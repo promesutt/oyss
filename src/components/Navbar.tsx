@@ -1,15 +1,17 @@
 import React from 'react';
-import { Sparkles, Printer, GraduationCap, ShieldCheck, Globe } from 'lucide-react';
+import { Sparkles, Printer, GraduationCap, ShieldCheck, Globe, MessageSquarePlus } from 'lucide-react';
 
 interface NavbarProps {
   onOpenAIModal: () => void;
   onOpenSourcesModal: () => void;
+  onOpenFeedbackModal?: () => void;
   onPrint: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
   onOpenAIModal,
   onOpenSourcesModal,
+  onOpenFeedbackModal,
   onPrint,
 }) => {
   return (
@@ -41,32 +43,43 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
 
           {/* Quick Actions */}
-          <div className="flex items-center space-x-2 sm:space-x-3">
+          <div className="flex items-center space-x-1.5 sm:space-x-2.5">
             <button
               onClick={onOpenAIModal}
-              className="inline-flex items-center px-3.5 py-2 text-xs sm:text-sm font-semibold rounded-lg text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 shadow-sm transition-all hover:shadow active:scale-95"
-              title="Yapay zeka ile seçtiğin senaryoya uygun yeni açık uçlu soru ve çalışma kağıdı üret"
+              className="inline-flex items-center px-3 py-1.5 sm:px-3.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 shadow-sm transition-all hover:shadow active:scale-95 cursor-pointer"
+              title="Seçtiğin senaryoya uygun özgün açık uçlu soru ve çalışma kâğıdı üret"
             >
-              <Sparkles className="w-4 h-4 mr-1.5" />
-              <span className="hidden md:inline">Yapay Zekâ ile</span> Soru Üret
+              <Sparkles className="w-4 h-4 mr-1.5 text-amber-300" />
+              <span>Özgün Soru Üret</span>
             </button>
+
+            {onOpenFeedbackModal && (
+              <button
+                onClick={onOpenFeedbackModal}
+                className="inline-flex items-center px-2.5 py-1.5 sm:px-3 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-amber-900 bg-amber-50 hover:bg-amber-100 border border-amber-300 transition-colors shadow-2xs cursor-pointer"
+                title="Görüş, öneri veya hata bildir"
+              >
+                <MessageSquarePlus className="w-4 h-4 mr-1 sm:mr-1.5 text-amber-700" />
+                <span className="hidden sm:inline">Görüş /</span> Bildir
+              </button>
+            )}
 
             <button
               onClick={onOpenSourcesModal}
-              className="inline-flex items-center px-3 py-2 text-xs sm:text-sm font-semibold rounded-lg text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 transition-colors shadow-2xs"
+              className="inline-flex items-center px-2.5 py-1.5 sm:px-3 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 transition-colors shadow-2xs"
               title="Bakanlığın resmi sitelerinden çekilen müfredat ve senaryoların eşzamanlama durumu"
             >
-              <Globe className="w-4 h-4 mr-1.5 text-emerald-600" />
+              <Globe className="w-4 h-4 mr-1 sm:mr-1.5 text-emerald-600" />
               <span className="hidden sm:inline">Resmi MEB</span> Kaynakları
             </button>
 
             <button
               onClick={onPrint}
-              className="inline-flex items-center px-3 py-2 text-xs sm:text-sm font-medium rounded-lg text-slate-700 bg-white hover:bg-slate-50 border border-slate-300 shadow-sm transition-colors"
+              className="inline-flex items-center px-2.5 py-1.5 sm:px-3 sm:py-2 text-xs sm:text-sm font-medium rounded-lg text-slate-700 bg-white hover:bg-slate-50 border border-slate-300 shadow-sm transition-colors cursor-pointer"
               title="A4 formatında yazdır veya PDF olarak kaydet"
             >
-              <Printer className="w-4 h-4 mr-1.5 text-slate-600" />
-              <span>Yazdır / PDF</span>
+              <Printer className="w-4 h-4 mr-1 text-slate-600" />
+              <span className="hidden sm:inline">Yazdır /</span> PDF
             </button>
           </div>
         </div>

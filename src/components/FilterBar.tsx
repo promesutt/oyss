@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState, useEffect, useCallback } from 'react';
 import { 
   GradeLevel, 
   SubjectId, 
@@ -30,7 +30,9 @@ import {
   Landmark,
   Map,
   Brain,
-  School
+  School,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 
 interface FilterBarProps {
@@ -69,6 +71,43 @@ export const FilterBar: React.FC<FilterBarProps> = ({
   // Filter grades and subjects by current stage
   const availableGrades = ALL_GRADES.filter(g => g.stage === currentStage);
   const availableSubjects = ALL_SUBJECTS.filter(s => s.stage.includes(currentStage));
+
+  const subjectScrollRef = useRef<HTMLDivElement>(null);
+  const scenarioScrollRef = useRef<HTMLDivElement>(null);
+
+  const [subjectCanScrollLeft, setSubjectCanScrollLeft] = useState(false);
+  const [subjectCanScrollRight, setSubjectCanScrollRight] = useState(false);
+  const [scenarioCanScrollLeft, setScenarioCanScrollLeft] = useState(false);
+  const [scenarioCanScrollRight, setScenarioCanScrollRight] = useState(false);
+
+  const updateScrollState = useCallback(() => {
+    if (subjectScrollRef.current) {
+      const el = subjectScrollRef.current;
+      setSubjectCanScrollLeft(el.scrollLeft > 6);
+      setSubjectCanScrollRight(el.scrollWidth > el.clientWidth + el.scrollLeft + 6);
+    }
+    if (scenarioScrollRef.current) {
+      const el = scenarioScrollRef.current;
+      setScenarioCanScrollLeft(el.scrollLeft > 6);
+      setScenarioCanScrollRight(el.scrollWidth > el.clientWidth + el.scrollLeft + 6);
+    }
+  }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(updateScrollState, 80);
+    window.addEventListener('resize', updateScrollState);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('resize', updateScrollState);
+    };
+  }, [updateScrollState, availableSubjects, scenarios]);
+
+  const scrollContainer = (ref: React.RefObject<HTMLDivElement | null>, offset: number) => {
+    if (ref.current) {
+      ref.current.scrollBy({ left: offset, behavior: 'smooth' });
+      setTimeout(updateScrollState, 250);
+    }
+  };
 
   const getSubjectIcon = (iconName: string) => {
     switch (iconName) {
@@ -168,18 +207,39 @@ export const FilterBar: React.FC<FilterBarProps> = ({
         </div>
 
         {/* Row 2: Subject Selector Bar */}
-        <div className="flex items-center space-x-2 overflow-x-auto pb-1 scrollbar-thin">
-          <span className="text-xs font-bold text-slate-500 uppercase tracking-wider mr-1 shrink-0">
+        <div className="relative flex items-center pt-1 group">
+          <span className="text-xs font-bold text-slate-500 uppercase tracking-wider mr-2 shrink-0">
             Dersler ({availableSubjects.length}):
           </span>
-          <div className="flex space-x-2 shrink-0">
+
+          {/* Left Arrow Button */}
+          {subjectCanScrollLeft && (
+            <>
+              <div className="absolute left-20 sm:left-24 top-0 bottom-0 w-8 bg-gradient-to-r from-white via-white/80 to-transparent pointer-events-none z-10" />
+              <button
+                type="button"
+                onClick={() => scrollContainer(subjectScrollRef, -180)}
+                className="absolute left-20 sm:left-24 top-1/2 -translate-y-1/2 z-20 w-7 h-7 rounded-full bg-white border border-slate-300 shadow-md flex items-center justify-center text-slate-700 hover:text-indigo-600 hover:bg-slate-50 cursor-pointer"
+                title="Sola kaydır"
+              >
+                <ChevronLeft className="w-4 h-4" />
+              </button>
+            </>
+          )}
+
+          {/* Scrollable Subjects */}
+          <div 
+            ref={subjectScrollRef}
+            onScroll={updateScrollState}
+            className="flex space-x-2 overflow-x-auto pb-1 scrollbar-none w-full scroll-smooth"
+          >
             {availableSubjects.map((sub) => {
               const isSelected = selectedSubject === sub.id;
               return (
                 <button
                   key={sub.id}
                   onClick={() => onSelectSubject(sub.id)}
-                  className={`inline-flex items-center px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold border transition-all ${
+                  className={`inline-flex items-center px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold border transition-all shrink-0 cursor-pointer ${
                     isSelected
                       ? 'bg-slate-900 text-white border-slate-900 shadow-sm ring-2 ring-slate-900/10'
                       : 'bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100 hover:border-slate-300'
@@ -200,37 +260,92 @@ export const FilterBar: React.FC<FilterBarProps> = ({
               );
             })}
           </div>
+
+          {/* Right Arrow Button & Indicator */}
+          {subjectCanScrollRight && (
+            <>
+              <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-white via-white/80 to-transparent pointer-events-none z-10" />
+              <button
+                type="button"
+                onClick={() => scrollContainer(subjectScrollRef, 180)}
+                className="absolute right-0 top-1/2 -translate-y-1/2 z-20 flex items-center space-x-1 pl-2 pr-2.5 py-1 rounded-full bg-indigo-600 text-white shadow-md hover:bg-indigo-700 transition-all cursor-pointer text-xs font-semibold animate-pulse"
+                title="Sağdaki diğer dersleri gör"
+              >
+                <span className="text-[11px] hidden sm:inline">Daha fazla</span>
+                <ChevronRight className="w-4 h-4" />
+              </button>
+            </>
+          )}
         </div>
 
         {/* Row 3: Scenario Selector (Senaryolar) */}
         {scenarios.length > 0 && (
-          <div className="flex flex-col sm:flex-row sm:items-center gap-2 pt-2 border-t border-slate-100">
+          <div className="relative flex flex-col sm:flex-row sm:items-center gap-2 pt-2 border-t border-slate-100 group">
             <div className="flex items-center space-x-1.5 shrink-0">
               <Layers className="w-4 h-4 text-indigo-600" />
               <span className="text-xs font-bold text-slate-700">
                 MEBİ & ÖDSGM Senaryo Tipi:
               </span>
             </div>
-            <div className="flex flex-wrap gap-2">
-              {scenarios.map((sc) => {
-                const isSelected = selectedScenarioId === sc.id;
-                return (
+
+            <div className="relative flex-1 min-w-0">
+              {/* Left Arrow Button */}
+              {scenarioCanScrollLeft && (
+                <>
+                  <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-white via-white/80 to-transparent pointer-events-none z-10" />
                   <button
-                    key={sc.id}
-                    onClick={() => onSelectScenario(sc.id)}
-                    className={`inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-medium border transition-all ${
-                      isSelected
-                        ? 'bg-indigo-50 border-indigo-300 text-indigo-900 font-bold ring-1 ring-indigo-400'
-                        : 'bg-white border-slate-200 text-slate-600 hover:bg-slate-50'
-                    }`}
+                    type="button"
+                    onClick={() => scrollContainer(scenarioScrollRef, -160)}
+                    className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-6 h-6 rounded-full bg-white border border-slate-300 shadow-md flex items-center justify-center text-slate-700 hover:text-indigo-600 hover:bg-slate-50 cursor-pointer"
+                    title="Sola kaydır"
                   >
-                    <span>{sc.name}</span>
-                    <span className="ml-1.5 px-1.5 py-0.2 bg-slate-200/80 rounded-full text-[10px] text-slate-700">
-                      {sc.totalQuestions} Soru
-                    </span>
+                    <ChevronLeft className="w-3.5 h-3.5" />
                   </button>
-                );
-              })}
+                </>
+              )}
+
+              {/* Scrollable Scenarios */}
+              <div 
+                ref={scenarioScrollRef}
+                onScroll={updateScrollState}
+                className="flex items-center space-x-2 overflow-x-auto pb-1 scrollbar-none scroll-smooth w-full"
+              >
+                {scenarios.map((sc) => {
+                  const isSelected = selectedScenarioId === sc.id;
+                  return (
+                    <button
+                      key={sc.id}
+                      onClick={() => onSelectScenario(sc.id)}
+                      className={`inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-medium border transition-all shrink-0 cursor-pointer ${
+                        isSelected
+                          ? 'bg-indigo-50 border-indigo-300 text-indigo-900 font-bold ring-1 ring-indigo-400'
+                          : 'bg-white border-slate-200 text-slate-600 hover:bg-slate-50'
+                      }`}
+                    >
+                      <span>{sc.name}</span>
+                      <span className="ml-1.5 px-1.5 py-0.2 bg-slate-200/80 rounded-full text-[10px] text-slate-700">
+                        {sc.totalQuestions} Soru
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Right Arrow Button & Indicator */}
+              {scenarioCanScrollRight && (
+                <>
+                  <div className="absolute right-0 top-0 bottom-0 w-10 bg-gradient-to-l from-white via-white/80 to-transparent pointer-events-none z-10" />
+                  <button
+                    type="button"
+                    onClick={() => scrollContainer(scenarioScrollRef, 160)}
+                    className="absolute right-0 top-1/2 -translate-y-1/2 z-20 flex items-center space-x-1 pl-1.5 pr-2 py-0.5 rounded-full bg-indigo-600 text-white shadow-md hover:bg-indigo-700 transition-all cursor-pointer text-[10px] font-semibold animate-pulse"
+                    title="Sağdaki diğer senaryoları gör"
+                  >
+                    <span className="hidden sm:inline">Diğerleri</span>
+                    <ChevronRight className="w-3.5 h-3.5" />
+                  </button>
+                </>
+              )}
             </div>
           </div>
         )}

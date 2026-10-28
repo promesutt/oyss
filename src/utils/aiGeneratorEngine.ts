@@ -195,13 +195,12 @@ SADECE geçerli bir JSON çıktısı ver. JSON şeması:
       }
 
       if (questionsList && Array.isArray(questionsList) && questionsList.length > 0) {
-        const activeModelName = data?.activeModel || 'gemini-3.5-flash-lite';
         const normalized = normalizeAndCalibrateQuestions(questionsList);
         return {
-          title: `${grade}. Sınıf ${scenario.name} (Canlı Gemini 3.5 Flash-Lite - ${normalized.length} Soru)`,
+          title: `${grade}. Sınıf ${scenario.name} (Özgün Sınav Seti - ${normalized.length} Soru)`,
           variationNumber: variationIndex + 1,
-          generationTime: '0.9 saniye (Tasarruflu Sunucu Değişkeni)',
-          model: `Gemini 3.5 Flash-Lite (${activeModelName} - Minimum Token)`,
+          generationTime: '0.9 saniye (Hızlı Üretim)',
+          model: `TYMM Akıllı Soru Motoru`,
           questionsCount: normalized.length,
           generatedQuestions: normalized
         };
@@ -1518,10 +1517,10 @@ ${sName2}: "Hayır, şartlar değiştiğinde doğrudan diğer etkenlerin devreye
   const finalDynamicQuestions = calibrateQuestionDifficulties(dynamicQuestions);
 
   return {
-    title: `${grade}. Sınıf ${scenario.name} (Yapay Zekâ Varyasyonu - ${finalDynamicQuestions.length} Soru)`,
+    title: `${grade}. Sınıf ${scenario.name} (Özgün Sınav Seti - ${finalDynamicQuestions.length} Soru)`,
     variationNumber: variationIndex + 1,
     generationTime: '1.1 saniye',
-    model: apiKey ? 'Gemini 3.5 Flash-Lite (Canlı)' : 'Gemini TYMM-Engine (Alternatif MEBİ Havuzu)',
+    model: 'MEBİ Standartlı Soru Motoru',
     questionsCount: finalDynamicQuestions.length,
     generatedQuestions: finalDynamicQuestions
   };

@@ -38,9 +38,9 @@ export const ExamPaperView: React.FC<ExamPaperViewProps> = ({
               <Sparkles className="w-4 h-4 text-amber-300" />
             </span>
             <div>
-              <span>Yapay Zekâ ile Üretilen Özgün Sınav Kağıdı Aktarıldı</span>
+              <span>Özgün Sınav Kâğıdı Aktarıldı</span>
               <p className="text-[11px] font-normal text-indigo-700">
-                Aşağıdaki A4 kağıdında doğrudan yapay zekânın ürettiği MEBİ soruları yer almaktadır.
+                Aşağıdaki A4 kâğıdında senaryoya uygun üretilen MEBİ soruları yer almaktadır.
               </p>
             </div>
           </div>
@@ -152,7 +152,7 @@ export const ExamPaperView: React.FC<ExamPaperViewProps> = ({
               className="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100 transition-colors cursor-pointer shadow-2xs"
             >
               <Sparkles className="w-3.5 h-3.5 mr-1 text-indigo-600" />
-              Yeni Varyasyon Türet
+              Yeni Sınav Oluştur
             </button>
 
             <button
@@ -299,18 +299,14 @@ export const ExamPaperView: React.FC<ExamPaperViewProps> = ({
                   <span>Öğrenci Çözüm ve Cevap Alanı:</span>
                   <span className="print:inline hidden print:text-[10px] print:font-bold">Puan: [ &nbsp; &nbsp; / {q.points} ]</span>
                 </div>
-                {/* Lined writing area for real printing */}
-                <div className={`w-full rounded-lg bg-slate-50/50 border border-slate-200 p-3 print:bg-transparent print:border-slate-300 print:p-2 ${
-                  answerLineCount === 2 
-                    ? 'min-h-[70px] space-y-4 print:min-h-[55px] print:space-y-3.5'
-                    : answerLineCount === 4
-                    ? 'min-h-[140px] space-y-6 print:min-h-[105px] print:space-y-4'
-                    : 'min-h-[110px] space-y-5 print:min-h-[75px] print:space-y-3.5'
-                }`}>
-                  <div className="border-b border-slate-200 print:border-slate-300 h-1"></div>
-                  <div className="border-b border-slate-200 print:border-slate-300 h-1"></div>
-                  {answerLineCount >= 3 && <div className="border-b border-slate-200 print:border-slate-300 h-1"></div>}
-                  {answerLineCount >= 4 && <div className="border-b border-slate-200 print:border-slate-300 h-1"></div>}
+                {/* Lined writing area for real printing - perfectly equal row heights */}
+                <div className="w-full rounded-lg bg-slate-50/50 border border-slate-200 print:bg-transparent print:border-slate-300 overflow-hidden divide-y divide-slate-200 print:divide-slate-300">
+                  {Array.from({ length: answerLineCount }).map((_, lineIdx) => (
+                    <div 
+                      key={lineIdx} 
+                      className="h-8 print:h-7 w-full"
+                    />
+                  ))}
                 </div>
               </div>
 

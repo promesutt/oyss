@@ -5,14 +5,11 @@ import {
   ExamTerm, 
   ExamScenario
 } from '../types';
-import { ALL_SUBJECTS, EXAM_TERMS, getOfficialOutcomeTitle, formatOutcomeBadgeTitle } from '../data/curriculumData';
+import { ALL_SUBJECTS, getOfficialOutcomeTitle, formatOutcomeBadgeTitle } from '../data/curriculumData';
 import { calibrateQuestionDifficulties } from '../utils/difficultyCalibrator';
 import { 
   X, 
   Sparkles, 
-  Copy, 
-  Check, 
-  Wand2, 
   Cpu, 
   CheckCircle2,
   MessageSquareQuote,
@@ -54,8 +51,6 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
   const [isGenerating, setIsGenerating] = useState<boolean>(false);
   const [generatedResult, setGeneratedResult] = useState<GenerationResult | null>(null);
   const [variationCount, setVariationCount] = useState<number>(0);
-  const [activeTab, setActiveTab] = useState<'preview' | 'prompt'>('preview');
-  const [copied, setCopied] = useState<boolean>(false);
   const apiKey = 
     (typeof import.meta !== 'undefined' && import.meta.env?.VITE_GEMINI_API_KEY) ||
     (typeof window !== 'undefined' && sessionStorage.getItem('gemini_api_key')) ||
@@ -64,78 +59,6 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
   if (!isOpen) return null;
 
   const subjectMeta = ALL_SUBJECTS.find((s) => s.id === subjectId);
-  const termMeta = EXAM_TERMS.find(t => t.id === examTerm);
-
-  // Generate the strict MEBİ TYMM Prompt with explicit non-literal example directive
-  const buildSystemPrompt = () => {
-    const expandedDistributions: typeof scenario.distributions = [];
-    for (const d of scenario.distributions) {
-      const count = d.questionCount || 1;
-      for (let c = 0; c < count; c++) {
-        expandedDistributions.push(d);
-      }
-    }
-    const targetCount = questionCountChoice || expandedDistributions.length || scenario.totalQuestions || 6;
-    const questionDistributions = Array.from({ length: targetCount }, (_, i) => {
-      return expandedDistributions[i % (expandedDistributions.length || 1)] || scenario.distributions[0];
-    });
-    const distributionsText = questionDistributions.map((d, i) => {
-      const officialTitle = getOfficialOutcomeTitle(d.outcomeCode);
-      return `Soru ${i + 1}: [Kazanım Kodu: ${d.outcomeCode}] [Resmi Öğrenme Çıktısı: ${officialTitle || d.notes || 'Kavramsal Uygulama'}] [Bilişsel Düzey: ${d.cognitiveLevel}]`;
-    }).join('\n');
-
-    return `SEN MİLLÎ EĞİTİM BAKANLIĞI TEMEL EĞİTİM GENEL MÜDÜRLÜĞÜ VE ÖDSGM ORTAK SINAVLAR BAŞUZMANISIN.
-
-MİSYON:
-${grade}. Sınıf ${subjectMeta?.name} "${scenario.name}" için DÜZ BİLGİ/TANIM İÇERMEYEN, tamamen MEBİ resmi açık uçlu soru kalıplarına (%100 beceri ve durum temelli) uygun bir sınav seti üret.
-TOPLAM SORU SAYISI: KESİNLİKLE VE TAM OLARAK ${targetCount} ADET AÇIK UÇLU SORU (1'den ${targetCount}'e kadar her soru eksiksiz üretilmelidir).
-
-SENARYO RESMİ KAZANIM DAĞILIM PLANI (${targetCount} SORU):
-${distributionsText}
-
-ZORUNLU KAZANIM EŞLEŞMESİ (EN KATI VE DEĞİŞTİRİLEMEZ 1. KURAL):
-- Sınavdaki Soru 1'den Soru ${targetCount}'e kadar HER BİR SORU, yukarıdaki dağılım tablosunda kendisine atanan [Kazanım Kodu] ve [Resmi Öğrenme Çıktısı] ile %100 BİRE BİR EŞLEŞMEK ZORUNDADIR!
-- Dağılım sırası ve kazanım kodları ASLA değiştirilemez! Senaryoda yer almayan hiçbir kazanımdan soru üretilemez!
-
-ÖĞRENCİ YAŞ DÜZEYİNE UYGUN SADE VE AKICI TÜRKÇE (${grade}. SINIF SEVİYESİ - ÇOK ÖNEMLİ):
-- Sorularda kullanılan dil, 12-13 yaşındaki bir ortaokul öğrencisinin rahatlıkla anlayabileceği duru, yalın, açık ve anlaşılır bir Türkçe olmalıdır.
-- Ağır akademik terminoloji, üniversite düzeyinde fizik/kimya/astronomi jargonları KESİNLİKLE YASAKTIR.
-- Soru kökleri, öncüller ve diyaloglar günlük hayatın içinden, öğrencinin yabancılık çekmeyeceği durumlar üzerinden kurgulanmalıdır.
-
-DİKKAT EDİLECEK EN KRİTİK TALİMAT (BAĞLAM ÇEŞİTLİLİĞİ VE TEKRAR YASAĞI):
-- AYNI SINAV İÇİNDEKİ SORULARDA ASLA AYNI MEKÂN, AYNI ETKİNLİK VEYA AYNI BAĞLAMI TEKRARLAMA!
-- Soruların "TÜBİTAK Bilim Fuarı / Şenliği", "Robotik Atölyesi" veya "Bilim Kulübü" gibi tek bir mekânda toplanması KESİNLİKLE YASAKTIR.
-- Her sorunun konusu, mekânı, karakterleri ve gerçek yaşam olayı birbirinden TAMAMEN FARKLI alanlardan seçilmelidir:
-  * Bir soru: Ev ekonomisi, mutfak, yemek tarifi, manav/market alışverişi veya aile bütçesi
-  * Bir soru: Marangozluk atölyesi, mimari çizim, park peyzajı, ahşap zanaatı veya mobilya tasarımı
-  * Bir soru: Spor sahası, atletizm koşu parkuru, bisiklet turu, dağcılık veya yüzme yarışı
-  * Bir soru: Doğa ve çevre, baraj gölü su seviyesi, tarımsal damla sulama veya meteoroloji hava raporu
-  * Bir soru: Okul kütüphanesi, arkeoloji müzesi, geleneksel el sanatları (ebru, çini, dokuma)
-  * Bir soru: Şehir içi ulaşım ve trafik ışığı zamanlaması, güneş enerjisi santrali veya geri dönüşüm tesisi
-- Karakter isimleri de her soruda değişmelidir (Örn: Soru 1'de Elif ile Kerem, Soru 2'de Marangoz Ahmet Usta, Soru 3'te Zeynep ve Can...).
-
-MEBİ RESMİ PEDAGOJİK SORU ŞABLONLARI:
-Üreteceğiniz sorular mutlaka şu 7 MEBİ şablonundan birine dayanmalıdır:
-1. KURGUSAL SENARYO & VAKA İNCELEMESİ (Gerçek yaşam problemi veya mühendislik projesi üzerinden gerekçelendirme).
-2. ÖĞRENCİ DİYALOĞU & KAVRAM YANILGISI TESPİTİ (İki öğrencinin tartışmasında kimin haklı olduğunun bilimsel/mantıksal kanıtla açıklanması).
-3. HATA TESPİTİ & ADIM ANALİZİ (Bir öğrencinin basamaklı çözümünde "İlk hata hangi adımda yapılmıştır?" analizi).
-4. DURUM / ÖZELLİK MATRİSİ (Özellikleri VAR/YOK veya tik tablosu ile kıyaslayıp çıkarım yapma).
-5. DİLEMMA (İKİLEM) & ÇÖZÜM DEĞERLENDİRME (İki farklı alternatif yöntemin avantaj ve dezavantajlarını tartma).
-6. EMPATİ & CÜMLE DÖNÜŞTÜRME (İletişim, sosyal etkileşim veya edebi empati kurgusu).
-7. METİN İÇİ DELİLLENDİRME & ÖRTÜK ANLAM (Metinden iki somut kanıt bularak örtük mesajı açıklama).
-
-HEDEF PARAMETRELER:
-- Kademeler: ${grade}. Sınıf
-- Ders: ${subjectMeta?.name}
-- Sınav: ${termMeta?.name}
-- Senaryo: ${scenario.name} (ZORUNLU SORU SAYISI: ${targetCount} Açık Uçlu Soru)
-- Zorluk Dengesi: Kolay (%20-25), Orta (%50-60), Zor (%20-25)
-
-KESİNLİKLE YASAK OLANLAR:
-- Kuru ezber, tanımsal ve çoktan seçmeli sorular KESİNLİKLE YASAKTIR.
-- Soru köklerinde mutlaka: "Gerekçeleriyle açıklayınız", "Metinden iki kanıt gösteriniz", "Doğru adımı belirleyiniz" ifadeleri yer almalıdır.
-- Her soru için MEBİ formatında analitik puanlama rubriği eksiksiz verilmeli ve toplam 100 puan üzerinden dağıtılmalıdır.`;
-  };
 
   const handleGenerate = async () => {
     setIsGenerating(true);
@@ -151,18 +74,11 @@ KESİNLİKLE YASAK OLANLAR:
       );
       setVariationCount(nextIndex + 1);
       setGeneratedResult(res);
-      setActiveTab('preview');
     } catch (err) {
       console.error('Generation error:', err);
     } finally {
       setIsGenerating(false);
     }
-  };
-
-  const handleCopyPrompt = () => {
-    navigator.clipboard.writeText(buildSystemPrompt());
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
   };
 
   return (
@@ -177,9 +93,9 @@ KESİNLİKLE YASAK OLANLAR:
             </div>
             <div>
               <h2 className="text-base sm:text-lg font-bold flex items-center">
-                TYMM Yapay Zekâ Soru & Materyal Motoru
+                TYMM Soru & Materyal Üretim Motoru
                 <span className="ml-2 text-[10px] bg-indigo-500/30 text-indigo-200 border border-indigo-400/30 px-2 py-0.5 rounded-full font-normal">
-                  Çoklu Varyasyon & MEBİ Standartlı
+                  Özgün Sınav & MEBİ Standartlı
                 </span>
               </h2>
               <p className="text-xs text-indigo-200">
@@ -251,68 +167,48 @@ KESİNLİKLE YASAK OLANLAR:
           </div>
 
           {/* Action Button: Generate */}
-          <div className="flex flex-wrap items-center justify-between gap-3">
-            <div className="flex space-x-2 border-b border-slate-200">
-              <button
-                onClick={() => setActiveTab('preview')}
-                className={`pb-2 px-3 text-xs font-bold border-b-2 transition-colors ${
-                  activeTab === 'preview'
-                    ? 'border-indigo-600 text-indigo-600'
-                    : 'border-transparent text-slate-500 hover:text-slate-800'
-                }`}
-              >
-                Üretim Sonucu (Önizleme)
-              </button>
-              <button
-                onClick={() => setActiveTab('prompt')}
-                className={`pb-2 px-3 text-xs font-bold border-b-2 transition-colors ${
-                  activeTab === 'prompt'
-                    ? 'border-indigo-600 text-indigo-600'
-                    : 'border-transparent text-slate-500 hover:text-slate-800'
-                }`}
-              >
-                Kullanılan MEB İstemi (Prompt İncele)
-              </button>
+          <div className="flex flex-wrap items-center justify-between gap-3 pt-1 border-b border-slate-200 pb-3">
+            <div className="text-xs font-semibold text-slate-600">
+              MEB ÖDSGM Senaryo Esaslı Açık Uçlu Soru Seti Hazırlama
             </div>
 
             <button
               onClick={handleGenerate}
               disabled={isGenerating}
-              className="inline-flex items-center px-4 py-2 rounded-xl text-xs sm:text-sm font-bold text-white bg-indigo-600 hover:bg-indigo-700 shadow-md transition-all active:scale-95 disabled:opacity-50"
+              className="inline-flex items-center px-4 py-2 rounded-xl text-xs sm:text-sm font-bold text-white bg-indigo-600 hover:bg-indigo-700 shadow-md transition-all active:scale-95 disabled:opacity-50 cursor-pointer"
             >
               {isGenerating ? (
                 <>
                   <Cpu className="w-4 h-4 mr-2 animate-spin" />
-                  Yeni Soru Seti Türetiliyor...
+                  Sorular Hazırlanıyor...
                 </>
               ) : generatedResult ? (
                 <>
                   <RotateCw className="w-4 h-4 mr-2 text-amber-300" />
-                  Farklı Bir Varyasyon Üret
+                  Farklı Sorular Hazırla
                 </>
               ) : (
                 <>
-                  <Wand2 className="w-4 h-4 mr-2 text-amber-300" />
-                  Yapay Zekâ ile Üret
+                  <Sparkles className="w-4 h-4 mr-2 text-amber-300" />
+                  Özgün Soru Üret
                 </>
               )}
             </button>
           </div>
 
-          {/* Tab 1: Preview or Empty State */}
-          {activeTab === 'preview' && (
-            <div>
-              {generatedResult ? (
-                <div className="space-y-4">
-                  <div className="flex flex-wrap items-center justify-between bg-emerald-50 border border-emerald-200 p-3 rounded-xl text-xs text-emerald-900 font-semibold gap-2">
-                    <span className="flex items-center">
-                      <CheckCircle2 className="w-4 h-4 mr-1.5 text-emerald-600 shrink-0" />
-                      Başarıyla üretildi: Varyasyon #{generatedResult.variationNumber} ({generatedResult.questionsCount} açık uçlu soru ve MEB puanlama rubriği).
-                    </span>
-                    <span className="text-[11px] text-slate-500">
-                      Motor: {generatedResult.model} • {generatedResult.generationTime}
-                    </span>
-                  </div>
+          {/* Preview or Empty State */}
+          <div>
+            {generatedResult ? (
+              <div className="space-y-4">
+                <div className="flex flex-wrap items-center justify-between bg-emerald-50 border border-emerald-200 p-3 rounded-xl text-xs text-emerald-900 font-semibold gap-2">
+                  <span className="flex items-center">
+                    <CheckCircle2 className="w-4 h-4 mr-1.5 text-emerald-600 shrink-0" />
+                    Başarıyla hazırlandı: Soru Seti #{generatedResult.variationNumber} ({generatedResult.questionsCount} açık uçlu soru ve MEB puanlama rubriği).
+                  </span>
+                  <span className="text-[11px] text-slate-500">
+                    MEBİ Uyumlu Akıllı Motor • {generatedResult.generationTime}
+                  </span>
+                </div>
 
                   <div className="space-y-4">
                     {generatedResult.generatedQuestions.map((gq, i) => (
@@ -404,11 +300,11 @@ KESİNLİKLE YASAK OLANLAR:
                               subjectId: subjectId,
                               examTerm: examTerm,
                               scenarioId: scenario.id,
-                              title: `${grade}. Sınıf ${subjectMeta?.name} (${scenario.name}) - Yapay Zekâ MEBİ Sınavı (#${generatedResult.variationNumber})`,
+                              title: `${grade}. Sınıf ${subjectMeta?.name} (${scenario.name}) - Özgün MEBİ Sınavı (#${generatedResult.variationNumber})`,
                               durationMinutes: 40,
                               totalPoints: 100,
                               instructions: [
-                                'Bu sınav yapay zekâ MEBİ motoru tarafından resmi senaryo kurallarına göre özel türetilmiştir.',
+                                'Bu sınav resmi senaryo kurallarına göre özel olarak hazırlanmıştır.',
                                 'Soruları analitik düşünme adımlarını ve bilimsel gerekçelerinizi belirterek açık uçlu cevaplayınız.',
                                 'Puanlamada MEB Analitik Dereceli Puanlama Anahtarı (Rubrik) basamakları esas alınacaktır.'
                               ],
@@ -459,46 +355,15 @@ KESİNLİKLE YASAK OLANLAR:
                 <div className="border-2 border-dashed border-slate-200 rounded-xl p-8 text-center text-slate-400 space-y-2">
                   <Sparkles className="w-8 h-8 mx-auto text-indigo-300" />
                   <p className="text-xs sm:text-sm font-semibold text-slate-600">
-                    Henüz yeni bir varyasyon üretilmedi.
+                    Henüz yeni sorular oluşturulmadı.
                   </p>
                   <p className="text-xs text-slate-400 max-w-sm mx-auto">
-                    Yukarıdaki <strong>"Yapay Zekâ ile Üret"</strong> butonuna basarak her seferinde farklı öğrenci isimleri ve taze vaka kurgularıyla yeni sorular türetebilirsiniz.
+                    Yukarıdaki <strong>"Özgün Soru Üret"</strong> butonuna basarak her seferinde farklı öğrenci isimleri ve taze vaka kurgularıyla yeni sorular hazırlayabilirsiniz.
                   </p>
                 </div>
               )}
             </div>
-          )}
-
-          {/* Tab 2: System Prompt Viewer */}
-          {activeTab === 'prompt' && (
-            <div className="space-y-3">
-              <div className="flex items-center justify-between text-xs text-slate-600">
-                <span className="font-semibold">
-                  Bu senaryo için Gemini / LLM modeline gönderilen yapılandırılmış resmi istem (Prompt):
-                </span>
-                <button
-                  onClick={handleCopyPrompt}
-                  className="inline-flex items-center text-indigo-600 hover:text-indigo-800 font-bold"
-                >
-                  {copied ? (
-                    <>
-                      <Check className="w-3.5 h-3.5 mr-1 text-emerald-600" />
-                      Kopyalandı!
-                    </>
-                  ) : (
-                    <>
-                      <Copy className="w-3.5 h-3.5 mr-1" />
-                      İstemi Kopyala
-                    </>
-                  )}
-                </button>
-              </div>
-              <pre className="bg-slate-900 text-slate-100 p-4 rounded-xl text-xs font-mono overflow-x-auto whitespace-pre-wrap leading-relaxed max-h-80 border border-slate-800">
-                {buildSystemPrompt()}
-              </pre>
-            </div>
-          )}
-        </div>
+          </div>
 
         {/* Modal Footer */}
         <div className="bg-slate-50 p-4 border-t border-slate-200 flex items-center justify-between text-xs text-slate-500">

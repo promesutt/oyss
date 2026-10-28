@@ -25,7 +25,7 @@ export const InfographicView: React.FC<InfographicViewProps> = ({ infographics }
       <div className="max-w-4xl mx-auto py-12 text-center text-slate-500">
         <Sparkles className="w-8 h-8 mx-auto text-slate-400 mb-2" />
         <p className="font-semibold text-sm">Bu ders ve senaryo için henüz infografik eklenmedi.</p>
-        <p className="text-xs text-slate-400 mt-1">Yapay Zeka Soru Üretici ile bu konu için anında infografik kartları üretebilirsiniz.</p>
+        <p className="text-xs text-slate-400 mt-1">Akıllı Soru Motoru ile bu konu için anında infografik kartları üretebilirsiniz.</p>
       </div>
     );
   }

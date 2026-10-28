@@ -137,7 +137,7 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
       "TUZAK: \"Doğa sevgisi\" bir konudur, ana fikir olamaz. \"Doğayı korumak insanlığın geleceğini kurtarır\" ise bir ana fikirdir."
     ],
     "solvedExample": {
-      "question": "Yukarıda verilen 1. sorudaki karınca Çıtı metnini dikkate alınız.\n\nÇalışkan karınca Pıtır'ın kış hazırlığını anlatan bu metnin içeriğini en iyi özetleyen 3 anahtar kelimeyi yazınız.",
+      "question": "Yukarıda verilen 1. sorudaki karınca Çıtı metnini dikkate alınız.\n\nÇalışkan karınca Çıtı'nın kış hazırlığını anlatan bu metnin içeriğini en iyi özetleyen 3 anahtar kelimeyi yazınız.",
       "analysis": "Karınca, azim/gayret, yardımlaşma.",
       "solution": "1. Karınca\n2. Azim (Çalışkanlık)\n3. Yardımlaşma (Dayanışma)"
     },

@@ -33,6 +33,7 @@ import { InfographicView } from './components/InfographicView';
 import { SpeakingGuideView } from './components/SpeakingGuideView';
 import { AIGeneratorModal } from './components/AIGeneratorModal';
 import { OfficialSourcesModal } from './components/OfficialSourcesModal';
+import { FeedbackModal } from './components/FeedbackModal';
 
 export const App: React.FC = () => {
   // Navigation / Filter State (Default: 5. Sınıf Türkçe Senaryo 1 Sınav Kağıdı)
@@ -47,6 +48,7 @@ export const App: React.FC = () => {
   // Modal States
   const [isAIModalOpen, setIsAIModalOpen] = useState<boolean>(false);
   const [isSourcesModalOpen, setIsSourcesModalOpen] = useState<boolean>(false);
+  const [isFeedbackModalOpen, setIsFeedbackModalOpen] = useState<boolean>(false);
 
   // Stage Switch Handler (Ortaokul <-> Lise)
   const handleSelectStage = (stage: SchoolStage) => {
@@ -403,6 +405,7 @@ b) Durum 1 ile Durum 2 arasındaki fark, uygulanan yöntemin sürekliliği ve do
       <Navbar
         onOpenAIModal={() => setIsAIModalOpen(true)}
         onOpenSourcesModal={() => setIsSourcesModalOpen(true)}
+        onOpenFeedbackModal={() => setIsFeedbackModalOpen(true)}
         onPrint={() => window.print()}
       />
 
@@ -474,6 +477,13 @@ b) Durum 1 ile Durum 2 arasındaki fark, uygulanan yöntemin sürekliliği ve do
       <OfficialSourcesModal
         isOpen={isSourcesModalOpen}
         onClose={() => setIsSourcesModalOpen(false)}
+      />
+
+      {/* User Feedback Modal */}
+      <FeedbackModal
+        isOpen={isFeedbackModalOpen}
+        onClose={() => setIsFeedbackModalOpen(false)}
+        currentContext={`${selectedGrade}. Sınıf ${ALL_SUBJECTS.find(s => s.id === selectedSubject)?.name || ''} (${currentScenario?.name || 'Senaryo'})`}
       />
     </div>
   );

@@ -62,7 +62,7 @@ export const OfficialSourcesModal: React.FC<OfficialSourcesModalProps> = ({
       url: 'https://mebi.eba.gov.tr',
       badge: '7 Temel Soru Kalıbı',
       status: 'Entegre Edildi',
-      description: 'MEBİ açık uçlu soru fasiküllerinden çıkarılan pedagojik DNA (Kurgusal Vaka, Öğrenci Tartışması, Hata Tespiti, VAR/YOK Tablosu, İkilem/Dilemma, Empati/Ben Dili) yapay zekâ motorumuza kalıcı olarak öğretilmiştir. Harici soru yükleme gerektirmez.',
+      description: 'MEBİ açık uçlu soru fasiküllerinden çıkarılan pedagojik DNA (Kurgusal Vaka, Öğrenci Tartışması, Hata Tespiti, VAR/YOK Tablosu, İkilem/Dilemma, Empati/Ben Dili) soru üretim motorumuza kalıcı olarak öğretilmiştir. Harici soru yükleme gerektirmez.',
       icon: Sparkles,
       iconColor: 'text-amber-600',
       bgColor: 'bg-amber-50'

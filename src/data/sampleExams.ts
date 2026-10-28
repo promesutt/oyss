@@ -26,7 +26,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Metnin konusunu belirleme.",
-        "stimulus": "“Ali o gün dedesinin tavan arasındaki eski ahşap sandığını açtı. Sandığın içinde dedesinin çocukken kendi elleriyle gürgen ağacından yonttuğu rengârenk bir fırıldak (topaç) ve tahta bir araba duruyordu. Dedesi yanına gelip başını okşadı: 'Evlat, biz küçükken oyuncaklarımızı çarşıdan hazır almazdık; doğadan bulduğumuz bir dalla, bir kozalakla günlerce emek verip kendi oyuncağımızı üretirdik. Çünkü insanın kendi emeğiyle yaptığı şey paha biçilemezdir.' dedi.”",
+        "stimulus": "“Ali o gün dedesinin tavan arasındaki eski ahşap sandığını açtı. Sandığın içinde dedesinin çocukluğundan kalan en kıymetli yadigârı; kendi elleriyle gürgen ağacından yonttuğu rengârenk bir fırıldak (topaç) ve tahta bir araba duruyordu. Dedesi yanına gelip başını okşadı: 'Evlat, biz küçükken oyuncaklarımızı çarşıdan hazır almazdık; doğadan bulduğumuz bir dalla, bir kozalakla günlerce emek verip kendi oyuncağımızı üretirdik. Çünkü insanın kendi emeğiyle yaptığı şey paha biçilemezdir.' dedi.”",
         "questionText": "Yukarıda dedenin torununa ahşap oyuncakları gösterdiği metnin konusunu tek bir cümleyle yazınız.",
         "solutionExplanation": "Metin geleneksel el yapımı oyuncakları ve emek verilerek üretilen şeylerin manevi değerini anlatır.",
         "modelAnswer": "Metnin konusu: Dedenin torununa çocukluk yıllarında emek vererek yaptığı ahşap oyuncakları göstermesi ve kendi emeğiyle üretmenin değerini anlatmasıdır.",
@@ -269,7 +269,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "points": 16,
         "contextText": "Anahtar kelime tespiti.",
         "stimulus": "Yukarıda verilen 1. sorudaki karınca Çıtı metnini dikkate alınız.",
-        "questionText": "Çalışkan karınca Pıtır'ın kış hazırlığını anlatan bu metnin içeriğini en iyi özetleyen 3 anahtar kelimeyi yazınız.",
+        "questionText": "Çalışkan karınca Çıtı'nın kış hazırlığını anlatan bu metnin içeriğini en iyi özetleyen 3 anahtar kelimeyi yazınız.",
         "solutionExplanation": "Karınca, azim/gayret, yardımlaşma.",
         "modelAnswer": "1. Karınca\n2. Azim (Çalışkanlık)\n3. Yardımlaşma (Dayanışma)",
         "rubric": [
