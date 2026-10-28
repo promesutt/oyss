@@ -23,21 +23,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.5.6. Metnin yüzey anlamını belirleyebilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Metnin konusunu belirleme.",
         "stimulus": "“Ali o gün dedesinin tavan arasındaki eski ahşap sandığını açtı. Sandığın içinde dedesinin çocukken kendi elleriyle gürgen ağacından yonttuğu rengârenk bir fırıldak (topaç) ve tahta bir araba duruyordu. Dedesi yanına gelip başını okşadı: 'Evlat, biz küçükken oyuncaklarımızı çarşıdan hazır almazdık; doğadan bulduğumuz bir dalla, bir kozalakla günlerce emek verip kendi oyuncağımızı üretirdik. Çünkü insanın kendi emeğiyle yaptığı şey paha biçilemezdir.' dedi.”",
-        "questionText": "Verilen metindeki/durumdaki temel düşünceden hareketle yazarın aktarmak istediği örtük iletiyi açıklayınız. Metinden bu düşüncenizi destekleyen iki somut ifadeyi kanıt gösteriniz.",
+        "questionText": "Yukarıda dedenin torununa ahşap oyuncakları gösterdiği metnin konusunu tek bir cümleyle yazınız.",
         "solutionExplanation": "Metin geleneksel el yapımı oyuncakları ve emek verilerek üretilen şeylerin manevi değerini anlatır.",
-        "modelAnswer": "Örtük İleti: Yüzey Anlam: Metinde doğrudan doğruya açıkça söylenen, gizli olmayan ve satır aralarında aranmayan apaçık bilgidir.\nMetinden Kanıtlar:\n1. Kanıt: Durumun manevi ve kalıcı yönünün vurgulanması.\n2. Kanıt: Emek verilerek üretilen değerin maddiyatla ölçülemeyeceğinin ifade edilmesi.",
+        "modelAnswer": "Metnin konusu: Dedenin torununa çocukluk yıllarında emek vererek yaptığı ahşap oyuncakları göstermesi ve kendi emeğiyle üretmenin değerini anlatmasıdır.",
         "rubric": [
           {
-            "criterion": "Metindeki örtük iletinin doğru tespiti",
-            "points": 8
-          },
-          {
-            "criterion": "Metinden iki somut kanıtın gösterilmesi",
-            "points": 9
+            "criterion": "Metnin konusunun eksiksiz ve tek cümleyle yazılması",
+            "points": 17
           }
         ]
       },
@@ -47,16 +43,16 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.5.6. Metnin yüzey anlamını belirleyebilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
         "points": 17,
         "contextText": "Metne dayalı açık uçlu kavrama sorusu.",
-        "stimulus": "“Ali o gün dedesinin tavan arasındaki eski ahşap sandığını açtı. Sandığın içinde dedesinin çocukken kendi elleriyle gürgen ağacından yonttuğu rengârenk bir fırıldak (topaç) ve tahta bir araba duruyordu. Dedesi yanına gelip başını okşadı: 'Evlat, biz küçükken oyuncaklarımızı çarşıdan hazır almazdık; doğadan bulduğumuz bir dalla, bir kozalakla günlerce emek verip kendi oyuncağımızı üretirdik. Çünkü insanın kendi emeğiyle yaptığı şey paha biçilemezdir.' dedi.”",
-        "questionText": "Yukarıda dedenin torununa ahşap oyuncakları gösterdiği metnin konusunu tek bir cümleyle yazınız.",
-        "solutionExplanation": "Metin geleneksel el yapımı oyuncakları ve emek verilerek üretilen şeylerin manevi değerini anlatır.",
-        "modelAnswer": "Metnin konusu: Dedenin torununa çocukluk yıllarında emek vererek yaptığı ahşap oyuncakları göstermesi ve kendi emeğiyle üretmenin değerini anlatmasıdır.",
+        "stimulus": "Yukarıda verilen 1. sorudaki ahşap sandık metnini dikkate alınız.",
+        "questionText": "Dedesi torununa 'İnsanın kendi emeğiyle yaptığı şey paha biçilemezdir' sözüyle neyi anlatmak istemiştir? Metindeki düşüncelerden hareketle açıklayınız.",
+        "solutionExplanation": "Kişinin alın teriyle ve sabırla ürettiği eşyaların maddiyatla ölçülemeyecek bir manevi değere sahip olmasıdır.",
+        "modelAnswer": "Dedesi, parayla satın alınan hazır oyuncakların kolayca tüketilebileceğini; ancak insanın kendi alın teri, sabrı ve hayal gücüyle ürettiği bir oyuncağın çok daha kıymetli ve unutulmaz olduğunu anlatmak istemiştir.",
         "rubric": [
           {
-            "criterion": "Metnin konusunun eksiksiz ve tek cümleyle yazılması",
+            "criterion": "Emek ve manevi değer ilişkisinin doğru açıklanması",
             "points": 17
           }
         ]
@@ -139,7 +135,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.Y.5.16. Yazım ve noktalama işaretleriyle ilgili kuralları uygulayabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "archetype": "Hata Tespiti & Adım Analizi",
         "points": 16,
         "contextText": "Büyük harflerin yazımı ve nokta/virgül hataları.",
         "stimulus": "Hatalı Cümle: 'ali ile dedesi kastamonu'nun inebolu ilçesinde ahşap oyuncaklar yapardı.'",
@@ -248,17 +244,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Görsel / Deney / Günlük Hayat Durumu",
         "points": 17,
         "contextText": "Çalışkanlık ve tembellik karşılaştırma afişi.",
-        "stimulus": "Bir fen dergisindeki görselde; onlarca karıncanın birbirine kenetlenerek bir su birikintisi üzerinde canlı bir 'köprü' oluşturduğu ve diğer karıncaların bu köprüden güvenle karşıya geçtiği resmedilmiştir.",
-        "questionText": "Bu görselden hareketle karıncaların davranışının insan toplumlarındaki hangi değer ve erdemlerle benzerlik gösterdiğini 2 madde halinde açıklayınız.",
-        "solutionExplanation": "Fedakârlık, iş birliği, ortak amaç ve yardımlaşma.",
-        "modelAnswer": "1. Yardımlaşma ve İmece Kültürü: Tıpkı zor şartlarda birbirine destek olan insanlar gibi karıncalar da tek başlarına aşamayacakları engeli güçlerini birleştirerek aşmaktadırlar.\n2. Fedakârlık: Köprü olan karıncalar kendi rahatlarını feda ederek toplumun ve koloninin selameti için kendini riske atmaktadır.",
+        "stimulus": "Bir okul panosunda 'Emek Veren Kazanır' başlıklı afişte bir yanda kışa hazırlık yapan çalışkan karınca, diğer yanda yaz boyu saz çalan ağustos böceği resmedilmiştir.",
+        "questionText": "Afişteki zıtlıktan hareketle öğrencilere verilmek istenen mesajı ve bu mesajı destekleyen bir Türk atasözünü yazınız.",
+        "solutionExplanation": "Zamanında çalışıp emek veren rahat eder. Atasözü: Yazın başı pişenin kışın aşı pişer (veya Ne doğrarsan aşına o çıkar kaşığına).",
+        "modelAnswer": "• Verilen Mesaj: Zamanında çalışıp geleceği için hazırlık yapanlar zor günlerde sıkıntı çekmez; vaktini tembellikle boşa harcayanlar ise sonradan çok pişman olurlar.\n• Destekleyen Atasözü: 'Yazın başı pişenin kışın aşı pişer.' (veya 'Emek olmadan yemek olmaz.')",
         "rubric": [
           {
-            "criterion": "İmece ve iş birliği benzerliğinin açıklanması",
+            "criterion": "Afiş mesajının doğru çıkarılması",
             "points": 9
           },
           {
-            "criterion": "Fedakârlık ve ortak amaç bilincinin açıklanması",
+            "criterion": "Mesajı destekleyen geçerli bir atasözünün yazılması",
             "points": 8
           }
         ]
@@ -289,7 +285,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.Y.5.16. Yazım ve noktalama işaretleriyle ilgili kuralları uygulayabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "archetype": "Hata Tespiti & Adım Analizi",
         "points": 16,
         "contextText": "Noktalama işaretleri (soru işareti ve ünlem).",
         "stimulus": "Cümleler:\n1. 'Sen de bizimle buğday taşımaya gelecek misin ( )'\n2. 'Yaşasın, kışlık erzakımızı tamamladık ( )'",
@@ -379,12 +375,12 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "points": 14,
         "contextText": "Metne dayalı neden-sonuç çıkarımı.",
         "stimulus": "Yukarıda verilen 1. sorudaki 'Merhamet Isıtır' metnini dikkate alınız.",
-        "questionText": "Can ve arkadaşlarının sokak hayvanları için kışlık kulübe yapmasını anlatan bu metnin konusunu tek bir cümleyle yazınız.",
-        "solutionExplanation": "Metin çocukların sokak hayvanlarını soğuktan korumak için el birliğiyle kedi evleri yapmasını anlatır.",
-        "modelAnswer": "Metnin konusu: Bir grup 5. sınıf öğrencisinin kış aylarında sokak hayvanlarını soğuktan korumak amacıyla kendi elleriyle barınaklar yapması ve çevreye örnek olmasıdır.",
+        "questionText": "Çocukların koli kutularını su geçirmez naylonla kaplamalarının ve içlerine eski kazakları sermelerinin AMACI nedir? Açıklayınız.",
+        "solutionExplanation": "Kutuları yağmurdan/kardan korumak ve içerisini sıcak tutarak hayvanların üşümesini engellemek.",
+        "modelAnswer": "Naylonla kaplamalarının amacı yağmur ve kar suyunun kutuyu ıslatıp çürütmesini engellemektir. İçine eski kazak sermelerinin amacı ise barınağın zeminini yumuşak ve sıcak tutarak hayvanların donmaktan korunmasını sağlamaktır.",
         "rubric": [
           {
-            "criterion": "Metnin konusunun eksiksiz ve tek cümleyle yazılması",
+            "criterion": "Naylon kaplama ve kazak serme amacının mantıksal açıklaması",
             "points": 14
           }
         ]
@@ -459,7 +455,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.Y.5.16. Yazım ve noktalama işaretleriyle ilgili kuralları uygulayabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Hata Tespiti & Adım Analizi",
         "points": 14,
         "contextText": "Sayıların ve gün/ay isimlerinin yazımı.",
         "stimulus": "Hatalı Cümle: 'Bizim kulüp 15 ocak salı günü saat 14:30'da 3'er kişilik gruplarla kedi evlerini boyayacak.'",
@@ -505,21 +501,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.5.6. Metnin yüzey anlamını belirleyebilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 15,
         "contextText": "Köy kütüphanesi ve dayanışma konulu hikâyeleyici metin.",
-        "stimulus": "“Köyün ulu çınarının gölgesinde oturan Elif, kasabadan bağış olarak gönderilen kitap kolilerini büyük bir heyecanla açtı. Köylerinde henüz bir kütüphane yoktu ancak o yaz tatilinde tüm çocuklar el ele verip eski muhtarlık odasını kireçle boyamış, tahtalardan kitap rafları yapmışlardı. Elif eline aldığı ilk kitabın kapağını yavaşça araladı; sayfaların arasında kurutulmuş bir papatya ve küçük bir not vardı: 'Kitaplar hiç gitmediğin diyarların anahtarıdır.'”",
-        "questionText": "Yukarıdaki metne göre:\na) Köy çocuklarının yaz tatilinde birlikte gerçekleştirdiği dayanışmayı açıklayınız.\nb) Metinde geçen 'Kitaplar hiç gitmediğin diyarların anahtarıdır' sözüyle anlatılmak isteneni bir cümleyle yazınız.",
-        "solutionExplanation": "Çocuklar el ele verip kütüphane kurmuşlardır. Kitapların insanı yeni dünyalarla tanıştırması vurgulanmaktadır.",
-        "modelAnswer": "a) Çocuklar yaz tatilinde birlik olarak eski muhtarlık odasını kireçle boyamış, tahtalardan raflar çakarak köylerine ilk kütüphaneyi kazandırmışlardır.\nb) Kitaplar sayesinde insanların henüz görmedikleri yerleri, farklı kültürleri ve yeni bilgileri hayal güçleriyle keşfedebilecekleri anlatılmak istenmiştir.",
+        "stimulus": "Toros Dağları'nın eteklerindeki küçük bir köy okulunda öğretmenlik yapan Elif Öğretmen, boş bir sınıfı kütüphaneye dönüştürmek için kolları sıvadı. Kasabadaki marangozdan tahta raflar rica etti, öğrencileriyle birlikte rafları gökkuşağı renklerine boyadı. Kısa sürede Türkiye'nin dört bir yanından gelen bağış kitaplarla raf dolup taştı. Öğrencilerden Ali, kütüphanenin ilk açıldığı gün rafların karşısında büyülenmiş gibi durdu ve eline aldığı ilk masal kitabını koklayarak sayfalarını çevirmeye başladı.",
+        "questionText": "Elif Öğretmen'in köy okuluna kütüphane kurma sürecini anlatan yukarıdaki metnin konusunu tek bir cümleyle ifade ediniz.",
+        "solutionExplanation": "Metin, bir köy okulunda öğretmenin ve öğrencilerin dayanışmasıyla kurulan kütüphaneyi ve çocukların kitaba kavuşma heyecanını anlatmaktadır.",
+        "modelAnswer": "Metnin konusu, bir köy okulunda boş bir sınıfın el birliğiyle rengârenk bir kütüphaneye dönüştürülmesi ve öğrencilerin kitap sevgisidir.",
         "rubric": [
           {
-            "criterion": "a şıkkında kütüphane kurma dayanışmasının doğru açıklanması",
-            "points": 8
-          },
-          {
-            "criterion": "b şıkkında kitapların yeni dünyaları keşfettirmesi anlamının yazılması",
-            "points": 7
+            "criterion": "Kütüphane kurulumu ve kitap sevgisini kapsayan doğru konu cümlesi yazımı",
+            "points": 15
           }
         ]
       },
@@ -532,14 +524,18 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 15,
         "contextText": "Metne dayalı neden-sonuç sorusu.",
-        "stimulus": "Toros Dağları'nın eteklerindeki küçük bir köy okulunda öğretmenlik yapan Elif Öğretmen, boş bir sınıfı kütüphaneye dönüştürmek için kolları sıvadı. Kasabadaki marangozdan tahta raflar rica etti, öğrencileriyle birlikte rafları gökkuşağı renklerine boyadı. Kısa sürede Türkiye'nin dört bir yanından gelen bağış kitaplarla raf dolup taştı. Öğrencilerden Ali, kütüphanenin ilk açıldığı gün rafların karşısında büyülenmiş gibi durdu ve eline aldığı ilk masal kitabını koklayarak sayfalarını çevirmeye başladı.",
-        "questionText": "Elif Öğretmen'in köy okuluna kütüphane kurma sürecini anlatan yukarıdaki metnin konusunu tek bir cümleyle ifade ediniz.",
-        "solutionExplanation": "Metin, bir köy okulunda öğretmenin ve öğrencilerin dayanışmasıyla kurulan kütüphaneyi ve çocukların kitaba kavuşma heyecanını anlatmaktadır.",
-        "modelAnswer": "Metnin konusu, bir köy okulunda boş bir sınıfın el birliğiyle rengârenk bir kütüphaneye dönüştürülmesi ve öğrencilerin kitap sevgisidir.",
+        "stimulus": "Metne göre: Elif Öğretmen kütüphaneyi kurarken kasaba esnafından ve Türkiye'nin farklı şehirlerindeki kitapseverlerden nasıl destek almıştır?",
+        "questionText": "Elif Öğretmen'in kütüphaneyi tamamlarken aldığı yardımları metne dayanarak 2 maddeyle açıklayınız.",
+        "solutionExplanation": "Marangozdan tahta raflar almış, Türkiye'nin dört bir yanından bağış kitaplar toplanmıştır.",
+        "modelAnswer": "1. Kasabadaki marangozdan rica ederek kitaplar için tahta raflar temin etmiştir.\n2. Türkiye'nin dört bir yanından gelen kitap bağışlarıyla kütüphanenin raflarını doldurmuştur.",
         "rubric": [
           {
-            "criterion": "Kütüphane kurulumu ve kitap sevgisini kapsayan doğru konu cümlesi yazımı",
-            "points": 15
+            "criterion": "Marangozdan raf temini maddesinin yazılması",
+            "points": 8
+          },
+          {
+            "criterion": "Kitap bağışları desteğinin belirtilmesi",
+            "points": 7
           }
         ]
       },
@@ -576,17 +572,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Görsel / Deney / Günlük Hayat Durumu",
         "points": 14,
         "contextText": "Kitap okuma saati görseli.",
-        "stimulus": "Kütüphanenin giriş kapısına asılan afişte: Açık duran büyük bir kitabın içinden uzaya yükselen bir roket ve rengârenk çiçekler açan bir vadi resmedilmiş; altına 'Her Kitap Yeni Bir Dünyadır' sloganı yazılmıştır.",
-        "questionText": "Bu afişteki roket ve çiçek açan vadi görselleriyle kitap okumanın çocuklara sağladığı hangi iki kazanım anlatılmak istenmiştir?",
-        "solutionExplanation": "Roket hayal gücünü göklere/bilime çıkarmayı; çiçek açan vadi ise iç dünyayı güzelleştirmeyi simgeler.",
-        "modelAnswer": "1. Roket: Kitapların insanın hayal gücünü sonsuzluğa taşıdığını, bilime, keşfe ve ufukların ötesine kanatlandırdığını sembolize eder.\n2. Çiçek Açan Vadi: Kitap okumanın insanın ruhunu, kelime dağarcığını ve iç dünyasını rengârenk güzelliklerle zenginleştirdiğini simgeler.",
+        "stimulus": "Afişte kütüphanede halının üzerine bağdaş kurup gülümseyerek kitap okuyan çocukların yüz ifadeleri yer almaktadır.",
+        "questionText": "Görseldeki çocukların yüz ifadelerinden hareketle kütüphanede bulunmaktan duydukları duyguyu tek kelimeyle yazıp nedenini açıklayınız.",
+        "solutionExplanation": "Huzur, mutluluk, heyecan. Yeni dünyalar keşfetmenin sevinci.",
+        "modelAnswer": "Duygu: Mutluluk (veya Huzur / Coşku).\nNedeni: Çocukların tebessüm eden yüzleri ve kitap sayfalarına sevgiyle bakmaları, kitapların sunduğu büyülü dünyada olmaktan derin bir keyif ve iç huzuru duyduklarını gösterir.",
         "rubric": [
           {
-            "criterion": "Roketin hayal gücü ve bilgi/keşif anlamının doğru yorumlanması",
+            "criterion": "Doğru duygunun (mutluluk/huzur) belirlenmesi",
             "points": 7
           },
           {
-            "criterion": "Çiçekli vadinin içsel zenginlik ve güzellik anlamının açıklanması",
+            "criterion": "Görsel kanıtla tutarlı açıklama yapılması",
             "points": 7
           }
         ]
@@ -645,7 +641,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.Y.5.16. Yazım ve noktalama işaretleriyle ilgili kuralları uygulayabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Hata Tespiti & Adım Analizi",
         "points": 14,
         "contextText": "Konuşma çizgisi, iki nokta ve tırnak işareti kuralları.",
         "stimulus": "Metin: 'Elif Öğretmen sınıfa girdi ve şöyle dedi: — Çocuklar, kütüphanemiz yarın saat 10.00'da törenle açılıyor!'",
@@ -687,7 +683,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.5.5. Metinde geçen anlamını bilmediği söz varlığı unsurlarının anlamını tahmin edebilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 15,
         "contextText": "Dede Korkut Masalları ve Boğaç Han.",
         "stimulus": "Bayındır Han'ın görkemli toyunda beslenen azgın bir boğa meydandan kaçtı. Meydandaki herkes kaçışırken Dirse Han'ın on beş yaşındaki cesur oğlu meydanın ortasında dimdik durdu. Boğa hışımla üzerine koştuğunda genç alp geri adım atmadı; yumruğunu boğanın alnına dayayarak onu diz çöktürdü. Dede Korkut gelip boy boyladı, soy soyladı ve bu yiğide 'Boğaç Han' adını verdi.",
@@ -734,13 +730,13 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Neden-sonuç ilişkisi.",
-        "stimulus": "Metinde Dirse Han'ın oğlunun kaçmak yerine boğanın karşısında cesaretle durması ve onu aklıyla, bilek gücüyle alt etmesi anlatılmaktadır.",
-        "questionText": "Yukarıdaki metnin ana fikrini (vermek istediği temel mesajı) yazınız.",
-        "solutionExplanation": "Zorluklar ve tehlikeler karşısında cesaretle duranlar başarıya ve şerefe ulaşırlar.",
-        "modelAnswer": "Metnin ana fikri: Tehlikeler ve zorluklar karşısında korkup kaçmak yerine cesaret ve azimle mücadele edenler büyük engelleri aşar ve toplumda haklı bir saygı kazanırlar.",
+        "stimulus": "Metne göre: Dede Korkut bu gence neden 'Boğaç Han' adını vermiştir?",
+        "questionText": "Gence bu ismin verilme gerekçesini metindeki olay örgüsünden hareketle açıklayınız.",
+        "solutionExplanation": "Boğayı yumruğuyla bastırıp alt ettiği için.",
+        "modelAnswer": "Kızgın ve azgın boğayı kaçmak yerine alnına vurduğu tek yumrukla dize getirip boğduğu (alt ettiği) için Dede Korkut ona 'Boğaç' adını vermiştir.",
         "rubric": [
           {
-            "criterion": "Cesaret ve zorluklarla mücadele ana fikrinin doğru ifadesi",
+            "criterion": "Boğayı dize getirme/alt etme neden-sonuç bağının doğru yazılması",
             "points": 14
           }
         ]
@@ -861,7 +857,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.5.5. Metinde geçen anlamını bilmediği söz varlığı unsurlarının anlamını tahmin edebilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 13,
         "contextText": "Ege'de zeytin hasadı.",
         "stimulus": "Ekim ayının son günlerinde Ayvalık'taki zeytinliklerde tatlı bir telaş başlar. Hasan Dede sabahın ayazında torunu Can'ın eline sırığı verir. Ağaçların altına yaygılar serilir; olgunlaşan taneler incitilmeden silkelenir. Hasan Dede: 'Zeytin ağacı barışın ve sabrın simgesidir evlat. Ona hürmet edersen seni bin yıl doyurur' der. Toplanan zeytinler çuvallarla taş değirmenlere götürülür ve altın sarısı soğuk sıkım zeytinyağı elde edilir.",
@@ -908,13 +904,13 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 13,
         "contextText": "Zeytin hasadı aşamalarını sıralama.",
-        "stimulus": "Metinde bir zeytin bahçesinde dede ve torunun sabah erken saatlerde başlayıp zeytin toplamaları ve zeytinyağı üretimi anlatılmaktadır.",
-        "questionText": "Ayvalık zeytinliklerindeki geleneksel hasat telaşını ve dedenin öğüdünü anlatan yukarıdaki metnin konusunu tek bir cümleyle yazınız.",
-        "solutionExplanation": "Ege'de geleneksel zeytin hasadı ve zeytinin bereketi.",
-        "modelAnswer": "Metnin konusu, bir dede ile torununun zeytin bahçesinde emek vererek yaptıkları geleneksel zeytin hasadı ve zeytin ağacının değeridir.",
+        "stimulus": "Metinde zeytinin toplanıp yağa dönüştürülmesine kadar belirli bir sıra anlatılmıştır.",
+        "questionText": "Metinden hareketle zeytinyağı elde edilişinin ilk 3 aşamasını sırasıyla yazınız.",
+        "solutionExplanation": "Yaygıların serilmesi, ağaçların silkelenmesi, değirmenlerde ezilip yağ çıkarılması.",
+        "modelAnswer": "1. Ağaçların altına zeytin taneleri toprağa düşmesin diye yaygıların serilmesi.\n2. Sırıklarla olgunlaşan zeytinlerin dallara zarar vermeden silkelenip toplanması.\n3. Toplanan zeytinlerin taş değirmenlere götürülerek ezilip soğuk sıkım yağının çıkarılması.",
         "rubric": [
           {
-            "criterion": "Zeytin hasadı ve emeği kapsayan doğru konu cümlesi",
+            "criterion": "Üç aşamanın doğru kronolojik sırayla yazılması",
             "points": 13
           }
         ]
@@ -985,7 +981,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.Y.5.3. Yazısında içerik ve yapıya yönelik seçimlerini yönetebilme",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "Metne uygun başlık belirleme.",
         "stimulus": "Okuduğunuz metin zeytinin bereketi, dedenin emeği ve doğaya duyulan saygıyı işlemektedir.",
@@ -1191,7 +1187,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "MAT.5.3.7. Matematiksel araç ve teknoloji yardımıyla düzlemde iki noktada kesişen çember çiftinin merkezleri ve kesişim noktalarından biri ile inşa edilen üçgenlerin kenar özelliklerine yönelik çıkarım yapabilme",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Kareli kâğıtta okul ve kütüphane konumu.",
         "stimulus": "Kareli zeminde okul A noktasında, kütüphane B noktasındadır. B noktası A noktasından 5 birim sağda ve 2 birim yukarıdadır.",
@@ -1377,7 +1373,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "MAT.5.3.6. Çokgenlerin özellikleri ile ilgili edindiği deneyimleri yansıtabilme",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Dörtgenin iç açıları toplamı.",
         "stimulus": "Bir dörtgenin üç açısı 85°, 95° ve 105° olarak ölçülmüştür.",
@@ -1470,17 +1466,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Dik açıyı bölen ışın problemi.",
-        "stimulus": "Bir terzi makasının kolları arasındaki açı önce 40° iken daha sonra açılarak 130° olmuştur.",
-        "questionText": "Makasın kolları arasındaki açı 40° iken ve 130° olduğunda hangi açı çeşitlerine karşılık gelir? Yazınız.",
-        "solutionExplanation": "40 derece dar açı, 130 derece geniş açıdır.",
-        "modelAnswer": "• 40° iken: Dar Açı'dır (0° ile 90° arası).\n• 130° olduğunda: Geniş Açı'dır (90° ile 180° arası).",
+        "stimulus": "Ölçüsü 90° olan bir dik açının köşesinden bir ışın geçirilerek iki komşu açı oluşturulmuştur. Bu açılardan biri 55°'dir.",
+        "questionText": "Diğer komşu açının ölçüsünü işlem yaparak bulunuz ve bu açının türünü yazınız.",
+        "solutionExplanation": "90 - 55 = 35 derece. 35 derece dar açıdır.",
+        "modelAnswer": "İşlem: 90° - 55° = 35°\nAçının Türü: 35° ölçüsü 90 dereceden küçük olduğu için 'Dar Açı'dır.",
         "rubric": [
           {
-            "criterion": "40° için dar açı tespiti",
+            "criterion": "90 - 55 = 35° işleminin doğruluğu",
             "points": 7
           },
           {
-            "criterion": "130° için geniş açı tespiti",
+            "criterion": "Dar açı türünün doğru yazılması",
             "points": 7
           }
         ]
@@ -1514,13 +1510,13 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Üç doğrunun düzlemdeki durumları: Üçgen oluşturma.",
-        "stimulus": "Düzlemde d1 ve d2 doğrularının bütün noktaları birbiriyle üst üste gelmektedir.",
-        "questionText": "Bütün noktaları ortak olan ve üst üste gelen bu tür doğrulara ne ad verilir? Yazınız.",
-        "solutionExplanation": "Çakışık doğrulardır.",
-        "modelAnswer": "Bütün noktaları ortak olan bu doğrulara 'Çakışık Doğrular' adı verilir.",
+        "stimulus": "Düzlemde bulunan a, b ve c doğruları ikişer ikişer kesişerek 3 farklı kesişim noktası oluşturmuştur.",
+        "questionText": "Bu üç doğrunun kesişmesiyle doğruların arasında hangi geometrik çokgen şekli meydana gelir? Yazınız.",
+        "solutionExplanation": "Üçgen meydana gelir.",
+        "modelAnswer": "Bu üç doğrunun ikişerli kesişmesi sonucunda doğruların arasında bir 'Üçgen' meydana gelir.",
         "rubric": [
           {
-            "criterion": "Çakışık doğrular kavramının doğru yazılması",
+            "criterion": "Üçgen cevabının doğru verilmesi",
             "points": 14
           }
         ]
@@ -1555,7 +1551,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "MAT.5.3.6. Çokgenlerin özellikleri ile ilgili edindiği deneyimleri yansıtabilme",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Dik açılı üçgende bilinmeyen açı.",
         "stimulus": "Bir dik üçgende dik açının ölçüsü 90° olup dar açılardan birinin ölçüsü 32°'dir.",
@@ -1672,17 +1668,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Doğru açıdan açı çıkarma.",
-        "stimulus": "Deftere çizilmiş bir ABC açısının ölçüsü iletki yardımıyla ölçülecektir.",
-        "questionText": "İletkinin merkez noktasının açının hangi bölgesine konulması gerektiğini ve kenarlardan birinin nasıl hizalanacağını 2 adımda açıklayınız.",
-        "solutionExplanation": "Merkez açının tepe noktasına (B) konur, sıfır çizgisi kenarlardan birine çakıştırılır.",
-        "modelAnswer": "1. İletkinin orta merkez noktası açının köşe (tepe) noktası olan B noktasına tam olarak yerleştirilir.\n2. İletkinin tabanındaki 0° çizgisi açının bir kolu (ışını) üzerine tam çakıştırılır ve diğer kolun gösterdiği derece okunur.",
+        "stimulus": "Ölçüsü 180° olan bir doğru açının üzerinden çizilen bir ışın ile komşu iki açı oluşmuştur. Açılardan biri 115°'dir.",
+        "questionText": "Diğer açının ölçüsünü hesaplayınız ve açının çeşidini belirtiniz.",
+        "solutionExplanation": "180 - 115 = 65 derecedir. 65 derece dar açıdır.",
+        "modelAnswer": "İşlem: 180° - 115° = 65°\nAçının Çeşidi: 'Dar Açı'dır.",
         "rubric": [
           {
-            "criterion": "İletki merkezinin köşe noktasına konması kuralı",
+            "criterion": "180 - 115 = 65° işleminin doğruluğu",
             "points": 8
           },
           {
-            "criterion": "Sıfır çizgisinin açının koluna hizalanması adımı",
+            "criterion": "Dar açı sınıflandırması",
             "points": 9
           }
         ]
@@ -1834,17 +1830,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "En küçük geniş açı ve en büyük dar açı.",
-        "stimulus": "Masa üzerinde kapalı duran bir kitabın kapağı önce 45° dikleştirilmiş, ardından tamamen arkaya yatırılarak masayla düz bir doğru oluşturacak şekilde 180° açılmıştır.",
-        "questionText": "Kapağın 45° ve 180° açıldığında oluşturduğu açı çeşitlerini yazınız.",
-        "solutionExplanation": "45 derece dar açı, 180 derece doğru açıdır.",
-        "modelAnswer": "• 45° açıldığında: Dar Açı\n• 180° açıldığında: Doğru Açı",
+        "stimulus": "Doğal sayı olan açılar incelenmektedir.",
+        "questionText": "a) Derece cinsinden en büyük dar açının ölçüsü kaç derecedir?\nb) Derece cinsinden en küçük geniş açının ölçüsü kaç derecedir?",
+        "solutionExplanation": "En büyük dar açı 89°, en küçük geniş açı 91°'dir.",
+        "modelAnswer": "a) En büyük dar açı: 89°'dir (90 dereceden küçük en büyük tam sayı).\nb) En küçük geniş açı: 91°'dir (90 dereceden büyük en küçük tam sayı).",
         "rubric": [
           {
-            "criterion": "45° için dar açı tespiti",
+            "criterion": "a şıkkında 89° cevabının yazılması",
             "points": 7
           },
           {
-            "criterion": "180° için doğru açı tespiti",
+            "criterion": "b şıkkında 91° cevabının yazılması",
             "points": 7
           }
         ]
@@ -1899,7 +1895,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "MAT.5.3.5. Çokgenleri düzlemde ardışık olarak kesişen doğruların oluşturduğu kapalı şekiller olarak yorumlayabilme",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Futbol topu üzerindeki çokgenler.",
         "stimulus": "Klasik bir futbol topunun yüzeyinde siyah beşgenler ve beyaz altıgenler birbirine dikilmiştir.",
@@ -2015,19 +2011,19 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
-        "contextText": "İlk Dördün evresinin özellikleri.",
-        "stimulus": "Ay'ın Dünya etrafındaki dolanımı sırasında gökyüzündeki görünümü periyodik olarak değişir.",
-        "questionText": "Ay'ın 4 ana evresinin isimlerini sırasıyla yazınız ve art arda gelen iki ana evre arasında geçen süreyi belirtiniz.",
-        "solutionExplanation": "Yeni Ay, İlk Dördün, Dolunay, Son Dördün. İki ana evre arası yaklaşık 1 haftadır.",
-        "modelAnswer": "• Sırasıyla Ana Evreler: 1. Yeni Ay, 2. İlk Dördün, 3. Dolunay, 4. Son Dördün.\n• Geçen Süre: İki ana evre arasında yaklaşık 1 hafta (7 gün) geçer.",
+        "contextText": "İlk Dördün evresinin özellikleri ve görünümü.",
+        "stimulus": "Yeni Ay evresinden yaklaşık bir hafta sonra Ay gökyüzünde yarım daire biçiminde (düz D harfi şeklinde) aydınlık olarak belirir.",
+        "questionText": "Bu evrenin adını yazınız. Bu evrede Ay'ın Dünya'dan bakıldığında hangi yarısının (sağ mı sol mu) aydınlık göründüğünü belirtiniz.",
+        "solutionExplanation": "İlk dördün evresidir, sağ tarafı aydınlıktır ve düz D harfine benzer.",
+        "modelAnswer": "• Evrenin Adı: İlk Dördün evresi.\n• Aydınlık Kısmı: Ay'ın Dünya'ya bakan yüzünün 'sağ yarısı' aydınlıktır ve gökyüzünde düz 'D' harfi şeklinde görünür.",
         "rubric": [
           {
-            "criterion": "Dört ana evrenin doğru sırayla yazımı",
-            "points": 8
+            "criterion": "İlk Dördün adının doğru tespiti",
+            "points": 7
           },
           {
-            "criterion": "Ana evreler arası sürenin (1 hafta / 7 gün) belirtilmesi",
-            "points": 6
+            "criterion": "Sağ tarafının aydınlık olduğunun ve düz D şeklinin yazılması",
+            "points": 7
           }
         ]
       },
@@ -2085,7 +2081,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "FB.5.2.1. Kuvveti büyüklüğü ile operasyonel tanımlayabilme",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Dinamometre çalışma ilkesi.",
         "stimulus": "Kuvvet ölçümünde kullanılan dinamometrenin içerisinde sarmal bir çelik yay bulunmaktadır.",
@@ -2154,17 +2150,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 15,
         "contextText": "Ay'da rüzgar ve hava olaylarının olmaması.",
-        "stimulus": "Ay'da Güneş alan bölgelerde sıcaklık +120°C'ye ulaşırken, Güneş almayan gölge yerlerde -170°C'ye kadar düşmektedir.",
-        "questionText": "Ay'daki bu aşırı gece-gündüz sıcaklık farkının nedenini Dünya'nın atmosferi ile karşılaştırarak açıklayınız.",
-        "solutionExplanation": "Ay'da ısıyı tutacak ve dağıtacak bir atmosfer yoktur.",
-        "modelAnswer": "Ay'da koruyucu bir atmosfer tabakası bulunmadığı için gelen güneş ışınları yüzeyi aşırı ısıtır, gölgede ise ısı hızla uzaya kaçar. Dünya'daki atmosfer ise koruyucu bir sera etkisi yaparak gece ile gündüz sıcaklığını dengeler.",
+        "stimulus": "Ay yüzeyine inen uzay araçlarının ve astronotların bıraktığı tekerlek izleri aradan onlarca yıl geçmesine rağmen hiç bozulmamıştır.",
+        "questionText": "Bu tekerlek izlerinin ilk günkü gibi kalmasını sağlayan temel doğa şartı nedir? Yazınız.",
+        "solutionExplanation": "Hava tabakası olmaması ve rüzgâr/yağmur gibi hava olaylarının görülmemesidir.",
+        "modelAnswer": "Ay'da atmosfer bulunmadığı için rüzgâr, fırtına ve yağış gibi aşındırıcı ve süpürücü hava olayları kesinlikle meydana gelmez; bu sayede yüzeydeki izler bozulmadan kalır.",
         "rubric": [
           {
-            "criterion": "Atmosfer yokluğunun sıcaklık farkına etkisinin açıklanması",
+            "criterion": "Atmosferin olmamasının belirtilmesi",
             "points": 8
           },
           {
-            "criterion": "Dünya atmosferinin dengeleyici battaniye rolünün yazılması",
+            "criterion": "Rüzgar ve yağış gibi silici hava olaylarının yaşanmaması gerekçesi",
             "points": 7
           }
         ]
@@ -2202,17 +2198,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Dolunay evresinin özellikleri.",
-        "stimulus": "Gökyüzünün bulutsuz ve açık olduğu bazı gecelerde Ay gökyüzünde hiç görünmez.",
-        "questionText": "Ay'ın gökyüzünde görülemediği bu ana evrenin adı nedir ve bu sırada Ay'ın Dünya'ya göre konumu nasıldır?",
-        "solutionExplanation": "Yeni Ay evresidir. Ay, Güneş ile Dünya arasında yer alır.",
-        "modelAnswer": "• Evrenin Adı: Yeni Ay evresidir.\n• Konumu: Ay, Güneş ile Dünya'nın arasında bulunur; aydınlık yüzü Güneş'e, karanlık yüzü ise Dünya'ya dönüktür.",
+        "stimulus": "İlk Dördün evresinden yaklaşık bir hafta sonra Ay'ın Dünya'ya bakan yüzü tamamen aydınlık ve parlak bir daire şeklinde görülür.",
+        "questionText": "Bu evrenin adını yazınız ve bu evrede Dünya'nın Güneş ile Ay'a göre nerede bulunduğunu belirtiniz.",
+        "solutionExplanation": "Dolunay evresidir. Dünya, Güneş ile Ay arasında yer alır.",
+        "modelAnswer": "• Evrenin Adı: Dolunay evresidir.\n• Konumu: Dünya, Güneş ile Ay'ın arasında bulunur; bu sayede Güneş ışınları Ay'ın Dünya'ya bakan yüzünün tamamını aydınlatır.",
         "rubric": [
           {
-            "criterion": "Yeni Ay evresinin doğru teşhisi",
+            "criterion": "Dolunay evresi adının yazılması",
             "points": 7
           },
           {
-            "criterion": "Güneş ile Dünya arasında bulunma konumunun yazılması",
+            "criterion": "Dünya'nın Güneş ile Ay arasında bulunma konumunun açıklanması",
             "points": 7
           }
         ]
@@ -2226,17 +2222,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Son Dördün evresi ve ters D harfi.",
-        "stimulus": "Gökyüzünün bulutsuz ve açık olduğu bazı gecelerde Ay gökyüzünde hiç görünmez.",
-        "questionText": "Ay'ın gökyüzünde görülemediği bu ana evrenin adı nedir ve bu sırada Ay'ın Dünya'ya göre konumu nasıldır?",
-        "solutionExplanation": "Yeni Ay evresidir. Ay, Güneş ile Dünya arasında yer alır.",
-        "modelAnswer": "• Evrenin Adı: Yeni Ay evresidir.\n• Konumu: Ay, Güneş ile Dünya'nın arasında bulunur; aydınlık yüzü Güneş'e, karanlık yüzü ise Dünya'ya dönüktür.",
+        "stimulus": "Dolunay evresinden bir hafta sonra Ay'ın aydınlık yüzü küçülerek tekrar yarım daire haline gelir.",
+        "questionText": "Son Dördün evresinde Ay'ın hangi tarafı (sağ mı sol mu) aydınlıktır ve gökyüzünde hangi harfe benzer?",
+        "solutionExplanation": "Sol tarafı aydınlıktır ve ters D harfine benzer.",
+        "modelAnswer": "Son Dördün evresinde Ay'ın Dünya'ya bakan yüzünün 'sol yarısı' aydınlıktır ve gökyüzünde ters 'D' harfi şeklinde görünür.",
         "rubric": [
           {
-            "criterion": "Yeni Ay evresinin doğru teşhisi",
+            "criterion": "Sol yarının aydınlık olduğunun yazılması",
             "points": 7
           },
           {
-            "criterion": "Güneş ile Dünya arasında bulunma konumunun yazılması",
+            "criterion": "Ters D harfi benzerliğinin belirtilmesi",
             "points": 7
           }
         ]
@@ -2271,7 +2267,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "FB.5.1.4. Güneş, Dünya ve Ay’ın birbirlerine göre hareketlerini ve hacimsel büyüklüklerini temsil eden bilimsel model oluşturabilme",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Güneş'in Dünya'dan küçük görünmesinin nedeni.",
         "stimulus": "Güneş, Dünya'dan yaklaşık 1 milyon 300 bin kat daha büyük olmasına rağmen gökyüzünde neredeyse Ay ile aynı boyutta görünür.",
@@ -2340,17 +2336,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Ay'da su ve yaşam şartları.",
-        "stimulus": "Geceleri gökyüzünde parlayan Ay, Dünya'mızın tek doğal uydusudur.",
-        "questionText": "Ay'ın geometrik şekli neye benzer? Ay kendi ışığını mı üretir yoksa ışığını nereden alır? Açıklayınız.",
-        "solutionExplanation": "Küreye benzer. Işık kaynağı değildir, Güneş'ten aldığı ışığı yansıtır.",
-        "modelAnswer": "• Geometrik Şekli: Küreye (yuvarlak bir topa) benzer.\n• Işık Kaynağı: Ay bir ışık kaynağı değildir; Güneş'ten üzerine düşen ışınları ayna gibi Dünya'ya yansıtır.",
+        "stimulus": "Bilim insanları Ay'da kalıcı üsler kurmak ve yaşamak için araştırmalar yapmaktadır.",
+        "questionText": "Ay yüzeyinde astronotların özel uzay kıyafetleri ve oksijen tüpleri olmadan yaşayamamasının 2 temel nedenini yazınız.",
+        "solutionExplanation": "Oksijen/atmosfer yoktur, zararlı uzay radyasyonu ve aşırı sıcaklık farkları vardır.",
+        "modelAnswer": "1. Ay'da nefes alacak oksijen gazı ve koruyucu atmosfer tabakasının bulunmaması.\n2. Gece ile gündüz arasındaki ölümcül sıcaklık farkları ve uzaydan gelen zararlı güneş radyasyonundan koruyacak kalkanın olmaması.",
         "rubric": [
           {
-            "criterion": "Küre şeklinin doğru yazılması",
+            "criterion": "Oksijen ve solunabilir atmosfer eksikliğinin yazılması",
             "points": 8
           },
           {
-            "criterion": "Işık kaynağı olmadığı ve Güneş ışığını yansıttığı bilgisinin açıklanması",
+            "criterion": "Aşırı sıcaklık farkları ve radyasyon tehlikesinin belirtilmesi",
             "points": 9
           }
         ]
@@ -2502,17 +2498,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Ay'da ses iletimi.",
-        "stimulus": "Ay'ın kütlesi Dünya'nın kütlesinden çok daha küçük olduğu için kütle çekim kuvveti de Dünya'dakinden zayıftır.",
-        "questionText": "Dünya'da 60 kg gelen bir astronotun ağırlığı Ay'da yaklaşık kaçta kaçına iner ve Ay'da yürüyen astronotların hareketleri nasıl etkilenir?",
-        "solutionExplanation": "Ay'daki yerçekimi Dünya'nın yaklaşık 1/6'sı kadardır. Astronotlar zıplayarak ve hafifçe adımlar atarlar.",
-        "modelAnswer": "Ay'ın yerçekimi kuvveti Dünya'dakinin yaklaşık '6'da 1'i' (1/6) kadardır. Bu nedenle astronotlar Ay yüzeyinde adeta kuş gibi hafifler; yürümek yerine yükseğe zıplayarak ve süzülerek adımlar atarlar.",
+        "stimulus": "Ay yüzeyine inen iki astronot aralarındaki mesafe 1 metre olsa bile kasklarını çıkarıp bağırsalar birbirlerinin sesini duyamazlar.",
+        "questionText": "Ay'da sesin havada yayılamamasının fiziksel sebebini açıklayınız. Astronotlar kendi aralarında nasıl iletişim kurarlar?",
+        "solutionExplanation": "Ses maddesel ortamda yayılır; Ay'da hava/atmosfer olmadığı için ses yayılmaz. Radyo dalgalarıyla (telsizle) iletişim kurarlar.",
+        "modelAnswer": "• Sesin Duyulmama Sebebi: Ses mekanik bir dalgadır ve yayılabilmesi için hava, su gibi tanecikli maddesel bir ortama ihtiyaç duyar. Ay'da atmosfer (hava boşluğu) olmadığı için ses dalgaları yayılamaz.\n• İletişim Yöntemi: Astronotlar boşlukta da yayılabilen radyo dalgaları kullanan telsiz sistemleriyle haberleşirler.",
         "rubric": [
           {
-            "criterion": "1/6 oranının doğru yazılması",
+            "criterion": "Sesin yayılması için maddesel ortam gerektiği ve Ay'da hava olmadığı gerekçesi",
             "points": 8
           },
           {
-            "criterion": "Zıplayarak/hafifleyerek hareket etme sonucunun açıklanması",
+            "criterion": "Telsiz / radyo dalgalarıyla iletişim çözümünün belirtilmesi",
             "points": 9
           }
         ]
@@ -2550,17 +2546,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Güneş lekeleri ve Galileo'nun keşfi.",
-        "stimulus": "Güneş, Güneş sistemimizin merkezinde yer alan orta büyüklükte sarı bir yıldızdır.",
-        "questionText": "Güneş'in yapısını oluşturan iki ana gazı yazınız ve Güneş'in kendi etrafında dönme hareketi yapıp yapmadığını belirtiniz.",
-        "solutionExplanation": "Hidrojen ve Helyum gazları. Güneş kendi etrafında döner.",
-        "modelAnswer": "• Yapısındaki Ana Gazlar: Hidrojen (%73 civarı) ve Helyum (%25 civarı) gazlarıdır.\n• Dönme Hareketi: Güneş de tıpkı gezegenler gibi kendi ekseni etrafında batıdan doğuya doğru dönme hareketi yapar.",
+        "stimulus": "Ünlü İtalyan bilim insanı Galileo Galilei, teleskopla Güneş üzerine düşürdüğü görüntüde koyu renkli lekelerin yer değiştirdiğini fark etmiştir.",
+        "questionText": "Güneş üzerindeki bu koyu lekelerin yer değiştirmesi Galileo'ya Güneş hakkında hangi temel bilimsel gerçeği ispatlamıştır?",
+        "solutionExplanation": "Güneş'in kendi ekseni etrafında döndüğünü ispatlamıştır.",
+        "modelAnswer": "Güneş lekelerinin hep aynı yöne doğru düzenli olarak kayması, Güneş'in sabit durmadığını ve kendi ekseni etrafında batıdan doğuya doğru döndüğünü kesin olarak ispatlamıştır.",
         "rubric": [
           {
-            "criterion": "Hidrojen ve Helyum gazlarının yazılması",
+            "criterion": "Güneş'in kendi ekseni etrafında döndüğü kanıtının yazılması",
             "points": 8
           },
           {
-            "criterion": "Güneş'in kendi ekseni etrafında döndüğü bilgisinin doğrulanması",
+            "criterion": "Lekelerin düzenli kaymasının bu dönüşü gösterdiğinin açıklanması",
             "points": 9
           }
         ]
@@ -2688,17 +2684,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Geleneksel mutfak kültürümüz.",
-        "stimulus": "Ege'de efelerin zeybeği, Karadeniz'de coşkulu horon ve Erzurum'da yiğitçe oynanan bar oyunu sergilenmektedir.",
-        "questionText": "Farklı yörelerimize ait bu halk oyunlarının milletimizin ortak kültürüne sağladığı zenginliği 2 cümleyle açıklayınız.",
-        "solutionExplanation": "Kültürel zenginliğimizi ve ortak duygularda buluşmayı sağlar.",
-        "modelAnswer": "Farklı yörelerimizdeki halk oyunları, Anadolu insanının neşesini, kahramanlığını ve doğayla mücadelesini yansıtan zengin bir kültür mozaiğidir. Bu oyunların bayram ve törenlerde birlikte oynanması milletimizin kaynaşmasını ve kültürel bağlarımızın güçlenmesini sağlar.",
+        "stimulus": "Gaziantep'in baklavası ve kebabı, Trabzon'un kuymak ve hamsili ekmeği, Kayseri'nin mantısı tüm Türkiye'de sevilerek tüketilmektedir.",
+        "questionText": "Yöresel yemeklerimizin ülkemizin her köşesinde bilinmesi ve sevilmesi kültürel birlikteliğimize nasıl katkı sağlar? Açıklayınız.",
+        "solutionExplanation": "Ortak damak tadı ve kültürel kaynaşma sağlar.",
+        "modelAnswer": "Farklı şehirlerin lezzetlerinin tüm ülkede sahiplenilmesi, sofralarımızda ortak bir tat ve muhabbet oluşturarak bölgesel ayrılıkları eritir; vatandaşlarımız arasında sempati, paylaşma ve kültürel yakınlaşmayı artırır.",
         "rubric": [
           {
-            "criterion": "Kültürel mozaik ve duygu yansıması tespiti",
+            "criterion": "Ortak damak tadı ve lezzet birliği vurgusu",
             "points": 8
           },
           {
-            "criterion": "Kaynaşma ve millî birlik katkısının açıklanması",
+            "criterion": "Kültürel yakınlaşma ve kaynaşma gerekçesi",
             "points": 9
           }
         ]
@@ -2736,17 +2732,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 16,
         "contextText": "Tarihî sadaka taşları inceliği.",
-        "stimulus": "Anadolu köylerinde kış hazırlığı yapan komşular, her gün bir ailenin odun kırma ve un öğütme işini toplanıp hep birlikte bitirmektedir.",
-        "questionText": "Köylerde uygulanan bu 'imece' geleneğinin toplumsal dayanışmaya ve zorlukların aşılmasına sağladığı 2 faydayı yazınız.",
-        "solutionExplanation": "Ağır işler el birliğiyle kolayca biter, dostluk ve dayanışma pekişir.",
-        "modelAnswer": "1. Tek bir ailenin günlerce yapamayacağı zahmetli işlerin birlik ve beraberlik ruhuyla kısa sürede, yorulmadan tamamlanmasını sağlar.\n2. Köy halkı arasında dayanışma, karşılıksız destek ve komşuluk bağlarını güçlendirerek kimsenin yalnız hissetmemesini temin eder.",
+        "stimulus": "Osmanlı döneminde cami avlularındaki sadaka taşlarına durumu iyi olanlar gizlice para koyar; fakirler ise sadece o günkü ihtiyacı kadar olan parayı alırdı.",
+        "questionText": "Sadaka taşları uygulamasının yoksul insanların onurunu incitmeden yardım etme ahlakını nasıl yansıttığını açıklayınız.",
+        "solutionExplanation": "Veren el alan eli görmez, alan kişi mahcup olmaz, veren kişi kibirlenmez.",
+        "modelAnswer": "Bu gelenekte veren el ile alan el birbirini hiç görmez. Yardım eden kişi gösteriş ve riyadan uzak durur; ihtiyaç sahibi kimse de kimseye el açıp boyun bükmeden, haysiyeti zedelenmeden ihtiyacını giderir. İnsan onurunu koruyan eşsiz bir yardımlaşma ahlakıdır.",
         "rubric": [
           {
-            "criterion": "İşlerin kolay ve hızlı bitirilmesi faydası",
+            "criterion": "Gizlilik ve birbirini görmeme ilkesinin açıklanması",
             "points": 8
           },
           {
-            "criterion": "Komşuluk ve birlik bağlarının güçlenmesi faydası",
+            "criterion": "İnsan onurunu koruma ve mahcubiyeti önleme gerekçesi",
             "points": 8
           }
         ]
@@ -2826,17 +2822,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 15,
         "contextText": "Grup çalışmalarında adil görev paylaşımı.",
-        "stimulus": "Bir çocuğun düşüncesi: 'Parkta temiz ve güvenli bir alanda oyun oynamak benim hakkımdır.'",
-        "questionText": "Parkta oyun oynama hakkına sahip olan bir çocuğun, parktaki oyuncaklara ve çevreye karşı yerine getirmesi gereken 2 sorumluluğu yazınız.",
-        "solutionExplanation": "Oyuncaklara zarar vermemek, çöpleri çöp kutusuna atmak, sırayla oynamak.",
-        "modelAnswer": "1. Salıncak, kaydırak gibi park oyuncaklarını kırıp dökmeden özenle kullanmak ve diğer çocukların sırasına saygı göstermek.\n2. Yediği bisküvi, meyve suyu gibi atıkları yere atmayıp çöp kutusuna atarak parkı temiz bırakmak.",
+        "stimulus": "Dört arkadaş fen deney projesi için bir araya gelmiş ve aralarında iş bölümü yapmıştır.",
+        "questionText": "Grup çalışmasında görev dağılımı yapılmasının ve herkesin payına düşen işi yapmasının gruba kazandırdığı 2 faydayı yazınız.",
+        "solutionExplanation": "İşlerin zamanında bitmesini sağlar, adil iş yükü oluşturur, başarıyı artırır.",
+        "modelAnswer": "1. İşlerin bir kişinin üzerine yıkılmasını önleyerek adaletli bir çalışma ortamı oluşturur.\n2. Farklı yeteneklerin birleşmesiyle projenin kalitesini yükseltir ve takım ruhunu pekiştirir.",
         "rubric": [
           {
-            "criterion": "Oyuncakları koruma ve saygılı kullanma sorumluluğu",
+            "criterion": "Adil iş yükü dağılımı faydası",
             "points": 8
           },
           {
-            "criterion": "Çevreyi temiz tutma ve çöp atmama sorumluluğu",
+            "criterion": "Proje kalitesi ve takım ruhu faydası",
             "points": 7
           }
         ]
@@ -2874,17 +2870,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Geleneksel el sanatlarımız.",
-        "stimulus": "Bayram sabahı erkenden uyanan çocuklar en temiz kıyafetlerini giyer, dede ve ninelerinin elini öpüp hayır duasını alır, komşulara şeker ikram edilir.",
-        "questionText": "Geleneksel bayram kutlamalarının toplumda sevgi, saygı ve akrabalık bağlarına yaptığı 2 olumlu etkiyi yazınız.",
-        "solutionExplanation": "Küsleri barıştırır, büyükleri sevindirir, nesiller arası bağı korur.",
-        "modelAnswer": "1. Dargınlıkların unutulmasını sağlayarak aile ve komşular arasında barış ve sevgi iklimini yeşertir.\n2. Büyüklerin ziyaret edilip ellerinin öpülmesi gençlere vefa ve hürmet duygusunu aşılayarak kuşaklar arası bağı güçlendirir.",
+        "stimulus": "Ebru sanatı, çinicilik, bakırcılık ve halı dokumacılığı Türk milletinin yüzyıllardır yaşattığı el emeği göz nuru sanatlarıdır.",
+        "questionText": "Geleneksel el sanatlarımızın yaşatılmasının millî kimliğimiz ve kültürel sürekliliğimiz açısından önemini açıklayınız.",
+        "solutionExplanation": "Geçmişten gelen zevk ve zarafetimizi geleceğe taşır, millet olma bilincini korur.",
+        "modelAnswer": "Geleneksel el sanatlarımız, ecdadımızın estetik zevkini, sabrını ve dünya görüşünü günümüze taşıyan canlı tarih belgeleridir. Bu sanatların yaşatılması kültürel mirasımızın kaybolmasını önler ve millî benliğimizi korumamızı sağlar.",
         "rubric": [
           {
-            "criterion": "Dargınlıkları giderme ve sevgi ortamı etkisi",
+            "criterion": "Tarihî ve estetik miras boyutu",
             "points": 7
           },
           {
-            "criterion": "Büyüklere hürmet ve nesiller arası vefa etkisi",
+            "criterion": "Millî kimlik ve kültürel süreklilik koruması gerekçesi",
             "points": 7
           }
         ]
@@ -2943,7 +2939,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "SB.5.1.3. Toplumsal birliği sürdürmeye yönelik yardımlaşma ve dayanışma faaliyetlerine katkı sağlayabilme",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Askıda ekmek geleneği.",
         "stimulus": "Fırınlarda müşterilerin iki ekmek alıp bir ekmeğin parasını 'askıya' bırakması ve ihtiyacı olanların bu ekmekleri ücretsiz alması geleneği yaşatılmaktadır.",
@@ -3012,17 +3008,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 15,
         "contextText": "Evdeki sorumluluklarımız.",
-        "stimulus": "Birleşmiş Milletler Çocuk Hakları Sözleşmesi'ne göre her çocuğun yaşama, sağlıklı beslenme, eğitim alma ve oyun oynama hakkı vardır.",
-        "questionText": "Çocuk haklarının uluslararası belgelerle koruma altına alınmasının en temel amacını açıklayınız.",
-        "solutionExplanation": "Çocukların bedensel, zihinsel ve ahlaki gelişimini güvenceye almak, şiddet ve istismardan korumak.",
-        "modelAnswer": "Temel amaç; savunmasız olan çocukların her türlü ihmal, istismar ve şiddetten korunmasını sağlamak; onların eşit şartlarda eğitim alıp sağlıklı, güvenli ve mutlu bireyler olarak yetişmelerini devletlerin güvencesi altına almaktır.",
+        "stimulus": "10 yaşındaki bir çocuk 'Ben sadece ders çalışırım, odamı toplamak ve masayı kurmaya yardım etmek benim görevim değildir' demektedir.",
+        "questionText": "Aile içi dayanışma açısından bu çocuğun yaklaşımındaki hatayı açıklayarak, evde üstlenmesi gereken 2 sorumluluk yazınız.",
+        "solutionExplanation": "Aile bir bütündür, ortak yaşama katkı sunulmalıdır.",
+        "modelAnswer": "• Hata: Aile bir bütündür ve evdeki huzur ancak ortak iş bölümüyle korunur; bütün yükü anne ve babaya bırakmak bencilce bir tutumdur.\n• Sorumluluklar: 1) Sabah kalktığında yatağını ve dağıttığı oyuncaklarını toplamak. 2) Yemekten önce veya sonra sofranın kurulup toplanmasına yardım etmek.",
         "rubric": [
           {
-            "criterion": "İhmal ve istismardan korunma güvencesi",
+            "criterion": "Bencil tutumun ve aile iş bölümü hatasının açıklanması",
             "points": 8
           },
           {
-            "criterion": "Eşit eğitim ve sağlıklı gelişim hakkının vurgulanması",
+            "criterion": "Evde üstlenilebilecek 2 somut sorumluluğun yazılması",
             "points": 7
           }
         ]
@@ -3060,17 +3056,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Türkülerimizin ortak duyguları.",
-        "stimulus": "Türk kültüründe kapıya gelen misafir 'Tanrı misafiri' olarak kabul edilir; evdeki en güzel oda ona açılır ve en lezzetli ikramlar sunulur.",
-        "questionText": "Misafirperverlik geleneğimizin insan ilişkilerine kazandırdığı 2 erdemi yazınız.",
-        "solutionExplanation": "Cömertlik, güler yüz, samimiyet ve kaynaşma.",
-        "modelAnswer": "1. İnsanlar arasında samimiyet, cömertlik ve sıcak dostluk bağlarının kurulmasını sağlar.\n2. Ev kapılarını ve gönülleri yabancılara dahi açarak hoşgörü ve diğerkâmlık ahlakını geliştirir.",
+        "stimulus": "Bozkırın ortasındaki bir ağıt da Karadeniz kıyısındaki bir kemençe türküsü de milletimizin sevincini, kederini ve hasretini dile getirir.",
+        "questionText": "Farklı yöre türkülerimizin ortak duygu ve acılarda birleşebilmemiz açısından üstlendiği rolü açıklayınız.",
+        "solutionExplanation": "Türküler ortak tarihimizin ve gönül dilimizin tercümanıdır.",
+        "modelAnswer": "Türkülerimiz milletimizin ortak vicdanının ve duygularının tercümanıdır. Farklı şivelerle söylenseler bile aynı hüznü ve sevinci paylaştırarak yürekler arasında görünmez bir gönül köprüsü kurar ve millî duygudaşlığı pekiştirir.",
         "rubric": [
           {
-            "criterion": "Cömertlik ve samimiyet boyutunun yazılması",
+            "criterion": "Türkülerin ortak vicdan ve duygu tercümanı olması tespiti",
             "points": 7
           },
           {
-            "criterion": "Hoşgörü ve gönül zenginliği erdeminin açıklanması",
+            "criterion": "Gönül köprüsü kurarak millî duygudaşlığı artırma gerekçesi",
             "points": 7
           }
         ]
@@ -3129,7 +3125,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "SB.5.2.1. Küreselleşmenin insan ve toplum hayatı üzerindeki etkilerini analiz edebilme",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Tarihî eser kaçakçılığı ve mirası koruma.",
         "stimulus": "Ülkemiz toprakları binlerce yıllık Hitit, Frig, Roma, Selçuklu ve Osmanlı medeniyetlerinin zengin eserlerini barındırmaktadır.",
@@ -3222,17 +3218,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Millî bayramlarımız ve bağımsızlık bilinci.",
-        "stimulus": "Bir ormanda tek bir ağaç türü değil; çam, meşe, gürgen ve çınar bir arada yaşadığında orman gerçek bir ekosistem olur.",
-        "questionText": "Ormandaki bu ağaç çeşitliliği analojisinden hareketle, toplumda farklı düşünce, kültür ve kökenden gelen insanların bir arada huzurla yaşamasının şartını açıklayınız.",
-        "solutionExplanation": "Karşılıklı saygı, sevgi, hoşgörü ve farklılıkları zenginlik olarak kabul etmek.",
-        "modelAnswer": "Tıpkı ormanın güzelliğinin ağaç çeşitliliğinden gelmesi gibi; toplumun zenginliği de farklı fikir, inanç ve geleneklerin bir arada bulunmasından kaynaklanır. Bunun şartı ise herkesin birbirine karşılıklı saygı, empati ve hoşgörüyle yaklaşmasıdır.",
+        "stimulus": "23 Nisan Ulusal Egemenlik ve Çocuk Bayramı, 29 Ekim Cumhuriyet Bayramı gibi özel günlerde okullar süslenir, şiirler okunur ve coşkuyla törenler yapılır.",
+        "questionText": "Millî bayramlarımızın milletimizin ortak tarih şuuruna ve birlikteliğine sağladığı katkıyı 2 maddeyle açıklayınız.",
+        "solutionExplanation": "Geçmiş mücadeleleri hatırlatır, vatan sevgisi ve bayrak aşkını canlı tutar.",
+        "modelAnswer": "1. Şehitlerimizin ve gazilerimizin vatan uğruna verdiği fedakârlıkları hatırlatarak bağımsızlığımızın kıymetini kavratır.\n2. Ortak bayrak ve cumhuriyet paydasında milletçe tek yürek olmayı sağlayarak millî aidiyet duygumuzu güçlendirir.",
         "rubric": [
           {
-            "criterion": "Ağaç analojisiyle toplumsal çeşitlilik bağının kurulması",
+            "criterion": "Tarihî fedakârlıkları ve bağımsızlığı hatırlama katkısı",
             "points": 8
           },
           {
-            "criterion": "Karşılıklı saygı ve hoşgörü şartının açıklanması",
+            "criterion": "Millî aidiyet ve tek yürek olma katkısı",
             "points": 9
           }
         ]
@@ -3270,17 +3266,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 16,
         "contextText": "Aşevleri geleneği.",
-        "stimulus": "Yaptığı yardımı sosyal medyada canlı yayınlayıp yoksul insanların yüzünü göstererek övünen biri eleştirilmiştir.",
-        "questionText": "Yardımlaşma ve dayanışmada 'gösterişten kaçınma ve muhatabın haysiyetini gözetme' kuralının önemini açıklayınız.",
-        "solutionExplanation": "Yardım şov için değil Allah rızası ve vicdan için yapılır; insanın yüzünü afişe etmek haysiyetini kırar.",
-        "modelAnswer": "Gerçek yardımlaşma çıkar ve gösteriş için değil; samimiyet ve merhametle yapılır. Yardım yapılan kişinin yoksulluğunu teşhir etmek onun onurunu kırar ve kalbini yaralar. Bu nedenle kültürümüz 'Sağ elin verdiğini sol el görmemelidir' ilkesini benimsemiştir.",
+        "stimulus": "Tarihten günümüze vakıflar ve belediyeler tarafından işletilen aşevleri her gün binlerce kimsesiz ve yoksula sıcak çorba ve yemek dağıtmaktadır.",
+        "questionText": "Aşevi geleneğinin kimsesizleri sokakta aç bırakmama ve sosyal adaleti sağlama yönünü açıklayınız.",
+        "solutionExplanation": "Aç insan kalmamasını sağlar, kimsesizlere devletin ve milletin şefkat elini hissettirir.",
+        "modelAnswer": "Aşevleri toplumda hiçbir ferdin aç ve çaresiz kalmamasını güvenceye alan şefkat kapılarıdır. Kimsesizlere devletin ve hayırseverlerin koruyucu elini uzatarak onları hayata bağlar ve toplumsal vicdanı rahatlatır.",
         "rubric": [
           {
-            "criterion": "Gösterişten uzak durma ve samimiyet ilkesi",
+            "criterion": "Aç ve çaresiz insan bırakmama güvencesi",
             "points": 8
           },
           {
-            "criterion": "Sağ elin verdiğini sol el görmez inceliğinin vurgulanması",
+            "criterion": "Toplumsal şefkat ve vicdani koruma gerekçesi",
             "points": 8
           }
         ]
@@ -3360,17 +3356,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Sınıf kurallarına uyma bilinci.",
-        "stimulus": "Okul meclis başkanlığına seçilen bir öğrenci, teneffüslerde arkadaşlarının kantin ve bahçe ile ilgili taleplerini dinleyip okul yönetimine iletmektedir.",
-        "questionText": "Bu öğrencinin temsilcilik rolünü yerine getirirken gösterdiği demokratik sorumluluğu açıklayınız.",
-        "solutionExplanation": "Arkadaşlarının sesini duyurmak, tarafsız ve adil olmak, meclis kültürünü işletmek.",
-        "modelAnswer": "Öğrenci, kendisine oy veren arkadaşlarının hakkını savunmak ve taleplerini idareye medeni bir şekilde iletmek sorumluluğunu taşır. Bu tutum okulda katılımcı demokrasi kültürünü ve öğrenci temsilciliği bilincini somutlaştırır.",
+        "stimulus": "Bir sınıfta ders işlenirken bazı öğrencilerin parmak kaldırmadan konuşması ve yerinden kalkması dersin akışını bozmaktadır.",
+        "questionText": "Sınıf içi kurallara uymanın arkadaşlarımızın eğitim alma hakkına saygı açısından önemini açıklayınız.",
+        "solutionExplanation": "Gürültü yapmak başkalarının öğrenme hakkını engellemektir, hak ihlalidir.",
+        "modelAnswer": "Kurallara uymamak ve gürültü yapmak, sınıftaki diğer arkadaşlarımızın dersi dinleme ve eğitim alma hakkını doğrudan engellemektir. Parmak kaldırıp sırasını beklemek diğer bireylerin öğrenme hakkına duyulan saygının bir ifadesidir.",
         "rubric": [
           {
-            "criterion": "Arkadaşlarının hak ve taleplerini savunma görevi",
+            "criterion": "Başkalarının öğrenme hakkını engelleme tespiti",
             "points": 8
           },
           {
-            "criterion": "Katılımcı demokrasi ve temsil bilincinin açıklanması",
+            "criterion": "Parmak kaldırma kuralının hakka saygı niteliğinin açıklanması",
             "points": 9
           }
         ]
@@ -3432,17 +3428,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 16,
         "contextText": "Kütüphanesiz köy okullarına kitap desteği.",
-        "stimulus": "TEMA Vakfı gönüllüleri her yıl binlerce öğrenciyle birlikte fidan dikme şenlikleri düzenleyerek erozyonla mücadele etmektedir.",
-        "questionText": "Fidan dikme kampanyalarına katılmanın gelecek nesillere karşı hangi vatandaşlık ve çevre sorumluluğumuzu gösterdiğini açıklayınız.",
-        "solutionExplanation": "Gelecek kuşaklara yaşanabilir temiz bir çevre bırakmak, toprağı ve suyu korumak.",
-        "modelAnswer": "Ağaç dikmek yalnızca bugünü değil; gelecekte yaşayacak çocuklarımıza temiz hava, verimli toprak ve yeşil bir vatan bırakma borcumuzdur. Gelecek nesillere karşı en onurlu çevre ve vatandaşlık sorumluluğumuzdur.",
+        "stimulus": "Bir ortaokulun öğrencileri 'Kardeş Okul Kütüphanesi' projesiyle harçlıklarından artırdıkları paralarla kitaplar alıp bir köy okuluna göndermiştir.",
+        "questionText": "Öğrencilerin bu dayanışmasının köydeki akranlarıyla aralarında oluşturduğu gönül bağını açıklayınız.",
+        "solutionExplanation": "Fırsat eşitliği sağlar, sevgi ve kardeşlik köprüsü kurar.",
+        "modelAnswer": "Bu proje, şehirdeki öğrenciler ile köydeki öğrenciler arasında eğitimde fırsat eşitliği sağlayan sıcacık bir kardeşlik köprüsü kurar. Köydeki çocukların kitap sevinci yaşamasını sağlayarak millet olma ve paylaşma ruhunu diri tutar.",
         "rubric": [
           {
-            "criterion": "Gelecek nesillere yaşanabilir çevre bırakma borcu",
+            "criterion": "Eğitimde fırsat eşitliği desteği",
             "points": 8
           },
           {
-            "criterion": "Erozyonla mücadele ve yeşil vatan bilinci gerekçesi",
+            "criterion": "Kardeşlik ve paylaşma köprüsü kurulması gerekçesi",
             "points": 8
           }
         ]
@@ -3546,17 +3542,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 13,
         "contextText": "Kusursuz sanat eseri ve Sanatkâr ilişkisi.",
-        "stimulus": "Kelime-i Şehadet ve Kelime-i Tevhid İslam inancının omurgasını oluşturan Tevhid ilkesini ifade eder.",
-        "questionText": "Tevhid inancını tanımlayarak, evrende birden fazla yaratıcı olsaydı bu düzenin nasıl bozulacağını açıklayınız.",
-        "solutionExplanation": "Tevhid Allah'ın tek ve eşsiz olmasıdır. Birden fazla tanrı olsaydı iradeler çatışır ve evren yıkılırdı.",
-        "modelAnswer": "• Tevhid: Yüce Allah'ın var olduğuna, bir olduğuna, eşi, benzeri ve ortağının bulunmadığına inanmaktır.\n• Açıklama: Kur'an'da bildirildiği gibi eğer birden fazla ilah olsaydı her biri kendi yarattığını yönetmek ister, çatışma çıkar ve evrendeki kusursuz kozmik düzen altüst olurdu.",
+        "stimulus": "Bir müzede sergilenen muhteşem bir tablonun fırça darbelerine bakan biri, 'Bu resim boyaların tuvale dökülmesiyle tesadüfen oldu' diyemez.",
+        "questionText": "Tablo ve ressam örneğinden hareketle, kainattaki canlılar ve galaksiler ile Yüce Yaratıcı arasındaki mantıksal bağı açıklayınız.",
+        "solutionExplanation": "Her sanat eseri bir ustaya muhtaçtır; kainat da sonsuz ilim sahibi Allah'a muhtaçtır.",
+        "modelAnswer": "Küçük bir yağlı boya tablosu bile mutlaka yetenekli ve bilgili bir ressamın varlığını zorunlu kılıyorsa; koca kainattaki trilyonlarca hücre, yıldız ve galaksi de asla tesadüfle açıklanamaz. Mutlaka sonsuz ilim, irade ve sanat sahibi Yüce Allah tarafından yaratılmıştır.",
         "rubric": [
           {
-            "criterion": "Tevhid inancının doğru tanımı",
+            "criterion": "Tablo-ressam ilişkisinin kainata uyarlanması",
             "points": 6
           },
           {
-            "criterion": "Birden fazla ilah olması durumundaki çatışma gerekçesi",
+            "criterion": "Tesadüfün reddi ve ilahi sanatkâr tespiti",
             "points": 7
           }
         ]
@@ -3570,17 +3566,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 13,
         "contextText": "Gözle görülmeyen gerçekler.",
-        "stimulus": "Kelime-i Şehadet ve Kelime-i Tevhid İslam inancının omurgasını oluşturan Tevhid ilkesini ifade eder.",
-        "questionText": "Tevhid inancını tanımlayarak, evrende birden fazla yaratıcı olsaydı bu düzenin nasıl bozulacağını açıklayınız.",
-        "solutionExplanation": "Tevhid Allah'ın tek ve eşsiz olmasıdır. Birden fazla tanrı olsaydı iradeler çatışır ve evren yıkılırdı.",
-        "modelAnswer": "• Tevhid: Yüce Allah'ın var olduğuna, bir olduğuna, eşi, benzeri ve ortağının bulunmadığına inanmaktır.\n• Açıklama: Kur'an'da bildirildiği gibi eğer birden fazla ilah olsaydı her biri kendi yarattığını yönetmek ister, çatışma çıkar ve evrendeki kusursuz kozmik düzen altüst olurdu.",
+        "stimulus": "Aklımızı, elektriği veya içimizdeki sevgiyi gözlerimizle göremeyiz fakat yaptıkları işlerle varlıklarından şüphe etmeyiz.",
+        "questionText": "Bu durumdan hareketle, Allah'ı gözlerimizle göremediğimiz halde O'nun varlığına nasıl kesin olarak inandığımızı açıklayınız.",
+        "solutionExplanation": "Eserlerinden, kâinattaki düzen ve canlardan hareketle varlığını aklımızla anlarız.",
+        "modelAnswer": "Gözlerimiz sınırlı bir görme kapasitesine sahiptir; akıl, elektrik ve yerçekimi gibi birçok somut gücü gözle göremeyiz ama eserlerinden kesin olarak biliriz. Allah'ı da dünyada gözümüzle göremeyiz ancak yarattığı muazzam kâinata ve canlara bakarak aklımız ve kalbimizle O'nun varlığına kesin olarak iman ederiz.",
         "rubric": [
           {
-            "criterion": "Tevhid inancının doğru tanımı",
+            "criterion": "Gözle görülmeyen güçler analojisinin kurulması",
             "points": 6
           },
           {
-            "criterion": "Birden fazla ilah olması durumundaki çatışma gerekçesi",
+            "criterion": "Kâinattaki eserlerden hareketle akılla inanma gerekçesi",
             "points": 7
           }
         ]
@@ -3639,7 +3635,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "DKAB.5.1.4. İhlas suresini ve bu surenin anlamını okuyarak yorumlayabilme",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "İhlas Suresi ve Samed kavramı.",
         "stimulus": "İhlas Suresi'nin 2. ayetinde 'Allâhü's-Samed' buyrulmaktadır.",
@@ -3756,17 +3752,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Göz bebeği ve insan tasarımı.",
-        "stimulus": "Okyanusun en derin karanlıklarında yaşayan balıklardan gökyüzündeki kuşlara kadar trilyonlarca canlının rızkı her gün eksiksiz ulaştırılmaktadır.",
-        "questionText": "Bu durum Allah'ın hangi güzel isminin (Rezzak) ve sonsuz cömertliğinin bir tecellisidir? Açıklayınız.",
-        "solutionExplanation": "Rezzak ismi. Bütün canlıların rızkını veren O'dur.",
-        "modelAnswer": "Bu durum, bütün yaratılmışların rızkını veren ve onları aç bırakmayan Yüce Allah'ın 'Rezzâk' isminin tecellisidir. Canlıların kendi rızkını üretemediği ortamlarda bile hayatlarını sürdürmeleri sonsuz bir ilahi şefkatin kanıtıdır.",
+        "stimulus": "İnsan gözü ışık fazla olduğunda küçülen, karanlıkta ise büyüyen akıllı bir göz bebeği mekanizmasına sahiptir.",
+        "questionText": "Göz bebeğinin ışığa göre otomatik ayarlanması, insanın yaratılışındaki ilahi tasarımı nasıl ispatlar?",
+        "solutionExplanation": "Kör tesadüf ışığın zararlarını bilemez; sonsuz ilim sahibi Allah gözü koruyacak şekilde tasarlamıştır.",
+        "modelAnswer": "Kör ve şuursuz tesadüfler ışığın fazlasının retinayı yakacağını hesaplayamaz. Gözün ışık miktarına göre otomatik odaklanması, insanı yoktan var eden Yaratıcının sonsuz ilim, hikmet ve tasarım kudretini apaçık ispatlar.",
         "rubric": [
           {
-            "criterion": "Rezzâk isminin doğru yazılması",
+            "criterion": "Tesadüfün hesaplayamayacağı vurgusu",
             "points": 7
           },
           {
-            "criterion": "Canlıların rızıklandırılmasındaki ilahi şefkatin açıklanması",
+            "criterion": "İlahi hikmet ve tasarım kudretinin gerekçelendirilmesi",
             "points": 7
           }
         ]
@@ -3780,17 +3776,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Güneş'in doğuşu ve batışı.",
-        "stimulus": "Okyanusun en derin karanlıklarında yaşayan balıklardan gökyüzündeki kuşlara kadar trilyonlarca canlının rızkı her gün eksiksiz ulaştırılmaktadır.",
-        "questionText": "Bu durum Allah'ın hangi güzel isminin (Rezzak) ve sonsuz cömertliğinin bir tecellisidir? Açıklayınız.",
-        "solutionExplanation": "Rezzak ismi. Bütün canlıların rızkını veren O'dur.",
-        "modelAnswer": "Bu durum, bütün yaratılmışların rızkını veren ve onları aç bırakmayan Yüce Allah'ın 'Rezzâk' isminin tecellisidir. Canlıların kendi rızkını üretemediği ortamlarda bile hayatlarını sürdürmeleri sonsuz bir ilahi şefkatin kanıtıdır.",
+        "stimulus": "'Güneş de kendi yörüngesinde akıp gitmektedir. İşte bu, Aziz ve Alim olan Allah'ın takdiridir.' (Yâsîn Suresi, 38. ayet)",
+        "questionText": "Güneş'in trilyonlarca yıldır şaşmadan kendi yörüngesinde akıp gitmesi ilahi kudret açısından ne anlam taşır? Yazınız.",
+        "solutionExplanation": "Evrenin başıboş olmadığını, ilahi bir kanun ve takdirle yönetildiğini gösterir.",
+        "modelAnswer": "Bu durum, devasa gök cisimlerinin bile başıboş ve rastgele hareket etmediğini; her saniye sonsuz güç (Aziz) ve her şeyi bilen (Alim) tek bir Yaratıcının emrine boyun eğdiğini ve O'nun koyduğu nizamla yürüdüğünü gösterir.",
         "rubric": [
           {
-            "criterion": "Rezzâk isminin doğru yazılması",
+            "criterion": "Başıboş olmama ve ilahi nizam tespiti",
             "points": 7
           },
           {
-            "criterion": "Canlıların rızıklandırılmasındaki ilahi şefkatin açıklanması",
+            "criterion": "Aziz ve Alim sıfatlarıyla bağ kurulması",
             "points": 7
           }
         ]
@@ -3849,7 +3845,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "DKAB.5.1.4. İhlas suresini ve bu surenin anlamını okuyarak yorumlayabilme",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "İhlas Suresinde 'Doğurmamış ve doğmamıştır' ayeti.",
         "stimulus": "İhlas Suresi 3. ayet: 'Lem yelid ve lem yûled' (O, doğurmamış ve doğmamıştır).",
@@ -3918,17 +3914,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Arıların petek yapma ilhamı.",
-        "stimulus": "Maddenin en küçük yapı taşı olan atomun çekirdeği etrafında elektronlar saniyede yüzlerce kilometre hızla hiç çarpmadan dönmektedir.",
-        "questionText": "Mikro alemdeki bu muazzam atom hareketinin Yüce Allah'ın kudretiyle ilişkisini açıklayınız.",
-        "solutionExplanation": "Gözle görülmeyen atomda bile Güneş sistemi gibi bir düzen kurulmuştur, ilahi kudretin eseridir.",
-        "modelAnswer": "Gözle dahi görülemeyen mikroskobik atomun içinde adeta küçük bir Güneş sistemi kurulmuştur. Elektronların milyarlarca yıldır şaşmadan yörüngelerinde dönmesi, sonsuz ilim ve kudret sahibi Allah'ın her zerreyi bir nizamla idare ettiğini gösterir.",
+        "stimulus": "Bal arıları peteklerini en az balmumuyla en çok balı alacak şekilde kusursuz düzgün altıgenler halinde inşa ederler.",
+        "questionText": "Küçük bir böceğin geometri ve mimarlık dehası sergilemesi, canlılara bu yeteneği ilham eden Allah'ın varlığını nasıl kanıtlar?",
+        "solutionExplanation": "Arıya bu hesabı yaptıran ve vahyeden (öğreten) Yüce Allah'tır.",
+        "modelAnswer": "Arı bir geometri veya mühendislik eğitimi almamıştır. Petekleri tam altıgen açılarla kusursuz örmesi, Kur'an'da bildirildiği gibi Yüce Allah'ın arıya bu ilhamı ve yeteneği bahşetmesidir; canlıların ardındaki ilahi aklı kanıtlar.",
         "rubric": [
           {
-            "criterion": "Atomdaki yörünge hareketinin düzen tespiti",
+            "criterion": "Arının eğitime dayanmayan yeteneği tespiti",
             "points": 8
           },
           {
-            "criterion": "İlahi ilim ve nizamla bağ kurulması",
+            "criterion": "İlahi ilham (vahiy) ve yaratıcı kanıtının açıklanması",
             "points": 9
           }
         ]
@@ -3942,17 +3938,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Atmosferin koruyucu kalkan özelliği.",
-        "stimulus": "Maddenin en küçük yapı taşı olan atomun çekirdeği etrafında elektronlar saniyede yüzlerce kilometre hızla hiç çarpmadan dönmektedir.",
-        "questionText": "Mikro alemdeki bu muazzam atom hareketinin Yüce Allah'ın kudretiyle ilişkisini açıklayınız.",
-        "solutionExplanation": "Gözle görülmeyen atomda bile Güneş sistemi gibi bir düzen kurulmuştur, ilahi kudretin eseridir.",
-        "modelAnswer": "Gözle dahi görülemeyen mikroskobik atomun içinde adeta küçük bir Güneş sistemi kurulmuştur. Elektronların milyarlarca yıldır şaşmadan yörüngelerinde dönmesi, sonsuz ilim ve kudret sahibi Allah'ın her zerreyi bir nizamla idare ettiğini gösterir.",
+        "stimulus": "'Gökyüzünü korunmuş bir tavan yaptık...' (Enbiyâ Suresi, 32. ayet)",
+        "questionText": "Dünya'yı saran atmosfer tabakasının zararlı güneş ışınlarını ve gök taşlarını engelleyen koruyucu kalkan rolünü açıklayınız.",
+        "solutionExplanation": "Atmosfer ozon tabakasıyla zararlı UV ışınlarını süzer, meteorları sürtünmeyle yakarak Dünya'yı korur.",
+        "modelAnswer": "Atmosfer, ozon tabakası sayesinde Güneş'ten gelen öldürücü morötesi (UV) ışınları süzer; ayrıca uzaydan yağan meteorları sürtünmeyle yakarak adeta Dünya'nın üzerine serilmiş koruyucu bir tavan görevi yapar. Canlılığın sürmesini sağlayan ilahi bir kalkandır.",
         "rubric": [
           {
-            "criterion": "Atomdaki yörünge hareketinin düzen tespiti",
+            "criterion": "Ozon tabakası ve zararlı ışın filtresi tespiti",
             "points": 8
           },
           {
-            "criterion": "İlahi ilim ve nizamla bağ kurulması",
+            "criterion": "Meteorları yakarak koruyucu tavan olma gerekçesi",
             "points": 9
           }
         ]
@@ -4104,17 +4100,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Fotosentez ve oksijen dengesi.",
-        "stimulus": "Dünya üzerinde yaşamış ve yaşayacak milyarlarca insanın parmak izleri, göz irisi ve ses tonu birbirinden tamamen farklıdır.",
-        "questionText": "Milyarlarca insanın parmak izinin birbirine benzememesi, Yüce Allah'ın hangi yaratma sanatını ve kudretini gösterir?",
-        "solutionExplanation": "Sonsuz ilim ve benzersiz yaratma (Musavvir, Hâlık) kudretini gösterir.",
-        "modelAnswer": "Küçücük bir parmak ucunda milyarlarca farklı deseni birbirine karıştırmadan yaratmak, Yüce Allah'ın sonsuz ilmini, benzersiz şekil verme (el-Musavvir) sanatını ve sınırsız yaratma kudretini en açık şekilde kanıtlar.",
+        "stimulus": "İnsanlar ve hayvanlar sürekli oksijen tüketip karbondioksit verirken; bitkiler gündüzleri fotosentez yaparak havaya temiz oksijen salmaktadır.",
+        "questionText": "Bu döngü sayesinde havadaki oksijen oranının (%21) milyonlarca yıldır sabit kalması kainattaki düzen hakkında neyi ispatlar?",
+        "solutionExplanation": "Bitkiler ve hayvanlar arasındaki bu mükemmel dengenin tesadüf olamayacağını, tek bir Yaratıcı tarafından planlandığını ispatlar.",
+        "modelAnswer": "Tüketilen oksijen ile bitkilerin ürettiği oksijenin kusursuz bir dengeyle birbirini tamamlaması, bitkiler ile hayvanları aynı ortak ekosistemde var eden tek bir Yaratıcının (Allah'ın) hikmetli planını ve evrendeki kusursuz dengeyi ispatlar.",
         "rubric": [
           {
-            "criterion": "Benzersiz desen yaratma tespiti",
+            "criterion": "Oksijen ve karbondioksit dengesinin tespiti",
             "points": 8
           },
           {
-            "criterion": "Musavvir ve Hâlık sıfatlarıyla bağ kurulması",
+            "criterion": "Tek bir planlayıcı ve ilahi denge kanıtının yazılması",
             "points": 9
           }
         ]
@@ -4152,17 +4148,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 16,
         "contextText": "Allah'ın El-Adl ismi (Mutlak adalet sahibi).",
-        "stimulus": "Allah her türlü eksiklikten uzaktır ve kainatı tertemiz yaratmıştır.",
-        "questionText": "Allah'ın El-Kuddûs ismine inanan bir Müslümanın çevre ve beden temizliğine neden büyük özen göstermesi gerektiğini açıklayınız.",
-        "solutionExplanation": "'Temizlik imandandır' kuralı. Kuddus isminin tecellisi olarak insan bedenini ve çevresini temiz tutmalıdır.",
-        "modelAnswer": "El-Kuddûs; her türlü kirden, kusurdan ve noksanlıktan pak ve tertemiz olan demektir. Peygamberimizin 'Temizlik imandandır' hadisi gereğince bu isme inanan mümin, hem kalbini kötü duygulardan hem de bedenini, elbisesini ve çevresini çöplerden arındırarak temiz tutar.",
+        "stimulus": "Allah hiç kimseye haksızlık yapmaz ve zerre kadar iyiliğin veya kötülüğün karşılığını verir.",
+        "questionText": "Allah'ın El-Adl ismini rehber edinen bir öğrencinin okulda arkadaşlarına ve oyun kurallarına karşı sergileyeceği dürüst tutumu açıklayınız.",
+        "solutionExplanation": "Oyunlarda hile yapmaz, arkadaşlarına hakkaniyetle davranır.",
+        "modelAnswer": "Allah'ın mutlak adalet sahibi olduğuna inanan öğrenci, oyunlarda asla hile yapmaz, kimsenin hakkını yemez, taraftarlık gütmez; haklı olan arkadaşının yanında durarak adaleti ve dürüstlüğü savunur.",
         "rubric": [
           {
-            "criterion": "El-Kuddûs isminin temizlik anlamının yazılması",
+            "criterion": "Hile yapmama ve hak yememe tutumu",
             "points": 8
           },
           {
-            "criterion": "Beden ve çevre temizliği sorumluluğuyla bağ kurulması",
+            "criterion": "Arkadaşlıkta adalet ve dürüstlük bilinci gerekçesi",
             "points": 8
           }
         ]
@@ -4215,7 +4211,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "ENG.5.1.R2. Students can bring information about the current content on “school life with people, places and rules at school; school clubs; countries; national days and celebrations” through skimming (looking quickly at) the audio-visual elements and reading the content very quickly.",
         "difficulty": "Kolay",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 20,
         "contextText": "Reading comprehension: Country and nationality.",
         "stimulus": "Read the text:\n\n'Hello! My name is Pierre. I am 11 years old. I am from France, so I am French. I speak French and English.'",
@@ -4349,7 +4345,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "ENG.5.1.R2. Students can bring information about the current content on “school life with people, places and rules at school; school clubs; countries; national days and celebrations” through skimming (looking quickly at) the audio-visual elements and reading the content very quickly.",
         "difficulty": "Kolay",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 20,
         "contextText": "Reading: Maria from Spain.",
         "stimulus": "Read about Maria:\n\n'Hi everyone! I am Maria from Spain. I am Spanish. I live in Madrid with my family. I speak Spanish and English.'",
@@ -4491,7 +4487,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "ENG.5.1.R2. Students can bring information about the current content on “school life with people, places and rules at school; school clubs; countries; national days and celebrations” through skimming (looking quickly at) the audio-visual elements and reading the content very quickly.",
         "difficulty": "Kolay",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Reading: Hans from Germany.",
         "stimulus": "Read the text:\n\n'My name is Hans. I live in Berlin, Germany. I am German. I can speak German and English fluently.'",
@@ -4518,17 +4514,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Country and language matching.",
-        "stimulus": "Read the text:\n\n'My name is Hans. I live in Berlin, Germany. I am German. I can speak German and English fluently.'",
-        "questionText": "Answer the questions:\na) What nationality is Hans?\nb) Which languages does he speak?",
-        "solutionExplanation": "Nationality: German, Languages: German and English.",
-        "modelAnswer": "a) Hans is German.\nb) He speaks German and English.",
+        "stimulus": "Match countries with languages: Japan, Italy.",
+        "questionText": "Write the languages spoken in these countries:\n• Japan -> .................................\n• Italy -> .................................",
+        "solutionExplanation": "Japan -> Japanese, Italy -> Italian.",
+        "modelAnswer": "• Japan -> Japanese\n• Italy -> Italian",
         "rubric": [
           {
-            "criterion": "a şıkkında German yazımı",
+            "criterion": "Japanese yazımı",
             "points": 8
           },
           {
-            "criterion": "b şıkkında German and English yazımı",
+            "criterion": "Italian yazımı",
             "points": 9
           }
         ]
@@ -4653,7 +4649,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "ENG.5.1.R2. Students can bring information about the current content on “school life with people, places and rules at school; school clubs; countries; national days and celebrations” through skimming (looking quickly at) the audio-visual elements and reading the content very quickly.",
         "difficulty": "Kolay",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 15,
         "contextText": "Reading: Kenji from Tokyo.",
         "stimulus": "Read about Kenji:\n\n'Konichiwa! My name is Kenji. I am from Tokyo, Japan. I am Japanese. I can speak Japanese and a little bit of English. My favorite subject is Drama.'",
@@ -4704,17 +4700,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Good at / Bad at expressions.",
-        "stimulus": "Emily says: 'Today I have Geography, so I packed my world map and atlas. After that I have Math, so I packed my ruler and calculator.'",
-        "questionText": "Which materials does Emily pack for:\na) Geography class: .................................\nb) Math class: .................................",
-        "solutionExplanation": "a world map and atlas, b ruler and calculator.",
-        "modelAnswer": "a) World map and atlas\nb) Ruler and calculator",
+        "stimulus": "Mark says: 'I am good at solving numerical problems, but I am bad at drawing and painting pictures.'",
+        "questionText": "According to Mark's statement:\na) Which class is he good at? (Math or Art?)\nb) Which class is he bad at? (Math or Art?)",
+        "solutionExplanation": "a Math, b Art.",
+        "modelAnswer": "a) Mark is good at Math.\nb) Mark is bad at Art.",
         "rubric": [
           {
-            "criterion": "Coğrafya malzemelerinin yazımı",
+            "criterion": "a için Math tespiti",
             "points": 7
           },
           {
-            "criterion": "Matematik malzemelerinin yazımı",
+            "criterion": "b için Art tespiti",
             "points": 7
           }
         ]
@@ -4752,17 +4748,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Town places: cafe and toy shop.",
-        "stimulus": "Definitions of medical places:\n1. A big building where doctors and nurses treat sick people.\n2. A small shop where you buy pills, cough syrup, and band-aids.",
-        "questionText": "Write the English names of these medical places (hospital or pharmacy):\n1: .................................\n2: .................................",
-        "solutionExplanation": "1 Hospital, 2 Pharmacy.",
-        "modelAnswer": "1: Hospital\n2: Pharmacy (or Chemist's)",
+        "stimulus": "Where do you go to:\na) Buy a teddy bear or lego for your little brother? -> .................................\nb) Drink hot chocolate and eat cake with friends? -> .................................",
+        "questionText": "Write the English words for places a and b (choose from: cafe, toy shop):\na: .................................\nb: .................................",
+        "solutionExplanation": "a Toy shop, b Cafe.",
+        "modelAnswer": "a) Toy shop\nb) Cafe",
         "rubric": [
           {
-            "criterion": "Hospital yazımı",
+            "criterion": "Toy shop yazımı",
             "points": 7
           },
           {
-            "criterion": "Pharmacy yazımı",
+            "criterion": "Cafe yazımı",
             "points": 7
           }
         ]
@@ -4797,7 +4793,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "ENG.5.1.W4. Students can individually construct/form content for the assigned writing task on the current content “school life with people, places and rules at school; school clubs; countries; national days and celebrations”.",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Writing personal profile for student ID.",
         "stimulus": "Fill out a student profile form in complete English sentences.",
@@ -4843,7 +4839,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "ENG.5.1.R2. Students can bring information about the current content on “school life with people, places and rules at school; school clubs; countries; national days and celebrations” through skimming (looking quickly at) the audio-visual elements and reading the content very quickly.",
         "difficulty": "Kolay",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 13,
         "contextText": "Reading: Ali from Turkey.",
         "stimulus": "Read about Ali:\n\n'Hi! I am Ali. I live in Istanbul. Turkey is my country and I am Turkish. I am in the 5th grade.'",
@@ -4870,17 +4866,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 13,
         "contextText": "Country flags and nationalities: UK and USA.",
-        "stimulus": "Read about Ali:\n\n'Hi! I am Ali. I live in Istanbul. Turkey is my country and I am Turkish. I am in the 5th grade.'",
-        "questionText": "Answer the questions according to Ali's sentences:\na) What is Ali's country and nationality?\nb) Which grade is Ali in?",
-        "solutionExplanation": "Country: Turkey, Nationality: Turkish, Grade: 5th grade.",
-        "modelAnswer": "a) Ali's country is Turkey and he is Turkish.\nb) Ali is in the 5th grade.",
+        "stimulus": "Information:\n• David is from the United Kingdom (UK).\n• Sarah is from the United States of America (USA).",
+        "questionText": "Write down their nationalities in English:\n• David is: .................................\n• Sarah is: .................................",
+        "solutionExplanation": "British and American.",
+        "modelAnswer": "• David is: British (or English)\n• Sarah is: American",
         "rubric": [
           {
-            "criterion": "Ülke ve milliyet yazımı",
+            "criterion": "British yazımı",
             "points": 6
           },
           {
-            "criterion": "5. sınıf ifadesinin yazımı",
+            "criterion": "American yazımı",
             "points": 7
           }
         ]
@@ -4942,17 +4938,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "Town places: playground and mosque.",
-        "stimulus": "Definitions:\n1. A place on the street where passengers wait for public buses.\n2. A place where ancient statues and historical relics are exhibited.",
-        "questionText": "Write the English names of these places:\n1: .................................\n2: .................................",
-        "solutionExplanation": "1 Bus stop, 2 Museum.",
-        "modelAnswer": "1: Bus stop\n2: Museum",
+        "stimulus": "Definitions:\n1. An outdoor area where children play on slides and swings.\n2. A religious place where Muslims pray and worship.",
+        "questionText": "Write the English names of these community places (playground or mosque):\n1: .................................\n2: .................................",
+        "solutionExplanation": "1 Playground, 2 Mosque.",
+        "modelAnswer": "1: Playground (or Play area)\n2: Mosque",
         "rubric": [
           {
-            "criterion": "Bus stop yazımı",
+            "criterion": "Playground yazımı",
             "points": 6
           },
           {
-            "criterion": "Museum yazımı",
+            "criterion": "Mosque yazımı",
             "points": 6
           }
         ]
@@ -4983,7 +4979,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "ENG.5.1.G1. Students can select and use the target grammatical elements of the current content about “school life with people, places and rules at school; school clubs; countries; national days and celebrations” accurately, authentically, spontaneously, and naturally and use it appropriately and effectively when communicating with others.",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "Giving directions: between two landmarks.",
         "stimulus": "A person asks for the cafe. The cafe is situated in the middle, having the bank on the right and the cinema on the left.",
@@ -5045,7 +5041,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Metinde geçen anlamını bilmediği söz varlığı unsurlarının anlamını tahmin edebilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Göbeklitepe metninde geçen sözcükler.",
         "stimulus": "Şanlıurfa yakınlarındaki Göbeklitepe, insanlık tarihinin bilinen en kadim tapınak merkezidir. T biçimindeki devasa kireçtaşı sütunların üzerine tilki, yaban domuzu ve turna kabartmaları büyük bir ustalıkla nakşedilmiştir. Arkeologlar bu kazıların yerleşik hayata geçiş teorilerini kökünden değiştirdiğini belirtmektedir.",
@@ -5092,14 +5088,18 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Göbeklitepe'nin arkeoloji tarihindeki önemi.",
-        "stimulus": "Metinde Şanlıurfa Göbeklitepe'deki kazılar, T sütunlarındaki kabartmalar ve yerleşik hayata geçiş teorilerine etkisi anlatılmaktadır.",
-        "questionText": "Göbeklitepe'yi ve üzerindeki kabartmaları anlatan yukarıdaki metnin konusunu tek bir cümleyle yazınız.",
-        "solutionExplanation": "Göbeklitepe'nin tarihî önemi ve insanlık tarihine katkısı.",
-        "modelAnswer": "Metnin konusu, Şanlıurfa'daki Göbeklitepe tapınak alanının mimari özellikleri ve insanlık tarihinin başlangıcına dair bilinenleri kökten değiştirmesidir.",
+        "stimulus": "Arkeologlar Göbeklitepe keşfedilmeden önce avcı-toplayıcı insanların tapınak yapamayacağını düşünüyordu.",
+        "questionText": "Göbeklitepe keşfinin insanlık tarihi hakkındaki yerleşik düşünceleri nasıl değiştirdiğini metne dayanarak açıklayınız.",
+        "solutionExplanation": "İnsanların tarımdan önce de inanç merkezleri ve tapınaklar inşa edebildiğini kanıtlamıştır.",
+        "modelAnswer": "Göbeklitepe, avcı-toplayıcı insanların henüz tarıma ve yerleşik hayata geçmeden önce bile büyük bir organizasyon kurarak görkemli inanç merkezleri (tapınaklar) inşa edebildiğini kanıtlamış ve medeniyet tarihinin başlangıcını binlerce yıl geriye çekmiştir.",
         "rubric": [
           {
-            "criterion": "Göbeklitepe ve tarihî önemini kapsayan konu cümlesi",
-            "points": 17
+            "criterion": "Tarımdan önce tapınak inşa edilebildiği tespiti",
+            "points": 9
+          },
+          {
+            "criterion": "Tarih tezlerini kökünden değiştirme gerekçesi",
+            "points": 8
           }
         ]
       },
@@ -5199,7 +5199,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Metnin yüzey anlamını belirleyebilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Nasreddin Hoca fıkrasının ana fikri.",
         "stimulus": "Nasreddin Hoca komşusundan ödünç aldığı kazanı geri verirken içine küçük bir tencere koyar. Komşusu şaşırınca 'Müjde komşu, kazanın doğurdu!' der ve komşusu sevinçle kabul eder. Bir süre sonra Hoca kazanı tekrar ister. Ancak haftalar geçer kazan gelmez. Komşu kazanı isteyince Hoca: 'Başın sağ olsun komşu, senin kazan öldü!' der. Komşu öfkeyle 'Hocam hiç kazan ölür mü?' diye bağırınca Hoca taşı gediğine koyar: 'Doğurduğuna inandın da öldüğüne niye inanmıyorsun?'",
@@ -5222,14 +5222,18 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Fıkradaki komşunun karakter tahlili.",
-        "stimulus": "Nasreddin Hoca komşusundan ödünç aldığı kazanı geri verirken içine küçük bir tencere koyar. Komşusu şaşırınca 'Müjde komşu, kazanın doğurdu!' der ve komşusu sevinçle kabul eder. Bir süre sonra Hoca kazanı tekrar ister. Ancak haftalar geçer kazan gelmez. Komşu kazanı isteyince Hoca: 'Başın sağ olsun komşu, senin kazan öldü!' der. Komşu öfkeyle 'Hocam hiç kazan ölür mü?' diye bağırınca Hoca taşı gediğine koyar: 'Doğurduğuna inandın da öldüğüne niye inanmıyorsun?'",
-        "questionText": "Nasreddin Hoca'nın bu fıkrada komşusuna ve okuyucuya vermek istediği temel ahlaki mesajı (ana fikri) yazınız.",
-        "solutionExplanation": "İşine gelince mantıksız bir kârı kabul eden, zarara da katlanmalıdır; dürüstlükten şaşılmamalıdır.",
-        "modelAnswer": "Fıkranın ana fikri: Kendi çıkarına ve menfaatine uygun düştüğünde akıl ve mantık dışı durumları kabullenen insanlar, işlerine gelmeyen olumsuz sonuçlarla karşılaştıklarında itiraz etme hakkına sahip olamazlar; insan menfaatinde de dürüst ve tutarlı olmalıdır.",
+        "stimulus": "Komşu kazanın doğurduğunu duyunca hiç sorgulamadan küçük tencereyi sahiplenmiş, fakat ölüm haberine şiddetle karşı çıkmıştır.",
+        "questionText": "Komşunun bu iki farklı tepkisinden hareketle onun hangi kişilik özelliğine (zaafına) sahip olduğunu tek bir kavramla yazıp açıklayınız.",
+        "solutionExplanation": "Açgözlülük, menfaatçilik veya tutarsızlık.",
+        "modelAnswer": "Kişilik Zaafı: Açgözlülük (veya Menfaatçilik / Fırsatçılık).\nAçıklama: Kazan gibi cansız bir varlığın doğuramayacağını bildiği halde sırf bedava tencere kazanmak için bu yalana sevinmiş, işine gelince mantığı bir kenara bırakmıştır.",
         "rubric": [
           {
-            "criterion": "Çıkar ve dürüstlük çelişkisi ana fikrinin doğru ifadesi",
-            "points": 17
+            "criterion": "Açgözlülük/fırsatçılık kavramının tespiti",
+            "points": 9
+          },
+          {
+            "criterion": "Komşunun çıkar ilişkisi tutarsızlığının açıklanması",
+            "points": 8
           }
         ]
       },
@@ -5345,7 +5349,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Metinde geçen anlamını bilmediği söz varlığı unsurlarının anlamını tahmin edebilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Bilimsel metinde kelime anlamı tahmini.",
         "stimulus": "Dünyanın en cüsseli canlıları olan mavi balinalar, okyanusun karanlık derinliklerinde kilometrelerce uzağa ulaşabilen düşük frekanslı melodik sesler çıkarırlar. Bilim insanları bu gizemli şarkıların sürünün diğer üyeleriyle rezonans kurarak iletişim sağladığını ve göç rotalarını tayin ettiğini keşfetmiştir.",
@@ -5495,7 +5499,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Metnin yüzey anlamını belirleyebilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Kuş evleri metninin ana fikri.",
         "stimulus": "Osmanlı mimarisinde camilerin, medreselerin ve köprülerin rüzgâr almayan güneşli cephelerine taştan ve ahşaptan zarif kuş köşkleri inşa edilmiştir. Bu minik saraylar sayesinde serçeler, güvercinler ve kırlangıçlar kışın dondurucu soğuğundan ve yırtıcı hayvanlardan korunmuştur. Ecdadımız bu eserlerle canlılara merhamet etmeyi mimari bir zarafete dönüştürmüştür.",
@@ -5518,14 +5522,18 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Kuş evlerinin mimari konumu.",
-        "stimulus": "Osmanlı mimarisinde camilerin, medreselerin ve köprülerin rüzgâr almayan güneşli cephelerine taştan ve ahşaptan zarif kuş köşkleri inşa edilmiştir. Bu minik saraylar sayesinde serçeler, güvercinler ve kırlangıçlar kışın dondurucu soğuğundan ve yırtıcı hayvanlardan korunmuştur. Ecdadımız bu eserlerle canlılara merhamet etmeyi mimari bir zarafete dönüştürmüştür.",
-        "questionText": "Kuş evlerini ve ecdadımızın merhametini anlatan yukarıdaki metnin ana fikrini yazınız.",
-        "solutionExplanation": "Gerçek medeniyet ve gelişmişlik, dilsiz hayvanlara ve tüm canlılara gösterilen şefkat ve koruma zarafetiyle ölçülür.",
-        "modelAnswer": "Metnin ana fikri: Gerçek insanlık ve medeniyet, yalnızca insanları değil doğadaki en savunmasız dilsiz canlıları da şefkatle korumak, onlara merhamet göstermeyi mimari ve kültürel bir sorumluluk bilmektir.",
+        "stimulus": "Metne göre mimarlar kuş evlerini yapıların rastgele bir yerine değil, rüzgâr almayan ve güneş gören yüksek duvarlarına yerleştirmişlerdir.",
+        "questionText": "Kuş evlerinin özellikle 'rüzgâr almayan ve yüksek' yerlere yapılmasının 2 mantıksal gerekçesini açıklayınız.",
+        "solutionExplanation": "Kışın soğuk fırtınalardan korumak ve kediler gibi yırtıcıların ulaşmasını engellemek.",
+        "modelAnswer": "1. Rüzgâr almayan cephe: Kuşları kış aylarının dondurucu poyrazından ve fırtınasından koruyarak yuvalarının sıcak kalmasını sağlamak.\n2. Yüksek duvarlar: Sokaktaki kedi, köpek gibi avcı hayvanların ve kötü niyetli insanların kuşlara ulaşmasını engellemek.",
         "rubric": [
           {
-            "criterion": "Canlılara merhamet ve mimari zarafet ana fikrinin doğru ifadesi",
-            "points": 17
+            "criterion": "Rüzgar ve soğuktan koruma gerekçesi",
+            "points": 9
+          },
+          {
+            "criterion": "Yırtıcı hayvanlardan koruma yüksekliği gerekçesi",
+            "points": 8
           }
         ]
       },
@@ -5562,17 +5570,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Zıt anlamlı sözcükler: 'savunmasız' ve 'yüksek'.",
-        "stimulus": "Metindeki kavramlar: 'merhamet' ve 'zarif'.",
-        "questionText": "Aşağıdaki kelimelerin eş anlamlılarını yazınız:\n• merhamet: ............................\n• zarif: ............................",
-        "solutionExplanation": "merhamet = acıma, şefkat. zarif = ince, narin.",
-        "modelAnswer": "• merhamet: şefkat (veya acıma duygusu)\n• zarif: narin (veya ince / estetik)",
+        "stimulus": "Metindeki kelimelerin karşıtları.",
+        "questionText": "Aşağıdaki kelimelerin zıt anlamlılarını yazınız:\n• savunmasız: ............................\n• yüksek: ............................",
+        "solutionExplanation": "savunmasız -> korunaklı/güçlü, yüksek -> alçak.",
+        "modelAnswer": "• savunmasız: korunaklı (veya güçlü / dayanıklı)\n• yüksek: alçak",
         "rubric": [
           {
-            "criterion": "Merhamet eş anlamlısı",
+            "criterion": "Savunmasız zıt anlamlısı",
             "points": 9
           },
           {
-            "criterion": "Zarif eş anlamlısı",
+            "criterion": "Yüksek zıt anlamlısı",
             "points": 8
           }
         ]
@@ -5668,14 +5676,18 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 15,
         "contextText": "Eserin yazılış amacı.",
-        "stimulus": "11. yüzyılda Kaşgarlı Mahmud, Türk boylarını adım adım gezerek Türkçe kelimeleri, atasözlerini ve şiirleri derlemiş; Türkçenin Arapça kadar zengin ve üstün bir dil olduğunu göstermek için ilk Türkçe sözlük olan 'Divânu Lugâti't-Türk'ü yazmıştır. Kitabın sonuna ilk Türk dünyası haritasını da eklemiştir.",
-        "questionText": "Kaşgarlı Mahmud'un bu devasa eserini anlatan metnin konusunu tek bir cümleyle özetleyiniz.",
-        "solutionExplanation": "Kaşgarlı Mahmud'un Divânu Lugâti't-Türk'ü yazma amacı ve eserin dilimiz açısından önemi.",
-        "modelAnswer": "Metnin konusu, Kaşgarlı Mahmud'un Türkçenin zenginliğini kanıtlamak amacıyla Türk boylarını gezerek hazırladığı ilk Türkçe sözlük olan Divânu Lugâti't-Türk'ün yazılış serüveni ve kültürel değeridir.",
+        "stimulus": "Kaşgarlı Mahmud eserinin önsözünde Türkçenin gücünü ve Araplara Türkçeyi öğretme niyetini vurgular.",
+        "questionText": "Kaşgarlı Mahmud'un bu eseri kaleme almasındaki 2 temel hedefi metinden hareketle yazınız.",
+        "solutionExplanation": "1. Türkçenin Arapça kadar zengin olduğunu kanıtlamak. 2. Araplara Türkçeyi öğretmek ve Türk kültürünü tanıtmak.",
+        "modelAnswer": "1. Türkçenin en az Arapça kadar zengin, kurallı ve üstün bir edebiyat dili olduğunu ispatlamak.\n2. Araplara Türk dilini öğretmek ve Türk boylarının atasözlerini, geleneklerini ve coğrafyasını tanıtmak.",
         "rubric": [
           {
-            "criterion": "Kaşgarlı Mahmud ve Divânu Lugâti't-Türk'ü kapsayan doğru konu cümlesi",
-            "points": 15
+            "criterion": "Türkçenin zenginliğini ispatlama hedefi",
+            "points": 8
+          },
+          {
+            "criterion": "Türkçeyi öğretme ve kültürü tanıtma hedefi",
+            "points": 7
           }
         ]
       },
@@ -5732,17 +5744,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Eş anlamlı kelimeler: 'eser' ve 'amaç'.",
-        "stimulus": "Kaşgarlı Mahmud ömrünü Türk diline ve kültürüne gönül vermiş bir bilgindir.",
-        "questionText": "'Gönül vermek' deyiminin anlamını açıklayarak Kaşgarlı Mahmud'un çalışmalarına nasıl uyduğunu belirtiniz.",
-        "solutionExplanation": "Bir şeye içten sevgi ve tutkuyla bağlanmak.",
-        "modelAnswer": "• Anlamı: Bir işe, davaya veya kişiye büyük bir sevgi, tutku ve içtenlikle bağlanmak demektir.\n• Uyumu: Kaşgarlı Mahmud yıllarca at sırtında diyar diyar gezerek zorluklara katlanmış, dilini derin bir sevgi ve fedakârlıkla derlemiştir.",
+        "stimulus": "Metindeki kavramlar: 'eser' ve 'amaç'.",
+        "questionText": "Aşağıdaki kelimelerin metindeki anlamına uygun eş anlamlılarını yazınız:\n• eser: ............................\n• amaç: ............................",
+        "solutionExplanation": "eser = yapıt, amaç = gaye / hedef.",
+        "modelAnswer": "• eser: yapıt\n• amaç: gaye (veya hedef / maksat)",
         "rubric": [
           {
-            "criterion": "Deyimin doğru tanımı",
+            "criterion": "Eser eş anlamlısı",
             "points": 7
           },
           {
-            "criterion": "Kaşgarlı Mahmud'un dil sevgisiyle örtüşmesinin açıklanması",
+            "criterion": "Amaç eş anlamlısı",
             "points": 7
           }
         ]
@@ -5773,7 +5785,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Yazım kuralları ve noktalama işaretlerini uygulayabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Kitap ve eser adlarının yazımı.",
         "stimulus": "Cümle: 'Öğretmenimiz derste kaşgarlı mahmud'un divânu lugâti't-türk adlı eserini tanıttı.'",
@@ -5815,7 +5827,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Metinde geçen anlamını bilmediği söz varlığı unsurlarının anlamını tahmin edebilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 15,
         "contextText": "Kutup Işıkları metninde kelime anlamı tahmini.",
         "stimulus": "Kuzey Kutup bölgesinde geceleri gökyüzünü yeşil, mor ve pembe ışık dalgalarıyla dans ettiren doğa olayına 'Kutup Işıkları' (Aurora Borealis) denir. Güneş'ten fırlatılan yüklü parçacıklar Dünya'nın manyetik kalkanıyla etkileşime girdiğinde ortaya çıkan bu büyüleyici şölen, gökyüzünde adeta ışıklı bir perde gibi dalgalanır.",
@@ -5862,14 +5874,18 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Işıkların oluşma mekanizması (Neden-sonuç).",
-        "stimulus": "Metinde Kutup Işıklarının oluşumu, Güneş parçacıklarının Dünya'nın manyetik alanıyla teması ve gökyüzündeki renkli görüntüsü anlatılmaktadır.",
-        "questionText": "Gökyüzündeki bu renk cümbüşünü anlatan yukarıdaki metnin konusunu tek bir cümleyle yazınız.",
-        "solutionExplanation": "Kutup Işıklarının (Aurora) oluşumu ve gökyüzündeki büyüleyici görsel şöleni.",
-        "modelAnswer": "Metnin konusu, Güneş parçacıklarının Dünya'nın manyetik kalkanıyla etkileşimi sonucu kutup bölgelerinde oluşan Kutup Işıklarının (Aurora) meydana gelişi ve görsel özellikleridir.",
+        "stimulus": "Metne göre Kutup Işıkları Güneş'ten gelen parçacıklar ile Dünya'nın manyetik alanı arasındaki temas sonucu oluşur.",
+        "questionText": "Kutup Işıklarının oluşumundaki neden-sonuç ilişkisini metne dayanarak 1 cümleyle açıklayınız.",
+        "solutionExplanation": "Güneş'ten fırlatılan yüklü parçacıkların Dünya'nın manyetik alanına çarpması sonucunda gökyüzünde renkli ışımalar oluşur.",
+        "modelAnswer": "Güneş'ten uzaya fırlatılan yüklü parçacıkların Dünya'nın kutup bölgelerindeki manyetik kalkanına çarpıp atmosferdeki gazlarla etkileşime girmesi (neden), gökyüzünde rengarenk dans eden ışıkların parlamasına (sonuç) yol açar.",
         "rubric": [
           {
-            "criterion": "Kutup Işıkları oluşumu ve görsel özelliklerini kapsayan konu cümlesi",
-            "points": 14
+            "criterion": "Neden unsurunun (Güneş parçacıkları ve manyetik alan) doğru tespiti",
+            "points": 7
+          },
+          {
+            "criterion": "Sonuç unsurunun (gökyüzünde renkli ışık oluşumu) açıklanması",
+            "points": 7
           }
         ]
       },
@@ -5947,7 +5963,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Yazım kuralları ve noktalama işaretlerini uygulayabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Kısaltmaların ve eklerin yazımı.",
         "stimulus": "Cümle: 'TÜBİTAK'ın kutup araştırmaları ekibi norveç'in tromso şehrinde inceleme yaptı.'",
@@ -6040,17 +6056,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "9 ile bölünebilme kuralı.",
-        "stimulus": "Dört basamaklı 542A sayısı hem 3'e hem de 5'e kalansız bölünebilmektedir.",
-        "questionText": "Buna göre 'A' yerine yazılabilecek rakamı işlem basamaklarını ve bölünebilme kurallarını açıklayarak bulunuz.",
-        "solutionExplanation": "5'e bölünmesi için son basamak 0 veya 5 olmalıdır. 3'e bölünmesi için rakamlar toplamı 3'ün katı olmalıdır. A=0 için 5+4+2+0=11 (3'ün katı değil). A=5 için 5+4+2+5=16 (değil).",
-        "modelAnswer": "• 5'e Bölünebilme Kuralı: Sayının son basamağı (A) 0 veya 5 olmalıdır.\n• 3'e Bölünebilme Kuralı: Rakamları toplamı 3'ün katı olmalıdır.\n  - A = 0 ise: 5 + 4 + 2 + 0 = 11 (3'ün katı değildir, bölünmez).\n  - A = 5 ise: 5 + 4 + 2 + 5 = 16 (3'ün katı değildir, bölünmez).\nSayının 542A değil, 54A0 şeklinde olması durumunda A=3,6,9 olur. Verilen sayıda kalansız bölünme şartını sağlayan A rakamı bulunamaz; şartın sağlanması için sayının 54A5 olması gerekirdi.",
+        "stimulus": "Beş basamaklı 71A32 sayısı 9 ile kalansız bölünebilmektedir.",
+        "questionText": "9 ile bölünebilme kuralını yazarak 'A' yerine gelmesi gereken rakamı bulunuz.",
+        "solutionExplanation": "Rakamlar toplamı 9'un katı olmalıdır: 7 + 1 + A + 3 + 2 = 13 + A. 13 + 5 = 18. A = 5.",
+        "modelAnswer": "Kural: Bir sayının rakamları toplamı 9'un tam katı ise o sayı 9'a kalansız bölünür.\nİşlem: 7 + 1 + A + 3 + 2 = 13 + A\n13'ten büyük en küçük 9'un katı 18'dir.\n13 + A = 18 => A = 5 olur.",
         "rubric": [
           {
-            "criterion": "5'e bölünebilme kuralının uygulanması",
+            "criterion": "9 ile bölünebilme kuralının yazılması",
             "points": 9
           },
           {
-            "criterion": "3'e bölünebilme kuralı ve rakam toplamı kontrolü",
+            "criterion": "A = 5 sonucunun işlemle bulunması",
             "points": 8
           }
         ]
@@ -6250,17 +6266,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 20,
         "contextText": "Ortak zil çalma periyodu (EKOK).",
-        "stimulus": "Bir marangoz 36 metre ve 48 metre uzunluğundaki iki tahtayı hiç parça artmayacak şekilde eşit uzunlukta en büyük parçalara bölecektir.",
-        "questionText": "Her bir tahta parçasının uzunluğu kaç metre olmalıdır ve toplam kaç parça tahta elde edilir?",
-        "solutionExplanation": "EBOB(36, 48) = 12 m. 36/12 = 3, 48/12 = 4, toplam 7 parça.",
-        "modelAnswer": "İşlem:\n36 ve 48'in en büyük ortak böleni (EBOB) = 12 metredir.\nBir parçanın uzunluğu = 12 m olmalıdır.\nParça Sayısı: (36 / 12) + (48 / 12) = 3 + 4 = 7 parça elde edilir.",
+        "stimulus": "Bir okulda iki farklı derslik zilinden biri 30 dakikada bir, diğeri 40 dakikada bir çalmaktadır. Ziller ilk kez sabah saat 09.00'da birlikte çalmıştır.",
+        "questionText": "Ziller ikinci kez saat kaçta birlikte çalar? Ortak kat hesabı yaparak bulunuz.",
+        "solutionExplanation": "EKOK(30, 40) = 120 dk = 2 saat. 09.00 + 2 saat = 11.00.",
+        "modelAnswer": "İşlem:\n30'un katları: 30, 60, 90, 120, 150...\n40'ın katları: 40, 80, 120, 160...\nEn küçük ortak kat = 120 dakikadır.\n120 dakika = 2 saattir.\n09.00 + 2 saat = Saat 11.00'de ikinci kez birlikte çalarlar.",
         "rubric": [
           {
-            "criterion": "12 metre parça uzunluğunun bulunması",
+            "criterion": "120 dakika ortak katının bulunması",
             "points": 10
           },
           {
-            "criterion": "Toplam 7 parça sonucunun bulunması",
+            "criterion": "Saat 11.00 sonucunun doğru yazılması",
             "points": 10
           }
         ]
@@ -6312,13 +6328,13 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 15,
         "contextText": "Kat kavramı ve iki basamaklı katlar.",
-        "stimulus": "90 sayısının bölenleri bir torbaya atılmıştır.",
-        "questionText": "90 sayısının tüm pozitif bölenlerini (çarpanlarını) küçükten büyüğe sırasıyla yazınız.",
-        "solutionExplanation": "1, 2, 3, 5, 6, 9, 10, 15, 18, 30, 45, 90.",
-        "modelAnswer": "90'ın Çarpanları: 1, 2, 3, 5, 6, 9, 10, 15, 18, 30, 45, 90 (Toplam 12 çarpanı vardır).",
+        "stimulus": "15 sayısının katları incelenmektedir.",
+        "questionText": "15 sayısının iki basamaklı tüm katlarını küçükten büyüğe doğru yazınız.",
+        "solutionExplanation": "15, 30, 45, 60, 75, 90.",
+        "modelAnswer": "15'in İki Basamaklı Katları: 15, 30, 45, 60, 75, 90.",
         "rubric": [
           {
-            "criterion": "12 çarpanın eksiksiz ve sıralı yazılması",
+            "criterion": "6 katın eksiksiz yazılması",
             "points": 15
           }
         ]
@@ -6356,17 +6372,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Bölünebilme kuralı probleminde kalan bulma.",
-        "stimulus": "Dört basamaklı 834B sayısı 10 ile kalansız bölünebilen ve aynı zamanda 3'ün katı olan bir sayıdır.",
-        "questionText": "a) B rakamı kaçtır?\nb) Sayının 3'e kalansız bölündüğünü rakamlar toplamı yöntemiyle gösteriniz.",
-        "solutionExplanation": "10'a bölünmesi için B = 0 olmalıdır. Rakamlar toplamı: 8 + 3 + 4 + 0 = 15 (3'ün katıdır).",
-        "modelAnswer": "a) 10 ile kalansız bölünebilmesi için birler basamağı sıfır olmalıdır. B = 0'dır.\nb) Rakamlar toplamı: 8 + 3 + 4 + 0 = 15'tir. 15 sayısı 3'ün tam katı olduğu için sayı 3'e de kalansız bölünür.",
+        "stimulus": "A sayısı 4'e bölündüğünde kalan 3, B sayısı 4'e bölündüğünde kalan 2'dir.",
+        "questionText": "(A + B) toplamının 4 ile bölümünden kalan kaçtır? İşlemle açıklayınız.",
+        "solutionExplanation": "Kalanlar toplamı: 3 + 2 = 5. 5'in 4 ile bölümünden kalan 1'dir.",
+        "modelAnswer": "İşlem: Kalanlar toplanır -> 3 + 2 = 5.\n5 sayısının 4 ile bölümünden kalan: 5 = 1 x 4 + 1 olduğundan kalan '1'dir.",
         "rubric": [
           {
-            "criterion": "a şıkkında B = 0 tespiti",
+            "criterion": "Kalanların toplanması kuralı",
             "points": 7
           },
           {
-            "criterion": "b şıkkında 15 toplamı ve 3'e bölünebilme kanıtı",
+            "criterion": "Kalanın 1 olarak doğru bulunması",
             "points": 7
           }
         ]
@@ -6425,7 +6441,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Günlük hayat problemleri ya da matematiksel durumlarda iki doğal sayının ortak bölenleri ve katlarını yorumlayabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Bilyeleri dörderli ve altışarlı sayma.",
         "stimulus": "Bir torbadaki bilyeler dörderli ve altışarlı sayıldığında her seferinde 3 bilye artmaktadır. Torbadaki bilye sayısının 50'den fazla olduğu bilinmektedir.",
@@ -6494,17 +6510,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 13,
         "contextText": "Gezegenlerin halkaları ve uyduları.",
-        "stimulus": "Güneş sistemindeki 8 gezegen yapısal özelliklerine göre 'İç (Karasal) Gezegenler' ve 'Dış (Gazsal) Gezegenler' olarak ikiye ayrılır.",
-        "questionText": "İç gezegenlerin ve dış gezegenlerin adlarını Güneş'e yakınlık sırasına göre yazınız.",
-        "solutionExplanation": "İç: Merkür, Venüs, Dünya, Mars. Dış: Jüpiter, Satürn, Uranüs, Neptün.",
-        "modelAnswer": "• İç (Karasal) Gezegenler: Merkür, Venüs, Dünya, Mars.\n• Dış (Gazsal) Gezegenler: Jüpiter, Satürn, Uranüs, Neptün.",
+        "stimulus": "Güneş sisteminde bazı gezegenlerin etrafında buz ve tozdan oluşan halkalar ve uydular yer almaktadır.",
+        "questionText": "a) En belirgin halka sistemine sahip gezegen hangisidir?\nb) Uydusu hiç bulunmayan 2 gezegenin adını yazınız.",
+        "solutionExplanation": "a Satürn, b Merkür ve Venüs.",
+        "modelAnswer": "a) En belirgin halka sistemine sahip gezegen: Satürn'dür.\nb) Uydusu bulunmayan iki gezegen: Merkür ve Venüs'tür.",
         "rubric": [
           {
-            "criterion": "İç gezegenlerin 4'ünün doğru yazılması",
+            "criterion": "a şıkkında Satürn tespiti",
             "points": 7
           },
           {
-            "criterion": "Dış gezegenlerin 4'ünün doğru yazılması",
+            "criterion": "b şıkkında Merkür ve Venüs tespiti",
             "points": 6
           }
         ]
@@ -6566,17 +6582,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "Aynı yönlü kuvvetlerin bileşkesi.",
-        "stimulus": "Bir cisme aynı doğrultuda Doğu yönünde $F_1 = 25$ N ve Batı yönünde $F_2 = 15$ N büyüklüğünde iki kuvvet uygulanmaktadır.",
-        "questionText": "Cisme etki eden bileşke kuvvetin (net kuvvetin) büyüklüğünü ve yönünü işlem yaparak bulunuz.",
-        "solutionExplanation": "Zıt yönlü olduğu için çıkarılır: 25 - 15 = 10 N Doğu yönünde.",
-        "modelAnswer": "İşlem:\nKuvvetler zıt yönlü olduğu için birbirinden çıkarılır.\n$F_{net} = F_1 - F_2 = 25 - 15 = 10$ N\nYön: Büyük kuvvetin yönü olan 'Doğu' yönündedir.\nBileşke Kuvvet: Doğu yönünde 10 N.",
+        "stimulus": "Bir sandığı iki arkadaş aynı doğrultuda ve aynı yönde (Kuzey yönünde) itmektedir. Ali 18 N, Veli 22 N kuvvet uygulamaktadır.",
+        "questionText": "Sandığa uygulanan toplam bileşke kuvvetin büyüklüğünü ve yönünü hesaplayınız.",
+        "solutionExplanation": "Aynı yönlü olduğu için toplanır: 18 + 22 = 40 N Kuzey yönünde.",
+        "modelAnswer": "İşlem:\nKuvvetler aynı yönlü olduğu için toplanır.\n$F_{net} = 18 + 22 = 40$ N\nYön: 'Kuzey' yönündedir.\nBileşke Kuvvet: Kuzey yönünde 40 N.",
         "rubric": [
           {
-            "criterion": "25 - 15 = 10 N büyüklük hesabı",
+            "criterion": "18 + 22 = 40 N toplama işlemi",
             "points": 6
           },
           {
-            "criterion": "Doğu yönünün doğru belirlenmesi",
+            "criterion": "Kuzey yönünün doğru tespiti",
             "points": 6
           }
         ]
@@ -6611,7 +6627,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Sürat ve hız kavramlarını karşılaştırabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "Sürat formülü ve birimi.",
         "stimulus": "Bir hareketlinin birim zamanda aldığı yola 'sürat' denir.",
@@ -6704,17 +6720,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 13,
         "contextText": "Venüs'ün sera etkisi ve sıcaklığı.",
-        "stimulus": "Güneş sistemindeki gezegenler hacimsel olarak çok farklı büyüklüktedir.",
-        "questionText": "Güneş sisteminin en büyük gezegeni ile en küçük gezegeninin adını yazınız.",
-        "solutionExplanation": "En büyük Jüpiter, en küçük Merkür.",
-        "modelAnswer": "• En Büyük Gezegen: Jüpiter (Gaz devi)\n• En Küçük Gezegen: Merkür (Karasal gezegen)",
+        "stimulus": "Güneş'e en yakın gezegen Merkür olmasına rağmen, Güneş sisteminin yüzey sıcaklığı en yüksek gezegeni Venüs'tür (+460°C).",
+        "questionText": "Venüs'ün Merkür'den daha sıcak olmasının bilimsel gerekçesini atmosfer yapısı ve sera etkisi açısından açıklayınız.",
+        "solutionExplanation": "Venüs'ün karbondioksit zengini çok kalın bir atmosferi vardır ve yoğun sera etkisiyle ısıyı hapseder.",
+        "modelAnswer": "Venüs'ün atmosferi neredeyse tamamen karbondioksit gazından oluşan çok kalın ve yoğun bir tabakadır. Bu kalın gaz tabakası Güneş'ten gelen ısıyı hapsederek aşırı bir 'sera etkisi' yaratır; Merkür'de ise atmosfer olmadığı için ısı tutulamaz.",
         "rubric": [
           {
-            "criterion": "En büyük gezegen Jüpiter tespiti",
+            "criterion": "Karbondioksit ve kalın atmosfer tespiti",
             "points": 7
           },
           {
-            "criterion": "En küçük gezegen Merkür tespiti",
+            "criterion": "Sera etkisiyle ısının hapsedilmesi gerekçesi",
             "points": 6
           }
         ]
@@ -6752,17 +6768,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 13,
         "contextText": "Tutulmaların her ay gerçekleşmeme sebebi.",
-        "stimulus": "Ay tutulması sırasında gökyüzünde parlayan dolunay Dünya'nın gölgesine girerek bakır kırmızısı bir renge bürünür.",
-        "questionText": "Ay tutulmasında gök cisimlerinin dizilim sırasını yazınız ve tutulmanın Ay'ın hangi evresinde meydana geldiğini açıklayınız.",
-        "solutionExplanation": "Güneş - Dünya - Ay. Dolunay evresinde gerçekleşir.",
-        "modelAnswer": "• Dizilim Sırası: Güneş — Dünya — Ay (Dünya, Güneş ile Ay arasına girer ve gölgesi Ay'ın üzerine düşer).\n• Ay'ın Evresi: 'Dolunay' evresinde gerçekleşir.",
+        "stimulus": "Ay her ay Yeni Ay ve Dolunay evrelerinden geçtiği halde her ay Güneş ve Ay tutulması yaşanmaz.",
+        "questionText": "Her ay düzenli olarak tutulma gerçekleşmemesinin bilimsel nedenini yörünge düzlemleri açısından açıklayınız.",
+        "solutionExplanation": "Ay'ın Dünya etrafındaki yörünge düzlemi ile Dünya'nın Güneş etrafındaki yörünge düzlemi arasında yaklaşık 5 derecelik bir açı eğikliği vardır.",
+        "modelAnswer": "Ay'ın Dünya etrafındaki dolanma yörüngesi ile Dünya'nın Güneş etrafındaki yörünge düzlemi tam çakışık değildir; aralarında yaklaşık 5 derecelik bir eğiklik (açı farkı) vardır. Bu nedenle her ay bu üç gök cismi tam aynı doğrultuya gelemez.",
         "rubric": [
           {
-            "criterion": "Güneş - Dünya - Ay diziliminin yazılması",
+            "criterion": "Yörünge düzlemleri arasındaki 5 derecelik açı eğikliği tespiti",
             "points": 7
           },
           {
-            "criterion": "Dolunay evresinin doğru belirtilmesi",
+            "criterion": "Her ay tam aynı doğrultuya gelememe gerekçesi",
             "points": 6
           }
         ]
@@ -6821,7 +6837,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Sürat ve hız kavramlarını karşılaştırabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "Otobüsün km/h sürat hesabı.",
         "stimulus": "Ankara'dan İstanbul'a giden bir yolcu otobüsü 450 kilometrelik yolu mola vermeden 5 saatte tamamlamıştır.",
@@ -6918,18 +6934,14 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 15,
         "contextText": "Asteroit Kuşağı'nın konumu.",
-        "stimulus": "Mars gezegeninin yüzeyi pas renginde kırmızımsı toz ve kayalarla kaplıdır.",
-        "questionText": "a) Mars'ın 'Kızıl Gezegen' olarak anılmasının sebebi yüzeyindeki hangi elementtir?\nb) Mars iç gezegen midir dış gezegen midir?",
-        "solutionExplanation": "a Demir oksit (pas), b İç (karasal) gezegendir.",
-        "modelAnswer": "a) Yüzeyindeki toprak ve kayalarda bol miktarda bulunan 'demir oksit' (paslı demir bileşikleri) nedeniyle kızıl renkte görünür.\nb) Mars bir 'İç (Karasal) Gezegen'dir.",
+        "stimulus": "Güneş sisteminde kaya ve metal parçalarından oluşan milyonlarca asteroitin dolandığı devasa bir kuşak vardır.",
+        "questionText": "Asteroit Kuşağı hangi iki gezegenin yörüngeleri arasında yer almaktadır? Yazınız.",
+        "solutionExplanation": "Mars ile Jüpiter arasında yer alır.",
+        "modelAnswer": "Asteroit Kuşağı, iç gezegenlerin sonuncusu olan 'Mars' ile dış gezegenlerin ilki olan 'Jüpiter' gezegenlerinin yörüngeleri arasında yer alır.",
         "rubric": [
           {
-            "criterion": "a şıkkında demir oksit/pas tespiti",
-            "points": 8
-          },
-          {
-            "criterion": "b şıkkında iç gezegen tespiti",
-            "points": 7
+            "criterion": "Mars ve Jüpiter gezegenlerinin doğru yazılması",
+            "points": 15
           }
         ]
       },
@@ -6990,17 +7002,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Kuvvetin 4 temel özelliği.",
-        "stimulus": "Bir kutuya doğu yönünde $F_1 = 12$ N ve $F_2 = 8$ N, batı yönünde ise $F_3 = 15$ N kuvvet etki etmektedir.",
-        "questionText": "Bu üç kuvvetin bileşkesini (net kuvveti) ve yönünü bulunuz.",
-        "solutionExplanation": "Doğu toplamı = 12 + 8 = 20 N. Batı = 15 N. Net = 20 - 15 = 5 N Doğu yönünde.",
-        "modelAnswer": "İşlem:\nDoğu yönündeki kuvvetler toplamı = 12 N + 8 N = 20 N (Doğu)\nBatı yönündeki kuvvet = 15 N (Batı)\nNet Kuvvet = 20 N - 15 N = 5 N (Doğu yönünde).",
+        "stimulus": "Kuvvet vektörel bir büyüklüktür ve ok işareti ile gösterilir.",
+        "questionText": "Bir kuvveti tam olarak tanımlayabilmek için gereken 4 temel özelliği yazınız (Örn: Büyüklüğü vb.).",
+        "solutionExplanation": "Uygulama noktası, doğrultusu, yönü, büyüklüğü (şiddeti).",
+        "modelAnswer": "Bir Kuvvetin 4 Temel Özelliği:\n1. Uygulama Noktası (Başlangıç noktası)\n2. Doğrultusu (Örn: Doğu-Batı doğrultusu)\n3. Yönü (Örn: Doğu yönü)\n4. Büyüklüğü / Şiddeti (Newton cinsinden değeri)",
         "rubric": [
           {
-            "criterion": "Doğu toplamı 20 N hesabı",
+            "criterion": "Uygulama noktası ve doğrultu özelliklerinin yazılması",
             "points": 7
           },
           {
-            "criterion": "Çıkarma ile 5 N Doğu bileşkesinin bulunması",
+            "criterion": "Yön ve büyüklük özelliklerinin yazılması",
             "points": 7
           }
         ]
@@ -7035,7 +7047,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Sürat ve hız kavramlarını karşılaştırabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Aynı yolu farklı sürelerde alma.",
         "stimulus": "Aynı 100 metrelik mesafeyi Ali 10 saniyede, Can ise 20 saniyede koşmuştur.",
@@ -7290,17 +7302,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Işığın doğrusal yayılması ilkesi.",
-        "stimulus": "Güneş tutulmasında Ay'ın tam gölgesi altında kalan bölgede gündüz Güneş tamamen kaybolur.",
-        "questionText": "Tam gölge alanında gerçekleşen tutulma ile yarı gölge alanında gerçekleşen tutulmanın adlarını yazınız.",
-        "solutionExplanation": "Tam gölgede Tam Güneş Tutulması, yarı gölgede Parçalı Güneş Tutulması gerçekleşir.",
-        "modelAnswer": "• Tam gölge alanında: 'Tam Güneş Tutulması' (Güneş tamamen kararır, sadece taç küre parlar).\n• Yarı gölge alanında: 'Parçalı Güneş Tutulması' (Güneş'in bir kısmı hilal gibi görünür).",
+        "stimulus": "Güneş ve Ay tutulmaları ışığın temel bir fiziksel özelliği sayesinde gerçekleşir.",
+        "questionText": "Her iki tutulma olayının da gerçekleşmesi, ışığın hangi temel yayılma özelliğini kesin bir şekilde kanıtlar?",
+        "solutionExplanation": "Işığın her yönde ve doğrusal (doğrular boyunca) yayıldığını kanıtlar.",
+        "modelAnswer": "Tutulmalar, ışığın saydam olmayan opak cisimlerin arkasına geçemediğini ve 'ışığın her yöne doğrusal bir hat boyunca (doğrular halinde) yayıldığını' kesin olarak kanıtlar.",
         "rubric": [
           {
-            "criterion": "Tam tutulma tespiti",
+            "criterion": "Işığın doğrusal yayılması ilkesinin yazılması",
             "points": 7
           },
           {
-            "criterion": "Parçalı tutulma tespiti",
+            "criterion": "Opak cismin gölge oluşturması gerekçesi",
             "points": 7
           }
         ]
@@ -7338,17 +7350,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Bileşke kuvvetin sıfır olması durumu.",
-        "stimulus": "Kareli düzlemde her 1 birim kare 5 N kuvveti temsil etmektedir. Sağa doğru 4 birimlik bir kuvvet oku çizilmiştir.",
-        "questionText": "Bu kuvvetin büyüklüğünü ve yönünü hesaplayınız.",
-        "solutionExplanation": "4 birim x 5 N = 20 N, Doğu (sağ) yönünde.",
-        "modelAnswer": "Büyüklük: 4 birim x 5 N = 20 N\nYön: Sağa doğru (Doğu yönünde) 20 N'dur.",
+        "stimulus": "Bir cisme doğu yönünde 30 N kuvvet uygulanırken cismin hareketsiz kalması istenmektedir.",
+        "questionText": "Cismin hareket etmemesi için uygulanması gereken dengeleyici kuvvetin büyüklüğü ve yönü ne olmalıdır?",
+        "solutionExplanation": "Batı yönünde 30 N kuvvet uygulanmalıdır.",
+        "modelAnswer": "Cismin durması (bileşkenin sıfır olması) için zıt yönde, yani 'Batı yönünde tam 30 N' büyüklüğünde bir kuvvet uygulanmalıdır.",
         "rubric": [
           {
-            "criterion": "20 N büyüklük hesabı",
+            "criterion": "Batı yönünün tespiti",
             "points": 7
           },
           {
-            "criterion": "Doğu/sağ yönünün tespiti",
+            "criterion": "30 N eşit büyüklük tespiti",
             "points": 7
           }
         ]
@@ -7383,7 +7395,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Dengelenmiş ve dengelenmemiş kuvvetlerin etkisi altındaki bir cismin hareketine yönelik deney yapabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Daldan düşen elma.",
         "stimulus": "Ağacın dalından kopan bir elma yere doğru düşerken giderek hızlanır.",
@@ -7452,17 +7464,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 11,
         "contextText": "Meteorit ve gök taşı kavramı.",
-        "stimulus": "Güneş sisteminin en dış sınırında yer alan mavi renkli Neptün incelenmektedir.",
-        "questionText": "a) Neptün Güneş'e en uzak gezegen olduğuna göre dolanma süresi (yılı) en uzun mudur en kısa mıdır?\nb) Mavi rengini veren atmosferindeki gaz hangisidir?",
-        "solutionExplanation": "a En uzundur (~165 Dünya yılı). b Metan gazı.",
-        "modelAnswer": "a) Dolanma süresi (yılı) en uzundur (yaklaşık 165 Dünya yılı sürer).\nb) Atmosferindeki metan gazı kırmızı ışığı soğurup mavi ışığı yansıttığı için masmavi görünür.",
+        "stimulus": "Uzaydan Dünya atmosferine giren kaya parçaları sürtünmeyle ışık saçar, bazıları yere kadar ulaşır.",
+        "questionText": "Atmosferde yanarak ışık saçan gök taşı olayına halk arasında ne ad verilir? Yere ulaşabilen taş parçasına ne ad verilir?",
+        "solutionExplanation": "Halk arasında yıldız kayması denir. Yere ulaşana meteorit (gök taşı) denir.",
+        "modelAnswer": "• Işık Saçma Olayı: Halk arasında 'Yıldız Kayması' (meteor yağmuru) olarak adlandırılır.\n• Yere Ulaşan Taş: 'Meteorit' (veya yeryüzüne düşen gök taşı) adını alır.",
         "rubric": [
           {
-            "criterion": "a şıkkında en uzun dolanma süresi tespiti",
+            "criterion": "Yıldız kayması tespiti",
             "points": 6
           },
           {
-            "criterion": "b şıkkında metan gazı tespiti",
+            "criterion": "Meteorit kavramının doğru yazılması",
             "points": 5
           }
         ]
@@ -7500,17 +7512,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 11,
         "contextText": "Tutulma sürelerinin karşılaştırılması.",
-        "stimulus": "Tam Ay tutulması sırasında Ay tamamen kapkaranlık olmak yerine bakır kırmızısı (kanlı ay) bir renk alır.",
-        "questionText": "Dünya'nın gölgesinde kalan Ay'ın bu kızıl rengi almasının optik nedenini Dünya'nın atmosferi açısından açıklayınız.",
-        "solutionExplanation": "Dünya atmosferinden geçen güneş ışınlarının kırılarak kırmızı dalga boylarının Ay'a yansımasıdır (Rayleigh saçılması).",
-        "modelAnswer": "Güneş ışınları Dünya'nın kenarındaki atmosfer tabakasından geçerken mavi ışınlar saçılır; ancak uzun dalga boylu kırmızı ışınlar atmosferde kırılarak bükülür ve Dünya'nın gölgesindeki Ay yüzeyine ulaşır. Bu kırılarak yansıyan kırmızı ışıklar Ay'ı bakır kızılı renkte gösterir.",
+        "stimulus": "Güneş tutulması birkaç dakika sürerken, Ay tutulması saatlerce (1-2 saat) sürebilmektedir.",
+        "questionText": "Güneş tutulmasının Ay tutulmasından çok daha kısa sürmesinin temel geometrik sebebini açıklayınız.",
+        "solutionExplanation": "Ay'ın gölgesi Dünya yüzeyinde çok küçüktür ve Ay hızla geçer; Dünya'nın gölgesi ise devasadır.",
+        "modelAnswer": "Ay'ın Dünya üzerine düşen gölge konisi küçüktür ve Ay'ın yörüngesindeki hızlı hareketi sebebiyle bu gölge Dünya üzerinden birkaç dakika içinde kayıp geçer. Oysa Dünya'nın uzaya vuran gölgesi çok geniş olduğu için Ay bu koca gölge alanından ancak saatler içinde çıkabilir.",
         "rubric": [
           {
-            "criterion": "Dünya atmosferinde güneş ışınlarının kırılması tespiti",
+            "criterion": "Ay'ın gölgesinin küçük ve hızlı geçmesi gerekçesi",
             "points": 6
           },
           {
-            "criterion": "Kırmızı dalga boyunun Ay yüzeyine yansıması gerekçesi",
+            "criterion": "Dünya'nın gölgesinin çok geniş olması sebebiyle uzun sürmesi gerekçesi",
             "points": 5
           }
         ]
@@ -7569,7 +7581,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Dengelenmiş ve dengelenmemiş kuvvetlerin etkisi altındaki bir cismin hareketine yönelik deney yapabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 11,
         "contextText": "Bileşke kuvvetin sıfır olmasının sonuçları.",
         "stimulus": "Doğuya doğru 40 N ve batıya doğru 40 N kuvvet etki eden sürtünmesiz bir masa incelenmektedir.",
@@ -7596,17 +7608,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 11,
         "contextText": "Virajı dönen araba.",
-        "stimulus": "Doğuya doğru 40 N ve batıya doğru 40 N kuvvet etki eden sürtünmesiz bir masa incelenmektedir.",
-        "questionText": "Bu masaya etki eden net kuvvet kaç N'dur? Masa başlangıçta duruyorsa hareketi nasıl olur?",
-        "solutionExplanation": "Net kuvvet 40 - 40 = 0 N'dur. Cisim durmaya devam eder.",
-        "modelAnswer": "• Net Kuvvet: 40 N - 40 N = 0 N'dur (Dengelenmiş kuvvetler).\n• Hareketi: Masa başlangıçta durduğu için hareketsiz kalmaya (durmaya) devam eder.",
+        "stimulus": "Bir otomobil hız göstergesi 60 km/h değerini sabit tutarak dairesel bir virajı dönmektedir.",
+        "questionText": "Sürati 60 km/h sabit kalsa bile yönü değiştiği için bu araç dengelenmiş kuvvetlerin etkisinde midir? Açıklayınız.",
+        "solutionExplanation": "Dengelenmemiş kuvvetlerin etkisindedir, çünkü hareket yönü değişmektedir.",
+        "modelAnswer": "Hayır, 'Dengelenmemiş Kuvvetler'in etkisindedir. Çünkü dengelenmiş kuvvetlerde cismin hem sürati hem de hareket doğrultusu sabit kalmalıdır. Viraj dönen aracın yönü sürekli değiştiği için üzerine etki eden bir net merkezcil kuvvet vardır.",
         "rubric": [
           {
-            "criterion": "Net kuvvetin 0 N olarak hesaplanması",
+            "criterion": "Dengelenmemiş kuvvetler cevabı",
             "points": 6
           },
           {
-            "criterion": "Durmaya devam edeceği sonucunun yazılması",
+            "criterion": "Yönün değişmesi sebebiyle net kuvvet oluştuğu gerekçesi",
             "points": 5
           }
         ]
@@ -7686,17 +7698,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Rol çatışması ve rol uyumu.",
-        "stimulus": "Bebekken sadece ilgiye muhtaç olan bir birey, 6. sınıfa geldiğinde okulda öğrenci, evde kardeşine bakan bir abla veya ağabey olur; yetişkinlikte ise anne-baba ve meslek sahibi bir çalışan olur.",
-        "questionText": "Zaman içinde insanın rollerinin değişmesinin arkasındaki 2 temel nedeni (yaş, eğitim, sosyal çevre) yazınız.",
-        "solutionExplanation": "Yaş aldıkça, eğitim seviyesi arttıkça ve yeni sosyal çevrelere girdikçe yeni roller kazanırız.",
-        "modelAnswer": "1. Yaşın İlerlemesi ve Büyüme: Birey büyüdükçe zihinsel ve fiziksel olgunluğa ulaşır; bebeklikten öğrenciliğe, oradan da meslek sahipliğine geçer.\n2. Sosyal Çevrenin ve Eğitimin Genişlemesi: Yeni gruplara (okul, spor kulübü, iş hayatı) dahil oldukça toplumsal ilişkiler zenginleşir ve yeni roller üstlenilir.",
+        "stimulus": "Aynı zamanda okul basketbol takımının kaptanı ve 6-C sınıfının öğrencisi olan Kerem, maç günü yaklaştığında antrenmanlar ile sınavlara hazırlanma arasında kalmıştır.",
+        "questionText": "Kerem'in yaşadığı bu durumu tanımlayarak, her iki rolünü de aksatmadan başarıyla yönetebilmesi için 1 çözüm önerisi yazınız.",
+        "solutionExplanation": "Rol çatışmasıdır. Planlı ve zamanı iyi yöneten bir program yapmalıdır.",
+        "modelAnswer": "• Tanım: Üstlenilen farklı rollerin gereklerinin ve zamanlarının birbiriyle çakışmasına 'Rol Çatışması' denir.\n• Çözüm: Kerem günlük ve haftalık bir 'zaman yönetimi planı' hazırlamalı; antrenman saatleri ile ders çalışma saatlerini önceden belirleyerek disiplinli bir program uygulamalıdır.",
         "rubric": [
           {
-            "criterion": "Büyüme ve olgunlaşma sebebi",
+            "criterion": "Rol çatışması kavramının tespiti",
             "points": 9
           },
           {
-            "criterion": "Eğitim ve sosyal çevrenin genişlemesi sebebi",
+            "criterion": "Zaman yönetimi ve planlama çözümünün yazılması",
             "points": 8
           }
         ]
@@ -7758,17 +7770,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 16,
         "contextText": "Su israfı ve baraj doluluk oranları.",
-        "stimulus": "Şehirlerde sokaklara atılan plastik şişeler, poşetler ve ambalajlar hem doğayı zehirlemekte hem de görüntü kirliliği oluşturmaktadır.",
-        "questionText": "Okulunuzda çevre kirliliğini önlemek ve geri dönüşümü yaygınlaştırmak için uygulayabileceğiniz 2 somut proje önerisi yazınız.",
-        "solutionExplanation": "Geri dönüşüm kutuları koymak, kompost gübre üretmek, bez torba kullanımı.",
-        "modelAnswer": "1. Her kata kâğıt, cam, plastik ve pil için ayrı renkli 'Sıfır Atık Geri Dönüşüm Kutuları' koyarak öğrencileri bilinçlendirmek.\n2. Kantinde tek kullanımlık plastik bardak yerine öğrencilerin kendi su mataralarını ve bez çantalarını kullanmalarını teşvik eden ödüllü kampanyalar düzenlemek.",
+        "stimulus": "Küresel kuraklık sebebiyle şehirlerimize su sağlayan barajların doluluk oranları kritik seviyelere inmiştir.",
+        "questionText": "Evlerimizde ve okullarda su israfını önlemek için alabileceğimiz 2 pratik tasarruf tedbirini yazınız.",
+        "solutionExplanation": "Diş fırçalarken musluğu kapatmak, tasarruflu perlatör başlıkları takmak, arızalı sifonları tamir etmek.",
+        "modelAnswer": "1. Diş fırçalarken, el sabunlarken musluğu boş yere akıtmayıp kapatmak ve musluk uçlarına suyu hava ile zenginleştiren tasarruflu perlatör başlıkları takmak.\n2. Damlatan muslukları ve sızdıran sifonları vakit kaybetmeden tamir ettirmek; sebze yıkanan suları çiçekleri sulamak için yeniden kullanmak.",
         "rubric": [
           {
-            "criterion": "Geri dönüşüm kutuları projesi",
+            "criterion": "Musluğu kapatma ve tasarruflu başlık tedbiri",
             "points": 8
           },
           {
-            "criterion": "Matara/bez çanta teşvik kampanyası projesi",
+            "criterion": "Kaçak tamiri ve gri suyun çiçeklerde kullanımı tedbiri",
             "points": 8
           }
         ]
@@ -7848,17 +7860,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 13,
         "contextText": "Hak, sorumluluk ve rol ilişkisi.",
-        "stimulus": "Roller: Evlat olmak, doktor olmak, kardeş olmak, sınıf başkanı olmak.",
-        "questionText": "Verilen rolleri sınıflandırınız:\n• Doğuştan Kazanılan Roller (2): .................................\n• Sonradan Emekle Kazanılan Roller (2): .................................",
-        "solutionExplanation": "Doğuştan: evlat, kardeş. Sonradan: doktor, sınıf başkanı.",
-        "modelAnswer": "• Doğuştan Kazanılan Roller: Evlat olmak, Kardeş olmak (kişinin kendi seçimine bağlı olmayan roller).\n• Sonradan Kazanılan Roller: Doktor olmak, Sınıf başkanı olmak (kişinin çabası, eğitimi ve tercihiyle elde ettiği roller).",
+        "stimulus": "Kütüphanecilik kulübü başkanı olan bir öğrenci 'Kulüp odasının anahtarı bende ama kitapları düzenlemek benim görevim değildir' demektedir.",
+        "questionText": "Bu öğrencinin yaklaşımındaki sorumluluk hatasını açıklayınız. Başkanlık yetkisini kullanan birinin hangi sorumluluğu üstlenmesi gerekir?",
+        "solutionExplanation": "Yetki ve hak sorumlulukla birlikte yürür. Başkanlık anahtar taşımak değil, kütüphanenin düzenini sağlamaktır.",
+        "modelAnswer": "Yetki ve haklar sorumluluktan ayrı düşünülemez. Başkanlık rolü sadece ayrıcalık ve anahtar taşımak demek değildir; o kulübün düzenini, kitapların kaydını ve kütüphanenin temizliğini sağlama 'sorumluluğunu' da zorunlu kılar. Sorumluluktan kaçmak rolün kötüye kullanılmasıdır.",
         "rubric": [
           {
-            "criterion": "Doğuştan kazanılan iki rolün doğru tespiti",
+            "criterion": "Yetki ile sorumluluk arasındaki bağın açıklanması",
             "points": 7
           },
           {
-            "criterion": "Sonradan kazanılan iki rolün doğru tespiti",
+            "criterion": "Kütüphane düzenini sağlama sorumluluğu gerekçesi",
             "points": 6
           }
         ]
@@ -7896,17 +7908,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 13,
         "contextText": "Dini ve milli bayramların birleştirici gücü.",
-        "stimulus": "Malazgirt Zaferi'nden İstanbul'un Fethi'ne, Çanakkale Destanı'ndan Kurtuluş Savaşı'na kadar ortak bir tarihi paylaşmaktayız.",
-        "questionText": "Tarihimizi öğrenmenin milletçe geleceğe güvenle yürümemiz ve ortak kimliğimizi korumamız açısından önemini açıklayınız.",
-        "solutionExplanation": "Kökü olmayan ağaç devrilir; tarihini bilmeyen milletler kimliğini kaybeder ve yönünü şaşırır.",
-        "modelAnswer": "Tarih bir milletin hafızasıdır; geçmişini bilmeyen milletler köksüz bir ağaç gibi ilk rüzgârda devrilir. Ecdadımızın kahramanlıklarını, fedakârlıklarını ve medeniyet mirasını öğrenmek bize özgüven verir, millî kimliğimizi korur ve geleceğimizi sağlam temeller üzerine inşa etmemizi sağlar.",
+        "stimulus": "Kurban Bayramı'nda paylaşılan etler, Cumhuriyet Bayramı'nda caddeleri donatan kırmızı-beyaz bayraklar tüm fertleri aynı duyguda buluşturur.",
+        "questionText": "Bayramların toplumdaki kırgınlıkları bitirme ve 'biz bilincini' güçlendirme fonksiyonunu 2 maddeyle açıklayınız.",
+        "solutionExplanation": "Ayrılıkları unutturur, dayanışma ve sevinci paylaşmayı sağlar.",
+        "modelAnswer": "1. Bütün şahsi dargınlık ve kırgınlıkları bir kenara bırakıp el ele vermeyi sağlayarak toplumsal barışı ve sevgiyi tazeler.\n2. Sevinçte ve tasada bir olan tek bir millet olduğumuzu hatırlatarak 'ben' bencil duygusu yerine 'biz' ortak aidiyet bilincini yüceltir.",
         "rubric": [
           {
-            "criterion": "Milletin hafızası olma analojisinin yazılması",
+            "criterion": "Dargınlıkları bitirme ve barışı tazeleme maddesi",
             "points": 7
           },
           {
-            "criterion": "Özgüven kazanma ve geleceği inşa etme gerekçesi",
+            "criterion": "Biz bilinci ve tek millet aidiyeti maddesi",
             "points": 6
           }
         ]
@@ -7965,7 +7977,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Toplumsal hayatta karşılaşılan sorunlara yönelik çözüm önerilerini müzakere edebilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "Gıda israfı ve ekmek nimeti.",
         "stimulus": "Ülkemizde her gün milyonlarca ekmek ve tonlarca taze meyve-sebze çöpe atılarak israf edilmektedir.",
@@ -8058,17 +8070,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Kazanılmış rollerin topluma hizmet boyutu.",
-        "stimulus": "Bir ortaokul öğrencisi ileride hangi mesleği seçeceğine karar verirken kendi ilgi, yetenek ve değerlerini keşfetmeye çalışmaktadır.",
-        "questionText": "Gelecekteki mesleki rolümüzü seçerken dikkat etmemiz gereken en önemli 2 kişisel kriteri yazınız.",
-        "solutionExplanation": "Kişisel ilgi ve yetenekler, mesleğin gerektirdiği kişilik özellikleri.",
-        "modelAnswer": "1. Kendi yeteneklerimizi ve ilgi alanlarımızı doğru tanımak (Örneğin el becerisi, fen sevgisi veya iletişim gücü).\n2. Mesleğin çalışma şartlarının kendi kişilik yapımıza ve beklentilerimize uygun olup olmadığını değerlendirmek.",
+        "stimulus": "Öğretmenlik, hekimlik, zabıtalık veya itfaiyecilik gibi meslek rolleri doğrudan toplumun huzuruna ve can güvenliğine hizmet eder.",
+        "questionText": "Mesleki rollerin toplum düzeninin korunmasındaki ve kamu hizmetlerinin aksamadan yürümesindeki önemini 1 cümleyle açıklayınız.",
+        "solutionExplanation": "Herkes mesleki rolünü hakkıyla yaparsa toplumsal düzen ve huzur sağlanır.",
+        "modelAnswer": "Her meslek sahibi kendi rolünün gerektirdiği etik kurallara ve dürüstlüğe bağlı kalarak işini en iyi şekilde yaptığında, toplumda güven ortamı tesis edilir ve ortak yaşam aksamadan mükemmel bir düzen içinde yürür.",
         "rubric": [
           {
-            "criterion": "İlgi ve yetenek kriterinin yazılması",
+            "criterion": "Mesleki etik ve dürüstlük vurgusu",
             "points": 9
           },
           {
-            "criterion": "Kişilik yapısı ve çalışma şartları uyumu kriteri",
+            "criterion": "Toplumsal güven ve düzenin sağlanması gerekçesi",
             "points": 8
           }
         ]
@@ -8244,17 +8256,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Şehitlik ve gazilik makamlarına saygı.",
-        "stimulus": "Dükkân tabelalarında yabancı kelimelerin yaygınlaşması ana dilimiz Türkçenin zenginliğini tehdit etmektedir.",
-        "questionText": "Karamanoğlu Mehmet Bey'in 'Bugünden sonra divanda, dergahta, mecliste Türkçe'den başka dil kullanılmaya' fermanından hareketle dilimizi korumanın bağımsızlığımız açısından önemini açıklayınız.",
-        "solutionExplanation": "Dil bir milletin kalesidir, dilini kaybeden millet bağımsızlığını da kaybeder.",
-        "modelAnswer": "Dil bir milletin bağımsızlığının ve kültürünün en muhkem kalesidir. Dilini yabancı kelimelerin istilasına terk eden milletler zamanla düşünce dünyasını ve bağımsız kimliğini kaybeder. Türkçemizi korumak vatan topraklarını korumak kadar hayati bir millî görevdir.",
+        "stimulus": "Vatan savunmasında canını feda eden kahramanlarımıza 'Şehit', yaralanıp hayatta kalanlara 'Gazi' unvanı verilir.",
+        "questionText": "Türk milletinde şehit ve gazilere duyulan hürmetin ve onların emanetlerine sahip çıkmanın vefa borcumuz olduğunu 2 cümleyle açıklayınız.",
+        "solutionExplanation": "Hürriyetimizi onların fedakarlıklarına borçluyuz, emanetlerine sahip çıkmak en kutsal görevimizdir.",
+        "modelAnswer": "Bugün bu topraklarda hür ve başımız dik yaşayabilmemizi, vatanı için seve seve canını veren aziz şehitlerimize ve kahraman gazilerimize borçluyuz. Onların hatırasını yaşatmak, geride bıraktıkları ailelerine sahip çıkmak ve vatanı canımız pahasına korumak boynumuzun borcudur.",
         "rubric": [
           {
-            "criterion": "Dilin bağımsızlık ve kültür kalesi niteliği",
+            "criterion": "Hürriyetin şehit ve gazilere borçlu olunduğu tespiti",
             "points": 9
           },
           {
-            "criterion": "Ana dili korumanın vatanı korumakla eşdeğer olduğu gerekçesi",
+            "criterion": "Ailelerine sahip çıkma ve vefa borcu gerekçesi",
             "points": 8
           }
         ]
@@ -8292,17 +8304,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 16,
         "contextText": "Enerji tasarrufu ve elektrik israfı.",
-        "stimulus": "Kışın dondurucu ayazında ve yazın kavurucu sıcağında sokak hayvanları yiyecek ve su bulmakta zorlanmaktadır.",
-        "questionText": "Mahallemizdeki sokak hayvanlarının yaşam hakkını korumak için kapımızın önüne koyabileceğimiz 2 pratik çözümü yazınız.",
-        "solutionExplanation": "Bir kap temiz su ve mama koymak, kışın korunaklı kedi evleri yapmak.",
-        "modelAnswer": "1. Yazın sıcağında gölge bir köşeye 'Bir Kap Temiz Su' ve bozulmayacak kuru mama bırakmak.\n2. Kış aylarında yağmur ve rüzgar almayan kuytu yerlere strafor veya kartondan korunaklı kedi/köpek yuvaları hazırlamak.",
+        "stimulus": "Gereksiz yere yanan lambalar, fişte takılı bırakılan şarj aletleri hem aile bütçesine hem de ülke ekonomisine büyük yük getirmektedir.",
+        "questionText": "Okullarda ve evlerde elektrik enerjisini verimli kullanmak için uygulanabilecek 2 tasarruf kuralını yazınız.",
+        "solutionExplanation": "Kullanılmayan lambaları söndürmek, enerji tasarruflu LED ampuller kullanmak, prizlerde şarj aleti bırakmamak.",
+        "modelAnswer": "1. Gün ışığından azami ölçüde yararlanmak; aydınlık odalarda ve boş sınıflarda lambaları derhal kapatmak.\n2. Akkor flamanlı eski lambalar yerine az elektrik tüketen A+++ enerji sınıflı LED ampuller kullanmak ve kullanılmayan cihazları fişten çekmek.",
         "rubric": [
           {
-            "criterion": "Temiz su ve mama koyma çözümü",
+            "criterion": "Boş yanan lambaları kapatma kuralı",
             "points": 8
           },
           {
-            "criterion": "Kışlık korunaklı barınak hazırlama çözümü",
+            "criterion": "LED ampul ve fişten çekme tedbiri",
             "points": 8
           }
         ]
@@ -8382,17 +8394,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 15,
         "contextText": "Demokratik okul ortamında öğrenci rolleri.",
-        "stimulus": "Dedeler ve nineler torunlarına masallar anlatır, gelenekleri ve ahlaki öğütleri aktarır.",
-        "questionText": "Ailedeki büyükanne ve büyükbaba rolünün kültürel değerlerin yeni nesillere aktarılmasındaki rolünü açıklayınız.",
-        "solutionExplanation": "Yaşayan kültür taşıyıcılarıdır, geçmiş ile gelecek arasında köprü kurarlar.",
-        "modelAnswer": "Büyükanne ve büyükbabalar yaşayan birer kültür hazinesidir. Anlattıkları yaşanmış hikayeler, masallar ve verdikleri nasihatlerle aile terbiyesini, millî ve manevi gelenekleri çocuklara sevdirerek kültürün kuşaktan kuşağa kesintisiz aktarılmasını sağlarlar.",
+        "stimulus": "Okullarda kulüp temsilcileri, okul öğrenci meclisleri ve sınıf başkanlıkları seçimle belirlenir.",
+        "questionText": "Okulda seçimle bir göreve talip olmanın ve oy kullanmanın öğrencilere kazandırdığı yurttaşlık bilincini açıklayınız.",
+        "solutionExplanation": "Demokrasiyi, seçme ve seçilme hakkını, oyuna sahip çıkmayı ve sorumluluk almayı öğretir.",
+        "modelAnswer": "Öğrencilere seçme ve seçilme hakkını küçük yaşta deneyimleterek demokratik olgunluk kazandırır. Oy vermenin bir yurttaşlık sorumluluğu olduğunu, seçilen temsilcileri denetlemeyi ve ortak kararlara saygı duymayı öğretir.",
         "rubric": [
           {
-            "criterion": "Kültür hazinesi ve köprü olma tespiti",
+            "criterion": "Seçme ve seçilme hakkı deneyimi tespiti",
             "points": 8
           },
           {
-            "criterion": "Geleneklerin ve terbiyenin aktarılması gerekçesi",
+            "criterion": "Yurttaşlık sorumluluğu ve ortak karara saygı gerekçesi",
             "points": 7
           }
         ]
@@ -8430,17 +8442,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Tarihî mimari eserlerin millî hafıza olması.",
-        "stimulus": "Dede Korkut hikâyeleri Türk töresini, aileye saygıyı, haksızlığa karşı durmayı ve sözünde durma erdemini asırlardır nesilden nesile aktarmaktadır.",
-        "questionText": "Dede Korkut anlatılarının milletimizin ortak ahlaki kodlarını oluşturmasındaki rolünü bir örnekle açıklayınız.",
-        "solutionExplanation": "Doğruluk, büyüklere saygı, obayı ve zayıfları koruma ahlakını canlı tutar.",
-        "modelAnswer": "Dede Korkut anlatıları, yiğitliğin sadece bilek gücüyle değil; mazluma kalkan olmakla, sözünü tutmakla ve anaya-babaya hürmetle tamamlanacağını öğretir. Hikâyelerdeki adalet, doğruluk ve birlik ideali milletimizin bin yıllık ortak ahlak pusulası olmuştur.",
+        "stimulus": "Mimar Sinan'ın Edirne'deki Selimiye Camii, Erzurum'daki Çifte Minareli Medrese ve Sivas Divriği Ulu Camii hayranlık uyandırmaya devam etmektedir.",
+        "questionText": "Tarihî mimari eserlerimizin korunmasının bir ülkenin tapu senetleri olması yönünü açıklayınız.",
+        "solutionExplanation": "Bu eserler o coğrafyanın ebedi Türk-İslam yurdu olduğunun fiziki tapu senetleridir.",
+        "modelAnswer": "Bu görkemli eserler, bu toprakların asırlardır kimin vatanı olduğunu kanıtlayan taştan yazılmış tapu senetleridir. Bir caminin kubbesi, bir köprünün kemeri o coğrafyaya millî kimlik vurur; onları korumak vatanımızın tapusuna sahip çıkmaktır.",
         "rubric": [
           {
-            "criterion": "Mazluma kalkan olma ve ahlaki değerler tespiti",
+            "criterion": "Eserlerin taştan yazılmış tapu senedi olması metaforu",
             "points": 7
           },
           {
-            "criterion": "Ortak ahlak pusulası rolünün açıklanması",
+            "criterion": "Millî kimlik ve vatana sahip çıkma gerekçesi",
             "points": 7
           }
         ]
@@ -8499,7 +8511,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Toplumsal hayatta karşılaşılan sorunlara yönelik çözüm önerilerini müzakere edebilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Tüketici hakları ve ayıplı mal.",
         "stimulus": "Mağazadan aldığı spor ayakkabısı iki gün sonra tabanından açılan bir tüketiciye mağaza görevlisi 'Kullanılmış ürünü iade almayız' demiştir.",
@@ -8568,17 +8580,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 15,
         "contextText": "Vahyin karanlıktan aydınlığa çıkarma misyonu.",
-        "stimulus": "Ayet Meali: 'İnsanlar tek bir ümmetti. Allah, müjdeciler ve uyarıcılar olarak peygamberler gönderdi ve anlaşmazlığa düştükleri konularda insanlar arasında hak ile hükmetsin diye onlarla birlikte hak kitabı indirdi.' (Bakara suresi, 213. ayet)",
-        "questionText": "Verilen ayetten hareketle, Allah'ın insanlara peygamberler ve vahiy göndermesinin iki temel amacını yazınız.",
-        "solutionExplanation": "İnsanları müjdelemek/uyarmak ve aralarındaki anlaşmazlıkları adaletle çözmek.",
-        "modelAnswer": "1. İnsanları doğru davranışlara yönlendirip müjdelemek, yanlış inanç ve kötülüklere karşı uyarmak.\n2. İnsanların kendi başlarına çözemeyecekleri inanç ve adalet konularındaki anlaşmazlıkları vahyin rehberliğinde hak ve adaletle çözmek.",
+        "stimulus": "Ayet Meali: 'Elif. Lâm. Râ. Bu, insanları Rablerinin izniyle karanlıklardan aydınlığa, mutlak güç sahibi ve övgüye lâyık olan Allah'ın yoluna çıkarasın diye sana indirdiğimiz bir kitaptır.' (İbrahim suresi, 1. ayet)",
+        "questionText": "Ayet-i kerimede geçen 'karanlıklar' ve 'aydınlık' benzetmelerinin neleri temsil ettiğini açıklayınız.",
+        "solutionExplanation": "Karanlık: Cehalet, şirk, zulüm ve ahlaksızlık; Aydınlık: Tevhid, ilim, adalet ve güzel ahlak.",
+        "modelAnswer": "• Karanlıklar: İnsanı mutsuzluğa sürükleyen bilgisizlik (cehalet), haksızlık, adaletsizlik, putperestlik ve ahlaki çöküntüyü temsil eder.\n• Aydınlık: Vahyin getirdiği Allah'ın birliği inancı (Tevhid), adalet, merhamet, ilim ve insan onurunu koruyan ahlakı temsil eder.",
         "rubric": [
           {
-            "criterion": "Müjdeleme ve uyarma amacının açıklanması",
+            "criterion": "Karanlıklar ifadesinin cehalet/haksızlık anlamıyla açıklanması",
             "points": 8
           },
           {
-            "criterion": "Anlaşmazlıkları adaletle giderme amacının açıklanması",
+            "criterion": "Aydınlık ifadesinin Tevhid/adalet anlamıyla açıklanması",
             "points": 7
           }
         ]
@@ -8592,17 +8604,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Vahyin ahiret ve ibadetler konusundaki bilgiyi tamamlama rolü.",
-        "stimulus": "Ayet Meali: 'İnsanlar tek bir ümmetti. Allah, müjdeciler ve uyarıcılar olarak peygamberler gönderdi ve anlaşmazlığa düştükleri konularda insanlar arasında hak ile hükmetsin diye onlarla birlikte hak kitabı indirdi.' (Bakara suresi, 213. ayet)",
-        "questionText": "Verilen ayetten hareketle, Allah'ın insanlara peygamberler ve vahiy göndermesinin iki temel amacını yazınız.",
-        "solutionExplanation": "İnsanları müjdelemek/uyarmak ve aralarındaki anlaşmazlıkları adaletle çözmek.",
-        "modelAnswer": "1. İnsanları doğru davranışlara yönlendirip müjdelemek, yanlış inanç ve kötülüklere karşı uyarmak.\n2. İnsanların kendi başlarına çözemeyecekleri inanç ve adalet konularındaki anlaşmazlıkları vahyin rehberliğinde hak ve adaletle çözmek.",
+        "stimulus": "İnsan aklı çevresindeki düzeni inceleyerek bir Yaratıcının var olduğunu anlayabilir.",
+        "questionText": "İnsan aklı bir Yaratıcıyı kavrayabildiği halde, ibadetlerin nasıl yapılacağı ve ölümden sonraki hayat (ahiret) hakkında neden mutlaka vahye ihtiyaç duyar?",
+        "solutionExplanation": "Çünkü gayb âlemi ve ibadet şekilleri akılla bilinemez, ancak vahiy yoluyla öğrenilir.",
+        "modelAnswer": "İbadetlerin hangi vakitlerde, kaç rekat veya ne şekilde yapılacağı ve ahiret hayatındaki cennet, cehennem, hesap gibi duyu organlarıyla algılanamayan gaybî hakikatler insanın akıl yürütmesiyle bilinemez. Allah bu detayları insanlara sadece vahiy ve peygamberler aracılığıyla bildirmiştir.",
         "rubric": [
           {
-            "criterion": "Müjdeleme ve uyarma amacının açıklanması",
+            "criterion": "İbadet şekillerinin akılla belirlenemeyeceği tespiti",
             "points": 7
           },
           {
-            "criterion": "Anlaşmazlıkları adaletle giderme amacının açıklanması",
+            "criterion": "Ahiret gibi gayb alanlarının yalnızca vahiyle bilinebileceğinin açıklanması",
             "points": 7
           }
         ]
@@ -8636,14 +8648,18 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Kur'an-ı Kerim'in korunmuşluk özelliği.",
-        "stimulus": "İlahi kitaplar, peygamberler aracılığıyla insanlara ulaştırılan kutsal metinlerdir.",
-        "questionText": "Dört büyük ilahi kitabı ve bu kitapların gönderildiği peygamberleri eksiksiz eşleştirerek yazınız.",
-        "solutionExplanation": "Tevrat - Hz. Musa, Zebur - Hz. Davud, İncil - Hz. İsa, Kur'an-ı Kerim - Hz. Muhammed.",
-        "modelAnswer": "1. Tevrat: Hz. Musa (a.s.)\n2. Zebur: Hz. Davud (a.s.)\n3. İncil: Hz. İsa (a.s.)\n4. Kur'an-ı Kerim: Hz. Muhammed (s.a.v.)",
+        "stimulus": "Ayet Meali: 'Şüphesiz o zikri (Kur'an'ı) biz indirdik; onu koruyacak olan da elbette biziz.' (Hicr suresi, 9. ayet)",
+        "questionText": "Verilen ayete göre, Kur'an-ı Kerim'in diğer ilahi kitaplardan ayrılan en temel muhafaza özelliğini ve bunun nasıl sağlandığını açıklayınız.",
+        "solutionExplanation": "Kur'an Allah'ın koruması altındadır, tek harfi dahi değişmeden günümüze ulaşmıştır.",
+        "modelAnswer": "Kur'an-ı Kerim ilahi koruma altındadır ve vahyedildiği günden bugüne tek bir harfi dahi tahrif edilmeden (değiştirilmeden) aslı gibi korunmuş son ilahi kitaptır. Bu korunma hem vahiy katiplerinin anında yazması hem de yüz binlerce hafız tarafından ezberlenerek nesilden nesile aktarılmasıyla sağlanmıştır.",
         "rubric": [
           {
-            "criterion": "Dört ilahi kitabın ve peygamberlerinin hatasız eşleştirilmesi",
-            "points": 14
+            "criterion": "Tahrif olmadan korunma özelliğinin belirtilmesi",
+            "points": 7
+          },
+          {
+            "criterion": "Yazı ve hafızlık geleneğiyle korunma boyutunun açıklanması",
+            "points": 7
           }
         ]
       },
@@ -8677,7 +8693,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Ramazan ayının oruç ve Kur’an ayı olduğunu çözümleyebilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Ramazan ayı ve Kur'an'ın indirilişi.",
         "stimulus": "Ayet Meali: 'Ramazan ayı, insanlara yol gösterici, doğrunun ve doğruyu eğriden ayırmanın açık delilleri olarak Kur'an'ın indirildiği aydır...' (Bakara suresi, 185. ayet)",
@@ -8746,17 +8762,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Peygamberlerin tebliğ ve tebyin görevi.",
-        "stimulus": "İnsan 'Ben kimim? Nereden geldim? Niçin yaratıldım ve nereye gideceğim?' gibi varoluşsal soruları sürekli zihninde taşır.",
-        "questionText": "Vahyin insanın bu temel varoluş sorularına verdiği cevabı ve hayatına kattığı anlamı açıklayınız.",
-        "solutionExplanation": "Vahiy insanın yaratılış amacının Allah'a kulluk ve yeryüzünde adaletle yaşamak olduğunu bildirir.",
-        "modelAnswer": "Vahiy, insanın başıboş ve anlamsız yaratılmadığını; Yüce Allah'ın kulu olarak O'nu tanımak, emir ve yasaklarına uyarak yeryüzünü imar ve ıslah etmek üzere imtihan dünyasında bulunduğunu öğretir. Böylece insana hayatın gayesini bildirip ölümün bir yok oluş değil ebedî ahiret hayatının başlangıcı olduğunu gösterir.",
+        "stimulus": "Ayet Meali: 'İnsanlara, kendilerine indirileni açıklayasın ve onlar da düşünüp öğüt alsınlar diye sana da bu Kur'an'ı indirdik.' (Nahl suresi, 44. ayet)",
+        "questionText": "Ayetten hareketle, peygamberlerin vahyi sadece insanlara ulaştırmakla (tebliğ) kalmayıp aynı zamanda 'açıklama ve uygulama' (tebyin) görevlerinin olmasının önemini yazınız.",
+        "solutionExplanation": "Peygamberler vahyi bizzat yaşayarak somut örnek olmuşlar ve kapalı hükümleri açıklamışlardır.",
+        "modelAnswer": "Vahiy genel emirler verir; peygamberler ise bu emirlerin günlük hayatta nasıl uygulanacağını bizzat yaşayarak göstermişlerdir (Örneğin namazın nasıl kılınacağı, orucun nasıl tutulacağı). Eğer peygamberlerin açıklayıcı ve örnek rolü olmasaydı insanlar vahyi kendi anlayışlarına göre farklı uygulayabilir ve birlik bozulurdu.",
         "rubric": [
           {
-            "criterion": "İnsanın kulluk ve imtihan gayesinin belirtilmesi",
+            "criterion": "Peygamberlerin somut model ve örnek olma rolü",
             "points": 9
           },
           {
-            "criterion": "Ölüm ve ahiret inancıyla hayata katılan anlamın açıklanması",
+            "criterion": "Dini hükümleri açıklama ve ortak anlayış sağlama gerekçesi",
             "points": 8
           }
         ]
@@ -8770,17 +8786,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Vahyin temel ahlaki ilkeleri yerleştirmesi.",
-        "stimulus": "İnsan 'Ben kimim? Nereden geldim? Niçin yaratıldım ve nereye gideceğim?' gibi varoluşsal soruları sürekli zihninde taşır.",
-        "questionText": "Vahyin insanın bu temel varoluş sorularına verdiği cevabı ve hayatına kattığı anlamı açıklayınız.",
-        "solutionExplanation": "Vahiy insanın yaratılış amacının Allah'a kulluk ve yeryüzünde adaletle yaşamak olduğunu bildirir.",
-        "modelAnswer": "Vahiy, insanın başıboş ve anlamsız yaratılmadığını; Yüce Allah'ın kulu olarak O'nu tanımak, emir ve yasaklarına uyarak yeryüzünü imar ve ıslah etmek üzere imtihan dünyasında bulunduğunu öğretir. Böylece insana hayatın gayesini bildirip ölümün bir yok oluş değil ebedî ahiret hayatının başlangıcı olduğunu gösterir.",
+        "stimulus": "Hz. Peygamber (s.a.v.) bir hadisinde: 'Ben ancak güzel ahlakı tamamlamak için gönderildim.' buyurmuştur.",
+        "questionText": "Vahyin ve peygamberlerin bireysel ve toplumsal ahlakı inşa etmede getirdiği 2 temel evrensel ahlak ilkesini yazınız.",
+        "solutionExplanation": "Doğruluk/dürüstlük, adalet, emanete riayet, yetim ve yoksulu koruma.",
+        "modelAnswer": "1. Doğruluk ve Emanete Riayet: İnsanın sözünde ve işinde doğru olması, emanetlere hıyanet etmemesi.\n2. Adalet ve Merhamet: Güçlünün zayıfı ezmesini engellemek, anne-babaya, yetimlere, yoksullara ve tüm canlılara merhametle muamele etmek.",
         "rubric": [
           {
-            "criterion": "İnsanın kulluk ve imtihan gayesinin belirtilmesi",
+            "criterion": "Birinci ahlaki ilke ve toplumsal boyutunun açıklanması",
             "points": 9
           },
           {
-            "criterion": "Ölüm ve ahiret inancıyla hayata katılan anlamın açıklanması",
+            "criterion": "İkinci ahlaki ilke ve toplumsal boyutunun açıklanması",
             "points": 8
           }
         ]
@@ -8818,17 +8834,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 16,
         "contextText": "Suhuflar (Sayfalar) kavramı ve verildiği peygamberler.",
-        "stimulus": "Tarih boyunca farklı toplumlara farklı dillerde ilahi kitaplar gönderilmiştir.",
-        "questionText": "Tüm ilahi kitapların inanç esasları açısından vurguladığı en temel ortak mesaj nedir? Açıklayınız.",
-        "solutionExplanation": "Tevhid inancı: Allah'ın varlığı, birliği, eşi ve benzeri olmadığı inancı.",
-        "modelAnswer": "Tüm ilahi kitapların özündeki değişmeyen ortak mesaj 'Tevhid İnancı'dır; yani evrenin tek bir Yaratıcısı olduğu, Allah'a hiçbir şeyin ortak koşulmaması gerektiği ve yalnız O'na ibadet edilip O'ndan yardım dilenmesidir. Yanı sıra ahiret günü ve hesap verme inancı da hepsinde ortaktır.",
+        "stimulus": "Dört büyük ilahi kitap dışında bazı peygamberlere küçük risaleler şeklinde 'sayfalar' (suhuf) indirilmiştir.",
+        "questionText": "Kendilerine suhuf verilen 4 peygamberi ve onlara kaçar sayfa verildiğini yazınız.",
+        "solutionExplanation": "Hz. Adem 10, Hz. Şit 50, Hz. İdris 30, Hz. İbrahim 10 sayfa.",
+        "modelAnswer": "1. Hz. Âdem (a.s.): 10 sayfa\n2. Hz. Şît (a.s.): 50 sayfa\n3. Hz. İdris (a.s.): 30 sayfa\n4. Hz. İbrahim (a.s.): 10 sayfa (Toplam 100 sayfa)",
         "rubric": [
           {
-            "criterion": "Tevhid inancı (Allah'ın birliği) kavramının vurgulanması",
+            "criterion": "Dört peygamberin isimlerinin eksiksiz yazılması",
             "points": 8
           },
           {
-            "criterion": "Ahiret veya adalet ortak paydasının açıklanması",
+            "criterion": "Sayfa sayılarının doğru belirtilmesi",
             "points": 8
           }
         ]
@@ -8908,17 +8924,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 20,
         "contextText": "Cahiliye dönemine vahyin getirdiği adalet ve insan hakları.",
-        "stimulus": "Ayet Meali: 'Andolsun biz onlara, inanan bir toplum için bir hidayet ve bir rahmet olarak, bilgiye dayalı şekilde açıkladığımız bir kitap getirdik.' (A'râf suresi, 52. ayet)",
-        "questionText": "Verilen ayette geçen 'hidayet' ve 'rahmet' kavramlarının anlamını vahyin insan hayatına etkisi üzerinden açıklayınız.",
-        "solutionExplanation": "Hidayet doğru yolu bulmak, rahmet ise Allah'ın şefkat, mağfiret ve esirgeyiciliğidir.",
-        "modelAnswer": "• Hidayet: Vahiy insanı batıldan, sapıklıktan ve yanlıştan koruyup hak ve adalet olan doğru yola (Sırat-ı Müstakim) ulaştırır.\n• Rahmet: Allah'ın kullarına olan sonsuz şefkati ve sevgisi gereği vahiy indirerek onları dünya ve ahiret sıkıntılarından koruyup ebedî mutluluğa kavuşturmasıdır.",
+        "stimulus": "İslam öncesi Arap yarımadasında güçlüler haklı sayılır, köleler ezilir ve kız çocukları bir utanç kaynağı görülerek diri diri toprağa gömülürdü.",
+        "questionText": "Vahyin bu adaletsiz toplum yapısını dönüştürürken getirdiği 2 temel devrim niteliğindeki hükmü açıklayınız.",
+        "solutionExplanation": "Kız çocuklarının yaşam hakkı ve insan onuru; soy üstünlüğü yerine takva ve hukuk önünde eşitlik.",
+        "modelAnswer": "1. Yaşama Hakkı ve Kadın Onuru: Kız çocuklarının öldürülmesini kesin şekilde yasaklamış; kadınlara ve kız çocuklarına ailede ve toplumda onurlu bir miras ve mülkiyet hakkı tanımıştır.\n2. İnsanların Eşitliği: Kabilecilik ve soy üstünlüğünü kaldırarak üstünlüğün ancak Allah'a saygı ve ahlakta (takva) olduğunu ilan etmiş, kölelere eşit haklar tanımıştır.",
         "rubric": [
           {
-            "criterion": "Hidayet kavramının doğru yol rehberliği olarak açıklanması",
+            "criterion": "Kız çocukları ve yaşama hakkı ilkesi",
             "points": 10
           },
           {
-            "criterion": "Rahmet kavramının ilahi lütuf ve esirgeme boyutuyla açıklanması",
+            "criterion": "Kabilecilik yerine eşitlik ve takva ilkesi",
             "points": 10
           }
         ]
@@ -8956,17 +8972,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 20,
         "contextText": "Kur'an-ı Kerim'in Mushaf haline getirilmesi ve çoğaltılması.",
-        "stimulus": "Kur'an-ı Kerim diğer bazı kitaplar gibi tek seferde değil, yaklaşık 23 yıllık bir zaman diliminde ayet ayet indirilmiştir.",
-        "questionText": "Kur'an-ı Kerim'in 23 yılda parça parça indirilmesinin (tedricîliğin) sağladığı 2 pedagojik ve toplumsal faydayı yazınız.",
-        "solutionExplanation": "Kolayca ezberlenmesi, anlaşılması, hükümleri hazmedilerek uygulanması ve ortaya çıkan olaylara çözüm üretmesi.",
-        "modelAnswer": "1. Kolayca Ezberlenme ve Anlaşılma: İnsanların ayetleri yavaş yavaş okuyup zihinlerine ve kalplerine sindirmesini, kolayca ezberlemesini sağlamıştır.\n2. Yaşantıya Geçirme Kolaylığı: Eski kökleşmiş kötü alışkanlıkların birdenbire değil, aşama aşama terk edilmesini ve yeni ahlaki hükümlerin hayatla bütünleşmesini sağlamıştır.",
+        "stimulus": "Hz. Peygamber'in vefatından sonra Yemâme Savaşı'nda birçok hafız sahabi şehit olmuştur.",
+        "questionText": "a) Kur'an-ı Kerim hangi halife döneminde bir araya getirilerek kitap (Mushaf) haline getirilmiştir?\nb) Hangi halife döneminde çoğaltılarak önemli İslam merkezlerine gönderilmiştir?",
+        "solutionExplanation": "a) Hz. Ebubekir, b) Hz. Osman.",
+        "modelAnswer": "a) Kitap (Mushaf) haline getiren Halife: Hz. Ebubekir (Zeyd b. Sabit başkanlığındaki heyet tarafından).\nb) Çoğaltarak merkezlere gönderen Halife: Hz. Osman (Kıraat farklılıklarını önlemek amacıyla).",
         "rubric": [
           {
-            "criterion": "Ezberleme ve anlama kolaylığı faydası",
+            "criterion": "Hz. Ebubekir döneminin doğru yazılması",
             "points": 10
           },
           {
-            "criterion": "Aşama aşama uygulama ve hayata geçirme faydası",
+            "criterion": "Hz. Osman döneminin doğru yazılması",
             "points": 10
           }
         ]
@@ -9046,17 +9062,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Evrensel ahlaki ilkeler: En'âm suresi 151-152. ayetler.",
-        "stimulus": "Kur'an-ı Kerim insanlara namaz kılmayı, zekat vermeyi ve adil davranmayı emreder.",
-        "questionText": "İnsan sadece 'Ben iyi bir insanım' diyerek neden ibadetlerden muaf olamaz? Vahyin ibadetler aracılığıyla kişiye kazandırdığı ruhsal olgunluğu açıklayınız.",
-        "solutionExplanation": "İbadetler inancı canlı tutar, sorumluluk bilincini pekiştirir ve insanı kötülükten alıkoyar.",
-        "modelAnswer": "İnanç sadece kalpte kalan soyut bir duygu değildir; ibadetler inancın davranışa dönüşmesini ve her an taze kalmasını sağlar. Kur'an'da bildirilen namaz, oruç gibi ibadetler insanı kibirden arındırır, gün boyu Allah'ın huzurunda olduğu bilincini (ihsan) diri tutarak kötülük yapmaktan alıkoyar.",
+        "stimulus": "Ayet Meali: '...Anne babaya iyilik edin. Yoksulluk endişesiyle çocuklarınızı öldürmeyin... Kötülüklerin açığına da gizlisine de yaklaşmayın... Ölçü ve tartıyı adaletle tam yapın...' (En'âm suresi, 151-152. ayetler)",
+        "questionText": "Verilen ayetlerden hareketle, vahyin ekonomik ve ailevi hayatta emrettiği 2 temel ahlak kuralını çıkarınız.",
+        "solutionExplanation": "Ailede anne babaya saygı/çocuk hakları, ekonomide dürüstlük ve ölçüde adalet.",
+        "modelAnswer": "1. Ailevi İlke: Anne-babaya sevgi, saygı ve hürmetle davranmak; evlatların yaşam hakkını güvenceye almak.\n2. Ekonomik İlke: Ticarette hile ve tartı sahtekarlığından kaçınmak, ölçü ve tartıda tam bir adalet ve dürüstlük sergilemek.",
         "rubric": [
           {
-            "criterion": "İnanç ile ibadet arasındaki tamamlayıcı bağın kurulması",
+            "criterion": "Aile hayatına yönelik ahlaki ilkenin çıkarılması",
             "points": 9
           },
           {
-            "criterion": "İbadetlerin ahlaki ve manevi olgunlaşma fonksiyonunun açıklanması",
+            "criterion": "Ekonomik/ticari hayata yönelik dürüstlük ilkesinin çıkarılması",
             "points": 8
           }
         ]
@@ -9070,17 +9086,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Vahyin aklı ve düşünmeyi teşvik etmesi.",
-        "stimulus": "Kur'an-ı Kerim insanlara namaz kılmayı, zekat vermeyi ve adil davranmayı emreder.",
-        "questionText": "İnsan sadece 'Ben iyi bir insanım' diyerek neden ibadetlerden muaf olamaz? Vahyin ibadetler aracılığıyla kişiye kazandırdığı ruhsal olgunluğu açıklayınız.",
-        "solutionExplanation": "İbadetler inancı canlı tutar, sorumluluk bilincini pekiştirir ve insanı kötülükten alıkoyar.",
-        "modelAnswer": "İnanç sadece kalpte kalan soyut bir duygu değildir; ibadetler inancın davranışa dönüşmesini ve her an taze kalmasını sağlar. Kur'an'da bildirilen namaz, oruç gibi ibadetler insanı kibirden arındırır, gün boyu Allah'ın huzurunda olduğu bilincini (ihsan) diri tutarak kötülük yapmaktan alıkoyar.",
+        "stimulus": "Kur'an-ı Kerim'de birçok ayet 'Akletmez misiniz?', 'Düşünmez misiniz?', 'İbret almaz mısınız?' sorularıyla biter.",
+        "questionText": "Kur'an-ı Kerim'in sürekli insan aklına ve düşünmeye hitap etmesinin dini sorumluluk açısından önemini açıklayınız.",
+        "solutionExplanation": "İslam'da dinî sorumluluğun ön şartı akıl ve iradedir; körü körüne taklit yasaklanmıştır.",
+        "modelAnswer": "İslam dininde insanın vahiyle muhatap ve sorumlu olmasının temel şartı akıl ve irade sahibi olmasıdır. Kur'an, insanların atalarından gördükleri yanlış inançları körü körüne taklit etmesini reddeder; hakikati araştırarak, kainatı gözlemleyerek ve aklını kullanarak bilinçli bir imana ulaşmasını ister.",
         "rubric": [
           {
-            "criterion": "İnanç ile ibadet arasındaki tamamlayıcı bağın kurulması",
+            "criterion": "Akıl ve iradenin sorumluluğun temeli olduğunun belirtilmesi",
             "points": 9
           },
           {
-            "criterion": "İbadetlerin ahlaki ve manevi olgunlaşma fonksiyonunun açıklanması",
+            "criterion": "Körü körüne taklidin reddedilip bilinçli imanın vurgulanması",
             "points": 8
           }
         ]
@@ -9118,17 +9134,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 16,
         "contextText": "Vahiy katipleri ve Kur'an'ın yazılı kaydedilmesi.",
-        "stimulus": "Geçmiş ilahi kitaplar belirli bir kavme ve zamana gönderilmişken, Kur'an-ı Kerim tüm insanlığa gönderilmiştir.",
-        "questionText": "Kur'an-ı Kerim'in 'evrensel bir kitap' olması ne anlama gelir? Geçmiş ilahi kitaplarla karşılaştırarak açıklayınız.",
-        "solutionExplanation": "Kur'an sadece bir millete değil kıyamete kadar bütün insanlığa hitap eden son rehberdir.",
-        "modelAnswer": "Tevrat veya İncil gibi önceki kutsal kitaplar belirli bir topluluğa (İsrailoğulları) ve belli bir çağa hitap ediyordu. Kur'an-ı Kerim ise hiçbir ırk, bölge veya millet ayrımı gözetmeksizin kıyamete kadar gelecek tüm insanlığa gönderilmiş evrensel ve son ilahi kitaptır; hükümleri çağlar üstüdür.",
+        "stimulus": "Hz. Muhammed (s.a.v.) kendisine inen ayetleri anında ezberler ve vahiy katiplerine yazdırırdı.",
+        "questionText": "Vahiy katipliği kurumunun Kur'an ayetlerinin günümüze sıhhatle ve güvenle ulaşmasındaki rolünü açıklayınız.",
+        "solutionExplanation": "Ayetlerin iner inmez deri, kemik, taş ve hurma yapraklarına anında yazıya geçirilmesini sağlamıştır.",
+        "modelAnswer": "Hz. Peygamber vahiy geldiğinde Hz. Ali, Zeyd b. Sabit gibi vahiy katiplerini çağırarak ayetleri anında deri, taş ve parşömenlere yazdırmış; ayrıca yazılan metni katibe tekrar okutarak kontrol etmiştir. Bu titiz kayıt sistemi, Kur'an'ın sözlü unutulmalara karşı ilk andan itibaren belgelenmesini ve korunmasını sağlamıştır.",
         "rubric": [
           {
-            "criterion": "Geçmiş kitapların yerel/bölgesel vasfının belirtilmesi",
+            "criterion": "Vahiy katiplerinin anında kayıt altına alma işlevi",
             "points": 8
           },
           {
-            "criterion": "Kur'an'ın tüm insanlığı kapsayan evrensel niteliğinin açıklanması",
+            "criterion": "Yazılanların kontrol edilerek güvenliğin sağlanması",
             "points": 8
           }
         ]
@@ -9208,17 +9224,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Peygamberlerin en güzel model (üsve-i hasene) olması.",
-        "stimulus": "Ayet Meali: 'Nefsini kötülüklerden arındıran kurtuluşa ermiştir. Onu kötülüklere gömen ise ziyan etmiştir.' (Şems suresi, 9-10. ayetler)",
-        "questionText": "Verilen ayete göre, vahyin temel gayelerinden biri olan 'nefis tezkiyesi' (manevi arınma) kavramını ve kurtuluşla ilişkisini açıklayınız.",
-        "solutionExplanation": "İnsanın kalbini kibir, yalan, kin gibi manevi hastalıklardan temizlemesi kurtuluşun şartıdır.",
-        "modelAnswer": "Vahiy, insanın sadece bedensel ihtiyaçlarını değil ruhsal ve kalbî arınmasını da hedefler. Nefis tezkiyesi; kişinin iç dünyasını kibir, cimrilik, kıskançlık ve öfkeden temizleyip tevazu, cömertlik, doğruluk ve merhametle süslemesidir. Gerçek kurtuluş ve huzur ancak bu ahlaki arınmayla mümkündür.",
+        "stimulus": "Ayet Meali: 'Andolsun ki, Allah'ın Elçisinde sizin için; Allah'a ve ahiret gününe kavuşmayı uman ve Allah'ı çok anan kimseler için güzel bir örnek vardır.' (Ahzâb suresi, 21. ayet)",
+        "questionText": "Ayetten hareketle, İslam inancında 'üsve-i hasene' kavramının anlamını ve Hz. Peygamber'in hayatından bir örnekle açıklayınız.",
+        "solutionExplanation": "Üsve-i hasene en güzel örnek demektir; peygamberin adaleti, affediciliği ve mütevazılığı.",
+        "modelAnswer": "• Anlamı: 'Üsve-i Hasene', her alanda örnek alınabilecek en mükemmel, kusursuz ve güzel ahlak timsali rehber demektir.\n• Örnek: Hz. Peygamber'in Medine'de adaletle hükmetmesi, kendisine zulmeden Mekkelileri af buyurması veya ev işlerinde ailesine yardım eden mütevazı tavrı bu model şahsiyetin canlı örneğidir.",
         "rubric": [
           {
-            "criterion": "Nefis tezkiyesi ve kötü huylardan arınma tanımı",
+            "criterion": "Üsve-i hasene kavramının tanımı",
             "points": 9
           },
           {
-            "criterion": "Ahlaki arınmanın dünya ve ahiret kurtuluşuna etkisi",
+            "criterion": "Hz. Peygamber'in hayatından somut bir model davranış örneği",
             "points": 8
           }
         ]
@@ -9232,17 +9248,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Vahyin toplumsal kardeşlik ve barış prensibi.",
-        "stimulus": "Ayet Meali: 'Nefsini kötülüklerden arındıran kurtuluşa ermiştir. Onu kötülüklere gömen ise ziyan etmiştir.' (Şems suresi, 9-10. ayetler)",
-        "questionText": "Verilen ayete göre, vahyin temel gayelerinden biri olan 'nefis tezkiyesi' (manevi arınma) kavramını ve kurtuluşla ilişkisini açıklayınız.",
-        "solutionExplanation": "İnsanın kalbini kibir, yalan, kin gibi manevi hastalıklardan temizlemesi kurtuluşun şartıdır.",
-        "modelAnswer": "Vahiy, insanın sadece bedensel ihtiyaçlarını değil ruhsal ve kalbî arınmasını da hedefler. Nefis tezkiyesi; kişinin iç dünyasını kibir, cimrilik, kıskançlık ve öfkeden temizleyip tevazu, cömertlik, doğruluk ve merhametle süslemesidir. Gerçek kurtuluş ve huzur ancak bu ahlaki arınmayla mümkündür.",
+        "stimulus": "Ayet Meali: 'Müminler ancak kardeştirler. Öyleyse kardeşlerinizin arasını düzeltin ve Allah'a itaatsizlikten sakının ki merhamet göresiniz.' (Hucurât suresi, 10. ayet)",
+        "questionText": "Vahyin getirdiği 'kardeşlik' anlayışının kan bağına dayalı kabilecilikten farkını ve toplumsal barışa katkısını yazınız.",
+        "solutionExplanation": "İslam kardeşliği soy ve ırka değil ortak inanç ve adalete dayanır; toplumda kin ve düşmanlığı bitirir.",
+        "modelAnswer": "İslam'dan önce kardeşlik sadece aynı kabileye ve kan bağına mensubiyetle sınırlıydı. Vahiy ise tüm inananları hiçbir ırk, renk ve soy ayrımı gözetmeksizin manevi kardeş ilan etmiştir. Aralarında bir anlaşmazlık çıktığında adaletle barışı sağlamayı emrederek toplumsal fitne ve ayrımcılığı kökten engellemiştir.",
         "rubric": [
           {
-            "criterion": "Nefis tezkiyesi ve kötü huylardan arınma tanımı",
+            "criterion": "Kabilecilik ve kan bağı yerine inanç kardeşliği farkı",
             "points": 9
           },
           {
-            "criterion": "Ahlaki arınmanın dünya ve ahiret kurtuluşuna etkisi",
+            "criterion": "Toplumsal barış ve adalet katkısı",
             "points": 8
           }
         ]
@@ -9280,17 +9296,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 16,
         "contextText": "Kur'an-ı Kerim'in iç düzeni: Ayet, Sure ve Cüz.",
-        "stimulus": "Ayet Meali: 'Biz her peygamberi ancak kendi kavminin diliyle gönderdik ki onlara (emirleri) iyice açıklasın...' (İbrahim suresi, 4. ayet)",
-        "questionText": "Kur'an-ı Kerim'in Arapça olarak indirilmesinin hikmetini ve ilk muhatapların vahyi anlamasındaki rolünü açıklayınız.",
-        "solutionExplanation": "İlk tebliğ edilen toplumun Arapça konuşması nedeniyle mesajın net ve apaçık anlaşılması içindir.",
-        "modelAnswer": "Yüce Allah, mesajının ilk muhataplar tarafından doğru, eksiksiz ve derinlemesine anlaşılması için Kur'an'ı Hz. Peygamber'in ve kavminin konuştuğu Arapça diliyle indirmiştir. Eğer yabancı bir dilde inseydi toplum 'Biz bunu anlamıyoruz' diyerek itiraz edebilir ve tebliğ zorlaşırdı.",
+        "stimulus": "Kur'an-ı Kerim belirli yapısal bölümlerden oluşan ilahi bir kitaptır.",
+        "questionText": "Kur'an-ı Kerim'in yapısal birimleri olan Ayet, Sure ve Cüz kavramlarını tanımlayarak sayısal bilgilerini yazınız.",
+        "solutionExplanation": "Ayet (tümceler, 6236 civarı), Sure (bölümler, 114 adet), Cüz (20 sayfalık 30 parça).",
+        "modelAnswer": "1. Âyet: Kur'an'ın durak işaretleriyle birbirinden ayrılan her bir cümlesi veya ifadesidir (Yaklaşık 6236 ayet vardır).\n2. Sûre: Ayetlerin oluşturduğu, başında besmele bulunan bağımsız bölümlerdir (114 sure vardır; en uzunu Bakara, en kısası Kevser'dir).\n3. Cüz: Kur'an'ın kolay okunması ve ezberlenmesi için ayrılmış her 20 sayfalık bölümüdür (Toplam 30 cüz vardır).",
         "rubric": [
           {
-            "criterion": "Mesajın muhataplarca net anlaşılması gerekçesi",
+            "criterion": "Ayet, Sure ve Cüz tanımlarının eksiksiz yapılması",
             "points": 8
           },
           {
-            "criterion": "Tebliğin ilk aşamasında dil birliğinin önemi",
+            "criterion": "Sayısal verilerin (6236 ayet, 114 sure, 30 cüz) doğru belirtilmesi",
             "points": 8
           }
         ]
@@ -9343,7 +9359,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Students can bring information about the current content on “school life with roles, and responsibilities at school; school routines; national days and celebrations” through skimming (looking quickly at) the audio-visual elements and reading the content very quickly.",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 20,
         "contextText": "School club notice board schedule.",
         "stimulus": "NOTICE BOARD - ATATÜRK MIDDLE SCHOOL:\n• Chess Club: Monday at 15:30 (Room 102)\n• Music Club: Wednesday at 16:00 (Hall B)\n• Drama Club: Friday at 15:45 (Main Theatre)",
@@ -9477,7 +9493,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Students can bring information about the current content on “school life with roles, and responsibilities at school; school routines; national days and celebrations” through skimming (looking quickly at) the audio-visual elements and reading the content very quickly.",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 20,
         "contextText": "Republic Day celebration programme poster.",
         "stimulus": "POSTER: 29TH OCTOBER REPUBLIC DAY CEREMONY\n• Place: School Garden\n• 09:30: National Anthem & Moment of Silence\n• 10:00: Principal's Speech\n• 10:20: Student Poetry Recitation (Defne)\n• 10:45: Folk Dance Show (6th Grade Team)",
@@ -9611,7 +9627,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Students can bring information about the current content on “school life with roles, and responsibilities at school; school routines; national days and celebrations” through skimming (looking quickly at) the audio-visual elements and reading the content very quickly.",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Eco-School club weekly duties timetable.",
         "stimulus": "ECO-SCHOOL TIMETABLE:\n• Monday: Collect waste paper & cardboard (Mert & Ali)\n• Wednesday: Water indoor plants in classrooms (Seda)\n• Friday: Recycle plastic bottles and glass (Burak & Elif)",
@@ -9638,17 +9654,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Classroom rules infographic.",
-        "stimulus": "ECO-SCHOOL TIMETABLE:\n• Monday: Collect waste paper & cardboard (Mert & Ali)\n• Wednesday: Water indoor plants in classrooms (Seda)\n• Friday: Recycle plastic bottles and glass (Burak & Elif)",
-        "questionText": "Skim the timetable quickly and answer:\na) Which day do students recycle plastic bottles?\nb) Who is responsible for watering the indoor plants?",
-        "solutionExplanation": "a) Friday, b) Seda.",
-        "modelAnswer": "a) On Friday (students recycle plastic bottles).\nb) Seda is responsible for watering the indoor plants.",
+        "stimulus": "CLASSROOM RULES POSTER:\n1. Raise your hand before speaking.\n2. Keep your desk tidy and clean.\n3. Do not run in the corridors.\n4. Listen to your teacher carefully.",
+        "questionText": "Quickly scan the poster and identify:\na) What must you do before speaking?\nb) Where should you NOT run?",
+        "solutionExplanation": "a) Raise your hand, b) In the corridors.",
+        "modelAnswer": "a) Raise your hand before speaking.\nb) You should not run in the corridors.",
         "rubric": [
           {
-            "criterion": "Friday identified correctly",
+            "criterion": "Raise hand rule found correctly",
             "points": 9
           },
           {
-            "criterion": "Seda identified correctly",
+            "criterion": "Corridors location identified correctly",
             "points": 8
           }
         ]
@@ -9769,7 +9785,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Students can bring information about the current content on “school life with roles, and responsibilities at school; school routines; national days and celebrations” through skimming (looking quickly at) the audio-visual elements and reading the content very quickly.",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 15,
         "contextText": "Sports hall after-school training timetable.",
         "stimulus": "SPORTS SCHEDULE - GYM A:\n• Basketball: Tuesday & Thursday (15:30 - 17:00)\n• Volleyball: Wednesday (15:30 - 16:45)\n• Table Tennis: Friday (15:00 - 16:30)",
@@ -9820,17 +9836,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Emir's evening habit vs weekend routine.",
-        "stimulus": "Text: 'Hi, my name is Emir. When the bell rings at 15:20, my classes finish. I walk home with my buddy Kerem because my house is only 10 minutes away from school. After arriving home, I drink a glass of milk and rest for 30 minutes. Then, I do my homework from 16:30 to 18:00. I never watch TV before finishing my assignments.'",
-        "questionText": "Read the text carefully and answer:\na) Why does Emir walk home instead of taking a bus?\nb) What does Emir do between 16:30 and 18:00?",
-        "solutionExplanation": "a) Because his house is only 10 minutes away, b) He does his homework.",
-        "modelAnswer": "a) Because his house is very close to school (only 10 minutes away).\nb) He does his homework from 16:30 to 18:00.",
+        "stimulus": "Text: 'In the evenings, Emir reads a book with his father. On Saturdays, he wakes up later, at 09:00, and attends the swimming club in the city sports complex.'",
+        "questionText": "According to the text, what does Emir do on Saturday mornings that is different from weekdays?",
+        "solutionExplanation": "He wakes up later at 09:00 and attends the swimming club.",
+        "modelAnswer": "On Saturday mornings, Emir wakes up later (at 09:00) and attends the swimming club at the city sports complex.",
         "rubric": [
           {
-            "criterion": "House proximity reason stated correctly",
+            "criterion": "Later wake up time mentioned",
             "points": 7
           },
           {
-            "criterion": "Homework activity stated correctly",
+            "criterion": "Swimming club activity mentioned",
             "points": 7
           }
         ]
@@ -9864,13 +9880,13 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "School subjects and learning materials.",
-        "stimulus": "Collocations bank: [take a nap, do homework, surf the net, ride a bicycle]",
-        "questionText": "Match the phrases with their meanings:\n1. Resting and sleeping for a short time during the day: ....................\n2. Completing school tasks given by teachers: ....................\n3. Browsing websites on a tablet or computer: ....................",
-        "solutionExplanation": "1. take a nap, 2. do homework, 3. surf the net.",
-        "modelAnswer": "1. take a nap\n2. do homework\n3. surf the net",
+        "stimulus": "Subjects: [Physical Education, Art, Science, Geography]",
+        "questionText": "Write the correct school subject for each description:\na) In this class, we learn about countries, mountains and maps: ....................\nb) In this class, we wear sneakers and play sports in the gym: ....................\nc) In this class, we do interesting experiments in the lab: ....................",
+        "solutionExplanation": "a) Geography, b) Physical Education (P.E.), c) Science.",
+        "modelAnswer": "a) Geography\nb) Physical Education (P.E.)\nc) Science",
         "rubric": [
           {
-            "criterion": "Three daily activity phrases matched correctly",
+            "criterion": "Three school subjects named correctly",
             "points": 14
           }
         ]
@@ -9905,7 +9921,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Students can individually construct/form content for the assigned writing task on the current content “school life with roles, and responsibilities at school; school routines; national days and celebrations”.",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Independent writing: Your after-school routine.",
         "stimulus": "Writing prompt: Describe your afternoon and evening routine after leaving school.",
@@ -9947,7 +9963,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Students can bring information about the current content on “school life with roles, and responsibilities at school; school routines; national days and celebrations” through skimming (looking quickly at) the audio-visual elements and reading the content very quickly.",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 13,
         "contextText": "Penpal email: Dennis from London writes to Kerem.",
         "stimulus": "EMAIL SNIPPET:\n'From: Dennis (London)\nTo: Kerem (Ankara)\nDear Kerem, in England our school starts at 09:00 and ends at 15:30. We wear a navy blue blazer and tie. My favorite lesson is History because I love learning about ancient castles. What is your school like?'",
@@ -9974,17 +9990,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 13,
         "contextText": "School club frequency brochure.",
-        "stimulus": "EMAIL SNIPPET:\n'From: Dennis (London)\nTo: Kerem (Ankara)\nDear Kerem, in England our school starts at 09:00 and ends at 15:30. We wear a navy blue blazer and tie. My favorite lesson is History because I love learning about ancient castles. What is your school like?'",
-        "questionText": "Skim the email quickly and answer:\na) What time does Dennis's school start in London?\nb) What is Dennis's favorite school subject?",
-        "solutionExplanation": "a) At 09:00, b) History.",
-        "modelAnswer": "a) His school starts at 09:00.\nb) His favorite subject is History.",
+        "stimulus": "CLUBS FREQUENCY:\n• Coding Club: Twice a week (Tuesday & Thursday)\n• Art Club: Once a week (Wednesday)\n• Chess Club: Every day during lunch break",
+        "questionText": "Scan the brochure and answer:\na) How often does the Coding Club meet?\nb) When does the Chess Club meet?",
+        "solutionExplanation": "a) Twice a week, b) Every day during lunch break.",
+        "modelAnswer": "a) The Coding Club meets twice a week.\nb) The Chess Club meets every day during lunch break.",
         "rubric": [
           {
-            "criterion": "09:00 starting time identified",
+            "criterion": "Twice a week frequency noted",
             "points": 7
           },
           {
-            "criterion": "History identified as favourite subject",
+            "criterion": "Daily lunch break timing noted",
             "points": 6
           }
         ]
@@ -10042,13 +10058,13 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "Time expressions and frequency phrases.",
-        "stimulus": "Definitions:\n1. A room equipped with computers for programming lessons: I _ _ L _ B\n2. A ring sound that marks the beginning or end of a lesson: B _ _ L\n3. A locker or shelf where students store their textbooks: L _ _ K _ R",
-        "questionText": "Find the school words:\n1. I.T. LAB\n2. B _ _ L\n3. L _ _ K _ R",
-        "solutionExplanation": "1. IT LAB, 2. BELL, 3. LOCKER.",
-        "modelAnswer": "1. IT LAB\n2. BELL\n3. LOCKER",
+        "stimulus": "Expressions: [on weekdays, at the weekend, twice a month, every morning]",
+        "questionText": "Fill in the blanks with the correct time expression:\na) I get up early at 07:00 .................... because I have school from Monday to Friday.\nb) We sleep longer and rest .................... because there are no classes on Saturday and Sunday.",
+        "solutionExplanation": "a) on weekdays, b) at the weekend.",
+        "modelAnswer": "a) on weekdays (every morning)\nb) at the weekend",
         "rubric": [
           {
-            "criterion": "All school words identified accurately",
+            "criterion": "Two time expressions filled appropriately",
             "points": 12
           }
         ]
@@ -10083,7 +10099,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Students can select and use the target grammatical elements of the current content about “school life with roles, and responsibilities at school; school routines; national days and celebrations” accurately, authentically, spontaneously, and naturally and use it appropriately and effectively when communicating with others.",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "Wh- question words: Where, When, Who, What time.",
         "stimulus": "Match question words with answers.",
@@ -10289,7 +10305,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.Y.7.21. Yazım kuralları ve noktalama işaretlerini uygulayabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Hata Tespiti & Adım Analizi",
         "points": 14,
         "contextText": "Yazım yanlışları (büyük harf, bağlaç olan ki, -de hali) ve noktalama düzeltme.",
         "stimulus": "Hatalı Cümle: 'ılgaz dağında ki fırtınada türk askeri, canla başla cephaneleri taşıyorduki düşman anadoluyu ele geçiremesin.'",
@@ -10331,21 +10347,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.7.5. Metnin yüzey anlamını belirleyebilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Ahilik kültürü ve dürüst ticaret ahlakını anlatan bilgilendirici metin.",
         "stimulus": "“Selçuklu ve Osmanlı döneminde esnafın piri sayılan Ahi Evran, çarşıdaki dürüstlük ve meslek ahlakını çok sıkı kurallara bağlamıştı. Bir ayakkabıcı veya saraç hatalı, çürük bir mal ürettiğinde o esnafın lonca heyeti toplanır, hatalı ayakkabıyı dükkânın çatısına (damına) fırlatırdı. Bu durum, o esnafın kusurlu mal sattığının çarşıdaki herkese ilanıydı. 'Pabucu dama atılmak' deyimi işte bu köklü ahlak geleneğinden doğmuştur. Ahilikte helal kazanç, usta-çırak terbiyesi ve tüketiciye saygı her şeyin üstünde tutulurdu.”",
-        "questionText": "Verilen metindeki/durumdaki temel düşünceden hareketle yazarın aktarmak istediği örtük iletiyi açıklayınız. Metinden bu düşüncenizi destekleyen iki somut ifadeyi kanıt gösteriniz.",
+        "questionText": "Yukarıdaki Ahilik teşkilatı ve esnaf ahlakını anlatan metnin konusunu tek bir cümleyle özetleyiniz.",
         "solutionExplanation": "Metin Ahilik teşkilatının dürüst esnaf ahlakını ve 'pabucu dama atılmak' deyiminin kökenini açıklamaktadır.",
-        "modelAnswer": "Örtük İleti: Deyimler: Genellikle mecaz anlamlı, en az iki sözcükten oluşan kalıplaşmış anlatım kalıplarıdır.\nMetinden Kanıtlar:\n1. Kanıt: Durumun manevi ve kalıcı yönünün vurgulanması.\n2. Kanıt: Emek verilerek üretilen değerin maddiyatla ölçülemeyeceğinin ifade edilmesi.",
+        "modelAnswer": "Metnin konusu: Ahilik teşkilatında uygulanan dürüst esnaflık kuralları, tüketici hakkını koruma bilinci ve 'pabucu dama atılmak' deyiminin tarihî doğuşudur.",
         "rubric": [
           {
-            "criterion": "Metindeki örtük iletinin doğru tespiti",
-            "points": 8
-          },
-          {
-            "criterion": "Metinden iki somut kanıtın gösterilmesi",
-            "points": 9
+            "criterion": "Metnin konusunu eksiksiz ve net biçimde tek cümleyle özetleme",
+            "points": 17
           }
         ]
       },
@@ -10451,7 +10463,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.Y.7.21. Yazım kuralları ve noktalama işaretlerini uygulayabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "archetype": "Hata Tespiti & Adım Analizi",
         "points": 16,
         "contextText": "Noktalama işaretleri ve yazım kuralları düzeltme.",
         "stimulus": "Cümle: 'kırşehirde yaşayan ahi evran esnaflara şöyle derdi; harama el uzatma, kapını açık tut, müşteriye güler yüz göster.'",
@@ -10541,12 +10553,12 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "points": 14,
         "contextText": "Metnin ana fikrini/ana düşüncesini belirleme.",
         "stimulus": "Yukarıda verilen 1. sorudaki tebessüm ve iletişim metnini dikkate alınız.",
-        "questionText": "Yukarıdaki tebessümün ve tatlı dilin önemini vurgulayan metnin konusunu bir cümleyle yazınız.",
-        "solutionExplanation": "Metin güler yüzün ve nezaketli iletişimin insan ilişkilerindeki olumlu etkisini anlatmaktadır.",
-        "modelAnswer": "Metnin konusu: Güler yüzlü olmanın, tatlı dilin ve nezaketli iletişimin insan ilişkilerini yumuşatmadaki ve dostlukları güçlendirmedeki rolüdür.",
+        "questionText": "Yazarın bu metinde okuyucuya vermek istediği temel mesaj (ana fikir) nedir? Bir cümleyle yazınız.",
+        "solutionExplanation": "İletişimde en etkili yol nezaket ve tebessümdür.",
+        "modelAnswer": "Metnin Ana Fikri: İnsanlarla sağlıklı, güçlü ve sıcak ilişkiler kurmanın yolu; kelimelerimizden önce yüzümüzdeki içten bir tebessüm ve sesimizdeki nezakettir.",
         "rubric": [
           {
-            "criterion": "Metnin konusunu eksiksiz biçimde tek bir cümleyle yazma",
+            "criterion": "Ana fikrin bir öğüt veya genel yargı cümlesi olarak doğru yazılması",
             "points": 14
           }
         ]
@@ -10629,7 +10641,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.Y.7.21. Yazım kuralları ve noktalama işaretlerini uygulayabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Hata Tespiti & Adım Analizi",
         "points": 14,
         "contextText": "Yay ayraç içine uygun noktalama işaretlerini yerleştirme.",
         "stimulus": "Cümle: Sabah erkenden okula gelen Mert ( ) nöbetçi öğretmene tebessüm ederek sordu ( ) ( ) Hocam ( ) kütüphane kaçta açılacak ( ) ( )",
@@ -10719,12 +10731,12 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "points": 14,
         "contextText": "Metnin ana fikrini belirleme.",
         "stimulus": "Yukarıda verilen 1. sorudaki çınar ağacı metnini dikkate alınız.",
-        "questionText": "Bursa İnkaya köyündeki asırlık çınarın ele alındığı bu metnin konusunu bir cümleyle yazınız.",
-        "solutionExplanation": "Metin asırlık bir çınarın tarihi tanıklığını ve insana verdiği manevi mesajı ele almaktadır.",
-        "modelAnswer": "Metnin konusu: Bursa'daki altı asırlık İnkaya çınarının heybetli yapısı, tarihî tanıklığı ve insanlara öğrettiği sabır ve vefa duygusudur.",
+        "questionText": "Yazarın bu metindeki asırlık çınar üzerinden insanlara iletmek istediği ana fikir (ana düşünce) nedir?",
+        "solutionExplanation": "Köklerine bağlı olan bireyler ve toplumlar fırtınalara karşı dimdik durur.",
+        "modelAnswer": "Metnin Ana Fikri: Tıpkı kökleri derine inen bir çınar ağacı gibi, geçmişine, kültürüne ve köklerine vefayla bağlı olan toplumlar hayatın zorlukları ve fırtınaları karşısında dimdik ayakta kalırlar.",
         "rubric": [
           {
-            "criterion": "Metnin konusunun eksiksiz ve tek cümleyle yazılması",
+            "criterion": "Ana fikrin öğüt verici ve genelleyici bir yargı olarak sunulması",
             "points": 14
           }
         ]
@@ -10803,7 +10815,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.Y.7.21. Yazım kuralları ve noktalama işaretlerini uygulayabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Hata Tespiti & Adım Analizi",
         "points": 14,
         "contextText": "Yazım kuralları (ikilemeler, bağlaç olan de).",
         "stimulus": "Hatalı Cümle: 'Bursa'daki ulu çınar ağır ağır büyürken, osmanlı devleti'nin şanlı tarihinede şahitlik etmiştir.'",
@@ -10893,12 +10905,12 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "points": 17,
         "contextText": "Metnin ana fikrini belirleme.",
         "stimulus": "Yukarıda verilen 1. sorudaki kitap metnini dikkate alınız.",
-        "questionText": "Kitabın kil tabletten matbaaya ve ekrana uzanan tarihini anlatan bu metnin konusunu bir cümleyle yazınız.",
-        "solutionExplanation": "Metin kitabın tarihsel gelişimi ve matbaanın bilgiyi yaymadaki rolünü ele alır.",
-        "modelAnswer": "Metnin konusu: Kitabın kil tabletlerden dijital ekranlara kadar geçirdiği tarihî dönüşüm ve matbaa sayesinde bilginin tüm insanlığa yayılmasıdır.",
+        "questionText": "Bu metnin ana düşüncesini (yazarın iletmek istediği asıl mesajı) bir cümleyle yazınız.",
+        "solutionExplanation": "Kitabın şekli değişse de insanın bilgiye ulaşma arzusu değişmez.",
+        "modelAnswer": "Metnin Ana Düşüncesi: Kitapların biçimi çağlar içinde tabletten ekrana doğru değişse de insanın bilgi edinme, öğrenme ve dünyayı anlama tutkusu asla değişmez.",
         "rubric": [
           {
-            "criterion": "Metnin konusunu net ve eksiksiz bir cümleyle özetleme",
+            "criterion": "Ana fikrin doğru ve eksiksiz çıkarılması",
             "points": 17
           }
         ]
@@ -10957,7 +10969,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.Y.7.21. Yazım kuralları ve noktalama işaretlerini uygulayabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "archetype": "Hata Tespiti & Adım Analizi",
         "points": 16,
         "contextText": "Sayıların yazımı ve kısaltmaların ekleri.",
         "stimulus": "Cümle: '1450'de Almanyada matbaayı geliştiren Gutenberg, ilk eserini 3'er 3'er ciltleyip Prof. Dr. ünvanlı bilginlere sunmuştu.'",
@@ -11047,12 +11059,12 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "points": 17,
         "contextText": "Metnin ana fikrini belirleme.",
         "stimulus": "Yukarıda verilen 1. sorudaki Neşet Ertaş metnini dikkate alınız.",
-        "questionText": "Neşet Ertaş ve türkülerimizin anlatıldığı bu metnin konusunu bir cümleyle yazınız.",
-        "solutionExplanation": "Metin Neşet Ertaş'ın sanatını ve türkülerin milletimizin duygularını yansıtmadaki yerini anlatır.",
-        "modelAnswer": "Metnin konusu: Neşet Ertaş'ın sazı ve sözüyle Anadolu insanının duygularına tercüman oluşu ve türkülerimizin millî kültürümüzdeki yeridir.",
+        "questionText": "Yazarın 'Türkülerini unutan bir millet, ruhunun en derin ezgilerini kaybetmiş demektir' sözüyle anlatmak istediği ana düşünce nedir?",
+        "solutionExplanation": "Türküler bir milletin kimliği ve ruhudur; unutulursa kimlik kaybolur.",
+        "modelAnswer": "Metnin Ana Düşüncesi: Türküler bir milletin ortak vicdanı, hafızası ve duygusal kimliğidir; türkülerinden kopan bir millet millî ve manevi bağlarını kaybeder.",
         "rubric": [
           {
-            "criterion": "Metnin konusunun eksiksiz tek cümleyle sunulması",
+            "criterion": "Ana fikrin doğru ve güçlü bir biçimde ifade edilmesi",
             "points": 17
           }
         ]
@@ -11111,7 +11123,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.Y.7.21. Yazım kuralları ve noktalama işaretlerini uygulayabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "archetype": "Hata Tespiti & Adım Analizi",
         "points": 16,
         "contextText": "Noktalama işaretleri düzeltme.",
         "stimulus": "Cümle: Neşet Ertaş şöyle derdi İncinsen de incitme çünkü gönül kırmak Kabe'yi yıkmak gibidir",
@@ -11152,7 +11164,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "MAT.7.1.1. Gerçek yaşam ya da matematiksel durumlarda doğal sayı, tam sayı ve rasyonel sayıları yorumlayabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
         "points": 15,
         "contextText": "Kutup hayvanlarının yaşam sıcaklık aralıkları ve tam sayılar.",
         "stimulus": "Kutup biyomunda yaşayan üç canlının dayanabildiği en düşük hava sıcaklıkları şöyledir:\n• Kutup Ayısı: -42 °C\n• İmparator Penguen: -35 °C\n• Kutup Tilkisi: -50 °C\nBir kış günü bölgede ölçülen hava sıcaklığı -38 °C olarak kaydedilmiştir.",
@@ -11200,20 +11212,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "MAT.7.1.2. Gerçek yaşam durumlarında rasyonel sayıların ondalık gösterimlerini yansıtabilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "archetype": "Hata Tespiti & Adım Analizi",
         "points": 14,
         "contextText": "Bölme işlemiyle ondalık gösterim bulma.",
-        "stimulus": "Bir laboratuvarda yapılan hassas kütle ölçümünde cihaz ekranında 2,363636... (2,36; 36 devrediyor) değeri okunmuştur.",
-        "questionText": "a) Bu devirli ondalık gösterimi rasyonel sayıya çevirme formülünü (Tüm Sayı - Devretmeyen Kısım) / (Devreden kadar 9, Devretmeyen kadar 0) kullanarak kesir olarak yazınız.\nb) Bulduğunuz rasyonel sayıyı en sade (en küçük tam sayılarla) haline getiriniz.",
-        "solutionExplanation": "(236 - 2) / 99 = 234 / 99 = 26 / 11.",
-        "modelAnswer": "a) Formül: (236 - 2) / 99 = 234 / 99\nb) Sadeleştirme: 234 ve 99 sayıları 9'a bölünür: 234 ÷ 9 = 26, 99 ÷ 9 = 11. En sade hali: 26 / 11 (veya 2 tam 4/11).",
+        "stimulus": "Eren, 7 / 8 rasyonel sayısını ondalık gösterime dönüştürmek için payı paydaya bölme yöntemini uygulamıştır.",
+        "questionText": "7 / 8 rasyonel sayısını uzun bölme işlemi adımlarını göstererek ondalık gösterim biçiminde yazınız ve devirli olup olmadığını belirtiniz.",
+        "solutionExplanation": "7 / 8 = 0,875 (devirsiz, sonlu ondalık gösterim).",
+        "modelAnswer": "7'nin içinde 8 yoktur, bölüme '0,' yazılır. 70'te 8 sekiz defa (8×8=64), kalan 6. 60'ta 8 yedi defa (7×8=56), kalan 4. 40'ta 8 beş defa (5×8=40), kalan 0.\nSonuç: 0,875'tir. Kalan sıfır olduğu için devirsiz (sonlu) bir ondalık gösterimdir.",
         "rubric": [
           {
-            "criterion": "Formülün doğru uygulanarak 234 / 99 kesrinin bulunması",
+            "criterion": "Uzun bölme adımlarının doğru gösterilmesi",
             "points": 7
           },
           {
-            "criterion": "9 ile sadeleştirilerek 26 / 11 en sade kesrinin elde edilmesi",
+            "criterion": "0,875 sonucunun ve sonlu olduğunun doğru yazılması",
             "points": 7
           }
         ]
@@ -11248,21 +11260,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "MAT.7.1.3. Rasyonel sayıların karşılaştırma ve sıralama ilişkilerini yorumlayabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "archetype": "Hata Tespiti & Adım Analizi",
         "points": 14,
         "contextText": "Kesirleri yarıma ve bütüne yakınlığa göre sıralama.",
-        "stimulus": "Mert ile Ece, -3/4 ve -5/6 rasyonel sayılarını karşılaştırmaktadır:\n• Mert: \"Paydaları eşitlediğimizde -9/12 ve -10/12 olur. -10 sayısı -9'dan küçük olduğu için -5/6 < -3/4'tür.\"\n• Ece: \"Hayır, pozitif sayılarda 10, 9'dan büyük olduğu için negatifte de -10/12 daha büyüktür.\"",
-        "questionText": "Mert ve Ece'den hangisinin argümanı doğrudur? Sayı doğrusu üzerindeki konumlarını ve sıfıra olan mesafelerini gerekçe göstererek açıklayınız.",
-        "solutionExplanation": "Mert haklıdır. Sayı doğrusunda sola gidildikçe sayılar küçülür, -10/12 daha soldadır.",
-        "modelAnswer": "Mert haklıdır. Paydalar 12'de eşitlendiğinde -3/4 = -9/12 ve -5/6 = -10/12 olur. Sayı doğrusunda sıfırın solundaki negatif sayılarda sıfırdan uzaklaştıkça sayı küçülür. -10/12 sayısı sayı doğrusunda -9/12'nin daha solundadır. Bu nedenle -5/6 < -3/4 sıralaması doğrudur.",
+        "stimulus": "Verilen rasyonel sayılar: A = 7/15, B = 9/10, C = 4/7.",
+        "questionText": "A, B ve C rasyonel sayılarını payda eşitlemeden, 'yarıma ve bütüne yakınlık' stratejisini kullanarak küçükten büyüğe sıralayınız. Sıralamadaki mantığınızı açıklayınız.",
+        "solutionExplanation": "A yarımdan küçük (7/15 < 7.5/15), C yarımdan büyük (4/7 > 3.5/7), B bütüne çok yakın (9/10). Sıralama: A < C < B.",
+        "modelAnswer": "• A = 7/15: Yarım 7,5/15 olduğu için A sayısı yarımdan küçüktür (A < 1/2).\n• C = 4/7: Yarım 3,5/7 olduğu için C sayısı yarımdan büyüktür (C > 1/2).\n• B = 9/10: Bütüne (1 tam) sadece 1/10 kalmıştır, 1'e çok yakındır.\nBu durumda sıralama: A < C < B (7/15 < 4/7 < 9/10) şeklindedir.",
         "rubric": [
           {
-            "criterion": "Mert'in haklı olduğunun doğru tespiti",
-            "points": 5
+            "criterion": "A, B ve C'nin yarıma/bütüne durumlarının doğru analiz edilmesi",
+            "points": 7
           },
           {
-            "criterion": "Sayı doğrusundaki sol-sağ kuralı ve payda eşitleme ile bilimsel gerekçelendirme",
-            "points": 9
+            "criterion": "A < C < B sıralamasının hatasız yapılması",
+            "points": 7
           }
         ]
       },
@@ -11296,7 +11308,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "MAT.7.1.4. Rasyonel sayılar ve işlemler içeren gerçek yaşam problemlerini çözebilme",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Kalanın kesri türünden problem.",
         "stimulus": "Ali Bey maaşının 1/4'ünü ev kirasına, kalan parasının 2/5'ini mutfak masraflarına harcamıştır. Geriye 18.000 TL parası kalmıştır.",
@@ -11337,7 +11349,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "MAT.7.1.1. Gerçek yaşam ya da matematiksel durumlarda doğal sayı, tam sayı ve rasyonel sayıları yorumlayabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
         "points": 20,
         "contextText": "Deniz seviyesine göre konumlar ve tam sayılar.",
         "stimulus": "Bir deniz araştırmasında üç farklı gözlem noktasının deniz seviyesine göre konumları belirlenmiştir:\n• Araştırma Dalgıcı: Deniz seviyesinin 45 m altında (-45 m)\n• Keşif Denizaltısı: Deniz seviyesinin 120 m altında (-120 m)\n• Gözlem Helikopteri: Deniz seviyesinin 80 m üstünde (+80 m)",
@@ -11436,17 +11448,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 20,
         "contextText": "Su deposu boşaltma ve kesir hesaplama.",
-        "stimulus": "Bir üretici 45 litre zeytinyağını her biri 3/4 litre yağ alan cam şişelere tamamen dolduracaktır. Şişelerin tanesi 12 TL'den satılacaktır.",
-        "questionText": "a) Bu işlem için toplam kaç adet şişe gereklidir? İşlemini gösteriniz.\nb) Tüm şişeler satıldığında üreticinin elde edeceği toplam gelir kaç TL olur?",
-        "solutionExplanation": "Şişe sayısı = 45 / (3/4) = 45 * 4 / 3 = 60 şişe. Gelir = 60 * 12 = 720 TL.",
-        "modelAnswer": "a) Şişe Sayısı = 45 ÷ (3/4) = 45 × (4/3) = (45 ÷ 3) × 4 = 15 × 4 = 60 adet şişe gereklidir.\nb) Toplam Gelir = 60 şişe × 12 TL = 720 TL elde edilir.",
+        "stimulus": "Tamamı 600 litre su alan bir deponun başlangıçta 3/5'i doludur. Depodaki suyun 1/4'ü bahçe sulamasında kullanılmıştır.",
+        "questionText": "a) Bahçe sulandıktan sonra depoda kaç litre su kalmıştır?\nb) Kalan suyun depoyu tamamen doldurabilmesi için depoya kaç litre daha su eklenmelidir?",
+        "solutionExplanation": "Başlangıç: 600 * 3/5 = 360 L. Kullanılan: 360 * 1/4 = 90 L. Kalan: 360 - 90 = 270 L. Eksik: 600 - 270 = 330 L.",
+        "modelAnswer": "a) Başlangıçtaki su: 600 × 3/5 = 360 litre.\nKullanılan su: 360 × 1/4 = 90 litre.\nKalan su: 360 - 90 = 270 litre su kalmıştır.\nb) Deponun tam dolması için gereken su: 600 - 270 = 330 litre daha su eklenmelidir.",
         "rubric": [
           {
-            "criterion": "Rasyonel bölme ile 60 şişe sayısının doğru bulunması",
+            "criterion": "Kalan su miktarının (270 L) adım adım doğru bulunması",
             "points": 12
           },
           {
-            "criterion": "Toplam gelirin (720 TL) doğru hesaplanması",
+            "criterion": "Eklenmesi gereken suyun (330 L) doğru hesaplanması",
             "points": 8
           }
         ]
@@ -11497,20 +11509,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "MAT.7.1.1. Gerçek yaşam ya da matematiksel durumlarda doğal sayı, tam sayı ve rasyonel sayıları yorumlayabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
         "points": 15,
         "contextText": "Sayı doğrusu üzerinde tam sayı ve rasyonel sayı eşleme.",
-        "stimulus": "Bir teknoloji mağazasının yılın ilk 4 ayındaki net kâr/zarar durumu şöyledir:\n• Ocak: +45.000 TL\n• Şubat: -18.000 TL\n• Mart: +32.000 TL\n• Nisan: -25.000 TL",
-        "questionText": "a) Bu 4 ayın sonunda mağazanın net kâr-zarar durumu kaç TL'dir? İşlem basamaklarını gösteriniz.\nb) En çok kâr edilen ay ile en çok zarar edilen ay arasındaki mali fark kaç TL'dir?",
-        "solutionExplanation": "a) (+45000 - 18000 + 32000 - 25000) = +34.000 TL kâr. b) (+45.000) - (-25.000) = 70.000 TL.",
-        "modelAnswer": "a) Net durum: (+45.000) + (-18.000) + (+32.000) + (-25.000) = 77.000 - 43.000 = +34.000 TL (34.000 TL kârdadır).\nb) En çok kâr: +45.000 TL, En çok zarar: -25.000 TL. Fark: (+45.000) - (-25.000) = 45.000 + 25.000 = 70.000 TL'dir.",
+        "stimulus": "Sayı doğrusunda -3 ile -2 arası 4 eşit parçaya; +1 ile +2 arası ise 3 eşit parçaya bölünmüştür.\n• K noktası: -3 ile -2 arasında, -3'ten sağa doğru 3. bölme işaretidir.\n• L noktası: +1 ile +2 arasında, +1'den sağa doğru 2. bölme işaretidir.",
+        "questionText": "K ve L noktalarına karşılık gelen rasyonel sayıları tam sayılı ve bileşik kesir biçiminde yazınız.",
+        "solutionExplanation": "K = -3 + 3/4 = -2 tam 1/4 = -9/4. L = 1 tam 2/3 = 5/3.",
+        "modelAnswer": "• K noktası: -2 ile -3 arasında, -2'den sola doğru 1 birim veya -3'ten sağa doğru 3 birimdir: -2 tam 1/4 = -9/4 rasyonel sayısıdır.\n• L noktası: 1 ile 2 arasında 2. bölmedir: 1 tam 2/3 = +5/3 rasyonel sayısıdır.",
         "rubric": [
           {
-            "criterion": "a şıkkında 4 aylık toplam net durumun (+34.000 TL) doğru bulunması",
+            "criterion": "K noktasının (-2 tam 1/4 veya -9/4) doğru bulunması",
             "points": 8
           },
           {
-            "criterion": "b şıkkında tam sayılarda çıkarma ile 70.000 TL farkın bulunması",
+            "criterion": "L noktasının (1 tam 2/3 veya 5/3) doğru bulunması",
             "points": 7
           }
         ]
@@ -11545,20 +11557,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "MAT.7.1.2. Gerçek yaşam durumlarında rasyonel sayıların ondalık gösterimlerini yansıtabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "archetype": "Hata Tespiti & Adım Analizi",
         "points": 14,
         "contextText": "Sadece bir basamağı devreden devirli ondalık sayı.",
-        "stimulus": "Verilen devirli ondalık sayı: 0,727272... (0,72; 72 devrediyor).",
-        "questionText": "Bu sayıyı kesir çizgisi kullanarak rasyonel sayıya çeviriniz ve en sade biçimde yazınız.",
-        "solutionExplanation": "72 / 99 = 8 / 11.",
-        "modelAnswer": "Formül: (72 - 0) / 99 = 72 / 99.\nSadeleştirme (9 ile): 72 ÷ 9 = 8, 99 ÷ 9 = 11. En sade hali: 8 / 11'dir.",
+        "stimulus": "Verilen sayı: 3,1666... (3,16; sadece 6 devrediyor).",
+        "questionText": "Bu sayıyı rasyonel sayıya dönüştürünüz. Paydasında neden bir tane 9 ve bir tane 0 olduğunu kuralıyla açıklayınız.",
+        "solutionExplanation": "(316 - 31) / 90 = 285 / 90 = 19 / 6. Virgülden sonra bir devreden (9), bir devretmeyen (0).",
+        "modelAnswer": "Formül: (316 - 31) / 90 = 285 / 90.\nPayda kuralı: Virgülden sonraki kısımda devreden basamak sayısı kadar 9 (bir tane 6 var -> 9), devretmeyen basamak sayısı kadar 0 (bir tane 1 var -> 0) yazılır, payda 90 olur.\nEn sade kesir: 285 ÷ 15 = 19, 90 ÷ 15 = 6 yani 19 / 6 (veya 3 tam 1/6).",
         "rubric": [
           {
-            "criterion": "72 / 99 kesrinin doğru oluşturulması",
+            "criterion": "(316 - 31)/90 işleminin doğru kurulması ve sonucun bulunması",
             "points": 7
           },
           {
-            "criterion": "8 / 11 en sade kesrinin bulunması",
+            "criterion": "Payda kuralının (bir 9, bir 0) doğru açıklanması",
             "points": 7
           }
         ]
@@ -11593,7 +11605,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "MAT.7.1.3. Rasyonel sayıların karşılaştırma ve sıralama ilişkilerini yorumlayabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
         "points": 14,
         "contextText": "Rasyonel sayılarda işlem önceliği.",
         "stimulus": "İşlem: [(-2/3) + (1/2)] ÷ (-5/6).\n• Can: 'Önce parantez içindeki toplama için payda eşitlenir, ardından bölme çarpma kuralına dönüştürülür.'\n• Alp: 'Bölme işlemi toplamadan önceliklidir, önce 1/2'yi -5/6'ya bölmeliyiz.'",
@@ -11617,7 +11629,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "MAT.7.1.4. Rasyonel sayılar ve işlemler içeren gerçek yaşam problemlerini çözebilme",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Adım uzunluğu ile mesafe ölçme.",
         "stimulus": "Kaan'ın bir adımının uzunluğu 3/5 metredir. Kaan evinden okula giderken 450 adım atmıştır.",
@@ -11657,7 +11669,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "MAT.7.1.1. Gerçek yaşam ya da matematiksel durumlarda doğal sayı, tam sayı ve rasyonel sayıları yorumlayabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
         "points": 17,
         "contextText": "Dağ zirvesi ile vadi arasındaki sıcaklık farkı.",
         "stimulus": "Ağrı Dağı'nın zirvesinde hava sıcaklığı -16 °C iken, aynı anda eteklerindeki Iğdır Ovası'nda hava sıcaklığı +8 °C olarak ölçülmüştür.",
@@ -11681,20 +11693,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "MAT.7.1.1. Gerçek yaşam ya da matematiksel durumlarda doğal sayı, tam sayı ve rasyonel sayıları yorumlayabilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Akıllı bina asansörü kat hareketleri.",
-        "stimulus": "Ağrı Dağı'nın zirvesinde hava sıcaklığı -16 °C iken, aynı anda eteklerindeki Iğdır Ovası'nda hava sıcaklığı +8 °C olarak ölçülmüştür.",
-        "questionText": "a) Ova ile zirve arasındaki sıcaklık farkını tam sayılarda çıkarma işlemi olarak ifade edip sonucunu bulunuz.\nb) Dağa tırmanan bir dağcı her 200 metre yükselişte sıcaklığın 1 °C düştüğünü bilmektedir. Buna göre ova ile zirve arasındaki yükseklik farkı yaklaşık kaç metredir?",
-        "solutionExplanation": "a) (+8) - (-16) = 24 °C. b) 24 * 200 = 4800 metre.",
-        "modelAnswer": "a) Sıcaklık farkı: (+8) - (-16) = 8 + 16 = 24 °C'dir.\nb) 1 °C düşüş için 200 m tırmanılıyorsa; 24 °C fark için: 24 × 200 = 4.800 metre yükseklik farkı vardır.",
+        "stimulus": "Bir alışveriş merkezinde zemin kat 0, otopark katları -1, -2, -3; mağaza ve ofis katları ise +1'den +15'e kadar numaralandırılmıştır.\nAsansöre -2. kattan binen Leyla Hanım, önce 9 kat yukarı çıkmış; ardından 4 kat aşağı inmiştir.",
+        "questionText": "Leyla Hanım'ın son durumda bulunduğu katı tam sayı işlemi yazarak hesaplayınız.",
+        "solutionExplanation": "(-2) + (+9) + (-4) = +3. kat.",
+        "modelAnswer": "İşlem: (-2) + (+9) + (-4) = +7 + (-4) = +3. kat.\nLeyla Hanım son durumda 3. mağaza katındadır.",
         "rubric": [
           {
-            "criterion": "a şıkkında 24 °C sıcaklık farkının bulunması",
+            "criterion": "Tam sayı toplama/çıkarma işleminin doğru yazılması",
             "points": 9
           },
           {
-            "criterion": "b şıkkında 4.800 metre yükseklik farkının hesaplanması",
+            "criterion": "+3. kat sonucunun doğru bulunması",
             "points": 8
           }
         ]
@@ -11732,17 +11744,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Ondalık basamak çözümlemesi ve kesir karşılığı.",
-        "stimulus": "Verilen sayı: 0,8333... (0,83; sadece 3 devrediyor).",
-        "questionText": "0,83 devirli ondalık sayısını rasyonel sayıya çeviriniz ve en sade haline getiriniz.",
-        "solutionExplanation": "(83 - 8) / 90 = 75 / 90 = 5 / 6.",
-        "modelAnswer": "Formül: (83 - 8) / 90 = 75 / 90.\nSadeleştirme (15 ile): 75 ÷ 15 = 5, 90 ÷ 15 = 6.\nEn sade kesir: 5 / 6'dır.",
+        "stimulus": "Bir yakıt sayacında depoya aktarılan benzin miktarı 4,375 litre olarak görünmektedir.",
+        "questionText": "4,375 ondalık gösterimini tam sayılı kesir ve en sade bileşik kesir olarak yazınız.",
+        "solutionExplanation": "4 tam 375/1000 = 4 tam 3/8 = 35/8.",
+        "modelAnswer": "4,375 = 4 tam 375/1000.\n375 ve 1000 sayıları 125'e bölünür: 375 ÷ 125 = 3, 1000 ÷ 125 = 8.\n• Tam sayılı kesir: 4 tam 3/8\n• Bileşik kesir: (4×8 + 3)/8 = 35/8'dir.",
         "rubric": [
           {
-            "criterion": "Formül ile 75 / 90 kesrinin bulunması",
+            "criterion": "4 tam 3/8 tam sayılı kesrinin bulunması",
             "points": 9
           },
           {
-            "criterion": "15 ile sadeleştirilerek 5 / 6 kesrinin elde edilmesi",
+            "criterion": "35/8 en sade bileşik kesrinin yazılması",
             "points": 8
           }
         ]
@@ -11777,7 +11789,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "MAT.7.1.3. Rasyonel sayıların karşılaştırma ve sıralama ilişkilerini yorumlayabilme",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "archetype": "Hata Tespiti & Adım Analizi",
         "points": 16,
         "contextText": "Çok adımlı rasyonel işlemde hata analizi.",
         "stimulus": "Efe tahtadaki (1 - 1/3) × (1 + 1/2) işlemini şu adımlarla çözmüştür:\n1. Adım: (1 - 1/3) = 2/3\n2. Adım: (1 + 1/2) = 3/2\n3. Adım: (2/3) × (3/2) = 6/6 = 1",
@@ -11818,17 +11830,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "cognitiveLevel": "Basit Bilişsel Süreçler",
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "contextText": "Gözlemevi (rasathane) yer seçiminde coğrafi ve atmosferik şartlar.",
-        "stimulus": "Gök bilimciler uzaydaki gök cisimlerini ve gezegenleri incelemek için gözlemevlerini (rasathaneleri) şehir merkezleri yerine şehirlerden uzak ve yüksek dağların tepelerine kurarlar.",
-        "questionText": "a) Gözlemevlerinin şehir ışıklarından uzak yerlere kurulmasının temel nedenini yazınız.\nb) Yüksek dağ zirvelerinin tercih edilmesinin atmosfer ve hava şartlarıyla ilgili nedenini açıklayınız.",
-        "solutionExplanation": "Işık kirliliğinden uzaklaşmak ve dağlarda nem, bulut ve hava kirliliğinin az olması.",
-        "modelAnswer": "a) Şehirlerdeki yoğun yapay ışıklar gökyüzünü aydınlatarak ışık kirliliğine neden olur; bu durum gök cisimlerinin teleskopla net görülmesini engeller.\nb) Yüksek dağ zirvelerinde atmosfer tabakası daha incedir, hava kirliliği ve nem oranı çok düşüktür, ayrıca açık ve bulutsuz gece sayısı fazladır. Böylece uzaydan gelen ışık bozulmadan teleskoba ulaşır.",
+        "stimulus": "Gökbilimciler uzayı incelemek için hem Dünya yüzeyindeki yüksek dağların zirvelerine dev gözlemevleri (rasathaneler) kurmakta hem de James Webb gibi teleskopları uzay boşluğuna yerleştirmektedir.",
+        "questionText": "a) Uzay teleskoplarının, yeryüzündeki en gelişmiş gözlemevlerinden bile daha net ve kaliteli görüntü elde etmesinin 2 temel bilimsel nedenini açıklayınız.\nb) Rasathanelerin (gözlemevlerinin) kurulacağı yer seçiminde dikkat edilen 2 coğrafi/çevresel kriteri yazınız.",
+        "solutionExplanation": "Atmosfer ışığı saçar, soğurur ve hava olayları gözlemi engeller. Uzayda atmosfer yoktur. Rasathaneler ışık kirliliğinden uzak ve yüksek yerlere kurulur.",
+        "modelAnswer": "a) 1. Neden: Dünya atmosferindeki gaz tabakası, tozlar ve bulutlar ışığı kırarak dağıtır ve görüntüyü bozar. Uzay boşluğunda atmosfer olmadığı için ışık bozulmadan teleskoba ulaşır.\n2. Neden: Yeryüzündeki yapay ışık kirliliği ve hava olayları (sis, yağmur, bulut) uzay teleskoplarını etkilemez.\nb) Rasathane yer seçim kriterleri: 1) Şehir ışıklarından uzak, ışık kirliliğinin en az olduğu yerler olmalıdır. 2) Havadaki nem ve bulutluluk oranının düşük, açık gece sayısının fazla olduğu yüksek rakımlı dağ zirveleri seçilmelidir.",
         "rubric": [
           {
-            "criterion": "a şıkkında yapay ışık kirliliğinin gök cisimlerinin gözlemini engellediğinin belirtilmesi",
+            "criterion": "Uzay teleskoplarının atmosferik avantajının doğru açıklanması",
             "points": 6
           },
           {
-            "criterion": "b şıkkında dağ zirvelerindeki ince atmosfer, az nem veya bulutsuz/temiz hava şartının gerekçelendirilmesi",
+            "criterion": "Rasathane yeri için 2 bilimsel kriterin doğru yazılması",
             "points": 6
           }
         ],
@@ -11840,20 +11852,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeCode": "FB.7.1.1",
         "outcomeTitle": "FB.7.1.1. Uzay araştırmaları için geliştirilen teknolojileri karşılaştırabilme",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
         "contextText": "Uzay teleskopları ile yeryüzü teleskoplarının görüntü kalitesi farkı.",
-        "stimulus": "Astronomi panosu hazırlayan iki öğrenci arasında şu konuşma geçer:\nCan: \"James Webb ve Hubble gibi uzay teleskopları, yeryüzündeki en büyük teleskoplardan bile çok daha net ve kaliteli fotoğraflar çeker.\"\nAlp: \"Bence uzayda veya yeryüzünde olmasının önemi yoktur, sadece ayna boyutu büyük olan teleskop her zaman daha net çeker.\"",
-        "questionText": "Hangi öğrencinin açıklaması doğrudur? Uzay teleskoplarının Dünya atmosferinin olumsuz etkilerinden neden etkilenmediğini açıklayınız.",
-        "solutionExplanation": "Can haklıdır. Dünya atmosferi ışığı kırar ve bozar; uzayda atmosfer olmadığı için görüntü nettir.",
-        "modelAnswer": "Can haklıdır. Çünkü Dünya atmosferindeki hava hareketleri, tozlar ve bulutlar gök cisimlerinden gelen ışığı kırarak görüntünün bulanıklaşmasına yol açar. Uzay teleskopları ise atmosferin dışında, uzay boşluğunda görev yaptığı için ışık hiçbir engelle karşılaşmadan doğrudan teleskoba ulaşır.",
+        "stimulus": "Dünya yörüngesinde işlevini yitirmiş yaklaşık 30.000'den fazla roket parçası, patlama artığı ve ömrü tükenmiş uydu başıboş halde saatte on binlerce kilometre hızla dönmektedir (Uzay Kirliliği).",
+        "questionText": "a) Uzay kirliliğinin günümüzde aktif olarak görev yapan uzay istasyonları ve haberleşme uyduları için oluşturduğu en büyük tehlikeyi açıklayınız.\nb) Uzay kirliliğini azaltmak veya önlemek amacıyla bilim insanlarının geliştirebileceği 2 somut çözüm önerisi yazınız.",
+        "solutionExplanation": "Yüksek hızda çarpışma zincirleme reaksiyon (Kessler sendromu) yaratır. Çözümler: Kendi kendini imha/atmosfere sokma, lazer veya manyetik ağ ile toplama.",
+        "modelAnswer": "a) Yörüngedeki çöpler saatte 28.000 km gibi çok yüksek hızlarla hareket eder. Bu hızdaki küçücük bir cıvata bile aktif bir uyduya veya Uluslararası Uzay İstasyonu'na çarptığında zırhı delebilir, uyduları parçalayabilir ve 'Kessler Sendromu' denilen zincirleme çarpışmalarla yörüngeyi tamamen kullanılamaz hale getirebilir.\nb) Çözüm önerileri:\n1) Görev süresi biten uyduların motorlarını son bir kez ateşleyerek Dünya atmosferine yönlendirilmesi ve sürtünmeyle yanarak yok olmasının sağlanması.\n2) Uzay çöpü toplayıcı robot kollar, dev lazerler veya manyetik çekicilerle enkazların toplanıp kontrollü şekilde düşürülmesi.",
         "rubric": [
           {
-            "criterion": "Can'ın haklı olduğunun doğru tespiti",
-            "points": 5
+            "criterion": "Yüksek hız ve çarpışma riskinin bilimsel olarak açıklanması",
+            "points": 6
           },
           {
-            "criterion": "Dünya atmosferindeki gaz ve tozların görüntüyü bozduğunun, uzayda ise atmosfer olmadığı için görüntünün net kaldığının açıklanması",
-            "points": 6
+            "criterion": "İki gerçekçi ve bilimsel çözüm önerisinin sunulması",
+            "points": 5
           }
         ],
         "questionNumber": 2,
@@ -11864,20 +11876,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeCode": "FB.7.1.4",
         "outcomeTitle": "FB.7.1.4. Yıldızların yaşamını açıklayarak yapılandırabilme",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
         "contextText": "Bulutsu (nebula) ve yıldızların yaşam döngüsü.",
-        "stimulus": "Yıldızlar da tıpkı canlılar gibi doğar, büyür ve enerjileri tükenince ömürlerini tamamlarlar. Yıldızların yaşam süreçleri başlangıçtaki kütlelerinin büyüklüğüne göre belirlenir.",
-        "questionText": "a) Bütün yıldızların doğum yeri olan gaz ve toz bulutlarına ne ad verilir?\nb) Güneş gibi küçük kütleli bir yıldızın ömrü bittiğinde geride bıraktığı sıcak ve yoğun kalıntıya ne ad verilir?",
-        "solutionExplanation": "Yıldızlar bulutsuda doğar; küçük kütleliler beyaz cüce olarak sonlanır.",
-        "modelAnswer": "a) Bütün yıldızların doğum yeri olan dev gaz ve toz bulutlarına 'Bulutsu (Nebula)' adı verilir (Örn: Orion Bulutsusu).\nb) Güneş gibi küçük kütleli yıldızlar ömürlerinin sonunda dış katmanlarını uzaya salarak geride 'Beyaz Cüce' bırakırlar.",
+        "stimulus": "Yıldızlar uzaydaki gaz ve toz bulutlarının (Bulutsu / Nebula) sıkışmasıyla doğar. Ancak bir yıldızın ömrünü nasıl tamamlayacağını onun başlangıç kütlesi belirler.\n• Küçük Kütleli Yıldızlar: Güneş gibi yıldızlar.\n• Büyük Kütleli Yıldızlar: Güneş'ten katbekat büyük dev yıldızlar.",
+        "questionText": "a) Güneş büyüklüğündeki küçük kütleli bir yıldızın yaşam döngüsü basamaklarını (Bulutsu'dan son aşamaya kadar) sırasıyla yazınız.\nb) Güneş bir gün süpernova patlaması geçirerek kara deliğe dönüşebilir mi? Nedenini açıklayınız.",
+        "solutionExplanation": "Küçük kütle: Bulutsu -> Küçük kütleli yıldız -> Kırmızı Dev -> Gezegenimsi Bulutsu -> Beyaz Cüce. Güneş kara delik olamaz çünkü kütlesi yetersizdir.",
+        "modelAnswer": "a) Küçük kütleli yıldızın yaşam evreleri:\nBulutsu (Nebula) → Küçük Kütleli Yıldız (Güneş) → Kırmızı Dev → Gezegenimsi Bulutsu → Beyaz Cüce (ve en son Siyah Cüce).\nb) Hayır, Güneş kara deliğe DÖNÜŞEMEZ. Çünkü bir yıldızın süpernova patlaması geçirip kara delik veya nötron yıldızı olabilmesi için başlangıç kütlesinin Güneş kütlesinden çok daha büyük (büyük kütleli yıldız) olması gerekir. Güneş küçük kütleli olduğu için ömrünü Beyaz Cüce olarak tamamlayacaktır.",
         "rubric": [
           {
-            "criterion": "a şıkkında Bulutsu / Nebula teriminin doğru yazılması",
-            "points": 5
+            "criterion": "Yaşam evrelerinin (Bulutsu -> Kırmızı Dev -> Gezegenimsi Bulutsu -> Beyaz Cüce) doğru sıralanması",
+            "points": 6
           },
           {
-            "criterion": "b şıkkında Beyaz Cüce kavramının doğru açıklanması",
-            "points": 6
+            "criterion": "Güneş'in kütle yetersizliğinden dolayı kara delik olamayacağının gerekçelendirilmesi",
+            "points": 5
           }
         ],
         "questionNumber": 3,
@@ -11888,20 +11900,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeCode": "FB.7.1.5",
         "outcomeTitle": "FB.7.1.5. Yıldız, galaksi ve evren kavramlarını açıklayarak yapılandırabilme",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+        "archetype": "Hata Tespiti & Adım Analizi",
         "contextText": "Galaksi türleri ve Samanyolu Galaksisi.",
-        "stimulus": "Galaksiler (gök adalar) milyarlarca yıldız, gaz ve toz bulutunun bir araya gelmesiyle oluşur. Şekillerine göre Sarmal, Eliptik ve Düzensiz galaksi olmak üzere üçe ayrılırlar.",
-        "questionText": "a) İçinde Dünya'mızın ve Güneş Sistemi'mizin de bulunduğu galaksinin adı ve şekil türü nedir?\nb) Bu galaksiye en yakın olan dev komşu sarmal galaksinin adı nedir?",
-        "solutionExplanation": "Samanyolu Galaksisi sarmaldır; en yakın komşu Andromeda'dır.",
-        "modelAnswer": "a) Galaksimizin adı 'Samanyolu Galaksisi'dir ve şekil olarak 'Sarmal Galaksi' türündedir.\nb) Samanyolu Galaksisi'ne en yakın komşu büyük galaksinin adı 'Andromeda Galaksisi'dir.",
+        "stimulus": "Bir fen deneyinde üç farklı öğrencinin eylemleri gözlenmiştir:\n1. Durum: Can, sırtındaki 5 kg'lık okul çantasıyla düz bir koridorda sabit hızla 20 metre yürümüştür.\n2. Durum: Elif, yerde duran 10 kg'lık koliyi 50 N'luk yatay kuvvet uygulayarak yatay zeminde 4 metre ileri itmiştir.\n3. Durum: Burak, duvara 100 N'luk kuvvetle 10 dakika boyunca bastırmış ancak duvar hareket etmemiştir.",
+        "questionText": "a) Bu durumlardan hangisinde/hangilerinde fiziksel anlamda İŞ YAPILMIŞTIR? Nedenini işin fiziksel formülü ve doğrultu kuralına göre açıklayınız.\nb) Fiziksel anlamda iş yapılan durumdaki iş miktarını Joule (J) cinsinden hesaplayınız.",
+        "solutionExplanation": "İş = Kuvvet * Yol. Kuvvet ile hareket doğrultusu aynı olmalıdır. 1. durumda kuvvet yukarı yol yatay (iş yok). 3. durumda yol sıfır (iş yok). 2. durumda iş = 50 N * 4 m = 200 J.",
+        "modelAnswer": "a) Yalnızca 2. DURUMDA (Elif'in durumunda) fiziksel anlamda iş yapılmıştır.\nGerekçeler:\n• 1. Durumda: Çantaya uygulanan kaldırma kuvveti DİKEY doğrultuda iken, hareket YATAY doğrultudadır. Kuvvet ile hareket doğrultusu dik olduğu için fiziksel iş yapılmaz.\n• 2. Durumda: Uygulanan kuvvet de hareket de YATAY doğrultudadır ve cisim yol almıştır. Bu nedenle iş yapılmıştır.\n• 3. Durumda: Duvar hareket etmediği için (alınan yol = 0), kuvvet ne kadar büyük olursa olsun iş yapılmamıştır.\nb) Yapılan İş Hesabı: İş = Kuvvet × Alınan Yol = 50 N × 4 m = 200 Joule (J) bulunur.",
         "rubric": [
           {
-            "criterion": "a şıkkında Samanyolu adı ve Sarmal şeklinin doğru yazılması",
-            "points": 6
+            "criterion": "Durumların fiziksel iş kuralına (doğrultu ve yol şartı) göre doğru tahlil edilmesi",
+            "points": 7
           },
           {
-            "criterion": "b şıkkında Andromeda galaksisinin doğru belirtilmesi",
-            "points": 5
+            "criterion": "İş hesabının (50 × 4 = 200 Joule) doğru yapılması",
+            "points": 4
           }
         ],
         "questionNumber": 4,
@@ -12636,20 +12648,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "SB.7.1.1. Dâhil olduğu gruplarda ve sosyal hayatta etkili iletişimin önemini sorgulayabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
         "points": 15,
         "contextText": "Empatik dinleme ve beden dili.",
-        "stimulus": "Bir anne çocuğuna şu şekilde seslenmektedir: 'Her zaman odanı darmadağın bırakıyorsun, çok sorumsuz bir çocuksun!'",
-        "questionText": "a) Annenin bu cümlesi neden 'Sen Dili'ne örnektir ve çocuk üzerinde nasıl bir psikolojik tepki doğurur?\nb) Bu iletişimi, çatışmaya yol açmayacak şekilde 'Ben Dili'ne dönüştürerek yeniden yazınız.",
-        "solutionExplanation": "Sen dili suçlayıcıdır, savunmaya ve öfkeye iter. Ben dili ise davranışın kişide bıraktığı duyguyu anlatır.",
-        "modelAnswer": "a) Cümle doğrudan kişiliği hedef aldığı, suçlayıcı, yargılayıcı ve genelleme ('her zaman') içerdiği için Sen Dili'dir. Çocukta savunmaya geçme, öfke ve kendini kapatma tepkisi doğurur.\nb) Ben Dili Dönüşümü: 'Odanı dağınık gördüğümde eşyalarını bulamayacağından endişeleniyorum ve yorulup üzülüyorum.'",
+        "stimulus": "Selin sınavdan düşük aldığı için çok üzgündür ve ağlamaklı bir sesle durumu arkadaşı Mert'e anlatmaktadır. Mert ise gözünü telefonundan ayırmadan: 'Aman boş ver, bir sonraki sınava çalışırsın.' demiştir.",
+        "questionText": "Mert'in bu davranışındaki 2 temel iletişim hatasını belirtiniz. Mert empati kuran ve etkin dinleyen bir arkadaş olsaydı nasıl davranmalı ve ne söylemeliydi?",
+        "solutionExplanation": "Göz teması kurmamış, duyguyu küçümsemiştir. Empatik dinlemede göz teması kurulur ve duygu paylaşılır.",
+        "modelAnswer": "• İletişim Hataları: 1) Göz teması kurmamış, telefonuyla ilgilenerek arkadaşını önemsiz hissettirmiştir. 2) Arkadaşının yaşadığı üzüntüyü 'Aman boş ver' diyerek küçümsemiş ve geçiştirmiştir.\n• Olması Gereken Tavır: Telefonu bir kenara bırakıp Selin'in yüzüne bakmalı, dikkatle dinlemeli ve 'Çok emek verdiğini biliyorum, üzülmekte çok haklısın. İstersen eksiklerini birlikte gözden geçirelim, yanındayım.' şeklinde destekleyici olmalıydı.",
         "rubric": [
           {
-            "criterion": "Sen dilinin özellikleri ve olumsuz etkisinin doğru açıklanması",
+            "criterion": "İki somut iletişim hatasının doğru tespit edilmesi",
             "points": 8
           },
           {
-            "criterion": "Ben diline duygu belirten doğru dönüşümün yapılması",
+            "criterion": "Empatik yaklaşımın ve örnek konuşmanın doğru kurgulanması",
             "points": 7
           }
         ]
@@ -12704,21 +12716,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "SB.7.1.3. Türk toplumunun millî meseleler karşısında gösterdiği tutum ve davranışlara ilişkin çıkarım yapabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
         "points": 14,
         "contextText": "Doğal afetlerde ve depremlerde milletimizin kenetlenmesi.",
-        "stimulus": "Mustafa Kemal Paşa Sakarya Meydan Muharebesi öncesinde ordunun çorap, çarık, bez, silah ve yiyecek ihtiyacını karşılamak için Tekâlif-i Milliye Emirleri'ni yayımlamıştır. Türk milleti elindeki son çorabına ve buğday çuvalına kadar ordusuna teslim etmiştir.",
-        "questionText": "Türk milletinin bu tutumu, onun hangi millî ve manevi karakter özelliklerini yansıtır? İki kavram belirterek açıklayınız.",
-        "solutionExplanation": "Vatanseverlik, dayanışma, bağımsızlık tutkusu ve fedakârlık.",
-        "modelAnswer": "1. Vatanseverlik ve Bağımsızlık Aşkı: Türk halkı bağımsız yaşayabilmek için malını, mülkünü ve canını feda etmekten bir an bile çekinmemiştir.\n2. Topyekûn Dayanışma (İmece Ruhu): Kadını, erkeği, yaşlısıyla tüm halkın tek bir vücut halinde ordusunun arkasında kenetlenmesi eşsiz bir millî birlik şuurunu gösterir.",
+        "stimulus": "Ülkemizde yaşanan büyük depremlerde ve afetlerde, Türkiye'nin dört bir yanından milyonlarca vatandaş kan merkezlerine koşmuş, yardım tırları hazırlamış ve binlerce genç gönüllü olarak afet bölgesine gitmiştir.",
+        "questionText": "Bu durum, Türk milletinin geçmişten gelen hangi tarihî değerinin günümüzde de canlı bir şekilde yaşadığını kanıtlar? Açıklayınız.",
+        "solutionExplanation": "Milli birlik, beraberlik ve yardımlaşma şuuru.",
+        "modelAnswer": "Bu durum, Türk milletinin bin yıllık tarihinden süzülüp gelen 'millî birlik, beraberlik ve diğerkâmlık (başkalarını düşünme)' hasletinin canlılığını koruduğunu gösterir. Milletimiz felaket ve zor günlerde her türlü ayrılığı bir kenara bırakarak tek yürek olmayı başaran yüce bir dayanışma refleksine sahiptir.",
         "rubric": [
           {
-            "criterion": "İki millî/manevi değerin doğru belirlenmesi",
-            "points": 7
-          },
-          {
-            "criterion": "Tekâlif-i Milliye ruhunun gerekçeli açıklanması",
-            "points": 7
+            "criterion": "Dayanışma ve millî birlik bilincinin doğru ifade edilmesi",
+            "points": 14
           }
         ]
       },
@@ -12728,7 +12736,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "SB.7.2.1. Küreselleşmenin insan ve toplum hayatı üzerindeki etkilerini analiz edebilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
         "points": 14,
         "contextText": "Küreselleşme ve kültürel etkileşim.",
         "stimulus": "İnternet, sosyal medya ve uluslararası ticaret sayesinde dünyanın bir ucunda üretilen müzik, film, giyim tarzı veya yemek alışkanlığı birkaç gün içinde tüm dünyaya yayılmaktadır.",
@@ -12752,7 +12760,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "SB.7.2.1. Küreselleşmenin insan ve toplum hayatı üzerindeki etkilerini analiz edebilme",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Kültürümüzün dünyaya tanıtılması.",
         "stimulus": "Geleneksel Türk kahvesi, ebru sanatı ve Karagöz-Hacivat oyunu UNESCO İnsanlığın Somut Olmayan Kültürel Mirası Temsilî Listesi'ne alınmıştır.",
@@ -12818,21 +12826,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "SB.7.1.1. Dâhil olduğu gruplarda ve sosyal hayatta etkili iletişimin önemini sorgulayabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
         "points": 15,
         "contextText": "Ön yargı ve kalıp yargıların iletişime engeli.",
-        "stimulus": "Tarih öğretmeni derse girdiğinde asık bir suratla doğrudan kitaptan okumaya başlamış, tahtaya dönük konuşmuş ve öğrencilerin yüzüne hiç bakmamıştır. Ders sonunda öğrencilerin çoğunun konuyu anlamadığı ve dersten sıkıldığı görülmüştür.",
-        "questionText": "Öğretmenin beden dili ve sözsüz iletişimindeki 2 temel eksikliği belirterek, bunların öğrencinin derse ilgisi üzerindeki olumsuz sonucunu açıklayınız.",
-        "solutionExplanation": "Göz teması kurmamak, güler yüzlü olmamak ve monoton bir duruş iletişimi koparır.",
-        "modelAnswer": "• Eksiklikler: 1) Öğrencilerle doğrudan göz teması kurmamış, tahtaya dönük ders anlatmıştır. 2) Güler yüzlü, tebessüm eden ve dinleyeni içine çeken bir mimik ve jest kullanmamıştır.\n• Olumsuz Sonuç: Bu tutum öğrencide değersizlik hissi yaratır, dikkat dağılır, motivasyon düşer ve ders monotonlaşarak verimsiz hale gelir.",
+        "stimulus": "Sınıfa yeni nakil gelen gözlüklü ve sessiz arkadaşı Arda için Cemil şöyle demiştir: 'Gözlük takan ve az konuşan insanlar soğuk ve kibirli olurlar, onunla hiç arkadaşlık kurulmaz.'",
+        "questionText": "Cemil'in bu tutumu hangi iletişim engelidir (kavram)? Bu tür düşüncelerin sınıf içi birlikteliğe ve yeni öğrenciye verdiği 2 zararı yazınız.",
+        "solutionExplanation": "Kalıp yargı ve ön yargıdır. Bireyi dışlar ve yalnızlaştırır.",
+        "modelAnswer": "• Kavram: Ön yargı (veya kalıp yargı).\n• Zararları: 1) Arda'yı tanımadan etiketlediği için onu sınıfta yalnızlaştırır, dışlanmışlık ve uyum sorunu hissettirir. 2) Sınıf içindeki arkadaşlık, güven ve kaynaşma ortamını zedeler, haksız bir önyargı duvarı örer.",
         "rubric": [
           {
-            "criterion": "Göz teması ve mimik eksikliğinin doğru belirlenmesi",
-            "points": 8
+            "criterion": "Ön yargı / kalıp yargı kavramının doğru teşhisi",
+            "points": 7
           },
           {
-            "criterion": "Öğrenci motivasyonuna ve dinleme ilgisine etkisinin gerekçelendirilmesi",
-            "points": 7
+            "criterion": "Sosyal dışlanma ve sınıf iklimine yönelik 2 zararın yazılması",
+            "points": 8
           }
         ]
       },
@@ -12869,17 +12877,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "İşitme engelli bireylerin kamusal hizmete erişimi.",
-        "stimulus": "Beyaz baston kullanan görme engelli bir vatandaş, şehrin ana caddesinde yürürken ve karşıdan karşıya geçerken ciddi güvenlik sorunları yaşamaktadır.",
-        "questionText": "Belediyelerin ve toplumun görme engelli bireylerin bağımsız hareket edebilmesi için şehirde uygulaması gereken 2 kentsel çözümü yazınız.",
-        "solutionExplanation": "Sarı kabartmalı hissedilebilir kılavuz yollar, sesli yaya geçidi sinyalizasyonları.",
-        "modelAnswer": "1. Kaldırımlara ve toplu taşıma istasyonlarına sürekliliği bozulmayan kabartmalı sarı hissedilebilir takip yüzeyleri (kılavuz çizgiler) döşenmelidir ve bu yüzeylerin üzeri araç veya eşyalarla kapatılmamalıdır.\n2. Yaya geçitlerindeki trafik ışıklarına 'geç' ve 'dur' durumunu ses tonuyla bildiren sesli yaya sinyalizasyon butonları monte edilmelidir.",
+        "stimulus": "İşitme engelli bir vatandaş hastaneye veya adliyeye gittiğinde derdini anlatmakta ve memurların dediklerini anlamakta büyük zorluk çekmektedir.",
+        "questionText": "Kamusal hizmetlerde fırsat eşitliğini sağlamak için devlet kurumlarında hangi 2 somut uygulamanın yaygınlaştırılması gerekir?",
+        "solutionExplanation": "Türk İşaret Dili bilen personeller istihdam edilmeli veya görüntülü işaret dili tercüme merkezleri kurulmalıdır.",
+        "modelAnswer": "1. Hastane, adliye, karakol ve nüfus müdürlükleri gibi kamu binalarında Türk İşaret Dili (TİD) bilen uzman personellerin istihdam edilmesi sağlanmalıdır.\n2. Tablet veya kiosklar aracılığıyla 7/24 hizmet veren uzaktan canlı 'Görüntülü İşaret Dili Tercüman Destek Hattı' sistemi kurulmalıdır.",
         "rubric": [
           {
-            "criterion": "Hissedilebilir sarı yüzey uygulamasının yazılması",
+            "criterion": "İşaret dili personeli istihdamının belirtilmesi",
             "points": 7
           },
           {
-            "criterion": "Sesli trafik sinyalizasyonu uygulamasının yazılması",
+            "criterion": "Görüntülü dijital tercüman desteğinin önerilmesi",
             "points": 7
           }
         ]
@@ -13004,21 +13012,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "SB.7.1.1. Dâhil olduğu gruplarda ve sosyal hayatta etkili iletişimin önemini sorgulayabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
         "points": 13,
         "contextText": "Etkili dinleme ve söz kesmeme.",
-        "stimulus": "Bir öğrenci, sınıf arkadaşının sosyal medyada paylaştığı resim altına alaycı ve kırıcı yorumlar yazmış, diğer bazı öğrencilerin de bu alaya katılmasına sebep olmuştur.",
-        "questionText": "a) Bu durum dijital iletişimde hangi olumsuz kavramla adlandırılır?\nb) Sanal ortamda etkili ve ahlaki bir iletişim için uyulması gereken 1 kural yazınız.",
-        "solutionExplanation": "Siber zorbalık. Sanal ortamda da gerçek hayattaki saygı ve nezaket kurallarına uymak gerekir.",
-        "modelAnswer": "a) Siber zorbalık (dijital şiddet).\nb) Yüz yüze söyleyemeyeceğimiz hiçbir kırıcı, küçük düşürücü veya alaycı ifadeyi sanal ortamda da yazmamalı; dijital nezaket ve empati kurallarını korumalıyız.",
+        "stimulus": "Grup ödevi toplantısında Kerem, arkadaşı Zehra fikrini açıklamaya çalışırken sürekli onun sözünü kesmiş ve 'Sen anlamazsın, benim dediğim planı yapmalıyız' demiştir.",
+        "questionText": "Kerem'in bu davranışı grup çalışmalarında hangi iki temel soruna yol açar? Açıklayınız.",
+        "solutionExplanation": "Grup içi iletişimi koparır, takım ruhunu yok eder ve ortak akıl üretimini engeller.",
+        "modelAnswer": "1. Takım Ruhunun ve Güvenin Yok Olması: Arkadaşının fikrine saygı duyulmadığı için Zehra kendisini değersiz hisseder ve çalışmaya katkı sunmaktan vazgeçer.\n2. Ortak Aklın Engellenmesi: Farklı fikirlerin dinlenmemesi projenin zenginleşmesini engeller ve grubun başarı seviyesini düşürür.",
         "rubric": [
           {
-            "criterion": "Siber zorbalık kavramının tespiti",
-            "points": 6
-          },
-          {
-            "criterion": "Dijital nezaket ve ahlak kuralının yazılması",
-            "points": 7
+            "criterion": "İki somut grup içi iletişim sorununun gerekçelendirilmesi",
+            "points": 13
           }
         ]
       },
@@ -13076,21 +13080,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "SB.7.1.3. Türk toplumunun millî meseleler karşısında gösterdiği tutum ve davranışlara ilişkin çıkarım yapabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
         "points": 12,
         "contextText": "Kızılay ve Mehmetçik Vakfı gibi millî dayanışma kurumları.",
-        "stimulus": "Kastamonu İnebolu Limanı'na indirilen cephaneleri sırtında çocuğuyla, kağnı arabasında cepheye taşıyan Şerife Bacı, mermiler ıslanmasın diye kazağını cephanelerin üzerine örtmüş ve donarak şehit olmuştur.",
-        "questionText": "Şerife Bacı'nın bu destansı fedakârlığı, Türk kadınının ve milletinin vatan savunmasındaki rolüne dair neyi ispatlar? Açıklayınız.",
-        "solutionExplanation": "Vatan savunmasının sadece cephedeki askerle değil, kadın-erkek tüm milletin topyekûn ruhuyla yapıldığını gösterir.",
-        "modelAnswer": "Bu fedakârlık, Türk milletinde vatan savunmasının sadece ordunun değil, kadın-erkek, genç-yaşlı bütün bir milletin ortak davası (topyekûn seferberlik) olduğunu ispatlar. Türk kadını, evladının canını dahi vatanın bağımsızlığından sonra görerek bağımsızlık mücadelesinin en kritik taşıyıcı gücü olmuştur.",
+        "stimulus": "Milletimiz kurban bayramlarında, ramazan aylarında ve kriz anlarında Türk Kızılayı, Mehmetçik Vakfı ve AFAD gibi kurumlara rekor seviyede bağışlar yapmaktadır.",
+        "questionText": "Vatandaşlarımızın bu kurumlara gösterdiği yüksek güven ve desteğin arkasındaki temel millî hasletimiz nedir? Yazınız.",
+        "solutionExplanation": "Yardımlaşma, diğerkâmlık, şehit ve gazilere vefa, devlet-millet bütünleşmesi.",
+        "modelAnswer": "Temel millî hasletimiz 'yardımlaşma, infak ve şehit/gazi emanetine sahip çıkma' bilincidir. Türk toplumu zor durumda olan soydaş ve vatandaşlarının acısını kendi acısı gibi hisseder ve devletin güvenilir şefkat kollarına tereddütsüz destek verir.",
         "rubric": [
           {
-            "criterion": "Topyekûn mücadele bilincinin vurgulanması",
-            "points": 6
-          },
-          {
-            "criterion": "Türk kadınının fedakârlık ve vatan sevgisinin açıklanması",
-            "points": 6
+            "criterion": "Dayanışma ve vefa hasletinin doğru ifade edilmesi",
+            "points": 12
           }
         ]
       },
@@ -13120,7 +13120,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "SB.7.2.1. Küreselleşmenin insan ve toplum hayatı üzerindeki etkilerini analiz edebilme",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "Küresel e-ticaret ve yerel üreticiler.",
         "stimulus": "Dünya genelindeki internet alışveriş siteleri sayesinde bir vatandaş oturduğu yerden Çin'den veya Almanya'dan elektronik eşya sipariş edebilmektedir.",
@@ -13140,17 +13140,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "SB.7.2.1. Küreselleşmenin insan ve toplum hayatı üzerindeki etkilerini analiz edebilme",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
         "points": 12,
         "contextText": "Küreselleşme karşısında ana dilin korunması.",
-        "stimulus": "Dünya genelindeki internet alışveriş siteleri sayesinde bir vatandaş oturduğu yerden Çin'den veya Almanya'dan elektronik eşya sipariş edebilmektedir.",
-        "questionText": "Küresel e-ticaretin yerel esnaf ve yerli üretim üzerindeki olumsuz etkisini önlemek için yerli üreticiler nasıl bir strateji izlemelidir? Bir çözüm yazınız.",
-        "solutionExplanation": "Yerli esnaf da dijitalleşmeli, özgün ve kaliteli ürünlerini dünyaya pazarlayabilmelidir.",
-        "modelAnswer": "Yerli üreticiler ve esnaf da dijitalleşerek kendi e-ticaret altyapılarını kurmalı; geleneksel ve el emeği kaliteli ürünlerini küresel pazarlara ihraç edebilecek e-ihracat standartlarına taşımalıdır.",
+        "stimulus": "Günümüzde gençlerin mesajlaşırken Türkçe kelimeler yerine 'okey', 'bye', 'cool', 'link atmak' gibi yabancı sözcükleri yaygın biçimde kullanması dikkat çekmektedir.",
+        "questionText": "Küreselleşmenin getirdiği bu dil yozlaşması karşısında Türkçemizi korumak için gençlere düşen 2 temel sorumluluğu yazınız.",
+        "solutionExplanation": "Türkçe karşılıkları kullanmak, bol bol nitelikli Türkçe eserler okumak.",
+        "modelAnswer": "1. Yabancı kelimeler yerine Türk Dil Kurumu'nun belirlediği güzel Türkçe karşılıklarını (örneğin 'link' yerine 'bağlantı') bilinçli olarak tercih etmek.\n2. Türk edebiyatının klasik ve çağdaş nitelikli eserlerini bol bol okuyarak dil dağarcığını geliştirmek ve Türkçeyi doğru, kurallı kullanmaya özen göstermek.",
         "rubric": [
           {
-            "criterion": "Dijitalleşme ve katma değerli e-ihracat çözümünün belirtilmesi",
-            "points": 12
+            "criterion": "Türkçe karşılıkları kullanma bilincinin yazılması",
+            "points": 6
+          },
+          {
+            "criterion": "Kitap okuma ve dili özenli kullanma sorumluluğunun yazılması",
+            "points": 6
           }
         ]
       }
@@ -13202,20 +13206,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "SB.7.1.1. Dâhil olduğu gruplarda ve sosyal hayatta etkili iletişimin önemini sorgulayabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
         "points": 15,
         "contextText": "İletişimde lakap takma ve alay etme engeli.",
-        "stimulus": "Ali Bey, iş yerindeki çırağına hızlıca karmaşık bir iş tarif etmiş, çırağın anlayıp anlamadığını kontrol etmeden dükkândan ayrılmıştır. Akşam geldiğinde işin tamamen yanlış yapıldığını görmüştür.",
-        "questionText": "İletişim sürecinde 'geri bildirim (dönüt)' kavramını tanımlayarak, Ali Bey'in hatasını ve bu durumun nasıl engellenebileceğini açıklayınız.",
-        "solutionExplanation": "Dönüt, alıcının mesajı anlayıp anlamadığını gösteren tepkidir. Ali Bey teyit almalıydı.",
-        "modelAnswer": "• Dönüt: Alıcının, kaynağın gönderdiği mesajı doğru anlayıp anlamadığını göstermek için verdiği sözel veya davranışsal cevaptır.\n• Ali Bey'in Hatası ve Çözüm: Ali Bey mesajı iletmiş ancak geri bildirim almamıştır. 'Anlattıklarımı anladın mı, nasıl yapacağını bana bir tekrar eder misin?' diyerek çırağından dönüt alsaydı hata baştan önlenirdi.",
+        "stimulus": "Sınıftaki bazı öğrenciler, kilolu olan arkadaşları Caner'e sürekli 'Tombiş' ve 'Ayıboğan' diye hitap etmekte ve bunu sadece şaka yaptıklarını söyleyerek savunmaktadırlar.",
+        "questionText": "Bu durumun şaka değil bir iletişim suçu ve zorbalık olduğunu gösteren 2 gerekçe yazınız. Caner'in kişilik gelişimine zararını belirtiniz.",
+        "solutionExplanation": "Kişilik haklarına saldırı, özgüven kaybı, sosyal içe kapanma.",
+        "modelAnswer": "• Gerekçeler: 1) Muhatabın rızası ve hoşnutluğu olmayan, bedensel kusurları hedef alan her hitap kişilik haklarına saygısızlıktır. 2) Süreklilik arz ettiğinde psikolojik bir akran zorbalığına dönüşür.\n• Caner'e Zararı: Caner'de ciddi özgüven kaybına, değersizlik hissine, sosyal ortamlardan kaçınmaya ve okul başarısında düşüşe yol açar.",
         "rubric": [
           {
-            "criterion": "Geri bildirim (dönüt) kavramının doğru tanımlanması",
+            "criterion": "Kişilik hakları ve zorbalık boyutunun açıklanması",
             "points": 8
           },
           {
-            "criterion": "Ali Bey'in iletişim hatasının ve teyit çözümünün açıklanması",
+            "criterion": "Özgüven kaybı ve psikolojik zararın belirtilmesi",
             "points": 7
           }
         ]
@@ -13249,13 +13253,13 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "İstihdamda fırsat eşitliği ve engelli kotaları.",
-        "stimulus": "Bir alışveriş merkezinin tam giriş kapısının önünde yer alan mavi tabelalı 'Engelli Araç Park Yeri'ne engelli kartı olmayan sağlam bir sürücü arabasını park etmiştir.",
-        "questionText": "Bu sürücünün davranışı toplum sözleşmesi ve fırsat eşitliği açısından neden büyük bir hak ihlalidir? Açıklayınız.",
-        "solutionExplanation": "Özel gereksinimli bireyin en temel hareket özgürlüğünü engeller, pozitif ayrımcılık hakkını gasp eder.",
-        "modelAnswer": "Özel gereksinimli bireylerin hayatlarını kolaylaştırmak için yasal olarak tanınan pozitif ayrımcılık ve erişim hakkının bencilce gasp edilmesidir. Engelli bireyin hareket özgürlüğünü sıfırlayarak onu AVM'ye veya hizmete ulaşamaz hale getiren ağır bir kul hakkı ve toplumsal saygısızlıktır.",
+        "stimulus": "Anayasamızın 10. maddesi 'Çocuklar, yaşlılar, engelliler, harp ve vazife şehitlerinin dul ve yetimleri ile malul ve gaziler için alınacak tedbirler eşitlik ilkesine aykırı sayılmaz' demektedir.",
+        "questionText": "Bu anayasal ilkeye dayanarak, devletin kamu ve özel sektörde engelli vatandaşlar için uyguladığı 'zorunlu istihdam kotası'nın amacını açıklayınız.",
+        "solutionExplanation": "Pozitif ayrımcılık ile ekonomik bağımsızlık kazandırmak ve topluma üretken bireyler olarak katmak.",
+        "modelAnswer": "Bu uygulamanın amacı pozitif ayrımcılık ilkesini işleterek engelli bireylerin ekonomik bağımsızlıklarını kazanmalarını sağlamaktır. Onların üretken birer yurttaş olarak onurlarıyla çalışmalarını ve toplumda diğer bireylerle eşit hayat standardına erişmelerini temin etmektir.",
         "rubric": [
           {
-            "criterion": "Pozitif ayrımcılık ve hak ihlali boyutunun açıklanması",
+            "criterion": "Pozitif ayrımcılık ve ekonomik bağımsızlık vurgusunun yapılması",
             "points": 14
           }
         ]
@@ -13286,7 +13290,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "SB.7.1.3. Türk toplumunun millî meseleler karşısında gösterdiği tutum ve davranışlara ilişkin çıkarım yapabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
         "points": 14,
         "contextText": "Millî bayramlarda bayrak asma ve anma kültürü.",
         "stimulus": "29 Ekim Cumhuriyet Bayramı'nda veya 19 Mayıs'ta Edirne'den Kars'a kadar bütün evlerin balkonlarına, caddelere ve dükkânlara al yıldızlı Türk bayrakları asılmaktadır.",
@@ -13306,7 +13310,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "SB.7.1.3. Türk toplumunun millî meseleler karşısında gösterdiği tutum ve davranışlara ilişkin çıkarım yapabilme",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Orman yangınlarında milletin fidan seferberliği.",
         "stimulus": "Yaz aylarında meydana gelen orman yangınlarının ardından milyonlarca vatandaş 'Geleceğe Nefes' kampanyasına katılarak fidan bağışlamış ve küle dönen alanları yeniden yeşillendirmek için el ele vermiştir.",
@@ -13395,17 +13399,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Dijital ortamda görme engelliler için erişilebilirlik.",
-        "stimulus": "Şehir içi belediye otobüslerinin yüksek basamaklı olması tekerlekli sandalyeli ve yürüteç kullanan vatandaşların otobüse binmesini imkânsız hale getirmektedir.",
-        "questionText": "Belediyelerin toplu ulaşım araçlarında fırsat eşitliğini sağlamak için otobüs filosunda yapması gereken 2 teknik/fiziki iyileştirmeyi yazınız.",
-        "solutionExplanation": "Alçak tabanlı otobüsler, açılır kapanır mekanik engelli rampaları, otobüs içi emniyet kemerli tekerlekli sandalye alanı.",
-        "modelAnswer": "1. Şehir içi otobüslerin tamamının kaldırım seviyesine inebilen körüklü 'alçak tabanlı' ve basamaksız modellerle değiştirilmesi.\n2. Orta kapılara tekerlekli sandalyenin kolayca içeri girmesini sağlayan manuel veya otomatik açılır kapanır tekerlekli sandalye rampalarının takılması.",
+        "stimulus": "Devlet kurumlarının web sitelerinde ve e-Devlet uygulamasında resimlerin altında alternatif metin (alt tag) bulunmaması, ekran okuyucu program kullanan görme engelli bireylerin işlem yapmasını engellemektedir.",
+        "questionText": "Dijital kamu hizmetlerinde fırsat eşitliğini sağlamak için web sitelerinde hangi 2 yazılımsal/erişilebilirlik standardının zorunlu tutulması gerekir?",
+        "solutionExplanation": "Ekran okuyucu uyumluluğu, görsellere betimleyici metinler (alt-text) ekleme, sesli yönlendirme.",
+        "modelAnswer": "1. Sitedeki bütün görsel, buton ve grafiklere ekran okuyucu yazılımların seslendirebileceği açıklayıcı 'alternatif metin (alt-text)' etiketlerinin eklenmesi.\n2. Görme azlığı olanlar için yüksek kontrast modu ve web sayfalarında metin boyutunu büyütme/sesli okuma düğmelerinin yer alması.",
         "rubric": [
           {
-            "criterion": "Alçak tabanlı basamaksız otobüs çözümünün yazılması",
+            "criterion": "Ekran okuyucu ve alternatif metin standardının yazılması",
             "points": 9
           },
           {
-            "criterion": "Açılır kapanır rampa ve emniyetli alan çözümünün yazılması",
+            "criterion": "Yüksek kontrast ve sesli okuma desteğinin belirtilmesi",
             "points": 8
           }
         ]
@@ -13440,21 +13444,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "SB.7.1.3. Türk toplumunun millî meseleler karşısında gösterdiği tutum ve davranışlara ilişkin çıkarım yapabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
         "points": 16,
         "contextText": "Millî savunma sanayii atılımlarında milletin desteği.",
-        "stimulus": "Maraş işgal edildiğinde Fransız ve Ermeni askerlerinin Türk kadınlarının peçesine saldırması üzerine Sütçü İmam ilk kurşunu sıkarak Maraş'ın şanlı direnişini başlatmıştır.",
-        "questionText": "Sütçü İmam'ın bu ilk kurşunu, Türk milletinin millî namus ve bağımsızlık anlayışındaki kırmızı çizgisini nasıl yansıtır? Açıklayınız.",
-        "solutionExplanation": "Türk milleti namusuna, bayrağına ve kutsallarına dokunulduğunda hiçbir tereddüt göstermeden canını ortaya koyar.",
-        "modelAnswer": "Bu olay, Türk milletinin kutsal değerlerine, kadınların namusuna ve millî onuruna uzanan ellere karşı hiçbir güçten korkmadan, canı pahasına anında karşılık vereceğini gösterir. Maraş halkının topyekûn şahlanışına kıvılcım olmuş ve kutsallara dokunulamaz olduğunu tarihe kazımıştır.",
+        "stimulus": "Türkiye'nin yerli İHA, SİHA (Bayraktar), Millî Muharip Uçak (KAAN) ve TCG Anadolu gibi savunma sanayii projelerine milletimiz TEKNOFEST'lerde milyonlar halinde akın ederek sahip çıkmaktadır.",
+        "questionText": "Milletimizin yerli ve millî teknoloji atılımlarına gösterdiği bu heyecan, bağımsız devlet olma ideali açısından ne anlam taşır? Yazınız.",
+        "solutionExplanation": "Tam bağımsızlığın yolunun yerli üretim ve savunma sanayiinden geçtiği bilinci.",
+        "modelAnswer": "Bu heyecan, Atatürk'ün 'İstikbal göklerdedir' ülküsü doğrultusunda tam bağımsız Türkiye idealine milletçe inanıldığını gösterir. Savunmada dışa bağımlılığı bitirmenin millî bir beka ve hürriyet meselesi olduğunun idrak edildiğini kanıtlar.",
         "rubric": [
           {
-            "criterion": "Millî namus ve haysiyet anlayışının açıklanması",
-            "points": 8
-          },
-          {
-            "criterion": "Tereddütsüz direniş refleksinin gerekçelendirilmesi",
-            "points": 8
+            "criterion": "Tam bağımsızlık ve yerli savunma bilincinin açıklanması",
+            "points": 16
           }
         ]
       },
@@ -13554,20 +13554,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "DKAB.7.1.2. Ahiret hayatının aşamalarını çözümleyebilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
         "points": 13,
         "contextText": "Mizan ve Mahşer kavramları.",
-        "stimulus": "'Sûr'a üflenir; göklerde ve yerde olanlar, Allah'ın diledikleri müstesna, baygın düşer (ölür). Sonra ona bir daha üflenir; bir de bakarsın ki onlar ayağa kalkmış bakıyorlar.' (Zümer Suresi, 68. ayet)",
-        "questionText": "Ayet metninde Sûr'a birinci ve ikinci üflenişle gerçekleşeceği bildirilen iki ahiret aşamasının adını (kavramları) sırasıyla yazınız.",
-        "solutionExplanation": "İlk üfleniş Kıyamet'tir, ikinci üfleniş Ba's (yeniden diriliş)tir.",
-        "modelAnswer": "1. Birinci Üfleniş: Kıyamet (Dünya hayatının son bulması, evrendeki kozmik düzenin yıkılması ve canlıların ölmesi).\n2. İkinci Üfleniş: Ba's (Ölen bütün insanların hesaba çekilmek üzere kabirlerinden yeniden diriltilmesi).",
+        "stimulus": "Ali: 'İnsanlar öldükten sonra doğrudan cennet ya da cehenneme gider, aradaki toplanma ve tartı aşamaları semboliktir.' demiştir. Zeynep ise ahirette ilahi adaletin tecelli edeceği iki temel durağı hatırlatmıştır.",
+        "questionText": "Zeynep'in hatırlattığı; dirilen insanların toplanacağı alana verilen adı (1) ve amellerin tartıldığı ilahi adalet terazisine verilen adı (2) yazınız.",
+        "solutionExplanation": "Mahşer toplanma yeridir; Mizan amellerin tartıldığı terazidir.",
+        "modelAnswer": "1. Toplanma Alanı: Mahşer (Haşir meydanı).\n2. Amellerin Tartıldığı İlahi Adalet Terazisi: Mizan.",
         "rubric": [
           {
-            "criterion": "Kıyamet kavramının doğru tespiti ve açıklaması",
+            "criterion": "Mahşer kavramının doğru yazılması",
             "points": 7
           },
           {
-            "criterion": "Ba's (yeniden diriliş) kavramının doğru tespiti",
+            "criterion": "Mizan kavramının doğru yazılması",
             "points": 6
           }
         ]
@@ -13605,17 +13605,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "Ahiret inancının acılara ve kayıplara karşı teselli edici gücü.",
-        "stimulus": "Ahmet, odasında tek başınayken ve hiç kimse kendisini görmüyorken bile internette ahlaka aykırı sitelere girmemekte, haksız bir kazanç teklifini tereddütsüz reddetmektedir.",
-        "questionText": "Ahmet'in hiç kimsenin görmediği yerlerde dahi dürüst davranması, Kiramen Kâtibin meleklerine inanmanın insana kazandırdığı hangi ahlaki bilinçle açıklanır? Yazınız.",
-        "solutionExplanation": "Otokontrol (öz denetim) ve her an melekler tarafından gözetlendiği şuuru.",
-        "modelAnswer": "Bu durum, insanın sağında ve solunda bulunan 'Kiramen Kâtibin (yazıcı melekler)' meleklerinin yapılan her iyi ve kötü ameli kaydettiği bilincinden kaynaklanan 'öz denetim (otokontrol)' duygusudur. Kişi yalnız kalsa bile asla başıboş olmadığını ve Allah'ın huzurunda hesap vereceğini bilir.",
+        "stimulus": "Çok sevdiği dedesini kaybeden 7. sınıf öğrencisi Elif, ilk günlerde derin bir hüzün yaşasa da 'Dedem yok olmadı, sadece ebedi ahiret yurduna göçtü, inşallah cennette tekrar buluşacağız' diyerek sabretmiştir.",
+        "questionText": "Elif'in bu tesellisi, ahiret inancının insan psikolojisi üzerindeki hangi koruyucu ve güçlendirici etkisini gösterir? Açıklayınız.",
+        "solutionExplanation": "Yok olma korkusunu yenme, ölümün son değil ebedi hayata geçiş olduğu bilinci, sabır ve umut aşılama.",
+        "modelAnswer": "Ahiret inancı, insanın içindeki 'yok olup gitme ve sonsuz ayrılık' korkusunu ortadan kaldırır. Sevdiklerinden ayrılan insana ölümün bir son değil, ebedi mutluluk yurduna açılan bir kapı olduğunu fısıldayarak sabır, metanet, huzur ve yeniden kavuşma ümidi verir.",
         "rubric": [
           {
-            "criterion": "Kiramen Kâtibin ve amel defteri şuurunun belirtilmesi",
+            "criterion": "Ölümün son olmadığı ve yokluk korkusunu yenme etkisinin yazılması",
             "points": 6
           },
           {
-            "criterion": "Otokontrol/özdenetim ahlakının gerekçeli açıklanması",
+            "criterion": "Sabır, metanet ve umut kazandırma boyutunun açıklanması",
             "points": 6
           }
         ]
@@ -13626,7 +13626,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "DKAB.7.1.3. Melek ve ahiret inancının insana kazandırdıkları konusunda çıkarım yapabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
         "points": 12,
         "contextText": "Ahiret inancı ve toplumsal adalet duygusu.",
         "stimulus": "Dünya hayatında haksızlığa uğrayan, hakkı yenen ve zalimlerin cezasız kaldığını gören bir insan bazen ümitsizliğe kapılabilir.",
@@ -13650,7 +13650,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "DKAB.7.1.4. Nâs suresini ve bu surenin anlamını okuyarak yorumlayabilme",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
         "points": 12,
         "contextText": "Nâs suresinin mesajı ve sığınma bilinci.",
         "stimulus": "'De ki: İnsanların kalplerine vesvese sokan sinsi vesvesecinin şerrinden insanların Rabbine, insanların Melikine (hükümranına), insanların İlahına sığınırım! O vesvese cinlerden de olur insanlardan da.' (Nâs Suresi)",
@@ -13764,20 +13764,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "DKAB.7.1.2. Ahiret hayatının aşamalarını çözümleyebilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Haşir ve Mahşer aşaması.",
-        "stimulus": "'Onların arkasında, yeniden diriltilecekleri güne kadar bir berzah (engel) vardır.' (Mü'minûn Suresi, 100. ayet)",
-        "questionText": "İslam ahiret inancında 'Berzah' kavramını tanımlayarak, bu aşamada ölen kişinin sorgusunu gerçekleştiren meleklerin adını yazınız.",
-        "solutionExplanation": "Berzah ölümle kıyamet arasındaki kabir hayatıdır. Sorguyu Münker ve Nekir melekleri yapar.",
-        "modelAnswer": "• Berzah: İnsanın ölümüyle başlayan ve kıyametteki yeniden dirilişe (Ba's) kadar devam eden ara dönem, yani kabir hayatıdır.\n• Sorgu Melekleri: Münker ve Nekir melekleridir.",
+        "stimulus": "İsrafil (a.s.) Sûr'a ikinci kez üfledikten sonra bütün insanlar kabirlerinden fırlayacak ve hesap vermek üzere devasa bir meydanda toplanacaktır.",
+        "questionText": "İnsanların kabirlerinden çıkarılarak bu alana sevk edilmesine ne denir (1)? Toplandıkları bu alana verilen ad nedir (2)?",
+        "solutionExplanation": "Sevk edilip toplanmaya Haşir, toplanılan alana Mahşer denir.",
+        "modelAnswer": "1. İnsanların diriltilip toplanmak üzere sevk edilmesine: Haşir denir.\n2. Hesaba çekilmek üzere toplandıkları o yüce meydana: Mahşer (Mahşer yeri) denir.",
         "rubric": [
           {
-            "criterion": "Berzah kavramının ve zaman diliminin doğru tanımlanması",
+            "criterion": "Haşir eyleminin ve kavramının doğru açıklanması",
             "points": 7
           },
           {
-            "criterion": "Münker ve Nekir meleklerinin adının doğru yazılması",
+            "criterion": "Mahşer meydanı kavramının doğru yazılması",
             "points": 7
           }
         ]
@@ -13812,20 +13812,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "DKAB.7.1.3. Melek ve ahiret inancının insana kazandırdıkları konusunda çıkarım yapabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
         "points": 14,
         "contextText": "Melek inancının insana verdiği manevi güven.",
-        "stimulus": "'Kim zerre miktarı hayır işlemişse onu görür. Kim de zerre miktarı şer işlemişse onu görür.' (Zilzâl Suresi, 7-8. ayetler)",
-        "questionText": "Bu ayetleri ilke edinen bir esnafın tartı ve ölçü yaparken hile yapmaktan neden şiddetle kaçınacağını ahiret sorumluluğu açısından açıklayınız.",
-        "solutionExplanation": "Zerre kadar haksızlığın bile hesabının sorulacağı bilinci esnafı dürüstlüğe sevk eder.",
-        "modelAnswer": "Bu ayetleri kalbine yerleştiren bir esnaf bilir ki kimsenin görmediği bir gramlık eksik tartı dahi zayi olmayacak, Mizan terazisinde önüne çıkacaktır. Kul hakkının hesabını verememe korkusu ve ilahi adalete olan sarsılmaz inancı onu her türlü hile ve haksızlıktan kesin olarak alıkoyar.",
+        "stimulus": "Geceleri karanlıktan korkan veya yalnız kaldığında endişelenen bir çocuğa annesi koruyucu meleklerin (Hafaza melekleri) varlığından bahsetmiştir.",
+        "questionText": "Hafaza meleklerine inanmanın insan psikolojisine kazandırdığı manevi huzur ve güven hissini açıklayınız.",
+        "solutionExplanation": "İnsanın yalnız ve sahipsiz olmadığını, Allah'ın koruması altında olduğunu bilerek korku ve yalnızlıktan kurtulması.",
+        "modelAnswer": "Hafaza meleklerine inanan insan, kainatta yapayalnız, kimsesiz ve sahipsiz olmadığını idrak eder. Yüce Yaratıcının kendisini görünmeyen koruyucu güçlerle muhafaza ettiğini bilmek insana derin bir iç huzuru, güven ve manevi cesaret verir; kaygı ve yalnızlık hissini yok eder.",
         "rubric": [
           {
-            "criterion": "Zerre kadar hakkın hesabının verileceği bilincinin açıklanması",
+            "criterion": "Yalnız ve sahipsiz olunmadığı bilincinin vurgulanması",
             "points": 7
           },
           {
-            "criterion": "Kul hakkı ve Mizan terazisi korkusunun dürüstlüğe etkisinin yazılması",
+            "criterion": "Manevi güven, cesaret ve kaygıların giderilmesinin açıklanması",
             "points": 7
           }
         ]
@@ -13836,7 +13836,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "DKAB.7.1.4. Nâs suresini ve bu surenin anlamını okuyarak yorumlayabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
         "points": 14,
         "contextText": "Nâs suresinde 'vesvese' kavramı.",
         "stimulus": "Selin: 'Nâs suresinde sadece dışımızdaki düşmanlardan bahsedilir' demiştir. Öğretmeni ise surenin asıl insanın iç dünyasına fitne sokan sinsi duygulara dikkat çektiğini belirtmiştir.",
@@ -13860,7 +13860,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "DKAB.7.2.1. Hac ve umre ibadetlerini çözümleyebilme",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Hac ile umre arasındaki farklar.",
         "stimulus": "Emre Bey ailesiyle birlikte Mekke'ye gitmiş; Kabe'yi tavaf etmiş, Safa ile Merve arasında sa'y yapmış ve tıraş olup ihramdan çıkmıştır. Ancak Arafat'a çıkmamış ve kurban kesmemiştir.",
@@ -13950,20 +13950,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "DKAB.7.1.2. Ahiret hayatının aşamalarını çözümleyebilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Amel defterlerinin dağıtılması ve hesap.",
-        "stimulus": "'Güneş dürüldüğü zaman, yıldızlar döküldüğü zaman, dağlar yürütüldüğü zaman...' (Tekvîr Suresi, 1-3. ayetler)",
-        "questionText": "Tekvîr suresinde tasvir edilen bu kozmik olay ahiret hayatının hangi ilk durağını anlatmaktadır? Bu olayın ardından yaşanacak aşamayı yazınız.",
-        "solutionExplanation": "Kıyametin kopmasıdır. Ardından kabir hayatı (berzah) ve yeniden diriliş (ba's) gelir.",
-        "modelAnswer": "• Tasvir Edilen Aşama: Kıyamet (Evrenin düzeninin bozulup dünya hayatının bütünüyle sona ermesi).\n• Sonrasındaki Aşama: İkinci sûr üflenişiyle birlikte insanların mezarlarından yeniden diriltilmesi (Ba's) ve Mahşer meydanına toplanmasıdır.",
+        "stimulus": "Mahşer meydanında toplanan insanlara dünyada yaptıkları bütün iyilik ve kötülüklerin yazılı olduğu amel defterleri verilecektir.",
+        "questionText": "Amel defterinin sağından verilmesi ile solundan verilmesinin ahiretteki akıbet (sonuç) açısından anlamını açıklayınız.",
+        "solutionExplanation": "Sağından alanlar kurtuluşa erip cennete gidecektir; solundan alanlar hüsrana uğrayıp cehenneme gidecektir.",
+        "modelAnswer": "• Defteri Sağdan Verilenler: Dünyada iman edip salih amel işleyen, Allah'ın rızasını kazanan bahtiyar kullardır; hesapları kolay geçecek ve mükâfat olarak Cennet'e gideceklerdir.\n• Defteri Soldan Verilenler: Dünyada inkâr ve kötülük içinde yaşayan, hesap gününü unutanlardır; büyük bir pişmanlık ve hüsrana uğrayarak Cehennem azabına gideceklerdir.",
         "rubric": [
           {
-            "criterion": "Kıyamet olayının doğru tespiti",
+            "criterion": "Defteri sağdan verilenlerin durumu ve cennet akıbetinin yazılması",
             "points": 9
           },
           {
-            "criterion": "Kıyamet sonrası diriliş (Ba's) aşamasının açıklanması",
+            "criterion": "Defteri soldan verilenlerin hüsranı ve cehennem sonucunun açıklanması",
             "points": 8
           }
         ]
@@ -13998,20 +13998,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "DKAB.7.1.3. Melek ve ahiret inancının insana kazandırdıkları konusunda çıkarım yapabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
         "points": 16,
         "contextText": "Ahiret inancı ve sorumluluk duygusu.",
-        "stimulus": "Eğer ahiret inancı olmasaydı, hayat sadece birkaç on yıllık mücadele, hastalık, yaşlılık ve sonunda mutlak bir yok oluştan ibaret kalırdı.",
-        "questionText": "Ahiret inancının dünyadaki hayatımızı anlamsızlıktan ve boşluk hissinden nasıl kurtardığını açıklayınız.",
-        "solutionExplanation": "Dünyanın bir imtihan salonu olduğu ve ebedi saadet için fırsat sunduğu bilinci hayata değer katar.",
-        "modelAnswer": "Ahiret inancı insana varoluşunun gayesini öğretir. İnsanın dünyaya tesadüfen gelmediğini, ömrünün her anının bir imtihan olduğunu ve burada ektiği iyilik tohumlarını ebedi cennette biçeceğini müjdeler. Böylece hayatı boş, anlamsız ve acı bir bekleyiş olmaktan çıkarıp yüce bir hedefe bağlar.",
+        "stimulus": "Kaan: 'Nasılsa Allah çok bağışlayıcıdır, istediğim gibi yaşarım, kötülük yapsam da bir şey olmaz' demektedir. Arkadaşı Tarık ise ahiretin aynı zamanda bir adalet ve sorumluluk günü olduğunu hatırlatmıştır.",
+        "questionText": "Tarık'ın ifadesinden hareketle, ahirete inanan bir Müslümanın neden 'sorumsuz ve laubali' bir hayat yaşayamayacağını gerekçelendiriniz.",
+        "solutionExplanation": "Allah merhamet sahibidir ancak aynı zamanda adildir ve kul hakkını asla affetmez.",
+        "modelAnswer": "Allah'ın sonsuz merhameti insanı tembellik ve sorumsuzluğa değil, daha çok şükretmeye sevk etmelidir. Ahirete inanan mümin bilir ki Allah aynı zamanda 'Adl'dir (mutlak adalet sahibidir); kul hakları, zulümler ve bilerek işlenen kötülükler hesap gününde mutlaka sorulacaktır. Bu şuur kişiyi sorumsuzluktan kurtarıp titiz bir ahlak bilincine yöneltir.",
         "rubric": [
           {
-            "criterion": "Varoluş gayesi ve dünya hayatının imtihan salonu bilincinin yazılması",
+            "criterion": "Allah'ın merhameti ile mutlak adaleti arasındaki dengenin kurulması",
             "points": 8
           },
           {
-            "criterion": "Ebedi mükâfat idealiyle hayata anlam ve değer katmasının açıklanması",
+            "criterion": "Kul hakkı ve hesap verme sorumluluğunun gerekçelendirilmesi",
             "points": 8
           }
         ]
@@ -14022,7 +14022,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "DKAB.7.1.4. Nâs suresini ve bu surenin anlamını okuyarak yorumlayabilme",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
         "points": 16,
         "contextText": "Nâs suresinde Allah'ın üç sıfatı: Rab, Melik, İlah.",
         "stimulus": "Nâs suresinde Yüce Allah'a 'Rabbi'n-nâs (İnsanların Rabbi)', 'Meliki'n-nâs (İnsanların Meliki)' ve 'İlahi'n-nâs (İnsanların İlahı)' unvanlarıyla sığınılmaktadır.",
@@ -14088,20 +14088,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "DKAB.7.1.2. Ahiret hayatının aşamalarını çözümleyebilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
         "points": 17,
         "contextText": "Cennet ve Cehennem: Ebedi mükâfat ve ceza yurtları.",
-        "stimulus": "Ahiret hayatı insanın ölümüyle başlayıp ebediyete kadar süren basamaklardan oluşur: Kıyamet, Berzah, Ba's, Haşir-Mahşer, Hesap-Mizan, Cennet-Cehennem.",
-        "questionText": "Ölüm ile başlayan bu zincirde: a) Kıyamet ile yeniden diriliş arasındaki ara bekleme dönemine ne ad verilir? b) Amellerin tartıldığı hassas ilahi teraziye ne ad verilir?",
-        "solutionExplanation": "a) Berzah (kabir hayatı), b) Mizan terazisi.",
-        "modelAnswer": "a) Kıyamet ile diriliş arasındaki ara kabir hayatına: Berzah denir.\nb) Amellerin en ince ayrıntısına kadar tartıldığı ilahi adalet terazisine: Mizan denir.",
+        "stimulus": "'İman edip salih ameller işleyenlere gelince, onlar için altından ırmaklar akan cennetler vardır. İşte büyük kurtuluş budur.' (Bürûc Suresi, 11. ayet)",
+        "questionText": "Ayetten hareketle Cennet'e kavuşmanın 2 temel şartını yazınız. Ahiret inancında Cennet ve Cehennemin ebedi (sonsuz) oluşunun insana hissettirdiği sorumluluğu açıklayınız.",
+        "solutionExplanation": "Şartlar: İman ve salih amel. Ebedi olması hayatın geri dönüşü olmayan ciddiyetini kavratır.",
+        "modelAnswer": "• Cennete Kavuşmanın 2 Şartı: 1) Yüce Allah'a ve ahirete samimiyetle iman etmek, 2) Salih amel (faydalı, güzel, ahlaki davranışlar ve ibadetler) işlemek.\n• Sorumluluk Hissi: Ahiretin sonsuz olması, bu fani dünyada işlenen her tercihin geri dönüşsüz ebedi bir karşılık bulacağını öğretir; insanı günahlardan titreterek uzaklaştırır.",
         "rubric": [
           {
-            "criterion": "Berzah kavramının doğru yazılması",
+            "criterion": "İman ve salih amel şartlarının doğru yazılması",
             "points": 9
           },
           {
-            "criterion": "Mizan kavramının doğru yazılması",
+            "criterion": "Ebediyet bilincinin doğurduğu sorumluluğun açıklanması",
             "points": 8
           }
         ]
@@ -14136,20 +14136,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "DKAB.7.1.3. Melek ve ahiret inancının insana kazandırdıkları konusunda çıkarım yapabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
         "points": 17,
         "contextText": "Gıybet, iftira ve kul hakkının ahiretteki karşılığı.",
-        "stimulus": "Zengin bir iş insanı olan Kerem Bey, kazancının büyük kısmıyla yetimler için aşevi açmış ve burslar vermiştir. 'Ben bu parayı biriktirip dünyalık yığabilirdim ama asıl zenginlik ahirete gönderilen yatırımdır' demiştir.",
-        "questionText": "Kerem Bey'in bu tutumu, ahiret inancının mal ve servet tutkusunu nasıl terbiye ettiğini gösterir? İki maddeyle açıklayınız.",
-        "solutionExplanation": "Dünya malının geçici olduğunu anlamak, infak ve sadaka bilincini artırmak.",
-        "modelAnswer": "1. Mal Tutkusunu Terbiye Eder: Servetin fani ve geçici bir emanet olduğunu kavratarak insanı cimrilik ve bencillik hastalığından kurtarır.\n2. Ebedi Kazanç Şuuru: Malı yalnızca dünyada tüketmek yerine, infak ve sadakayla ahirete taşınacak tükenmez bir sevap sermayesine dönüştürür.",
+        "stimulus": "Peygamber Efendimiz (s.a.v.) bir hadisinde ahirette iflas eden kişiyi (müflis) tarif ederken: 'Namazı, orucu vardır fakat birine sövmüş, birine iftira atmış, birinin hakkını yemiştir; iyilikleri hak sahiplerine dağıtılır...' buyurmuştur.",
+        "questionText": "Bu hadisten hareketle, ahirete inanan bir gencin arkadaşları arkasından konuşmaktan (gıybetten) neden titizlikle sakınması gerektiğini açıklayınız.",
+        "solutionExplanation": "Gıybet ağır bir kul hakkıdır, kişinin dünyadaki ibadet sevaplarının silinmesine ve hak sahibine verilmesine yol açar.",
+        "modelAnswer": "Gıybet ve iftira en ağır kul haklarındandır. Ahirete inanan mümin bilir ki binbir emekle kıldığı namazların ve tuttuğu oruçların sevapları, arkasından konuştuğu insanlara hak olarak aktarılacaktır; sevapları tükenince de onların günahlarını yüklenecektir. Bu korku insanı dilini korumaya ve kul hakkından titizlikle sakınmaya sevk eder.",
         "rubric": [
           {
-            "criterion": "Cimrilikten kurtarma ve geçicilik idrakinin açıklanması",
+            "criterion": "Gıybetin kul hakkı niteliğinin ve müflis hadisiyle bağının açıklanması",
             "points": 9
           },
           {
-            "criterion": "İnfak ve ahirete yatırım şuurunun belirtilmesi",
+            "criterion": "Sevapların devredilmesi tehlikesi karşısında dilin korunmasının vurgulanması",
             "points": 8
           }
         ]
@@ -14163,17 +14163,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 16,
         "contextText": "Meleklerin insan için dua ve istiğfar etmesi.",
-        "stimulus": "Zengin bir iş insanı olan Kerem Bey, kazancının büyük kısmıyla yetimler için aşevi açmış ve burslar vermiştir. 'Ben bu parayı biriktirip dünyalık yığabilirdim ama asıl zenginlik ahirete gönderilen yatırımdır' demiştir.",
-        "questionText": "Kerem Bey'in bu tutumu, ahiret inancının mal ve servet tutkusunu nasıl terbiye ettiğini gösterir? İki maddeyle açıklayınız.",
-        "solutionExplanation": "Dünya malının geçici olduğunu anlamak, infak ve sadaka bilincini artırmak.",
-        "modelAnswer": "1. Mal Tutkusunu Terbiye Eder: Servetin fani ve geçici bir emanet olduğunu kavratarak insanı cimrilik ve bencillik hastalığından kurtarır.\n2. Ebedi Kazanç Şuuru: Malı yalnızca dünyada tüketmek yerine, infak ve sadakayla ahirete taşınacak tükenmez bir sevap sermayesine dönüştürür.",
+        "stimulus": "Kuran-ı Kerim'de meleklerin müminler için bağışlanma diledikleri ve 'Rabbimiz! Onları bağışla ve onları cehennem azabından koru' diye dua ettikleri bildirilmektedir.",
+        "questionText": "Görünmeyen nurani meleklerin kendisi için hayır dua ettiğini bilmek bir mümine nasıl bir manevi destek ve moral sağlar? Açıklayınız.",
+        "solutionExplanation": "Manevi bir güç ve yalnız olmama hissi verir, iyilik yolunda motivasyonu artırır.",
+        "modelAnswer": "Günahsız ve temiz varlıklar olan meleklerin kendisi için Allah'a dua ve istiğfar ettiğini bilmek, müminin kalbine tarifsiz bir manevi ferahlık ve ümit aşılar. İyilik yolunda yürürken arkasında gök ehlinin duasını hissetmek kişiyi ibadet ve ahlakta daha gayretli olmaya motive eder.",
         "rubric": [
           {
-            "criterion": "Cimrilikten kurtarma ve geçicilik idrakinin açıklanması",
+            "criterion": "Manevi ferahlık ve ümit aşılama etkisinin yazılması",
             "points": 8
           },
           {
-            "criterion": "İnfak ve ahirete yatırım şuurunun belirtilmesi",
+            "criterion": "İyilik ve ahlakta moral/motivasyon boyutunun açıklanması",
             "points": 8
           }
         ]
@@ -14184,7 +14184,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "DKAB.7.1.4. Nâs suresini ve bu surenin anlamını okuyarak yorumlayabilme",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
         "points": 16,
         "contextText": "Nâs suresinin Felak suresiyle ortak yönü (Muavvizeteyn).",
         "stimulus": "Peygamber Efendimiz (s.a.v.) Felak ve Nâs surelerine 'koruyucu iki sure' anlamında 'Muavvizeteyn' adını vermiş ve her sabah-akşam bu iki sureyi okuyarak Allah'a sığınmıştır.",
@@ -14274,20 +14274,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "DKAB.7.1.2. Ahiret hayatının aşamalarını çözümleyebilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Hesap ve şahitlerin konuşması.",
-        "stimulus": "'Ölü toprağa can veren Allah, işte ölüleri de böyle diriltecektir...' Kuran-ı Kerim'de kışın kuruyan ve ölen tabiatın ilkbaharda yemyeşil canlanması yeniden dirilişe delil gösterilir.",
-        "questionText": "Tabiatın ilkbaharda yeniden dirilmesi ile ahiretteki 'Ba's' inancı arasındaki mantıksal bağı açıklayınız.",
-        "solutionExplanation": "Kuru toprağa can veren sonsuz kudret sahibi Allah, insanları da çürümüş kemiklerinden kolayca yeniden yaratabilir.",
-        "modelAnswer": "Kış mevsiminde kurumuş, ölmüş gibi duran ağaçlara ve toprağa baharda yeniden can veren, yaprak ve çiçek açtıran sonsuz kudret sahibi Allah için, ölüp toprağa karışan insanları ikinci bir üflenişle yeniden diriltmek (Ba's) son derece kolaydır. Tabiat her bahar gözlerimizin önünde Ba's mucizesini sergilemektedir.",
+        "stimulus": "'O gün onların ağızlarını mühürleriz; yaptıklarını bize elleri anlatır, ayakları da şahitlik eder.' (Yâsîn Suresi, 65. ayet)",
+        "questionText": "Yâsîn suresindeki bu ayet, ahiretteki hesabın hangi tartışmasız adalet özelliğini kanıtlar? Açıklayınız.",
+        "solutionExplanation": "Hiçbir inkarın ve yalanın mümkün olmayacağı, organların bile bizzat hakikati itiraf edeceği mutlak adalet.",
+        "modelAnswer": "Bu ayet, ahiretteki hesabın hiçbir yalan, inkar, sahte şahit veya mazerete yer bırakmayacak mutlak ve kusursuz bir adaletle görüleceğini kanıtlar. İnsanın kendi uzuvları bizzat işledikleri fiillere şahitlik ederek suçun veya sevabın üzerini örtmeyi imkansız hale getirecektir.",
         "rubric": [
           {
-            "criterion": "Baharın dirilişi ile Ba's arasındaki analojinin açıklanması",
+            "criterion": "Yalan ve inkarın imkansızlığı ve mutlak adalet vurgusu",
             "points": 9
           },
           {
-            "criterion": "Allah'ın sonsuz yaratma kudretiyle bağ kurulması",
+            "criterion": "Organların şahitliğiyle hakikatin apaçık ortaya çıkmasının açıklanması",
             "points": 8
           }
         ]
@@ -14322,20 +14322,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "DKAB.7.1.3. Melek ve ahiret inancının insana kazandırdıkları konusunda çıkarım yapabilme",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
         "points": 16,
         "contextText": "Ahiret inancı ve helal kazanç bilinci.",
-        "stimulus": "Ecdadımız Osmanlı'da kışın dağlardaki kurtlar ve kuşlar aç kalmasın diye vakıflar kurulmuş, cami duvarlarına zarif kuş sarayları inşa edilmiştir.",
-        "questionText": "Canlılara gösterilen bu derin merhametin arkasındaki melek ve ahiret hesabı bilincini açıklayınız.",
-        "solutionExplanation": "Dilsiz hayvanların hakkının bile ahirette sorulacağı inancı insanları merhamete sevk eder.",
-        "modelAnswer": "İslam inancına göre kıyamet gününde boynuzsuz koyun, boynuzlu koyundan hakkını alacaktır. Dilsiz hayvanların dahi ahirette hakkının sorulacağı ve onlara yapılan bir yudum su iyiliğinin amel defterine sevap yazılacağı inancı, ecdadımızı kuşlara dahi saray yapan eşsiz bir merhamet medeniyeti inşa etmeye sevk etmiştir.",
+        "stimulus": "Bir tüccara arkadaşı 'Vergi kaçırıp sahte fatura düzenlersen çok daha zengin olursun, kimse de yakalayamaz' demiştir. Tüccar ise 'Maliye görmese de Allah görüyor, Kiramen Katibin yazıyor' diyerek reddetmiştir.",
+        "questionText": "Tüccarın bu tavrı toplumda haksız kazanç ve yolsuzlukları önlemede kanunlardan önce hangi manevi gücün etkili olduğunu gösterir? Açıklayınız.",
+        "solutionExplanation": "İçsel vicdan, meleklerin kaydettiği şuuru ve ahiret hesap bilinci.",
+        "modelAnswer": "Bu durum, suç ve haksızlıkları önlemede yalnızca polis ve kanun gibi dış denetimlerin yetmeyeceğini; asıl caydırıcı gücün insanın kalbindeki 'Allah'ın her şeyi bildiği, meleklerin kaydettiği ve ahirette zerresine kadar hesap verileceği' inancından doğan iç denetim (takva ve vicdan) olduğunu gösterir.",
         "rubric": [
           {
-            "criterion": "Hayvan haklarının ahirette sorulacağı inancının yazılması",
+            "criterion": "İç denetim ve takva/vicdan şuurunun vurgulanması",
             "points": 8
           },
           {
-            "criterion": "Merhamet ve amel defteri bilinciyle bağ kurulması",
+            "criterion": "Meleklerin kaydı ve ahiret hesabı bilincinin açıklanması",
             "points": 8
           }
         ]
@@ -14388,7 +14388,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "E7.1.R1. Students will be able to understand a simple text about appearance and personality.",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 25,
         "contextText": "Reading comprehension: Mark and Liam.",
         "stimulus": "Read the text below and answer the questions:\n\n'Mark and Liam are classmates. Mark is tall and slim with curly dark hair and blue eyes. He is very outgoing and generous; he always buys presents for his friends and loves telling jokes. Liam is medium-height with straight brown hair and hazel eyes. He is quite shy and calm, but he is more hardworking than Mark because he studies three hours every evening.'",
@@ -14510,7 +14510,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "E7.1.R1. Students will be able to understand a simple text about appearance and personality.",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 20,
         "contextText": "Reading: Two sisters, Clara and Fiona.",
         "stimulus": "Read the text:\n\n'Clara and Fiona are twin sisters, but they look and act completely different. Clara has got long wavy blonde hair and green eyes. She is plump and short. She is very cheerful and talkative; she makes friends easily. Fiona has got short straight brown hair and dark eyes. She is tall and slim. Unlike Clara, Fiona is quiet and punctual. She never arrives late for appointments.'",
@@ -14534,20 +14534,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "E7.1.R1. Students will be able to understand a simple text about appearance and personality.",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
         "points": 20,
         "contextText": "True / False statements with justifications.",
-        "stimulus": "Read the text:\n\n'Clara and Fiona are twin sisters, but they look and act completely different. Clara has got long wavy blonde hair and green eyes. She is plump and short. She is very cheerful and talkative; she makes friends easily. Fiona has got short straight brown hair and dark eyes. She is tall and slim. Unlike Clara, Fiona is quiet and punctual. She never arrives late for appointments.'",
-        "questionText": "Fill in the missing details in the comparison chart based on the text:\n1) Clara's hair and build: ....................................................\n2) Fiona's personality traits: ....................................................",
-        "solutionExplanation": "Extracting physical and personality traits.",
-        "modelAnswer": "1) Clara has got long wavy blonde hair and she is plump and short.\n2) Fiona is quiet and punctual (she never arrives late).",
+        "stimulus": "According to the text about Clara and Fiona:\nStatement 1: 'Clara finds it difficult to make new friends.'\nStatement 2: 'Fiona is always on time for her plans.'",
+        "questionText": "Write whether the statements are TRUE or FALSE. Quote one clue phrase from the text for each:\na) Statement 1: ................. (Clue: .................)\nb) Statement 2: ................. (Clue: .................)",
+        "solutionExplanation": "Validating comprehension through text evidence.",
+        "modelAnswer": "a) Statement 1 is FALSE. Clue: 'she makes friends easily' / 'she is very cheerful and talkative'.\nb) Statement 2 is TRUE. Clue: 'Fiona is quiet and punctual' / 'She never arrives late for appointments'.",
         "rubric": [
           {
-            "criterion": "1. maddede Clara'nın saç ve vücut yapısının yazılması",
+            "criterion": "a şıkkında FALSE tespiti ve doğru kanıt cümlenin alıntılanması",
             "points": 10
           },
           {
-            "criterion": "2. maddede Fiona'nın kişilik özelliklerinin yazılması",
+            "criterion": "b şıkkında TRUE tespiti ve doğru kanıt cümlenin alıntılanması",
             "points": 10
           }
         ]
@@ -14606,20 +14606,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "E7.2.R1. Students will be able to understand short and simple texts on sports.",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
         "points": 20,
         "contextText": "Indoor vs outdoor sports classification.",
-        "stimulus": "Read the text:\n\n'Volleyball is a popular team sport played with two teams of six players. Players hit the ball over a high net using their hands and arms. To prevent knee injuries when diving on the hard wooden court, volleyball players must wear kneepads. Our school team practices three times a week in the indoor gym.'",
-        "questionText": "Answer the questions according to the paragraph:\na) How many players are there in a volleyball team on the court?\nb) Where do the team players practice and what equipment protects their knees?",
-        "solutionExplanation": "Information extraction: number of players, venue, and safety equipment.",
-        "modelAnswer": "a) There are six players in a team on the court.\nb) They practice in the indoor gym and they wear kneepads to protect their knees.",
+        "stimulus": "Read the list of sports: 'Swimming in a lake, table tennis, ice skating, rock climbing, badminton in a gym, trekking.'",
+        "questionText": "Classify the given sports into two categories:\n• INDOOR SPORTS (write 2): ....................................................\n• OUTDOOR SPORTS (write 2): ....................................................",
+        "solutionExplanation": "Classifying sports as indoor or outdoor.",
+        "modelAnswer": "• Indoor Sports: Table tennis, badminton (in a gym), ice skating (indoor arena).\n• Outdoor Sports: Swimming in a lake, rock climbing, trekking.",
         "rubric": [
           {
-            "criterion": "a şıkkında oyuncu sayısının (six) doğru yazılması",
+            "criterion": "İki kapalı alan sporunun (indoor) doğru seçilmesi",
             "points": 10
           },
           {
-            "criterion": "b şıkkında indoor gym ve kneepads bilgisinin yazılması",
+            "criterion": "İki açık alan sporunun (outdoor) doğru seçilmesi",
             "points": 10
           }
         ]
@@ -14648,7 +14648,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "E7.1.R1. Students will be able to understand a simple text about appearance and personality.",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "David's new school in Istanbul.",
         "stimulus": "Read David's email to his cousin in London:\n\n'Dear Sam, I love my new school in Istanbul! My deskmate Mehmet is very friendly and honest. He never tells lies and always helps me with Turkish words. He is medium-height with short black hair and brown eyes. Our English teacher, Mrs. Demir, is very energetic and patient with all foreign students.'",
@@ -14672,20 +14672,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "E7.1.R1. Students will be able to understand a simple text about appearance and personality.",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
         "points": 17,
         "contextText": "Physical appearance vs personality adjectives.",
-        "stimulus": "Read David's email to his cousin in London:\n\n'Dear Sam, I love my new school in Istanbul! My deskmate Mehmet is very friendly and honest. He never tells lies and always helps me with Turkish words. He is medium-height with short black hair and brown eyes. Our English teacher, Mrs. Demir, is very energetic and patient with all foreign students.'",
-        "questionText": "Based on David's email:\na) Why does David think Mehmet is honest? Write the sentence from the text.\nb) How does David describe Mrs. Demir's personality?",
-        "solutionExplanation": "Extracting reasons and personality adjectives.",
-        "modelAnswer": "a) Because 'He never tells lies (and always helps me with Turkish words)'.\nb) Mrs. Demir is very energetic and patient.",
+        "stimulus": "Look at the list of words: 'plump, clumsy, selfish, wavy, stubborn, freckles, generous, slim.'",
+        "questionText": "Divide the adjectives into two columns:\n• PHYSICAL APPEARANCE (Write 3 words): .................................\n• PERSONALITY (Write 3 words): .................................",
+        "solutionExplanation": "Distinguishing physical appearance adjectives from personality adjectives.",
+        "modelAnswer": "• Physical Appearance: plump, wavy, freckles, slim.\n• Personality: clumsy, selfish, stubborn, generous.",
         "rubric": [
           {
-            "criterion": "a şıkkında dürüstlük gerekçesinin doğru alıntılanması",
+            "criterion": "Fiziksel özellik belirten 3 kelimenin doğru yazılması",
             "points": 9
           },
           {
-            "criterion": "b şıkkında Mrs. Demir'in kişilik özelliklerinin yazılması",
+            "criterion": "Kişilik/karakter belirten 3 kelimenin doğru yazılması",
             "points": 8
           }
         ]
@@ -14744,20 +14744,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "E7.2.R1. Students will be able to understand short and simple texts on sports.",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
         "points": 16,
         "contextText": "Sports rules and fair play.",
-        "stimulus": "Read the text:\n\n'Defne is a national swimmer. She wakes up at 5:30 am every weekday. She goes to the Olympic pool and swims for two hours before school. She always wears her swimsuit, goggles, and swim cap. She eats healthy food like eggs, fruits, and fish to stay strong.'",
-        "questionText": "Answer the questions:\na) What equipment does Defne use when swimming?\nb) What does Defne eat to stay healthy and strong?",
-        "solutionExplanation": "Extracting swimming equipment and dietary habits.",
-        "modelAnswer": "a) She uses / wears a swimsuit, goggles, and a swim cap.\nb) She eats healthy food like eggs, fruits, and fish.",
+        "stimulus": "Read the quote from a sports referee: 'In football, touching the ball with hands is a foul, except for the goalkeeper inside the penalty area. Players should respect the referee and follow the fair play rules.'",
+        "questionText": "According to the referee's statement:\na) Which player can touch the ball with hands in football?\nb) What does 'fair play' mean for athletes? Explain briefly in English.",
+        "solutionExplanation": "Understanding rules of soccer and fair play concept.",
+        "modelAnswer": "a) Only the goalkeeper (inside the penalty box) can touch the ball with hands.\nb) Fair play means playing honestly, respecting rules, opponents, and referees without cheating.",
         "rubric": [
           {
-            "criterion": "a şıkkında yüzme ekipmanlarının (goggles, swim cap vb.) yazılması",
+            "criterion": "a şıkkında kalecinin (goalkeeper) belirtilmesi",
             "points": 8
           },
           {
-            "criterion": "b şıkkında sağlıklı besinlerin (eggs, fruits, fish) yazılması",
+            "criterion": "b şıkkında adil oyun (fair play) ve kurala saygının açıklanması",
             "points": 8
           }
         ]
@@ -14768,7 +14768,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "E7.2.W1. Students will be able to write pieces about routines/daily activities by using frequency adverbs.",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
         "points": 16,
         "contextText": "Frequency adverbs: Daily routines table.",
         "stimulus": "Look at Selim's weekly activities:\n• Go cycling: 5 days a week (★★★★☆)\n• Play computer games: 1 day a month (☆☆☆☆☆)\n• Do morning gymnastics: 7 days a week (★★★★★)",
@@ -14810,7 +14810,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "E7.1.R1. Students will be able to understand a simple text about appearance and personality.",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 15,
         "contextText": "Class election: candidates profile.",
         "stimulus": "Read the school election notice:\n\n'Two students are running for class president: Zeynep is generous, outgoing, and good at public speaking. She has long dark wavy hair. Murat is smart, punctual, and very calm. He wears glasses and has short curly hair.'",
@@ -14834,20 +14834,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "E7.1.R1. Students will be able to understand a simple text about appearance and personality.",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
         "points": 15,
         "contextText": "Personality idioms and meanings.",
-        "stimulus": "Read the school election notice:\n\n'Two students are running for class president: Zeynep is generous, outgoing, and good at public speaking. She has long dark wavy hair. Murat is smart, punctual, and very calm. He wears glasses and has short curly hair.'",
-        "questionText": "Answer the questions:\na) Who is better at public speaking?\nb) What does Murat look like?",
-        "solutionExplanation": "Information extraction from election profiles.",
-        "modelAnswer": "a) Zeynep is better at public speaking.\nb) Murat wears glasses and has short curly hair.",
+        "stimulus": "Match the personality definitions:\n1. Someone who never changes his mind easily.\n2. Someone who enjoys buying gifts and sharing things.",
+        "questionText": "Write the correct adjectives for each definition (choose from: stubborn, clumsy, generous, selfish):\nDefinition 1 is: ....................................................\nDefinition 2 is: ....................................................",
+        "solutionExplanation": "Stubborn vs generous definitions.",
+        "modelAnswer": "Definition 1 is: stubborn.\nDefinition 2 is: generous.",
         "rubric": [
           {
-            "criterion": "a şıkkında Zeynep'in doğru yazılması",
+            "criterion": "1. tanım için 'stubborn' kelimesinin doğru yazılması",
             "points": 8
           },
           {
-            "criterion": "b şıkkında Murat'ın gözlük ve kıvırcık saç özelliğinin yazılması",
+            "criterion": "2. tanım için 'generous' kelimesinin doğru yazılması",
             "points": 7
           }
         ]
@@ -14881,13 +14881,13 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Comparing study habits.",
-        "stimulus": "Ahmet (85 kg) and Tolga (62 kg).",
-        "questionText": "Write a comparative sentence using 'heavier than' or 'slimmer than' to compare Ahmet and Tolga.",
-        "solutionExplanation": "Applying comparative adjective rules.",
-        "modelAnswer": "Ahmet is heavier than Tolga. / Tolga is slimmer than Ahmet.",
+        "stimulus": "Selin studies 4 hours every day. Berk studies 1 hour every day.",
+        "questionText": "Write a comparative sentence using the adjective 'hardworking' to compare Selin and Berk.",
+        "solutionExplanation": "Using 'more hardworking than'.",
+        "modelAnswer": "Selin is more hardworking than Berk.",
         "rubric": [
           {
-            "criterion": "Ağırlık/zayıflık karşılaştırmasının kurallı İngilizceyle yazılması",
+            "criterion": "'more hardworking than' kalıbının eksiksiz yazılması",
             "points": 14
           }
         ]
@@ -14922,7 +14922,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "E7.2.R1. Students will be able to understand short and simple texts on sports.",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
         "points": 14,
         "contextText": "Team sports vs individual sports.",
         "stimulus": "Basketball, tennis, archery, handball, swimming, football.",
@@ -14988,7 +14988,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "E7.1.R1. Students will be able to understand a simple text about appearance and personality.",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 13,
         "contextText": "Twin brothers Leo and Max.",
         "stimulus": "Read the text:\n\n'Leo and Max are 13-year-old brothers. Leo is outgoing and cheerful. He loves hanging out with his friends at cafes. Max is clumsy and forgetful; he often drops his glasses and forgets his homework, but he is very honest and generous.'",
@@ -15012,20 +15012,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "E7.1.R1. Students will be able to understand a simple text about appearance and personality.",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
         "points": 13,
         "contextText": "Dialogue between Emma and Jack.",
-        "stimulus": "Read the text:\n\n'Leo and Max are 13-year-old brothers. Leo is outgoing and cheerful. He loves hanging out with his friends at cafes. Max is clumsy and forgetful; he often drops his glasses and forgets his homework, but he is very honest and generous.'",
-        "questionText": "Answer the questions:\na) What negative personality traits does Max have?\nb) What positive personality traits does Max have?",
-        "solutionExplanation": "Negative vs positive personality traits.",
-        "modelAnswer": "a) Max is clumsy and forgetful.\nb) Max is honest and generous.",
+        "stimulus": "Emma: 'Who is that tall girl with hazel eyes near the library?'\nJack: 'That is Deniz. She is our new exchange student from Ankara. She is very polite and modest, but she is a bit shy in crowded places.'",
+        "questionText": "According to the dialogue:\na) What does Deniz look like?\nb) How does Jack describe Deniz's personality?",
+        "solutionExplanation": "Dialogue analysis for appearance and personality.",
+        "modelAnswer": "a) Deniz is tall with hazel eyes.\nb) Deniz is polite, modest, and a bit shy.",
         "rubric": [
           {
-            "criterion": "a şıkkında clumsy ve forgetful özelliklerinin yazılması",
+            "criterion": "a şıkkında tall ve hazel eyes ifadelerinin yazılması",
             "points": 7
           },
           {
-            "criterion": "b şıkkında honest ve generous özelliklerinin yazılması",
+            "criterion": "b şıkkında polite, modest ve shy özelliklerinin yazılması",
             "points": 6
           }
         ]
@@ -15063,17 +15063,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 13,
         "contextText": "Writing comparative sentences from a table.",
-        "stimulus": "Adjectives: 'good, easy-going'. Compare Aylin and Buse.",
-        "questionText": "Complete the sentences with the comparative forms of the words in brackets:\na) Aylin plays tennis ................................. than Buse. (good)\nb) Buse is ................................. than Aylin in social relations. (easy-going)",
-        "solutionExplanation": "Irregular comparative 'better' and multi-syllable 'more easy-going'.",
-        "modelAnswer": "a) Aylin plays tennis better than Buse.\nb) Buse is more easy-going than Aylin in social relations.",
+        "stimulus": "Table:\n• Sam: 14 years old, curly hair, punctual\n• Tom: 16 years old, straight hair, lazy",
+        "questionText": "Write two comparative sentences comparing Sam and Tom:\n1) (younger / older)\n2) (hardworking / lazy)",
+        "solutionExplanation": "Sentence construction using comparatives.",
+        "modelAnswer": "1) Sam is younger than Tom. / Tom is older than Sam.\n2) Sam is more hardworking than Tom. / Tom is lazier than Sam.",
         "rubric": [
           {
-            "criterion": "a şıkkında 'better' düzensiz sıfatının doğru yazılması",
+            "criterion": "1. cümlede yaş kıyaslamasının doğru yapılması",
             "points": 7
           },
           {
-            "criterion": "b şıkkında 'more easy-going' kalıbının doğru yazılması",
+            "criterion": "2. cümlede çalışkanlık/tembellik kıyaslamasının doğru yapılması",
             "points": 6
           }
         ]
@@ -15108,7 +15108,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "E7.2.R1. Students will be able to understand short and simple texts on sports.",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
         "points": 12,
         "contextText": "Sports verbs: play, go, do.",
         "stimulus": "In English, we use different verbs with different sports: 'play', 'go', and 'do'.",
@@ -15136,7 +15136,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "E7.2.R1. Students will be able to understand short and simple texts on sports.",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "Medals and achievements in sports.",
         "stimulus": "At the Olympic games, successful athletes receive medals: Gold medal for the 1st place, Silver medal for the 2nd place, and Bronze medal for the 3rd place.",
@@ -15198,7 +15198,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Bağlamdan yararlanarak bilmediği kelime ve kelime gruplarının anlamını tahmin eder.",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 13,
         "contextText": "Çanakkale metninde geçen sözcükler.",
         "stimulus": "Metin Parçası: '18 Mart 1915 günü Çanakkale Boğazı'nda top sesleri yeri göğü inletiyordu. Rumeli Mecidiye Tabyası ağır bir bombardıman altında kalmış, topun vinci parçalanmıştı. Havranlı Seyit Onbaşı, vatan aşkıyla devasa 215 okkalık mermiyi sırtlayarak namluya sürdü ve İngiliz zırhlısı Ocean'ı dümeninden vurarak saf dışı bıraktı.'",
@@ -15330,7 +15330,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Şiir yazar.",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "Şiir yazma becerisi.",
         "stimulus": "Tema: Çanakkale Zaferi, vatan sevgisi ve Mehmetçik.",
@@ -15396,7 +15396,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Bağlamdan yararlanarak bilmediği kelime ve kelime gruplarının anlamını tahmin eder.",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "Bilim metninde geçen sözcükler.",
         "stimulus": "Metin Parçası: 'Yapay zekâ algoritmaları son yıllarda tıp, astronomi ve mühendislikte çığır açan keşiflere öncülük etmektedir. Devasa veri havuzlarını saniyeler içinde tarayan bu sistemler, araştırmacıların yıllar sürecek tahlillerini anında somutlaştırmaktadır.'",
@@ -15520,7 +15520,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Metin türlerini ayırt eder.",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 11,
         "contextText": "Metin türlerini ayırt etme.",
         "stimulus": "Parça: 'Yapay zekâ algoritmalarının eğitim verilerindeki önyargıları devralması, günümüz bilgisayar mühendisliğinin en tartışmalı konusudur. 2024 yılında yapılan bir araştırmaya göre, yüz tanıma modellerinin hata oranı farklı ten renklerinde %15'e kadar çıkabilmektedir.'",
@@ -15610,7 +15610,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Bağlamdan yararlanarak bilmediği kelime ve kelime gruplarının anlamını tahmin eder.",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 15,
         "contextText": "Geleneksel sanatlar metninde kelime anlamı.",
         "stimulus": "Metin Parçası: 'Ebru, kitreli suyun yüzeyine toprak boyaların serpilmesi ve biz adı verilen ince uçlu aletlerle ahenkle şekillendirilmesiyle icra edilen kadim bir kâğıt süsleme sanatıdır.'",
@@ -15742,7 +15742,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Cümlenin ögelerini ayırt eder.",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Cümlenin ögelerini bulma.",
         "stimulus": "Cümle: 'Usta sanatçı, teknedeki renkli damlaları ince bir bizle yavaşça dağıttı.'",
@@ -15784,7 +15784,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Bağlamdan yararlanarak bilmediği kelime ve kelime gruplarının anlamını tahmin eder.",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 15,
         "contextText": "Orman metninde kelime grubu.",
         "stimulus": "Metin Parçası: 'Ormanlar sadece ağaç toplulukları değil; mikoriza mantarlarından dev meşelere kadar sayısız canlının birbirine kenetlendiği kusursuz bir ekolojik ağdır.'",
@@ -15912,7 +15912,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Yazılarında uygun geçiş ve bağlantı ifadelerini kullanır.",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Geçiş ve bağlantı ifadeleri.",
         "stimulus": "Bağlantı ifadeleri: 'başka bir deyişle', 'buna rağmen'.",
@@ -15954,7 +15954,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Metindeki söz sanatlarını tespit eder.",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "Söz sanatları: Kişileştirme (Teşhis).",
         "stimulus": "Cümle: 'Kütüphanenin tozlu raflarında sıralanan eski ciltli kitaplar, kendilerini açıp okuyacak vefalı bir dostun yolunu sabırla gözlüyordu.'",
@@ -16086,7 +16086,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Okuduklarında kullanılan düşünceyi geliştirme yollarını belirler.",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 11,
         "contextText": "Düşünceyi geliştirme yolları: Tanık Gösterme.",
         "stimulus": "Parça: 'Kitaplar medeniyetin köprüleridir. Nitekim ünlü düşünür Cemil Meriç, 'Kitap bir limandı benim için. Kitaplarda kendimi buldum, kitaplarla kurtuldum.' diyerek kitabın insan hayatındaki kurtarıcı rolünü vurgulamıştır.'",
@@ -16172,7 +16172,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Metindeki söz sanatlarını tespit eder.",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 10,
         "contextText": "Söz sanatları: Teşbih ve Abartma.",
         "stimulus": "Cümle: 'Köy odasındaki misafirperverlik öyle büyüktü ki sofra adeta bir saray ziyafeti gibi donatılmış, ev sahibinin ikramı göklere ulaşmıştı.'",
@@ -16300,7 +16300,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Okudukları ile ilgili çıkarımlarda bulunur.",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 10,
         "contextText": "Okuduklarından çıkarım yapma.",
         "stimulus": "Parça: 'Eskiden köylerde birinin evi yandığında ya da sel bastığında köylüler birkaç gün içinde toplanıp el birliğiyle o aileye yeni bir ev kurarlardı. Hiç kimse 'Bana ne!' demezdi.'",
@@ -16402,7 +16402,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Fiilimsilerin cümledeki işlevlerini kavrar.",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 15,
         "contextText": "Fiilimsilerin ekleri ve işlevleri.",
         "stimulus": "Cümle: 'Kelimelerin gücünü fark eden yazarlar, dili özenle kullanarak geleceğe kalıcı eserler bırakmayı başarırlar.'",
@@ -16530,7 +16530,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Cümlenin ögelerini ayırt eder.",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Cümlenin ögelerini bulma ve öge dizilişi.",
         "stimulus": "Cümle: 'Bilinçli her Türk genci, güzel Türkçemizi yabancı sözcüklerin baskısından daima koruyacaktır.'",
@@ -16716,7 +16716,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Verilen bir sayıyı 10’un farklı tam sayı kuvvetlerini kullanarak ifade eder.",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 9,
         "contextText": "10'un farklı tam sayı kuvvetleriyle ifade etme.",
         "stimulus": "Eşitlik: 0,00045 = 45 × 10^x = 4,5 × 10^y",
@@ -16905,17 +16905,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 13,
         "contextText": "EBOB problemi: İki farklı kalitedeki zeytinyağını şişeleme.",
-        "stimulus": "İki farklı okul zilinden biri 30 dakikada bir, diğeri ise 45 dakikada bir çalmaktadır. Bu iki zil ilk kez sabah saat 08:00'de birlikte çalmıştır.",
-        "questionText": "Bu iki zilin ikinci kez saat kaçta birlikte çalacağını EKOK işlemiyle hesaplayınız.",
-        "solutionExplanation": "EKOK(30, 45) = 90 dakika = 1 saat 30 dakika. 08:00 + 01:30 = 09:30.",
-        "modelAnswer": "• 30 ve 45'in EKOK'u bulunur:\n30 = 2 × 3 × 5\n45 = 3² × 5\nEKOK(30, 45) = 2 × 3² × 5 = 90 dakika.\n• 90 dakika = 1 saat 30 dakikadır.\n• Birlikte ikinci çalış saati: 08:00 + 01:30 = 09:30'dur.",
+        "stimulus": "Bir zeytin üreticisinin elinde 84 litre Gemlik zeytinyağı ve 96 litre Ayvalık zeytinyağı vardır. Üretici bu yağları birbirine karıştırmadan, hiç artmayacak şekilde eşit hacimli en büyük şişelere dolduracaktır.",
+        "questionText": "a) Bir şişenin hacmi en fazla kaç litre olabilir?\nb) Bu işlem için toplam kaç adet şişe gerekir?",
+        "solutionExplanation": "EBOB(84, 96) = 12 litre. Şişe sayısı = 84/12 + 96/12 = 7 + 8 = 15 şişe.",
+        "modelAnswer": "a) Şişe hacmi EBOB(84, 96) olmalıdır:\n84 = 2² × 3 × 7\n96 = 2⁵ × 3\nEBOB(84, 96) = 2² × 3 = 12 litre.\nb) Toplam Şişe Sayısı:\n84 / 12 = 7 şişe (Gemlik)\n96 / 12 = 8 şişe (Ayvalık)\nToplam = 7 + 8 = 15 şişe gereklidir.",
         "rubric": [
           {
-            "criterion": "EKOK(30, 45) = 90 dakikanın doğru bulunması",
+            "criterion": "EBOB'un 12 litre bulunması",
             "points": 7
           },
           {
-            "criterion": "Saat 09:30'un doğru tespit edilmesi",
+            "criterion": "Toplam şişe sayısının 15 olarak bulunması",
             "points": 6
           }
         ]
@@ -16953,17 +16953,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "Üslü sayılarda bölme ve üssün üssü.",
-        "stimulus": "İşlem: 5⁷ × 2⁷ işleminin sonucu.",
-        "questionText": "5⁷ × 2⁷ işleminin sonucunu üslü ifadelerin kurallarını kullanarak bulunuz ve sonucun kaç basamaklı bir doğal sayı olduğunu belirtiniz.",
-        "solutionExplanation": "Üsler aynıysa tabanlar çarpılır: (5*2)^7 = 10^7. 1'in yanında 7 sıfır vardır, 8 basamaklıdır.",
-        "modelAnswer": "• Üsler aynı olduğu için tabanlar çarpılır: a^n × b^n = (a × b)^n\n5⁷ × 2⁷ = (5 × 2)⁷ = 10⁷\n• 10⁷ sayısı: 1'in yanına 7 adet sıfır yazılmasıyla oluşur (10 000 000).\n• Basamak Sayısı: 1 basamak (1 sayısı) + 7 basamak (sıfırlar) = 8 basamaklıdır.",
+        "stimulus": "İşlem: (27⁴) / (9⁵)",
+        "questionText": "Verilen bölme işleminin sonucunu 3'ün kuvveti şeklinde hesaplayınız.",
+        "solutionExplanation": "27^4 = (3^3)^4 = 3^12. 9^5 = (3^2)^5 = 3^10. 3^12 / 3^10 = 3^(12-10) = 3^2 = 9.",
+        "modelAnswer": "Tabanlar 3'ün kuvvetine dönüştürülür:\n• Pay: 27⁴ = (3³)⁴ = 3^(3×4) = 3¹²\n• Payda: 9⁵ = (3²)⁵ = 3^(2×5) = 3¹⁰\n• Bölme Kuralı: 3¹² / 3¹⁰ = 3^(12 - 10) = 3² = 9",
         "rubric": [
           {
-            "criterion": "10^7 ifadesinin kural uygulanarak bulunması",
+            "criterion": "Pay ve paydanın 3 tabanına çevrilmesi",
             "points": 6
           },
           {
-            "criterion": "8 basamaklı olduğunun doğru açıklanması",
+            "criterion": "Bölme işlemiyle 3^2 (9) sonucunun bulunması",
             "points": 6
           }
         ]
@@ -16998,7 +16998,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Kareköklü bir ifadeyi a√b şeklinde yazar ve a√b şeklindeki ifadede katsayıyı kök içine alır.",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "Kareköklü ifadeyi a√b şeklinde yazma.",
         "stimulus": "Sayı: √180",
@@ -17025,17 +17025,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "Katsayıyı karekök içine alma ve sıralama.",
-        "stimulus": "Sayı: √180",
-        "questionText": "√180 kareköklü ifadesini a√b şeklinde, a sayısı 1'den büyük olacak biçimde 2 farklı şekilde yazınız ve en sade halini daire içine alınız.",
-        "solutionExplanation": "√180 = √(4*45) = 2√45; √180 = √(9*20) = 3√20; √180 = √(36*5) = 6√5 (en sade).",
-        "modelAnswer": "• 1. Yazım: √180 = √(4 × 45) = 2√45\n• 2. Yazım: √180 = √(9 × 20) = 3√20\n• En Sade Hali: √180 = √(36 × 5) = 6√5 (Daire içine alınan en sade gösterim)",
+        "stimulus": "Üç sayı: x = 3√5, y = 4√3, z = 2√11",
+        "questionText": "Verilen x, y ve z sayılarının katsayılarını kök içine alarak bu sayıları küçükten büyüğe doğru sıralayınız.",
+        "solutionExplanation": "x = sqrt(9*5)=sqrt(45); y = sqrt(16*3)=sqrt(48); z = sqrt(4*11)=sqrt(44). Sıralama: z < x < y.",
+        "modelAnswer": "Katsayılar kök içine karesi alınarak alınır:\n• x = 3√5 = √(3² × 5) = √(9 × 5) = √45\n• y = 4√3 = √(4² × 3) = √(16 × 3) = √48\n• z = 2√11 = √(2² × 11) = √(4 × 11) = √44\nSıralama: √44 < √45 < √48 olduğundan: z < x < y",
         "rubric": [
           {
-            "criterion": "Farklı a√b gösterimlerinin yazılması",
+            "criterion": "Her üç sayının kök içine doğru alınması",
             "points": 6
           },
           {
-            "criterion": "En sade halinin 6√5 olarak belirlenmesi",
+            "criterion": "z < x < y sıralamasının doğru yapılması",
             "points": 6
           }
         ]
@@ -17115,17 +17115,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 9,
         "contextText": "EKOK problemi: Otobüs sefer saatleri.",
-        "stimulus": "Bir terzinin elinde 75 metre mavi kumaş ve 105 metre kırmızı kumaş vardır. Terzi kumaşları hiç parça artmayacak şekilde eşit uzunlukta en büyük parçalara bölecektir.",
-        "questionText": "a) Bir kumaş parçasının uzunluğu en fazla kaç metre olabilir?\nb) Toplam kaç parça kumaş elde edilir ve toplam kaç kesim yapılır?",
-        "solutionExplanation": "EBOB(75, 105) = 15 m. Parça sayısı: 75/15 + 105/15 = 5 + 7 = 12 parça. Kesim sayısı = (5-1) + (7-1) = 4 + 6 = 10 kesim.",
-        "modelAnswer": "a) EBOB(75, 105) hesaplanır:\n75 = 3 × 5², 105 = 3 × 5 × 7 -> EBOB(75, 105) = 3 × 5 = 15 metre.\nb) Parça ve Kesim Sayısı:\nMavi kumaş: 75 / 15 = 5 parça (4 kesim)\nKırmızı kumaş: 105 / 15 = 7 parça (6 kesim)\nToplam 12 parça elde edilir ve toplam 10 kesim işlemi yapılır.",
+        "stimulus": "A şehrinden kalkan iki otobüsten biri her 40 dakikada bir, diğeri ise her 50 dakikada bir sefere çıkmaktadır. İki otobüs saat 07:00'de aynı anda sefere çıkmıştır.",
+        "questionText": "Bu iki otobüsün ikinci kez saat kaçta birlikte sefere çıkacağını hesaplayınız.",
+        "solutionExplanation": "EKOK(40, 50) = 200 dakika = 3 saat 20 dakika. 07:00 + 03:20 = 10:20.",
+        "modelAnswer": "• 40 ve 50'nin EKOK'u:\n40 = 2³ × 5, 50 = 2 × 5² -> EKOK(40, 50) = 2³ × 5² = 8 × 25 = 200 dakika.\n• 200 dakika = 3 saat 20 dakikadır.\n• İkinci birlikte sefer saati: 07:00 + 03:20 = 10:20'dir.",
         "rubric": [
           {
-            "criterion": "EBOB'un 15 m bulunması",
+            "criterion": "EKOK = 200 dakikanın doğru bulunması",
             "points": 5
           },
           {
-            "criterion": "12 parça ve 10 kesim sayısının bulunması",
+            "criterion": "Saat 10:20'nin bulunması",
             "points": 4
           }
         ]
@@ -17208,7 +17208,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Sayıların ondalık gösterimlerini 10’un tam sayı kuvvetlerini kullanarak çözümler.",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 9,
         "contextText": "10'un negatif kuvvetleriyle çözümleme.",
         "stimulus": "Verilen çözümleme: (5 × 10²) + (7 × 10⁰) + (4 × 10⁻¹) + (9 × 10⁻³)",
@@ -17373,17 +17373,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 13,
         "contextText": "EKOK problemi: Merdiven basamakları.",
-        "stimulus": "Bir bakkalın elinde 60 kg toz şeker ve 72 kg un bulunmaktadır. Bakkal bunları birbirine karıştırmadan eşit ağırlıktaki poşetlere paylaştıracaktır.",
-        "questionText": "a) Bir poşet en fazla kaç kg şeker veya un alabilir?\nb) Bu iş için toplam kaç adet poşet gereklidir?",
-        "solutionExplanation": "EBOB(60, 72) = 12 kg. Poşet sayısı: 60/12 + 72/12 = 5 + 6 = 11 poşet.",
-        "modelAnswer": "a) Poşet ağırlığı EBOB(60, 72) olmalıdır:\n60 = 2² × 3 × 5, 72 = 2³ × 3² -> EBOB(60, 72) = 2² × 3 = 12 kg.\nb) Toplam Poşet Sayısı:\nŞeker için: 60 / 12 = 5 poşet\nUn için: 72 / 12 = 6 poşet\nToplam = 5 + 6 = 11 poşet gereklidir.",
+        "stimulus": "Ahmet bir merdivenin basamaklarını ikişer ikişer veya üçer üçer çıktığında her seferinde 1 basamak artmaktadır. Merdivendeki basamak sayısı 40'tan fazladır.",
+        "questionText": "Bu merdivende en az kaç basamak olduğunu EKOK yardımıyla bulunuz.",
+        "solutionExplanation": "EKOK(2, 3) = 6. 6'nın 40'tan büyük en küçük katı = 42. 1 basamak arttığı için: 42 + 1 = 43 basamak.",
+        "modelAnswer": "• 2 ve 3'ün EKOK'u: EKOK(2, 3) = 6'dır.\n• Basamak sayısı 6'nın katından 1 fazladır: 6k + 1\n• Basamak sayısı 40'tan fazla olduğuna göre 6'nın 40'tan büyük en küçük katı 42'dir (6 × 7 = 42).\n• Toplam basamak sayısı = 42 + 1 = 43 basamaktır.",
         "rubric": [
           {
-            "criterion": "EBOB'un 12 kg bulunması",
+            "criterion": "EKOK(2, 3) = 6 ve katının bulunması",
             "points": 7
           },
           {
-            "criterion": "Toplam poşet sayısının 11 olarak bulunması",
+            "criterion": "1 fazlası alınarak 43 sonucunun bulunması",
             "points": 6
           }
         ]
@@ -17445,17 +17445,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "Üslü ifadelerde çarpım ve kuvvet alma.",
-        "stimulus": "İşlem: (10¹²) / (2¹²)",
-        "questionText": "Bu işlemin sonucunu üslü ifadeler kuralını uygulayarak bulunuz ve sonucun değerini yazınız.",
-        "solutionExplanation": "Üsler aynı olduğundan tabanlar bölünür: (10/2)^12 = 5^12.",
-        "modelAnswer": "• Üsler aynı olduğunda kural: (a^n) / (b^n) = (a / b)^n\n• (10¹²) / (2¹²) = (10 / 2)¹² = 5¹²",
+        "stimulus": "İşlem: (25³) × (125²)",
+        "questionText": "Verilen işlemin sonucunu 5'in bir kuvveti olarak gösteriniz.",
+        "solutionExplanation": "25^3 = (5^2)^3 = 5^6. 125^2 = (5^3)^2 = 5^6. 5^6 * 5^6 = 5^12.",
+        "modelAnswer": "Tabanlar 5'in kuvveti olarak yazılır:\n• 25³ = (5²)³ = 5^(2×3) = 5⁶\n• 125² = (5³)² = 5^(3×2) = 5⁶\n• Çarpma Kuralı: 5⁶ × 5⁶ = 5^(6 + 6) = 5¹²",
         "rubric": [
           {
-            "criterion": "Bölme kuralının doğru ifade edilmesi",
+            "criterion": "Her iki sayının 5 tabanına çevrilmesi",
             "points": 6
           },
           {
-            "criterion": "5^12 sonucunun bulunması",
+            "criterion": "Sonucun 5^12 olarak bulunması",
             "points": 6
           }
         ]
@@ -17490,7 +17490,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Verilen bir sayıyı 10’un farklı tam sayı kuvvetlerini kullanarak ifade eder.",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "Kuvvet dönüşümü.",
         "stimulus": "Sayı: 0,0032 × 10⁸",
@@ -17607,17 +17607,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 10,
         "contextText": "EKOK problemi: İki nöbetçi doktor.",
-        "stimulus": "Boyutları 120 cm ve 180 cm olan dikdörtgen şeklindeki bir banyonun zemini hiç boşluk kalmayacak şekilde eşit büyüklükte en büyük kare fayanslarla kaplanacaktır.",
-        "questionText": "a) Bir kare fayansın bir kenar uzunluğu en fazla kaç cm olabilir?\nb) Bu iş için en az kaç fayans gereklidir?",
-        "solutionExplanation": "EBOB(120, 180) = 60 cm. Fayans sayısı = (120*180) / (60*60) = 2 * 3 = 6 fayans.",
-        "modelAnswer": "a) Fayansın kenarı EBOB(120, 180) olmalıdır:\n120 = 2³ × 3 × 5, 180 = 2² × 3² × 5 -> EBOB(120, 180) = 2² × 3 × 5 = 60 cm.\nb) En az fayans sayısı:\nFayans Sayısı = Zemin Alanı / Bir Fayansın Alanı\n= (120 × 180) / (60 × 60) = 2 × 3 = 6 adet fayans gereklidir.",
+        "stimulus": "Bir hastanedeki iki doktordan Dr. Ayşe 6 günde bir, Dr. Mehmet ise 8 günde bir nöbet tutmaktadır. İki doktor ilk nöbetlerini Pazartesi günü birlikte tutmuşlardır.",
+        "questionText": "Bu iki doktorun tekrar birlikte nöbet tutmaları için en az kaç gün geçmelidir?",
+        "solutionExplanation": "EKOK(6, 8) = 24 gün.",
+        "modelAnswer": "• İki doktorun tekrar birlikte nöbet tutma süresi EKOK(6, 8) gün sonradır.\n• 6 = 2 × 3\n• 8 = 2³\n• EKOK(6, 8) = 2³ × 3 = 8 × 3 = 24 gün.\nEn az 24 gün sonra tekrar birlikte nöbet tutarlar.",
         "rubric": [
           {
-            "criterion": "EBOB'un 60 cm bulunması",
+            "criterion": "EKOK asal çarpan algoritması",
             "points": 5
           },
           {
-            "criterion": "Fayans sayısının 6 olarak bulunması",
+            "criterion": "24 gün cevabının bulunması",
             "points": 5
           }
         ]
@@ -17631,17 +17631,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 10,
         "contextText": "EBOB ve EKOK bağıntısı.",
-        "stimulus": "Boyutları 120 cm ve 180 cm olan dikdörtgen şeklindeki bir banyonun zemini hiç boşluk kalmayacak şekilde eşit büyüklükte en büyük kare fayanslarla kaplanacaktır.",
-        "questionText": "a) Bir kare fayansın bir kenar uzunluğu en fazla kaç cm olabilir?\nb) Bu iş için en az kaç fayans gereklidir?",
-        "solutionExplanation": "EBOB(120, 180) = 60 cm. Fayans sayısı = (120*180) / (60*60) = 2 * 3 = 6 fayans.",
-        "modelAnswer": "a) Fayansın kenarı EBOB(120, 180) olmalıdır:\n120 = 2³ × 3 × 5, 180 = 2² × 3² × 5 -> EBOB(120, 180) = 2² × 3 × 5 = 60 cm.\nb) En az fayans sayısı:\nFayans Sayısı = Zemin Alanı / Bir Fayansın Alanı\n= (120 × 180) / (60 × 60) = 2 × 3 = 6 adet fayans gereklidir.",
+        "stimulus": "A ve B gibi iki doğal sayının EBOB'u 6, EKOK'u 180'dir. Bu sayılardan biri 30'dur.",
+        "questionText": "İki sayının çarpımı ile EBOB ve EKOK'ları arasındaki ilişkiyi kullanarak diğer sayıyı bulunuz.",
+        "solutionExplanation": "A * B = EBOB * EKOK. 30 * B = 6 * 180 = 1080 -> B = 36.",
+        "modelAnswer": "• Kural: İki doğal sayının çarpımı, bu sayıların EBOB'u ile EKOK'unun çarpımına eşittir.\nSayı 1 × Sayı 2 = EBOB × EKOK\n• 30 × B = 6 × 180\n• 30 × B = 1080\n• B = 1080 / 30 = 36\nDiğer sayı 36'dır.",
         "rubric": [
           {
-            "criterion": "EBOB'un 60 cm bulunması",
+            "criterion": "Kuralın (A x B = EBOB x EKOK) doğru yazılması",
             "points": 5
           },
           {
-            "criterion": "Fayans sayısının 6 olarak bulunması",
+            "criterion": "Diğer sayının 36 olarak bulunması",
             "points": 5
           }
         ]
@@ -17700,7 +17700,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Üslü ifadelerle ilgili temel kuralları anlar, birbirine denk ifadeler oluşturur.",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 10,
         "contextText": "Üslü sayılarda çarpım basamak sayısı.",
         "stimulus": "İşlem: 4⁶ × 5¹⁰",
@@ -17861,17 +17861,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 11,
         "contextText": "EKOK problemi: Kitapları gruplama.",
-        "stimulus": "Alanı 96 m² ve 144 m² olan iki arsa, hiç alan artmayacak şekilde eşit büyüklükte en büyük parsellere ayrılacaktır.",
-        "questionText": "a) Bir parselin alanı en fazla kaç m² olabilir?\nb) Bu iki arsadan toplam kaç parsel elde edilir?",
-        "solutionExplanation": "EBOB(96, 144) = 48 m². Parsel sayısı: 96/48 + 144/48 = 2 + 3 = 5 parsel.",
-        "modelAnswer": "a) Bir parselin alanı EBOB(96, 144) olmalıdır:\n96 = 2⁵ × 3, 144 = 2⁴ × 3² -> EBOB(96, 144) = 2⁴ × 3 = 16 × 3 = 48 m².\nb) Toplam Parsel Sayısı:\n1. arsa: 96 / 48 = 2 parsel\n2. arsa: 144 / 48 = 3 parsel\nToplam = 2 + 3 = 5 parsel elde edilir.",
+        "stimulus": "Bir okuldaki kitaplar dörder dörder ve altışar altışar sayıldığında hiç kitap artmamaktadır. Kitap sayısı 100'den fazladır.",
+        "questionText": "Bu okulda en az kaç kitap olduğunu EKOK yardımıyla hesaplayınız.",
+        "solutionExplanation": "EKOK(4, 6) = 12. 12'nin 100'den büyük en küçük katı: 12 * 9 = 108.",
+        "modelAnswer": "• 4 ve 6'nın EKOK'u bulunur:\n4 = 2², 6 = 2 × 3 -> EKOK(4, 6) = 2² × 3 = 12\n• Kitap sayısı 12'nin katı olmalıdır (12k).\n• 100'den büyük en küçük 12'nin katı:\n12 × 8 = 96 (100'den küçük)\n12 × 9 = 108 (100'den büyük en küçük kat)\nSonuç: En az 108 kitap vardır.",
         "rubric": [
           {
-            "criterion": "EBOB'un 48 m² bulunması",
+            "criterion": "EKOK(4, 6) = 12 bulunması",
             "points": 6
           },
           {
-            "criterion": "Toplam 5 parsel sayısının bulunması",
+            "criterion": "100'den büyük en küçük kat olan 108'in bulunması",
             "points": 5
           }
         ]
@@ -17958,7 +17958,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Üslü ifadelerle ilgili temel kuralları anlar, birbirine denk ifadeler oluşturur.",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 11,
         "contextText": "Üslü sayılarda problem çözme: Bakteri çoğalması.",
         "stimulus": "Bir laboratuvar tüpünde başlangıçta 16 adet bakteri vardır. Bu bakteri türü her 20 dakikada bir 2 katına çıkmaktadır.",
@@ -18095,17 +18095,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Nükleotidin yapısı ve bileşenleri.",
-        "stimulus": "Kalıtsal yapılar karmaşıktan basite (büyükten küçüğe) doğru sıralanabilir.",
-        "questionText": "Kromozom, nükleotid, gen ve DNA kavramlarını karmaşıktan basite (büyükten küçüğe) doğru sıralayınız ve 'gen' kavramının görevini açıklayınız.",
-        "solutionExplanation": "Kromozom > DNA > Gen > Nükleotid. Gen: Belirli bir kalıtsal özelliği (göz rengi, kan grubu) şifreleyen DNA parçasıdır.",
-        "modelAnswer": "• Karmaşıktan Basite Sıralama (KediGen Kuralı):\nKromozom > DNA > Gen > Nükleotid\n• Genin Görevi: DNA üzerindeki anlamlı görev birimleridir; saç şekli, göz rengi, kan grubu gibi canlıya ait kalıtsal özelliklerin şifrelendiği ve nesillere aktarıldığı DNA bölümleridir.",
+        "stimulus": "Bir nükleotid üç temel yapı biriminin birleşmesiyle oluşur: Fosfat (P), Deoksiriboz şekeri (D) ve Organik baz.",
+        "questionText": "a) Bir nükleotidin yapısını oluşturan üç temel molekülü yazınız.\nb) Bir nükleotidin hangi ada sahip olacağını bu moleküllerden hangisi belirler?",
+        "solutionExplanation": "a) Fosfat, Deoksiriboz şekeri, Organik baz. b) Taşıdığı organik baz (Adenin, Timin, Guanin, Sitozin).",
+        "modelAnswer": "a) Nükleotidin Üç Molekülü: Fosfat grubu + Deoksiriboz (5 karbonlu şeker) + Organik baz.\nb) Nükleotidin İsmi: Taşıdığı organik baza göre adlandırılır (Örneğin Adenin bazı taşıyorsa 'Adenin nükleotidi', Guanin taşıyorsa 'Guanin nükleotidi' adını alır).",
         "rubric": [
           {
-            "criterion": "Büyükten küçüğe doğru sıralama",
+            "criterion": "Üç bileşenin eksiksiz yazılması",
             "points": 7
           },
           {
-            "criterion": "Genin görev birimi olduğunun açıklanması",
+            "criterion": "İsmini organik baza göre aldığının belirtilmesi",
             "points": 7
           }
         ]
@@ -18143,18 +18143,22 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "DNA molekülünde sayısal eşitlikler.",
-        "stimulus": "DNA çift zincirli ve sarmal bir yapıya sahiptir. Karşılıklı zincirlerdeki nükleotidler hidrojen bağlarıyla birbirine bağlanır.",
-        "questionText": "DNA molekülünde organik bazların karşılıklı eşleşme kuralını ve aralarındaki hidrojen bağı sayılarını yazınız.",
-        "solutionExplanation": "Adenin (A) ile Timin (T) arasında ikili zayıf hidrojen bağı; Guanin (G) ile Sitozin (C) arasında üçlü zayıf hidrojen bağı kurulur.",
-        "modelAnswer": "• Eşleşme Kuralı: Adenin bazı daima Timin bazı ile eşleşir (A = T). Guanin bazı daima Sitozin bazı ile eşleşir (G ≡ C).\n• Hidrojen Bağları: Adenin ile Timin arasında 2'li zayıf hidrojen bağı; Guanin ile Sitozin arasında 3'lü zayıf hidrojen bağı kurulur.",
+        "stimulus": "Sağlıklı bir DNA molekülünde 600 Guanin nükleotidi ve 400 Adenin nükleotidi bulunmaktadır.",
+        "questionText": "Bu DNA molekülündeki:\na) Sitozin ve Timin nükleotidi sayılarını,\nb) Toplam nükleotid sayısını,\nc) Toplam Deoksiriboz şekeri ve Fosfat sayısını hesaplayınız.",
+        "solutionExplanation": "G = C = 600; A = T = 400. Toplam nükleotid = 600+600+400+400 = 2000. Şeker = Fosfat = Nükleotid sayısı = 2000.",
+        "modelAnswer": "a) Eşleşme Kuralına Göre:\n• Sitozin sayısı = Guanin sayısı = 600 adet\n• Timin sayısı = Adenin sayısı = 400 adet\nb) Toplam Nükleotid Sayısı: 600 (G) + 600 (C) + 400 (A) + 400 (T) = 2000 adet nükleotid.\nc) Şeker ve Fosfat Sayısı: Bir DNA'da Toplam Nükleotid = Toplam Şeker = Toplam Fosfat olduğundan; 2000 adet Deoksiriboz şekeri ve 2000 adet Fosfat molekülü bulunur.",
         "rubric": [
           {
-            "criterion": "A-T ve G-C eşleşmesinin doğru yazılması",
-            "points": 7
+            "criterion": "Sitozin ve Timin sayılarının doğru bulunması",
+            "points": 5
           },
           {
-            "criterion": "İkili ve üçlü hidrojen bağı sayılarının belirtilmesi",
-            "points": 7
+            "criterion": "Toplam nükleotidin 2000 olarak bulunması",
+            "points": 5
+          },
+          {
+            "criterion": "Şeker ve fosfat sayılarının 2000 bulunması",
+            "points": 4
           }
         ]
       },
@@ -18188,7 +18192,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "DNA’nın kendini nasıl eşlediğini ifade eder.",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "DNA onarımı ve mutasyon.",
         "stimulus": "DNA eşlenmesi sırasında meydana gelen bazı hatalar enzimler tarafından onarılabilirken bazı hatalar onarılamaz.",
@@ -18257,17 +18261,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 13,
         "contextText": "Işığın geliş açısı ve birim alana düşen enerji.",
-        "stimulus": "21 Haziran tarihinde Güneş ışınları öğle vakti Yengeç Dönencesi'ne dik açıyla (90°) düşer.",
-        "questionText": "21 Haziran tarihinde Kuzey Yarım Küre ve Güney Yarım Küre'de yaşanan mevsimleri ve gece-gündüz süreleri arasındaki ilişkiyi yazınız.",
-        "solutionExplanation": "Kuzey: Yaz başlar, en uzun gündüz/en kısa gece. Güney: Kış başlar, en uzun gece/en kısa gündüz.",
-        "modelAnswer": "• Kuzey Yarım Küre:\n- Yaz mevsimi başlar.\n- Yılın en uzun gündüzü ve en kısa gecesi yaşanır. Bu tarihten sonra gündüzler kısalmaya başlar.\n• Güney Yarım Küre:\n- Kış mevsimi başlar.\n- Yılın en uzun gecesi ve en kısa gündüzü yaşanır.",
+        "stimulus": "Bir el feneri düz bir masaya önce dik (90°), ardından eğik (30°) açıyla tutularak aydınlanan alanlar ve termometre sıcaklıkları inceleniyor.",
+        "questionText": "Güneş ışınlarının dik açıyla düştüğü bölge ile eğik açıyla düştüğü bölgedeki aydınlanan alan genişliğini ve birim alana aktarılan ısı enerjisi miktarını karşılaştırınız.",
+        "solutionExplanation": "Dik açı: Aydınlanan alan dar, birim alana düşen enerji fazla (sıcaklık yüksek). Eğik açı: Aydınlanan alan geniş, birim alana düşen enerji az (sıcaklık düşük).",
+        "modelAnswer": "• Dik Açıyla Düştüğünde: Işınlar dar bir alana toplanır. Birim yüzeye düşen ışık ve ısı enerjisi miktarı çok fazla olur; bu nedenle ortam daha fazla ısınır (Yaz mevsimi).\n• Eğik Açıyla Düştüğünde: Işınlar daha geniş bir alana yayılır. Birim yüzeye düşen ısı enerjisi miktarı azalır; bu nedenle ortam daha az ısınır (Kış mevsimi).",
         "rubric": [
           {
-            "criterion": "Kuzey Yarım Küre mevsim ve gündüz süresi",
+            "criterion": "Dik açıda dar alan ve yüksek enerji açıklanması",
             "points": 7
           },
           {
-            "criterion": "Güney Yarım Küre mevsim ve gece süresi",
+            "criterion": "Eğik açıda geniş alan ve düşük enerji açıklanması",
             "points": 6
           }
         ]
@@ -18329,17 +18333,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "DNA'da nükleotid dizilimi ve canlı çeşitliliği.",
-        "stimulus": "Bir öğrenci evdeki malzemelerle DNA modeli tasarlayacaktır: 50 adet mavi ataş (Fosfat), 50 adet sarı düğme (Şeker), 15 kırmızı boncuk (Adenin), 15 yeşil boncuk (Timin), 10 beyaz boncuk (Guanin) ve 10 turuncu boncuk (Sitozin).",
-        "questionText": "Öğrencinin bu malzemelerin tamamını kullanarak eksiksiz bir DNA modeli oluşturup oluşturamayacağını işlem basamaklarıyla açıklayınız.",
-        "solutionExplanation": "A=15, T=15 -> 15 çift (30 nükleotid). G=10, C=10 -> 10 çift (20 nükleotid). Toplam baz = 50. Şeker = 50, Fosfat = 50. Tamamı kullanılır.",
-        "modelAnswer": "• Baz Eşleşmeleri:\n- 15 Adenin ile 15 Timin eşleşir: 15 + 15 = 30 nükleotid.\n- 10 Guanin ile 10 Sitozin eşleşir: 10 + 10 = 20 nükleotid.\n- Toplam Organik Baz = 30 + 20 = 50 adet.\n• Şeker ve Fosfat Kontrolü:\n- 50 nükleotid için 50 adet şeker ve 50 adet fosfat gereklidir.\n- Elimizde 50 sarı düğme (şeker) ve 50 mavi ataş (fosfat) tam bulunmaktadır.\nSonuç: Malzemelerin hiçbiri artmadan eksiksiz ve hatasız bir DNA modeli oluşturulabilir.",
+        "stimulus": "Tüm canlıların DNA'sında sadece 4 çeşit organik baz (A, T, G, C) bulunmasına rağmen canlılar birbirlerinden tamamen farklı özelliklere sahiptir.",
+        "questionText": "Canlılar arasındaki bu genetik çeşitliliğin (biyoçeşitliliğin) temel nedenini DNA yapısıyla ilişkilendirerek açıklayınız.",
+        "solutionExplanation": "Nükleotidlerin DNA üzerindeki dizilim sırası, sayısı ve tekrarlanma oranının farklı olmasıdır.",
+        "modelAnswer": "Bütün canlılarda aynı 4 çeşit nükleotid bulunmasına rağmen türlerin ve bireylerin birbirinden farklı olmasının nedeni; nükleotidlerin DNA üzerindeki 'sayısının', 'sıralanış diziliminin' ve gen bölgelerindeki 'kombinasyonlarının' canlıdan canlıya benzersiz olmasıdır. Tıpkı alfabedeki 29 harfle milyonlarca farklı kitap yazılabilmesi gibidir.",
         "rubric": [
           {
-            "criterion": "Baz eşleşme sayılarının doğru kontrolü",
+            "criterion": "Sıra, sayı ve dizilim farklılığının vurgulanması",
             "points": 6
           },
           {
-            "criterion": "Şeker ve fosfat dengesinin tam uyumunun ispatı",
+            "criterion": "Kalıtsal çeşitlilik bağlantısının kurulması",
             "points": 6
           }
         ]
@@ -18374,7 +18378,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Tek karakter çaprazlamaları ile ilgili problemler çözerek sonuçlar hakkında yorum yapar.",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "Mendel genetiği: Tohum rengi çaprazlaması.",
         "stimulus": "Bezelyelerde sarı tohum geni (S), yeşil tohum genine (s) baskındır. Homozigot (saf) sarı tohumlu bir bezelye ile yeşil tohumlu bir bezelye çaprazlanıyor.",
@@ -18405,22 +18409,18 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "Melez iki bezelyenin çaprazlanması (F2 kuşağı).",
-        "stimulus": "Bezelyelerde sarı tohum geni (S), yeşil tohum genine (s) baskındır. Homozigot (saf) sarı tohumlu bir bezelye ile yeşil tohumlu bir bezelye çaprazlanıyor.",
-        "questionText": "Bu çaprazlama sonucunda oluşacak 1. kuşağın (F1):\na) Genotip oranlarını,\nb) Fenotip oranlarını Punnett karesi veya çaprazlama basamaklarıyla bulunuz.",
-        "solutionExplanation": "Genotipler: SS x ss -> F1: %100 Ss (Heterozigot sarı). Fenotip: %100 Sarı tohumlu.",
-        "modelAnswer": "• Ebeveynlerin Genotipleri: SS (Saf Sarı) × ss (Yeşil tohum)\n• Çaprazlama Basamakları: S ile s -> Ss, S ile s -> Ss, S ile s -> Ss, S ile s -> Ss\na) Genotip Oranı: %100 Melez (Heterozigot) baskın döl (Ss)\nb) Fenotip Oranı: %100 Sarı tohumlu bezelye elde edilir.",
+        "stimulus": "Heterozigot (melez) mor çiçekli iki bezelye (Mm × Mm) çaprazlanıyor. (Mor çiçek geni 'M', beyaz çiçek geni 'm'ye baskındır).",
+        "questionText": "Oluşacak bezelyelerin beyaz çiçekli olma olasılığı yüzde kaçtır? Çaprazlama tablosunu göstererek açıklayınız.",
+        "solutionExplanation": "Mm x Mm -> MM (%25), Mm (%50), mm (%25). Beyaz çiçekli olma olasılığı %25'tir.",
+        "modelAnswer": "• Çaprazlama: Mm × Mm\n• Genotip Dağılımı:\n- M × M -> MM (%25 Saf mor)\n- M × m -> Mm (%25 Melez mor)\n- m × M -> Mm (%25 Melez mor)\n- m × m -> mm (%25 Saf beyaz)\n• Toplam Fenotip: %75 Mor çiçekli, %25 Beyaz çiçekli.\nSonuç: Beyaz çiçekli bezelye oluşma olasılığı %25 (veya 1/4)'tür.",
         "rubric": [
           {
-            "criterion": "Çaprazlama adımlarının gösterilmesi",
-            "points": 4
+            "criterion": "Dört genotip ihtimalinin doğru yazılması",
+            "points": 6
           },
           {
-            "criterion": "Genotipin %100 Ss bulunması",
-            "points": 4
-          },
-          {
-            "criterion": "Fenotipin %100 sarı bulunması",
-            "points": 4
+            "criterion": "Beyaz çiçek ihtimalinin %25 olarak bulunması",
+            "points": 6
           }
         ]
       }
@@ -18475,17 +18475,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 11,
         "contextText": "Gölge boyu ve Güneş ışınlarının geliş açısı.",
-        "stimulus": "Ekinoks tarihlerinde Güneş ışınları öğle vakti Ekvator çizgisine dik açıyla (90°) düşer.",
-        "questionText": "21 Mart Ekinoksu'nda Dünya genelinde yaşanan gece ve gündüz süreleri ile aydınlanma çemberinin konumunu açıklayınız.",
-        "solutionExplanation": "Aydınlanma çemberi kutup noktalarından teğet geçer. Tüm dünyada gece ve gündüz süreleri eşit (12 saat gece, 12 saat gündüz) olur.",
-        "modelAnswer": "• Gece-Gündüz Eşitliği: 21 Mart tarihinde Dünya'nın her yerinde gece ve gündüz süreleri birbirine eşit olur (12 saat gündüz, 12 saat gece yaşanır).\n• Aydınlanma Çemberi: Eksen eğikliğinin etkisi ortadan kalkmış gibi görünür ve aydınlanma çemberi kutup noktalarından teğet geçer; her iki kutup da aynı anda Güneş ışığını teğet olarak görür.",
+        "stimulus": "Ankara'da açık bir alana dikilen 1 metrelik bir çubuğun öğle saat 12:00'deki gölge boyu 21 Haziran ve 21 Aralık tarihlerinde ölçülüyor.",
+        "questionText": "Hangi tarihte gölge boyunun en kısa, hangi tarihte en uzun olduğunu Güneş ışınlarının geliş açısıyla ilişkilendirerek açıklayınız.",
+        "solutionExplanation": "21 Haziran: Işınlar dik açıyla gelir, gölge en kısa. 21 Aralık: Işınlar en eğik açıyla gelir, gölge en uzun.",
+        "modelAnswer": "• 21 Haziran (En Kısa Gölge): Ankara Kuzey Yarım Küre'dedir. 21 Haziran'da Güneş ışınları yıl içindeki en büyük (en dik) açıyla gelir. Işınlar ne kadar dik gelirse gölge boyu o kadar kısa olur; bu tarihte gölge boyu en kısadır.\n• 21 Aralık (En Uzun Gölge): Güneş ışınları yıl içindeki en küçük (en eğik) açıyla düşer. Işınlar eğikleştikçe gölge uzar; bu tarihte öğle vakti gölge boyu en uzundur.",
         "rubric": [
           {
-            "criterion": "Tüm dünyada 12 saat gece 12 saat gündüz eşitliği",
+            "criterion": "21 Haziran'da en kısa gölge ve büyük açı gerekçesi",
             "points": 6
           },
           {
-            "criterion": "Aydınlanma çemberinin kutup noktalarından geçişi",
+            "criterion": "21 Aralık'ta en uzun gölge ve eğik açı gerekçesi",
             "points": 5
           }
         ]
@@ -18547,17 +18547,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 11,
         "contextText": "Eksik DNA zincirini tamamlama.",
-        "stimulus": "Bir DNA zincirinde Adenin / Timin oranı daima 1'dir: (A / T = 1).",
-        "questionText": "Bir DNA molekülünde (A + G) / (T + C) oranının neden daima 1'e eşit olduğunu matematiksel eşitliklerle ispatlayınız.",
-        "solutionExplanation": "A = T ve G = C olduğundan A + G = T + C olur, dolayısıyla oran 1'dir.",
-        "modelAnswer": "DNA çift sarmalında karşılıklı baz eşleşmesi kuralına göre:\n• Adenin sayısı Timin sayısına eşittir: A = T\n• Guanin sayısı Sitozin sayısına eşittir: G = C\nBuradan pay kısmındaki (A + G) toplamı, payda kısmındaki (T + C) toplamına tam olarak eşit olur.\nSonuç: (A + G) / (T + C) = (A + G) / (A + G) = 1'dir.",
+        "stimulus": "Bir DNA parçasının 1. zincirindeki nükleotid dizilimi şöyledir: 1. Zincir: A - T - G - C - C - A - T",
+        "questionText": "Bu DNA parçasının:\na) Karşı zincirindeki (2. Zincir) nükleotid dizilimini yazınız.\nb) Bu DNA parçasında toplam kaç adet hidrojen bağı bulunduğunu hesaplayınız.",
+        "solutionExplanation": "a) T - A - C - G - G - T - A. b) A-T çiftleri (3 adet): 3*2=6; G-C çiftleri (4 adet): 4*3=12. Toplam = 18 hidrojen bağı.",
+        "modelAnswer": "a) Karşı Zincir (2. Zincir):\n1. Zincir: A - T - G - C - C - A - T\n2. Zincir: T - A - C - G - G - T - A\nb) Toplam Hidrojen Bağı:\n• A - T çiftleri (2'li bağ): 3 adet A-T çifti var -> 3 × 2 = 6 hidrojen bağı.\n• G - C çiftleri (3'lü bağ): 4 adet G-C çifti var -> 4 × 3 = 12 hidrojen bağı.\n• Toplam = 6 + 12 = 18 adet zayıf hidrojen bağı bulunur.",
         "rubric": [
           {
-            "criterion": "A=T ve G=C eşitliklerinin yazılması",
+            "criterion": "Karşı zincir diziliminin hatasız yazılması",
             "points": 6
           },
           {
-            "criterion": "Oranın 1 olduğunun matematiksel ispatı",
+            "criterion": "Hidrojen bağı sayısının 18 olarak hesaplanması",
             "points": 5
           }
         ]
@@ -18588,7 +18588,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Tek karakter çaprazlamaları ile ilgili problemler çözerek sonuçlar hakkında yorum yapar.",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 11,
         "contextText": "Bezelyelerde boy uzunluğu çaprazlaması.",
         "stimulus": "Bezelyelerde uzun boy geni (U), kısa boy genine (u) baskındır. Melez uzun boylu (Uu) bir bezelye ile kısa boylu (uu) bir bezelye çaprazlanıyor.",
@@ -18615,17 +18615,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 11,
         "contextText": "İnsanda cinsiyet kalıtımı.",
-        "stimulus": "Bezelyelerde uzun boy geni (U), kısa boy genine (u) baskındır. Melez uzun boylu (Uu) bir bezelye ile kısa boylu (uu) bir bezelye çaprazlanıyor.",
-        "questionText": "Oluşacak yeni kuşakta kısa boylu bezelye elde edilme olasılığı yüzde kaçtır? Çaprazlama yaparak gösteriniz.",
-        "solutionExplanation": "Uu x uu -> Uu (%50), uu (%50). Kısa boylu olma olasılığı %50'dir.",
-        "modelAnswer": "• Çaprazlama: Uu × uu\n• Genotip Dağılımı:\n- U × u -> Uu (Melez Uzun)\n- U × u -> Uu (Melez Uzun)\n- u × u -> uu (Saf Kısa)\n- u × u -> uu (Saf Kısa)\n• Genotip Oranı: %50 Uu, %50 uu\n• Fenotip Oranı: %50 Uzun boylu, %50 Kısa boylu.\nSonuç: Kısa boylu bezelye olma ihtimali %50 (1/2)'dir.",
+        "stimulus": "İnsanlarda cinsiyet X ve Y kromozomları ile belirlenir. Dişiler 44 + XX, erkekler 44 + XY genotipine sahiptir.",
+        "questionText": "Bir ailenin doğacak çocuklarının kız veya erkek olma olasılığını çaprazlama yaparak gösteriniz ve cinsiyeti anneden gelen eşey kromozomunun mu yoksa babadan gelenin mi belirlediğini açıklayınız.",
+        "solutionExplanation": "XX x XY -> XX (%50 kız), XY (%50 erkek). Cinsiyeti babadan gelen spermdeki X veya Y belirler.",
+        "modelAnswer": "• Çaprazlama: Anne (XX) × Baba (XY)\n- X (anne) + X (baba) -> XX (Kız çocuğu: %50)\n- X (anne) + Y (baba) -> XY (Erkek çocuğu: %50)\n• Olasılık: Her doğumda doğacak çocuğun kız ya da erkek olma olasılığı %50'dir.\n• Cinsiyeti Belirleyen Ebeveyn: Babadır. Çünkü anne daima 'X' kromozomu aktarır. Babadan 'X' gelirse çocuk kız (XX), 'Y' gelirse erkek (XY) olur.",
         "rubric": [
           {
-            "criterion": "Çaprazlama adımlarının gösterilmesi",
+            "criterion": "Çaprazlama ve %50 olasılığının gösterilmesi",
             "points": 6
           },
           {
-            "criterion": "%50 olasılığının doğru bulunması",
+            "criterion": "Babadan gelen Y kromozomunun belirleyici olduğunun açıklanması",
             "points": 5
           }
         ]
@@ -18705,17 +18705,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 15,
         "contextText": "Gece-gündüz süre farkının kutuplara doğru değişimi.",
-        "stimulus": "Dünya'nın Güneş'e en yakın olduğu tarih 3 Ocak (147 milyon km), en uzak olduğu tarih ise 4 Temmuz'dur (152 milyon km).",
-        "questionText": "Dünya Güneş'e en yakın olduğu tarihte (3 Ocak) Kuzey Yarım Küre'de neden yaz mevsimi değil de kış mevsimi yaşandığını açıklayınız.",
-        "solutionExplanation": "Mevsimlerin oluşumunda Güneş'e olan uzaklığın etkisi yoktur; belirleyici olan eksen eğikliği ve ışınların geliş açısıdır.",
-        "modelAnswer": "Mevsimlerin oluşumunda Dünya'nın Güneş'e olan mesafesinin hiçbir belirleyici etkisi yoktur. Belirleyici olan tek faktör eksen eğikliği ve ışınların yeryüzüne düşme açısıdır. 3 Ocak tarihinde Dünya Güneş'e en yakın konumda olsa bile eksen eğikliği nedeniyle Kuzey Yarım Küre Güneş ışınlarını eğik açıyla alır; birim alana düşen ısı enerjisi azaldığı için kış mevsimi yaşanır.",
+        "stimulus": "21 Haziran tarihinde Ekvator'dan Kuzey Kutbu'na doğru gidildikçe gündüz süresi uzar.",
+        "questionText": "21 Haziran'da Türkiye'de Sinop'ta mı yoksa Hatay'da mı gündüz süresi daha uzundur? Nedenini açıklayınız.",
+        "solutionExplanation": "Sinop'ta daha uzundur. Çünkü 21 Haziran'da kuzeye gidildikçe gündüz süresi artar.",
+        "modelAnswer": "• Sinop'ta gündüz süresi daha uzundur.\n• Neden: 21 Haziran yaz gün dönümünde Kuzey Yarım Küre'de Ekvator'dan kuzeye (Kuzey Kutup Noktası'na) doğru gidildikçe gündüz süreleri uzar. Sinop, Hatay'a göre daha kuzeyde yer aldığı için 21 Haziran günü Sinop'ta yaşanan gündüz süresi Hatay'dan daha uzundur.",
         "rubric": [
           {
-            "criterion": "Mesafe ile mevsim arasında ilişki olmadığının belirtilmesi",
+            "criterion": "Sinop'un doğru seçilmesi",
             "points": 8
           },
           {
-            "criterion": "Eksen eğikliği ve eğik geliş açısı gerekçesi",
+            "criterion": "Kuzeye gidildikçe gündüzün uzaması gerekçesi",
             "points": 7
           }
         ]
@@ -18753,17 +18753,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Gen ve alel kavramları.",
-        "stimulus": "DNA üzerinde yer alan kalıtsal birimler.",
-        "questionText": "Bir nükleotidin yapısındaki organik baz çeşitlerini (4 çeşit) yazınız ve DNA'daki nükleotid diziliminin canlının hangi özelliklerini belirlediğini açıklayınız.",
-        "solutionExplanation": "Organik bazlar: Adenin, Timin, Guanin, Sitozin. Dizilim: Protein sentezini ve canlıya ait tüm fiziksel/biyokimyasal özellikleri şifreler.",
-        "modelAnswer": "• 4 Çeşit Organik Baz: Adenin (A), Timin (T), Guanin (G) ve Sitozin (C/S).\n• Nükleotid Diziliminin Belirlediği Özellikler: Bu 4 bazın diziliş sırası hücredeki proteinlerin şifresini oluşturur; canlının göz renginden enzim üretimine, boy uzunluğundan kan grubuna kadar bütün kalıtsal ve biyolojik özelliklerini belirler.",
+        "stimulus": "Biri anneden diğeri babadan gelen ve aynı karakter üzerinde etkili olan gen çiftlerine 'alel gen' denir.",
+        "questionText": "Alel genlerin homolog kromozomlar üzerindeki konumunu ve çekinik bir genin etkisini fenotipte gösterebilmesi için hangi genotipte bulunması gerektiğini yazınız.",
+        "solutionExplanation": "Alel genler karşılıklı lokuslarda yer alır. Çekinik gen ancak homozigot (saf) durumda etkisini fenotipte gösterir (aa).",
+        "modelAnswer": "• Konumu: Alel genler, biri anneden biri babadan gelen eş (homolog) kromozomların karşılıklı aynı bölgelerinde (lokuslarında) yer alır.\n• Çekinik Genin Ortaya Çıkma Şartı: Çekinik bir alelin özelliğini dış görünüşte (fenotipte) gösterebilmesi için canlının 'homozigot çekinik' (saf döl, örneğin aa) genotipine sahip olması gerekir; yanında baskın alel bulunursa etkisi gizlenir.",
         "rubric": [
           {
-            "criterion": "Dört organik bazın yazılması",
+            "criterion": "Homolog kromozomların karşılıklı bölgelerinde yer alma tespiti",
             "points": 7
           },
           {
-            "criterion": "Kalıtsal özellikleri şifreleme fonksiyonunun açıklanması",
+            "criterion": "Saf döl (homozigot çekinik) şartının yazılması",
             "points": 7
           }
         ]
@@ -18822,7 +18822,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Kalıtım ile ilgili kavramları tanımlar.",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Baskın ve çekinik karakterler.",
         "stimulus": "Kahverengi göz aleli (K), mavi göz aleline (k) baskındır.",
@@ -18891,17 +18891,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 13,
         "contextText": "Eksen eğikliği olmasaydı ne olurdu?",
-        "stimulus": "Kışın Güneş ışınları atmosferde daha uzun bir yol kat ederken yazın daha kısa bir yoldan yeryüzüne ulaşır.",
-        "questionText": "Işınların atmosferde aldığı yolun uzunluğu ile atmosfer tarafından tutulan (soğurulan) enerji miktarı arasındaki ilişkiyi mevsim sıcaklıklarıyla açıklayınız.",
-        "solutionExplanation": "Eğik açıyla gelen ışınlar atmosferde daha uzun yol alır, daha fazla tutulur/yansır, yere daha az enerji ulaşır (soğuk olur). Dik açıda yol kısa, kayıp az, enerji fazladır (sıcak olur).",
-        "modelAnswer": "• Kış Mevsiminde (Eğik Açı): Güneş ışınları atmosfere eğik girdiğinde atmosfer katmanları boyunca çok daha uzun bir yol kateder. Bu uzun yolculuk sırasında ışınların büyük kısmı bulutlar ve gazlar tarafından soğurulur ve yansıtılır; yeryüzüne ulaşan enerji azaldığı için hava soğuk olur.\n• Yaz Mevsiminde (Dik Açı): Işınlar dik girdiğinden atmosferde en kısa yolu alır; enerji kaybı minimum olur ve yeryüzü kuvvetli şekilde ısınır.",
+        "stimulus": "Dünya'nın dönme ekseni yörünge düzlemine dik olsaydı (yani 23° 27'lik eğiklik bulunmasaydı).",
+        "questionText": "Dünya'nın eksen eğikliği olmasaydı gezegenimizde meydana gelebilecek 2 temel değişikliği yazınız.",
+        "solutionExplanation": "1. Mevsimler oluşmazdı, sıcaklık yıl boyu sabit kalırdı. 2. Gece-gündüz süreleri her yerde ve her gün 12 saat eşit olurdu.",
+        "modelAnswer": "1. Mevsimler Oluşmazdı: Yıl boyunca bir bölgeye Güneş ışınlarının geliş açısı hiç değişmezdi; bir yer daima yazı, bir yer daima kışı yaşardı, mevsim döngüsü ortadan kalkardı.\n2. Gece ve Gündüz Süreleri Daima Eşit Olurdu: Yılın 365 günü Dünya'nın her yerinde 12 saat gündüz, 12 saat gece yaşanırdı.",
         "rubric": [
           {
-            "criterion": "Eğik açıda uzun yol ve yüksek enerji kaybı ilişkisi",
+            "criterion": "Mevsimlerin ortadan kalkacağının belirtilmesi",
             "points": 7
           },
           {
-            "criterion": "Dik açıda kısa yol ve yüksek sıcaklık ilişkisi",
+            "criterion": "Gece-gündüz eşitliğinin yıl boyu süreceğinin belirtilmesi",
             "points": 6
           }
         ]
@@ -19008,7 +19008,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Tek karakter çaprazlamaları ile ilgili problemler çözerek sonuçlar hakkında yorum yapar.",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "Meyve rengi çaprazlaması.",
         "stimulus": "Bezelyelerde yeşil meyve rengi (Y), sarı meyve rengine (y) baskındır. Melez yeşil meyveli bezelye ile sarı meyveli bezelye çaprazlanıyor.",
@@ -19035,17 +19035,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "İnsan genetiğinde akraba evliliği riski.",
-        "stimulus": "Homozigot düzgün tohumlu bir bezelye ile buruşuk tohumlu bir bezelye çaprazlanarak F1 kuşağı elde ediliyor. Daha sonra F1 kuşağından alınan iki bezelye kendi arasında çaprazlanıyor (F2 kuşağı).",
-        "questionText": "F2 kuşağında oluşacak bezelyelerin genotip oranlarını (saf baskın, melez baskın, saf çekinik) yüzde olarak yazınız.",
-        "solutionExplanation": "F1: Dd. F2: Dd x Dd -> DD (%25 saf baskın), Dd (%50 melez baskın), dd (%25 saf çekinik).",
-        "modelAnswer": "• F1 Kuşağı: DD × dd -> %100 Dd (Melez)\n• F2 Kuşağı Çaprazlaması: Dd × Dd\n- D × D -> DD (%25 Homozigot / Saf Baskın)\n- D × d -> Dd (%25 Heterozigot / Melez Baskın)\n- d × D -> Dd (%25 Heterozigot / Melez Baskın)\n- d × d -> dd (%25 Homozigot / Saf Çekinik)\n• Sonuç Genotip Dağılımı: %25 Saf Baskın (DD), %50 Melez Baskın (Dd), %25 Saf Çekinik (dd).",
+        "stimulus": "Kistik fibrozis, fenilketonüri gibi birçok kalıtsal genetik hastalık çekinik alellerle taşınır.",
+        "questionText": "Akraba evliliği yapmış bireylerin çocuklarında genetik hastalıkların görülme olasılığının neden akraba olmayanlara göre çok daha yüksek olduğunu açıklayınız.",
+        "solutionExplanation": "Akrabaların ortak atadan gelen genetik yapıları benzerdir. Hastalık taşıyıcı olma ihtimalleri yüksektir ve iki çekinik genin yan yana gelme olasılığı artar.",
+        "modelAnswer": "Kalıtsal hastalıkların çoğu çekinik genlerle (küçük harfle) taşınır ve hastalığın ortaya çıkması için hem anneden hem babadan aynı kusurlu çekinik genin gelmesi gerekir. Akraba olan bireyler aynı soy ağacından geldikleri için ortak gen havuzuna sahiptirler; bu nedenle her ikisinin de aynı hastalık genini taşıyor olma ihtimali çok yüksektir. Evlendiklerinde bu kusurlu çekinik genlerin yan yana gelme (homozigot olma) olasılığı toplum ortalamasına göre katbekat artar.",
         "rubric": [
           {
-            "criterion": "F1 ve F2 çaprazlama adımlarının doğru yapılması",
+            "criterion": "Ortak atadan gelen genetik benzerliğin açıklanması",
             "points": 6
           },
           {
-            "criterion": "%25 DD, %50 Dd, %25 dd oranlarının hatasız bulunması",
+            "criterion": "Çekinik hastalık genlerinin yan yana gelme riskinin artışı vurgusu",
             "points": 6
           }
         ]
@@ -19380,7 +19380,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Mondros Ateşkes Antlaşması’nın imzalanması ve uygulanması karşısında Osmanlı yönetiminin, Mustafa Kemal’in ve halkın tutumunu analiz eder.",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Mondros Ateşkes Antlaşması'nın 7. Maddesi.",
         "stimulus": "Mondros'un 7. Maddesi: 'İtilaf Devletleri, güvenliklerini tehdit edecek bir durum ortaya çıkarsa herhangi bir stratejik noktayı işgal etme hakkına sahip olacaktır.'",
@@ -19566,7 +19566,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Birinci Dünya Savaşı’nda Osmanlı Devleti’nin durumu hakkında çıkarımlarda bulunur.",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "Kafkas Cephesi ve Sarıkamış Harekatı.",
         "stimulus": "1914 kışında Enver Paşa komutasındaki Osmanlı ordusu Rus işgalindeki Kars, Ardahan ve Batum'u geri almak için Sarıkamış Harekâtı'nı başlatmıştır.",
@@ -19893,17 +19893,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Mustafa Kemal'in Suriye Cephesi ve Yıldırım Orduları Komutanlığı.",
-        "stimulus": "Mustafa Kemal Harp Akademisi'nden mezun olduktan sonra kurmay yüzbaşı rütbesiyle ilk görev yeri olan Şam'daki 5. Ordu'ya atanmıştır.",
-        "questionText": "Mustafa Kemal'in Şam'da kurduğu gizli cemiyetin adını yazınız ve bu cemiyeti kurma amacını açıklayınız.",
-        "solutionExplanation": "Vatan ve Hürriyet Cemiyeti. Amaç: İstibdat rejimine son vermek, vatanı dağılmaktan kurtarmak ve hürriyeti getirmek.",
-        "modelAnswer": "• Cemiyetin Adı: Vatan ve Hürriyet Cemiyeti.\n• Kurma Amacı: Padişahın baskıcı istibdat yönetimine karşı hürriyeti, meşrutiyeti ve anayasal düzeni savunmak; ordu ve aydınlar arasında teşkilatlanarak vatanın parçalanmasını önleyecek kurtuluş çareleri üretmekti.",
+        "stimulus": "1918 yılında Mustafa Kemal, Suriye Cephesi'nde 7. Ordu ve ardından Yıldırım Orduları Grup Komutanlığı görevini üstlenmiştir.",
+        "questionText": "Mustafa Kemal'in İngiliz ve asi Arap ordularının taarruzu karşısında ordusunu Halep'in kuzeyine çekerek kurduğu savunma hattının Millî Mücadele sınırları açısından önemini açıklayınız.",
+        "solutionExplanation": "Düşmanı bugünkü Türkiye sınırlarında (Hatay/Kilis/Antep hattı) durdurdu; Misak-ı Milli'nin güney sınırını fiilen çizdi.",
+        "modelAnswer": "Mustafa Kemal ordusunu stratejik bir manevrayla Halep'in kuzeyine çekerek Katma bölgesinde sağlam bir savunma hattı kurmuş ve İngiliz taarruzunu durdurmuştur. Bu hat, Türklerin çoğunlukta olduğu Anadolu topraklarının düşman tarafından işgal edilmesini engellemiş ve gelecekte Millî Mücadele'nin ve Misak-ı Millî'nin güney sınırını (bugünkü Türkiye sınırı) fiilen belirlemiştir.",
         "rubric": [
           {
-            "criterion": "Vatan ve Hürriyet Cemiyeti adının doğru yazılması",
+            "criterion": "Düşmanı Halep'in kuzeyinde durdurma başarısı",
             "points": 7
           },
           {
-            "criterion": "İstibdata karşı hürriyet ve vatanı kurtarma amacının açıklanması",
+            "criterion": "Misak-ı Milli güney sınırını çizme stratejik önemi",
             "points": 7
           }
         ]
@@ -19938,7 +19938,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Birinci Dünya Savaşı’nın sebeplerini ve savaşın başlamasına yol açan gelişmeleri kavrar.",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Balkan Savaşları'nın I. Dünya Savaşı'na etkisi.",
         "stimulus": "1912-1913 Balkan Savaşları sonrasında Osmanlı Devleti Edirne ve Kırklareli hariç tüm Rumeli topraklarını kaybetmiştir.",
@@ -20124,7 +20124,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Birinci Dünya Savaşı’nda Osmanlı Devleti’nin durumu hakkında çıkarımlarda bulunur.",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "1915 Sevk ve İskân (Tehcir) Kanunu.",
         "stimulus": "I. Dünya Savaşı sırasında Doğu Anadolu'da Kafkas Cephesi gerisinde Ruslarla iş birliği yapan bazı Ermeni çetelerinin orduyu arkadan vurması ve sivil katliamlar yapması üzerine 27 Mayıs 1915'te Sevk ve İskân Kanunu çıkarılmıştır.",
@@ -20217,17 +20217,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 13,
         "contextText": "Mustafa Kemal'in öğrenim hayatında öğretmenlerinin rolü.",
-        "stimulus": "Mustafa, Selanik Askeri Rüştiyesi'nde öğrenciyken matematik dersindeki üstün başarısıyla dikkat çekiyordu.",
-        "questionText": "Matematik öğretmeni Yüzbaşı Mustafa Bey'in öğrencisine 'Kemal' adını vermesinin gerekçesini ve bu ismin Mustafa Kemal'in karakterine yansımasını açıklayınız.",
-        "solutionExplanation": "'Kemal' olgunluk ve mükemmellik demektir. Öğretmen onun zekasını ve olgunluğunu takdir ederek bu adı vermiştir.",
-        "modelAnswer": "• İsmin Veriliş Gerekçesi: Matematik öğretmeni Yüzbaşı Mustafa Bey, öğrencisinin matematikteki üstün problem çözme yeteneğini, çalışkanlığını ve yaşından beklenmeyen olgunluğunu görerek; 'Benim adım da Mustafa senin adın da Mustafa. Arada bir fark olmalı; bundan sonra senin adın Mustafa Kemal olsun' demiştir.\n• Karaktere Yansıması: 'Kemal' kelimesi Arapçada olgunluk, eksiksizlik ve mükemmellik anlamına gelir. Mustafa Kemal hayatı boyunca her alanda mükemmeli arayan, akılcı ve disiplinli bir karakter sergilemiştir.",
+        "stimulus": "Mustafa Kemal'in yetişmesinde Şemsi Efendi, Mehmet Tevfik Bey ve Kolağası Ömer Naci gibi öğretmenleri büyük izler bırakmıştır.",
+        "questionText": "Öğretmenlerinin Mustafa Kemal'de geliştirdiği 2 temel düşünce ve liderlik becerisini örneklerle açıklayınız.",
+        "solutionExplanation": "Mehmet Tevfik Bey tarih bilincini, Ömer Naci hitabet ve edebiyat yeteneğini kazandırmıştır.",
+        "modelAnswer": "1. Millî Tarih ve Vatan Bilinci: Manastır Askeri İdadisi'ndeki tarih öğretmeni Kolağası Mehmet Tevfik Bey, ona Türk milletinin geçmişteki kahramanlıklarını anlatarak köklü bir millet sevgisi aşılamıştır.\n2. Hitabet ve Edebi Güç: Sınıf arkadaşı Ömer Naci sayesinde edebiyat ve hitabet sanatına yönelmiş; kitleleri peşinden sürükleyecek etkili ve ikna edici konuşma gücü kazanmıştır.",
         "rubric": [
           {
-            "criterion": "Matematik öğretmeninin gerekçesinin yazılması",
+            "criterion": "Mehmet Tevfik Bey ve tarih bilinci örneği",
             "points": 7
           },
           {
-            "criterion": "Kemal isminin olgunluk/mükemmellik anlamı ve yansıması",
+            "criterion": "Ömer Naci ve hitabet becerisi örneği",
             "points": 6
           }
         ]
@@ -20265,17 +20265,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 13,
         "contextText": "Mustafa Kemal'in çok yönlülüğü ve kitap sevgisi.",
-        "stimulus": "1897'de Osmanlı ordusu Yunan ordusunu Dömeke Meydan Muharebesi'nde mağlup etmesine rağmen masa başında (İstanbul Antlaşması) istediğini alamamıştır.",
-        "questionText": "Mustafa Kemal'in henüz Manastır Askeri İdadisi öğrencisiyken cepheye katılmak için okuldan kaçmaya kalkıştığı bu savaşın onda uyandırdığı askerî ve diplomatik dersi açıklayınız.",
-        "solutionExplanation": "Meydanda kazanılan zaferin masa başında kaybedilmemesi gerektiğini; güçlü bir diplomasinin önemini anladı.",
-        "modelAnswer": "Bu savaş Mustafa Kemal'de iki büyük ders bırakmıştır:\n1. Vatan Savunması Aşkı: Henüz genç bir öğrenciyken vatan savunması için cepheye koşacak kadar yüksek bir vatanperverliğe sahip olduğunu göstermiştir.\n2. Diplomasi Dersi: Osmanlı ordusunun meydanda kazandığı kesin zaferin masa başında Avrupalıların baskısıyla heba edilmesi, Mustafa Kemal'e 'askeri zaferlerin mutlaka güçlü bir diplomasi ve siyasi zaferle taçlandırılması gerektiği' gerçeğini öğretmiştir.",
+        "stimulus": "Mustafa Kemal hayatı boyunca savaş cephelerinde dahi çadırında binlerce kitap (yaklaşık 4000 eser) okumuş, sayfaların kenarlarına notlar almıştır.",
+        "questionText": "Mustafa Kemal'in askerlik dışında tarih, dilbilim, sosyoloji ve hukuk alanında derin okumalar yapması onun hangi kişilik özelliğini yansıtır ve inkılaplarına nasıl yansımıştır?",
+        "solutionExplanation": "Çok yönlülüğü (çok cepheliliği). Cumhuriyet'in sadece askeri değil hukuki, kültürel ve bilimsel temellerini atmasını sağladı.",
+        "modelAnswer": "• Kişilik Özelliği: Çok yönlülüğü (Çok cepheliliği) ve entelektüel derinliğidir.\n• İnkılaplara Yansıması: Mustafa Kemal sadece askeri bir komutan olarak kalmamış; okuduğu tarih, dil, sosyoloji ve hukuk eserlerinden edindiği zengin birikimle harf inkılabı, Türk Dil ve Tarih Kurumlarının kurulması, Medeni Kanun gibi Türkiye Cumhuriyeti'ni çağdaşlaştıran çok boyutlu inkılapları bizzat tasarlayıp hayata geçirmiştir.",
         "rubric": [
           {
-            "criterion": "Genç yaştaki vatanperverlik vurgusu",
+            "criterion": "Çok yönlülük özelliğinin belirtilmesi",
             "points": 7
           },
           {
-            "criterion": "Meydan zaferinin masa başında kaybedilmemesi dersi",
+            "criterion": "Farklı alanlardaki inkılaplara olan derin yansıması",
             "points": 6
           }
         ]
@@ -20334,7 +20334,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Birinci Dünya Savaşı’nın sebeplerini ve savaşın başlamasına yol açan gelişmeleri kavrar.",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "Osmanlı Devleti'nin I. Dünya Savaşı'nda Almanya'yı tercih etme nedenleri.",
         "stimulus": "Osmanlı Devleti başlangıçta İngiltere ve Fransa ile ittifak yapmak istemiş ancak bu devletler Osmanlı'yı kendi aralarında gizli antlaşmalarla paylaştıkları için teklifi reddetmişlerdir.",
@@ -20361,17 +20361,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "Almanya'nın Osmanlı Devleti'ni kendi yanında savaşa sokmak isteme nedenleri.",
-        "stimulus": "Osmanlı Devleti başlangıçta İngiltere ve Fransa ile ittifak yapmak istemiş ancak bu devletler Osmanlı'yı kendi aralarında gizli antlaşmalarla paylaştıkları için teklifi reddetmişlerdir.",
-        "questionText": "İttihat ve Terakki liderlerinin Almanya'nın savaşı kazanacağına inanmalarının ve Almanya ile ittifak kurmalarının 2 temel gerekçesini yazınız.",
-        "solutionExplanation": "1. Kaybedilen toprakları (Balkanlar, Mısır) geri alma arzusu, 2. Alman sanayi ve ordu teknolojisine duyulan aşırı güven.",
-        "modelAnswer": "1. Kaybedilen Toprakları Geri Alma Arzusu: Son yıllarda Balkan Savaşları ve Trablusgarp'ta kaybedilen vatan topraklarını Almanya'nın yanında savaşı kazanarak geri alma ümidi.\n2. Alman Sanayi ve Askeri Üstünlüğüne Güven: Enver Paşa ve İttihatçı liderlerin Almanya'nın güçlü sanayisi ve modern ordusu sayesinde savaşı kısa sürede kesin bir zaferle tamamlayacağına olan sarsılmaz inançları.",
+        "stimulus": "Almanya, askeri ve ekonomik olarak zayıflamış olan Osmanlı Devleti'ni ısrarla kendi yanında savaşa çekmek istemiştir.",
+        "questionText": "Almanya'nın Osmanlı'nın 'jeopolitik konumu'ndan ve padişahın 'halifelik gücü'nden yararlanma hedeflerini açıklayınız.",
+        "solutionExplanation": "Jeopolitik konum: Yeni cepheler açıp Almanya'nın yükünü hafifletmek ve Rusya'ya boğazları kapatmak. Halifelik: İngiliz ve Fransız sömürgelerindeki Müslümanları cihatla ayaklandırmak.",
+        "modelAnswer": "• Jeopolitik Konum Hedefi: Osmanlı savaşa girdiğinde Kafkasya, Çanakkale, Süveyş ve Ortadoğu'da yeni cepheler açılacak; böylece Avrupa'daki İtilaf baskısı bölünecek ve Almanya'nın savaş yükü hafifleyecektir. Ayrıca Rusya'ya boğazlar yolu kapatılacaktır.\n• Halifelik (Dini Güç) Hedefi: Osmanlı Padişahı aynı zamanda İslam halifesiydi. Halifenin ilan edeceği 'Cihad-ı Ekber' (Kutsal Savaş) çağrısıyla İngiltere ve Fransa'nın sömürgelerinde (Hindistan, Mısır, Kuzey Afrika) yaşayan milyonlarca Müslümanın sömürgeci devletlere karşı ayaklanması amaçlanmıştır.",
         "rubric": [
           {
-            "criterion": "Kaybedilen toprakları geri alma ümidi",
+            "criterion": "Yeni cepheler açarak yükü hafifletme ve boğazları kapatma hedefi",
             "points": 6
           },
           {
-            "criterion": "Alman ordusu ve teknolojisine duyulan güven",
+            "criterion": "Halifeliğin cihat gücüyle sömürgeleri ayaklandırma hedefi",
             "points": 6
           }
         ]
@@ -20475,17 +20475,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 11,
         "contextText": "Kaderle ilgili kavramlar: Rızık ve Emek.",
-        "stimulus": "Bir adam Hz. Peygamber'e gelerek: 'Ey Allah'ın Resulü! Devemi bağlayıp da mı tevekkül edeyim, yoksa bağlamadan mı?' diye sormuştur.",
-        "questionText": "Hz. Peygamber'in bu adama verdiği cevabı yazınız ve İslam'da doğru tevekkül anlayışının aşamalarını açıklayınız.",
-        "solutionExplanation": "Hz. Peygamber: 'Önce deveni bağla, sonra Allah'a tevekkül et!' buyurmuştur.",
-        "modelAnswer": "• Hz. Peygamber'in Cevabı: 'Önce deveni sağlamca bağla, sonra Allah'a tevekkül et!'\n• Doğru Tevekkül Anlayışı: Tevekkül, hiçbir iş yapmadan tembelce oturup sonucu Allah'tan beklemek değildir. Bir hedefe ulaşmak için insan aklının ve fennin gerektirdiği bütün tedbirleri eksiksiz almalı, elinden gelen tüm gayreti gösterdikten sonra gönül huzuruyla sonucu Allah'a bırakıp O'na güvenmelidir.",
+        "stimulus": "Ayet Meali: 'Gerçekten insan için kendi emeğinden (çalışmasından) başkası yoktur.' (Necm suresi, 39. ayet)",
+        "questionText": "İslam dininin rızık kazanmada 'emek ve helal kazanç' konusundaki ilkelerini verilen ayet ışığında açıklayınız.",
+        "solutionExplanation": "Rızkı veren Allah'tır ancak rızkı aramak ve kazanmak için insanın meşru yollardan alın teri dökmesi şarttır.",
+        "modelAnswer": "İslam'da rızık gökten zahmetsizce inmez. Yüce Allah rızkı yaratıcıdır (Rezzâk); ancak insanın bu rızkı elde etmesi için meşru, helal ve dürüst yollarla alın teri dökmesi, çalışıp çabalaması şart koşulmuştur. Başkalarının sırtından geçinmek, dilencilik yapmak veya kumar gibi haksız kazanç yolları reddedilmiş, en hayırlı rızkın kişinin kendi el emeğiyle kazandığı rızık olduğu bildirilmiştir.",
         "rubric": [
           {
-            "criterion": "Hz. Peygamber'in hadisinin doğru aktarılması",
+            "criterion": "Rızkın emek ve alın teriyle kazanılması zorunluluğu",
             "points": 6
           },
           {
-            "criterion": "Gerekli tedbirleri aldıktan sonra Allah'a güvenme tanımı",
+            "criterion": "Helal kazanç ve haksız yolların reddi vurgusu",
             "points": 5
           }
         ]
@@ -20544,7 +20544,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "8.1.5. Hz. Musa’nın (a.s.) hayatını ana hatlarıyla tanır.",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 11,
         "contextText": "Hz. Musa'nın (a.s.) hayatı ve Firavun ile mücadelesi.",
         "stimulus": "Hz. Musa, Mısır'da İsrailoğullarını köleleştiren ve ilahlık taslayan Firavun'a karşı hak dini tebliğ etmekle görevlendirilmiştir.",
@@ -20661,17 +20661,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 13,
         "contextText": "Akıl ve dini sorumluluk ilişkisi.",
-        "stimulus": "Ayet Meali: 'Kim doğru yolu seçerse bunu ancak kendi iyiliği için seçmiş olur; kim de saparsa ancak kendi aleyhine sapmış olur...' (İsrâ suresi, 15. ayet)",
-        "questionText": "Ayetten hareketle, insanın dünyadaki tercihleri ile ahiretteki hesabı arasındaki doğrudan bağı açıklayınız.",
-        "solutionExplanation": "İnsan seçimlerinde özgür bırakılmıştır; bu yüzden cennet veya cehennem kendi amellerinin karşılığıdır.",
-        "modelAnswer": "İslam'da ceza ya da mükafat ancak özgür iradeyle yapılan seçimlerin sonucudur. Ayet-i kerime, insanın iyi ya da kötü tercihlerinde tamamen hür olduğunu, hiç kimsenin zorla günaha sürüklenmediğini belirtir. Dolayısıyla ahirette görülecek hesabın ve karşılığın tamamen insanın kendi cüzi iradesiyle yaptığı eylemlerin adil bir sonucu olduğunu ortaya koyar.",
+        "stimulus": "Hz. Peygamber (s.a.v.) bir hadisinde: 'Üç kişiden sorumluluk kaldırılmıştır: Akli dengesi yerinde olmayandan, uyanıncaya kadar uyuyandan ve ergenlik çağına gelinceye kadar çocuktan.' buyurmuştur.",
+        "questionText": "Bu hadisten hareketle İslam'da bir insanın dinî emir ve yasaklardan sorumlu (mükellef) olmasının 2 temel ön şartını yazınız.",
+        "solutionExplanation": "1. Akıl sağlığının yerinde olması, 2. Ergenlik (bülûğ) çağına girmiş olması.",
+        "modelAnswer": "1. Akıl Sağlığı: Doğruyu yanlıştan ayırt edebilecek zihinsel muhakeme yeteneğine (akil) sahip olmak.\n2. Ergenlik ve İrade (Bülûğ Çağı): Bireyin kendi kararlarını alabilecek bilinç ve ergenlik olgunluğuna ulaşmış olması.",
         "rubric": [
           {
-            "criterion": "Özgür seçim hakkının vurgulanması",
+            "criterion": "Akıl sağlığı şartının belirtilmesi",
             "points": 7
           },
           {
-            "criterion": "Ahiret karşılığının kendi amellerinin sonucu olduğu gerekçesi",
+            "criterion": "Ergenlik ve irade çağı şartının belirtilmesi",
             "points": 6
           }
         ]
@@ -20709,17 +20709,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 13,
         "contextText": "Kaderle ilgili kavramlar: Sağlık ve Hastalık.",
-        "stimulus": "Ayet Meali: 'Her can ölümü tadacaktır... Her milletin bir eceli vardır. Ecelleri geldiğinde ne bir an erteleyebilirler ne de öne alabilirler.' (Âl-i İmrân ve A'râf sureleri)",
-        "questionText": "'Ömür' ve 'Ecel' kavramlarını tanımlayarak, ecelin değişmezliği karşısında insanın hayatını nasıl değerlendirmesi gerektiğini açıklayınız.",
-        "solutionExplanation": "Ömür: Doğumdan ölüme kadar geçen süre. Ecel: Hayatın bittiği takdir edilmiş an.",
-        "modelAnswer": "• Ömür: İnsanın doğumundan ölüm anına kadar geçen sınırlı yaşam süresidir.\n• Ecel: Allah'ın belirlediği bu yaşam süresinin sona erdiği ve ölümün gerçekleştiği andır.\n• Hayatın Değerlendirilmesi: Ecelin vakti gizlidir ve vakti geldiğinde asla ertelenemez; bu nedenle Müslüman, her an ölebileceğini bilerek zamanını faydalı ilim, ibadet, ahlak ve insanlığa hizmetle değerlendirmelidir.",
+        "stimulus": "Hz. Peygamber: 'Ey Allah'ın kulları! Tedavi olunuz; çünkü Allah yarattığı her hastalığın şifasını da yaratmıştır.' buyurmuştur.",
+        "questionText": "Hastalanan bir kimsenin doktora gitmeyip 'Kaderimde iyileşmek varsa iyileşirim' demesi hadise göre neden yanlıştır? Açıklayınız.",
+        "solutionExplanation": "Tedavi olmak fiili bir duadır ve sünnettir; şifa aramak kaderin bir parçasıdır.",
+        "modelAnswer": "Bu davranış İslam'ın tevekkül ve kader anlayışına aykırıdır. Hastalık da şifa da Allah'ın takdiriyle evrene koyduğu biyolojik yasalar çerçevesindedir. Yüce Allah şifayı tıbbın, ilaçların ve tedavinin içine yerleştirmiştir. Tedavi olmayı reddetmek kendi canını tehlikeye atmaktır ve Peygamber Efendimizin 'Tedavi olunuz' emrine karşı gelmektir.",
         "rubric": [
           {
-            "criterion": "Ömür ve ecel tanımlarının doğru yapılması",
+            "criterion": "Biyolojik yasalara uygun tedavi olma zorunluluğu",
             "points": 7
           },
           {
-            "criterion": "Zamanı ve hayatı bilinçli değerlendirme gerekliliği",
+            "criterion": "Hadise dayalı şifa arama bilincinin açıklanması",
             "points": 6
           }
         ]
@@ -20778,7 +20778,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "8.1.5. Hz. Musa’nın (a.s.) hayatını ana hatlarıyla tanır.",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "Hz. Musa'nın (a.s.) Kızıldeniz mucizesi ve Firavun'un helakı.",
         "stimulus": "Firavun ordusuyla İsrailoğullarını Kızıldeniz kıyısında sıkıştırdığında Hz. Musa asasını denize vurmuş ve deniz ikiye yarılmıştır.",
@@ -20871,17 +20871,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "İyilik ve kötülüğü seçme özgürlüğü.",
-        "stimulus": "Ayet Meali: 'Hakkında bilgin olmayan şeyin ardına düşme; çünkü kulak, göz ve kalp, bunların hepsi ondan sorumludur.' (İsrâ suresi, 36. ayet)",
-        "questionText": "Verilen ayetin insanın duyu organlarını ve bilgisini kullanma ahlakı konusundaki uyarısını açıklayınız.",
-        "solutionExplanation": "İnsan duyduğu ve gördüğü her şeyden sorumludur; dedikodu, iftira ve asılsız bilgilerin peşine düşmemelidir.",
-        "modelAnswer": "Ayet-i kerime, insanın zihinsel ve duyusal yeteneklerini sorumsuzca kullanamayacağını hatırlatır. Kulak, göz ve akıl gibi nimetler insana hakikati aramak ve iyilik üretmek için verilmiştir. Doğruluğu kesin olmayan dedikoduların, iftiraların ve suizanların peşinden gitmek büyük bir günahtır; insan bilmediği bir iddiayı yaymaktan ve araştırmadan hüküm vermekten ahirette sorguya çekilecektir.",
+        "stimulus": "Ayet Meali: 'Şüphesiz biz ona doğru yolu gösterdik; ister şükredici olsun ister nankör.' (İnsân suresi, 3. ayet)",
+        "questionText": "Ayetten hareketle insanın imtihan dünyasındaki konumunu ve irade hürriyetini açıklayınız.",
+        "solutionExplanation": "Allah yolu göstermiştir; şükretmek ya da nankörlük etmek insanın kendi seçimidir.",
+        "modelAnswer": "Yüce Allah vahiy ve peygamberler göndererek doğru yolu apaçık göstermiştir. Ancak insanı bu yola girmeye zorlamamış, seçim hakkını kendi hür iradesine bırakmıştır. Kişi dilerse şükredip itaat eder, dilerse nankörlük edip isyanı seçer. İmtihan dünyasının varlık sebebi işte bu özgür iradeyle yapılan bilinçli tercihtir.",
         "rubric": [
           {
-            "criterion": "Duyu organlarının ahlaki sorumluluğunun belirtilmesi",
+            "criterion": "Hür irade ve seçme serbestliğinin vurgulanması",
             "points": 9
           },
           {
-            "criterion": "Asılsız bilgilerin peşine düşmeme uyarısının açıklanması",
+            "criterion": "İmtihan dünyasının mantığıyla bağ kurulması",
             "points": 8
           }
         ]
@@ -20919,17 +20919,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Kaderle ilgili kavramlar: Ecel ve Hayatın Kıymeti.",
-        "stimulus": "Bir esnaf iş yerini zamanında açar, müşterilerine dürüst davranır, kaliteli mal satar ve büyük kâr elde eder.",
-        "questionText": "Bu esnafın başarısını 'kendi üstün zekâsına' bağlayıp kibirlenmesinin ve Allah'ın lütfunu unutmasının kader inancı açısından sakıncasını Karun kıssasıyla açıklayınız.",
-        "solutionExplanation": "Karun servetini 'kendi bilgimle kazandım' diyerek helak olmuştur; başarıda emek kadar Allah'ın lütfu ve rızkı da unutulmamalıdır.",
-        "modelAnswer": "İslam'da başarı çalışmanın meyvesidir ancak elde edilen nimetler karşısında kibirlenmek büyük bir günahtır. Tıpkı Kur'an'da anlatılan Karun'un 'Bu servet bana bendeki bilgi sayesinde verildi' diyerek şımarması ve yerin dibine batırılması gibi; insan ne kadar başarılı olursa olsun kendisine o aklı, sağlığı ve imkânı verenin Yüce Allah olduğunu bilip şükretmeli ve tevazu göstermelidir.",
+        "stimulus": "Hz. Peygamber: 'İki nimet vardır ki insanların çoğu bunların kıymetini bilmekte aldanmıştır: Sağlık ve boş vakit.' buyurmuştur.",
+        "questionText": "Hadisten hareketle insanın ömür sermayesini değerlendirirken sağlık ve zaman bilincine nasıl yaklaşması gerektiğini yazınız.",
+        "solutionExplanation": "Sağlık ve gençlik geçicidir; ecel gelmeden önce bu iki nimet hayırlı işlerde kullanılmalıdır.",
+        "modelAnswer": "İnsana bahşedilen en büyük iki ilahi lütuf sağlık ve zamandır (boş vakit). İnsanlar genelde gençlik ve sağlık ellerindeyken ömrün hiç bitmeyeceğini sanırlar. Oysa ecel ansızın gelir ve kaybedilen bir saniyeyi dahi geri getirmek imkânsızdır. Hadis, insanın sağlığını zararlı maddelerden korumasını ve zamanını tembellikle tüketmeyip ibadet, ahlak ve faydalı işlerle doldurmasını emreder.",
         "rubric": [
           {
-            "criterion": "Kibir ve kendi nefsine pay çıkarma eleştirisi",
+            "criterion": "Sağlık ve boş vaktin kıymetinin açıklanması",
             "points": 9
           },
           {
-            "criterion": "Karun kıssası ve şükür/tevazu bilinciyle açıklanması",
+            "criterion": "Ömrü faydalı amellerle değerlendirme gerekliliği",
             "points": 8
           }
         ]
@@ -21061,17 +21061,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 13,
         "contextText": "İnsanın fiillerinde mazeret üretme hatası.",
-        "stimulus": "Ayet Meali: 'Bir toplum kendi durumunu değiştirmedikçe Allah onların durumunu değiştirmez.' (Ra'd suresi, 11. ayet)",
-        "questionText": "Verilen ayetin toplumsal yasalar ve bireylerin ahlaki sorumluluğu açısından verdiği mesajı açıklayınız.",
-        "solutionExplanation": "Toplumların huzur ve refahı bireylerin ahlak ve adalet gayretine bağlıdır; toplum düzelmeden durum düzelmez.",
-        "modelAnswer": "Bu ayet evrensel bir toplumsal yasayı formüle eder. Bir millet tembellik, ahlaksızlık, rüşvet ve adaletsizliğe saparsa Allah onların huzur ve refahını geri alır. Bir toplumun kalkınması, huzura ve başarıya ulaşması dışarıdan bir mucizeyle değil; o toplumu oluşturan bireylerin kendi ahlaklarını, adalet ve çalışma disiplinlerini iyileştirmesiyle mümkündür.",
+        "stimulus": "Kur'an'da müşriklerin 'Eğer Allah dileseydi biz de atalarımız da O'na ortak koşmazdık...' diyerek şirki kadere yükledikleri anlatılır.",
+        "questionText": "Müşriklerin bu sözünün neden geçersiz ve samimiyetsiz olduğunu Kur'an'ın irade vurgusuyla açıklayınız.",
+        "solutionExplanation": "Allah insanlara peygamberler göndererek doğruyu bildirmiş ve seçme iradesi vermiştir; suçu kadere atmak sahtekarlıktır.",
+        "modelAnswer": "Müşriklerin bu iddiası tamamen bir kaçış ve sorumluluktan sıyrılma oyunudur. Yüce Allah hiçbir insanı zorla inkâra ya da puta tapmaya mecbur etmemiştir. İnsanlara akıl vermiş, peygamberler ve kitaplar göndererek doğru yolu bildirmiştir. Puta tapmayı kendi dünyevi menfaatleri için seçen müşriklerin bunu 'Allah böyle diledi' diyerek kadere fatura etmesi vicdansızlıktır.",
         "rubric": [
           {
-            "criterion": "Toplumsal yasa formülasyonunun açıklanması",
+            "criterion": "Müşriklerin iddialarının arkasındaki mazeretçilik eleştirisi",
             "points": 7
           },
           {
-            "criterion": "Bireylerin ahlaki ıslahı ile toplumsal refah bağıntısı",
+            "criterion": "Peygamberlerin tebliği ve cüzi irade vurgusu",
             "points": 6
           }
         ]
@@ -21109,17 +21109,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "Rızıkta helal ve haram sınırları.",
-        "stimulus": "Hicret yolculuğunda Hz. Peygamber'in Sevr Mağarası'na gizlenmesi, izleri kaybettirmek için çoban tutması ve Medine'ye bilinen yoldan değil farklı bir güzergâhtan gitmesi.",
-        "questionText": "Hz. Peygamber Allah'ın koruması altında olduğu halde neden bu kadar kapsamlı tedbirler almıştır? Tevekkül açısından açıklayınız.",
-        "solutionExplanation": "Peygamberimiz ümmetine örnek olmak ve fiili tedbir almanın tevekkülün ilk şartı olduğunu göstermek istemiştir.",
-        "modelAnswer": "Hz. Peygamber Yüce Allah'ın peygamberi olduğu halde 'Nasılsa Allah beni korur' diyerek tedbirsiz yola çıkmamıştır. Çünkü O, tüm insanlığa örnektir (üsve-i hasene). İnsanın aklını ve imkânlarını sonuna kadar kullanarak her türlü askeri ve stratejik tedbiri almasının, ardından Allah'a güvenip tevekkül etmesinin doğru olduğunu bizzat yaşayarak göstermiştir.",
+        "stimulus": "Ayet Meali: 'Ey insanlar! Yeryüzündeki helal ve temiz olan şeylerden yiyin; şeytanın adımlarını takip etmeyin...' (Bakara suresi, 168. ayet)",
+        "questionText": "Kader inancında rızık miktarı takdir edilmişken, bu rızkı helal veya haram yoldan kazanmanın insanın iradesine bırakılmasını açıklayınız.",
+        "solutionExplanation": "Rızık miktarı belirlidir; ancak kul o rızkı helal yoldan mı (çalışarak) yoksa haram yoldan mı (hırsızlık/faiz) alacağını kendisi seçer.",
+        "modelAnswer": "Yüce Allah insanın rızkını takdir etmiştir. Ancak o rızka hangi yolla ulaşacağını insanın cüzi iradesine bırakmıştır. İnsan dilerse sabredip alın teriyle, helal yoldan ticaret yaparak rızkını kazanır; dilerse hırsızlık, rüşvet veya faiz gibi haram yollara tevessül eder. Haramı seçen kimse 'kaderimde bu varmış' diyemez; haram yoldan kazanmayı seçtiği için günaha girer ve sorumlu olur.",
         "rubric": [
           {
-            "criterion": "Peygamberin ümmete somut örnek olma misyonu",
+            "criterion": "Rızkın helal ya da haram yoldan temininin insana ait olduğu",
             "points": 6
           },
           {
-            "criterion": "Önce tüm tedbirleri alıp sonra Allah'a tevekkül etme dersi",
+            "criterion": "Haramı seçmenin sorumluluğu ve günahı boyutu",
             "points": 6
           }
         ]
@@ -21154,7 +21154,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "8.1.4. Toplumda kader ve kaza ile ilgili yaygın olan yanlış anlayışları sorgular",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "Yanlış kader anlayışı: 'Rüzgârın önündeki yaprak'.",
         "stimulus": "Bazı felsefi yaklaşımlar ve fatalist (kaderci) çevreler insanı 'Rüzgârın önünde savrulan kuru bir yaprak' gibi iradesiz ve çaresiz kabul ederler.",
@@ -21181,17 +21181,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "Trafik kazaları ve tedbirsizliği kadere yükleme.",
-        "stimulus": "Bazı felsefi yaklaşımlar ve fatalist (kaderci) çevreler insanı 'Rüzgârın önünde savrulan kuru bir yaprak' gibi iradesiz ve çaresiz kabul ederler.",
-        "questionText": "İslam dininin insanı rüzgâr önündeki yaprağa benzeten bu anlayışı neden kesinlikle reddettiğini açıklayınız.",
-        "solutionExplanation": "Çünkü yaprağın aklı ve iradesi yoktur, nereye gideceğini seçemez. İnsanın ise aklı, vicdanı ve iradesi vardır.",
-        "modelAnswer": "Kuru bir yaprağın ne aklı ne bilinci ne de rüzgâra yön verme iradesi vardır; nereye savrulursa oraya gider ve sorumlu tutulamaz. Oysa İslam inancında insan, yaprak gibi şuursuz bir varlık değildir. Yüce Allah insana akıl, fikir, vicdan ve cüzi irade bahşetmiştir; doğru ile yanlışı ayırt edebilecek güce sahiptir. Bu nedenle insanı rüzgârın önündeki iradesiz bir yaprak gibi görmek İslam'ın adalet ve sorumluluk ilkeleriyle taban tabana zıttır.",
+        "stimulus": "Aşırı hız yapan, kırmızı ışıkta geçen ve alkollü araç kullanarak kazaya sebep olan bir sürücünün 'Kader işte, canı veren Allah alır' diyerek kendini savunması.",
+        "questionText": "Bu sürücünün savunmasını İslam'ın can güvenliği ve kader anlayışı açısından çürütünüz.",
+        "solutionExplanation": "Trafik kurallarını ihlal etmek kendi iradesidir; sebep olduğu ölümler cinayet ve kul hakkıdır, kadere fatura edilemez.",
+        "modelAnswer": "Bu sürücünün savunması tamamen batıldır ve dini kendi suçuna alet etmektir. Kırmızı ışıkta geçmek, hız limitini aşmak ve alkollü araç kullanmak tamamen sürücünün kendi hür iradesiyle işlediği bir cinayet ve suçtur. İslam can güvenliğini korumayı en temel farzlardan sayar. Kendi tedbirsizliği ve kural tanımazlığı yüzünden masum insanların ölümüne yol açan kimse hem hukuken katildir hem de ahirette ağır bir kul hakkı vebali altındadır; bu cürmü kadere yükleyemez.",
         "rubric": [
           {
-            "criterion": "Yaprak ile insan arasındaki irade/akıl farkının ortaya konması",
+            "criterion": "Kural ihlalinin hür iradeyle yapıldığının tespiti",
             "points": 6
           },
           {
-            "criterion": "İslam'ın sorumluluk ve adalet ilkelerine aykırılık gerekçesi",
+            "criterion": "Can güvenliğini tehlikeye atmanın ve kul hakkının kadere yüklenemeyeceği",
             "points": 6
           }
         ]
@@ -21295,17 +21295,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Kaderle ilgili kavramlar: Rızıkta infak ve cömertlik.",
-        "stimulus": "İnsan elinden gelen tüm gayreti gösterdikten sonra sonucun Allah'ın takdirinde olduğunu bildiğinde kalbinde derin bir huzur bulur.",
-        "questionText": "Doğru tevekkül bilincinin insanı aşırı kaygıdan, stresten ve yenilgi anında ümitsizliğe düşmekten nasıl koruduğunu açıklayınız.",
-        "solutionExplanation": "Sonucu Allah'a havale eden insan kriz anlarında paniğe kapılmaz; 'Hakkımda hayırlısı budur' diyerek iç huzurunu korur.",
-        "modelAnswer": "Doğru tevekkül, insanın ruh sağlığını koruyan muazzam bir sığınaktır. Görevini ve tedbirini eksiksiz yerine getiren birey, kontrolü dışındaki sonuçlar için yıpratıcı bir kaygı ve endişeye kapılmaz. Karşılaştığı zorluklarda ve başarısızlıklarda ise 'Ben elimden geleni yaptım, takdir Allah'ındır; bunda da bir hayır vardır' diyerek ümitsizlik ve depresyona düşmekten korunur, psikolojik direncini daima yüksek tutar.",
+        "stimulus": "Ayet Meali: 'Allah'ın sana verdiğinden (O'nun yolunda harcayarak) ahiret yurdunu iste; ama dünyadan da nasibini unutma...' (Kasas suresi, 77. ayet)",
+        "questionText": "İslam'ın dünya ve ahiret dengesi ile rızkın paylaşılması (infak) konusundaki bakış açısını verilen ayet ışığında açıklayınız.",
+        "solutionExplanation": "Dünya terk edilmemeli, helalinden kazanılmalı; ancak kazanılan mal Allah yolunda paylaşılarak ahiret sermayesine dönüştürülmelidir.",
+        "modelAnswer": "İslam dini dünyadan tamamen el etek çekip fakir yaşamayı değil, meşru yollardan dünya nimetlerinden dengeli bir şekilde faydalanmayı öğütler. Ancak kazanılan rızık ve servetin bir amaç değil, ebedi ahiret mutluluğunu kazanmak için bir araç olduğunu hatırlatır. Zenginlik bencilce biriktirilmemeli; yetimlerle, yoksullarla ve toplumun hayrına infak edilerek ahiret azığına dönüştürülmelidir.",
         "rubric": [
           {
-            "criterion": "Gereksiz kaygı ve stresten koruma boyutu",
+            "criterion": "Dünya ve ahiret dengesinin açıklanması",
             "points": 7
           },
           {
-            "criterion": "Başarısızlık anında ümitsizliği önleme ve iç huzur katkısı",
+            "criterion": "Rızkın infak ve yardımlaşmayla değerlendirilmesi vurgusu",
             "points": 7
           }
         ]
@@ -21364,7 +21364,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "8.1.6. Ayet el-Kürsi’yi okur, anlamını söyler.",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Ayet el-Kürsi'de Allah'ın ilmi ve mülkiyeti.",
         "stimulus": "'O, kullarının önlerindekini ve arkalarındakini (yaptıklarını ve yapacaklarını) bilir. Onlar O'nun ilminden, kendisinin dilediği kadarından başka bir şey kavrayamazlar.' (Ayet el-Kürsi)",
@@ -21406,7 +21406,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Students will be able to understand short and simple texts about friendship.",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 25,
         "contextText": "Personal characteristics of true friends.",
         "stimulus": "Text: 'True friends are like stars; you do not always see them, but you know they are always there. A true friend always backs you up when you have a problem. They are honest, loyal, and they never share your secrets with others.'",
@@ -21485,18 +21485,14 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 25,
         "contextText": "Teen preferences and outdoor activities.",
-        "stimulus": "Interview: 'Mark: I am crazy about rock music because the energetic rhythm keeps me motivated. However, I can't stand classical music; to be honest, I find it quite boring. In my free time, I usually go camping with my scouting group.'",
-        "questionText": "Read the interview snippet and answer:\na) Why does Mark love rock music?\nb) What type of music does he dislike, and what is his opinion of it?",
-        "solutionExplanation": "a) Because the energetic rhythm keeps him motivated. b) He dislikes classical music because he finds it boring.",
-        "modelAnswer": "a) He loves rock music because its energetic rhythm keeps him motivated.\nb) He dislikes classical music and finds it quite boring (unbearable).",
+        "stimulus": "Survey results: 65% of 8th graders prefer outdoor sports like trekking and cycling, while 35% prefer playing computer games at home.",
+        "questionText": "Based on the survey results, compare the popularity of outdoor activities with online computer games among 8th-grade teenagers.",
+        "solutionExplanation": "Outdoor activities are more popular (65%) than playing computer games (35%).",
+        "modelAnswer": "Outdoor activities (such as trekking and cycling) are much more popular than playing computer games; the majority of teenagers (65%) prefer being in nature rather than staying at home in front of a screen.",
         "rubric": [
           {
-            "criterion": "Reason for liking rock music explained",
-            "points": 13
-          },
-          {
-            "criterion": "Dislike of classical music and opinion stated",
-            "points": 12
+            "criterion": "Accurate comparison based on percentage data",
+            "points": 25
           }
         ]
       }
@@ -21524,7 +21520,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Students will be able to understand short and simple texts about friendship.",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 20,
         "contextText": "Friendship vocabulary and traits.",
         "stimulus": "Dialogue:\n• Sam: 'Can I count on Jason?'\n• Leo: 'Definitely! He is the most reliable boy in our class. He never tells lies and he always keeps his promises.'",
@@ -21662,7 +21658,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Students will be able to understand short and simple texts about friendship.",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Friendship qualities: Backing up and honesty.",
         "stimulus": "Text: 'Good friends have a lot of things in common. They share similar hobbies, support each other in hard times, and never tell lies. An arrogant and self-centered person cannot be a good friend because true friendship requires empathy.'",
@@ -21685,13 +21681,13 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Vocabulary matching: Friendship traits.",
-        "stimulus": "Text: 'Good friends have a lot of things in common. They share similar hobbies, support each other in hard times, and never tell lies. An arrogant and self-centered person cannot be a good friend because true friendship requires empathy.'",
-        "questionText": "According to the text, why can an arrogant and self-centered person NOT be a true friend?",
-        "solutionExplanation": "Because they lack empathy and true friendship requires understanding and supporting others.",
-        "modelAnswer": "An arrogant and self-centered person cannot be a true friend because true friendship requires empathy, mutual understanding, and supporting each other, whereas selfish people only care about themselves.",
+        "stimulus": "Words: [generous, supportive, jealous, honest]",
+        "questionText": "Match the personality adjectives with their descriptions:\n1. Always tells the truth and never lies: ....................\n2. Helps you whenever you need assistance: ....................\n3. Likes sharing things and giving presents: ....................\n4. Cannot stand seeing other people's success: ....................",
+        "solutionExplanation": "1. honest, 2. supportive, 3. generous, 4. jealous.",
+        "modelAnswer": "1. honest\n2. supportive\n3. generous\n4. jealous",
         "rubric": [
           {
-            "criterion": "Lack of empathy and selfishness explained as the barrier to true friendship",
+            "criterion": "All four personality adjectives matched accurately",
             "points": 17
           }
         ]
@@ -21816,7 +21812,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Students will be able to understand short and simple texts about friendship.",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Best friends having common interests.",
         "stimulus": "Text: 'Tim and Eric have been buddies for six years. They always get on well with each other because they share the same hobbies. Both of them love playing basketball, solving math puzzles, and listening to rock music.'",
@@ -21867,18 +21863,14 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Refusing invitations with reasons.",
-        "stimulus": "Dialogue:\n• David: 'We are organizing a picnic by the lake this Saturday. Do you fancy coming with us?'\n• Arthur: 'Awesome! That sounds great. What can I bring with me?'",
-        "questionText": "Does Arthur accept the picnic invitation? How do you know?",
-        "solutionExplanation": "Yes, he accepts. He says 'Awesome! That sounds great' and asks what he can bring.",
-        "modelAnswer": "Yes, Arthur accepts the invitation enthusiastically. We know this because he replies with positive phrases like 'Awesome! That sounds great' and immediately offers to help by asking what food or drinks he can bring.",
+        "stimulus": "Email:\n'Dear David, thanks for inviting me to the bowling tournament tomorrow. I am sorry, but I can't attend because I must look after my little sister while my parents are at work. Have fun! - Paul'",
+        "questionText": "Identify Paul's excuse for not attending the bowling tournament.",
+        "solutionExplanation": "He must look after his little sister while his parents are at work.",
+        "modelAnswer": "Paul cannot attend the bowling tournament because he has to take care of (look after) his little sister while his parents are at work.",
         "rubric": [
           {
-            "criterion": "Accurate confirmation of acceptance",
-            "points": 9
-          },
-          {
-            "criterion": "Evidence from dialogue quoted and explained",
-            "points": 8
+            "criterion": "Excuse stated accurately and completely",
+            "points": 17
           }
         ]
       },
@@ -21915,18 +21907,14 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 16,
         "contextText": "Music genre definitions.",
-        "stimulus": "Text: 'Selim is an organized 8th-grade student. He always wakes up at 06:45, washes his face, and has a healthy breakfast. He leaves home at 07:45 and walks to school. His lessons start at 08:30 and finish at 15:30. After school, he attends the science club twice a week.'",
-        "questionText": "Read the text and answer:\na) How does Selim go to school in the morning?\nb) How often does he attend the science club?",
-        "solutionExplanation": "a) He walks to school. b) Twice a week.",
-        "modelAnswer": "a) Selim walks to school on foot.\nb) He attends the science club twice a week after school.",
+        "stimulus": "Definitions:\n1. Heavy beats, electric guitars, and high energy: R _ _ K music\n2. Traditional, harmonious, played by orchestras: C _ _ _ _ _ C _ L music\n3. Improvised wind instruments, saxophones, originated in New Orleans: J _ _ Z music",
+        "questionText": "Complete the missing letters of the music genres:\n1. R _ _ K\n2. C _ _ _ _ _ C _ L\n3. J _ _ Z",
+        "solutionExplanation": "1. ROCK, 2. CLASSICAL, 3. JAZZ.",
+        "modelAnswer": "1. ROCK\n2. CLASSICAL\n3. JAZZ",
         "rubric": [
           {
-            "criterion": "Walking to school identified",
-            "points": 8
-          },
-          {
-            "criterion": "Twice a week frequency stated",
-            "points": 8
+            "criterion": "Three music genres correctly completed",
+            "points": 16
           }
         ]
       },
@@ -21978,7 +21966,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Students will be able to understand short and simple texts about friendship.",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 15,
         "contextText": "Friendship traits: Loyal and caring.",
         "stimulus": "Text: 'A loyal buddy stands by you through thick and thin. When you fail an exam or feel depressed, they do not criticize you; instead, they cheer you up and offer constructive solutions.'",
@@ -22001,13 +21989,13 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 15,
         "contextText": "Opposite traits in friendship.",
-        "stimulus": "Text: 'A loyal buddy stands by you through thick and thin. When you fail an exam or feel depressed, they do not criticize you; instead, they cheer you up and offer constructive solutions.'",
-        "questionText": "What does a loyal buddy do when you feel depressed or face a failure according to the text?",
-        "solutionExplanation": "They stand by you, cheer you up, and offer constructive solutions instead of criticizing.",
-        "modelAnswer": "Instead of criticizing you, a loyal buddy stands by your side, cheers you up, and helps you find constructive solutions to overcome your problems.",
+        "stimulus": "Pairs of opposites: generous vs stingy, honest vs sneaky, reliable vs untrustworthy.",
+        "questionText": "Write the opposite of each negative personality trait:\na) sneaky (dishonest) <-> ....................\nb) stingy (mean) <-> ....................\nc) untrustworthy (unreliable) <-> ....................",
+        "solutionExplanation": "a) honest, b) generous, c) reliable / trustworthy.",
+        "modelAnswer": "a) sneaky <-> honest (truthful)\nb) stingy <-> generous (kind)\nc) untrustworthy <-> reliable (trustworthy)",
         "rubric": [
           {
-            "criterion": "Cheering up and constructive support accurately described",
+            "criterion": "Three positive opposite traits correctly written",
             "points": 15
           }
         ]
@@ -22114,7 +22102,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Students will be able to write a short and simple paragraph about regular activities of teenagers.",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Independent writing: Teenager profile.",
         "stimulus": "Writing task: Create a personal teen profile for a school magazine.",

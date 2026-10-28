@@ -169,14 +169,16 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "MAT.5.3.1": {
     "outcomeCode": "MAT.5.3.1",
-    "topicTitle": "GEOMETRİK ŞEKİLLER - Temel Geometrik Çizimler ve İnşalar",
+    "topicTitle": "Doğru, Doğru Parçası ve Işın",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Temel geometrik çizimler için matematiksel araç ve teknolojiden yararlanabilme",
-      "Kavramsal İlke: Tren rayları, paket lastiği ve fener ışığı modelleri.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Doğru: Her iki yönden sonsuza kadar uzanan noktalar kümesidir. Başlangıcı ve bitişi olmadığı için boyu cetvelle ölçülemez (Örn: İki ucunda ok olan d doğrusu veya AB doğrusu).",
+      "Işın: Başlangıç noktası sabit olup diğer yönden sonsuza uzanır. Boyu ölçülemez (Örn: [AB ışını. Güneş ışınları veya fener ışığı birer ışın modelidir).",
+      "Doğru Parçası: İki ucu da sınırlandırılmış düz çizgi parçasıdır. Başlangıcı ve bitişi belli olduğu için boyu kesin bir sayıyla cetvelle ölçülebilir (Örn: [AB] doğru parçası). Cetvel veya tahta çıta birer doğru parçası modelidir.",
+      "Noktanın Noktaya Göre Konumu: Bir noktadan diğerine giderken yönler (sağ, sol, yukarı, aşağı) ve birim kareler sayılarak ifade edilir."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "PÜF NOKTA: Doğru ve ışının boyu cetvelle ölçülemez; yalnızca iki ucu da kapalı olan \"doğru parçasının\" boyu ölçülebilir.",
+      "TUZAK: Konum sorularında başlangıç noktasına dikkat ediniz! \"A'nın B'ye göre konumu\" sorulduğunda B noktasından yola çıkılarak A'ya ulaşılır."
     ],
     "solvedExample": {
       "question": "Aşağıdaki modeller verilmiştir:\n1. İki yönden sonsuza uzanan tren rayı\n2. İki ucu da kesilmiş 40 cm'lik tahta cetvel\n3. Deniz fenerinden karanlık denize yayılan ışık huzmesi\n\nNumaralandırılmış modellerin hangi temel geometrik kavramları (doğru, doğru parçası, ışın) temsil ettiğini gerekçeleriyle sırasıyla yazınız.",
@@ -190,14 +192,14 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "MAT.5.3.2": {
     "outcomeCode": "MAT.5.3.2",
-    "topicTitle": "Temel geometrik çizimlere dayalı deneyimlerini yansıtabilme",
+    "topicTitle": "Doğruya Dikme Çizme ve Eşit Uzunlukta Doğru Parçaları",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Temel geometrik çizimlere dayalı deneyimlerini yansıtabilme",
-      "Kavramsal İlke: Gönye ile 90 derecelik dikme çizimi.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Dik Doğru (Dikme): Bir doğruya üzerindeki veya dışındaki bir noktadan 90°'lik dik açıyla çizilen doğrudur (sembolü: ⟂).",
+      "Dikme Çizim Aletleri: Dikme çizmek için üzerinde 90°'lik dik açı bulunan gönye veya açıölçer (iletki) kullanılır.",
+      "Eşit Uzunlukta Doğru Parçaları: Yatay ve dikey doğrultuda kareli zeminde uç noktalar arasındaki yatay ve düşey birim farkları birbirine eşit olan doğru parçalarının uzunlukları eşittir (Örn: Yatayda 4, düşeyde 3 birim ötelenen tüm doğru parçaları eşit uzunluktadır)."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "PÜF NOKTA: Eğik doğru parçalarının uzunluğunu bulurken uç noktaları arasındaki yatay ve dikey birim adımları sayılır; yönün sağa veya sola olması uzunluğu etkilemez."
     ],
     "solvedExample": {
       "question": "Yatay bir tahta çıtaya tam 90 derecelik dikey bir destek tahtası monte edilecektir.\n\nBir doğruya üzerindeki bir noktadan dik doğru (dikme) çizebilmek için hangi matematiksel çizim aracı kullanılır? Kısaca açıklayınız.",
@@ -211,14 +213,17 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "MAT.5.3.3": {
     "outcomeCode": "MAT.5.3.3",
-    "topicTitle": "Açı Ölçme - Açı Ölçme",
+    "topicTitle": "Açı Çeşitleri ve Açı Ölçme",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Açıları ölçmek için matematiksel araç ve teknolojiden yararlanabilme",
-      "Kavramsal İlke: Açı çeşitleri sınıflandırması.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Dar Açı: Ölçüsü 0° ile 90° arasında olan açılardır (Örn: 25°, 60°, 89°).",
+      "Dik Açı: Ölçüsü tam olarak 90° olan açıdır (∟ sembolü ile gösterilir, gönye köşesi gibidir).",
+      "Geniş Açı: Ölçüsü 90° ile 180° arasında olan açılardır (Örn: 91°, 120°, 175°).",
+      "Doğru Açı: Ölçüsü tam olarak 180° olan açıdır (dümdüz bir doğru oluşturur).",
+      "Açıölçer (İletki): Bir açının ölçüsünü derece (°) cinsinden ölçmek veya istenen açıyı çizmek için kullanılan araçtır."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "TUZAK: 90° tam dik açıdır, dar veya geniş açı değildir. 180° tam doğru açıdır, geniş açı değildir.",
+      "PÜF NOKTA: Saat 03.00 ve 09.00'da akrep ile yelkovan tam 90° (dik açı); saat 06.00'da tam 180° (doğru açı) oluşturur."
     ],
     "solvedExample": {
       "question": "Ölçüleri verilen açılar:\nK = 35°, L = 90°, M = 140°, N = 180°\n\nK, L, M ve N açılarının çeşitlerini (dar açı, dik açı, geniş açı, doğru açı) karşılarına sırasıyla yazınız.",
@@ -232,14 +237,15 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "MAT.5.3.4": {
     "outcomeCode": "MAT.5.3.4",
-    "topicTitle": "Düzlemde iki veya üç doğrunun birbirine göre durumuna bağlı olarak oluşabilecek açılara dair çıkarım yapabilme",
+    "topicTitle": "Doğruların Birbirine Göre Durumları",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Düzlemde iki veya üç doğrunun birbirine göre durumuna bağlı olarak oluşabilecek açılara dair çıkarım yapabilme",
-      "Kavramsal İlke: Sokak krokisinde paralel ve dik kesişen yollar.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Paralel Doğrular: Aynı düzlemde olan, aralarındaki uzaklık daima eşit kalan ve sonsuza kadar uzatılsalar bile asla kesişmeyen doğrulardır (sembolü: //). Tren rayları veya defter çizgileri örnektir.",
+      "Kesişen Doğrular: Düzlemde tek bir ortak noktası bulunan doğrulardır (Örn: Makas kolları, \"X\" harfi).",
+      "Dik Kesişen Doğrular: Birbirini tam 90°'lik dik açıyla kesen doğrulardır (sembolü: ⟂). Pencere çerçevesi çıtaları veya \"+\" işareti örnektir.",
+      "Çakışık Doğrular: Bütün noktaları ortak olan ve birbiriyle üst üste gelen doğrulardır (tek bir doğru gibi görünürler)."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "PÜF NOKTA: Paralel doğruların hiçbir ortak noktası yoktur; kesişen doğruların yalnızca 1 ortak noktası vardır; çakışık doğruların ise sonsuz ortak noktası vardır."
     ],
     "solvedExample": {
       "question": "Şehir krokisinde Gül Sokak ile Karanfil Sokak birbirini hiç kesmemektedir. Lale Caddesi ise hem Gül Sokak'ı hem de Karanfil Sokak'ı 90 derecelik açıyla kesmektedir.\n\na) Gül Sokak ile Karanfil Sokak birbirine göre nasıl doğrulardır?\nb) Lale Caddesi ile Gül Sokak birbirine göre nasıl doğrulardır?",
@@ -253,14 +259,15 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "MAT.5.3.5": {
     "outcomeCode": "MAT.5.3.5",
-    "topicTitle": "Çokgenler ve Çember - Çokgenler ve Çember",
+    "topicTitle": "Çokgenlerin Tanımı ve Temel Özellikleri",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Çokgenleri düzlemde ardışık olarak kesişen doğruların oluşturduğu kapalı şekiller olarak yorumlayabilme",
-      "Kavramsal İlke: Çokgen olma şartları.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Çokgen Olma Şartları: 1) En az 3 doğru parçasından oluşmalıdır. 2) Uç uca eklenerek tamamen kapalı bir şekil oluşturmalıdır. 3) Kenarları doğru parçası olmalıdır.",
+      "Çokgen İsimlendirme: Çokgenler kenar veya köşe sayılarına göre adlandırılır: 3 kenarlı ise Üçgen, 4 kenarlı ise Dörtgen, 5 kenarlı ise Beşgen, 6 kenarlı ise Altıgen.",
+      "Çokgen Olmayanlar: Çember ve daire eğri çizgiden oluştuğu için, bir ucu açık kalan şekiller ise kapalı olmadığı için çokgen DEĞİLDİR."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "TUZAK: Daire ve çember çokgen DEĞİLDİR çünkü kenarları doğru parçası değil, eğridir.",
+      "TUZAK: Bir ucu açık kalan şekiller (örneğin harf şeklindeki çizgiler) kapalı olmadığı için çokgen olamaz."
     ],
     "solvedExample": {
       "question": "Şekil 1: Üç doğru parçasının uç uca eklenmesiyle oluşan kapalı şekil\nŞekil 2: Dört doğru parçasıyla çizilmiş fakat bir köşesi açık bırakılmış şekil\nŞekil 3: Bir kenarı çember yayı olan kapalı şekil\n\nVerilen şekillerden hangisi çokgendir? Çokgen olabilmesi için gereken 2 temel kuralı yazınız.",
@@ -274,14 +281,15 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "MAT.5.3.6": {
     "outcomeCode": "MAT.5.3.6",
-    "topicTitle": "Çokgenlerin özellikleri ile ilgili edindiği deneyimleri yansıtabilme",
+    "topicTitle": "Çokgenlerde Kenar, Köşe ve Köşegen İlişkisi",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Çokgenlerin özellikleri ile ilgili edindiği deneyimleri yansıtabilme",
-      "Kavramsal İlke: Dörtgen köşegenleri ve üçgen istisnası.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Temel Kural: Tüm çokgenlerde Kenar Sayısı = Köşe Sayısı = İç Açı Sayısıdır. (Örn: Beşgende 5 kenar, 5 köşe, 5 iç açı vardır).",
+      "Köşegen Tanımı: Bir çokgende komşu olmayan iki köşeyi birleştiren doğru parçasına \"köşegen\" denir.",
+      "ÜÇGENİN KÖŞEGENİ YOKTUR! Çünkü üçgenin tüm köşeleri birbirine komşudur; komşu olmayan köşe bulunmadığı için köşegen çizilemez.",
+      "Dörtgende 2 adet köşegen çizilebilir; beşgende ise 5 adet köşegen çizilebilir."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "MEB SINAV TUZAĞI: \"Aşağıdaki çokgenlerden hangisinin köşegeni yoktur?\" sorusunun cevabı daima ÜÇGENDİR. Üçgenin köşegen sayısı SIFIRDIR."
     ],
     "solvedExample": {
       "question": "Çokgenlerde komşu olmayan iki köşeyi birleştiren doğru parçasına 'köşegen' denir.\n\na) Bir dörtgenin (örneğin dikdörtgenin) kaç köşegeni vardır?\nb) Bir üçgenin neden köşegeni yoktur? Gerekçesini yazınız.",
@@ -295,14 +303,15 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "MAT.5.3.7": {
     "outcomeCode": "MAT.5.3.7",
-    "topicTitle": "Matematiksel araç ve teknoloji yardımıyla düzlemde iki noktada kesişen çember çiftinin merkezleri ve kesişim noktalarından biri ile inşa edilen üçgenlerin kenar özelliklerine yönelik çıkarım yapabilme",
+    "topicTitle": "Üçgen Çeşitleri (Kenarlarına ve Açılarına Göre)",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Matematiksel araç ve teknoloji yardımıyla düzlemde iki noktada kesişen çember çiftinin merkezleri ve kesişim noktalarından biri ile inşa edilen üçgenlerin kenar özelliklerine yönelik çıkarım yapabilme",
-      "Kavramsal İlke: Kareli kâğıtta okul ve kütüphane konumu.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Açılarına Göre Üçgenler: 1) Dar Açılı Üçgen (tüm iç açıları 90°'den küçüktür), 2) Dik Açılı Üçgen (bir açısı tam 90°'dir), 3) Geniş Açılı Üçgen (bir açısı 90°'den büyüktür).",
+      "Kenarlarına Göre Üçgenler: 1) Eşkenar Üçgen (tüm kenarları eşit ve her iç açısı 60°'dir), 2) İkizkenar Üçgen (iki kenarı eşit ve bu kenarları gören taban açıları eşittir), 3) Çeşitkenar Üçgen (üç kenar uzunluğu da birbirinden farklıdır).",
+      "İç Açı Toplamı: Bir üçgenin iç açıları toplamı daima 180°'dir. Dik üçgende dik açı (90°) dışındaki iki dar açının toplamı daima 90° yapar."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "TUZAK: Bir üçgende birden fazla dik açı veya birden fazla geniş açı OLAMAZ (çünkü iki dik açı 180° eder, üçüncü açıya yer kalmaz).",
+      "PÜF NOKTA: Eşkenar üçgenlerin tüm iç açıları 60° olduğu için her eşkenar üçgen aynı zamanda bir \"dar açılı üçgen\"dir."
     ],
     "solvedExample": {
       "question": "Kareli zeminde okul A noktasında, kütüphane B noktasındadır. B noktası A noktasından 5 birim sağda ve 2 birim yukarıdadır.\n\nB noktasının A noktasına göre konumunu tek bir cümleyle ifade ediniz.",
@@ -316,14 +325,18 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "FB.5.1.2": {
     "outcomeCode": "FB.5.1.2",
-    "topicTitle": "Gökyüzündeki Komşumuz: Ay - Gökyüzündeki Komşumuz: Ay",
+    "topicTitle": "Ay'ın Özellikleri ve Hareketleri",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Ay’ın özellikleri, dönme ve dolanma hareketleri ile ilgili bilimsel çıkarım yapabilme",
-      "Kavramsal İlke: Ay'ın dönme ve dolanma sürelerinin eşitliği.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Ay, Dünya'mızın tek doğal uydusudur ve geometrik şekli küreye benzer. Hacimce Güneş ve Dünya'dan çok daha küçüktür (Güneş karpuz ise Dünya ceviz, Ay karabiber tanesidir).",
+      "Ay'da yok denecek kadar ince bir atmosfer vardır. Bu nedenle rüzgâr, yağmur, kar gibi hava olayları gerçekleşmez; gece ile gündüz arasındaki sıcaklık farkı 200°C'yi aşar.",
+      "Atmosfer olmadığı için uzaydan gelen gök taşları sürtünmeyle yanmadan doğrudan yüzeye çarpar ve \"krater\" adı verilen derin çukurlar oluşturur.",
+      "Rüzgâr, yağış ve fırtına gibi hava olayları olmadığı için Ay yüzeyindeki kraterler ve astronotların bıraktığı ayak/tekerlek izleri milyarlarca yıldır bozulmadan ve silinmeden kalır.",
+      "Ay kendi ışığını üretmez, Güneş'ten aldığı ışığı yansıtır.",
+      "Ay'ın kendi ekseni etrafında dönme süresi ile Dünya etrafında dolanma süresi birbirine eşittir (~27,3 gün). Bu eşitlik nedeniyle Dünya'dan bakıldığında daima Ay'ın hep aynı yüzü görülür."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "TUZAK 1: \"Ay kendi ışığını üretir\" veya \"Ay bir ışık kaynağıdır\" ifadeleri tamamen yanlıştır. Ay sadece Güneş ışığını yansıtan bir gök cismidir.",
+      "PÜF NOKTA: Dünya'dan bakıldığında Ay'ın hep aynı yüzünün görülmesinin TEK bilimsel gerekçesi; Ay'ın kendi ekseni etrafında dönme süresi ile Dünya etrafında dolanma süresinin eşit (~27,3 gün) olmasıdır."
     ],
     "solvedExample": {
       "question": "Dünya'dan gökyüzüne bakan bir insan hangi tarihte bakarsa baksın Ay'ın hep aynı yüzey şekillerini (aynı yüzünü) görür.\n\nDünya'dan bakıldığında Ay'ın hep aynı yüzünün görülmesinin bilimsel gerekçesini Ay'ın dönme ve dolanma süreleri bakımından açıklayınız.",
@@ -337,14 +350,19 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "FB.5.1.3": {
     "outcomeCode": "FB.5.1.3",
-    "topicTitle": "Ay’ın evrelerini temsil eden bilimsel model oluşturabilme",
+    "topicTitle": "Ay'ın Evreleri ve Periyotları",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Ay’ın evrelerini temsil eden bilimsel model oluşturabilme",
-      "Kavramsal İlke: Ay'ın ana evreleri sıralaması.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Ay'ın 4 Ana Evresi sırasıyla: 1) Yeni Ay → 2) İlk Dördün → 3) Dolunay → 4) Son Dördün.",
+      "Art arda gelen iki ana evre arasında yaklaşık 1 hafta (7 gün) geçer. Tüm evrelerin tamamlanması yaklaşık 29,5 gün (1 ay) sürer.",
+      "Yeni Ay: Ay Güneş ile Dünya arasındadır; Dünya'ya bakan yüzü karanlıktır, gökyüzünde görünmez.",
+      "İlk Dördün: Yeni Ay'dan 1 hafta sonra görülür. Ay'ın Dünya'ya bakan yüzünün sağ yarısı aydınlıktır ve düz \"D\" harfi şeklinde parlar.",
+      "Dolunay: İlk Dördün'den 1 hafta sonra görülür. Ay'ın Dünya'ya bakan yüzü tamamen aydınlıktır ve tam bir daire şeklinde ışıldar.",
+      "Son Dördün: Dolunay'dan 1 hafta sonra görülür. Ay'ın sol yarısı aydınlıktır ve ters \"D\" harfi şeklinde görünür.",
+      "Ara Evreler: Hilal (Yeni Ay ile İlk Dördün ve Son Dördün ile Yeni Ay arasında) ve Şişkin Ay (İlk Dördün ile Dolunay ve Dolunay ile Son Dördün arasında)."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "PÜF NOKTA: Düz \"D\" harfi İlk Dördün; ters \"D\" harfi Son Dördün evresidir. Türk bayrağımızdaki hilal ise bir \"ara evre\"dir.",
+      "TUZAK: Ay'ın evrelerinin oluşma sebebi Ay'ın kendi etrafında dönmesi değil, Ay'ın Dünya etrafında DOLANMASI ve Güneş'e göre konumunun değişmesidir."
     ],
     "solvedExample": {
       "question": "Ay'ın Dünya etrafındaki dolanımı sırasında gökyüzündeki görünümü periyodik olarak değişir.\n\nAy'ın 4 ana evresinin isimlerini sırasıyla yazınız ve art arda gelen iki ana evre arasında geçen süreyi belirtiniz.",
@@ -358,14 +376,15 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "FB.5.1.4": {
     "outcomeCode": "FB.5.1.4",
-    "topicTitle": "Dünya’mız ve Gökyüzündeki Komşularımız - Dünya’mız ve Gökyüzündeki Komşularımız",
+    "topicTitle": "Güneş, Dünya ve Ay'ın Büyüklük ve Hareket Modeli",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Güneş, Dünya ve Ay’ın birbirlerine göre hareketlerini ve hacimsel büyüklüklerini temsil eden bilimsel model oluşturabilme",
-      "Kavramsal İlke: Güneş, Dünya ve Ay büyüklük modeli.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Büyüklük Karşılaştırması: Güneş > Dünya > Ay. Güneş içine yaklaşık 1 milyon 300 bin Dünya sığabilir. Dünya içine ise yaklaşık 64 Ay sığabilir.",
+      "Model Eşleştirmesi: Güneş = Karpuz veya Basketbol topu, Dünya = Ceviz veya Nohut tanesi, Ay = Karabiber tanesi veya Mercimek tanesi.",
+      "Dönme Yönleri: Kuzey kutup noktasından bakıldığında Güneş, Dünya ve Ay'ın kendi eksenleri etrafındaki dönme yönü \"Saat yönünün tersine\" (Batıdan Doğuya doğru) gerçekleşir.",
+      "Güneş ve Ay'ın Gökyüzünde Aynı Boyutta Görünmesi: Güneş, Ay'dan 400 kat büyük olmasına rağmen bize Ay'dan çok daha uzak olduğu için gökyüzünde yaklaşık aynı büyüklükte görünür (Perspektif etkisi)."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "TUZAK: \"Güneş uzayda tamamen sabittir ve hiç dönmez\" ifadesi yanlıştır. Güneş de kendi ekseni etrafında saat yönünün tersine döner (Galileo Güneş lekelerini gözlemleyerek bunu ispatlamıştır)."
     ],
     "solvedExample": {
       "question": "Öğretmen masaya bir karpuz, bir ceviz ve bir karabiber tanesi koymuştur.\n\nBu üç nesneyi hacimsel büyüklüklerine göre Güneş, Dünya ve Ay ile doğru şekilde eşleştiriniz.",
@@ -379,14 +398,17 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "FB.5.2.1": {
     "outcomeCode": "FB.5.2.1",
-    "topicTitle": "2. ÜNİTE: KUVVETİ TANIYALIM - Kuvvet ve Kuvvetin Ölçülmesi",
+    "topicTitle": "Kuvvetin Ölçülmesi ve Dinamometre",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Kuvveti büyüklüğü ile operasyonel tanımlayabilme",
-      "Kavramsal İlke: Dinamometre çalışma ilkesi.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Kuvvet Tanımı ve Birimi: Duran bir cismi hareket ettiren, hareket eden cismi durduran veya şeklini değiştiren etkidir. Birimi \"Newton\"dur ve \"N\" harfi ile gösterilir.",
+      "Dinamometre: Kuvvetin büyüklüğünü ölçen alettir. İçerisinde sarmal esnek çelik yay bulunur.",
+      "Çalışma Prensibi: Dinamometre, esnek yayların üzerlerine uygulanan kuvvet miktarıyla doğru orantılı olarak uzaması esasına dayanır (Kuvvet 2 katına çıkarsa uzama da 2 katına çıkar).",
+      "Hassas Ölçüm: İnce yaylı dinamometreler küçük kuvvetleri ölçmek için uygundur (daha hassastır). Kalın yaylı dinamometreler ise büyük kuvvetleri ölçebilir ancak küçük kuvvetlere karşı hassas değildir.",
+      "Ölçüm Sınırı: Bir dinamometreye taşıyabileceğinden fazla kuvvet uygulanırsa yayın esneklik özelliği kalıcı olarak bozulur."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "TUZAK: Maksimum 50 N ölçebilen bir dinamometreye 70 N asılırsa dinamometre doğru değer göstermez ve içindeki yay esneklik sınırını aştığı için kalıcı olarak bozulur.",
+      "PÜF NOKTA: 10 bölmeli ve en fazla 50 N ölçen bir dinamometrede her 1 bölme 50 ÷ 10 = 5 N büyüklüğündedir."
     ],
     "solvedExample": {
       "question": "Kuvvet ölçümünde kullanılan dinamometrenin içerisinde sarmal bir çelik yay bulunmaktadır.\n\na) Dinamometrenin çalışma prensibi yayın hangi özelliğine dayanır?\nb) Kuvvetin birimi ve sembolü nedir?",
@@ -400,14 +422,16 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "SB.5.1.1": {
     "outcomeCode": "SB.5.1.1",
-    "topicTitle": "BİRLİKTE YAŞAMAK - Gruplar ve Roller",
+    "topicTitle": "Gruplar, Roller, Hak ve Sorumluluklar",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Dâhil olduğu gruplar ve bu gruplardaki rolleri arasındaki ilişkileri çözümleyebilme",
-      "Kavramsal İlke: Sosyal roller ve sorumluluklar.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Grup: Ortak bir amaç için bir araya gelen, aralarında iş birliği olan en az iki kişiden oluşan topluluktur (Aile, okul korosu, futbol takımı).",
+      "Rol: Bir grupta üstlendiğimiz görevlerdir. Bir birey aynı anda birden fazla grupta farklı rollere sahip olabilir (Evde evlat, okulda öğrenci, takımda kaleci).",
+      "Doğuştan Gelen Roller: Seçme hakkımız olmayan rollerdir (Evlat, torun, kardeş).",
+      "Sonradan Kazanılan Roller: Kendi isteğimiz ve çalışmamızla kazandığımız rollerdir (Öğrenci, doktor, kulüp başkanı).",
+      "Hak ve Sorumluluk: Hak yasal güvencelerimizdir (Eğitim hakkı, oyun hakkı). Sorumluluk ise rolümüzün gerektirdiği görevleri eksiksiz yapmaktır (Dersi dinlemek, odayı toplamak)."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "PÜF NOKTA: Durakta otobüs bekleyenler \"kalabalık\"tır; çünkü ortak amaç ve iş birliği yoktur. Okul voleybol takımı ise \"grup\"tur."
     ],
     "solvedExample": {
       "question": "5. sınıf öğrencisi Selim, evde anne ve babasının evladı, okulda 5-A sınıfının başkanı, basketbol kulübünde ise oyun kurucudur.\n\nSelim'in dahil olduğu bu üç gruptaki rollerini yazarak, roller değiştikçe sorumlulukların nasıl değiştiğini açıklayınız.",
@@ -421,14 +445,15 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "SB.5.1.2": {
     "outcomeCode": "SB.5.1.2",
-    "topicTitle": "Kültürel Özelliklere Saygı ve Birlikte Yaşama Kültürü - Kültürel Özelliklere Saygı ve Birlikte Yaşama Kültürü",
+    "topicTitle": "Kültürel Zenginliğimiz ve Birlikte Yaşama",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Kültürel özelliklere saygı duymanın birlikte yaşamaya etkisini yorumlayabilme",
-      "Kavramsal İlke: Yöresel halk oyunlarımız.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Maddi Kültür Mirası: Somut, gözle görülen eserlerdir (Tarihi köprüler, camiler, yöresel kıyafetler, yemekler, el sanatları).",
+      "Manevi Kültür Mirası: İnançlar, gelenek ve görenekler, bayramlaşma, misafirperverlik, türküler, masallar, atasözleri.",
+      "Halk Oyunları Mozaiğimiz: Ege'de zeybek, Karadeniz'de horon, Doğu ve Güneydoğu'da halay, Erzurum'da bar, Trakya'da hora oynanır.",
+      "Birlikte Yaşama Kültürü: Kültürel farklılıkları bir ayrışma sebebi değil, milletimizin ortak zenginliği olarak kabul etmek toplumsal dayanışmayı güçlendirir."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "TUZAK: \"Kültürel farklılıklar toplumda çatışmaya yol açar\" düşüncesi yanlıştır. Farklılıklar kültürel mozaiğimizin zenginliğidir."
     ],
     "solvedExample": {
       "question": "Ege'de efelerin zeybeği, Karadeniz'de coşkulu horon ve Erzurum'da yiğitçe oynanan bar oyunu sergilenmektedir.\n\nFarklı yörelerimize ait bu halk oyunlarının milletimizin ortak kültürüne sağladığı zenginliği 2 cümleyle açıklayınız.",
@@ -442,14 +467,15 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "SB.5.1.3": {
     "outcomeCode": "SB.5.1.3",
-    "topicTitle": "Yardımlaşma ve Dayanışma Faaliyetlerinin Toplumsal Birliğe Etkisi - Yardımlaşma ve Dayanışma Faaliyetlerinin Toplumsal Birliğe Etkisi",
+    "topicTitle": "Toplumsal Yardımlaşma ve Dayanışma",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Toplumsal birliği sürdürmeye yönelik yardımlaşma ve dayanışma faaliyetlerine katkı sağlayabilme",
-      "Kavramsal İlke: İmece usulü yardımlaşma.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "İmece Geleneği: Köylerde ve mahallelerde zor işlerin köylüler tarafından el birliğiyle, sırayla ve karşılıksız yapılmasıdır (Ekin biçme, kışlık odun hazırlama, yol yapma).",
+      "Sadaka Taşı: Osmanlı'da cami ve çeşme kenarlarına konulan; zenginlerin gizlice para bıraktığı, fakirlerin ise sadece ihtiyacı kadar aldığı zarif yardımlaşma geleneğidir. Veren el alan eli görmez, kimse rencide olmaz.",
+      "Sivil Toplum Kuruluşları (STK): Kızılay (afet yardımı ve kan bağışı), Yeşilay (bağımlılıklarla mücadele), TEV (eğitim bursu), Mehmetçik Vakfı (şehit ve gazi yakınları).",
+      "Toplumsal Faydası: Birlik ve beraberliği pekiştirir, gelir adaletsizliğinin olumsuz etkilerini hafifletir, sevgi ve kardeşlik bağlarını güçlendirir."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "PÜF NOKTA: Sadaka taşının en önemli ahlaki ilkesi \"İhtiyaç sahibinin gururunu korumak ve gösterişten/riya yapmaktan kaçınmak\"tır."
     ],
     "solvedExample": {
       "question": "Anadolu köylerinde kış hazırlığı yapan komşular, her gün bir ailenin odun kırma ve un öğütme işini toplanıp hep birlikte bitirmektedir.\n\nKöylerde uygulanan bu 'imece' geleneğinin toplumsal dayanışmaya ve zorlukların aşılmasına sağladığı 2 faydayı yazınız.",
@@ -484,14 +510,14 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "Evrendeki": {
     "outcomeCode": "Evrendeki",
-    "topicTitle": "ALLAH İNANCI - Evrendeki Mükemmel Düzen",
+    "topicTitle": "Evrendeki Mükemmel Düzen ve Ölçü",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Mükemmel Düzen",
-      "Kavramsal İlke: Evrendeki ölçü ve ilahi ahenk.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Mükemmel Düzen: Gece ve gündüzün birbirini izlemesi, mevsimlerin oluşumu, su döngüsü, yer çekimi kanunu ve Güneş Sistemi'nin kusursuz işlemesi evrende hiçbir şeyin tesadüf eseri olmadığını gösterir.",
+      "Ölçü ve Denge: Canlıların nefes alması için gereken oksijen oranı, atmosfer tabakasının Dünya'yı zararlı ışınlardan koruması gibi dengeler Yüce Allah'ın sonsuz ilminin ve kudretinin kanıtıdır.",
+      "Ayet Meali: \"O, yedi göğü tabaka tabaka yaratandır. Rahmân'ın yaratışında hiçbir uyumsuzluk göremezsin...\" (Mülk suresi, 3. ayet)."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "PÜF NOKTA: Evrendeki ölçü ve düzen sorularında anahtar kavramlar: \"Ahenk, denge, ölçü, nizam, tesadüf olmaması\"dır."
     ],
     "solvedExample": {
       "question": "'Gökleri ve yeri yaratan, gece ile gündüzü birbiri ardınca getiren Allah'tır...' (Âl-i İmrân Suresi, 190. ayet)\n\nAyetten hareketle evrendeki kusursuz düzene ve ölçüye günlük hayattan 2 somut tabiat olayı örneği veriniz.",
@@ -505,14 +531,14 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "DKAB.5.1.2": {
     "outcomeCode": "DKAB.5.1.2",
-    "topicTitle": "Allah’ın Varlığı ve Birliği - Allah’ın Varlığı ve Birliği",
+    "topicTitle": "Allah'ın Varlığı ve Birliği (Tevhit)",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Evrendeki mükemmel düzenden hareketle Allah’ın (cc) varlığı ve birliğini müşahede edebilme",
-      "Kavramsal İlke: Tevhid inancı tanımı.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Tevhit İnancı: Yüce Allah'ın tek olduğuna, eşi, benzeri ve ortağının bulunmadığına inanmaktır. İslam dininin en temel inanç esasıdır.",
+      "Şirk: Allah'a ortak koşmak, başka varlıklara ilahlık yakıştırmaktır. Tevhit inancının zıddıdır ve en büyük günahtır.",
+      "Mantıksal Delil: Eğer evrende birden fazla ilah olsaydı, aralarında anlaşmazlık çıkar ve evrenin düzeni tamamen bozulurdu (Enbiyâ suresi, 22. ayet)."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "PÜF NOKTA: İslam inancının temeli \"Tevhit\"tir. Kelime-i Tevhid: \"Lâ ilâhe illallah Muhammedün Resûlullah\" (Allah'tan başka ilah yoktur, Muhammed O'nun elçisidir)."
     ],
     "solvedExample": {
       "question": "Kelime-i Şehadet ve Kelime-i Tevhid İslam inancının omurgasını oluşturan Tevhid ilkesini ifade eder.\n\nTevhid inancını tanımlayarak, evrende birden fazla yaratıcı olsaydı bu düzenin nasıl bozulacağını açıklayınız.",
@@ -526,14 +552,17 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "DKAB.5.1.3": {
     "outcomeCode": "DKAB.5.1.3",
-    "topicTitle": "Allah’ın Güzel İsimleri - Allah’ın Güzel İsimleri",
+    "topicTitle": "Allah'ın Güzel İsimleri (Esmâ-i Hüsnâ)",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Allah’ın (cc) güzel isimlerini bağlamına uygun kullanabilme",
-      "Kavramsal İlke: Rahman ve Rahim isimleri arasındaki fark.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Er-Rahmân: Dünyada inanan veya inanmayan ayrımı yapmaksızın bütün yaratılmışlara merhamet eden, rızık veren.",
+      "Er-Rahîm: Ahirette yalnızca iman edip güzel davranışlarda bulunan mümin kullarına sonsuz merhamet gösteren.",
+      "El-Alîm: Gizli veya açık, geçmiş veya gelecek her şeyi eksiksiz ve ayrıntısıyla bilen.",
+      "El-Kâdir: Dilediği her şeyi yaratmaya gücü yeten, sonsuz kudret sahibi.",
+      "Es-Semî: Fısıltıları, kalpten geçenleri ve edilen tüm duaları hakkıyla işiten.",
+      "El-Basîr: Karanlıkta veya aydınlıkta yapılan her şeyi eksiksiz gören."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "MEB SINAV TUZAĞI: \"Rahmân\" dünyada tüm canlıları kapsayan genel merhamettir; \"Rahîm\" ise ahirette sadece müminlere özel merhamettir. Bu iki kavramın farkı sıkça sorulur."
     ],
     "solvedExample": {
       "question": "Her işe başlarken söylediğimiz Besmele'de Allah'ın Rahman ve Rahim isimleri zikredilir.\n\nRahman ile Rahim isimlerinin anlamlarını dünya ve ahiret merhameti bakımından karşılaştırınız.",
@@ -547,14 +576,16 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "DKAB.5.1.4": {
     "outcomeCode": "DKAB.5.1.4",
-    "topicTitle": "Bir Sure Öğreniyorum: İhlas Suresi - Bir Sure Öğreniyorum: İhlas Suresi",
+    "topicTitle": "İhlas Suresi ve Anlamı",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: İhlas suresini ve bu surenin anlamını okuyarak yorumlayabilme",
-      "Kavramsal İlke: İhlas Suresi ve Samed kavramı.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Sure Özeti: 4 ayetten oluşur. İslam'ın özü olan \"Tevhit\" inancını en berrak şekilde özetleyen suredir.",
+      "1. Ayet: \"De ki: O, Allah birdir.\" → Tevhit ilkesi vurgulanır.",
+      "2. Ayet: \"Allah Samed'dir.\" → Samed: Hiçbir şeye muhtaç olmayan, aksine her şeyin ve herkesin kendisine muhtaç olduğu mutlak varlık.",
+      "3. Ayet: \"O, doğurmamış ve doğmamıştır.\" → Doğma, doğurma, çocuk edinme gibi beşeri zaaflardan uzaktır.",
+      "4. Ayet: \"O'nun hiçbir dengi yoktur.\" → Yaratılmış hiçbir varlığa benzemez, eşi ve dengi yoktur."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "PÜF NOKTA: İhlas suresindeki en kritik terim \"SAMED\"dir. Sınavlarda anlamı doğrudan sorulur: \"Hiçbir şeye muhtaç olmayan, her şeyin kendisine muhtaç olduğu varlık\"."
     ],
     "solvedExample": {
       "question": "İhlas Suresi'nin 2. ayetinde 'Allâhü's-Samed' buyrulmaktadır.\n\n'Samed' kelimesinin anlamını açıklayarak, bu ismin Allah'ın hiçbir şeye muhtaç olmaması yönünü belirtiniz.",
@@ -568,14 +599,15 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "DKAB.5.2.1": {
     "outcomeCode": "DKAB.5.2.1",
-    "topicTitle": "NAMAZ - Allah’ın Huzurunda Olmak: Namaz",
+    "topicTitle": "Namaz İbadeti ve Önemi",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Namaz ibadetini özetleyebilme",
-      "Kavramsal İlke: Namazın farzları: Şartlar ve rükünler.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Namazın Anlamı: Sözlükte dua etmek, tazim göstermek anlamına gelir. Dinin direği ve müminin miracıdır.",
+      "Günde 5 Vakit: Sabah (2 sünnet, 2 farz), Öğle (4 sünnet, 4 farz, 2 son sünnet), İkindi (4 sünnet, 4 farz), Akşam (3 farz, 2 sünnet), Yatsı (4 sünnet, 4 farz, 2 son sünnet, 3 vitir).",
+      "Namazın Kılınış Aşamaları: İftitah Tekbiri (Başlama tekbiri), Kıyam (Ayakta durmak), Kıraat (Kur'an okumak), Rükû (Eğilmek), Secde (Yere kapanmak), Ka'de-i Âhire (Son oturuş).",
+      "Ahlaki Faydası: Namaz insanı kötülüklerden, çirkin işlerden ve haksızlıktan alıkoyar; günde 5 kez abdestle bedensel temizlik kazandırır."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "PÜF NOKTA: Kulun Allah'a en yakın olduğu an \"SECDE\" anıdır."
     ],
     "solvedExample": {
       "question": "Namaz kılacak bir kimse namaza başlamadan önce ve namazın içinde belirli farzları yerine getirir.\n\na) Namazın dışındaki şartlardan 2 tanesini yazınız (Örn: Abdest almak vb.).\nb) Namazın içindeki rükünlerden 2 tanesini yazınız (Örn: Secde vb.).",
@@ -589,14 +621,14 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "ENG.5.1.R2": {
     "outcomeCode": "ENG.5.1.R2",
-    "topicTitle": "SCHOOL LIFE - SCHOOL LIFE",
+    "topicTitle": "School Subjects and Daily Schedule",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Students can bring information about the current content on “school life with people, places and rules at school; school clubs; countries; national days and celebrations” through skimming (looking quickly at) the audio-visual elements and reading the content very quickly.",
-      "Kavramsal İlke: Reading comprehension: Country and nationality.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "School Subjects: Science (Fen), Maths (Matematik), Social Studies (Sosyal), Art (Görsel Sanatlar), Music (Müzik), PE / Physical Education (Beden Eğitimi), English (İngilizce), Information Technology (Bilişim).",
+      "Expressing Likes/Dislikes: \"I like Science because it is fun.\" / \"I dislike Maths because it is difficult.\" / \"My favourite class is Art.\"",
+      "Asking Days: \"When is PE class?\" → \"It is on Tuesday and Friday.\""
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "TRAP: Günlerden önce daima \"ON\" edatı kullanılır (on Monday, on Friday); saatlerden önce \"AT\" kullanılır (at 9 o'clock)."
     ],
     "solvedExample": {
       "question": "Read the text:\n\n'Hello! My name is Pierre. I am 11 years old. I am from France, so I am French. I speak French and English.'\n\nAnswer the questions in full English sentences:\na) Where is Pierre from and what is his nationality?\nb) Which languages can Pierre speak?",
@@ -610,14 +642,13 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "ENG.5.1.R3": {
     "outcomeCode": "ENG.5.1.R3",
-    "topicTitle": "Students can make meaning of / derive meaning from the current content about “school life with people, places and rules at school; school clubs; countries; national days and celebrations” by reading it carefully.",
+    "topicTitle": "School Rules and Obligations",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Students can make meaning of / derive meaning from the current content about “school life with people, places and rules at school; school clubs; countries; national days and celebrations” by reading it carefully.",
-      "Kavramsal İlke: Reading about school subjects: Kerem.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Imperatives (Emir Cümleleri): Kuralları belirtirken fiilin yalın hali kullanılır: \"Listen to your teacher.\" (Öğretmenini dinle). \"Raise your hand to speak.\" (Konuşmak için parmak kaldır).",
+      "Negative Rules (Yasaklar): \"Don't\" ile başlar: \"Don't run in the corridors.\" (Koridorda koşma). \"Don't shout in the class.\" (Sınıfta bağırma). \"Don't eat during the lesson.\" (Derste bir şey yeme)."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "PÜF NOKTA: Olumsuz kurallarda cümlenin başına \"Don't\" getirilir ve fiil hiçbir ek almaz (Don't run)."
     ],
     "solvedExample": {
       "question": "Read Kerem's notes:\n\n'On Mondays, I have double Math and Science. I really love Science because we do fun experiments in the lab. However, I dislike History because memorizing dates is boring for me.'\n\nAnswer the questions:\na) Which class does Kerem dislike and why?\nb) Why does Kerem love Science?",
@@ -631,14 +662,13 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "ENG.5.1.V1": {
     "outcomeCode": "ENG.5.1.V1",
-    "topicTitle": "Students can select and use the target vocabulary of the current content about “school life with people, places and rules at school; school clubs; countries; national days and celebrations” accurately, authentically, spontaneously, and naturally and use it appropriately and effectively when communicating with others.",
+    "topicTitle": "School Vocabulary and National Celebrations",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Students can select and use the target vocabulary of the current content about “school life with people, places and rules at school; school clubs; countries; national days and celebrations” accurately, authentically, spontaneously, and naturally and use it appropriately and effectively when communicating with others.",
-      "Kavramsal İlke: Places in a town: Library, pharmacy, bakery.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Key Vocabulary: timetable (ders programı), classroom (derslik), library (kütüphane), canteen (kantin), gym (spor salonu), club (öğrenci kulübü).",
+      "National Celebrations: Republic Day (29 Ekim Cumhuriyet Bayramı), Children's Day (23 Nisan Ulusal Egemenlik ve Çocuk Bayramı), Youth and Sports Day (19 Mayıs Gençlik ve Spor Bayramı), Victory Day (30 Ağustos Zafer Bayramı)."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "TRAP: \"Celebrate\" kutlamak, \"flag\" bayrak, \"poem\" şiir, \"ceremony\" tören demektir."
     ],
     "solvedExample": {
       "question": "Definitions of city places:\n1. A place where you can borrow and read books.\n2. A place where you can buy medicine and aspirin.\n3. A place where bakers make fresh bread and bagels.\n\nWrite the English names of these places (choose from: pharmacy, bakery, library):\n1: .................................\n2: .................................\n3: .................................",
@@ -652,14 +682,13 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "ENG.5.1.G1": {
     "outcomeCode": "ENG.5.1.G1",
-    "topicTitle": "Students can select and use the target grammatical elements of the current content about “school life with people, places and rules at school; school clubs; countries; national days and celebrations” accurately, authentically, spontaneously, and naturally and use it appropriately and effectively when communicating with others.",
+    "topicTitle": "Simple Present Tense & Prepositions of Time",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Students can select and use the target grammatical elements of the current content about “school life with people, places and rules at school; school clubs; countries; national days and celebrations” accurately, authentically, spontaneously, and naturally and use it appropriately and effectively when communicating with others.",
-      "Kavramsal İlke: Prepositions of place: between and opposite.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Prepositions of Time Kuralı: \n• AT: Saatler için kullanılır (at 8:30, at noon).\n• ON: Günler ve tarihler için kullanılır (on Monday, on 29th October).\n• IN: Günün bölümleri, aylar ve mevsimler için kullanılır (in the morning, in May, in summer).",
+      "Simple Present Tense (He/She/It): Olumlu cümlede fiile -s, -es veya -ies eklenir: \"She likes Science.\", \"He watches TV.\""
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "TRAP: \"He like Maths\" YANLIŞTIR! Özne He/She/It ise fiile -s takısı gelir: \"He likes Maths.\""
     ],
     "solvedExample": {
       "question": "On Green Street:\n• The bank is located with the pharmacy on its left and the bookshop on its right.\n• The hospital is facing the school on the other side of the road.\n\nComplete the sentences using 'between' or 'opposite':\na) The bank is ................................. the pharmacy and the bookshop.\nb) The hospital is ................................. the school.",
@@ -673,14 +702,13 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "ENG.5.1.W3": {
     "outcomeCode": "ENG.5.1.W3",
-    "topicTitle": "Students can organise a content for the assigned writing task on the current content “school life with people, places and rules at school; school clubs; countries; national days and celebrations” based on the model/example provided.",
+    "topicTitle": "Writing About Daily School Life",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Students can organise a content for the assigned writing task on the current content “school life with people, places and rules at school; school clubs; countries; national days and celebrations” based on the model/example provided.",
-      "Kavramsal İlke: Writing likes and dislikes.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Paragraf Kalıbı: \"My name is Can. I am a 5th grade student. My favourite school subjects are Science and English. We have Science on Monday and Wednesday at 09:00. I also obey the school rules: I keep my desk clean and listen to my teachers.\"",
+      "Bağlaçlar: \"and\" (ve), \"but\" (ama/fakat), \"because\" (çünkü)."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "PÜF NOKTA: Neden belirtirken \"because\" (çünkü) bağlacı kullanılır: \"I love PE because I am good at sports.\""
     ],
     "solvedExample": {
       "question": "Information about Selin:\n• Loves: Art (drawing nature)\n• Dislikes: P.E. (hates running)\n\nWrite two full English sentences about Selin's preferences using 'loves' and 'dislikes':\n1) Sentence about Art:\n2) Sentence about P.E.:",
@@ -694,14 +722,13 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "ENG.5.1.W4": {
     "outcomeCode": "ENG.5.1.W4",
-    "topicTitle": "Students can individually construct/form content for the assigned writing task on the current content “school life with people, places and rules at school; school clubs; countries; national days and celebrations”.",
+    "topicTitle": "Writing a Profile of a School Club",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Students can individually construct/form content for the assigned writing task on the current content “school life with people, places and rules at school; school clubs; countries; national days and celebrations”.",
-      "Kavramsal İlke: Writing a self-introduction paragraph.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Kulüp Tanıtımı: \"I am a member of the Chess Club. We meet on Friday afternoons in the library. We play chess matches and learn new tactics. It is very exciting.\"",
+      "Temel Sorular: What is the club? (Kulüp ne?), When do you meet? (Ne zaman toplanıyorsunuz?), Where do you meet? (Nerede toplanıyorsunuz?)."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "PÜF NOKTA: Gün ve yer belirtirken \"on Friday in the library\" kalıbı kullanılır."
     ],
     "solvedExample": {
       "question": "Imagine you are writing a letter to an international penfriend.\n\nWrite a short self-introduction paragraph (3 full sentences) in English. Include:\n1. Your name and age\n2. Your country and nationality\n3. Your favorite school subject",
@@ -715,14 +742,15 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "T.O.6.5": {
     "outcomeCode": "T.O.6.5",
-    "topicTitle": "Metinde geçen anlamını bilmediği söz varlığı unsurlarının anlamını tahmin edebilme",
+    "topicTitle": "Sözcükte Anlam: Gerçek, Mecaz ve Terim Anlam",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Metinde geçen anlamını bilmediği söz varlığı unsurlarının anlamını tahmin edebilme",
-      "Kavramsal İlke: Göbeklitepe metninde geçen sözcükler.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Gerçek (Temel) Anlam: Bir sözcüğün akla gelen ilk, somut ve sözlükteki birinci anlamıdır. Örneğin: \"Ateş elini yaktı.\", \"Kutunun kapağını açtı.\"",
+      "Mecaz Anlam: Sözcüğün gerçek anlamından tamamen uzaklaşarak kazandığı yeni ve soyut anlamdır. Genellikle ilgi veya benzetme yoluyla oluşur. Örneğin: \"Bu sınav beni yaktı.\", \"Sözleriyle kalbimi kırdı.\"",
+      "Terim Anlam: Bilim, sanat, spor veya meslek dalına özgü özel ve tanımlı kavramları karşılayan sözcüklerdir. Örneğin: Türkçe (zarf, kafiye), Matematik (açı, kök), Müzik (nota, sol anahtarı), Tiyatro (perde, dekor, sahne).",
+      "Bağlamdan Anlam Çıkarma: Anlamı bilinmeyen bir sözcüğün anlamı, metnin bütünü, cümlenin geliş yönü ve anahtar kelimeler incelenerek tahmin edilir."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "MEB SINAV TUZAĞI: Bir sözcük tek başına her zaman mecaz ya da her zaman terim değildir! Cümle içindeki kullanımına bakılmalıdır. \"Tiyatronun ikinci perdesi başladı\" -> Terim; \"Gözlerime sanki bir perde indi\" -> Mecaz; \"Odanın tül perdesini çekti\" -> Gerçek anlamdır."
     ],
     "solvedExample": {
       "question": "Şanlıurfa yakınlarındaki Göbeklitepe, insanlık tarihinin bilinen en kadim tapınak merkezidir. T biçimindeki devasa kireçtaşı sütunların üzerine tilki, yaban domuzu ve turna kabartmaları büyük bir ustalıkla nakşedilmiştir. Arkeologlar bu kazıların yerleşik hayata geçiş teorilerini kökünden değiştirdiğini belirtmektedir.\n\nMetinde geçen 'kadim' ve 'nakşetmek' sözcüklerinin anlamlarını metnin bağlamından tahmin ederek karşılarına yazınız.",
@@ -736,14 +764,14 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "T.O.6.6": {
     "outcomeCode": "T.O.6.6",
-    "topicTitle": "Metnin yüzey anlamını belirleyebilme",
+    "topicTitle": "Metnin Yüzey Anlamı ve 5N1K Çözümlemesi",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Metnin yüzey anlamını belirleyebilme",
-      "Kavramsal İlke: Göbeklitepe metninin konusu.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Yüzey Anlam: Metinde yazarın doğrudan, açıkça ifade ettiği, yoruma veya gizli anlama gerek kalmadan metinden hemen bulunabilen somut bilgilerdir.",
+      "5N1K Formülü: Metnin yüzey anlamını eksiksiz kavramak için 6 temel soru metne yöneltilir:\n• Kim? (Olayı yaşayan kişi/kahraman)\n• Ne? (Yaşanan olay veya durum)\n• Nerede? (Olayın geçtiği mekân)\n• Ne zaman? (Olayın gerçekleştiği vakit veya dönem)\n• Nasıl? (Olayın gerçekleşme biçimi, durumu)\n• Neden/Niçin? (Olayın gerekçesi ve sebebi).",
+      "Metinden Doğrudan Çıkarım: Cevaplar aranırken metindeki ilgili cümlenin altı çizilir ve metne sadık kalınır."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "KRİTİK UYARI: Yüzey anlam sorularında kendi kişisel bilginizi, yorumunuzu veya tahmininizi asla cevaba eklemeyiniz. Yalnızca metinde açıkça yazan ifadelere dayalı yanıt veriniz."
     ],
     "solvedExample": {
       "question": "Metinde Şanlıurfa Göbeklitepe'deki kazılar, T sütunlarındaki kabartmalar ve yerleşik hayata geçiş teorilerine etkisi anlatılmaktadır.\n\nGöbeklitepe'yi ve üzerindeki kabartmaları anlatan yukarıdaki metnin konusunu tek bir cümleyle yazınız.",
@@ -757,14 +785,15 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "T.O.6.21": {
     "outcomeCode": "T.O.6.21",
-    "topicTitle": "Metinden hareketle söz varlığını geliştirmeye yönelik çözümleme yapabilme",
+    "topicTitle": "Söz Varlığı: Eş ve Zıt Anlam, Deyimler ve Atasözleri",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Metinden hareketle söz varlığını geliştirmeye yönelik çözümleme yapabilme",
-      "Kavramsal İlke: Eş ve zıt anlamlı kelimeler.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Eş Anlamlı (Anlamdaş) Sözcükler: Yazılışları ve okunuşları farklı, ancak anlamları aynı olan sözcüklerdir (cevap - yanıt, mektep - okul, yurt - vatan, ak - beyaz).",
+      "Zıt (Karşıt) Anlamlı Sözcükler: Anlamca birbirinin tam tersi kavramları karşılayan sözcüklerdir (tatlı - acı, yüksek - alçak, dar - geniş).",
+      "Deyimler: Genellikle mecaz anlamlı, en az iki sözcükten oluşan, kalıplaşmış ve durumu özetleyen söz öbekleridir (göz boyamak, etekleri zil çalmak, küplere binmek). Sözcüklerin yerleri değiştirilemez.",
+      "Atasözleri: Geçmiş kuşakların deneyimlerine dayanan, kimin söylediği belli olmayan (anonim), öğüt veren ve ders çıkaran bilge sözlerdir (Damlaya damlaya göl olur, Sakla samanı gelir zamanı)."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "MEB SINAV TUZAĞI: Bir sözcüğün olumsuzu, onun zıttı (karşıtı) DEĞİLDİR! Örneğin: \"gelmek\" fiilinin zıttı \"gelmemek\" değil, \"gitmek\"tir. \"Gülmek\" fiilinin zıttı \"gülmemek\" değil, \"ağlamak\"tır."
     ],
     "solvedExample": {
       "question": "Metindeki sözcükler: 'asır', 'ilkel'.\n\na) 'asır' sözcüğünün eş anlamlısını yazınız.\nb) 'ilkel' sözcüğünün zıt anlamlısını yazınız.",
@@ -778,14 +807,14 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "T.Y.6.18": {
     "outcomeCode": "T.Y.6.18",
-    "topicTitle": "Yazısını zenginleştirecek biçimde söz varlığını kullanabilme",
+    "topicTitle": "Yazıda Söz Varlığını Zenginleştirme Teknikleri",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Yazısını zenginleştirecek biçimde söz varlığını kullanabilme",
-      "Kavramsal İlke: Deyim kullanımı: 'çığır açmak'.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Tekrardan Kaçınma: Aynı kelimeyi ardı ardına sıralamak yerine zamirler (o, bu, kendisi) veya eş anlamlı kelimeler kullanarak akıcılık sağlanır.",
+      "Deyim ve Atasözü ile Güçlendirme: Düşünceyi daha etkileyici ve inandırıcı kılmak için anlatılan duruma tam uygun bir deyim ya da atasözü yerleştirilir.",
+      "Niteleyici Sözcükler (Sıfatlar): Varlıkların biçim, renk ve durumlarını ayrıntılı anlatan güçlü sıfatlar kullanılarak okuyucunun zihninde canlı bir tablo oluşturulur (örneğin: \"ağaç\" yerine \"rüzgârda salınan ulu çınar ağacı\")."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "PÜF NOKTA: Yazınızda \"güzel, iyi, yaptı, oldu\" gibi çok genel ve sıradan fiil ve sıfatları her cümlede tekrarlamayın; duyguyu ve durumu belirginleştiren özel sözcükler seçin."
     ],
     "solvedExample": {
       "question": "'Çığır açmak' deyimi yeni bir yol açmak, bir alanda köklü bir yenilik ve başlangıç yapmak anlamına gelir.\n\n'Çığır açmak' deyimini Göbeklitepe'nin bilim dünyasındaki etkisini anlatacak şekilde anlamlı ve kurallı bir cümlede kullanınız.",
@@ -799,14 +828,15 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "T.Y.6.21": {
     "outcomeCode": "T.Y.6.21",
-    "topicTitle": "Yazım kuralları ve noktalama işaretlerini uygulayabilme",
+    "topicTitle": "Yazım Kuralları ve Noktalama İşaretleri",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Yazım kuralları ve noktalama işaretlerini uygulayabilme",
-      "Kavramsal İlke: Büyük harflerin yazımı ve kesme işareti.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "\"-de / -da\" Yazımı:\n• Bağlaç olan \"de/da\": Ayrı yazılır. Cümleden çıkarıldığında cümlenin anlamı bozulmaz (hafif daralabilir). Örneğin: \"Sen de bizimle gel.\" -> \"Sen bizimle gel.\" (Anlam bozulmadı, ayrı yazılır).\n• Bulunma durum eki \"-de/-da\": Bitişik yazılır. \"Nerede, kimde?\" sorularına cevap verir, cümleden çıkarsa anlam bozulur. Örneğin: \"Kitabım evde kaldı.\"",
+      "\"-ki\" Yazımı:\n• Pratik Kural: \"-ki\"den sonra \"-ler\" çoğul ekini getirin; anlamlı oluyorsa bitişik (evdeki-ler -> evdeki, masadaki-ler -> masadaki), anlamsız oluyorsa ayrı bağlaçtır (duydum ki-ler -> anlamsız, ayrı yazılır: \"duydum ki\").",
+      "Büyük Harfler: Özel isimler, kurum/kuruluş adları, cadde, sokak, mahalle adları büyük harfle başlar (Atatürk Caddesi, Millî Eğitim Bakanlığı).",
+      "Noktalama İşaretleri: Nokta (.) tamamlanmış cümlenin sonuna, virgül (,) eş görevli kelimeler arasına, noktalı virgül (;) ögeleri arasında virgül bulunan sıralı cümleleri ayırmak için kullanılır."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "MEB SINAV TUZAĞI: Bulunma hâl eki olan \"-de/-da\", sertleşme kuralına uyarak \"-te/-ta\"ya dönüşebilir (sokakta, sınıfta). Fakat BAĞLAÇ OLAN \"de/da\" asla \"te/ta\" şeklinde yazılamaz! \"Gitsen de\" doğrudur, \"Gitsen te\" yazımı kesinlikle yanlıştır."
     ],
     "solvedExample": {
       "question": "Cümle: 'arkeologlar 2026 yılının eylül ayında şanlıurfa'daki göbeklitepe ören yerinde yeni bulgulara ulaştı.'\n\nYukarıdaki cümlede yer alan büyük harflerin yazımı hatalarını düzelterek cümlenin doğru halini yeniden yazınız.",
@@ -820,14 +850,13 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "T.O.6.16": {
     "outcomeCode": "T.O.6.16",
-    "topicTitle": "Bilgilendirici metinde anahtar kelimeleri belirlemeye yönelik çözümleme yapabilme",
+    "topicTitle": "Bilgilendirici Metinlerde Anahtar Kelimeler",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Bilgilendirici metinde anahtar kelimeleri belirlemeye yönelik çözümleme yapabilme",
-      "Kavramsal İlke: Fıkranın anahtar kelimeleri.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Anahtar Kelime: Bir metnin konusunu ve özünü en iyi yansıtan, metnin omurgasını kuran, metin çıkarıldığında eksikliği derhal hissedilen kilit kelimelerdir.",
+      "Anahtar Kelimeleri Tespit Etme Yolları:\n1. Metnin başlığına ve ilk/son paragraflarına dikkat edilir.\n2. Metin boyunca en sık tekrarlanan ve yazarın üzerinde ısrarla durduğu temel kavramlar belirlenir.\n3. \"Bu metin ne hakkındadır?\" sorusuna verilen en temel yanıtlar anahtar kelimeleri verir."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "KRİTİK UYARI: Her çok tekrarlanan sözcük anahtar kelime değildir! \"Ve, ama, için, çok, ile\" gibi bağlaç ve edatlar metinde yüz kere geçse bile anahtar kelime sayılamaz. Anahtar kelimeler konuyu doğrudan temsil eden isim veya terim olmalıdır."
     ],
     "solvedExample": {
       "question": "Fıkra kazan, doğum, ölüm, menfaat ve adalet kavramları etrafında gelişmektedir.\n\nNasreddin Hoca'nın kazan fıkrasını en iyi özetleyen 3 anahtar kelimeyi yazınız.",
@@ -841,14 +870,14 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "T.Y.6.3": {
     "outcomeCode": "T.Y.6.3",
-    "topicTitle": "Yazısında içerik ve yapıya yönelik seçimlerini yönetebilme",
+    "topicTitle": "Yazı Planı ve Paragraf Yapısı (Giriş, Gelişme, Sonuç)",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Yazısında içerik ve yapıya yönelik seçimlerini yönetebilme",
-      "Kavramsal İlke: Metne uygun başlık belirleme.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Giriş Bölümü: Konunun takdim edildiği, okuyucunun ilgisini çeken ilk bölümdür. Genellikle 1-2 cümledir. Giriş cümlesinde \"bununla birlikte, çünkü, bundan dolayı, bu nedenle\" gibi bağlayıcı ögeler yer almaz.",
+      "Gelişme Bölümü: Ana düşüncenin örneklerle, benzetmelerle, karşılaştırmalarla ve açıklamalarla açıldığı, düşüncelerin derinleştiği en uzun bölümdür.",
+      "Sonuç Bölümü: Anlatılanların toparlandığı, ana fikrin kesin ve net bir dille sonuca bağlandığı bölümdür. \"Kısaca, özetle, sonuç olarak, böylece\" gibi ifadelerle başlayabilir."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "PÜF NOKTA: Her yeni fikir veya konunun farklı bir alt başlığı için yeni bir paragrafa geçilmelidir. Paragraflar arasında konu bütünlüğü ve mantıksal geçiş köprüleri kurulmalıdır."
     ],
     "solvedExample": {
       "question": "Okuduğunuz fıkra mizah yoluyla insanlardaki açgözlülük zaafını yermektedir.\n\nBu fıkraya içeriğin nükteli yönünü yansıtan 2 farklı özgün başlık önerisi yazınız.",
@@ -862,14 +891,14 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "MAT.6.1.1": {
     "outcomeCode": "MAT.6.1.1",
-    "topicTitle": "SAYILAR VE NİCELİKLER (1) - Bir Doğal Sayının Çarpanları ve Katları",
+    "topicTitle": "Üslü İfadeler ve İşlem Önceliği",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Karşılaştığı problem durumlarında bir doğal sayının çarpanlarını ve katlarını belirleyebilme",
-      "Kavramsal İlke: Doğal sayının çarpanları (bölenleri).",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Üslü İfade: aⁿ ifadesinde \"a\" taban, \"n\" üs (kuvvet)tir. Tabanın n defa kendisiyle çarpımıdır (Örn: 2³ = 2 × 2 × 2 = 8; 5² = 5 × 5 = 25).",
+      "Özel Kurallar: 1'in tüm kuvvetleri 1'dir (1¹⁰ = 1). Her sayının 1. kuvveti kendisine eşittir (7¹ = 7). Sıfır hariç her sayının 0. kuvveti 1'dir (8⁰ = 1). 0'ın pozitif kuvvetleri 0'dır (0⁵ = 0).",
+      "İŞLEM ÖNCELİĞİ SIRASI:\n1. Üslü İfadelerin değeri hesaplanır.\n2. Parantez içindeki işlemler yapılır.\n3. Çarpma veya Bölme işlemleri yapılır (soldan sağa).\n4. Toplama veya Çıkarma işlemleri yapılır (soldan sağa)."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "MEB EN BÜYÜK TUZAĞI: Çarpma ve bölme yan yana geldiğinde veya toplama ve çıkarma yan yana geldiğinde işlem SOLDAN SAĞA doğru sırayla yapılır! (Örn: 12 ÷ 3 × 2 = 4 × 2 = 8'dir, önce çarpma yapılmaz!)."
     ],
     "solvedExample": {
       "question": "48 kişilik bir turist grubu bir otelde her odada eşit sayıda kişi kalacak şekilde odalara yerleştirilecektir.\n\n48 sayısının tüm pozitif doğal sayı çarpanlarını küçükten büyüğe sırasıyla yazınız ve odalarda kalabilecek kişi sayısı seçeneklerini belirtiniz.",
@@ -883,14 +912,15 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "MAT.6.1.2": {
     "outcomeCode": "MAT.6.1.2",
-    "topicTitle": "SAYILAR VE NİCELİKLER (1) - Bölünebilme Kriterleri",
+    "topicTitle": "Dağılma Özelliği ve Ortak Çarpan Parantezi",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Bir doğal sayının 2, 3, 4, 5, 6, 9 ve 10'a kalansız bölünebilme kurallarını açıklayabilme ve kullanabilme",
-      "Kavramsal İlke: 3 ve 5 ile kalansız bölünebilme kuralı.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Çarpmanın Toplama Üzerine Dağılması: a × (b + c) = (a × b) + (a × c). Dıştaki sayı parantezin içindeki her iki sayıyla ayrı ayrı çarpılır.",
+      "Çarpmanın Çıkarma Üzerine Dağılması: a × (b - c) = (a × b) - (a × c).",
+      "Ortak Çarpan Parantezine Alma: (a × b) + (a × c) = a × (b + c). İki terimde de ortak olan çarpan parantezin dışına alınır.",
+      "Zihinden İşlem Pratiği: 18 × 99 işlemi yerine 18 × (100 - 1) = 1800 - 18 = 1782 yazarak kolayca hesaplanabilir."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "PÜF NOKTA: Dikdörtgenin alanını iki parçaya bölerek hesaplama modellemesi doğrudan dağılma özelliğinin geometrik gösterimidir."
     ],
     "solvedExample": {
       "question": "Dört basamaklı 542A sayısı hem 3'e hem de 5'e kalansız bölünebilmektedir.\n\nBuna göre 'A' yerine yazılabilecek rakamı işlem basamaklarını ve bölünebilme kurallarını açıklayarak bulunuz.",
@@ -904,14 +934,19 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "MAT.6.1.3": {
     "outcomeCode": "MAT.6.1.3",
-    "topicTitle": "SAYILAR VE NİCELİKLER (1) - Asal Sayılar ve Asal Çarpanlar",
+    "topicTitle": "Bölünebilme Kuralları (2, 3, 4, 5, 6, 9, 10)",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Bir doğal sayının asal olma durumunu ve asal çarpanlarını belirleyebilme",
-      "Kavramsal İlke: Asal sayılar ve asal çarpanlar.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "2 ile Bölünebilme: Birler basamağı çift sayı (0, 2, 4, 6, 8) olan sayılar kalansız bölünür.",
+      "3 ile Bölünebilme: Rakamları toplamı 3 veya 3'ün katı olan sayılar kalansız bölünür.",
+      "4 ile Bölünebilme: Son iki basamağı 00 veya 4'ün katı olan sayılar kalansız bölünür (Örn: 324, 1500, 712).",
+      "5 ile Bölünebilme: Birler basamağı 0 veya 5 olan sayılar kalansız bölünür.",
+      "6 ile Bölünebilme: Bir sayı HEM 2'ye (çift) HEM 3'e (rakamları toplamı 3'ün katı) kalansız bölünüyorsa 6'ya da kalansız bölünür.",
+      "9 ile Bölünebilme: Rakamları toplamı 9 veya 9'un katı olan sayılar kalansız bölünür.",
+      "10 ile Bölünebilme: Birler basamağı 0 olan sayılar kalansız bölünür."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "PÜF NOKTA: 9'a tam bölünen her sayı kesinlikle 3'e de tam bölünür; fakat 3'e tam bölünen her sayı 9'a bölünmeyebilir (Örn: 12 sayısı 3'e bölünür ama 9'a bölünmez).",
+      "TUZAK: Bir sayının 9 ile bölümünden kalan, o sayının rakamları toplamının 9 ile bölümünden kalana eşittir."
     ],
     "solvedExample": {
       "question": "72 sayısı asal çarpanlarına ayrılacaktır.\n\n72 sayısını bölen listesi (algoritma) yöntemiyle asal çarpanlarına ayırınız ve üslü ifadelerin çarpımı şeklinde yazınız.",
@@ -925,14 +960,17 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "MAT.6.1.4": {
     "outcomeCode": "MAT.6.1.4",
-    "topicTitle": "SAYILAR VE NİCELİKLER (1) - Bir Doğal Sayının Çarpanları ve Katları",
+    "topicTitle": "Asal Sayılar ve Asal Çarpanlara Ayırma",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Günlük hayat problemleri ya da matematiksel durumlarda iki doğal sayının ortak bölenleri ve katlarını yorumlayabilme",
-      "Kavramsal İlke: Ortak bölen problemi (EBOB mantığı).",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Asal Sayı Tanımı: Yalnızca 1'e ve kendisine tam bölünebilen 1'den büyük doğal sayılardır.",
+      "İlk Asal Sayılar: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47...",
+      "2 Sayısının Önemi: 2, EN KÜÇÜK asal sayıdır ve ÇİFT OLAN TEK ASAL SAYIDIR! Diğer tüm çift sayılar 2'ye bölündüğü için asal değildir.",
+      "1 Sayısı Asal Değildir: 1 asal sayı kabul edilmez.",
+      "Asal Çarpanlara Ayırma (Bölen Listesi): Sayı en küçük asal sayıdan (2) başlanarak 1 kalana kadar asal sayılara bölünür (Örn: 24 ÷ 2 = 12, 12 ÷ 2 = 6, 6 ÷ 2 = 3, 3 ÷ 3 = 1 → 24 = 2³ × 3)."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "MEB TUZAĞI: \"Tüm tek sayılar asaldır\" ifadesi yanlıştır (9, 15, 21, 25, 27 tek sayıdır ama asal değildir).",
+      "MEB TUZAĞI: \"Tüm asal sayılar tektir\" ifadesi de yanlıştır; çünkü 2 sayısı ÇİFTTİR ve asaldır."
     ],
     "solvedExample": {
       "question": "Bir manav 45 kg elma ve 60 kg portakalı birbirine karıştırmadan ve hiç artmayacak şekilde eşit ağırlıktaki kasalara paylaştıracaktır.\n\nKasaların alabileceği en büyük ağırlık kaç kg olmalıdır? Bu iş için toplam kaç kasa gerekir? İşlem basamaklarını gösteriniz.",
@@ -946,14 +984,17 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "FB.6.1.1": {
     "outcomeCode": "FB.6.1.1",
-    "topicTitle": "1. ÜNİTE: GÜNEŞ SİSTEMİ - Güneş Sistemi",
+    "topicTitle": "Güneş Sistemi ve Gezegenler",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Güneş sistemindeki gezegenleri niteliklerine göre sınıflandırabilme",
-      "Kavramsal İlke: Karasal ve gazsal gezegenler ayrımı.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Güneş'e Yakınlık Sıralaması: Merkür → Venüs → Dünya → Mars → Jüpiter → Satürn → Uranüs → Neptün (Kodlama: Mavi Valiz Dünyadan Marsa, Jilet Satıp Ucuzladı Neptün).",
+      "Karasal (İç) Gezegenler: Merkür, Venüs, Dünya, Mars. Taş ve kayalardan oluşur, halkaları yoktur.",
+      "Gazsal (Dış) Gezegenler: Jüpiter, Satürn, Uranüs, Neptün. Gazlardan oluşur, hepsinin halkası ve çok sayıda uydusu vardır.",
+      "Büyüklük Sıralaması: Jüpiter (En Büyük) > Satürn > Uranüs > Neptün > Dünya > Venüs > Mars > Merkür (En Küçük).",
+      "Özel Bilgiler: Venüs gökyüzünde çok parlak göründüğü için \"Çoban Yıldızı\" olarak bilinir ve kendi ekseni etrafında diğer gezegenlerin TERSİNE döner. Mars ise pas rengi topraklarından dolayı \"Kızıl Gezegen\" olarak adlandırılır."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "PÜF NOKTA: Güneş Sistemi'nin en sıcak gezegeni Güneş'e en yakın olan Merkür değil, atmosferindeki yoğun sera gazları nedeniyle VENÜS'tür (~460°C).",
+      "TUZAK: Asteroit Kuşağı, iç gezegenler ile dış gezegenlerin arasında; yani MARS ile JÜPİTER arasındadır."
     ],
     "solvedExample": {
       "question": "Güneş sistemindeki 8 gezegen yapısal özelliklerine göre 'İç (Karasal) Gezegenler' ve 'Dış (Gazsal) Gezegenler' olarak ikiye ayrılır.\n\nİç gezegenlerin ve dış gezegenlerin adlarını Güneş'e yakınlık sırasına göre yazınız.",
@@ -967,14 +1008,15 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "FB.6.1.3": {
     "outcomeCode": "FB.6.1.3",
-    "topicTitle": "Güneş ve Ay Tutulmaları - Güneş ve Ay Tutulmaları",
+    "topicTitle": "Güneş ve Ay Tutulmaları",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Güneş ve Ay tutulması ile ilgili bilimsel çıkarım yapabilme",
-      "Kavramsal İlke: Güneş tutulması modeli.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Güneş Tutulması: Ay, Güneş ile Dünya arasına girer (Sıralama: Güneş - Ay - Dünya). Ay'ın gölgesi Dünya'nın bir kısmına düşer. Gündüz vakti yaşanır ve Ay YENİ AY evresindedir.",
+      "Ay Tutulması: Dünya, Güneş ile Ay arasına girer (Sıralama: Güneş - Dünya - Ay). Dünya'nın gölgesi Ay'ın üzerine düşer. Gece vakti yaşanır ve Ay DOLUNAY evresindedir.",
+      "Işığın Doğrusal Yayılması: Her iki tutulma olayı da ışığın doğrusal yayıldığının ve gölge oluşumunun en net kanıtıdır.",
+      "Farklar: Ay tutulması Dünya'da geceyi yaşayan herkes tarafından saatlerce gözlemlenebilir; Güneş tutulması ise dar bir alanda sadece birkaç dakika izlenir ve çıplak gözle bakmak tehlikelidir."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "MEB SINAV TUZAĞI: \"Her ay Güneş ve Ay tutulması gerçekleşir mi?\" HAYIR! Çünkü Ay'ın dolanma düzlemi ile Dünya'nın dolanma düzlemi arasında yaklaşık 5°'lik eğiklik vardır; her ay tam aynı hizaya gelemezler."
     ],
     "solvedExample": {
       "question": "Güneş tutulması sırasında gök cisimleri aynı doğrultuya gelir ve Dünya'nın gündüz olan bir bölgesinde gündüz vakti aniden kararır.\n\nGüneş tutulması sırasında Güneş, Dünya ve Ay'ın dizilim sırasını yazınız ve bu tutulmanın Ay'ın hangi evresinde gerçekleştiğini belirtiniz.",
@@ -988,14 +1030,14 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "FB.6.2.1": {
     "outcomeCode": "FB.6.2.1",
-    "topicTitle": "2. ÜNİTE: KUVVETİN ETKİSİNDE HAREKET - Bileşke Kuvvet",
+    "topicTitle": "Destek ve Hareket Sistemi",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Bir cisme etki eden aynı doğrultudaki kuvvetler arasındaki ilişkileri açıklayarak bileşke kuvveti yapılandırabilme",
-      "Kavramsal İlke: Zıt yönlü kuvvetlerin bileşkesi.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Kemik Çeşitleri: \n• Uzun Kemikler: Boyu eninden fazla olan kemikler (Kol ve bacak kemikleri: uyluk, kaval, pazu).\n• Kısa Kemikler: Eni ve boyu birbirine yakın kemikler (El ve ayak bilek kemikleri).\n• Yassı Kemikler: Yassılaşmış, plakamsı kemikler (Kafatası, göğüs kafesi, leğen, kürek kemiği).",
+      "Eklem Çeşitleri: Oynar Eklem (Kol, bacak; hareket yeteneği çok yüksek, eklem sıvısı var), Yarı Oynar Eklem (Omurga; hareket sınırlı, kıkırdak diskler var), Oynamaz Eklem (Kafatası, leğen; kemikler testere dişi gibi birbirine kilitlidir).",
+      "Kas Çeşitleri: \n• Çizgili (İskelet) Kası: İsteğimizle çalışır, hızlı kasılır, çabuk yorulur, kırmızı renklidir.\n• Düz Kas: İsteğimiz dışında (otonom) çalışır, iç organlarda bulunur (mide, bağırsak, damarlar), yavaş kasılır, yorulmaz, beyaz renklidir.\n• Kalp Kası: Yapısı çizgili kasa benzer (hızlı ve güçlü), çalışması düz kasa benzer (isteğimiz dışında ritmik çalışır ve hiç yorulmaz)."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "PÜF NOKTA: Kalp kası yapı olarak çizgili kas; çalışma prensibi olarak düz kas özelliği gösterir. Asla yorulmaz!"
     ],
     "solvedExample": {
       "question": "Bir cisme aynı doğrultuda Doğu yönünde $F_1 = 25$ N ve Batı yönünde $F_2 = 15$ N büyüklüğünde iki kuvvet uygulanmaktadır.\n\nCisme etki eden bileşke kuvvetin (net kuvvetin) büyüklüğünü ve yönünü işlem yaparak bulunuz.",
@@ -1009,14 +1051,16 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "FB.6.2.2": {
     "outcomeCode": "FB.6.2.2",
-    "topicTitle": "Dengelenmiş ve dengelenmemiş kuvvetlerin etkisi altındaki bir cismin hareketine yönelik deney yapabilme",
+    "topicTitle": "Sindirim Sistemi (Mekanik ve Kimyasal)",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Dengelenmiş ve dengelenmemiş kuvvetlerin etkisi altındaki bir cismin hareketine yönelik deney yapabilme",
-      "Kavramsal İlke: Dengelenmiş kuvvetler altında cismin durumu.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Mekanik (Fiziksel) Sindirim: Besinlerin enzim kullanılmadan dişler, kas hareketleri ve safra ile küçük parçalara ayrılmasıdır (Amaç: Enzimlerin etki edeceği yüzeyi genişletmek).",
+      "Kimyasal Sindirim: Besinlerin enzim ve su yardımıyla yapı taşlarına (kana geçebilecek boyuta) parçalanmasıdır.",
+      "Besinlerin Kimyasal Sindirim Başlama ve Bitiş Yerleri:\n• Karbonhidratlar: Ağızda başlar (tükürükteki amilaz) → İnce bağırsakta biter.\n• Proteinler: Midede başlar (mide öz suyundaki pepsin) → İnce bağırsakta biter.\n• Yağlar: İnce bağırsakta başlar (pankreas öz suyu) → İnce bağırsakta biter.",
+      "Sindirime Yardımcı Organlar: \n• Karaciğer: Safra salgısı üretir; safra yağların MEKANİK sindirimini yapar (enzim içermez!).\n• Pankreas: Pankreas öz suyu salgılar; karbonhidrat, yağ ve proteinlerin üçünün de KİMYASAL sindirimini yapan enzimleri içerir.",
+      "Emilim: Sindirilen besinlerin ince bağırsaktaki villuslardan (tümör benzeri çıkıntılardan) kana geçmesidir. Kalın bağırsakta sindirim olmaz; su, vitamin ve minerallerin emilimi yapılır."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "MEB EN BÜYÜK TUZAĞI: \"Karaciğerin ürettiği safra sıvısı yağların kimyasal sindirimini yapar\" ifadesi KESİNLİKLE YANLIŞTIR! Safra sıvı bir enzim DEĞİLDİR, yağları sadece küçük damlacıklara böler (fiziksel/mekanik sindirim yapar)."
     ],
     "solvedExample": {
       "question": "Bir cisme etki eden net kuvvet (bileşke kuvvet) sıfır ise ($F_{net} = 0$) cisim dengelenmiş kuvvetlerin etkisindedir.\n\nDengelenmiş kuvvetlerin etkisindeki bir cismin sergileyebileceği 2 farklı hareket durumunu yazınız.",
@@ -1030,14 +1074,15 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "FB.6.2.3": {
     "outcomeCode": "FB.6.2.3",
-    "topicTitle": "Sabit Süratli ve Sabit Hızlı Hareket - Sabit Süratli ve Sabit Hızlı Hareket",
+    "topicTitle": "Dolaşım Sistemi (Kalp, Damarlar ve Kan)",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Sürat ve hız kavramlarını karşılaştırabilme",
-      "Kavramsal İlke: Sürat formülü ve birimi.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Kalbin Yapısı: 4 odacıktan oluşur: Üstte 2 kulakçık, altta 2 karıncık. Kalbin SAĞ tarafında daima Kirli Kan (karbondioksitçe zengin), SOL tarafında ise daima Temiz Kan (oksijence zengin) bulunur.",
+      "Damar Çeşitleri:\n• Atardamar: Kanı kalpten organlara taşır. Genellikle temiz kan taşır (İstisna: Akciğer atardamarı kirli kan taşır). Kan basıncı ve akış hızı en yüksek damardır.\n• Toplardamar: Kanı organlardan kalbe getirir. Genellikle kirli kan taşır (İstisna: Akciğer toplardamarı temiz kan taşır).\n• Kılcal Damar: Kıl gibi ince olup doku hücreleri ile kan arasında madde ve gaz alışverişini sağlar.",
+      "Küçük Kan Dolaşımı: Kalp (Sağ karıncık) → Akciğer Atardamarı → Akciğerler (Kan temizlenir) → Akciğer Toplardamarı → Kalp (Sol kulakçık). Amaç: Kanı oksijence zenginleştirmek (temizlemek).",
+      "Büyük Kan Dolaşımı: Kalp (Sol karıncık) → Aort Atardamarı → Tüm Vücut (Besin ve oksijen dağıtılır, kan kirlenir) → Ana Toplardamar → Kalp (Sağ kulakçık). Amaç: Hücrelere besin ve oksijen taşımak."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "PÜF NOKTA: İstisna damarları ezberleyin! \"Akciğer atardamarı\" kirli kan taşıyan TEK atardamardır; \"Akciğer toplardamarı\" ise temiz kan taşıyan TEK toplardamardır."
     ],
     "solvedExample": {
       "question": "Bir hareketlinin birim zamanda aldığı yola 'sürat' denir.\n\na) Süratin hesaplama formülünü (yol ve zaman ilişkisini) yazınız.\nb) Bilimde en yaygın kullanılan iki sürat birimini belirtiniz.",
@@ -1051,14 +1096,15 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "FB.6.3.1": {
     "outcomeCode": "FB.6.3.1",
-    "topicTitle": "3. ÜNİTE: CANLILARDA SİSTEMLER - Bitki ve Hayvanlarda Üreme, Büyüme ve Gelişme",
+    "topicTitle": "Kan Hücreleri, Kan Grupları ve Kan Bağışı",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Eşeyli ve eşeysiz üremeyi karşılaştırabilme",
-      "Kavramsal İlke: Eşeyli ve eşeysiz üreme temel farkı.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Kan Hücreleri:\n• Alyuvarlar: Kırmızı renklidir (hemoglobin içerir). Oksijen ve karbondioksit gazlarını taşır. Çekirdeksizdirler.\n• Akyuvarlar: Beyaz renklidir. Vücudu mikroplara karşı korur (bağışıklık askerleridir), enfeksiyon anında sayıları hızla artar.\n• Kan Pulcukları (Trombositler): Kanın pıhtılaşmasını sağlayarak yaralanmalarda kan kaybını önler.",
+      "Kan Grupları: A, B, AB ve 0 olmak üzere 4 ana grup vardır. Kanda Rh proteini varsa Rh(+), yoksa Rh(-) denir.",
+      "Kan Nakli Kuralı: Tıpta kan nakli daima AYNI GRUPLAR arasında yapılır (A Rh+ sadece A Rh+'e verebilir).",
+      "Kan Bağışının Önemi: 18-65 yaş arası sağlıklı bireyler Kızılay'a kan bağışında bulunabilir. Kan vermek vücutta yeni kan hücresi üretimini tetikler ve binlerce hayat kurtarır."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "TUZAK: Eskiden anlatılan \"0 genel verici, AB genel alıcıdır\" kuralı modern tıpta terk edilmiştir; günümüzde kan nakli yalnızca BİRE BİR AYNI gruptan yapılır."
     ],
     "solvedExample": {
       "question": "Canlılarda soyun devamını sağlayan üreme faaliyeti eşeyli ve eşeysiz olmak üzere iki şekilde gerçekleşir.\n\nEşeyli üreme ile eşeysiz üremeyi üreme hücreleri (gametler) ve genetik çeşitlilik bakımından 2 maddeyle karşılaştırınız.",
@@ -1072,14 +1118,15 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "SB.6.1.1": {
     "outcomeCode": "SB.6.1.1",
-    "topicTitle": "BİRLİKTE YAŞAMAK - Zaman İçinde Değişen Gruplar ve Roller",
+    "topicTitle": "Gruplar ve Zaman İçinde Değişen Rollerimiz",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Dâhil olduğu grupların ve bu gruplardaki rollerinin zaman içerisinde değişebile ceğine ilişkin çıkarım yapabilme",
-      "Kavramsal İlke: Büyüdükçe değişen roller ve sorumluluklar.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Rol Kavramı: Bireyin içinde bulunduğu grup veya kurumlarda üstlendiği görev ve sorumlulukların bütünüdür.",
+      "Doğuştan Kazanılan Roller: Bireyin kendi iradesi ve seçimi olmadan, doğumuyla birlikte kazandığı rollerdir. Örnek: Evlat, kardeş, torun, yeğen.",
+      "Sonradan Kazanılan Roller: Bireyin kendi isteği, emeği, eğitimi ve tercihiyle kazandığı rollerdir. Örnek: Öğrenci, sınıf başkanı, doktor, futbolcu, müzisyen.",
+      "Rollerin Değişimi: Yaşımız ilerledikçe veya yeni gruplara katıldıkça rollerimiz çeşitlenir ve değişir. Bir insan aynı anda birden fazla role sahip olabilir (örneğin evde evlat, okulda öğrenci, sahada takım kaptanı)."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "MEB SINAV TUZAĞI: Rollerimiz değiştiğinde bunlara bağlı olan \"hak\" ve \"sorumluluklarımız\" da değişir! Örneğin bir öğrencinin ders dinleme sorumluluğu varken, evlat olarak odasını toplama sorumluluğu vardır."
     ],
     "solvedExample": {
       "question": "Bebekken sadece ilgiye muhtaç olan bir birey, 6. sınıfa geldiğinde okulda öğrenci, evde kardeşine bakan bir abla veya ağabey olur; yetişkinlikte ise anne-baba ve meslek sahibi bir çalışan olur.\n\nZaman içinde insanın rollerinin değişmesinin arkasındaki 2 temel nedeni (yaş, eğitim, sosyal çevre) yazınız.",
@@ -1093,14 +1140,15 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "SB.6.1.2": {
     "outcomeCode": "SB.6.1.2",
-    "topicTitle": "Kültürel Bağlarımızın ve Millî Değerlerimizin Toplumsal Birlikteliğe Etkisi - Kültürel Bağlarımızın ve Millî Değerlerimizin Toplumsal Birlikteliğe Etkisi",
+    "topicTitle": "Kültürel Bağlarımız ve Millî Değerlerimiz",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Kültürel bağlarımızın ve millî değerlerimizin toplumsal birliğe etkisini yorumlayabilme",
-      "Kavramsal İlke: İstiklal Marşı ve bayrak sevgisi.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Kültürü Oluşturan Unsurlar: Tarih birliği, ortak Türkçe dili, din ve inançlar, örf-âdet ve gelenekler, millî ve dinî bayramlar, mimari eserler, halk oyunları ve mutfak kültürü.",
+      "Toplumsal Birliktelik: Ortak kültürel değerler insanları birbirine bağlar, birlik ve beraberlik ruhunu (biz bilincini) güçlendirir.",
+      "Millî Bayramlarımız: 29 Ekim Cumhuriyet Bayramı, 23 Nisan Ulusal Egemenlik ve Çocuk Bayramı, 19 Mayıs Atatürk'ü Anma Gençlik ve Spor Bayramı, 30 Ağustos Zafer Bayramı (milletçe coşkuyla kutlanır).",
+      "Dinî Bayramlarımız: Ramazan ve Kurban Bayramları (akraba ziyareti, küskünlerin barışması, yardımlaşma ve dayanışma günleridir)."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "KRİTİK BİLGİ: Kültür yaşayan bir varlıktır; geçmişten geleceğe kuşaktan kuşağa aktarılırken özünü korur ancak zamanla değişen ihtiyaçlara göre yeni ögelerle zenginleşebilir."
     ],
     "solvedExample": {
       "question": "Her pazartesi sabahı ve cuma akşamı okullarda milyonlarca öğrenci ve öğretmen hazır ol duruşuna geçerek İstiklal Marşı'mızı coşkuyla söyler.\n\nBayrağımızın ve İstiklal Marşı'mızın milletimiz için taşıdığı bağımsızlık sembolü anlamını 2 cümleyle açıklayınız.",
@@ -1114,14 +1162,16 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "SB.6.1.3": {
     "outcomeCode": "SB.6.1.3",
-    "topicTitle": "Toplumsal Sorunlar ve Çözümler Önerileri - Toplumsal Sorunlar ve Çözümler Önerileri",
+    "topicTitle": "Toplumsal Sorunlar, Ön Yargılar ve Çözüm Yolları",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Toplumsal hayatta karşılaşılan sorunlara yönelik çözüm önerilerini müzakere edebilme",
-      "Kavramsal İlke: Çevre kirliliği ve sıfır atık.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Ön Yargı: Bir kimse veya bir durum hakkında yeterli bilgi sahibi olmadan, peşin hükümle varılan olumlu ya da olumsuz kanaattir.",
+      "Kalıp Yargı: Bir grubun tüm üyelerine genelleştirilen, basmakalıp ve değişmesi zor inançlardır (örneğin: \"Gözlüklü olan herkes çok kitap okur\").",
+      "Ayrımcılık: İnsanlara cinsiyet, ırk, din, dil veya fiziksel engel durumlarından ötürü eşit ve adil davranmamaktır.",
+      "Toplumsal Dayanışma ve Çözüm: Empati kurmak (kendini karşısındakinin yerine koymak), farklılıklara saygı göstermek, sivil toplum kuruluşlarına (Kızılay, Yeşilay, Darüşşafaka, Tema) destek olmak.",
+      "Yasal Hak Arama Yolları: Dilekçe hakkı (Anayasa m.74), CİMER başvurusu, Tüketici Hakem Heyetleri."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "MEB SINAV TUZAĞI: Ön yargı yalnızca \"olumsuz\" olmak zorunda değildir! Bir insanı tanımadan peşin hükümle \"o kesin dürüst biridir\" demek de olumlu bir ön yargıdır; ancak her iki ön yargı da objektif iletişimi engeller."
     ],
     "solvedExample": {
       "question": "Şehirlerde sokaklara atılan plastik şişeler, poşetler ve ambalajlar hem doğayı zehirlemekte hem de görüntü kirliliği oluşturmaktadır.\n\nOkulunuzda çevre kirliliğini önlemek ve geri dönüşümü yaygınlaştırmak için uygulayabileceğiniz 2 somut proje önerisi yazınız.",
@@ -1135,14 +1185,14 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "DKAB.6.1.2": {
     "outcomeCode": "DKAB.6.1.2",
-    "topicTitle": "Peygamberlerin İlettiği Mesaj: Vahiy - Peygamberlerin İlettiği Mesaj: Vahiy",
+    "topicTitle": "Peygamberlerin Sıfatları ve Vahiy Kavramı",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Vahyin gönderiliş amacını idrak edebilme",
-      "Kavramsal İlke: Vahyin gönderiliş amacı ve aklın rehberliği.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Peygamberlerin 5 Temel Sıfatı:\n1. Sıdk: Doğru ve dürüst olmak; peygamberler asla yalan söylemezler.\n2. Emanet: Son derece güvenilir olmak (Peygamberimize peygamberlik öncesinde verilen \"Muhammedü'l-Emîn\" unvanı).\n3. İsmet: Günah işlemekten korunmuş, temiz ve lekesiz bir fıtrata sahip olmak.\n4. Fetanet: Üstün akıl, kavrayış, mantık ve yüksek zekâ sahibi olmak.\n5. Tebliğ: Allah'tan aldıkları ilahi mesajları insanlara eksiksiz, artırmadan veya eksiltmeden doğrudan ulaştırmak.",
+      "Vahiy: Allah'ın insanlara iletmek istediği emir, yasak ve ilkeleri peygamberlerine bildirmesidir.",
+      "Mucize: Peygamberlerin peygamberlik iddialarını ispatlamak amacıyla Allah'ın izniyle sergiledikleri, insanların benzerini yapmaktan aciz kaldığı olağanüstü olaylardır."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "MEB SINAV TUZAĞI: Peygamberler ilah/tanrı değildir; onlar da birer insandır (yerler, içerler, uyurlar, hastalanırlar ve vefat ederler). Onları diğer insanlardan ayıran tek fark Allah'tan vahiy almaları ve ismet sıfatına sahip olmalarıdır."
     ],
     "solvedExample": {
       "question": "Ayet Meali: 'İnsanlar tek bir ümmetti. Allah, müjdeciler ve uyarıcılar olarak peygamberler gönderdi ve anlaşmazlığa düştükleri konularda insanlar arasında hak ile hükmetsin diye onlarla birlikte hak kitabı indirdi.' (Bakara suresi, 213. ayet)\n\nVerilen ayetten hareketle, Allah'ın insanlara peygamberler ve vahiy göndermesinin iki temel amacını yazınız.",
@@ -1156,14 +1206,13 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "DKAB.6.1.3": {
     "outcomeCode": "DKAB.6.1.3",
-    "topicTitle": "İlahi Kitaplar - İlahi Kitaplar",
+    "topicTitle": "Dört Büyük İlahi Kitap ve Sahifeler (Suhuf)",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: İlahi kitaplarla ilgili bilgileri çözümleyebilme",
-      "Kavramsal İlke: Dört büyük ilahi kitap ve gönderildikleri peygamberler.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "4 Büyük İlahi Kitap ve Gönderildiği Peygamberler:\n1. Tevrat -> Hz. Musa (İsrailoğullarına gönderilmiştir)\n2. Zebur -> Hz. Davud\n3. İncil -> Hz. İsa\n4. Kur'an-ı Kerim -> Hz. Muhammed (Son ilahi kitaptır, evrenseldir ve lafzı kıyamete kadar korunmuştur).",
+      "Sahifeler (Suhuf): Dört büyük kitap dışında bazı peygamberlere gönderilen küçük risalelerdir (Toplam 100 sahife):\n• Hz. Âdem: 10 sahife\n• Hz. Şit: 50 sahife\n• Hz. İdris: 30 sahife\n• Hz. İbrahim: 10 sahife."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "KRİTİK EŞLEŞTİRME: Zebur ile Tevrat'ın hangi peygamberlere indirildiğini birbirine karıştırmayınız: Tevrat -> Hz. Musa, Zebur -> Hz. Davud'dur. Ayrıca Kur'an-ı Kerim belirli bir ırka değil, tüm insanlığa (evrensel) hitap eder."
     ],
     "solvedExample": {
       "question": "İlahi kitaplar, peygamberler aracılığıyla insanlara ulaştırılan kutsal metinlerdir.\n\nDört büyük ilahi kitabı ve bu kitapların gönderildiği peygamberleri eksiksiz eşleştirerek yazınız.",
@@ -1177,14 +1226,14 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "DKAB.6.1.4": {
     "outcomeCode": "DKAB.6.1.4",
-    "topicTitle": "Bir Sure Öğreniyorum: Felak Suresi - Bir Sure Öğreniyorum: Felak Suresi",
+    "topicTitle": "Bir Sure Öğreniyorum: Felak Suresi ve Anlamı",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Felak suresini ve bu surenin anlamını okuyarak yorumlayabilme",
-      "Kavramsal İlke: Felak suresinin 1-2. ayetlerinin tefsiri.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Sure Bilgisi: Kur'an-ı Kerim'in 113. suresidir ve 5 ayetten oluşur. Nâs suresi ile birlikte iki sığınma suresi anlamına gelen \"Muavvizeteyn\" olarak adlandırılır.",
+      "Temel Mesaj: İnsanın karşılaşabileceği görünen ve görünmeyen tüm kötülüklerden yalnızca her şeyin yaratıcısı ve sabahın aydınlığının Rabbi olan Allah'a sığınması emredilir.",
+      "Felak Suresinde Sığınılan Kötülükler:\n1. Yarattığı şeylerin şerrinden (tüm mahlukatın kötülüğü),\n2. Karanlığı çöktüğü zaman gecenin şerrinden,\n3. Düğümlere üfleyen büyücü ve kötü niyetlilerin şerrinden,\n4. Haset ettiği (kıskandığı) zaman hasetçinin şerrinden."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "PÜF NOKTA: \"Felak\" kelime anlamı olarak \"sabah, şafak vakti / karanlığı yarıp aydınlatan sabah\" demektir. Felak ve Nâs sureleri her türlü korku ve endişe anında korunma (istiâze) amacıyla okunur."
     ],
     "solvedExample": {
       "question": "Ayet Meali: 'De ki: Yarattığı şeylerin şerrinden sabahın Rabbine sığınırım.' (Felak suresi, 1-2. ayetler)\n\nFelak suresinin ilk iki ayetinden hareketle, bir Müslümanın kötülük ve tehlikeler karşısında nasıl bir inanç tutumu sergilemesi gerektiğini açıklayınız.",
@@ -1198,14 +1247,13 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "DKAB.6.2.1": {
     "outcomeCode": "DKAB.6.2.1",
-    "topicTitle": "RAMAZAN VE ORUÇ - Oruç ve Kur’an Ayı Ramazan",
+    "topicTitle": "Ramazan Ayı ve Oruç İbadeti",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Ramazan ayının oruç ve Kur’an ayı olduğunu çözümleyebilme",
-      "Kavramsal İlke: Ramazan ayı ve Kur'an'ın indirilişi.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Oruç (Savm): Akıllı ve ergenlik çağına girmiş sağlıklı her Müslümana farz bir ibadettir. Niyet ederek tan yerinin ağarmasından (imsak) akşam güneş batıncaya (iftar) kadar yeme, içme ve nefsi arzulardan uzak durmaktır.",
+      "Temel Kavramlar:\n• Sahur: Oruç tutmak için gece imsak vaktinden önce kalkılıp bereket niyetine yenen yemektir.\n• İmsak: Orucun başlama vaktidir (sabah ezanı vakti).\n• İftar: Akşam ezanıyla birlikte orucun açıldığı vakittir.\n• Teravih: Ramazan gecelerinde yatsı namazından sonra cemaatle veya tek başına kılınan 20 rekatlık sünnet namazdır.\n• Mukabele: Bir kişinin Kur'an okuması, dinleyenlerin ise Kur'an'dan takip etmesi geleneğidir.\n• Fitre (Sadaka-i Fıtır): Ramazan ayında zengin olan Müslümanların bayramdan önce fakirlere vermekle yükümlü olduğu vacip sadakadır."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "MEB SINAV TUZAĞI: Teravih namazı farz değil, \"sünnet-i müekkede\"dir. Fitre (sadaka-i fıtır) vermek ise farz değil, \"vacip\"tir. İbadetlerin fıkhi hükümlerini sınavlarda birbirine karıştırmayınız!"
     ],
     "solvedExample": {
       "question": "Ayet Meali: 'Ramazan ayı, insanlara yol gösterici, doğrunun ve doğruyu eğriden ayırmanın açık delilleri olarak Kur'an'ın indirildiği aydır...' (Bakara suresi, 185. ayet)\n\nRamazan ayının İslam kültüründe 'Kur'an Ayı' olarak adlandırılmasının nedenini ve bu ayda uygulanan 'mukabele' geleneğinin ne olduğunu açıklayınız.",
@@ -1219,14 +1267,13 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "ENG.6.1.R2": {
     "outcomeCode": "ENG.6.1.R2",
-    "topicTitle": "SCHOOL LIFE - SCHOOL LIFE",
+    "topicTitle": "School Life & Telling the Time",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Students can bring information about the current content on “school life with roles, and responsibilities at school; school routines; national days and celebrations” through skimming (looking quickly at) the audio-visual elements and reading the content very quickly.",
-      "Kavramsal İlke: School club notice board schedule.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Telling the Time (Saatleri Söyleme):\n• Tam saatler: \"It is eight o'clock.\" (Saat sekiz)\n• Buçuk saatler (half past): \"It is half past eight.\" (Saat sekiz buçuk - 08:30)\n• Çeyrek geçe (quarter past): \"It is quarter past eight.\" (08:15)\n• Çeyrek kala (quarter to): \"It is quarter to nine.\" (08:45)\n• Dakikalar: \"It is ten past seven.\" (07:10) / \"It is twenty to eight.\" (07:40).",
+      "Time Prepositions:\n• \"at\" -> Saatlerle kullanılır (at 08:30, at noon, at night).\n• \"on\" -> Günlerle kullanılır (on Monday, on weekdays).\n• \"in\" -> Günün bölümleri ve aylarla kullanılır (in the morning, in June)."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "PÜF NOKTA: Saatlerde \"past\" (geçe) ve \"to\" (kala) kelimelerinin yerleşimine dikkat edin! 08:50 ifadesinde \"dokuza on var\" denir, bu yüzden \"It is ten to nine\" şeklinde söylenir."
     ],
     "solvedExample": {
       "question": "NOTICE BOARD - ATATÜRK MIDDLE SCHOOL:\n• Chess Club: Monday at 15:30 (Room 102)\n• Music Club: Wednesday at 16:00 (Hall B)\n• Drama Club: Friday at 15:45 (Main Theatre)\n\nQuickly scan the notice board and answer the questions:\na) Which club meets on Wednesday?\nb) What time does the Chess Club start?",
@@ -1240,14 +1287,13 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "ENG.6.1.R3": {
     "outcomeCode": "ENG.6.1.R3",
-    "topicTitle": "Students can make meaning of / derive meaning from the current content about “school life with roles, and responsibilities at school; school routines; national days and celebrations” by reading it carefully.",
+    "topicTitle": "Reading: School Routines & National Celebrations",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Students can make meaning of / derive meaning from the current content about “school life with roles, and responsibilities at school; school routines; national days and celebrations” by reading it carefully.",
-      "Kavramsal İlke: Zeynep's daily school routine and library responsibility.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "National Holidays in Turkey:\n• 29th October: Republic Day (Cumhuriyet Bayramı)\n• 23rd April: National Sovereignty and Children's Day (Ulusal Egemenlik ve Çocuk Bayramı)\n• 19th May: Commemoration of Atatürk, Youth and Sports Day (Gençlik ve Spor Bayramı)\n• 30th August: Victory Day (Zafer Bayramı).",
+      "Celebration Activities: decorate the classroom (sınıfı süslemek), recite poems (şiirler okumak), perform traditional folk dances (halk oyunları oynamak), sing the national anthem (istiklal marşını okumak), carry Turkish flags (bayrak taşımak)."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "GRAMMAR TIP: Hem gün hem ay belirtildiğinde daima \"on\" edatı kullanılır: \"We celebrate Republic Day ON 29th October.\""
     ],
     "solvedExample": {
       "question": "Text: 'Hello! I am Zeynep. I am an active 6th-grade student. I wake up at 07:00 every morning. My school starts at 08:30 and finishes at 15:10. On Tuesdays and Thursdays, I work as the school library monitor. I help our teacher put the books on the shelves and keep the library quiet.'\n\nRead the text carefully and answer:\na) What is Zeynep's special duty at school on Tuesdays?\nb) How does she help the teacher in the library?",
@@ -1261,14 +1307,13 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "ENG.6.1.V1": {
     "outcomeCode": "ENG.6.1.V1",
-    "topicTitle": "Students can select and use the target vocabulary of the current content about “school life with roles, and responsibilities at school; school routines; national days and celebrations” accurately, authentically, spontaneously, and naturally and use it appropriately and effectively when communicating with others.",
+    "topicTitle": "Target Vocabulary: School Life & Responsibilities",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Students can select and use the target vocabulary of the current content about “school life with roles, and responsibilities at school; school routines; national days and celebrations” accurately, authentically, spontaneously, and naturally and use it appropriately and effectively when communicating with others.",
-      "Kavramsal İlke: School responsibility and places vocabulary.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Daily Routines Vocabulary:\n• wake up / get up: uyanmak / yataktan kalkmak\n• have breakfast: kahvaltı yapmak\n• brush teeth / wash hands: diş fırçalamak / el yıkamak\n• attend classes / courses: derslere / kurslara katılmak\n• run errands: evin getir-götür / ufak tefek alışveriş işlerini yapmak\n• take care of the pet: evcil hayvana bakmak / beslemek\n• rest / take a nap: dinlenmek / şekerleme yapmak\n• do homework: ödev yapmak.",
+      "School Subjects: Science (Fen), Maths (Matematik), Social Studies (Sosyal Bilgiler), P.E. (Beden Eğitimi), Art (Görsel Sanatlar), Music."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "MEB SINAV TUZAĞI: \"run errands\" kalıbı \"koşmak\" anlamına gelmez! Günlük alışveriş, fatura ödeme gibi ev işlerini halletmek anlamına gelir."
     ],
     "solvedExample": {
       "question": "Vocabulary bank: [canteen, timetable, class president, library, whiteboard]\n\nChoose the correct words from the box to complete the sentences:\n1. Ahmet is our ....................; he helps our teacher and takes attendance.\n2. We buy sandwiches and water from the school .................... during the lunch break.\n3. Students borrow story books from the ....................",
@@ -1282,14 +1327,13 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "ENG.6.1.G1": {
     "outcomeCode": "ENG.6.1.G1",
-    "topicTitle": "Students can select and use the target grammatical elements of the current content about “school life with roles, and responsibilities at school; school routines; national days and celebrations” accurately, authentically, spontaneously, and naturally and use it appropriately and effectively when communicating with others.",
+    "topicTitle": "Grammar: Simple Present Tense & Frequency Adverbs",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Students can select and use the target grammatical elements of the current content about “school life with roles, and responsibilities at school; school routines; national days and celebrations” accurately, authentically, spontaneously, and naturally and use it appropriately and effectively when communicating with others.",
-      "Kavramsal İlke: Simple Present Tense third-person affirmative and negative forms.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Simple Present Tense (Geniş Zaman):\n• Olumlu: He / She / It öznelerinde fiile \"-s, -es, -ies\" takısı gelir (He plays, She watches, It flies). I / You / We / They öznelerinde fiil yalındır (I play, We study).\n• Olumsuz: He/She/It doesn't play. / I/You/We/They don't play.\n• Soru: Does he play? / Do you play?",
+      "Adverbs of Frequency (Sıklık Zarfları):\n• always (%100 - her zaman) > usually (%80 - genellikle) > often (%60 - sık sık) > sometimes (%40 - bazen) > rarely/seldom (%10 - nadiren) > never (%0 - hiçbir zaman).\n• Cümledeki Yeri: Özneden hemen sonra, esas fiilden hemen önce gelir: \"Selin ALWAYS brushes her teeth before bed.\""
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "MEB SINAV TUZAĞI: Olumsuz cümlelerde \"doesn't\" geldiğinde ya da soruda \"does\" kullanıldığında fiildeki \"-s\" takısı DÜŞER! \"He doesn't plays\" YANLIŞ, \"He doesn't play\" DOĞRUDUR!"
     ],
     "solvedExample": {
       "question": "Grammar task on school habits.\n\nComplete the sentences with the correct Simple Present forms of the verbs in brackets:\na) Selim .................... (walk) to school every morning, but he .................... (not / take) the bus.\nb) Our teacher always .................... (arrive) at school at 08:15.",
@@ -1303,14 +1347,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "ENG.6.1.W3": {
     "outcomeCode": "ENG.6.1.W3",
-    "topicTitle": "Students can organise a content for the assigned writing task on the current content “school life with roles, and responsibilities at school; school routines; national days and celebrations” based on the model/example provided.",
+    "topicTitle": "Organizing Writing: Connectors of Sequence",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Students can organise a content for the assigned writing task on the current content “school life with roles, and responsibilities at school; school routines; national days and celebrations” based on the model/example provided.",
-      "Kavramsal İlke: Guided writing based on a model: Morning school routine.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Sequencing Words (Sıralama Bağlaçları):\n1. First (İlk olarak): \"First, I get up at 7 o'clock and wash my face.\"\n2. Then (Sonra / Daha sonra): \"Then, I have a healthy breakfast with milk and eggs.\"\n3. Next (Ardından): \"Next, I put on my school uniform and take the bus.\"\n4. After school (Okuldan sonra): \"After school, I attend the basketball club.\"\n5. Finally (Son olarak): \"Finally, I read a book and go to sleep at 10 pm.\""
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "PÜF NOKTA: Sıralama bağlaçlarından sonra (First, Then, Finally vb.) cümle başında virgül (,) kullanılır."
     ],
     "solvedExample": {
       "question": "Model text: 'I wake up at 07:15. I brush my teeth and have breakfast. Then, I leave home at 08:00 for school.'\n\nWrite 3 sentences about your own morning routine before school, following the example model.",
@@ -1324,14 +1366,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "ENG.6.1.W4": {
     "outcomeCode": "ENG.6.1.W4",
-    "topicTitle": "Students can individually construct/form content for the assigned writing task on the current content “school life with roles, and responsibilities at school; school routines; national days and celebrations”.",
+    "topicTitle": "Writing a Cohesive Paragraph on Daily Routine",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Students can individually construct/form content for the assigned writing task on the current content “school life with roles, and responsibilities at school; school routines; national days and celebrations”.",
-      "Kavramsal İlke: Independent writing: Celebrating a national day.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Checklist for Daily Routine Writing:\n• Başlık: \"My Daily Routine\" veya \"A Day in My School Life\"\n• Zaman uyumu: Tüm cümleler Simple Present Tense olmalıdır.\n• Özne uyumu: Kendi gününüzü anlatıyorsanız \"I\", bir arkadaşınızı anlatıyorsanız fiillere \"-s\" ekleyerek \"He / She\" kullanın.\n• Çeşitlilik: Sadece okul değil, sabah hazırlığı, ders araları ve akşam dinlenmesi de dahil edilmelidir."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "YAZIM UYARISI: \"I always do my homeworks\" ifadesi YANLIŞTIR. İngilizcede \"homework\" sayılamaz bir isimdir, çoğul eki almaz: \"do my homework\" denir."
     ],
     "solvedExample": {
       "question": "National celebrations at Turkish schools (e.g., 29th October Republic Day or 23rd April Children's Day).\n\nWrite 3 full sentences describing how you and your classmates celebrate a national day at school (mention decorations, singing, or activities).",
@@ -1759,14 +1799,15 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "SB.7.1.1": {
     "outcomeCode": "SB.7.1.1",
-    "topicTitle": "BİRLİKTE YAŞAMAK - Gruplarda ve Sosyal Hayatta İletişimin Önemi",
+    "topicTitle": "İletişim ve İnsan İlişkileri: Ben Dili ve Sen Dili",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Dâhil olduğu gruplarda ve sosyal hayatta etkili iletişimin önemini sorgulayabilme",
-      "Kavramsal İlke: Sen dili ve ben dili dönüştürme.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Ben Dili: Kişinin karşıdakini suçlamadan, kendi duygu, düşünce ve rahatsızlığını anlattığı yapıcı iletişim dilidir. Karşı tarafta savunma veya öfke uyandırmaz; empatiyi tetikler. Örnek: \"Derslerine zaman ayırmadığında sınavların için endişeleniyorum.\"",
+      "Sen Dili: Karşı tarafı doğrudan suçlayıcı, yargılayıcı, emir verici ve kırıcı konuşma biçimidir. Savunmaya ve çatışmaya yol açar. Örnek: \"Sen hep sorumsuz davranıyorsun, hiçbir zaman ders çalışmıyorsun!\"",
+      "Etkin Dinleme Kuralları: Konuşmacıyla göz teması kurmak, sözünü kesmemek, empati yapmak (kendini onun yerine koymak), baş sallayarak ve beden diliyle odaklandığını hissettirmek.",
+      "İletişimi Engelleyen Faktörler: Ön yargılı olmak, lakap takmak, emir vermek, tehdit etmek, sürekli akıl vermek, alay etmek."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "MEB SINAV TUZAĞI: Sınavlarda bir diyalog verilip \"Hangi cümle ben diline örnektir?\" diye sorulur. Cümlenin sonunda \"...hissediyorum, ...üzülüyorum, ...tedirgin oluyorum\" gibi kendi duygusunu ifade eden cümleler \"ben dili\"dir. \"...yapıyorsun, ...beceriksizsin\" gibi doğrudan kişiyi hedef alan ifadeler \"sen dili\"dir."
     ],
     "solvedExample": {
       "question": "Bir anne çocuğuna şu şekilde seslenmektedir: 'Her zaman odanı darmadağın bırakıyorsun, çok sorumsuz bir çocuksun!'\n\na) Annenin bu cümlesi neden 'Sen Dili'ne örnektir ve çocuk üzerinde nasıl bir psikolojik tepki doğurur?\nb) Bu iletişimi, çatışmaya yol açmayacak şekilde 'Ben Dili'ne dönüştürerek yeniden yazınız.",
@@ -1820,14 +1861,15 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "SB.7.2.1": {
     "outcomeCode": "SB.7.2.1",
-    "topicTitle": "EVİMİZ DÜNYA - Küreselleşmenin İnsan ve Toplum Hayatına Etkisi",
+    "topicTitle": "Küreselleşme ve Dünya Sorunları",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Küreselleşmenin insan ve toplum hayatı üzerindeki etkilerini analiz edebilme",
-      "Kavramsal İlke: Küreselleşme ve kültürel etkileşim.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Küresel Sorun Nedir? Tek bir ülkenin sınırlarını aşan, tüm insanlığı ve gezegenin geleceğini tehdit eden, yalnızca ortak küresel iş birliğiyle çözülebilecek büyük problemlerdir.",
+      "Başlıca Küresel Sorunlar:\n• Küresel Isınma ve İklim Değişikliği (kuraklık, buzulların erimesi, deniz seviyesinin yükselmesi)\n• Açlık ve Yoksulluk\n• Salgın Hastalıklar\n• Doğal Afetler (depremler, tsunamiler)\n• Savaşlar ve Zorunlu Göç / Mülteci Sorunu.",
+      "Uluslararası Örgütler ve Görevleri:\n• BM (Birleşmiş Milletler): Küresel barış ve güvenliği sağlamak.\n• UNICEF: Dünyadaki çocukların eğitim, sağlık ve beslenme haklarını korumak.\n• DSÖ (WHO): Dünya Sağlık Örgütü; salgın hastalıklarla küresel düzeyde mücadele etmek.\n• UNESCO: Bilim, kültür, sanat ve dünya mirasını korumak.",
+      "Bireysel Sorumluluklarımız: Su ve enerji tasarrufu yapmak, geri dönüşüme katılmak, israftan kaçınmak, doğayı korumak."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "KRİTİK ÇIKARIM: Küresel çevre ve iklim sorunları sınır tanımaz; bir ülkenin sanayi atıkları veya karbon salınımı binlerce kilometre ötedeki kıtaları etkiler. Bu nedenle çözüm yerel değil, mutlaka küresel ortak politikalar gerektirir."
     ],
     "solvedExample": {
       "question": "İnternet, sosyal medya ve uluslararası ticaret sayesinde dünyanın bir ucunda üretilen müzik, film, giyim tarzı veya yemek alışkanlığı birkaç gün içinde tüm dünyaya yayılmaktadır.\n\na) Küreselleşmenin toplumlar arasındaki kültürel zenginliğe sağladığı 1 OLUMLU katkıyı yazınız.\nb) Küreselleşmenin yerel kültürler üzerindeki 1 OLUMSUZ (riskli) etkisini yazınız.",
@@ -2025,14 +2067,15 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "T.8.3.5": {
     "outcomeCode": "T.8.3.5",
-    "topicTitle": "Bağlamdan yararlanarak bilmediği kelime ve kelime gruplarının anlamını tahmin eder.",
+    "topicTitle": "Sözcükte Anlam, Mecaz ve Çok Anlamlılık",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Bağlamdan yararlanarak bilmediği kelime ve kelime gruplarının anlamını tahmin eder.",
-      "Kavramsal İlke: Çanakkale metninde geçen sözcükler.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Gerçek Anlam: Sözcüğün temel ve akla ilk gelen anlamı (örneğin: \"Derin kuyu\").",
+      "Mecaz Anlam: Gerçek anlamından tamamen uzaklaşarak soyutlaşan yeni anlam (örneğin: \"Derin düşüncelere daldı\").",
+      "Terim Anlam: Bilim, sanat, meslek dallarına ait özel sözcükler (örneğin: \"hücre, üçgen, vezin\").",
+      "Çok Anlamlılık: Bir kelimenin cümledeki kullanımına göre birden fazla farklı anlamı karşılamasıdır (örneğin: \"açmak\" fiili: kapıyı açmak, tıkalı yolu açmak, yeni dükkân açmak, rengi açmak, sırrını açmak)."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "LGS SINAV TUZAĞI: \"Bu kelime aşağıdaki cümlelerin hangisinde 'farklı bir anlamda' kullanılmıştır?\" sorularında kelimenin yerine sözlük tanımını veya eş anlamlısını koyarak sağlamasını yapınız."
     ],
     "solvedExample": {
       "question": "Metin Parçası: '18 Mart 1915 günü Çanakkale Boğazı'nda top sesleri yeri göğü inletiyordu. Rumeli Mecidiye Tabyası ağır bir bombardıman altında kalmış, topun vinci parçalanmıştı. Havranlı Seyit Onbaşı, vatan aşkıyla devasa 215 okkalık mermiyi sırtlayarak namluya sürdü ve İngiliz zırhlısı Ocean'ı dümeninden vurarak saf dışı bıraktı.'\n\nMetinde altı çizili 'saf dışı bırakmak' deyiminin metne kattığı anlamı bağlamdan hareketle açıklayınız.",
@@ -2046,14 +2089,16 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "T.8.3.7": {
     "outcomeCode": "T.8.3.7",
-    "topicTitle": "Metindeki söz sanatlarını tespit eder.",
+    "topicTitle": "Söz Sanatları (Edebî Sanatlar)",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Metindeki söz sanatlarını tespit eder.",
-      "Kavramsal İlke: Metindeki söz sanatları.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "1. Teşbih (Benzetme): Aralarında ortak özellik bulunan iki varlıktan zayıf olanın güçlü olana benzetilmesidir. 4 ögesi vardır: Benzeyen, Kendisine Benzetilen, Benzetme Yönü, Benzetme Edatı (Örnek: \"Aslan gibi kuvvetli bir genç\").",
+      "2. Teşhis (Kişileştirme): İnsan dışındaki canlı veya cansız varlıklara insana ait özellikler yüklemektir (Örnek: \"Rüzgâr acı acı inliyordu.\", \"Bulutlar gözyaşı döküyordu.\").",
+      "3. İntak (Konuşturma): İnsan dışındaki varlıkların bizzat konuşturulmasıdır (Örnek: \"Küçük karınca, 'Ben kış için çalışıyorum' dedi.\").",
+      "4. Tezat (Karşıtlık): Birbirine zıt duygu, durum ve kavramların aynı metinde etkileyicilik amacıyla bir arada kullanılmasıdır (Örnek: \"Ağlarım hatıra geldikçe gülüştüklerimiz.\").",
+      "5. Mübalağa (Abartma): Bir durumun etkisini artırmak için onu olduğundan çok daha büyük veya çok daha küçük göstermektir (Örnek: \"Bir of çeksem karşıki dağlar yıkılır.\")."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "LGS TUZAĞI: Her intak (konuşturma) sanatında mutlaka teşhis (kişileştirme) de vardır; çünkü konuşmak insana özgü bir niteliktir. Ancak her kişileştirmede intak YOKTUR! Varlık insan gibi davranmışsa kişileştirme, ağzından söz çıkmışsa intaktır."
     ],
     "solvedExample": {
       "question": "Cümle: 'Top sesleri adeta yeri göğü inletiyor, koca tabyadaki toplar birer dev gibi denize meydan okuyordu.'\n\nVerilen cümlede yer alan benzetme (teşbih) ve abartma (mübalağa) sanatlarını unsurlarıyla birlikte gösteriniz.",
@@ -2067,14 +2112,15 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "T.8.3.9": {
     "outcomeCode": "T.8.3.9",
-    "topicTitle": "Fiilimsilerin cümledeki işlevlerini kavrar.",
+    "topicTitle": "Fiilimsiler (Eylemsiler) ve Görevleri",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Fiilimsilerin cümledeki işlevlerini kavrar.",
-      "Kavramsal İlke: Fiilimsilerin türleri ve cümledeki işlevi.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Fiilimsi Kuralları: Fiil kök veya gövdesinden türetilir; kip ve kişi eki ALMAZ; fiil anlamını korur; olumsuzluk eki (-ma/-me) alabilir; cümlede isim, sıfat veya zarf görevinde kullanılır.",
+      "1. İsim-Fiil (-ma, -ış, -mak -> KOD: -MA-YIŞ-MAK):\n• \"Kitap okumak ufku genişletir.\", \"Onun bakışı güven veriyor.\"\n• DİKKAT: Kalıcı isim olmuşsa fiilimsi değildir! (ekmek, çakmak, sarma, dondurma, giriş, çıkış).",
+      "2. Sıfat-Fiil (-an, -ası, -mez, -ar, -dik, -ecek, -miş -> KOD: ANASIMEZARDIKECEKMİŞ):\n• \"Kırılan vazo\", \"Görünmez kaza\", \"Tanıdık yüzler\", \"Gelecek yıl\".\n• Adlaşmış Sıfat-Fiil: Nitelediği isim düşerse adlaşır (\"Gelen gideni aratır\" -> gelen insan, giden insan).",
+      "3. Zarf-Fiil (-ken, -alı, -madan, -ince, -ip, -arak, -dıkça, -e...-e, -r...-mez, -casına, -meksizin):\n• Durum bildirir (Nasıl? sorusuna yanıt): \"Koşarak geldi.\"\n• Zaman bildirir (Ne zaman? sorusuna yanıt): \"Zil çalınca içeri girdi.\""
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "LGS EN BÜYÜK TUZAĞI: Sıfat-fiil ekleri (-ar, -mez, -ecek, -miş) ile zaman kip eklerini birbirine karıştırmayın! Fiilimsi ismi niteler (\"Gelecek hafta görüşürüz\" -> sıfat-fiil). Yargı bildiren çekimli fiildir (\"Yarın bize gelecek\" -> gelecek zaman kipi)."
     ],
     "solvedExample": {
       "question": "Cümle: 'Vincin kırılması üzerine devasa mermiyi sırtlayan Seyit, basamakları inleyerek tırmandı.'\n\nCümledeki üç farklı fiilimsiyi bularak türlerini (isim-fiil, sıfat-fiil, zarf-fiil) karşılarına yazınız:\n1. ................................. -> .................................\n2. ................................. -> .................................\n3. ................................. -> .................................",
@@ -2088,14 +2134,14 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "T.8.3.14": {
     "outcomeCode": "T.8.3.14",
-    "topicTitle": "Metinle ilgili soruları cevaplar.",
+    "topicTitle": "Metin Çözümleme ve Metne Dayalı Soruları Yanıtlama",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Metinle ilgili soruları cevaplar.",
-      "Kavramsal İlke: Metin anlama ve çıkarım.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Soru Kökünü Doğru Okuma: \"Çıkarılabilir / çıkarılamaz\", \"Ulaşılabilir / ulaşılamaz\", \"Değinilmiştir / değinilmemiştir\" gibi olumlu/olumsuz ifadelere çok dikkat edilir.",
+      "Metne Bağlı Kalma: Kendi kişisel tecrübenize göre doğru olan bir bilgi metinde GEÇMİYORSA doğru cevap kabul edilemez. Yalnızca metnin sınırları içinde kalınmalıdır.",
+      "Anahtar İpuçlarını Eşleme: Şıklarda geçen kilit kelimeler ile metindeki karşılık gelen cümleler altı çizilerek eşleştirilip elenir."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "LGS TUZAĞI: Metinde sadece bir defa yan cümle olarak geçen önemsiz bir ayrıntı, ana fikir veya genel yargı gibi sunulan çeldiricilerde kullanılır. Metnin tamamını kapsayan genel doğruları arayınız."
     ],
     "solvedExample": {
       "question": "Metin Parçası: 'Rumeli Mecidiye Tabyası'nda vinç mekanizması bozulduğunda hiçbir askerin umutsuzluğa kapılmaması, Seyit Onbaşı'nın insanüstü bir gayretle tek başına mermiyi kaldırmasını sağlamıştır.'\n\nSeyit Onbaşı'yı devasa top mermisini tek başına taşımaya sevk eden temel duygu ve inanç nedir? Metinden hareketle açıklayınız.",
@@ -2109,14 +2155,14 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "T.8.3.16": {
     "outcomeCode": "T.8.3.16",
-    "topicTitle": "Metnin konusunu belirler.",
+    "topicTitle": "Metnin Konusunu Belirleme",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Metnin konusunu belirler.",
-      "Kavramsal İlke: Metnin konusunu belirleme.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Konu Nedir? Yazar bu metinde neyi anlatıyor? Neyden bahsediyor? sorusunun yanıtıdır.",
+      "Yapısal Özellik: Konu bir yargı bildirmez (yüklemi olan tam bir cümle değildir). Genellikle 2-5 kelimelik bir söz öbeğidir (Örnek: \"Kitap okuma alışkanlığının beyin gelişimine etkisi\", \"Yapay zekânın eğitimde kullanımı\").",
+      "Nasıl Bulunur? Metnin ilk paragrafına, en çok tekrarlanan anahtar kavramlara ve metnin bütününe bakılarak belirlenir."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "MEB SINAV TUZAĞI: Konu ile Ana Fikri birbirine karıştırmayın! Konu \"Neyden bahsedildiği\"dir (kelime grubudur); ana fikir ise \"Verilmek istenen ders veya mesaj\"dır (tam bir cümledir)."
     ],
     "solvedExample": {
       "question": "Çanakkale Deniz Zaferi ve Seyit Onbaşı anlatımı.\n\nÇanakkale Savaşı ve Seyit Onbaşı'nın kahramanlığını anlatan metnin konusunu tek bir cümleyle yazınız.",
@@ -2130,14 +2176,17 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "T.8.3.34": {
     "outcomeCode": "T.8.3.34",
-    "topicTitle": "Okuduklarında kullanılan düşünceyi geliştirme yollarını belirler.",
+    "topicTitle": "Düşünceyi Geliştirme Yolları",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Okuduklarında kullanılan düşünceyi geliştirme yollarını belirler.",
-      "Kavramsal İlke: Düşünceyi geliştirme yolları.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "1. Tanımlama: \"Bu nedir?\" sorusunun yanıtıdır. \"...denir\" ya da \"...dır/-dir\" şeklinde biter (Örnek: \"Gözlem, olayların dikkatle izlenmesidir.\").",
+      "2. Karşılaştırma: İki kavram arasındaki benzerlik veya farklılıkları ortaya koymaktır (\"en, daha, ise, göre, oysa\" kelimeleri sıkça kullanılır).",
+      "3. Örnekleme: İleri sürülen soyut düşünceyi somutlaştırmak için örnek durumlar veya isimler sıralamaktır (\"Örneğin, mesela, söz gelimi\").",
+      "4. Tanıklık Gösterme (Alıntı Yapma): Yazarın düşüncesini kanıtlamak için alanında tanınan bir uzmanın ADINI VE ONUN SÖZÜNÜ tırnak içinde aynen aktarmasıdır.",
+      "5. Sayısal Verilerden Yararlanma: İstatistikler, anketler, grafikler ve rakamsal veriler kullanmaktır (Örnek: \"%45\", \"10 bin ton\").",
+      "6. Benzetme: Anlatımı güçlendirmek için zayıf olanı güçlü olana benzetmektir."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "LGS EN BÜYÜK TUZAĞI: Metinde sadece bir uzmanın adının geçmesi \"Örnekleme\"dir; o uzmanın SÖZÜ tırnak içinde veya doğrudan aktarılmışsa \"Tanıklık Gösterme\"dir! Söz yoksa tanıklık gösterme OLAMAZ!"
     ],
     "solvedExample": {
       "question": "Cümle: 'Seyit Onbaşı'nın kaldırdığı mermi tam 215 okka, yani yaklaşık 276 kilogram ağırlığındaydı. Oysa normal bir insanın sırtında taşıyabileceği ağırlık en fazla 50-60 kilogramdır.'\n\nYazarın bu parçada düşüncesini kanıtlamak ve inandırıcı kılmak için başvurduğu 2 düşünceyi geliştirme yolunu yazınız.",
@@ -2151,14 +2200,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "T.8.4.1": {
     "outcomeCode": "T.8.4.1",
-    "topicTitle": "YAZMA - Alt Öğrenme Alanı Yok",
+    "topicTitle": "Yazma Süreci ve Becerileri",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Şiir yazar.",
-      "Kavramsal İlke: Şiir yazma becerisi.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Yazma Aşamaları:\n1. Konu ve Amacı Belirleme: \"Ne yazacağım ve neden yazıyorum?\"\n2. Hedef Kitleyi Tayin Etme: Yaş grubuna ve okuyucuya uygun dil seçimi.\n3. Bilgi Toplama ve Planlama: Giriş, gelişme ve sonuç taslağını çıkarma.\n4. Taslağı Metne Dönüştürme: Düşünceleri bağlaçlarla birbirine bağlayarak yazma.\n5. Gözden Geçirme ve Düzeltme: Yazım kuralları, noktalama ve anlatım bozukluklarını kontrol etme."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "PÜF NOKTA: Yazıya başlamadan önce taslak plan çıkarmak, yazı esnasında konu dışına çıkmayı ve düşünce kopukluklarını engeller."
     ],
     "solvedExample": {
       "question": "Tema: Çanakkale Zaferi, vatan sevgisi ve Mehmetçik.\n\nÇanakkale şehitlerimizin ve gazilerimizin kahramanlığını anlatan, kafiye ve redif uyumuna dikkat edilmiş 4 dizelik (bir kıtalık) özgün bir şiir yazınız.",
@@ -2172,14 +2219,14 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "T.8.4.15": {
     "outcomeCode": "T.8.4.15",
-    "topicTitle": "Yazılarında uygun geçiş ve bağlantı ifadelerini kullanır.",
+    "topicTitle": "Geçiş ve Bağlantı İfadeleri",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Yazılarında uygun geçiş ve bağlantı ifadelerini kullanır.",
-      "Kavramsal İlke: Geçiş ve bağlantı ifadeleri.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "1. Düşüncenin Yönünü Değiştirenler: \"ama, fakat, lakin, ancak, oysa, ne var ki, buna rağmen, yine de\" (Olumlu düşünceden olumsuza ya da tam tersine geçiş yapar).\nÖrnek: \"Çok çalıştı ama istediği puanı alamadı.\"",
+      "2. Destekleyici ve Açıklayıcı İfadeler: \"özellikle, örneğin, hatta, açıkçası, doğrusu, başka bir deyişle\".\nÖrnek: \"Spor yapmayı severim, özellikle yüzmeye bayılırım.\"",
+      "3. Özetleyen ve Sonuç Bildiren İfadeler: \"kısacası, özetle, son olarak, sonuçta, böylece\".\nÖrnek: \"Özetle, kitap okumak insanı zenginleştirir.\""
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "LGS SINAV TUZAĞI: Cümlenin anlam akışına dikkat ediniz! Cümle olumludan olumsuza dönüyorsa mutlaka \"ama, fakat, oysa\" gibi yön değiştirici bağlaçlar seçilmelidir."
     ],
     "solvedExample": {
       "question": "Geçiş ifadeleri: 'özellikle', 'oysaki', 'başka bir deyişle'.\n\nVerilen geçiş ve bağlantı ifadelerinden 'özellikle' ve 'oysaki' sözcüklerini Çanakkale savunmasını anlatan iki farklı anlamlı cümlede kullanınız.",
@@ -2193,14 +2240,15 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "T.8.3.11": {
     "outcomeCode": "T.8.3.11",
-    "topicTitle": "Metindeki anlatım biçimlerini belirler.",
+    "topicTitle": "Anlatım Biçimleri: Açıklama, Tartışma, Öyküleme, Betimleme",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Metindeki anlatım biçimlerini belirler.",
-      "Kavramsal İlke: Anlatım biçimlerini belirleme.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "1. Açıklama: Bilgi vermek, öğretmek amacıyla yazılır. Nesneldir, yalın bir üslup vardır (ders kitapları, ansiklopediler).",
+      "2. Tartışma: Okuyucunun yerleşik bir kanısını değiştirmek, kendi tezini kanıtlamak için yazılır. Karşılıklı konuşma havası, soru cümleleri ve \"oysa, bence, bana göre\" ifadeleri yer alır.",
+      "3. Öyküleme: Olay, kişi, yer ve zaman ögelerine dayanır. Olaylar bir film şeridi gibi hareket halindedir (zaman akışı ve devinim vardır).",
+      "4. Betimleme: Varlıkları sözcüklerle resim çizer gibi anlatmaktır. Niteleme sıfatları, renkler, şekiller ve durağan anlar hâkimdir."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "PÜF NOKTA: Öyküleme bir \"video kamera kaydı\" gibidir (eylem, hareket ve zaman ilerler); betimleme ise bir \"fotoğraf karesi\" gibidir (zaman durmuştur, sadece görsel ve duyusal ayrıntılar sıralanır)."
     ],
     "solvedExample": {
       "question": "Parça: 'Yapay zekâ, insan zekâsını taklit ederek öğrenme, problem çözme ve karar verme yeteneklerini bilgisayar yazılımlarına kazandıran bilim dalıdır. Günümüzde otonom araçlardan tıbbi görüntülemeye kadar her alanda nesnel verilerle çalışır.'\n\nBu parçada kullanılan temel anlatım biçimini belirleyiniz ve bu biçimin tercih edilme nedenini yazınız.",
@@ -2214,14 +2262,14 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "T.8.3.17": {
     "outcomeCode": "T.8.3.17",
-    "topicTitle": "Metnin ana fikrini/ana duygusunu belirler.",
+    "topicTitle": "Metnin Ana Fikri (Ana Düşüncesi) ve Şiirde Ana Duygu",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Metnin ana fikrini/ana duygusunu belirler.",
-      "Kavramsal İlke: Metnin ana fikrini belirleme.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Ana Fikir: Yazarın bu metni yazma amacı nedir? Bize hangi öğüdü veya mesajı vermek istiyor? sorusunun tam ve kesin cevabıdır.",
+      "Yapısal Özellik: Kesin bir yargı bildiren tam bir cümledir (Örnek: \"Gerçek dostluklar zor günlerde gösterilen fedakârlıklarla perçinlenir.\").",
+      "Şiirde Ana Duygu (Tema): Şiirin bütününde okuyucuya hissettirilen temel duygudur (Örnek: Ayrılık acısı, vatan sevgisi, anne özlemi, yaşama sevinci)."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "LGS SINAV TUZAĞI: Ana fikir metnin yalnızca bir paragrafını veya küçük bir örneğini değil, METNİN TÜMÜNÜ kapsamak zorundadır. Paragraftaki bir örneği ana fikir olarak veren çeldiricilere dikkat ediniz!"
     ],
     "solvedExample": {
       "question": "Yapay zekâ ve insan aklı iş birliği metni.\n\nYazarın okuyucuya iletmek istediği asıl mesajı (ana fikri) bir cümleyle ifade ediniz.",
@@ -2235,14 +2283,13 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "T.8.3.25": {
     "outcomeCode": "T.8.3.25",
-    "topicTitle": "Okudukları ile ilgili çıkarımlarda bulunur.",
+    "topicTitle": "Örtülü Anlam ve Metinden Çıkarım Yapma",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Okudukları ile ilgili çıkarımlarda bulunur.",
-      "Kavramsal İlke: Metinden çıkarım yapma.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Örtülü Anlam: Cümlede açıkça yazılmadığı hâlde bazı ekler, bağlaçlar ve sözcükler sayesinde cümlenin derinliğinden çıkarılan gizli anlamdır.",
+      "Örtülü Anlam İpuçları:\n• \"de/da\" bağlacı: \"Toplantıya Ali de katıldı.\" -> Başka kişiler de katılmıştır (örtülü anlam).\n• \"en / daha\": \"Sınıfın en çalışkanı Zeynep'tir.\" -> Sınıfta başka çalışkanlar da vardır ancak Zeynep birinci sıradadır.\n• \"artık\": \"Artık geç yatmıyor.\" -> Eskiden geç yatıyordu.\n• \"yalnızca / sadece\": \"Soruyu sadece Kerem çözebildi.\" -> Kerem dışındaki öğrenciler çözemedi."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "LGS TUZAĞI: \"Bu metinden kesin olarak çıkarılabilecek yargı hangisidir?\" sorularında örtülü anlamı oluşturan \"sadece, en, artık, de\" gibi belirteçlere odaklanınız."
     ],
     "solvedExample": {
       "question": "Parça: 'Sadece veriyi işlemek bir yapay zekâyı başarılı kılabilir; ancak ona etik kurallar koymak ve nerede duracağını belirlemek ancak insan vicdanının işidir.'\n\nBu parçadan hareketle bilimsel ilerlemede 'insan vicdanı ve etik' hakkında yapılabilecek en temel çıkarımı yazınız.",
@@ -2256,14 +2303,14 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "T.8.3.26": {
     "outcomeCode": "T.8.3.26",
-    "topicTitle": "Metin türlerini ayırt eder.",
+    "topicTitle": "Metin Türleri: Olay, Düşünce ve Bildirme Yazıları",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Metin türlerini ayırt eder.",
-      "Kavramsal İlke: Metin türlerini ayırt etme.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "1. Olay Yazıları:\n• Masal: Tekerlemeyle başlar, tamamen olağanüstü kahramanlar (peri, dev) ve olaylar vardır; yer ve zaman belirsizdir; iyiler hep kazanır.\n• Fabl: Kahramanları hayvanlar veya bitkilerdir; insanlara ders verir; sonunda ahlakî bir öğüt yer alır.\n• Hikâye (Öykü): Yaşanmış ya da yaşanabilir olaylar; dar kişi ve çevre; kısa anlatım.\n• Roman: Ayrıntılı olay örgüsü, geniş mekân ve derinlemesine karakter tahlilleri.",
+      "2. Düşünce Yazıları:\n• Deneme: Yazarın herhangi bir konuda kanıtlama ihtiyacı duymadan, kendi kendisiyle konuşur gibi yazdığı samimi yazılardır (\"Ben\" dili hâkimdir).\n• Makale: Bilimsel bir tezi kanıtlamak amacıyla, nesnel veriler ve araştırmalarla yazılan yazılardır.\n• Fıkra (Köşe Yazısı): Günlük siyasi ve toplumsal konuları gazete veya dergilerde ele alan güncel yazılardır.\n• Söyleşi (Sohbet): Yazarın okuyucuyla karşılıklı konuşuyormuş gibi, içten ve sorular sorarak yazdığı yazılardır.",
+      "3. Bildirme Yazıları:\n• Biyografi (Yaşam Öyküsü): Tanınmış bir kişinin hayatının başkası tarafından nesnel olarak anlatılmasıdır (Üçüncü kişi ağzı).\n• Otobiyografi: Kişinin kendi hayatını birinci kişi ağzıyla (\"ben\") anlatmasıdır.\n• Anı (Hatıra): Yaşanmış bir olayın üzerinden zaman geçtikten sonra kaleme alınmasıdır."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "LGS SINAV TUZAĞI: Deneme (yazar kendi kendine konuşur) ile Söyleşi (yazar okuyucuyla sohbet eder, ona soru sorar) arasındaki ince çizgiye çok dikkat ediniz! Kanıtlama amacı ve bilimsel veri varsa kesinlikle Makaledir."
     ],
     "solvedExample": {
       "question": "Parça: 'Yapay zekâ algoritmalarının eğitim verilerindeki önyargıları devralması, günümüz bilgisayar mühendisliğinin en tartışmalı konusudur. 2024 yılında yapılan bir araştırmaya göre, yüz tanıma modellerinin hata oranı farklı ten renklerinde %15'e kadar çıkabilmektedir.'\n\nBu metnin türünü (makale, deneme, anı, gezi yazısı) belirleyiniz ve bu türe ait olduğunu gösteren 2 kanıt gösteriniz.",
@@ -2277,14 +2324,13 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "T.8.4.9": {
     "outcomeCode": "T.8.4.9",
-    "topicTitle": "Yazılarında anlatım biçimlerini kullanır.",
+    "topicTitle": "Yazılarda Anlatım Biçimlerini Kullanma",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Yazılarında anlatım biçimlerini kullanır.",
-      "Kavramsal İlke: Açıklayıcı ve tartışmacı anlatım biçimlerini yazıda kullanma.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Olay Odaklı Metin Yazımı: Öyküleme ve betimleme birlikte harmanlanır. Olayların akışı öyküleme ile, mekânın ve kahramanların görsel özellikleri betimleme ile canlı tutulur.",
+      "Düşünce Odaklı Metin Yazımı: Açıklama ve tartışma teknikleri birlikte kullanılır. Genel bilgiler açıklama ile verilirken, yazarın kendi savunduğu fikir tartışma ve soru-cevap yöntemiyle pekiştirilir."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "PÜF NOKTA: Yazınızda akıcılığı sağlamak için olay akışı ile çevre tasvirlerini dengeli kullanınız; sadece betimleme yapmak yazıyı durağanlaştırır."
     ],
     "solvedExample": {
       "question": "Konu: 'Yapay zekâ gelecekte meslekleri yok mu edecek, yoksa yeni meslekler mi doğuracak?'\n\nYukarıdaki soru etrafında kendi görüşünüzü savunan, tartışmacı anlatım biçimini kullanarak 3-4 cümlelik kısa bir paragraf yazınız.",
@@ -2298,14 +2344,14 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "T.8.4.18": {
     "outcomeCode": "T.8.4.18",
-    "topicTitle": "Cümlenin ögelerini ayırt eder.",
+    "topicTitle": "Cümlenin Ögeleri ve Cümle Vurgusu",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Cümlenin ögelerini ayırt eder.",
-      "Kavramsal İlke: Cümlenin ögelerini bulma.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "ÖGE BULMA SIRASI (KOD: Y - Ö - N - D - Z -> YÖNTEM):\n1. Yüklem: Cümlenin temelidir, yargıyı bildirir. İlk önce yüklem bulunur! Bütün sorular yükleme yöneltilir.\n2. Özne: Yüklemdeki işi yapan ögedir (\"Yapan kim? Olan ne?\").\n3. Nesne: İşten etkilenen ögedir. Belirtili Nesne (\"Neyi, kimi?\" -> -i hâl eki alır). Belirtisiz Nesne (Özne bulunduktan sonra yükleme sorulan \"Ne?\" sorusudur).\n4. Yer Tamlayıcısı (Dolaylı Tümleç): Yüklemin yerini bildirir. Mutlaka \"-e, -de, -den\" eklerini alır (\"Kime, kimde, kimden? Nereye, nerede, nereden? Neye, neyde, neyden?\").\n5. Zarf Tamlayıcısı: Yüklemi durum, zaman, miktar veya sebeple tamamlar (\"Nasıl? Ne zaman? Ne kadar? Neden/Niçin?\").",
+      "ALTIN KURAL: Söz öbekleri (İsim ve Sıfat Tamlamaları, Deyimler, İkilemeler, Birleşik Fiiller, Fiilimsi Grupları) ASLA bölünemez! Tek bir öge olarak alınır.",
+      "Cümle Vurgusu:\n• Fiil cümlelerinde vurgu: Yüklemden hemen ÖNCEKİ ögededir.\n• İsim cümlelerinde vurgu: Bizzat YÜKLEMİN kendisindedir.\n• \"de/da\" ve \"mi\" olan cümlelerde vurgu: Bu eklerden hemen önceki ögededir."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "LGS EN BÜYÜK TUZAĞI: Özne ile belirtisiz nesneyi karıştırmamak için ÖNCE mutlaka ÖZNEYİ bulunuz! \"Masanın üzerindeki bardak kırıldı\" cümlesinde kırılan ne? -> \"Masanın üzerindeki bardak\" ÖZNE'dir, nesne değildir (çünkü işi yapan öznedir)."
     ],
     "solvedExample": {
       "question": "Cümle: 'Usta sanatçı, teknedeki renkli damlaları ince bir bizle yavaşça dağıttı.'\n\nYukarıdaki cümlenin ögelerini (Özne, Belirtili Nesne, Zarf Tamlayıcısı, Yer Tamlayıcısı, Yüklem) eksiksiz olarak ayırıp yazınız:\n• Dağıttı: .................................\n• Usta sanatçı: .................................\n• Teknedeki renkli damlaları: .................................\n• İnce bir bizle: .................................\n• Yavaşça: .................................",
@@ -2319,14 +2365,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "T.8.4.4": {
     "outcomeCode": "T.8.4.4",
-    "topicTitle": "Yazma stratejilerini uygular.",
+    "topicTitle": "Yazma Stratejilerini Uygulama",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Yazma stratejilerini uygular.",
-      "Kavramsal İlke: Yazma stratejileri: Taslak oluşturma.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Yazma Stratejileri:\n• Güdümlü Yazma: Belirlenen kurallar, verilen yönergeler ve kelime sınırları çerçevesinde disiplinli yazma.\n• Serbest Yazma: Bireyin kendi hayal gücünü ve duygularını sınır olmaksızın aktarması.\n• Yaratıcı Yazma: Olayları ve karakterleri alışılmışın dışında, özgün kurgularla buluşturma.\n• Empati Kurarak Yazma: Bir olay veya durum karşısında başka bir kişinin ya da canlının yerine kendini koyarak yazma."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "MEB AÇIK UÇLU SINAV TUZAĞI: Açık uçlu sorularda yönergede verilen şartları (örneğin \"en az 3 cümle\", \"bir deyim kullanarak\") kesinlikle uygulayınız; şartlardan biri eksik olursa tam puan verilmez."
     ],
     "solvedExample": {
       "question": "Tema: 'Gelecek Nesillere Yeşil Bir Dünya Bırakmak'.\n\nBu tema çerçevesinde yazacağınız bir bilgilendirici metin için giriş, gelişme ve sonuç paragraflarında ele alacağınız ana noktaları birer cümleyle taslak halinde yazınız.",
@@ -2340,14 +2384,13 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "T.8.3.15": {
     "outcomeCode": "T.8.3.15",
-    "topicTitle": "Metinle ilgili sorular sorar.",
+    "topicTitle": "Metinle İlgili Nitelikli Soru Oluşturma",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Metinle ilgili sorular sorar.",
-      "Kavramsal İlke: Metinle ilgili soru sorma.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Nitelikli Soru Özellikleri: Metnin ana fikrini, olaylar arasındaki neden-sonuç bağlarını ve yazarın bakış açısını sorgulayan sorulardır.",
+      "Soru Türleri:\n• Doğrudan Bilgi Soruları: \"Yazar bu araştırmayı hangi yılda tamamlamıştır?\"\n• Analiz ve Yorum Soruları: \"Yazarın çevre kirliliğini önlemede bireysel bilinç yerine yasal önlemleri savunmasının gerekçesi nedir?\""
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "PÜF NOKTA: Yazılan sorunun cevabı metinde eksiksiz ve tartışmasız biçimde yer almalıdır. Cevabı tahminlere veya metin dışı varsayımlara dayanan sorular geçersizdir."
     ],
     "solvedExample": {
       "question": "Kütüphanelerin sessizlik kuralı ve sosyal hafıza rolü.\n\nMetinde geçen 'Kütüphaneler bir milletin bin yıllık kültürel hafızasını koruyan ve nesillere aktaran mabetlerdir.' cümlesine yönelik cevabı doğrudan bu cümlede olan 2 nitelikli soru yazınız.",
@@ -2361,14 +2404,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "T.8.3.19": {
     "outcomeCode": "T.8.3.19",
-    "topicTitle": "Metnin içeriğine uygun başlık/başlıklar belirler.",
+    "topicTitle": "Metnin İçeriğine Uygun Başlık Belirleme",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Metnin içeriğine uygun başlık/başlıklar belirler.",
-      "Kavramsal İlke: Metne uygun başlık belirleme.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Başlığın Özellikleri:\n1. Metnin hem konusunu hem de ana fikrini yansıtmalıdır.\n2. Okuyucuda merak uyandırmalı, ilgi çekici ve çarpıcı olmalıdır.\n3. Kısa ve öz olmalıdır (genellikle 1 ila 4 sözcükten oluşur).\n4. Metnin sadece bir bölümünü değil, tamamını kapsamalıdır."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "PÜF NOKTA: Bir başlık çok genel olursa (örneğin sadece \"Doğa\") metnin özel konusunu karşılamaz; çok dar olursa (örneğin sadece \"Karıncaların Yuvası\") metnin bütününü kapsamaz. İkisinin dengesi bulunmalıdır."
     ],
     "solvedExample": {
       "question": "İmece, köy odaları ve Anadolu misafirperverliği metni.\n\nOkuduğunuz metnin içeriğine ve ana fikrine tam uyumlu, biri çarpıcı iki farklı özgün başlık önerisi yazınız.",
@@ -2382,14 +2423,14 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "M.8.1.1.1": {
     "outcomeCode": "M.8.1.1.1",
-    "topicTitle": "SAYILAR VE İŞLEMLER - Çarpanlar ve Katlar",
+    "topicTitle": "Çarpanlar ve Katlar, Asal Çarpanlara Ayırma",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Verilen pozitif tam sayıların pozitif tam sayı çarpanlarını bulur, pozitif tam sayıların pozitif tam sayı çarpanlarını üslü ifadelerin çarpımı şeklinde yazar.",
-      "Kavramsal İlke: Pozitif tam sayının çarpanları ve asal çarpanlar.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Pozitif Çarpan (Bölen): Bir doğal sayıyı kalansız bölen pozitif tam sayılardır (Örn: 12'nin çarpanları: 1, 2, 3, 4, 6, 12).",
+      "Gökkuşağı Yöntemi: 1 × 12 = 12, 2 × 6 = 12, 3 × 4 = 12. En dıştaki ile en içteki çarpanların çarpımı daima sayıyı verir.",
+      "Asal Çarpanlara Ayırma (Bölen Listesi): Sayı sağdaki asal çizgi yardımıyla asal sayılara bölünür (Örn: 360 = 2³ × 3² × 5)."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "PÜF NOKTA: Bir sayının \"çarpan sayısı\" sorulduğunda asal çarpanların üsleri 1 artırılarak birbiriyle çarpılır (Örn: 2³ × 3² ise pozitif bölen sayısı (3+1) × (2+1) = 4 × 3 = 12'dir)."
     ],
     "solvedExample": {
       "question": "Bir manavdaki kasada 72 kg elma bulunmaktadır. Manav bu elmaları her poşette eşit miktarda ve tam sayı olacak şekilde paylaştırmak istiyor.\n\n72 sayısının tüm pozitif tam sayı çarpanlarını küçükten büyüğe yazınız ve asal çarpan algoritması kullanarak 72'yi üslü ifadelerin çarpımı şeklinde gösteriniz.",
@@ -2403,14 +2444,14 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "M.8.1.1.2": {
     "outcomeCode": "M.8.1.1.2",
-    "topicTitle": "İki doğal sayının en büyük ortak bölenini (EBOB) ve en küçük ortak katını (EKOK) hesaplar, ilgili problemleri çözer.",
+    "topicTitle": "EBOB ve EKOK Problemleri",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: İki doğal sayının en büyük ortak bölenini (EBOB) ve en küçük ortak katını (EKOK) hesaplar, ilgili problemleri çözer.",
-      "Kavramsal İlke: EBOB problemi: Dikdörtgen bahçe etrafına ağaç dikme.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "EBOB (En Büyük Ortak Bölen): İki veya daha fazla sayıyı aynı anda bölen en büyük sayıdır. Parçadan bütüne değil; BÜTÜNDEN PARÇAYA (bölme, parçalama, paketleme, eşit aralıklarla ağaç dikme) gidilen problemlerde EBOB kullanılır.",
+      "EKOK (En Küçük Ortak Kat): İki veya daha fazla sayının ortak katlarının en küçüğüdür. PARÇADAN BÜTÜNE (küçük parçaları birleştirip büyük kare yapma, nöbet tutma, zil çalma, turlama) gidilen problemlerde EKOK kullanılır.",
+      "Altın Kural: İki sayının çarpımı, bu iki sayının EBOB'u ile EKOK'unun çarpımına eşittir: a × b = EBOB(a, b) × EKOK(a, b)."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "MEB SINAV TUZAĞI: \"Dikdörtgen tarla etrafına eşit aralıklarla ağaç dikme\" sorusu bir EBOB sorusudur. Ağaç sayısı = Çevre ÷ EBOB formülüyle bulunur. Köşelere de dikileceği unutulmamalıdır!"
     ],
     "solvedExample": {
       "question": "Eni 48 metre, boyu 60 metre olan dikdörtgen şeklindeki bir bahçenin etrafına, köşelere de gelmek şartıyla eşit aralıklarla fidan dikilecektir.\n\na) İki fidan arasındaki mesafe en fazla kaç metre olabilir?\nb) Bu iş için en az kaç fidan gereklidir?",
@@ -2424,14 +2465,14 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "M.8.1.1.3": {
     "outcomeCode": "M.8.1.1.3",
-    "topicTitle": "Verilen iki doğal sayının aralarında asal olup olmadığını belirler.",
+    "topicTitle": "Aralarında Asal Sayılar",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Verilen iki doğal sayının aralarında asal olup olmadığını belirler.",
-      "Kavramsal İlke: Aralarında asal sayılar.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Tanım: 1'den başka hiçbir ortak pozitif böleni olmayan sayılara \"Aralarında Asal Sayılar\" denir.",
+      "Kurallar:\n• Sayıların kendilerinin asal olması ŞART DEĞİLDİR (Örn: 8 ve 9 asal değildir ama aralarında asaldır çünkü tek ortak bölenleri 1'dir).\n• 1 ile bütün pozitif doğal sayılar aralarında asaldır (1 ile 100 aralarında asaldır).\n• Ardışık doğal sayılar daima aralarında asaldır (14 ile 15, 20 ile 21).\n• İki asal sayı daima aralarında asaldır (7 ile 13).",
+      "EBOB ve EKOK Özelliği: Aralarında asal iki sayının EBOB'u daima 1'dir; EKOK'u ise bu iki sayının ÇARPIMINA eşittir (EBOB=1, EKOK=a×b)."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "PÜF NOKTA: \"a ve b aralarında asal sayılar ve a/b = 15/20 ise\" sorusunda önce kesir en sade hale getirilir: 15/20 = 3/4 → a=3, b=4 bulunur."
     ],
     "solvedExample": {
       "question": "İki doğal sayının 1'den başka ortak pozitif böleni yoksa bu sayılar aralarında asaldır.\n\n14 ile 25 sayılarının pozitif bölenlerini yazarak bu iki sayının aralarında asal olup olmadığını gerekçesiyle açıklayınız.",
@@ -2445,14 +2486,15 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "M.8.1.2.1": {
     "outcomeCode": "M.8.1.2.1",
-    "topicTitle": "Üslü İfadeler - Üslü İfadeler",
+    "topicTitle": "Tam Sayıların Negatif Kuvvetleri",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Tam sayıların, tam sayı kuvvetlerini hesaplar.",
-      "Kavramsal İlke: Negatif üs ve tam sayı kuvvetleri.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Negatif Üs Kuralı: Negatif üs, sayıyı takla attırır (ters çevirir), sayının işaretini eksi yapmaz! a⁻ⁿ = 1 / aⁿ.",
+      "Örnekler: 2⁻³ = 1 / 2³ = 1/8; 5⁻² = 1 / 5² = 1/25.",
+      "Rasyonel Sayının Negatif Üssü: Kesir ters çevrilir ve üs pozitif yapılır: (2/3)⁻² = (3/2)² = 9/4.",
+      "İşaret Kuralı: Negatif bir sayının parantez dışındaki ÇİFT kuvveti pozitiftir: (-2)⁴ = +16. Parantez dışındaki TEK kuvveti negatiftir: (-2)³ = -8."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "MEB TUZAĞI: -3² ile (-3)² aynı şey DEĞİLDİR! -3² = -9 (üs sadece 3'e aittir); (-3)² = +9 (üs parantezin dışındadır)."
     ],
     "solvedExample": {
       "question": "Bir tam sayının negatif kuvveti o sayının çarpma işlemine göre tersinin pozitif kuvvetine eşittir: a^(-n) = 1 / a^n.\n\nAşağıdaki üslü ifadelerin sayısal değerlerini rasyonel sayı veya tam sayı olarak hesaplayınız:\na) 2^(-4) = ?\nb) (-3)^(-2) = ?\nc) (-5)^3 = ?",
@@ -2466,14 +2508,14 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "M.8.1.2.2": {
     "outcomeCode": "M.8.1.2.2",
-    "topicTitle": "Üslü ifadelerle ilgili temel kuralları anlar, birbirine denk ifadeler oluşturur.",
+    "topicTitle": "Üslü İfadelerde Çarpma ve Bölme İşlemleri",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Üslü ifadelerle ilgili temel kuralları anlar, birbirine denk ifadeler oluşturur.",
-      "Kavramsal İlke: Üslü ifadelerde çarpma ve bölme kuralları.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Üssün Üssü: (aⁿ)ᵐ = aⁿˣᵐ (Üsler birbiriyle çarpılır: (2³)² = 2⁶ = 64).",
+      "Çarpma İşlemi:\n• Tabanlar eşitse üsler toplanır: aⁿ × aᵐ = aⁿ⁺ᵐ (2³ × 2⁵ = 2⁸).\n• Üsler eşitse tabanlar çarpılır: aⁿ × bⁿ = (a × b)ⁿ (2³ × 5³ = 10³ = 1000).",
+      "Bölme İşlemi:\n• Tabanlar eşitse payın üssünden paydanın üssü çıkarılır: aⁿ ÷ aᵐ = aⁿ⁻ᵐ.\n• Üsler eşitse tabanlar bölünür: aⁿ ÷ bⁿ = (a ÷ b)ⁿ."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "PÜF NOKTA: \"2¹⁰ sayısının yarısı kaçtır?\" sorusunun cevabı 2⁵ DEĞİLDİR! Yarısı demek 2'ye bölmek demektir: 2¹⁰ ÷ 2¹ = 2⁹ eder!"
     ],
     "solvedExample": {
       "question": "İşlem: (8⁴ × 4⁵) / 16³\n\nVerilen işlemin sonucunu 2'nin bir kuvveti şeklinde işlem adımlarını göstererek hesaplayınız.",
@@ -2487,14 +2529,14 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "M.8.1.2.3": {
     "outcomeCode": "M.8.1.2.3",
-    "topicTitle": "Sayıların ondalık gösterimlerini 10’un tam sayı kuvvetlerini kullanarak çözümler.",
+    "topicTitle": "Ondalık Gösterimlerin 10'un Kuvvetleriyle Çözümlenmesi",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Sayıların ondalık gösterimlerini 10’un tam sayı kuvvetlerini kullanarak çözümler.",
-      "Kavramsal İlke: Ondalık gösterimlerin 10'un kuvvetleriyle çözümlenmesi.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Basamak Değerleri: Virgülün solundaki tam kısım: 10⁰ (birler), 10¹ (onlar), 10² (yüzler)... Virgülün sağındaki kesir kısım: 10⁻¹ (onda birler), 10⁻² (yüzde birler), 10⁻³ (binde birler)...",
+      "Örnek: 43,205 = (4 × 10¹) + (3 × 10⁰) + (2 × 10⁻¹) + (5 × 10⁻³).",
+      "Eksik Basamaklara Dikkat: Çözümlemede verilmeyen 10'un kuvvetinin katsayısı SIFIR (0)'dır."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "TUZAK: Çözümlemede 10⁻² terimi yoksa o basamağa 0 yazılması unutulmamalıdır."
     ],
     "solvedExample": {
       "question": "Sayı: 345,608\n\n345,608 sayısını 10'un tam sayı kuvvetlerini kullanarak çözümleyiniz.",
@@ -2508,14 +2550,13 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "M.8.1.2.4": {
     "outcomeCode": "M.8.1.2.4",
-    "topicTitle": "Verilen bir sayıyı 10’un farklı tam sayı kuvvetlerini kullanarak ifade eder.",
+    "topicTitle": "Çok Büyük ve Çok Küçük Sayılar",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Verilen bir sayıyı 10’un farklı tam sayı kuvvetlerini kullanarak ifade eder.",
-      "Kavramsal İlke: 10'un farklı tam sayı kuvvetleriyle ifade etme.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Virgül Kaydırma Kuralı: Virgül SAĞA kaydıkça sayı büyür, 10'un üssü KÜÇÜLÜR. Virgül SOLA kaydıkça sayı küçülür, 10'un üssü BÜYÜR.",
+      "Denge İlkesi: Sayı × 10ⁿ ifadesinde sayı kaç basamak büyürse üs o kadar azalır (Örn: 0,004 × 10⁸ = 4 × 10⁵)."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "PÜF NOKTA: Virgülü sağa kaydırırken 10'un kuvvetini azaltmayı; sola kaydırırken artırmayı unutmayınız."
     ],
     "solvedExample": {
       "question": "Eşitlik: 0,00045 = 45 × 10^x = 4,5 × 10^y\n\nYukarıda verilen eşitliklerdeki x ve y tam sayılarının değerlerini bularak (x + y) toplamını hesaplayınız.",
@@ -2529,14 +2570,14 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "M.8.1.2.5": {
     "outcomeCode": "M.8.1.2.5",
-    "topicTitle": "Çok büyük ve çok küçük sayıları bilimsel gösterimle ifade eder ve karşılaştırır.",
+    "topicTitle": "Bilimsel Gösterim",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Çok büyük ve çok küçük sayıları bilimsel gösterimle ifade eder ve karşılaştırır.",
-      "Kavramsal İlke: Bilimsel gösterim.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Tanım: a × 10ⁿ gösterimidir. Burada \"a\" katsayısı mutlak değerce 1 ile 10 arasında olmalıdır (1 ≤ |a| < 10) ve n bir tam sayıdır.",
+      "Katsayı Şartı: Katsayı 1 olabilir fakat 10 OLAMAZ! (Örn: 1 × 10⁷ bilimseldir; 10 × 10⁶ bilimsel DEĞİLDİR; 0,8 × 10⁴ bilimsel DEĞİLDİR).",
+      "Örnekler: \n• 45.000.000 = 4,5 × 10⁷ (Bilimsel gösterim)\n• 0,0000082 = 8,2 × 10⁻⁶ (Bilimsel gösterim)"
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "MEB'İN EN SEVDİĞİ LGS TUZAĞI: Katsayı 10'dan küçük olmak zorundadır. \"12 × 10⁵\" ifadesi bilimsel gösterim değildir; doğrusu \"1,2 × 10⁶\"dır."
     ],
     "solvedExample": {
       "question": "Işık boşlukta 1 saniyede yaklaşık 300 000 km yol almaktadır. 1 km = 1000 m olduğuna göre ışık 1 saniyede 300 000 000 metre yol alır.\n\nIşığın 1 saniyede aldığı bu yolun metre cinsinden bilimsel gösterimini yazınız.",
@@ -2550,14 +2591,14 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "M.8.1.3.1": {
     "outcomeCode": "M.8.1.3.1",
-    "topicTitle": "Kareköklü İfadeler - Kareköklü İfadeler",
+    "topicTitle": "Tam Kare Sayılar ve Karekök Kavramı",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Tamkare pozitif tam sayılarla bu sayıların karekökleri arasındaki ilişkiyi belirler.",
-      "Kavramsal İlke: Tam kare sayılar ve karekök ilişkisi.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Tam Kare Sayılar: Bir tam sayının karesi olan pozitif sayılardır: 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, 361, 400...",
+      "Karekök Tanımı: Alanı bilinen bir karenin 1 kenar uzunluğunu bulma işlemidir. Sembolü √'tir (Örn: Alanı 64 cm² olan karenin bir kenarı √64 = 8 cm'dir).",
+      "Karekök içi hiçbir zaman negatif olamaz: √-16 tanımsızdır."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "PÜF NOKTA: √0 = 0 ve √1 = 1'dir."
     ],
     "solvedExample": {
       "question": "Alanı 196 cm² olan kare şeklindeki bir kartonun bir kenar uzunluğu cetvelle ölçülecektir.\n\nBu karenin bir kenar uzunluğunun kaç cm olduğunu karekök alma işlemiyle gösteriniz ve çevresini hesaplayınız.",
@@ -2571,14 +2612,14 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "M.8.1.3.2": {
     "outcomeCode": "M.8.1.3.2",
-    "topicTitle": "Tam kare olmayan kareköklü bir sayının hangi iki doğal sayı arasında olduğunu belirler.",
+    "topicTitle": "Tam Kare Olmayan Sayıların Karekökünü Tahmin Etme",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Tam kare olmayan kareköklü bir sayının hangi iki doğal sayı arasında olduğunu belirler.",
-      "Kavramsal İlke: Tam kare olmayan sayının ardışık iki doğal sayı arasında belirlenmesi.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Tahmin Kuralı: Sayıdan önceki ve sonraki en yakın iki tam kare sayı belirlenir.",
+      "Örnek: √40 hangi iki ardışık tam sayı arasındadır? \n36 < 40 < 49 olduğundan √36 < √40 < √49 → 6 ile 7 arasındadır.",
+      "Hangisine Daha Yakın? 40 sayısı 36'ya 4 birim, 49'a 9 birim uzaklıktadır. 36'ya daha yakın olduğu için √40 yaklaşık olarak 6,3 civarındadır (6'ya daha yakındır)."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "PÜF NOKTA: Sayı doğrusunda yer gösterirken hangi tam kareye daha yakın olduğunu kontrol ediniz."
     ],
     "solvedExample": {
       "question": "Karekök değeri: √75\n\n√75 sayısının hangi iki ardışık tam sayı arasında olduğunu bulunuz ve bu sayılardan hangisine daha yakın olduğunu işlemle gösteriniz.",
@@ -2592,14 +2633,14 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "M.8.1.3.3": {
     "outcomeCode": "M.8.1.3.3",
-    "topicTitle": "Kareköklü bir ifadeyi a√b şeklinde yazar ve a√b şeklindeki ifadede katsayıyı kök içine alır.",
+    "topicTitle": "Kareköklü Sayıları a√b Biçiminde Yazma ve Katsayıyı Kök İçine Alma",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Kareköklü bir ifadeyi a√b şeklinde yazar ve a√b şeklindeki ifadede katsayıyı kök içine alır.",
-      "Kavramsal İlke: Kareköklü ifadeyi a√b şeklinde yazma ve katsayıyı içeri alma.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "a√b Biçiminde Yazma: Kök içindeki sayı biri tam kare olacak şekilde iki sayının çarpımı olarak yazılır ve tam kare olan sayı kök dışına çıkarılır (Örn: √72 = √(36 × 2) = 6√2).",
+      "Katsayıyı Kök İçine Alma: Kök dışındaki katsayı karesi alınarak kök içindeki sayıyla çarpılır: a√b = √(a² × b) (Örn: 3√5 = √(3² × 5) = √(9 × 5) = √45).",
+      "Karşılaştırma Pratiği: Kareköklü sayılarda büyüklük-küçüklük karşılaştırması yapılırken tüm katsayılar kök içine alınır; kök içi büyük olan sayı daha büyüktür."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "TUZAK: Katsayı kök içine girerken karesi alınarak girer! 2√3 = √(2 × 3) DEĞİL; √(2² × 3) = √12'dir."
     ],
     "solvedExample": {
       "question": "İki kareköklü ifade: A = √108 ve B = 5√3\n\na) A = √108 sayısını a√b şeklinde en sade biçimde yazınız.\nb) B = 5√3 sayısında kök dışındaki katsayıyı kök içine alarak tek bir karekök olarak yazınız.",
@@ -2613,14 +2654,14 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "F.8.1.1.1": {
     "outcomeCode": "F.8.1.1.1",
-    "topicTitle": "1.ÜNİTE: MEVSİMLER VE İKLİM - 8.1.1. Mevsimlerin Oluşumu",
+    "topicTitle": "Mevsimlerin Oluşumu ve Eksen Eğikliği",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Mevsimlerin oluşumuna yönelik tahminlerde bulunur.",
-      "Kavramsal İlke: Mevsimlerin oluşumu ve eksen eğikliği.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Mevsimlerin Oluşumunun 2 Temel Nedeni:\n1) Dünya'nın dönme ekseninin 23° 27' (yaklaşık 23,5 derece) EĞİK olması.\n2) Dünya'nın Güneş etrafında DOLANMA hareketi yapması.",
+      "Güneş Işınlarının Geliş Açısı: Işınlar dik veya dike yakın açıyla (büyük açıyla) gelirse birim yüzeye düşen enerji miktarı fazla olur → YAZ mevsimi yaşanır. Eğik açıyla (küçük açıyla) gelirse enerji geniş alana yayılır → KIŞ mevsimi yaşanır.",
+      "Önemli Tarihler (Kuzey Yarım Küre için):\n• 21 Haziran (Yaz Gün Dönümü): Güneş Yengeç Dönencesi'ne dik gelir. KYK'de en uzun gündüz, en kısa gece yaşanır.\n• 21 Aralık (Kış Gün Dönümü): Güneş Oğlak Dönencesi'ne dik gelir. KYK'de en uzun gece, en kısa gündüz yaşanır.\n• 21 Mart ve 23 Eylül (Ekinoks): Güneş Ekvator'a dik gelir. Tüm Dünya'da 12 saat gece, 12 saat gündüz eşitliği yaşanır."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "MEB'İN 1 NUMARALI TUZAĞI: \"Dünya'nın Güneş'e olan mesafesi mevsimlerin oluşumunda etkili midir?\" KESİNLİKLE HAYIR! Dünya'nın Güneş'e en yakın olduğu tarih 3 Ocak'tır (biz kış yaşarız); en uzak olduğu tarih 4 Temmuz'dur (biz yaz yaşarız). Mesafe mevsim yapmaz, geliş açısı yapar!"
     ],
     "solvedExample": {
       "question": "Dünya'nın dönme ekseni, Güneş etrafındaki dolanma düzlemine (ekliptik) 23° 27' (yaklaşık 23,5 derece) eğiktir.\n\nDünya'da aynı anda Kuzey Yarım Küre'de yaz mevsimi yaşanırken Güney Yarım Küre'de kış mevsimi yaşanmasının 2 temel astronomik nedenini yazınız.",
@@ -2634,14 +2675,16 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "F.8.2.1.1": {
     "outcomeCode": "F.8.2.1.1",
-    "topicTitle": "2.ÜNİTE: DNA VE GENETİK KOD - 8.2.1. DNA ve Genetik Kod",
+    "topicTitle": "İklim ve Hava Hareketleri, Rüzgâr Oluşumu",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Nükleotid, gen, DNA ve kromozom kavramlarını açıklayarak bu kavramlar arasında ilişki kurar.",
-      "Kavramsal İlke: Kromozom, DNA, gen ve nükleotid ilişkisi.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "İklim: Geniş bir bölgede, uzun yıllar boyunca (35-40 yıl) değişmeyen ortalama hava şartlarıdır. Kesindir, bilimi \"Klimatoloji\", uzmanı \"Klimatolog\"dur.",
+      "Hava Durumu: Dar bir alanda, kısa süre içinde (günlük/saatlik) değişen değişken atmosfer olaylarıdır. Tahminidir, bilimi \"Meteoroloji\", uzmanı \"Meteorolog\"dur.",
+      "Rüzgârın Yönü: Rüzgâr daima YÜKSEK BASINÇ (soğuk) alanından ALÇAK BASINÇ (sıcak) alanına doğru yatay yönde eser.",
+      "Alçak Basınç (Sıcak Bölge): Hava sıcaktır, ısınan hava genleşip yükselir (yükselici hava hareketi), bulut oluşur, yağış ihtimali yüksektir.",
+      "Yüksek Basınç (Soğuk Bölge): Hava soğuktur, soğuyan hava yoğunlaşıp alçalır (alçalıcı hava hareketi), hava açıktır ve bulut oluşmaz."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "MEB TUZAĞI: Alçak basınç alanında \"alçalıcı\" hava değil, \"YÜKSELİCİ\" hava hareketi görülür! Yüksek basınç alanında ise \"ALÇALICI\" hava hareketi görülür."
     ],
     "solvedExample": {
       "question": "Kalıtsal yapılar karmaşıktan basite (büyükten küçüğe) doğru sıralanabilir.\n\nKromozom, nükleotid, gen ve DNA kavramlarını karmaşıktan basite (büyükten küçüğe) doğru sıralayınız ve 'gen' kavramının görevini açıklayınız.",
@@ -2655,14 +2698,16 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "F.8.2.1.2": {
     "outcomeCode": "F.8.2.1.2",
-    "topicTitle": "DNA’nın yapısını model üzerinde gösterir.",
+    "topicTitle": "DNA ve Genetik Kodun Yapısı",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: DNA’nın yapısını model üzerinde gösterir.",
-      "Kavramsal İlke: DNA çift sarmal modeli ve baz eşleşmesi.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Büyüklük Hiyerarşisi (Büyükten Küçüğe): Kromozom > DNA > Gen > Nükleotid (Kodlama: KeDiGeNi).",
+      "Nükleotidin Yapısı: 1 Nükleotid = 1 Fosfat (P) + 1 Deoksiriboz Şekeri (D) + 1 Organik Baz.",
+      "Baz Eşleşme Kuralı: Adenin (A) karşısına daima Timin (T) gelir [A = T, ikili bağ]. Guanin (G) karşısına daima Sitozin (C) gelir [G ≡ C, üçlü bağ].",
+      "Eşitlikler: Toplam Nükleotid Sayısı = Toplam Fosfat Sayısı = Toplam Şeker Sayısı = Toplam Organik Baz Sayısı.",
+      "Kalıtsal Çeşitliliğin Sebebi: Tüm canlılarda 4 çeşit nükleotid olmasına rağmen canlıların birbirinden farklı olmasının sebebi nükleotidlerin DİZİLİŞ SIRASI ve SAYISININ farklı olmasıdır."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "TUZAK: Nükleotidler isimlerini içerdikleri organik bazdan alırlar (Örn: Adenin bazı içeren nükleotidin adı \"Adenin Nükleotidi\"dir)."
     ],
     "solvedExample": {
       "question": "DNA çift zincirli ve sarmal bir yapıya sahiptir. Karşılıklı zincirlerdeki nükleotidler hidrojen bağlarıyla birbirine bağlanır.\n\nDNA molekülünde organik bazların karşılıklı eşleşme kuralını ve aralarındaki hidrojen bağı sayılarını yazınız.",
@@ -2676,14 +2721,14 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "F.8.2.1.3": {
     "outcomeCode": "F.8.2.1.3",
-    "topicTitle": "DNA’nın kendini nasıl eşlediğini ifade eder.",
+    "topicTitle": "DNA'nın Kendini Eşlemesi (Replikasyon)",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: DNA’nın kendini nasıl eşlediğini ifade eder.",
-      "Kavramsal İlke: DNA'nın kendini eşleme aşamaları.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Eşleme Amacı: Hücre bölünmesi öncesinde kalıtsal bilginin yeni oluşacak yavru hücrelere eksiksiz aktarılmasını sağlamak.",
+      "Eşleme Aşamaları: \n1. DNA zinciri bir fermuar gibi ortadan ikiye açılır.\n2. Sitoplazmadaki serbest nükleotidler çekirdeğe girer.\n3. Açılan eski zincirlerin karşısına kurala uygun (A-T, G-C) yeni nükleotidler yerleşir.\n4. Sonuçta bir zinciri eski, bir zinciri yeni olan BİRBİRİNİN TIPATIP AYNISI İKİ YENİ DNA molekülü oluşur.",
+      "Hataların Onarımı: Tek zincirdeki yanlış baz eşleşmesi veya tek zincirdeki nükleotid eksikliği enzimlerle ONARILABİLİR. Ancak karşılıklı her iki zincirdeki nükleotidler boş kalmışsa bu hasar ONARILAMAZ (Mutasyon kalıcı olur)."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "PÜF NOKTA: Karşılıklı iki zincirin aynı bölgesinde nükleotid yoksa bu hasar onarılamaz mutasyona yol açar."
     ],
     "solvedExample": {
       "question": "Hücre bölünmesi öncesinde DNA miktarını iki katına çıkarmak için kendini eşler (replikasyon).\n\nDNA'nın kendini eşlemesi sürecinde gerçekleşen temel basamakları sırasıyla yazınız.",
@@ -2697,14 +2742,14 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "F.8.2.2.2": {
     "outcomeCode": "F.8.2.2.2",
-    "topicTitle": "Tek karakter çaprazlamaları ile ilgili problemler çözerek sonuçlar hakkında yorum yapar.",
+    "topicTitle": "Kalıtsal Hastalıklar ve Akraba Evliliği",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Tek karakter çaprazlamaları ile ilgili problemler çözerek sonuçlar hakkında yorum yapar.",
-      "Kavramsal İlke: Mendel genetiği: Tohum rengi çaprazlaması.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Kalıtsal Hastalıkların Taşınması: Orak hücreli anemi, kistik fibrozis, fenilketonüri gibi genetik hastalıkların büyük çoğunluğu ÇEKİNİK (resesif) genlerle taşınır.",
+      "Hasta Olma Şartı: Bir çocuğun hasta doğabilmesi için hem annesinden hem babasından çekinik geni alması (aa genotipine sahip olması) gerekir.",
+      "Akraba Evliliği Riski: Aralarında kan bağı olan bireylerin aynı çekinik zararlı geni taşıma olasılığı çok daha yüksektir. Bu nedenle akraba evliliği yapan ailelerde genetik hastalıklı çocuk doğma riski toplum ortalamasına göre kat kat fazladır."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "MEB TUZAĞI: \"Akraba evliliği yapan herkesin çocuğu kesinlikle hasta doğar\" ifadesi yanlıştır. Taşıyıcı anne-babanın (Aa × Aa) hasta çocuk doğurma olasılığı her doğumda %25'tir."
     ],
     "solvedExample": {
       "question": "Bezelyelerde sarı tohum geni (S), yeşil tohum genine (s) baskındır. Homozigot (saf) sarı tohumlu bir bezelye ile yeşil tohumlu bir bezelye çaprazlanıyor.\n\nBu çaprazlama sonucunda oluşacak 1. kuşağın (F1):\na) Genotip oranlarını,\nb) Fenotip oranlarını Punnett karesi veya çaprazlama basamaklarıyla bulunuz.",
@@ -2718,14 +2763,17 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "F.8.2.2.1": {
     "outcomeCode": "F.8.2.2.1",
-    "topicTitle": "8.2.2. Kalıtım - 8.2.2. Kalıtım",
+    "topicTitle": "Kalıtımın Temel İlkeleri ve Çaprazlamalar",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Kalıtım ile ilgili kavramları tanımlar.",
-      "Kavramsal İlke: Genetik kavramlar: Genotip ve Fenotip.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Baskın (Dominant) Gen: Etkisini her durumda fenotipte gösteren gendir. Büyük harfle gösterilir (A, U, S).",
+      "Çekinik (Resesif) Gen: Baskın genin olmadığı durumda (ancak homozigot iken) etkisini gösterebilen gendir. Küçük harfle gösterilir (a, u, s).",
+      "Homozigot (Saf/Arı Döl): Anne ve babadan gelen alellerin aynı olmasıdır (AA veya aa).",
+      "Heterozigot (Melez Döl): Anne ve babadan gelen alellerin farklı olmasıdır (Aa).",
+      "Genotip: Canlının sahip olduğu genetik yapı/harf kombinasyonudur (AA, Aa, aa).",
+      "Fenotip: Genotipin ve çevrenin etkisiyle ortaya çıkan dış görünüştür (Uzun boy, mor çiçek, sarı tohum)."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "PÜF NOKTA: İki melez bireyin çaprazlanmasında (Aa × Aa) fenotip oranı %75 Baskın, %25 Çekiniktir (3:1). Genotip oranı ise %25 AA, %50 Aa, %25 aa'dır (1:2:1)."
     ],
     "solvedExample": {
       "question": "Kalıtımda bir canlının sahip olduğu genlerin tamamına genotip, genotip ve çevrenin etkisiyle dışarıya yansıyan özelliklerine fenotip denir.\n\n'Homozigot baskın', 'Heterozigot baskın' ve 'Homozigot çekinik' genotip terimlerini 'A' ve 'a' harflerini kullanarak yazınız.",
@@ -2886,14 +2934,14 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "DKAB.8.1.1": {
     "outcomeCode": "DKAB.8.1.1",
-    "topicTitle": "KADER İNANCI - Kader ve Kaza İnancı",
+    "topicTitle": "Kader ve Kaza İnancı",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: 8.1.1. Kader ve kaza inancını ayet ve hadislerle açıklar.",
-      "Kavramsal İlke: Kader ve kaza kavramları ve evrendeki ölçü.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Kader: Allah'ın her şeyi önceden bilmesi, bir ölçü, nizam ve plana göre takdir edip belirlemesidir (Planlama aşamasıdır).",
+      "Kaza: Allah tarafından takdir edilen olayların zamanı ve yeri geldiğinde gerçekleşmesi, meydana gelmesidir (Gerçekleşme aşamasıdır).",
+      "Örnek Ayrımı: \"Su 100°C'de kaynar\" veya \"Yer çekimi vardır\" kuralları KADER'dir. \"Isınan çaydanlıktaki suyun 100°C'ye ulaşıp kaynaması\" KAZA'dır."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "PÜF NOKTA: Cümlede kural, ölçü, kanun, takdir varsa KADER; olay yaşanmış, bitmiş, gerçekleşmiş ise KAZA'dır."
     ],
     "solvedExample": {
       "question": "Ayet Meali: 'Şüphesiz biz her şeyi bir ölçüye (kadere) göre yarattık.' (Kamer suresi, 49. ayet)\n\nKader ve kaza kavramlarını tanımlayarak, verilen ayetten hareketle evrendeki düzen ve kader inancı arasındaki ilişkiyi açıklayınız.",
@@ -2907,14 +2955,14 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "DKAB.8.1.2": {
     "outcomeCode": "DKAB.8.1.2",
-    "topicTitle": "İnsanın İradesi ve Kader - İnsanın İradesi ve Kader",
+    "topicTitle": "Evrensel Yasalar (Sünnetullah)",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: 8.1.2. İnsanın ilmi, iradesi, sorumluluğu ile kader arasında ilişki kurar.",
-      "Kavramsal İlke: Külli irade ve cüzi irade kavramları.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Fiziksel Yasalar: Maddenin yapısı, hareketi ve enerjisiyle ilgili evrensel yasalardır. Deney ve gözlemle ispatlanır (Yer çekimi, suyun kaldırma kuvveti, ısınan metallerin genleşmesi, gece-gündüz oluşumu).",
+      "Biyolojik Yasalar: Canlıların doğması, gelişmesi, üremesi ve anatomik özellikleriyle ilgili yasalardır (Kuşların kanat yapısı, fotosentez, canlıların kış uykusu, DNA yapısı).",
+      "Toplumsal Yasalar: İnsanlar arasındaki ilişkileri, ahlakı, adaleti ve toplumların yükseliş-çöküş kurallarını belirleyen yasalardır (Adaletin olmadığı toplumların çökmesi, gelir dağılımı eşitsizliğinin huzursuzluk doğurması, kul hakkı)."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "MEB'İN EN SEVDİĞİ AYET SORUSU: \"Gemilerin denizde akıp gitmesi\" FİZİKSEL yasadır (suyun kaldırma kuvveti); \"Sizi bir erkekle bir dişiden yarattık\" BİYOLOJİK yasadır; \"Her toplumun bir eceli vardır\" TOPLUMSAL yasadır."
     ],
     "solvedExample": {
       "question": "İslam inancına göre insanın iradesi ile Allah'ın mutlak iradesi arasında temel bir sınır vardır.\n\n'Külli irade' ile 'Cüzi irade' kavramlarını açıklayınız ve insanın cüzi iradesiyle seçtiği fiillerden neden sorumlu olduğunu belirtiniz.",
@@ -2928,14 +2976,15 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "DKAB.8.1.3": {
     "outcomeCode": "DKAB.8.1.3",
-    "topicTitle": "Kaderle İlgili Kavramlar - Kaderle İlgili Kavramlar",
+    "topicTitle": "Kaderle İlgili Kavramlar (Tevekkül, Ecel, Rızık, Sağlık)",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: 8.1.3. Kaza ve kader ile ilgili kavramları analiz eder.",
-      "Kavramsal İlke: Kaderle ilgili kavramlar: Tevekkül.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Tevekkül: Bir iş için gereken tüm maddi ve manevi çabayı gösterip, tedbirleri aldıktan sonra sonucu Allah'a bırakıp güvenmektir (Örn: Çiftçinin tarlayı sürüp suladıktan sonra bereket için dua etmesi).",
+      "Ömür ve Ecel: Ömür insanın doğumundan ölümüne kadar geçen yaşam süresidir; Ecel ise bu sürenin bittiği ölüm anıdır.",
+      "Rızık: Allah'ın canlıların yaşamını sürdürmesi için bahşettiği her türlü helal nimet, gıda ve kazançtır.",
+      "Yanlış Kader Anlayışı (Fatalizm): \"Kaderim böyleymiş, ne yapsam boş\" diyerek tembellik yapmak, tedbir almamak İslam kader inancıyla bağdaşmaz. İnsan irade ve akıl sahibi olup eylemlerinden sorumludur."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "MEB SINAV TUZAĞI: \"Deveni bağla sonra tevekkül et\" hadisi tedbir almadan tevekkül olamayacağını gösterir. Tedbirsizlik tevekkül değil, sorumsuzluktur."
     ],
     "solvedExample": {
       "question": "Bir adam Hz. Peygamber'e gelerek: 'Ey Allah'ın Resulü! Devemi bağlayıp da mı tevekkül edeyim, yoksa bağlamadan mı?' diye sormuştur.\n\nHz. Peygamber'in bu adama verdiği cevabı yazınız ve İslam'da doğru tevekkül anlayışının aşamalarını açıklayınız.",
@@ -2949,14 +2998,13 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "DKAB.8.1.4": {
     "outcomeCode": "DKAB.8.1.4",
-    "topicTitle": "8.1.4. Toplumda kader ve kaza ile ilgili yaygın olan yanlış anlayışları sorgular",
+    "topicTitle": "İnsanın İradesi ve Kader (Küllî ve Cüz'î İrade)",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: 8.1.4. Toplumda kader ve kaza ile ilgili yaygın olan yanlış anlayışları sorgular",
-      "Kavramsal İlke: Toplumdaki yanlış kader anlayışları: 'Kader mahkumu'.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Küllî İrade: Yüce Allah'ın mutlak, sınırsız ve her şeyi kuşatan iradesidir. İnsanın bu alanda seçme hakkı yoktur (Anne-baba, doğum yeri/tarihi, ırk, cinsiyet, kalp atışı). İnsan bunlardan sorumlu DEĞİLDİR.",
+      "Cüz'î İrade: Allah'ın insana verdiği sınırlı seçme özgürlüğüdür. İnsan aklıyla iyiyi veya kötüyü seçebilir (İbadet etmek, dürüst olmak, yalan söylemek, çalışmak). İnsan bu seçimlerinden tamamen SORUMLUDUR."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "PÜF NOKTA: İnsan sadece \"Cüz'î iradesiyle\" yaptığı bilinçli eylemlerden hesaba çekilecektir."
     ],
     "solvedExample": {
       "question": "Kendi isteğiyle suç işleyip cezaevine düşen birinin 'Ben ne yapayım, kader mahkumuyum!' diyerek suçu kadere yüklemesi.\n\nBu tutumun İslam'ın irade ve sorumluluk inancıyla neden çeliştiğini gerekçeleriyle sorgulayınız.",
@@ -2970,14 +3018,15 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "DKAB.8.1.5": {
     "outcomeCode": "DKAB.8.1.5",
-    "topicTitle": "Bir Peygamber Tanıyorum: Hz. Musa (a.s.) - Bir Peygamber Tanıyorum: Hz. Musa (a.s.)",
+    "topicTitle": "Hz. Musa'nın (as) Hayatı ve Mücadelesi",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: 8.1.5. Hz. Musa’nın (a.s.) hayatını ana hatlarıyla tanır.",
-      "Kavramsal İlke: Hz. Musa'nın (a.s.) hayatı ve Firavun ile mücadelesi.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Doğumu ve Saray: Firavun'un İsrailoğulları erkek çocuklarını öldürttüğü dönemde annesi tarafından bir sandık içinde Nil Nehri'ne bırakılmış ve Firavun'un sarayında büyütülmüştür.",
+      "Mucizeleri: Firavun'a karşı gösterdiği asanın yılana dönüşmesi ve elinin bembeyaz parlaması (Yed-i Beyzâ) mucizeleri.",
+      "Kızıldeniz'in Yarılması: Firavun'un ordusu karşısında Kızıldeniz'in asasıyla ikiye yarılması ve inananların kurtulması.",
+      "Kardeşi: Kendisine yardımcı ve peygamber olarak verilen kardeşi Hz. Harun'dur."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "PÜF NOKTA: Hz. Musa tevhid mücadelesinde cesaret, tevekkül ve adaletin sembolüdür."
     ],
     "solvedExample": {
       "question": "Hz. Musa, Mısır'da İsrailoğullarını köleleştiren ve ilahlık taslayan Firavun'a karşı hak dini tebliğ etmekle görevlendirilmiştir.\n\nYüce Allah'ın Hz. Musa ve kardeşi Hz. Harun'u Firavun'a gönderirken 'Ona yumuşak söz (kavl-i leyyin) söyleyin, belki öğüt alır' buyurmasının tebliğ ahlakı açısından önemini açıklayınız.",
@@ -2991,14 +3040,15 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "DKAB.8.1.6": {
     "outcomeCode": "DKAB.8.1.6",
-    "topicTitle": "Bir Ayet Tanıyorum: Ayetelkürsi ve Anlamı - Bir Ayet Tanıyorum: Ayetelkürsi ve Anlamı",
+    "topicTitle": "Ayet el-Kürsi ve Anlamı (Bakara Suresi, 255. Ayet)",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: 8.1.6. Ayet el-Kürsi’yi okur, anlamını söyler.",
-      "Kavramsal İlke: Ayet el-Kürsi'nin mesajı ve Allah'ın sıfatları.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Ayet el-Kürsi: Bakara suresinin 255. ayetidir. İsmini ayette geçen ve Allah'ın mutlak hükümranlığını simgeleyen \"Kürsi\" kelimesinden alır.",
+      "El-Hayy: Daima diri olan, hayatın kaynağı olan, ezelî ve ebedî varlık.",
+      "El-Kayyûm: Bütün varlıkları yaratan, idare eden, ayakta tutan ve gözeten.",
+      "Uyku ve Uyuklama Yoktur: O'nu ne bir uyuklama ne de bir uyku tutar. Göklerde ve yerde ne varsa hepsi O'nundur."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "PÜF NOKTA: Ayet el-Kürsi bir sure değil, Bakara suresinin 255. AYETİDİR. Sınavlarda \"El-Hayy\" ve \"El-Kayyûm\" sıfatları sorulur."
     ],
     "solvedExample": {
       "question": "Ayet el-Kürsi (Bakara suresi 255. ayet), tevhid inancının ve Allah'ın yüce kudretinin en kapsamlı anlatıldığı ayettir.\n\nAyet el-Kürsi'de geçen 'el-Hayy' ve 'el-Kayyûm' esmalarının anlamlarını yazarak bu ayetin ana mesajını açıklayınız.",
@@ -3012,14 +3062,15 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "DKAB.8.2.1": {
     "outcomeCode": "DKAB.8.2.1",
-    "topicTitle": "ZEKÂT VE SADAKA - İslam’ın Paylaşma ve Yardımlaşmaya Verdiği Önem",
+    "topicTitle": "Zekât ve Sadaka İbadeti",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: 8.2.1. İslam’ın paylaşma ve yardımlaşmaya verdiği önemi ayet ve hadisler ışığında yorumlar.",
-      "Kavramsal İlke: İslam'da paylaşma ve zekât ibadeti.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Zekât: Dinen zengin sayılan Müslümanların yılda 1 kez mallarının belirli bir oranını ihtiyaç sahiplerine vermesidir (FARZDIR).",
+      "Nisap Miktarı: Zenginlik ölçüsüdür (Temel ihtiyaçlar ve borçlar çıktıktan sonra 80,18 gram altın veya karşılığı para).",
+      "Zekât Oranları:\n• Altın, gümüş, para ve ticaret mallarında: 1/40 (%2,5).\n• Küçükbaş hayvanda (koyun, keçi): 40 koyunda 1 koyun.\n• Büyükbaş hayvanda (sığır): 30 sığırda 1 adet 2 yaşında buzağı.\n• Toprak ürünlerinde (Öşür): Masrafsız ise 1/10 (%10), masraflı sulama varsa 1/20 (%5).",
+      "Sadaka-i Cariye: İnsan öldükten sonra da sevabı devam eden kalıcı hayırlardır (Cami, okul, çeşme, köprü yaptırmak, faydalı ilim eseri veya hayırlı evlat bırakmak)."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "MEB TUZAĞI: Anneye, babaya, dedeye, nineye (üstsoy) ve çocuklara, torunlara (altsoy) ZEKÂT VERİLMEZ! Çünkü kişi onlara zaten bakmakla yükümlüdür."
     ],
     "solvedExample": {
       "question": "Zekât, dinen zengin sayılan Müslümanların yılda bir kez mallarının belirli bir oranını ihtiyaç sahiplerine vermesidir.\n\nZekât ibadetinin zengin ile fakir arasındaki kıskançlık ve kin duygularını nasıl giderdiğini ve toplumsal barışa katkısını açıklayınız.",
@@ -3033,14 +3084,16 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "E8.1.R1": {
     "outcomeCode": "E8.1.R1",
-    "topicTitle": "Friendship - Friendship",
+    "topicTitle": "Friendship: Personal Characteristics & Invitations",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Students will be able to understand short and simple texts about friendship.",
-      "Kavramsal İlke: Personal characteristics of true friends.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Positive Personality Traits: honest (dürüst), loyal (sadık), supportive / back up (destekleyici), generous (cömert), caring (ilgili), amusing (eğlenceli), fair (adil).",
+      "Negative Personality Traits: stubborn (inatçı), selfish (bencil), sneaky (sinsi), arrogant (kibirli), bad-tempered (huysuz), jealous (kıskanç).",
+      "Key Expressions:\n• \"Count on / Trust / Rely on\": Güvenmek (A true friend is someone you can count on).\n• \"Back up\": Destek olmak / arka çıkmak.\n• \"Get on well with\": İyi geçinmek (I get on well with my classmates).\n• \"Have a lot in common\": Ortak birçok noktası olmak.",
+      "Accepting an Invitation: \"I'd love to, thanks.\" / \"That sounds great / awesome!\" / \"Sure, why not?\"",
+      "Refusing and Making an Excuse: \"I'm sorry, but I can't. I have to study for an exam.\" / \"I'd love to, but I am busy.\""
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "LGS EN BÜYÜK TUZAĞI: \"I'd love to, but I can't\" cümlesi teklifi KABUL ETMEZ, REDDEDER (\"Çok isterdim ama gelemem\")! Soru kökünde daveti reddeden kişiyi ararken bu kalıba çok dikkat ediniz."
     ],
     "solvedExample": {
       "question": "Text: 'True friends are like stars; you do not always see them, but you know they are always there. A true friend always backs you up when you have a problem. They are honest, loyal, and they never share your secrets with others.'\n\nAccording to the text, what are two main qualities of a true friend? Mention their attitude towards secrets.",
@@ -3054,14 +3107,13 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "E8.1.W1": {
     "outcomeCode": "E8.1.W1",
-    "topicTitle": "Students will be able to write a short and simple letter apologizing and giving reasons for not attending a party in response to an invitation.",
+    "topicTitle": "Writing an Invitation & Apology Letter",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Students will be able to write a short and simple letter apologizing and giving reasons for not attending a party in response to an invitation.",
-      "Kavramsal İlke: Writing a letter of refusal with an excuse.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Parts of an Invitation Letter:\n1. Sender (Gönderen)\n2. Receiver (Alıcı)\n3. Event / Activity (Etkinlik: barbecue party, slumber party, exhibition)\n4. Date & Time (Tarih ve Saat: on Sunday at 3 pm)\n5. Place / Location (Yer: at my house, at the school hall)\n6. Deadline / RSVP (Son katılım bildirme tarihi: Let me know until Friday).",
+      "Apologizing with Reason: \"Dear Alex, Thanks for the invitation to your birthday party. I would love to join, but my grandparents are visiting us this weekend. Have a great time! Love, Selin.\""
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "PÜF NOKTA: \"RSVP\" davete katılıp katılmayacağınızı önceden haber verme notudur."
     ],
     "solvedExample": {
       "question": "Your close friend Sally invites you to her birthday barbecue party this Saturday afternoon, but you have a tennis tournament.\n\nWrite a short reply email (3 sentences) to Sally. Thank her for the invitation, refuse it politely, and state your excuse.",
@@ -3075,14 +3127,14 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "E8.2.R1": {
     "outcomeCode": "E8.2.R1",
-    "topicTitle": "Teen Life - Teen Life",
+    "topicTitle": "Teen Life: Daily Routines & Preferences",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Students will be able to understand short and simple texts about regular activities of teenagers.",
-      "Kavramsal İlke: Teenager daily routine and music preferences.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Music Genres: rock, pop, rap/hip-hop, jazz, classical, heavy metal, folk music.",
+      "Expressing Likes & Preferences:\n• \"be keen on\" / \"be fond of\": Düşkün olmak, çok sevmek (I am keen on music).\n• \"be crazy about\": Delisi olmak, bayılmak.\n• \"can't stand\": Katlanamamak, tahammül edememek (I can't stand loud music).\n• \"prefer X to Y\": X'i Y'ye tercih etmek (I prefer reading books to watching TV).\n• \"unbearable\": Katlanılmaz / çekilmez.\n• \"ridiculous\": Gülünç / saçma.",
+      "Frequency Expressions: every day (her gün), once a week (haftada bir), twice a month (ayda iki kez), rarely (nadiren)."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "LGS TUZAĞI: \"prefer X to Y\" kalıbında tercih edilen şey \"to\"dan ÖNCE gelir! \"I prefer tea to coffee\" cümlesinde ÇAY tercih edilir, kahve değil!"
     ],
     "solvedExample": {
       "question": "Interview: 'Mark: I am crazy about rock music because the energetic rhythm keeps me motivated. However, I can't stand classical music; to be honest, I find it quite boring. In my free time, I usually go camping with my scouting group.'\n\nRead the interview snippet and answer:\na) Why does Mark love rock music?\nb) What type of music does he dislike, and what is his opinion of it?",
@@ -3096,14 +3148,14 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "E8.1.R2": {
     "outcomeCode": "E8.1.R2",
-    "topicTitle": "Students will be able to understand short and simple invitation letters, cards and e-mails.",
+    "topicTitle": "Reading: Understanding Invitations, Letters & Emails",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Students will be able to understand short and simple invitation letters, cards and e-mails.",
-      "Kavramsal İlke: Invitation card comprehension.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Structure of an Invitation:\n• Sender (Gönderen): The person who invites (at the bottom of the note: \"Love, Can\").\n• Receiver (Alıcı): The person invited (at the top: \"Dear Sarah,\").\n• Event (Etkinlik): Birthday party, barbecue, picnic, book fair.\n• Date & Time: \"on Saturday at 4 pm\".\n• Location / Place: \"at my garden, at the cafe\".\n• Deadline / RSVP: \"Please let me know until Friday.\"",
+      "Accepting Expressions: \"Sure, that sounds fun!\", \"Awesome, I will definitely come!\", \"I would love to join.\"",
+      "Refusing Expressions (with an excuse): \"I am sorry, but I can't because I have an exam.\", \"I'd love to, but I have to visit my grandparents.\""
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "LGS SINAV TUZAĞI: Soru köküne çok dikkat edin! \"Who refuses the invitation by giving an excuse/reason?\" (Kim bir mazeret/gerekçe bildirerek reddediyor?) sorulduğunda sadece \"I can't\" diyen değil, arkasından \"BECAUSE...\" diyerek mazeret belirten kişi seçilmelidir!"
     ],
     "solvedExample": {
       "question": "INVITATION CARD:\n'Join Us for a Movie Night!\nDate: Friday, 14th November\nTime: 19:30\nPlace: Kevin's Home (Green Street No: 12)\nPS: Please bring your favorite popcorn or snacks!'\n\nRead the invitation card and answer:\na) What kind of event is Kevin organizing?\nb) What are guests asked to bring with them?",
@@ -3117,14 +3169,13 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "E8.2.W1": {
     "outcomeCode": "E8.2.W1",
-    "topicTitle": "Students will be able to write a short and simple paragraph about regular activities of teenagers.",
+    "topicTitle": "Writing About Daily Activities of Teenagers",
     "quickNotes": [
-      "Kazanım Odaklı Temel İlke: Students will be able to write a short and simple paragraph about regular activities of teenagers.",
-      "Kavramsal İlke: Writing about teen daily routine and hobbies.",
-      "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
+      "Daily Routine Vocabulary: wake up early (erken uyanmak), have breakfast (kahvaltı yapmak), attend classes (derslere katılmak), take after-school courses (kurslara gitmek), hang out with friends (arkadaşlarla takılmak), surf the Net (internette gezinmek).",
+      "Connectors of Sequence: First (İlk olarak), Then (Daha sonra), Next (Ardından), After that (Ondan sonra), Finally (Son olarak)."
     ],
     "examTraps": [
-      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
+      "PÜF NOKTA: Günlük rutin anlatırken Simple Present Tense kullanılır ve sıralama bağlaçları (First, Then, Finally) ile akıcı hale getirilir."
     ],
     "solvedExample": {
       "question": "Prompt: Describe your typical Saturday routine and your favorite hobbies as an 8th-grade teen.\n\nWrite a 3-4 sentence paragraph describing your favorite weekend routine, including what time you wake up, your hobby, and your music preference.",
