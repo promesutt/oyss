@@ -1,0 +1,854 @@
+[
+  {
+    "id": "exam_7_sosyal_bilgiler_1_1_senaryo_1",
+    "grade": 7,
+    "subjectId": "sosyal_bilgiler",
+    "examTerm": "1_donem_1_yazili",
+    "scenarioId": "senaryo_1",
+    "title": "7. Sınıf Sosyal Bilgiler 1. Dönem 1. Ortak Yazılı Sınavı (Senaryo 1) (7 Soru)",
+    "durationMinutes": 40,
+    "totalPoints": 100,
+    "questions": [
+      {
+        "questionNumber": 1,
+        "outcomeCode": "SB.7.1.1",
+        "outcomeTitle": "SB.7.1.1. Dâhil olduğu gruplarda ve sosyal hayatta etkili iletişimin önemini sorgulayabilme",
+        "difficulty": "Kolay",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 15,
+        "contextText": "Sen dili ve ben dili dönüştürme.",
+        "stimulus": "Bir anne çocuğuna şu şekilde seslenmektedir: 'Her zaman odanı darmadağın bırakıyorsun, çok sorumsuz bir çocuksun!'",
+        "questionText": "a) Annenin bu cümlesi neden 'Sen Dili'ne örnektir ve çocuk üzerinde nasıl bir psikolojik tepki doğurur?\nb) Bu iletişimi, çatışmaya yol açmayacak şekilde 'Ben Dili'ne dönüştürerek yeniden yazınız.",
+        "solutionExplanation": "Sen dili suçlayıcıdır, savunmaya ve öfkeye iter. Ben dili ise davranışın kişide bıraktığı duyguyu anlatır.",
+        "modelAnswer": "a) Cümle doğrudan kişiliği hedef aldığı, suçlayıcı, yargılayıcı ve genelleme ('her zaman') içerdiği için Sen Dili'dir. Çocukta savunmaya geçme, öfke ve kendini kapatma tepkisi doğurur.\nb) Ben Dili Dönüşümü: 'Odanı dağınık gördüğümde eşyalarını bulamayacağından endişeleniyorum ve yorulup üzülüyorum.'",
+        "rubric": [
+          {
+            "criterion": "Sen dilinin özellikleri ve olumsuz etkisinin doğru açıklanması",
+            "points": 8
+          },
+          {
+            "criterion": "Ben diline duygu belirten doğru dönüşümün yapılması",
+            "points": 7
+          }
+        ]
+      },
+      {
+        "questionNumber": 2,
+        "outcomeCode": "SB.7.1.1",
+        "outcomeTitle": "SB.7.1.1. Dâhil olduğu gruplarda ve sosyal hayatta etkili iletişimin önemini sorgulayabilme",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "points": 15,
+        "contextText": "Empatik dinleme ve beden dili.",
+        "stimulus": "Selin sınavdan düşük aldığı için çok üzgündür ve ağlamaklı bir sesle durumu arkadaşı Mert'e anlatmaktadır. Mert ise gözünü telefonundan ayırmadan: 'Aman boş ver, bir sonraki sınava çalışırsın.' demiştir.",
+        "questionText": "Mert'in bu davranışındaki 2 temel iletişim hatasını belirtiniz. Mert empati kuran ve etkin dinleyen bir arkadaş olsaydı nasıl davranmalı ve ne söylemeliydi?",
+        "solutionExplanation": "Göz teması kurmamış, duyguyu küçümsemiştir. Empatik dinlemede göz teması kurulur ve duygu paylaşılır.",
+        "modelAnswer": "• İletişim Hataları: 1) Göz teması kurmamış, telefonuyla ilgilenerek arkadaşını önemsiz hissettirmiştir. 2) Arkadaşının yaşadığı üzüntüyü 'Aman boş ver' diyerek küçümsemiş ve geçiştirmiştir.\n• Olması Gereken Tavır: Telefonu bir kenara bırakıp Selin'in yüzüne bakmalı, dikkatle dinlemeli ve 'Çok emek verdiğini biliyorum, üzülmekte çok haklısın. İstersen eksiklerini birlikte gözden geçirelim, yanındayım.' şeklinde destekleyici olmalıydı.",
+        "rubric": [
+          {
+            "criterion": "İki somut iletişim hatasının doğru tespit edilmesi",
+            "points": 8
+          },
+          {
+            "criterion": "Empatik yaklaşımın ve örnek konuşmanın doğru kurgulanması",
+            "points": 7
+          }
+        ]
+      },
+      {
+        "questionNumber": 3,
+        "outcomeCode": "SB.7.1.2",
+        "outcomeTitle": "SB.7.1.2. Özel gereksinimli bireyler için fırsat eşitliğini sürdürmeye yönelik fikir üretebilme",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Basit Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 14,
+        "contextText": "Tekerlekli sandalye kullanan bireyler için erişilebilirlik.",
+        "stimulus": "Bedensel engelli (tekerlekli sandalye kullanan) 7. sınıf öğrencisi Umut, okuluna ve mahallesindeki kütüphaneye giderken çeşitli engellerle karşılaşmaktadır.",
+        "questionText": "Umut'un eğitim ve sosyal hayata tam katılımını sağlamak için okulda ve kütüphanede yapılması gereken 2 fiziki/mimari düzenlemeyi yazınız.",
+        "solutionExplanation": "Erişilebilir rampa, engelli asansörü, genişletilmiş kapılar vb.",
+        "modelAnswer": "1. Okul ve kütüphane girişlerine standartlara uygun eğimli tekerlekli sandalye rampaları ve katlar arası erişim için engelli asansörü yapılmalıdır.\n2. Kütüphanedeki çalışma masaları ve kitap reyonları arasındaki koridorlar tekerlekli sandalyenin rahatça dönebileceği genişlikte ve yükseklikte tasarlanmalıdır.",
+        "rubric": [
+          {
+            "criterion": "İki gerçekçi ve standartlara uygun mimari/fiziki çözümün yazılması",
+            "points": 14
+          }
+        ]
+      },
+      {
+        "questionNumber": 4,
+        "outcomeCode": "SB.7.1.3",
+        "outcomeTitle": "SB.7.1.3. Türk toplumunun millî meseleler karşısında gösterdiği tutum ve davranışlara ilişkin çıkarım yapabilme",
+        "difficulty": "Zor",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "points": 14,
+        "contextText": "Kurtuluş Savaşı'nda Tekâlif-i Milliye ve halkın fedakârlığı.",
+        "stimulus": "Mustafa Kemal Paşa Sakarya Meydan Muharebesi öncesinde ordunun çorap, çarık, bez, silah ve yiyecek ihtiyacını karşılamak için Tekâlif-i Milliye Emirleri'ni yayımlamıştır. Türk milleti elindeki son çorabına ve buğday çuvalına kadar ordusuna teslim etmiştir.",
+        "questionText": "Türk milletinin bu tutumu, onun hangi millî ve manevi karakter özelliklerini yansıtır? İki kavram belirterek açıklayınız.",
+        "solutionExplanation": "Vatanseverlik, dayanışma, bağımsızlık tutkusu ve fedakârlık.",
+        "modelAnswer": "1. Vatanseverlik ve Bağımsızlık Aşkı: Türk halkı bağımsız yaşayabilmek için malını, mülkünü ve canını feda etmekten bir an bile çekinmemiştir.\n2. Topyekûn Dayanışma (İmece Ruhu): Kadını, erkeği, yaşlısıyla tüm halkın tek bir vücut halinde ordusunun arkasında kenetlenmesi eşsiz bir millî birlik şuurunu gösterir.",
+        "rubric": [
+          {
+            "criterion": "İki millî/manevi değerin doğru belirlenmesi",
+            "points": 7
+          },
+          {
+            "criterion": "Tekâlif-i Milliye ruhunun gerekçeli açıklanması",
+            "points": 7
+          }
+        ]
+      },
+      {
+        "questionNumber": 5,
+        "outcomeCode": "SB.7.1.3",
+        "outcomeTitle": "SB.7.1.3. Türk toplumunun millî meseleler karşısında gösterdiği tutum ve davranışlara ilişkin çıkarım yapabilme",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "points": 14,
+        "contextText": "Doğal afetlerde ve depremlerde milletimizin kenetlenmesi.",
+        "stimulus": "Ülkemizde yaşanan büyük depremlerde ve afetlerde, Türkiye'nin dört bir yanından milyonlarca vatandaş kan merkezlerine koşmuş, yardım tırları hazırlamış ve binlerce genç gönüllü olarak afet bölgesine gitmiştir.",
+        "questionText": "Bu durum, Türk milletinin geçmişten gelen hangi tarihî değerinin günümüzde de canlı bir şekilde yaşadığını kanıtlar? Açıklayınız.",
+        "solutionExplanation": "Milli birlik, beraberlik ve yardımlaşma şuuru.",
+        "modelAnswer": "Bu durum, Türk milletinin bin yıllık tarihinden süzülüp gelen 'millî birlik, beraberlik ve diğerkâmlık (başkalarını düşünme)' hasletinin canlılığını koruduğunu gösterir. Milletimiz felaket ve zor günlerde her türlü ayrılığı bir kenara bırakarak tek yürek olmayı başaran yüce bir dayanışma refleksine sahiptir.",
+        "rubric": [
+          {
+            "criterion": "Dayanışma ve millî birlik bilincinin doğru ifade edilmesi",
+            "points": 14
+          }
+        ]
+      },
+      {
+        "questionNumber": 6,
+        "outcomeCode": "SB.7.2.1",
+        "outcomeTitle": "SB.7.2.1. Küreselleşmenin insan ve toplum hayatı üzerindeki etkilerini analiz edebilme",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "points": 14,
+        "contextText": "Küreselleşme ve kültürel etkileşim.",
+        "stimulus": "İnternet, sosyal medya ve uluslararası ticaret sayesinde dünyanın bir ucunda üretilen müzik, film, giyim tarzı veya yemek alışkanlığı birkaç gün içinde tüm dünyaya yayılmaktadır.",
+        "questionText": "a) Küreselleşmenin toplumlar arasındaki kültürel zenginliğe sağladığı 1 OLUMLU katkıyı yazınız.\nb) Küreselleşmenin yerel kültürler üzerindeki 1 OLUMSUZ (riskli) etkisini yazınız.",
+        "solutionExplanation": "Olumlu: Farklı kültürleri tanıma, hoşgörü. Olumsuz: Kültürel tek tipleşme, yerel geleneklerin unutulması.",
+        "modelAnswer": "a) Olumlu Katkı: Farklı kültürleri, dilleri ve yaşam tarzlarını tanıma imkânı sunarak toplumlar arasında ön yargıların kırılmasını ve dünya barışına katkı sağlayacak hoşgörüyü geliştirir.\nb) Olumsuz Etki: Popüler kültürün baskısıyla yerel geleneklerin, özgün halk oyunlarının, el sanatlarının ve ana dilin yozlaşmasına (kültürel tek tipleşmeye / yozlaşmaya) yol açabilir.",
+        "rubric": [
+          {
+            "criterion": "a şıkkında olumlu katkının doğru açıklanması",
+            "points": 7
+          },
+          {
+            "criterion": "b şıkkında tek tipleşme/kültürel kayıp riskinin açıklanması",
+            "points": 7
+          }
+        ]
+      },
+      {
+        "questionNumber": 7,
+        "outcomeCode": "SB.7.2.1",
+        "outcomeTitle": "SB.7.2.1. Küreselleşmenin insan ve toplum hayatı üzerindeki etkilerini analiz edebilme",
+        "difficulty": "Zor",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 14,
+        "contextText": "Kültürümüzün dünyaya tanıtılması.",
+        "stimulus": "Geleneksel Türk kahvesi, ebru sanatı ve Karagöz-Hacivat oyunu UNESCO İnsanlığın Somut Olmayan Kültürel Mirası Temsilî Listesi'ne alınmıştır.",
+        "questionText": "Millî kültür ögelerimizin küresel ölçekte tescillenip tanıtılmasının ülkemizin uluslararası saygınlığı ve turizmi açısından önemini 2 maddeyle açıklayınız.",
+        "solutionExplanation": "Kültürel diplomasi gücümüzü artırır, turizm gelirlerini ve saygınlığı yükseltir.",
+        "modelAnswer": "1. Kültürel Diplomasi ve Tanıtım: Ülkemizin köklü ve zengin bir medeniyet mirasına sahip olduğunu tüm dünyaya kanıtlayarak Türkiye'nin uluslararası arenadaki saygınlığını ve kültürel marka değerini artırır.\n2. Turizm ve Ekonomik Katkı: Bu geleneksel zenginlikleri yerinde görmek ve deneyimlemek isteyen yabancı turistlerin ülkemizi ziyaret etmesini teşvik ederek kültür turizmini canlandırır.",
+        "rubric": [
+          {
+            "criterion": "Kültürel diplomasi ve saygınlık etkisinin açıklanması",
+            "points": 7
+          },
+          {
+            "criterion": "Kültür turizmi ve ekonomik boyuta etkisinin yazılması",
+            "points": 7
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "exam_7_sosyal_bilgiler_1_1_senaryo_2",
+    "grade": 7,
+    "subjectId": "sosyal_bilgiler",
+    "examTerm": "1_donem_1_yazili",
+    "scenarioId": "senaryo_2",
+    "title": "7. Sınıf Sosyal Bilgiler 1. Dönem 1. Ortak Yazılı Sınavı (Senaryo 2) (7 Soru)",
+    "durationMinutes": 40,
+    "totalPoints": 100,
+    "questions": [
+      {
+        "questionNumber": 1,
+        "outcomeCode": "SB.7.1.1",
+        "outcomeTitle": "SB.7.1.1. Dâhil olduğu gruplarda ve sosyal hayatta etkili iletişimin önemini sorgulayabilme",
+        "difficulty": "Kolay",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 15,
+        "contextText": "Sözsüz iletişim ve beden dili.",
+        "stimulus": "Tarih öğretmeni derse girdiğinde asık bir suratla doğrudan kitaptan okumaya başlamış, tahtaya dönük konuşmuş ve öğrencilerin yüzüne hiç bakmamıştır. Ders sonunda öğrencilerin çoğunun konuyu anlamadığı ve dersten sıkıldığı görülmüştür.",
+        "questionText": "Öğretmenin beden dili ve sözsüz iletişimindeki 2 temel eksikliği belirterek, bunların öğrencinin derse ilgisi üzerindeki olumsuz sonucunu açıklayınız.",
+        "solutionExplanation": "Göz teması kurmamak, güler yüzlü olmamak ve monoton bir duruş iletişimi koparır.",
+        "modelAnswer": "• Eksiklikler: 1) Öğrencilerle doğrudan göz teması kurmamış, tahtaya dönük ders anlatmıştır. 2) Güler yüzlü, tebessüm eden ve dinleyeni içine çeken bir mimik ve jest kullanmamıştır.\n• Olumsuz Sonuç: Bu tutum öğrencide değersizlik hissi yaratır, dikkat dağılır, motivasyon düşer ve ders monotonlaşarak verimsiz hale gelir.",
+        "rubric": [
+          {
+            "criterion": "Göz teması ve mimik eksikliğinin doğru belirlenmesi",
+            "points": 8
+          },
+          {
+            "criterion": "Öğrenci motivasyonuna ve dinleme ilgisine etkisinin gerekçelendirilmesi",
+            "points": 7
+          }
+        ]
+      },
+      {
+        "questionNumber": 2,
+        "outcomeCode": "SB.7.1.1",
+        "outcomeTitle": "SB.7.1.1. Dâhil olduğu gruplarda ve sosyal hayatta etkili iletişimin önemini sorgulayabilme",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "points": 15,
+        "contextText": "Ön yargı ve kalıp yargıların iletişime engeli.",
+        "stimulus": "Sınıfa yeni nakil gelen gözlüklü ve sessiz arkadaşı Arda için Cemil şöyle demiştir: 'Gözlük takan ve az konuşan insanlar soğuk ve kibirli olurlar, onunla hiç arkadaşlık kurulmaz.'",
+        "questionText": "Cemil'in bu tutumu hangi iletişim engelidir (kavram)? Bu tür düşüncelerin sınıf içi birlikteliğe ve yeni öğrenciye verdiği 2 zararı yazınız.",
+        "solutionExplanation": "Kalıp yargı ve ön yargıdır. Bireyi dışlar ve yalnızlaştırır.",
+        "modelAnswer": "• Kavram: Ön yargı (veya kalıp yargı).\n• Zararları: 1) Arda'yı tanımadan etiketlediği için onu sınıfta yalnızlaştırır, dışlanmışlık ve uyum sorunu hissettirir. 2) Sınıf içindeki arkadaşlık, güven ve kaynaşma ortamını zedeler, haksız bir önyargı duvarı örer.",
+        "rubric": [
+          {
+            "criterion": "Ön yargı / kalıp yargı kavramının doğru teşhisi",
+            "points": 7
+          },
+          {
+            "criterion": "Sosyal dışlanma ve sınıf iklimine yönelik 2 zararın yazılması",
+            "points": 8
+          }
+        ]
+      },
+      {
+        "questionNumber": 3,
+        "outcomeCode": "SB.7.1.2",
+        "outcomeTitle": "SB.7.1.2. Özel gereksinimli bireyler için fırsat eşitliğini sürdürmeye yönelik fikir üretebilme",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Basit Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 14,
+        "contextText": "Görme engelli bireyler için kentsel erişilebilirlik.",
+        "stimulus": "Beyaz baston kullanan görme engelli bir vatandaş, şehrin ana caddesinde yürürken ve karşıdan karşıya geçerken ciddi güvenlik sorunları yaşamaktadır.",
+        "questionText": "Belediyelerin ve toplumun görme engelli bireylerin bağımsız hareket edebilmesi için şehirde uygulaması gereken 2 kentsel çözümü yazınız.",
+        "solutionExplanation": "Sarı kabartmalı hissedilebilir kılavuz yollar, sesli yaya geçidi sinyalizasyonları.",
+        "modelAnswer": "1. Kaldırımlara ve toplu taşıma istasyonlarına sürekliliği bozulmayan kabartmalı sarı hissedilebilir takip yüzeyleri (kılavuz çizgiler) döşenmelidir ve bu yüzeylerin üzeri araç veya eşyalarla kapatılmamalıdır.\n2. Yaya geçitlerindeki trafik ışıklarına 'geç' ve 'dur' durumunu ses tonuyla bildiren sesli yaya sinyalizasyon butonları monte edilmelidir.",
+        "rubric": [
+          {
+            "criterion": "Hissedilebilir sarı yüzey uygulamasının yazılması",
+            "points": 7
+          },
+          {
+            "criterion": "Sesli trafik sinyalizasyonu uygulamasının yazılması",
+            "points": 7
+          }
+        ]
+      },
+      {
+        "questionNumber": 4,
+        "outcomeCode": "SB.7.1.2",
+        "outcomeTitle": "SB.7.1.2. Özel gereksinimli bireyler için fırsat eşitliğini sürdürmeye yönelik fikir üretebilme",
+        "difficulty": "Zor",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 14,
+        "contextText": "İşitme engelli bireylerin kamusal hizmete erişimi.",
+        "stimulus": "İşitme engelli bir vatandaş hastaneye veya adliyeye gittiğinde derdini anlatmakta ve memurların dediklerini anlamakta büyük zorluk çekmektedir.",
+        "questionText": "Kamusal hizmetlerde fırsat eşitliğini sağlamak için devlet kurumlarında hangi 2 somut uygulamanın yaygınlaştırılması gerekir?",
+        "solutionExplanation": "Türk İşaret Dili bilen personeller istihdam edilmeli veya görüntülü işaret dili tercüme merkezleri kurulmalıdır.",
+        "modelAnswer": "1. Hastane, adliye, karakol ve nüfus müdürlükleri gibi kamu binalarında Türk İşaret Dili (TİD) bilen uzman personellerin istihdam edilmesi sağlanmalıdır.\n2. Tablet veya kiosklar aracılığıyla 7/24 hizmet veren uzaktan canlı 'Görüntülü İşaret Dili Tercüman Destek Hattı' sistemi kurulmalıdır.",
+        "rubric": [
+          {
+            "criterion": "İşaret dili personeli istihdamının belirtilmesi",
+            "points": 7
+          },
+          {
+            "criterion": "Görüntülü dijital tercüman desteğinin önerilmesi",
+            "points": 7
+          }
+        ]
+      },
+      {
+        "questionNumber": 5,
+        "outcomeCode": "SB.7.1.3",
+        "outcomeTitle": "SB.7.1.3. Türk toplumunun millî meseleler karşısında gösterdiği tutum ve davranışlara ilişkin çıkarım yapabilme",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "points": 14,
+        "contextText": "Çanakkale Savaşı'nda 15'liler ve vatan sevgisi.",
+        "stimulus": "1915 yılında Çanakkale Cephesi'nde vatan tehlikeye düştüğünde Galatasaray Lisesi, Konya Lisesi ve Kastamonu Lisesi'nin 15-16 yaşındaki son sınıf öğrencileri gönüllü olarak askere yazılmış, o yıl pek çok okul mezun verememiştir.",
+        "questionText": "Genç yaştaki lise öğrencilerinin eğitimi bırakıp cepheye koşması, Türk milletinin millî bağımsızlık anlayışı hakkında ne gösterir? Açıklayınız.",
+        "solutionExplanation": "Vatan savunmasının her şeyin üstünde tutulduğunu, nesiller boyu aktarılan bağımsızlık andını gösterir.",
+        "modelAnswer": "Bu durum, Türk milletinde 'vatan mevzubahis olduğunda her şeyin teferruat olduğu' inancının en somut kanıtıdır. Geleceğin aydınları olan lise gençliği dahi kişisel istikballerini ve rahat hayatlarını bir kenara bırakarak bağımsız yaşama uğruna canlarını feda etmeyi şeref saymıştır.",
+        "rubric": [
+          {
+            "criterion": "Vatan sevgisinin ve bağımsızlığın önceliğinin vurgulanması",
+            "points": 7
+          },
+          {
+            "criterion": "Gençlerin fedakârlığının millî şuur boyutuyla gerekçelendirilmesi",
+            "points": 7
+          }
+        ]
+      },
+      {
+        "questionNumber": 6,
+        "outcomeCode": "SB.7.1.3",
+        "outcomeTitle": "SB.7.1.3. Türk toplumunun millî meseleler karşısında gösterdiği tutum ve davranışlara ilişkin çıkarım yapabilme",
+        "difficulty": "Zor",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 14,
+        "contextText": "15 Temmuz Demokrasi ve Millî Birlik Günü.",
+        "stimulus": "15 Temmuz darbe girişimi gecesinde hiçbir silahı olmayan Türk milleti, kadını, genci ve yaşlısıyla sokaklara çıkmış, tankların önüne geçerek millî egemenliğine ve demokrasisine sahip çıkmıştır.",
+        "questionText": "Milletimizin bu dik duruşu, Türkiye Cumhuriyeti Anayasası'nda yer alan hangi temel ilkeye bağlılığını ortaya koyar? Gerekçelendiriniz.",
+        "solutionExplanation": "Milli irade ve 'Egemenlik kayıtsız şartsız milletindir' ilkesine bağlılık.",
+        "modelAnswer": "Bu dik duruş, 'Egemenlik kayıtsız şartsız milletindir' ilkesine ve millî iradeye sarsılmaz bağlılığı gösterir. Türk milleti, kendi oyuyla seçtiği meclisine ve demokrasisine dışarıdan veya içeriden hiçbir vesayetin müdahale edemeyeceğini canı pahasına dünyaya ilan etmiştir.",
+        "rubric": [
+          {
+            "criterion": "Millî irade ve egemenlik ilkesinin doğru belirtilmesi",
+            "points": 7
+          },
+          {
+            "criterion": "Demokrasiye sahip çıkma refleksinin gerekçeli açıklanması",
+            "points": 7
+          }
+        ]
+      },
+      {
+        "questionNumber": 7,
+        "outcomeCode": "SB.7.2.1",
+        "outcomeTitle": "SB.7.2.1. Küreselleşmenin insan ve toplum hayatı üzerindeki etkilerini analiz edebilme",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "points": 14,
+        "contextText": "Küresel çevre sorunları ve uluslararası iş birliği.",
+        "stimulus": "Dünyanın bir bölgesinde atmosfere salınan sera gazları, binlerce kilometre ötedeki kutup buzullarının erimesine ve küresel iklim krizine neden olmaktadır. Bu durum karşısında tüm dünya devletleri ortak zirveler düzenlemektedir.",
+        "questionText": "Bu durumdan hareketle, çevre felaketlerinin çözülmesinde küresel iş birliğinin neden zorunlu olduğunu tek bir cümleyle gerekçelendiriniz.",
+        "solutionExplanation": "Hava, su ve atmosfer sınır tanımaz; çevre felaketleri tek bir ülkenin çabasıyla önlenemez, evrensel dayanışma şarttır.",
+        "modelAnswer": "Hava, su ve atmosfer sınır tanımaz; çevre krizleri tüm insanlığın ortak meselesi olduğundan, tek bir devletin tek başına başarabileceği bir süreç değil, bütün dünya milletlerinin ortak ve kararlı iş birliğini gerektiren küresel bir sorumluluktur.",
+        "rubric": [
+          {
+            "criterion": "Çevre sorunlarının sınır tanımayan ortak niteliğinin açıklanması",
+            "points": 7
+          },
+          {
+            "criterion": "Küresel ortak sorumluluk ve eylem zorunluluğunun vurgulanması",
+            "points": 7
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "exam_7_sosyal_bilgiler_1_1_senaryo_3",
+    "grade": 7,
+    "subjectId": "sosyal_bilgiler",
+    "examTerm": "1_donem_1_yazili",
+    "scenarioId": "senaryo_3",
+    "title": "7. Sınıf Sosyal Bilgiler 1. Dönem 1. Ortak Yazılı Sınavı (Senaryo 3) (8 Soru)",
+    "durationMinutes": 40,
+    "totalPoints": 100,
+    "questions": [
+      {
+        "questionNumber": 1,
+        "outcomeCode": "SB.7.1.1",
+        "outcomeTitle": "SB.7.1.1. Dâhil olduğu gruplarda ve sosyal hayatta etkili iletişimin önemini sorgulayabilme",
+        "difficulty": "Kolay",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 13,
+        "contextText": "Sosyal medyada siber zorbalık ve nezaket.",
+        "stimulus": "Bir öğrenci, sınıf arkadaşının sosyal medyada paylaştığı resim altına alaycı ve kırıcı yorumlar yazmış, diğer bazı öğrencilerin de bu alaya katılmasına sebep olmuştur.",
+        "questionText": "a) Bu durum dijital iletişimde hangi olumsuz kavramla adlandırılır?\nb) Sanal ortamda etkili ve ahlaki bir iletişim için uyulması gereken 1 kural yazınız.",
+        "solutionExplanation": "Siber zorbalık. Sanal ortamda da gerçek hayattaki saygı ve nezaket kurallarına uymak gerekir.",
+        "modelAnswer": "a) Siber zorbalık (dijital şiddet).\nb) Yüz yüze söyleyemeyeceğimiz hiçbir kırıcı, küçük düşürücü veya alaycı ifadeyi sanal ortamda da yazmamalı; dijital nezaket ve empati kurallarını korumalıyız.",
+        "rubric": [
+          {
+            "criterion": "Siber zorbalık kavramının tespiti",
+            "points": 6
+          },
+          {
+            "criterion": "Dijital nezaket ve ahlak kuralının yazılması",
+            "points": 7
+          }
+        ]
+      },
+      {
+        "questionNumber": 2,
+        "outcomeCode": "SB.7.1.1",
+        "outcomeTitle": "SB.7.1.1. Dâhil olduğu gruplarda ve sosyal hayatta etkili iletişimin önemini sorgulayabilme",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "points": 13,
+        "contextText": "Etkili dinleme ve söz kesmeme.",
+        "stimulus": "Grup ödevi toplantısında Kerem, arkadaşı Zehra fikrini açıklamaya çalışırken sürekli onun sözünü kesmiş ve 'Sen anlamazsın, benim dediğim planı yapmalıyız' demiştir.",
+        "questionText": "Kerem'in bu davranışı grup çalışmalarında hangi iki temel soruna yol açar? Açıklayınız.",
+        "solutionExplanation": "Grup içi iletişimi koparır, takım ruhunu yok eder ve ortak akıl üretimini engeller.",
+        "modelAnswer": "1. Takım Ruhunun ve Güvenin Yok Olması: Arkadaşının fikrine saygı duyulmadığı için Zehra kendisini değersiz hisseder ve çalışmaya katkı sunmaktan vazgeçer.\n2. Ortak Aklın Engellenmesi: Farklı fikirlerin dinlenmemesi projenin zenginleşmesini engeller ve grubun başarı seviyesini düşürür.",
+        "rubric": [
+          {
+            "criterion": "İki somut grup içi iletişim sorununun gerekçelendirilmesi",
+            "points": 13
+          }
+        ]
+      },
+      {
+        "questionNumber": 3,
+        "outcomeCode": "SB.7.1.2",
+        "outcomeTitle": "SB.7.1.2. Özel gereksinimli bireyler için fırsat eşitliğini sürdürmeye yönelik fikir üretebilme",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Basit Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 13,
+        "contextText": "Eğitimde fırsat eşitliği ve kaynaştırma eğitimi.",
+        "stimulus": "Öğrenme güçlüğü (disleksi) çeken bir öğrencinin sınavlara diğer öğrencilerle tıpatıp aynı sürede ve aynı formatta girmesi onu zorlamaktadır.",
+        "questionText": "Bu öğrenci için MEB sınavlarında sağlanan 2 adil destek uygulamasını (fırsat eşitliği tedbirini) yazınız.",
+        "solutionExplanation": "Okuyucu/kodlayıcı desteği, ek sınav süresi, sadeleştirilmiş soru kağıdı.",
+        "modelAnswer": "1. Disleksili öğrenciye sınav esnasında soruları tane tane seslendirecek özel bir 'okuyucu öğretmen' ve cevapları işaretleyecek 'kodlayıcı' görevlendirilmesi.\n2. Okuma hızındaki zorluğu dengelemek adına öğrenciye resmi ek sınav süresi (örneğin +15-20 dakika) tanımlanması.",
+        "rubric": [
+          {
+            "criterion": "Okuyucu/kodlayıcı desteğinin belirtilmesi",
+            "points": 7
+          },
+          {
+            "criterion": "Ek süre tanımlamasının belirtilmesi",
+            "points": 6
+          }
+        ]
+      },
+      {
+        "questionNumber": 4,
+        "outcomeCode": "SB.7.1.3",
+        "outcomeTitle": "SB.7.1.3. Türk toplumunun millî meseleler karşısında gösterdiği tutum ve davranışlara ilişkin çıkarım yapabilme",
+        "difficulty": "Zor",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "points": 13,
+        "contextText": "Millî Mücadele'de Kastamonu kağnı kolları ve kadın kahramanlar.",
+        "stimulus": "Kastamonu İnebolu Limanı'na indirilen cephaneleri sırtında çocuğuyla, kağnı arabasında cepheye taşıyan Şerife Bacı, mermiler ıslanmasın diye kazağını cephanelerin üzerine örtmüş ve donarak şehit olmuştur.",
+        "questionText": "Şerife Bacı'nın bu destansı fedakârlığı, Türk kadınının ve milletinin vatan savunmasındaki rolüne dair neyi ispatlar? Açıklayınız.",
+        "solutionExplanation": "Vatan savunmasının sadece cephedeki askerle değil, kadın-erkek tüm milletin topyekûn ruhuyla yapıldığını gösterir.",
+        "modelAnswer": "Bu fedakârlık, Türk milletinde vatan savunmasının sadece ordunun değil, kadın-erkek, genç-yaşlı bütün bir milletin ortak davası (topyekûn seferberlik) olduğunu ispatlar. Türk kadını, evladının canını dahi vatanın bağımsızlığından sonra görerek bağımsızlık mücadelesinin en kritik taşıyıcı gücü olmuştur.",
+        "rubric": [
+          {
+            "criterion": "Topyekûn mücadele bilincinin vurgulanması",
+            "points": 7
+          },
+          {
+            "criterion": "Türk kadınının fedakârlık ve vatan sevgisinin açıklanması",
+            "points": 6
+          }
+        ]
+      },
+      {
+        "questionNumber": 5,
+        "outcomeCode": "SB.7.1.3",
+        "outcomeTitle": "SB.7.1.3. Türk toplumunun millî meseleler karşısında gösterdiği tutum ve davranışlara ilişkin çıkarım yapabilme",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "points": 12,
+        "contextText": "Kızılay ve Mehmetçik Vakfı gibi millî dayanışma kurumları.",
+        "stimulus": "Milletimiz kurban bayramlarında, ramazan aylarında ve kriz anlarında Türk Kızılayı, Mehmetçik Vakfı ve AFAD gibi kurumlara rekor seviyede bağışlar yapmaktadır.",
+        "questionText": "Vatandaşlarımızın bu kurumlara gösterdiği yüksek güven ve desteğin arkasındaki temel millî hasletimiz nedir? Yazınız.",
+        "solutionExplanation": "Yardımlaşma, diğerkâmlık, şehit ve gazilere vefa, devlet-millet bütünleşmesi.",
+        "modelAnswer": "Temel millî hasletimiz 'yardımlaşma, infak ve şehit/gazi emanetine sahip çıkma' bilincidir. Türk toplumu zor durumda olan soydaş ve vatandaşlarının acısını kendi acısı gibi hisseder ve devletin güvenilir şefkat kollarına tereddütsüz destek verir.",
+        "rubric": [
+          {
+            "criterion": "Dayanışma ve vefa hasletinin doğru ifade edilmesi",
+            "points": 12
+          }
+        ]
+      },
+      {
+        "questionNumber": 6,
+        "outcomeCode": "SB.7.1.3",
+        "outcomeTitle": "SB.7.1.3. Türk toplumunun millî meseleler karşısında gösterdiği tutum ve davranışlara ilişkin çıkarım yapabilme",
+        "difficulty": "Zor",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 12,
+        "contextText": "Millî spor başarılarında ve bayrak sevgisinde ortak coşku.",
+        "stimulus": "A Millî Kadın Voleybol Takımımız (Filenin Sultanları) veya Ampute Futbol Millî Takımımız dünya şampiyonu olduğunda 85 milyon vatandaşımız sokaklarda Türk bayraklarıyla sevinç gözyaşları dökmüştür.",
+        "questionText": "Sporcularımızın kazandığı uluslararası zaferlerin milletimiz üzerinde oluşturduğu birleştirici etkiyi 2 cümleyle açıklayınız.",
+        "solutionExplanation": "Milli birlik, ortak gurur ve bayrak sevgisinde buluşma.",
+        "modelAnswer": "Bu başarılar, tüm fertleri ortak bir gurur ve sevinç paydasında birleştirerek millî birlik ve aidiyet duygumuzu güçlendirir. Farklı görüş ve yaşam tarzına sahip tüm vatandaşların aynı bayrak altında tek yürek atmasını sağlar.",
+        "rubric": [
+          {
+            "criterion": "Ortak gurur ve millî aidiyet hissinin açıklanması",
+            "points": 12
+          }
+        ]
+      },
+      {
+        "questionNumber": 7,
+        "outcomeCode": "SB.7.2.1",
+        "outcomeTitle": "SB.7.2.1. Küreselleşmenin insan ve toplum hayatı üzerindeki etkilerini analiz edebilme",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 12,
+        "contextText": "Küresel e-ticaret ve yerel üreticiler.",
+        "stimulus": "Dünya genelindeki internet alışveriş siteleri sayesinde bir vatandaş oturduğu yerden Çin'den veya Almanya'dan elektronik eşya sipariş edebilmektedir.",
+        "questionText": "Küresel e-ticaretin yerel esnaf ve yerli üretim üzerindeki olumsuz etkisini önlemek için yerli üreticiler nasıl bir strateji izlemelidir? Bir çözüm yazınız.",
+        "solutionExplanation": "Yerli esnaf da dijitalleşmeli, özgün ve kaliteli ürünlerini dünyaya pazarlayabilmelidir.",
+        "modelAnswer": "Yerli üreticiler ve esnaf da dijitalleşerek kendi e-ticaret altyapılarını kurmalı; geleneksel ve el emeği kaliteli ürünlerini küresel pazarlara ihraç edebilecek e-ihracat standartlarına taşımalıdır.",
+        "rubric": [
+          {
+            "criterion": "Dijitalleşme ve katma değerli e-ihracat çözümünün belirtilmesi",
+            "points": 12
+          }
+        ]
+      },
+      {
+        "questionNumber": 8,
+        "outcomeCode": "SB.7.2.1",
+        "outcomeTitle": "SB.7.2.1. Küreselleşmenin insan ve toplum hayatı üzerindeki etkilerini analiz edebilme",
+        "difficulty": "Zor",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "points": 12,
+        "contextText": "Küreselleşme karşısında ana dilin korunması.",
+        "stimulus": "Günümüzde gençlerin mesajlaşırken Türkçe kelimeler yerine 'okey', 'bye', 'cool', 'link atmak' gibi yabancı sözcükleri yaygın biçimde kullanması dikkat çekmektedir.",
+        "questionText": "Küreselleşmenin getirdiği bu dil yozlaşması karşısında Türkçemizi korumak için gençlere düşen 2 temel sorumluluğu yazınız.",
+        "solutionExplanation": "Türkçe karşılıkları kullanmak, bol bol nitelikli Türkçe eserler okumak.",
+        "modelAnswer": "1. Yabancı kelimeler yerine Türk Dil Kurumu'nun belirlediği güzel Türkçe karşılıklarını (örneğin 'link' yerine 'bağlantı') bilinçli olarak tercih etmek.\n2. Türk edebiyatının klasik ve çağdaş nitelikli eserlerini bol bol okuyarak dil dağarcığını geliştirmek ve Türkçeyi doğru, kurallı kullanmaya özen göstermek.",
+        "rubric": [
+          {
+            "criterion": "Türkçe karşılıkları kullanma bilincinin yazılması",
+            "points": 6
+          },
+          {
+            "criterion": "Kitap okuma ve dili özenli kullanma sorumluluğunun yazılması",
+            "points": 6
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "exam_7_sosyal_bilgiler_1_1_senaryo_4",
+    "grade": 7,
+    "subjectId": "sosyal_bilgiler",
+    "examTerm": "1_donem_1_yazili",
+    "scenarioId": "senaryo_4",
+    "title": "7. Sınıf Sosyal Bilgiler 1. Dönem 1. Ortak Yazılı Sınavı (Senaryo 4) (7 Soru)",
+    "durationMinutes": 40,
+    "totalPoints": 100,
+    "questions": [
+      {
+        "questionNumber": 1,
+        "outcomeCode": "SB.7.1.1",
+        "outcomeTitle": "SB.7.1.1. Dâhil olduğu gruplarda ve sosyal hayatta etkili iletişimin önemini sorgulayabilme",
+        "difficulty": "Kolay",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 15,
+        "contextText": "İletişimde geri bildirim (dönüt) ve teyit etme.",
+        "stimulus": "Ali Bey, iş yerindeki çırağına hızlıca karmaşık bir iş tarif etmiş, çırağın anlayıp anlamadığını kontrol etmeden dükkândan ayrılmıştır. Akşam geldiğinde işin tamamen yanlış yapıldığını görmüştür.",
+        "questionText": "İletişim sürecinde 'geri bildirim (dönüt)' kavramını tanımlayarak, Ali Bey'in hatasını ve bu durumun nasıl engellenebileceğini açıklayınız.",
+        "solutionExplanation": "Dönüt, alıcının mesajı anlayıp anlamadığını gösteren tepkidir. Ali Bey teyit almalıydı.",
+        "modelAnswer": "• Dönüt: Alıcının, kaynağın gönderdiği mesajı doğru anlayıp anlamadığını göstermek için verdiği sözel veya davranışsal cevaptır.\n• Ali Bey'in Hatası ve Çözüm: Ali Bey mesajı iletmiş ancak geri bildirim almamıştır. 'Anlattıklarımı anladın mı, nasıl yapacağını bana bir tekrar eder misin?' diyerek çırağından dönüt alsaydı hata baştan önlenirdi.",
+        "rubric": [
+          {
+            "criterion": "Geri bildirim (dönüt) kavramının doğru tanımlanması",
+            "points": 8
+          },
+          {
+            "criterion": "Ali Bey'in iletişim hatasının ve teyit çözümünün açıklanması",
+            "points": 7
+          }
+        ]
+      },
+      {
+        "questionNumber": 2,
+        "outcomeCode": "SB.7.1.1",
+        "outcomeTitle": "SB.7.1.1. Dâhil olduğu gruplarda ve sosyal hayatta etkili iletişimin önemini sorgulayabilme",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "points": 15,
+        "contextText": "İletişimde lakap takma ve alay etme engeli.",
+        "stimulus": "Sınıftaki bazı öğrenciler, kilolu olan arkadaşları Caner'e sürekli 'Tombiş' ve 'Ayıboğan' diye hitap etmekte ve bunu sadece şaka yaptıklarını söyleyerek savunmaktadırlar.",
+        "questionText": "Bu durumun şaka değil bir iletişim suçu ve zorbalık olduğunu gösteren 2 gerekçe yazınız. Caner'in kişilik gelişimine zararını belirtiniz.",
+        "solutionExplanation": "Kişilik haklarına saldırı, özgüven kaybı, sosyal içe kapanma.",
+        "modelAnswer": "• Gerekçeler: 1) Muhatabın rızası ve hoşnutluğu olmayan, bedensel kusurları hedef alan her hitap kişilik haklarına saygısızlıktır. 2) Süreklilik arz ettiğinde psikolojik bir akran zorbalığına dönüşür.\n• Caner'e Zararı: Caner'de ciddi özgüven kaybına, değersizlik hissine, sosyal ortamlardan kaçınmaya ve okul başarısında düşüşe yol açar.",
+        "rubric": [
+          {
+            "criterion": "Kişilik hakları ve zorbalık boyutunun açıklanması",
+            "points": 8
+          },
+          {
+            "criterion": "Özgüven kaybı ve psikolojik zararın belirtilmesi",
+            "points": 7
+          }
+        ]
+      },
+      {
+        "questionNumber": 3,
+        "outcomeCode": "SB.7.1.2",
+        "outcomeTitle": "SB.7.1.2. Özel gereksinimli bireyler için fırsat eşitliğini sürdürmeye yönelik fikir üretebilme",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Basit Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 14,
+        "contextText": "Engelli otopark yerleri ve toplumsal saygı.",
+        "stimulus": "Bir alışveriş merkezinin tam giriş kapısının önünde yer alan mavi tabelalı 'Engelli Araç Park Yeri'ne engelli kartı olmayan sağlam bir sürücü arabasını park etmiştir.",
+        "questionText": "Bu sürücünün davranışı toplum sözleşmesi ve fırsat eşitliği açısından neden büyük bir hak ihlalidir? Açıklayınız.",
+        "solutionExplanation": "Özel gereksinimli bireyin en temel hareket özgürlüğünü engeller, pozitif ayrımcılık hakkını gasp eder.",
+        "modelAnswer": "Özel gereksinimli bireylerin hayatlarını kolaylaştırmak için yasal olarak tanınan pozitif ayrımcılık ve erişim hakkının bencilce gasp edilmesidir. Engelli bireyin hareket özgürlüğünü sıfırlayarak onu AVM'ye veya hizmete ulaşamaz hale getiren ağır bir kul hakkı ve toplumsal saygısızlıktır.",
+        "rubric": [
+          {
+            "criterion": "Pozitif ayrımcılık ve hak ihlali boyutunun açıklanması",
+            "points": 14
+          }
+        ]
+      },
+      {
+        "questionNumber": 4,
+        "outcomeCode": "SB.7.1.2",
+        "outcomeTitle": "SB.7.1.2. Özel gereksinimli bireyler için fırsat eşitliğini sürdürmeye yönelik fikir üretebilme",
+        "difficulty": "Zor",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 14,
+        "contextText": "İstihdamda fırsat eşitliği ve engelli kotaları.",
+        "stimulus": "Anayasamızın 10. maddesi 'Çocuklar, yaşlılar, engelliler, harp ve vazife şehitlerinin dul ve yetimleri ile malul ve gaziler için alınacak tedbirler eşitlik ilkesine aykırı sayılmaz' demektedir.",
+        "questionText": "Bu anayasal ilkeye dayanarak, devletin kamu ve özel sektörde engelli vatandaşlar için uyguladığı 'zorunlu istihdam kotası'nın amacını açıklayınız.",
+        "solutionExplanation": "Pozitif ayrımcılık ile ekonomik bağımsızlık kazandırmak ve topluma üretken bireyler olarak katmak.",
+        "modelAnswer": "Bu uygulamanın amacı pozitif ayrımcılık ilkesini işleterek engelli bireylerin ekonomik bağımsızlıklarını kazanmalarını sağlamaktır. Onların üretken birer yurttaş olarak onurlarıyla çalışmalarını ve toplumda diğer bireylerle eşit hayat standardına erişmelerini temin etmektir.",
+        "rubric": [
+          {
+            "criterion": "Pozitif ayrımcılık ve ekonomik bağımsızlık vurgusunun yapılması",
+            "points": 14
+          }
+        ]
+      },
+      {
+        "questionNumber": 5,
+        "outcomeCode": "SB.7.1.3",
+        "outcomeTitle": "SB.7.1.3. Türk toplumunun millî meseleler karşısında gösterdiği tutum ve davranışlara ilişkin çıkarım yapabilme",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "points": 14,
+        "contextText": "Kuvâ-yı Millîye ruhu ve yerel direniş.",
+        "stimulus": "Mondros Ateşkes Antlaşması sonrası vatan toprakları işgal edildiğinde, düzenli ordu henüz kurulmamışken halk kendi köylerinde ve kasabalarında Kuvâ-yı Millîye birlikleri kurarak düşmana karşı direnişe geçmiştir.",
+        "questionText": "Halkın kendi imkânlarıyla Kuvâ-yı Millîye'yi kurması, Türk milletinin esarete karşı tavrını nasıl ortaya koyar? Yazınız.",
+        "solutionExplanation": "Türk milletinin hiçbir şart altında esareti kabul etmeyeceğini, bağımsızlığın karakteri olduğunu kanıtlar.",
+        "modelAnswer": "Bu durum, Türk milletinin bin yıllık tarihinde asla esarete boyun eğmediğini, ordusuz ve silahsız kalsa bile kendi iradesiyle vatanını savunacak bağımsızlık tutkusuna (hürriyet aşkına) sahip olduğunu gösterir.",
+        "rubric": [
+          {
+            "criterion": "Esareti reddetme ve bağımsızlık tutkusunun açıklanması",
+            "points": 14
+          }
+        ]
+      },
+      {
+        "questionNumber": 6,
+        "outcomeCode": "SB.7.1.3",
+        "outcomeTitle": "SB.7.1.3. Türk toplumunun millî meseleler karşısında gösterdiği tutum ve davranışlara ilişkin çıkarım yapabilme",
+        "difficulty": "Zor",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "points": 14,
+        "contextText": "Millî bayramlarda bayrak asma ve anma kültürü.",
+        "stimulus": "29 Ekim Cumhuriyet Bayramı'nda veya 19 Mayıs'ta Edirne'den Kars'a kadar bütün evlerin balkonlarına, caddelere ve dükkânlara al yıldızlı Türk bayrakları asılmaktadır.",
+        "questionText": "Balkonları bayraklarla donatmak milletimizin hangi ortak aidiyet bilincini sembolize eder? İki maddeyle açıklayınız.",
+        "solutionExplanation": "Ortak vatan sevgisi, bağımsızlık sembolüne saygı ve ortak geçmiş bilinci.",
+        "modelAnswer": "1. Bağımsızlık Sembolüne Saygı: Bayrağımızın bağımsızlığımızın ve şehitlerimizin emaneti olduğu bilinciyle ona olan ebedi hürmeti gösterir.\n2. Ortak Tarih ve Birlik Şuuru: Bütün farklılıkların üzerinde, ortak bir vatanda tek millet olarak özgürce yaşama iradesini perçinler.",
+        "rubric": [
+          {
+            "criterion": "İki somut aidiyet gerekçesinin doğru açıklanması",
+            "points": 14
+          }
+        ]
+      },
+      {
+        "questionNumber": 7,
+        "outcomeCode": "SB.7.1.3",
+        "outcomeTitle": "SB.7.1.3. Türk toplumunun millî meseleler karşısında gösterdiği tutum ve davranışlara ilişkin çıkarım yapabilme",
+        "difficulty": "Zor",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 14,
+        "contextText": "Orman yangınlarında milletin fidan seferberliği.",
+        "stimulus": "Yaz aylarında meydana gelen orman yangınlarının ardından milyonlarca vatandaş 'Geleceğe Nefes' kampanyasına katılarak fidan bağışlamış ve küle dönen alanları yeniden yeşillendirmek için el ele vermiştir.",
+        "questionText": "Ormanlarımızı bir 'millî mesele' olarak görmek ve el ele vermek vatanseverliğin hangi yönünü kanıtlar? Açıklayınız.",
+        "solutionExplanation": "Vatan sevgisinin sadece sınır boylarını değil, toprağı, suyu, ormanı ve doğayı korumayı da kapsadığını kanıtlar.",
+        "modelAnswer": "Vatanseverliğin yalnızca askerî savunmadan ibaret olmadığını; vatanın taşını, toprağını, ağacını ve gelecek nesillere kalacak tabiat mirasını korumanın da en yüce millî sorumluluk olduğunu kanıtlar.",
+        "rubric": [
+          {
+            "criterion": "Vatan sevgisinin çevre ve doğa koruma boyutuyla açıklanması",
+            "points": 14
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "exam_7_sosyal_bilgiler_1_1_senaryo_5",
+    "grade": 7,
+    "subjectId": "sosyal_bilgiler",
+    "examTerm": "1_donem_1_yazili",
+    "scenarioId": "senaryo_5",
+    "title": "7. Sınıf Sosyal Bilgiler 1. Dönem 1. Ortak Yazılı Sınavı (Senaryo 5) (6 Soru)",
+    "durationMinutes": 40,
+    "totalPoints": 100,
+    "questions": [
+      {
+        "questionNumber": 1,
+        "outcomeCode": "SB.7.1.1",
+        "outcomeTitle": "SB.7.1.1. Dâhil olduğu gruplarda ve sosyal hayatta etkili iletişimin önemini sorgulayabilme",
+        "difficulty": "Kolay",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 17,
+        "contextText": "Etkili iletişimde tatlı dil ve tebessüm.",
+        "stimulus": "Mahalledeki bakkal Ahmet Amca müşterilerini her sabah kapıda 'Hayırlı sabahlar, gününüz bereketli olsun' diyerek güler yüzle karşılamaktadır. Yan sokaktaki somurtkan bakkala göre dükkânı her zaman dolup taşmaktadır.",
+        "questionText": "Ahmet Amca'nın başarısını iletişim ilkeleri (tatlı dil ve tebessüm) açısından değerlendiriniz. İletişimde tatlı dilin insan ilişkilerine 2 katkısını yazınız.",
+        "solutionExplanation": "Güler yüz güven verir, sıcaklık oluşturur ve bariyerleri kaldırır.",
+        "modelAnswer": "• Değerlendirme: Ahmet Amca pozitif beden dili (tebessüm) ve nezaketli sözlü iletişimi birleştirerek insanlarda samimiyet, güven ve aidiyet hissi oluşturmaktadır.\n• Katkıları: 1) İnsanlar arasındaki gerginlik ve önyargıları eritir, sıcak dostluklar kurar. 2) Muhatabına değer verildiğini hissettirerek toplumsal huzura ve barışa katkı sağlar.",
+        "rubric": [
+          {
+            "criterion": "Pozitif beden dili ve nezaketin etkisinin açıklanması",
+            "points": 9
+          },
+          {
+            "criterion": "Tatlı dilin insan ilişkilerine 2 somut katkısının yazılması",
+            "points": 8
+          }
+        ]
+      },
+      {
+        "questionNumber": 2,
+        "outcomeCode": "SB.7.1.2",
+        "outcomeTitle": "SB.7.1.2. Özel gereksinimli bireyler için fırsat eşitliğini sürdürmeye yönelik fikir üretebilme",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Basit Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 17,
+        "contextText": "Engelliler için toplu taşıma erişilebilirliği.",
+        "stimulus": "Şehir içi belediye otobüslerinin yüksek basamaklı olması tekerlekli sandalyeli ve yürüteç kullanan vatandaşların otobüse binmesini imkânsız hale getirmektedir.",
+        "questionText": "Belediyelerin toplu ulaşım araçlarında fırsat eşitliğini sağlamak için otobüs filosunda yapması gereken 2 teknik/fiziki iyileştirmeyi yazınız.",
+        "solutionExplanation": "Alçak tabanlı otobüsler, açılır kapanır mekanik engelli rampaları, otobüs içi emniyet kemerli tekerlekli sandalye alanı.",
+        "modelAnswer": "1. Şehir içi otobüslerin tamamının kaldırım seviyesine inebilen körüklü 'alçak tabanlı' ve basamaksız modellerle değiştirilmesi.\n2. Orta kapılara tekerlekli sandalyenin kolayca içeri girmesini sağlayan manuel veya otomatik açılır kapanır tekerlekli sandalye rampalarının takılması.",
+        "rubric": [
+          {
+            "criterion": "Alçak tabanlı basamaksız otobüs çözümünün yazılması",
+            "points": 9
+          },
+          {
+            "criterion": "Açılır kapanır rampa ve emniyetli alan çözümünün yazılması",
+            "points": 8
+          }
+        ]
+      },
+      {
+        "questionNumber": 3,
+        "outcomeCode": "SB.7.1.2",
+        "outcomeTitle": "SB.7.1.2. Özel gereksinimli bireyler için fırsat eşitliğini sürdürmeye yönelik fikir üretebilme",
+        "difficulty": "Zor",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 17,
+        "contextText": "Dijital ortamda görme engelliler için erişilebilirlik.",
+        "stimulus": "Devlet kurumlarının web sitelerinde ve e-Devlet uygulamasında resimlerin altında alternatif metin (alt tag) bulunmaması, ekran okuyucu program kullanan görme engelli bireylerin işlem yapmasını engellemektedir.",
+        "questionText": "Dijital kamu hizmetlerinde fırsat eşitliğini sağlamak için web sitelerinde hangi 2 yazılımsal/erişilebilirlik standardının zorunlu tutulması gerekir?",
+        "solutionExplanation": "Ekran okuyucu uyumluluğu, görsellere betimleyici metinler (alt-text) ekleme, sesli yönlendirme.",
+        "modelAnswer": "1. Sitedeki bütün görsel, buton ve grafiklere ekran okuyucu yazılımların seslendirebileceği açıklayıcı 'alternatif metin (alt-text)' etiketlerinin eklenmesi.\n2. Görme azlığı olanlar için yüksek kontrast modu ve web sayfalarında metin boyutunu büyütme/sesli okuma düğmelerinin yer alması.",
+        "rubric": [
+          {
+            "criterion": "Ekran okuyucu ve alternatif metin standardının yazılması",
+            "points": 9
+          },
+          {
+            "criterion": "Yüksek kontrast ve sesli okuma desteğinin belirtilmesi",
+            "points": 8
+          }
+        ]
+      },
+      {
+        "questionNumber": 4,
+        "outcomeCode": "SB.7.1.3",
+        "outcomeTitle": "SB.7.1.3. Türk toplumunun millî meseleler karşısında gösterdiği tutum ve davranışlara ilişkin çıkarım yapabilme",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "points": 17,
+        "contextText": "Sütçü İmam ve Maraş millî direnişi.",
+        "stimulus": "Maraş işgal edildiğinde Fransız ve Ermeni askerlerinin Türk kadınlarının peçesine saldırması üzerine Sütçü İmam ilk kurşunu sıkarak Maraş'ın şanlı direnişini başlatmıştır.",
+        "questionText": "Sütçü İmam'ın bu ilk kurşunu, Türk milletinin millî namus ve bağımsızlık anlayışındaki kırmızı çizgisini nasıl yansıtır? Açıklayınız.",
+        "solutionExplanation": "Türk milleti namusuna, bayrağına ve kutsallarına dokunulduğunda hiçbir tereddüt göstermeden canını ortaya koyar.",
+        "modelAnswer": "Bu olay, Türk milletinin kutsal değerlerine, kadınların namusuna ve millî onuruna uzanan ellere karşı hiçbir güçten korkmadan, canı pahasına anında karşılık vereceğini gösterir. Maraş halkının topyekûn şahlanışına kıvılcım olmuş ve kutsallara dokunulamaz olduğunu tarihe kazımıştır.",
+        "rubric": [
+          {
+            "criterion": "Millî namus ve haysiyet anlayışının açıklanması",
+            "points": 9
+          },
+          {
+            "criterion": "Tereddütsüz direniş refleksinin gerekçelendirilmesi",
+            "points": 8
+          }
+        ]
+      },
+      {
+        "questionNumber": 5,
+        "outcomeCode": "SB.7.1.3",
+        "outcomeTitle": "SB.7.1.3. Türk toplumunun millî meseleler karşısında gösterdiği tutum ve davranışlara ilişkin çıkarım yapabilme",
+        "difficulty": "Zor",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "points": 16,
+        "contextText": "Millî savunma sanayii atılımlarında milletin desteği.",
+        "stimulus": "Türkiye'nin yerli İHA, SİHA (Bayraktar), Millî Muharip Uçak (KAAN) ve TCG Anadolu gibi savunma sanayii projelerine milletimiz TEKNOFEST'lerde milyonlar halinde akın ederek sahip çıkmaktadır.",
+        "questionText": "Milletimizin yerli ve millî teknoloji atılımlarına gösterdiği bu heyecan, bağımsız devlet olma ideali açısından ne anlam taşır? Yazınız.",
+        "solutionExplanation": "Tam bağımsızlığın yolunun yerli üretim ve savunma sanayiinden geçtiği bilinci.",
+        "modelAnswer": "Bu heyecan, Atatürk'ün 'İstikbal göklerdedir' ülküsü doğrultusunda tam bağımsız Türkiye idealine milletçe inanıldığını gösterir. Savunmada dışa bağımlılığı bitirmenin millî bir beka ve hürriyet meselesi olduğunun idrak edildiğini kanıtlar.",
+        "rubric": [
+          {
+            "criterion": "Tam bağımsızlık ve yerli savunma bilincinin açıklanması",
+            "points": 16
+          }
+        ]
+      },
+      {
+        "questionNumber": 6,
+        "outcomeCode": "SB.7.2.1",
+        "outcomeTitle": "SB.7.2.1. Küreselleşmenin insan ve toplum hayatı üzerindeki etkilerini analiz edebilme",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 16,
+        "contextText": "Küresel salgın hastalıklar ve uluslararası dayanışma.",
+        "stimulus": "Dünya genelinde ortaya çıkan koronavirüs (COVID-19) gibi salgın hastalıklarda Türkiye, kendi ihtiyacını karşılamanın yanı sıra 150'den fazla ülkeye tıbbi yardım uçağı göndermiştir.",
+        "questionText": "Türkiye'nin bu insani yardımları, küreselleşen dünyada ülkemizin 'insani diplomasi ve dünya barışı' vizyonuna nasıl katkı sağlar? Açıklayınız.",
+        "solutionExplanation": "Türkiye'nin vicdanlı, yardımsever ve güvenilir bir küresel aktör olduğunu gösterir.",
+        "modelAnswer": "Türkiye'nin din, dil ve ırk ayrımı gözetmeksizin dünyanın dört bir yanına şefkat eli uzatması, ülkemizin küresel vicdanın sesi olduğunu kanıtlar. Uluslararası arenada Türkiye'nin güvenilir, saygın ve 'dünya beşten büyüktür' anlayışıyla mazlumların yanında duran barışçıl liderliğini pekiştirir.",
+        "rubric": [
+          {
+            "criterion": "İnsani diplomasi ve küresel vicdan vizyonunun açıklanması",
+            "points": 8
+          },
+          {
+            "criterion": "Türkiye'nin uluslararası saygınlığına ve barışa katkısının belirtilmesi",
+            "points": 8
+          }
+        ]
+      }
+    ]
+  }
+]

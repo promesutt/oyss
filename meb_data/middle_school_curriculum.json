@@ -1,0 +1,2278 @@
+{
+  "matematik": {
+    "5": {
+      "scenarios": [
+        "Senaryo 1",
+        "Senaryo 2",
+        "Senaryo 3",
+        "Senaryo 4",
+        "Senaryo 5"
+      ],
+      "scenario_cols": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "outcomes": [
+        {
+          "unit": "GEOMETRİK ŞEKİLLER",
+          "topic": "Temel Geometrik Çizimler ve İnşalar",
+          "outcome": "MAT.5.3.1. Temel geometrik çizimler için matematiksel araç ve teknolojiden yararlanabilme",
+          "counts": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "MAT.5.3.2. Temel geometrik çizimlere dayalı deneyimlerini yansıtabilme",
+          "counts": [
+            1,
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "unit": "Açı Ölçme",
+          "topic": "",
+          "outcome": "MAT.5.3.3. Açıları ölçmek için matematiksel araç ve teknolojiden yararlanabilme",
+          "counts": [
+            1,
+            1,
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "MAT.5.3.4. Düzlemde iki veya üç doğrunun birbirine göre durumuna bağlı olarak oluşabilecek açılara dair çıkarım yapabilme",
+          "counts": [
+            1,
+            1,
+            2,
+            1,
+            2
+          ]
+        },
+        {
+          "unit": "Çokgenler ve Çember",
+          "topic": "",
+          "outcome": "MAT.5.3.5. Çokgenleri düzlemde ardışık olarak kesişen doğruların oluşturduğu kapalı şekiller olarak yorumlayabilme",
+          "counts": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "MAT.5.3.6. Çokgenlerin özellikleri ile ilgili edindiği deneyimleri yansıtabilme",
+          "counts": [
+            1,
+            2,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "MAT.5.3.7. Matematiksel araç ve teknoloji yardımıyla düzlemde iki noktada kesişen çember çiftinin merkezleri ve kesişim noktalarından biri ile inşa edilen üçgenlerin kenar özelliklerine yönelik çıkarım yapabilme",
+          "counts": [
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    "6": {
+      "scenarios": [],
+      "scenario_cols": [],
+      "outcomes": []
+    },
+    "7": {
+      "scenarios": [
+        "Senaryo 1",
+        "Senaryo 2",
+        "Senaryo 3",
+        "Senaryo 4"
+      ],
+      "scenario_cols": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "outcomes": [
+        {
+          "unit": "SAYILAR VE NİCELİKLER (1)",
+          "topic": "Tam Sayılar\nRasyonel Sayılar ve Farklı Temsilleri",
+          "outcome": "MAT.7.1.1.  Gerçek yaşam ya da matematiksel durumlarda doğal sayı, tam sayı ve rasyonel sayıları yorumlayabilme",
+          "counts": [
+            1,
+            1,
+            2,
+            2
+          ]
+        },
+        {
+          "unit": "Rasyonel Sayılar ve Farklı Temsilleri",
+          "topic": "",
+          "outcome": "MAT.7.1.2. Gerçek yaşam durumlarında rasyonel sayıların ondalık gösterimlerini yansıtabilmea) Bölme işlemini kullanarak her rasyonel sayının bir ondalık gösterimi olduğunu inceler..",
+          "counts": [
+            2,
+            1,
+            2,
+            2
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "MAT.7.1.3. Rasyonel sayıların karşılaştırma ve sıralama ilişkilerini yorumlayabilme",
+          "counts": [
+            2,
+            1,
+            2,
+            2
+          ]
+        },
+        {
+          "unit": "Rasyonel Sayılarla İşlemler ve Problem Çözme",
+          "topic": "",
+          "outcome": "MAT.7.1.4. Rasyonel sayılar ve işlemler içeren gerçek yaşam problemlerini  çözebilme",
+          "counts": [
+            2,
+            2,
+            1,
+            0
+          ]
+        }
+      ]
+    },
+    "8": {
+      "scenarios": [
+        "Senaryo 1",
+        "Senaryo 2",
+        "Senaryo 3",
+        "Senaryo 4",
+        "Senaryo 5",
+        "Senaryo 6"
+      ],
+      "scenario_cols": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "outcomes": [
+        {
+          "unit": "SAYILAR VE İŞLEMLER",
+          "topic": "M.8.1.1.1. Verilen pozitif tam sayıların pozitif tam sayı çarpanlarını bulur, pozitif tam sayıların pozitif tam sayı çarpanlarını üslü ifadelerin çarpımı şeklinde yazar.",
+          "outcome": "Çarpanlar ve Katlar",
+          "counts": [
+            1,
+            1,
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "M.8.1.1.2. İki doğal sayının en büyük ortak bölenini (EBOB) ve en küçük ortak katını (EKOK) hesaplar, ilgili problemleri çözer.",
+          "counts": [
+            1,
+            2,
+            2,
+            2,
+            3,
+            2
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "M.8.1.1.3. Verilen iki doğal sayının aralarında asal olup olmadığını belirler.",
+          "counts": [
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "unit": "Üslü İfadeler",
+          "topic": "",
+          "outcome": "M.8.1.2.1. Tam sayıların, tam sayı kuvvetlerini hesaplar.",
+          "counts": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "M.8.1.2.2. Üslü ifadelerle ilgili temel kuralları anlar, birbirine denk ifadeler oluşturur.",
+          "counts": [
+            1,
+            2,
+            2,
+            2,
+            3,
+            2
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "M.8.1.2.3. Sayıların ondalık gösterimlerini 10’un tam sayı kuvvetlerini kullanarak çözümler.",
+          "counts": [
+            1,
+            0,
+            1,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "M.8.1.2.4. Verilen bir sayıyı 10’un farklı tam sayı kuvvetlerini kullanarak ifade eder.",
+          "counts": [
+            1,
+            0,
+            1,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "M.8.1.2.5. Çok büyük ve çok küçük sayıları bilimsel gösterimle ifade eder ve karşılaştırır.",
+          "counts": [
+            1,
+            0,
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "unit": "Kareköklü İfadeler",
+          "topic": "",
+          "outcome": "M.8.1.3.1. Tamkare pozitif tam sayılarla bu sayıların karekökleri arasındaki ilişkiyi belirler.",
+          "counts": [
+            1,
+            0,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "M.8.1.3.2. Tam kare olmayan kareköklü bir sayının hangi iki doğal sayı arasında olduğunu belirler.",
+          "counts": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "M.8.1.3.3. Kareköklü bir ifadeyi a√b şeklinde yazar ve a√b şeklindeki ifadede katsayıyı kök içine alır.",
+          "counts": [
+            1,
+            2,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    }
+  },
+  "fen_bilimleri": {
+    "5": {
+      "scenarios": [
+        "Senaryo 1",
+        "Senaryo 2",
+        "Senaryo 3",
+        "Senaryo 4"
+      ],
+      "scenario_cols": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "outcomes": [
+        {
+          "unit": "Gökyüzündeki Komşumuz: Ay",
+          "topic": "",
+          "outcome": "FB.5.1.2. Ay’ın özellikleri, dönme ve dolanma hareketleri ile ilgili bilimsel çıkarım yapabilme",
+          "counts": [
+            2,
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "FB.5.1.3. Ay’ın evrelerini temsil eden bilimsel model oluşturabilme",
+          "counts": [
+            2,
+            3,
+            1,
+            0
+          ]
+        },
+        {
+          "unit": "Dünya’mız ve Gökyüzündeki Komşularımız",
+          "topic": "",
+          "outcome": "FB.5.1.4. Güneş, Dünya ve Ay’ın birbirlerine göre hareketlerini ve hacimsel büyüklüklerini temsil eden bilimsel model oluşturabilme",
+          "counts": [
+            2,
+            2,
+            1,
+            2
+          ]
+        },
+        {
+          "unit": "2. ÜNİTE: KUVVETİ TANIYALIM",
+          "topic": "Kuvvet ve Kuvvetin Ölçülmesi",
+          "outcome": "FB.5.2.1. Kuvveti büyüklüğü ile operasyonel tanımlayabilme",
+          "counts": [
+            1,
+            0,
+            2,
+            2
+          ]
+        }
+      ]
+    },
+    "6": {
+      "scenarios": [
+        "Senaryo 1",
+        "Senaryo 2",
+        "Senaryo 3",
+        "Senaryo 4",
+        "Senaryo 5",
+        "Senaryo 6"
+      ],
+      "scenario_cols": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "outcomes": [
+        {
+          "unit": "1. ÜNİTE: GÜNEŞ SİSTEMİ",
+          "topic": "Güneş Sistemi",
+          "outcome": "FB.6.1.1. Güneş sistemindeki gezegenleri niteliklerine göre sınıflandırabilme",
+          "counts": [
+            2,
+            2,
+            2,
+            1,
+            1,
+            2
+          ]
+        },
+        {
+          "unit": "Güneş ve Ay Tutulmaları",
+          "topic": "",
+          "outcome": "FB.6.1.3. Güneş ve Ay tutulması ile ilgili bilimsel çıkarım yapabilme",
+          "counts": [
+            1,
+            2,
+            1,
+            1,
+            2,
+            2
+          ]
+        },
+        {
+          "unit": "2. ÜNİTE: KUVVETİN ETKİSİNDE HAREKET",
+          "topic": "Bileşke Kuvvet",
+          "outcome": "FB.6.2.1. Bir cisme etki eden aynı doğrultudaki kuvvetler arasındaki ilişkileri açıklayarak bileşke kuvveti yapılandırabilme",
+          "counts": [
+            2,
+            1,
+            2,
+            1,
+            2,
+            2
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "FB.6.2.2. Dengelenmiş ve dengelenmemiş kuvvetlerin etkisi altındaki bir cismin hareketine yönelik deney yapabilme",
+          "counts": [
+            1,
+            0,
+            0,
+            1,
+            2,
+            2
+          ]
+        },
+        {
+          "unit": "Sabit Süratli ve Sabit Hızlı Hareket",
+          "topic": "",
+          "outcome": "FB.6.2.3. Sürat ve hız kavramlarını karşılaştırabilme",
+          "counts": [
+            1,
+            2,
+            2,
+            2,
+            0,
+            1
+          ]
+        },
+        {
+          "unit": "3. ÜNİTE: CANLILARDA SİSTEMLER",
+          "topic": "FB.6.3.1. Eşeyli ve eşeysiz üremeyi karşılaştırabilme",
+          "outcome": "Bitki ve Hayvanlarda Üreme, Büyüme ve Gelişme",
+          "counts": [
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    "7": {
+      "scenarios": [
+        "Senaryo 1",
+        "Senaryo 2",
+        "Senaryo 3",
+        "Senaryo 4"
+      ],
+      "scenario_cols": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "outcomes": [
+        {
+          "unit": "1. ÜNİTE: UZAY ÇAĞI",
+          "topic": "Türkiye ve Uzay Araştırmaları",
+          "outcome": "FB.7.1.1. Uzay araştırmaları için geliştirilen teknolojileri karşılaştırabilme",
+          "counts": [
+            2,
+            2,
+            2,
+            0
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "FB.7.1.3. Uzay araştırmalarının yol açabileceği problemleri çözebilme",
+          "counts": [
+            0,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "unit": "Uzayda Neler Var?",
+          "topic": "",
+          "outcome": "FB.7.1.4. Yıldızların yaşamını açıklayarak yapılandırabilme",
+          "counts": [
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "FB.7.1.5. Yıldız, galaksi ve evren kavramlarını açıklayarak yapılandırabilme",
+          "counts": [
+            1,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "unit": "2. ÜNİTE: KUVVET VE ENERJİYİ KEŞFEDELİM",
+          "topic": "Kuvvet, İş ve Enerji İlişkisi",
+          "outcome": "FB.7.2.1. Fiziksel anlamda yapılan işin bağlı olduğu faktörlere ilişkin bilimsel çıkarım yapabilme",
+          "counts": [
+            3,
+            3,
+            2,
+            2
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "FB.7.2.2. Enerji çeşitlerinden kinetik ve potansiyel enerjiyi karşılaştırabilme",
+          "counts": [
+            2,
+            0,
+            2,
+            1
+          ]
+        }
+      ]
+    },
+    "8": {
+      "scenarios": [
+        "Senaryo 1",
+        "Senaryo 2",
+        "Senaryo 3",
+        "Senaryo 4",
+        "Senaryo 5"
+      ],
+      "scenario_cols": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "outcomes": [
+        {
+          "unit": "1.ÜNİTE: MEVSİMLER VE İKLİM",
+          "topic": "8.1.1. Mevsimlerin Oluşumu",
+          "outcome": "F.8.1.1.1. Mevsimlerin oluşumuna yönelik tahminlerde bulunur.",
+          "counts": [
+            1,
+            2,
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "unit": "2.ÜNİTE: DNA VE GENETİK KOD",
+          "topic": "8.2.1. DNA ve Genetik Kod",
+          "outcome": "F.8.2.1.1. Nükleotid, gen, DNA ve kromozom kavramlarını açıklayarak bu kavramlar arasında ilişki kurar.",
+          "counts": [
+            2,
+            1,
+            1,
+            2,
+            0
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "F.8.2.1.2. DNA’nın yapısını model üzerinde gösterir.",
+          "counts": [
+            2,
+            2,
+            2,
+            0,
+            1
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "F.8.2.1.3. DNA’nın kendini nasıl eşlediğini ifade eder.",
+          "counts": [
+            2,
+            1,
+            0,
+            2,
+            1
+          ]
+        },
+        {
+          "unit": "8.2.2. Kalıtım",
+          "topic": "",
+          "outcome": "F.8.2.2.1. Kalıtım ile ilgili kavramları tanımlar.",
+          "counts": [
+            0,
+            0,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "F.8.2.2.2. Tek karakter çaprazlamaları ile ilgili problemler çözerek sonuçlar hakkında yorum yapar.",
+          "counts": [
+            0,
+            2,
+            3,
+            0,
+            3
+          ]
+        }
+      ]
+    }
+  },
+  "turkce": {
+    "5": {
+      "scenarios": [
+        "Senaryo 1",
+        "Senaryo 2",
+        "Senaryo 3",
+        "Senaryo 4",
+        "Senaryo 5",
+        "Senaryo 6"
+      ],
+      "scenario_cols": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "outcomes": [
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "T.O.5.5. Metinde geçen anlamını bilmediği söz varlığı unsurlarının anlamını tahmin edebilme",
+          "counts": [
+            0,
+            1,
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "T.O.5.6. Metnin yüzey anlamını belirleyebilme",
+          "counts": [
+            2,
+            1,
+            2,
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "T.O.5.7. Görselle iletilen anlamı belirleyebilme",
+          "counts": [
+            1,
+            2,
+            1,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "T.O.5.15. Metnin anahtar kelimelerini belirlemeye yönelik çözümleme yapabilme",
+          "counts": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "T.O.5.20. Metinden hareketle söz varlığını geliştirmeye yönelik çözümleme yapabilme",
+          "counts": [
+            1,
+            0,
+            0,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "T.Y.5.3. Yazısında içerik ve yapıya yönelik seçimlerini yönetebilme",
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "T.Y.5.13. Yazısını zenginleştirecek biçimde söz varlığını kullanabilme",
+          "counts": [
+            1,
+            0,
+            1,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "T.Y.5.16. Yazım ve noktalama işaretleriyle ilgili kuralları uygulayabilme",
+          "counts": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    "6": {
+      "scenarios": [
+        "Senaryo 1",
+        "Senaryo 2",
+        "Senaryo 3",
+        "Senaryo 4",
+        "Senaryo 5",
+        "Senaryo 6"
+      ],
+      "scenario_cols": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "outcomes": [
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "T.O.6.5. Metinde geçen anlamını bilmediği söz varlığı unsurlarının anlamını tahmin edebilme",
+          "counts": [
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "T.O.6.6. Metnin yüzey anlamını belirleyebilme",
+          "counts": [
+            2,
+            2,
+            1,
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "T.O.6.16. Bilgilendirici metinde anahtar kelimeleri belirlemeye yönelik çözümleme yapabilme",
+          "counts": [
+            0,
+            1,
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "T.O.6.21. Metinden hareketle söz varlığını geliştirmeye yönelik çözümleme yapabilme",
+          "counts": [
+            1,
+            1,
+            1,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "T.Y.6.3. Yazısında içerik ve yapıya yönelik seçimlerini yönetebilme",
+          "counts": [
+            0,
+            1,
+            0,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "T.Y.6.18. Yazısını zenginleştirecek biçimde söz varlığını kullanabilme",
+          "counts": [
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "T.Y.6.21. Yazım kuralları ve noktalama işaretlerini uygulayabilme",
+          "counts": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    "7": {
+      "scenarios": [
+        "Senaryo 1",
+        "Senaryo 2",
+        "Senaryo 3",
+        "Senaryo 4",
+        "Senaryo 5",
+        "Senaryo 6"
+      ],
+      "scenario_cols": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "outcomes": [
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "T.O.7.4. Metinde geçen anlamını bilmediği söz varlığı unsurlarının anlamını tahmin edebilme",
+          "counts": [
+            1,
+            0,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "T.O.7.5. Metnin yüzey anlamını belirleyebilme",
+          "counts": [
+            1,
+            1,
+            2,
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "T.O.7.7. Metnin derin anlamını belirlemeye yönelik basit çıkarımlar yapabilme",
+          "counts": [
+            0,
+            1,
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "T.O.7.8. Metnin derin anlamını belirlemeye yönelik üst düzey çıkarımlar yapabilme",
+          "counts": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "T.O.7.14. Bilgilendirici metinlerde metin yapılarından hareketle önemli bilgileri belirlemeye yönelik çözümleme yapabilme",
+          "counts": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "T.O.7.15. Bilgilendirici metinde anahtar kelimeleri belirlemeye yönelik çözümleme yapabilme",
+          "counts": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "T.O.7.21. Metinden hareketle söz varlığını geliştirmeye yönelik çözümleme yapabilme",
+          "counts": [
+            1,
+            0,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "T.Y.7.3. Yazısında içerik ve yapıya yönelik seçimlerini yönetebilme",
+          "counts": [
+            1,
+            1,
+            1,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "T.Y.7.18. Yazısını zenginleştirecek biçimde söz varlığını kullanabilme",
+          "counts": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "T.Y.7.21. Yazım kuralları ve noktalama işaretlerini uygulayabilme",
+          "counts": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    "8": {
+      "scenarios": [
+        "Senaryo 1",
+        "Senaryo 2",
+        "Senaryo 3",
+        "Senaryo 4",
+        "Senaryo 5",
+        "Senaryo 6",
+        "Senaryo 7"
+      ],
+      "scenario_cols": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "outcomes": [
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "T.8.3.5. Bağlamdan yararlanarak bilmediği kelime ve kelime gruplarının anlamını tahmin eder.",
+          "counts": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "T.8.3.7. Metindeki söz sanatlarını tespit eder.",
+          "counts": [
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "T.8.3.9. Fiilimsilerin cümledeki işlevlerini kavrar.",
+          "counts": [
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "T.8.3.11. Metindeki anlatım biçimlerini belirler.",
+          "counts": [
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "T.8.3.14. Metinle ilgili soruları cevaplar.",
+          "counts": [
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "T.8.3.15. Metinle ilgili sorular sorar.",
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "T.8.3.16. Metnin konusunu belirler.",
+          "counts": [
+            1,
+            0,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "T.8.3.17. Metnin ana fikrini/ana duygusunu belirler.",
+          "counts": [
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "T.8.3.19. Metnin içeriğine uygun başlık/başlıklar belirler.",
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "T.8.3.25. Okudukları ile ilgili çıkarımlarda bulunur.",
+          "counts": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "T.8.3.26. Metin türlerini ayırt eder.",
+          "counts": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "T.8.3.34. Okuduklarında kullanılan düşünceyi geliştirme yollarını belirler.",
+          "counts": [
+            1,
+            1,
+            0,
+            1,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "unit": "YAZMA",
+          "topic": "Alt Öğrenme Alanı Yok",
+          "outcome": "T.8.4.1. Şiir yazar.",
+          "counts": [
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "T.8.4.4. Yazma stratejilerini uygular.",
+          "counts": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "T.8.4.9. Yazılarında anlatım biçimlerini kullanır.",
+          "counts": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "T.8.4.15. Yazılarında uygun geçiş ve bağlantı ifadelerini kullanır.",
+          "counts": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "T.8.4.18. Cümlenin ögelerini ayırt eder.",
+          "counts": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    }
+  },
+  "sosyal_bilgiler": {
+    "5": {
+      "scenarios": [
+        "Senaryo 1",
+        "Senaryo 2",
+        "Senaryo 3",
+        "Senaryo 4",
+        "Senaryo 5"
+      ],
+      "scenario_cols": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "outcomes": [
+        {
+          "unit": "BİRLİKTE YAŞAMAK",
+          "topic": "Gruplar ve Roller",
+          "outcome": "SB.5.1.1. Dâhil olduğu gruplar ve bu gruplardaki rolleri arasındaki ilişkileri çözümleyebilme",
+          "counts": [
+            1,
+            2,
+            2,
+            1,
+            2
+          ]
+        },
+        {
+          "unit": "Kültürel Özelliklere Saygı ve Birlikte Yaşama Kültürü",
+          "topic": "",
+          "outcome": "SB.5.1.2. Kültürel özelliklere saygı duymanın birlikte yaşamaya etkisini yorumlayabilme",
+          "counts": [
+            2,
+            2,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "unit": "Yardımlaşma ve Dayanışma Faaliyetlerinin Toplumsal Birliğe Etkisi",
+          "topic": "",
+          "outcome": "SB.5.1.3. Toplumsal birliği sürdürmeye yönelik yardımlaşma ve dayanışma faaliyetlerine katkı sağlayabilme",
+          "counts": [
+            2,
+            3,
+            2,
+            3,
+            2
+          ]
+        },
+        {
+          "unit": "Yaşadığı İlin Göreceli Konumu",
+          "topic": "SB.5.2.1.  Yaşadığı ilin göreceli konum özelliklerini algılayabilme",
+          "outcome": "EVİMİZ DÜNYA",
+          "counts": [
+            1,
+            0,
+            1,
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    "6": {
+      "scenarios": [
+        "Senaryo 1",
+        "Senaryo 2",
+        "Senaryo 3",
+        "Senaryo 4",
+        "Senaryo 5"
+      ],
+      "scenario_cols": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "outcomes": [
+        {
+          "unit": "BİRLİKTE YAŞAMAK",
+          "topic": "Zaman İçinde Değişen Gruplar ve Roller",
+          "outcome": "SB.6.1.1. Dâhil olduğu grupların ve bu gruplardaki rollerinin zaman içerisinde değişebile ceğine ilişkin çıkarım yapabilme",
+          "counts": [
+            2,
+            2,
+            2,
+            1,
+            2
+          ]
+        },
+        {
+          "unit": "Kültürel Bağlarımızın ve Millî Değerlerimizin Toplumsal Birlikteliğe Etkisi",
+          "topic": "",
+          "outcome": "SB.6.1.2. Kültürel bağlarımızın ve millî değerlerimizin toplumsal birliğe etkisini yorumlayabilme",
+          "counts": [
+            1,
+            2,
+            1,
+            2,
+            2
+          ]
+        },
+        {
+          "unit": "Toplumsal Sorunlar ve Çözümler Önerileri",
+          "topic": "",
+          "outcome": "SB.6.1.3. Toplumsal hayatta karşılaşılan sorunlara yönelik çözüm önerilerini müzakere edebilme",
+          "counts": [
+            2,
+            3,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "unit": "Ülkemizin, Kıtaların ve Okyanusların Konum Özellikleri",
+          "topic": "SB.6.2.1. Ülkemizin, kıtaların ve okyanusların konum özelliklerini algılayabilme",
+          "outcome": "EVİMİZ DÜNYA",
+          "counts": [
+            1,
+            1,
+            2,
+            1,
+            0
+          ]
+        }
+      ]
+    },
+    "7": {
+      "scenarios": [
+        "Senaryo 1",
+        "Senaryo 2",
+        "Senaryo 3",
+        "Senaryo 4",
+        "Senaryo 5"
+      ],
+      "scenario_cols": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "outcomes": [
+        {
+          "unit": "BİRLİKTE YAŞAMAK",
+          "topic": "Gruplarda ve Sosyal Hayatta İletişimin Önemi",
+          "outcome": "SB 7.1.1. Dâhil olduğu gruplarda ve sosyal hayatta etkili iletişimin önemini sorgulayabilme",
+          "counts": [
+            2,
+            2,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "unit": "Özel Gereksinimli Bireyler İçin Fırsat Eşitliği",
+          "topic": "",
+          "outcome": "SB.7.1.2. Özel gereksinimli bireyler için fırsat eşitliğini sürdürmeye yönelik fikir üretebilme",
+          "counts": [
+            1,
+            2,
+            1,
+            2,
+            2
+          ]
+        },
+        {
+          "unit": "Millî Meseleler Karşısında Türk Toplumunun Tutum ve Davranışları",
+          "topic": "",
+          "outcome": "SB.7.1.3. Türk toplumunun millî meseleler karşısında gösterdiği tutum ve davranışlara ilişkin çıkarım yapabilme",
+          "counts": [
+            2,
+            2,
+            3,
+            3,
+            2
+          ]
+        },
+        {
+          "unit": "Küreselleşmenin İnsan ve Toplum Hayatına Etkisi",
+          "topic": "SB.7.2.1. Küreselleşmenin insan ve toplum hayatında meydana getirdiği değişimi yorumlayabilme",
+          "outcome": "EVİMİZ DÜNYA",
+          "counts": [
+            2,
+            1,
+            2,
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    "8": {
+      "scenarios": [
+        "Senaryo 1",
+        "Senaryo 2",
+        "Senaryo 3",
+        "Senaryo 4",
+        "Senaryo 5",
+        "Senaryo 6",
+        "Senaryo 7"
+      ],
+      "scenario_cols": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "outcomes": [
+        {
+          "unit": "1. ÜNİTE: BİR KAHRAMAN DOĞUYOR",
+          "topic": "",
+          "outcome": "İTA.8.1.1. Avrupa’daki gelişmelerin yansımaları bağlamında Osmanlı Devleti’nin yirminci yüzyılın\n başlarındaki siyasi ve sosyal durumunu kavrar.",
+          "counts": [
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "İTA.8.1.2. Mustafa Kemal’in çocukluk ve öğrenim hayatından hareketle onun kişilik özelliklerinin oluşumu hakkında çıkarımlarda bulunur.",
+          "counts": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "İTA.8.1.3. Gençlik döneminde Mustafa Kemal’in fikir hayatını etkileyen önemli kişileri ve olayları kavrar.",
+          "counts": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "İTA.8.1.4. Mustafa Kemal’in askerlik hayatı ile ilgili olayları ve olguları onun kişilik özellikleri ile ilişkilendirir.",
+          "counts": [
+            1,
+            1,
+            1,
+            1,
+            2,
+            1,
+            2
+          ]
+        },
+        {
+          "unit": "2. ÜNİTE: MİLLÎ UYANIŞ: BAĞIMSIZLIK YOLUNDA ATILAN ADIMLAR",
+          "topic": "",
+          "outcome": "İTA.8.2.1. Birinci Dünya Savaşı’nın sebeplerini ve savaşın başlamasına yol açan gelişmeleri kavrar.",
+          "counts": [
+            1,
+            1,
+            2,
+            1,
+            2,
+            1,
+            2
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "İTA.8.2.2. Birinci Dünya Savaşı’nda Osmanlı Devleti’nin durumu hakkında çıkarımlarda bulunur.",
+          "counts": [
+            1,
+            1,
+            1,
+            2,
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "İTA.8.2.3. Mondros Ateşkes Antlaşması’nın imzalanması ve uygulanması karşısında Osmanlı yönetiminin, Mustafa Kemal’in ve halkın tutumunu analiz eder.",
+          "counts": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            1,
+            0
+          ]
+        }
+      ]
+    }
+  },
+  "din_kulturu": {
+    "5": {
+      "scenarios": [
+        "Senaryo 1",
+        "Senaryo 2",
+        "Senaryo 3",
+        "Senaryo 4"
+      ],
+      "scenario_cols": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "outcomes": [
+        {
+          "unit": "ALLAH İNANCI",
+          "topic": "DKAB.5.1.1. Evrendeki mükemmel düzene ilişkin akıl yürütebilme",
+          "outcome": "Evrendeki Mükemmel Düzen",
+          "counts": [
+            1,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "unit": "Allah’ın Varlığı ve Birliği",
+          "topic": "",
+          "outcome": "DKAB.5.1.2. Evrendeki mükemmel düzenden hareketle Allah’ın (cc) varlığı ve birliğini müşahede edebilme",
+          "counts": [
+            3,
+            3,
+            3,
+            2
+          ]
+        },
+        {
+          "unit": "Allah’ın Güzel İsimleri",
+          "topic": "",
+          "outcome": "DKAB.5.1.3. Allah’ın (cc) güzel isimlerini bağlamına uygun kullanabilme",
+          "counts": [
+            2,
+            2,
+            1,
+            2
+          ]
+        },
+        {
+          "unit": "Bir Sure Öğreniyorum: İhlas Suresi",
+          "topic": "",
+          "outcome": "DKAB.5.1.4. İhlas suresini ve bu surenin anlamını okuyarak yorumlayabilme",
+          "counts": [
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "unit": "NAMAZ",
+          "topic": "Allah’ın Huzurunda Olmak: Namaz",
+          "outcome": "DKAB.5.2.1. Namaz ibadetini özetleyebilme",
+          "counts": [
+            1,
+            0,
+            1,
+            0
+          ]
+        }
+      ]
+    },
+    "6": {
+      "scenarios": [
+        "Senaryo 1",
+        "Senaryo 2",
+        "Senaryo 3",
+        "Senaryo 4",
+        "Senaryo 5"
+      ],
+      "scenario_cols": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "outcomes": [
+        {
+          "unit": "Peygamberlerin İlettiği Mesaj: Vahiy",
+          "topic": "",
+          "outcome": "DKAB.6.1.2. Vahyin gönderiliş amacını idrak edebilme",
+          "counts": [
+            3,
+            3,
+            2,
+            3,
+            3
+          ]
+        },
+        {
+          "unit": "İlahi Kitaplar",
+          "topic": "",
+          "outcome": "DKAB.6.1.3. İlahi kitaplarla ilgili bilgileri çözümleyebilme",
+          "counts": [
+            2,
+            2,
+            2,
+            2,
+            3
+          ]
+        },
+        {
+          "unit": "Bir Sure Öğreniyorum: Felak Suresi",
+          "topic": "",
+          "outcome": "DKAB.6.1.4. Felak suresini ve bu surenin anlamını okuyarak yorumlayabilme",
+          "counts": [
+            1,
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "unit": "RAMAZAN VE ORUÇ",
+          "topic": "Oruç ve Kur’an Ayı Ramazan",
+          "outcome": "DKAB.6.2.1. Ramazan ayının oruç ve Kur’an ayı olduğunu çözümleyebilme",
+          "counts": [
+            1,
+            0,
+            0,
+            1,
+            0
+          ]
+        }
+      ]
+    },
+    "7": {
+      "scenarios": [
+        "Senaryo 1",
+        "Senaryo 2",
+        "Senaryo 3",
+        "Senaryo 4",
+        "Senaryo 5"
+      ],
+      "scenario_cols": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "outcomes": [
+        {
+          "unit": "MELEK VE AHİRET İNANCI",
+          "topic": "Varlıklar Âlemi",
+          "outcome": "DKAB.7.1.1. Melekleri sınıflandırabilme",
+          "counts": [
+            1,
+            1,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "unit": "Dünya ve Ahiret Hayatı",
+          "topic": "",
+          "outcome": "DKAB.7.1.2. Ahiret hayatının aşamalarını çözümleyebilme",
+          "counts": [
+            2,
+            2,
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "unit": "Melek ve Ahiret İnancının İnsana Kazandırdıkları",
+          "topic": "",
+          "outcome": "DKAB.7.1.3. Melek ve ahiret inancının insana kazandırdıkları konusunda analitik düşünebilme",
+          "counts": [
+            3,
+            2,
+            2,
+            3,
+            3
+          ]
+        },
+        {
+          "unit": "Bir Sure Öğreniyorum: Nâs Suresi",
+          "topic": "",
+          "outcome": "DKAB.7.1.4. Nâs suresini ve bu surenin anlamını okuyarak yorumlayabilme",
+          "counts": [
+            1,
+            1,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "unit": "HAC, UMRE VE KURBAN",
+          "topic": "Hac ve Umre İbadeti",
+          "outcome": "DKAB.7.2.1. Hac ve umre ibadetlerini çözümleyebilme",
+          "counts": [
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    "8": {
+      "scenarios": [
+        "Senaryo 1",
+        "Senaryo 2",
+        "Senaryo 3",
+        "Senaryo 4",
+        "Senaryo 5"
+      ],
+      "scenario_cols": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "outcomes": [
+        {
+          "unit": "KADER İNANCI",
+          "topic": "Kader ve Kaza İnancı",
+          "outcome": "DKAB 8.1.1. Kader ve kaza inancını ayet ve hadislerle açıklar.",
+          "counts": [
+            1,
+            0,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "unit": "İnsanın İradesi ve Kader",
+          "topic": "",
+          "outcome": "DKAB 8.1.2. İnsanın ilmi, iradesi, sorumluluğu ile kader arasında ilişki kurar.",
+          "counts": [
+            1,
+            2,
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "unit": "Kaderle İlgili Kavramlar",
+          "topic": "",
+          "outcome": "DKAB 8.1.3. Kaza ve kader ile ilgili kavramları analiz eder.",
+          "counts": [
+            2,
+            2,
+            2,
+            3,
+            2
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "DKAB 8.1.4. Toplumda kader ve kaza ile ilgili yaygın olan yanlış anlayışları sorgular",
+          "counts": [
+            2,
+            2,
+            1,
+            2,
+            2
+          ]
+        },
+        {
+          "unit": "Bir Peygamber Tanıyorum: Hz. Musa (a.s.)",
+          "topic": "",
+          "outcome": "DKAB 8.1.5. Hz. Musa’nın (a.s.) hayatını ana hatlarıyla tanır.",
+          "counts": [
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "unit": "Bir Ayet Tanıyorum: Ayetelkürsi ve Anlamı",
+          "topic": "",
+          "outcome": "DKAB 8.1.6. Ayet el-Kürsi’yi okur, anlamını söyler.",
+          "counts": [
+            1,
+            0,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "unit": "ZEKÂT VE SADAKA",
+          "topic": "İslam’ın Paylaşma ve Yardımlaşmaya Verdiği Önem",
+          "outcome": "DKAB 8.2.1. İslam’ın paylaşma ve yardımlaşmaya verdiği önemi ayet ve hadisler ışığında yorumlar.",
+          "counts": [
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    }
+  },
+  "ingilizce": {
+    "5": {
+      "scenarios": [
+        "Senaryo 1",
+        "Senaryo 2",
+        "Senaryo 3",
+        "Senaryo 4",
+        "Senaryo 5"
+      ],
+      "scenario_cols": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "outcomes": [
+        {
+          "unit": "SCHOOL LIFE",
+          "topic": "",
+          "outcome": "ENG.5.1.R2. Students can bring information about the current content on “school life with people, places and rules at school; school clubs; countries; national days and celebrations” through skimming (looking quickly at) the audio-visual elements and reading the content very quickly.",
+          "counts": [
+            1,
+            1,
+            2,
+            1,
+            2
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "ENG.5.1.R3. Students can make meaning of / derive meaning from the current content about “school life with people, places and rules at school; school clubs; countries; national days and celebrations” by reading it carefully.",
+          "counts": [
+            1,
+            1,
+            1,
+            2,
+            1
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "ENG.5.1.V1. Students can select and use the target vocabulary of the current content about “school life with people, places and rules at school; school clubs; countries; national days and celebrations” accurately, authentically, spontaneously, and naturally and use it appropriately and effectively when communicating with others.",
+          "counts": [
+            1,
+            1,
+            1,
+            2,
+            2
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "ENG.5.1.G1. Students can select and use the target grammatical elements of the current content about “school life with people, places and rules at school; school clubs; countries; national days and celebrations” accurately, authentically, spontaneously, and naturally and use it appropriately and effectively when communicating with others.",
+          "counts": [
+            1,
+            1,
+            1,
+            1,
+            2
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "ENG.5.1.W3. Students can organise a content for the assigned writing task on the current content “school life with people, places and rules at school; school clubs; countries; national days and celebrations” based on the model/example provided.",
+          "counts": [
+            1,
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "ENG.5.1.W4. Students can individually construct/form content for the assigned writing task on the current content “school life with people, places and rules at school; school clubs; countries; national days and celebrations”.",
+          "counts": [
+            0,
+            1,
+            0,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    "6": {
+      "scenarios": [
+        "Senaryo 1",
+        "Senaryo 2",
+        "Senaryo 3",
+        "Senaryo 4",
+        "Senaryo 5"
+      ],
+      "scenario_cols": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "outcomes": [
+        {
+          "unit": "SCHOOL LIFE",
+          "topic": "",
+          "outcome": "ENG.6.1.R2. Students can bring information about the current content on “school life with roles, and responsibilities at school; school routines; national days and celebrations” through skimming (looking quickly at) the audio-visual elements and reading the content very quickly.",
+          "counts": [
+            1,
+            1,
+            2,
+            1,
+            2
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "ENG.6.1.R3. Students can make meaning of / derive meaning from the current content about “school life with roles, and responsibilities at school; school routines; national days and celebrations” by reading it carefully.",
+          "counts": [
+            1,
+            1,
+            1,
+            2,
+            1
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "ENG.6.1.V1. Students can select and use the target vocabulary of the current content about “school life with roles, and responsibilities at school; school routines; national days and celebrations” accurately, authentically, spontaneously, and naturally and use it appropriately and effectively when communicating with others.",
+          "counts": [
+            1,
+            1,
+            1,
+            2,
+            2
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "ENG.6.1.G1. Students can select and use the target grammatical elements of the current content about “school life with roles, and responsibilities at school; school routines; national days and celebrations” accurately, authentically, spontaneously, and naturally and use it appropriately and effectively when communicating with others.",
+          "counts": [
+            1,
+            1,
+            1,
+            1,
+            2
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "ENG.6.1.W3. Students can organise a content for the assigned writing task on the current content “school life with roles, and responsibilities at school; school routines; national days and celebrations” based on the model/example provided.",
+          "counts": [
+            1,
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "ENG.6.1.W4. Students can individually construct/form content for the assigned writing task on the current content “school life with roles, and responsibilities at school; school routines; national days and celebrations”.",
+          "counts": [
+            0,
+            1,
+            0,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    "7": {
+      "scenarios": [
+        "Senaryo 1",
+        "Senaryo 2",
+        "Senaryo 3",
+        "Senaryo 4",
+        "Senaryo 5"
+      ],
+      "scenario_cols": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "outcomes": [
+        {
+          "unit": "Appearance And Personality",
+          "topic": "",
+          "outcome": "E7.1.R1. Students will be able to understand a simple text about appearances,  ersonalities, and comparisons including explanations and reasons.",
+          "counts": [
+            1,
+            2,
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "E7.1.W1. Students will be able to write simple pieces to compare people.",
+          "counts": [
+            1,
+            1,
+            1,
+            2,
+            2
+          ]
+        },
+        {
+          "unit": "Sports",
+          "topic": "",
+          "outcome": "E7.2.R1. Students will be able to understand  short and simple texts on sports.",
+          "counts": [
+            1,
+            2,
+            2,
+            2,
+            3
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "E7.2.W1. Students will be able to write pieces  about routines/daily activities by using frequency adverbs.",
+          "counts": [
+            1,
+            0,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    "8": {
+      "scenarios": [
+        "Senaryo 1",
+        "Senaryo 2",
+        "Senaryo 3",
+        "Senaryo 4",
+        "Senaryo 5"
+      ],
+      "scenario_cols": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "outcomes": [
+        {
+          "unit": "Friendship",
+          "topic": "",
+          "outcome": "E8.1.R1. Students will be able to understand short and simple texts about friendship.",
+          "counts": [
+            1,
+            1,
+            2,
+            1,
+            2
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "E8.1.R2. Students will be able to understand short and simple invitation letters, cards and e-mails.",
+          "counts": [
+            0,
+            1,
+            1,
+            2,
+            1
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "E8.1.W1. Students will be able to write a short and simple letter apologizing and giving reasons for not attending a party in response to an invitation.",
+          "counts": [
+            1,
+            1,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "unit": "Teen Life",
+          "topic": "",
+          "outcome": "E8.2.R1. Students will be able to understand short and simple texts about regular activities of teenagers.",
+          "counts": [
+            2,
+            1,
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "unit": "",
+          "topic": "",
+          "outcome": "E8.2.W1. Students will be able to write a short and simple paragraph about regular activities of teenagers.",
+          "counts": [
+            0,
+            1,
+            0,
+            1,
+            1
+          ]
+        }
+      ]
+    }
+  }
+}

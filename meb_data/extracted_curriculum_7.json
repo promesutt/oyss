@@ -1,0 +1,481 @@
+{
+  "fen_bilimleri": {
+    "subjectId": "fen_bilimleri",
+    "sheet": "7. sınıf",
+    "scenarioCount": 4,
+    "scenarios": [
+      "Senaryo 1",
+      "Senaryo 2",
+      "Senaryo 3",
+      "Senaryo 4"
+    ],
+    "outcomes": [
+      {
+        "unit": "1. ÜNİTE: UZAY ÇAĞI",
+        "topic": "Türkiye ve Uzay Araştırmaları",
+        "outcome": "FB.7.1.1. Uzay araştırmaları için geliştirilen teknolojileri karşılaştırabilme",
+        "questions_per_scenario": [
+          2,
+          2,
+          2,
+          0
+        ]
+      },
+      {
+        "unit": "1. ÜNİTE: UZAY ÇAĞI",
+        "topic": "Türkiye ve Uzay Araştırmaları",
+        "outcome": "FB.7.1.3. Uzay araştırmalarının yol açabileceği problemleri çözebilme",
+        "questions_per_scenario": [
+          0,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "unit": "1. ÜNİTE: UZAY ÇAĞI",
+        "topic": "Uzayda Neler Var?",
+        "outcome": "FB.7.1.4. Yıldızların yaşamını açıklayarak yapılandırabilme",
+        "questions_per_scenario": [
+          1,
+          0,
+          1,
+          1
+        ]
+      },
+      {
+        "unit": "1. ÜNİTE: UZAY ÇAĞI",
+        "topic": "Uzayda Neler Var?",
+        "outcome": "FB.7.1.5. Yıldız, galaksi ve evren kavramlarını açıklayarak yapılandırabilme",
+        "questions_per_scenario": [
+          1,
+          1,
+          0,
+          1
+        ]
+      },
+      {
+        "unit": "2. ÜNİTE: KUVVET VE ENERJİYİ KEŞFEDELİM",
+        "topic": "Kuvvet, İş ve Enerji İlişkisi",
+        "outcome": "FB.7.2.1. Fiziksel anlamda yapılan işin bağlı olduğu faktörlere ilişkin bilimsel çıkarım yapabilme",
+        "questions_per_scenario": [
+          3,
+          3,
+          2,
+          2
+        ]
+      },
+      {
+        "unit": "2. ÜNİTE: KUVVET VE ENERJİYİ KEŞFEDELİM",
+        "topic": "Kuvvet, İş ve Enerji İlişkisi",
+        "outcome": "FB.7.2.2. Enerji çeşitlerinden kinetik ve potansiyel enerjiyi karşılaştırabilme",
+        "questions_per_scenario": [
+          2,
+          0,
+          2,
+          1
+        ]
+      }
+    ]
+  },
+  "matematik": {
+    "subjectId": "matematik",
+    "sheet": "7.sınıf",
+    "scenarioCount": 4,
+    "scenarios": [
+      "Senaryo 1",
+      "Senaryo 2",
+      "Senaryo 3",
+      "Senaryo 4"
+    ],
+    "outcomes": [
+      {
+        "unit": "SAYILAR VE NİCELİKLER (1)",
+        "topic": "Tam Sayılar Rasyonel Sayılar ve Farklı Temsilleri",
+        "outcome": "MAT.7.1.1.  Gerçek yaşam ya da matematiksel durumlarda doğal sayı, tam sayı ve rasyonel sayıları yorumlayabilme",
+        "questions_per_scenario": [
+          1,
+          1,
+          2,
+          2
+        ]
+      },
+      {
+        "unit": "SAYILAR VE NİCELİKLER (1)",
+        "topic": "Rasyonel Sayılar ve Farklı Temsilleri",
+        "outcome": "MAT.7.1.2. Gerçek yaşam durumlarında rasyonel sayıların ondalık gösterimlerini yansıtabilmea) Bölme işlemini kullanarak her rasyonel sayının bir ondalık gösterimi olduğunu inceler..",
+        "questions_per_scenario": [
+          2,
+          1,
+          2,
+          2
+        ]
+      },
+      {
+        "unit": "SAYILAR VE NİCELİKLER (1)",
+        "topic": "Rasyonel Sayılar ve Farklı Temsilleri",
+        "outcome": "MAT.7.1.3. Rasyonel sayıların karşılaştırma ve sıralama ilişkilerini yorumlayabilme",
+        "questions_per_scenario": [
+          2,
+          1,
+          2,
+          2
+        ]
+      },
+      {
+        "unit": "SAYILAR VE NİCELİKLER (1)",
+        "topic": "Rasyonel Sayılarla İşlemler ve Problem Çözme",
+        "outcome": "MAT.7.1.4. Rasyonel sayılar ve işlemler içeren gerçek yaşam problemlerini  çözebilme",
+        "questions_per_scenario": [
+          2,
+          2,
+          1,
+          0
+        ]
+      }
+    ]
+  },
+  "turkce": {
+    "subjectId": "turkce",
+    "sheet": "7. SINIF",
+    "scenarioCount": 6,
+    "scenarios": [
+      "Senaryo 1",
+      "Senaryo 2",
+      "Senaryo 3",
+      "Senaryo 4",
+      "Senaryo 5",
+      "Senaryo 6"
+    ],
+    "outcomes": [
+      {
+        "unit": "OKUMA",
+        "topic": "OKUMA",
+        "outcome": "T.O.7.4. Metinde geçen anlamını bilmediği söz varlığı unsurlarının anlamını tahmin edebilme",
+        "questions_per_scenario": [
+          1,
+          0,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "unit": "OKUMA",
+        "topic": "OKUMA",
+        "outcome": "T.O.7.5. Metnin yüzey anlamını belirleyebilme",
+        "questions_per_scenario": [
+          1,
+          1,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "unit": "OKUMA",
+        "topic": "OKUMA",
+        "outcome": "T.O.7.7. Metnin derin anlamını belirlemeye yönelik basit çıkarımlar yapabilme",
+        "questions_per_scenario": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "unit": "OKUMA",
+        "topic": "OKUMA",
+        "outcome": "T.O.7.8. Metnin derin anlamını belirlemeye yönelik üst düzey çıkarımlar yapabilme",
+        "questions_per_scenario": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "unit": "OKUMA",
+        "topic": "OKUMA",
+        "outcome": "T.O.7.14. Bilgilendirici metinlerde metin yapılarından hareketle önemli bilgileri belirlemeye yönelik çözümleme yapabilme",
+        "questions_per_scenario": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "unit": "OKUMA",
+        "topic": "OKUMA",
+        "outcome": "T.O.7.15. Bilgilendirici metinde anahtar kelimeleri belirlemeye yönelik çözümleme yapabilme",
+        "questions_per_scenario": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "unit": "OKUMA",
+        "topic": "OKUMA",
+        "outcome": "T.O.7.21. Metinden hareketle söz varlığını geliştirmeye yönelik çözümleme yapabilme",
+        "questions_per_scenario": [
+          1,
+          0,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "unit": "YAZMA",
+        "topic": "YAZMA",
+        "outcome": "T.Y.7.3. Yazısında içerik ve yapıya yönelik seçimlerini yönetebilme",
+        "questions_per_scenario": [
+          1,
+          1,
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "unit": "YAZMA",
+        "topic": "YAZMA",
+        "outcome": "T.Y.7.18. Yazısını zenginleştirecek biçimde söz varlığını kullanabilme",
+        "questions_per_scenario": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          1
+        ]
+      },
+      {
+        "unit": "YAZMA",
+        "topic": "YAZMA",
+        "outcome": "T.Y.7.21. Yazım kuralları ve noktalama işaretlerini uygulayabilme",
+        "questions_per_scenario": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    ]
+  },
+  "sosyal_bilgiler": {
+    "subjectId": "sosyal_bilgiler",
+    "sheet": "7. sınıf ",
+    "scenarioCount": 5,
+    "scenarios": [
+      "Senaryo 1",
+      "Senaryo 2",
+      "Senaryo 3",
+      "Senaryo 4",
+      "Senaryo 5"
+    ],
+    "outcomes": [
+      {
+        "unit": "BİRLİKTE YAŞAMAK",
+        "topic": "Gruplarda ve Sosyal Hayatta İletişimin Önemi",
+        "outcome": "SB 7.1.1. Dâhil olduğu gruplarda ve sosyal hayatta etkili iletişimin önemini sorgulayabilme",
+        "questions_per_scenario": [
+          2,
+          2,
+          2,
+          2,
+          1
+        ]
+      },
+      {
+        "unit": "BİRLİKTE YAŞAMAK",
+        "topic": "Özel Gereksinimli Bireyler İçin Fırsat Eşitliği",
+        "outcome": "SB.7.1.2. Özel gereksinimli bireyler için fırsat eşitliğini sürdürmeye yönelik fikir üretebilme",
+        "questions_per_scenario": [
+          1,
+          2,
+          1,
+          2,
+          2
+        ]
+      },
+      {
+        "unit": "BİRLİKTE YAŞAMAK",
+        "topic": "Millî Meseleler Karşısında Türk Toplumunun Tutum ve Davranışları",
+        "outcome": "SB.7.1.3. Türk toplumunun millî meseleler karşısında gösterdiği tutum ve davranışlara ilişkin çıkarım yapabilme",
+        "questions_per_scenario": [
+          2,
+          2,
+          3,
+          3,
+          2
+        ]
+      },
+      {
+        "unit": "EVİMİZ DÜNYA",
+        "topic": "Küreselleşmenin İnsan ve Toplum Hayatına Etkisi",
+        "outcome": "SB.7.2.1. Küreselleşmenin insan ve toplum hayatında meydana getirdiği değişimi yorumlayabilme",
+        "questions_per_scenario": [
+          2,
+          1,
+          2,
+          0,
+          1
+        ]
+      }
+    ]
+  },
+  "din_kulturu": {
+    "subjectId": "din_kulturu",
+    "sheet": "7. Sınıf",
+    "scenarioCount": 5,
+    "scenarios": [
+      "Senaryo 1",
+      "Senaryo 2",
+      "Senaryo 3",
+      "Senaryo 4",
+      "Senaryo 5"
+    ],
+    "outcomes": [
+      {
+        "unit": "MELEK VE AHİRET İNANCI",
+        "topic": "Varlıklar Âlemi",
+        "outcome": "DKAB.7.1.1. Melekleri sınıflandırabilme",
+        "questions_per_scenario": [
+          1,
+          1,
+          1,
+          0,
+          1
+        ]
+      },
+      {
+        "unit": "MELEK VE AHİRET İNANCI",
+        "topic": "Dünya ve Ahiret Hayatı",
+        "outcome": "DKAB.7.1.2. Ahiret hayatının aşamalarını çözümleyebilme",
+        "questions_per_scenario": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "unit": "MELEK VE AHİRET İNANCI",
+        "topic": "Melek ve Ahiret İnancının İnsana Kazandırdıkları",
+        "outcome": "DKAB.7.1.3. Melek ve ahiret inancının insana kazandırdıkları konusunda analitik düşünebilme",
+        "questions_per_scenario": [
+          3,
+          2,
+          2,
+          3,
+          3
+        ]
+      },
+      {
+        "unit": "MELEK VE AHİRET İNANCI",
+        "topic": "Bir Sure Öğreniyorum: Nâs Suresi",
+        "outcome": "DKAB.7.1.4. Nâs suresini ve bu surenin anlamını okuyarak yorumlayabilme",
+        "questions_per_scenario": [
+          1,
+          1,
+          1,
+          1,
+          0
+        ]
+      },
+      {
+        "unit": "HAC, UMRE VE KURBAN",
+        "topic": "Hac ve Umre İbadeti",
+        "outcome": "DKAB.7.2.1. Hac ve umre ibadetlerini çözümleyebilme",
+        "questions_per_scenario": [
+          1,
+          1,
+          0,
+          0,
+          0
+        ]
+      }
+    ]
+  },
+  "ingilizce": {
+    "subjectId": "ingilizce",
+    "sheet": "7. sınıf",
+    "scenarioCount": 5,
+    "scenarios": [
+      "Senaryo 1",
+      "Senaryo 2",
+      "Senaryo 3",
+      "Senaryo 4",
+      "Senaryo 5"
+    ],
+    "outcomes": [
+      {
+        "unit": "Appearance And Personality",
+        "topic": "Appearance And Personality",
+        "outcome": "E7.1.R1. Students will be able to understand a simple text about appearances,  ersonalities, and comparisons including explanations and reasons.",
+        "questions_per_scenario": [
+          1,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "unit": "Appearance And Personality",
+        "topic": "Appearance And Personality",
+        "outcome": "E7.1.W1. Students will be able to write simple pieces to compare people.",
+        "questions_per_scenario": [
+          1,
+          1,
+          1,
+          2,
+          2
+        ]
+      },
+      {
+        "unit": "Sports",
+        "topic": "Sports",
+        "outcome": "E7.2.R1. Students will be able to understand  short and simple texts on sports.",
+        "questions_per_scenario": [
+          1,
+          2,
+          2,
+          2,
+          3
+        ]
+      },
+      {
+        "unit": "Sports",
+        "topic": "Sports",
+        "outcome": "E7.2.W1. Students will be able to write pieces  about routines/daily activities by using frequency adverbs.",
+        "questions_per_scenario": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ]
+      }
+    ]
+  }
+}

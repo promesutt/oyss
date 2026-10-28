@@ -1,0 +1,1066 @@
+{
+  "MAT.5.3.1": {
+    "code": "MAT.5.3.1",
+    "unit": "GEOMETRİK ŞEKİLLER",
+    "topic": "Temel Geometrik Çizimler ve İnşalar",
+    "canonicalTitle": "Temel geometrik çizimler için matematiksel araç ve teknolojiden yararlanabilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "MAT.5.3.2": {
+    "code": "MAT.5.3.2",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Temel geometrik çizimlere dayalı deneyimlerini yansıtabilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "MAT.5.3.3": {
+    "code": "MAT.5.3.3",
+    "unit": "Açı Ölçme",
+    "topic": "Açı Ölçme",
+    "canonicalTitle": "Açıları ölçmek için matematiksel araç ve teknolojiden yararlanabilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "MAT.5.3.4": {
+    "code": "MAT.5.3.4",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Düzlemde iki veya üç doğrunun birbirine göre durumuna bağlı olarak oluşabilecek açılara dair çıkarım yapabilme",
+    "cognitiveLevel": "Karmaşık Bilişsel Süreçler"
+  },
+  "MAT.5.3.5": {
+    "code": "MAT.5.3.5",
+    "unit": "Çokgenler ve Çember",
+    "topic": "Çokgenler ve Çember",
+    "canonicalTitle": "Çokgenleri düzlemde ardışık olarak kesişen doğruların oluşturduğu kapalı şekiller olarak yorumlayabilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "MAT.5.3.6": {
+    "code": "MAT.5.3.6",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Çokgenlerin özellikleri ile ilgili edindiği deneyimleri yansıtabilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "MAT.5.3.7": {
+    "code": "MAT.5.3.7",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Matematiksel araç ve teknoloji yardımıyla düzlemde iki noktada kesişen çember çiftinin merkezleri ve kesişim noktalarından biri ile inşa edilen üçgenlerin kenar özelliklerine yönelik çıkarım yapabilme",
+    "cognitiveLevel": "Karmaşık Bilişsel Süreçler"
+  },
+  "MAT.6.1.1": {
+    "code": "MAT.6.1.1",
+    "unit": "SAYILAR VE NİCELİKLER (1)",
+    "topic": "Bir Doğal Sayının Çarpanları ve Katları",
+    "canonicalTitle": "Karşılaştığı problem durumlarında bir doğal sayının çarpanlarını ve katlarını belirleyebilme",
+    "cognitiveLevel": "Karmaşık Bilişsel Süreçler"
+  },
+  "MAT.6.1.2": {
+    "code": "MAT.6.1.2",
+    "unit": "SAYILAR VE NİCELİKLER (1)",
+    "topic": "Bölünebilme Kriterleri",
+    "canonicalTitle": "Bir doğal sayının 2, 3, 4, 5, 6, 9 ve 10'a kalansız bölünebilme kurallarını açıklayabilme ve kullanabilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "MAT.6.1.3": {
+    "code": "MAT.6.1.3",
+    "unit": "SAYILAR VE NİCELİKLER (1)",
+    "topic": "Asal Sayılar ve Asal Çarpanlar",
+    "canonicalTitle": "Bir doğal sayının asal olma durumunu ve asal çarpanlarını belirleyebilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "MAT.6.1.4": {
+    "code": "MAT.6.1.4",
+    "unit": "SAYILAR VE NİCELİKLER (1)",
+    "topic": "Bir Doğal Sayının Çarpanları ve Katları",
+    "canonicalTitle": "Günlük hayat problemleri ya da matematiksel durumlarda iki doğal sayının ortak bölenleri ve katlarını yorumlayabilme",
+    "cognitiveLevel": "Karmaşık Bilişsel Süreçler"
+  },
+  "MAT.7.1.1": {
+    "code": "MAT.7.1.1",
+    "unit": "SAYILAR VE NİCELİKLER (1)",
+    "topic": "Tam Sayılar\nRasyonel Sayılar ve Farklı Temsilleri",
+    "canonicalTitle": "Gerçek yaşam ya da matematiksel durumlarda doğal sayı, tam sayı ve rasyonel sayıları yorumlayabilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "MAT.7.1.2": {
+    "code": "MAT.7.1.2",
+    "unit": "Rasyonel Sayılar ve Farklı Temsilleri",
+    "topic": "Rasyonel Sayılar ve Farklı Temsilleri",
+    "canonicalTitle": "Gerçek yaşam durumlarında rasyonel sayıların ondalık gösterimlerini yansıtabilmea) Bölme işlemini kullanarak her rasyonel sayının bir ondalık gösterimi olduğunu inceler..",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "MAT.7.1.3": {
+    "code": "MAT.7.1.3",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Rasyonel sayıların karşılaştırma ve sıralama ilişkilerini yorumlayabilme",
+    "cognitiveLevel": "Karmaşık Bilişsel Süreçler"
+  },
+  "MAT.7.1.4": {
+    "code": "MAT.7.1.4",
+    "unit": "Rasyonel Sayılarla İşlemler ve Problem Çözme",
+    "topic": "Rasyonel Sayılarla İşlemler ve Problem Çözme",
+    "canonicalTitle": "Rasyonel sayılar ve işlemler içeren gerçek yaşam problemlerini çözebilme",
+    "cognitiveLevel": "Karmaşık Bilişsel Süreçler"
+  },
+  "M.8.1.1.1": {
+    "code": "M.8.1.1.1",
+    "unit": "SAYILAR VE İŞLEMLER",
+    "topic": "Çarpanlar ve Katlar",
+    "canonicalTitle": "Verilen pozitif tam sayıların pozitif tam sayı çarpanlarını bulur, pozitif tam sayıların pozitif tam sayı çarpanlarını üslü ifadelerin çarpımı şeklinde yazar.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "M.8.1.1.2": {
+    "code": "M.8.1.1.2",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "İki doğal sayının en büyük ortak bölenini (EBOB) ve en küçük ortak katını (EKOK) hesaplar, ilgili problemleri çözer.",
+    "cognitiveLevel": "Karmaşık Bilişsel Süreçler"
+  },
+  "M.8.1.1.3": {
+    "code": "M.8.1.1.3",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Verilen iki doğal sayının aralarında asal olup olmadığını belirler.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "M.8.1.2.1": {
+    "code": "M.8.1.2.1",
+    "unit": "Üslü İfadeler",
+    "topic": "Üslü İfadeler",
+    "canonicalTitle": "Tam sayıların, tam sayı kuvvetlerini hesaplar.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "M.8.1.2.2": {
+    "code": "M.8.1.2.2",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Üslü ifadelerle ilgili temel kuralları anlar, birbirine denk ifadeler oluşturur.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "M.8.1.2.3": {
+    "code": "M.8.1.2.3",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Sayıların ondalık gösterimlerini 10’un tam sayı kuvvetlerini kullanarak çözümler.",
+    "cognitiveLevel": "Karmaşık Bilişsel Süreçler"
+  },
+  "M.8.1.2.4": {
+    "code": "M.8.1.2.4",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Verilen bir sayıyı 10’un farklı tam sayı kuvvetlerini kullanarak ifade eder.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "M.8.1.2.5": {
+    "code": "M.8.1.2.5",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Çok büyük ve çok küçük sayıları bilimsel gösterimle ifade eder ve karşılaştırır.",
+    "cognitiveLevel": "Karmaşık Bilişsel Süreçler"
+  },
+  "M.8.1.3.1": {
+    "code": "M.8.1.3.1",
+    "unit": "Kareköklü İfadeler",
+    "topic": "Kareköklü İfadeler",
+    "canonicalTitle": "Tamkare pozitif tam sayılarla bu sayıların karekökleri arasındaki ilişkiyi belirler.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "M.8.1.3.2": {
+    "code": "M.8.1.3.2",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Tam kare olmayan kareköklü bir sayının hangi iki doğal sayı arasında olduğunu belirler.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "M.8.1.3.3": {
+    "code": "M.8.1.3.3",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Kareköklü bir ifadeyi a√b şeklinde yazar ve a√b şeklindeki ifadede katsayıyı kök içine alır.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "FB.5.1.2": {
+    "code": "FB.5.1.2",
+    "unit": "Gökyüzündeki Komşumuz: Ay",
+    "topic": "Gökyüzündeki Komşumuz: Ay",
+    "canonicalTitle": "Ay’ın özellikleri, dönme ve dolanma hareketleri ile ilgili bilimsel çıkarım yapabilme",
+    "cognitiveLevel": "Karmaşık Bilişsel Süreçler"
+  },
+  "FB.5.1.3": {
+    "code": "FB.5.1.3",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Ay’ın evrelerini temsil eden bilimsel model oluşturabilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "FB.5.1.4": {
+    "code": "FB.5.1.4",
+    "unit": "Dünya’mız ve Gökyüzündeki Komşularımız",
+    "topic": "Dünya’mız ve Gökyüzündeki Komşularımız",
+    "canonicalTitle": "Güneş, Dünya ve Ay’ın birbirlerine göre hareketlerini ve hacimsel büyüklüklerini temsil eden bilimsel model oluşturabilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "FB.5.2.1": {
+    "code": "FB.5.2.1",
+    "unit": "2. ÜNİTE: KUVVETİ TANIYALIM",
+    "topic": "Kuvvet ve Kuvvetin Ölçülmesi",
+    "canonicalTitle": "Kuvveti büyüklüğü ile operasyonel tanımlayabilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "FB.6.1.1": {
+    "code": "FB.6.1.1",
+    "unit": "1. ÜNİTE: GÜNEŞ SİSTEMİ",
+    "topic": "Güneş Sistemi",
+    "canonicalTitle": "Güneş sistemindeki gezegenleri niteliklerine göre sınıflandırabilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "FB.6.1.3": {
+    "code": "FB.6.1.3",
+    "unit": "Güneş ve Ay Tutulmaları",
+    "topic": "Güneş ve Ay Tutulmaları",
+    "canonicalTitle": "Güneş ve Ay tutulması ile ilgili bilimsel çıkarım yapabilme",
+    "cognitiveLevel": "Karmaşık Bilişsel Süreçler"
+  },
+  "FB.6.2.1": {
+    "code": "FB.6.2.1",
+    "unit": "2. ÜNİTE: KUVVETİN ETKİSİNDE HAREKET",
+    "topic": "Bileşke Kuvvet",
+    "canonicalTitle": "Bir cisme etki eden aynı doğrultudaki kuvvetler arasındaki ilişkileri açıklayarak bileşke kuvveti yapılandırabilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "FB.6.2.2": {
+    "code": "FB.6.2.2",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Dengelenmiş ve dengelenmemiş kuvvetlerin etkisi altındaki bir cismin hareketine yönelik deney yapabilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "FB.6.2.3": {
+    "code": "FB.6.2.3",
+    "unit": "Sabit Süratli ve Sabit Hızlı Hareket",
+    "topic": "Sabit Süratli ve Sabit Hızlı Hareket",
+    "canonicalTitle": "Sürat ve hız kavramlarını karşılaştırabilme",
+    "cognitiveLevel": "Karmaşık Bilişsel Süreçler"
+  },
+  "FB.6.3.1": {
+    "code": "FB.6.3.1",
+    "unit": "3. ÜNİTE: CANLILARDA SİSTEMLER",
+    "topic": "Bitki ve Hayvanlarda Üreme, Büyüme ve Gelişme",
+    "canonicalTitle": "Eşeyli ve eşeysiz üremeyi karşılaştırabilme",
+    "cognitiveLevel": "Karmaşık Bilişsel Süreçler"
+  },
+  "FB.7.1.1": {
+    "code": "FB.7.1.1",
+    "unit": "1. ÜNİTE: UZAY ÇAĞI",
+    "topic": "Türkiye ve Uzay Araştırmaları",
+    "canonicalTitle": "Uzay araştırmaları için geliştirilen teknolojileri karşılaştırabilme",
+    "cognitiveLevel": "Karmaşık Bilişsel Süreçler"
+  },
+  "FB.7.1.3": {
+    "code": "FB.7.1.3",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Uzay araştırmalarının yol açabileceği problemleri çözebilme",
+    "cognitiveLevel": "Karmaşık Bilişsel Süreçler"
+  },
+  "FB.7.1.4": {
+    "code": "FB.7.1.4",
+    "unit": "Uzayda Neler Var?",
+    "topic": "Uzayda Neler Var?",
+    "canonicalTitle": "Yıldızların yaşamını açıklayarak yapılandırabilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "FB.7.1.5": {
+    "code": "FB.7.1.5",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Yıldız, galaksi ve evren kavramlarını açıklayarak yapılandırabilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "FB.7.2.1": {
+    "code": "FB.7.2.1",
+    "unit": "2. ÜNİTE: KUVVET VE ENERJİYİ KEŞFEDELİM",
+    "topic": "Kuvvet, İş ve Enerji İlişkisi",
+    "canonicalTitle": "Fiziksel anlamda yapılan işin bağlı olduğu faktörlere ilişkin bilimsel çıkarım yapabilme",
+    "cognitiveLevel": "Karmaşık Bilişsel Süreçler"
+  },
+  "FB.7.2.2": {
+    "code": "FB.7.2.2",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Enerji çeşitlerinden kinetik ve potansiyel enerjiyi karşılaştırabilme",
+    "cognitiveLevel": "Karmaşık Bilişsel Süreçler"
+  },
+  "F.8.1.1.1": {
+    "code": "F.8.1.1.1",
+    "unit": "1.ÜNİTE: MEVSİMLER VE İKLİM",
+    "topic": "8.1.1. Mevsimlerin Oluşumu",
+    "canonicalTitle": "Mevsimlerin oluşumuna yönelik tahminlerde bulunur.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "F.8.2.1.1": {
+    "code": "F.8.2.1.1",
+    "unit": "2.ÜNİTE: DNA VE GENETİK KOD",
+    "topic": "8.2.1. DNA ve Genetik Kod",
+    "canonicalTitle": "Nükleotid, gen, DNA ve kromozom kavramlarını açıklayarak bu kavramlar arasında ilişki kurar.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "F.8.2.1.2": {
+    "code": "F.8.2.1.2",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "DNA’nın yapısını model üzerinde gösterir.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "F.8.2.1.3": {
+    "code": "F.8.2.1.3",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "DNA’nın kendini nasıl eşlediğini ifade eder.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "F.8.2.2.1": {
+    "code": "F.8.2.2.1",
+    "unit": "8.2.2. Kalıtım",
+    "topic": "8.2.2. Kalıtım",
+    "canonicalTitle": "Kalıtım ile ilgili kavramları tanımlar.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "F.8.2.2.2": {
+    "code": "F.8.2.2.2",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Tek karakter çaprazlamaları ile ilgili problemler çözerek sonuçlar hakkında yorum yapar.",
+    "cognitiveLevel": "Karmaşık Bilişsel Süreçler"
+  },
+  "T.O.5.5": {
+    "code": "T.O.5.5",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Metinde geçen anlamını bilmediği söz varlığı unsurlarının anlamını tahmin edebilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "T.O.5.6": {
+    "code": "T.O.5.6",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Metnin yüzey anlamını belirleyebilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "T.O.5.7": {
+    "code": "T.O.5.7",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Görselle iletilen anlamı belirleyebilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "T.O.5.15": {
+    "code": "T.O.5.15",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Metnin anahtar kelimelerini belirlemeye yönelik çözümleme yapabilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "T.O.5.20": {
+    "code": "T.O.5.20",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Metinden hareketle söz varlığını geliştirmeye yönelik çözümleme yapabilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "T.Y.5.3": {
+    "code": "T.Y.5.3",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Yazısında içerik ve yapıya yönelik seçimlerini yönetebilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "T.Y.5.13": {
+    "code": "T.Y.5.13",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Yazısını zenginleştirecek biçimde söz varlığını kullanabilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "T.Y.5.16": {
+    "code": "T.Y.5.16",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Yazım ve noktalama işaretleriyle ilgili kuralları uygulayabilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "T.O.6.5": {
+    "code": "T.O.6.5",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Metinde geçen anlamını bilmediği söz varlığı unsurlarının anlamını tahmin edebilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "T.O.6.6": {
+    "code": "T.O.6.6",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Metnin yüzey anlamını belirleyebilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "T.O.6.16": {
+    "code": "T.O.6.16",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Bilgilendirici metinde anahtar kelimeleri belirlemeye yönelik çözümleme yapabilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "T.O.6.21": {
+    "code": "T.O.6.21",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Metinden hareketle söz varlığını geliştirmeye yönelik çözümleme yapabilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "T.Y.6.3": {
+    "code": "T.Y.6.3",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Yazısında içerik ve yapıya yönelik seçimlerini yönetebilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "T.Y.6.18": {
+    "code": "T.Y.6.18",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Yazısını zenginleştirecek biçimde söz varlığını kullanabilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "T.Y.6.21": {
+    "code": "T.Y.6.21",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Yazım kuralları ve noktalama işaretlerini uygulayabilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "T.O.7.4": {
+    "code": "T.O.7.4",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Metinde geçen anlamını bilmediği söz varlığı unsurlarının anlamını tahmin edebilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "T.O.7.5": {
+    "code": "T.O.7.5",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Metnin yüzey anlamını belirleyebilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "T.O.7.7": {
+    "code": "T.O.7.7",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Metnin derin anlamını belirlemeye yönelik basit çıkarımlar yapabilme",
+    "cognitiveLevel": "Karmaşık Bilişsel Süreçler"
+  },
+  "T.O.7.8": {
+    "code": "T.O.7.8",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Metnin derin anlamını belirlemeye yönelik üst düzey çıkarımlar yapabilme",
+    "cognitiveLevel": "Karmaşık Bilişsel Süreçler"
+  },
+  "T.O.7.14": {
+    "code": "T.O.7.14",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Bilgilendirici metinlerde metin yapılarından hareketle önemli bilgileri belirlemeye yönelik çözümleme yapabilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "T.O.7.15": {
+    "code": "T.O.7.15",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Bilgilendirici metinde anahtar kelimeleri belirlemeye yönelik çözümleme yapabilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "T.O.7.21": {
+    "code": "T.O.7.21",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Metinden hareketle söz varlığını geliştirmeye yönelik çözümleme yapabilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "T.Y.7.3": {
+    "code": "T.Y.7.3",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Yazısında içerik ve yapıya yönelik seçimlerini yönetebilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "T.Y.7.18": {
+    "code": "T.Y.7.18",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Yazısını zenginleştirecek biçimde söz varlığını kullanabilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "T.Y.7.21": {
+    "code": "T.Y.7.21",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Yazım kuralları ve noktalama işaretlerini uygulayabilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "T.8.3.5": {
+    "code": "T.8.3.5",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Bağlamdan yararlanarak bilmediği kelime ve kelime gruplarının anlamını tahmin eder.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "T.8.3.7": {
+    "code": "T.8.3.7",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Metindeki söz sanatlarını tespit eder.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "T.8.3.9": {
+    "code": "T.8.3.9",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Fiilimsilerin cümledeki işlevlerini kavrar.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "T.8.3.11": {
+    "code": "T.8.3.11",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Metindeki anlatım biçimlerini belirler.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "T.8.3.14": {
+    "code": "T.8.3.14",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Metinle ilgili soruları cevaplar.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "T.8.3.15": {
+    "code": "T.8.3.15",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Metinle ilgili sorular sorar.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "T.8.3.16": {
+    "code": "T.8.3.16",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Metnin konusunu belirler.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "T.8.3.17": {
+    "code": "T.8.3.17",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Metnin ana fikrini/ana duygusunu belirler.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "T.8.3.19": {
+    "code": "T.8.3.19",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Metnin içeriğine uygun başlık/başlıklar belirler.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "T.8.3.25": {
+    "code": "T.8.3.25",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Okudukları ile ilgili çıkarımlarda bulunur.",
+    "cognitiveLevel": "Karmaşık Bilişsel Süreçler"
+  },
+  "T.8.3.26": {
+    "code": "T.8.3.26",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Metin türlerini ayırt eder.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "T.8.3.34": {
+    "code": "T.8.3.34",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Okuduklarında kullanılan düşünceyi geliştirme yollarını belirler.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "T.8.4.1": {
+    "code": "T.8.4.1",
+    "unit": "YAZMA",
+    "topic": "Alt Öğrenme Alanı Yok",
+    "canonicalTitle": "Şiir yazar.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "T.8.4.4": {
+    "code": "T.8.4.4",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Yazma stratejilerini uygular.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "T.8.4.9": {
+    "code": "T.8.4.9",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Yazılarında anlatım biçimlerini kullanır.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "T.8.4.15": {
+    "code": "T.8.4.15",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Yazılarında uygun geçiş ve bağlantı ifadelerini kullanır.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "T.8.4.18": {
+    "code": "T.8.4.18",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Cümlenin ögelerini ayırt eder.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "SB.5.1.1": {
+    "code": "SB.5.1.1",
+    "unit": "BİRLİKTE YAŞAMAK",
+    "topic": "Gruplar ve Roller",
+    "canonicalTitle": "Dâhil olduğu gruplar ve bu gruplardaki rolleri arasındaki ilişkileri çözümleyebilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "SB.5.1.2": {
+    "code": "SB.5.1.2",
+    "unit": "Kültürel Özelliklere Saygı ve Birlikte Yaşama Kültürü",
+    "topic": "Kültürel Özelliklere Saygı ve Birlikte Yaşama Kültürü",
+    "canonicalTitle": "Kültürel özelliklere saygı duymanın birlikte yaşamaya etkisini yorumlayabilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "SB.5.1.3": {
+    "code": "SB.5.1.3",
+    "unit": "Yardımlaşma ve Dayanışma Faaliyetlerinin Toplumsal Birliğe Etkisi",
+    "topic": "Yardımlaşma ve Dayanışma Faaliyetlerinin Toplumsal Birliğe Etkisi",
+    "canonicalTitle": "Toplumsal birliği sürdürmeye yönelik yardımlaşma ve dayanışma faaliyetlerine katkı sağlayabilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "EVİMİZ": {
+    "code": "EVİMİZ",
+    "unit": "EVİMİZ DÜNYA",
+    "topic": "Küreselleşmenin İnsan ve Toplum Hayatına Etkisi",
+    "canonicalTitle": "DÜNYA",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "SB.6.1.1": {
+    "code": "SB.6.1.1",
+    "unit": "BİRLİKTE YAŞAMAK",
+    "topic": "Zaman İçinde Değişen Gruplar ve Roller",
+    "canonicalTitle": "Dâhil olduğu grupların ve bu gruplardaki rollerinin zaman içerisinde değişebile ceğine ilişkin çıkarım yapabilme",
+    "cognitiveLevel": "Karmaşık Bilişsel Süreçler"
+  },
+  "SB.6.1.2": {
+    "code": "SB.6.1.2",
+    "unit": "Kültürel Bağlarımızın ve Millî Değerlerimizin Toplumsal Birlikteliğe Etkisi",
+    "topic": "Kültürel Bağlarımızın ve Millî Değerlerimizin Toplumsal Birlikteliğe Etkisi",
+    "canonicalTitle": "Kültürel bağlarımızın ve millî değerlerimizin toplumsal birliğe etkisini yorumlayabilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "SB.6.1.3": {
+    "code": "SB.6.1.3",
+    "unit": "Toplumsal Sorunlar ve Çözümler Önerileri",
+    "topic": "Toplumsal Sorunlar ve Çözümler Önerileri",
+    "canonicalTitle": "Toplumsal hayatta karşılaşılan sorunlara yönelik çözüm önerilerini müzakere edebilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "SB": {
+    "code": "SB",
+    "unit": "BİRLİKTE YAŞAMAK",
+    "topic": "Gruplarda ve Sosyal Hayatta İletişimin Önemi",
+    "canonicalTitle": "7.1.1. Dâhil olduğu gruplarda ve sosyal hayatta etkili iletişimin önemini sorgulayabilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "SB.7.1.2": {
+    "code": "SB.7.1.2",
+    "unit": "Özel Gereksinimli Bireyler İçin Fırsat Eşitliği",
+    "topic": "Özel Gereksinimli Bireyler İçin Fırsat Eşitliği",
+    "canonicalTitle": "Özel gereksinimli bireyler için fırsat eşitliğini sürdürmeye yönelik fikir üretebilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "SB.7.1.3": {
+    "code": "SB.7.1.3",
+    "unit": "Millî Meseleler Karşısında Türk Toplumunun Tutum ve Davranışları",
+    "topic": "Millî Meseleler Karşısında Türk Toplumunun Tutum ve Davranışları",
+    "canonicalTitle": "Türk toplumunun millî meseleler karşısında gösterdiği tutum ve davranışlara ilişkin çıkarım yapabilme",
+    "cognitiveLevel": "Karmaşık Bilişsel Süreçler"
+  },
+  "İTA.8.1.1": {
+    "code": "İTA.8.1.1",
+    "unit": "1. ÜNİTE: BİR KAHRAMAN DOĞUYOR",
+    "topic": "1. ÜNİTE: BİR KAHRAMAN DOĞUYOR",
+    "canonicalTitle": "Avrupa’daki gelişmelerin yansımaları bağlamında Osmanlı Devleti’nin yirminci yüzyılın başlarındaki siyasi ve sosyal durumunu kavrar.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "İTA.8.1.2": {
+    "code": "İTA.8.1.2",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Mustafa Kemal’in çocukluk ve öğrenim hayatından hareketle onun kişilik özelliklerinin oluşumu hakkında çıkarımlarda bulunur.",
+    "cognitiveLevel": "Karmaşık Bilişsel Süreçler"
+  },
+  "İTA.8.1.3": {
+    "code": "İTA.8.1.3",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Gençlik döneminde Mustafa Kemal’in fikir hayatını etkileyen önemli kişileri ve olayları kavrar.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "İTA.8.1.4": {
+    "code": "İTA.8.1.4",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Mustafa Kemal’in askerlik hayatı ile ilgili olayları ve olguları onun kişilik özellikleri ile ilişkilendirir.",
+    "cognitiveLevel": "Karmaşık Bilişsel Süreçler"
+  },
+  "İTA.8.2.1": {
+    "code": "İTA.8.2.1",
+    "unit": "2. ÜNİTE: MİLLÎ UYANIŞ: BAĞIMSIZLIK YOLUNDA ATILAN ADIMLAR",
+    "topic": "2. ÜNİTE: MİLLÎ UYANIŞ: BAĞIMSIZLIK YOLUNDA ATILAN ADIMLAR",
+    "canonicalTitle": "Birinci Dünya Savaşı’nın sebeplerini ve savaşın başlamasına yol açan gelişmeleri kavrar.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "İTA.8.2.2": {
+    "code": "İTA.8.2.2",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Birinci Dünya Savaşı’nda Osmanlı Devleti’nin durumu hakkında çıkarımlarda bulunur.",
+    "cognitiveLevel": "Karmaşık Bilişsel Süreçler"
+  },
+  "İTA.8.2.3": {
+    "code": "İTA.8.2.3",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Mondros Ateşkes Antlaşması’nın imzalanması ve uygulanması karşısında Osmanlı yönetiminin, Mustafa Kemal’in ve halkın tutumunu analiz eder.",
+    "cognitiveLevel": "Karmaşık Bilişsel Süreçler"
+  },
+  "Evrendeki": {
+    "code": "Evrendeki",
+    "unit": "ALLAH İNANCI",
+    "topic": "Evrendeki Mükemmel Düzen",
+    "canonicalTitle": "Mükemmel Düzen",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "DKAB.5.1.2": {
+    "code": "DKAB.5.1.2",
+    "unit": "Allah’ın Varlığı ve Birliği",
+    "topic": "Allah’ın Varlığı ve Birliği",
+    "canonicalTitle": "Evrendeki mükemmel düzenden hareketle Allah’ın (cc) varlığı ve birliğini müşahede edebilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "DKAB.5.1.3": {
+    "code": "DKAB.5.1.3",
+    "unit": "Allah’ın Güzel İsimleri",
+    "topic": "Allah’ın Güzel İsimleri",
+    "canonicalTitle": "Allah’ın (cc) güzel isimlerini bağlamına uygun kullanabilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "DKAB.5.1.4": {
+    "code": "DKAB.5.1.4",
+    "unit": "Bir Sure Öğreniyorum: İhlas Suresi",
+    "topic": "Bir Sure Öğreniyorum: İhlas Suresi",
+    "canonicalTitle": "İhlas suresini ve bu surenin anlamını okuyarak yorumlayabilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "DKAB.5.2.1": {
+    "code": "DKAB.5.2.1",
+    "unit": "NAMAZ",
+    "topic": "Allah’ın Huzurunda Olmak: Namaz",
+    "canonicalTitle": "Namaz ibadetini özetleyebilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "DKAB.6.1.2": {
+    "code": "DKAB.6.1.2",
+    "unit": "Peygamberlerin İlettiği Mesaj: Vahiy",
+    "topic": "Peygamberlerin İlettiği Mesaj: Vahiy",
+    "canonicalTitle": "Vahyin gönderiliş amacını idrak edebilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "DKAB.6.1.3": {
+    "code": "DKAB.6.1.3",
+    "unit": "İlahi Kitaplar",
+    "topic": "İlahi Kitaplar",
+    "canonicalTitle": "İlahi kitaplarla ilgili bilgileri çözümleyebilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "DKAB.6.1.4": {
+    "code": "DKAB.6.1.4",
+    "unit": "Bir Sure Öğreniyorum: Felak Suresi",
+    "topic": "Bir Sure Öğreniyorum: Felak Suresi",
+    "canonicalTitle": "Felak suresini ve bu surenin anlamını okuyarak yorumlayabilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "DKAB.6.2.1": {
+    "code": "DKAB.6.2.1",
+    "unit": "RAMAZAN VE ORUÇ",
+    "topic": "Oruç ve Kur’an Ayı Ramazan",
+    "canonicalTitle": "Ramazan ayının oruç ve Kur’an ayı olduğunu çözümleyebilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "DKAB.7.1.1": {
+    "code": "DKAB.7.1.1",
+    "unit": "MELEK VE AHİRET İNANCI",
+    "topic": "Varlıklar Âlemi",
+    "canonicalTitle": "Melekleri sınıflandırabilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "DKAB.7.1.2": {
+    "code": "DKAB.7.1.2",
+    "unit": "Dünya ve Ahiret Hayatı",
+    "topic": "Dünya ve Ahiret Hayatı",
+    "canonicalTitle": "Ahiret hayatının aşamalarını çözümleyebilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "DKAB.7.1.3": {
+    "code": "DKAB.7.1.3",
+    "unit": "Melek ve Ahiret İnancının İnsana Kazandırdıkları",
+    "topic": "Melek ve Ahiret İnancının İnsana Kazandırdıkları",
+    "canonicalTitle": "Melek ve ahiret inancının insana kazandırdıkları konusunda analitik düşünebilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "DKAB.7.1.4": {
+    "code": "DKAB.7.1.4",
+    "unit": "Bir Sure Öğreniyorum: Nâs Suresi",
+    "topic": "Bir Sure Öğreniyorum: Nâs Suresi",
+    "canonicalTitle": "Nâs suresini ve bu surenin anlamını okuyarak yorumlayabilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "DKAB.7.2.1": {
+    "code": "DKAB.7.2.1",
+    "unit": "HAC, UMRE VE KURBAN",
+    "topic": "Hac ve Umre İbadeti",
+    "canonicalTitle": "Hac ve umre ibadetlerini çözümleyebilme",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "DKAB": {
+    "code": "DKAB",
+    "unit": "ZEKÂT VE SADAKA",
+    "topic": "İslam’ın Paylaşma ve Yardımlaşmaya Verdiği Önem",
+    "canonicalTitle": "8.2.1. İslam’ın paylaşma ve yardımlaşmaya verdiği önemi ayet ve hadisler ışığında yorumlar.",
+    "cognitiveLevel": "Karmaşık Bilişsel Süreçler"
+  },
+  "ENG.5.1.R2": {
+    "code": "ENG.5.1.R2",
+    "unit": "SCHOOL LIFE",
+    "topic": "SCHOOL LIFE",
+    "canonicalTitle": "Students can bring information about the current content on “school life with people, places and rules at school; school clubs; countries; national days and celebrations” through skimming (looking quickly at) the audio-visual elements and reading the content very quickly.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "ENG.5.1.R3": {
+    "code": "ENG.5.1.R3",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Students can make meaning of / derive meaning from the current content about “school life with people, places and rules at school; school clubs; countries; national days and celebrations” by reading it carefully.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "ENG.5.1.V1": {
+    "code": "ENG.5.1.V1",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Students can select and use the target vocabulary of the current content about “school life with people, places and rules at school; school clubs; countries; national days and celebrations” accurately, authentically, spontaneously, and naturally and use it appropriately and effectively when communicating with others.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "ENG.5.1.G1": {
+    "code": "ENG.5.1.G1",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Students can select and use the target grammatical elements of the current content about “school life with people, places and rules at school; school clubs; countries; national days and celebrations” accurately, authentically, spontaneously, and naturally and use it appropriately and effectively when communicating with others.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "ENG.5.1.W3": {
+    "code": "ENG.5.1.W3",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Students can organise a content for the assigned writing task on the current content “school life with people, places and rules at school; school clubs; countries; national days and celebrations” based on the model/example provided.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "ENG.5.1.W4": {
+    "code": "ENG.5.1.W4",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Students can individually construct/form content for the assigned writing task on the current content “school life with people, places and rules at school; school clubs; countries; national days and celebrations”.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "ENG.6.1.R2": {
+    "code": "ENG.6.1.R2",
+    "unit": "SCHOOL LIFE",
+    "topic": "SCHOOL LIFE",
+    "canonicalTitle": "Students can bring information about the current content on “school life with roles, and responsibilities at school; school routines; national days and celebrations” through skimming (looking quickly at) the audio-visual elements and reading the content very quickly.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "ENG.6.1.R3": {
+    "code": "ENG.6.1.R3",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Students can make meaning of / derive meaning from the current content about “school life with roles, and responsibilities at school; school routines; national days and celebrations” by reading it carefully.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "ENG.6.1.V1": {
+    "code": "ENG.6.1.V1",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Students can select and use the target vocabulary of the current content about “school life with roles, and responsibilities at school; school routines; national days and celebrations” accurately, authentically, spontaneously, and naturally and use it appropriately and effectively when communicating with others.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "ENG.6.1.G1": {
+    "code": "ENG.6.1.G1",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Students can select and use the target grammatical elements of the current content about “school life with roles, and responsibilities at school; school routines; national days and celebrations” accurately, authentically, spontaneously, and naturally and use it appropriately and effectively when communicating with others.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "ENG.6.1.W3": {
+    "code": "ENG.6.1.W3",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Students can organise a content for the assigned writing task on the current content “school life with roles, and responsibilities at school; school routines; national days and celebrations” based on the model/example provided.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "ENG.6.1.W4": {
+    "code": "ENG.6.1.W4",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Students can individually construct/form content for the assigned writing task on the current content “school life with roles, and responsibilities at school; school routines; national days and celebrations”.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "E7.1.R1": {
+    "code": "E7.1.R1",
+    "unit": "Appearance And Personality",
+    "topic": "Appearance And Personality",
+    "canonicalTitle": "Students will be able to understand a simple text about appearances, ersonalities, and comparisons including explanations and reasons.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "E7.1.W1": {
+    "code": "E7.1.W1",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Students will be able to write simple pieces to compare people.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "E7.2.R1": {
+    "code": "E7.2.R1",
+    "unit": "Sports",
+    "topic": "Sports",
+    "canonicalTitle": "Students will be able to understand short and simple texts on sports.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "E7.2.W1": {
+    "code": "E7.2.W1",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Students will be able to write pieces about routines/daily activities by using frequency adverbs.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "E8.1.R1": {
+    "code": "E8.1.R1",
+    "unit": "Friendship",
+    "topic": "Friendship",
+    "canonicalTitle": "Students will be able to understand short and simple texts about friendship.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "E8.1.R2": {
+    "code": "E8.1.R2",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Students will be able to understand short and simple invitation letters, cards and e-mails.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "E8.1.W1": {
+    "code": "E8.1.W1",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Students will be able to write a short and simple letter apologizing and giving reasons for not attending a party in response to an invitation.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "E8.2.R1": {
+    "code": "E8.2.R1",
+    "unit": "Teen Life",
+    "topic": "Teen Life",
+    "canonicalTitle": "Students will be able to understand short and simple texts about regular activities of teenagers.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "E8.2.W1": {
+    "code": "E8.2.W1",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "Students will be able to write a short and simple paragraph about regular activities of teenagers.",
+    "cognitiveLevel": "Basit Bilişsel Süreçler"
+  },
+  "SB.7.1.1": {
+    "code": "SB.7.1.1",
+    "unit": "BİRLİKTE YAŞAMAK",
+    "topic": "Gruplarda ve Sosyal Hayatta İletişimin Önemi",
+    "canonicalTitle": "Dâhil olduğu gruplarda ve sosyal hayatta etkili iletişimin önemini sorgulayabilme",
+    "cognitiveLevel": "Karmaşık Bilişsel Süreçler"
+  },
+  "SB.7.2.1": {
+    "code": "SB.7.2.1",
+    "unit": "EVİMİZ DÜNYA",
+    "topic": "Küreselleşmenin İnsan ve Toplum Hayatına Etkisi",
+    "canonicalTitle": "Küreselleşmenin insan ve toplum hayatı üzerindeki etkilerini analiz edebilme",
+    "cognitiveLevel": "Karmaşık Bilişsel Süreçler"
+  },
+  "DKAB.8.1.1": {
+    "code": "DKAB.8.1.1",
+    "unit": "KADER İNANCI",
+    "topic": "Kader ve Kaza İnancı",
+    "canonicalTitle": "8.1.1. Kader ve kaza inancını ayet ve hadislerle açıklar.",
+    "cognitiveLevel": "Anlama"
+  },
+  "DKAB.8.1.2": {
+    "code": "DKAB.8.1.2",
+    "unit": "İnsanın İradesi ve Kader",
+    "topic": "İnsanın İradesi ve Kader",
+    "canonicalTitle": "8.1.2. İnsanın ilmi, iradesi, sorumluluğu ile kader arasında ilişki kurar.",
+    "cognitiveLevel": "Anlama"
+  },
+  "DKAB.8.1.3": {
+    "code": "DKAB.8.1.3",
+    "unit": "Kaderle İlgili Kavramlar",
+    "topic": "Kaderle İlgili Kavramlar",
+    "canonicalTitle": "8.1.3. Kaza ve kader ile ilgili kavramları analiz eder.",
+    "cognitiveLevel": "Anlama"
+  },
+  "DKAB.8.1.4": {
+    "code": "DKAB.8.1.4",
+    "unit": "",
+    "topic": "",
+    "canonicalTitle": "8.1.4. Toplumda kader ve kaza ile ilgili yaygın olan yanlış anlayışları sorgular",
+    "cognitiveLevel": "Anlama"
+  },
+  "DKAB.8.1.5": {
+    "code": "DKAB.8.1.5",
+    "unit": "Bir Peygamber Tanıyorum: Hz. Musa (a.s.)",
+    "topic": "Bir Peygamber Tanıyorum: Hz. Musa (a.s.)",
+    "canonicalTitle": "8.1.5. Hz. Musa’nın (a.s.) hayatını ana hatlarıyla tanır.",
+    "cognitiveLevel": "Anlama"
+  },
+  "DKAB.8.1.6": {
+    "code": "DKAB.8.1.6",
+    "unit": "Bir Ayet Tanıyorum: Ayetelkürsi ve Anlamı",
+    "topic": "Bir Ayet Tanıyorum: Ayetelkürsi ve Anlamı",
+    "canonicalTitle": "8.1.6. Ayet el-Kürsi’yi okur, anlamını söyler.",
+    "cognitiveLevel": "Anlama"
+  },
+  "DKAB.8.2.1": {
+    "code": "DKAB.8.2.1",
+    "unit": "ZEKÂT VE SADAKA",
+    "topic": "İslam’ın Paylaşma ve Yardımlaşmaya Verdiği Önem",
+    "canonicalTitle": "8.2.1. İslam’ın paylaşma ve yardımlaşmaya verdiği önemi ayet ve hadisler ışığında yorumlar.",
+    "cognitiveLevel": "Anlama"
+  }
+}

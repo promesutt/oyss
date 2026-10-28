@@ -1,0 +1,496 @@
+{
+  "fen_bilimleri": {
+    "scenarios": [
+      "Senaryo 1",
+      "Senaryo 2",
+      "Senaryo 3",
+      "Senaryo 4"
+    ],
+    "outcomes": [
+      {
+        "row": 7,
+        "unit": "1. ÜNİTE: UZAY ÇAĞI",
+        "topic": "Türkiye ve Uzay Araştırmaları",
+        "outcome_raw": "FB.7.1.1. Uzay araştırmaları için geliştirilen teknolojileri karşılaştırabilme",
+        "counts": [
+          2,
+          2,
+          2,
+          0
+        ]
+      },
+      {
+        "row": 9,
+        "unit": "",
+        "topic": "",
+        "outcome_raw": "FB.7.1.3. Uzay araştırmalarının yol açabileceği problemleri çözebilme",
+        "counts": [
+          0,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "row": 10,
+        "unit": "",
+        "topic": "Uzayda Neler Var?",
+        "outcome_raw": "FB.7.1.4. Yıldızların yaşamını açıklayarak yapılandırabilme",
+        "counts": [
+          1,
+          0,
+          1,
+          1
+        ]
+      },
+      {
+        "row": 11,
+        "unit": "",
+        "topic": "",
+        "outcome_raw": "FB.7.1.5. Yıldız, galaksi ve evren kavramlarını açıklayarak yapılandırabilme",
+        "counts": [
+          1,
+          1,
+          0,
+          1
+        ]
+      },
+      {
+        "row": 12,
+        "unit": "2. ÜNİTE: KUVVET VE ENERJİYİ KEŞFEDELİM",
+        "topic": "Kuvvet, İş ve Enerji İlişkisi",
+        "outcome_raw": "FB.7.2.1. Fiziksel anlamda yapılan işin bağlı olduğu faktörlere ilişkin bilimsel çıkarım yapabilme",
+        "counts": [
+          3,
+          3,
+          2,
+          2
+        ]
+      },
+      {
+        "row": 13,
+        "unit": "",
+        "topic": "",
+        "outcome_raw": "FB.7.2.2. Enerji çeşitlerinden kinetik ve potansiyel enerjiyi karşılaştırabilme",
+        "counts": [
+          2,
+          0,
+          2,
+          1
+        ]
+      }
+    ]
+  },
+  "matematik": {
+    "scenarios": [
+      "Senaryo 1",
+      "Senaryo 2",
+      "Senaryo 3",
+      "Senaryo 4"
+    ],
+    "outcomes": [
+      {
+        "row": 7,
+        "unit": "SAYILAR VE NİCELİKLER (1)",
+        "topic": "Tam Sayılar\nRasyonel Sayılar ve Farklı Temsilleri",
+        "outcome_raw": "MAT.7.1.1.  Gerçek yaşam ya da matematiksel durumlarda doğal sayı, tam sayı ve rasyonel sayıları yorumlayabilme",
+        "counts": [
+          1,
+          1,
+          2,
+          2
+        ]
+      },
+      {
+        "row": 8,
+        "unit": "",
+        "topic": "Rasyonel Sayılar ve Farklı Temsilleri",
+        "outcome_raw": "MAT.7.1.2. Gerçek yaşam durumlarında rasyonel sayıların ondalık gösterimlerini yansıtabilmea) Bölme işlemini kullanarak her rasyonel sayının bir ondalık gösterimi olduğunu inceler..",
+        "counts": [
+          2,
+          1,
+          2,
+          2
+        ]
+      },
+      {
+        "row": 9,
+        "unit": "",
+        "topic": "",
+        "outcome_raw": "MAT.7.1.3. Rasyonel sayıların karşılaştırma ve sıralama ilişkilerini yorumlayabilme",
+        "counts": [
+          2,
+          1,
+          2,
+          2
+        ]
+      },
+      {
+        "row": 10,
+        "unit": "",
+        "topic": "Rasyonel Sayılarla İşlemler ve Problem Çözme",
+        "outcome_raw": "MAT.7.1.4. Rasyonel sayılar ve işlemler içeren gerçek yaşam problemlerini  çözebilme",
+        "counts": [
+          2,
+          2,
+          1,
+          0
+        ]
+      }
+    ]
+  },
+  "turkce": {
+    "scenarios": [
+      "Senaryo 1",
+      "Senaryo 2",
+      "Senaryo 3",
+      "Senaryo 4",
+      "Senaryo 5",
+      "Senaryo 6"
+    ],
+    "outcomes": [
+      {
+        "row": 10,
+        "unit": "",
+        "topic": "",
+        "outcome_raw": "T.O.7.4. Metinde geçen anlamını bilmediği söz varlığı unsurlarının anlamını tahmin edebilme",
+        "counts": [
+          1,
+          0,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "row": 11,
+        "unit": "",
+        "topic": "",
+        "outcome_raw": "T.O.7.5. Metnin yüzey anlamını belirleyebilme",
+        "counts": [
+          1,
+          1,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "row": 12,
+        "unit": "",
+        "topic": "",
+        "outcome_raw": "T.O.7.7. Metnin derin anlamını belirlemeye yönelik basit çıkarımlar yapabilme",
+        "counts": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "row": 13,
+        "unit": "",
+        "topic": "",
+        "outcome_raw": "T.O.7.8. Metnin derin anlamını belirlemeye yönelik üst düzey çıkarımlar yapabilme",
+        "counts": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "row": 14,
+        "unit": "",
+        "topic": "",
+        "outcome_raw": "T.O.7.14. Bilgilendirici metinlerde metin yapılarından hareketle önemli bilgileri belirlemeye yönelik çözümleme yapabilme",
+        "counts": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "row": 15,
+        "unit": "",
+        "topic": "",
+        "outcome_raw": "T.O.7.15. Bilgilendirici metinde anahtar kelimeleri belirlemeye yönelik çözümleme yapabilme",
+        "counts": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "row": 16,
+        "unit": "",
+        "topic": "",
+        "outcome_raw": "T.O.7.21. Metinden hareketle söz varlığını geliştirmeye yönelik çözümleme yapabilme",
+        "counts": [
+          1,
+          0,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "row": 20,
+        "unit": "",
+        "topic": "",
+        "outcome_raw": "T.Y.7.3. Yazısında içerik ve yapıya yönelik seçimlerini yönetebilme",
+        "counts": [
+          1,
+          1,
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "row": 21,
+        "unit": "",
+        "topic": "",
+        "outcome_raw": "T.Y.7.18. Yazısını zenginleştirecek biçimde söz varlığını kullanabilme",
+        "counts": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          1
+        ]
+      },
+      {
+        "row": 22,
+        "unit": "",
+        "topic": "",
+        "outcome_raw": "T.Y.7.21. Yazım kuralları ve noktalama işaretlerini uygulayabilme",
+        "counts": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    ]
+  },
+  "sosyal_bilgiler": {
+    "scenarios": [
+      "Senaryo 1",
+      "Senaryo 2",
+      "Senaryo 3",
+      "Senaryo 4",
+      "Senaryo 5"
+    ],
+    "outcomes": [
+      {
+        "row": 7,
+        "unit": "BİRLİKTE YAŞAMAK",
+        "topic": "Gruplarda ve Sosyal Hayatta İletişimin Önemi",
+        "outcome_raw": "SB 7.1.1. Dâhil olduğu gruplarda ve sosyal hayatta etkili iletişimin önemini sorgulayabilme",
+        "counts": [
+          2,
+          2,
+          2,
+          2,
+          1
+        ]
+      },
+      {
+        "row": 8,
+        "unit": "",
+        "topic": "Özel Gereksinimli Bireyler İçin Fırsat Eşitliği",
+        "outcome_raw": "SB.7.1.2. Özel gereksinimli bireyler için fırsat eşitliğini sürdürmeye yönelik fikir üretebilme",
+        "counts": [
+          1,
+          2,
+          1,
+          2,
+          2
+        ]
+      },
+      {
+        "row": 9,
+        "unit": "",
+        "topic": "Millî Meseleler Karşısında Türk Toplumunun Tutum ve Davranışları",
+        "outcome_raw": "SB.7.1.3. Türk toplumunun millî meseleler karşısında gösterdiği tutum ve davranışlara ilişkin çıkarım yapabilme",
+        "counts": [
+          2,
+          2,
+          3,
+          3,
+          2
+        ]
+      },
+      {
+        "row": 10,
+        "unit": "EVİMİZ DÜNYA",
+        "topic": "Küreselleşmenin İnsan ve Toplum Hayatına Etkisi",
+        "outcome_raw": "SB.7.2.1. Küreselleşmenin insan ve toplum hayatında meydana getirdiği değişimi yorumlayabilme",
+        "counts": [
+          2,
+          1,
+          2,
+          0,
+          1
+        ]
+      }
+    ]
+  },
+  "din_kulturu": {
+    "scenarios": [
+      "Senaryo 1",
+      "Senaryo 2",
+      "Senaryo 3",
+      "Senaryo 4",
+      "Senaryo 5"
+    ],
+    "outcomes": [
+      {
+        "row": 7,
+        "unit": "MELEK VE AHİRET İNANCI",
+        "topic": "Varlıklar Âlemi",
+        "outcome_raw": "DKAB.7.1.1. Melekleri sınıflandırabilme",
+        "counts": [
+          1,
+          1,
+          1,
+          0,
+          1
+        ]
+      },
+      {
+        "row": 8,
+        "unit": "",
+        "topic": "Dünya ve Ahiret Hayatı",
+        "outcome_raw": "DKAB.7.1.2. Ahiret hayatının aşamalarını çözümleyebilme",
+        "counts": [
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "row": 9,
+        "unit": "",
+        "topic": "Melek ve Ahiret İnancının İnsana Kazandırdıkları",
+        "outcome_raw": "DKAB.7.1.3. Melek ve ahiret inancının insana kazandırdıkları konusunda analitik düşünebilme",
+        "counts": [
+          3,
+          2,
+          2,
+          3,
+          3
+        ]
+      },
+      {
+        "row": 10,
+        "unit": "",
+        "topic": "Bir Sure Öğreniyorum: Nâs Suresi",
+        "outcome_raw": "DKAB.7.1.4. Nâs suresini ve bu surenin anlamını okuyarak yorumlayabilme",
+        "counts": [
+          1,
+          1,
+          1,
+          1,
+          0
+        ]
+      },
+      {
+        "row": 11,
+        "unit": "HAC, UMRE VE KURBAN",
+        "topic": "Hac ve Umre İbadeti",
+        "outcome_raw": "DKAB.7.2.1. Hac ve umre ibadetlerini çözümleyebilme",
+        "counts": [
+          1,
+          1,
+          0,
+          0,
+          0
+        ]
+      }
+    ]
+  },
+  "ingilizce": {
+    "scenarios": [
+      "Senaryo 1",
+      "Senaryo 2",
+      "Senaryo 3",
+      "Senaryo 4",
+      "Senaryo 5"
+    ],
+    "outcomes": [
+      {
+        "row": 7,
+        "unit": "Appearance And Personality",
+        "topic": "Appearance And Personality",
+        "outcome_raw": "E7.1.R1. Students will be able to understand a simple text about appearances,  ersonalities, and comparisons including explanations and reasons.",
+        "counts": [
+          1,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "row": 8,
+        "unit": "",
+        "topic": "",
+        "outcome_raw": "E7.1.W1. Students will be able to write simple pieces to compare people.",
+        "counts": [
+          1,
+          1,
+          1,
+          2,
+          2
+        ]
+      },
+      {
+        "row": 9,
+        "unit": "Sports",
+        "topic": "Sports",
+        "outcome_raw": "E7.2.R1. Students will be able to understand  short and simple texts on sports.",
+        "counts": [
+          1,
+          2,
+          2,
+          2,
+          3
+        ]
+      },
+      {
+        "row": 10,
+        "unit": "",
+        "topic": "",
+        "outcome_raw": "E7.2.W1. Students will be able to write pieces  about routines/daily activities by using frequency adverbs.",
+        "counts": [
+          1,
+          0,
+          1,
+          1,
+          1
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,816 @@
+# -*- coding: utf-8 -*-
+import json
+
+# Distinct Grade 7 Türkçe Exams (Scenario 1 to Scenario 6)
+GRADE7_TURKCE_EXAMS = [
+    # -------------------------------------------------------------
+    # SENARYO 1 (7 Questions, 100 Puan)
+    # Metin: Şerife Bacı ve Millî Mücadele
+    # Dağılım: T.O.7.4 (1), T.O.7.5 (1), T.O.7.8 (1), T.O.7.21 (1), T.Y.7.3 (1), T.Y.7.18 (1), T.Y.7.21 (1)
+    # -------------------------------------------------------------
+    {
+        "id": "exam_7_turkce_1_1_senaryo_1",
+        "grade": 7,
+        "subjectId": "turkce",
+        "examTerm": "1_donem_1_yazili",
+        "scenarioId": "senaryo_1",
+        "title": "7. Sınıf Türkçe 1. Dönem 1. Ortak Yazılı Sınavı (Senaryo 1) (7 Soru)",
+        "description": "MEB ÖDSGM 7. Sınıf Türkçe 1. Senaryo resmi konu soru dağılımına uygun 100 puanlık sınav kağıdı.",
+        "totalPoints": 100,
+        "durationMinutes": 40,
+        "questions": [
+            {
+                "questionNumber": 1,
+                "outcomeCode": "T.O.7.4",
+                "outcomeTitle": "T.O.7.4. Metinde geçen anlamını bilmediği söz varlığı unsurlarının anlamını tahmin edebilme",
+                "difficulty": "Orta",
+                "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+                "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+                "points": 15,
+                "contextText": "Kastamonu İnebolu sahilinden cepheye kağnılarla cephane taşıyan Şerife Bacı'nın kahramanlık anlatısı.",
+                "stimulus": "“Kastamonu’nun İnebolu sahilinde başlayan kağnı yolculuğu, çetin kış şartlarında Ilgaz Dağları’nı aşarak cepheye ulaşıyordu. Şerife Bacı, kundaktaki yavrusunun üzerindeki yorganı alıp ıslanmasın diye cephanenin üstüne örttü. Çünkü onun zihninde tek bir mefkûre vardı: 'Benim çocuğum yetim kalabilir ama vatan yetim kalamaz.' Kar fırtınası şiddetlenirken kağnının gıcırtısı dağlarda bir bağımsızlık türküsü gibi yankılanıyordu.”",
+                "questionText": "Metindeki altı çizili 'mefkûre' kelimesinin ve 'vatan yetim kalamaz' söz öbeğinin anlamlarını metnin bağlamından yararlanarak tahmin ediniz. Tahmininizi metindeki hangi ipuçlarına dayandırdığınızı açıklayınız.",
+                "solutionExplanation": "Metin bağlamında mefkûre gaye/ülkü demektir. Vatanın yetim kalmaması ise bağımsızlığını ve devletini kaybetmemesidir.",
+                "modelAnswer": "• Mefkûre: Ulaşılmak istenen yüce amaç, ülkü veya gaye anlamındadır. İpucu: Şerife Bacı'nın vatanı kurtarmayı her şeyin üstünde tutmasıdır.\n• Vatan yetim kalamaz: Vatanın sahipsiz, hürriyetsiz ve bağımsızlıktan yoksun bırakılamayacağı anlamına gelir. İpucu: Çocuğunun örtüsünü cephaneye vermesidir.",
+                "rubric": [
+                    {"criterion": "'mefkûre' kelimesinin bağlama uygun doğru tahmin edilmesi ve gerekçelendirilmesi", "points": 8},
+                    {"criterion": "'Vatan yetim kalamaz' sözünün derin anlamının açıklanması", "points": 7}
+                ]
+            },
+            {
+                "questionNumber": 2,
+                "outcomeCode": "T.O.7.5",
+                "outcomeTitle": "T.O.7.5. Metnin yüzey anlamını belirleyebilme",
+                "difficulty": "Kolay",
+                "cognitiveLevel": "Basit Bilişsel Süreçler",
+                "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+                "points": 15,
+                "contextText": "Metnin konusunu tek bir cümleyle özetleme görevi.",
+                "stimulus": "Yukarıda verilen 1. sorudaki Şerife Bacı metnini dikkate alınız.",
+                "questionText": "Yukarıda Şerife Bacı ve kağnı kollarının anlatıldığı 1. metnin konusunu tek bir cümleyle yazınız.",
+                "solutionExplanation": "Metinde Millî Mücadele yıllarında Türk kadınının vatanı uğruna yaptığı fedakârlık ele alınmaktadır.",
+                "modelAnswer": "Metnin konusu: Kurtuluş Savaşı'nda Türk kadınlarının (Şerife Bacı'nın) cepheye mermi taşırken gösterdiği eşsiz fedakârlık ve vatan sevgisidir.",
+                "rubric": [
+                    {"criterion": "Metnin konusunu eksiksiz, tek bir yargı bildiren cümleyle ifade etme", "points": 15}
+                ]
+            },
+            {
+                "questionNumber": 3,
+                "outcomeCode": "T.O.7.8",
+                "outcomeTitle": "T.O.7.8. Metnin derin anlamını belirlemeye yönelik üst düzey çıkarımlar yapabilme",
+                "difficulty": "Zor",
+                "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+                "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+                "points": 15,
+                "contextText": "Karakterin davranışından zihniyet ve değer analizi çıkarma.",
+                "stimulus": "Yukarıda verilen 1. sorudaki Şerife Bacı metnini dikkate alınız.",
+                "questionText": "Şerife Bacı’nın kendi öz evladının üzerindeki yorganı alıp top mermilerinin üzerine örtmesi, onun hangi değer dünyasını ve psikolojik kararlılığını gösterir? Metinden delil göstererek tahlil ediniz.",
+                "solutionExplanation": "Öğrenci bireysel sevgiden daha üstün bir vatan bilincini ve bağımsızlık aşkını tahlil eder.",
+                "modelAnswer": "Şerife Bacı, vatanın kurtuluşunu kendi canından ve ailesinden daha üstün tutan sarsılmaz bir fedakârlık ve vatanseverlik anlayışına sahiptir. 'Benim çocuğum yetim kalabilir ama vatan yetim kalamaz' sözü, bağımsız bir vatan olmazsa evladının da geleceğinin olamayacağı bilincini taşıdığını açıkça kanıtlamaktadır.",
+                "rubric": [
+                    {"criterion": "Vatanseverlik ve fedakârlık değerinin derinlemesine tahlil edilmesi", "points": 8},
+                    {"criterion": "Metindeki söz ve eylemlerle tutarlı delillendirme yapılması", "points": 7}
+                ]
+            },
+            {
+                "questionNumber": 4,
+                "outcomeCode": "T.O.7.21",
+                "outcomeTitle": "T.O.7.21. Metinden hareketle söz varlığını geliştirmeye yönelik çözümleme yapabilme",
+                "difficulty": "Orta",
+                "cognitiveLevel": "Basit Bilişsel Süreçler",
+                "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+                "points": 15,
+                "contextText": "Metindeki sözcüklerden eş anlam ve mecaz anlam türetme.",
+                "stimulus": "Metinde geçen 'bağımsızlık' ve 'yankılanmak' kelimeleri.",
+                "questionText": "a) Metinde geçen 'bağımsızlık' kelimesinin eş anlamlısını yazınız.\nb) 'Yankılanmak' kelimesini metindeki gerçek ses yansıması anlamı dışında, MECÂZ anlamda özgün bir cümle içinde kullanınız.",
+                "solutionExplanation": "Bağımsızlık eş anlamlısı hürriyet/istiklaldir. Yankılanmak mecaz kullanımı ise toplumda derin etki bırakmaktır.",
+                "modelAnswer": "a) Bağımsızlık = İstiklal (veya Hürriyet)\nb) Mecaz Anlamlı Cümle: 'Genç yazarın bu cesur konuşması tüm ülkede büyük bir yankı uyandırdı.' (veya 'Hocanın son sözleri zihnimde günlerce yankılandı.')",
+                "rubric": [
+                    {"criterion": "Bağımsızlık kelimesinin eş anlamlısının doğru yazılması", "points": 7},
+                    {"criterion": "'Yankılanmak' kelimesinin açık ve doğru bir mecaz anlamda cümlede kullanılması", "points": 8}
+                ]
+            },
+            {
+                "questionNumber": 5,
+                "outcomeCode": "T.Y.7.3",
+                "outcomeTitle": "T.Y.7.3. Yazısında içerik ve yapıya yönelik seçimlerini yönetebilme",
+                "difficulty": "Orta",
+                "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+                "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+                "points": 15,
+                "contextText": "Yazma taslağı oluşturma (giriş, gelişme, sonuç planı).",
+                "stimulus": "Konu: 'Bir milletin en büyük gücü: Birlik ve Beraberlik'",
+                "questionText": "Yukarıdaki konuyla ilgili bilgilendirici bir metin yazacak olsaydınız; giriş, gelişme ve sonuç paragraflarında hangi ana fikirlere yer vereceğinizi taslak halinde maddelerle planlayınız.",
+                "solutionExplanation": "Kompozisyonun üç ana bölümü için tematik taslak hazırlanır.",
+                "modelAnswer": "• Giriş Bölümü: İnsanların tek başlarına aşamayacakları zorlukları dayanışma ve ortak şuurla aşabileceklerinin tanımı yapılır.\n• Gelişme Bölümü: Kurtuluş Savaşı'ndaki Tekâlif-i Milliye emirleri ve Şerife Bacı gibi kahramanların fedakârlıkları somut örneklerle açıklanır.\n• Sonuç Bölümü: Birlik ve beraberliğini koruyan toplumların geleceğe güvenle bakabileceği vurgulanarak genel bir öğütle yazı tamamlanır.",
+                "rubric": [
+                    {"criterion": "Giriş bölümünün konuyu tanıtıcı ve ilgi çekici planlanması", "points": 5},
+                    {"criterion": "Gelişme bölümünde somut delil ve örnek planının sunulması", "points": 5},
+                    {"criterion": "Sonuç bölümünün toparlayıcı ve mesaj verici kurgulanması", "points": 5}
+                ]
+            },
+            {
+                "questionNumber": 6,
+                "outcomeCode": "T.Y.7.18",
+                "outcomeTitle": "T.Y.7.18. Yazısını zenginleştirecek biçimde söz varlığını kullanabilme",
+                "difficulty": "Orta",
+                "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+                "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+                "points": 15,
+                "contextText": "Hedef kelimelerle zenginleştirilmiş etkileyici metin tamamlama.",
+                "stimulus": "Hedef Kelimeler: 'fedakârlık, sarsılmaz irade, hürriyet, vatan sağ olsun'.",
+                "questionText": "Şerife Bacı’nın kağnı kolunun Kastamonu Kışlası kapısına ulaştığı anı; içinde 'fedakârlık', 'sarsılmaz irade', 'hürriyet' ve 'vatan sağ olsun' ifadelerinin geçtiği 3-4 cümlelik etkileyici bir anlatımla tamamlayınız.",
+                "solutionExplanation": "Öğrenci verilen 4 anahtar kavramı anlam bütünlüğü içinde kurgular.",
+                "modelAnswer": "Kışla nizamiyesinden içeri giren kağnı, bir milletin sarsılmaz iradesini simgeliyordu. Askerler mermileri indirmek için koştuğunda gördükleri bu yüce fedakârlık karşısında gözyaşlarını tutamadılar. Şerife Bacı'nın dudaklarından dökülen son nefes, göklerde yankılanan kutsal bir hürriyet andı gibiydi: 'Vatan sağ olsun!'",
+                "rubric": [
+                    {"criterion": "Verilen 4 anahtar ifadenin tamamının anlamlı ve yerinde kullanılması", "points": 8},
+                    {"criterion": "Cümlelerin akıcı, duygusal yoğunluğu yüksek ve kurallı olması", "points": 7}
+                ]
+            },
+            {
+                "questionNumber": 7,
+                "outcomeCode": "T.Y.7.21",
+                "outcomeTitle": "T.Y.7.21. Yazım kuralları ve noktalama işaretlerini uygulayabilme",
+                "difficulty": "Kolay",
+                "cognitiveLevel": "Basit Bilişsel Süreçler",
+                "archetype": "Hata Tespiti & Adım Analizi",
+                "points": 10,
+                "contextText": "Yazım yanlışları (büyük harf, bağlaç olan ki, -de hali) ve noktalama düzeltme.",
+                "stimulus": "Hatalı Cümle: 'ılgaz dağında ki fırtınada türk askeri, canla başla cephaneleri taşıyorduki düşman anadoluyu ele geçiremesin.'",
+                "questionText": "Yukarıdaki cümlede yer alan yazım ve noktalama hatalarını tespit ediniz ve cümlenin hatasız halini altındaki satıra yazınız.",
+                "solutionExplanation": "Ilgaz Dağı özel isim büyük harf, dağındaki sıfat yapan -ki bitişik, taşıyordu ki bağlaç ayrı, Türk askeri büyük T, Anadolu'yu kesme işareti.",
+                "modelAnswer": "Doğru Cümle: 'Ilgaz Dağı'ndaki fırtınada Türk askeri, canla başla cephaneleri taşıyordu ki düşman Anadolu'yu ele geçiremesin.'\n(Hatalar: Ilgaz Dağı'ndaki büyük harf ve kesme, Türk büyük harf, taşıyordu ki ayrı, Anadolu'yu kesme işareti).",
+                "rubric": [
+                    {"criterion": "Özel isimlerin ve kesme işaretlerinin doğru yazımı (Ilgaz Dağı'ndaki, Türk, Anadolu'yu)", "points": 5},
+                    {"criterion": "-ki ekinin ve bağlacının kurallarına uygun doğru yazımı", "points": 5}
+                ]
+            }
+        ]
+    },
+
+    # -------------------------------------------------------------
+    # SENARYO 2 (6 Questions, 100 Puan)
+    # Metin: Ahilik Teşkilatı ve Esnaf Ahlakı (Pabucu Dama Atılmak)
+    # Dağılım: T.O.7.5 (1), T.O.7.7 (1), T.O.7.14 (1), T.O.7.15 (1), T.Y.7.3 (1), T.Y.7.21 (1)
+    # -------------------------------------------------------------
+    {
+        "id": "exam_7_turkce_1_1_senaryo_2",
+        "grade": 7,
+        "subjectId": "turkce",
+        "examTerm": "1_donem_1_yazili",
+        "scenarioId": "senaryo_2",
+        "title": "7. Sınıf Türkçe 1. Dönem 1. Ortak Yazılı Sınavı (Senaryo 2) (6 Soru)",
+        "description": "MEB ÖDSGM 7. Sınıf Türkçe 2. Senaryo resmi konu soru dağılımına uygun 100 puanlık sınav kağıdı.",
+        "totalPoints": 100,
+        "durationMinutes": 40,
+        "questions": [
+            {
+                "questionNumber": 1,
+                "outcomeCode": "T.O.7.5",
+                "outcomeTitle": "T.O.7.5. Metnin yüzey anlamını belirleyebilme",
+                "difficulty": "Kolay",
+                "cognitiveLevel": "Basit Bilişsel Süreçler",
+                "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+                "points": 17,
+                "contextText": "Ahilik kültürü ve dürüst ticaret ahlakını anlatan bilgilendirici metin.",
+                "stimulus": "“Selçuklu ve Osmanlı döneminde esnafın piri sayılan Ahi Evran, çarşıdaki dürüstlük ve meslek ahlakını çok sıkı kurallara bağlamıştı. Bir ayakkabıcı veya saraç hatalı, çürük bir mal ürettiğinde o esnafın lonca heyeti toplanır, hatalı ayakkabıyı dükkânın çatısına (damına) fırlatırdı. Bu durum, o esnafın kusurlu mal sattığının çarşıdaki herkese ilanıydı. 'Pabucu dama atılmak' deyimi işte bu köklü ahlak geleneğinden doğmuştur. Ahilikte helal kazanç, usta-çırak terbiyesi ve tüketiciye saygı her şeyin üstünde tutulurdu.”",
+                "questionText": "Yukarıdaki Ahilik teşkilatı ve esnaf ahlakını anlatan metnin konusunu tek bir cümleyle özetleyiniz.",
+                "solutionExplanation": "Metin Ahilik teşkilatının dürüst esnaf ahlakını ve 'pabucu dama atılmak' deyiminin kökenini açıklamaktadır.",
+                "modelAnswer": "Metnin konusu: Ahilik teşkilatında uygulanan dürüst esnaflık kuralları, tüketici hakkını koruma bilinci ve 'pabucu dama atılmak' deyiminin tarihî doğuşudur.",
+                "rubric": [
+                    {"criterion": "Metnin konusunu eksiksiz ve net biçimde tek cümleyle özetleme", "points": 17}
+                ]
+            },
+            {
+                "questionNumber": 2,
+                "outcomeCode": "T.O.7.7",
+                "outcomeTitle": "T.O.7.7. Metnin derin anlamını belirlemeye yönelik basit çıkarımlar yapabilme",
+                "difficulty": "Orta",
+                "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+                "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+                "points": 17,
+                "contextText": "Toplumsal denetim ve esnaf ahlakı üzerine çıkarım yapma.",
+                "stimulus": "Yukarıda verilen 1. sorudaki Ahilik metnini dikkate alınız.",
+                "questionText": "Ahilik teşkilatının kusurlu mal üreten esnafın ayakkabısını dama atması eylemi, çarşıdaki güven ortamı ve üretilen ürünlerin kalitesi açısından nasıl bir sonuç doğurmuştur? Açıklayınız.",
+                "solutionExplanation": "Ayakkabının dama atılması caydırıcı bir ceza olup esnafın hileli mal üretmesini engeller.",
+                "modelAnswer": "Bu uygulama esnaflar üzerinde çok güçlü bir manevi ve toplumsal otokontrol (caydırıcılık) sağlamıştır. Çarşıda adı kötüye çıkmak istemeyen ustalar mallarını son derece titiz ve kaliteli üretmiş; tüketiciler de çarşıdan güvenle alışveriş yapabilmiştir.",
+                "rubric": [
+                    {"criterion": "Toplumsal güven ve caydırıcılık etkisinin doğru açıklanması", "points": 9},
+                    {"criterion": "Ürün kalitesine olan doğrudan yansımanın belirtilmesi", "points": 8}
+                ]
+            },
+            {
+                "questionNumber": 3,
+                "outcomeCode": "T.O.7.14",
+                "outcomeTitle": "T.O.7.14. Bilgilendirici metinlerde metin yapılarından hareketle önemli bilgileri belirlemeye yönelik çözümleme yapabilme",
+                "difficulty": "Zor",
+                "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+                "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+                "points": 17,
+                "contextText": "Bilgilendirici metnin yapısal analizi (Giriş, Gelişme, Sonuç bölümleri).",
+                "stimulus": "Yukarıda verilen 1. sorudaki Ahilik metnini dikkate alınız.",
+                "questionText": "Bu metnin giriş, gelişme ve sonuç bölümlerinde okuyucuya aktarılan temel bilgileri tespit ederek metnin yapısını çözümleyiniz.",
+                "solutionExplanation": "Metnin üç bölümündeki ana düşünceler tespit edilir.",
+                "modelAnswer": "• Giriş Bölümü: Ahi Evran ve Ahilik teşkilatının esnaf ahlakını disipline eden kuralları tanıtılmıştır.\n• Gelişme Bölümü: Hatalı mal üreten esnafın pabucunun dama atılması süreci ve deyimin ortaya çıkışı anlatılmıştır.\n• Sonuç Bölümü: Ahilik sisteminde helal kazanç, usta-çırak terbiyesi ve tüketici hakkının önemi vurgulanarak genel ilke ortaya konmuştur.",
+                "rubric": [
+                    {"criterion": "Giriş ve gelişme bölümlerindeki yapısal bilginin doğru tespiti", "points": 9},
+                    {"criterion": "Sonuç bölümündeki ana mesajın doğru çözümlenmesi", "points": 8}
+                ]
+            },
+            {
+                "questionNumber": 4,
+                "outcomeCode": "T.O.7.15",
+                "outcomeTitle": "T.O.7.15. Bilgilendirici metinde anahtar kelimeleri belirlemeye yönelik çözümleme yapabilme",
+                "difficulty": "Kolay",
+                "cognitiveLevel": "Basit Bilişsel Süreçler",
+                "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+                "points": 17,
+                "contextText": "Anahtar kelimelerin tespiti ve seçim gerekçesi.",
+                "stimulus": "Yukarıda verilen 1. sorudaki Ahilik metnini dikkate alınız.",
+                "questionText": "a) Bu metnin içeriğini en iyi yansıtan 3 anahtar kelimeyi yazınız.\nb) Belirlediğiniz bu anahtar kelimeleri metnin hangi özelliklerine dayanarak seçtiğinizi birer cümleyle gerekçelendiriniz.",
+                "solutionExplanation": "Anahtar kelimeler metnin omurgasını oluşturan kavramlardır (Ahilik, ahlak/dürüstlük, pabuç/lonca).",
+                "modelAnswer": "a) Anahtar Kelimeler: Ahilik, Esnaf Ahlakı, Pabucu dama atılmak.\nb) Gerekçe: Metnin ana eksenini bu kurum oluşturduğu için 'Ahilik'; çarşı düzeni ahlak ilkelerine dayandığı için 'Esnaf Ahlakı'; deyimin kökeni açıklandığı için 'Pabucu dama atılmak' anahtar kavram olarak seçilmiştir.",
+                "rubric": [
+                    {"criterion": "Metni temsil eden 3 anahtar kelimenin doğru belirlenmesi", "points": 9},
+                    {"criterion": "Seçim gerekçelerinin metin içeriğiyle tutarlı açıklanması", "points": 8}
+                ]
+            },
+            {
+                "questionNumber": 5,
+                "outcomeCode": "T.Y.7.3",
+                "outcomeTitle": "T.Y.7.3. Yazısında içerik ve yapıya yönelik seçimlerini yönetebilme",
+                "difficulty": "Orta",
+                "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+                "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+                "points": 16,
+                "contextText": "Özgün kompozisyon planı oluşturma.",
+                "stimulus": "Konu: 'Bir Meslekte Başarının Temeli: Dürüstlük ve Güven'",
+                "questionText": "Bu konuda yazacağınız bilgilendirici bir metin için; giriş bölümünde savunacağınız ana düşünceyi ve gelişme bölümünde vereceğiniz iki farklı argümanı maddeler halinde yazınız.",
+                "solutionExplanation": "Öğrenci meslek ahlakı konusunda planlı bir içerik haritası çıkarır.",
+                "modelAnswer": "• Giriş Bölümü Ana Düşüncesi: Bir esnafın veya meslek sahibinin en büyük sermayesi dükkânındaki mallar değil, müşterilerinin ona duyduğu sarsılmaz güvendir.\n• Gelişme Argümanı 1: Hileli mal satanlar kısa vadede para kazansa da uzun vadede itibarını ve müşterilerini tamamen kaybederler.\n• Gelişme Argümanı 2: Dürüst esnaf ise kriz dönemlerinde bile toplumun saygısı ve desteğiyle ayakta kalır.",
+                "rubric": [
+                    {"criterion": "Giriş bölümü ana düşüncesinin açık ve tutarlı sunulması", "points": 8},
+                    {"criterion": "Gelişme bölümü için iki ikna edici argümanın oluşturulması", "points": 8}
+                ]
+            },
+            {
+                "questionNumber": 6,
+                "outcomeCode": "T.Y.7.21",
+                "outcomeTitle": "T.Y.7.21. Yazım kuralları ve noktalama işaretlerini uygulayabilme",
+                "difficulty": "Kolay",
+                "cognitiveLevel": "Basit Bilişsel Süreçler",
+                "archetype": "Hata Tespiti & Adım Analizi",
+                "points": 16,
+                "contextText": "Noktalama işaretleri ve yazım kuralları düzeltme.",
+                "stimulus": "Cümle: 'kırşehirde yaşayan ahi evran esnaflara şöyle derdi; harama el uzatma, kapını açık tut, müşteriye güler yüz göster.'",
+                "questionText": "Yukarıdaki cümlede yer alan büyük harf, kesme işareti ve iki nokta/noktalı virgül hatalarını düzelterek cümlenin doğru şeklini yazınız.",
+                "solutionExplanation": "Kırşehir'de kesme işareti ve büyük harf, Ahi Evran büyük harf, konuşma öncesi iki nokta konur.",
+                "modelAnswer": "Doğru Şekil: 'Kırşehir'de yaşayan Ahi Evran, esnaflara şöyle derdi: \"Harama el uzatma, kapını açık tut, müşteriye güler yüz göster.\"' (veya iki nokta konup tırnaksız devam ettirilebilir).",
+                "rubric": [
+                    {"criterion": "Özel isimlerin ve eklerinin doğru yazımı (Kırşehir'de, Ahi Evran)", "points": 8},
+                    {"criterion": "Açıklama/alıntı öncesi iki nokta (:) kuralının doğru uygulanması", "points": 8}
+                ]
+            }
+        ]
+    },
+
+    # -------------------------------------------------------------
+    # SENARYO 3 (7 Questions, 100 Puan)
+    # Metin: İletişimin Gücü ve Bir Tebessümün Değeri (Tamamen Farklı Metin!)
+    # Dağılım: T.O.7.4 (1), T.O.7.5 (2), T.O.7.7 (1), T.O.7.21 (1), T.Y.7.3 (1), T.Y.7.21 (1)
+    # -------------------------------------------------------------
+    {
+        "id": "exam_7_turkce_1_1_senaryo_3",
+        "grade": 7,
+        "subjectId": "turkce",
+        "examTerm": "1_donem_1_yazili",
+        "scenarioId": "senaryo_3",
+        "title": "7. Sınıf Türkçe 1. Dönem 1. Ortak Yazılı Sınavı (Senaryo 3) (7 Soru)",
+        "description": "MEB ÖDSGM 7. Sınıf Türkçe 3. Senaryo resmi konu soru dağılımına uygun 100 puanlık sınav kağıdı.",
+        "totalPoints": 100,
+        "durationMinutes": 40,
+        "questions": [
+            {
+                "questionNumber": 1,
+                "outcomeCode": "T.O.7.4",
+                "outcomeTitle": "T.O.7.4. Metinde geçen anlamını bilmediği söz varlığı unsurlarının anlamını tahmin edebilme",
+                "difficulty": "Orta",
+                "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+                "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+                "points": 15,
+                "contextText": "İnsan ilişkilerinde nezaket ve güler yüzün gücünü anlatan deneme metni.",
+                "stimulus": "“İnsan ilişkilerinde en ucuz ama getirisi en yüksek sermaye içten bir tebessümdür. Asık suratlı, sürekli eleştiren ve etrafına öfke saçan insanlar, çevrelerindeki en candan dostlarını bile zamanla uzaklaştırırlar. Oysa güler yüzlü bir 'Günaydın' veya içten bir 'Teşekkür ederim', en gergin ortamların bile buzlarını eritir. İletişim yalnızca ağızdan çıkan kelimelerden ibaret değildir; bakışlarımızın nezaketi ve ses tonumuzun sıcaklığı kelimelerden çok daha hızlı karşı tarafa nüfuz eder.”",
+                "questionText": "Metindeki altı çizili 'buzlarını eritmek' deyiminin ve 'nüfuz etmek' kelimesinin anlamlarını metnin bağlamından yararlanarak tahmin edip yazınız.",
+                "solutionExplanation": "Buzlarını eritmek aradaki soğukluğu ve gerginliği gidermek; nüfuz etmek ise derinden etkilemek, içine işlemek demektir.",
+                "modelAnswer": "• Buzlarını eritmek: İnsanlar arasındaki kırgınlığı, çekingenliği, soğukluğu ve gerginliği ortadan kaldırıp samimi bir ortam kurmak demektir.\n• Nüfuz etmek: Karşı tarafın kalbine ve zihnine derinden işlemek, güçlü bir etki bırakmak anlamına gelir.",
+                "rubric": [
+                    {"criterion": "'Buzlarını eritmek' deyiminin bağlama uygun doğru açıklanması", "points": 8},
+                    {"criterion": "'Nüfuz etmek' sözcüğünün doğru tahmin edilmesi", "points": 7}
+                ]
+            },
+            {
+                "questionNumber": 2,
+                "outcomeCode": "T.O.7.5",
+                "outcomeTitle": "T.O.7.5. Metnin yüzey anlamını belirleyebilme",
+                "difficulty": "Kolay",
+                "cognitiveLevel": "Basit Bilişsel Süreçler",
+                "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+                "points": 14,
+                "contextText": "Metnin konusunu belirleme.",
+                "stimulus": "Yukarıda verilen 1. sorudaki tebessüm ve iletişim metnini dikkate alınız.",
+                "questionText": "Yukarıdaki tebessümün ve tatlı dilin önemini vurgulayan metnin konusunu bir cümleyle yazınız.",
+                "solutionExplanation": "Metin güler yüzün ve nezaketli iletişimin insan ilişkilerindeki olumlu etkisini anlatmaktadır.",
+                "modelAnswer": "Metnin konusu: Güler yüzlü olmanın, tatlı dilin ve nezaketli iletişimin insan ilişkilerini yumuşatmadaki ve dostlukları güçlendirmedeki rolüdür.",
+                "rubric": [
+                    {"criterion": "Metnin konusunu eksiksiz biçimde tek bir cümleyle yazma", "points": 14}
+                ]
+            },
+            {
+                "questionNumber": 3,
+                "outcomeCode": "T.O.7.5",
+                "outcomeTitle": "T.O.7.5. Metnin yüzey anlamını belirleyebilme",
+                "difficulty": "Kolay",
+                "cognitiveLevel": "Basit Bilişsel Süreçler",
+                "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+                "points": 14,
+                "contextText": "Metnin ana fikrini/ana düşüncesini belirleme.",
+                "stimulus": "Yukarıda verilen 1. sorudaki tebessüm ve iletişim metnini dikkate alınız.",
+                "questionText": "Yazarın bu metinde okuyucuya vermek istediği temel mesaj (ana fikir) nedir? Bir cümleyle yazınız.",
+                "solutionExplanation": "İletişimde en etkili yol nezaket ve tebessümdür.",
+                "modelAnswer": "Metnin Ana Fikri: İnsanlarla sağlıklı, güçlü ve sıcak ilişkiler kurmanın yolu; kelimelerimizden önce yüzümüzdeki içten bir tebessüm ve sesimizdeki nezakettir.",
+                "rubric": [
+                    {"criterion": "Ana fikrin bir öğüt veya genel yargı cümlesi olarak doğru yazılması", "points": 14}
+                ]
+            },
+            {
+                "questionNumber": 4,
+                "outcomeCode": "T.O.7.7",
+                "outcomeTitle": "T.O.7.7. Metnin derin anlamını belirlemeye yönelik basit çıkarımlar yapabilme",
+                "difficulty": "Orta",
+                "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+                "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+                "points": 14,
+                "contextText": "Metinden hareketle insan psikolojisine dair çıkarım yapma.",
+                "stimulus": "Yukarıda verilen 1. sorudaki tebessüm ve iletişim metnini dikkate alınız.",
+                "questionText": "Metne göre bir insanın yalnızca doğru kelimeleri kullanması etkili bir iletişim için neden yeterli değildir? Metindeki bakış açısıyla açıklayınız.",
+                "solutionExplanation": "Çünkü beden dili ve ses tonu kelimelerden daha hızlı ve etkilidir.",
+                "modelAnswer": "Çünkü iletişim sadece sözcüklerden oluşmaz. İnsanlar karşısındakinin yüz ifadesine, samimiyetine ve ses tonuna bakar. Eğer sözcükler nazik ama yüz ifadesi asık ve samimiyetsizse, karşı taraf kelimelere değil beden dilindeki bu soğukluğa odaklanır.",
+                "rubric": [
+                    {"criterion": "Sözsüz iletişim ve beden dili vurgusunun doğru yapılması", "points": 7},
+                    {"criterion": "Metindeki düşüncelerle tutarlı gerekçelendirme", "points": 7}
+                ]
+            },
+            {
+                "questionNumber": 5,
+                "outcomeCode": "T.O.7.21",
+                "outcomeTitle": "T.O.7.21. Metinden hareketle söz varlığını geliştirmeye yönelik çözümleme yapabilme",
+                "difficulty": "Orta",
+                "cognitiveLevel": "Basit Bilişsel Süreçler",
+                "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+                "points": 15,
+                "contextText": "Tatlı dil ve nezaketle ilgili atasözleri/deyimler.",
+                "stimulus": "Kavramlar: 'Tatlı dil' ve 'Güler yüz'.",
+                "questionText": "Türkçemizde tatlı dilli olmanın ve güler yüz göstermenin önemini anlatan 2 farklı atasözü veya deyim yazıp anlamlarını kısaca açıklayınız.",
+                "solutionExplanation": "Tatlı dil yılanı deliğinden çıkarır, yüzü gülmek, bal damlamak vb.",
+                "modelAnswer": "1. Atasözü: 'Tatlı dil yılanı deliğinden çıkarır.' (Anlamı: Kırıcı olmayan, hoş ve yumuşak sözler en inatçı ve öfkeli insanları bile ikna eder).\n2. Deyim: 'Güler yüz göstermek' (Anlamı: Karşılaştığı insanlara samimi, dostça ve sevecen davranmak).",
+                "rubric": [
+                    {"criterion": "Konuyla ilgili iki geçerli atasözü/deyimin yazılması", "points": 8},
+                    {"criterion": "Atasözü ve deyimlerin anlamlarının doğru açıklanması", "points": 7}
+                ]
+            },
+            {
+                "questionNumber": 6,
+                "outcomeCode": "T.Y.7.3",
+                "outcomeTitle": "T.Y.7.3. Yazısında içerik ve yapıya yönelik seçimlerini yönetebilme",
+                "difficulty": "Orta",
+                "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+                "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+                "points": 14,
+                "contextText": "Okul içi iletişimde empati konulu yazı planı.",
+                "stimulus": "Konu: 'Okulda Arkadaşlık İlişkilerinde Empati ve Dinleme Kültürü'",
+                "questionText": "Bu konuda yazacağınız bir bilgilendirici metinde; gelişme bölümünde ele alacağınız 2 iletişim hatasını ve bunların çözüm yollarını maddeler halinde planlayınız.",
+                "solutionExplanation": "Öğrenci dinlememe, söz kesme gibi hataları ve empati çözümünü yansıtır.",
+                "modelAnswer": "• 1. İletişim Hatası: Arkadaşı konuşurken sözünü kesmek ve onu sonuna kadar dinlememek. Çözüm: Sabırla dinleyip 'aktif dinleyici' olmak.\n• 2. İletişim Hatası: Karşısındakinin yerine kendini koymadan hemen peşin hüküm vermek ve suçlayıcı sen dili kullanmak. Çözüm: Empati kurarak 'ben dili' ile duygularını ifade etmek.",
+                "rubric": [
+                    {"criterion": "İki somut iletişim hatasının doğru tespit edilmesi", "points": 7},
+                    {"criterion": "Bu hatalara yönelik gerçekçi çözümlerin sunulması", "points": 7}
+                ]
+            },
+            {
+                "questionNumber": 7,
+                "outcomeCode": "T.Y.7.21",
+                "outcomeTitle": "T.Y.7.21. Yazım kuralları ve noktalama işaretlerini uygulayabilme",
+                "difficulty": "Kolay",
+                "cognitiveLevel": "Basit Bilişsel Süreçler",
+                "archetype": "Hata Tespiti & Adım Analizi",
+                "points": 14,
+                "contextText": "Yay ayraç içine uygun noktalama işaretlerini yerleştirme.",
+                "stimulus": "Cümle: Sabah erkenden okula gelen Mert ( ) nöbetçi öğretmene tebessüm ederek sordu ( ) ( ) Hocam ( ) kütüphane kaçta açılacak ( ) ( )",
+                "questionText": "Yukarıdaki cümlede yay ayraçla ( ) gösterilen yerlere gelmesi gereken noktalama işaretlerini sırasıyla yazınız.",
+                "solutionExplanation": "Özneden sonra virgül, konuşma öncesi iki nokta, konuşma çizgisi veya tırnak, hitap virgülü, soru işareti, tırnak kapama.",
+                "modelAnswer": "Sırasıyla: Virgül (,), İki nokta (:), Tırnak işareti (\"), Virgül (,), Soru işareti (?), Tırnak işareti (\").\nCümle: Sabah erkenden okula gelen Mert, nöbetçi öğretmene tebessüm ederek sordu: \"Hocam, kütüphane kaçta açılacak?\"",
+                "rubric": [
+                    {"criterion": "Virgül ve iki noktanın yerinde doğru kullanımı", "points": 7},
+                    {"criterion": "Alıntı cümlesi ve soru işaretinin eksiksiz yerleştirilmesi", "points": 7}
+                ]
+            }
+        ]
+    },
+
+    # -------------------------------------------------------------
+    # SENARYO 4 (7 Questions, 100 Puan)
+    # Metin: Asırlık Çınar Ağaçları ve Doğa Sevgisi
+    # Dağılım: T.O.7.4 (1), T.O.7.5 (2), T.O.7.7 (1), T.O.7.21 (1), T.Y.7.18 (1), T.Y.7.21 (1)
+    # -------------------------------------------------------------
+    {
+        "id": "exam_7_turkce_1_1_senaryo_4",
+        "grade": 7,
+        "subjectId": "turkce",
+        "examTerm": "1_donem_1_yazili",
+        "scenarioId": "senaryo_4",
+        "title": "7. Sınıf Türkçe 1. Dönem 1. Ortak Yazılı Sınavı (Senaryo 4) (7 Soru)",
+        "description": "MEB ÖDSGM 7. Sınıf Türkçe 4. Senaryo resmi konu soru dağılımına uygun 100 puanlık sınav kağıdı.",
+        "totalPoints": 100,
+        "durationMinutes": 40,
+        "questions": [
+            {
+                "questionNumber": 1,
+                "outcomeCode": "T.O.7.4",
+                "outcomeTitle": "T.O.7.4. Metinde geçen anlamını bilmediği söz varlığı unsurlarının anlamını tahmin edebilme",
+                "difficulty": "Orta",
+                "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+                "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+                "points": 15,
+                "contextText": "Tarihî çınar ağacı ve köklerimize bağlılık temalı metin.",
+                "stimulus": "“Bursa’nın İnkaya köyünde heybetiyle göğe yükselen altı asırlık çınar, Osmanlı Devleti’nin kuruluş günlerinden bugüne kadar nice nesillere tanıklık etmiştir. Dalları onlarca metreye yayılan bu ulu ağacın gölgesinde soluklanan insanlar, sadece bir ağacın değil; yaşayan bir tarihin serinliğini hissederler. Kökleri toprağın derinliklerine sımsıkı sarılmış bu çınar; bize sabrı, geçmişe vefa duymayı ve fırtınalara karşı dimdik durmayı fısıldar.”",
+                "questionText": "Metindeki altı çizili 'heybet' kelimesinin ve 'yaşayan bir tarihin serinliğini hissetmek' söz öbeğinin anlamlarını metnin bağlamından yararlanarak açıklayınız.",
+                "solutionExplanation": "Heybet büyüklük, azamet; yaşayan tarihin serinliği ise geçmişle kurulan canlı bağı ifade eder.",
+                "modelAnswer": "• Heybet: İnsana saygı ve hayranlık veren büyüklük, azamet ve gösteriş demektir.\n• Yaşayan bir tarihin serinliği: Ağacın yüzyıllar boyunca tarihi olayları ve kuşakları görmüş olmasından dolayı, onun gölgesinde oturanların geçmişle doğrudan manevi bir bağ kurmasıdır.",
+                "rubric": [
+                    {"criterion": "'Heybet' kelimesinin doğru açıklanması", "points": 8},
+                    {"criterion": "Söz öbeğindeki mecaz ve derin anlamın çözümlenmesi", "points": 7}
+                ]
+            },
+            {
+                "questionNumber": 2,
+                "outcomeCode": "T.O.7.5",
+                "outcomeTitle": "T.O.7.5. Metnin yüzey anlamını belirleyebilme",
+                "difficulty": "Kolay",
+                "cognitiveLevel": "Basit Bilişsel Süreçler",
+                "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+                "points": 14,
+                "contextText": "Metnin konusunu belirleme.",
+                "stimulus": "Yukarıda verilen 1. sorudaki çınar ağacı metnini dikkate alınız.",
+                "questionText": "Bursa İnkaya köyündeki asırlık çınarın ele alındığı bu metnin konusunu bir cümleyle yazınız.",
+                "solutionExplanation": "Metin asırlık bir çınarın tarihi tanıklığını ve insana verdiği manevi mesajı ele almaktadır.",
+                "modelAnswer": "Metnin konusu: Bursa'daki altı asırlık İnkaya çınarının heybetli yapısı, tarihî tanıklığı ve insanlara öğrettiği sabır ve vefa duygusudur.",
+                "rubric": [
+                    {"criterion": "Metnin konusunun eksiksiz ve tek cümleyle yazılması", "points": 14}
+                ]
+            },
+            {
+                "questionNumber": 3,
+                "outcomeCode": "T.O.7.5",
+                "outcomeTitle": "T.O.7.5. Metnin yüzey anlamını belirleyebilme",
+                "difficulty": "Kolay",
+                "cognitiveLevel": "Basit Bilişsel Süreçler",
+                "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+                "points": 14,
+                "contextText": "Metnin ana fikrini belirleme.",
+                "stimulus": "Yukarıda verilen 1. sorudaki çınar ağacı metnini dikkate alınız.",
+                "questionText": "Yazarın bu metindeki asırlık çınar üzerinden insanlara iletmek istediği ana fikir (ana düşünce) nedir?",
+                "solutionExplanation": "Köklerine bağlı olan bireyler ve toplumlar fırtınalara karşı dimdik durur.",
+                "modelAnswer": "Metnin Ana Fikri: Tıpkı kökleri derine inen bir çınar ağacı gibi, geçmişine, kültürüne ve köklerine vefayla bağlı olan toplumlar hayatın zorlukları ve fırtınaları karşısında dimdik ayakta kalırlar.",
+                "rubric": [
+                    {"criterion": "Ana fikrin öğüt verici ve genelleyici bir yargı olarak sunulması", "points": 14}
+                ]
+            },
+            {
+                "questionNumber": 4,
+                "outcomeCode": "T.O.7.7",
+                "outcomeTitle": "T.O.7.7. Metnin derin anlamını belirlemeye yönelik basit çıkarımlar yapabilme",
+                "difficulty": "Orta",
+                "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+                "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+                "points": 14,
+                "contextText": "Doğa ve tarih ilişkisinden çıkarım yapma.",
+                "stimulus": "Yukarıda verilen 1. sorudaki çınar ağacı metnini dikkate alınız.",
+                "questionText": "Yazarın çınarı sadece bir bitki olarak değil, 'yaşayan bir tanık' olarak görmesinin sebebini metne dayanarak açıklayınız.",
+                "solutionExplanation": "Ağacın Osmanlı'nın kuruluşundan bugüne kadar kuşakları görmüş olması.",
+                "modelAnswer": "Çünkü bu ağaç altı asırdır aynı yerde dimdik durarak Osmanlı'nın kuruluşuna, savaşlara, fatihlerin ve sıradan insanların hayatlarına şahitlik etmiş; yüzyılların kültürünü gölgesinde biriktirmiştir.",
+                "rubric": [
+                    {"criterion": "Tarihî süreklilik ve tanıklık gerekçesinin açıklanması", "points": 14}
+                ]
+            },
+            {
+                "questionNumber": 5,
+                "outcomeCode": "T.O.7.21",
+                "outcomeTitle": "T.O.7.21. Metinden hareketle söz varlığını geliştirmeye yönelik çözümleme yapabilme",
+                "difficulty": "Orta",
+                "cognitiveLevel": "Basit Bilişsel Süreçler",
+                "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+                "points": 15,
+                "contextText": "Zıt anlam ve söz varlığı türetme.",
+                "stimulus": "Kelimeler: 'derin' ve 'dimdik'.",
+                "questionText": "a) 'Derin' kelimesinin zıt anlamlısını yazıp bir cümlede kullanınız.\nb) 'Dimdik' kelimesinin eş anlamlısını veya yakın anlamlı karşılığını yazınız.",
+                "solutionExplanation": "Derin zıttı sığ, dimdik eş anlamlısı ayakta/eğilmeden.",
+                "modelAnswer": "a) Derin zıt anlamlısı: SIĞ. Cümle: 'Kıyıya yakın sığ sularda çocuklar güvenle yüzüyordu.'\nb) Dimdik eş/yakın anlamı: Sarsılmadan, dosdoğru, eğilmeden, dik bir biçimde.",
+                "rubric": [
+                    {"criterion": "Zıt anlamın ve örnek cümlenin doğruluğu", "points": 8},
+                    {"criterion": "Eş anlamın/açıklamanın doğruluğu", "points": 7}
+                ]
+            },
+            {
+                "questionNumber": 6,
+                "outcomeCode": "T.Y.7.18",
+                "outcomeTitle": "T.Y.7.18. Yazısını zenginleştirecek biçimde söz varlığını kullanabilme",
+                "difficulty": "Orta",
+                "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+                "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+                "points": 14,
+                "contextText": "Kişileştirme sanatı ve otobiyografik anlatımla paragraf yazma.",
+                "stimulus": "Bakış Açısı: Asırlık çınar ağacının ağzından anlatım.",
+                "questionText": "Asırlık çınarın ağzından insanlara seslenen; içinde 'kök salmak', 'sabır', 'fırtına' ve 'vefa' kelimelerinin geçtiği 3-4 cümlelik duygu dolu bir paragraf yazınız.",
+                "solutionExplanation": "Öğrenci ağacın gözünden insana sesleniş yazar.",
+                "modelAnswer": "Altı yüz yıldır bu tepede rüzgârlarla boğuştum ama toprağıma sımsıkı kök salmaktan asla vazgeçmedim. Nice fırtına dallarımı sarstı lakin sabır zırhımı kuşanıp her bahar yeniden yeşerdim. Ey gölgemde soluklanan insan, unutma ki vefa göstermeyen ve köklerini unutan bir dal en hafif rüzgârda bile kırılır.",
+                "rubric": [
+                    {"criterion": "Verilen 4 kavramın eksiksiz ve yerinde kullanılması", "points": 7},
+                    {"criterion": "Kişileştirme ve edebi dilin akıcı uygulanması", "points": 7}
+                ]
+            },
+            {
+                "questionNumber": 7,
+                "outcomeCode": "T.Y.7.21",
+                "outcomeTitle": "T.Y.7.21. Yazım kuralları ve noktalama işaretlerini uygulayabilme",
+                "difficulty": "Kolay",
+                "cognitiveLevel": "Basit Bilişsel Süreçler",
+                "archetype": "Hata Tespiti & Adım Analizi",
+                "points": 14,
+                "contextText": "Yazım kuralları (ikilemeler, bağlaç olan de).",
+                "stimulus": "Hatalı Cümle: 'Bursa'daki ulu çınar ağır ağır büyürken, osmanlı devleti'nin şanlı tarihinede şahitlik etmiştir.'",
+                "questionText": "Yukarıdaki cümlede yer alan büyük harf, kesme işareti ve bağlaç olan 'de'nin yazımıyla ilgili hataları düzelterek cümlenin doğru halini yazınız.",
+                "solutionExplanation": "Osmanlı Devleti büyük harf, tarihine de ayrı.",
+                "modelAnswer": "Doğru Cümle: 'Bursa'daki ulu çınar ağır ağır büyürken Osmanlı Devleti'nin şanlı tarihine de şahitlik etmiştir.'\n(Düzeltilenler: Osmanlı Devleti'nin büyük harfle yazımı, 'tarihine de' bağlacının ayrı yazımı, gereksiz virgülün kaldırılması).",
+                "rubric": [
+                    {"criterion": "Özel ismin ve kurum adının doğru yazılması (Osmanlı Devleti'nin)", "points": 7},
+                    {"criterion": "Bağlaç olan 'de'nin ayrı yazılması ve noktalama düzeltmesi", "points": 7}
+                ]
+            }
+        ]
+    },
+
+    # -------------------------------------------------------------
+    # SENARYO 5 (6 Questions, 100 Puan)
+    # Metin: Kitabın Serüveni: Mürekkep Kokusundan Ekranlara
+    # Dağılım: T.O.7.4 (1), T.O.7.5 (2), T.O.7.21 (1), T.Y.7.3 (1), T.Y.7.21 (1)
+    # -------------------------------------------------------------
+    {
+        "id": "exam_7_turkce_1_1_senaryo_5",
+        "grade": 7,
+        "subjectId": "turkce",
+        "examTerm": "1_donem_1_yazili",
+        "scenarioId": "senaryo_5",
+        "title": "7. Sınıf Türkçe 1. Dönem 1. Ortak Yazılı Sınavı (Senaryo 5) (6 Soru)",
+        "description": "MEB ÖDSGM 7. Sınıf Türkçe 5. Senaryo resmi konu soru dağılımına uygun 100 puanlık sınav kağıdı.",
+        "totalPoints": 100,
+        "durationMinutes": 40,
+        "questions": [
+            {
+                "questionNumber": 1,
+                "outcomeCode": "T.O.7.4",
+                "outcomeTitle": "T.O.7.4. Metinde geçen anlamını bilmediği söz varlığı unsurlarının anlamını tahmin edebilme",
+                "difficulty": "Orta",
+                "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+                "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+                "points": 17,
+                "contextText": "Kitabın ve bilginin tarihsel yolculuğu.",
+                "stimulus": "“Kil tabletlerden papirüslere, parşömenden kâğıt ve matbaaya uzanan kitap, insanlığın bilgi birikimini çağlar ötesine taşıyan en sadık yol arkadaşıdır. Gutenberg’in hareketli harflerle çalışan matbaayı icat etmesi, bilginin sadece sarayların ve manastırların tekelinde kalmasını önlemiş; halk kitlelerine yayılmasını sağlamıştır. Günümüzde ise e-kitaplar hayatımıza girmiştir. Biçim değişse de değişmeyen tek şey, insanın öğrenme tutkusudur.”",
+                "questionText": "Metindeki altı çizili 'tekelinde kalmak' söz öbeğinin ve 'bilgi birikimi' kavramının anlamlarını metnin bağlamından yararlanarak tahmin ediniz.",
+                "solutionExplanation": "Tekelinde kalmak sadece bir zümrenin kontrolünde olmak; bilgi birikimi ise kuşaktan kuşağa aktarılan tecrübedir.",
+                "modelAnswer": "• Tekelinde kalmak: Bir şeyin yalnızca belirli bir grubun veya zümrenin sahipliğinde ve kontrolünde olması, başkalarına kullandırılmaması demektir.\n• Bilgi birikimi: İnsanlığın çağlar boyunca araştırarak, deneyerek elde ettiği ve kitaplar yoluyla nesilden nesile aktardığı kültür ve ilim hazinesidir.",
+                "rubric": [
+                    {"criterion": "'Tekelinde kalmak' deyiminin doğru açıklanması", "points": 9},
+                    {"criterion": "'Bilgi birikimi' kavramının bağlama uygun tanımlanması", "points": 8}
+                ]
+            },
+            {
+                "questionNumber": 2,
+                "outcomeCode": "T.O.7.5",
+                "outcomeTitle": "T.O.7.5. Metnin yüzey anlamını belirleyebilme",
+                "difficulty": "Kolay",
+                "cognitiveLevel": "Basit Bilişsel Süreçler",
+                "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+                "points": 17,
+                "contextText": "Metnin konusunu belirleme.",
+                "stimulus": "Yukarıda verilen 1. sorudaki kitap metnini dikkate alınız.",
+                "questionText": "Kitabın kil tabletten matbaaya ve ekrana uzanan tarihini anlatan bu metnin konusunu bir cümleyle yazınız.",
+                "solutionExplanation": "Metin kitabın tarihsel gelişimi ve matbaanın bilgiyi yaymadaki rolünü ele alır.",
+                "modelAnswer": "Metnin konusu: Kitabın kil tabletlerden dijital ekranlara kadar geçirdiği tarihî dönüşüm ve matbaa sayesinde bilginin tüm insanlığa yayılmasıdır.",
+                "rubric": [
+                    {"criterion": "Metnin konusunu net ve eksiksiz bir cümleyle özetleme", "points": 17}
+                ]
+            },
+            {
+                "questionNumber": 3,
+                "outcomeCode": "T.O.7.5",
+                "outcomeTitle": "T.O.7.5. Metnin yüzey anlamını belirleyebilme",
+                "difficulty": "Kolay",
+                "cognitiveLevel": "Basit Bilişsel Süreçler",
+                "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+                "points": 17,
+                "contextText": "Metnin ana fikrini belirleme.",
+                "stimulus": "Yukarıda verilen 1. sorudaki kitap metnini dikkate alınız.",
+                "questionText": "Bu metnin ana düşüncesini (yazarın iletmek istediği asıl mesajı) bir cümleyle yazınız.",
+                "solutionExplanation": "Kitabın şekli değişse de insanın bilgiye ulaşma arzusu değişmez.",
+                "modelAnswer": "Metnin Ana Düşüncesi: Kitapların biçimi çağlar içinde tabletten ekrana doğru değişse de insanın bilgi edinme, öğrenme ve dünyayı anlama tutkusu asla değişmez.",
+                "rubric": [
+                    {"criterion": "Ana fikrin doğru ve eksiksiz çıkarılması", "points": 17}
+                ]
+            },
+            {
+                "questionNumber": 4,
+                "outcomeCode": "T.O.7.21",
+                "outcomeTitle": "T.O.7.21. Metinden hareketle söz varlığını geliştirmeye yönelik çözümleme yapabilme",
+                "difficulty": "Orta",
+                "cognitiveLevel": "Basit Bilişsel Süreçler",
+                "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+                "points": 17,
+                "contextText": "Terim anlamlı sözcükleri tespit etme.",
+                "stimulus": "Yukarıda verilen 1. sorudaki kitap metnini dikkate alınız.",
+                "questionText": "Metinde geçen yazı ve matbaa alanına ait 3 terim anlamlı sözcük belirleyip bunların hangi meslek/bilim dalıyla ilgili olduğunu yazınız.",
+                "solutionExplanation": "Papirüs, parşömen, matbaa vb.",
+                "modelAnswer": "1. Papirüs (Eski yazı malzemesi / Tarih-Arkeoloji)\n2. Parşömen (İşlenmiş hayvan derisinden yazı kağıdı / Tarih-Yayıncılık)\n3. Matbaa (Basım aleti ve tekniği / Basım-Yayımcılık)",
+                "rubric": [
+                    {"criterion": "3 terim anlamlı sözcüğün doğru belirlenmesi", "points": 9},
+                    {"criterion": "İlgili alanların doğru ilişkilendirilmesi", "points": 8}
+                ]
+            },
+            {
+                "questionNumber": 5,
+                "outcomeCode": "T.Y.7.3",
+                "outcomeTitle": "T.Y.7.3. Yazısında içerik ve yapıya yönelik seçimlerini yönetebilme",
+                "difficulty": "Orta",
+                "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+                "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+                "points": 16,
+                "contextText": "Fikir yazısı planı.",
+                "stimulus": "Konu: 'Sayfaların Kokusu mu, Ekranın Işığı mı? (Basılı Kitap vs E-Kitap)'",
+                "questionText": "Bu konuda yazacağınız tartışmacı bir metin için; savunduğunuz görüşü ve bu görüşü destekleyen 2 güçlü kanıtı maddeler halinde taslaklaştırınız.",
+                "solutionExplanation": "Öğrenci basılı veya dijital kitaptan birini seçerek iki sağlam gerekçe sunar.",
+                "modelAnswer": "• Savunulan Görüş: Dijital kolaylıklara rağmen basılı kitabın dokusu, göz sağlığına uygunluğu ve odaklanma kolaylığı üstündür.\n• Kanıt 1: Yapılan araştırmalar kâğıttan okumanın ekran ışığına göre gözü daha az yorduğunu ve okuduğunu anlama oranını artırdığını göstermektedir.\n• Kanıt 2: Dijital ekranlarda gelen bildirimler ve internet bağlantısı okuyucunun dikkatini dağıtırken basılı kitap derinleşmeyi sağlar.",
+                "rubric": [
+                    {"criterion": "Savunulan görüşün açıkça belirlenmesi", "points": 8},
+                    {"criterion": "İki tutarlı ve ikna edici kanıtın sunulması", "points": 8}
+                ]
+            },
+            {
+                "questionNumber": 6,
+                "outcomeCode": "T.Y.7.21",
+                "outcomeTitle": "T.Y.7.21. Yazım kuralları ve noktalama işaretlerini uygulayabilme",
+                "difficulty": "Kolay",
+                "cognitiveLevel": "Basit Bilişsel Süreçler",
+                "archetype": "Hata Tespiti & Adım Analizi",
+                "points": 16,
+                "contextText": "Sayıların yazımı ve kısaltmaların ekleri.",
+                "stimulus": "Cümle: '1450'de Almanyada matbaayı geliştiren Gutenberg, ilk eserini 3'er 3'er ciltleyip Prof. Dr. ünvanlı bilginlere sunmuştu.'",
+                "questionText": "Yukarıdaki cümlede yer alan yazım yanlışlarını (özel isim eki, üleştirme sayısının yazımı, unvan kelimesi) düzelterek cümlenin doğrusunu yazınız.",
+                "solutionExplanation": "Almanya'da kesme işareti, üleştirme sayıları rakamla değil yazıyla yazılır (üçer üçer), unvan değil unvan.",
+                "modelAnswer": "Doğru Cümle: '1450'de Almanya'da matbaayı geliştiren Gutenberg, ilk eserini üçer üçer ciltleyip Prof. Dr. unvanlı bilginlere sunmuştu.'\n(Düzeltmeler: Almanya'da kesme işareti, 3'er değil 'üçer üçer', unvan yazımı).",
+                "rubric": [
+                    {"criterion": "Özel ismin ekine kesme işareti konulması (Almanya'da)", "points": 8},
+                    {"criterion": "Üleştirme sayısının yazıyla yazılması kuralının uygulanması (üçer üçer)", "points": 8}
+                ]
+            }
+        ]
+    },
+
+    # -------------------------------------------------------------
+    # SENARYO 6 (6 Questions, 100 Puan)
+    # Metin: Bozkırın Tezenesi Neşet Ertaş ve Türkülerimiz
+    # Dağılım: T.O.7.4 (1), T.O.7.5 (2), T.O.7.21 (1), T.Y.7.18 (1), T.Y.7.21 (1)
+    # -------------------------------------------------------------
+    {
+        "id": "exam_7_turkce_1_1_senaryo_6",
+        "grade": 7,
+        "subjectId": "turkce",
+        "examTerm": "1_donem_1_yazili",
+        "scenarioId": "senaryo_6",
+        "title": "7. Sınıf Türkçe 1. Dönem 1. Ortak Yazılı Sınavı (Senaryo 6) (6 Soru)",
+        "description": "MEB ÖDSGM 7. Sınıf Türkçe 6. Senaryo resmi konu soru dağılımına uygun 100 puanlık sınav kağıdı.",
+        "totalPoints": 100,
+        "durationMinutes": 40,
+        "questions": [
+            {
+                "questionNumber": 1,
+                "outcomeCode": "T.O.7.4",
+                "outcomeTitle": "T.O.7.4. Metinde geçen anlamını bilmediği söz varlığı unsurlarının anlamını tahmin edebilme",
+                "difficulty": "Orta",
+                "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+                "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+                "points": 17,
+                "contextText": "Halk müziği ve Neşet Ertaş anlatısı.",
+                "stimulus": "“Anadolu’nun bağrından kopan türküler, bu milletin sevinçlerinin ve gurbet acılarının en samimi aynasıdır. 'Bozkırın Tezenesi' olarak anılan Neşet Ertaş; sazının tellerine dokunduğunda sadece bir melodi çalmaz, adeta bir halkın kalbinden geçenleri dile getirirdi. Onun 'Gönülden gönüle bir yol vardır görülmez' deyişi, Türk insanının sevgiye ve samimiyete verdiği değeri en veciz şekilde ortaya koyar. Türkülerini unutan bir millet, ruhunun en derin ezgilerini kaybetmiş demektir.”",
+                "questionText": "Metindeki altı çizili 'Bozkırın Tezenesi' lakabının ve 'veciz' kelimesinin anlamlarını metnin bağlamından hareketle açıklayınız.",
+                "solutionExplanation": "Tezene mızrap demektir; bozkırın mızrabı/sesi anlamındadır. Veciz ise kısa, öz ve derin anlamlı demektir.",
+                "modelAnswer": "• Bozkırın Tezenesi: Orta Anadolu bozkırının saz mızrabı, o coğrafyanın duygularını ve feryadını saza aktaran büyük usta anlamına gelir.\n• Veciz: Kısa, öz, etkili ve derin anlamlar taşıyan söz veya ifade demektir.",
+                "rubric": [
+                    {"criterion": "'Bozkırın Tezenesi' unvanının doğru açıklanması", "points": 9},
+                    {"criterion": "'Veciz' kelimesinin sözlük ve bağlam anlamının yazılması", "points": 8}
+                ]
+            },
+            {
+                "questionNumber": 2,
+                "outcomeCode": "T.O.7.5",
+                "outcomeTitle": "T.O.7.5. Metnin yüzey anlamını belirleyebilme",
+                "difficulty": "Kolay",
+                "cognitiveLevel": "Basit Bilişsel Süreçler",
+                "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+                "points": 17,
+                "contextText": "Metnin konusunu belirleme.",
+                "stimulus": "Yukarıda verilen 1. sorudaki Neşet Ertaş metnini dikkate alınız.",
+                "questionText": "Neşet Ertaş ve türkülerimizin anlatıldığı bu metnin konusunu bir cümleyle yazınız.",
+                "solutionExplanation": "Metin Neşet Ertaş'ın sanatını ve türkülerin milletimizin duygularını yansıtmadaki yerini anlatır.",
+                "modelAnswer": "Metnin konusu: Neşet Ertaş'ın sazı ve sözüyle Anadolu insanının duygularına tercüman oluşu ve türkülerimizin millî kültürümüzdeki yeridir.",
+                "rubric": [
+                    {"criterion": "Metnin konusunun eksiksiz tek cümleyle sunulması", "points": 17}
+                ]
+            },
+            {
+                "questionNumber": 3,
+                "outcomeCode": "T.O.7.5",
+                "outcomeTitle": "T.O.7.5. Metnin yüzey anlamını belirleyebilme",
+                "difficulty": "Kolay",
+                "cognitiveLevel": "Basit Bilişsel Süreçler",
+                "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+                "points": 17,
+                "contextText": "Metnin ana fikrini belirleme.",
+                "stimulus": "Yukarıda verilen 1. sorudaki Neşet Ertaş metnini dikkate alınız.",
+                "questionText": "Yazarın 'Türkülerini unutan bir millet, ruhunun en derin ezgilerini kaybetmiş demektir' sözüyle anlatmak istediği ana düşünce nedir?",
+                "solutionExplanation": "Türküler bir milletin kimliği ve ruhudur; unutulursa kimlik kaybolur.",
+                "modelAnswer": "Metnin Ana Düşüncesi: Türküler bir milletin ortak vicdanı, hafızası ve duygusal kimliğidir; türkülerinden kopan bir millet millî ve manevi bağlarını kaybeder.",
+                "rubric": [
+                    {"criterion": "Ana fikrin doğru ve güçlü bir biçimde ifade edilmesi", "points": 17}
+                ]
+            },
+            {
+                "questionNumber": 4,
+                "outcomeCode": "T.O.7.21",
+                "outcomeTitle": "T.O.7.21. Metinden hareketle söz varlığını geliştirmeye yönelik çözümleme yapabilme",
+                "difficulty": "Orta",
+                "cognitiveLevel": "Basit Bilişsel Süreçler",
+                "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+                "points": 17,
+                "contextText": "Gönül kelimesiyle deyim tahlili.",
+                "stimulus": "Kavram: 'Gönül' sözcüğü.",
+                "questionText": "Metinde geçen 'gönül' kelimesiyle kurulmuş 2 farklı deyim (örn. gönül koymak, gönül almak, gönül bağı) yazıp anlamlarını açıklayınız.",
+                "solutionExplanation": "Gönül almak sevindirmek, gönül koymak kırılmak vb.",
+                "modelAnswer": "1. Deyim: Gönül almak (Anlamı: Kırılan veya üzülen birini güzel söz ve davranışlarla sevindirmek, teselli etmek).\n2. Deyim: Gönül bağı kurmak (Anlamı: İki insan veya toplum arasında içten, samimi ve sevgiye dayalı bir yakınlık oluşturmak).",
+                "rubric": [
+                    {"criterion": "İki doğru deyimin yazılması", "points": 9},
+                    {"criterion": "Deyimlerin anlamlarının doğru açıklanması", "points": 8}
+                ]
+            },
+            {
+                "questionNumber": 5,
+                "outcomeCode": "T.Y.7.18",
+                "outcomeTitle": "T.Y.7.18. Yazısını zenginleştirecek biçimde söz varlığını kullanabilme",
+                "difficulty": "Orta",
+                "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+                "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+                "points": 16,
+                "contextText": "Türkülerin kültürel değerini anlatan paragraf yazımı.",
+                "stimulus": "Hedef Kavramlar: 'kültür mirası, samimiyet, ortak hafıza, ezgi'.",
+                "questionText": "Türkülerimizin geçmişten geleceğe kültür aktarımındaki rolünü anlatan; içinde 'kültür mirası', 'samimiyet', 'ortak hafıza' ve 'ezgi' kelimelerinin yer aldığı 3-4 cümlelik akıcı bir paragraf yazınız.",
+                "solutionExplanation": "Öğrenci 4 anahtar kavramla zengin bir metin kurar.",
+                "modelAnswer": "Türkülerimiz, Anadolu'nun asırlar boyunca biriktirdiği en değerli kültür mirasıdır. Her bir ezgi, düğünlerimizden ağıtlarımıza kadar milletimizin ortak hafızasını canlı tutar. Bu dizelerdeki eşsiz samimiyet, kuşakları birbirine bağlayan en güçlü köprüdür.",
+                "rubric": [
+                    {"criterion": "Dört anahtar kelimenin eksiksiz ve yerinde kullanılması", "points": 8},
+                    {"criterion": "Düşüncelerin akıcı ve edebi bir dille ifade edilmesi", "points": 8}
+                ]
+            },
+            {
+                "questionNumber": 6,
+                "outcomeCode": "T.Y.7.21",
+                "outcomeTitle": "T.Y.7.21. Yazım kuralları ve noktalama işaretlerini uygulayabilme",
+                "difficulty": "Kolay",
+                "cognitiveLevel": "Basit Bilişsel Süreçler",
+                "archetype": "Hata Tespiti & Adım Analizi",
+                "points": 16,
+                "contextText": "Noktalama işaretleri düzeltme.",
+                "stimulus": "Cümle: Neşet Ertaş şöyle derdi İncinsen de incitme çünkü gönül kırmak Kabe'yi yıkmak gibidir",
+                "questionText": "Yukarıdaki cümlede eksik bırakılan noktalama işaretlerini (iki nokta, tırnak işareti, virgül, nokta) uygun yerlere yerleştirerek cümleyi yeniden yazınız.",
+                "solutionExplanation": "Açıklama öncesi iki nokta, alıntı tırnak içine alınır, virgül ve nokta konur.",
+                "modelAnswer": "Doğru Şekil: Neşet Ertaş şöyle derdi: \"İncinsen de incitme; çünkü gönül kırmak, Kâbe'yi yıkmak gibidir.\"\n(veya: Neşet Ertaş şöyle derdi: \"İncinsen de incitme, çünkü gönül kırmak Kâbe'yi yıkmak gibidir.\")",
+                "rubric": [
+                    {"criterion": "Konuşma öncesi iki nokta (:) ve tırnak işaretlerinin doğru yerleştirilmesi", "points": 8},
+                    {"criterion": "Cümle içi virgül ve bitiş noktasının kurallara uygun kullanılması", "points": 8}
+                ]
+            }
+        ]
+    }
+]
+
+with open('meb_data/grade7_turkce_distinct.json', 'w', encoding='utf-8') as f:
+    json.dump(GRADE7_TURKCE_EXAMS, f, ensure_ascii=False, indent=2)
+
+print("Grade 7 Türkçe distinct exams generated successfully!")

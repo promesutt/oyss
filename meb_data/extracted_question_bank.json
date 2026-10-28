@@ -1,0 +1,2131 @@
+{
+  "FB.7.1.1": [
+    {
+      "outcomeCode": "FB.7.1.1",
+      "difficulty": "Kolay",
+      "cognitiveLevel": "Basit Bilişsel Süreçler",
+      "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+      "contextText": "Aşağıdaki tabloda uzay araştırmalarında kullanılan bazı teknolojiler ve bu teknolojilere ait özellikler verilmiştir.",
+      "stimulus": "Tablo: Uzay Teknolojilerinin Özellikleri\n-----------------------------------------------------------------------------------------\n| Uzay Teknolojisi | Belirli Bir Yörüngede Dolanma | İçinde Astronot Bulundurma | Tekrar Kullanılabilme |\n| Yapay Uydu       | ...........................   | ..........................  | .....................  |\n| Uzay İstasyonu   | ...........................   | ..........................  | .....................  |\n| Uzay Mekiği      | ...........................   | ..........................  | .....................  |",
+      "questionText": "Tablodaki boşluklara ilgili teknolojinin özelliğine göre \"VAR\" veya \"YOK\" yazarak doldurunuz.",
+      "modelAnswer": "• Yapay Uydu: Belirli Yörüngede Dolanma: VAR | İçinde Astronot Bulundurma: YOK | Tekrar Kullanılabilme: YOK\n• Uzay İstasyonu: Belirli Yörüngede Dolanma: VAR | İçinde Astronot Bulundurma: VAR | Tekrar Kullanılabilme: YOK\n• Uzay Mekiği: Belirli Yörüngede Dolanma: VAR | İçinde Astronot Bulundurma: VAR | Tekrar Kullanılabilme: VAR",
+      "solutionExplanation": "Yapay uydular insansızdır ve ömrü bitince çöp olur. Uzay istasyonları yörüngede kalıcı araştırma merkezleridir, astronot barındırır ama yeryüzüne inip tekrar fırlatılmaz. Uzay mekikleri ise roket gibi fırlatılıp uçak gibi piste inerek tekrar tekrar kullanılabilir.",
+      "rubric": [
+        {
+          "criterion": "Yapay Uydu satırının eksiksiz doldurulması (VAR - YOK - YOK)",
+          "points": 6
+        },
+        {
+          "criterion": "Uzay İstasyonu satırının eksiksiz doldurulması (VAR - VAR - YOK)",
+          "points": 6
+        },
+        {
+          "criterion": "Uzay Mekiği satırının eksiksiz doldurulması (VAR - VAR - VAR)",
+          "points": 5
+        }
+      ]
+    },
+    {
+      "outcomeCode": "FB.7.1.1",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+      "contextText": "Türkiye Uzay Ajansı (TUA), Mars yüzeyinde detaylı incelemeler yapmak ve astronotların konaklayabileceği bir yaşam alanı kurmak için dev bir proje başlatıyor. Projede kullanılacak 4 farklı teknoloji tanımlanmıştır:",
+      "stimulus": "1. Gökmen-1: Astronotları ve malzemeleri Dünya atmosferinin dışına taşıyacak uzay aracıdır.\n2. Keşif-X: Dünya'dan kontrol edilebilen, Mars yüzeyine inip toprak/kaya analizi yapacak robotik uzay aracıdır.\n3. Haberleşme-TR: Mars ile Dünya arasındaki veri akışını sağlamak için Mars yörüngesine yerleştirilecek araçtır.\n4. Uluslararası Yaşam Merkezi (UYM): Mars yörüngesinde bulunan ve bilim insanlarının uzun süre kalıp deney yapabildiği büyük platformdur.",
+      "questionText": "Buna göre aşağıdaki soruları gerekçelendirerek cevaplayınız:\na) Yukarıdaki numaralandırılmış araçlardan hangisi \"Uzay Sondası\" kavramına örnek gösterilebilir? Nedenini bir cümleyle açıklayınız.\nb) Haberleşme-TR ile Uluslararası Yaşam Merkezi (UYM) araçlarının bulundukları yer bakımından ortak özelliği nedir?\nc) Gökmen-1 ile Keşif-X araçlarını, görevleri ve kullanım amaçları bakımından karşılaştırarak en temel farklılığını yazınız.",
+      "modelAnswer": "a) 2 numaralı (Keşif-X) araçtır. Çünkü içerisinde astronot bulunmayan, başka bir gök cismini incelemek için uzaktan kumanda edilen robotik bir araştırma aracıdır.\nb) Her iki araç da Dünya'da değil, belirli bir gök cisminin (Mars) yörüngesinde dolanmaktadır.\nc) En temel fark: Gökmen-1 bir fırlatma/taşıma aracı (roket) olup görevi yük ve astronot taşımaktır. Keşif-X ise bir gözlem/analiz aracı (sonda) olup görevi veri toplamak ve bilimsel inceleme yapmaktır.",
+      "solutionExplanation": "Uzay sondaları uzaktan kumandalı insansız araştırma robotlarıdır. Roketler taşıyıcıdır, yapay uydular ve istasyonlar ise yörünge araçlarıdır.",
+      "rubric": [
+        {
+          "criterion": "a şıkkında Keşif-X seçimi ve insansız robotik araştırma aracı gerekçesi",
+          "points": 6
+        },
+        {
+          "criterion": "b şıkkında her iki aracın Mars yörüngesinde bulunma ortaklığının tespiti",
+          "points": 5
+        },
+        {
+          "criterion": "c şıkkında taşıma/fırlatma görevi ile bilimsel veri toplama farkının karşılaştırılması",
+          "points": 6
+        }
+      ]
+    },
+    {
+      "outcomeCode": "FB.7.1.1",
+      "difficulty": "Kolay",
+      "cognitiveLevel": "Basit Bilişsel Süreçler",
+      "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+      "contextText": "Uzay projelerinde kullanılan araçlar görev ve yapılarına göre farklı kategorilere ayrılır:",
+      "stimulus": "Araç A (Gökmen-1): Astronotları ve kargoları Dünya atmosferinin dışına fırlatan dev roket sistemi.\nAraç B (Keşif-X): Mars yüzeyine indirilerek Dünya'dan uzaktan kumandayla yönlendirilen, toprak ve kaya örneklerini analiz eden tekerlekli robotik araç.",
+      "questionText": "a) Araç B hangi uzay aracı kategorisine (Yapay Uydu / Uzay Sondası / Uzay İstasyonu) girmektedir? Nedenini bir cümleyle açıklayınız.\nb) Araç A ile Araç B'yi kullanım amaçları bakımından karşılaştırarak temel farkını yazınız.",
+      "modelAnswer": "a) Araç B bir \"Uzay Sondası\"dır. Çünkü içerisinde astronot bulunmayan, başka bir gök cismini incelemek üzere bilimsel veri toplamak için gönderilen robotik araştırma aracıdır.\nb) Temel fark: Araç A (roket) bir taşıma/fırlatma aracıdır, asıl görevi yükü yerçekiminden kurtarıp uzaya çıkarmaktır. Araç B ise bir gözlem/analiz aracıdır, görevi veri toplayıp dünyaya iletmektir.",
+      "solutionExplanation": "Uzay sondası ile uzay roketi arasındaki temel görev ayrımı MEBİ kazanımının merkezindedir.",
+      "rubric": [
+        {
+          "criterion": "a şıkkında Uzay Sondası tespiti ve robotik veri toplama gerekçesi",
+          "points": 10
+        },
+        {
+          "criterion": "b şıkkında fırlatma/taşıma ile bilimsel analiz görevinin karşılaştırılması",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "outcomeCode": "FB.7.1.1",
+      "difficulty": "Kolay",
+      "cognitiveLevel": "Basit Bilişsel Süreçler",
+      "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+      "contextText": "Aşağıdaki tabloda uzay araştırmalarında kullanılan bazı teknolojiler ve bu teknolojilere ait özellikler verilmiştir.",
+      "stimulus": "Tablo: Uzay Teknolojilerinin Özellikleri\n-----------------------------------------------------------------------------------------\n| Uzay Teknolojisi | Belirli Bir Yörüngede Dolanma | İçinde Astronot Bulundurma | Tekrar Kullanılabilme |\n| Yapay Uydu       | ...........................   | ..........................  | .....................  |\n| Uzay İstasyonu   | ...........................   | ..........................  | .....................  |\n| Uzay Mekiği      | ...........................   | ..........................  | .....................  |",
+      "questionText": "Tablodaki boşluklara ilgili teknolojinin özelliğine göre \"VAR\" veya \"YOK\" yazarak doldurunuz.",
+      "modelAnswer": "• Yapay Uydu: Belirli Yörüngede Dolanma: VAR | İçinde Astronot Bulundurma: YOK | Tekrar Kullanılabilme: YOK\n• Uzay İstasyonu: Belirli Yörüngede Dolanma: VAR | İçinde Astronot Bulundurma: VAR | Tekrar Kullanılabilme: YOK\n• Uzay Mekiği: Belirli Yörüngede Dolanma: VAR | İçinde Astronot Bulundurma: VAR | Tekrar Kullanılabilme: VAR",
+      "solutionExplanation": "Yapay uydular insansızdır ve ömrü bitince çöp olur. Uzay istasyonları yörüngede kalıcı araştırma merkezleridir, astronot barındırır ama yeryüzüne inip tekrar fırlatılmaz. Uzay mekikleri ise roket gibi fırlatılıp uçak gibi piste inerek tekrar tekrar kullanılabilir.",
+      "rubric": [
+        {
+          "criterion": "Yapay Uydu satırının eksiksiz doldurulması (VAR - YOK - YOK)",
+          "points": 5
+        },
+        {
+          "criterion": "Uzay İstasyonu satırının eksiksiz doldurulması (VAR - VAR - YOK)",
+          "points": 5
+        },
+        {
+          "criterion": "Uzay Mekiği satırının eksiksiz doldurulması (VAR - VAR - VAR)",
+          "points": 5
+        }
+      ]
+    },
+    {
+      "outcomeCode": "FB.7.1.1",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+      "contextText": "Türkiye Uzay Ajansı (TUA), Mars yüzeyinde detaylı incelemeler yapmak ve astronotların konaklayabileceği bir yaşam alanı kurmak için dev bir proje başlatıyor. Projede kullanılacak 4 farklı teknoloji tanımlanmıştır:",
+      "stimulus": "1. Gökmen-1: Astronotları ve malzemeleri Dünya atmosferinin dışına taşıyacak uzay aracıdır.\n2. Keşif-X: Dünya'dan kontrol edilebilen, Mars yüzeyine inip toprak/kaya analizi yapacak robotik uzay aracıdır.\n3. Haberleşme-TR: Mars ile Dünya arasındaki veri akışını sağlamak için Mars yörüngesine yerleştirilecek araçtır.\n4. Uluslararası Yaşam Merkezi (UYM): Mars yörüngesinde bulunan ve bilim insanlarının uzun süre kalıp deney yapabildiği büyük platformdur.",
+      "questionText": "Buna göre aşağıdaki soruları gerekçelendirerek cevaplayınız:\na) Yukarıdaki numaralandırılmış araçlardan hangisi \"Uzay Sondası\" kavramına örnek gösterilebilir? Nedenini bir cümleyle açıklayınız.\nb) Haberleşme-TR ile Uluslararası Yaşam Merkezi (UYM) araçlarının bulundukları yer bakımından ortak özelliği nedir?\nc) Gökmen-1 ile Keşif-X araçlarını, görevleri ve kullanım amaçları bakımından karşılaştırarak en temel farklılığını yazınız.",
+      "modelAnswer": "a) 2 numaralı (Keşif-X) araçtır. Çünkü içerisinde astronot bulunmayan, başka bir gök cismini incelemek için uzaktan kumanda edilen robotik bir araştırma aracıdır.\nb) Her iki araç da Dünya'da değil, belirli bir gök cisminin (Mars) yörüngesinde dolanmaktadır.\nc) En temel fark: Gökmen-1 bir fırlatma/taşıma aracı (roket) olup görevi yük ve astronot taşımaktır. Keşif-X ise bir gözlem/analiz aracı (sonda) olup görevi veri toplamak ve bilimsel inceleme yapmaktır.",
+      "solutionExplanation": "Uzay sondaları uzaktan kumandalı insansız araştırma robotlarıdır. Roketler taşıyıcıdır, yapay uydular ve istasyonlar ise yörünge araçlarıdır.",
+      "rubric": [
+        {
+          "criterion": "a şıkkında Keşif-X seçimi ve insansız robotik araştırma aracı gerekçesi",
+          "points": 5
+        },
+        {
+          "criterion": "b şıkkında her iki aracın Mars yörüngesinde bulunma ortaklığının tespiti",
+          "points": 5
+        },
+        {
+          "criterion": "c şıkkında taşıma/fırlatma görevi ile bilimsel veri toplama farkının karşılaştırılması",
+          "points": 5
+        }
+      ]
+    }
+  ],
+  "FB.7.1.3": [
+    {
+      "outcomeCode": "FB.7.1.3",
+      "difficulty": "Zor",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+      "contextText": "İnsanlık son 60 yılda uzaya binlerce uydu fırlattı. Görevini tamamlamış uydular, roket parçaları ve boya kalıntıları saatte 28.000 km hızla Dünya etrafında dolanmaktadır.",
+      "stimulus": "Bu problemi çözmek için bilim kuruluna iki farklı yöntem önerilmiştir:\n1. Yöntem: Eski uyduları itici motorlarla Dünya atmosferine çekerek sürtünmeyle tamamen yanmalarını sağlamak.\n2. Yöntem: Uzaydaki çöpleri yörüngede dolaşan dev ağlar veya mıknatıslı robot kollar yardımıyla toplayıp temizlemek.",
+      "questionText": "a) Eğer bu problem çözülmezse Dünya'daki günlük hayatımızı etkileyen hangi teknolojilerde ne gibi aksaklıklar yaşanabilir? Bir örnekle açıklayınız.\nb) Sizce yukarıda sunulan çözüm yollarından hangisi daha uygulanabilir? Seçtiğiniz yöntemin neden daha iyi olduğunu veya yöntemlerin eksik kalan yönlerini bilimsel olarak değerlendiriniz.",
+      "modelAnswer": "a) Televizyon yayınları kesilebilir, GPS/navigasyon sistemleri uydulara çarpma sonucu çökebilir veya meteoroloji hava durumu tahminleri yapılamaz hale gelebilir.\nb) (Öğrenci 1. veya 2. yöntemi seçip tutarlı gerekçelendirdiğinde tam puan alır):\n• 1. Yöntemi Seçen: Çöpleri atmosferde yakmak onları tamamen yok eder ve Dünya'ya geri düşme tehlikesini ortadan kaldırır. Ağla toplamak ise devasa boyutlardaki binlerce parça için yetersiz kalabilir.\n• 2. Yöntemi Seçen: Çok yüksek yörüngelerdeki uyduları atmosfere çekmek devasa yakıt gerektirir; ağ veya robot kolla toplamak yakıt tasarrufu sağlar ve kontrollü temizlik imkânı sunar.",
+      "solutionExplanation": "TYMM ikilem/dilemma tipi açık uçlu değerlendirme sorusudur. Tek bir ezber şık yerine öğrencinin tercih ettiği yöntemin bilimsel tutarlılığı değerlendirilir.",
+      "rubric": [
+        {
+          "criterion": "a şıkkında günlük hayat teknolojilerinden (GPS, TV, hava tahmini) birinin aksamasını gerekçelendirme",
+          "points": 8
+        },
+        {
+          "criterion": "b şıkkında seçilen yöntemin avantaj ve dezavantajlarını bilimsel olarak gerekçelendirme",
+          "points": 9
+        }
+      ]
+    },
+    {
+      "outcomeCode": "FB.7.1.3",
+      "difficulty": "Zor",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+      "contextText": "Dünya yörüngesinde işlevini tamamlamış binlerce uydu ve roket enkazı saatte 28.000 km hızla kontrolsüz dönmektedir.",
+      "stimulus": "Bilim insanları bu uzay çöplerinin temizlenmesi için iki yaklaşım geliştirmiştir:\n1. Yaklaşım: Eski uyduları itici motorlarla Dünya atmosferine yönlendirip sürtünmeyle tamamen yanmalarını sağlamak.\n2. Yaklaşım: Yörüngede otonom dev temizlik ağları ve robot kollar dolaştırarak çöpleri toplamak.",
+      "questionText": "a) Uzay kirliliğinin çözülmemesi durumunda yeryüzündeki haberleşme, navigasyon (GPS) veya hava tahmini gibi teknolojilerde yaşanabilecek somut bir tehlikeyi açıklayınız.\nb) Yukarıdaki iki yaklaşımdan birini seçerek avantajını ve diğer yaklaşımın riskini bilimsel argümanlarla savunup açıklayınız.",
+      "modelAnswer": "a) Saatte binlerce km hızla dönen uzay çöpleri aktif haberleşme veya GPS uydularına çarparak onları parçalayabilir. Bu durum dünya genelinde navigasyon sistemlerinin, uçak-gemi rotalarının çökmesine veya anlık hava durumu uydularının körleşmesine yol açar.\nb) (Öğrenci 1. veya 2. yaklaşımı seçip gerekçelendirdiğinde tam puan alır):\n• 1. Yaklaşım: Atmosfere çekip yakmak çöpleri tamamen yok eder ve yörüngeyi kesin temizler.\n• 2. Yaklaşım: Çok yüksek irtifadaki uyduları atmosfere indirmek devasa yakıt ister; ağla toplamak kontrollü temizlik sağlar.",
+      "solutionExplanation": "İkilem çözümleme açık uçlu soru standardıdır.",
+      "rubric": [
+        {
+          "criterion": "a şıkkında navigasyon veya iletişim altyapısının çökme riskini açıklama",
+          "points": 10
+        },
+        {
+          "criterion": "b şıkkında seçilen yöntemin avantajını ve diğerinin riskini savunma",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "outcomeCode": "FB.7.1.3",
+      "difficulty": "Zor",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+      "contextText": "İnsanlık son 60 yılda uzaya binlerce uydu fırlattı. Görevini tamamlamış uydular, roket parçaları ve boya kalıntıları saatte 28.000 km hızla Dünya etrafında dolanmaktadır.",
+      "stimulus": "Bu problemi çözmek için bilim kuruluna iki farklı yöntem önerilmiştir:\n1. Yöntem: Eski uyduları itici motorlarla Dünya atmosferine çekerek sürtünmeyle tamamen yanmalarını sağlamak.\n2. Yöntem: Uzaydaki çöpleri yörüngede dolaşan dev ağlar veya mıknatıslı robot kollar yardımıyla toplayıp temizlemek.",
+      "questionText": "a) Eğer bu problem çözülmezse Dünya'daki günlük hayatımızı etkileyen hangi teknolojilerde ne gibi aksaklıklar yaşanabilir? Bir örnekle açıklayınız.\nb) Sizce yukarıda sunulan çözüm yollarından hangisi daha uygulanabilir? Seçtiğiniz yöntemin neden daha iyi olduğunu veya yöntemlerin eksik kalan yönlerini bilimsel olarak değerlendiriniz.",
+      "modelAnswer": "a) Televizyon yayınları kesilebilir, GPS/navigasyon sistemleri uydulara çarpma sonucu çökebilir veya meteoroloji hava durumu tahminleri yapılamaz hale gelebilir.\nb) (Öğrenci 1. veya 2. yöntemi seçip tutarlı gerekçelendirdiğinde tam puan alır):\n• 1. Yöntemi Seçen: Çöpleri atmosferde yakmak onları tamamen yok eder ve Dünya'ya geri düşme tehlikesini ortadan kaldırır. Ağla toplamak ise devasa boyutlardaki binlerce parça için yetersiz kalabilir.\n• 2. Yöntemi Seçen: Çok yüksek yörüngelerdeki uyduları atmosfere çekmek devasa yakıt gerektirir; ağ veya robot kolla toplamak yakıt tasarrufu sağlar ve kontrollü temizlik imkânı sunar.",
+      "solutionExplanation": "TYMM ikilem/dilemma tipi açık uçlu değerlendirme sorusudur. Tek bir ezber şık yerine öğrencinin tercih ettiği yöntemin bilimsel tutarlılığı değerlendirilir.",
+      "rubric": [
+        {
+          "criterion": "a şıkkında günlük hayat teknolojilerinden (GPS, TV, hava tahmini) birinin aksamasını gerekçelendirme",
+          "points": 7
+        },
+        {
+          "criterion": "b şıkkında seçilen yöntemin avantaj ve dezavantajlarını bilimsel olarak gerekçelendirme",
+          "points": 8
+        }
+      ]
+    }
+  ],
+  "FB.7.1.4": [
+    {
+      "outcomeCode": "FB.7.1.4",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Birinci Ağızdan Konuşturma / Rol",
+      "contextText": "Uzayda yaşamının farklı evrelerinde bulunan üç farklı gök cismi kendilerini tanıtmaktadır:",
+      "stimulus": "X Cismi: \"Ben büyük bir gaz ve toz bulutuyum. İçimde kütle çekimi sayesinde sıkışan maddeler yeni yıldızların doğmasına imkân sağlar.\"\nY Cismi: \"Ben çok büyük kütleli bir yıldızdım. Ömrümün sonunda muazzam bir patlama geçirdim ve şimdi ışığın bile kaçamadığı çok güçlü bir çekim merkezine dönüştüm.\"\nZ Cismi: \"Ben orta büyüklükte bir yıldızım. Milyarlarca yıldır ısı ve ışık yayıyorum. Enerjim bittiğinde önce şişip kızıl bir deve dönüşeceğim. En sonunda beyaz bir cüce olarak sessizce veda edeceğim.\"",
+      "questionText": "a) Kendisini tanıtan X, Y ve Z cisimlerinin bilimsel kavram karşılıklarını yazınız.\nb) Metindeki Y cismi ile Z cisminin, yaşamlarının \"son evrelerinin\" neden birbirinden farklı olduğunu, yıldızların başlangıçtaki hangi temel özelliğiyle açıklarsınız?\nc) Güneş'imizin yaşam döngüsü tamamlandığında bir \"kara delik\"e dönüşmesi beklenebilir mi? Nedenini açıklayınız.",
+      "modelAnswer": "a) X: Bulutsu (Nebula) | Y: Kara Delik | Z: Küçük/Orta Kütleli Yıldız (Güneş benzeri sarı cüce).\nb) Bu farkın temel nedeni yıldızların başlangıçtaki KÜTLELERİDİR. Başlangıç kütlesi büyük olan yıldızlar süpernova patlamasıyla kara delik veya nötron yıldızına dönüşür; küçük/orta kütleli yıldızlar ise patlama yapmadan gezegenimsi bulutsu ve beyaz cüce olarak söner.\nc) Hayır, beklenemez. Çünkü Güneş küçük kütleli bir yıldızdır. Kara delik oluşabilmesi için yıldızın Güneş'ten çok daha büyük kütleye sahip olması gerekir. Güneş beyaz cüce olarak ömrünü tamamlayacaktır.",
+      "solutionExplanation": "Yıldız evriminde belirleyici faktör kütledir. Karakter konuşturma formatıyla MEBİ doğrudan kavram kavrama düzeyini ölçer.",
+      "rubric": [
+        {
+          "criterion": "a şıkkında X, Y ve Z cisimlerinin hatasız eşleştirilmesi (Her biri 2 puan)",
+          "points": 6
+        },
+        {
+          "criterion": "b şıkkında kütle büyüklüğü belirleyiciliğinin bilimsel açıklanması",
+          "points": 6
+        },
+        {
+          "criterion": "c şıkkında Güneş için \"beklenemez\" denilip beyaz cüceye dönüşeceğinin belirtilmesi",
+          "points": 5
+        }
+      ]
+    },
+    {
+      "outcomeCode": "FB.7.1.4",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+      "contextText": "Tüm yıldızlar bulutsu (nebula) adı verilen dev gaz ve toz bulutlarında doğar; ancak yaşamlarının son evreleri birbirinin aynısı değildir.",
+      "stimulus": "Yıldız K: Başlangıç kütlesi Güneş'in kütlesinden 15 kat daha büyük olan dev bir mavi yıldız.\nYıldız L: Başlangıç kütlesi Güneş'in kütlesine eşit olan orta büyüklükte bir sarı yıldız.",
+      "questionText": "a) Yıldız K ve Yıldız L'nin ömürlerinin sonunda geçirecekleri olayları (süpernova patlaması olup olmayacağını) yazınız.\nb) Ömürlerinin sonunda geriye kalacak gök cisimlerini (kara delik, nötron yıldızı veya beyaz cüce) eşleştirerek neden farklı sonlara sahip olduklarını başlangıç kütlesiyle açıklayınız.",
+      "modelAnswer": "a) Yıldız K büyük kütleli olduğu için şiddetli bir \"Süpernova Patlaması\" geçirerek ömrünü tamamlar. Yıldız L (Güneş büyüklüğünde) ise süpernova patlaması GEÇİREMEZ; dış katmanlarını uzaya salarak gezegenimsi bulutsuya dönüşür.\nb) Geriye Kalan Cisimler:\n• Yıldız K: Süpernova sonrası geride bir \"Kara Delik\" veya \"Nötron Yıldızı (Pulsar)\" bırakır.\n• Yıldız L: Merkezindeki çekirdek sıkışarak sönük bir \"Beyaz Cüce\"ye dönüşür.\nFarkın Nedeni: Yıldızın kaderini ve son evresini belirleyen yegâne etken başlangıçtaki KÜTLESİDİR.",
+      "solutionExplanation": "MEBİ Yıldızların yaşam döngüsü şemasının analitik vaka çözümlemesidir.",
+      "rubric": [
+        {
+          "criterion": "a şıkkında Yıldız K için süpernova, Yıldız L için süpernova olamayacağının tespiti",
+          "points": 10
+        },
+        {
+          "criterion": "b şıkkında kara delik/nötron yıldızı ve beyaz cüce eşleştirmesi ile kütle gerekçesi",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "outcomeCode": "FB.7.1.4",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Birinci Ağızdan Konuşturma / Rol",
+      "contextText": "Uzayda yaşamının farklı evrelerinde bulunan üç farklı gök cismi kendilerini tanıtmaktadır:",
+      "stimulus": "X Cismi: \"Ben büyük bir gaz ve toz bulutuyum. İçimde kütle çekimi sayesinde sıkışan maddeler yeni yıldızların doğmasına imkân sağlar.\"\nY Cismi: \"Ben çok büyük kütleli bir yıldızdım. Ömrümün sonunda muazzam bir patlama geçirdim ve şimdi ışığın bile kaçamadığı çok güçlü bir çekim merkezine dönüştüm.\"\nZ Cismi: \"Ben orta büyüklükte bir yıldızım. Milyarlarca yıldır ısı ve ışık yayıyorum. Enerjim bittiğinde önce şişip kızıl bir deve dönüşeceğim. En sonunda beyaz bir cüce olarak sessizce veda edeceğim.\"",
+      "questionText": "a) Kendisini tanıtan X, Y ve Z cisimlerinin bilimsel kavram karşılıklarını yazınız.\nb) Metindeki Y cismi ile Z cisminin, yaşamlarının \"son evrelerinin\" neden birbirinden farklı olduğunu, yıldızların başlangıçtaki hangi temel özelliğiyle açıklarsınız?\nc) Güneş'imizin yaşam döngüsü tamamlandığında bir \"kara delik\"e dönüşmesi beklenebilir mi? Nedenini açıklayınız.",
+      "modelAnswer": "a) X: Bulutsu (Nebula) | Y: Kara Delik | Z: Küçük/Orta Kütleli Yıldız (Güneş benzeri sarı cüce).\nb) Bu farkın temel nedeni yıldızların başlangıçtaki KÜTLELERİDİR. Başlangıç kütlesi büyük olan yıldızlar süpernova patlamasıyla kara delik veya nötron yıldızına dönüşür; küçük/orta kütleli yıldızlar ise patlama yapmadan gezegenimsi bulutsu ve beyaz cüce olarak söner.\nc) Hayır, beklenemez. Çünkü Güneş küçük kütleli bir yıldızdır. Kara delik oluşabilmesi için yıldızın Güneş'ten çok daha büyük kütleye sahip olması gerekir. Güneş beyaz cüce olarak ömrünü tamamlayacaktır.",
+      "solutionExplanation": "Yıldız evriminde belirleyici faktör kütledir. Karakter konuşturma formatıyla MEBİ doğrudan kavram kavrama düzeyini ölçer.",
+      "rubric": [
+        {
+          "criterion": "a şıkkında X, Y ve Z cisimlerinin hatasız eşleştirilmesi (Her biri 2 puan)",
+          "points": 6
+        },
+        {
+          "criterion": "b şıkkında kütle büyüklüğü belirleyiciliğinin bilimsel açıklanması",
+          "points": 5
+        },
+        {
+          "criterion": "c şıkkında Güneş için \"beklenemez\" denilip beyaz cüceye dönüşeceğinin belirtilmesi",
+          "points": 4
+        }
+      ]
+    }
+  ],
+  "FB.7.1.5": [
+    {
+      "outcomeCode": "FB.7.1.5",
+      "difficulty": "Kolay",
+      "cognitiveLevel": "Basit Bilişsel Süreçler",
+      "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+      "contextText": "Bir gök bilimci, keşfettiği yeni bir gök cisminin yerini tarif ederken şu ifadeleri kullanmaktadır:",
+      "stimulus": "“Keşfettiğim bu gök cismi, çevresine ısı ve ışık yayan büyük bir gaz küresidir. Bu parlak cisim; milyarlarca benzerinin, gaz ve toz bulutlarının bir araya gelerek oluşturduğu çok büyük bir sistemin içindedir. Bu sistem ise her şeyi içine alan ve sınırı tam olarak bilinmeyen sonsuz boşluğun küçük bir parçasıdır.”",
+      "questionText": "a) Yukarıdaki açıklamada hangi gök bilimi kavramlarından bahsedilmiştir? İsimlerini yazınız ve bu kavramları en geniş olandan en dar olana (büyükten küçüğe) doğru sıralayınız.\nb) Dünya'mızın içinde bulunduğu sarmal yapılı galaksinin adını yazınız.",
+      "modelAnswer": "a) Bahsedilen kavramlar: Evren, Galaksi (Gök ada), Yıldız.\nKapsam sıralaması (Büyükten küçüğe): Evren > Galaksi > Yıldız.\nb) Samanyolu Galaksisi (Avcı / Orion kolu).",
+      "solutionExplanation": "Kapsam ilişkisi: Sonsuz boşluk = Evren, Milyarlarca yıldızlı sistem = Galaksi, Isı-ışık yayan gaz küresi = Yıldız.",
+      "rubric": [
+        {
+          "criterion": "Kavramların doğru tespit edilip büyükten küçüğe sıralanması (Evren > Galaksi > Yıldız)",
+          "points": 10
+        },
+        {
+          "criterion": "Samanyolu galaksisinin adının yazılması",
+          "points": 6
+        }
+      ]
+    },
+    {
+      "outcomeCode": "FB.7.1.5",
+      "difficulty": "Kolay",
+      "cognitiveLevel": "Basit Bilişsel Süreçler",
+      "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+      "contextText": "Bir gök bilimci, keşfettiği yeni bir gök cisminin yerini tarif ederken şu ifadeleri kullanmaktadır:",
+      "stimulus": "“Keşfettiğim bu gök cismi, çevresine ısı ve ışık yayan büyük bir gaz küresidir. Bu parlak cisim; milyarlarca benzerinin, gaz ve toz bulutlarının bir araya gelerek oluşturduğu çok büyük bir sistemin içindedir. Bu sistem ise her şeyi içine alan ve sınırı tam olarak bilinmeyen sonsuz boşluğun küçük bir parçasıdır.”",
+      "questionText": "a) Yukarıdaki açıklamada hangi gök bilimi kavramlarından bahsedilmiştir? İsimlerini yazınız ve bu kavramları en geniş olandan en dar olana (büyükten küçüğe) doğru sıralayınız.\nb) Dünya'mızın içinde bulunduğu sarmal yapılı galaksinin adını yazınız.",
+      "modelAnswer": "a) Bahsedilen kavramlar: Evren, Galaksi (Gök ada), Yıldız.\nKapsam sıralaması (Büyükten küçüğe): Evren > Galaksi > Yıldız.\nb) Samanyolu Galaksisi (Avcı / Orion kolu).",
+      "solutionExplanation": "Kapsam ilişkisi: Sonsuz boşluk = Evren, Milyarlarca yıldızlı sistem = Galaksi, Isı-ışık yayan gaz küresi = Yıldız.",
+      "rubric": [
+        {
+          "criterion": "Kavramların doğru tespit edilip büyükten küçüğe sıralanması (Evren > Galaksi > Yıldız)",
+          "points": 7
+        },
+        {
+          "criterion": "Samanyolu galaksisinin adının yazılması",
+          "points": 3
+        }
+      ]
+    }
+  ],
+  "FB.7.2.1": [
+    {
+      "outcomeCode": "FB.7.2.1",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+      "contextText": "Fen bilimleri dersinde bir eylemin \"fiziksel anlamda iş\" sayılabilmesi için belirli bilimsel şartlar gereklidir.",
+      "stimulus": "Durum 1: Bir depoda duran ağır ahşap sandığı yatay doğrultuda kuvvet uygulayarak iten ve 5 metre yer değiştiren bir çalışan.\nDurum 2: Elindeki ağır market poşetlerini yukarı doğru sabit kuvvetle tutarak düz yolda sallamadan yatay olarak yürüyen bir kişi.",
+      "questionText": "a) Verilen durumlardan hangisinde \"fiziksel anlamda iş\" yapılmıştır? Hangisinde yapılmamıştır?\nb) Durum 2'de poşetleri taşıyan kişinin neden fiziksel anlamda iş yapmadığını kuvvet yönü ile hareket doğrultusu arasındaki açı ilişkisiyle açıklayınız.",
+      "modelAnswer": "a) Durum 1'de fiziksel anlamda iş yapılmıştır. Durum 2'de fiziksel anlamda iş yapılmamıştır.\nb) Gerekçe: Fiziksel anlamda iş yapılabilmesi için cismin uygulanan kuvvet doğrultusunda yer değiştirmesi gerekir. Durum 2'de poşetleri taşırken uygulanan kuvvet yukarı yönlüdür; yürünen yol ise yataydır. Kuvvet ile hareket yönü birbirine DİK (90 derece) olduğundan kuvvet doğrultusunda yer değiştirme sıfırdır ve fiziksel anlamda iş yapılmaz.",
+      "solutionExplanation": "Kuvvet ile hareket doğrultusu birbirine dik olduğunda fiziksel iş yapılmaz.",
+      "rubric": [
+        {
+          "criterion": "a şıkkında iş yapılan ve yapılmayan durumların doğru teşhisi",
+          "points": 8
+        },
+        {
+          "criterion": "b şıkkında kuvvet ile hareketin birbirine dik olması kuralının açıklanması",
+          "points": 8
+        }
+      ]
+    },
+    {
+      "outcomeCode": "FB.7.2.1",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+      "contextText": "Halter sporu yapan bir sporcunun antrenmanındaki iki durum incelenmiştir:",
+      "stimulus": "Durum 1 (Kaldırma Anı): Sporcu 120 kg ağırlığındaki halteri yerden yukarı doğru kuvvet uygulayarak 2 metre yukarı, başının üzerine çıkarmıştır.\nDurum 2 (Sabit Tutma Anı): Sporcu halteri başının üzerinde havada hiç kımıldatmadan 4 saniye boyunca sabit tutmuştur.",
+      "questionText": "a) Durum 1 ve Durum 2'de fiziksel anlamda iş yapılıp yapılmadığını ayrı ayrı belirtiniz.\nb) Durum 2'de sporcunun terleyip yorulmasına rağmen neden fiziksel anlamda iş yapmış SAYILMADIĞINI fen bilimleri iş formülü ve şartlarıyla açıklayınız.",
+      "modelAnswer": "a) Durum 1'de fiziksel anlamda İŞ YAPILMIŞTIR. Durum 2'de ise fiziksel anlamda İŞ YAPILMAMIŞTIR (İş = 0).\nb) Gerekçe: Bir kuvvetin fiziksel anlamda iş sayılabilmesi için yalnızca kuvvet uygulamak yetmez; cismin o kuvvet doğrultusunda MUTLAKA YER DEĞİŞTİRMESİ (yol alması: Δx > 0) gerekir. İş = Kuvvet × Yol (W = F · Δx) formülüne göre halter havada hareketsiz tutulduğunda alınan yol sıfırdır (Δx = 0). Yol sıfır olduğu için yapılan iş de sıfırdır. Günlük dilde yorulmak fiziksel iş anlamına gelmez.",
+      "solutionExplanation": "MEBİ 8. sorunun halterci vaka incelemesi.",
+      "rubric": [
+        {
+          "criterion": "a şıkkında Durum 1 için evet, Durum 2 için hayır tespiti",
+          "points": 10
+        },
+        {
+          "criterion": "b şıkkında yer değiştirme şartı (yol=0) ve W=F·x formül ilişkisinin gerekçelendirilmesi",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "outcomeCode": "FB.7.2.1",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+      "contextText": "Fen bilimleri dersinde bir eylemin \"fiziksel anlamda iş\" sayılabilmesi için belirli bilimsel şartlar gereklidir.",
+      "stimulus": "Durum 1: Bir depoda duran ağır ahşap sandığı yatay doğrultuda kuvvet uygulayarak iten ve 5 metre yer değiştiren bir çalışan.\nDurum 2: Elindeki ağır market poşetlerini yukarı doğru sabit kuvvetle tutarak düz yolda sallamadan yatay olarak yürüyen bir kişi.\nDurum 3: Halter sporcusunun ağırlığı yerden kaldırıp başının üzerine çıkardıktan sonra 3 saniye boyunca havada hareketsiz sabit tuttuğu an.",
+      "questionText": "a) Yukarıdaki 3 durumdan hangisinde/hangilerinde \"fiziksel anlamda iş\" yapılmıştır? Hangisinde yapılmamıştır?\nb) Durum 2 ve Durum 3'te neden fiziksel anlamda iş yapılmadığını fen bilimleri gerekçeleriyle (kuvvet yönü ve yer değiştirme şartı) ayrı ayrı açıklayınız.",
+      "modelAnswer": "a) Fiziksel anlamda iş yapılan: Yalnızca Durum 1.\nİş yapılmayanlar: Durum 2 ve Durum 3.\nb) Gerekçeler:\n• Durum 2'de: Uygulanan kuvvet yukarı yönlüdür ancak hareket yönü yataydır. Kuvvet ile hareket doğrultusu birbirine dik olduğu için fiziksel anlamda iş sayılmaz.\n• Durum 3'te: Halter havada sabit tutulurken sporcu kuvvet uygular ve yorulur; ancak cisim yer değiştirmediği (alınan yol = 0 olduğu) için fiziksel anlamda iş sıfırdır.",
+      "solutionExplanation": "Fiziksel iş şartları: 1. Kuvvet uygulanmalı, 2. Cisim kuvvet doğrultusunda yer değiştirmelidir. Sabit tutmada yol=0, taşımada kuvvet ile hareket birbirine diktir.",
+      "rubric": [
+        {
+          "criterion": "a şıkkında iş yapılan ve yapılmayan durumların doğru teşhisi",
+          "points": 5
+        },
+        {
+          "criterion": "Durum 2 için kuvvet ve hareket yönünün dik olması gerekçesi",
+          "points": 5
+        },
+        {
+          "criterion": "Durum 3 için cismin yer değiştirmemesi (yol = 0) gerekçesi",
+          "points": 5
+        }
+      ]
+    }
+  ],
+  "FB.7.2.2": [
+    {
+      "outcomeCode": "FB.7.2.2",
+      "difficulty": "Zor",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+      "contextText": "Bir elma ağacında asılı duran elma ile daldan koparak düşen elmanın enerjileri incelenmektedir:",
+      "stimulus": "Ağacın 4 metre yüksekliğindeki dalında duran 250 gramlık elma rüzgârın etkisiyle daldan kopmuş ve yere doğru hızla düşmeye başlamıştır.",
+      "questionText": "a) Dalda asılı dururken elmanın sahip olduğu enerji çeşidi nedir? Bu enerji elmanın hangi fiziksel özelliklerine bağlıdır?\nb) Elma daldan kopup yere doğru hızlanırken hangi enerjisi azalır, hangi enerjisi artar? Enerjinin korunumu ilkesiyle açıklayınız.\nc) Kinetik enerji ile çekim potansiyel enerjisi arasındaki en temel farkı enerjinin ortaya çıkması için gereken şartlar (konum vs hareket) bakımından yazınız.",
+      "modelAnswer": "a) Çekim Potansiyel Enerjisidir. Bu enerji elmanın kütlesine (ağırlığına) ve yerden yüksekliğine (h) bağlıdır (Ep = m·g·h).\nb) Aşağı düşerken yükseklik azaldığı için \"Çekim Potansiyel Enerjisi\" azalır; azalan bu potansiyel enerji sürate dönüşerek \"Kinetik Enerji\"yi artırır. Toplam mekanik enerji (sürtünmeler önemsenmediğinde) korunur.\nc) Temel Fark: Kinetik enerji cismin HAREKETİNDEN (süratinden) dolayı sahip olduğu enerjidir. Potansiyel enerji ise cismin KONUMUNDAN (yerden yüksekliğinden) dolayı depoladığı enerjidir.",
+      "solutionExplanation": "MEBİ 9. sorunun birebir enerji dönüşümü çözümlemesidir.",
+      "rubric": [
+        {
+          "criterion": "a şıkkında çekim potansiyel enerjisi ve kütle-yükseklik bağımlılığı",
+          "points": 7
+        },
+        {
+          "criterion": "b şıkkında potansiyelin azalıp kinetiğe dönüşmesi ve mekanik enerjinin korunumu",
+          "points": 7
+        },
+        {
+          "criterion": "c şıkkında konum (yükseklik) ile hareket (sürat) karşılaştırması",
+          "points": 6
+        }
+      ]
+    },
+    {
+      "outcomeCode": "FB.7.2.2",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+      "contextText": "Bir bahçedeki elma ağacını inceleyen öğrenci, dalda asılı duran elma ile rüzgârla kopup yere doğru hızla düşmekte olan elmanın enerjilerini karşılaştırmak istiyor.",
+      "stimulus": "Durum A: Ağacın 3 metre yüksekliğindeki dalında hareketsiz duran 200 gramlık olgun elma.\nDurum B: Daldan koparak yere 1 metre kala saniyede 6 metre süratle yere doğru düşmekte olan aynı elma.",
+      "questionText": "a) Durum A'daki elmanın sahip olduğu enerji çeşidi nedir ve bu enerji elmanın hangi fiziksel özelliklerine bağlıdır?\nb) Durum B'deki elmanın daldan koptuktan sonra kazandığı enerji türü nedir?\nc) Bu iki enerji türü arasındaki en temel farklılığı, enerjinin ortaya çıkması için gereken şartlar (konum vs hareket) bakımından karşılaştırınız.",
+      "modelAnswer": "a) Çekim Potansiyel Enerjisidir. Bu enerji elmanın kütlesine (ağırlığına) ve yerden yüksekliğine bağlıdır.\nb) Kinetik enerjidir (ayrıca henüz yere çarpmadığı için bir miktar çekim potansiyel enerjisi de bulunmaktadır).\nc) En temel fark: Kinetik enerji bir cismin HAREKETİNDEN (süratinden) dolayı sahip olduğu enerjidir. Çekim potansiyel enerjisi ise cismin KONUMUNDAN (yerden yüksekliğinden) dolayı depoladığı enerjidir. Biri sürat, diğeri yükseklik gerektirir.",
+      "solutionExplanation": "Potansiyel enerji konum enerjisi iken, kinetik enerji hareket enerjisidir. MEBİ soru 9 ile birebir örtüşen enerji dönüşüm kazanımıdır.",
+      "rubric": [
+        {
+          "criterion": "a şıkkında çekim potansiyel enerjisi ve kütle-yükseklik bağımlılığı",
+          "points": 5
+        },
+        {
+          "criterion": "b şıkkında kinetik enerji tanımı",
+          "points": 5
+        },
+        {
+          "criterion": "c şıkkında konum (yükseklik) ile hareket (sürat) karşılaştırması",
+          "points": 5
+        }
+      ]
+    }
+  ],
+  "MAT.7.1.1": [
+    {
+      "outcomeCode": "MAT.7.1.1",
+      "difficulty": "Kolay",
+      "cognitiveLevel": "Basit Bilişsel Süreçler",
+      "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+      "contextText": "Kutup tavşanı, kutup tilkisi ve ren geyiği soğuk iklimlerde yaşayabilen hayvanlardır. Bir araştırma etkinliğinde bu hayvanların yaşadığı bölgeler için aşağıdaki örnek sıcaklık aralıkları belirlenmiştir:",
+      "stimulus": "Tablo 1: Hayvanların Yaşadığı Sıcaklık Aralıkları\n- Kutup tavşanı: En düşük -40 °C | En yüksek +10 °C\n- Kutup tilkisi: En düşük -50 °C | En yüksek +5 °C\n- Ren geyiği:    En düşük -35 °C | En yüksek +15 °C",
+      "questionText": "Aşağıda verilen sıcaklık değerlerinin hangi hayvanların yaşadığı sıcaklık aralıklarında yer aldığını belirleyiniz:\\na) -45 °C sıcaklığı hangi hayvanın/hayvanların bölgesinde görülür?\\nb) 7 °C sıcaklığı hangi hayvanın/hayvanların bölgesinde görülür?\\nc) -30 °C sıcaklığının bu üç hayvan için ortak bir sıcaklık olup olmadığını matematiksel eşitsizlikle açıklayınız.",
+      "modelAnswer": "a) -45 °C: Yalnızca Kutup tilkisi (Çünkü -50 ile +5 arasındadır; tavşan -40'a kadar, geyik -35'e kadar dayanır).\nb) 7 °C: Kutup tavşanı ve Ren geyiği (Kutup tilkisi en fazla +5 °C'ye çıktığı için onda görülmez).\nc) Ortaktır. Çünkü -30 sayısı:\n-50 < -30 < +5 (tilki aralığında)\n-40 < -30 < +10 (tavşan aralığında)\n-35 < -30 < +15 (ren geyiği aralığında) olduğundan her üçü için de geçerlidir.",
+      "solutionExplanation": "MEBİ Matematik 1. sayfasındaki sıcaklık aralığı ve negatif tam sayıları karşılaştırma sorusunun birebir uyarlamasıdır.",
+      "rubric": [
+        {
+          "criterion": "a şıkkında yalnız Kutup tilkisi tespiti",
+          "points": 6
+        },
+        {
+          "criterion": "b şıkkında Tavşan ve Ren geyiği tespiti (tilkinin elenmesi)",
+          "points": 7
+        },
+        {
+          "criterion": "c şıkkında her üç hayvanın aralık eşitsizliğiyle ortaklığın kanıtlanması",
+          "points": 7
+        }
+      ]
+    },
+    {
+      "outcomeCode": "MAT.7.1.1",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+      "contextText": "Çay üretimi yapan bir fabrikada paketlerin hedef kütlesi 500 gram olarak belirlenmiştir. Paketleme makinelerinden rastgele alınan paketler hassas terazi ile tartılmış ve hedef kütleye göre sapmalar mutlak değerle hata miktarı olarak hesaplanmıştır.",
+      "stimulus": "Tablo: Makinelere Göre Kütle ve Hata Miktarları\n• 1. Makine: 496 g -> Hedef kütleden 4 g eksik -> Hata Miktarı: |-4| = 4 g\n• 2. Makine: 502 g -> Hedef kütleden 2 g fazla -> Hata Miktarı: |+2| = 2 g\n• 3. Makine: 499 g -> Hedef kütleden 1 g eksik -> Hata Miktarı: |-1| = 1 g\n• 4. Makine: 493 g -> Hedef kütleden 7 g eksik -> Hata Miktarı: |-7| = 7 g\n• 5. Makine: 501 g -> Hedef kütleden 1 g fazla -> Hata Miktarı: |+1| = 1 g",
+      "questionText": "a) 3. Makine ile 5. Makinenin paket kütleleri yön olarak farklı (biri eksik, biri fazla) olmasına rağmen hata miktarlarının neden eşit çıktığını mutlak değer kavramını kullanarak açıklayınız.\nb) Bu kontrole göre hata miktarı en az olan makineleri belirleyiniz.",
+      "modelAnswer": "a) Çünkü hata miktarı, paketin gerçek kütlesinin hedeflenen 500 gram noktasına olan \"uzaklığını\" ifade eder. Uzaklık hiçbir zaman negatif olamaz. 3. makine için |499 - 500| = |-1| = 1 birim; 5. makine için |501 - 500| = |+1| = 1 birimdir. Her iki paketin de 500 grama olan mesafesi 1 gram olduğundan hata miktarları eşittir.\nb) Hata miktarı en az olan makineler 3. Makine ve 5. Makinedir (Hata: 1 g).",
+      "solutionExplanation": "MEBİ Matematik 4. sorusundaki fabrikanın paketleme kontrolü ve mutlak değerin uzaklık anlamını kavratan problem modelidir.",
+      "rubric": [
+        {
+          "criterion": "Mutlak değerin başlangıç/hedef noktasına olan uzaklık olduğunun açıklanması",
+          "points": 10
+        },
+        {
+          "criterion": "|-1| = |+1| = 1 matematiksel eşitliğinin gösterilmesi",
+          "points": 5
+        },
+        {
+          "criterion": "En az hata miktarının 3 ve 5. makineler olduğunun belirtilmesi",
+          "points": 5
+        }
+      ]
+    },
+    {
+      "outcomeCode": "MAT.7.1.1",
+      "difficulty": "Kolay",
+      "cognitiveLevel": "Basit Bilişsel Süreçler",
+      "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+      "contextText": "Aşağıda verilen gerçek yaşam durumlarını inceleyiniz:",
+      "stimulus": "Durum 1: Türkiye'nin en yüksek dağı olan Ağrı Dağı'nın zirvesi deniz seviyesinin 5.137 metre üzerindedir.\nDurum 2: Mariana Çukuru'ndaki Challenger Derinliği deniz seviyesinin 10.935 metre altındadır.\nDurum 3: Erzurum'da bir kış günü hava sıcaklığı sıfırın altında 25 °C ölçülmüştür.\nDurum 4: Çamlıca Kulesi'nin yüksekliği zeminden itibaren 369 metredir.",
+      "questionText": "a) Yukarıdaki 4 durumun tam sayı karşılıklarını yönlü sayılarla (+ / -) yazınız.\nb) Ağrı Dağı'nın zirvesi ile Challenger Derinliği arasındaki dikey mesafe farkını tam sayılarda çıkarma işlemi kurarak hesaplayınız.",
+      "modelAnswer": "a) Tam Sayı Karşılıkları:\n• Ağrı Dağı: +5.137 m\n• Challenger Derinliği: -10.935 m\n• Erzurum Hava Sıcaklığı: -25 °C\n• Çamlıca Kulesi: +369 m\nb) Dikey Mesafe Farkı = (+5.137) - (-10.935) = (+5.137) + (+10.935) = 16.072 metredir.",
+      "solutionExplanation": "MEBİ Matematik 2. sorusunun birebir tam sayı modellemesi ve dikey fark çözümüdür.",
+      "rubric": [
+        {
+          "criterion": "4 durumun işaretli tam sayılarının hatasız yazılması (Her biri 2.5 puan)",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "outcomeCode": "MAT.7.1.1",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+      "contextText": "Sayı doğrusunda -2 ile -1 arası dört eş parçaya bölünmüş ve -2\\'ye en yakın olan ilk bölme noktası \"A\" olarak adlandırılmıştır.",
+      "stimulus": "A noktasına karşılık gelen rasyonel sayıyı bulmaları istendiğinde üç öğrenci şu cevapları vermiştir:\n• Kerem:  -1 tam 3/4\n• Zeynep: -14/8\n• Arda:   -21/12",
+      "questionText": "Bu öğrencilerden hangisi ya da hangileri doğru cevap vermiştir? Öğrencilerin cevaplarının doğruluğunu kesirleri sadeleştirerek ve bileşik kesre çevirerek matematiksel gerekçeleriyle açıklayınız.",
+      "modelAnswer": "Tüm öğrencilerin (Kerem, Zeynep ve Arda) verdiği cevaplar DOĞRUDUR.\nMatematiksel Gerekçelendirme:\n- Sayı doğrusunda -1 ile -2 arası 4 parçaya bölünmüştür. -1'den sola doğru 3 birim gidildiğinde nokta: -1 tam 3/4 = -7/4'e karşılık gelir.\n- Kerem: -1 tam 3/4 = -(1·4+3)/4 = -7/4 (Doğrudur).\n- Zeynep: -14/8 kesrini 2 ile sadeleştirdiğimizde: (-14÷2) / (8÷2) = -7/4 (Doğrudur).\n- Arda: -21/12 kesrini 3 ile sadeleştirdiğimizde: (-21÷3) / (12÷3) = -7/4 (Doğrudur).\nPay ve paydaları farklı sayılardan oluşsa da genişletme/sadeleştirme ile hepsi aynı -7/4 rasyonel sayısını temsil eder.",
+      "solutionExplanation": "MEBİ Matematik 8. sorusunun denk kesir ve sayı doğrusu modellemesidir.",
+      "rubric": [
+        {
+          "criterion": "A noktasının -7/4 olduğunun ve üç öğrencinin de doğru söylediğinin tespiti",
+          "points": 8
+        },
+        {
+          "criterion": "Kerem\\'in tam sayılı kesrinin bileşik kesre (-7/4) çevrilmesi",
+          "points": 4
+        },
+        {
+          "criterion": "Zeynep (-14/8) ve Arda\\'nın (-21/12) sadeleştirilerek -7/4 eşitliğinin kanıtlanması",
+          "points": 8
+        }
+      ]
+    },
+    {
+      "outcomeCode": "MAT.7.1.1",
+      "difficulty": "Kolay",
+      "cognitiveLevel": "Basit Bilişsel Süreçler",
+      "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+      "contextText": "Kutup tavşanı (-40 ile +10 °C), kutup tilkisi (-50 ile +5 °C) ve ren geyiği (-35 ile +15 °C) sıcaklıklarında yaşamaktadır.",
+      "stimulus": "Tablo: Belirli Sıcaklık Değerleri: -45 °C, -30 °C, 7 °C, 12 °C.",
+      "questionText": "a) -45 °C sıcaklığının hangi hayvanın yaşadığı bölgede görülebileceğini belirtiniz.\nb) -30 °C sıcaklığının bu üç hayvan için ortak bir sıcaklık olup olmadığını sayı doğrusu aralıklarıyla kanıtlayınız.",
+      "modelAnswer": "a) -45 °C yalnızca Kutup tilkisi bölgesinde görülür (-50 < -45 < +5).\nb) Ortaktır. Çünkü -30 °C değeri tilkinin (-50 ile +5), tavşanın (-40 ile +10) ve ren geyiğinin (-35 ile +15) her üç aralığının da içerisindedir.",
+      "solutionExplanation": "MEBİ Matematik 1. sayfasındaki sıcaklık aralığı tablosudur.",
+      "rubric": [
+        {
+          "criterion": "a şıkkında yalnız Kutup tilkisi tespiti",
+          "points": 7
+        },
+        {
+          "criterion": "b şıkkında her üç hayvanın aralığında yer aldığının kanıtlanması",
+          "points": 8
+        }
+      ]
+    },
+    {
+      "outcomeCode": "MAT.7.1.1",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+      "contextText": "Deniz seviyesi (0 m) referans kabul edilerek Ağrı Dağı (+5.137 m) ve Challenger Derinliği (-10.935 m) ölçülmüştür.",
+      "stimulus": "Ağrı Dağı: +5.137 metre | Challenger Derinliği: -10.935 metre",
+      "questionText": "Ağrı Dağı'nın zirvesi ile Challenger Derinliği arasındaki toplam dikey mesafe farkını tam sayılarda çıkarma işlemi kurarak hesaplayınız.",
+      "modelAnswer": "Dikey Fark = (+5.137) - (-10.935) = (+5.137) + (+10.935) = 16.072 metredir.",
+      "solutionExplanation": "Tam sayılarda çıkarma işlemi ve işaret dönüşümü kuralı.",
+      "rubric": []
+    },
+    {
+      "outcomeCode": "MAT.7.1.1",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+      "contextText": "500 gramlık çay paketlerinde 3. makine 499 g (1 g eksik), 5. makine ise 501 g (1 g fazla) doldurmuştur.",
+      "stimulus": "3. Makine: 499 g -> Hata: |-1| = 1 g | 5. Makine: 501 g -> Hata: |+1| = 1 g",
+      "questionText": "Paketler eksik ve fazla olmasına rağmen hata miktarlarının neden eşit çıktığını mutlak değerin geometrik sıfıra uzaklık tanımıyla açıklayınız.",
+      "modelAnswer": "Mutlak değer sayı doğrusundaki bir noktanın referans kabul edilen noktaya olan uzaklığını ifade eder. Uzaklık yönsüz ve pozitif bir niceliktir. Hem 499'un hem de 501'in 500'e olan mesafesi 1 birim olduğundan hata payları eşittir.",
+      "solutionExplanation": "MEBİ Matematik 4. sorusundaki mutlak değer uzaklık analizi.",
+      "rubric": [
+        {
+          "criterion": "Mutlak değerin başlangıç/hedef noktasına uzaklık tanımının yapılması",
+          "points": 8
+        },
+        {
+          "criterion": "|-1| = |+1| = 1 matematiksel eşitliğinin gerekçelendirilmesi",
+          "points": 7
+        }
+      ]
+    }
+  ],
+  "MAT.7.1.3": [
+    {
+      "outcomeCode": "MAT.7.1.3",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+      "contextText": "Matematik dersinde tahtaya yazılan işlem ve bu işlemle ilgili Deniz ile Mert arasında geçen konuşma verilmiştir:",
+      "stimulus": "Tahtadaki İşlem:  3 - (1/4) + (2/3)\n\nDeniz: \"Bu işlemde önce toplama işlemini yapmalıyız. Yani 1/4 ile 2/3'yi toplayıp sonra 3'ten çıkarmalıyız.\"\nMert:  \"Bence önce çıkarma işlemi yapılmalı. Yani 3'ten 1/4'i çıkarıp elde ettiğimiz sonuç ile 2/3'yi toplamalıyız.\"",
+      "questionText": "Deniz ve Mert'ten hangisinin işlem önceliğine uygun hareket ettiğini matematiksel gerekçesiyle açıklayınız. Doğru işlem sırasını uygulayarak işlemin sonucunu bulunuz.",
+      "modelAnswer": "Mert haklıdır.\nGerekçe: Matematikte toplama ve çıkarma işlemleri aynı işlem önceliği seviyesine sahiptir. Aynı önceliğe sahip işlemler yan yana geldiğinde işlem soldan sağa doğru sırayla yapılır. Bu nedenle önce soldaki çıkarma, ardından toplama yapılmalıdır.\n\nİşlem Basamakları:\n1. Adım: 3 - (1/4) = (12/4) - (1/4) = 11/4\n2. Adım: (11/4) + (2/3) -> Paydalar 12'de eşitlenir (3 ve 4 ile genişletilir):\n   (33/12) + (8/12) = 41/12 (veya 3 tam 5/12).",
+      "solutionExplanation": "MEBİ Matematik 21. sorusunun birebir öğrenci diyaloğu formatıdır. Kavram yanılgısını gidermeyi hedefler.",
+      "rubric": [
+        {
+          "criterion": "Mert\\'in doğru söylediğinin tespiti",
+          "points": 5
+        },
+        {
+          "criterion": "Aynı öncelikli işlemlerde soldan sağa işlem kuralının gerekçe olarak yazılması",
+          "points": 7
+        },
+        {
+          "criterion": "İşlem adımlarının doğru yapılarak 41/12 (3 tam 5/12) bulunması",
+          "points": 8
+        }
+      ]
+    },
+    {
+      "outcomeCode": "MAT.7.1.3",
+      "difficulty": "Zor",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Hata Tespiti & Adım Analizi",
+      "contextText": "Bir öğretmen, öğrencilerinden aşağıdaki rasyonel sayıları küçükten büyüğe sıralamalarını istemiştir:",
+      "stimulus": "Verilen Sayılar: -2/3, -5/6, +1/2, -7/3\n\nEfe bu sayıları sıralarken şu adımları izlemiştir:\n1. Adım: Yalnızca +1/2 pozitif olduğu için onun en büyük olduğunu belirlemiştir.\n2. Adım: Negatif rasyonel sayıların paydalarını 6'da eşitlemiştir: -4/6, -5/6, -14/6.\n3. Adım: Paydaları eşit olan negatif rasyonel sayıları paylarına göre karşılaştırarak: -4/6 < -5/6 < -14/6 sıralamasını yapmıştır.\n4. Adım: Sonuç olarak: -2/3 < -5/6 < -7/3 < 1/2 yazmıştır.",
+      "questionText": "Efe'nin yaptığı sıralama doğru mudur? Yanlış ise ilk hatayı hangi adımda yaptığını matematiksel gerekçelerle açıklayınız ve rasyonel sayıların doğru sıralamasını yazınız.",
+      "modelAnswer": "Efe'nin sıralaması YANLIŞTIR. İlk hatasını 3. ADIMDA yapmıştır.\nGerekçe: Negatif rasyonel sayılarda paydalar eşitken payı küçük olan (sayı doğrusunda sıfırdan daha uzakta olan) sayı daha küçüktür. Efe pozitif gibi düşünüp -4'ün -14'ten küçük olduğunu varsaymıştır. Oysa -14 < -5 < -4'tür.\n\nDoğru Sıralama:\n-14/6 < -5/6 < -4/6 < +1/2\nOrijinal halleriyle:\n-7/3 < -5/6 < -2/3 < 1/2",
+      "solutionExplanation": "MEBİ Matematik 10. sorusunun birebir hata analizi şablonudur.",
+      "rubric": [
+        {
+          "criterion": "Sıralamanın yanlış olduğunu ve ilk hatanın 3. adımda yapıldığını belirtme",
+          "points": 7
+        },
+        {
+          "criterion": "Negatif sayılarda mutlak değer ve sıfıra uzaklık kuralının açıklanması",
+          "points": 6
+        },
+        {
+          "criterion": "Doğru sıralamanın (-7/3 < -5/6 < -2/3 < 1/2) eksiksiz yazılması",
+          "points": 7
+        }
+      ]
+    },
+    {
+      "outcomeCode": "MAT.7.1.3",
+      "difficulty": "Zor",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Hata Tespiti & Adım Analizi",
+      "contextText": "Bir öğretmen, öğrencilerinden aşağıdaki rasyonel sayıları küçükten büyüğe sıralamalarını istemiştir:",
+      "stimulus": "Verilen Sayılar: -2/3, -5/6, +1/2, -7/3\n\nEfe bu sayıları sıralarken şu adımları izlemiştir:\n1. Adım: Yalnızca +1/2 pozitif olduğu için onun en büyük olduğunu belirlemiştir.\n2. Adım: Negatif rasyonel sayıların paydalarını 6'da eşitlemiştir: -4/6, -5/6, -14/6.\n3. Adım: Paydaları eşit olan negatif rasyonel sayıları paylarına göre karşılaştırarak: -4/6 < -5/6 < -14/6 sıralamasını yapmıştır.\n4. Adım: Sonuç olarak: -2/3 < -5/6 < -7/3 < 1/2 yazmıştır.",
+      "questionText": "Efe'nin yaptığı sıralama doğru mudur? Yanlış ise ilk hatayı hangi adımda yaptığını matematiksel gerekçelerle açıklayınız ve rasyonel sayıların doğru sıralamasını yazınız.",
+      "modelAnswer": "Efe'nin sıralaması YANLIŞTIR. İlk hatasını 3. ADIMDA yapmıştır.\nGerekçe: Negatif rasyonel sayılarda paydalar eşitken payı küçük olan (sayı doğrusunda sıfırdan daha uzakta olan) sayı daha küçüktür. Efe pozitif gibi düşünüp -4'ün -14'ten küçük olduğunu varsaymıştır. Oysa -14 < -5 < -4'tür.\n\nDoğru Sıralama:\n-14/6 < -5/6 < -4/6 < +1/2\nOrijinal halleriyle:\n-7/3 < -5/6 < -2/3 < 1/2",
+      "solutionExplanation": "MEBİ Matematik 10. sorusunun birebir hata analizi şablonudur.",
+      "rubric": [
+        {
+          "criterion": "Sıralamanın yanlış olduğunu ve ilk hatanın 3. adımda yapıldığını belirtme",
+          "points": 7
+        },
+        {
+          "criterion": "Negatif sayılarda mutlak değer ve sıfıra uzaklık kuralının açıklanması",
+          "points": 6
+        },
+        {
+          "criterion": "Doğru sıralamanın (-7/3 < -5/6 < -2/3 < 1/2) eksiksiz yazılması",
+          "points": 7
+        }
+      ]
+    },
+    {
+      "outcomeCode": "MAT.7.1.3",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+      "contextText": "Tahtadaki işlem: 3 - (1/4) + (2/3)",
+      "stimulus": "Deniz: \"Önce toplama (1/4 + 2/3) yapılır.\" | Mert: \"Toplama ve çıkarma aynı önceliklidir, önce soldaki çıkarma (3 - 1/4) yapılır.\"",
+      "questionText": "Hangi öğrenci haklıdır? Doğru işlem sırasını uygulayarak işlemin sonucunu rasyonel sayı olarak bulunuz.",
+      "modelAnswer": "Mert haklıdır. Toplama ve çıkarma aynı önceliklidir, soldan sağa işlem yapılır.\n1. Adım: 3 - 1/4 = 11/4\n2. Adım: 11/4 + 2/3 = 33/12 + 8/12 = 41/12 (3 tam 5/12).",
+      "solutionExplanation": "İşlem önceliğinde soldan sağa kuralı.",
+      "rubric": [
+        {
+          "criterion": "Mert\\'in haklı olduğunun ve soldan sağa kuralının belirtilmesi",
+          "points": 7
+        },
+        {
+          "criterion": "İşlemin doğru çözülerek 41/12 bulunması",
+          "points": 8
+        }
+      ]
+    },
+    {
+      "outcomeCode": "MAT.7.1.3",
+      "difficulty": "Zor",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Hata Tespiti & Adım Analizi",
+      "contextText": "Sayılar: -2/3, -5/6, 1/2, -7/3",
+      "stimulus": "Efe 3. adımda: -4/6 < -5/6 < -14/6 yazmıştır.",
+      "questionText": "Efe ilk hatayı kaçıncı adımda yapmıştır? Doğru küçükten büyüğe sıralamayı yazınız.",
+      "modelAnswer": "İlk hata 3. Adımda yapılmıştır. Negatif sayılarda mutlak değeri büyük olan sayı daha küçüktür (-14 < -5 < -4).\nDoğru Sıralama: -7/3 < -5/6 < -2/3 < 1/2'dir.",
+      "solutionExplanation": "Negatif kesir sıralaması.",
+      "rubric": [
+        {
+          "criterion": "3. adımdaki hatanın gerekçesiyle tespiti",
+          "points": 7
+        },
+        {
+          "criterion": "Doğru sıralamanın (-7/3 < -5/6 < -2/3 < 1/2) yazılması",
+          "points": 8
+        }
+      ]
+    }
+  ],
+  "MAT.7.1.4": [
+    {
+      "outcomeCode": "MAT.7.1.4",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+      "contextText": "Robotik kodlama kulübündeki öğrenciler, düz bir çizgide ileri ve geri hareket edebilen bir robot tasarlamıştır.",
+      "stimulus": "Robotun Hareket Planı:\n1. Hareket: 3/4 m geri gitme (-3/4)\n2. Hareket: 2/5 m ileri gitme (+2/5)\n3. Hareket: 3/4 m ileri gitme (+3/4)\n\nRobotun son konumunu bulmak için yazılan işlem: [(-3/4) + (+2/5)] + (+3/4)",
+      "questionText": "Eymen, payda eşitlemek yerine rasyonel sayılarda toplama işleminin özelliklerini (değişme, birleşme, ters eleman, etkisiz eleman) kullanarak bu işlemin zihinden çok daha kolay yapılabileceğini belirtmiştir.\nEymen'in önerdiği özellikleri adım adım göstererek robotun başlangıç noktasından kaç metre ve hangi yönde durduğunu bulunuz.",
+      "modelAnswer": "1. Adım (Değişme ve Birleşme Özelliği):\nİşlemdeki sayıların yerleri ve parantez değiştirilerek ters işaretli aynı sayılar yan yana getirilir:\n(+2/5) + [(-3/4) + (+3/4)]\n\n2. Adım (Ters Eleman Özelliği):\n(-3/4) ile (+3/4) toplama işlemine göre birbirinin tersidir ve toplamları 0 (etkisiz eleman) eder:\n[(-3/4) + (+3/4)] = 0\n\n3. Adım (Etkisiz Eleman Özelliği):\n(+2/5) + 0 = +2/5 metre.\n\nSonuç: Robot başlangıç noktasının 2/5 metre İLERİSİNDE (pozitif yönünde) durur. Paydaları 20'de eşitlemeye gerek kalmadan özellikler sayesinde pratikçe çözülür.",
+      "solutionExplanation": "MEBİ Matematik 17. sorusundaki rasyonel sayı işlem özellikleri modellemesidir.",
+      "rubric": [
+        {
+          "criterion": "Ters işaretli sayıların (-3/4 ve +3/4) yan yana getirilmesi (Değişme/Birleşme)",
+          "points": 7
+        },
+        {
+          "criterion": "Ters eleman kuralıyla toplamlarının 0 olduğunun gösterilmesi",
+          "points": 7
+        },
+        {
+          "criterion": "Sonucun +2/5 m ileri yön olarak bulunması",
+          "points": 6
+        }
+      ]
+    },
+    {
+      "outcomeCode": "MAT.7.1.4",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+      "contextText": "Fırıncı Hasan Usta, pişirdiği köy ekmeklerini eş kalınlıkta dilimleyen bir ekmek kesme makinesi kullanmaktadır.",
+      "stimulus": "Hasan Usta, uzunluğu 18 tam 3/4 cm olan bir ekmeği makine yardımıyla 6 eş dilime ayırmaktadır.",
+      "questionText": "a) Bir dilim ekmeğin kalınlığının kaç cm olduğunu tam sayılı kesri bileşik kesre çevirip bölme işlemi kurarak hesaplayınız.\nb) Çıkan sonucun en sade tam sayılı kesir karşılığını yazınız.",
+      "modelAnswer": "a) İşlem Adımları:\n1. Adım: Tam sayılı kesri bileşik kesre çevirme:\n   18 tam 3/4 = (18 × 4 + 3) / 4 = 75/4 cm.\n2. Adım: 6 eş dilime bölme:\n   (75/4) ÷ 6 = (75/4) × (1/6) = 75/24 cm.\n3. Adım: Sadeleştirme (Pay ve paydayı 3 ile bölme):\n   (75 ÷ 3) / (24 ÷ 3) = 25/8 cm.\nb) Tam Sayılı Kesir Hali:\n   25 ÷ 8 = 3 tam (kalan 1) -> 3 tam 1/8 cm'dir.",
+      "solutionExplanation": "MEBİ Matematik 20. sorusunun birebir rasyonel sayı kesme/bölme problemidir.",
+      "rubric": [
+        {
+          "criterion": "18 tam 3/4 kesrinin 75/4 bileşik kesrine doğru çevrilmesi",
+          "points": 6
+        },
+        {
+          "criterion": "(75/4) ÷ 6 işleminin ters çevirip çarparak 75/24 bulunması",
+          "points": 7
+        },
+        {
+          "criterion": "Sadeleştirilerek 25/8 veya 3 tam 1/8 cm kalınlığın bulunması",
+          "points": 7
+        }
+      ]
+    },
+    {
+      "outcomeCode": "MAT.7.1.4",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+      "contextText": "Hasan Usta 18 tam 3/4 cm uzunluğundaki ekmeği 6 eş dilime ayırmıştır.",
+      "stimulus": "Ekmeğin uzunluğu: 18 tam 3/4 cm | Dilim sayısı: 6 eş dilim.",
+      "questionText": "Bir dilim ekmeğin kalınlığını rasyonel bölme işlemi kurarak en sade tam sayılı kesir olarak bulunuz.",
+      "modelAnswer": "18 tam 3/4 = 75/4 cm.\n(75/4) ÷ 6 = (75/4) × (1/6) = 75/24 = 25/8 = 3 tam 1/8 cm'dir.",
+      "solutionExplanation": "MEBİ Matematik 20. sorusu ekmek dilimleme problemi.",
+      "rubric": [
+        {
+          "criterion": "Bileşik kesre çevirme (75/4) ve bölme adımı",
+          "points": 8
+        },
+        {
+          "criterion": "25/8 veya 3 tam 1/8 cm olarak sonucun bulunması",
+          "points": 8
+        }
+      ]
+    }
+  ],
+  "MAT.7.1.2": [
+    {
+      "outcomeCode": "MAT.7.1.2",
+      "difficulty": "Zor",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Hata Tespiti & Adım Analizi",
+      "contextText": "Fatih, hesap makinesinde bir doğal sayıyı sıfırdan farklı bir doğal sayıya bölmüştür. Sonucun devirli ondalık gösterimi ekranda 1,2333333... olarak görülmektedir.",
+      "stimulus": "Hesap Makinesi Ekranı: 1,23̄ (Yalnızca 3 devretmektedir).",
+      "questionText": "a) Bu devirli ondalık gösterimi rasyonel sayı formülüyle (Tüm Sayı - Devretmeyen Kısım) / (Devreden kadar 9, devretmeyen kadar 0) kuralını uygulayarak rasyonel sayıya çeviriniz.\nb) Bu bölme işleminde kullanılabilecek bölünen ve bölen doğal sayıların toplamının EN AZ kaç olabileceğini sadeleştirme yaparak bulunuz.",
+      "modelAnswer": "a) Formül: (123 - 12) / 90 = 111 / 90'dır.\nb) Bölünen ve bölenin toplamının en az değeri için kesir en sade haline getirilmelidir.\n111 ve 90 sayıları 3 ile sadeleştirilir:\n(111 ÷ 3) / (90 ÷ 3) = 37 / 30.\nBölünen en az 37, bölen en az 30 olur.\nToplamın en az değeri = 37 + 30 = 67'dir.",
+      "solutionExplanation": "MEBİ Matematik 3. sorusunun devirli ondalık ve en sade rasyonel sayı modellemesidir.",
+      "rubric": [
+        {
+          "criterion": "Formülün doğru uygulanıp 111/90 kesrinin bulunması",
+          "points": 10
+        },
+        {
+          "criterion": "3 ile sadeleştirilerek 37/30 en sade halinin elde edilmesi",
+          "points": 5
+        },
+        {
+          "criterion": "37 + 30 = 67 en az toplamının bulunması",
+          "points": 5
+        }
+      ]
+    },
+    {
+      "outcomeCode": "MAT.7.1.2",
+      "difficulty": "Zor",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Hata Tespiti & Adım Analizi",
+      "contextText": "Fatih hesap makinesinde bir bölme işlemi yapmış ve ekranda 1,23̄ (yalnızca 3 devreden) devirli sayısını görmüştür.",
+      "stimulus": "Sayı: 1,23̄",
+      "questionText": "Bu devirli sayıyı en sade rasyonel sayıya çeviriniz ve bölünen ile bölen doğal sayıların toplamının en az kaç olacağını bulunuz.",
+      "modelAnswer": "Formül: (123 - 12) / 90 = 111 / 90.\nSadeleştirme (3 ile): (111 ÷ 3) / (90 ÷ 3) = 37 / 30.\nBölünen = 37, Bölen = 30 -> Toplam = 37 + 30 = 67'dir.",
+      "solutionExplanation": "Devirli sayıdan rasyonel sayıya geçiş ve aralarında asal yapma.",
+      "rubric": [
+        {
+          "criterion": "111/90 kesrinin formülle bulunması",
+          "points": 7
+        },
+        {
+          "criterion": "37/30 sadeleştirmesi ve 67 en az toplamının bulunması",
+          "points": 7
+        }
+      ]
+    }
+  ],
+  "T.O.7.7": [
+    {
+      "outcomeCode": "T.O.7.7",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+      "contextText": "Aşağıdaki kısa metni dikkatlice okuyunuz:",
+      "stimulus": "“Düşman gemileri limana yaklaştığında kasaba halkı sessizliğe bürünmüştü ancak Demirci Hasan, o gece dükkânındaki ocağı her zamankinden daha hararetli yaktı. Sabaha karşı dükkânından çıkanlar ellerinde tarım aleti değil parıl parıl parlayan kılıçlar tutuyordu.”",
+      "questionText": "Metindeki bilgilerden hareketle Demirci Hasan’ın o gece ocağını her zamankinden daha hararetli yakması ve sabah köylülerin ellerinde tarım aletleri yerine kılıçlar bulunması kasaba halkının nasıl bir karar aldığını göstermektedir? Metinden çıkarım yaparak yazınız.",
+      "modelAnswer": "Kasaba halkı teslim olmayı değil, vatanlarını ve topraklarını sonuna kadar savunup düşmanla savaşma kararı almıştır.\nGerekçe: Ocağın hararetli yanması yapılacak hazırlığın büyüklüğünü ve halkın içindeki mücadele ateşini; tarım aletlerinin kılıca dönüştürülmesi ise halkın artık üretimi bir kenara bırakıp canı pahasına savunma aşamasına geçtiğini simgeler.",
+      "solutionExplanation": "MEBİ Türkçe 3. sorusunun birebir örtük anlam ve sembolik çıkarım formatıdır.",
+      "rubric": [
+        {
+          "criterion": "Teslim olmama ve vatanı savunma/savaşma kararının açıkça yazılması",
+          "points": 10
+        },
+        {
+          "criterion": "Ocağın harareti ve tarım aletlerinin kılıca dönüşmesinin gerekçelendirilmesi",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "outcomeCode": "T.O.7.7",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+      "contextText": "Düşman limana yaklaştığında Demirci Hasan\\'ın gece ocağı yakması ve sabah halkın elinde kılıçlarla çıkması anlatılmaktadır.",
+      "stimulus": "“Sabaha karşı dükkândan çıkanlar ellerinde tarım aleti değil, parıl parıl parlayan kılıçlar tutuyordu.”",
+      "questionText": "Kasaba halkının bu eylemi nasıl bir karar aldığını göstermektedir? Gerekçelendiriniz.",
+      "modelAnswer": "Halk teslim olmayı reddetmiş, vatan savunması için canını ortaya koyup savaşma kararı almıştır. Tarım aletlerinin kılıca dönmesi üretimin yerini silahlı savunmanın aldığını kanıtlar.",
+      "solutionExplanation": "MEBİ Türkçe 3. sorusu.",
+      "rubric": [
+        {
+          "criterion": "Vatan savunması ve teslim olmama kararının tespiti",
+          "points": 8
+        },
+        {
+          "criterion": "Tarım aletinden kılıca dönüşme sembolünün gerekçesi",
+          "points": 7
+        }
+      ]
+    }
+  ],
+  "T.O.7.8": [
+    {
+      "outcomeCode": "T.O.7.8",
+      "difficulty": "Zor",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+      "contextText": "Aşağıdaki metni okuyarak soruyu cevaplayınız:",
+      "stimulus": "“Ece, her cuma kütüphanedeki okuma grubuna katılırdı. Sınıflarına yeni gelen Mehmet de o gün gruba katılmıştı. Diğer öğrenciler okuyacakları bölümleri seçerken Mehmet, kitabın sayfalarını çeviriyor fakat kimseyle göz göze gelmiyordu. Sıra ona yaklaşınca 'Ben sadece dinlesem olur mu?' diye sordu.\nEce, daha önce tek başına okumak için seçtiği bölümü göstererek 'Burada iki kişinin konuşması var. Bunu birlikte okuyabiliriz.' dedi. Okurken Mehmet bir kelimede duraksadı. Ece, hemen araya girmek yerine onun devam etmesini bekledi. Bölüm bittiğinde kitabı aralarına bıraktı.\nErtesi cuma Mehmet kütüphaneye geldiğinde Ece'nin yanındaki sandalye boştu. Mehmet, çantasından bir kitap çıkarıp 'Bu kez bölümü ben seçtim.' dedi.”",
+      "questionText": "Mehmet’in ilk günkü kaygılı hâlinden sıyrılıp öz güven kazanmasında Ece’nin sergilediği tutumun rolü nedir? Ece’nin davranışlarındaki örtük (gizli) mesajları dikkate alarak Mehmet’in değişim sürecini metinden en az iki ipucuyla açıklayınız.",
+      "modelAnswer": "Ece, Mehmet'e acıyarak ya da üstten bir tavırla yardım etmek yerine onu eşit bir ortak olarak görmüş, baskı kurmadan empatiyle yaklaşmıştır.\nMetinden İpuçları:\n1. İpucu: 'Bunu birlikte okuyabiliriz' diyerek görevi paylaşması, Mehmet'in dışlanma korkusunu yok etmiştir.\n2. İpucu: Mehmet duraksadığında hemen araya girmeyip beklemesi, ona güvendiğini ve saygı duyduğunu gösteren örtük bir kabul mesajıdır.\n3. İpucu: Kitabı aralarına bırakması eşitlik hissi vermiştir. Bu sayede Mehmet cesaret bulmuş ve sonraki hafta kendi seçimiyle liderlik adımı atmıştır.",
+      "solutionExplanation": "MEBİ Türkçe 5. sorusunun empati, karakter gelişimi ve örtük anlam analizidir.",
+      "rubric": [
+        {
+          "criterion": "Ece\\'nin eşitlikçi ve baskısız empatik tutumunun açıklanması",
+          "points": 10
+        },
+        {
+          "criterion": "Metinden 1. ipucunun (birlikte okuma teklifi) gerekçelendirilmesi",
+          "points": 7
+        },
+        {
+          "criterion": "Metinden 2. ipucunun (duraksadığında bekleme/saygı) gerekçelendirilmesi",
+          "points": 8
+        }
+      ]
+    },
+    {
+      "outcomeCode": "T.O.7.8",
+      "difficulty": "Zor",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+      "contextText": "İlk gün göz teması kuramayan Mehmet\\'in Ece\\'nin desteğiyle öz güven kazanması anlatılmaktadır.",
+      "stimulus": "“Ece kitabı aralarına bıraktı. Ertesi cuma Mehmet 'Bu kez bölümü ben seçtim' dedi.”",
+      "questionText": "Ece'nin Mehmet'e acımadan eşitlikçi yaklaşımını kanıtlayan iki ipucunu yazınız.",
+      "modelAnswer": "1. 'Bunu birlikte okuyabiliriz' diyerek görevi eşit paylaşması.\n2. Mehmet duraksadığında hemen araya girmeyip sabırla beklemesi ve kitabı ortaya bırakması. Bu sayede Mehmet dışlanma korkusunu yenip inisiyatif almıştır.",
+      "solutionExplanation": "MEBİ Türkçe 5. sorusu.",
+      "rubric": [
+        {
+          "criterion": "Birlikte okuma teklifi ipucu",
+          "points": 8
+        },
+        {
+          "criterion": "Sabırla bekleme ve eşitlikçi tutum ipucu",
+          "points": 7
+        }
+      ]
+    }
+  ],
+  "T.O.7.4": [
+    {
+      "outcomeCode": "T.O.7.4",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+      "contextText": "Ömer Seyfettin’in “Forsa” adlı hikâyesinden alınan aşağıdaki metni okuyunuz:",
+      "stimulus": "“Kırk yıllık bir esaret! Yıllarca kadırgalarda kürek çekmiş, Malta'nın karanlık zindanlarında yatmıştı. Şimdi yaşı altmışı geçmişti. İhtiyarlamış, çok BİTAP düşmüştü. Kolları eski kuvvetini kaybetmiş, o heybetli vücudu âdeta erimiş, bir kemik torbasına dönmüştü. Gündüzleri ise engin denizlere bakarak ufukta belirecek bir Türk yelkenlisi görmenin İŞTİYAKIYLA yanıp tutuşurdu. Gözleri ufukta, kalbi memleket hasretiyle atarken rüzgârın getirdiği dalga sesleri ona ufak bir TESELLİ verir, vatanından ayrı kalmanın acısını bir an olsun unuttururdu.”",
+      "questionText": "Metindeki altı çizili kelimelerin anlamlarını metnin bağlamından yararlanarak tahmin ediniz. Sadece anlamı değil, sizi bu tahmine götüren metin içi gerekçeleri yazınız:\na) BİTAP:\n   • Tahminim: ....................\n   • Beni bu tahmine götüren metin içi gerekçeler: ....................\nb) İŞTİYAK:\n   • Tahminim: ....................\n   • Beni bu tahmine götüren metin içi gerekçeler: ....................\nc) TESELLİ:\n   • Tahminim: ....................\n   • Beni bu tahmine götüren metin içi gerekçeler: ....................",
+      "modelAnswer": "a) BİTAP:\n   • Tahminim: Güçsüz, bitkin, yorgun düşmüş, dermansız.\n   • Metin İçi Gerekçeler: Metindeki \"kolları eski kuvvetini kaybetmiş",
+      "solutionExplanation": "MEBİ Türkçe 6. sorusunun kelime dağarcığı ve bağlamsal delillendirme formatıdır.",
+      "rubric": [
+        {
+          "criterion": "Bitap kelimesi tahmini ve metin içi gerekçesi",
+          "points": 8
+        },
+        {
+          "criterion": "İştiyak kelimesi tahmini ve metin içi gerekçesi",
+          "points": 9
+        },
+        {
+          "criterion": "Teselli kelimesi tahmini ve metin içi gerekçesi",
+          "points": 8
+        }
+      ]
+    },
+    {
+      "outcomeCode": "T.O.7.4",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+      "contextText": "Forsa hikayesindeki Kara Memiş\\'in esaret yıllarını anlatan metni inceleyiniz.",
+      "stimulus": "“İhtiyarlamış, çok BİTAP düşmüştü... Bir Türk yelkenlisi görmenin İŞTİYAKIYLA yanıp tutuşurdu... Dalga sesleri ona ufak bir TESELLİ verirdi.”",
+      "questionText": "Altı çizili kelimelerin anlamlarını ve metin içi gerekçelerini yazınız.",
+      "modelAnswer": "• Bitap: Güçsüz, yorgun (Gerekçe: Kolları kuvvetini kaybetmiş, kemik torbasına dönmüş).\n• İştiyak: Güçlü özlem, hasret (Gerekçe: Yanıp tutuşurdu, kalbi memleket hasretiyle atardı).\n• Teselli: Avuntu, moral (Gerekçe: Acısını bir an olsun unuttururdu).",
+      "solutionExplanation": "MEBİ Türkçe 6. sorusu.",
+      "rubric": [
+        {
+          "criterion": "3 kelimenin tahmini ve metin içi gerekçeleri (Her biri 5 puan)",
+          "points": 15
+        }
+      ]
+    }
+  ],
+  "T.Y.7.21": [
+    {
+      "outcomeCode": "T.Y.7.21",
+      "difficulty": "Kolay",
+      "cognitiveLevel": "Basit Bilişsel Süreçler",
+      "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+      "contextText": "Aşağıda yer alan yazım ve noktalama kurallarını inceleyerek soruları cevaplayınız.",
+      "stimulus": "Cümle: “Sınav kâğıtlarını apar-topar toplayıp hızlıhızlı sınıftan çıktı ancak dışarıda yağmur yağıyordu.”",
+      "questionText": "a) Yukarıdaki cümlede yazım yanlışı yapılmış ikilemeleri tespit ediniz ve cümlenin doğru hâlini yazınız.\nb) Aşağıdaki cümlede yay ayraç ( ) ile belirtilen yere Noktalı Virgül (;) mü yoksa Üç Nokta (...) mı gelmelidir? İşaretin o cümledeki kullanım amacını açıklayınız:\n“Bahçemizde meyve ağaçları, rengârenk çiçekler, taze ot kokuları ( ) İçimiz huzurla doldu.”",
+      "modelAnswer": "a) Doğru Cümle: “Sınav kâğıtlarını apar topar toplayıp hızlı hızlı sınıftan çıktı ancak dışarıda yağmur yağıyordu.”\nAçıklama: İkilemeler daima ayrı yazılır ve aralarına kısa çizgi konulmaz (\"apar topar",
+      "solutionExplanation": "MEBİ Türkçe 9. sorusunun kural ve amaç gerekçelendirme biçimidir.",
+      "rubric": [
+        {
+          "criterion": "İkilemelerin doğru yazımı (\"apar topar\", \"hızlı hızlı\")",
+          "points": 8
+        },
+        {
+          "criterion": "Üç nokta tespiti ve eksiltili cümle amacının yazılması",
+          "points": 7
+        }
+      ]
+    },
+    {
+      "outcomeCode": "T.Y.7.21",
+      "difficulty": "Kolay",
+      "cognitiveLevel": "Basit Bilişsel Süreçler",
+      "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+      "contextText": "Yazım ve noktalama kurallarını uygulayınız.",
+      "stimulus": "1. “Sınav kâğıtlarını apar-topar toplayıp hızlıhızlı çıktı.”\n2. “Genç şairimiz ( ) Necip Fazıl, Nâzım Hikmet... ilham alıyordu.”",
+      "questionText": "a) 1. Cümledeki ikileme yazım hatalarını düzeltiniz.\nb) 2. Cümlede yay ayraca hangi işaret gelmelidir ve kullanım amacı nedir?",
+      "modelAnswer": "a) Doğru Yazım: \"apar topar\" ve \"hızlı hızlı\" (İkilemeler daima ayrı yazılır, kısa çizgi almaz).\nb) Noktalı virgül (;) gelmelidir. Amacı: İkiden fazla eş değer ögesi arasında virgül bulunan cümlede özneyi belirginleştirmek için kullanılır.",
+      "solutionExplanation": "MEBİ Türkçe 9. sorusu.",
+      "rubric": [
+        {
+          "criterion": "İkilemelerin doğru yazılması",
+          "points": 6
+        },
+        {
+          "criterion": "Noktalı virgül tespiti ve özneyi ayırma amacının yazılması",
+          "points": 6
+        }
+      ]
+    }
+  ],
+  "T.Y.7.18": [
+    {
+      "outcomeCode": "T.Y.7.18",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+      "contextText": "Millî Mücadele yıllarında cepheye mermi taşıyan Şerife Bacı anlatılmaktadır:",
+      "stimulus": "“Cepheye mermi taşıyan kağnılar, gecenin karanlığında gıcırdayarak ilerliyordu. Şerife Bacı, kucağındaki bebeğinin örtüsünü alıp mermilerin üzerine örttü. Hava buz kesmişti, sert rüzgâr insanın yüzünü uyuşturuyor, dudaklarını bile kımıldatmasını engelliyordu. Yol bitmek bilmiyordu ama Şerife Bacı’nın adımları hiç yavaşlamadı. Çünkü o biliyordu ki bu mermiler ulaşmazsa...”",
+      "questionText": "Yukarıdaki metni, Şerife Bacı’nın kararlılığını ve Millî Mücadele ruhunu yansıtacak biçimde “fedakârlık, sarsılmaz irade, hürriyet, vatan sağ olsun” kavramlarını ve uygun benzetmeleri kullanarak anlamlı bir paragrafla tamamlayınız.",
+      "modelAnswer": "(Örnek Model Tamamlama):\n...Çünkü o biliyordu ki bu mermiler ulaşmazsa hürriyet güneşi batacak, vatanın istikbali karanlığa gömülecekti. Bebeğinden vazgeçmişti ama sarsılmaz iradesiyle vatan toprağından asla vazgeçmiyordu. Şerife Bacı’nın bu sessiz fedakârlığı, karlı dağları aşan bir kahramanlık meşalesine dönüştü. Dudaklarından dökülen son fısıltı 'Vatan sağ olsun!' oldu. Bu inançla bir çınar gibi dimdik, cepheye doğru adımlarını sürdürdü.",
+      "solutionExplanation": "MEBİ Türkçe 4. sorusunun değer temelli metin tamamlama sorusudur.",
+      "rubric": [
+        {
+          "criterion": "Belirtilen 4 kavramın (\"fedakârlık\", \"sarsılmaz irade\", \"hürriyet\", \"vatan sağ olsun\") metne anlamca uygun yerleştirilmesi",
+          "points": 8
+        },
+        {
+          "criterion": "Uygun bir benzetme (güneş, meşale, çınar vb.) kullanılması",
+          "points": 4
+        },
+        {
+          "criterion": "İçerik ve anlatım akıcılığı",
+          "points": 3
+        }
+      ]
+    },
+    {
+      "outcomeCode": "T.Y.7.18",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+      "contextText": "Kağnıyla cepheye mermi taşıyan Şerife Bacı\\'nın fedakârlığını anlatan metni tamamlayınız.",
+      "stimulus": "“Bebeğinin örtüsünü mermilerin üzerine örten Şerife Bacı biliyordu ki bu mermiler ulaşmazsa...”",
+      "questionText": "Metni “fedakârlık, sarsılmaz irade, hürriyet, vatan sağ olsun” kelimelerini ve bir benzetme kullanarak tamamlayınız.",
+      "modelAnswer": "...hürriyet ateşi sönecek, vatan karanlığa gömülecekti. Bebeğinden vazgeçmişti ama sarsılmaz iradesiyle vatanından vazgeçmiyordu. Şerife Bacı’nın bu sessiz fedakârlığı bir kahramanlık meşalesine dönüştü. 'Vatan sağ olsun!' diyerek bir çınar gibi dimdik cepheye yürüdü.",
+      "solutionExplanation": "MEBİ Türkçe 4. sorusu.",
+      "rubric": [
+        {
+          "criterion": "Dört anahtar kelimenin yerleştirilmesi",
+          "points": 8
+        },
+        {
+          "criterion": "Benzetme kullanımı ve anlatım akıcılığı",
+          "points": 7
+        }
+      ]
+    }
+  ],
+  "T.O.7.21": [
+    {
+      "outcomeCode": "T.O.7.21",
+      "difficulty": "Kolay",
+      "cognitiveLevel": "Basit Bilişsel Süreçler",
+      "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+      "contextText": "HÜRKUŞ uçağı ile ilgili metni okuyunuz:",
+      "stimulus": "“Türkiye’nin yerli ve millî imkânlarla geliştirdiği HÜRKUŞ, eğitim ve KEŞİF görevleri için tasarlanmış modern bir uçaktır. Pilotların eğitim sürecinde ihtiyaç duyduğu birçok TEÇHİZATA sahip olan HÜRKUŞ, yüksek MANEVRA kabiliyeti sayesinde eğitim uçuşlarında önemli bir avantaj sağlar.”",
+      "questionText": "Aşağıdaki kelimelerin anlamını metnin bağlamından hareketle tahmin ediniz:\na) Keşif: ..........................................................................\nb) Teçhizat: .......................................................................\nc) Manevra: .......................................................................",
+      "modelAnswer": "a) Keşif: Bilinmeyen bir yeri, durumu veya gizli olan şeyleri araştırarak yeni bilgiler elde etme.\nb) Teçhizat: Bir görev veya amaç için gereken araç, gereç, alet ve donanımların tümü.\nc) Manevra: Bir aracın hareketlerini ustalıkla kontrol ederek yönünü değiştirme, istenilen hareketi yaptırma.",
+      "solutionExplanation": "MEBİ Türkçe 1. sorusu bağlamsal söz varlığı çözümlemesidir.",
+      "rubric": [
+        {
+          "criterion": "Keşif kelimesi tahmini",
+          "points": 7
+        },
+        {
+          "criterion": "Teçhizat kelimesi tahmini",
+          "points": 7
+        },
+        {
+          "criterion": "Manevra kelimesi tahmini",
+          "points": 6
+        }
+      ]
+    },
+    {
+      "outcomeCode": "T.O.7.21",
+      "difficulty": "Kolay",
+      "cognitiveLevel": "Basit Bilişsel Süreçler",
+      "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+      "contextText": "HÜRKUŞ uçağı metnindeki \"keşif",
+      "stimulus": "“HÜRKUŞ eğitim ve keşif görevleri için tasarlanmış, gelişmiş teçhizata ve yüksek manevra kabiliyetine sahip yerli uçağımızdır.”",
+      "questionText": "Keşif, teçhizat ve manevra kelimelerinin metin bağlamındaki anlamlarını yazınız.",
+      "modelAnswer": "• Keşif: Gizli veya bilinmeyen bir durum hakkında bilgi toplama.\n• Teçhizat: Bir görev için gereken donanım ve aletlerin tamamı.\n• Manevra: Bir aracın yön ve hareketlerini ustaca kontrol etme.",
+      "solutionExplanation": "MEBİ Türkçe 1. sorusu.",
+      "rubric": [
+        {
+          "criterion": "Her doğru kelime tahmini için 5 puan (3 x 5 = 15)",
+          "points": 15
+        }
+      ]
+    }
+  ],
+  "T.O.7.5": [
+    {
+      "outcomeCode": "T.O.7.5",
+      "difficulty": "Kolay",
+      "cognitiveLevel": "Basit Bilişsel Süreçler",
+      "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+      "contextText": "Aşağıdaki bilgilendirici metni okuyunuz:",
+      "stimulus": "“Arılar doğada önemli bir role sahiptir. Çiçeklerden topladıkları nektarı kovanlarına taşıyarak bal üretirler ancak arıların görevi sadece bal yapmak değildir. Çiçekler arasında dolaşırken bitkilerin tozlaşmasına da yardımcı olurlar. Bu sayede birçok bitki çoğalabilir ve doğadaki yaşam dengesi korunur. Arıların sayısının azalması bitki çeşitliliğini ve tarımı olumsuz etkiler.”",
+      "questionText": "Yukarıdaki metnin konusunu bir cümleyle yazınız.",
+      "modelAnswer": "Metnin konusu: Arıların doğadaki ekolojik önemi, bitkilerin tozlaşmasına katkısı ve yaşam dengesindeki hayati rolüdür.",
+      "solutionExplanation": "MEBİ Türkçe 2. sorusu metnin konusunu tespit etme standardıdır.",
+      "rubric": [
+        {
+          "criterion": "Arıların doğadaki rolü ve tozlaşmaya katkısının eksiksiz belirtilmesi",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "outcomeCode": "T.O.7.5",
+      "difficulty": "Kolay",
+      "cognitiveLevel": "Basit Bilişsel Süreçler",
+      "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+      "contextText": "Arıların sadece bal yapmadığını, bitkilerin tozlaşmasını sağladığını anlatan metni inceleyiniz.",
+      "stimulus": "“Arıların sayısı azaldığında bitki çeşitliliği ve tarımsal üretim doğrudan tehlikeye girer.”",
+      "questionText": "Metnin ana konusunu bir cümleyle yazınız.",
+      "modelAnswer": "Metnin konusu: Arıların doğadaki ekolojik dengedeki yeri, bitki tozlaşmasına katkısı ve tarımsal yaşam için hayati önemidir.",
+      "solutionExplanation": "MEBİ Türkçe 2. sorusu.",
+      "rubric": [
+        {
+          "criterion": "Metin konusunun eksiksiz tespiti",
+          "points": 14
+        }
+      ]
+    }
+  ],
+  "T.O.7.14": [
+    {
+      "outcomeCode": "T.O.7.14",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+      "contextText": "Aşağıdaki paragrafı okuyunuz:",
+      "stimulus": "“Bir milletin varlığını sürdürebilmesi vatan toprağına duyduğu sadakat ve millî birlik şuuruna bağlıdır. Tarih boyunca pek çok medeniyet, sadece askerî güçlerini kaybettikleri için değil içlerindeki dayanışma ruhunu yitirdikleri için yok olup gitmişlerdir. Buna karşılık imkânları kısıtlı olsa dahi birbirine kenetlenen milletler, en zorlu kuşatmaları aşarak bağımsızlıklarını korumuşlardır.”",
+      "questionText": "a) Metinde kullanılan düşünceyi geliştirme yolunu (metin yapısını) yazınız.\nb) Yazarın bu metin yapısını kullanarak vurgulamak istediği en temel düşünceyi kendi cümlelerinizle açıklayınız.",
+      "modelAnswer": "a) Kullanılan Metin Yapısı: Karşılaştırma / Zıtlık.\nb) Temel Düşünce: Bir vatanın korunması ve milletin bağımsızlığını sürdürmesi yalnızca askeri veya maddi güçle değil, asıl olarak fertlerin milli bir bilinçle birbirine kenetlenmesi ve dayanışma içinde olmasıyla mümkündür.",
+      "solutionExplanation": "MEBİ Türkçe 7. sorusu metin yapısı ve temel mesaj analizidir.",
+      "rubric": [
+        {
+          "criterion": "a şıkkında Karşılaştırma/Zıtlık yapısının doğru tespiti",
+          "points": 10
+        },
+        {
+          "criterion": "b şıkkında milli birlik ve dayanışmanın askeri güçten üstün olduğunun vurgulanması",
+          "points": 10
+        }
+      ]
+    }
+  ],
+  "T.O.7.15": [
+    {
+      "outcomeCode": "T.O.7.15",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+      "contextText": "Küresel iklim değişikliği ile ilgili metni inceleyiniz:",
+      "stimulus": "“Atmosferdeki sera gazlarının miktarının artması küresel ısınmaya yol açmaktadır. Bu sıcaklık artışı sebebiyle kutuplardaki buzullar hızla erimektedir. Buzulların erimesi sonucunda deniz seviyeleri yükselmekte ve kıyı bölgelerindeki ekosistemler ciddi zarar görme tehlikesiyle karşı karşıya kalmaktadır.”",
+      "questionText": "a) Bu metnin içeriğini en iyi yansıtan 3 anahtar kelime yazınız.\nb) Belirlediğiniz anahtar kelimelerin metindeki sebep-sonuç zincirini nasıl özetlediğini bir cümleyle açıklayınız.",
+      "modelAnswer": "a) Anahtar Kelimeler: Küresel ısınma (veya sera gazları), buzul erimesi, deniz seviyesi.\nb) Sebep-Sonuç Açıklaması: Sera gazlarının artışı küresel ısınmaya sebep olmakta; küresel ısınma buzulları eritmekte; buzul erimesi ise deniz seviyesini yükselterek kıyı ekosistemlerini tehdit etmektedir.",
+      "solutionExplanation": "MEBİ Türkçe 8. sorusu sebep-sonuç ve anahtar kelime çözümlemesidir.",
+      "rubric": [
+        {
+          "criterion": "a şıkkında 3 geçerli anahtar kelimenin yazılması",
+          "points": 10
+        },
+        {
+          "criterion": "b şıkkında olaylar arasındaki zincirleme sebep-sonuç bağının kurulması",
+          "points": 10
+        }
+      ]
+    }
+  ],
+  "T.Y.7.3": [
+    {
+      "outcomeCode": "T.Y.7.3",
+      "difficulty": "Zor",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+      "contextText": "“Doğa Sevgisi ve Çevre Bilinci” temalı bilgilendirici bir yazı yazmayı planlayınız.",
+      "stimulus": "Taslak Planı:\n• Giriş Bölümü: ...........................................................\n• Gelişme Bölümü: .......................................................\n• Sonuç Bölümü: .........................................................",
+      "questionText": "Bu metnin giriş, gelişme ve sonuç bölümlerinde hangi içeriklere yer vereceğinizi taslak hâlinde planlayarak yazınız.",
+      "modelAnswer": "• Giriş Bölümü: Doğanın insan yaşamı için sadece bir manzara değil; nefes aldığımız hava ve içtiğimiz su ile varlığımızın kaynağı olduğu belirtilerek konuya giriş yapılır.\n• Gelişme Bölümü: Modern yaşamın çevre kirliliği ve plastik atıklar gibi tehditleri örneklenir; fidan dikme, geri dönüşüm ve şuurlu su tüketimi gibi somut sorumluluklar açıklanır.\n• Sonuç Bölümü: Doğanın geçici misafirleri olduğumuz, doğayı korumanın aslında kendi geleceğimizi korumak olduğu vurgulanarak okuyucuda çağrı ve farkındalıkla bitirilir.",
+      "solutionExplanation": "MEBİ Türkçe 10. sorusu bilgilendirici metin mimarisi ve kompozisyon taslağıdır.",
+      "rubric": [
+        {
+          "criterion": "Giriş bölümü içerik planlaması",
+          "points": 6
+        },
+        {
+          "criterion": "Gelişme bölümü içerik ve örnek planlaması",
+          "points": 8
+        },
+        {
+          "criterion": "Sonuç bölümü ana fikir ve farkındalık planlaması",
+          "points": 6
+        }
+      ]
+    }
+  ],
+  "DKAB.7.1.1": [
+    {
+      "outcomeCode": "DKAB.7.1.1",
+      "difficulty": "Kolay",
+      "cognitiveLevel": "Basit Bilişsel Süreçler",
+      "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+      "contextText": "Ahmet, \"Gezegenimizdeki Canlılar\" belgeselini izledikten sonra kâinattaki varlıkları araştırmış; görünen varlıkların yanı sıra gözle görülemeyen ve sadece vahiyle bilinen meleklerle ilgili şu ayetlere ulaşmıştır:",
+      "stimulus": "Ayet 1: “Hamd, gökleri ve yeri yoktan var eden, melekleri ikişer, üçer, dörder kanatlı elçiler kılan Allah’a mahsustur.” (Fâtır suresi, 1. ayet)\nAyet 2: “… Allah’ın kendilerine verdiği emirlere karşı gelmeyen ve kendilerine emredilen şeyi yapan melekler vardır.” (Tahrîm suresi, 6. ayet)",
+      "questionText": "Yukarıdaki ayetlerden hareketle melekleri diğer varlıklardan (insan, cin vb.) ayıran üç temel özelliği yazınız.",
+      "modelAnswer": "1. Allah'ın emirlerine asla karşı gelmezler, kendilerine emredileni eksiksiz yaparlar (Günah işleme ve iradeleri yoktur).\n2. Duyu organlarıyla algılanamazlar, sadece vahiy yoluyla bilinebilen nurani varlıklardır.\n3. Kanatlı ve cinsiyetsiz elçiler olarak yaratılmışlardır; yeme, içme, uyuma gibi insani ihtiyaçları yoktur.",
+      "solutionExplanation": "MEBİ Din Kültürü 1. sorusunun ayet analizi ve varlıkların sınıflandırılması formatıdır.",
+      "rubric": [
+        {
+          "criterion": "Emirlere karşı gelmeme ve günahsız/iradesiz olma özelliğinin yazılması",
+          "points": 7
+        },
+        {
+          "criterion": "Gözle görülememe ve nurani olma özelliğinin belirtilmesi",
+          "points": 7
+        },
+        {
+          "criterion": "Yeme-içme ihtiyacı olmaması veya kanatlı varlık özelliğinin yazılması",
+          "points": 6
+        }
+      ]
+    },
+    {
+      "outcomeCode": "DKAB.7.1.1",
+      "difficulty": "Kolay",
+      "cognitiveLevel": "Basit Bilişsel Süreçler",
+      "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+      "contextText": "Kâinattaki varlıkları inceleyen Ahmet, meleklerle ilgili ayetleri araştırmıştır:",
+      "stimulus": "“...Allah’ın kendilerine verdiği emirlere karşı gelmeyen ve kendilerine emredilen şeyi yapan melekler vardır.” (Tahrim 6)",
+      "questionText": "Melekleri insan ve cinlerden ayıran en temel iki ahlaki/fiziksel özelliği yazınız.",
+      "modelAnswer": "1. Meleklerin günah işleme veya isyan etme iradeleri yoktur; Allah'a tam itaat ederler.\n2. Duyu organlarıyla algılanamaz, sadece vahiyle bilinirler; yeme, içme, evlenme ve cinsiyetleri yoktur.",
+      "solutionExplanation": "MEBİ Din Kültürü 1. sorusu.",
+      "rubric": [
+        {
+          "criterion": "İradesizlik ve tam itaat özelliğinin belirtilmesi",
+          "points": 10
+        },
+        {
+          "criterion": "Nurani olma ve insani ihtiyaçları bulunmama özelliğinin yazılması",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "outcomeCode": "DKAB.7.1.1",
+      "difficulty": "Kolay",
+      "cognitiveLevel": "Basit Bilişsel Süreçler",
+      "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+      "contextText": "Aşağıdaki melek sınıflarını doldurunuz:",
+      "stimulus": "1. Dört Büyük Melek\n2. Amelleri Kaydeden Melekler\n3. Kabirde Sorgulayan Melekler",
+      "questionText": "Tabloda belirtilen meleklerin isimlerini doğru kategorilere yazınız.",
+      "modelAnswer": "• Dört Büyük Melek: Cebrail (as), Mikâil (as), Azrail (as), İsrafil (as)\n• Yazıcı Melekler: Kiramen Kâtibin\n• Sorgu Melekleri: Münker ve Nekir",
+      "solutionExplanation": "MEBİ Din Kültürü 2. sorusu.",
+      "rubric": [
+        {
+          "criterion": "Dört büyük meleğin eksiksiz yazılması",
+          "points": 10
+        },
+        {
+          "criterion": "Kiramen Kâtibin ve Münker-Nekir meleklerinin doğru yazılması",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "outcomeCode": "DKAB.7.1.1",
+      "difficulty": "Kolay",
+      "cognitiveLevel": "Basit Bilişsel Süreçler",
+      "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+      "contextText": "Ahmet kâinattaki varlıkları araştırmıştır.",
+      "stimulus": "Fatır suresi 1. ayet ve Tahrim suresi 6. ayet.",
+      "questionText": "Melekleri insanlardan ayıran iki temel özelliği ayetler ışığında yazınız.",
+      "modelAnswer": "1. Allah'ın emirlerine asla karşı gelmezler (iradeleri ve günah işleme özellikleri yoktur). 2. Duyu organlarıyla görülemezler, nurani ve kanatlı elçilerdir; yeme-içme ihtiyaçları yoktur.",
+      "solutionExplanation": "MEBİ Din Kültürü 1. sorusu.",
+      "rubric": [
+        {
+          "criterion": "İradesizlik ve günahsızlık özelliği",
+          "points": 8
+        },
+        {
+          "criterion": "Nurani yapı ve insani ihtiyaç olmaması",
+          "points": 7
+        }
+      ]
+    },
+    {
+      "outcomeCode": "DKAB.7.1.1",
+      "difficulty": "Kolay",
+      "cognitiveLevel": "Basit Bilişsel Süreçler",
+      "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+      "contextText": "Meleklerin görev dağılım tablosunu doldurunuz.",
+      "stimulus": "Dört Büyük Melek | Yazıcı Melekler | Sorgu Melekleri",
+      "questionText": "Tablodaki boşluklara ilgili melek isimlerini yazınız.",
+      "modelAnswer": "Dört Büyük Melek: Cebrail, Mikail, Azrail, İsrafil. Yazıcı: Kiramen Kâtibin. Sorgu: Münker ve Nekir.",
+      "solutionExplanation": "MEBİ Din Kültürü 2. sorusu.",
+      "rubric": [
+        {
+          "criterion": "Tablonun eksiksiz doldurulması",
+          "points": 15
+        }
+      ]
+    }
+  ],
+  "DKAB.7.1.2": [
+    {
+      "outcomeCode": "DKAB.7.1.2",
+      "difficulty": "Kolay",
+      "cognitiveLevel": "Basit Bilişsel Süreçler",
+      "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+      "contextText": "Aşağıdaki ayetlerde altı çizili yerlerde ahiret hayatının hangi aşamasından bahsedildiğini tespit ediniz.",
+      "stimulus": "1. “... Muhakkak siz, kıyamet gününde DİRİLTİLECEKSİNİZ.” (Mü’minûn suresi, 16. ayet)\n2. “Kıyamet günü için ADALET TERAZİLERİ kuracağız…” (Enbiyâ suresi, 47. ayet)\n3. “... Ancak O’nun HUZURUNDA TOPLANACAKSINIZ.” (Mülk suresi, 24. ayet)\n4. “(O gün) SÛRA ÜFLENECEK.” (Zümer suresi, 68. ayet)",
+      "questionText": "Numaralandırılmış ayetlerin karşılık geldiği ahiret aşamalarını (Baas, Mizan, Haşir/Mahşer, Kıyamet) sırasıyla yazınız.",
+      "modelAnswer": "1. Diriltilme: BAAS\n2. Adalet Terazileri: MİZAN\n3. Huzurunda Toplanma: HAŞİR (veya MAHŞER)\n4. Sûra Üflenmesi: KIYAMET",
+      "solutionExplanation": "MEBİ Din Kültürü 4. sorusunun ahiret aşamaları eşleştirme şablonudur.",
+      "rubric": [
+        {
+          "criterion": "Her doğru kavram tespiti için 5 puan (4 x 5 = 20 Puan)",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "outcomeCode": "DKAB.7.1.2",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Hata Tespiti & Adım Analizi",
+      "contextText": "Aşağıdaki metni dikkatlice okuyunuz:",
+      "stimulus": "“Dünya hayatında hiçbir canlının yaşam süresi sonsuz değildir. Her canlı için takdir edilmiş bir ömür ve ecel vardır. Kıyametten sonra ahiret hayatında yeniden diriliş bir hakikattir. Kur’an’da bu durum baharda doğanın canlanmasına benzetilir. İnsanın amellerinin ilahi bir adalet terazisinde tartılacağı ahiret aşamaları bunlarla sınırlı değildir.”",
+      "questionText": "a) Metinde doğrudan bahsedilen ahiret kavramlarını yazınız.\nb) Ahiret hayatının temel aşamalarından olup bu metinde YER VERİLMEYEN en az iki kavramı tespit ederek yazınız.",
+      "modelAnswer": "a) Metinde yer verilen kavramlar: Ömür, Ecel, Kıyamet, Yeniden Diriliş (Baas), Adalet Terazisi (Mizan).\nb) Metinde yer verilmeyen aşamalar: Haşir / Mahşer (Toplanma yeri), Amel Defterlerinin dağıtılması, Cennet ve Cehennem.",
+      "solutionExplanation": "MEBİ Din Kültürü 5. sorusunun metin içi ve metin dışı kavram ayırt etme modelidir.",
+      "rubric": [
+        {
+          "criterion": "a şıkkında metinde geçen kavramların (Ecel, Baas, Mizan) doğru yazılması",
+          "points": 10
+        },
+        {
+          "criterion": "b şıkkında metinde yer verilmeyen aşamaların (Mahşer, Cennet-Cehennem) doğru tespiti",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "outcomeCode": "DKAB.7.1.2",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+      "contextText": "Zilzal suresi 6-8. ayetleri inceleyiniz:",
+      "stimulus": "“O gün insanlar amellerinin kendilerine gösterilmesi için bölük bölük kabirlerinden çıkacaklardır. Artık kim zerre ağırlığınca bir hayır işlerse onun mükâfatını görecektir. Kim de zerre ağırlığınca bir kötülük işlerse cezasını görecektir.”",
+      "questionText": "Ahiret hayatının bu ayetlerde bahsedilen aşamaları (kabirlerden çıkış ve amellerin tartılması) arasındaki ilişkiyi ilahi adalet terazisiyle açıklayınız.",
+      "modelAnswer": "İnsanların kabirlerden çıkması \"Baas\" (yeniden diriliş) aşamasıdır. Dirilişin amacı, dünyada yapılan zerre kadar iyilik ve kötülüğün \"Mizan\" adı verilen ilahi adalet terazisinde tartılması ve karşılığının eksiksiz verilmesidir. Allah hiçbir kuluna haksızlık etmez.",
+      "solutionExplanation": "MEBİ Din Kültürü 6. sorusu.",
+      "rubric": [
+        {
+          "criterion": "Kabirlerden çıkışın Baas olduğunun belirtilmesi",
+          "points": 10
+        },
+        {
+          "criterion": "Amellerin Mizan terazisinde karşılıksız kalmayacağının gerekçelendirilmesi",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "outcomeCode": "DKAB.7.1.2",
+      "difficulty": "Kolay",
+      "cognitiveLevel": "Basit Bilişsel Süreçler",
+      "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+      "contextText": "Diriltileceksiniz, adalet terazileri, huzurunda toplanacaksınız, sûra üflenecek ifadeleri.",
+      "stimulus": "Müminun 16, Enbiya 47, Mülk 24, Zümer 68 mealleri.",
+      "questionText": "Bu ayetlerin işaret ettiği ahiret aşamalarını sırasıyla yazınız.",
+      "modelAnswer": "1. Diriltilme = Baas | 2. Adalet Terazileri = Mizan | 3. Toplanma = Haşir/Mahşer | 4. Sûra Üflenme = Kıyamet.",
+      "solutionExplanation": "MEBİ Din Kültürü 4. sorusu.",
+      "rubric": [
+        {
+          "criterion": "4 kavramın doğru eşleştirilmesi",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "outcomeCode": "DKAB.7.1.2",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Hata Tespiti & Adım Analizi",
+      "contextText": "Dünya hayatının sonu ve dirilişin anlatıldığı metni inceleyiniz.",
+      "stimulus": "Metinde ömür, ecel, kıyamet, diriliş ve ilahi terazi yer almaktadır.",
+      "questionText": "Metinde yer verilmeyen en az iki ahiret aşamasını yazınız.",
+      "modelAnswer": "Haşir / Mahşer (Toplanma), Amel Defterinin dağıtılması, Cennet ve Cehennem.",
+      "solutionExplanation": "MEBİ Din Kültürü 5. sorusu.",
+      "rubric": [
+        {
+          "criterion": "Metin dışı aşamaların doğru tespiti",
+          "points": 14
+        }
+      ]
+    },
+    {
+      "outcomeCode": "DKAB.7.1.2",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+      "contextText": "Zerre ağırlığınca hayır ve şerrin karşılığı ayeti.",
+      "stimulus": "Zilzal suresi 6-8. ayetler.",
+      "questionText": "İnsanların kabirlerden çıkışı ile amellerin tartılması arasındaki nedensel bağı açıklayınız.",
+      "modelAnswer": "Yeniden diriliş (Baas), dünyada yapılan tüm eylemlerin ilahi adalet terazisi olan Mizan'da tartılıp her ferdin hak ettiği karşılığı eksiksiz alması için gerçekleşir.",
+      "solutionExplanation": "MEBİ Din Kültürü 6. sorusu.",
+      "rubric": [
+        {
+          "criterion": "Baas ve Mizan ilişkisinin gerekçelendirilmesi",
+          "points": 15
+        }
+      ]
+    }
+  ],
+  "DKAB.7.1.3": [
+    {
+      "outcomeCode": "DKAB.7.1.3",
+      "difficulty": "Zor",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+      "contextText": "Bir kulüp etkinliğinde Eren ve Selma, \"İnanç ve İnsan Davranışı\" konulu bir söyleşiden çıktıktan sonra okul bahçesinde sohbet etmektedir:",
+      "stimulus": "Eren: “Bir insan kendisini koruyan ve amellerini kaydeden meleklerin varlığını bilirse hayata çok farklı bakar. Her şeyin ahirette adaletle tartılacağına inanan biri, zorluklar karşısında pes etmez. Bu inanç insana bir iç pusula verir ve onu sorumluluk sahibi yapar.”\nSelma: “Çok doğru Eren. Bence de bu inancın asıl gücü, insanı sadece 'ödül ve ceza' korkusundan kurtarıp gerçek bir vicdan sahibi yapmasında gizli. Bir kişi, kimsenin görmediği anlarda bile haksızlık yapmıyorsa gerçek ahlaka ulaşmıştır. Çünkü bilir ki dünyada yapılan zerre kadar hayır da kötülük de karşılıksız kalmaz.”",
+      "questionText": "Eren ve Selma’nın konuşmalarından hareketle melek ve ahiret inancının insan karakterine ve ahlakına kazandırdıklarını gerekçeleriyle açıklayan üç temel ilke yazınız.",
+      "modelAnswer": "1. İç Pusula ve Sorumluluk Bilinci: Kiramen Kâtibin meleklerinin her davranışı kaydettiğini bilen birey, kimse görmese dahi dürüst davranır (otokontrol ve vicdan gelişimi).\n2. Zorluklar Karşısında Direnç ve Umut: Dünyadaki haksızlıkların ve çekilen sıkıntıların ahirette ilahi adaletle karşılık bulacağına inanan insan pes etmez, sabreder.\n3. Çıkarsız İyilik Yapma Arzusu: İnsanları salt menfaat veya ceza korkusuyla değil, Allah rızası ve sonsuz hayat şuuruyla karşılıksız iyilik yapmaya yönlendirir.",
+      "solutionExplanation": "MEBİ Din Kültürü 8. sorusunun öğrenci diyaloğu ve ahlaki çıkarım formatıdır.",
+      "rubric": [
+        {
+          "criterion": "Sorumluluk ve vicdan gelişimi ilkesinin gerekçelendirilmesi",
+          "points": 7
+        },
+        {
+          "criterion": "Zorluklar karşısında sabır ve adalet inancı ilkesinin gerekçelendirilmesi",
+          "points": 7
+        },
+        {
+          "criterion": "Çıkarsız iyilik yapma ve ahlak ilkesinin gerekçelendirilmesi",
+          "points": 6
+        }
+      ]
+    },
+    {
+      "outcomeCode": "DKAB.7.1.3",
+      "difficulty": "Zor",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+      "contextText": "Eren ve Selma melek ve ahiret inancının insan davranışına etkisini tartışmaktadır.",
+      "stimulus": "Selma: \"Bu inanç insanı sadece ceza korkusundan kurtarıp gerçek bir vicdan sahibi yapar. Kimsenin görmediği anlarda bile haksızlık yapmayan insan gerçek ahlaka ulaşmıştır.\"",
+      "questionText": "Selma'nın bu sözünden hareketle melek ve ahiret inancının insana kazandırdığı iki ahlaki sonucu açıklayınız.",
+      "modelAnswer": "1. Otokontrol ve Samimiyet: Kiramen Kâtibin meleklerinin her şeyi kaydettiğini bilen insan, polis veya kamera olmasa da gizlide dürüst davranır.\n2. Karşılıksız İyilik: Yaptığı hiçbir iyiliğin boşa gitmeyeceğini bilen insan, menfaat beklemeden yalnızca Allah rızası için iyilik yapar.",
+      "solutionExplanation": "MEBİ Din Kültürü 8. sorusu.",
+      "rubric": [
+        {
+          "criterion": "Otokontrol ve gizlide dahi haksızlık yapmama ilkesi",
+          "points": 10
+        },
+        {
+          "criterion": "Karşılıksız iyilik ve ahlaki samimiyet ilkesi",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "outcomeCode": "DKAB.7.1.3",
+      "difficulty": "Zor",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+      "contextText": "Bakara 177: \"...asıl erdemli kişi Allah\\'a, ahiret gününe ve meleklere iman edip yakınlara, yetimlere harcayandır.\"",
+      "stimulus": "Hadis: \"Allah'a ve ahirete iman eden komşusuna eziyet etmesin, ya hayır söylesin ya sussun.\"",
+      "questionText": "Bu inancı ilke edinen bir bireyin günlük yaşamında göstermesi gereken iki ahlaki davranışı yazınız.",
+      "modelAnswer": "1. Komşuluk haklarına saygı göstermek ve misafire ikramda bulunmak. 2. Diline sahip çıkıp faydalı konuşmak, dedikodu ve kırıcı sözlerden kaçınmak. 3. İhtiyaç sahiplerine karşılıksız infak etmek.",
+      "solutionExplanation": "MEBİ Din Kültürü 7. sorusu.",
+      "rubric": [
+        {
+          "criterion": "2 somut ahlaki davranışın ayet ve hadise dayandırılarak yazılması",
+          "points": 15
+        }
+      ]
+    }
+  ],
+  "DKAB.7.1.4": [
+    {
+      "outcomeCode": "DKAB.7.1.4",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+      "contextText": "Nâs suresinin okunuşu ve meali üzerinde çalışan bir öğrenci şu ayetleri incelemektedir:",
+      "stimulus": "“De ki: Cinlerden ve insanlardan insanların kalplerine vesvese veren sinsi vesvesecinin kötülüğünden insanların Rabb’ine, insanların Melik’ine, insanların İlah’ına sığınırım.” (Nâs suresi)",
+      "questionText": "a) Nâs suresinin mesajına uygun günlük yaşam davranışlarından iki örnek veriniz.\nb) Surenin ana mesajını anlamını değiştirmeden kendi cümlelerinizle özetleyiniz.",
+      "modelAnswer": "a) Günlük Yaşam Örnekleri: 1. Kötü arkadaşların ve zararlı alışkanlıkların olumsuz fısıltılarından uzak durmak. 2. İçimize şüphe, kıskançlık veya kötü düşünceler geldiğinde Allah'a sığınıp iyi işlerle meşgul olmak.\nb) Özet: Nâs suresi; insanın hem görünürdeki kötü niyetli insanlardan hem de görünmeyen şer odaklarından gelecek vesveselere karşı tek koruyucunun her şeyin gerçek sahibi ve Rabbi olan Allah olduğunu, çaresiz kalındığında yalnızca O'na sığınılması gerektiğini bildirir.",
+      "solutionExplanation": "MEBİ Din Kültürü 9. sorusunun sure analizi ve hayatla ilişkilendirme şablonudur.",
+      "rubric": [
+        {
+          "criterion": "a şıkkında günlük hayattan 2 geçerli örneğin verilmesi (Her biri 5 puan)",
+          "points": 10
+        },
+        {
+          "criterion": "b şıkkında surenin mesajının kendi cümleleriyle doğru özetlenmesi",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "outcomeCode": "DKAB.7.1.4",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+      "contextText": "Nâs suresi (Kul eûzü birabbinnâs...) üzerinde çalışan bir öğrenciyi düşününüz.",
+      "stimulus": "“İnsanların kalplerine vesvese veren sinsi vesvesecinin şerrinden insanların Rabb’ine, Melik’ine ve İlah’ına sığınırım.”",
+      "questionText": "Bu surenin ana mesajı nedir? İnsan hangi görünür veya görünmez kötülüklere karşı kime sığınmalıdır?",
+      "modelAnswer": "Ana Mesaj: İnsan; hem şeytanın ve kötü niyetli insanların vesveselerinden, hem de içindeki şüphe ve kıskançlık duygularından korunmak için kâinatın tek yaratıcısı, meliki ve koruyucusu olan Allah'a sığınmalıdır.",
+      "solutionExplanation": "MEBİ Din Kültürü 9. sorusu.",
+      "rubric": [
+        {
+          "criterion": "Görünür ve görünmez vesveselerden korunma amacının yazılması",
+          "points": 10
+        },
+        {
+          "criterion": "Yalnızca insanların Rabbi ve Meliki olan Allah\\'a sığınma bilincinin tespiti",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "outcomeCode": "DKAB.7.1.4",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+      "contextText": "Kul eûzü birabbinnâs suresi.",
+      "stimulus": "Sinsi vesvesecinin kötülüğünden insanların Rabbine sığınma emri.",
+      "questionText": "Nâs suresinin ana mesajını ve günlük hayatta bize verdiği korunma bilincini özetleyiniz.",
+      "modelAnswer": "İnsan içindeki vesveselere, kötü arkadaşların sinsi tuzaklarına ve her türlü şerre karşı yalnız değildir; tüm insanların sahibi ve hakimi olan Allah'a sığınarak manevi güç ve huzur bulmalıdır.",
+      "solutionExplanation": "MEBİ Din Kültürü 9. sorusu.",
+      "rubric": [
+        {
+          "criterion": "Sığınma bilinci ve surenin mesajının doğru özetlenmesi",
+          "points": 16
+        }
+      ]
+    }
+  ],
+  "E7.1.R1": [
+    {
+      "outcomeCode": "E7.1.R1",
+      "difficulty": "Kolay",
+      "cognitiveLevel": "Basit Bilişsel Süreçler",
+      "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+      "contextText": "Read the personality clues below and complete the sentences with the target adjectives:",
+      "stimulus": "1. Sally always does her homework and studies hard for her exams. She is ............................. .\n2. Tom is never late for school. He always arrives on time. He is ............................. .\n3. My brother doesn’t like sharing his things or toys. He is ............................. .\n4. Helen loves meeting new people and has a lot of friends. She is ............................. .\n5. Mike never tells lies. He always tells the truth. He is ............................. .",
+      "questionText": "Complete each sentence with the correct personality word: (hardworking, punctual, selfish, outgoing, honest).",
+      "modelAnswer": "1. hardworking\n2. punctual\n3. selfish\n4. outgoing (or friendly)\n5. honest",
+      "solutionExplanation": "MEBİ İngilizce Soru 1 bağlamsal sıfat tamamlama formatıdır.",
+      "rubric": [
+        {
+          "criterion": "Her doğru sıfat için 4 puan (5 x 4 = 20 Puan)",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "outcomeCode": "E7.1.R1",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+      "contextText": "Read the dialogue between Leo and Mia about Leo’s brothers:",
+      "stimulus": "Mia: \"Do you know my brothers?\"\nLeo: \"No, I don't. What are they like?\"\nMia: \"Well, Sam and Brian are very different from each other. Sam is tall and slim with dark hair. He is very serious and hardworking.\"\nLeo: \"What about Brian?\"\nMia: \"Brian is short and he has blonde hair. He is very funny and outgoing. He loves meeting new people.\"\nLeo: \"So, Brian is more social than Sam!\"\nMia: \"Exactly!\"",
+      "questionText": "Complete the table below according to the dialogue:\n--------------------------------------------------------------------------------------\n| NAME  | APPEARANCE (Physical features)      | PERSONALITY (Character traits)       |\n| SAM   | ................................... | .................................... |\n| BRIAN | ................................... | .................................... |",
+      "modelAnswer": "• SAM:\n  - Appearance: Tall, slim, dark hair\n  - Personality: Serious, hardworking\n• BRIAN:\n  - Appearance: Short, blonde hair\n  - Personality: Funny, outgoing (social)",
+      "solutionExplanation": "MEBİ İngilizce Soru 5 diyalogdan tabloya veri aktarma formatıdır.",
+      "rubric": [
+        {
+          "criterion": "Sam\\'in fiziksel ve kişilik özelliklerinin eksiksiz yazılması",
+          "points": 10
+        },
+        {
+          "criterion": "Brian\\'ın fiziksel ve kişilik özelliklerinin eksiksiz yazılması",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "outcomeCode": "E7.1.R1",
+      "difficulty": "Kolay",
+      "cognitiveLevel": "Basit Bilişsel Süreçler",
+      "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+      "contextText": "Read the personality definitions:",
+      "stimulus": "1. Sally always does her homework and studies hard: .........................\n2. Tom is never late for school; he arrives on time: .........................\n3. My brother doesn\\'t like sharing his toys: .........................\n4. Mike never tells lies; he tells the truth: .........................",
+      "questionText": "Complete the sentences with target personality words: (hardworking, punctual, selfish, honest).",
+      "modelAnswer": "1. hardworking | 2. punctual | 3. selfish | 4. honest",
+      "solutionExplanation": "MEBİ İngilizce Soru 1.",
+      "rubric": [
+        {
+          "criterion": "4 sıfatın doğru yerleştirilmesi (Her biri 5 puan)",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "outcomeCode": "E7.1.R1",
+      "difficulty": "Kolay",
+      "cognitiveLevel": "Basit Bilişsel Süreçler",
+      "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+      "contextText": "Personality clues:",
+      "stimulus": "1. Sally studies hard: hardworking | 2. Tom is never late: punctual | 3. Mike tells truth: honest.",
+      "questionText": "Write the personality adjectives for Sally, Tom, and Mike.",
+      "modelAnswer": "1. hardworking | 2. punctual | 3. honest",
+      "solutionExplanation": "MEBİ İngilizce Soru 1.",
+      "rubric": [
+        {
+          "criterion": "3 sıfatın doğru yazılması (Her biri 5 puan)",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "outcomeCode": "E7.1.R1",
+      "difficulty": "Kolay",
+      "cognitiveLevel": "Basit Bilişsel Süreçler",
+      "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+      "contextText": "Sarah has blonde hair and blue eyes. Zack has curly brown hair and wears glasses.",
+      "stimulus": "Match physical features with character names.",
+      "questionText": "Describe Zack's and Sarah's physical appearance in one sentence each.",
+      "modelAnswer": "• Sarah is a beautiful girl with blue eyes and blonde hair.\n• Zack has curly brown hair and wears glasses.",
+      "solutionExplanation": "MEBİ İngilizce Soru 2.",
+      "rubric": [
+        {
+          "criterion": "İki cümlenin hatasız yazılması (7 + 7)",
+          "points": 14
+        }
+      ]
+    },
+    {
+      "outcomeCode": "E7.1.R1",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+      "contextText": "Sam (tall, dark hair, serious) and Brian (short, blonde hair, outgoing).",
+      "stimulus": "Dialogue between Leo and Mia about brothers.",
+      "questionText": "Complete appearance and personality for Sam and Brian.",
+      "modelAnswer": "Sam: Tall, dark hair (Appearance) | Serious, hardworking (Personality).\nBrian: Short, blonde hair (Appearance) | Funny, outgoing (Personality).",
+      "solutionExplanation": "MEBİ İngilizce Soru 5.",
+      "rubric": [
+        {
+          "criterion": "Tablonun eksiksiz doldurulması",
+          "points": 15
+        }
+      ]
+    }
+  ],
+  "E7.1.W1": [
+    {
+      "outcomeCode": "E7.1.W1",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+      "contextText": "Look at the comparison table between Sally and Helen below:",
+      "stimulus": "TABLE: Comparison Data\n--------------------------------------------------------------\n| CRITERIA    | SALLY                     | HELEN            |\n| Age         | 15 years old              | 17 years old     |\n| Height      | 1.71 m                    | 1.65 m           |\n| Weight      | 45 kg                     | 50 kg            |\n| Personality | generous (★★★★★)          | generous (★★)    |\n--------------------------------------------------------------",
+      "questionText": "Using the data in the table, complete the comparative sentences using the given adjectives:\n1. Helen is ................................................... than Sally. (age / old)\n2. Sally is ................................................... than Helen. (height / tall)\n3. Sally is ................................................... than Helen. (weight / slim)\n4. Sally is ................................................... than Helen. (personality / generous)",
+      "modelAnswer": "1. Helen is older than Sally.\n2. Sally is taller than Helen.\n3. Sally is slimmer (or lighter / thinner) than Helen.\n4. Sally is more generous than Helen.",
+      "solutionExplanation": "MEBİ İngilizce Soru 3 tablodan verileri karşılaştırma formatıdır.",
+      "rubric": [
+        {
+          "criterion": "Her doğru comparative yapısı için 5 puan (4 x 5 = 20 Puan)",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "outcomeCode": "E7.1.W1",
+      "difficulty": "Zor",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Hata Tespiti & Adım Analizi",
+      "contextText": "Read the short biography of two sisters carefully:",
+      "stimulus": "“Amy is 16 years old, and her sister Emma is 12 years old. Amy is 165 cm tall and Emma is 160 cm tall. Amy is slim with straight blonde hair and brown eyes. Emma has short wavy hair and green eyes. Amy is very hardworking; she always studies hard. Emma is more outgoing than her sister; she likes meeting new people. Amy can sometimes be stubborn; she doesn’t change her mind easily.”",
+      "questionText": "The sentences below contain mistakes according to the text. Correct the mistakes and rewrite the sentences accurately:\n1. Amy is younger than Emma.\n   Correct: ..........................................................................................\n2. Emma is taller than Amy.\n   Correct: ..........................................................................................\n3. Amy has wavy blonde hair and green eyes.\n   Correct: ..........................................................................................\n4. Emma doesn’t change her mind easily.\n   Correct: ..........................................................................................",
+      "modelAnswer": "1. Amy is older than Emma. (or Emma is younger than Amy.)\n2. Amy is taller than Emma. (or Emma is shorter than Amy.)\n3. Amy has straight blonde hair and brown eyes.\n4. Amy doesn’t change her mind easily. (or Amy is stubborn.)",
+      "solutionExplanation": "MEBİ İngilizce Soru 4 metindeki hataları bulup yeniden yazma formatıdır.",
+      "rubric": [
+        {
+          "criterion": "Her doğru düzeltilmiş cümle için 5 puan (4 x 5 = 20 Puan)",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "outcomeCode": "E7.1.W1",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+      "contextText": "Sally (Age 15, Height 1.71 m, Weight 45 kg) and Helen (Age 17, Height 1.65 m, Weight 50 kg).",
+      "stimulus": "Compare Sally and Helen using comparative forms of: old, tall, slim, generous.",
+      "questionText": "Write 4 comparative sentences comparing Sally and Helen.",
+      "modelAnswer": "1. Helen is older than Sally.\n2. Sally is taller than Helen.\n3. Sally is slimmer (lighter) than Helen.\n4. Sally is more generous than Helen.",
+      "solutionExplanation": "MEBİ İngilizce Soru 3.",
+      "rubric": [
+        {
+          "criterion": "Her doğru comparative cümlesi için 5 puan (4 x 5 = 20)",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "outcomeCode": "E7.1.W1",
+      "difficulty": "Zor",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Hata Tespiti & Adım Analizi",
+      "contextText": "Amy (16 years old, 165 cm, straight blonde hair, stubborn) and Emma (12 years old, 160 cm, short wavy hair, outgoing).",
+      "stimulus": "Incorrect: \"Amy is younger than Emma. Emma is taller than Amy.\"",
+      "questionText": "Correct the mistakes and rewrite the accurate sentences.",
+      "modelAnswer": "1. Amy is older than Emma. (or Emma is younger than Amy.)\n2. Amy is taller than Emma. (or Emma is shorter than Amy.)\n3. Amy has straight blonde hair and brown eyes.\n4. Amy is stubborn; she doesn't change her mind easily.",
+      "solutionExplanation": "MEBİ İngilizce Soru 4.",
+      "rubric": [
+        {
+          "criterion": "Hataların tespiti ve doğru cümlelerin yazılması",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "outcomeCode": "E7.1.W1",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+      "contextText": "Sally (15, 1.71 m) vs Helen (17, 1.65 m).",
+      "stimulus": "Table comparing age, height, and generosity.",
+      "questionText": "Write 3 comparative sentences using \"old",
+      "modelAnswer": "1. Helen is older than Sally.\n2. Sally is taller than Helen.\n3. Sally is more generous than Helen.",
+      "solutionExplanation": "MEBİ İngilizce Soru 3.",
+      "rubric": [
+        {
+          "criterion": "3 comparative cümlesi (Her biri 5 puan)",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "outcomeCode": "E7.1.W1",
+      "difficulty": "Zor",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Hata Tespiti & Adım Analizi",
+      "contextText": "Incorrect: \"Amy is younger than Emma. Emma is taller than Amy.\"",
+      "stimulus": "Correct the mistakes using the reading text facts.",
+      "questionText": "Rewrite both sentences correctly.",
+      "modelAnswer": "1. Amy is older than Emma.\n2. Emma is shorter than Amy (or Amy is taller than Emma).",
+      "solutionExplanation": "MEBİ İngilizce Soru 4.",
+      "rubric": [
+        {
+          "criterion": "Doğru cümleler (7.5 + 7.5)",
+          "points": 15
+        }
+      ]
+    }
+  ],
+  "E7.2.W1": [
+    {
+      "outcomeCode": "E7.2.W1",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+      "contextText": "Read the sports dialogue between Jack and Sarah:",
+      "stimulus": "Jack:  \"Hi Sarah! My favourite sport is basketball. I play it four times a week at the school basketball court with my friends. You only need a ball and a basket for it. What about you?\"\nSarah: \"Hello Jack! My favourite sport is tennis. I play tennis twice a week. I usually play it at the local tennis court. We need a tennis ball and a racket to hit the ball over the net.\"",
+      "questionText": "Fill in the missing details in the sports profile table:\n-----------------------------------------------------------------------------------------\n| PROFILE CRITERIA | JACK (Basketball)               | SARAH (Tennis)                  |\n| Equipment Needed | ............................... | ............................... |\n| Place (Venue)    | ............................... | ............................... |\n| Frequency        | ............................... | ............................... |",
+      "modelAnswer": "• JACK:\n  - Equipment: Ball and basket\n  - Place: Basketball court\n  - Frequency: Four times a week\n• SARAH:\n  - Equipment: Ball and racket\n  - Place: Tennis court\n  - Frequency: Twice a week",
+      "solutionExplanation": "MEBİ İngilizce Soru 10 diyalogdan spor parametreleri matrisi formatıdır.",
+      "rubric": [
+        {
+          "criterion": "Jack sütununun eksiksiz doldurulması",
+          "points": 10
+        },
+        {
+          "criterion": "Sarah sütununun eksiksiz doldurulması",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "outcomeCode": "E7.2.W1",
+      "difficulty": "Kolay",
+      "cognitiveLevel": "Basit Bilişsel Süreçler",
+      "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+      "contextText": "Read the sports definitions:",
+      "stimulus": "a) You need a ball, kick into goal, 11 players.\nb) You need a racket and hit a yellow ball over the net.\nc) You need a bow and arrows, individual sport hitting center target.\nd) You need sneakers and backpack in mountains.",
+      "questionText": "Write the correct sports: (Football, Tennis, Archery, Hiking).",
+      "modelAnswer": "a) Football | b) Tennis | c) Archery | d) Hiking",
+      "solutionExplanation": "MEBİ İngilizce Soru 9.",
+      "rubric": [
+        {
+          "criterion": "Her doğru spor dalı için 5 puan (4 x 5 = 20)",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "outcomeCode": "E7.2.W1",
+      "difficulty": "Kolay",
+      "cognitiveLevel": "Basit Bilişsel Süreçler",
+      "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+      "contextText": "Scale: %100 always, %90 usually, %70 often, %50 sometimes, %0 never.",
+      "stimulus": "1. I .......... (100%) exercise. | 2. I .......... (0%) eat junk food. | 3. I .......... (70%) play basketball.",
+      "questionText": "Fill in the blanks with correct frequency adverbs.",
+      "modelAnswer": "1. always | 2. never | 3. often",
+      "solutionExplanation": "MEBİ İngilizce Soru 7.",
+      "rubric": [
+        {
+          "criterion": "3 zarfın doğru yerleştirilmesi (Her biri 5 puan)",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "outcomeCode": "E7.2.W1",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+      "contextText": "Jack plays basketball 4 times a week; Sarah plays tennis twice a week.",
+      "stimulus": "Equipment, venue, and frequency criteria.",
+      "questionText": "Write the equipment and frequency for both Jack and Sarah.",
+      "modelAnswer": "• Jack: Ball and basket | 4 times a week.\n• Sarah: Racket and ball | Twice a week.",
+      "solutionExplanation": "MEBİ İngilizce Soru 10.",
+      "rubric": [
+        {
+          "criterion": "Ekipman ve sıklık eşleştirmelerinin doğruluğu",
+          "points": 11
+        }
+      ]
+    }
+  ],
+  "E7.2.R1": [
+    {
+      "outcomeCode": "E7.2.R1",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+      "contextText": "Rose is 15 years old. She plays volleyball after school, goes hiking on Tuesdays and Thursdays, and swims on Saturdays.",
+      "stimulus": "Reading Text: Rose's weekly sports and leisure routines.",
+      "questionText": "1. What does Rose do after school?\n2. How often does she go hiking?",
+      "modelAnswer": "1. She plays volleyball with her friends after school.\n2. She goes hiking twice a week (on Tuesdays and Thursdays).",
+      "solutionExplanation": "MEBİ İngilizce Soru 6.",
+      "rubric": [
+        {
+          "criterion": "1. soruya tam İngilizce cevap",
+          "points": 10
+        },
+        {
+          "criterion": "2. soruya sıklık içeren doğru cevap",
+          "points": 10
+        }
+      ]
+    }
+  ],
+  "SB.7.1.1": [
+    {
+      "outcomeCode": "SB.7.1.1",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+      "contextText": "Aşağıda iki arkadaş arasında geçen iletişim durumunu okuyunuz:",
+      "stimulus": "“Selim, sınıf arkadaşı Ezel ile birlikte sinemaya gitmek istemiştir. Ezel ise yüksek ses ve gürültüden rahatsız olduğu için sinemaya gitmek istemediğini belirtmiştir. Selim sinirlenmek yerine Ezel’in hassasiyetini anlayışla karşılamıştır.”",
+      "questionText": "Selim’in Ezel ile empati kurduğunu, onun duygularını ve ihtiyaçlarını anladığını gösteren iki cümlelik örnek bir konuşma metni yazınız.",
+      "modelAnswer": "“Seni çok iyi anlıyorum Ezel, yüksek sesin seni rahatsız ettiğini fark edememiştim. Rahatsız olduğun bir yerde eğlenemezsin; istersen sinema yerine sessiz ve sakin bir parkta yürüyüşe çıkabiliriz.”",
+      "solutionExplanation": "MEBİ Sosyal Bilgiler 1. sorusunun empati konuşma metni kurgulama formatıdır.",
+      "rubric": [
+        {
+          "criterion": "Arkadaşının duygusunu/hassasiyetini anladığını belirten empati ifadesi",
+          "points": 10
+        },
+        {
+          "criterion": "Her iki tarafı da mutlu edecek alternatif bir çözüm önermesi",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "outcomeCode": "SB.7.1.1",
+      "difficulty": "Kolay",
+      "cognitiveLevel": "Basit Bilişsel Süreçler",
+      "archetype": "Hata Tespiti & Adım Analizi",
+      "contextText": "Aşağıda suçlayıcı ve iletişimi engelleyen \"sen dili\" ile kurulmuş iki cümle verilmiştir:",
+      "stimulus": "Cümle 1: “Sürekli geç kalmandan bıktım!”\nCümle 2: “Salonu hep dağınık bırakıyorsun.”",
+      "questionText": "Yukarıdaki \"sen dili\" cümlelerini, karşımızdakini suçlamadan kendi duygu ve düşüncelerimizi aktaran \"ben dili\" cümlelerine dönüştürerek yeniden yazınız:\n1. Cümlenin Ben Dili Hâli: ..........................................................................................\n2. Cümlenin Ben Dili Hâli: ..........................................................................................",
+      "modelAnswer": "1. Cümle: “Buluşmaya geç kaldığında beklemek beni endişelendiriyor ve kendimi önemsenmemiş hissediyorum.”\n2. Cümle: “Salon dağınık kaldığında aradığım eşyaları bulmakta zorlanıyorum ve bu durum beni çok yoruyor.”",
+      "solutionExplanation": "MEBİ Sosyal Bilgiler 2. sorusunun Ben Dili dönüştürme formatıdır.",
+      "rubric": [
+        {
+          "criterion": "1. cümlenin suçlamadan duygu belirten ben diliyle yazılması",
+          "points": 10
+        },
+        {
+          "criterion": "2. cümlenin suçlamadan duygu belirten ben diliyle yazılması",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "outcomeCode": "SB.7.1.1",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+      "contextText": "Aşağıda “sen dili” ile kurulmuş iki suçlayıcı cümle yer almaktadır:",
+      "stimulus": "1. Cümle: “Sürekli geç kalmandan bıktım!”\n2. Cümle: “Salonu dağınık bırakıyorsun.”",
+      "questionText": "Bu cümleleri karşı tarafı suçlamayan, kendi duygunuzu ifade eden “ben dili” cümlelerine dönüştürerek yazınız.",
+      "modelAnswer": "1. Cümle (Ben Dili): “Buluşmaya geç kaldığında seni çok merak ediyorum ve bana değer vermediğini düşünüp üzülüyorum.”\n2. Cümle (Ben Dili): “Salon dağınık kaldığında aradığım eşyaları bulamıyorum ve kendimi yorgun, huzursuz hissediyorum.”",
+      "solutionExplanation": "MEBİ Sosyal Bilgiler 2. sorusu ben dili dönüştürme formatıdır.",
+      "rubric": [
+        {
+          "criterion": "1. cümlenin duygu belirten ben diline çevrilmesi",
+          "points": 10
+        },
+        {
+          "criterion": "2. cümlenin suçlama içermeyen ben diline çevrilmesi",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "outcomeCode": "SB.7.1.1",
+      "difficulty": "Kolay",
+      "cognitiveLevel": "Basit Bilişsel Süreçler",
+      "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+      "contextText": "Selim ve Ezel sinema planı yapmaktadır.",
+      "stimulus": "Ezel yüksek sesten rahatsız olduğunu belirtmiştir.",
+      "questionText": "Selim'in Ezel ile empati kurduğunu gösteren bir konuşma metni yazınız.",
+      "modelAnswer": "“Seni anlıyorum Ezel. Yüksek sesin seni rahatsız ettiğini bilmiyordum. İstersen sinema yerine açık havada sakin bir yürüyüş yapalım.”",
+      "solutionExplanation": "MEBİ Sosyal Bilgiler 1. sorusu.",
+      "rubric": [
+        {
+          "criterion": "Empatik yaklaşımın ve alternatif çözümün yazılması",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "outcomeCode": "SB.7.1.1",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+      "contextText": "“Sürekli geç kalmandan bıktım!” ve “Salonu dağınık bırakıyorsun.”",
+      "stimulus": "Sen dili cümleleri.",
+      "questionText": "Bu iki cümleyi suçlayıcı olmayan ben dili ifadelerine çeviriniz.",
+      "modelAnswer": "1. “Geç kaldığında seni merak edip endişeleniyorum.”\n2. “Salon dağınık kaldığında aradığımı bulamıyor ve huzursuz oluyorum.”",
+      "solutionExplanation": "MEBİ Sosyal Bilgiler 2. sorusu.",
+      "rubric": [
+        {
+          "criterion": "Her iki cümlenin doğru ben diline çevrilmesi (7.5 + 7.5)",
+          "points": 15
+        }
+      ]
+    }
+  ],
+  "SB.7.1.2": [
+    {
+      "outcomeCode": "SB.7.1.2",
+      "difficulty": "Kolay",
+      "cognitiveLevel": "Basit Bilişsel Süreçler",
+      "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+      "contextText": "Mahallenizdeki oyun parklarının özel gereksinimli (bedensel ve görme engelli) çocukların ihtiyaçlarına uygun şekilde düzenlenmesini ve bu konuda mahallede bir farkındalık kamuoyu oluşturulmasını istediğinizi düşününüz.",
+      "stimulus": "“Selim sınıf arkadaşı Ezel ile sinemaya gitmek istemiştir. Ezel ise yüksek sesten rahatsız olduğu için sinemaya gitmek istemediğini belirtmiştir.”",
+      "questionText": "Selim’in, arkadaşı Ezel’in duygularını anladığını ve onunla empati kurduğunu gösteren iki cümlelik bir konuşma metni yazınız.",
+      "modelAnswer": "“Seni çok iyi anlıyorum Ezel. Yüksek sesin seni rahatsız ettiğini bilmiyordum, benim için senin rahat hissetmen daha önemli. İstersen sinema yerine açık havada sakin bir parkta dolaşabilir veya kütüphanede vakit geçirebiliriz.”",
+      "solutionExplanation": "MEBİ Sosyal Bilgiler 1. sorusu empati kurma becerisidir.",
+      "rubric": [
+        {
+          "criterion": "Arkadaşının rahatsızlığını anlayışla karşılayan ifadenin yazılması",
+          "points": 10
+        },
+        {
+          "criterion": "Alternatif ve empatik bir çözüm önerisi sunulması",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "outcomeCode": "SB.7.1.2",
+      "difficulty": "Kolay",
+      "cognitiveLevel": "Basit Bilişsel Süreçler",
+      "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+      "contextText": "Mahallenizdeki oyun parklarının bedensel engelli ve özel gereksinimli çocukların ihtiyaçlarına uygun olmadığını fark ettiniz.",
+      "stimulus": "Belediyeye ve mahalle sakinlerine yönelik bir farkındalık kampanyası düzenlenmektedir.",
+      "questionText": "Oyun parklarının tüm çocuklar için erişilebilir olmasını ve fırsat eşitliğini teşvik eden etkileyici bir slogan yazınız.",
+      "modelAnswer": "“Engelleri oyunla aşalım, her parkta birlikte koşalım!” (veya “Oyun haktır, engel tanımaz; engelsiz parklar tüm çocuklara kucak açar!”)",
+      "solutionExplanation": "MEBİ Sosyal Bilgiler 3. sorusu fırsat eşitliği ve slogan üretimidir.",
+      "rubric": [
+        {
+          "criterion": "Amaca uygun, olumlu ve etkileyici bir sloganın yazılması",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "outcomeCode": "SB.7.1.2",
+      "difficulty": "Kolay",
+      "cognitiveLevel": "Basit Bilişsel Süreçler",
+      "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+      "contextText": "Çocuk parklarının engelli çocuklara uygun hale getirilmesi.",
+      "stimulus": "Kamuoyu oluşturmak için slogan yazımı.",
+      "questionText": "Amacınıza uygun, fırsat eşitliğini vurgulayan bir slogan yazınız.",
+      "modelAnswer": "“Engelleri oyunla aşalım, parkları birlikte paylaşalım!”",
+      "solutionExplanation": "MEBİ Sosyal Bilgiler 3. sorusu.",
+      "rubric": [
+        {
+          "criterion": "Etkileyici ve amaca uygun slogan",
+          "points": 15
+        }
+      ]
+    }
+  ],
+  "SB.7.1.3": [
+    {
+      "outcomeCode": "SB.7.1.3",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+      "contextText": "Mustafa Kemal Paşa, 19 Mayıs 1919’da Samsun’a çıkarak Millî Mücadele’yi başlatmıştır.",
+      "stimulus": "Mondros Ateşkesi sonrası orduların terhis edilmesi ve yurdun işgali ortamı.",
+      "questionText": "a) Mustafa Kemal Paşa’nın Samsun’a çıkışında etkili olan temel tarihsel gelişmeleri yazınız.\nb) Anadolu halkının bu mücadeleye yaklaşımını ve dayanışma ruhunu açıklayınız.",
+      "modelAnswer": "a) Tarihsel Gelişmeler: Osmanlı Devleti\\'nin 1. Dünya Savaşı\\'ndan yenik çıkması, Mondros Ateşkes Antlaşması ile orduların terhis edilmesi ve İtilaf Devletleri\\'nin Anadolu topraklarını haksızca işgale başlamasıdır.\nb) Anadolu Halkının Tutumu: Halk tüm imkânsızlıklara rağmen vatanını teslim etmemiş; Mustafa Kemal Paşa\\'nın çağrısıyla Kuva-yı Milliye ruhu etrafında birleşerek elindeki kıt imkânları ve ekmeğini ordusuyla paylaşmıştır.",
+      "solutionExplanation": "MEBİ Sosyal Bilgiler 4. sorusu.",
+      "rubric": [
+        {
+          "criterion": "a şıkkında Mondros ve işgallerin belirtilmesi",
+          "points": 10
+        },
+        {
+          "criterion": "b şıkkında halkın topyekûn dayanışma ve seferberlik tutumunun açıklanması",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "outcomeCode": "SB.7.1.3",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+      "contextText": "Mustafa Kemal Paşa\\'nın Samsun\\'a çıkışı ve halkın desteği.",
+      "stimulus": "Mondros Ateşkesi sonrası başlayan kurtuluş mücadelesi.",
+      "questionText": "Mustafa Kemal Paşa\\'nın Samsun\\'a çıkmasında etkili olan gelişmeleri ve halkın yaklaşımını açıklayınız.",
+      "modelAnswer": "Osmanlı\\'nın işgale uğraması üzerine halkın bağımsızlığını korumak amacıyla Mustafa Kemal önderliğinde Kuva-yı Milliye ruhuyla birleşip varını yoğunu orduyla paylaşmasıdır.",
+      "solutionExplanation": "MEBİ Sosyal Bilgiler 4. sorusu.",
+      "rubric": [
+        {
+          "criterion": "Tarihsel gelişmeler ve halkın kenetlenmesi",
+          "points": 14
+        }
+      ]
+    }
+  ],
+  "SB.7.2.1": [
+    {
+      "outcomeCode": "SB.7.2.1",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+      "contextText": "Küreselleşme ve teknolojik ilerlemeler iletişim alışkanlıklarımızı kökten değiştirmiştir.",
+      "stimulus": "Geçmişte mektup, telgraf ve ankesörlü telefonlar kullanılırken; günümüzde anlık mesajlaşma ve görüntülü konuşma yaygınlaşmıştır.",
+      "questionText": "Bu değişimin günlük hayatımıza getirdiği olumlu bir kolaylığı ve dikkat edilmesi gereken bir olumsuz yönünü karşılaştırınız.",
+      "modelAnswer": "• Olumlu Yönü: Dünyanın öbür ucundaki insanlarla, akrabalarla anında ve görüntülü haberleşebilmek, bilgiye ve acil haberlere saniyeler içinde ulaşabilmektir.\n• Dikkat Edilmesi Gereken Yönü: Yüz yüze samimi iletişimin azalması, ekran bağımlılığı ve sanal ortamlarda bireylerin yalnızlaşmasıdır.",
+      "solutionExplanation": "MEBİ Sosyal Bilgiler 5. sorusu.",
+      "rubric": [
+        {
+          "criterion": "Hızlı ve sınırları aşan iletişimin somut örneği",
+          "points": 10
+        },
+        {
+          "criterion": "Yüz yüze iletişimi zayıflatma ve sanal yalnızlık boyutunun açıklanması",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "outcomeCode": "SB.7.2.1",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+      "contextText": "Mektuplardan anlık mobil iletişime geçiş.",
+      "stimulus": "İletişim araçlarındaki küresel değişim.",
+      "questionText": "Bu değişimin günlük hayatımıza getirdiği somut bir örneği geçmişle kıyaslayarak açıklayınız.",
+      "modelAnswer": "Eskiden haberleşme haftalar alırken, bugün genel ağ ve akıllı cihazlarla dünyanın her yeriyle saniyeler içinde görüntülü haberleşilebilmektedir.",
+      "solutionExplanation": "MEBİ Sosyal Bilgiler 5. sorusu.",
+      "rubric": [
+        {
+          "criterion": "Geçmiş ile günümüzün kıyaslanarak açıklanması",
+          "points": 15
+        }
+      ]
+    }
+  ],
+  "SB.7.2.2": [
+    {
+      "outcomeCode": "SB.7.2.2",
+      "difficulty": "Zor",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+      "contextText": "Osmanlı Devleti, Rumeli ve Balkanlar\\'da fethettiği topraklara Anadolu\\'dan getirdiği Türkmen aileleri yerleştirmiştir.",
+      "stimulus": "İskân Politikası: Konargöçer Türkmenlerin yeni fethedilen topraklara yerleştirilerek ziraata teşvik edilmesi.",
+      "questionText": "İskân politikasının Balkanlar\\'daki fetihleri kalıcı kılmadaki ve bölgenin güvenliğini sağlamadaki rolünü açıklayınız.",
+      "modelAnswer": "Bölgeye yerleştirilen Türkmen nüfus sayesinde fethedilen topraklar Türkleşmiş ve İslamlaşmış; tarımsal üretim güvenceye alınmış ve bölgede kalıcı Türk hâkimiyeti tesis edilerek olası isyanlar engellenmiştir.",
+      "solutionExplanation": "MEBİ Osmanlı Kuruluş Dönemi iskân stratejisi analizidir.",
+      "rubric": [
+        {
+          "criterion": "Türkleşme ve kalıcı hakimiyet gerekçesi",
+          "points": 8
+        },
+        {
+          "criterion": "Üretim ve bölge asayişinin sağlanması gerekçesi",
+          "points": 7
+        }
+      ]
+    },
+    {
+      "outcomeCode": "SB.7.2.2",
+      "difficulty": "Orta",
+      "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+      "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+      "contextText": "Osmanlı fethettiği bölgelerdeki Hristiyan ve gayrimüslim halkın dinine, diline, kilisesine ve can güvenliğine dokunmamış; adaleti ve vergi kolaylığını ön planda tutmuştur.",
+      "stimulus": "İstimâlet Politikası: Kalpleri kazanma, hoşgörü ve adil yönetim siyaseti.",
+      "questionText": "İstimâlet politikasının Balkan halklarının Osmanlı yönetimine karşı tutumunu nasıl etkilediğini ve Avrupa devletlerinin kışkırtmalarını nasıl boşa çıkardığını açıklayınız.",
+      "modelAnswer": "Balkan halkları kendi krallarının ağır vergileri ve baskıları yerine Osmanlı\\'nın dini hoşgörüsünü ve adaletini görmüş; böylece Osmanlı\\'yı bir işgalci olarak değil adil bir koruyucu olarak benimsemiştir. Bu hoşgörü fetihlerin kolaylaşmasını ve asırlarca sürmesini sağlamıştır.",
+      "solutionExplanation": "MEBİ istimâlet (gönül alma) politikası analizidir.",
+      "rubric": [
+        {
+          "criterion": "Dini hoşgörü ve adil vergi sisteminin belirtilmesi",
+          "points": 8
+        },
+        {
+          "criterion": "Halkın gönüllü bağlılığı ve fetihlerin kalıcı olması gerekçesi",
+          "points": 8
+        }
+      ]
+    }
+  ]
+}

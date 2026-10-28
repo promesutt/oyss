@@ -1,0 +1,295 @@
+import React, { useState } from 'react';
+import { ExamPaper } from '../types';
+import { MathRenderer } from './MathRenderer';
+import { 
+  CheckCircle2, 
+  Eye, 
+  EyeOff, 
+  Award,
+  Sparkles,
+  Printer
+} from 'lucide-react';
+
+interface ExamPaperViewProps {
+  examPaper: ExamPaper;
+  isCustomAIExam?: boolean;
+  onResetToDefaultExam?: () => void;
+  onOpenAIGenerator: () => void;
+}
+
+export const ExamPaperView: React.FC<ExamPaperViewProps> = ({ 
+  examPaper,
+  isCustomAIExam = false,
+  onResetToDefaultExam,
+  onOpenAIGenerator
+}) => {
+  const [showRubric, setShowRubric] = useState<boolean>(false);
+
+  return (
+    <div className="max-w-4xl mx-auto py-6 px-4 sm:px-6">
+      {/* Custom AI Exam Active Banner */}
+      {isCustomAIExam && (
+        <div className="mb-4 bg-gradient-to-r from-indigo-50 via-purple-50 to-indigo-50 border-2 border-indigo-200 rounded-xl p-3.5 flex flex-wrap items-center justify-between gap-2 shadow-xs print:hidden animate-in fade-in duration-200">
+          <div className="flex items-center space-x-2.5 text-indigo-950 font-bold text-xs sm:text-sm">
+            <span className="w-7 h-7 rounded-lg bg-indigo-600 text-white flex items-center justify-center shrink-0 shadow-xs">
+              <Sparkles className="w-4 h-4 text-amber-300" />
+            </span>
+            <div>
+              <span>Yapay Zekâ ile Üretilen Özgün Sınav Kağıdı Aktarıldı</span>
+              <p className="text-[11px] font-normal text-indigo-700">
+                Aşağıdaki A4 kağıdında doğrudan yapay zekânın ürettiği MEBİ soruları yer almaktadır.
+              </p>
+            </div>
+          </div>
+          {onResetToDefaultExam && (
+            <button
+              onClick={onResetToDefaultExam}
+              className="px-3 py-1.5 bg-white hover:bg-slate-50 border border-indigo-300 text-indigo-700 rounded-lg text-xs font-bold transition-all shadow-2xs hover:shadow-xs active:scale-95"
+            >
+              ← Varsayılan MEB Sınavına Dön
+            </button>
+          )}
+        </div>
+      )}
+
+      {/* Top Banner & Control Bar */}
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6 bg-slate-100 p-3 sm:p-4 rounded-xl border border-slate-200 print:hidden">
+        <div className="flex items-center space-x-2">
+          <Award className="w-5 h-5 text-red-600 shrink-0" />
+          <span className="text-xs sm:text-sm text-slate-700 font-medium">
+            <strong>MEB ÖDSGM Uyumlu:</strong> Bu sınav kağıdı, resmi konu soru dağılım tablosundaki bilişsel süreç düzeylerine göre yapılandırılmıştır.
+          </span>
+        </div>
+        <div className="flex flex-wrap items-center gap-2 self-end sm:self-auto">
+          <button
+            onClick={() => window.print()}
+            className="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-900 hover:bg-slate-800 text-white shadow-2xs transition-colors cursor-pointer"
+          >
+            <Printer className="w-3.5 h-3.5 mr-1 text-slate-300" />
+            Sınavı Yazdır / PDF İndir
+          </button>
+
+          <button
+            onClick={() => setShowRubric(!showRubric)}
+            className={`inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors cursor-pointer ${
+              showRubric
+                ? 'bg-amber-600 text-white hover:bg-amber-700'
+                : 'bg-white text-slate-700 border border-slate-300 hover:bg-slate-50'
+            }`}
+          >
+            {showRubric ? (
+              <>
+                <EyeOff className="w-3.5 h-3.5 mr-1" />
+                Rubrik & Çözümleri Gizle
+              </>
+            ) : (
+              <>
+                <Eye className="w-3.5 h-3.5 mr-1 text-amber-600" />
+                Rubrik & Çözümleri Göster
+              </>
+            )}
+          </button>
+
+          <button
+            onClick={onOpenAIGenerator}
+            className="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100 transition-colors cursor-pointer"
+          >
+            <Sparkles className="w-3.5 h-3.5 mr-1 text-indigo-600" />
+            Yeni Varyasyon Türet
+          </button>
+        </div>
+      </div>
+
+      {/* Printable Exam Paper Container (A4 Styled Sheet) */}
+      <div className="bg-white rounded-2xl shadow-md border border-slate-200 p-6 sm:p-10 print:shadow-none print:border-none print:p-0 print:m-0">
+        
+        {/* Official Header */}
+        <div className="border-2 border-slate-800 rounded-xl p-4 sm:p-5 mb-8">
+          <div className="text-center pb-4 border-b-2 border-slate-300">
+            <h3 className="text-xs sm:text-sm font-bold tracking-widest text-slate-800 uppercase">
+              T.C. MİLLÎ EĞİTİM BAKANLIĞI
+            </h3>
+            <h1 className="text-base sm:text-lg font-black text-slate-900 mt-0.5 tracking-tight uppercase">
+              {examPaper.title}
+            </h1>
+            <p className="text-xs font-semibold text-slate-600 mt-1">
+              Türkiye Yüzyılı Maarif Modeli Açık Uçlu Ortak Değerlendirme Kağıdı
+            </p>
+          </div>
+
+          {/* Student Info & Grade Box */}
+          <div className="grid grid-cols-1 sm:grid-cols-12 gap-3 pt-3 text-xs sm:text-sm">
+            <div className="sm:col-span-8 space-y-1.5 font-medium text-slate-800">
+              <div className="flex items-center">
+                <span className="w-28 font-bold text-slate-600">Öğrenci Adı Soyadı:</span>
+                <span className="border-b border-dashed border-slate-400 flex-1 h-5"></span>
+              </div>
+              <div className="flex items-center">
+                <span className="w-28 font-bold text-slate-600">Sınıfı ve Şubesi:</span>
+                <span className="border-b border-dashed border-slate-400 w-24 h-5 mr-4"></span>
+                <span className="font-bold text-slate-600 mr-2">Okul No:</span>
+                <span className="border-b border-dashed border-slate-400 flex-1 h-5"></span>
+              </div>
+              <div className="flex items-center text-slate-500 text-[11px] pt-1">
+                <span>Sınav Süresi: <strong>{examPaper.durationMinutes} Dakika</strong></span>
+                <span className="mx-2">•</span>
+                <span>Toplam Puan: <strong>{examPaper.totalPoints} Puan</strong></span>
+              </div>
+            </div>
+
+            {/* Teacher Grade Scoring Box */}
+            <div className="sm:col-span-4 flex sm:justify-end">
+              <div className="border-2 border-slate-800 rounded-lg p-2 text-center w-full sm:w-36 bg-slate-50">
+                <span className="block text-[11px] font-bold uppercase text-slate-600">
+                  ALDIĞI NOT
+                </span>
+                <div className="text-2xl font-black text-slate-900 h-9 flex items-center justify-center">
+                  / 100
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* General Instructions */}
+        <div className="mb-6 p-3 bg-slate-50 rounded-lg border border-slate-200 text-xs text-slate-600 space-y-1">
+          <span className="font-bold text-slate-800 block">Yönerge:</span>
+          {examPaper.instructions.map((ins, i) => (
+            <p key={i}>• {ins}</p>
+          ))}
+        </div>
+
+        {/* Question List */}
+        <div className="space-y-8">
+          {examPaper.questions.map((q) => (
+            <div 
+              key={q.questionNumber} 
+              className="border-b border-slate-200 pb-8 last:border-b-0"
+            >
+              {/* Question Header: Number, Outcome, Difficulty, Archetype, Points */}
+              <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
+                  <span className="w-7 h-7 rounded-lg bg-slate-900 text-white font-extrabold text-sm flex items-center justify-center shrink-0">
+                    {q.questionNumber}
+                  </span>
+                  
+                  {/* Öğrenme Çıktısı Rozeti (Kodu + Başlığı) */}
+                  <span className="text-xs font-semibold text-indigo-900 bg-indigo-50 px-2.5 py-0.5 rounded-md border border-indigo-200">
+                    <strong className="font-mono text-indigo-700 mr-1">{q.outcomeCode}</strong>
+                    {q.outcomeTitle ? `• ${q.outcomeTitle}` : ''}
+                  </span>
+
+                  {/* Zorluk Derecesi (Kolay / Orta / Zor Dengesi) */}
+                  <span className={`text-[11px] font-bold px-2 py-0.5 rounded ${
+                    q.difficulty === 'Zor'
+                      ? 'bg-purple-100 text-purple-900 border border-purple-200'
+                      : q.difficulty === 'Kolay'
+                      ? 'bg-emerald-100 text-emerald-900 border border-emerald-200'
+                      : 'bg-blue-100 text-blue-900 border border-blue-200'
+                  }`}>
+                    Zorluk: {q.difficulty || 'Orta'}
+                  </span>
+
+                  {/* MEBİ Pedagojik Şablonu */}
+                  {q.archetype && (
+                    <span className="text-[10px] font-bold text-amber-900 bg-amber-100 border border-amber-200 px-2 py-0.5 rounded-full">
+                      ★ {q.archetype}
+                    </span>
+                  )}
+                </div>
+
+                <div className="text-xs font-bold text-slate-700 bg-slate-100 px-2.5 py-1 rounded-md border border-slate-200 shrink-0">
+                  {q.points} Puan
+                </div>
+              </div>
+
+              {/* Context / Stimulus Text (if any) */}
+              {q.contextText && (
+                <div className="text-xs sm:text-sm text-slate-600 italic mb-2 bg-slate-50 p-2.5 rounded-lg border-l-4 border-slate-400">
+                  <MathRenderer content={q.contextText} />
+                </div>
+              )}
+
+              {/* Special Stimulus (Experiment setup, scenario text, data, dialogue) */}
+              {q.stimulus && (
+                <div className="text-xs sm:text-sm text-slate-800 font-medium mb-3 bg-amber-50/70 p-3.5 rounded-xl border border-amber-200 shadow-2xs whitespace-pre-line leading-relaxed">
+                  <MathRenderer content={q.stimulus} />
+                </div>
+              )}
+
+              {/* Main Question Text */}
+              <div className="text-sm sm:text-base font-semibold text-slate-900 mb-4 pl-1">
+                <MathRenderer content={q.questionText} />
+              </div>
+
+              {/* Student Answer Space (Blank lines or boxed area) */}
+              <div className="mt-4 pt-3 border-t border-dashed border-slate-300">
+                <div className="flex items-center justify-between text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2">
+                  <span>Öğrenci Çözüm ve Cevap Alanı:</span>
+                  <span className="print:inline hidden">Puan: [ &nbsp; &nbsp; / {q.points} ]</span>
+                </div>
+                {/* Lined writing area for real printing */}
+                <div className="min-h-[110px] w-full rounded-lg bg-slate-50/50 border border-slate-200 p-3 space-y-5 print:min-h-[140px] print:bg-transparent">
+                  <div className="border-b border-slate-200 h-1"></div>
+                  <div className="border-b border-slate-200 h-1"></div>
+                  <div className="border-b border-slate-200 h-1"></div>
+                </div>
+              </div>
+
+              {/* Optional Scoring Rubric & Model Answer Box (Toggled by user) */}
+              {showRubric && (
+                <div className="mt-5 p-4 bg-emerald-50/80 rounded-xl border border-emerald-200 text-xs text-slate-800 space-y-3 print:hidden">
+                  <div className="flex flex-wrap items-center justify-between gap-1 text-emerald-900 font-bold border-b border-emerald-200 pb-2">
+                    <span className="flex items-center">
+                      <CheckCircle2 className="w-4 h-4 mr-1.5 text-emerald-700" />
+                      MEB Model Cevap ve Çözüm Adımları
+                    </span>
+                    <span className="text-[11px] font-medium text-emerald-900 bg-emerald-100 px-2.5 py-0.5 rounded border border-emerald-300">
+                      ÖDSGM Bilişsel Düzey (Öğretmen Kaydı): <strong>{q.cognitiveLevel}</strong>
+                    </span>
+                  </div>
+
+                  <div className="bg-white p-3 rounded-lg border border-emerald-100 font-medium whitespace-pre-line text-slate-700">
+                    <MathRenderer content={q.modelAnswer} />
+                  </div>
+
+                  {/* Rubric Points Breakdown */}
+                  <div>
+                    <span className="font-bold text-slate-700 block mb-1">
+                      Analitik Dereceli Puanlama Anahtarı (Rubrik):
+                    </span>
+                    <div className="bg-white rounded-lg border border-slate-200 overflow-hidden">
+                      <table className="min-w-full divide-y divide-slate-200 text-[11px]">
+                        <thead className="bg-slate-50">
+                          <tr>
+                            <th className="px-3 py-1.5 text-left font-bold text-slate-600">Ölçüt / Beklenen Basamak</th>
+                            <th className="px-3 py-1.5 text-right font-bold text-slate-600 w-20">Puan</th>
+                          </tr>
+                        </thead>
+                        <tbody className="divide-y divide-slate-100">
+                          {q.rubric.map((r, rIdx) => (
+                            <tr key={rIdx}>
+                              <td className="px-3 py-1.5 text-slate-700">{r.criterion}</td>
+                              <td className="px-3 py-1.5 text-right font-bold text-emerald-700">+{r.points} p</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Footer */}
+        <div className="mt-8 pt-4 border-t-2 border-slate-800 flex items-center justify-between text-[11px] text-slate-500">
+          <span>T.C. MEB Türkiye Yüzyılı Maarif Modeli</span>
+          <span>Sınavınız bitmiştir, lütfen cevaplarınızı kontrol ediniz.</span>
+          <span>Sayfa 1 / 1</span>
+        </div>
+      </div>
+    </div>
+  );
+};

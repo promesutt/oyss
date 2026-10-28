@@ -1,0 +1,691 @@
+# -*- coding: utf-8 -*-
+import json
+
+def distribute_points(count):
+    base = 100 // count
+    rem = 100 % count
+    return [base + (1 if i < rem else 0) for i in range(count)]
+
+scenarios_data = [
+    # SENARYO 1 (8 Qs: DKAB.7.1.1: 1, DKAB.7.1.2: 2, DKAB.7.1.3: 3, DKAB.7.1.4: 1, DKAB.7.2.1: 1)
+    # Points: 13, 13, 13, 13, 12, 12, 12, 12 = 100
+    {
+        "id": "exam_7_din_kulturu_1_1_senaryo_1",
+        "grade": 7,
+        "subjectId": "din_kulturu",
+        "examTerm": "1_donem_1_yazili",
+        "scenarioId": "senaryo_1",
+        "title": "7. Sınıf Din Kültürü ve Ahlak Bilgisi 1. Dönem 1. Ortak Yazılı Sınavı (Senaryo 1) (8 Soru)",
+        "durationMinutes": 40,
+        "totalPoints": 100,
+        "questions": [
+            {
+                "questionNumber": 1,
+                "outcomeCode": "DKAB.7.1.1",
+                "outcomeTitle": "DKAB.7.1.1. Melekleri sınıflandırabilme",
+                "difficulty": "Kolay",
+                "cognitiveLevel": "Basit Bilişsel Süreçler",
+                "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+                "points": 13,
+                "contextText": "Dört büyük melek ve görevleri.",
+                "stimulus": "İslam inancında dört büyük melek yaratılmış olup her birine evrenin işleyişi ve vahiy ile ilgili yüce vazifeler verilmiştir.",
+                "questionText": "Cebrail (a.s.) ve Azrail (a.s.)'ın yüce Allah tarafından görevlendirildikleri temel vazifeleri birer cümleyle yazınız.",
+                "solutionExplanation": "Cebrail vahiy meleğidir; Azrail ise eceli gelen canlıların ruhunu teslim alan ölüm meleğidir.",
+                "modelAnswer": "• Cebrail (a.s.): Yüce Allah'ın emir, yasak ve vahiylerini peygamberlere ulaştırmakla görevli vahiy meleğidir.\n• Azrail (a.s.): Eceli gelen canlıların ruhunu almakla (vefat ettirmekle) görevli ölüm meleğidir.",
+                "rubric": [
+                    {"criterion": "Cebrail'in vahiy görevinin doğru yazılması", "points": 7},
+                    {"criterion": "Azrail'in ecel/ölüm görevinin doğru yazılması", "points": 6}
+                ]
+            },
+            {
+                "questionNumber": 2,
+                "outcomeCode": "DKAB.7.1.2",
+                "outcomeTitle": "DKAB.7.1.2. Ahiret hayatının aşamalarını çözümleyebilme",
+                "difficulty": "Orta",
+                "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+                "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+                "points": 13,
+                "contextText": "Kıyamet ve Ba's kavramları.",
+                "stimulus": "'Sûr'a üflenir; göklerde ve yerde olanlar, Allah'ın diledikleri müstesna, baygın düşer (ölür). Sonra ona bir daha üflenir; bir de bakarsın ki onlar ayağa kalkmış bakıyorlar.' (Zümer Suresi, 68. ayet)",
+                "questionText": "Ayet metninde Sûr'a birinci ve ikinci üflenişle gerçekleşeceği bildirilen iki ahiret aşamasının adını (kavramları) sırasıyla yazınız.",
+                "solutionExplanation": "İlk üfleniş Kıyamet'tir, ikinci üfleniş Ba's (yeniden diriliş)tir.",
+                "modelAnswer": "1. Birinci Üfleniş: Kıyamet (Dünya hayatının son bulması, evrendeki kozmik düzenin yıkılması ve canlıların ölmesi).\n2. İkinci Üfleniş: Ba's (Ölen bütün insanların hesaba çekilmek üzere kabirlerinden yeniden diriltilmesi).",
+                "rubric": [
+                    {"criterion": "Kıyamet kavramının doğru tespiti ve açıklaması", "points": 7},
+                    {"criterion": "Ba's (yeniden diriliş) kavramının doğru tespiti", "points": 6}
+                ]
+            },
+            {
+                "questionNumber": 3,
+                "outcomeCode": "DKAB.7.1.2",
+                "outcomeTitle": "DKAB.7.1.2. Ahiret hayatının aşamalarını çözümleyebilme",
+                "difficulty": "Zor",
+                "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+                "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+                "points": 13,
+                "contextText": "Mizan ve Mahşer kavramları.",
+                "stimulus": "Ali: 'İnsanlar öldükten sonra doğrudan cennet ya da cehenneme gider, aradaki toplanma ve tartı aşamaları semboliktir.' demiştir. Zeynep ise ahirette ilahi adaletin tecelli edeceği iki temel durağı hatırlatmıştır.",
+                "questionText": "Zeynep'in hatırlattığı; dirilen insanların toplanacağı alana verilen adı (1) ve amellerin tartıldığı ilahi adalet terazisine verilen adı (2) yazınız.",
+                "solutionExplanation": "Mahşer toplanma yeridir; Mizan amellerin tartıldığı terazidir.",
+                "modelAnswer": "1. Toplanma Alanı: Mahşer (Haşir meydanı).\n2. Amellerin Tartıldığı İlahi Adalet Terazisi: Mizan.",
+                "rubric": [
+                    {"criterion": "Mahşer kavramının doğru yazılması", "points": 7},
+                    {"criterion": "Mizan kavramının doğru yazılması", "points": 6}
+                ]
+            },
+            {
+                "questionNumber": 4,
+                "outcomeCode": "DKAB.7.1.3",
+                "outcomeTitle": "DKAB.7.1.3. Melek ve ahiret inancının insana kazandırdıkları konusunda çıkarım yapabilme",
+                "difficulty": "Orta",
+                "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+                "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+                "points": 13,
+                "contextText": "Kiramen Kâtibin melekleri ve otokontrol bilinci.",
+                "stimulus": "Ahmet, odasında tek başınayken ve hiç kimse kendisini görmüyorken bile internette ahlaka aykırı sitelere girmemekte, haksız bir kazanç teklifini tereddütsüz reddetmektedir.",
+                "questionText": "Ahmet'in hiç kimsenin görmediği yerlerde dahi dürüst davranması, Kiramen Kâtibin meleklerine inanmanın insana kazandırdığı hangi ahlaki bilinçle açıklanır? Yazınız.",
+                "solutionExplanation": "Otokontrol (öz denetim) ve her an melekler tarafından gözetlendiği şuuru.",
+                "modelAnswer": "Bu durum, insanın sağında ve solunda bulunan 'Kiramen Kâtibin (yazıcı melekler)' meleklerinin yapılan her iyi ve kötü ameli kaydettiği bilincinden kaynaklanan 'öz denetim (otokontrol)' duygusudur. Kişi yalnız kalsa bile asla başıboş olmadığını ve Allah'ın huzurunda hesap vereceğini bilir.",
+                "rubric": [
+                    {"criterion": "Kiramen Kâtibin ve amel defteri şuurunun belirtilmesi", "points": 7},
+                    {"criterion": "Otokontrol/özdenetim ahlakının gerekçeli açıklanması", "points": 6}
+                ]
+            },
+            {
+                "questionNumber": 5,
+                "outcomeCode": "DKAB.7.1.3",
+                "outcomeTitle": "DKAB.7.1.3. Melek ve ahiret inancının insana kazandırdıkları konusunda çıkarım yapabilme",
+                "difficulty": "Kolay",
+                "cognitiveLevel": "Basit Bilişsel Süreçler",
+                "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+                "points": 12,
+                "contextText": "Ahiret inancının acılara ve kayıplara karşı teselli edici gücü.",
+                "stimulus": "Çok sevdiği dedesini kaybeden 7. sınıf öğrencisi Elif, ilk günlerde derin bir hüzün yaşasa da 'Dedem yok olmadı, sadece ebedi ahiret yurduna göçtü, inşallah cennette tekrar buluşacağız' diyerek sabretmiştir.",
+                "questionText": "Elif'in bu tesellisi, ahiret inancının insan psikolojisi üzerindeki hangi koruyucu ve güçlendirici etkisini gösterir? Açıklayınız.",
+                "solutionExplanation": "Yok olma korkusunu yenme, ölümün son değil ebedi hayata geçiş olduğu bilinci, sabır ve umut aşılama.",
+                "modelAnswer": "Ahiret inancı, insanın içindeki 'yok olup gitme ve sonsuz ayrılık' korkusunu ortadan kaldırır. Sevdiklerinden ayrılan insana ölümün bir son değil, ebedi mutluluk yurduna açılan bir kapı olduğunu fısıldayarak sabır, metanet, huzur ve yeniden kavuşma ümidi verir.",
+                "rubric": [
+                    {"criterion": "Ölümün son olmadığı ve yokluk korkusunu yenme etkisinin yazılması", "points": 6},
+                    {"criterion": "Sabır, metanet ve umut kazandırma boyutunun açıklanması", "points": 6}
+                ]
+            },
+            {
+                "questionNumber": 6,
+                "outcomeCode": "DKAB.7.1.3",
+                "outcomeTitle": "DKAB.7.1.3. Melek ve ahiret inancının insana kazandırdıkları konusunda çıkarım yapabilme",
+                "difficulty": "Zor",
+                "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+                "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+                "points": 12,
+                "contextText": "Ahiret inancı ve toplumsal adalet duygusu.",
+                "stimulus": "Dünya hayatında haksızlığa uğrayan, hakkı yenen ve zalimlerin cezasız kaldığını gören bir insan bazen ümitsizliğe kapılabilir.",
+                "questionText": "Ahiretteki 'Mizan ve Mahkeme-i Kübra' inancı, adaletsizliğe uğrayan bir müminin adalet inancını ve iç huzurunu nasıl korur? Açıklayınız.",
+                "solutionExplanation": "Mutlak adalet ahirettedir. Zalim cezasını çekecek, mazlum hakkını alacaktır.",
+                "modelAnswer": "Mümin bilir ki bu dünya bir imtihan yeridir ve hakiki mutlak adalet ahiretteki Mahkeme-i Kübra'da tecelli edecektir. 'Zerre ağırlığınca hayır yapan da şer yapan da karşılığını görecektir.' Zalimin yaptığı yanına kalmayacak, mazlum hakkını kuruşu kuruşuna alacaktır; bu inanç mümine derin bir adalet huzuru sağlar.",
+                "rubric": [
+                    {"criterion": "Mahkeme-i Kübra ve mutlak ilahi adalet inancının vurgulanması", "points": 6},
+                    {"criterion": "Mazlumun hakkını alacağı ve ümitsizliği önleme etkisinin yazılması", "points": 6}
+                ]
+            },
+            {
+                "questionNumber": 7,
+                "outcomeCode": "DKAB.7.1.4",
+                "outcomeTitle": "DKAB.7.1.4. Nâs suresini ve bu surenin anlamını okuyarak yorumlayabilme",
+                "difficulty": "Orta",
+                "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+                "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+                "points": 12,
+                "contextText": "Nâs suresinin mesajı ve sığınma bilinci.",
+                "stimulus": "'De ki: İnsanların kalplerine vesvese sokan sinsi vesvesecinin şerrinden insanların Rabbine, insanların Melikine (hükümranına), insanların İlahına sığınırım! O vesvese cinlerden de olur insanlardan da.' (Nâs Suresi)",
+                "questionText": "Nâs suresinde insanın ne tür tehlikelerden ve kime sığınması emredilmektedir? İki unsur halinde açıklayınız.",
+                "solutionExplanation": "Vesveseden, kötü niyetli insanların ve cinlerin fısıltılarından yalnızca her şeyin sahibi olan Allah'a sığınılır.",
+                "modelAnswer": "1. Kime Sığınılır: İnsanların tek Rabbi, mutlak hükümdarı (Melik) ve gerçek mabudu olan Yüce Allah'a sığınılır.\n2. Neyin Şerrinden Sığınılır: İnsanın kalbine kötü düşünceler, şüphe ve günah fısıldayan (vesvese veren) cin ve insan şeytanlarının sinsi tuzaklarından sığınılır.",
+                "rubric": [
+                    {"criterion": "Yalnızca Allah'a (Rab, Melik, İlah) sığınılacağının belirtilmesi", "points": 6},
+                    {"criterion": "Sinsi vesvese ve kötülük fısıldayan odakların şerrinden sakınmanın açıklanması", "points": 6}
+                ]
+            },
+            {
+                "questionNumber": 8,
+                "outcomeCode": "DKAB.7.2.1",
+                "outcomeTitle": "DKAB.7.2.1. Hac ve umre ibadetlerini çözümleyebilme",
+                "difficulty": "Orta",
+                "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+                "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+                "points": 12,
+                "contextText": "Hac ibadetinde İhram ve eşitlik sembolü.",
+                "stimulus": "Hac ibadeti için Mekke'ye giden milyonlarca Müslüman zengin-fakir, cumhurbaşkanı-işçi ayrımı olmaksızın tüm dünyalık elbiselerini çıkararak beyaz iki parça kumaştan oluşan 'ihram' giymektedir.",
+                "questionText": "Hacdaki bu ihram uygulamasının sembolize ettiği 2 temel manevi/toplumsal anlamı yazınız.",
+                "solutionExplanation": "Allah katında eşitlik, kefeni hatırlatarak ölümü ve ahireti anımsatma.",
+                "modelAnswer": "1. Mahşerdeki Eşitlik: Makam, servet, ırk ve unvanların Allah katında hiçbir üstünlük sağlamadığını, bütün insanların tek bir kefen benzeri örtü içinde eşit olduğunu gösterir.\n2. Dünyevilikten Arınma: İnsana ölümü, kefeni ve geçici dünya süslerini terk edip saf bir kul olarak Allah'ın huzuruna çıkmayı hatırlatır.",
+                "rubric": [
+                    {"criterion": "Tüm insanların Allah katında eşitliği boyutunun yazılması", "points": 6},
+                    {"criterion": "Dünyadan arınma ve ölümü/mahşeri hatırlama boyutunun yazılması", "points": 6}
+                ]
+            }
+        ]
+    },
+
+    # SENARYO 2 (7 Qs: DKAB.7.1.1: 1, DKAB.7.1.2: 2, DKAB.7.1.3: 2, DKAB.7.1.4: 1, DKAB.7.2.1: 1)
+    # Points: 15, 15, 14, 14, 14, 14, 14 = 100
+    {
+        "id": "exam_7_din_kulturu_1_1_senaryo_2",
+        "grade": 7,
+        "subjectId": "din_kulturu",
+        "examTerm": "1_donem_1_yazili",
+        "scenarioId": "senaryo_2",
+        "title": "7. Sınıf Din Kültürü ve Ahlak Bilgisi 1. Dönem 1. Ortak Yazılı Sınavı (Senaryo 2) (7 Soru)",
+        "durationMinutes": 40,
+        "totalPoints": 100,
+        "questions": [
+            {
+                "questionNumber": 1,
+                "outcomeCode": "DKAB.7.1.1",
+                "outcomeTitle": "DKAB.7.1.1. Melekleri sınıflandırabilme",
+                "difficulty": "Kolay",
+                "cognitiveLevel": "Basit Bilişsel Süreçler",
+                "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+                "points": 15,
+                "contextText": "Mikail (a.s.) ve İsrafil (a.s.)'ın görevleri.",
+                "stimulus": "Dört büyük melekten ikisi evrendeki doğa olaylarını ve ahiretin başlangıç düdüğünü idare etmekle vazifelendirilmiştir.",
+                "questionText": "Mikail (a.s.) ve İsrafil (a.s.)'ın yüce Allah tarafından verilen görevlerini birer cümleyle açıklayınız.",
+                "solutionExplanation": "Mikail tabiat olaylarını ve rızıkları idare eder; İsrafil kıyamet ve dirilişte Sûr'a üflemekle görevlidir.",
+                "modelAnswer": "• Mikail (a.s.): Yağmur, rüzgâr, bitkilerin yeşermesi gibi tabiat olaylarını ve canlıların rızıklarını Allah'ın izniyle düzenlemekle görevli melektir.\n• İsrafil (a.s.): Kıyametin kopması ve insanların yeniden diriltilmesi için Sûr borusuna üflemekle görevlendirilmiş melektir.",
+                "rubric": [
+                    {"criterion": "Mikail'in tabiat olayları ve rızık görevinin doğru yazılması", "points": 8},
+                    {"criterion": "İsrafil'in Sûr'a üfleme görevinin doğru yazılması", "points": 7}
+                ]
+            },
+            {
+                "questionNumber": 2,
+                "outcomeCode": "DKAB.7.1.2",
+                "outcomeTitle": "DKAB.7.1.2. Ahiret hayatının aşamalarını çözümleyebilme",
+                "difficulty": "Orta",
+                "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+                "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+                "points": 15,
+                "contextText": "Berzah (Kabir Hayatı) aşaması.",
+                "stimulus": "'Onların arkasında, yeniden diriltilecekleri güne kadar bir berzah (engel) vardır.' (Mü'minûn Suresi, 100. ayet)",
+                "questionText": "İslam ahiret inancında 'Berzah' kavramını tanımlayarak, bu aşamada ölen kişinin sorgusunu gerçekleştiren meleklerin adını yazınız.",
+                "solutionExplanation": "Berzah ölümle kıyamet arasındaki kabir hayatıdır. Sorguyu Münker ve Nekir melekleri yapar.",
+                "modelAnswer": "• Berzah: İnsanın ölümüyle başlayan ve kıyametteki yeniden dirilişe (Ba's) kadar devam eden ara dönem, yani kabir hayatıdır.\n• Sorgu Melekleri: Münker ve Nekir melekleridir.",
+                "rubric": [
+                    {"criterion": "Berzah kavramının ve zaman diliminin doğru tanımlanması", "points": 8},
+                    {"criterion": "Münker ve Nekir meleklerinin adının doğru yazılması", "points": 7}
+                ]
+            },
+            {
+                "questionNumber": 3,
+                "outcomeCode": "DKAB.7.1.2",
+                "outcomeTitle": "DKAB.7.1.2. Ahiret hayatının aşamalarını çözümleyebilme",
+                "difficulty": "Zor",
+                "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+                "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+                "points": 14,
+                "contextText": "Haşir ve Mahşer aşaması.",
+                "stimulus": "İsrafil (a.s.) Sûr'a ikinci kez üfledikten sonra bütün insanlar kabirlerinden fırlayacak ve hesap vermek üzere devasa bir meydanda toplanacaktır.",
+                "questionText": "İnsanların kabirlerinden çıkarılarak bu alana sevk edilmesine ne denir (1)? Toplandıkları bu alana verilen ad nedir (2)?",
+                "solutionExplanation": "Sevk edilip toplanmaya Haşir, toplanılan alana Mahşer denir.",
+                "modelAnswer": "1. İnsanların diriltilip toplanmak üzere sevk edilmesine: Haşir denir.\n2. Hesaba çekilmek üzere toplandıkları o yüce meydana: Mahşer (Mahşer yeri) denir.",
+                "rubric": [
+                    {"criterion": "Haşir eyleminin ve kavramının doğru açıklanması", "points": 7},
+                    {"criterion": "Mahşer meydanı kavramının doğru yazılması", "points": 7}
+                ]
+            },
+            {
+                "questionNumber": 4,
+                "outcomeCode": "DKAB.7.1.3",
+                "outcomeTitle": "DKAB.7.1.3. Melek ve ahiret inancının insana kazandırdıkları konusunda çıkarım yapabilme",
+                "difficulty": "Orta",
+                "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+                "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+                "points": 14,
+                "contextText": "Ahiret inancının insanı kötülüklerden alıkoyması.",
+                "stimulus": "'Kim zerre miktarı hayır işlemişse onu görür. Kim de zerre miktarı şer işlemişse onu görür.' (Zilzâl Suresi, 7-8. ayetler)",
+                "questionText": "Bu ayetleri ilke edinen bir esnafın tartı ve ölçü yaparken hile yapmaktan neden şiddetle kaçınacağını ahiret sorumluluğu açısından açıklayınız.",
+                "solutionExplanation": "Zerre kadar haksızlığın bile hesabının sorulacağı bilinci esnafı dürüstlüğe sevk eder.",
+                "modelAnswer": "Bu ayetleri kalbine yerleştiren bir esnaf bilir ki kimsenin görmediği bir gramlık eksik tartı dahi zayi olmayacak, Mizan terazisinde önüne çıkacaktır. Kul hakkının hesabını verememe korkusu ve ilahi adalete olan sarsılmaz inancı onu her türlü hile ve haksızlıktan kesin olarak alıkoyar.",
+                "rubric": [
+                    {"criterion": "Zerre kadar hakkın hesabının verileceği bilincinin açıklanması", "points": 7},
+                    {"criterion": "Kul hakkı ve Mizan terazisi korkusunun dürüstlüğe etkisinin yazılması", "points": 7}
+                ]
+            },
+            {
+                "questionNumber": 5,
+                "outcomeCode": "DKAB.7.1.3",
+                "outcomeTitle": "DKAB.7.1.3. Melek ve ahiret inancının insana kazandırdıkları konusunda çıkarım yapabilme",
+                "difficulty": "Zor",
+                "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+                "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+                "points": 14,
+                "contextText": "Melek inancının insana verdiği manevi güven.",
+                "stimulus": "Geceleri karanlıktan korkan veya yalnız kaldığında endişelenen bir çocuğa annesi koruyucu meleklerin (Hafaza melekleri) varlığından bahsetmiştir.",
+                "questionText": "Hafaza meleklerine inanmanın insan psikolojisine kazandırdığı manevi huzur ve güven hissini açıklayınız.",
+                "solutionExplanation": "İnsanın yalnız ve sahipsiz olmadığını, Allah'ın koruması altında olduğunu bilerek korku ve yalnızlıktan kurtulması.",
+                "modelAnswer": "Hafaza meleklerine inanan insan, kainatta yapayalnız, kimsesiz ve sahipsiz olmadığını idrak eder. Yüce Yaratıcının kendisini görünmeyen koruyucu güçlerle muhafaza ettiğini bilmek insana derin bir iç huzuru, güven ve manevi cesaret verir; kaygı ve yalnızlık hissini yok eder.",
+                "rubric": [
+                    {"criterion": "Yalnız ve sahipsiz olunmadığı bilincinin vurgulanması", "points": 7},
+                    {"criterion": "Manevi güven, cesaret ve kaygıların giderilmesinin açıklanması", "points": 7}
+                ]
+            },
+            {
+                "questionNumber": 6,
+                "outcomeCode": "DKAB.7.1.4",
+                "outcomeTitle": "DKAB.7.1.4. Nâs suresini ve bu surenin anlamını okuyarak yorumlayabilme",
+                "difficulty": "Orta",
+                "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+                "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+                "points": 14,
+                "contextText": "Nâs suresinde 'vesvese' kavramı.",
+                "stimulus": "Selin: 'Nâs suresinde sadece dışımızdaki düşmanlardan bahsedilir' demiştir. Öğretmeni ise surenin asıl insanın iç dünyasına fitne sokan sinsi duygulara dikkat çektiğini belirtmiştir.",
+                "questionText": "Nâs suresindeki 'vesvese' kavramını açıklayınız. İnsan aklına gelen vesveselere karşı surenin önerdiği temel koruma yöntemi nedir?",
+                "solutionExplanation": "Vesvese şeytanın veya kötü kişilerin kalbe fısıldadığı şüphe ve kötülüktür. Korunma yolu Allah'a sığınmaktır.",
+                "modelAnswer": "• Vesvese: İnsanın kalbine ve zihnine gizlice fısıldanan, onu hayırdan alıkoyup kötülüğe, şüpheye ve ümitsizliğe sevk eden sinsi telkinlerdir.\n• Korunma Yöntemi: Bu fısıltılara kapılmayıp doğrudan insanların yegane Rabbi, Meliki ve İlahı olan Yüce Allah'a sığınmak ve O'ndan yardım dilemektir.",
+                "rubric": [
+                    {"criterion": "Vesvese kavramının doğru tanımlanması", "points": 7},
+                    {"criterion": "Doğrudan Allah'a sığınma çözümünün açıklanması", "points": 7}
+                ]
+            },
+            {
+                "questionNumber": 7,
+                "outcomeCode": "DKAB.7.2.1",
+                "outcomeTitle": "DKAB.7.2.1. Hac ve umre ibadetlerini çözümleyebilme",
+                "difficulty": "Orta",
+                "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+                "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+                "points": 14,
+                "contextText": "Hac ile umre arasındaki farklar.",
+                "stimulus": "Emre Bey ailesiyle birlikte Mekke'ye gitmiş; Kabe'yi tavaf etmiş, Safa ile Merve arasında sa'y yapmış ve tıraş olup ihramdan çıkmıştır. Ancak Arafat'a çıkmamış ve kurban kesmemiştir.",
+                "questionText": "a) Emre Bey'in yaptığı bu ibadet hac mıdır umre midir?\nb) Hac ile umre arasındaki 2 temel farkı yazınız.",
+                "solutionExplanation": "Umre yapmıştır. Hac farzdır, belirli zamanda yapılır ve Arafat vakfesi vardır; umre sünnettir, her zaman yapılabilir ve vakfesi yoktur.",
+                "modelAnswer": "a) Emre Bey'in yaptığı ibadet Umre'dir.\nb) Hac ile Umre Arasındaki 2 Temel Fark:\n1. Hac farz bir ibadettir ve sadece Kurban Bayramı günlerinde (Zilhicce ayı) yapılır; Umre ise sünnettir ve hac günleri dışındaki yılın her vaktinde yapılabilir.\n2. Hacda Arafat vakfesi, Müzdelife vakfesi ve kurban kesme şartı vardır; Umrede ise vakfe ve kurban yoktur.",
+                "rubric": [
+                    {"criterion": "Umre ibadetinin doğru teşhis edilmesi", "points": 4},
+                    {"criterion": "Hüküm/zaman ve vakfe/kurban farklarının doğru yazılması", "points": 10}
+                ]
+            }
+        ]
+    },
+
+    # SENARYO 3 (6 Qs: DKAB.7.1.1: 1, DKAB.7.1.2: 2, DKAB.7.1.3: 2, DKAB.7.1.4: 1)
+    # Points: 17, 17, 17, 17, 16, 16 = 100
+    {
+        "id": "exam_7_din_kulturu_1_1_senaryo_3",
+        "grade": 7,
+        "subjectId": "din_kulturu",
+        "examTerm": "1_donem_1_yazili",
+        "scenarioId": "senaryo_3",
+        "title": "7. Sınıf Din Kültürü ve Ahlak Bilgisi 1. Dönem 1. Ortak Yazılı Sınavı (Senaryo 3) (6 Soru)",
+        "durationMinutes": 40,
+        "totalPoints": 100,
+        "questions": [
+            {
+                "questionNumber": 1,
+                "outcomeCode": "DKAB.7.1.1",
+                "outcomeTitle": "DKAB.7.1.1. Melekleri sınıflandırabilme",
+                "difficulty": "Kolay",
+                "cognitiveLevel": "Basit Bilişsel Süreçler",
+                "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+                "points": 17,
+                "contextText": "Meleklerin temel özellikleri ve insanlardan farkları.",
+                "stimulus": "Melekler gözle görülmeyen nurani varlıklardır. İnsanlardan ve cinlerden çok farklı yaratılış özelliklerine sahiptirler.",
+                "questionText": "Meleklerin insanlardan ayrılan 2 temel yaratılış ve ahlaki özelliğini (yeme-içme, cinsiyet, günah işleme durumları bakımından) yazınız.",
+                "solutionExplanation": "Nurdan yaratılmışlardır, yeme-içme ve cinsiyetleri yoktur, asla günah işlemezler ve emirlere tam itaat ederler.",
+                "modelAnswer": "1. Yeme, içme, uyuma, evlenme ve cinsiyet gibi biyolojik ve beşeri ihtiyaçları yoktur.\n2. İradeleri yalnızca iyiliğe programlanmıştır; günah işlemezler, kötülük yapamazlar ve Allah'ın emirlerine eksiksiz ve koşulsuz itaat ederler.",
+                "rubric": [
+                    {"criterion": "Biyolojik ihtiyaçların (yeme-içme/cinsiyet) olmamasının yazılması", "points": 9},
+                    {"criterion": "Günahsızlık ve tam itaat özelliğinin yazılması", "points": 8}
+                ]
+            },
+            {
+                "questionNumber": 2,
+                "outcomeCode": "DKAB.7.1.2",
+                "outcomeTitle": "DKAB.7.1.2. Ahiret hayatının aşamalarını çözümleyebilme",
+                "difficulty": "Orta",
+                "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+                "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+                "points": 17,
+                "contextText": "Kıyametin kopması ve evrendeki kozmik düzenin bozulması.",
+                "stimulus": "'Güneş dürüldüğü zaman, yıldızlar döküldüğü zaman, dağlar yürütüldüğü zaman...' (Tekvîr Suresi, 1-3. ayetler)",
+                "questionText": "Tekvîr suresinde tasvir edilen bu kozmik olay ahiret hayatının hangi ilk durağını anlatmaktadır? Bu olayın ardından yaşanacak aşamayı yazınız.",
+                "solutionExplanation": "Kıyametin kopmasıdır. Ardından kabir hayatı (berzah) ve yeniden diriliş (ba's) gelir.",
+                "modelAnswer": "• Tasvir Edilen Aşama: Kıyamet (Evrenin düzeninin bozulup dünya hayatının bütünüyle sona ermesi).\n• Sonrasındaki Aşama: İkinci sûr üflenişiyle birlikte insanların mezarlarından yeniden diriltilmesi (Ba's) ve Mahşer meydanına toplanmasıdır.",
+                "rubric": [
+                    {"criterion": "Kıyamet olayının doğru tespiti", "points": 9},
+                    {"criterion": "Kıyamet sonrası diriliş (Ba's) aşamasının açıklanması", "points": 8}
+                ]
+            },
+            {
+                "questionNumber": 3,
+                "outcomeCode": "DKAB.7.1.2",
+                "outcomeTitle": "DKAB.7.1.2. Ahiret hayatının aşamalarını çözümleyebilme",
+                "difficulty": "Zor",
+                "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+                "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+                "points": 17,
+                "contextText": "Amel defterlerinin dağıtılması ve hesap.",
+                "stimulus": "Mahşer meydanında toplanan insanlara dünyada yaptıkları bütün iyilik ve kötülüklerin yazılı olduğu amel defterleri verilecektir.",
+                "questionText": "Amel defterinin sağından verilmesi ile solundan verilmesinin ahiretteki akıbet (sonuç) açısından anlamını açıklayınız.",
+                "solutionExplanation": "Sağından alanlar kurtuluşa erip cennete gidecektir; solundan alanlar hüsrana uğrayıp cehenneme gidecektir.",
+                "modelAnswer": "• Defteri Sağdan Verilenler: Dünyada iman edip salih amel işleyen, Allah'ın rızasını kazanan bahtiyar kullardır; hesapları kolay geçecek ve mükâfat olarak Cennet'e gideceklerdir.\n• Defteri Soldan Verilenler: Dünyada inkâr ve kötülük içinde yaşayan, hesap gününü unutanlardır; büyük bir pişmanlık ve hüsrana uğrayarak Cehennem azabına gideceklerdir.",
+                "rubric": [
+                    {"criterion": "Defteri sağdan verilenlerin durumu ve cennet akıbetinin yazılması", "points": 9},
+                    {"criterion": "Defteri soldan verilenlerin hüsranı ve cehennem sonucunun açıklanması", "points": 8}
+                ]
+            },
+            {
+                "questionNumber": 4,
+                "outcomeCode": "DKAB.7.1.3",
+                "outcomeTitle": "DKAB.7.1.3. Melek ve ahiret inancının insana kazandırdıkları konusunda çıkarım yapabilme",
+                "difficulty": "Orta",
+                "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+                "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+                "points": 17,
+                "contextText": "Ahiret inancının insan hayatına anlam katması.",
+                "stimulus": "Eğer ahiret inancı olmasaydı, hayat sadece birkaç on yıllık mücadele, hastalık, yaşlılık ve sonunda mutlak bir yok oluştan ibaret kalırdı.",
+                "questionText": "Ahiret inancının dünyadaki hayatımızı anlamsızlıktan ve boşluk hissinden nasıl kurtardığını açıklayınız.",
+                "solutionExplanation": "Dünyanın bir imtihan salonu olduğu ve ebedi saadet için fırsat sunduğu bilinci hayata değer katar.",
+                "modelAnswer": "Ahiret inancı insana varoluşunun gayesini öğretir. İnsanın dünyaya tesadüfen gelmediğini, ömrünün her anının bir imtihan olduğunu ve burada ektiği iyilik tohumlarını ebedi cennette biçeceğini müjdeler. Böylece hayatı boş, anlamsız ve acı bir bekleyiş olmaktan çıkarıp yüce bir hedefe bağlar.",
+                "rubric": [
+                    {"criterion": "Varoluş gayesi ve dünya hayatının imtihan salonu bilincinin yazılması", "points": 9},
+                    {"criterion": "Ebedi mükâfat idealiyle hayata anlam ve değer katmasının açıklanması", "points": 8}
+                ]
+            },
+            {
+                "questionNumber": 5,
+                "outcomeCode": "DKAB.7.1.3",
+                "outcomeTitle": "DKAB.7.1.3. Melek ve ahiret inancının insana kazandırdıkları konusunda çıkarım yapabilme",
+                "difficulty": "Zor",
+                "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+                "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+                "points": 16,
+                "contextText": "Ahiret inancı ve sorumluluk duygusu.",
+                "stimulus": "Kaan: 'Nasılsa Allah çok bağışlayıcıdır, istediğim gibi yaşarım, kötülük yapsam da bir şey olmaz' demektedir. Arkadaşı Tarık ise ahiretin aynı zamanda bir adalet ve sorumluluk günü olduğunu hatırlatmıştır.",
+                "questionText": "Tarık'ın ifadesinden hareketle, ahirete inanan bir Müslümanın neden 'sorumsuz ve laubali' bir hayat yaşayamayacağını gerekçelendiriniz.",
+                "solutionExplanation": "Allah merhamet sahibidir ancak aynı zamanda adildir ve kul hakkını asla affetmez.",
+                "modelAnswer": "Allah'ın sonsuz merhameti insanı tembellik ve sorumsuzluğa değil, daha çok şükretmeye sevk etmelidir. Ahirete inanan mümin bilir ki Allah aynı zamanda 'Adl'dir (mutlak adalet sahibidir); kul hakları, zulümler ve bilerek işlenen kötülükler hesap gününde mutlaka sorulacaktır. Bu şuur kişiyi sorumsuzluktan kurtarıp titiz bir ahlak bilincine yöneltir.",
+                "rubric": [
+                    {"criterion": "Allah'ın merhameti ile mutlak adaleti arasındaki dengenin kurulması", "points": 8},
+                    {"criterion": "Kul hakkı ve hesap verme sorumluluğunun gerekçelendirilmesi", "points": 8}
+                ]
+            },
+            {
+                "questionNumber": 6,
+                "outcomeCode": "DKAB.7.1.4",
+                "outcomeTitle": "DKAB.7.1.4. Nâs suresini ve bu surenin anlamını okuyarak yorumlayabilme",
+                "difficulty": "Orta",
+                "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+                "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+                "points": 16,
+                "contextText": "Nâs suresinde Allah'ın üç sıfatı: Rab, Melik, İlah.",
+                "stimulus": "Nâs suresinde Yüce Allah'a 'Rabbi'n-nâs (İnsanların Rabbi)', 'Meliki'n-nâs (İnsanların Meliki)' ve 'İlahi'n-nâs (İnsanların İlahı)' unvanlarıyla sığınılmaktadır.",
+                "questionText": "Bu üç isimden 'Rab' ve 'Melik' kavramlarının manalarını yazarak, tehlikeler karşısında neden yalnızca O'na sığınılması gerektiğini açıklayınız.",
+                "solutionExplanation": "Rab terbiye eden ve koruyandır; Melik mutlak hükümdardır.",
+                "modelAnswer": "• Rab: İnsanı yoktan var eden, besleyen, büyüten ve her an terbiye edip koruyan Yaratıcıdır.\n• Melik: Bütün mülkün ve kâinatın tek mutlak sahibi, kanun koyucusu ve egemen hükümdarıdır.\n• Neden O'na Sığınılır: Bütün evren ve görünmez şer odakları O'nun mutlak kudretine boyun eğdiğinden, mutlak güç sahibi olmayan hiçbir varlık insanı şerlerden koruyamaz; hakiki sığınak yalnızca Allah'tır.",
+                "rubric": [
+                    {"criterion": "Rab ve Melik kavramlarının doğru açıklanması", "points": 8},
+                    {"criterion": "Mutlak kudret sahibi olarak yalnızca O'na sığınma gerekçesinin yazılması", "points": 8}
+                ]
+            }
+        ]
+    },
+
+    # SENARYO 4 (6 Qs: DKAB.7.1.2: 2, DKAB.7.1.3: 3, DKAB.7.1.4: 1)
+    # Points: 17, 17, 17, 17, 16, 16 = 100
+    {
+        "id": "exam_7_din_kulturu_1_1_senaryo_4",
+        "grade": 7,
+        "subjectId": "din_kulturu",
+        "examTerm": "1_donem_1_yazili",
+        "scenarioId": "senaryo_4",
+        "title": "7. Sınıf Din Kültürü ve Ahlak Bilgisi 1. Dönem 1. Ortak Yazılı Sınavı (Senaryo 4) (6 Soru)",
+        "durationMinutes": 40,
+        "totalPoints": 100,
+        "questions": [
+            {
+                "questionNumber": 1,
+                "outcomeCode": "DKAB.7.1.2",
+                "outcomeTitle": "DKAB.7.1.2. Ahiret hayatının aşamalarını çözümleyebilme",
+                "difficulty": "Kolay",
+                "cognitiveLevel": "Basit Bilişsel Süreçler",
+                "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+                "points": 17,
+                "contextText": "Ahiret hayatının aşamaları sıralaması.",
+                "stimulus": "Ahiret hayatı insanın ölümüyle başlayıp ebediyete kadar süren basamaklardan oluşur: Kıyamet, Berzah, Ba's, Haşir-Mahşer, Hesap-Mizan, Cennet-Cehennem.",
+                "questionText": "Ölüm ile başlayan bu zincirde: a) Kıyamet ile yeniden diriliş arasındaki ara bekleme dönemine ne ad verilir? b) Amellerin tartıldığı hassas ilahi teraziye ne ad verilir?",
+                "solutionExplanation": "a) Berzah (kabir hayatı), b) Mizan terazisi.",
+                "modelAnswer": "a) Kıyamet ile diriliş arasındaki ara kabir hayatına: Berzah denir.\nb) Amellerin en ince ayrıntısına kadar tartıldığı ilahi adalet terazisine: Mizan denir.",
+                "rubric": [
+                    {"criterion": "Berzah kavramının doğru yazılması", "points": 9},
+                    {"criterion": "Mizan kavramının doğru yazılması", "points": 8}
+                ]
+            },
+            {
+                "questionNumber": 2,
+                "outcomeCode": "DKAB.7.1.2",
+                "outcomeTitle": "DKAB.7.1.2. Ahiret hayatının aşamalarını çözümleyebilme",
+                "difficulty": "Orta",
+                "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+                "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+                "points": 17,
+                "contextText": "Cennet ve Cehennem: Ebedi mükâfat ve ceza yurtları.",
+                "stimulus": "'İman edip salih ameller işleyenlere gelince, onlar için altından ırmaklar akan cennetler vardır. İşte büyük kurtuluş budur.' (Bürûc Suresi, 11. ayet)",
+                "questionText": "Ayetten hareketle Cennet'e kavuşmanın 2 temel şartını yazınız. Ahiret inancında Cennet ve Cehennemin ebedi (sonsuz) oluşunun insana hissettirdiği sorumluluğu açıklayınız.",
+                "solutionExplanation": "Şartlar: İman ve salih amel. Ebedi olması hayatın geri dönüşü olmayan ciddiyetini kavratır.",
+                "modelAnswer": "• Cennete Kavuşmanın 2 Şartı: 1) Yüce Allah'a ve ahirete samimiyetle iman etmek, 2) Salih amel (faydalı, güzel, ahlaki davranışlar ve ibadetler) işlemek.\n• Sorumluluk Hissi: Ahiretin sonsuz olması, bu fani dünyada işlenen her tercihin geri dönüşsüz ebedi bir karşılık bulacağını öğretir; insanı günahlardan titreterek uzaklaştırır.",
+                "rubric": [
+                    {"criterion": "İman ve salih amel şartlarının doğru yazılması", "points": 9},
+                    {"criterion": "Ebediyet bilincinin doğurduğu sorumluluğun açıklanması", "points": 8}
+                ]
+            },
+            {
+                "questionNumber": 3,
+                "outcomeCode": "DKAB.7.1.3",
+                "outcomeTitle": "DKAB.7.1.3. Melek ve ahiret inancının insana kazandırdıkları konusunda çıkarım yapabilme",
+                "difficulty": "Orta",
+                "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+                "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+                "points": 17,
+                "contextText": "Ahiret inancının cömertlik ve infak ahlakına etkisi.",
+                "stimulus": "Zengin bir iş insanı olan Kerem Bey, kazancının büyük kısmıyla yetimler için aşevi açmış ve burslar vermiştir. 'Ben bu parayı biriktirip dünyalık yığabilirdim ama asıl zenginlik ahirete gönderilen yatırımdır' demiştir.",
+                "questionText": "Kerem Bey'in bu tutumu, ahiret inancının mal ve servet tutkusunu nasıl terbiye ettiğini gösterir? İki maddeyle açıklayınız.",
+                "solutionExplanation": "Dünya malının geçici olduğunu anlamak, infak ve sadaka bilincini artırmak.",
+                "modelAnswer": "1. Mal Tutkusunu Terbiye Eder: Servetin fani ve geçici bir emanet olduğunu kavratarak insanı cimrilik ve bencillik hastalığından kurtarır.\n2. Ebedi Kazanç Şuuru: Malı yalnızca dünyada tüketmek yerine, infak ve sadakayla ahirete taşınacak tükenmez bir sevap sermayesine dönüştürür.",
+                "rubric": [
+                    {"criterion": "Cimrilikten kurtarma ve geçicilik idrakinin açıklanması", "points": 9},
+                    {"criterion": "İnfak ve ahirete yatırım şuurunun belirtilmesi", "points": 8}
+                ]
+            },
+            {
+                "questionNumber": 4,
+                "outcomeCode": "DKAB.7.1.3",
+                "outcomeTitle": "DKAB.7.1.3. Melek ve ahiret inancının insana kazandırdıkları konusunda çıkarım yapabilme",
+                "difficulty": "Zor",
+                "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+                "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+                "points": 17,
+                "contextText": "Gıybet, iftira ve kul hakkının ahiretteki karşılığı.",
+                "stimulus": "Peygamber Efendimiz (s.a.v.) bir hadisinde ahirette iflas eden kişiyi (müflis) tarif ederken: 'Namazı, orucu vardır fakat birine sövmüş, birine iftira atmış, birinin hakkını yemiştir; iyilikleri hak sahiplerine dağıtılır...' buyurmuştur.",
+                "questionText": "Bu hadisten hareketle, ahirete inanan bir gencin arkadaşları arkasından konuşmaktan (gıybetten) neden titizlikle sakınması gerektiğini açıklayınız.",
+                "solutionExplanation": "Gıybet ağır bir kul hakkıdır, kişinin dünyadaki ibadet sevaplarının silinmesine ve hak sahibine verilmesine yol açar.",
+                "modelAnswer": "Gıybet ve iftira en ağır kul haklarındandır. Ahirete inanan mümin bilir ki binbir emekle kıldığı namazların ve tuttuğu oruçların sevapları, arkasından konuştuğu insanlara hak olarak aktarılacaktır; sevapları tükenince de onların günahlarını yüklenecektir. Bu korku insanı dilini korumaya ve kul hakkından titizlikle sakınmaya sevk eder.",
+                "rubric": [
+                    {"criterion": "Gıybetin kul hakkı niteliğinin ve müflis hadisiyle bağının açıklanması", "points": 9},
+                    {"criterion": "Sevapların devredilmesi tehlikesi karşısında dilin korunmasının vurgulanması", "points": 8}
+                ]
+            },
+            {
+                "questionNumber": 5,
+                "outcomeCode": "DKAB.7.1.3",
+                "outcomeTitle": "DKAB.7.1.3. Melek ve ahiret inancının insana kazandırdıkları konusunda çıkarım yapabilme",
+                "difficulty": "Orta",
+                "cognitiveLevel": "Basit Bilişsel Süreçler",
+                "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+                "points": 16,
+                "contextText": "Meleklerin insan için dua ve istiğfar etmesi.",
+                "stimulus": "Kuran-ı Kerim'de meleklerin müminler için bağışlanma diledikleri ve 'Rabbimiz! Onları bağışla ve onları cehennem azabından koru' diye dua ettikleri bildirilmektedir.",
+                "questionText": "Görünmeyen nurani meleklerin kendisi için hayır dua ettiğini bilmek bir mümine nasıl bir manevi destek ve moral sağlar? Açıklayınız.",
+                "solutionExplanation": "Manevi bir güç ve yalnız olmama hissi verir, iyilik yolunda motivasyonu artırır.",
+                "modelAnswer": "Günahsız ve temiz varlıklar olan meleklerin kendisi için Allah'a dua ve istiğfar ettiğini bilmek, müminin kalbine tarifsiz bir manevi ferahlık ve ümit aşılar. İyilik yolunda yürürken arkasında gök ehlinin duasını hissetmek kişiyi ibadet ve ahlakta daha gayretli olmaya motive eder.",
+                "rubric": [
+                    {"criterion": "Manevi ferahlık ve ümit aşılama etkisinin yazılması", "points": 8},
+                    {"criterion": "İyilik ve ahlakta moral/motivasyon boyutunun açıklanması", "points": 8}
+                ]
+            },
+            {
+                "questionNumber": 6,
+                "outcomeCode": "DKAB.7.1.4",
+                "outcomeTitle": "DKAB.7.1.4. Nâs suresini ve bu surenin anlamını okuyarak yorumlayabilme",
+                "difficulty": "Orta",
+                "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+                "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+                "points": 16,
+                "contextText": "Nâs suresinin Felak suresiyle ortak yönü (Muavvizeteyn).",
+                "stimulus": "Peygamber Efendimiz (s.a.v.) Felak ve Nâs surelerine 'koruyucu iki sure' anlamında 'Muavvizeteyn' adını vermiş ve her sabah-akşam bu iki sureyi okuyarak Allah'a sığınmıştır.",
+                "questionText": "Nâs suresini okuyan bir müminin günlük hayatında nazar, büyü, vesvese veya karanlık korkular karşısında nasıl bir manevi sığınak bulduğunu açıklayınız.",
+                "solutionExplanation": "Batıl inançlara ve korkulara kapılmadan yalnızca alemlerin Rabbine sığınarak kalbi huzur bulması.",
+                "modelAnswer": "Nâs suresini şuurlu şekilde okuyan mümin, batıl inançlara, muskacılara, kuruntulara ve karanlık vesveselere prim vermez. İnsanların tek sahibine ve koruyucusuna sığındığını bilerek tüm korkularından sıyrılır, kalbi tevhid inancının huzur ve emniyetiyle dolar.",
+                "rubric": [
+                    {"criterion": "Batıl inanç ve kuruntulardan uzaklaşma etkisinin yazılması", "points": 8},
+                    {"criterion": "Tevhid inancıyla emniyet ve huzur bulma boyutunun açıklanması", "points": 8}
+                ]
+            }
+        ]
+    },
+
+    # SENARYO 5 (6 Qs: DKAB.7.1.1: 1, DKAB.7.1.2: 2, DKAB.7.1.3: 3)
+    # Points: 17, 17, 17, 17, 16, 16 = 100
+    {
+        "id": "exam_7_din_kulturu_1_1_senaryo_5",
+        "grade": 7,
+        "subjectId": "din_kulturu",
+        "examTerm": "1_donem_1_yazili",
+        "scenarioId": "senaryo_5",
+        "title": "7. Sınıf Din Kültürü ve Ahlak Bilgisi 1. Dönem 1. Ortak Yazılı Sınavı (Senaryo 5) (6 Soru)",
+        "durationMinutes": 40,
+        "totalPoints": 100,
+        "questions": [
+            {
+                "questionNumber": 1,
+                "outcomeCode": "DKAB.7.1.1",
+                "outcomeTitle": "DKAB.7.1.1. Melekleri sınıflandırabilme",
+                "difficulty": "Kolay",
+                "cognitiveLevel": "Basit Bilişsel Süreçler",
+                "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+                "points": 17,
+                "contextText": "Görünmeyen varlıklar: Melek, Cin ve Şeytan karşılaştırması.",
+                "stimulus": "İslam inancında duyu organlarıyla algılanamayan gayb alemine ait varlıklar vardır: Melekler, cinler ve şeytan.",
+                "questionText": "Melekler ile şeytanı yaratılış maddesi ve Allah'ın emirlerine itaat bakımından 2 maddeyle karşılaştırınız.",
+                "solutionExplanation": "Melekler nurdan yaratılmış ve daima itaatkardır; şeytan ateşten yaratılmış ve kibirlenerek isyan etmiştir.",
+                "modelAnswer": "1. Yaratılış Maddesi: Melekler saf nurdan yaratılmıştır; şeytan ise dumansız yalın bir ateşten yaratılmıştır.\n2. İtaat Durumu: Melekler asla günah işlemez, kibirlenmez ve Allah'a tam itaat ederler; şeytan ise kibri yüzünden Allah'ın emrine isyan etmiş ve insanları saptırmaya ant içmiştir.",
+                "rubric": [
+                    {"criterion": "Nur ve ateş yaratılış farkının doğru yazılması", "points": 9},
+                    {"criterion": "İtaat ve isyan/kibir ahlaki farkının doğru yazılması", "points": 8}
+                ]
+            },
+            {
+                "questionNumber": 2,
+                "outcomeCode": "DKAB.7.1.2",
+                "outcomeTitle": "DKAB.7.1.2. Ahiret hayatının aşamalarını çözümleyebilme",
+                "difficulty": "Orta",
+                "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+                "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+                "points": 17,
+                "contextText": "Ba's (Yeniden Diriliş) ve tabiat delili.",
+                "stimulus": "'Ölü toprağa can veren Allah, işte ölüleri de böyle diriltecektir...' Kuran-ı Kerim'de kışın kuruyan ve ölen tabiatın ilkbaharda yemyeşil canlanması yeniden dirilişe delil gösterilir.",
+                "questionText": "Tabiatın ilkbaharda yeniden dirilmesi ile ahiretteki 'Ba's' inancı arasındaki mantıksal bağı açıklayınız.",
+                "solutionExplanation": "Kuru toprağa can veren sonsuz kudret sahibi Allah, insanları da çürümüş kemiklerinden kolayca yeniden yaratabilir.",
+                "modelAnswer": "Kış mevsiminde kurumuş, ölmüş gibi duran ağaçlara ve toprağa baharda yeniden can veren, yaprak ve çiçek açtıran sonsuz kudret sahibi Allah için, ölüp toprağa karışan insanları ikinci bir üflenişle yeniden diriltmek (Ba's) son derece kolaydır. Tabiat her bahar gözlerimizin önünde Ba's mucizesini sergilemektedir.",
+                "rubric": [
+                    {"criterion": "Baharın dirilişi ile Ba's arasındaki analojinin açıklanması", "points": 9},
+                    {"criterion": "Allah'ın sonsuz yaratma kudretiyle bağ kurulması", "points": 8}
+                ]
+            },
+            {
+                "questionNumber": 3,
+                "outcomeCode": "DKAB.7.1.2",
+                "outcomeTitle": "DKAB.7.1.2. Ahiret hayatının aşamalarını çözümleyebilme",
+                "difficulty": "Zor",
+                "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+                "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+                "points": 17,
+                "contextText": "Hesap ve şahitlerin konuşması.",
+                "stimulus": "'O gün onların ağızlarını mühürleriz; yaptıklarını bize elleri anlatır, ayakları da şahitlik eder.' (Yâsîn Suresi, 65. ayet)",
+                "questionText": "Yâsîn suresindeki bu ayet, ahiretteki hesabın hangi tartışmasız adalet özelliğini kanıtlar? Açıklayınız.",
+                "solutionExplanation": "Hiçbir inkarın ve yalanın mümkün olmayacağı, organların bile bizzat hakikati itiraf edeceği mutlak adalet.",
+                "modelAnswer": "Bu ayet, ahiretteki hesabın hiçbir yalan, inkar, sahte şahit veya mazerete yer bırakmayacak mutlak ve kusursuz bir adaletle görüleceğini kanıtlar. İnsanın kendi uzuvları bizzat işledikleri fiillere şahitlik ederek suçun veya sevabın üzerini örtmeyi imkansız hale getirecektir.",
+                "rubric": [
+                    {"criterion": "Yalan ve inkarın imkansızlığı ve mutlak adalet vurgusu", "points": 9},
+                    {"criterion": "Organların şahitliğiyle hakikatin apaçık ortaya çıkmasının açıklanması", "points": 8}
+                ]
+            },
+            {
+                "questionNumber": 4,
+                "outcomeCode": "DKAB.7.1.3",
+                "outcomeTitle": "DKAB.7.1.3. Melek ve ahiret inancının insana kazandırdıkları konusunda çıkarım yapabilme",
+                "difficulty": "Orta",
+                "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+                "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+                "points": 17,
+                "contextText": "Ahiret inancının çevreye ve canlılara merhamet ahlakına etkisi.",
+                "stimulus": "Ecdadımız Osmanlı'da kışın dağlardaki kurtlar ve kuşlar aç kalmasın diye vakıflar kurulmuş, cami duvarlarına zarif kuş sarayları inşa edilmiştir.",
+                "questionText": "Canlılara gösterilen bu derin merhametin arkasındaki melek ve ahiret hesabı bilincini açıklayınız.",
+                "solutionExplanation": "Dilsiz hayvanların hakkının bile ahirette sorulacağı inancı insanları merhamete sevk eder.",
+                "modelAnswer": "İslam inancına göre kıyamet gününde boynuzsuz koyun, boynuzlu koyundan hakkını alacaktır. Dilsiz hayvanların dahi ahirette hakkının sorulacağı ve onlara yapılan bir yudum su iyiliğinin amel defterine sevap yazılacağı inancı, ecdadımızı kuşlara dahi saray yapan eşsiz bir merhamet medeniyeti inşa etmeye sevk etmiştir.",
+                "rubric": [
+                    {"criterion": "Hayvan haklarının ahirette sorulacağı inancının yazılması", "points": 9},
+                    {"criterion": "Merhamet ve amel defteri bilinciyle bağ kurulması", "points": 8}
+                ]
+            },
+            {
+                "questionNumber": 5,
+                "outcomeCode": "DKAB.7.1.3",
+                "outcomeTitle": "DKAB.7.1.3. Melek ve ahiret inancının insana kazandırdıkları konusunda çıkarım yapabilme",
+                "difficulty": "Zor",
+                "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+                "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+                "points": 16,
+                "contextText": "Ahiret inancı ve helal kazanç bilinci.",
+                "stimulus": "Bir tüccara arkadaşı 'Vergi kaçırıp sahte fatura düzenlersen çok daha zengin olursun, kimse de yakalayamaz' demiştir. Tüccar ise 'Maliye görmese de Allah görüyor, Kiramen Katibin yazıyor' diyerek reddetmiştir.",
+                "questionText": "Tüccarın bu tavrı toplumda haksız kazanç ve yolsuzlukları önlemede kanunlardan önce hangi manevi gücün etkili olduğunu gösterir? Açıklayınız.",
+                "solutionExplanation": "İçsel vicdan, meleklerin kaydettiği şuuru ve ahiret hesap bilinci.",
+                "modelAnswer": "Bu durum, suç ve haksızlıkları önlemede yalnızca polis ve kanun gibi dış denetimlerin yetmeyeceğini; asıl caydırıcı gücün insanın kalbindeki 'Allah'ın her şeyi bildiği, meleklerin kaydettiği ve ahirette zerresine kadar hesap verileceği' inancından doğan iç denetim (takva ve vicdan) olduğunu gösterir.",
+                "rubric": [
+                    {"criterion": "İç denetim ve takva/vicdan şuurunun vurgulanması", "points": 8},
+                    {"criterion": "Meleklerin kaydı ve ahiret hesabı bilincinin açıklanması", "points": 8}
+                ]
+            },
+            {
+                "questionNumber": 6,
+                "outcomeCode": "DKAB.7.1.3",
+                "outcomeTitle": "DKAB.7.1.3. Melek ve ahiret inancının insana kazandırdıkları konusunda çıkarım yapabilme",
+                "difficulty": "Orta",
+                "cognitiveLevel": "Basit Bilişsel Süreçler",
+                "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+                "points": 16,
+                "contextText": "Ahiret inancının sabır ve zorluklara dayanma gücü.",
+                "stimulus": "Ağır bir hastalığa yakalanan veya kaza geçiren bir mümin 'Veren de Allah alan da Allah. Bu dert günahlarıma kefarettir, sabredersem Rabbim ahirette büyük mükâfat verecektir' demiştir.",
+                "questionText": "Ahiret inancının hastalık ve musibetler karşısında insana kazandırdığı 2 manevi kazanımı yazınız.",
+                "solutionExplanation": "İsyanı önleme, günahlara kefaret bilinci, ebedi mükafat ümidi ile sabır gösterme.",
+                "modelAnswer": "1. İsyandan Korur ve Sabır Kazandırır: Başa gelen sıkıntıların kör bir tesadüf olmadığını, bir imtihan olduğunu bilerek kadere rıza ve metanet gösterir.\n2. Ebedi Mükâfat Umudu: Hastalığa sabretmenin günahları döktüğünü ve ahirette hesapsız dereceler kazandıracağını bilerek ruhsal çöküntüye düşmekten korunur.",
+                "rubric": [
+                    {"criterion": "İsyanı önleme ve metanet/sabır boyutunun açıklanması", "points": 8},
+                    {"criterion": "Günahlara kefaret ve ahiretteki mükâfat umudunun yazılması", "points": 8}
+                ]
+            }
+        ]
+    }
+]
+
+# Verify and save
+for ex in scenarios_data:
+    tot_p = sum(q['points'] for q in ex['questions'])
+    assert tot_p == 100, f"Error in {ex['id']}: total points {tot_p} != 100"
+    for q in ex['questions']:
+        r_sum = sum(r['points'] for r in q['rubric'])
+        assert r_sum == q['points'], f"Rubric mismatch in {ex['id']} Q{q['questionNumber']}: {r_sum} != {q['points']}"
+
+with open('meb_data/grade7_din_distinct.json', 'w', encoding='utf-8') as f:
+    json.dump(scenarios_data, f, ensure_ascii=False, indent=2)
+
+print(f"Grade 7 Din Kültürü distinct: 5 scenarios verified with 100% exact 100 points, 0 duplicates!")

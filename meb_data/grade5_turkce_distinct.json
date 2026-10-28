@@ -1,0 +1,992 @@
+[
+  {
+    "id": "exam_5_turkce_1_1_senaryo_1",
+    "grade": 5,
+    "subjectId": "turkce",
+    "examTerm": "1_donem_1_yazili",
+    "scenarioId": "senaryo_1",
+    "title": "5. Sınıf Türkçe 1. Dönem 1. Ortak Yazılı Sınavı (Senaryo 1) (6 Soru)",
+    "description": "MEB ÖDSGM 5. Sınıf Türkçe 1. Senaryo resmi konu soru dağılımına uygun 100 puanlık sınav kağıdı.",
+    "totalPoints": 100,
+    "durationMinutes": 40,
+    "questions": [
+      {
+        "questionNumber": 1,
+        "outcomeCode": "T.O.5.6",
+        "outcomeTitle": "T.O.5.6. Metnin yüzey anlamını belirleyebilme",
+        "difficulty": "Kolay",
+        "cognitiveLevel": "Basit Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 17,
+        "contextText": "Metnin konusunu belirleme.",
+        "stimulus": "“Ali o gün dedesinin tavan arasındaki eski ahşap sandığını açtı. Sandığın içinde dedesinin çocukken kendi elleriyle gürgen ağacından yonttuğu rengârenk bir fırıldak (topaç) ve tahta bir araba duruyordu. Dedesi yanına gelip başını okşadı: 'Evlat, biz küçükken oyuncaklarımızı çarşıdan hazır almazdık; doğadan bulduğumuz bir dalla, bir kozalakla günlerce emek verip kendi oyuncağımızı üretirdik. Çünkü insanın kendi emeğiyle yaptığı şey paha biçilemezdir.' dedi.”",
+        "questionText": "Yukarıda dedenin torununa ahşap oyuncakları gösterdiği metnin konusunu tek bir cümleyle yazınız.",
+        "solutionExplanation": "Metin geleneksel el yapımı oyuncakları ve emek verilerek üretilen şeylerin manevi değerini anlatır.",
+        "modelAnswer": "Metnin konusu: Dedenin torununa çocukluk yıllarında emek vererek yaptığı ahşap oyuncakları göstermesi ve kendi emeğiyle üretmenin değerini anlatmasıdır.",
+        "rubric": [
+          {
+            "criterion": "Metnin konusunun eksiksiz ve tek cümleyle yazılması",
+            "points": 17
+          }
+        ]
+      },
+      {
+        "questionNumber": 2,
+        "outcomeCode": "T.O.5.6",
+        "outcomeTitle": "T.O.5.6. Metnin yüzey anlamını belirleyebilme",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Basit Bilişsel Süreçler",
+        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "points": 17,
+        "contextText": "Metne dayalı açık uçlu kavrama sorusu.",
+        "stimulus": "Yukarıda verilen 1. sorudaki ahşap sandık metnini dikkate alınız.",
+        "questionText": "Dedesi torununa 'İnsanın kendi emeğiyle yaptığı şey paha biçilemezdir' sözüyle neyi anlatmak istemiştir? Metindeki düşüncelerden hareketle açıklayınız.",
+        "solutionExplanation": "Kişinin alın teriyle ve sabırla ürettiği eşyaların maddiyatla ölçülemeyecek bir manevi değere sahip olmasıdır.",
+        "modelAnswer": "Dedesi, parayla satın alınan hazır oyuncakların kolayca tüketilebileceğini; ancak insanın kendi alın teri, sabrı ve hayal gücüyle ürettiği bir oyuncağın çok daha kıymetli ve unutulmaz olduğunu anlatmak istemiştir.",
+        "rubric": [
+          {
+            "criterion": "Emek ve manevi değer ilişkisinin doğru açıklanması",
+            "points": 17
+          }
+        ]
+      },
+      {
+        "questionNumber": 3,
+        "outcomeCode": "T.O.5.7",
+        "outcomeTitle": "T.O.5.7. Görselle iletilen anlamı belirleyebilme",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "points": 17,
+        "contextText": "Geleneksel ahşap oyuncak ile hazır plastik oyuncak karşılaştırma tablosu.",
+        "stimulus": "Aşağıdaki tabloda geleneksel ahşap oyuncaklar ile günümüz plastik oyuncaklarının özellikleri verilmiştir:\n• Ahşap Oyuncak: Doğal ağaçtan yapılır, dayanıklıdır, çocuğun el becerisini ve üreticiliğini geliştirir, çevreye zarar vermez.\n• Plastik Seri Üretim Oyuncak: Fabrikada üretilir, çabuk kırılabilir, çocukta hazır tüketim alışkanlığı yaratır, doğada yüzyıllarca kaybolmaz.",
+        "questionText": "Tablodaki verileri çocuk gelişimi ve çevre sağlığı açısından yorumlayınız. Neden ahşap oyuncaklar daha sağlıklı ve yararlıdır? İki gerekçe yazınız.",
+        "solutionExplanation": "Doğal malzemedir, kimyasal içermez, üreticiliği destekler ve doğayı kirletmez.",
+        "modelAnswer": "1. Çocuk Gelişimi Açısından: Ahşap oyuncaklar çocuğu tüketen değil üreten konumuna getirir, el becerisini ve hayal gücünü geliştirir.\n2. Çevre ve Sağlık Açısından: Tamamen doğal ağaçtan yapıldığı için kimyasal madde içermez ve kırıldığında doğada kolayca çözünerek çevre kirliliği oluşturmaz.",
+        "rubric": [
+          {
+            "criterion": "Çocuk gelişimi gerekçesinin doğru açıklanması",
+            "points": 9
+          },
+          {
+            "criterion": "Çevre ve sağlık gerekçesinin doğru açıklanması",
+            "points": 8
+          }
+        ]
+      },
+      {
+        "questionNumber": 4,
+        "outcomeCode": "T.O.5.20",
+        "outcomeTitle": "T.O.5.20. Metinden hareketle söz varlığını geliştirmeye yönelik çözümleme yapabilme",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Basit Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 17,
+        "contextText": "Kelime tahlili ve cümle kurma.",
+        "stimulus": "Metinde geçen 'yadigâr' ve 'paha biçilemez' sözcük öbekleri.",
+        "questionText": "a) 'Yadigâr' kelimesinin anlamını yazıp bir cümlede kullanınız.\nb) 'Paha biçilemez' deyiminin ne anlama geldiğini açıklayınız.",
+        "solutionExplanation": "Yadigâr: Bir kimseden veya geçmişten hatıra kalan şey. Paha biçilemez: Değerine fiyat konulamayacak kadar kıymetli olan.",
+        "modelAnswer": "a) Yadigâr: Geçmişten veya sevilen bir kimseden hatıra olarak kalan değerli eşya demektir. Örnek Cümle: 'Dedemden kalan bu gümüş köstekli saat bizim en kıymetli yadigârımızdır.'\nb) Paha biçilemez: Maddi bir parayla ölçülemeyecek kadar yüksek manevi değere ve öneme sahip olan şeydir.",
+        "rubric": [
+          {
+            "criterion": "Yadigâr kelimesinin anlamı ve doğru örnek cümle",
+            "points": 9
+          },
+          {
+            "criterion": "Paha biçilemez deyiminin anlamının doğru açıklanması",
+            "points": 8
+          }
+        ]
+      },
+      {
+        "questionNumber": 5,
+        "outcomeCode": "T.Y.5.13",
+        "outcomeTitle": "T.Y.5.13. Yazısını zenginleştirecek biçimde söz varlığını kullanabilme",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 16,
+        "contextText": "Deyimler içeren yaratıcı paragraf tamamlama.",
+        "stimulus": "Kullanılacak Deyimler: 'gözü gibi bakmak' ve 'can kulağıyla dinlemek'.",
+        "questionText": "Ali'nin dedesinin anlattıklarını dinlerken hissettiklerini ve o topaca sahip çıkışını; içinde 'gözü gibi bakmak' ve 'can kulağıyla dinlemek' deyimlerinin geçtiği 2-3 cümlelik bir anlatımla yazınız.",
+        "solutionExplanation": "Öğrenci verilen iki deyimi yerli yerinde kullanarak akıcı bir anlatım kurar.",
+        "modelAnswer": "Ali, dedesinin çocukluk anılarını can kulağıyla dinledi ve geçmişin güzelliklerine hayran kaldı. Dedesinin armağan ettiği o ahşap topacı avucuna aldığında, ömrü boyunca bu kıymetli hatıraya gözü gibi bakacağına kendi kendine söz verdi.",
+        "rubric": [
+          {
+            "criterion": "İki deyimin yerinde ve anlamına uygun kullanılması",
+            "points": 8
+          },
+          {
+            "criterion": "Cümlelerin anlam bütünlüğü ve akıcılığı",
+            "points": 8
+          }
+        ]
+      },
+      {
+        "questionNumber": 6,
+        "outcomeCode": "T.Y.5.16",
+        "outcomeTitle": "T.Y.5.16. Yazım ve noktalama işaretleriyle ilgili kuralları uygulayabilme",
+        "difficulty": "Kolay",
+        "cognitiveLevel": "Basit Bilişsel Süreçler",
+        "archetype": "Hata Tespiti & Adım Analizi",
+        "points": 16,
+        "contextText": "Büyük harflerin yazımı ve nokta/virgül hataları.",
+        "stimulus": "Hatalı Cümle: 'ali ile dedesi kastamonu'nun inebolu ilçesinde ahşap oyuncaklar yapardı.'",
+        "questionText": "Yukarıdaki cümlede büyük harflerin kullanımıyla ilgili yapılan 3 hatayı bularak cümlenin doğru halini yazınız.",
+        "solutionExplanation": "Ali özel isim büyük, Kastamonu büyük, İnebolu büyük.",
+        "modelAnswer": "Doğru Cümle: 'Ali ile dedesi, Kastamonu'nun İnebolu ilçesinde ahşap oyuncaklar yapardı.'\n(Hatalar: Ali ismi büyük harfle başlamalı, Kastamonu özel isim olduğu için büyük yazılmalı, İnebolu ilçe adı olduğu için büyük harfle başlamalıdır).",
+        "rubric": [
+          {
+            "criterion": "Ali, Kastamonu ve İnebolu büyük harf hatalarının düzeltilmesi",
+            "points": 16
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "exam_5_turkce_1_1_senaryo_2",
+    "grade": 5,
+    "subjectId": "turkce",
+    "examTerm": "1_donem_1_yazili",
+    "scenarioId": "senaryo_2",
+    "title": "5. Sınıf Türkçe 1. Dönem 1. Ortak Yazılı Sınavı (Senaryo 2) (6 Soru)",
+    "description": "MEB ÖDSGM 5. Sınıf Türkçe 2. Senaryo resmi konu soru dağılımına uygun 100 puanlık sınav kağıdı.",
+    "totalPoints": 100,
+    "durationMinutes": 40,
+    "questions": [
+      {
+        "questionNumber": 1,
+        "outcomeCode": "T.O.5.5",
+        "outcomeTitle": "T.O.5.5. Metinde geçen anlamını bilmediği söz varlığı unsurlarının anlamını tahmin edebilme",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Basit Bilişsel Süreçler",
+        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "points": 17,
+        "contextText": "Küçük bir karıncanın azim ve çalışkanlığı.",
+        "stimulus": "“Güneşli bir yaz sabahı minik karınca Çıtı, yuvasına buğday tanesi taşımaya çalışıyordu. Buğday tanesi kendi cüssesinden ağırdı, yolda defalarca tepeciğin yamacından aşağı yuvarlandı. Fakat Çıtı asla yılmadı; her düşüşte taneyi yeniden sırtlayıp yola koyuldu. Diğer karıncalar da yardıma koşunca buğday yuvanın kapısına ulaştı.”",
+        "questionText": "Metindeki altı çizili 'cüsse' ve 'yılmamak' kelimelerinin anlamlarını metin bağlamından hareketle tahmin edip yazınız.",
+        "solutionExplanation": "Cüsse beden/vücut iriliği; yılmamak ise zorluklar karşısında pes etmemek, vazgeçmemektir.",
+        "modelAnswer": "• Cüsse: Bir canlının vücut büyüklüğü, gövdesi ve ağırlığı demektir.\n• Yılmamak: Karşılaşılan engeller, güçlükler ve başarısızlıklar karşısında vazgeçmemek, pes etmeyip azimle devam etmektir.",
+        "rubric": [
+          {
+            "criterion": "Cüsse kelimesinin doğru açıklanması",
+            "points": 9
+          },
+          {
+            "criterion": "Yılmamak fiilinin azim/pes etmeme anlamıyla açıklanması",
+            "points": 8
+          }
+        ]
+      },
+      {
+        "questionNumber": 2,
+        "outcomeCode": "T.O.5.6",
+        "outcomeTitle": "T.O.5.6. Metnin yüzey anlamını belirleyebilme",
+        "difficulty": "Kolay",
+        "cognitiveLevel": "Basit Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 17,
+        "contextText": "Metnin ana fikrini belirleme.",
+        "stimulus": "Yukarıda verilen 1. sorudaki karınca metnini dikkate alınız.",
+        "questionText": "Yazarın bu masal/öykü aracılığıyla çocuklara vermek istediği temel ders (ana fikir) nedir?",
+        "solutionExplanation": "Zorluklar karşısında pes etmeyenler ve dayanışma gösterenler başarıya ulaşır.",
+        "modelAnswer": "Metnin Ana Fikri: Karşılaştığımız engeller ne kadar büyük olursa olsun sabırla gayret gösterir ve pes etmezsek, arkadaşlarımızla iş birliği yaparak her zorluğu aşabiliriz.",
+        "rubric": [
+          {
+            "criterion": "Ana fikrin öğüt bildiren tutarlı bir yargı olarak yazılması",
+            "points": 17
+          }
+        ]
+      },
+      {
+        "questionNumber": 3,
+        "outcomeCode": "T.O.5.7",
+        "outcomeTitle": "T.O.5.7. Görselle iletilen anlamı belirleyebilme",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "points": 17,
+        "contextText": "Karınca kolonisi dayanışma çizimi.",
+        "stimulus": "Bir fen dergisindeki görselde; onlarca karıncanın birbirine kenetlenerek bir su birikintisi üzerinde canlı bir 'köprü' oluşturduğu ve diğer karıncaların bu köprüden güvenle karşıya geçtiği resmedilmiştir.",
+        "questionText": "Bu görselden hareketle karıncaların davranışının insan toplumlarındaki hangi değer ve erdemlerle benzerlik gösterdiğini 2 madde halinde açıklayınız.",
+        "solutionExplanation": "Fedakârlık, iş birliği, ortak amaç ve yardımlaşma.",
+        "modelAnswer": "1. Yardımlaşma ve İmece Kültürü: Tıpkı zor şartlarda birbirine destek olan insanlar gibi karıncalar da tek başlarına aşamayacakları engeli güçlerini birleştirerek aşmaktadırlar.\n2. Fedakârlık: Köprü olan karıncalar kendi rahatlarını feda ederek toplumun ve koloninin selameti için kendini riske atmaktadır.",
+        "rubric": [
+          {
+            "criterion": "İmece ve iş birliği benzerliğinin açıklanması",
+            "points": 9
+          },
+          {
+            "criterion": "Fedakârlık ve ortak amaç bilincinin açıklanması",
+            "points": 8
+          }
+        ]
+      },
+      {
+        "questionNumber": 4,
+        "outcomeCode": "T.O.5.7",
+        "outcomeTitle": "T.O.5.7. Görselle iletilen anlamı belirleyebilme",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Basit Bilişsel Süreçler",
+        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "points": 17,
+        "contextText": "Çalışkanlık ve tembellik karşılaştırma afişi.",
+        "stimulus": "Bir okul panosunda 'Emek Veren Kazanır' başlıklı afişte bir yanda kışa hazırlık yapan çalışkan karınca, diğer yanda yaz boyu saz çalan ağustos böceği resmedilmiştir.",
+        "questionText": "Afişteki zıtlıktan hareketle öğrencilere verilmek istenen mesajı ve bu mesajı destekleyen bir Türk atasözünü yazınız.",
+        "solutionExplanation": "Zamanında çalışıp emek veren rahat eder. Atasözü: Yazın başı pişenin kışın aşı pişer (veya Ne doğrarsan aşına o çıkar kaşığına).",
+        "modelAnswer": "• Verilen Mesaj: Zamanında çalışıp geleceği için hazırlık yapanlar zor günlerde sıkıntı çekmez; vaktini tembellikle boşa harcayanlar ise sonradan çok pişman olurlar.\n• Destekleyen Atasözü: 'Yazın başı pişenin kışın aşı pişer.' (veya 'Emek olmadan yemek olmaz.')",
+        "rubric": [
+          {
+            "criterion": "Afiş mesajının doğru çıkarılması",
+            "points": 9
+          },
+          {
+            "criterion": "Mesajı destekleyen geçerli bir atasözünün yazılması",
+            "points": 8
+          }
+        ]
+      },
+      {
+        "questionNumber": 5,
+        "outcomeCode": "T.O.5.15",
+        "outcomeTitle": "T.O.5.15. Metnin anahtar kelimelerini belirlemeye yönelik çözümleme yapabilme",
+        "difficulty": "Kolay",
+        "cognitiveLevel": "Basit Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 16,
+        "contextText": "Anahtar kelime tespiti.",
+        "stimulus": "Yukarıda verilen 1. sorudaki karınca Çıtı metnini dikkate alınız.",
+        "questionText": "Çalışkan karınca Pıtır'ın kış hazırlığını anlatan bu metnin içeriğini en iyi özetleyen 3 anahtar kelimeyi yazınız.",
+        "solutionExplanation": "Karınca, azim/gayret, yardımlaşma.",
+        "modelAnswer": "1. Karınca\n2. Azim (Çalışkanlık)\n3. Yardımlaşma (Dayanışma)",
+        "rubric": [
+          {
+            "criterion": "Metni temsil eden 3 anahtar kelimenin doğru yazılması",
+            "points": 16
+          }
+        ]
+      },
+      {
+        "questionNumber": 6,
+        "outcomeCode": "T.Y.5.16",
+        "outcomeTitle": "T.Y.5.16. Yazım ve noktalama işaretleriyle ilgili kuralları uygulayabilme",
+        "difficulty": "Kolay",
+        "cognitiveLevel": "Basit Bilişsel Süreçler",
+        "archetype": "Hata Tespiti & Adım Analizi",
+        "points": 16,
+        "contextText": "Noktalama işaretleri (soru işareti ve ünlem).",
+        "stimulus": "Cümleler:\n1. 'Sen de bizimle buğday taşımaya gelecek misin ( )'\n2. 'Yaşasın, kışlık erzakımızı tamamladık ( )'",
+        "questionText": "Yukarıdaki cümlelerin sonundaki yay ayraçlara ( ) sırasıyla hangi noktalama işaretleri getirilmelidir? Nedenini açıklayınız.",
+        "solutionExplanation": "1. cümle soru bildirdiği için soru işareti (?), 2. cümle sevinç/coşku bildirdiği için ünlem işareti (!).",
+        "modelAnswer": "1. cümlenin sonuna SORU İŞARETİ (?) getirilmelidir; çünkü cevap alma amacıyla bir soru sorulmuştur.\n2. cümlenin sonuna ÜNLEM İŞARETİ (!) getirilmelidir; çünkü 'Yaşasın' sözcüğüyle sevinç ve coşku duygusu belirtilmiştir.",
+        "rubric": [
+          {
+            "criterion": "1. cümleye soru işaretinin getirilmesi ve gerekçesi",
+            "points": 8
+          },
+          {
+            "criterion": "2. cümleye ünlem işaretinin getirilmesi ve gerekçesi",
+            "points": 8
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "exam_5_turkce_1_1_senaryo_3",
+    "grade": 5,
+    "subjectId": "turkce",
+    "examTerm": "1_donem_1_yazili",
+    "scenarioId": "senaryo_3",
+    "title": "5. Sınıf Türkçe 1. Dönem 1. Ortak Yazılı Sınavı (Senaryo 3) (7 Soru)",
+    "description": "MEB ÖDSGM 5. Sınıf Türkçe 3. Senaryo resmi konu soru dağılımına uygun 100 puanlık sınav kağıdı.",
+    "totalPoints": 100,
+    "durationMinutes": 40,
+    "questions": [
+      {
+        "questionNumber": 1,
+        "outcomeCode": "T.O.5.5",
+        "outcomeTitle": "T.O.5.5. Metinde geçen anlamını bilmediği söz varlığı unsurlarının anlamını tahmin edebilme",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Basit Bilişsel Süreçler",
+        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
+        "points": 15,
+        "contextText": "Sokak hayvanları için kedi evi yapan çocuklar.",
+        "stimulus": "“Kış kapıya dayanmış, ayaz rüzgârlar sokakları sarmıştı. 5-A sınıfı öğrencileri bir araya gelip 'Merhamet Isıtır' adını verdikleri bir kulüp kurdular. Boş koli kutularını su geçirmez naylonlarla kaplayıp içlerine eski kazakları sererek sokaktaki minik dostlarına korunaklı barınaklar hazırladılar. Mahalleli çocukların bu samimi gayretini takdirle karşıladı.”",
+        "questionText": "Metindeki altı çizili 'ayaz' ve 'korunaklı' kelimelerinin anlamlarını metnin bağlamına göre tahmin ederek yazınız.",
+        "solutionExplanation": "Ayaz: Duru ve çok soğuk kış havası. Korunaklı: Soğuktan, tehlikeden ve dış etkilerden koruyan, güvenli yer.",
+        "modelAnswer": "• Ayaz: Kış aylarında bulutsuz gecelerde veya sabahlarda hissedilen çok kuru, keskin ve dondurucu soğuk demektir.\n• Korunaklı: Yağmur, rüzgâr ve soğuk gibi dış etkilerden koruyan, sığınılabilecek güvenli ve korumalı yer demektir.",
+        "rubric": [
+          {
+            "criterion": "Ayaz kelimesinin doğru açıklanması",
+            "points": 8
+          },
+          {
+            "criterion": "Korunaklı kelimesinin doğru açıklanması",
+            "points": 7
+          }
+        ]
+      },
+      {
+        "questionNumber": 2,
+        "outcomeCode": "T.O.5.6",
+        "outcomeTitle": "T.O.5.6. Metnin yüzey anlamını belirleyebilme",
+        "difficulty": "Kolay",
+        "cognitiveLevel": "Basit Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 15,
+        "contextText": "Metnin konusunu belirleme.",
+        "stimulus": "Yukarıda verilen 1. sorudaki 'Merhamet Isıtır' metnini dikkate alınız.",
+        "questionText": "Can ve arkadaşlarının sokak hayvanları için kışlık kulübe yapmasını anlatan bu metnin konusunu tek bir cümleyle yazınız.",
+        "solutionExplanation": "Metin çocukların sokak hayvanlarını soğuktan korumak için el birliğiyle kedi evleri yapmasını anlatır.",
+        "modelAnswer": "Metnin konusu: Bir grup 5. sınıf öğrencisinin kış aylarında sokak hayvanlarını soğuktan korumak amacıyla kendi elleriyle barınaklar yapması ve çevreye örnek olmasıdır.",
+        "rubric": [
+          {
+            "criterion": "Metnin konusunun eksiksiz ve tek cümleyle yazılması",
+            "points": 15
+          }
+        ]
+      },
+      {
+        "questionNumber": 3,
+        "outcomeCode": "T.O.5.6",
+        "outcomeTitle": "T.O.5.6. Metnin yüzey anlamını belirleyebilme",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Basit Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 14,
+        "contextText": "Metne dayalı neden-sonuç çıkarımı.",
+        "stimulus": "Yukarıda verilen 1. sorudaki 'Merhamet Isıtır' metnini dikkate alınız.",
+        "questionText": "Çocukların koli kutularını su geçirmez naylonla kaplamalarının ve içlerine eski kazakları sermelerinin AMACI nedir? Açıklayınız.",
+        "solutionExplanation": "Kutuları yağmurdan/kardan korumak ve içerisini sıcak tutarak hayvanların üşümesini engellemek.",
+        "modelAnswer": "Naylonla kaplamalarının amacı yağmur ve kar suyunun kutuyu ıslatıp çürütmesini engellemektir. İçine eski kazak sermelerinin amacı ise barınağın zeminini yumuşak ve sıcak tutarak hayvanların donmaktan korunmasını sağlamaktır.",
+        "rubric": [
+          {
+            "criterion": "Naylon kaplama ve kazak serme amacının mantıksal açıklaması",
+            "points": 14
+          }
+        ]
+      },
+      {
+        "questionNumber": 4,
+        "outcomeCode": "T.O.5.7",
+        "outcomeTitle": "T.O.5.7. Görselle iletilen anlamı belirleyebilme",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "points": 14,
+        "contextText": "Sosyal sorumluluk afişi analizi.",
+        "stimulus": "Bir sokak panosundaki afişte; bir kap su ve bir kap mamanın yanında 'Bir Kap Su, Bir Kap Sevgi: Onlar Bize Emanet' sloganı ve yaralı bir sokak köpeğini besleyen çocuk görseli yer almaktadır.",
+        "questionText": "Bu afişteki 'Onlar Bize Emanet' ifadesiyle topluma hangi sorumluluk yüklenmektedir? Açıklayınız.",
+        "solutionExplanation": "Sokak hayvanlarının konuşamadığı, kendilerini ifade edemediği ve yaşam alanlarının insanlar tarafından daraltıldığı için insan merhametine muhtaç olduğu bilinci.",
+        "modelAnswer": "Bu ifadeyle, sokak hayvanlarının kendi dertlerini anlatamayacak dilsiz varlıklar olduğu; şehirlerde doğal yaşam alanları daraldığı için su ve yiyecek bulma imkânlarının insanların vicdanına ve merhametine bağlı olduğu vurgulanmakta; tüm vatandaşlara onları koruma ve gözetme görevi yüklenmektedir.",
+        "rubric": [
+          {
+            "criterion": "Emanet bilinci ve vicdani sorumluluk analizinin doğru yapılması",
+            "points": 14
+          }
+        ]
+      },
+      {
+        "questionNumber": 5,
+        "outcomeCode": "T.O.5.15",
+        "outcomeTitle": "T.O.5.15. Metnin anahtar kelimelerini belirlemeye yönelik çözümleme yapabilme",
+        "difficulty": "Kolay",
+        "cognitiveLevel": "Basit Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 14,
+        "contextText": "Anahtar kelimeler.",
+        "stimulus": "Yukarıda verilen 1. sorudaki sokak hayvanları metnini dikkate alınız.",
+        "questionText": "Metnin anahtar kelimelerinden 3 tanesini yazınız.",
+        "solutionExplanation": "Sokak hayvanları, merhamet/yardımlaşma, barınak/kedi evi.",
+        "modelAnswer": "1. Sokak hayvanları\n2. Merhamet\n3. Barınak (Kedi evi)",
+        "rubric": [
+          {
+            "criterion": "3 anahtar kelimenin doğru yazılması",
+            "points": 14
+          }
+        ]
+      },
+      {
+        "questionNumber": 6,
+        "outcomeCode": "T.Y.5.13",
+        "outcomeTitle": "T.Y.5.13. Yazısını zenginleştirecek biçimde söz varlığını kullanabilme",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 14,
+        "contextText": "Deyim içeren duygu dolu paragraf yazımı.",
+        "stimulus": "Kullanılacak Deyim: 'kol kanat germek' ve 'içi ısınmak'.",
+        "questionText": "Soğuk kış gününde bir yavru köpeğe yuva bulan bir çocuğun mutluluğunu; içinde 'kol kanat germek' ve 'içi ısınmak' deyimlerinin geçtiği 2-3 cümleyle yazınız.",
+        "solutionExplanation": "Öğrenci iki deyimi yerinde kullanır.",
+        "modelAnswer": "Çetin kış gününde tir tir titreyen yavru köpeğe kol kanat geren Emre, onu kendi elleriyle yaptığı sıcak barınağa yerleştirdi. Minik köpeğin karnını doyurup mutlulukla kuyruk salladığını görünce Emre'nin de içi ısındı ve yüzünde tatlı bir tebessüm belirdi.",
+        "rubric": [
+          {
+            "criterion": "İki deyimin anlamına uygun ve doğru kullanılması",
+            "points": 7
+          },
+          {
+            "criterion": "Anlatımın duygusal yoğunluğu ve dil kurallarına uygunluğu",
+            "points": 7
+          }
+        ]
+      },
+      {
+        "questionNumber": 7,
+        "outcomeCode": "T.Y.5.16",
+        "outcomeTitle": "T.Y.5.16. Yazım ve noktalama işaretleriyle ilgili kuralları uygulayabilme",
+        "difficulty": "Kolay",
+        "cognitiveLevel": "Basit Bilişsel Süreçler",
+        "archetype": "Hata Tespiti & Adım Analizi",
+        "points": 14,
+        "contextText": "Sayıların ve gün/ay isimlerinin yazımı.",
+        "stimulus": "Hatalı Cümle: 'Bizim kulüp 15 ocak salı günü saat 14:30'da 3'er kişilik gruplarla kedi evlerini boyayacak.'",
+        "questionText": "Yukarıdaki cümlede yer alan büyük harf, saatler arası noktalama ve üleştirme sayısının yazımı hatalarını düzelterek cümlenin doğrusunu yazınız.",
+        "solutionExplanation": "Belirli tarih olduğu için Ocak Salı büyük, saat ve dakika arasına tek nokta konur (14.30), üleştirme sayıları yazıyla yazılır (üçer).",
+        "modelAnswer": "Doğru Cümle: 'Bizim kulüp 15 Ocak Salı günü saat 14.30'da üçer kişilik gruplarla kedi evlerini boyayacak.'\n(Düzeltmeler: 15 Ocak Salı büyük harfle, 14.30 tek nokta ile, 3'er değil 'üçer' yazıyla).",
+        "rubric": [
+          {
+            "criterion": "Belirli tarihteki ay ve gün adının büyük harfle yazımı",
+            "points": 5
+          },
+          {
+            "criterion": "Saat arasına tek nokta konulması kuralı",
+            "points": 4
+          },
+          {
+            "criterion": "Üleştirme sayısının yazıyla (üçer) yazılması kuralı",
+            "points": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "exam_5_turkce_1_1_senaryo_4",
+    "grade": 5,
+    "subjectId": "turkce",
+    "examTerm": "1_donem_1_yazili",
+    "scenarioId": "senaryo_4",
+    "title": "5. Sınıf Türkçe 1. Dönem 1. Ortak Yazılı Sınavı (Senaryo 4) (7 Soru)",
+    "description": "MEB ÖDSGM 5. Sınıf Türkçe 4. Senaryo resmi konu soru dağılımına uygun 100 puanlık sınav kağıdı.",
+    "durationMinutes": 40,
+    "totalPoints": 100,
+    "questions": [
+      {
+        "questionNumber": 1,
+        "outcomeCode": "T.O.5.6",
+        "outcomeTitle": "T.O.5.6. Metnin yüzey anlamını belirleyebilme",
+        "difficulty": "Kolay",
+        "cognitiveLevel": "Basit Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 15,
+        "contextText": "Köy okulundaki kütüphane ve kitap sevgisi.",
+        "stimulus": "Toros Dağları'nın eteklerindeki küçük bir köy okulunda öğretmenlik yapan Elif Öğretmen, boş bir sınıfı kütüphaneye dönüştürmek için kolları sıvadı. Kasabadaki marangozdan tahta raflar rica etti, öğrencileriyle birlikte rafları gökkuşağı renklerine boyadı. Kısa sürede Türkiye'nin dört bir yanından gelen bağış kitaplarla raf dolup taştı. Öğrencilerden Ali, kütüphanenin ilk açıldığı gün rafların karşısında büyülenmiş gibi durdu ve eline aldığı ilk masal kitabını koklayarak sayfalarını çevirmeye başladı.",
+        "questionText": "Elif Öğretmen'in köy okuluna kütüphane kurma sürecini anlatan yukarıdaki metnin konusunu tek bir cümleyle ifade ediniz.",
+        "solutionExplanation": "Metin, bir köy okulunda öğretmenin ve öğrencilerin dayanışmasıyla kurulan kütüphaneyi ve çocukların kitaba kavuşma heyecanını anlatmaktadır.",
+        "modelAnswer": "Metnin konusu, bir köy okulunda boş bir sınıfın el birliğiyle rengârenk bir kütüphaneye dönüştürülmesi ve öğrencilerin kitap sevgisidir.",
+        "rubric": [
+          {
+            "criterion": "Kütüphane kurulumu ve kitap sevgisini kapsayan doğru konu cümlesi yazımı",
+            "points": 15
+          }
+        ]
+      },
+      {
+        "questionNumber": 2,
+        "outcomeCode": "T.O.5.6",
+        "outcomeTitle": "T.O.5.6. Metnin yüzey anlamını belirleyebilme",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Basit Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 15,
+        "contextText": "Metne dayalı neden-sonuç sorusu.",
+        "stimulus": "Metne göre: Elif Öğretmen kütüphaneyi kurarken kasaba esnafından ve Türkiye'nin farklı şehirlerindeki kitapseverlerden nasıl destek almıştır?",
+        "questionText": "Elif Öğretmen'in kütüphaneyi tamamlarken aldığı yardımları metne dayanarak 2 maddeyle açıklayınız.",
+        "solutionExplanation": "Marangozdan tahta raflar almış, Türkiye'nin dört bir yanından bağış kitaplar toplanmıştır.",
+        "modelAnswer": "1. Kasabadaki marangozdan rica ederek kitaplar için tahta raflar temin etmiştir.\n2. Türkiye'nin dört bir yanından gelen kitap bağışlarıyla kütüphanenin raflarını doldurmuştur.",
+        "rubric": [
+          {
+            "criterion": "Marangozdan raf temini maddesinin yazılması",
+            "points": 8
+          },
+          {
+            "criterion": "Kitap bağışları desteğinin belirtilmesi",
+            "points": 7
+          }
+        ]
+      },
+      {
+        "questionNumber": 3,
+        "outcomeCode": "T.O.5.7",
+        "outcomeTitle": "T.O.5.7. Görselle iletilen anlamı belirleyebilme",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "points": 14,
+        "contextText": "Kütüphane tanıtım afişi analizi.",
+        "stimulus": "Kütüphanenin giriş kapısına asılan afişte: Açık duran büyük bir kitabın içinden uzaya yükselen bir roket ve rengârenk çiçekler açan bir vadi resmedilmiş; altına 'Her Kitap Yeni Bir Dünyadır' sloganı yazılmıştır.",
+        "questionText": "Bu afişteki roket ve çiçek açan vadi görselleriyle kitap okumanın çocuklara sağladığı hangi iki kazanım anlatılmak istenmiştir?",
+        "solutionExplanation": "Roket hayal gücünü göklere/bilime çıkarmayı; çiçek açan vadi ise iç dünyayı güzelleştirmeyi simgeler.",
+        "modelAnswer": "1. Roket: Kitapların insanın hayal gücünü sonsuzluğa taşıdığını, bilime, keşfe ve ufukların ötesine kanatlandırdığını sembolize eder.\n2. Çiçek Açan Vadi: Kitap okumanın insanın ruhunu, kelime dağarcığını ve iç dünyasını rengârenk güzelliklerle zenginleştirdiğini simgeler.",
+        "rubric": [
+          {
+            "criterion": "Roketin hayal gücü ve bilgi/keşif anlamının doğru yorumlanması",
+            "points": 7
+          },
+          {
+            "criterion": "Çiçekli vadinin içsel zenginlik ve güzellik anlamının açıklanması",
+            "points": 7
+          }
+        ]
+      },
+      {
+        "questionNumber": 4,
+        "outcomeCode": "T.O.5.7",
+        "outcomeTitle": "T.O.5.7. Görselle iletilen anlamı belirleyebilme",
+        "difficulty": "Kolay",
+        "cognitiveLevel": "Basit Bilişsel Süreçler",
+        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "points": 14,
+        "contextText": "Kitap okuma saati görseli.",
+        "stimulus": "Afişte kütüphanede halının üzerine bağdaş kurup gülümseyerek kitap okuyan çocukların yüz ifadeleri yer almaktadır.",
+        "questionText": "Görseldeki çocukların yüz ifadelerinden hareketle kütüphanede bulunmaktan duydukları duyguyu tek kelimeyle yazıp nedenini açıklayınız.",
+        "solutionExplanation": "Huzur, mutluluk, heyecan. Yeni dünyalar keşfetmenin sevinci.",
+        "modelAnswer": "Duygu: Mutluluk (veya Huzur / Coşku).\nNedeni: Çocukların tebessüm eden yüzleri ve kitap sayfalarına sevgiyle bakmaları, kitapların sunduğu büyülü dünyada olmaktan derin bir keyif ve iç huzuru duyduklarını gösterir.",
+        "rubric": [
+          {
+            "criterion": "Doğru duygunun (mutluluk/huzur) belirlenmesi",
+            "points": 7
+          },
+          {
+            "criterion": "Görsel kanıtla tutarlı açıklama yapılması",
+            "points": 7
+          }
+        ]
+      },
+      {
+        "questionNumber": 5,
+        "outcomeCode": "T.O.5.20",
+        "outcomeTitle": "T.O.5.20. Metinden hareketle söz varlığını geliştirmeye yönelik çözümleme yapabilme",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 14,
+        "contextText": "Kelime tahlili ve cümle kurgusu.",
+        "stimulus": "Metinde geçen 'fedakârlık' ve 'aydınlık' sözcükleri.",
+        "questionText": "'Fedakârlık' ve 'aydınlık' sözcüklerini kütüphane veya kitap sevgisi temasını içerecek şekilde birer anlamlı ve kurallı cümlede kullanınız.",
+        "solutionExplanation": "Kelimelerin bağlama uygun kurallı cümlelerde kullanımı.",
+        "modelAnswer": "1. Fedakârlık: 'Öğretmenimiz büyük bir fedakârlık göstererek hafta sonu bile kütüphanenin raflarını düzenledi.'\n2. Aydınlık: 'Okuduğumuz her kitap zihnimizde yeni bir kandil yakarak geleceğimizi aydınlık kılar.'",
+        "rubric": [
+          {
+            "criterion": "Fedakârlık sözcüğünün anlamına uygun cümlede kullanılması",
+            "points": 7
+          },
+          {
+            "criterion": "Aydınlık sözcüğünün mecaz/anlamlı bağlamda doğru kullanımı",
+            "points": 7
+          }
+        ]
+      },
+      {
+        "questionNumber": 6,
+        "outcomeCode": "T.Y.5.13",
+        "outcomeTitle": "T.Y.5.13. Yazısını zenginleştirecek biçimde söz varlığını kullanabilme",
+        "difficulty": "Zor",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 14,
+        "contextText": "Deyim kullanımı: 'kitap kurdu' ve 'göz nuru dökmek'.",
+        "stimulus": "Deyimler dilimizin en değerli hazineleridir: 'kitap kurdu' (çok kitap okuyan) ve 'göz nuru dökmek' (büyük emek harcamak).",
+        "questionText": "Bu iki deyimi ('kitap kurdu' ve 'göz nuru dökmek') anlamlarına uygun şekilde kullanarak Ali'nin kitap okuma tutkusunu anlatan 2-3 cümlelik kısa bir paragraf yazınız.",
+        "solutionExplanation": "Deyimlerin bağlama uygun olarak paragraf içinde kullanılması.",
+        "modelAnswer": "Ali, köyün en çalışkan kitap kurdu olarak her fırsatta kütüphaneye koşardı. Elif Öğretmen'in büyük bir göz nuru dökerek kurduğu bu rengârenk yuvada Ali, akşama kadar yeni serüvenlerin izini sürerdi.",
+        "rubric": [
+          {
+            "criterion": "İki deyimin anlamına uygun ve doğru kullanılması",
+            "points": 7
+          },
+          {
+            "criterion": "Paragrafın anlam bütünlüğü ve anlatım akıcılığı",
+            "points": 7
+          }
+        ]
+      },
+      {
+        "questionNumber": 7,
+        "outcomeCode": "T.Y.5.16",
+        "outcomeTitle": "T.Y.5.16. Yazım ve noktalama işaretleriyle ilgili kuralları uygulayabilme",
+        "difficulty": "Kolay",
+        "cognitiveLevel": "Basit Bilişsel Süreçler",
+        "archetype": "Hata Tespiti & Adım Analizi",
+        "points": 14,
+        "contextText": "Konuşma çizgisi, iki nokta ve tırnak işareti kuralları.",
+        "stimulus": "Metin: 'Elif Öğretmen sınıfa girdi ve şöyle dedi: — Çocuklar, kütüphanemiz yarın saat 10.00'da törenle açılıyor!'",
+        "questionText": "Yukarıdaki cümlede yer alan 'iki nokta (:)' ve 'uzun çizgi (—)' işaretlerinin hangi kurallara dayanılarak kullanıldığını açıklayınız.",
+        "solutionExplanation": "İki nokta kendisinden sonra konuşma veya açıklama geleceğini belirtir; uzun çizgi satır başındaki karşılıklı konuşmayı gösterir.",
+        "modelAnswer": "1. İki Nokta (:): Kendisinden sonra doğrudan bir başkasının sözü (konuşma cümlesi) geleceği için kullanılmıştır.\n2. Uzun Çizgi (—): Karşılıklı konuşmalarda konuşan kişinin sözlerinin başına (konuşma çizgisi olarak) konulmuştur.",
+        "rubric": [
+          {
+            "criterion": "İki noktanın kuralının doğru açıklanması",
+            "points": 7
+          },
+          {
+            "criterion": "Konuşma çizgisinin kuralının doğru açıklanması",
+            "points": 7
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "exam_5_turkce_1_1_senaryo_5",
+    "grade": 5,
+    "subjectId": "turkce",
+    "examTerm": "1_donem_1_yazili",
+    "scenarioId": "senaryo_5",
+    "title": "5. Sınıf Türkçe 1. Dönem 1. Ortak Yazılı Sınavı (Senaryo 5) (7 Soru)",
+    "description": "MEB ÖDSGM 5. Sınıf Türkçe 5. Senaryo resmi konu soru dağılımına uygun 100 puanlık sınav kağıdı.",
+    "durationMinutes": 40,
+    "totalPoints": 100,
+    "questions": [
+      {
+        "questionNumber": 1,
+        "outcomeCode": "T.O.5.5",
+        "outcomeTitle": "T.O.5.5. Metinde geçen anlamını bilmediği söz varlığı unsurlarının anlamını tahmin edebilme",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 15,
+        "contextText": "Dede Korkut Masalları ve Boğaç Han.",
+        "stimulus": "Bayındır Han'ın görkemli toyunda beslenen azgın bir boğa meydandan kaçtı. Meydandaki herkes kaçışırken Dirse Han'ın on beş yaşındaki cesur oğlu meydanın ortasında dimdik durdu. Boğa hışımla üzerine koştuğunda genç alp geri adım atmadı; yumruğunu boğanın alnına dayayarak onu diz çöktürdü. Dede Korkut gelip boy boyladı, soy soyladı ve bu yiğide 'Boğaç Han' adını verdi.",
+        "questionText": "Metinde geçen 'toy' ve 'alp' kelimelerinin metindeki bağlam anlamlarını tahmin ederek yazınız.",
+        "solutionExplanation": "Toy: Büyük ziyafet, şenlik. Alp: Yiğit, cesur savaşçı/kahraman.",
+        "modelAnswer": "• Toy: Eski Türklerde boy beylerinin ve halkın katıldığı büyük ziyafet, şenlik ve eğlence meclisi.\n• Alp: Korkusuz, yiğit, kahraman savaşçı.",
+        "rubric": [
+          {
+            "criterion": "Toy sözcüğünün ziyafet/şenlik bağlamında doğru tahmini",
+            "points": 8
+          },
+          {
+            "criterion": "Alp sözcüğünün yiğit/kahraman bağlamında doğru tahmini",
+            "points": 7
+          }
+        ]
+      },
+      {
+        "questionNumber": 2,
+        "outcomeCode": "T.O.5.6",
+        "outcomeTitle": "T.O.5.6. Metnin yüzey anlamını belirleyebilme",
+        "difficulty": "Kolay",
+        "cognitiveLevel": "Basit Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 15,
+        "contextText": "Metnin ana fikrini belirleme.",
+        "stimulus": "Metinde Dirse Han'ın oğlunun kaçmak yerine boğanın karşısında cesaretle durması ve onu aklıyla, bilek gücüyle alt etmesi anlatılmaktadır.",
+        "questionText": "Yukarıdaki metnin ana fikrini (vermek istediği temel mesajı) yazınız.",
+        "solutionExplanation": "Zorluklar ve tehlikeler karşısında cesaretle duranlar başarıya ve şerefe ulaşırlar.",
+        "modelAnswer": "Metnin ana fikri: Tehlikeler ve zorluklar karşısında korkup kaçmak yerine cesaret ve azimle mücadele edenler büyük engelleri aşar ve toplumda haklı bir saygı kazanırlar.",
+        "rubric": [
+          {
+            "criterion": "Cesaret ve zorluklarla mücadele ana fikrinin doğru ifadesi",
+            "points": 15
+          }
+        ]
+      },
+      {
+        "questionNumber": 3,
+        "outcomeCode": "T.O.5.6",
+        "outcomeTitle": "T.O.5.6. Metnin yüzey anlamını belirleyebilme",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Basit Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 14,
+        "contextText": "Neden-sonuç ilişkisi.",
+        "stimulus": "Metne göre: Dede Korkut bu gence neden 'Boğaç Han' adını vermiştir?",
+        "questionText": "Gence bu ismin verilme gerekçesini metindeki olay örgüsünden hareketle açıklayınız.",
+        "solutionExplanation": "Boğayı yumruğuyla bastırıp alt ettiği için.",
+        "modelAnswer": "Kızgın ve azgın boğayı kaçmak yerine alnına vurduğu tek yumrukla dize getirip boğduğu (alt ettiği) için Dede Korkut ona 'Boğaç' adını vermiştir.",
+        "rubric": [
+          {
+            "criterion": "Boğayı dize getirme/alt etme neden-sonuç bağının doğru yazılması",
+            "points": 14
+          }
+        ]
+      },
+      {
+        "questionNumber": 4,
+        "outcomeCode": "T.O.5.7",
+        "outcomeTitle": "T.O.5.7. Görselle iletilen anlamı belirleyebilme",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "points": 14,
+        "contextText": "Minyatür çiziminde Dede Korkut ve kopuzu.",
+        "stimulus": "Metnin yanında yer alan tarihî minyatürde: Ak sakallı, başında börkü olan bir bilge dede elinde kopuz çalmakta ve çadırın etrafında toplanan obanın gençlerine nasihatler vermektedir.",
+        "questionText": "Bu görselde Dede Korkut'un elindeki 'kopuz' ve etrafındaki dinleyiciler onun Türk kültüründeki hangi iki önemli rolünü simgelemektedir?",
+        "solutionExplanation": "Ozanlık/müzisyenlik ve yol gösterici bilgelik/aksakallılık.",
+        "modelAnswer": "1. Ozanlık / Âşıklık Geleneği: Elindeki kopuz, onun Türk milletinin destanlarını, kahramanlıklarını ezgiyle anlatan kadim bir halk ozanı olduğunu simgeler.\n2. Aksakallı Bilgelik ve Yol Göstericilik: Etrafındaki gençlerin saygıyla dinlemesi, onun obanın akıl hocası, barış elçisi ve töre koruyucusu ulu bir bilge olduğunu gösterir.",
+        "rubric": [
+          {
+            "criterion": "Kopuzun ozanlık ve destan anlatıcılığı sembolünün açıklanması",
+            "points": 7
+          },
+          {
+            "criterion": "Aksakallı bilgelik ve akıl hocalığı rolünün belirtilmesi",
+            "points": 7
+          }
+        ]
+      },
+      {
+        "questionNumber": 5,
+        "outcomeCode": "T.O.5.20",
+        "outcomeTitle": "T.O.5.20. Metinden hareketle söz varlığını geliştirmeye yönelik çözümleme yapabilme",
+        "difficulty": "Kolay",
+        "cognitiveLevel": "Basit Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 14,
+        "contextText": "Eş anlamlı sözcükler.",
+        "stimulus": "Metinde geçen sözcükler: 'ad', 'yiğit', 'alaka'.",
+        "questionText": "Aşağıdaki sözcüklerin metindeki anlamına uygun eş anlamlılarını karşılarına yazınız:\n• ad: ............................\n• yiğit: ............................\n• tören: ............................",
+        "solutionExplanation": "ad = isim, yiğit = cesur/alp, tören = merasim.",
+        "modelAnswer": "• ad: isim\n• yiğit: cesur (kahraman / yürekli)\n• tören: merasim (kutlama)",
+        "rubric": [
+          {
+            "criterion": "Üç eş anlamlı sözcüğün eksiksiz yazılması (her biri ~4.6 puan)",
+            "points": 14
+          }
+        ]
+      },
+      {
+        "questionNumber": 6,
+        "outcomeCode": "T.Y.5.3",
+        "outcomeTitle": "T.Y.5.3. Yazısında içerik ve yapıya yönelik seçimlerini yönetebilme",
+        "difficulty": "Zor",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 14,
+        "contextText": "Hikaye unsurlarını belirleme (Serim, Düğüm, Çözüm).",
+        "stimulus": "Boğaç Han metninin olay örgüsü.",
+        "questionText": "Boğaç Han metninin hikâye unsurlarını aşağıdaki şablona göre yazınız:\n• Olay: ....................................................\n• Şahıs Kadrosu: ....................................................\n• Mekân (Yer): ....................................................\n• Çözüm Bölümü: ....................................................",
+        "solutionExplanation": "Hikaye unsurlarının tespiti.",
+        "modelAnswer": "• Olay: Bayındır Han'ın toyunda kaçan azgın boğayı genç bir yiğidin cesaretle alt etmesi ve isim kazanması.\n• Şahıs Kadrosu: Dirse Han'ın oğlu (Boğaç Han), Bayındır Han, Dede Korkut, oba halkı.\n• Mekân: Bayındır Han'ın toy meydanı / oba çadırı.\n• Çözüm: Boğanın yenilmesi üzerine Dede Korkut'un gelerek gence kahramanlığına uygun 'Boğaç Han' adını vermesi.",
+        "rubric": [
+          {
+            "criterion": "Olay ve şahıs kadrosunun eksiksiz tespiti",
+            "points": 7
+          },
+          {
+            "criterion": "Mekân ve çözüm bölümünün doğru tespiti",
+            "points": 7
+          }
+        ]
+      },
+      {
+        "questionNumber": 7,
+        "outcomeCode": "T.Y.5.13",
+        "outcomeTitle": "T.Y.5.13. Yazısını zenginleştirecek biçimde söz varlığını kullanabilme",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "points": 14,
+        "contextText": "Deyim kullanımı: 'gözünü budaktan sakınmamak' ve 'nam salmak'.",
+        "stimulus": "Deyimler: 'gözünü budaktan sakınmamak' (hiçbir tehlikeden korkmamak) ve 'nam salmak' (herkesçe tanınmak, şöhret kazanmak).",
+        "questionText": "Bu iki deyimi kullanarak bir kahramanın mücadelesini anlatan 2 cümle yazınız.",
+        "solutionExplanation": "Deyimlerin anlamına uygun kullanımı.",
+        "modelAnswer": "Genç yiğit düşman karşısında gözünü budaktan sakınmayarak obasını büyük bir tehlikeden kurtardı. Gösterdiği bu eşsiz cesaretle kısa sürede tüm Türk yurtlarında nam saldı.",
+        "rubric": [
+          {
+            "criterion": "'Gözünü budaktan sakınmamak' deyiminin doğru kullanımı",
+            "points": 7
+          },
+          {
+            "criterion": "'Nam salmak' deyiminin doğru kullanımı",
+            "points": 7
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "exam_5_turkce_1_1_senaryo_6",
+    "grade": 5,
+    "subjectId": "turkce",
+    "examTerm": "1_donem_1_yazili",
+    "scenarioId": "senaryo_6",
+    "title": "5. Sınıf Türkçe 1. Dönem 1. Ortak Yazılı Sınavı (Senaryo 6) (8 Soru)",
+    "description": "MEB ÖDSGM 5. Sınıf Türkçe 6. Senaryo resmi konu soru dağılımına uygun 100 puanlık sınav kağıdı.",
+    "durationMinutes": 40,
+    "totalPoints": 100,
+    "questions": [
+      {
+        "questionNumber": 1,
+        "outcomeCode": "T.O.5.5",
+        "outcomeTitle": "T.O.5.5. Metinde geçen anlamını bilmediği söz varlığı unsurlarının anlamını tahmin edebilme",
+        "difficulty": "Kolay",
+        "cognitiveLevel": "Basit Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 13,
+        "contextText": "Ege'de zeytin hasadı.",
+        "stimulus": "Ekim ayının son günlerinde Ayvalık'taki zeytinliklerde tatlı bir telaş başlar. Hasan Dede sabahın ayazında torunu Can'ın eline sırığı verir. Ağaçların altına yaygılar serilir; olgunlaşan taneler incitilmeden silkelenir. Hasan Dede: 'Zeytin ağacı barışın ve sabrın simgesidir evlat. Ona hürmet edersen seni bin yıl doyurur' der. Toplanan zeytinler çuvallarla taş değirmenlere götürülür ve altın sarısı soğuk sıkım zeytinyağı elde edilir.",
+        "questionText": "Metinde geçen 'hasat' ve 'ayaz' sözcüklerinin anlamlarını metnin bağlamından tahmin ederek yazınız.",
+        "solutionExplanation": "Hasat: Ürün toplama dönemi. Ayaz: Duru ve çok soğuk hava.",
+        "modelAnswer": "• Hasat: Tarlada, bahçede olgunlaşan ekin ve meyvelerin toplanması vakti/eylemi.\n• Ayaz: Kışın ya da sonbahar sabahlarında gökyüzü açıkken hissedilen keskin ve kuru soğuk.",
+        "rubric": [
+          {
+            "criterion": "Hasat sözcüğünün doğru tahmini",
+            "points": 7
+          },
+          {
+            "criterion": "Ayaz sözcüğünün doğru tahmini",
+            "points": 6
+          }
+        ]
+      },
+      {
+        "questionNumber": 2,
+        "outcomeCode": "T.O.5.6",
+        "outcomeTitle": "T.O.5.6. Metnin yüzey anlamını belirleyebilme",
+        "difficulty": "Kolay",
+        "cognitiveLevel": "Basit Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 13,
+        "contextText": "Metnin konusunu belirleme.",
+        "stimulus": "Metinde bir zeytin bahçesinde dede ve torunun sabah erken saatlerde başlayıp zeytin toplamaları ve zeytinyağı üretimi anlatılmaktadır.",
+        "questionText": "Ayvalık zeytinliklerindeki geleneksel hasat telaşını ve dedenin öğüdünü anlatan yukarıdaki metnin konusunu tek bir cümleyle yazınız.",
+        "solutionExplanation": "Ege'de geleneksel zeytin hasadı ve zeytinin bereketi.",
+        "modelAnswer": "Metnin konusu, bir dede ile torununun zeytin bahçesinde emek vererek yaptıkları geleneksel zeytin hasadı ve zeytin ağacının değeridir.",
+        "rubric": [
+          {
+            "criterion": "Zeytin hasadı ve emeği kapsayan doğru konu cümlesi",
+            "points": 13
+          }
+        ]
+      },
+      {
+        "questionNumber": 3,
+        "outcomeCode": "T.O.5.6",
+        "outcomeTitle": "T.O.5.6. Metnin yüzey anlamını belirleyebilme",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 13,
+        "contextText": "Zeytin hasadı aşamalarını sıralama.",
+        "stimulus": "Metinde zeytinin toplanıp yağa dönüştürülmesine kadar belirli bir sıra anlatılmıştır.",
+        "questionText": "Metinden hareketle zeytinyağı elde edilişinin ilk 3 aşamasını sırasıyla yazınız.",
+        "solutionExplanation": "Yaygıların serilmesi, ağaçların silkelenmesi, değirmenlerde ezilip yağ çıkarılması.",
+        "modelAnswer": "1. Ağaçların altına zeytin taneleri toprağa düşmesin diye yaygıların serilmesi.\n2. Sırıklarla olgunlaşan zeytinlerin dallara zarar vermeden silkelenip toplanması.\n3. Toplanan zeytinlerin taş değirmenlere götürülerek ezilip soğuk sıkım yağının çıkarılması.",
+        "rubric": [
+          {
+            "criterion": "Üç aşamanın doğru kronolojik sırayla yazılması",
+            "points": 13
+          }
+        ]
+      },
+      {
+        "questionNumber": 4,
+        "outcomeCode": "T.O.5.7",
+        "outcomeTitle": "T.O.5.7. Görselle iletilen anlamı belirleyebilme",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Basit Bilişsel Süreçler",
+        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "points": 13,
+        "contextText": "Zeytin dalı ve güvercin amblemi.",
+        "stimulus": "Zeytinyağı şişesinin etiketinde ağzında zeytin dalı taşıyan beyaz bir güvercin görseli basılmıştır.",
+        "questionText": "Ağzında zeytin dalı taşıyan beyaz güvercin simgesi dünyada hangi evrensel kavramı sembolize eder? Açıklayınız.",
+        "solutionExplanation": "Barış, kardeşlik ve esenlik.",
+        "modelAnswer": "Ağzında zeytin dalı olan beyaz güvercin evrensel olarak 'barış, huzur ve dostluk' kavramını simgeler. Hasan Dede'nin metinde belirttiği gibi zeytin ağacı kadim zamanlardan beri barışın en temiz sembolüdür.",
+        "rubric": [
+          {
+            "criterion": "Barış ve dostluk kavramının doğru tespiti",
+            "points": 13
+          }
+        ]
+      },
+      {
+        "questionNumber": 5,
+        "outcomeCode": "T.O.5.15",
+        "outcomeTitle": "T.O.5.15. Metnin anahtar kelimelerini belirlemeye yönelik çözümleme yapabilme",
+        "difficulty": "Kolay",
+        "cognitiveLevel": "Basit Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 12,
+        "contextText": "Anahtar kelimeler.",
+        "stimulus": "Metin zeytin ağacı, hasat zamanı, emek ve zeytinyağı etrafında şekillenmiştir.",
+        "questionText": "Hasan Dede ve torununun Ayvalık'taki zeytin hasadını anlatan bu metnin içeriğini en iyi yansıtan 3 anahtar kelimeyi belirleyiniz.",
+        "solutionExplanation": "Zeytin, hasat, emek (veya zeytinyağı, bereket).",
+        "modelAnswer": "1. Zeytin\n2. Hasat\n3. Emek (veya Zeytinyağı / Bereket)",
+        "rubric": [
+          {
+            "criterion": "Üç isabetli anahtar kelimenin yazılması (her biri 4 puan)",
+            "points": 12
+          }
+        ]
+      },
+      {
+        "questionNumber": 6,
+        "outcomeCode": "T.O.5.20",
+        "outcomeTitle": "T.O.5.20. Metinden hareketle söz varlığını geliştirmeye yönelik çözümleme yapabilme",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Basit Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 12,
+        "contextText": "Zıt anlamlı sözcükler.",
+        "stimulus": "Metindeki kavramlar: 'sabah', 'olgun', 'tatlı'.",
+        "questionText": "Aşağıdaki kelimelerin zıt (karşıt) anlamlılarını karşılarına yazınız:\n• sabah: ............................\n• olgun: ............................\n• tatlı: ............................",
+        "solutionExplanation": "sabah -> akşam, olgun -> ham/çağla, tatlı -> acı.",
+        "modelAnswer": "• sabah: akşam\n• olgun: ham (veya çiğ)\n• tatlı: acı",
+        "rubric": [
+          {
+            "criterion": "Üç zıt anlamlı sözcüğün doğru yazılması (her biri 4 puan)",
+            "points": 12
+          }
+        ]
+      },
+      {
+        "questionNumber": 7,
+        "outcomeCode": "T.Y.5.3",
+        "outcomeTitle": "T.Y.5.3. Yazısında içerik ve yapıya yönelik seçimlerini yönetebilme",
+        "difficulty": "Zor",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 12,
+        "contextText": "Metne uygun başlık belirleme.",
+        "stimulus": "Okuduğunuz metin zeytinin bereketi, dedenin emeği ve doğaya duyulan saygıyı işlemektedir.",
+        "questionText": "Bu metne içerikle uyumlu, okuyucunun ilgisini çekecek 2 farklı başlık önerisi yazınız.",
+        "solutionExplanation": "Başlık metnin içeriğini yansıtmalı ve çekici olmalıdır.",
+        "modelAnswer": "1. Başlık Önerisi: Bereketin Adı: Zeytin\n2. Başlık Önerisi: Dedemin Zeytin Bahçesi (veya Asırlık Ağacın Mirası)",
+        "rubric": [
+          {
+            "criterion": "İki özgün ve içerikle tam uyumlu başlık önerisi yazılması",
+            "points": 12
+          }
+        ]
+      },
+      {
+        "questionNumber": 8,
+        "outcomeCode": "T.Y.5.16",
+        "outcomeTitle": "T.Y.5.16. Yazım ve noktalama işaretleriyle ilgili kuralları uygulayabilme",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Basit Bilişsel Süreçler",
+        "archetype": "Hata Tespiti & Adım Analizi",
+        "points": 12,
+        "contextText": "Bağlaç olan 'de' ve ek olan '-de'nin yazımı.",
+        "stimulus": "Cümle: 'Ayvalık'ta zeytin ağaçları da bahçelerde ki taş değirmenlerde hasat heyecanı yaşıyor.'",
+        "questionText": "Yukarıdaki cümlede yer alan bağlaç olan 'da' ile ek olan '-de' ve 'ki'nin yazımını inceleyiniz. Yapılan 1 yazım hatasını tespit edip doğrusunu yazınız.",
+        "solutionExplanation": "'bahçelerde ki' sözcüğündeki -ki sıfat yapan ektir ve bitişik yazılmalıdır: 'bahçelerdeki'.",
+        "modelAnswer": "• Hata: 'bahçelerde ki' ayrı yazılmıştır.\n• Doğrusu: Buradaki '-ki' ismi niteleyen sıfat yapan aitlik ekidir; bu nedenle bitişik olarak 'bahçelerdeki taş değirmenler' şeklinde yazılmalıdır.",
+        "rubric": [
+          {
+            "criterion": "Hatalı kelimenin doğru tespiti",
+            "points": 6
+          },
+          {
+            "criterion": "Kuralın gerekçesiyle birlikte doğru halinin ('bahçelerdeki') yazılması",
+            "points": 6
+          }
+        ]
+      }
+    ]
+  }
+]
