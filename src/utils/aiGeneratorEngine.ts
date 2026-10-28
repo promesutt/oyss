@@ -11,15 +11,6 @@ const POOL_NAMES_B = [
   'Sude', 'Onur', 'Caner', 'Pınar', 'Doruk', 'Damla', 'Barış', 'Seda'
 ];
 
-const POOL_PROJECTS = [
-  'TÜBİTAK Bilim Şenliği Atölyesi',
-  'Matematiksel Modelleme Topluluğu',
-  'Robotik ve Sayısal Tasarım Grubu',
-  'Ekoloji ve Çevre Araştırmaları Timi',
-  'Kültür, Tarih ve Münazara Topluluğu',
-  'Geleceğin Bilim İnsanları Kulübü'
-];
-
 export interface GeneratedQuestionItem {
   number: number;
   outcome: string;
@@ -61,12 +52,11 @@ export async function generateMEBIQuestions(
   const targetCount = requestedQuestionCount || scenario.totalQuestions || scenario.distributions.length || 6;
   const pointAllocations = distributePoints(targetCount);
 
-  // Rotate names and projects with seed
+  // Rotate names for procedural fallback
   const nameIdx1 = (variationIndex * 3 + 1) % POOL_NAMES_A.length;
   const nameIdx2 = (variationIndex * 5 + 4) % POOL_NAMES_B.length;
   const name1 = POOL_NAMES_A[nameIdx1];
   const name2 = POOL_NAMES_B[nameIdx2];
-  const proj = POOL_PROJECTS[variationIndex % POOL_PROJECTS.length];
 
   const distributionsText = scenario.distributions.slice(0, targetCount).map((d, i) => 
     `Soru ${i + 1}: [Kazanım: ${d.outcomeCode}] [Bilişsel Düzey: ${d.cognitiveLevel}] [Odak: ${d.notes || 'Kavramsal Uygulama'}]`
@@ -79,12 +69,20 @@ TOPLAM SORU SAYISI: ${targetCount} ADET AÇIK UÇLU SORU (1'den ${targetCount}'e
 SENARYO KAZANIM DAĞILIM PLANI:
 ${distributionsText}
 
-KARAKTERLER VE BAĞLAMLAR:
-- Karakterler: ${name1} ve ${name2} (veya yeni türeteceğin özgün öğrenci isimleri)
-- Proje / Etkinlik: ${proj}
+HER SORU İÇİN ZORUNLU BAĞLAM ÇEŞİTLİLİĞİ KURALI (EN KRİTİK KURAL):
+- AYNI SINAV İÇİNDEKİ SORULARDA ASLA AYNI MEKÂN, AYNI ETKİNLİK VEYA AYNI BAĞLAMI TEKRARLAMA!
+- Birden fazla sorunun "TÜBİTAK Bilim Fuarı / Şenliği", "Robotik Atölyesi" veya "Bilim Kulübü" gibi tek bir mekânda toplanması KESİNLİKLE YASAKTIR.
+- Her sorunun kurgusu, mekânı, karakterleri ve gerçek yaşam olayı birbirinden TAMAMEN FARKLI alanlardan seçilmelidir:
+  * Bir soru: Ev ekonomisi, mutfak, yemek tarifi, manav/market alışverişi veya aile bütçesi
+  * Bir soru: Marangozluk atölyesi, mimari çizim, park peyzajı, ahşap zanaatı veya mobilya tasarımı
+  * Bir soru: Spor sahası, atletizm koşu parkuru, bisiklet turu, dağcılık veya yüzme yarışı
+  * Bir soru: Doğa ve çevre, baraj gölü su seviyesi, tarımsal damla sulama veya meteoroloji hava raporu
+  * Bir soru: Okul kütüphanesi, arkeoloji müzesi, geleneksel el sanatları (ebru, çini, dokuma)
+  * Bir soru: Şehir içi ulaşım ve trafik ışığı zamanlaması, güneş enerjisi santrali veya geri dönüşüm tesisi
+- Karakter isimleri de her soruda değişmelidir (Örn: 1. soruda Elif ve Kerem, 2. soruda Marangoz Ahmet Usta, 3. soruda Zeynep ile Can, 4. soruda Çiftçi Hasan Bey...).
 
 ÖNEMLİ MEBİ PEDAGOJİK KURALLARI:
-1. DÜZ BİLGİ/TANIM KESİNLİKLE YASAKTIR. ("... nedir?", "... kim bulmuştur?" gibi sorular sorulamaz).
+1. DÜZ BİLGİ/TANIM KESİNLİKLE YASAKTIR. ("... nedir?", "... kim bulmuştur?" gibi ezber sorular sorulamaz).
 2. Her soru mutlaka MEBİ'nin şu 7 şablonundan birine dayanmalıdır:
    - Durum & Özellik Matrisi (VAR/YOK tablosu)
    - Kurgusal Senaryo & Vaka İncelemesi
@@ -93,8 +91,7 @@ KARAKTERLER VE BAĞLAMLAR:
    - Dilemma (İkilem) ve Çözüm Değerlendirmesi
    - Empati & Cümle Dönüştürme
    - Metin İçi Delillendirme & Örtük Anlam
-3. Prompt içinde verilen isimler sadece örnektir, aynen kopyalama; yeni ve yaratıcı bağlamlar kur.
-4. Toplam ${targetCount} sorunun puanları toplamı 100 olacak şekilde paylaştırılmalıdır.
+3. Toplam ${targetCount} sorunun puanları toplamı 100 olacak şekilde paylaştırılmalıdır.
 
 ÇIKTI FORMATI:
 SADECE geçerli bir JSON çıktısı ver. JSON şeması:
@@ -181,7 +178,7 @@ SADECE geçerli bir JSON çıktısı ver. JSON şeması:
           body: JSON.stringify({
             contents: [{ parts: [{ text: livePrompt }] }],
             generationConfig: {
-              temperature: 0.3,
+              temperature: 0.65,
               responseMimeType: 'application/json'
             }
           })

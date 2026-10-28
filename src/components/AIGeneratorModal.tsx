@@ -65,11 +65,17 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
 MİSYON:
 Aşağıdaki parametreler doğrultusunda ${grade}. Sınıf ${subjectMeta?.name} "${scenario.name}" için DÜZ BİLGİ/TANIM İÇERMEYEN, tamamen MEBİ resmi açık uçlu soru kalıplarına (%100 beceri ve durum temelli) uygun bir sınav seti üret.
 
-DİKKAT EDİLECEK EN KRİTİK TALİMAT (ÖRNEKLERİ AYNEN KULLANMA!):
-Aşağıdaki şablonlarda parantez içinde verilen isimler (Ali, Zeynep, Deniz, Mert, Efe vb.) veya olay kurguları YALNIZCA BİRER YOL GÖSTERİCİ PEDAGOJİK ÖRNEKTİR.
-- Bu isimleri, karakterleri ve olayları KESİNLİKLE AYNEN KULLANMAYINIZ.
-- Her üretimde tamamen yeni öğrenci isimleri (örneğin Selin, Burak, Kerem, Kaan, Zehra, Umut, Aslı, Derya, Tolga, İrem...), yeni okul kulüpleri, yeni kurgusal projeler ve farklı gerçek yaşam senaryoları türetiniz.
-- Arka arkaya aynı hikâyeyi veya aynı şahsiyetleri ASLA tekrarlamayınız.
+DİKKAT EDİLECEK EN KRİTİK TALİMAT (BAĞLAM ÇEŞİTLİLİĞİ VE TEKRAR YASAĞI):
+- AYNI SINAV İÇİNDEKİ SORULARDA ASLA AYNI MEKÂN, AYNI ETKİNLİK VEYA AYNI BAĞLAMI TEKRARLAMA!
+- Soruların "TÜBİTAK Bilim Fuarı / Şenliği", "Robotik Atölyesi" veya "Bilim Kulübü" gibi tek bir mekânda toplanması KESİNLİKLE YASAKTIR.
+- Her sorunun konusu, mekânı, karakterleri ve gerçek yaşam olayı birbirinden TAMAMEN FARKLI alanlardan seçilmelidir:
+  * Bir soru: Ev ekonomisi, mutfak, yemek tarifi, manav/market alışverişi veya aile bütçesi
+  * Bir soru: Marangozluk atölyesi, mimari çizim, park peyzajı, ahşap zanaatı veya mobilya tasarımı
+  * Bir soru: Spor sahası, atletizm koşu parkuru, bisiklet turu, dağcılık veya yüzme yarışı
+  * Bir soru: Doğa ve çevre, baraj gölü su seviyesi, tarımsal damla sulama veya meteoroloji hava raporu
+  * Bir soru: Okul kütüphanesi, arkeoloji müzesi, geleneksel el sanatları (ebru, çini, dokuma)
+  * Bir soru: Şehir içi ulaşım ve trafik ışığı zamanlaması, güneş enerjisi santrali veya geri dönüşüm tesisi
+- Karakter isimleri de her soruda değişmelidir (Örn: Soru 1'de Elif ile Kerem, Soru 2'de Marangoz Ahmet Usta, Soru 3'te Zeynep ve Can...).
 
 MEBİ RESMİ PEDAGOJİK SORU ŞABLONLARI:
 Üreteceğiniz sorular mutlaka şu 7 MEBİ şablonundan birine dayanmalıdır:

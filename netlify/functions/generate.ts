@@ -58,7 +58,7 @@ export default async (req: Request) => {
         body: JSON.stringify({
           contents: [{ parts: [{ text: prompt }] }],
           generationConfig: {
-            temperature: 0.3,
+            temperature: 0.65,
             responseMimeType: 'application/json'
           }
         })
