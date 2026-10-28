@@ -47,21 +47,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.5.6. Metnin yüzey anlamını belirleyebilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Metne dayalı açık uçlu kavrama sorusu.",
-        "stimulus": "Metnin Yüzey Anlamı ve Olay Örgüsü konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nSelin: \"Bu durumda temel kural şudur: Yüzey anlam sorularında kendi yorumunuzu veya tahmininizi değil, sadece metinde açıkça yazılı olan delilleri kullanınız.\"\nKerem: \"Hayır Selin, yanılıyorsun. Çünkü kural gereği: Yüzey Anlam: Metinde doğrudan doğruya açıkça söylenen, gizli olmayan ve satır aralarında aranmayan apaçık bilgidir. Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Selin ve Kerem'nin iddialarını Metnin Yüzey Anlamı ve Olay Örgüsü ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
-        "solutionExplanation": "Kişinin alın teriyle ve sabırla ürettiği eşyaların maddiyatla ölçülemeyecek bir manevi değere sahip olmasıdır.",
-        "modelAnswer": "Kerem haklıdır. Çünkü Yüzey Anlam: Metinde doğrudan doğruya açıkça söylenen, gizli olmayan ve satır aralarında aranmayan apaçık bilgidir.. Selin ise 'Yüzey anlam sorularında kendi yorumunuzu veya tahmininizi değil, sadece metinde açıkça yazılı olan delilleri kullanınız.' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "stimulus": "“Ali o gün dedesinin tavan arasındaki eski ahşap sandığını açtı. Sandığın içinde dedesinin çocukken kendi elleriyle gürgen ağacından yonttuğu rengârenk bir fırıldak (topaç) ve tahta bir araba duruyordu. Dedesi yanına gelip başını okşadı: 'Evlat, biz küçükken oyuncaklarımızı çarşıdan hazır almazdık; doğadan bulduğumuz bir dalla, bir kozalakla günlerce emek verip kendi oyuncağımızı üretirdik. Çünkü insanın kendi emeğiyle yaptığı şey paha biçilemezdir.' dedi.”",
+        "questionText": "Yukarıda dedenin torununa ahşap oyuncakları gösterdiği metnin konusunu tek bir cümleyle yazınız.",
+        "solutionExplanation": "Metin geleneksel el yapımı oyuncakları ve emek verilerek üretilen şeylerin manevi değerini anlatır.",
+        "modelAnswer": "Metnin konusu: Dedenin torununa çocukluk yıllarında emek vererek yaptığı ahşap oyuncakları göstermesi ve kendi emeğiyle üretmenin değerini anlatmasıdır.",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (Kerem) doğru tespiti",
-            "points": 7
-          },
-          {
-            "criterion": "Selin'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 10
+            "criterion": "Metnin konusunun eksiksiz ve tek cümleyle yazılması",
+            "points": 17
           }
         ]
       },
@@ -71,21 +67,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.5.7. Görselle iletilen anlamı belirleyebilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
         "points": 17,
         "contextText": "Geleneksel ahşap oyuncak ile hazır plastik oyuncak karşılaştırma tablosu.",
-        "stimulus": "Aşağıdaki matriste Metnin Derin Anlamı ve Çıkarım Yapma konusuna yönelik üç farklı durum ve özellikleri verilmiştir:\n\n| Durum / Örnek | 1. Temel Kriter | 2. Ayırt Edici Özellik | Karşılar mı? |\n| :--- | :---: | :---: | :---: |\n| 1. Durum (Örnek A) | VAR | YOK | ............ |\n| 2. Durum (Örnek B) | VAR | VAR | ............ |\n| 3. Durum (Örnek C) | YOK | YOK | ............ |",
-        "questionText": "Matristeki boşlukları özelliğin doğruluğuna göre \"EVET\" veya \"HAYIR\" yazarak doldurunuz. 2. Durum'u diğer durumlardan ayıran en temel şartı gerekçelendirerek yazınız.",
+        "stimulus": "Aşağıdaki tabloda geleneksel ahşap oyuncaklar ile günümüz plastik oyuncaklarının özellikleri verilmiştir:\n• Ahşap Oyuncak: Doğal ağaçtan yapılır, dayanıklıdır, çocuğun el becerisini ve üreticiliğini geliştirir, çevreye zarar vermez.\n• Plastik Seri Üretim Oyuncak: Fabrikada üretilir, çabuk kırılabilir, çocukta hazır tüketim alışkanlığı yaratır, doğada yüzyıllarca kaybolmaz.",
+        "questionText": "Tablodaki verileri çocuk gelişimi ve çevre sağlığı açısından yorumlayınız. Neden ahşap oyuncaklar daha sağlıklı ve yararlıdır? İki gerekçe yazınız.",
         "solutionExplanation": "Doğal malzemedir, kimyasal içermez, üreticiliği destekler ve doğayı kirletmez.",
-        "modelAnswer": "Tablo Tamamlaması: 1. Durum: HAYIR | 2. Durum: EVET | 3. Durum: HAYIR.\nAyırt Edici Gerekçe: 2. Durum hem temel kriteri hem de ayırt edici özelliği eksiksiz sağladığı için Örtük Anlam: Metinde doğrudan söylenmeyen ancak ipuçlarından hareketle okuyucunun akıl yürüterek ulaştığı gizli anlamdır. kuralına tam uygundur.",
+        "modelAnswer": "1. Çocuk Gelişimi Açısından: Ahşap oyuncaklar çocuğu tüketen değil üreten konumuna getirir, el becerisini ve hayal gücünü geliştirir.\n2. Çevre ve Sağlık Açısından: Tamamen doğal ağaçtan yapıldığı için kimyasal madde içermez ve kırıldığında doğada kolayca çözünerek çevre kirliliği oluşturmaz.",
         "rubric": [
           {
-            "criterion": "Tablodaki boşlukların hatasız doldurulması (HAYIR - EVET - HAYIR)",
-            "points": 8
+            "criterion": "Çocuk gelişimi gerekçesinin doğru açıklanması",
+            "points": 9
           },
           {
-            "criterion": "2. Durum'un ayırt edici şartının ve kuralının açıklanması",
-            "points": 9
+            "criterion": "Çevre ve sağlık gerekçesinin doğru açıklanması",
+            "points": 8
           }
         ]
       },
@@ -95,25 +91,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.5.20. Metinden hareketle söz varlığını geliştirmeye yönelik çözümleme yapabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Hata Tespiti & Adım Analizi",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Kelime tahlili ve cümle kurma.",
-        "stimulus": "Gamze, Söz Sanatları: Kişileştirme ve Benzetme ile ilgili açık uçlu bir soruyu çözerken çalışma kağıdına şu adımları yazmıştır:\n1. Adım: Verilen öncülleri ve temel kavramları belirledim.\n2. Adım: \"Gibi\" veya \"kadar\" edatı olan her cümle benzetme olabilir; ancak kişileştirmede mutlaka insana özgü bir fiil (hüzünlenmek, fısıldamak) doğaya aktarılmalıdır. kabulünü yaparak işleme başladım.\n3. Adım: Bu adımdaki sonuca göre bağlantılı kuralı uyguladım.\n4. Adım: Nihai sonuca ulaştım.",
-        "questionText": "Gamze'in çözüm adımlarını inceleyiniz. İlk hata kaçıncı adımda yapılmıştır? Yapılan hatanın gerekçesini açıklayarak o adımın ve nihai cevabın doğru halini yazınız.",
+        "stimulus": "Metinde geçen 'yadigâr' ve 'paha biçilemez' sözcük öbekleri.",
+        "questionText": "a) 'Yadigâr' kelimesinin anlamını yazıp bir cümlede kullanınız.\nb) 'Paha biçilemez' deyiminin ne anlama geldiğini açıklayınız.",
         "solutionExplanation": "Yadigâr: Bir kimseden veya geçmişten hatıra kalan şey. Paha biçilemez: Değerine fiyat konulamayacak kadar kıymetli olan.",
-        "modelAnswer": "İlk hata 2. adımda yapılmıştır. Çünkü Gamze, '\"Gibi\" veya \"kadar\" edatı olan her cümle benzetme olabilir; ancak kişileştirmede mutlaka insana özgü bir fiil (hüzünlenmek, fısıldamak) doğaya aktarılmalıdır.' hatasına düşmüştür. Doğrusu: Benzetme (Teşbih): Aralarında ortak özellik bulunan iki varlıktan zayıf olanın güçlü olana benzetilmesidir (Benzeyen, Benzetilen, Benzetme Edatı, Benzetme Yönü). kuralı işletilmeli ve çözüm bu esasa göre tamamlanmalıdır.",
+        "modelAnswer": "a) Yadigâr: Geçmişten veya sevilen bir kimseden hatıra olarak kalan değerli eşya demektir. Örnek Cümle: 'Dedemden kalan bu gümüş köstekli saat bizim en kıymetli yadigârımızdır.'\nb) Paha biçilemez: Maddi bir parayla ölçülemeyecek kadar yüksek manevi değere ve öneme sahip olan şeydir.",
         "rubric": [
           {
-            "criterion": "İlk hatanın yapıldığı adımın (2. Adım) doğru belirlenmesi",
-            "points": 6
+            "criterion": "Yadigâr kelimesinin anlamı ve doğru örnek cümle",
+            "points": 9
           },
           {
-            "criterion": "Yapılan kavramsal/işlemsel hatanın gerekçelendirilmesi",
-            "points": 6
-          },
-          {
-            "criterion": "Adımın ve sonucun doğru kurala göre düzeltilmesi",
-            "points": 5
+            "criterion": "Paha biçilemez deyiminin anlamının doğru açıklanması",
+            "points": 8
           }
         ]
       },
@@ -123,20 +115,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.Y.5.13. Yazısını zenginleştirecek biçimde söz varlığını kullanabilme",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 16,
         "contextText": "Deyimler içeren yaratıcı paragraf tamamlama.",
-        "stimulus": "Noktalama İşaretleri: Virgül, Noktalı Virgül ve İki Nokta kapsamında karşılaşılan bir durumu çözmek için uzmanlar iki farklı yöntem geliştirmiştir:\n1. Yöntem: Kısa vadeli hızlı çözüm sunan ancak 'İki noktadan sonra gelen kısım tam bir cümle ise büyük harfle, sadece örnekler sıralanıyorsa küçük harfle başlar.' riskini barındıran yaklaşım.\n2. Yöntem: Başlangıçta daha fazla dikkat ve aşama gerektiren ancak 'Virgül (,): Eş görevli sözcükleri ayırır, sıralı cümleleri bağlar, hitap sözlerinden sonra konur.' ilkesine tam uyan sürdürülebilir yaklaşım.",
-        "questionText": "Verilen iki yaklaşımı Noktalama İşaretleri: Virgül, Noktalı Virgül ve İki Nokta ilkeleri bakımından değerlendiriniz. Hangi yöntem daha uygundur? Seçtiğiniz yöntemin güçlü yönlerini ve diğer yöntemin taşıdığı riskleri gerekçelendiriniz.",
+        "stimulus": "Kullanılacak Deyimler: 'gözü gibi bakmak' ve 'can kulağıyla dinlemek'.",
+        "questionText": "Ali'nin dedesinin anlattıklarını dinlerken hissettiklerini ve o topaca sahip çıkışını; içinde 'gözü gibi bakmak' ve 'can kulağıyla dinlemek' deyimlerinin geçtiği 2-3 cümlelik bir anlatımla yazınız.",
         "solutionExplanation": "Öğrenci verilen iki deyimi yerli yerinde kullanarak akıcı bir anlatım kurar.",
-        "modelAnswer": "2. Yöntem uygundur. Çünkü Virgül (,): Eş görevli sözcükleri ayırır, sıralı cümleleri bağlar, hitap sözlerinden sonra konur. ilkesini tam olarak karşılamaktadır. 1. Yöntem ise kısa vadeli olsa da 'İki noktadan sonra gelen kısım tam bir cümle ise büyük harfle, sadece örnekler sıralanıyorsa küçük harfle başlar.' sakıncasını doğuracağı için hedeflenen amaca ters düşer.",
+        "modelAnswer": "Ali, dedesinin çocukluk anılarını can kulağıyla dinledi ve geçmişin güzelliklerine hayran kaldı. Dedesinin armağan ettiği o ahşap topacı avucuna aldığında, ömrü boyunca bu kıymetli hatıraya gözü gibi bakacağına kendi kendine söz verdi.",
         "rubric": [
           {
-            "criterion": "Doğru yaklaşımın (2. Yöntem) tespiti ve güçlü yönünün gerekçelendirilmesi",
+            "criterion": "İki deyimin yerinde ve anlamına uygun kullanılması",
             "points": 8
           },
           {
-            "criterion": "1. Yöntemin taşıdığı kavramsal riskin açıklanması",
+            "criterion": "Cümlelerin anlam bütünlüğü ve akıcılığı",
             "points": 8
           }
         ]
@@ -209,21 +201,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.5.6. Metnin yüzey anlamını belirleyebilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Metnin ana fikrini belirleme.",
-        "stimulus": "Metnin Yüzey Anlamı ve Olay Örgüsü konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nSelin: \"Bu durumda temel kural şudur: Yüzey anlam sorularında kendi yorumunuzu veya tahmininizi değil, sadece metinde açıkça yazılı olan delilleri kullanınız.\"\nKerem: \"Hayır Selin, yanılıyorsun. Çünkü kural gereği: Yüzey Anlam: Metinde doğrudan doğruya açıkça söylenen, gizli olmayan ve satır aralarında aranmayan apaçık bilgidir. Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Selin ve Kerem'nin iddialarını Metnin Yüzey Anlamı ve Olay Örgüsü ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
+        "stimulus": "Yukarıda verilen 1. sorudaki karınca metnini dikkate alınız.",
+        "questionText": "Yazarın bu masal/öykü aracılığıyla çocuklara vermek istediği temel ders (ana fikir) nedir?",
         "solutionExplanation": "Zorluklar karşısında pes etmeyenler ve dayanışma gösterenler başarıya ulaşır.",
-        "modelAnswer": "Kerem haklıdır. Çünkü Yüzey Anlam: Metinde doğrudan doğruya açıkça söylenen, gizli olmayan ve satır aralarında aranmayan apaçık bilgidir.. Selin ise 'Yüzey anlam sorularında kendi yorumunuzu veya tahmininizi değil, sadece metinde açıkça yazılı olan delilleri kullanınız.' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "modelAnswer": "Metnin Ana Fikri: Karşılaştığımız engeller ne kadar büyük olursa olsun sabırla gayret gösterir ve pes etmezsek, arkadaşlarımızla iş birliği yaparak her zorluğu aşabiliriz.",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (Kerem) doğru tespiti",
-            "points": 7
-          },
-          {
-            "criterion": "Selin'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 10
+            "criterion": "Ana fikrin öğüt bildiren tutarlı bir yargı olarak yazılması",
+            "points": 17
           }
         ]
       },
@@ -233,21 +221,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.5.7. Görselle iletilen anlamı belirleyebilme",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
         "points": 17,
         "contextText": "Karınca kolonisi dayanışma çizimi.",
-        "stimulus": "Aşağıdaki matriste Metnin Derin Anlamı ve Çıkarım Yapma konusuna yönelik üç farklı durum ve özellikleri verilmiştir:\n\n| Durum / Örnek | 1. Temel Kriter | 2. Ayırt Edici Özellik | Karşılar mı? |\n| :--- | :---: | :---: | :---: |\n| 1. Durum (Örnek A) | VAR | YOK | ............ |\n| 2. Durum (Örnek B) | VAR | VAR | ............ |\n| 3. Durum (Örnek C) | YOK | YOK | ............ |",
-        "questionText": "Matristeki boşlukları özelliğin doğruluğuna göre \"EVET\" veya \"HAYIR\" yazarak doldurunuz. 2. Durum'u diğer durumlardan ayıran en temel şartı gerekçelendirerek yazınız.",
+        "stimulus": "Bir fen dergisindeki görselde; onlarca karıncanın birbirine kenetlenerek bir su birikintisi üzerinde canlı bir 'köprü' oluşturduğu ve diğer karıncaların bu köprüden güvenle karşıya geçtiği resmedilmiştir.",
+        "questionText": "Bu görselden hareketle karıncaların davranışının insan toplumlarındaki hangi değer ve erdemlerle benzerlik gösterdiğini 2 madde halinde açıklayınız.",
         "solutionExplanation": "Fedakârlık, iş birliği, ortak amaç ve yardımlaşma.",
-        "modelAnswer": "Tablo Tamamlaması: 1. Durum: HAYIR | 2. Durum: EVET | 3. Durum: HAYIR.\nAyırt Edici Gerekçe: 2. Durum hem temel kriteri hem de ayırt edici özelliği eksiksiz sağladığı için Örtük Anlam: Metinde doğrudan söylenmeyen ancak ipuçlarından hareketle okuyucunun akıl yürüterek ulaştığı gizli anlamdır. kuralına tam uygundur.",
+        "modelAnswer": "1. Yardımlaşma ve İmece Kültürü: Tıpkı zor şartlarda birbirine destek olan insanlar gibi karıncalar da tek başlarına aşamayacakları engeli güçlerini birleştirerek aşmaktadırlar.\n2. Fedakârlık: Köprü olan karıncalar kendi rahatlarını feda ederek toplumun ve koloninin selameti için kendini riske atmaktadır.",
         "rubric": [
           {
-            "criterion": "Tablodaki boşlukların hatasız doldurulması (HAYIR - EVET - HAYIR)",
-            "points": 8
+            "criterion": "İmece ve iş birliği benzerliğinin açıklanması",
+            "points": 9
           },
           {
-            "criterion": "2. Durum'un ayırt edici şartının ve kuralının açıklanması",
-            "points": 9
+            "criterion": "Fedakârlık ve ortak amaç bilincinin açıklanması",
+            "points": 8
           }
         ]
       },
@@ -257,25 +245,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.5.7. Görselle iletilen anlamı belirleyebilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Hata Tespiti & Adım Analizi",
+        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
         "points": 17,
         "contextText": "Çalışkanlık ve tembellik karşılaştırma afişi.",
-        "stimulus": "Gamze, Metnin Derin Anlamı ve Çıkarım Yapma ile ilgili açık uçlu bir soruyu çözerken çalışma kağıdına şu adımları yazmıştır:\n1. Adım: Verilen öncülleri ve temel kavramları belirledim.\n2. Adım: Çıkarım yaparken metinle hiçbir ilgisi olmayan serbest hayallere kapılmayın; çıkarımınız mutlaka metindeki bir söze dayanmalıdır. kabulünü yaparak işleme başladım.\n3. Adım: Bu adımdaki sonuca göre bağlantılı kuralı uyguladım.\n4. Adım: Nihai sonuca ulaştım.",
-        "questionText": "Gamze'in çözüm adımlarını inceleyiniz. İlk hata kaçıncı adımda yapılmıştır? Yapılan hatanın gerekçesini açıklayarak o adımın ve nihai cevabın doğru halini yazınız.",
-        "solutionExplanation": "Zamanında çalışıp emek veren rahat eder. Atasözü: Yazın başı pişenin kışın aşı pişer (veya Ne doğrarsan aşına o çıkar kaşığına).",
-        "modelAnswer": "İlk hata 2. adımda yapılmıştır. Çünkü Gamze, 'Çıkarım yaparken metinle hiçbir ilgisi olmayan serbest hayallere kapılmayın; çıkarımınız mutlaka metindeki bir söze dayanmalıdır.' hatasına düşmüştür. Doğrusu: Örtük Anlam: Metinde doğrudan söylenmeyen ancak ipuçlarından hareketle okuyucunun akıl yürüterek ulaştığı gizli anlamdır. kuralı işletilmeli ve çözüm bu esasa göre tamamlanmalıdır.",
+        "stimulus": "Bir fen dergisindeki görselde; onlarca karıncanın birbirine kenetlenerek bir su birikintisi üzerinde canlı bir 'köprü' oluşturduğu ve diğer karıncaların bu köprüden güvenle karşıya geçtiği resmedilmiştir.",
+        "questionText": "Bu görselden hareketle karıncaların davranışının insan toplumlarındaki hangi değer ve erdemlerle benzerlik gösterdiğini 2 madde halinde açıklayınız.",
+        "solutionExplanation": "Fedakârlık, iş birliği, ortak amaç ve yardımlaşma.",
+        "modelAnswer": "1. Yardımlaşma ve İmece Kültürü: Tıpkı zor şartlarda birbirine destek olan insanlar gibi karıncalar da tek başlarına aşamayacakları engeli güçlerini birleştirerek aşmaktadırlar.\n2. Fedakârlık: Köprü olan karıncalar kendi rahatlarını feda ederek toplumun ve koloninin selameti için kendini riske atmaktadır.",
         "rubric": [
           {
-            "criterion": "İlk hatanın yapıldığı adımın (2. Adım) doğru belirlenmesi",
-            "points": 6
+            "criterion": "İmece ve iş birliği benzerliğinin açıklanması",
+            "points": 9
           },
           {
-            "criterion": "Yapılan kavramsal/işlemsel hatanın gerekçelendirilmesi",
-            "points": 6
-          },
-          {
-            "criterion": "Adımın ve sonucun doğru kurala göre düzeltilmesi",
-            "points": 5
+            "criterion": "Fedakârlık ve ortak amaç bilincinin açıklanması",
+            "points": 8
           }
         ]
       },
@@ -285,21 +269,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.5.15. Metnin anahtar kelimelerini belirlemeye yönelik çözümleme yapabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 16,
         "contextText": "Anahtar kelime tespiti.",
-        "stimulus": "Metnin Konusu ve Ana Fikrini Belirleme kapsamında karşılaşılan bir durumu çözmek için uzmanlar iki farklı yöntem geliştirmiştir:\n1. Yöntem: Kısa vadeli hızlı çözüm sunan ancak '\"Doğa sevgisi\" bir konudur, ana fikir olamaz. \"Doğayı korumak insanlığın geleceğini kurtarır\" ise bir ana fikirdir.' riskini barındıran yaklaşım.\n2. Yöntem: Başlangıçta daha fazla dikkat ve aşama gerektiren ancak 'Metnin Konusu: \"Yazar bu metinde neden bahsediyor / ne anlatıyor?\" sorusunun yanıtıdır (genelde 2-4 kelimelik ifadedir).' ilkesine tam uyan sürdürülebilir yaklaşım.",
-        "questionText": "Verilen iki yaklaşımı Metnin Konusu ve Ana Fikrini Belirleme ilkeleri bakımından değerlendiriniz. Hangi yöntem daha uygundur? Seçtiğiniz yöntemin güçlü yönlerini ve diğer yöntemin taşıdığı riskleri gerekçelendiriniz.",
+        "stimulus": "Yukarıda verilen 1. sorudaki karınca Çıtı metnini dikkate alınız.",
+        "questionText": "Çalışkan karınca Pıtır'ın kış hazırlığını anlatan bu metnin içeriğini en iyi özetleyen 3 anahtar kelimeyi yazınız.",
         "solutionExplanation": "Karınca, azim/gayret, yardımlaşma.",
-        "modelAnswer": "2. Yöntem uygundur. Çünkü Metnin Konusu: \"Yazar bu metinde neden bahsediyor / ne anlatıyor?\" sorusunun yanıtıdır (genelde 2-4 kelimelik ifadedir). ilkesini tam olarak karşılamaktadır. 1. Yöntem ise kısa vadeli olsa da '\"Doğa sevgisi\" bir konudur, ana fikir olamaz. \"Doğayı korumak insanlığın geleceğini kurtarır\" ise bir ana fikirdir.' sakıncasını doğuracağı için hedeflenen amaca ters düşer.",
+        "modelAnswer": "1. Karınca\n2. Azim (Çalışkanlık)\n3. Yardımlaşma (Dayanışma)",
         "rubric": [
           {
-            "criterion": "Doğru yaklaşımın (2. Yöntem) tespiti ve güçlü yönünün gerekçelendirilmesi",
-            "points": 8
-          },
-          {
-            "criterion": "1. Yöntemin taşıdığı kavramsal riskin açıklanması",
-            "points": 8
+            "criterion": "Metni temsil eden 3 anahtar kelimenin doğru yazılması",
+            "points": 16
           }
         ]
       },
@@ -375,21 +355,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.5.6. Metnin yüzey anlamını belirleyebilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 15,
         "contextText": "Metnin konusunu belirleme.",
-        "stimulus": "Metnin Yüzey Anlamı ve Olay Örgüsü konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nSelin: \"Bu durumda temel kural şudur: Yüzey anlam sorularında kendi yorumunuzu veya tahmininizi değil, sadece metinde açıkça yazılı olan delilleri kullanınız.\"\nKerem: \"Hayır Selin, yanılıyorsun. Çünkü kural gereği: Yüzey Anlam: Metinde doğrudan doğruya açıkça söylenen, gizli olmayan ve satır aralarında aranmayan apaçık bilgidir. Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Selin ve Kerem'nin iddialarını Metnin Yüzey Anlamı ve Olay Örgüsü ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
+        "stimulus": "Yukarıda verilen 1. sorudaki 'Merhamet Isıtır' metnini dikkate alınız.",
+        "questionText": "Can ve arkadaşlarının sokak hayvanları için kışlık kulübe yapmasını anlatan bu metnin konusunu tek bir cümleyle yazınız.",
         "solutionExplanation": "Metin çocukların sokak hayvanlarını soğuktan korumak için el birliğiyle kedi evleri yapmasını anlatır.",
-        "modelAnswer": "Kerem haklıdır. Çünkü Yüzey Anlam: Metinde doğrudan doğruya açıkça söylenen, gizli olmayan ve satır aralarında aranmayan apaçık bilgidir.. Selin ise 'Yüzey anlam sorularında kendi yorumunuzu veya tahmininizi değil, sadece metinde açıkça yazılı olan delilleri kullanınız.' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "modelAnswer": "Metnin konusu: Bir grup 5. sınıf öğrencisinin kış aylarında sokak hayvanlarını soğuktan korumak amacıyla kendi elleriyle barınaklar yapması ve çevreye örnek olmasıdır.",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (Kerem) doğru tespiti",
-            "points": 6
-          },
-          {
-            "criterion": "Selin'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 9
+            "criterion": "Metnin konusunun eksiksiz ve tek cümleyle yazılması",
+            "points": 15
           }
         ]
       },
@@ -399,21 +375,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.5.6. Metnin yüzey anlamını belirleyebilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Metne dayalı neden-sonuç çıkarımı.",
-        "stimulus": "Aşağıdaki matriste Metnin Yüzey Anlamı ve Olay Örgüsü konusuna yönelik üç farklı durum ve özellikleri verilmiştir:\n\n| Durum / Örnek | 1. Temel Kriter | 2. Ayırt Edici Özellik | Karşılar mı? |\n| :--- | :---: | :---: | :---: |\n| 1. Durum (Örnek A) | VAR | YOK | ............ |\n| 2. Durum (Örnek B) | VAR | VAR | ............ |\n| 3. Durum (Örnek C) | YOK | YOK | ............ |",
-        "questionText": "Matristeki boşlukları özelliğin doğruluğuna göre \"EVET\" veya \"HAYIR\" yazarak doldurunuz. 2. Durum'u diğer durumlardan ayıran en temel şartı gerekçelendirerek yazınız.",
-        "solutionExplanation": "Kutuları yağmurdan/kardan korumak ve içerisini sıcak tutarak hayvanların üşümesini engellemek.",
-        "modelAnswer": "Tablo Tamamlaması: 1. Durum: HAYIR | 2. Durum: EVET | 3. Durum: HAYIR.\nAyırt Edici Gerekçe: 2. Durum hem temel kriteri hem de ayırt edici özelliği eksiksiz sağladığı için Yüzey Anlam: Metinde doğrudan doğruya açıkça söylenen, gizli olmayan ve satır aralarında aranmayan apaçık bilgidir. kuralına tam uygundur.",
+        "stimulus": "Yukarıda verilen 1. sorudaki 'Merhamet Isıtır' metnini dikkate alınız.",
+        "questionText": "Can ve arkadaşlarının sokak hayvanları için kışlık kulübe yapmasını anlatan bu metnin konusunu tek bir cümleyle yazınız.",
+        "solutionExplanation": "Metin çocukların sokak hayvanlarını soğuktan korumak için el birliğiyle kedi evleri yapmasını anlatır.",
+        "modelAnswer": "Metnin konusu: Bir grup 5. sınıf öğrencisinin kış aylarında sokak hayvanlarını soğuktan korumak amacıyla kendi elleriyle barınaklar yapması ve çevreye örnek olmasıdır.",
         "rubric": [
           {
-            "criterion": "Tablodaki boşlukların hatasız doldurulması (HAYIR - EVET - HAYIR)",
-            "points": 7
-          },
-          {
-            "criterion": "2. Durum'un ayırt edici şartının ve kuralının açıklanması",
-            "points": 7
+            "criterion": "Metnin konusunun eksiksiz ve tek cümleyle yazılması",
+            "points": 14
           }
         ]
       },
@@ -423,25 +395,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.5.7. Görselle iletilen anlamı belirleyebilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Hata Tespiti & Adım Analizi",
+        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
         "points": 14,
         "contextText": "Sosyal sorumluluk afişi analizi.",
-        "stimulus": "Gamze, Metnin Derin Anlamı ve Çıkarım Yapma ile ilgili açık uçlu bir soruyu çözerken çalışma kağıdına şu adımları yazmıştır:\n1. Adım: Verilen öncülleri ve temel kavramları belirledim.\n2. Adım: Çıkarım yaparken metinle hiçbir ilgisi olmayan serbest hayallere kapılmayın; çıkarımınız mutlaka metindeki bir söze dayanmalıdır. kabulünü yaparak işleme başladım.\n3. Adım: Bu adımdaki sonuca göre bağlantılı kuralı uyguladım.\n4. Adım: Nihai sonuca ulaştım.",
-        "questionText": "Gamze'in çözüm adımlarını inceleyiniz. İlk hata kaçıncı adımda yapılmıştır? Yapılan hatanın gerekçesini açıklayarak o adımın ve nihai cevabın doğru halini yazınız.",
+        "stimulus": "Bir sokak panosundaki afişte; bir kap su ve bir kap mamanın yanında 'Bir Kap Su, Bir Kap Sevgi: Onlar Bize Emanet' sloganı ve yaralı bir sokak köpeğini besleyen çocuk görseli yer almaktadır.",
+        "questionText": "Bu afişteki 'Onlar Bize Emanet' ifadesiyle topluma hangi sorumluluk yüklenmektedir? Açıklayınız.",
         "solutionExplanation": "Sokak hayvanlarının konuşamadığı, kendilerini ifade edemediği ve yaşam alanlarının insanlar tarafından daraltıldığı için insan merhametine muhtaç olduğu bilinci.",
-        "modelAnswer": "İlk hata 2. adımda yapılmıştır. Çünkü Gamze, 'Çıkarım yaparken metinle hiçbir ilgisi olmayan serbest hayallere kapılmayın; çıkarımınız mutlaka metindeki bir söze dayanmalıdır.' hatasına düşmüştür. Doğrusu: Örtük Anlam: Metinde doğrudan söylenmeyen ancak ipuçlarından hareketle okuyucunun akıl yürüterek ulaştığı gizli anlamdır. kuralı işletilmeli ve çözüm bu esasa göre tamamlanmalıdır.",
+        "modelAnswer": "Bu ifadeyle, sokak hayvanlarının kendi dertlerini anlatamayacak dilsiz varlıklar olduğu; şehirlerde doğal yaşam alanları daraldığı için su ve yiyecek bulma imkânlarının insanların vicdanına ve merhametine bağlı olduğu vurgulanmakta; tüm vatandaşlara onları koruma ve gözetme görevi yüklenmektedir.",
         "rubric": [
           {
-            "criterion": "İlk hatanın yapıldığı adımın (2. Adım) doğru belirlenmesi",
-            "points": 5
-          },
-          {
-            "criterion": "Yapılan kavramsal/işlemsel hatanın gerekçelendirilmesi",
-            "points": 5
-          },
-          {
-            "criterion": "Adımın ve sonucun doğru kurala göre düzeltilmesi",
-            "points": 4
+            "criterion": "Emanet bilinci ve vicdani sorumluluk analizinin doğru yapılması",
+            "points": 14
           }
         ]
       },
@@ -451,21 +415,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.5.15. Metnin anahtar kelimelerini belirlemeye yönelik çözümleme yapabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Anahtar kelimeler.",
-        "stimulus": "Metnin Konusu ve Ana Fikrini Belirleme kapsamında karşılaşılan bir durumu çözmek için uzmanlar iki farklı yöntem geliştirmiştir:\n1. Yöntem: Kısa vadeli hızlı çözüm sunan ancak '\"Doğa sevgisi\" bir konudur, ana fikir olamaz. \"Doğayı korumak insanlığın geleceğini kurtarır\" ise bir ana fikirdir.' riskini barındıran yaklaşım.\n2. Yöntem: Başlangıçta daha fazla dikkat ve aşama gerektiren ancak 'Metnin Konusu: \"Yazar bu metinde neden bahsediyor / ne anlatıyor?\" sorusunun yanıtıdır (genelde 2-4 kelimelik ifadedir).' ilkesine tam uyan sürdürülebilir yaklaşım.",
-        "questionText": "Verilen iki yaklaşımı Metnin Konusu ve Ana Fikrini Belirleme ilkeleri bakımından değerlendiriniz. Hangi yöntem daha uygundur? Seçtiğiniz yöntemin güçlü yönlerini ve diğer yöntemin taşıdığı riskleri gerekçelendiriniz.",
+        "stimulus": "Yukarıda verilen 1. sorudaki sokak hayvanları metnini dikkate alınız.",
+        "questionText": "Metnin anahtar kelimelerinden 3 tanesini yazınız.",
         "solutionExplanation": "Sokak hayvanları, merhamet/yardımlaşma, barınak/kedi evi.",
-        "modelAnswer": "2. Yöntem uygundur. Çünkü Metnin Konusu: \"Yazar bu metinde neden bahsediyor / ne anlatıyor?\" sorusunun yanıtıdır (genelde 2-4 kelimelik ifadedir). ilkesini tam olarak karşılamaktadır. 1. Yöntem ise kısa vadeli olsa da '\"Doğa sevgisi\" bir konudur, ana fikir olamaz. \"Doğayı korumak insanlığın geleceğini kurtarır\" ise bir ana fikirdir.' sakıncasını doğuracağı için hedeflenen amaca ters düşer.",
+        "modelAnswer": "1. Sokak hayvanları\n2. Merhamet\n3. Barınak (Kedi evi)",
         "rubric": [
           {
-            "criterion": "Doğru yaklaşımın (2. Yöntem) tespiti ve güçlü yönünün gerekçelendirilmesi",
-            "points": 7
-          },
-          {
-            "criterion": "1. Yöntemin taşıdığı kavramsal riskin açıklanması",
-            "points": 7
+            "criterion": "3 anahtar kelimenin doğru yazılması",
+            "points": 14
           }
         ]
       },
@@ -547,18 +507,18 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "cognitiveLevel": "Basit Bilişsel Süreçler",
         "archetype": "Metin İçi Delillendirme & Örtük Anlam",
         "points": 15,
-        "contextText": "Köy okulundaki kütüphane ve kitap sevgisi.",
-        "stimulus": "Toros Dağları'nın eteklerindeki küçük bir köy okulunda öğretmenlik yapan Elif Öğretmen, boş bir sınıfı kütüphaneye dönüştürmek için kolları sıvadı. Kasabadaki marangozdan tahta raflar rica etti, öğrencileriyle birlikte rafları gökkuşağı renklerine boyadı. Kısa sürede Türkiye'nin dört bir yanından gelen bağış kitaplarla raf dolup taştı. Öğrencilerden Ali, kütüphanenin ilk açıldığı gün rafların karşısında büyülenmiş gibi durdu ve eline aldığı ilk masal kitabını koklayarak sayfalarını çevirmeye başladı.",
-        "questionText": "Verilen metindeki/durumdaki temel düşünceden hareketle yazarın aktarmak istediği örtük iletiyi açıklayınız. Metinden bu düşüncenizi destekleyen iki somut ifadeyi kanıt gösteriniz.",
-        "solutionExplanation": "Metin, bir köy okulunda öğretmenin ve öğrencilerin dayanışmasıyla kurulan kütüphaneyi ve çocukların kitaba kavuşma heyecanını anlatmaktadır.",
-        "modelAnswer": "Örtük İleti: Yüzey Anlam: Metinde doğrudan doğruya açıkça söylenen, gizli olmayan ve satır aralarında aranmayan apaçık bilgidir.\nMetinden Kanıtlar:\n1. Kanıt: Durumun manevi ve kalıcı yönünün vurgulanması.\n2. Kanıt: Emek verilerek üretilen değerin maddiyatla ölçülemeyeceğinin ifade edilmesi.",
+        "contextText": "Köy kütüphanesi ve dayanışma konulu hikâyeleyici metin.",
+        "stimulus": "“Köyün ulu çınarının gölgesinde oturan Elif, kasabadan bağış olarak gönderilen kitap kolilerini büyük bir heyecanla açtı. Köylerinde henüz bir kütüphane yoktu ancak o yaz tatilinde tüm çocuklar el ele verip eski muhtarlık odasını kireçle boyamış, tahtalardan kitap rafları yapmışlardı. Elif eline aldığı ilk kitabın kapağını yavaşça araladı; sayfaların arasında kurutulmuş bir papatya ve küçük bir not vardı: 'Kitaplar hiç gitmediğin diyarların anahtarıdır.'”",
+        "questionText": "Yukarıdaki metne göre:\na) Köy çocuklarının yaz tatilinde birlikte gerçekleştirdiği dayanışmayı açıklayınız.\nb) Metinde geçen 'Kitaplar hiç gitmediğin diyarların anahtarıdır' sözüyle anlatılmak isteneni bir cümleyle yazınız.",
+        "solutionExplanation": "Çocuklar el ele verip kütüphane kurmuşlardır. Kitapların insanı yeni dünyalarla tanıştırması vurgulanmaktadır.",
+        "modelAnswer": "a) Çocuklar yaz tatilinde birlik olarak eski muhtarlık odasını kireçle boyamış, tahtalardan raflar çakarak köylerine ilk kütüphaneyi kazandırmışlardır.\nb) Kitaplar sayesinde insanların henüz görmedikleri yerleri, farklı kültürleri ve yeni bilgileri hayal güçleriyle keşfedebilecekleri anlatılmak istenmiştir.",
         "rubric": [
           {
-            "criterion": "Metindeki örtük iletinin doğru tespiti",
+            "criterion": "a şıkkında kütüphane kurma dayanışmasının doğru açıklanması",
             "points": 8
           },
           {
-            "criterion": "Metinden iki somut kanıtın gösterilmesi",
+            "criterion": "b şıkkında kitapların yeni dünyaları keşfettirmesi anlamının yazılması",
             "points": 7
           }
         ]
@@ -569,21 +529,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.5.6. Metnin yüzey anlamını belirleyebilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 15,
         "contextText": "Metne dayalı neden-sonuç sorusu.",
-        "stimulus": "Metnin Yüzey Anlamı ve Olay Örgüsü konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nSelin: \"Bu durumda temel kural şudur: Yüzey anlam sorularında kendi yorumunuzu veya tahmininizi değil, sadece metinde açıkça yazılı olan delilleri kullanınız.\"\nKerem: \"Hayır Selin, yanılıyorsun. Çünkü kural gereği: Yüzey Anlam: Metinde doğrudan doğruya açıkça söylenen, gizli olmayan ve satır aralarında aranmayan apaçık bilgidir. Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Selin ve Kerem'nin iddialarını Metnin Yüzey Anlamı ve Olay Örgüsü ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
-        "solutionExplanation": "Marangozdan tahta raflar almış, Türkiye'nin dört bir yanından bağış kitaplar toplanmıştır.",
-        "modelAnswer": "Kerem haklıdır. Çünkü Yüzey Anlam: Metinde doğrudan doğruya açıkça söylenen, gizli olmayan ve satır aralarında aranmayan apaçık bilgidir.. Selin ise 'Yüzey anlam sorularında kendi yorumunuzu veya tahmininizi değil, sadece metinde açıkça yazılı olan delilleri kullanınız.' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "stimulus": "Toros Dağları'nın eteklerindeki küçük bir köy okulunda öğretmenlik yapan Elif Öğretmen, boş bir sınıfı kütüphaneye dönüştürmek için kolları sıvadı. Kasabadaki marangozdan tahta raflar rica etti, öğrencileriyle birlikte rafları gökkuşağı renklerine boyadı. Kısa sürede Türkiye'nin dört bir yanından gelen bağış kitaplarla raf dolup taştı. Öğrencilerden Ali, kütüphanenin ilk açıldığı gün rafların karşısında büyülenmiş gibi durdu ve eline aldığı ilk masal kitabını koklayarak sayfalarını çevirmeye başladı.",
+        "questionText": "Elif Öğretmen'in köy okuluna kütüphane kurma sürecini anlatan yukarıdaki metnin konusunu tek bir cümleyle ifade ediniz.",
+        "solutionExplanation": "Metin, bir köy okulunda öğretmenin ve öğrencilerin dayanışmasıyla kurulan kütüphaneyi ve çocukların kitaba kavuşma heyecanını anlatmaktadır.",
+        "modelAnswer": "Metnin konusu, bir köy okulunda boş bir sınıfın el birliğiyle rengârenk bir kütüphaneye dönüştürülmesi ve öğrencilerin kitap sevgisidir.",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (Kerem) doğru tespiti",
-            "points": 6
-          },
-          {
-            "criterion": "Selin'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 9
+            "criterion": "Kütüphane kurulumu ve kitap sevgisini kapsayan doğru konu cümlesi yazımı",
+            "points": 15
           }
         ]
       },
@@ -593,20 +549,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.5.7. Görselle iletilen anlamı belirleyebilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
         "points": 14,
         "contextText": "Kütüphane tanıtım afişi analizi.",
-        "stimulus": "Aşağıdaki matriste Metnin Derin Anlamı ve Çıkarım Yapma konusuna yönelik üç farklı durum ve özellikleri verilmiştir:\n\n| Durum / Örnek | 1. Temel Kriter | 2. Ayırt Edici Özellik | Karşılar mı? |\n| :--- | :---: | :---: | :---: |\n| 1. Durum (Örnek A) | VAR | YOK | ............ |\n| 2. Durum (Örnek B) | VAR | VAR | ............ |\n| 3. Durum (Örnek C) | YOK | YOK | ............ |",
-        "questionText": "Matristeki boşlukları özelliğin doğruluğuna göre \"EVET\" veya \"HAYIR\" yazarak doldurunuz. 2. Durum'u diğer durumlardan ayıran en temel şartı gerekçelendirerek yazınız.",
+        "stimulus": "Kütüphanenin giriş kapısına asılan afişte: Açık duran büyük bir kitabın içinden uzaya yükselen bir roket ve rengârenk çiçekler açan bir vadi resmedilmiş; altına 'Her Kitap Yeni Bir Dünyadır' sloganı yazılmıştır.",
+        "questionText": "Bu afişteki roket ve çiçek açan vadi görselleriyle kitap okumanın çocuklara sağladığı hangi iki kazanım anlatılmak istenmiştir?",
         "solutionExplanation": "Roket hayal gücünü göklere/bilime çıkarmayı; çiçek açan vadi ise iç dünyayı güzelleştirmeyi simgeler.",
-        "modelAnswer": "Tablo Tamamlaması: 1. Durum: HAYIR | 2. Durum: EVET | 3. Durum: HAYIR.\nAyırt Edici Gerekçe: 2. Durum hem temel kriteri hem de ayırt edici özelliği eksiksiz sağladığı için Örtük Anlam: Metinde doğrudan söylenmeyen ancak ipuçlarından hareketle okuyucunun akıl yürüterek ulaştığı gizli anlamdır. kuralına tam uygundur.",
+        "modelAnswer": "1. Roket: Kitapların insanın hayal gücünü sonsuzluğa taşıdığını, bilime, keşfe ve ufukların ötesine kanatlandırdığını sembolize eder.\n2. Çiçek Açan Vadi: Kitap okumanın insanın ruhunu, kelime dağarcığını ve iç dünyasını rengârenk güzelliklerle zenginleştirdiğini simgeler.",
         "rubric": [
           {
-            "criterion": "Tablodaki boşlukların hatasız doldurulması (HAYIR - EVET - HAYIR)",
+            "criterion": "Roketin hayal gücü ve bilgi/keşif anlamının doğru yorumlanması",
             "points": 7
           },
           {
-            "criterion": "2. Durum'un ayırt edici şartının ve kuralının açıklanması",
+            "criterion": "Çiçekli vadinin içsel zenginlik ve güzellik anlamının açıklanması",
             "points": 7
           }
         ]
@@ -617,25 +573,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.5.7. Görselle iletilen anlamı belirleyebilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Hata Tespiti & Adım Analizi",
+        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
         "points": 14,
         "contextText": "Kitap okuma saati görseli.",
-        "stimulus": "Gamze, Metnin Derin Anlamı ve Çıkarım Yapma ile ilgili açık uçlu bir soruyu çözerken çalışma kağıdına şu adımları yazmıştır:\n1. Adım: Verilen öncülleri ve temel kavramları belirledim.\n2. Adım: Çıkarım yaparken metinle hiçbir ilgisi olmayan serbest hayallere kapılmayın; çıkarımınız mutlaka metindeki bir söze dayanmalıdır. kabulünü yaparak işleme başladım.\n3. Adım: Bu adımdaki sonuca göre bağlantılı kuralı uyguladım.\n4. Adım: Nihai sonuca ulaştım.",
-        "questionText": "Gamze'in çözüm adımlarını inceleyiniz. İlk hata kaçıncı adımda yapılmıştır? Yapılan hatanın gerekçesini açıklayarak o adımın ve nihai cevabın doğru halini yazınız.",
-        "solutionExplanation": "Huzur, mutluluk, heyecan. Yeni dünyalar keşfetmenin sevinci.",
-        "modelAnswer": "İlk hata 2. adımda yapılmıştır. Çünkü Gamze, 'Çıkarım yaparken metinle hiçbir ilgisi olmayan serbest hayallere kapılmayın; çıkarımınız mutlaka metindeki bir söze dayanmalıdır.' hatasına düşmüştür. Doğrusu: Örtük Anlam: Metinde doğrudan söylenmeyen ancak ipuçlarından hareketle okuyucunun akıl yürüterek ulaştığı gizli anlamdır. kuralı işletilmeli ve çözüm bu esasa göre tamamlanmalıdır.",
+        "stimulus": "Kütüphanenin giriş kapısına asılan afişte: Açık duran büyük bir kitabın içinden uzaya yükselen bir roket ve rengârenk çiçekler açan bir vadi resmedilmiş; altına 'Her Kitap Yeni Bir Dünyadır' sloganı yazılmıştır.",
+        "questionText": "Bu afişteki roket ve çiçek açan vadi görselleriyle kitap okumanın çocuklara sağladığı hangi iki kazanım anlatılmak istenmiştir?",
+        "solutionExplanation": "Roket hayal gücünü göklere/bilime çıkarmayı; çiçek açan vadi ise iç dünyayı güzelleştirmeyi simgeler.",
+        "modelAnswer": "1. Roket: Kitapların insanın hayal gücünü sonsuzluğa taşıdığını, bilime, keşfe ve ufukların ötesine kanatlandırdığını sembolize eder.\n2. Çiçek Açan Vadi: Kitap okumanın insanın ruhunu, kelime dağarcığını ve iç dünyasını rengârenk güzelliklerle zenginleştirdiğini simgeler.",
         "rubric": [
           {
-            "criterion": "İlk hatanın yapıldığı adımın (2. Adım) doğru belirlenmesi",
-            "points": 5
+            "criterion": "Roketin hayal gücü ve bilgi/keşif anlamının doğru yorumlanması",
+            "points": 7
           },
           {
-            "criterion": "Yapılan kavramsal/işlemsel hatanın gerekçelendirilmesi",
-            "points": 5
-          },
-          {
-            "criterion": "Adımın ve sonucun doğru kurala göre düzeltilmesi",
-            "points": 4
+            "criterion": "Çiçekli vadinin içsel zenginlik ve güzellik anlamının açıklanması",
+            "points": 7
           }
         ]
       },
@@ -645,20 +597,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.5.20. Metinden hareketle söz varlığını geliştirmeye yönelik çözümleme yapabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Kelime tahlili ve cümle kurgusu.",
-        "stimulus": "Söz Sanatları: Kişileştirme ve Benzetme kapsamında karşılaşılan bir durumu çözmek için uzmanlar iki farklı yöntem geliştirmiştir:\n1. Yöntem: Kısa vadeli hızlı çözüm sunan ancak '\"Gibi\" veya \"kadar\" edatı olan her cümle benzetme olabilir; ancak kişileştirmede mutlaka insana özgü bir fiil (hüzünlenmek, fısıldamak) doğaya aktarılmalıdır.' riskini barındıran yaklaşım.\n2. Yöntem: Başlangıçta daha fazla dikkat ve aşama gerektiren ancak 'Benzetme (Teşbih): Aralarında ortak özellik bulunan iki varlıktan zayıf olanın güçlü olana benzetilmesidir (Benzeyen, Benzetilen, Benzetme Edatı, Benzetme Yönü).' ilkesine tam uyan sürdürülebilir yaklaşım.",
-        "questionText": "Verilen iki yaklaşımı Söz Sanatları: Kişileştirme ve Benzetme ilkeleri bakımından değerlendiriniz. Hangi yöntem daha uygundur? Seçtiğiniz yöntemin güçlü yönlerini ve diğer yöntemin taşıdığı riskleri gerekçelendiriniz.",
+        "stimulus": "Metinde geçen 'fedakârlık' ve 'aydınlık' sözcükleri.",
+        "questionText": "'Fedakârlık' ve 'aydınlık' sözcüklerini kütüphane veya kitap sevgisi temasını içerecek şekilde birer anlamlı ve kurallı cümlede kullanınız.",
         "solutionExplanation": "Kelimelerin bağlama uygun kurallı cümlelerde kullanımı.",
-        "modelAnswer": "2. Yöntem uygundur. Çünkü Benzetme (Teşbih): Aralarında ortak özellik bulunan iki varlıktan zayıf olanın güçlü olana benzetilmesidir (Benzeyen, Benzetilen, Benzetme Edatı, Benzetme Yönü). ilkesini tam olarak karşılamaktadır. 1. Yöntem ise kısa vadeli olsa da '\"Gibi\" veya \"kadar\" edatı olan her cümle benzetme olabilir; ancak kişileştirmede mutlaka insana özgü bir fiil (hüzünlenmek, fısıldamak) doğaya aktarılmalıdır.' sakıncasını doğuracağı için hedeflenen amaca ters düşer.",
+        "modelAnswer": "1. Fedakârlık: 'Öğretmenimiz büyük bir fedakârlık göstererek hafta sonu bile kütüphanenin raflarını düzenledi.'\n2. Aydınlık: 'Okuduğumuz her kitap zihnimizde yeni bir kandil yakarak geleceğimizi aydınlık kılar.'",
         "rubric": [
           {
-            "criterion": "Doğru yaklaşımın (2. Yöntem) tespiti ve güçlü yönünün gerekçelendirilmesi",
+            "criterion": "Fedakârlık sözcüğünün anlamına uygun cümlede kullanılması",
             "points": 7
           },
           {
-            "criterion": "1. Yöntemin taşıdığı kavramsal riskin açıklanması",
+            "criterion": "Aydınlık sözcüğünün mecaz/anlamlı bağlamda doğru kullanımı",
             "points": 7
           }
         ]
@@ -759,21 +711,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.5.6. Metnin yüzey anlamını belirleyebilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 15,
         "contextText": "Metnin ana fikrini belirleme.",
-        "stimulus": "Metnin Yüzey Anlamı ve Olay Örgüsü konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nSelin: \"Bu durumda temel kural şudur: Yüzey anlam sorularında kendi yorumunuzu veya tahmininizi değil, sadece metinde açıkça yazılı olan delilleri kullanınız.\"\nKerem: \"Hayır Selin, yanılıyorsun. Çünkü kural gereği: Yüzey Anlam: Metinde doğrudan doğruya açıkça söylenen, gizli olmayan ve satır aralarında aranmayan apaçık bilgidir. Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Selin ve Kerem'nin iddialarını Metnin Yüzey Anlamı ve Olay Örgüsü ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
+        "stimulus": "Metinde Dirse Han'ın oğlunun kaçmak yerine boğanın karşısında cesaretle durması ve onu aklıyla, bilek gücüyle alt etmesi anlatılmaktadır.",
+        "questionText": "Yukarıdaki metnin ana fikrini (vermek istediği temel mesajı) yazınız.",
         "solutionExplanation": "Zorluklar ve tehlikeler karşısında cesaretle duranlar başarıya ve şerefe ulaşırlar.",
-        "modelAnswer": "Kerem haklıdır. Çünkü Yüzey Anlam: Metinde doğrudan doğruya açıkça söylenen, gizli olmayan ve satır aralarında aranmayan apaçık bilgidir.. Selin ise 'Yüzey anlam sorularında kendi yorumunuzu veya tahmininizi değil, sadece metinde açıkça yazılı olan delilleri kullanınız.' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "modelAnswer": "Metnin ana fikri: Tehlikeler ve zorluklar karşısında korkup kaçmak yerine cesaret ve azimle mücadele edenler büyük engelleri aşar ve toplumda haklı bir saygı kazanırlar.",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (Kerem) doğru tespiti",
-            "points": 6
-          },
-          {
-            "criterion": "Selin'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 9
+            "criterion": "Cesaret ve zorluklarla mücadele ana fikrinin doğru ifadesi",
+            "points": 15
           }
         ]
       },
@@ -783,21 +731,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.5.6. Metnin yüzey anlamını belirleyebilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Neden-sonuç ilişkisi.",
-        "stimulus": "Aşağıdaki matriste Metnin Yüzey Anlamı ve Olay Örgüsü konusuna yönelik üç farklı durum ve özellikleri verilmiştir:\n\n| Durum / Örnek | 1. Temel Kriter | 2. Ayırt Edici Özellik | Karşılar mı? |\n| :--- | :---: | :---: | :---: |\n| 1. Durum (Örnek A) | VAR | YOK | ............ |\n| 2. Durum (Örnek B) | VAR | VAR | ............ |\n| 3. Durum (Örnek C) | YOK | YOK | ............ |",
-        "questionText": "Matristeki boşlukları özelliğin doğruluğuna göre \"EVET\" veya \"HAYIR\" yazarak doldurunuz. 2. Durum'u diğer durumlardan ayıran en temel şartı gerekçelendirerek yazınız.",
-        "solutionExplanation": "Boğayı yumruğuyla bastırıp alt ettiği için.",
-        "modelAnswer": "Tablo Tamamlaması: 1. Durum: HAYIR | 2. Durum: EVET | 3. Durum: HAYIR.\nAyırt Edici Gerekçe: 2. Durum hem temel kriteri hem de ayırt edici özelliği eksiksiz sağladığı için Yüzey Anlam: Metinde doğrudan doğruya açıkça söylenen, gizli olmayan ve satır aralarında aranmayan apaçık bilgidir. kuralına tam uygundur.",
+        "stimulus": "Metinde Dirse Han'ın oğlunun kaçmak yerine boğanın karşısında cesaretle durması ve onu aklıyla, bilek gücüyle alt etmesi anlatılmaktadır.",
+        "questionText": "Yukarıdaki metnin ana fikrini (vermek istediği temel mesajı) yazınız.",
+        "solutionExplanation": "Zorluklar ve tehlikeler karşısında cesaretle duranlar başarıya ve şerefe ulaşırlar.",
+        "modelAnswer": "Metnin ana fikri: Tehlikeler ve zorluklar karşısında korkup kaçmak yerine cesaret ve azimle mücadele edenler büyük engelleri aşar ve toplumda haklı bir saygı kazanırlar.",
         "rubric": [
           {
-            "criterion": "Tablodaki boşlukların hatasız doldurulması (HAYIR - EVET - HAYIR)",
-            "points": 7
-          },
-          {
-            "criterion": "2. Durum'un ayırt edici şartının ve kuralının açıklanması",
-            "points": 7
+            "criterion": "Cesaret ve zorluklarla mücadele ana fikrinin doğru ifadesi",
+            "points": 14
           }
         ]
       },
@@ -807,25 +751,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.5.7. Görselle iletilen anlamı belirleyebilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Hata Tespiti & Adım Analizi",
+        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
         "points": 14,
         "contextText": "Minyatür çiziminde Dede Korkut ve kopuzu.",
-        "stimulus": "Gamze, Metnin Derin Anlamı ve Çıkarım Yapma ile ilgili açık uçlu bir soruyu çözerken çalışma kağıdına şu adımları yazmıştır:\n1. Adım: Verilen öncülleri ve temel kavramları belirledim.\n2. Adım: Çıkarım yaparken metinle hiçbir ilgisi olmayan serbest hayallere kapılmayın; çıkarımınız mutlaka metindeki bir söze dayanmalıdır. kabulünü yaparak işleme başladım.\n3. Adım: Bu adımdaki sonuca göre bağlantılı kuralı uyguladım.\n4. Adım: Nihai sonuca ulaştım.",
-        "questionText": "Gamze'in çözüm adımlarını inceleyiniz. İlk hata kaçıncı adımda yapılmıştır? Yapılan hatanın gerekçesini açıklayarak o adımın ve nihai cevabın doğru halini yazınız.",
+        "stimulus": "Metnin yanında yer alan tarihî minyatürde: Ak sakallı, başında börkü olan bir bilge dede elinde kopuz çalmakta ve çadırın etrafında toplanan obanın gençlerine nasihatler vermektedir.",
+        "questionText": "Bu görselde Dede Korkut'un elindeki 'kopuz' ve etrafındaki dinleyiciler onun Türk kültüründeki hangi iki önemli rolünü simgelemektedir?",
         "solutionExplanation": "Ozanlık/müzisyenlik ve yol gösterici bilgelik/aksakallılık.",
-        "modelAnswer": "İlk hata 2. adımda yapılmıştır. Çünkü Gamze, 'Çıkarım yaparken metinle hiçbir ilgisi olmayan serbest hayallere kapılmayın; çıkarımınız mutlaka metindeki bir söze dayanmalıdır.' hatasına düşmüştür. Doğrusu: Örtük Anlam: Metinde doğrudan söylenmeyen ancak ipuçlarından hareketle okuyucunun akıl yürüterek ulaştığı gizli anlamdır. kuralı işletilmeli ve çözüm bu esasa göre tamamlanmalıdır.",
+        "modelAnswer": "1. Ozanlık / Âşıklık Geleneği: Elindeki kopuz, onun Türk milletinin destanlarını, kahramanlıklarını ezgiyle anlatan kadim bir halk ozanı olduğunu simgeler.\n2. Aksakallı Bilgelik ve Yol Göstericilik: Etrafındaki gençlerin saygıyla dinlemesi, onun obanın akıl hocası, barış elçisi ve töre koruyucusu ulu bir bilge olduğunu gösterir.",
         "rubric": [
           {
-            "criterion": "İlk hatanın yapıldığı adımın (2. Adım) doğru belirlenmesi",
-            "points": 5
+            "criterion": "Kopuzun ozanlık ve destan anlatıcılığı sembolünün açıklanması",
+            "points": 7
           },
           {
-            "criterion": "Yapılan kavramsal/işlemsel hatanın gerekçelendirilmesi",
-            "points": 5
-          },
-          {
-            "criterion": "Adımın ve sonucun doğru kurala göre düzeltilmesi",
-            "points": 4
+            "criterion": "Aksakallı bilgelik ve akıl hocalığı rolünün belirtilmesi",
+            "points": 7
           }
         ]
       },
@@ -835,21 +775,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.5.20. Metinden hareketle söz varlığını geliştirmeye yönelik çözümleme yapabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Eş anlamlı sözcükler.",
-        "stimulus": "Söz Sanatları: Kişileştirme ve Benzetme kapsamında karşılaşılan bir durumu çözmek için uzmanlar iki farklı yöntem geliştirmiştir:\n1. Yöntem: Kısa vadeli hızlı çözüm sunan ancak '\"Gibi\" veya \"kadar\" edatı olan her cümle benzetme olabilir; ancak kişileştirmede mutlaka insana özgü bir fiil (hüzünlenmek, fısıldamak) doğaya aktarılmalıdır.' riskini barındıran yaklaşım.\n2. Yöntem: Başlangıçta daha fazla dikkat ve aşama gerektiren ancak 'Benzetme (Teşbih): Aralarında ortak özellik bulunan iki varlıktan zayıf olanın güçlü olana benzetilmesidir (Benzeyen, Benzetilen, Benzetme Edatı, Benzetme Yönü).' ilkesine tam uyan sürdürülebilir yaklaşım.",
-        "questionText": "Verilen iki yaklaşımı Söz Sanatları: Kişileştirme ve Benzetme ilkeleri bakımından değerlendiriniz. Hangi yöntem daha uygundur? Seçtiğiniz yöntemin güçlü yönlerini ve diğer yöntemin taşıdığı riskleri gerekçelendiriniz.",
+        "stimulus": "Metinde geçen sözcükler: 'ad', 'yiğit', 'alaka'.",
+        "questionText": "Aşağıdaki sözcüklerin metindeki anlamına uygun eş anlamlılarını karşılarına yazınız:\n• ad: ............................\n• yiğit: ............................\n• tören: ............................",
         "solutionExplanation": "ad = isim, yiğit = cesur/alp, tören = merasim.",
-        "modelAnswer": "2. Yöntem uygundur. Çünkü Benzetme (Teşbih): Aralarında ortak özellik bulunan iki varlıktan zayıf olanın güçlü olana benzetilmesidir (Benzeyen, Benzetilen, Benzetme Edatı, Benzetme Yönü). ilkesini tam olarak karşılamaktadır. 1. Yöntem ise kısa vadeli olsa da '\"Gibi\" veya \"kadar\" edatı olan her cümle benzetme olabilir; ancak kişileştirmede mutlaka insana özgü bir fiil (hüzünlenmek, fısıldamak) doğaya aktarılmalıdır.' sakıncasını doğuracağı için hedeflenen amaca ters düşer.",
+        "modelAnswer": "• ad: isim\n• yiğit: cesur (kahraman / yürekli)\n• tören: merasim (kutlama)",
         "rubric": [
           {
-            "criterion": "Doğru yaklaşımın (2. Yöntem) tespiti ve güçlü yönünün gerekçelendirilmesi",
-            "points": 7
-          },
-          {
-            "criterion": "1. Yöntemin taşıdığı kavramsal riskin açıklanması",
-            "points": 7
+            "criterion": "Üç eş anlamlı sözcüğün eksiksiz yazılması (her biri ~4.6 puan)",
+            "points": 14
           }
         ]
       },
@@ -949,21 +885,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.5.6. Metnin yüzey anlamını belirleyebilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 13,
         "contextText": "Metnin konusunu belirleme.",
-        "stimulus": "Metnin Yüzey Anlamı ve Olay Örgüsü konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nSelin: \"Bu durumda temel kural şudur: Yüzey anlam sorularında kendi yorumunuzu veya tahmininizi değil, sadece metinde açıkça yazılı olan delilleri kullanınız.\"\nKerem: \"Hayır Selin, yanılıyorsun. Çünkü kural gereği: Yüzey Anlam: Metinde doğrudan doğruya açıkça söylenen, gizli olmayan ve satır aralarında aranmayan apaçık bilgidir. Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Selin ve Kerem'nin iddialarını Metnin Yüzey Anlamı ve Olay Örgüsü ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
+        "stimulus": "Metinde bir zeytin bahçesinde dede ve torunun sabah erken saatlerde başlayıp zeytin toplamaları ve zeytinyağı üretimi anlatılmaktadır.",
+        "questionText": "Ayvalık zeytinliklerindeki geleneksel hasat telaşını ve dedenin öğüdünü anlatan yukarıdaki metnin konusunu tek bir cümleyle yazınız.",
         "solutionExplanation": "Ege'de geleneksel zeytin hasadı ve zeytinin bereketi.",
-        "modelAnswer": "Kerem haklıdır. Çünkü Yüzey Anlam: Metinde doğrudan doğruya açıkça söylenen, gizli olmayan ve satır aralarında aranmayan apaçık bilgidir.. Selin ise 'Yüzey anlam sorularında kendi yorumunuzu veya tahmininizi değil, sadece metinde açıkça yazılı olan delilleri kullanınız.' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "modelAnswer": "Metnin konusu, bir dede ile torununun zeytin bahçesinde emek vererek yaptıkları geleneksel zeytin hasadı ve zeytin ağacının değeridir.",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (Kerem) doğru tespiti",
-            "points": 5
-          },
-          {
-            "criterion": "Selin'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 8
+            "criterion": "Zeytin hasadı ve emeği kapsayan doğru konu cümlesi",
+            "points": 13
           }
         ]
       },
@@ -973,21 +905,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.5.6. Metnin yüzey anlamını belirleyebilme",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 13,
         "contextText": "Zeytin hasadı aşamalarını sıralama.",
-        "stimulus": "Aşağıdaki matriste Metnin Yüzey Anlamı ve Olay Örgüsü konusuna yönelik üç farklı durum ve özellikleri verilmiştir:\n\n| Durum / Örnek | 1. Temel Kriter | 2. Ayırt Edici Özellik | Karşılar mı? |\n| :--- | :---: | :---: | :---: |\n| 1. Durum (Örnek A) | VAR | YOK | ............ |\n| 2. Durum (Örnek B) | VAR | VAR | ............ |\n| 3. Durum (Örnek C) | YOK | YOK | ............ |",
-        "questionText": "Matristeki boşlukları özelliğin doğruluğuna göre \"EVET\" veya \"HAYIR\" yazarak doldurunuz. 2. Durum'u diğer durumlardan ayıran en temel şartı gerekçelendirerek yazınız.",
-        "solutionExplanation": "Yaygıların serilmesi, ağaçların silkelenmesi, değirmenlerde ezilip yağ çıkarılması.",
-        "modelAnswer": "Tablo Tamamlaması: 1. Durum: HAYIR | 2. Durum: EVET | 3. Durum: HAYIR.\nAyırt Edici Gerekçe: 2. Durum hem temel kriteri hem de ayırt edici özelliği eksiksiz sağladığı için Yüzey Anlam: Metinde doğrudan doğruya açıkça söylenen, gizli olmayan ve satır aralarında aranmayan apaçık bilgidir. kuralına tam uygundur.",
+        "stimulus": "Metinde bir zeytin bahçesinde dede ve torunun sabah erken saatlerde başlayıp zeytin toplamaları ve zeytinyağı üretimi anlatılmaktadır.",
+        "questionText": "Ayvalık zeytinliklerindeki geleneksel hasat telaşını ve dedenin öğüdünü anlatan yukarıdaki metnin konusunu tek bir cümleyle yazınız.",
+        "solutionExplanation": "Ege'de geleneksel zeytin hasadı ve zeytinin bereketi.",
+        "modelAnswer": "Metnin konusu, bir dede ile torununun zeytin bahçesinde emek vererek yaptıkları geleneksel zeytin hasadı ve zeytin ağacının değeridir.",
         "rubric": [
           {
-            "criterion": "Tablodaki boşlukların hatasız doldurulması (HAYIR - EVET - HAYIR)",
-            "points": 6
-          },
-          {
-            "criterion": "2. Durum'un ayırt edici şartının ve kuralının açıklanması",
-            "points": 7
+            "criterion": "Zeytin hasadı ve emeği kapsayan doğru konu cümlesi",
+            "points": 13
           }
         ]
       },
@@ -997,25 +925,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.5.7. Görselle iletilen anlamı belirleyebilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Hata Tespiti & Adım Analizi",
+        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
         "points": 13,
         "contextText": "Zeytin dalı ve güvercin amblemi.",
-        "stimulus": "Gamze, Metnin Derin Anlamı ve Çıkarım Yapma ile ilgili açık uçlu bir soruyu çözerken çalışma kağıdına şu adımları yazmıştır:\n1. Adım: Verilen öncülleri ve temel kavramları belirledim.\n2. Adım: Çıkarım yaparken metinle hiçbir ilgisi olmayan serbest hayallere kapılmayın; çıkarımınız mutlaka metindeki bir söze dayanmalıdır. kabulünü yaparak işleme başladım.\n3. Adım: Bu adımdaki sonuca göre bağlantılı kuralı uyguladım.\n4. Adım: Nihai sonuca ulaştım.",
-        "questionText": "Gamze'in çözüm adımlarını inceleyiniz. İlk hata kaçıncı adımda yapılmıştır? Yapılan hatanın gerekçesini açıklayarak o adımın ve nihai cevabın doğru halini yazınız.",
+        "stimulus": "Zeytinyağı şişesinin etiketinde ağzında zeytin dalı taşıyan beyaz bir güvercin görseli basılmıştır.",
+        "questionText": "Ağzında zeytin dalı taşıyan beyaz güvercin simgesi dünyada hangi evrensel kavramı sembolize eder? Açıklayınız.",
         "solutionExplanation": "Barış, kardeşlik ve esenlik.",
-        "modelAnswer": "İlk hata 2. adımda yapılmıştır. Çünkü Gamze, 'Çıkarım yaparken metinle hiçbir ilgisi olmayan serbest hayallere kapılmayın; çıkarımınız mutlaka metindeki bir söze dayanmalıdır.' hatasına düşmüştür. Doğrusu: Örtük Anlam: Metinde doğrudan söylenmeyen ancak ipuçlarından hareketle okuyucunun akıl yürüterek ulaştığı gizli anlamdır. kuralı işletilmeli ve çözüm bu esasa göre tamamlanmalıdır.",
+        "modelAnswer": "Ağzında zeytin dalı olan beyaz güvercin evrensel olarak 'barış, huzur ve dostluk' kavramını simgeler. Hasan Dede'nin metinde belirttiği gibi zeytin ağacı kadim zamanlardan beri barışın en temiz sembolüdür.",
         "rubric": [
           {
-            "criterion": "İlk hatanın yapıldığı adımın (2. Adım) doğru belirlenmesi",
-            "points": 5
-          },
-          {
-            "criterion": "Yapılan kavramsal/işlemsel hatanın gerekçelendirilmesi",
-            "points": 5
-          },
-          {
-            "criterion": "Adımın ve sonucun doğru kurala göre düzeltilmesi",
-            "points": 3
+            "criterion": "Barış ve dostluk kavramının doğru tespiti",
+            "points": 13
           }
         ]
       },
@@ -1025,21 +945,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.5.15. Metnin anahtar kelimelerini belirlemeye yönelik çözümleme yapabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "Anahtar kelimeler.",
-        "stimulus": "Metnin Konusu ve Ana Fikrini Belirleme kapsamında karşılaşılan bir durumu çözmek için uzmanlar iki farklı yöntem geliştirmiştir:\n1. Yöntem: Kısa vadeli hızlı çözüm sunan ancak '\"Doğa sevgisi\" bir konudur, ana fikir olamaz. \"Doğayı korumak insanlığın geleceğini kurtarır\" ise bir ana fikirdir.' riskini barındıran yaklaşım.\n2. Yöntem: Başlangıçta daha fazla dikkat ve aşama gerektiren ancak 'Metnin Konusu: \"Yazar bu metinde neden bahsediyor / ne anlatıyor?\" sorusunun yanıtıdır (genelde 2-4 kelimelik ifadedir).' ilkesine tam uyan sürdürülebilir yaklaşım.",
-        "questionText": "Verilen iki yaklaşımı Metnin Konusu ve Ana Fikrini Belirleme ilkeleri bakımından değerlendiriniz. Hangi yöntem daha uygundur? Seçtiğiniz yöntemin güçlü yönlerini ve diğer yöntemin taşıdığı riskleri gerekçelendiriniz.",
+        "stimulus": "Metin zeytin ağacı, hasat zamanı, emek ve zeytinyağı etrafında şekillenmiştir.",
+        "questionText": "Hasan Dede ve torununun Ayvalık'taki zeytin hasadını anlatan bu metnin içeriğini en iyi yansıtan 3 anahtar kelimeyi belirleyiniz.",
         "solutionExplanation": "Zeytin, hasat, emek (veya zeytinyağı, bereket).",
-        "modelAnswer": "2. Yöntem uygundur. Çünkü Metnin Konusu: \"Yazar bu metinde neden bahsediyor / ne anlatıyor?\" sorusunun yanıtıdır (genelde 2-4 kelimelik ifadedir). ilkesini tam olarak karşılamaktadır. 1. Yöntem ise kısa vadeli olsa da '\"Doğa sevgisi\" bir konudur, ana fikir olamaz. \"Doğayı korumak insanlığın geleceğini kurtarır\" ise bir ana fikirdir.' sakıncasını doğuracağı için hedeflenen amaca ters düşer.",
+        "modelAnswer": "1. Zeytin\n2. Hasat\n3. Emek (veya Zeytinyağı / Bereket)",
         "rubric": [
           {
-            "criterion": "Doğru yaklaşımın (2. Yöntem) tespiti ve güçlü yönünün gerekçelendirilmesi",
-            "points": 6
-          },
-          {
-            "criterion": "1. Yöntemin taşıdığı kavramsal riskin açıklanması",
-            "points": 6
+            "criterion": "Üç isabetli anahtar kelimenin yazılması (her biri 4 puan)",
+            "points": 12
           }
         ]
       },
@@ -1089,21 +1005,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.Y.5.16. Yazım ve noktalama işaretleriyle ilgili kuralları uygulayabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "archetype": "Hata Tespiti & Adım Analizi",
         "points": 12,
         "contextText": "Bağlaç olan 'de' ve ek olan '-de'nin yazımı.",
-        "stimulus": "Düşünceyi Geliştirme Yolları: Tanımlama ve Örnekleme konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nBarış: \"Bu durumda temel kural şudur: Her açıklama tanımlama değildir. Cümle mutlaka \"...denir\" veya \"...dır/dir\" ile bitmeli ve kavramın ne olduğunu netleştirmelidir.\"\nDoruk: \"Hayır Barış, yanılıyorsun. Çünkü kural gereği: Tanımlama: \"Bu nedir?\" sorusunun yanıtıdır. Kavramın temel niteliklerini açıklar (Örn: \"Şiir, duyguların ahenkli sözcüklerle aktarılması sanatıdır\"). Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Barış ve Doruk'nin iddialarını Düşünceyi Geliştirme Yolları: Tanımlama ve Örnekleme ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
+        "stimulus": "Cümle: 'Ayvalık'ta zeytin ağaçları da bahçelerde ki taş değirmenlerde hasat heyecanı yaşıyor.'",
+        "questionText": "Yukarıdaki cümlede yer alan bağlaç olan 'da' ile ek olan '-de' ve 'ki'nin yazımını inceleyiniz. Yapılan 1 yazım hatasını tespit edip doğrusunu yazınız.",
         "solutionExplanation": "'bahçelerde ki' sözcüğündeki -ki sıfat yapan ektir ve bitişik yazılmalıdır: 'bahçelerdeki'.",
-        "modelAnswer": "Doruk haklıdır. Çünkü Tanımlama: \"Bu nedir?\" sorusunun yanıtıdır. Kavramın temel niteliklerini açıklar (Örn: \"Şiir, duyguların ahenkli sözcüklerle aktarılması sanatıdır\").. Barış ise 'Her açıklama tanımlama değildir. Cümle mutlaka \"...denir\" veya \"...dır/dir\" ile bitmeli ve kavramın ne olduğunu netleştirmelidir.' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "modelAnswer": "• Hata: 'bahçelerde ki' ayrı yazılmıştır.\n• Doğrusu: Buradaki '-ki' ismi niteleyen sıfat yapan aitlik ekidir; bu nedenle bitişik olarak 'bahçelerdeki taş değirmenler' şeklinde yazılmalıdır.",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (Doruk) doğru tespiti",
-            "points": 5
+            "criterion": "Hatalı kelimenin doğru tespiti",
+            "points": 6
           },
           {
-            "criterion": "Barış'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 7
+            "criterion": "Kuralın gerekçesiyle birlikte doğru halinin ('bahçelerdeki') yazılması",
+            "points": 6
           }
         ]
       }
@@ -8073,21 +7989,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "SB.6.2.1. Küreselleşmenin insan ve toplum hayatı üzerindeki etkilerini analiz edebilme",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "Kutup iklimi ve iglo evler.",
-        "stimulus": "Evimiz Dünya: Küreselleşen Dünyada İletişim, Çevre ve Dayanışma konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nEce: \"Bu durumda temel kural şudur: Küresel bir sorun (örneğin hava kirliliği veya kuraklık) bireysel çabalarla tek başına çözülemez; hem bireysel bilinç hem de uluslararası ortak politikalar zorunludur.\"\nDamla: \"Hayır Ece, yanılıyorsun. Çünkü kural gereği: Küreselleşme ve Toplum: Teknolojik gelişmeler toplumlar arası mesafeleri kısaltmış, kültürel etkileşimi ve ekonomik bağımlılığı artırmıştır. Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Ece ve Damla'nin iddialarını Evimiz Dünya: Küreselleşen Dünyada İletişim, Çevre ve Dayanışma ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
+        "stimulus": "Kuzey Kutbu'nda yaşayan İnuitler (Eskimo halkı) kalın buz bloklarını üst üste dizerek 'iglo' adı verilen kubbeli evler yaparlar.",
+        "questionText": "İglo evlerin yapım malzemesinin ve kubbe şeklinin kutup ikliminin zorlu şartlarına (soğuk, fırtına) nasıl uyum sağladığını açıklayınız.",
         "solutionExplanation": "Sıkışmış kar ve buz mükemmel bir ısı yalıtkanıdır, kubbe şekli fırtına rüzgarlarını kaydırır.",
-        "modelAnswer": "Damla haklıdır. Çünkü Küreselleşme ve Toplum: Teknolojik gelişmeler toplumlar arası mesafeleri kısaltmış, kültürel etkileşimi ve ekonomik bağımlılığı artırmıştır.. Ece ise 'Küresel bir sorun (örneğin hava kirliliği veya kuraklık) bireysel çabalarla tek başına çözülemez; hem bireysel bilinç hem de uluslararası ortak politikalar zorunludur.' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "modelAnswer": "Kutup bölgesinde ağaç ve taş bulunmadığı için buz tek inşaat malzemesidir. Sıkışmış kardan yapılan bloklar haznelerindeki hava sayesinde mükemmel bir ısı yalıtımı sağlayarak içerdeki vücut ısısını hapseder; kubbe mimarisi ise şiddetli kutup fırtınalarının binayı yıkmadan üzerinden kayıp gitmesini sağlar.",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (Damla) doğru tespiti",
-            "points": 5
+            "criterion": "Buz bloklarının ısı yalıtımı özelliği",
+            "points": 6
           },
           {
-            "criterion": "Ece'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 7
+            "criterion": "Kubbe şeklinin fırtına rüzgârlarını kaydırma gerekçesi",
+            "points": 6
           }
         ]
       }
@@ -8211,20 +8127,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "SB.6.2.1. Küreselleşmenin insan ve toplum hayatı üzerindeki etkilerini analiz edebilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 16,
         "contextText": "Ekvatoral iklim ve yağmur ormanları.",
-        "stimulus": "Evimiz Dünya: Küreselleşen Dünyada İletişim, Çevre ve Dayanışma kapsamında karşılaşılan bir durumu çözmek için uzmanlar iki farklı yöntem geliştirmiştir:\n1. Yöntem: Kısa vadeli hızlı çözüm sunan ancak 'Küresel bir sorun (örneğin hava kirliliği veya kuraklık) bireysel çabalarla tek başına çözülemez; hem bireysel bilinç hem de uluslararası ortak politikalar zorunludur.' riskini barındıran yaklaşım.\n2. Yöntem: Başlangıçta daha fazla dikkat ve aşama gerektiren ancak 'Küreselleşme ve Toplum: Teknolojik gelişmeler toplumlar arası mesafeleri kısaltmış, kültürel etkileşimi ve ekonomik bağımlılığı artırmıştır.' ilkesine tam uyan sürdürülebilir yaklaşım.",
-        "questionText": "Verilen iki yaklaşımı Evimiz Dünya: Küreselleşen Dünyada İletişim, Çevre ve Dayanışma ilkeleri bakımından değerlendiriniz. Hangi yöntem daha uygundur? Seçtiğiniz yöntemin güçlü yönlerini ve diğer yöntemin taşıdığı riskleri gerekçelendiriniz.",
+        "stimulus": "Amazon ve Kongo havzalarında yıl boyunca her gün şiddetli yağmurlar yağar ve sıcaklık sürekli 25-30°C civarındadır.",
+        "questionText": "Ekvatoral iklimin gür yağmur ormanları oluşturmasının ve buradaki evlerin neden kazıklar üzerine dikilip dik çatılı yapıldığının nedenini açıklayınız.",
         "solutionExplanation": "Aşırı yağış ormanları gür yapar; kazıklar taşkınlardan, dik çatı ise aşırı yağmur suyunu akıtmaktan korur.",
-        "modelAnswer": "2. Yöntem uygundur. Çünkü Küreselleşme ve Toplum: Teknolojik gelişmeler toplumlar arası mesafeleri kısaltmış, kültürel etkileşimi ve ekonomik bağımlılığı artırmıştır. ilkesini tam olarak karşılamaktadır. 1. Yöntem ise kısa vadeli olsa da 'Küresel bir sorun (örneğin hava kirliliği veya kuraklık) bireysel çabalarla tek başına çözülemez; hem bireysel bilinç hem de uluslararası ortak politikalar zorunludur.' sakıncasını doğuracağı için hedeflenen amaca ters düşer.",
+        "modelAnswer": "Yıl boyu süren aşırı nem ve düzenli yağışlar devasa tropikal yağmur ormanlarını besler. Bölgedeki nehir taşmalarından ve vahşi hayvanlardan korunmak için evler yerden yüksek ahşap kazıklar üzerine kurulur; aşırı yağmur sularının hızla akıp gitmesi için de çatılar çok dik yapılır.",
         "rubric": [
           {
-            "criterion": "Doğru yaklaşımın (2. Yöntem) tespiti ve güçlü yönünün gerekçelendirilmesi",
+            "criterion": "Aşırı nem ve yağışın ormanları besleme boyutu",
             "points": 8
           },
           {
-            "criterion": "1. Yöntemin taşıdığı kavramsal riskin açıklanması",
+            "criterion": "Kazıklar üzerinde ve dik çatı mimarisinin sel/yağış gerekçesi",
             "points": 8
           }
         ]
@@ -10253,21 +10169,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.7.5. Metnin yüzey anlamını belirleyebilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 15,
         "contextText": "Metnin konusunu tek bir cümleyle özetleme görevi.",
-        "stimulus": "Deyim ve Atasözlerinin Metne Katkısı konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nUmut: \"Bu durumda temel kural şudur: Deyimlerdeki sözcüklerin eş anlamlıları dahi olsa yeri değiştirilemez.\"\nEmre: \"Hayır Umut, yanılıyorsun. Çünkü kural gereği: Deyimler: Genellikle mecaz anlamlı, en az iki sözcükten oluşan kalıplaşmış anlatım kalıplarıdır. Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Umut ve Emre'nin iddialarını Deyim ve Atasözlerinin Metne Katkısı ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
+        "stimulus": "Yukarıda verilen 1. sorudaki Şerife Bacı metnini dikkate alınız.",
+        "questionText": "Yukarıda Şerife Bacı ve kağnı kollarının anlatıldığı 1. metnin konusunu tek bir cümleyle yazınız.",
         "solutionExplanation": "Metinde Millî Mücadele yıllarında Türk kadınının vatanı uğruna yaptığı fedakârlık ele alınmaktadır.",
-        "modelAnswer": "Emre haklıdır. Çünkü Deyimler: Genellikle mecaz anlamlı, en az iki sözcükten oluşan kalıplaşmış anlatım kalıplarıdır.. Umut ise 'Deyimlerdeki sözcüklerin eş anlamlıları dahi olsa yeri değiştirilemez.' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "modelAnswer": "Metnin konusu: Kurtuluş Savaşı'nda Türk kadınlarının (Şerife Bacı'nın) cepheye mermi taşırken gösterdiği eşsiz fedakârlık ve vatan sevgisidir.",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (Emre) doğru tespiti",
-            "points": 6
-          },
-          {
-            "criterion": "Umut'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 9
+            "criterion": "Metnin konusunu eksiksiz, tek bir yargı bildiren cümleyle ifade etme",
+            "points": 15
           }
         ]
       },
@@ -10277,20 +10189,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.7.8. Metnin derin anlamını belirlemeye yönelik üst düzey çıkarımlar yapabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
         "points": 14,
         "contextText": "Karakterin davranışından zihniyet ve değer analizi çıkarma.",
-        "stimulus": "Aşağıdaki matriste Metnin Ana Düşüncesi ve Yardımcı Fikirleri konusuna yönelik üç farklı durum ve özellikleri verilmiştir:\n\n| Durum / Örnek | 1. Temel Kriter | 2. Ayırt Edici Özellik | Karşılar mı? |\n| :--- | :---: | :---: | :---: |\n| 1. Durum (Örnek A) | VAR | YOK | ............ |\n| 2. Durum (Örnek B) | VAR | VAR | ............ |\n| 3. Durum (Örnek C) | YOK | YOK | ............ |",
-        "questionText": "Matristeki boşlukları özelliğin doğruluğuna göre \"EVET\" veya \"HAYIR\" yazarak doldurunuz. 2. Durum'u diğer durumlardan ayıran en temel şartı gerekçelendirerek yazınız.",
+        "stimulus": "Yukarıda verilen 1. sorudaki Şerife Bacı metnini dikkate alınız.",
+        "questionText": "Şerife Bacı’nın kendi öz evladının üzerindeki yorganı alıp top mermilerinin üzerine örtmesi, onun hangi değer dünyasını ve psikolojik kararlılığını gösterir? Metinden delil göstererek tahlil ediniz.",
         "solutionExplanation": "Öğrenci bireysel sevgiden daha üstün bir vatan bilincini ve bağımsızlık aşkını tahlil eder.",
-        "modelAnswer": "Tablo Tamamlaması: 1. Durum: HAYIR | 2. Durum: EVET | 3. Durum: HAYIR.\nAyırt Edici Gerekçe: 2. Durum hem temel kriteri hem de ayırt edici özelliği eksiksiz sağladığı için Ana Fikir: Metnin omurgasını oluşturan, yazarın okuyucuyu ikna etmek istediği evrensel mesajdır. kuralına tam uygundur.",
+        "modelAnswer": "Şerife Bacı, vatanın kurtuluşunu kendi canından ve ailesinden daha üstün tutan sarsılmaz bir fedakârlık ve vatanseverlik anlayışına sahiptir. 'Benim çocuğum yetim kalabilir ama vatan yetim kalamaz' sözü, bağımsız bir vatan olmazsa evladının da geleceğinin olamayacağı bilincini taşıdığını açıkça kanıtlamaktadır.",
         "rubric": [
           {
-            "criterion": "Tablodaki boşlukların hatasız doldurulması (HAYIR - EVET - HAYIR)",
+            "criterion": "Vatanseverlik ve fedakârlık değerinin derinlemesine tahlil edilmesi",
             "points": 7
           },
           {
-            "criterion": "2. Durum'un ayırt edici şartının ve kuralının açıklanması",
+            "criterion": "Metindeki söz ve eylemlerle tutarlı delillendirme yapılması",
             "points": 7
           }
         ]
@@ -10301,25 +10213,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.7.21. Metinden hareketle söz varlığını geliştirmeye yönelik çözümleme yapabilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Hata Tespiti & Adım Analizi",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Metindeki sözcüklerden eş anlam ve mecaz anlam türetme.",
-        "stimulus": "Sude, Metin Türleri: Söyleşi (Sohbet) ve Fıkra (Köşe Yazısı) ile ilgili açık uçlu bir soruyu çözerken çalışma kağıdına şu adımları yazmıştır:\n1. Adım: Verilen öncülleri ve temel kavramları belirledim.\n2. Adım: Mizahi fıkra (Nasreddin Hoca fıkrası) ile gazete köşe yazısı olan fıkrayı karıştırmayınız! kabulünü yaparak işleme başladım.\n3. Adım: Bu adımdaki sonuca göre bağlantılı kuralı uyguladım.\n4. Adım: Nihai sonuca ulaştım.",
-        "questionText": "Sude'in çözüm adımlarını inceleyiniz. İlk hata kaçıncı adımda yapılmıştır? Yapılan hatanın gerekçesini açıklayarak o adımın ve nihai cevabın doğru halini yazınız.",
+        "stimulus": "Metinde geçen 'bağımsızlık' ve 'yankılanmak' kelimeleri.",
+        "questionText": "a) Metinde geçen 'bağımsızlık' kelimesinin eş anlamlısını yazınız.\nb) 'Yankılanmak' kelimesini metindeki gerçek ses yansıması anlamı dışında, MECÂZ anlamda özgün bir cümle içinde kullanınız.",
         "solutionExplanation": "Bağımsızlık eş anlamlısı hürriyet/istiklaldir. Yankılanmak mecaz kullanımı ise toplumda derin etki bırakmaktır.",
-        "modelAnswer": "İlk hata 2. adımda yapılmıştır. Çünkü Sude, 'Mizahi fıkra (Nasreddin Hoca fıkrası) ile gazete köşe yazısı olan fıkrayı karıştırmayınız!' hatasına düşmüştür. Doğrusu: Söyleşi (Sohbet): Yazarın okuyucuyla karşılıklı konuşuyormuş gibi içten, samimi bir dille yazdığı fikir yazısıdır (\"Siz de böyle düşünmez misiniz?\"). kuralı işletilmeli ve çözüm bu esasa göre tamamlanmalıdır.",
+        "modelAnswer": "a) Bağımsızlık = İstiklal (veya Hürriyet)\nb) Mecaz Anlamlı Cümle: 'Genç yazarın bu cesur konuşması tüm ülkede büyük bir yankı uyandırdı.' (veya 'Hocanın son sözleri zihnimde günlerce yankılandı.')",
         "rubric": [
           {
-            "criterion": "İlk hatanın yapıldığı adımın (2. Adım) doğru belirlenmesi",
-            "points": 5
+            "criterion": "Bağımsızlık kelimesinin eş anlamlısının doğru yazılması",
+            "points": 7
           },
           {
-            "criterion": "Yapılan kavramsal/işlemsel hatanın gerekçelendirilmesi",
-            "points": 5
-          },
-          {
-            "criterion": "Adımın ve sonucun doğru kurala göre düzeltilmesi",
-            "points": 4
+            "criterion": "'Yankılanmak' kelimesinin açık ve doğru bir mecaz anlamda cümlede kullanılması",
+            "points": 7
           }
         ]
       },
@@ -10329,21 +10237,25 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.Y.7.3. Yazısında içerik ve yapıya yönelik seçimlerini yönetebilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Yazma taslağı oluşturma (giriş, gelişme, sonuç planı).",
-        "stimulus": "Fiillerde Anlam (Zaman) Kayması kapsamında karşılaşılan bir durumu çözmek için uzmanlar iki farklı yöntem geliştirmiştir:\n1. Yöntem: Kısa vadeli hızlı çözüm sunan ancak 'Anlam kaymasını anlatım bozukluğu saymayınız! Kesinlikle bozukluk değildir.' riskini barındıran yaklaşım.\n2. Yöntem: Başlangıçta daha fazla dikkat ve aşama gerektiren ancak 'Tanım: Fiilin aldığı kip ekiyle, cümlede kastettiği zamanın birbirine uymaması durumudur.' ilkesine tam uyan sürdürülebilir yaklaşım.",
-        "questionText": "Verilen iki yaklaşımı Fiillerde Anlam (Zaman) Kayması ilkeleri bakımından değerlendiriniz. Hangi yöntem daha uygundur? Seçtiğiniz yöntemin güçlü yönlerini ve diğer yöntemin taşıdığı riskleri gerekçelendiriniz.",
+        "stimulus": "Konu: 'Bir milletin en büyük gücü: Birlik ve Beraberlik'",
+        "questionText": "Yukarıdaki konuyla ilgili bilgilendirici bir metin yazacak olsaydınız; giriş, gelişme ve sonuç paragraflarında hangi ana fikirlere yer vereceğinizi taslak halinde maddelerle planlayınız.",
         "solutionExplanation": "Kompozisyonun üç ana bölümü için tematik taslak hazırlanır.",
-        "modelAnswer": "2. Yöntem uygundur. Çünkü Tanım: Fiilin aldığı kip ekiyle, cümlede kastettiği zamanın birbirine uymaması durumudur. ilkesini tam olarak karşılamaktadır. 1. Yöntem ise kısa vadeli olsa da 'Anlam kaymasını anlatım bozukluğu saymayınız! Kesinlikle bozukluk değildir.' sakıncasını doğuracağı için hedeflenen amaca ters düşer.",
+        "modelAnswer": "• Giriş Bölümü: İnsanların tek başlarına aşamayacakları zorlukları dayanışma ve ortak şuurla aşabileceklerinin tanımı yapılır.\n• Gelişme Bölümü: Kurtuluş Savaşı'ndaki Tekâlif-i Milliye emirleri ve Şerife Bacı gibi kahramanların fedakârlıkları somut örneklerle açıklanır.\n• Sonuç Bölümü: Birlik ve beraberliğini koruyan toplumların geleceğe güvenle bakabileceği vurgulanarak genel bir öğütle yazı tamamlanır.",
         "rubric": [
           {
-            "criterion": "Doğru yaklaşımın (2. Yöntem) tespiti ve güçlü yönünün gerekçelendirilmesi",
-            "points": 7
+            "criterion": "Giriş bölümünün konuyu tanıtıcı ve ilgi çekici planlanması",
+            "points": 5
           },
           {
-            "criterion": "1. Yöntemin taşıdığı kavramsal riskin açıklanması",
-            "points": 7
+            "criterion": "Gelişme bölümünde somut delil ve örnek planının sunulması",
+            "points": 5
+          },
+          {
+            "criterion": "Sonuç bölümünün toparlayıcı ve mesaj verici kurgulanması",
+            "points": 4
           }
         ]
       },
@@ -10443,21 +10355,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.7.7. Metnin derin anlamını belirlemeye yönelik basit çıkarımlar yapabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
         "points": 17,
         "contextText": "Toplumsal denetim ve esnaf ahlakı üzerine çıkarım yapma.",
-        "stimulus": "Söz Sanatları: Tezat (Karşıtlık) ve Abartma (Mübalağa) konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nUmut: \"Bu durumda temel kural şudur: Her olumsuz sözcük tezat değildir; \"geldi-gelmedi\" tezat değil olumsuzluktur. \"Gülmek-ağlamak\" ise tezattır.\"\nEmre: \"Hayır Umut, yanılıyorsun. Çünkü kural gereği: Tezat: Anlamı güçlendirmek için birbirine zıt kavramların (gece-gündüz, ağlamak-gülmek) bir arada kullanılmasıdır. Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Umut ve Emre'nin iddialarını Söz Sanatları: Tezat (Karşıtlık) ve Abartma (Mübalağa) ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
+        "stimulus": "Yukarıda verilen 1. sorudaki Ahilik metnini dikkate alınız.",
+        "questionText": "Ahilik teşkilatının kusurlu mal üreten esnafın ayakkabısını dama atması eylemi, çarşıdaki güven ortamı ve üretilen ürünlerin kalitesi açısından nasıl bir sonuç doğurmuştur? Açıklayınız.",
         "solutionExplanation": "Ayakkabının dama atılması caydırıcı bir ceza olup esnafın hileli mal üretmesini engeller.",
-        "modelAnswer": "Emre haklıdır. Çünkü Tezat: Anlamı güçlendirmek için birbirine zıt kavramların (gece-gündüz, ağlamak-gülmek) bir arada kullanılmasıdır.. Umut ise 'Her olumsuz sözcük tezat değildir; \"geldi-gelmedi\" tezat değil olumsuzluktur. \"Gülmek-ağlamak\" ise tezattır.' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "modelAnswer": "Bu uygulama esnaflar üzerinde çok güçlü bir manevi ve toplumsal otokontrol (caydırıcılık) sağlamıştır. Çarşıda adı kötüye çıkmak istemeyen ustalar mallarını son derece titiz ve kaliteli üretmiş; tüketiciler de çarşıdan güvenle alışveriş yapabilmiştir.",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (Emre) doğru tespiti",
-            "points": 7
+            "criterion": "Toplumsal güven ve caydırıcılık etkisinin doğru açıklanması",
+            "points": 9
           },
           {
-            "criterion": "Umut'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 10
+            "criterion": "Ürün kalitesine olan doğrudan yansımanın belirtilmesi",
+            "points": 8
           }
         ]
       },
@@ -10467,21 +10379,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.7.14. Bilgilendirici metinlerde metin yapılarından hareketle önemli bilgileri belirlemeye yönelik çözümleme yapabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Bilgilendirici metnin yapısal analizi (Giriş, Gelişme, Sonuç bölümleri).",
-        "stimulus": "Aşağıdaki matriste Metinle İlgili Soruları Cevaplama ve Çıkarım konusuna yönelik üç farklı durum ve özellikleri verilmiştir:\n\n| Durum / Örnek | 1. Temel Kriter | 2. Ayırt Edici Özellik | Karşılar mı? |\n| :--- | :---: | :---: | :---: |\n| 1. Durum (Örnek A) | VAR | YOK | ............ |\n| 2. Durum (Örnek B) | VAR | VAR | ............ |\n| 3. Durum (Örnek C) | YOK | YOK | ............ |",
-        "questionText": "Matristeki boşlukları özelliğin doğruluğuna göre \"EVET\" veya \"HAYIR\" yazarak doldurunuz. 2. Durum'u diğer durumlardan ayıran en temel şartı gerekçelendirerek yazınız.",
+        "stimulus": "Yukarıda verilen 1. sorudaki Ahilik metnini dikkate alınız.",
+        "questionText": "Bu metnin giriş, gelişme ve sonuç bölümlerinde okuyucuya aktarılan temel bilgileri tespit ederek metnin yapısını çözümleyiniz.",
         "solutionExplanation": "Metnin üç bölümündeki ana düşünceler tespit edilir.",
-        "modelAnswer": "Tablo Tamamlaması: 1. Durum: HAYIR | 2. Durum: EVET | 3. Durum: HAYIR.\nAyırt Edici Gerekçe: 2. Durum hem temel kriteri hem de ayırt edici özelliği eksiksiz sağladığı için Doğrudan Bilgi: Metinde açıkça yazan veriler. kuralına tam uygundur.",
+        "modelAnswer": "• Giriş Bölümü: Ahi Evran ve Ahilik teşkilatının esnaf ahlakını disipline eden kuralları tanıtılmıştır.\n• Gelişme Bölümü: Hatalı mal üreten esnafın pabucunun dama atılması süreci ve deyimin ortaya çıkışı anlatılmıştır.\n• Sonuç Bölümü: Ahilik sisteminde helal kazanç, usta-çırak terbiyesi ve tüketici hakkının önemi vurgulanarak genel ilke ortaya konmuştur.",
         "rubric": [
           {
-            "criterion": "Tablodaki boşlukların hatasız doldurulması (HAYIR - EVET - HAYIR)",
-            "points": 8
+            "criterion": "Giriş ve gelişme bölümlerindeki yapısal bilginin doğru tespiti",
+            "points": 9
           },
           {
-            "criterion": "2. Durum'un ayırt edici şartının ve kuralının açıklanması",
-            "points": 9
+            "criterion": "Sonuç bölümündeki ana mesajın doğru çözümlenmesi",
+            "points": 8
           }
         ]
       },
@@ -10491,25 +10403,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.7.15. Bilgilendirici metinde anahtar kelimeleri belirlemeye yönelik çözümleme yapabilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Hata Tespiti & Adım Analizi",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Anahtar kelimelerin tespiti ve seçim gerekçesi.",
-        "stimulus": "Sude, Metne Dayalı Nitelikli Sorular Sorma ile ilgili açık uçlu bir soruyu çözerken çalışma kağıdına şu adımları yazmıştır:\n1. Adım: Verilen öncülleri ve temel kavramları belirledim.\n2. Adım: Soru sadece metindeki bir kelimeyi sormamalı; ana düşünceyi tartışmaya açmalıdır. kabulünü yaparak işleme başladım.\n3. Adım: Bu adımdaki sonuca göre bağlantılı kuralı uyguladım.\n4. Adım: Nihai sonuca ulaştım.",
-        "questionText": "Sude'in çözüm adımlarını inceleyiniz. İlk hata kaçıncı adımda yapılmıştır? Yapılan hatanın gerekçesini açıklayarak o adımın ve nihai cevabın doğru halini yazınız.",
+        "stimulus": "Yukarıda verilen 1. sorudaki Ahilik metnini dikkate alınız.",
+        "questionText": "a) Bu metnin içeriğini en iyi yansıtan 3 anahtar kelimeyi yazınız.\nb) Belirlediğiniz bu anahtar kelimeleri metnin hangi özelliklerine dayanarak seçtiğinizi birer cümleyle gerekçelendiriniz.",
         "solutionExplanation": "Anahtar kelimeler metnin omurgasını oluşturan kavramlardır (Ahilik, ahlak/dürüstlük, pabuç/lonca).",
-        "modelAnswer": "İlk hata 2. adımda yapılmıştır. Çünkü Sude, 'Soru sadece metindeki bir kelimeyi sormamalı; ana düşünceyi tartışmaya açmalıdır.' hatasına düşmüştür. Doğrusu: Açık Uçlu Soru: Cevabı \"evet/hayır\" olmayan, neden-nasıl analizini sorgulayan sorulardır. kuralı işletilmeli ve çözüm bu esasa göre tamamlanmalıdır.",
+        "modelAnswer": "a) Anahtar Kelimeler: Ahilik, Esnaf Ahlakı, Pabucu dama atılmak.\nb) Gerekçe: Metnin ana eksenini bu kurum oluşturduğu için 'Ahilik'; çarşı düzeni ahlak ilkelerine dayandığı için 'Esnaf Ahlakı'; deyimin kökeni açıklandığı için 'Pabucu dama atılmak' anahtar kavram olarak seçilmiştir.",
         "rubric": [
           {
-            "criterion": "İlk hatanın yapıldığı adımın (2. Adım) doğru belirlenmesi",
-            "points": 6
+            "criterion": "Metni temsil eden 3 anahtar kelimenin doğru belirlenmesi",
+            "points": 9
           },
           {
-            "criterion": "Yapılan kavramsal/işlemsel hatanın gerekçelendirilmesi",
-            "points": 6
-          },
-          {
-            "criterion": "Adımın ve sonucun doğru kurala göre düzeltilmesi",
-            "points": 5
+            "criterion": "Seçim gerekçelerinin metin içeriğiyle tutarlı açıklanması",
+            "points": 8
           }
         ]
       },
@@ -10519,20 +10427,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.Y.7.3. Yazısında içerik ve yapıya yönelik seçimlerini yönetebilme",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 16,
         "contextText": "Özgün kompozisyon planı oluşturma.",
-        "stimulus": "Fiillerde Anlam (Zaman) Kayması kapsamında karşılaşılan bir durumu çözmek için uzmanlar iki farklı yöntem geliştirmiştir:\n1. Yöntem: Kısa vadeli hızlı çözüm sunan ancak 'Anlam kaymasını anlatım bozukluğu saymayınız! Kesinlikle bozukluk değildir.' riskini barındıran yaklaşım.\n2. Yöntem: Başlangıçta daha fazla dikkat ve aşama gerektiren ancak 'Tanım: Fiilin aldığı kip ekiyle, cümlede kastettiği zamanın birbirine uymaması durumudur.' ilkesine tam uyan sürdürülebilir yaklaşım.",
-        "questionText": "Verilen iki yaklaşımı Fiillerde Anlam (Zaman) Kayması ilkeleri bakımından değerlendiriniz. Hangi yöntem daha uygundur? Seçtiğiniz yöntemin güçlü yönlerini ve diğer yöntemin taşıdığı riskleri gerekçelendiriniz.",
+        "stimulus": "Konu: 'Bir Meslekte Başarının Temeli: Dürüstlük ve Güven'",
+        "questionText": "Bu konuda yazacağınız bilgilendirici bir metin için; giriş bölümünde savunacağınız ana düşünceyi ve gelişme bölümünde vereceğiniz iki farklı argümanı maddeler halinde yazınız.",
         "solutionExplanation": "Öğrenci meslek ahlakı konusunda planlı bir içerik haritası çıkarır.",
-        "modelAnswer": "2. Yöntem uygundur. Çünkü Tanım: Fiilin aldığı kip ekiyle, cümlede kastettiği zamanın birbirine uymaması durumudur. ilkesini tam olarak karşılamaktadır. 1. Yöntem ise kısa vadeli olsa da 'Anlam kaymasını anlatım bozukluğu saymayınız! Kesinlikle bozukluk değildir.' sakıncasını doğuracağı için hedeflenen amaca ters düşer.",
+        "modelAnswer": "• Giriş Bölümü Ana Düşüncesi: Bir esnafın veya meslek sahibinin en büyük sermayesi dükkânındaki mallar değil, müşterilerinin ona duyduğu sarsılmaz güvendir.\n• Gelişme Argümanı 1: Hileli mal satanlar kısa vadede para kazansa da uzun vadede itibarını ve müşterilerini tamamen kaybederler.\n• Gelişme Argümanı 2: Dürüst esnaf ise kriz dönemlerinde bile toplumun saygısı ve desteğiyle ayakta kalır.",
         "rubric": [
           {
-            "criterion": "Doğru yaklaşımın (2. Yöntem) tespiti ve güçlü yönünün gerekçelendirilmesi",
+            "criterion": "Giriş bölümü ana düşüncesinin açık ve tutarlı sunulması",
             "points": 8
           },
           {
-            "criterion": "1. Yöntemin taşıdığı kavramsal riskin açıklanması",
+            "criterion": "Gelişme bölümü için iki ikna edici argümanın oluşturulması",
             "points": 8
           }
         ]
@@ -10609,21 +10517,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.7.5. Metnin yüzey anlamını belirleyebilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 15,
         "contextText": "Metnin konusunu belirleme.",
-        "stimulus": "Deyim ve Atasözlerinin Metne Katkısı konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nUmut: \"Bu durumda temel kural şudur: Deyimlerdeki sözcüklerin eş anlamlıları dahi olsa yeri değiştirilemez.\"\nEmre: \"Hayır Umut, yanılıyorsun. Çünkü kural gereği: Deyimler: Genellikle mecaz anlamlı, en az iki sözcükten oluşan kalıplaşmış anlatım kalıplarıdır. Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Umut ve Emre'nin iddialarını Deyim ve Atasözlerinin Metne Katkısı ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
+        "stimulus": "Yukarıda verilen 1. sorudaki tebessüm ve iletişim metnini dikkate alınız.",
+        "questionText": "Yukarıdaki tebessümün ve tatlı dilin önemini vurgulayan metnin konusunu bir cümleyle yazınız.",
         "solutionExplanation": "Metin güler yüzün ve nezaketli iletişimin insan ilişkilerindeki olumlu etkisini anlatmaktadır.",
-        "modelAnswer": "Emre haklıdır. Çünkü Deyimler: Genellikle mecaz anlamlı, en az iki sözcükten oluşan kalıplaşmış anlatım kalıplarıdır.. Umut ise 'Deyimlerdeki sözcüklerin eş anlamlıları dahi olsa yeri değiştirilemez.' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "modelAnswer": "Metnin konusu: Güler yüzlü olmanın, tatlı dilin ve nezaketli iletişimin insan ilişkilerini yumuşatmadaki ve dostlukları güçlendirmedeki rolüdür.",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (Emre) doğru tespiti",
-            "points": 6
-          },
-          {
-            "criterion": "Umut'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 9
+            "criterion": "Metnin konusunu eksiksiz biçimde tek bir cümleyle yazma",
+            "points": 15
           }
         ]
       },
@@ -10633,21 +10537,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.7.5. Metnin yüzey anlamını belirleyebilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Metnin ana fikrini/ana düşüncesini belirleme.",
-        "stimulus": "Aşağıdaki matriste Deyim ve Atasözlerinin Metne Katkısı konusuna yönelik üç farklı durum ve özellikleri verilmiştir:\n\n| Durum / Örnek | 1. Temel Kriter | 2. Ayırt Edici Özellik | Karşılar mı? |\n| :--- | :---: | :---: | :---: |\n| 1. Durum (Örnek A) | VAR | YOK | ............ |\n| 2. Durum (Örnek B) | VAR | VAR | ............ |\n| 3. Durum (Örnek C) | YOK | YOK | ............ |",
-        "questionText": "Matristeki boşlukları özelliğin doğruluğuna göre \"EVET\" veya \"HAYIR\" yazarak doldurunuz. 2. Durum'u diğer durumlardan ayıran en temel şartı gerekçelendirerek yazınız.",
-        "solutionExplanation": "İletişimde en etkili yol nezaket ve tebessümdür.",
-        "modelAnswer": "Tablo Tamamlaması: 1. Durum: HAYIR | 2. Durum: EVET | 3. Durum: HAYIR.\nAyırt Edici Gerekçe: 2. Durum hem temel kriteri hem de ayırt edici özelliği eksiksiz sağladığı için Deyimler: Genellikle mecaz anlamlı, en az iki sözcükten oluşan kalıplaşmış anlatım kalıplarıdır. kuralına tam uygundur.",
+        "stimulus": "Yukarıda verilen 1. sorudaki tebessüm ve iletişim metnini dikkate alınız.",
+        "questionText": "Yukarıdaki tebessümün ve tatlı dilin önemini vurgulayan metnin konusunu bir cümleyle yazınız.",
+        "solutionExplanation": "Metin güler yüzün ve nezaketli iletişimin insan ilişkilerindeki olumlu etkisini anlatmaktadır.",
+        "modelAnswer": "Metnin konusu: Güler yüzlü olmanın, tatlı dilin ve nezaketli iletişimin insan ilişkilerini yumuşatmadaki ve dostlukları güçlendirmedeki rolüdür.",
         "rubric": [
           {
-            "criterion": "Tablodaki boşlukların hatasız doldurulması (HAYIR - EVET - HAYIR)",
-            "points": 7
-          },
-          {
-            "criterion": "2. Durum'un ayırt edici şartının ve kuralının açıklanması",
-            "points": 7
+            "criterion": "Metnin konusunu eksiksiz biçimde tek bir cümleyle yazma",
+            "points": 14
           }
         ]
       },
@@ -10657,25 +10557,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.7.7. Metnin derin anlamını belirlemeye yönelik basit çıkarımlar yapabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Hata Tespiti & Adım Analizi",
+        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
         "points": 14,
         "contextText": "Metinden hareketle insan psikolojisine dair çıkarım yapma.",
-        "stimulus": "Sude, Söz Sanatları: Tezat (Karşıtlık) ve Abartma (Mübalağa) ile ilgili açık uçlu bir soruyu çözerken çalışma kağıdına şu adımları yazmıştır:\n1. Adım: Verilen öncülleri ve temel kavramları belirledim.\n2. Adım: Her olumsuz sözcük tezat değildir; \"geldi-gelmedi\" tezat değil olumsuzluktur. \"Gülmek-ağlamak\" ise tezattır. kabulünü yaparak işleme başladım.\n3. Adım: Bu adımdaki sonuca göre bağlantılı kuralı uyguladım.\n4. Adım: Nihai sonuca ulaştım.",
-        "questionText": "Sude'in çözüm adımlarını inceleyiniz. İlk hata kaçıncı adımda yapılmıştır? Yapılan hatanın gerekçesini açıklayarak o adımın ve nihai cevabın doğru halini yazınız.",
+        "stimulus": "Yukarıda verilen 1. sorudaki tebessüm ve iletişim metnini dikkate alınız.",
+        "questionText": "Metne göre bir insanın yalnızca doğru kelimeleri kullanması etkili bir iletişim için neden yeterli değildir? Metindeki bakış açısıyla açıklayınız.",
         "solutionExplanation": "Çünkü beden dili ve ses tonu kelimelerden daha hızlı ve etkilidir.",
-        "modelAnswer": "İlk hata 2. adımda yapılmıştır. Çünkü Sude, 'Her olumsuz sözcük tezat değildir; \"geldi-gelmedi\" tezat değil olumsuzluktur. \"Gülmek-ağlamak\" ise tezattır.' hatasına düşmüştür. Doğrusu: Tezat: Anlamı güçlendirmek için birbirine zıt kavramların (gece-gündüz, ağlamak-gülmek) bir arada kullanılmasıdır. kuralı işletilmeli ve çözüm bu esasa göre tamamlanmalıdır.",
+        "modelAnswer": "Çünkü iletişim sadece sözcüklerden oluşmaz. İnsanlar karşısındakinin yüz ifadesine, samimiyetine ve ses tonuna bakar. Eğer sözcükler nazik ama yüz ifadesi asık ve samimiyetsizse, karşı taraf kelimelere değil beden dilindeki bu soğukluğa odaklanır.",
         "rubric": [
           {
-            "criterion": "İlk hatanın yapıldığı adımın (2. Adım) doğru belirlenmesi",
-            "points": 5
+            "criterion": "Sözsüz iletişim ve beden dili vurgusunun doğru yapılması",
+            "points": 7
           },
           {
-            "criterion": "Yapılan kavramsal/işlemsel hatanın gerekçelendirilmesi",
-            "points": 5
-          },
-          {
-            "criterion": "Adımın ve sonucun doğru kurala göre düzeltilmesi",
-            "points": 4
+            "criterion": "Metindeki düşüncelerle tutarlı gerekçelendirme",
+            "points": 7
           }
         ]
       },
@@ -10685,20 +10581,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.7.21. Metinden hareketle söz varlığını geliştirmeye yönelik çözümleme yapabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Tatlı dil ve nezaketle ilgili atasözleri/deyimler.",
-        "stimulus": "Metin Türleri: Söyleşi (Sohbet) ve Fıkra (Köşe Yazısı) kapsamında karşılaşılan bir durumu çözmek için uzmanlar iki farklı yöntem geliştirmiştir:\n1. Yöntem: Kısa vadeli hızlı çözüm sunan ancak 'Mizahi fıkra (Nasreddin Hoca fıkrası) ile gazete köşe yazısı olan fıkrayı karıştırmayınız!' riskini barındıran yaklaşım.\n2. Yöntem: Başlangıçta daha fazla dikkat ve aşama gerektiren ancak 'Söyleşi (Sohbet): Yazarın okuyucuyla karşılıklı konuşuyormuş gibi içten, samimi bir dille yazdığı fikir yazısıdır (\"Siz de böyle düşünmez misiniz?\").' ilkesine tam uyan sürdürülebilir yaklaşım.",
-        "questionText": "Verilen iki yaklaşımı Metin Türleri: Söyleşi (Sohbet) ve Fıkra (Köşe Yazısı) ilkeleri bakımından değerlendiriniz. Hangi yöntem daha uygundur? Seçtiğiniz yöntemin güçlü yönlerini ve diğer yöntemin taşıdığı riskleri gerekçelendiriniz.",
+        "stimulus": "Kavramlar: 'Tatlı dil' ve 'Güler yüz'.",
+        "questionText": "Türkçemizde tatlı dilli olmanın ve güler yüz göstermenin önemini anlatan 2 farklı atasözü veya deyim yazıp anlamlarını kısaca açıklayınız.",
         "solutionExplanation": "Tatlı dil yılanı deliğinden çıkarır, yüzü gülmek, bal damlamak vb.",
-        "modelAnswer": "2. Yöntem uygundur. Çünkü Söyleşi (Sohbet): Yazarın okuyucuyla karşılıklı konuşuyormuş gibi içten, samimi bir dille yazdığı fikir yazısıdır (\"Siz de böyle düşünmez misiniz?\"). ilkesini tam olarak karşılamaktadır. 1. Yöntem ise kısa vadeli olsa da 'Mizahi fıkra (Nasreddin Hoca fıkrası) ile gazete köşe yazısı olan fıkrayı karıştırmayınız!' sakıncasını doğuracağı için hedeflenen amaca ters düşer.",
+        "modelAnswer": "1. Atasözü: 'Tatlı dil yılanı deliğinden çıkarır.' (Anlamı: Kırıcı olmayan, hoş ve yumuşak sözler en inatçı ve öfkeli insanları bile ikna eder).\n2. Deyim: 'Güler yüz göstermek' (Anlamı: Karşılaştığı insanlara samimi, dostça ve sevecen davranmak).",
         "rubric": [
           {
-            "criterion": "Doğru yaklaşımın (2. Yöntem) tespiti ve güçlü yönünün gerekçelendirilmesi",
+            "criterion": "Konuyla ilgili iki geçerli atasözü/deyimin yazılması",
             "points": 7
           },
           {
-            "criterion": "1. Yöntemin taşıdığı kavramsal riskin açıklanması",
+            "criterion": "Atasözü ve deyimlerin anlamlarının doğru açıklanması",
             "points": 7
           }
         ]
@@ -10799,21 +10695,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.7.5. Metnin yüzey anlamını belirleyebilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 15,
         "contextText": "Metnin konusunu belirleme.",
-        "stimulus": "Deyim ve Atasözlerinin Metne Katkısı konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nUmut: \"Bu durumda temel kural şudur: Deyimlerdeki sözcüklerin eş anlamlıları dahi olsa yeri değiştirilemez.\"\nEmre: \"Hayır Umut, yanılıyorsun. Çünkü kural gereği: Deyimler: Genellikle mecaz anlamlı, en az iki sözcükten oluşan kalıplaşmış anlatım kalıplarıdır. Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Umut ve Emre'nin iddialarını Deyim ve Atasözlerinin Metne Katkısı ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
+        "stimulus": "Yukarıda verilen 1. sorudaki çınar ağacı metnini dikkate alınız.",
+        "questionText": "Bursa İnkaya köyündeki asırlık çınarın ele alındığı bu metnin konusunu bir cümleyle yazınız.",
         "solutionExplanation": "Metin asırlık bir çınarın tarihi tanıklığını ve insana verdiği manevi mesajı ele almaktadır.",
-        "modelAnswer": "Emre haklıdır. Çünkü Deyimler: Genellikle mecaz anlamlı, en az iki sözcükten oluşan kalıplaşmış anlatım kalıplarıdır.. Umut ise 'Deyimlerdeki sözcüklerin eş anlamlıları dahi olsa yeri değiştirilemez.' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "modelAnswer": "Metnin konusu: Bursa'daki altı asırlık İnkaya çınarının heybetli yapısı, tarihî tanıklığı ve insanlara öğrettiği sabır ve vefa duygusudur.",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (Emre) doğru tespiti",
-            "points": 6
-          },
-          {
-            "criterion": "Umut'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 9
+            "criterion": "Metnin konusunun eksiksiz ve tek cümleyle yazılması",
+            "points": 15
           }
         ]
       },
@@ -10823,21 +10715,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.7.5. Metnin yüzey anlamını belirleyebilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Metnin ana fikrini belirleme.",
-        "stimulus": "Aşağıdaki matriste Deyim ve Atasözlerinin Metne Katkısı konusuna yönelik üç farklı durum ve özellikleri verilmiştir:\n\n| Durum / Örnek | 1. Temel Kriter | 2. Ayırt Edici Özellik | Karşılar mı? |\n| :--- | :---: | :---: | :---: |\n| 1. Durum (Örnek A) | VAR | YOK | ............ |\n| 2. Durum (Örnek B) | VAR | VAR | ............ |\n| 3. Durum (Örnek C) | YOK | YOK | ............ |",
-        "questionText": "Matristeki boşlukları özelliğin doğruluğuna göre \"EVET\" veya \"HAYIR\" yazarak doldurunuz. 2. Durum'u diğer durumlardan ayıran en temel şartı gerekçelendirerek yazınız.",
-        "solutionExplanation": "Köklerine bağlı olan bireyler ve toplumlar fırtınalara karşı dimdik durur.",
-        "modelAnswer": "Tablo Tamamlaması: 1. Durum: HAYIR | 2. Durum: EVET | 3. Durum: HAYIR.\nAyırt Edici Gerekçe: 2. Durum hem temel kriteri hem de ayırt edici özelliği eksiksiz sağladığı için Deyimler: Genellikle mecaz anlamlı, en az iki sözcükten oluşan kalıplaşmış anlatım kalıplarıdır. kuralına tam uygundur.",
+        "stimulus": "Yukarıda verilen 1. sorudaki çınar ağacı metnini dikkate alınız.",
+        "questionText": "Bursa İnkaya köyündeki asırlık çınarın ele alındığı bu metnin konusunu bir cümleyle yazınız.",
+        "solutionExplanation": "Metin asırlık bir çınarın tarihi tanıklığını ve insana verdiği manevi mesajı ele almaktadır.",
+        "modelAnswer": "Metnin konusu: Bursa'daki altı asırlık İnkaya çınarının heybetli yapısı, tarihî tanıklığı ve insanlara öğrettiği sabır ve vefa duygusudur.",
         "rubric": [
           {
-            "criterion": "Tablodaki boşlukların hatasız doldurulması (HAYIR - EVET - HAYIR)",
-            "points": 7
-          },
-          {
-            "criterion": "2. Durum'un ayırt edici şartının ve kuralının açıklanması",
-            "points": 7
+            "criterion": "Metnin konusunun eksiksiz ve tek cümleyle yazılması",
+            "points": 14
           }
         ]
       },
@@ -10847,25 +10735,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.7.7. Metnin derin anlamını belirlemeye yönelik basit çıkarımlar yapabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Hata Tespiti & Adım Analizi",
+        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
         "points": 14,
         "contextText": "Doğa ve tarih ilişkisinden çıkarım yapma.",
-        "stimulus": "Sude, Söz Sanatları: Tezat (Karşıtlık) ve Abartma (Mübalağa) ile ilgili açık uçlu bir soruyu çözerken çalışma kağıdına şu adımları yazmıştır:\n1. Adım: Verilen öncülleri ve temel kavramları belirledim.\n2. Adım: Her olumsuz sözcük tezat değildir; \"geldi-gelmedi\" tezat değil olumsuzluktur. \"Gülmek-ağlamak\" ise tezattır. kabulünü yaparak işleme başladım.\n3. Adım: Bu adımdaki sonuca göre bağlantılı kuralı uyguladım.\n4. Adım: Nihai sonuca ulaştım.",
-        "questionText": "Sude'in çözüm adımlarını inceleyiniz. İlk hata kaçıncı adımda yapılmıştır? Yapılan hatanın gerekçesini açıklayarak o adımın ve nihai cevabın doğru halini yazınız.",
+        "stimulus": "Yukarıda verilen 1. sorudaki çınar ağacı metnini dikkate alınız.",
+        "questionText": "Yazarın çınarı sadece bir bitki olarak değil, 'yaşayan bir tanık' olarak görmesinin sebebini metne dayanarak açıklayınız.",
         "solutionExplanation": "Ağacın Osmanlı'nın kuruluşundan bugüne kadar kuşakları görmüş olması.",
-        "modelAnswer": "İlk hata 2. adımda yapılmıştır. Çünkü Sude, 'Her olumsuz sözcük tezat değildir; \"geldi-gelmedi\" tezat değil olumsuzluktur. \"Gülmek-ağlamak\" ise tezattır.' hatasına düşmüştür. Doğrusu: Tezat: Anlamı güçlendirmek için birbirine zıt kavramların (gece-gündüz, ağlamak-gülmek) bir arada kullanılmasıdır. kuralı işletilmeli ve çözüm bu esasa göre tamamlanmalıdır.",
+        "modelAnswer": "Çünkü bu ağaç altı asırdır aynı yerde dimdik durarak Osmanlı'nın kuruluşuna, savaşlara, fatihlerin ve sıradan insanların hayatlarına şahitlik etmiş; yüzyılların kültürünü gölgesinde biriktirmiştir.",
         "rubric": [
           {
-            "criterion": "İlk hatanın yapıldığı adımın (2. Adım) doğru belirlenmesi",
-            "points": 5
-          },
-          {
-            "criterion": "Yapılan kavramsal/işlemsel hatanın gerekçelendirilmesi",
-            "points": 5
-          },
-          {
-            "criterion": "Adımın ve sonucun doğru kurala göre düzeltilmesi",
-            "points": 4
+            "criterion": "Tarihî süreklilik ve tanıklık gerekçesinin açıklanması",
+            "points": 14
           }
         ]
       },
@@ -10875,20 +10755,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.7.21. Metinden hareketle söz varlığını geliştirmeye yönelik çözümleme yapabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Zıt anlam ve söz varlığı türetme.",
-        "stimulus": "Metin Türleri: Söyleşi (Sohbet) ve Fıkra (Köşe Yazısı) kapsamında karşılaşılan bir durumu çözmek için uzmanlar iki farklı yöntem geliştirmiştir:\n1. Yöntem: Kısa vadeli hızlı çözüm sunan ancak 'Mizahi fıkra (Nasreddin Hoca fıkrası) ile gazete köşe yazısı olan fıkrayı karıştırmayınız!' riskini barındıran yaklaşım.\n2. Yöntem: Başlangıçta daha fazla dikkat ve aşama gerektiren ancak 'Söyleşi (Sohbet): Yazarın okuyucuyla karşılıklı konuşuyormuş gibi içten, samimi bir dille yazdığı fikir yazısıdır (\"Siz de böyle düşünmez misiniz?\").' ilkesine tam uyan sürdürülebilir yaklaşım.",
-        "questionText": "Verilen iki yaklaşımı Metin Türleri: Söyleşi (Sohbet) ve Fıkra (Köşe Yazısı) ilkeleri bakımından değerlendiriniz. Hangi yöntem daha uygundur? Seçtiğiniz yöntemin güçlü yönlerini ve diğer yöntemin taşıdığı riskleri gerekçelendiriniz.",
+        "stimulus": "Kelimeler: 'derin' ve 'dimdik'.",
+        "questionText": "a) 'Derin' kelimesinin zıt anlamlısını yazıp bir cümlede kullanınız.\nb) 'Dimdik' kelimesinin eş anlamlısını veya yakın anlamlı karşılığını yazınız.",
         "solutionExplanation": "Derin zıttı sığ, dimdik eş anlamlısı ayakta/eğilmeden.",
-        "modelAnswer": "2. Yöntem uygundur. Çünkü Söyleşi (Sohbet): Yazarın okuyucuyla karşılıklı konuşuyormuş gibi içten, samimi bir dille yazdığı fikir yazısıdır (\"Siz de böyle düşünmez misiniz?\"). ilkesini tam olarak karşılamaktadır. 1. Yöntem ise kısa vadeli olsa da 'Mizahi fıkra (Nasreddin Hoca fıkrası) ile gazete köşe yazısı olan fıkrayı karıştırmayınız!' sakıncasını doğuracağı için hedeflenen amaca ters düşer.",
+        "modelAnswer": "a) Derin zıt anlamlısı: SIĞ. Cümle: 'Kıyıya yakın sığ sularda çocuklar güvenle yüzüyordu.'\nb) Dimdik eş/yakın anlamı: Sarsılmadan, dosdoğru, eğilmeden, dik bir biçimde.",
         "rubric": [
           {
-            "criterion": "Doğru yaklaşımın (2. Yöntem) tespiti ve güçlü yönünün gerekçelendirilmesi",
+            "criterion": "Zıt anlamın ve örnek cümlenin doğruluğu",
             "points": 7
           },
           {
-            "criterion": "1. Yöntemin taşıdığı kavramsal riskin açıklanması",
+            "criterion": "Eş anlamın/açıklamanın doğruluğu",
             "points": 7
           }
         ]
@@ -10989,21 +10869,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.7.5. Metnin yüzey anlamını belirleyebilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Metnin konusunu belirleme.",
-        "stimulus": "Deyim ve Atasözlerinin Metne Katkısı konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nUmut: \"Bu durumda temel kural şudur: Deyimlerdeki sözcüklerin eş anlamlıları dahi olsa yeri değiştirilemez.\"\nEmre: \"Hayır Umut, yanılıyorsun. Çünkü kural gereği: Deyimler: Genellikle mecaz anlamlı, en az iki sözcükten oluşan kalıplaşmış anlatım kalıplarıdır. Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Umut ve Emre'nin iddialarını Deyim ve Atasözlerinin Metne Katkısı ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
+        "stimulus": "Yukarıda verilen 1. sorudaki kitap metnini dikkate alınız.",
+        "questionText": "Kitabın kil tabletten matbaaya ve ekrana uzanan tarihini anlatan bu metnin konusunu bir cümleyle yazınız.",
         "solutionExplanation": "Metin kitabın tarihsel gelişimi ve matbaanın bilgiyi yaymadaki rolünü ele alır.",
-        "modelAnswer": "Emre haklıdır. Çünkü Deyimler: Genellikle mecaz anlamlı, en az iki sözcükten oluşan kalıplaşmış anlatım kalıplarıdır.. Umut ise 'Deyimlerdeki sözcüklerin eş anlamlıları dahi olsa yeri değiştirilemez.' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "modelAnswer": "Metnin konusu: Kitabın kil tabletlerden dijital ekranlara kadar geçirdiği tarihî dönüşüm ve matbaa sayesinde bilginin tüm insanlığa yayılmasıdır.",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (Emre) doğru tespiti",
-            "points": 7
-          },
-          {
-            "criterion": "Umut'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 10
+            "criterion": "Metnin konusunu net ve eksiksiz bir cümleyle özetleme",
+            "points": 17
           }
         ]
       },
@@ -11013,21 +10889,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.7.5. Metnin yüzey anlamını belirleyebilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Metnin ana fikrini belirleme.",
-        "stimulus": "Aşağıdaki matriste Deyim ve Atasözlerinin Metne Katkısı konusuna yönelik üç farklı durum ve özellikleri verilmiştir:\n\n| Durum / Örnek | 1. Temel Kriter | 2. Ayırt Edici Özellik | Karşılar mı? |\n| :--- | :---: | :---: | :---: |\n| 1. Durum (Örnek A) | VAR | YOK | ............ |\n| 2. Durum (Örnek B) | VAR | VAR | ............ |\n| 3. Durum (Örnek C) | YOK | YOK | ............ |",
-        "questionText": "Matristeki boşlukları özelliğin doğruluğuna göre \"EVET\" veya \"HAYIR\" yazarak doldurunuz. 2. Durum'u diğer durumlardan ayıran en temel şartı gerekçelendirerek yazınız.",
-        "solutionExplanation": "Kitabın şekli değişse de insanın bilgiye ulaşma arzusu değişmez.",
-        "modelAnswer": "Tablo Tamamlaması: 1. Durum: HAYIR | 2. Durum: EVET | 3. Durum: HAYIR.\nAyırt Edici Gerekçe: 2. Durum hem temel kriteri hem de ayırt edici özelliği eksiksiz sağladığı için Deyimler: Genellikle mecaz anlamlı, en az iki sözcükten oluşan kalıplaşmış anlatım kalıplarıdır. kuralına tam uygundur.",
+        "stimulus": "Yukarıda verilen 1. sorudaki kitap metnini dikkate alınız.",
+        "questionText": "Kitabın kil tabletten matbaaya ve ekrana uzanan tarihini anlatan bu metnin konusunu bir cümleyle yazınız.",
+        "solutionExplanation": "Metin kitabın tarihsel gelişimi ve matbaanın bilgiyi yaymadaki rolünü ele alır.",
+        "modelAnswer": "Metnin konusu: Kitabın kil tabletlerden dijital ekranlara kadar geçirdiği tarihî dönüşüm ve matbaa sayesinde bilginin tüm insanlığa yayılmasıdır.",
         "rubric": [
           {
-            "criterion": "Tablodaki boşlukların hatasız doldurulması (HAYIR - EVET - HAYIR)",
-            "points": 8
-          },
-          {
-            "criterion": "2. Durum'un ayırt edici şartının ve kuralının açıklanması",
-            "points": 9
+            "criterion": "Metnin konusunu net ve eksiksiz bir cümleyle özetleme",
+            "points": 17
           }
         ]
       },
@@ -11037,25 +10909,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.7.21. Metinden hareketle söz varlığını geliştirmeye yönelik çözümleme yapabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Hata Tespiti & Adım Analizi",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Terim anlamlı sözcükleri tespit etme.",
-        "stimulus": "Sude, Metin Türleri: Söyleşi (Sohbet) ve Fıkra (Köşe Yazısı) ile ilgili açık uçlu bir soruyu çözerken çalışma kağıdına şu adımları yazmıştır:\n1. Adım: Verilen öncülleri ve temel kavramları belirledim.\n2. Adım: Mizahi fıkra (Nasreddin Hoca fıkrası) ile gazete köşe yazısı olan fıkrayı karıştırmayınız! kabulünü yaparak işleme başladım.\n3. Adım: Bu adımdaki sonuca göre bağlantılı kuralı uyguladım.\n4. Adım: Nihai sonuca ulaştım.",
-        "questionText": "Sude'in çözüm adımlarını inceleyiniz. İlk hata kaçıncı adımda yapılmıştır? Yapılan hatanın gerekçesini açıklayarak o adımın ve nihai cevabın doğru halini yazınız.",
+        "stimulus": "Yukarıda verilen 1. sorudaki kitap metnini dikkate alınız.",
+        "questionText": "Metinde geçen yazı ve matbaa alanına ait 3 terim anlamlı sözcük belirleyip bunların hangi meslek/bilim dalıyla ilgili olduğunu yazınız.",
         "solutionExplanation": "Papirüs, parşömen, matbaa vb.",
-        "modelAnswer": "İlk hata 2. adımda yapılmıştır. Çünkü Sude, 'Mizahi fıkra (Nasreddin Hoca fıkrası) ile gazete köşe yazısı olan fıkrayı karıştırmayınız!' hatasına düşmüştür. Doğrusu: Söyleşi (Sohbet): Yazarın okuyucuyla karşılıklı konuşuyormuş gibi içten, samimi bir dille yazdığı fikir yazısıdır (\"Siz de böyle düşünmez misiniz?\"). kuralı işletilmeli ve çözüm bu esasa göre tamamlanmalıdır.",
+        "modelAnswer": "1. Papirüs (Eski yazı malzemesi / Tarih-Arkeoloji)\n2. Parşömen (İşlenmiş hayvan derisinden yazı kağıdı / Tarih-Yayıncılık)\n3. Matbaa (Basım aleti ve tekniği / Basım-Yayımcılık)",
         "rubric": [
           {
-            "criterion": "İlk hatanın yapıldığı adımın (2. Adım) doğru belirlenmesi",
-            "points": 6
+            "criterion": "3 terim anlamlı sözcüğün doğru belirlenmesi",
+            "points": 9
           },
           {
-            "criterion": "Yapılan kavramsal/işlemsel hatanın gerekçelendirilmesi",
-            "points": 6
-          },
-          {
-            "criterion": "Adımın ve sonucun doğru kurala göre düzeltilmesi",
-            "points": 5
+            "criterion": "İlgili alanların doğru ilişkilendirilmesi",
+            "points": 8
           }
         ]
       },
@@ -11065,20 +10933,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.Y.7.3. Yazısında içerik ve yapıya yönelik seçimlerini yönetebilme",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 16,
         "contextText": "Fikir yazısı planı.",
-        "stimulus": "Fiillerde Anlam (Zaman) Kayması kapsamında karşılaşılan bir durumu çözmek için uzmanlar iki farklı yöntem geliştirmiştir:\n1. Yöntem: Kısa vadeli hızlı çözüm sunan ancak 'Anlam kaymasını anlatım bozukluğu saymayınız! Kesinlikle bozukluk değildir.' riskini barındıran yaklaşım.\n2. Yöntem: Başlangıçta daha fazla dikkat ve aşama gerektiren ancak 'Tanım: Fiilin aldığı kip ekiyle, cümlede kastettiği zamanın birbirine uymaması durumudur.' ilkesine tam uyan sürdürülebilir yaklaşım.",
-        "questionText": "Verilen iki yaklaşımı Fiillerde Anlam (Zaman) Kayması ilkeleri bakımından değerlendiriniz. Hangi yöntem daha uygundur? Seçtiğiniz yöntemin güçlü yönlerini ve diğer yöntemin taşıdığı riskleri gerekçelendiriniz.",
+        "stimulus": "Konu: 'Sayfaların Kokusu mu, Ekranın Işığı mı? (Basılı Kitap vs E-Kitap)'",
+        "questionText": "Bu konuda yazacağınız tartışmacı bir metin için; savunduğunuz görüşü ve bu görüşü destekleyen 2 güçlü kanıtı maddeler halinde taslaklaştırınız.",
         "solutionExplanation": "Öğrenci basılı veya dijital kitaptan birini seçerek iki sağlam gerekçe sunar.",
-        "modelAnswer": "2. Yöntem uygundur. Çünkü Tanım: Fiilin aldığı kip ekiyle, cümlede kastettiği zamanın birbirine uymaması durumudur. ilkesini tam olarak karşılamaktadır. 1. Yöntem ise kısa vadeli olsa da 'Anlam kaymasını anlatım bozukluğu saymayınız! Kesinlikle bozukluk değildir.' sakıncasını doğuracağı için hedeflenen amaca ters düşer.",
+        "modelAnswer": "• Savunulan Görüş: Dijital kolaylıklara rağmen basılı kitabın dokusu, göz sağlığına uygunluğu ve odaklanma kolaylığı üstündür.\n• Kanıt 1: Yapılan araştırmalar kâğıttan okumanın ekran ışığına göre gözü daha az yorduğunu ve okuduğunu anlama oranını artırdığını göstermektedir.\n• Kanıt 2: Dijital ekranlarda gelen bildirimler ve internet bağlantısı okuyucunun dikkatini dağıtırken basılı kitap derinleşmeyi sağlar.",
         "rubric": [
           {
-            "criterion": "Doğru yaklaşımın (2. Yöntem) tespiti ve güçlü yönünün gerekçelendirilmesi",
+            "criterion": "Savunulan görüşün açıkça belirlenmesi",
             "points": 8
           },
           {
-            "criterion": "1. Yöntemin taşıdığı kavramsal riskin açıklanması",
+            "criterion": "İki tutarlı ve ikna edici kanıtın sunulması",
             "points": 8
           }
         ]
@@ -11155,21 +11023,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.7.5. Metnin yüzey anlamını belirleyebilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Metnin konusunu belirleme.",
-        "stimulus": "Deyim ve Atasözlerinin Metne Katkısı konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nUmut: \"Bu durumda temel kural şudur: Deyimlerdeki sözcüklerin eş anlamlıları dahi olsa yeri değiştirilemez.\"\nEmre: \"Hayır Umut, yanılıyorsun. Çünkü kural gereği: Deyimler: Genellikle mecaz anlamlı, en az iki sözcükten oluşan kalıplaşmış anlatım kalıplarıdır. Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Umut ve Emre'nin iddialarını Deyim ve Atasözlerinin Metne Katkısı ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
+        "stimulus": "Yukarıda verilen 1. sorudaki Neşet Ertaş metnini dikkate alınız.",
+        "questionText": "Neşet Ertaş ve türkülerimizin anlatıldığı bu metnin konusunu bir cümleyle yazınız.",
         "solutionExplanation": "Metin Neşet Ertaş'ın sanatını ve türkülerin milletimizin duygularını yansıtmadaki yerini anlatır.",
-        "modelAnswer": "Emre haklıdır. Çünkü Deyimler: Genellikle mecaz anlamlı, en az iki sözcükten oluşan kalıplaşmış anlatım kalıplarıdır.. Umut ise 'Deyimlerdeki sözcüklerin eş anlamlıları dahi olsa yeri değiştirilemez.' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "modelAnswer": "Metnin konusu: Neşet Ertaş'ın sazı ve sözüyle Anadolu insanının duygularına tercüman oluşu ve türkülerimizin millî kültürümüzdeki yeridir.",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (Emre) doğru tespiti",
-            "points": 7
-          },
-          {
-            "criterion": "Umut'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 10
+            "criterion": "Metnin konusunun eksiksiz tek cümleyle sunulması",
+            "points": 17
           }
         ]
       },
@@ -11179,21 +11043,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.7.5. Metnin yüzey anlamını belirleyebilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Metnin ana fikrini belirleme.",
-        "stimulus": "Aşağıdaki matriste Deyim ve Atasözlerinin Metne Katkısı konusuna yönelik üç farklı durum ve özellikleri verilmiştir:\n\n| Durum / Örnek | 1. Temel Kriter | 2. Ayırt Edici Özellik | Karşılar mı? |\n| :--- | :---: | :---: | :---: |\n| 1. Durum (Örnek A) | VAR | YOK | ............ |\n| 2. Durum (Örnek B) | VAR | VAR | ............ |\n| 3. Durum (Örnek C) | YOK | YOK | ............ |",
-        "questionText": "Matristeki boşlukları özelliğin doğruluğuna göre \"EVET\" veya \"HAYIR\" yazarak doldurunuz. 2. Durum'u diğer durumlardan ayıran en temel şartı gerekçelendirerek yazınız.",
-        "solutionExplanation": "Türküler bir milletin kimliği ve ruhudur; unutulursa kimlik kaybolur.",
-        "modelAnswer": "Tablo Tamamlaması: 1. Durum: HAYIR | 2. Durum: EVET | 3. Durum: HAYIR.\nAyırt Edici Gerekçe: 2. Durum hem temel kriteri hem de ayırt edici özelliği eksiksiz sağladığı için Deyimler: Genellikle mecaz anlamlı, en az iki sözcükten oluşan kalıplaşmış anlatım kalıplarıdır. kuralına tam uygundur.",
+        "stimulus": "Yukarıda verilen 1. sorudaki Neşet Ertaş metnini dikkate alınız.",
+        "questionText": "Neşet Ertaş ve türkülerimizin anlatıldığı bu metnin konusunu bir cümleyle yazınız.",
+        "solutionExplanation": "Metin Neşet Ertaş'ın sanatını ve türkülerin milletimizin duygularını yansıtmadaki yerini anlatır.",
+        "modelAnswer": "Metnin konusu: Neşet Ertaş'ın sazı ve sözüyle Anadolu insanının duygularına tercüman oluşu ve türkülerimizin millî kültürümüzdeki yeridir.",
         "rubric": [
           {
-            "criterion": "Tablodaki boşlukların hatasız doldurulması (HAYIR - EVET - HAYIR)",
-            "points": 8
-          },
-          {
-            "criterion": "2. Durum'un ayırt edici şartının ve kuralının açıklanması",
-            "points": 9
+            "criterion": "Metnin konusunun eksiksiz tek cümleyle sunulması",
+            "points": 17
           }
         ]
       },
@@ -11203,25 +11063,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.O.7.21. Metinden hareketle söz varlığını geliştirmeye yönelik çözümleme yapabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Hata Tespiti & Adım Analizi",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Gönül kelimesiyle deyim tahlili.",
-        "stimulus": "Sude, Metin Türleri: Söyleşi (Sohbet) ve Fıkra (Köşe Yazısı) ile ilgili açık uçlu bir soruyu çözerken çalışma kağıdına şu adımları yazmıştır:\n1. Adım: Verilen öncülleri ve temel kavramları belirledim.\n2. Adım: Mizahi fıkra (Nasreddin Hoca fıkrası) ile gazete köşe yazısı olan fıkrayı karıştırmayınız! kabulünü yaparak işleme başladım.\n3. Adım: Bu adımdaki sonuca göre bağlantılı kuralı uyguladım.\n4. Adım: Nihai sonuca ulaştım.",
-        "questionText": "Sude'in çözüm adımlarını inceleyiniz. İlk hata kaçıncı adımda yapılmıştır? Yapılan hatanın gerekçesini açıklayarak o adımın ve nihai cevabın doğru halini yazınız.",
+        "stimulus": "Kavram: 'Gönül' sözcüğü.",
+        "questionText": "Metinde geçen 'gönül' kelimesiyle kurulmuş 2 farklı deyim (örn. gönül koymak, gönül almak, gönül bağı) yazıp anlamlarını açıklayınız.",
         "solutionExplanation": "Gönül almak sevindirmek, gönül koymak kırılmak vb.",
-        "modelAnswer": "İlk hata 2. adımda yapılmıştır. Çünkü Sude, 'Mizahi fıkra (Nasreddin Hoca fıkrası) ile gazete köşe yazısı olan fıkrayı karıştırmayınız!' hatasına düşmüştür. Doğrusu: Söyleşi (Sohbet): Yazarın okuyucuyla karşılıklı konuşuyormuş gibi içten, samimi bir dille yazdığı fikir yazısıdır (\"Siz de böyle düşünmez misiniz?\"). kuralı işletilmeli ve çözüm bu esasa göre tamamlanmalıdır.",
+        "modelAnswer": "1. Deyim: Gönül almak (Anlamı: Kırılan veya üzülen birini güzel söz ve davranışlarla sevindirmek, teselli etmek).\n2. Deyim: Gönül bağı kurmak (Anlamı: İki insan veya toplum arasında içten, samimi ve sevgiye dayalı bir yakınlık oluşturmak).",
         "rubric": [
           {
-            "criterion": "İlk hatanın yapıldığı adımın (2. Adım) doğru belirlenmesi",
-            "points": 6
+            "criterion": "İki doğru deyimin yazılması",
+            "points": 9
           },
           {
-            "criterion": "Yapılan kavramsal/işlemsel hatanın gerekçelendirilmesi",
-            "points": 6
-          },
-          {
-            "criterion": "Adımın ve sonucun doğru kurala göre düzeltilmesi",
-            "points": 5
+            "criterion": "Deyimlerin anlamlarının doğru açıklanması",
+            "points": 8
           }
         ]
       },
@@ -11231,20 +11087,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "T.Y.7.18. Yazısını zenginleştirecek biçimde söz varlığını kullanabilme",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 16,
         "contextText": "Türkülerin kültürel değerini anlatan paragraf yazımı.",
-        "stimulus": "Ek Fiil (Ek Eylem) ve Görevleri kapsamında karşılaşılan bir durumu çözmek için uzmanlar iki farklı yöntem geliştirmiştir:\n1. Yöntem: Kısa vadeli hızlı çözüm sunan ancak 'İsim yüklem olmuşsa orada MUTLAKA ek fiil vardır! \"Geniş zaman 3. tekil eki olan -dir bazen düşebilir: \"O çok çalışkan(dır)\".' riskini barındıran yaklaşım.\n2. Yöntem: Başlangıçta daha fazla dikkat ve aşama gerektiren ancak 'Ek Fiil Kökü: \"i- (imek)\" fiilidir (idi, imiş, ise, -dir).' ilkesine tam uyan sürdürülebilir yaklaşım.",
-        "questionText": "Verilen iki yaklaşımı Ek Fiil (Ek Eylem) ve Görevleri ilkeleri bakımından değerlendiriniz. Hangi yöntem daha uygundur? Seçtiğiniz yöntemin güçlü yönlerini ve diğer yöntemin taşıdığı riskleri gerekçelendiriniz.",
+        "stimulus": "Hedef Kavramlar: 'kültür mirası, samimiyet, ortak hafıza, ezgi'.",
+        "questionText": "Türkülerimizin geçmişten geleceğe kültür aktarımındaki rolünü anlatan; içinde 'kültür mirası', 'samimiyet', 'ortak hafıza' ve 'ezgi' kelimelerinin yer aldığı 3-4 cümlelik akıcı bir paragraf yazınız.",
         "solutionExplanation": "Öğrenci 4 anahtar kavramla zengin bir metin kurar.",
-        "modelAnswer": "2. Yöntem uygundur. Çünkü Ek Fiil Kökü: \"i- (imek)\" fiilidir (idi, imiş, ise, -dir). ilkesini tam olarak karşılamaktadır. 1. Yöntem ise kısa vadeli olsa da 'İsim yüklem olmuşsa orada MUTLAKA ek fiil vardır! \"Geniş zaman 3. tekil eki olan -dir bazen düşebilir: \"O çok çalışkan(dır)\".' sakıncasını doğuracağı için hedeflenen amaca ters düşer.",
+        "modelAnswer": "Türkülerimiz, Anadolu'nun asırlar boyunca biriktirdiği en değerli kültür mirasıdır. Her bir ezgi, düğünlerimizden ağıtlarımıza kadar milletimizin ortak hafızasını canlı tutar. Bu dizelerdeki eşsiz samimiyet, kuşakları birbirine bağlayan en güçlü köprüdür.",
         "rubric": [
           {
-            "criterion": "Doğru yaklaşımın (2. Yöntem) tespiti ve güçlü yönünün gerekçelendirilmesi",
+            "criterion": "Dört anahtar kelimenin eksiksiz ve yerinde kullanılması",
             "points": 8
           },
           {
-            "criterion": "1. Yöntemin taşıdığı kavramsal riskin açıklanması",
+            "criterion": "Düşüncelerin akıcı ve edebi bir dille ifade edilmesi",
             "points": 8
           }
         ]
@@ -11320,21 +11176,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "MAT.7.1.2. Gerçek yaşam durumlarında rasyonel sayıların ondalık gösterimlerini yansıtabilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 15,
         "contextText": "Devirli ondalık gösterimi rasyonel sayıya çevirme formülü.",
-        "stimulus": "Tam Sayılarla Çarpma ve Bölme İşlemleri konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nUmut: \"Bu durumda temel kural şudur: Çift sayıda negatif sayının çarpımı pozitif (+), tek sayıda negatif sayının çarpımı negatiftir (-).\"\nEmre: \"Hayır Umut, yanılıyorsun. Çünkü kural gereği: Çarpma ve Bölme İşaret Kuralları:\n• (+) × (+) = (+)\n• (-) × (-) = (+)\n• (+) × (-) = (-)\n• (-) × (+) = (-) Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Umut ve Emre'nin iddialarını Tam Sayılarla Çarpma ve Bölme İşlemleri ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
+        "stimulus": "Bir laboratuvarda yapılan hassas kütle ölçümünde cihaz ekranında 2,363636... (2,36; 36 devrediyor) değeri okunmuştur.",
+        "questionText": "a) Bu devirli ondalık gösterimi rasyonel sayıya çevirme formülünü (Tüm Sayı - Devretmeyen Kısım) / (Devreden kadar 9, Devretmeyen kadar 0) kullanarak kesir olarak yazınız.\nb) Bulduğunuz rasyonel sayıyı en sade (en küçük tam sayılarla) haline getiriniz.",
         "solutionExplanation": "(236 - 2) / 99 = 234 / 99 = 26 / 11.",
-        "modelAnswer": "Emre haklıdır. Çünkü Çarpma ve Bölme İşaret Kuralları:\n• (+) × (+) = (+)\n• (-) × (-) = (+)\n• (+) × (-) = (-)\n• (-) × (+) = (-). Umut ise 'Çift sayıda negatif sayının çarpımı pozitif (+), tek sayıda negatif sayının çarpımı negatiftir (-).' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "modelAnswer": "a) Formül: (236 - 2) / 99 = 234 / 99\nb) Sadeleştirme: 234 ve 99 sayıları 9'a bölünür: 234 ÷ 9 = 26, 99 ÷ 9 = 11. En sade hali: 26 / 11 (veya 2 tam 4/11).",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (Emre) doğru tespiti",
-            "points": 6
+            "criterion": "Formülün doğru uygulanarak 234 / 99 kesrinin bulunması",
+            "points": 8
           },
           {
-            "criterion": "Umut'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 9
+            "criterion": "9 ile sadeleştirilerek 26 / 11 en sade kesrinin elde edilmesi",
+            "points": 7
           }
         ]
       },
@@ -11344,20 +11200,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "MAT.7.1.2. Gerçek yaşam durumlarında rasyonel sayıların ondalık gösterimlerini yansıtabilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Bölme işlemiyle ondalık gösterim bulma.",
-        "stimulus": "Aşağıdaki matriste Tam Sayılarla Çarpma ve Bölme İşlemleri konusuna yönelik üç farklı durum ve özellikleri verilmiştir:\n\n| Durum / Örnek | 1. Temel Kriter | 2. Ayırt Edici Özellik | Karşılar mı? |\n| :--- | :---: | :---: | :---: |\n| 1. Durum (Örnek A) | VAR | YOK | ............ |\n| 2. Durum (Örnek B) | VAR | VAR | ............ |\n| 3. Durum (Örnek C) | YOK | YOK | ............ |",
-        "questionText": "Matristeki boşlukları özelliğin doğruluğuna göre \"EVET\" veya \"HAYIR\" yazarak doldurunuz. 2. Durum'u diğer durumlardan ayıran en temel şartı gerekçelendirerek yazınız.",
-        "solutionExplanation": "7 / 8 = 0,875 (devirsiz, sonlu ondalık gösterim).",
-        "modelAnswer": "Tablo Tamamlaması: 1. Durum: HAYIR | 2. Durum: EVET | 3. Durum: HAYIR.\nAyırt Edici Gerekçe: 2. Durum hem temel kriteri hem de ayırt edici özelliği eksiksiz sağladığı için Çarpma ve Bölme İşaret Kuralları:\n• (+) × (+) = (+)\n• (-) × (-) = (+)\n• (+) × (-) = (-)\n• (-) × (+) = (-) kuralına tam uygundur.",
+        "stimulus": "Bir laboratuvarda yapılan hassas kütle ölçümünde cihaz ekranında 2,363636... (2,36; 36 devrediyor) değeri okunmuştur.",
+        "questionText": "a) Bu devirli ondalık gösterimi rasyonel sayıya çevirme formülünü (Tüm Sayı - Devretmeyen Kısım) / (Devreden kadar 9, Devretmeyen kadar 0) kullanarak kesir olarak yazınız.\nb) Bulduğunuz rasyonel sayıyı en sade (en küçük tam sayılarla) haline getiriniz.",
+        "solutionExplanation": "(236 - 2) / 99 = 234 / 99 = 26 / 11.",
+        "modelAnswer": "a) Formül: (236 - 2) / 99 = 234 / 99\nb) Sadeleştirme: 234 ve 99 sayıları 9'a bölünür: 234 ÷ 9 = 26, 99 ÷ 9 = 11. En sade hali: 26 / 11 (veya 2 tam 4/11).",
         "rubric": [
           {
-            "criterion": "Tablodaki boşlukların hatasız doldurulması (HAYIR - EVET - HAYIR)",
+            "criterion": "Formülün doğru uygulanarak 234 / 99 kesrinin bulunması",
             "points": 7
           },
           {
-            "criterion": "2. Durum'un ayırt edici şartının ve kuralının açıklanması",
+            "criterion": "9 ile sadeleştirilerek 26 / 11 en sade kesrinin elde edilmesi",
             "points": 7
           }
         ]
@@ -11368,25 +11224,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "MAT.7.1.3. Rasyonel sayıların karşılaştırma ve sıralama ilişkilerini yorumlayabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Hata Tespiti & Adım Analizi",
+        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
         "points": 14,
         "contextText": "Negatif rasyonel sayılarda sıralama hatası analizi.",
-        "stimulus": "Sude, Tam Sayıların Kuvvetleri (Üslü İfadeler) ile ilgili açık uçlu bir soruyu çözerken çalışma kağıdına şu adımları yazmıştır:\n1. Adım: Verilen öncülleri ve temel kavramları belirledim.\n2. Adım: SINAVIN EN BÜYÜK TUZAĞI: (-4)² ile -4² AYNI DEĞİLDİR!\n(-4)² = (-4) × (-4) = +16 iken,\n-4² = - (4 × 4) = -16'dır! kabulünü yaparak işleme başladım.\n3. Adım: Bu adımdaki sonuca göre bağlantılı kuralı uyguladım.\n4. Adım: Nihai sonuca ulaştım.",
-        "questionText": "Sude'in çözüm adımlarını inceleyiniz. İlk hata kaçıncı adımda yapılmıştır? Yapılan hatanın gerekçesini açıklayarak o adımın ve nihai cevabın doğru halini yazınız.",
+        "stimulus": "Mert ile Ece, -3/4 ve -5/6 rasyonel sayılarını karşılaştırmaktadır:\n• Mert: \"Paydaları eşitlediğimizde -9/12 ve -10/12 olur. -10 sayısı -9'dan küçük olduğu için -5/6 < -3/4'tür.\"\n• Ece: \"Hayır, pozitif sayılarda 10, 9'dan büyük olduğu için negatifte de -10/12 daha büyüktür.\"",
+        "questionText": "Mert ve Ece'den hangisinin argümanı doğrudur? Sayı doğrusu üzerindeki konumlarını ve sıfıra olan mesafelerini gerekçe göstererek açıklayınız.",
         "solutionExplanation": "Mert haklıdır. Sayı doğrusunda sola gidildikçe sayılar küçülür, -10/12 daha soldadır.",
-        "modelAnswer": "İlk hata 2. adımda yapılmıştır. Çünkü Sude, 'SINAVIN EN BÜYÜK TUZAĞI: (-4)² ile -4² AYNI DEĞİLDİR!\n(-4)² = (-4) × (-4) = +16 iken,\n-4² = - (4 × 4) = -16'dır!' hatasına düşmüştür. Doğrusu: Pozitif sayıların tüm kuvvetleri pozitiftir: (+2)³ = +8, (+3)² = +9. kuralı işletilmeli ve çözüm bu esasa göre tamamlanmalıdır.",
+        "modelAnswer": "Mert haklıdır. Paydalar 12'de eşitlendiğinde -3/4 = -9/12 ve -5/6 = -10/12 olur. Sayı doğrusunda sıfırın solundaki negatif sayılarda sıfırdan uzaklaştıkça sayı küçülür. -10/12 sayısı sayı doğrusunda -9/12'nin daha solundadır. Bu nedenle -5/6 < -3/4 sıralaması doğrudur.",
         "rubric": [
           {
-            "criterion": "İlk hatanın yapıldığı adımın (2. Adım) doğru belirlenmesi",
+            "criterion": "Mert'in haklı olduğunun doğru tespiti",
             "points": 5
           },
           {
-            "criterion": "Yapılan kavramsal/işlemsel hatanın gerekçelendirilmesi",
-            "points": 5
-          },
-          {
-            "criterion": "Adımın ve sonucun doğru kurala göre düzeltilmesi",
-            "points": 4
+            "criterion": "Sayı doğrusundaki sol-sağ kuralı ve payda eşitleme ile bilimsel gerekçelendirme",
+            "points": 9
           }
         ]
       },
@@ -11396,21 +11248,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "MAT.7.1.3. Rasyonel sayıların karşılaştırma ve sıralama ilişkilerini yorumlayabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
         "points": 14,
         "contextText": "Kesirleri yarıma ve bütüne yakınlığa göre sıralama.",
-        "stimulus": "Tam Sayıların Kuvvetleri (Üslü İfadeler) kapsamında karşılaşılan bir durumu çözmek için uzmanlar iki farklı yöntem geliştirmiştir:\n1. Yöntem: Kısa vadeli hızlı çözüm sunan ancak 'SINAVIN EN BÜYÜK TUZAĞI: (-4)² ile -4² AYNI DEĞİLDİR!\n(-4)² = (-4) × (-4) = +16 iken,\n-4² = - (4 × 4) = -16'dır!' riskini barındıran yaklaşım.\n2. Yöntem: Başlangıçta daha fazla dikkat ve aşama gerektiren ancak 'Pozitif sayıların tüm kuvvetleri pozitiftir: (+2)³ = +8, (+3)² = +9.' ilkesine tam uyan sürdürülebilir yaklaşım.",
-        "questionText": "Verilen iki yaklaşımı Tam Sayıların Kuvvetleri (Üslü İfadeler) ilkeleri bakımından değerlendiriniz. Hangi yöntem daha uygundur? Seçtiğiniz yöntemin güçlü yönlerini ve diğer yöntemin taşıdığı riskleri gerekçelendiriniz.",
-        "solutionExplanation": "A yarımdan küçük (7/15 < 7.5/15), C yarımdan büyük (4/7 > 3.5/7), B bütüne çok yakın (9/10). Sıralama: A < C < B.",
-        "modelAnswer": "2. Yöntem uygundur. Çünkü Pozitif sayıların tüm kuvvetleri pozitiftir: (+2)³ = +8, (+3)² = +9. ilkesini tam olarak karşılamaktadır. 1. Yöntem ise kısa vadeli olsa da 'SINAVIN EN BÜYÜK TUZAĞI: (-4)² ile -4² AYNI DEĞİLDİR!\n(-4)² = (-4) × (-4) = +16 iken,\n-4² = - (4 × 4) = -16'dır!' sakıncasını doğuracağı için hedeflenen amaca ters düşer.",
+        "stimulus": "Mert ile Ece, -3/4 ve -5/6 rasyonel sayılarını karşılaştırmaktadır:\n• Mert: \"Paydaları eşitlediğimizde -9/12 ve -10/12 olur. -10 sayısı -9'dan küçük olduğu için -5/6 < -3/4'tür.\"\n• Ece: \"Hayır, pozitif sayılarda 10, 9'dan büyük olduğu için negatifte de -10/12 daha büyüktür.\"",
+        "questionText": "Mert ve Ece'den hangisinin argümanı doğrudur? Sayı doğrusu üzerindeki konumlarını ve sıfıra olan mesafelerini gerekçe göstererek açıklayınız.",
+        "solutionExplanation": "Mert haklıdır. Sayı doğrusunda sola gidildikçe sayılar küçülür, -10/12 daha soldadır.",
+        "modelAnswer": "Mert haklıdır. Paydalar 12'de eşitlendiğinde -3/4 = -9/12 ve -5/6 = -10/12 olur. Sayı doğrusunda sıfırın solundaki negatif sayılarda sıfırdan uzaklaştıkça sayı küçülür. -10/12 sayısı sayı doğrusunda -9/12'nin daha solundadır. Bu nedenle -5/6 < -3/4 sıralaması doğrudur.",
         "rubric": [
           {
-            "criterion": "Doğru yaklaşımın (2. Yöntem) tespiti ve güçlü yönünün gerekçelendirilmesi",
-            "points": 7
+            "criterion": "Mert'in haklı olduğunun doğru tespiti",
+            "points": 5
           },
           {
-            "criterion": "1. Yöntemin taşıdığı kavramsal riskin açıklanması",
-            "points": 7
+            "criterion": "Sayı doğrusundaki sol-sağ kuralı ve payda eşitleme ile bilimsel gerekçelendirme",
+            "points": 9
           }
         ]
       },
@@ -11509,21 +11361,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "MAT.7.1.2. Gerçek yaşam durumlarında rasyonel sayıların ondalık gösterimlerini yansıtabilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 20,
         "contextText": "Devirli ondalık sayıyı en sade rasyonel kesre çevirme.",
-        "stimulus": "Tam Sayılarla Çarpma ve Bölme İşlemleri konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nUmut: \"Bu durumda temel kural şudur: Çift sayıda negatif sayının çarpımı pozitif (+), tek sayıda negatif sayının çarpımı negatiftir (-).\"\nEmre: \"Hayır Umut, yanılıyorsun. Çünkü kural gereği: Çarpma ve Bölme İşaret Kuralları:\n• (+) × (+) = (+)\n• (-) × (-) = (+)\n• (+) × (-) = (-)\n• (-) × (+) = (-) Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Umut ve Emre'nin iddialarını Tam Sayılarla Çarpma ve Bölme İşlemleri ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
+        "stimulus": "Verilen devirli ondalık sayı: 1,454545... (1,45; 45 devrediyor).",
+        "questionText": "1,45 devirli ondalık sayısını rasyonel sayıya çeviriniz ve en sade haline getirerek pay ile paydasının toplamını bulunuz.",
         "solutionExplanation": "(145 - 1) / 99 = 144 / 99. 9'a böl: 16 / 11. Toplam: 16 + 11 = 27.",
-        "modelAnswer": "Emre haklıdır. Çünkü Çarpma ve Bölme İşaret Kuralları:\n• (+) × (+) = (+)\n• (-) × (-) = (+)\n• (+) × (-) = (-)\n• (-) × (+) = (-). Umut ise 'Çift sayıda negatif sayının çarpımı pozitif (+), tek sayıda negatif sayının çarpımı negatiftir (-).' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "modelAnswer": "• Kesir formülü: (145 - 1) / 99 = 144 / 99\n• Sadeleştirme (9 ile): 144 ÷ 9 = 16, 99 ÷ 9 = 11. En sade kesir: 16 / 11.\n• Pay ve payda toplamı: 16 + 11 = 27 bulunur.",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (Emre) doğru tespiti",
-            "points": 8
+            "criterion": "144 / 99 kesrinin doğru oluşturulması",
+            "points": 10
           },
           {
-            "criterion": "Umut'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 12
+            "criterion": "16 / 11 en sade kesrinin ve 27 toplamının bulunması",
+            "points": 10
           }
         ]
       },
@@ -11533,21 +11385,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "MAT.7.1.3. Rasyonel sayıların karşılaştırma ve sıralama ilişkilerini yorumlayabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
         "points": 20,
         "contextText": "Koşucuların sürelerini sıralama.",
-        "stimulus": "Aşağıdaki matriste Tam Sayıların Kuvvetleri (Üslü İfadeler) konusuna yönelik üç farklı durum ve özellikleri verilmiştir:\n\n| Durum / Örnek | 1. Temel Kriter | 2. Ayırt Edici Özellik | Karşılar mı? |\n| :--- | :---: | :---: | :---: |\n| 1. Durum (Örnek A) | VAR | YOK | ............ |\n| 2. Durum (Örnek B) | VAR | VAR | ............ |\n| 3. Durum (Örnek C) | YOK | YOK | ............ |",
-        "questionText": "Matristeki boşlukları özelliğin doğruluğuna göre \"EVET\" veya \"HAYIR\" yazarak doldurunuz. 2. Durum'u diğer durumlardan ayıran en temel şartı gerekçelendirerek yazınız.",
+        "stimulus": "Bir atletizm yarışında 1000 metrelik parkuru üç sporcunun tamamlama süreleri dakika cinsinden şöyledir:\n• Kerem: 7/4 dakika\n• Selim: 11/6 dakika\n• Burak: 9/5 dakika",
+        "questionText": "a) Bu üç sporcunun parkuru bitirme sürelerini paydalarını eşitleyerek küçükten büyüğe doğru sıralayınız.\nb) Yarışı birinci (en hızlı) bitiren sporcu kimdir? Nedenini açıklayınız.",
         "solutionExplanation": "Paydalar 60'ta eşitlenir: Kerem 105/60, Selim 110/60, Burak 108/60. 105/60 < 108/60 < 110/60. En az süre Kerem'dir, birinci Kerem'dir.",
-        "modelAnswer": "Tablo Tamamlaması: 1. Durum: HAYIR | 2. Durum: EVET | 3. Durum: HAYIR.\nAyırt Edici Gerekçe: 2. Durum hem temel kriteri hem de ayırt edici özelliği eksiksiz sağladığı için Pozitif sayıların tüm kuvvetleri pozitiftir: (+2)³ = +8, (+3)² = +9. kuralına tam uygundur.",
+        "modelAnswer": "a) Paydalar EKOK(4, 6, 5) = 60'ta eşitlenir:\n• Kerem: 7/4 = (7×15)/(4×15) = 105/60 dakika\n• Selim: 11/6 = (11×10)/(6×10) = 110/60 dakika\n• Burak: 9/5 = (9×12)/(5×12) = 108/60 dakika\nSüre sıralaması: 105/60 < 108/60 < 110/60 yani Kerem < Burak < Selim (7/4 < 9/5 < 11/6).\nb) Yarışı en az sürede tamamlayan en hızlıdır. Süresi en küçük olan KEREM (7/4 dk) yarışı 1. bitirmiştir.",
         "rubric": [
           {
-            "criterion": "Tablodaki boşlukların hatasız doldurulması (HAYIR - EVET - HAYIR)",
-            "points": 10
+            "criterion": "Paydaların 60'ta eşitlenerek kesirlerin doğru sıralanması",
+            "points": 12
           },
           {
-            "criterion": "2. Durum'un ayırt edici şartının ve kuralının açıklanması",
-            "points": 10
+            "criterion": "En az sürenin birinci olacağı mantığıyla Kerem'in kazandığının açıklanması",
+            "points": 8
           }
         ]
       },
@@ -11557,25 +11409,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "MAT.7.1.4. Rasyonel sayılar ve işlemler içeren gerçek yaşam problemlerini çözebilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Hata Tespiti & Adım Analizi",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 20,
         "contextText": "Zeytinyağı şişeleme problemi.",
-        "stimulus": "Sude, Rasyonel Sayılar ve Ondalık Gösterim ile ilgili açık uçlu bir soruyu çözerken çalışma kağıdına şu adımları yazmıştır:\n1. Adım: Verilen öncülleri ve temel kavramları belirledim.\n2. Adım: Negatif rasyonel sayıları sıralarken dikkat: Sıfıra daha yakın olan negatif sayı DAHA BÜYÜKTÜR! (-1/2 > -3/4). kabulünü yaparak işleme başladım.\n3. Adım: Bu adımdaki sonuca göre bağlantılı kuralı uyguladım.\n4. Adım: Nihai sonuca ulaştım.",
-        "questionText": "Sude'in çözüm adımlarını inceleyiniz. İlk hata kaçıncı adımda yapılmıştır? Yapılan hatanın gerekçesini açıklayarak o adımın ve nihai cevabın doğru halini yazınız.",
+        "stimulus": "Bir üretici 45 litre zeytinyağını her biri 3/4 litre yağ alan cam şişelere tamamen dolduracaktır. Şişelerin tanesi 12 TL'den satılacaktır.",
+        "questionText": "a) Bu işlem için toplam kaç adet şişe gereklidir? İşlemini gösteriniz.\nb) Tüm şişeler satıldığında üreticinin elde edeceği toplam gelir kaç TL olur?",
         "solutionExplanation": "Şişe sayısı = 45 / (3/4) = 45 * 4 / 3 = 60 şişe. Gelir = 60 * 12 = 720 TL.",
-        "modelAnswer": "İlk hata 2. adımda yapılmıştır. Çünkü Sude, 'Negatif rasyonel sayıları sıralarken dikkat: Sıfıra daha yakın olan negatif sayı DAHA BÜYÜKTÜR! (-1/2 > -3/4).' hatasına düşmüştür. Doğrusu: Rasyonel Sayı Tanımı: a ve b birer tam sayı ve b ≠ 0 olmak üzere a/b şeklinde yazılabilen sayılardır. kuralı işletilmeli ve çözüm bu esasa göre tamamlanmalıdır.",
+        "modelAnswer": "a) Şişe Sayısı = 45 ÷ (3/4) = 45 × (4/3) = (45 ÷ 3) × 4 = 15 × 4 = 60 adet şişe gereklidir.\nb) Toplam Gelir = 60 şişe × 12 TL = 720 TL elde edilir.",
         "rubric": [
           {
-            "criterion": "İlk hatanın yapıldığı adımın (2. Adım) doğru belirlenmesi",
-            "points": 7
+            "criterion": "Rasyonel bölme ile 60 şişe sayısının doğru bulunması",
+            "points": 12
           },
           {
-            "criterion": "Yapılan kavramsal/işlemsel hatanın gerekçelendirilmesi",
-            "points": 7
-          },
-          {
-            "criterion": "Adımın ve sonucun doğru kurala göre düzeltilmesi",
-            "points": 6
+            "criterion": "Toplam gelirin (720 TL) doğru hesaplanması",
+            "points": 8
           }
         ]
       },
@@ -11585,21 +11433,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "MAT.7.1.4. Rasyonel sayılar ve işlemler içeren gerçek yaşam problemlerini çözebilme",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 20,
         "contextText": "Su deposu boşaltma ve kesir hesaplama.",
-        "stimulus": "Rasyonel Sayılar ve Ondalık Gösterim kapsamında karşılaşılan bir durumu çözmek için uzmanlar iki farklı yöntem geliştirmiştir:\n1. Yöntem: Kısa vadeli hızlı çözüm sunan ancak 'Negatif rasyonel sayıları sıralarken dikkat: Sıfıra daha yakın olan negatif sayı DAHA BÜYÜKTÜR! (-1/2 > -3/4).' riskini barındıran yaklaşım.\n2. Yöntem: Başlangıçta daha fazla dikkat ve aşama gerektiren ancak 'Rasyonel Sayı Tanımı: a ve b birer tam sayı ve b ≠ 0 olmak üzere a/b şeklinde yazılabilen sayılardır.' ilkesine tam uyan sürdürülebilir yaklaşım.",
-        "questionText": "Verilen iki yaklaşımı Rasyonel Sayılar ve Ondalık Gösterim ilkeleri bakımından değerlendiriniz. Hangi yöntem daha uygundur? Seçtiğiniz yöntemin güçlü yönlerini ve diğer yöntemin taşıdığı riskleri gerekçelendiriniz.",
-        "solutionExplanation": "Başlangıç: 600 * 3/5 = 360 L. Kullanılan: 360 * 1/4 = 90 L. Kalan: 360 - 90 = 270 L. Eksik: 600 - 270 = 330 L.",
-        "modelAnswer": "2. Yöntem uygundur. Çünkü Rasyonel Sayı Tanımı: a ve b birer tam sayı ve b ≠ 0 olmak üzere a/b şeklinde yazılabilen sayılardır. ilkesini tam olarak karşılamaktadır. 1. Yöntem ise kısa vadeli olsa da 'Negatif rasyonel sayıları sıralarken dikkat: Sıfıra daha yakın olan negatif sayı DAHA BÜYÜKTÜR! (-1/2 > -3/4).' sakıncasını doğuracağı için hedeflenen amaca ters düşer.",
+        "stimulus": "Bir üretici 45 litre zeytinyağını her biri 3/4 litre yağ alan cam şişelere tamamen dolduracaktır. Şişelerin tanesi 12 TL'den satılacaktır.",
+        "questionText": "a) Bu işlem için toplam kaç adet şişe gereklidir? İşlemini gösteriniz.\nb) Tüm şişeler satıldığında üreticinin elde edeceği toplam gelir kaç TL olur?",
+        "solutionExplanation": "Şişe sayısı = 45 / (3/4) = 45 * 4 / 3 = 60 şişe. Gelir = 60 * 12 = 720 TL.",
+        "modelAnswer": "a) Şişe Sayısı = 45 ÷ (3/4) = 45 × (4/3) = (45 ÷ 3) × 4 = 15 × 4 = 60 adet şişe gereklidir.\nb) Toplam Gelir = 60 şişe × 12 TL = 720 TL elde edilir.",
         "rubric": [
           {
-            "criterion": "Doğru yaklaşımın (2. Yöntem) tespiti ve güçlü yönünün gerekçelendirilmesi",
-            "points": 10
+            "criterion": "Rasyonel bölme ile 60 şişe sayısının doğru bulunması",
+            "points": 12
           },
           {
-            "criterion": "1. Yöntemin taşıdığı kavramsal riskin açıklanması",
-            "points": 10
+            "criterion": "Toplam gelirin (720 TL) doğru hesaplanması",
+            "points": 8
           }
         ]
       }
@@ -11649,21 +11497,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "MAT.7.1.1. Gerçek yaşam ya da matematiksel durumlarda doğal sayı, tam sayı ve rasyonel sayıları yorumlayabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 15,
         "contextText": "Sayı doğrusu üzerinde tam sayı ve rasyonel sayı eşleme.",
-        "stimulus": "Tam Sayılarla Toplama ve Çıkarma İşlemleri konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nUmut: \"Bu durumda temel kural şudur: EN KRİTİK  Parantez önündeki eksi işareti içerideki sayının işaretini tersine çevirir! - (-7) = +7 olur.\"\nEmre: \"Hayır Umut, yanılıyorsun. Çünkü kural gereği: İşaret Kuralı (Toplama): Aynı işaretliler toplanır, ortak işaret yazılır: (+5) + (+3) = +8; (-4) + (-6) = -10. Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Umut ve Emre'nin iddialarını Tam Sayılarla Toplama ve Çıkarma İşlemleri ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
-        "solutionExplanation": "K = -3 + 3/4 = -2 tam 1/4 = -9/4. L = 1 tam 2/3 = 5/3.",
-        "modelAnswer": "Emre haklıdır. Çünkü İşaret Kuralı (Toplama): Aynı işaretliler toplanır, ortak işaret yazılır: (+5) + (+3) = +8; (-4) + (-6) = -10.. Umut ise 'EN KRİTİK  Parantez önündeki eksi işareti içerideki sayının işaretini tersine çevirir! - (-7) = +7 olur.' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "stimulus": "Bir teknoloji mağazasının yılın ilk 4 ayındaki net kâr/zarar durumu şöyledir:\n• Ocak: +45.000 TL\n• Şubat: -18.000 TL\n• Mart: +32.000 TL\n• Nisan: -25.000 TL",
+        "questionText": "a) Bu 4 ayın sonunda mağazanın net kâr-zarar durumu kaç TL'dir? İşlem basamaklarını gösteriniz.\nb) En çok kâr edilen ay ile en çok zarar edilen ay arasındaki mali fark kaç TL'dir?",
+        "solutionExplanation": "a) (+45000 - 18000 + 32000 - 25000) = +34.000 TL kâr. b) (+45.000) - (-25.000) = 70.000 TL.",
+        "modelAnswer": "a) Net durum: (+45.000) + (-18.000) + (+32.000) + (-25.000) = 77.000 - 43.000 = +34.000 TL (34.000 TL kârdadır).\nb) En çok kâr: +45.000 TL, En çok zarar: -25.000 TL. Fark: (+45.000) - (-25.000) = 45.000 + 25.000 = 70.000 TL'dir.",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (Emre) doğru tespiti",
-            "points": 6
+            "criterion": "a şıkkında 4 aylık toplam net durumun (+34.000 TL) doğru bulunması",
+            "points": 8
           },
           {
-            "criterion": "Umut'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 9
+            "criterion": "b şıkkında tam sayılarda çıkarma ile 70.000 TL farkın bulunması",
+            "points": 7
           }
         ]
       },
@@ -11673,20 +11521,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "MAT.7.1.2. Gerçek yaşam durumlarında rasyonel sayıların ondalık gösterimlerini yansıtabilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Farklı devirli sayıyı kesre dönüştürme.",
-        "stimulus": "Aşağıdaki matriste Tam Sayılarla Çarpma ve Bölme İşlemleri konusuna yönelik üç farklı durum ve özellikleri verilmiştir:\n\n| Durum / Örnek | 1. Temel Kriter | 2. Ayırt Edici Özellik | Karşılar mı? |\n| :--- | :---: | :---: | :---: |\n| 1. Durum (Örnek A) | VAR | YOK | ............ |\n| 2. Durum (Örnek B) | VAR | VAR | ............ |\n| 3. Durum (Örnek C) | YOK | YOK | ............ |",
-        "questionText": "Matristeki boşlukları özelliğin doğruluğuna göre \"EVET\" veya \"HAYIR\" yazarak doldurunuz. 2. Durum'u diğer durumlardan ayıran en temel şartı gerekçelendirerek yazınız.",
+        "stimulus": "Verilen devirli ondalık sayı: 0,727272... (0,72; 72 devrediyor).",
+        "questionText": "Bu sayıyı kesir çizgisi kullanarak rasyonel sayıya çeviriniz ve en sade biçimde yazınız.",
         "solutionExplanation": "72 / 99 = 8 / 11.",
-        "modelAnswer": "Tablo Tamamlaması: 1. Durum: HAYIR | 2. Durum: EVET | 3. Durum: HAYIR.\nAyırt Edici Gerekçe: 2. Durum hem temel kriteri hem de ayırt edici özelliği eksiksiz sağladığı için Çarpma ve Bölme İşaret Kuralları:\n• (+) × (+) = (+)\n• (-) × (-) = (+)\n• (+) × (-) = (-)\n• (-) × (+) = (-) kuralına tam uygundur.",
+        "modelAnswer": "Formül: (72 - 0) / 99 = 72 / 99.\nSadeleştirme (9 ile): 72 ÷ 9 = 8, 99 ÷ 9 = 11. En sade hali: 8 / 11'dir.",
         "rubric": [
           {
-            "criterion": "Tablodaki boşlukların hatasız doldurulması (HAYIR - EVET - HAYIR)",
+            "criterion": "72 / 99 kesrinin doğru oluşturulması",
             "points": 7
           },
           {
-            "criterion": "2. Durum'un ayırt edici şartının ve kuralının açıklanması",
+            "criterion": "8 / 11 en sade kesrinin bulunması",
             "points": 7
           }
         ]
@@ -11697,25 +11545,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "MAT.7.1.2. Gerçek yaşam durumlarında rasyonel sayıların ondalık gösterimlerini yansıtabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Hata Tespiti & Adım Analizi",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Sadece bir basamağı devreden devirli ondalık sayı.",
-        "stimulus": "Sude, Tam Sayılarla Çarpma ve Bölme İşlemleri ile ilgili açık uçlu bir soruyu çözerken çalışma kağıdına şu adımları yazmıştır:\n1. Adım: Verilen öncülleri ve temel kavramları belirledim.\n2. Adım: Çift sayıda negatif sayının çarpımı pozitif (+), tek sayıda negatif sayının çarpımı negatiftir (-). kabulünü yaparak işleme başladım.\n3. Adım: Bu adımdaki sonuca göre bağlantılı kuralı uyguladım.\n4. Adım: Nihai sonuca ulaştım.",
-        "questionText": "Sude'in çözüm adımlarını inceleyiniz. İlk hata kaçıncı adımda yapılmıştır? Yapılan hatanın gerekçesini açıklayarak o adımın ve nihai cevabın doğru halini yazınız.",
-        "solutionExplanation": "(316 - 31) / 90 = 285 / 90 = 19 / 6. Virgülden sonra bir devreden (9), bir devretmeyen (0).",
-        "modelAnswer": "İlk hata 2. adımda yapılmıştır. Çünkü Sude, 'Çift sayıda negatif sayının çarpımı pozitif (+), tek sayıda negatif sayının çarpımı negatiftir (-).' hatasına düşmüştür. Doğrusu: Çarpma ve Bölme İşaret Kuralları:\n• (+) × (+) = (+)\n• (-) × (-) = (+)\n• (+) × (-) = (-)\n• (-) × (+) = (-) kuralı işletilmeli ve çözüm bu esasa göre tamamlanmalıdır.",
+        "stimulus": "Verilen devirli ondalık sayı: 0,727272... (0,72; 72 devrediyor).",
+        "questionText": "Bu sayıyı kesir çizgisi kullanarak rasyonel sayıya çeviriniz ve en sade biçimde yazınız.",
+        "solutionExplanation": "72 / 99 = 8 / 11.",
+        "modelAnswer": "Formül: (72 - 0) / 99 = 72 / 99.\nSadeleştirme (9 ile): 72 ÷ 9 = 8, 99 ÷ 9 = 11. En sade hali: 8 / 11'dir.",
         "rubric": [
           {
-            "criterion": "İlk hatanın yapıldığı adımın (2. Adım) doğru belirlenmesi",
-            "points": 5
+            "criterion": "72 / 99 kesrinin doğru oluşturulması",
+            "points": 7
           },
           {
-            "criterion": "Yapılan kavramsal/işlemsel hatanın gerekçelendirilmesi",
-            "points": 5
-          },
-          {
-            "criterion": "Adımın ve sonucun doğru kurala göre düzeltilmesi",
-            "points": 4
+            "criterion": "8 / 11 en sade kesrinin bulunması",
+            "points": 7
           }
         ]
       },
@@ -11725,20 +11569,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "MAT.7.1.3. Rasyonel sayıların karşılaştırma ve sıralama ilişkilerini yorumlayabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Negatif kesirlerin sıralanması.",
-        "stimulus": "Tam Sayıların Kuvvetleri (Üslü İfadeler) kapsamında karşılaşılan bir durumu çözmek için uzmanlar iki farklı yöntem geliştirmiştir:\n1. Yöntem: Kısa vadeli hızlı çözüm sunan ancak 'SINAVIN EN BÜYÜK TUZAĞI: (-4)² ile -4² AYNI DEĞİLDİR!\n(-4)² = (-4) × (-4) = +16 iken,\n-4² = - (4 × 4) = -16'dır!' riskini barındıran yaklaşım.\n2. Yöntem: Başlangıçta daha fazla dikkat ve aşama gerektiren ancak 'Pozitif sayıların tüm kuvvetleri pozitiftir: (+2)³ = +8, (+3)² = +9.' ilkesine tam uyan sürdürülebilir yaklaşım.",
-        "questionText": "Verilen iki yaklaşımı Tam Sayıların Kuvvetleri (Üslü İfadeler) ilkeleri bakımından değerlendiriniz. Hangi yöntem daha uygundur? Seçtiğiniz yöntemin güçlü yönlerini ve diğer yöntemin taşıdığı riskleri gerekçelendiriniz.",
+        "stimulus": "Verilen sayılar: x = -3/5, y = -7/10, z = -1/2.",
+        "questionText": "x, y ve z rasyonel sayılarını paydalarını eşitleyerek küçükten büyüğe sıralayınız.",
         "solutionExplanation": "Payda 10: x = -6/10, y = -7/10, z = -5/10. -7/10 < -6/10 < -5/10 -> y < x < z.",
-        "modelAnswer": "2. Yöntem uygundur. Çünkü Pozitif sayıların tüm kuvvetleri pozitiftir: (+2)³ = +8, (+3)² = +9. ilkesini tam olarak karşılamaktadır. 1. Yöntem ise kısa vadeli olsa da 'SINAVIN EN BÜYÜK TUZAĞI: (-4)² ile -4² AYNI DEĞİLDİR!\n(-4)² = (-4) × (-4) = +16 iken,\n-4² = - (4 × 4) = -16'dır!' sakıncasını doğuracağı için hedeflenen amaca ters düşer.",
+        "modelAnswer": "Paydalar 10'da eşitlenir:\n• x = -3/5 = -6/10\n• y = -7/10\n• z = -1/2 = -5/10\nNegatif sayılarda sıfırdan en uzak olan en küçüktür: -7/10 < -6/10 < -5/10 olduğundan;\nSıralama: y < x < z (-7/10 < -3/5 < -1/2) şeklindedir.",
         "rubric": [
           {
-            "criterion": "Doğru yaklaşımın (2. Yöntem) tespiti ve güçlü yönünün gerekçelendirilmesi",
+            "criterion": "Paydaların 10'da doğru eşitlenmesi",
             "points": 7
           },
           {
-            "criterion": "1. Yöntemin taşıdığı kavramsal riskin açıklanması",
+            "criterion": "y < x < z negatif sıralamasının doğru yapılması",
             "points": 7
           }
         ]
@@ -11837,21 +11681,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "MAT.7.1.1. Gerçek yaşam ya da matematiksel durumlarda doğal sayı, tam sayı ve rasyonel sayıları yorumlayabilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
         "points": 17,
         "contextText": "Akıllı bina asansörü kat hareketleri.",
-        "stimulus": "Tam Sayılarla Toplama ve Çıkarma İşlemleri konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nUmut: \"Bu durumda temel kural şudur: EN KRİTİK  Parantez önündeki eksi işareti içerideki sayının işaretini tersine çevirir! - (-7) = +7 olur.\"\nEmre: \"Hayır Umut, yanılıyorsun. Çünkü kural gereği: İşaret Kuralı (Toplama): Aynı işaretliler toplanır, ortak işaret yazılır: (+5) + (+3) = +8; (-4) + (-6) = -10. Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Umut ve Emre'nin iddialarını Tam Sayılarla Toplama ve Çıkarma İşlemleri ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
-        "solutionExplanation": "(-2) + (+9) + (-4) = +3. kat.",
-        "modelAnswer": "Emre haklıdır. Çünkü İşaret Kuralı (Toplama): Aynı işaretliler toplanır, ortak işaret yazılır: (+5) + (+3) = +8; (-4) + (-6) = -10.. Umut ise 'EN KRİTİK  Parantez önündeki eksi işareti içerideki sayının işaretini tersine çevirir! - (-7) = +7 olur.' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "stimulus": "Ağrı Dağı'nın zirvesinde hava sıcaklığı -16 °C iken, aynı anda eteklerindeki Iğdır Ovası'nda hava sıcaklığı +8 °C olarak ölçülmüştür.",
+        "questionText": "a) Ova ile zirve arasındaki sıcaklık farkını tam sayılarda çıkarma işlemi olarak ifade edip sonucunu bulunuz.\nb) Dağa tırmanan bir dağcı her 200 metre yükselişte sıcaklığın 1 °C düştüğünü bilmektedir. Buna göre ova ile zirve arasındaki yükseklik farkı yaklaşık kaç metredir?",
+        "solutionExplanation": "a) (+8) - (-16) = 24 °C. b) 24 * 200 = 4800 metre.",
+        "modelAnswer": "a) Sıcaklık farkı: (+8) - (-16) = 8 + 16 = 24 °C'dir.\nb) 1 °C düşüş için 200 m tırmanılıyorsa; 24 °C fark için: 24 × 200 = 4.800 metre yükseklik farkı vardır.",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (Emre) doğru tespiti",
-            "points": 7
+            "criterion": "a şıkkında 24 °C sıcaklık farkının bulunması",
+            "points": 9
           },
           {
-            "criterion": "Umut'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 10
+            "criterion": "b şıkkında 4.800 metre yükseklik farkının hesaplanması",
+            "points": 8
           }
         ]
       },
@@ -11861,21 +11705,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "MAT.7.1.2. Gerçek yaşam durumlarında rasyonel sayıların ondalık gösterimlerini yansıtabilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Devirli ondalık sayıyı kesre çevirme.",
-        "stimulus": "Aşağıdaki matriste Tam Sayılarla Çarpma ve Bölme İşlemleri konusuna yönelik üç farklı durum ve özellikleri verilmiştir:\n\n| Durum / Örnek | 1. Temel Kriter | 2. Ayırt Edici Özellik | Karşılar mı? |\n| :--- | :---: | :---: | :---: |\n| 1. Durum (Örnek A) | VAR | YOK | ............ |\n| 2. Durum (Örnek B) | VAR | VAR | ............ |\n| 3. Durum (Örnek C) | YOK | YOK | ............ |",
-        "questionText": "Matristeki boşlukları özelliğin doğruluğuna göre \"EVET\" veya \"HAYIR\" yazarak doldurunuz. 2. Durum'u diğer durumlardan ayıran en temel şartı gerekçelendirerek yazınız.",
+        "stimulus": "Verilen sayı: 0,8333... (0,83; sadece 3 devrediyor).",
+        "questionText": "0,83 devirli ondalık sayısını rasyonel sayıya çeviriniz ve en sade haline getiriniz.",
         "solutionExplanation": "(83 - 8) / 90 = 75 / 90 = 5 / 6.",
-        "modelAnswer": "Tablo Tamamlaması: 1. Durum: HAYIR | 2. Durum: EVET | 3. Durum: HAYIR.\nAyırt Edici Gerekçe: 2. Durum hem temel kriteri hem de ayırt edici özelliği eksiksiz sağladığı için Çarpma ve Bölme İşaret Kuralları:\n• (+) × (+) = (+)\n• (-) × (-) = (+)\n• (+) × (-) = (-)\n• (-) × (+) = (-) kuralına tam uygundur.",
+        "modelAnswer": "Formül: (83 - 8) / 90 = 75 / 90.\nSadeleştirme (15 ile): 75 ÷ 15 = 5, 90 ÷ 15 = 6.\nEn sade kesir: 5 / 6'dır.",
         "rubric": [
           {
-            "criterion": "Tablodaki boşlukların hatasız doldurulması (HAYIR - EVET - HAYIR)",
-            "points": 8
+            "criterion": "Formül ile 75 / 90 kesrinin bulunması",
+            "points": 9
           },
           {
-            "criterion": "2. Durum'un ayırt edici şartının ve kuralının açıklanması",
-            "points": 9
+            "criterion": "15 ile sadeleştirilerek 5 / 6 kesrinin elde edilmesi",
+            "points": 8
           }
         ]
       },
@@ -11885,25 +11729,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "MAT.7.1.2. Gerçek yaşam durumlarında rasyonel sayıların ondalık gösterimlerini yansıtabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Hata Tespiti & Adım Analizi",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Ondalık basamak çözümlemesi ve kesir karşılığı.",
-        "stimulus": "Sude, Tam Sayılarla Çarpma ve Bölme İşlemleri ile ilgili açık uçlu bir soruyu çözerken çalışma kağıdına şu adımları yazmıştır:\n1. Adım: Verilen öncülleri ve temel kavramları belirledim.\n2. Adım: Çift sayıda negatif sayının çarpımı pozitif (+), tek sayıda negatif sayının çarpımı negatiftir (-). kabulünü yaparak işleme başladım.\n3. Adım: Bu adımdaki sonuca göre bağlantılı kuralı uyguladım.\n4. Adım: Nihai sonuca ulaştım.",
-        "questionText": "Sude'in çözüm adımlarını inceleyiniz. İlk hata kaçıncı adımda yapılmıştır? Yapılan hatanın gerekçesini açıklayarak o adımın ve nihai cevabın doğru halini yazınız.",
-        "solutionExplanation": "4 tam 375/1000 = 4 tam 3/8 = 35/8.",
-        "modelAnswer": "İlk hata 2. adımda yapılmıştır. Çünkü Sude, 'Çift sayıda negatif sayının çarpımı pozitif (+), tek sayıda negatif sayının çarpımı negatiftir (-).' hatasına düşmüştür. Doğrusu: Çarpma ve Bölme İşaret Kuralları:\n• (+) × (+) = (+)\n• (-) × (-) = (+)\n• (+) × (-) = (-)\n• (-) × (+) = (-) kuralı işletilmeli ve çözüm bu esasa göre tamamlanmalıdır.",
+        "stimulus": "Verilen sayı: 0,8333... (0,83; sadece 3 devrediyor).",
+        "questionText": "0,83 devirli ondalık sayısını rasyonel sayıya çeviriniz ve en sade haline getiriniz.",
+        "solutionExplanation": "(83 - 8) / 90 = 75 / 90 = 5 / 6.",
+        "modelAnswer": "Formül: (83 - 8) / 90 = 75 / 90.\nSadeleştirme (15 ile): 75 ÷ 15 = 5, 90 ÷ 15 = 6.\nEn sade kesir: 5 / 6'dır.",
         "rubric": [
           {
-            "criterion": "İlk hatanın yapıldığı adımın (2. Adım) doğru belirlenmesi",
-            "points": 6
+            "criterion": "Formül ile 75 / 90 kesrinin bulunması",
+            "points": 9
           },
           {
-            "criterion": "Yapılan kavramsal/işlemsel hatanın gerekçelendirilmesi",
-            "points": 6
-          },
-          {
-            "criterion": "Adımın ve sonucun doğru kurala göre düzeltilmesi",
-            "points": 5
+            "criterion": "15 ile sadeleştirilerek 5 / 6 kesrinin elde edilmesi",
+            "points": 8
           }
         ]
       },
@@ -11913,20 +11753,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "MAT.7.1.3. Rasyonel sayıların karşılaştırma ve sıralama ilişkilerini yorumlayabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 16,
         "contextText": "Payları eşit kesirlerin sıralanması.",
-        "stimulus": "Tam Sayıların Kuvvetleri (Üslü İfadeler) kapsamında karşılaşılan bir durumu çözmek için uzmanlar iki farklı yöntem geliştirmiştir:\n1. Yöntem: Kısa vadeli hızlı çözüm sunan ancak 'SINAVIN EN BÜYÜK TUZAĞI: (-4)² ile -4² AYNI DEĞİLDİR!\n(-4)² = (-4) × (-4) = +16 iken,\n-4² = - (4 × 4) = -16'dır!' riskini barındıran yaklaşım.\n2. Yöntem: Başlangıçta daha fazla dikkat ve aşama gerektiren ancak 'Pozitif sayıların tüm kuvvetleri pozitiftir: (+2)³ = +8, (+3)² = +9.' ilkesine tam uyan sürdürülebilir yaklaşım.",
-        "questionText": "Verilen iki yaklaşımı Tam Sayıların Kuvvetleri (Üslü İfadeler) ilkeleri bakımından değerlendiriniz. Hangi yöntem daha uygundur? Seçtiğiniz yöntemin güçlü yönlerini ve diğer yöntemin taşıdığı riskleri gerekçelendiriniz.",
+        "stimulus": "Verilen rasyonel sayılar: K = 12/17, L = 12/19, M = 12/13.",
+        "questionText": "Payları eşit olan pozitif rasyonel sayıların sıralama kuralını yazarak K, L ve M sayılarını büyükten küçüğe sıralayınız.",
         "solutionExplanation": "Paylar eşitse paydası küçük olan daha büyüktür. M > K > L.",
-        "modelAnswer": "2. Yöntem uygundur. Çünkü Pozitif sayıların tüm kuvvetleri pozitiftir: (+2)³ = +8, (+3)² = +9. ilkesini tam olarak karşılamaktadır. 1. Yöntem ise kısa vadeli olsa da 'SINAVIN EN BÜYÜK TUZAĞI: (-4)² ile -4² AYNI DEĞİLDİR!\n(-4)² = (-4) × (-4) = +16 iken,\n-4² = - (4 × 4) = -16'dır!' sakıncasını doğuracağı için hedeflenen amaca ters düşer.",
+        "modelAnswer": "Kural: Payları eşit olan pozitif rasyonel sayılarda; paydası KÜÇÜK olan kesir daha BÜYÜKTÜR (çünkü bütünü daha az parçaya bölmüştür).\nPaydalar: 13 < 17 < 19 olduğu için;\nSıralama: M > K > L (12/13 > 12/17 > 12/19) şeklindedir.",
         "rubric": [
           {
-            "criterion": "Doğru yaklaşımın (2. Yöntem) tespiti ve güçlü yönünün gerekçelendirilmesi",
+            "criterion": "Payı eşit kesirlerin kuralının doğru ifade edilmesi",
             "points": 8
           },
           {
-            "criterion": "1. Yöntemin taşıdığı kavramsal riskin açıklanması",
+            "criterion": "M > K > L sıralamasının doğru yapılması",
             "points": 8
           }
         ]
@@ -12205,172 +12045,180 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
     ],
     "questions": [
       {
+        "questionNumber": 1,
         "outcomeCode": "FB.7.1.1",
         "outcomeTitle": "FB.7.1.1. Uzay araştırmaları için geliştirilen teknolojileri karşılaştırabilme",
-        "cognitiveLevel": "Basit Bilişsel Süreçler",
+        "difficulty": "Kolay",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
-        "contextText": "Gözlemevi (rasathane) yer seçiminde coğrafi ve atmosferik şartlar.",
-        "stimulus": "Gök bilimciler uzaydaki gök cisimlerini ve gezegenleri incelemek için gözlemevlerini (rasathaneleri) şehir merkezleri yerine şehirlerden uzak ve yüksek dağların tepelerine kurarlar.",
-        "questionText": "a) Gözlemevlerinin şehir ışıklarından uzak yerlere kurulmasının temel nedenini yazınız.\nb) Yüksek dağ zirvelerinin tercih edilmesinin atmosfer ve hava şartlarıyla ilgili nedenini açıklayınız.",
-        "solutionExplanation": "Işık kirliliğinden uzaklaşmak ve dağlarda nem, bulut ve hava kirliliğinin az olması.",
-        "modelAnswer": "a) Şehirlerdeki yoğun yapay ışıklar gökyüzünü aydınlatarak ışık kirliliğine neden olur; bu durum gök cisimlerinin teleskopla net görülmesini engeller.\nb) Yüksek dağ zirvelerinde atmosfer tabakası daha incedir, hava kirliliği ve nem oranı çok düşüktür, ayrıca açık ve bulutsuz gece sayısı fazladır. Böylece uzaydan gelen ışık bozulmadan teleskoba ulaşır.",
+        "points": 15,
+        "contextText": "Uzay araştırmalarının günlük hayata ve tıbba kazandırdığı teknolojiler.",
+        "stimulus": "Uzay araştırmaları ve astronotların uzaydaki zorlu yaşam koşulları için geliştirilen pek çok buluş ve teknoloji, günümüzde günlük hayatımızda, sağlık alanında ve sanayide yaygın olarak kullanılmaktadır.",
+        "questionText": "Uzay araştırmaları sayesinde geliştirilip günümüzde günlük yaşamda veya tıp alanında kullanılan teknolojilere 3 farklı örnek veriniz ve bunlardan birinin sağladığı pratik faydayı açıklayınız.",
+        "solutionExplanation": "Dijital termometre, teflon, hafızalı köpük, duman dedektörü, yapay uzuvlar/protezler, çizilmeyen güneş gözlüğü camları uzay teknolojisi kökenlidir.",
+        "modelAnswer": "• Örnek Teknolojiler: Dijital termometre (kulaktan/alından ateş ölçer), yapay uzuvlar (biyonik protezler), çizilmeye dayanıklı gözlük camları, teflon kaplama, hafızalı köpük (ortopedik yataklar), duman dedektörü (herhangi üçü).\n• Sağladığı Fayda: Örneğin dijital termometreler, astronotların vücut ve uzay aracı sıcaklığını anında ölçmek için geliştirilmiş olup günümüzde hastalıkların teşhisinde hızlı, temassız ve güvenilir ölçüm sağlamaktadır.",
         "rubric": [
           {
-            "criterion": "a şıkkında yapay ışık kirliliğinin gök cisimlerinin gözlemini engellediğinin belirtilmesi",
-            "points": 8
+            "criterion": "3 farklı uzay araştırması kökenli ürünün doğru yazılması",
+            "points": 9
           },
           {
-            "criterion": "b şıkkında dağ zirvelerindeki ince atmosfer, az nem veya bulutsuz/temiz hava şartının gerekçelendirilmesi",
-            "points": 7
+            "criterion": "Seçilen bir ürünün kullanım alanının ve faydasının gerekçelendirilmesi",
+            "points": 6
           }
-        ],
-        "questionNumber": 1,
-        "points": 15,
-        "difficulty": "Kolay"
+        ]
       },
       {
+        "questionNumber": 2,
         "outcomeCode": "FB.7.1.1",
         "outcomeTitle": "FB.7.1.1. Uzay araştırmaları için geliştirilen teknolojileri karşılaştırabilme",
+        "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
         "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
-        "contextText": "Uzay teleskopları ile yeryüzü teleskoplarının görüntü kalitesi farkı.",
-        "stimulus": "Astronomi panosu hazırlayan iki öğrenci arasında şu konuşma geçer:\nCan: \"James Webb ve Hubble gibi uzay teleskopları, yeryüzündeki en büyük teleskoplardan bile çok daha net ve kaliteli fotoğraflar çeker.\"\nAlp: \"Bence uzayda veya yeryüzünde olmasının önemi yoktur, sadece ayna boyutu büyük olan teleskop her zaman daha net çeker.\"",
-        "questionText": "Hangi öğrencinin açıklaması doğrudur? Uzay teleskoplarının Dünya atmosferinin olumsuz etkilerinden neden etkilenmediğini açıklayınız.",
-        "solutionExplanation": "Can haklıdır. Dünya atmosferi ışığı kırar ve bozar; uzayda atmosfer olmadığı için görüntü nettir.",
-        "modelAnswer": "Can haklıdır. Çünkü Dünya atmosferindeki hava hareketleri, tozlar ve bulutlar gök cisimlerinden gelen ışığı kırarak görüntünün bulanıklaşmasına yol açar. Uzay teleskopları ise atmosferin dışında, uzay boşluğunda görev yaptığı için ışık hiçbir engelle karşılaşmadan doğrudan teleskoba ulaşır.",
+        "points": 15,
+        "contextText": "Türkiye'nin uzaydaki aktif yapay uyduları ve görev farkları.",
+        "stimulus": "Türkiye'nin uzayda görev yapan yapay uyduları üzerine çalışan iki öğrenci arasında şu tartışma geçer:\nCan: \"Türksat uyduları televizyon yayını ve internet iletişimi sağlarken; Göktürk ve İmece gibi uydular yeryüzünün fotoğraflarını çekerek haritacılık ve afet yönetiminde kullanılır.\"\nBurak: \"Bence tüm yapay uyduların görevi aynıdır, hepsi sadece cep telefonu şebekesi sağlamak için fırlatılmıştır.\"",
+        "questionText": "a) Can ve Burak'ın ifadelerini değerlendiriniz. Hangi öğrenci haklıdır?\nb) Türkiye'nin uzaydaki aktif haberleşme ve gözlem uydularına ikişer örnek vererek temel görev farklarını açıklayınız.",
+        "solutionExplanation": "Haberleşme uyduları (Türksat) iletişim sağlar; yer gözlem uyduları (Göktürk, İmece) yüksek çözünürlüklü görüntüleme yapar.",
+        "modelAnswer": "a) Can haklıdır. Çünkü yapay uydular kullanım amaçlarına göre haberleşme ve gözlem uyduları olarak farklı görevler üstlenir.\nb) • Haberleşme Uyduları: TÜRKSAT 4A, TÜRKSAT 5A, TÜRKSAT 5B (herhangi ikisi). İletişim, TV ve internet sağlar.\n• Yer Gözlem Uyduları: GÖKTÜRK-1, GÖKTÜRK-2, İMECE (herhangi ikisi). Haritacılık, tarım, çevre takibi ve savunma amaçlı görüntüleme yapar.",
         "rubric": [
           {
-            "criterion": "Can'ın haklı olduğunun doğru tespiti",
-            "points": 7
+            "criterion": "Haklı öğrencinin (Can) tespiti ve Burak'ın yanılgısının açıklanması",
+            "points": 5
           },
           {
-            "criterion": "Dünya atmosferindeki gaz ve tozların görüntüyü bozduğunun, uzayda ise atmosfer olmadığı için görüntünün net kaldığının açıklanması",
-            "points": 8
+            "criterion": "Haberleşme ve gözlem uydularına ikişer doğru örnek verilmesi",
+            "points": 5
+          },
+          {
+            "criterion": "Haberleşme ile gözlem uydularının görev farklarının belirtilmesi",
+            "points": 5
           }
-        ],
-        "questionNumber": 2,
-        "points": 15,
-        "difficulty": "Orta"
+        ]
       },
       {
+        "questionNumber": 3,
         "outcomeCode": "FB.7.1.3",
         "outcomeTitle": "FB.7.1.3. Uzay araştırmalarının yol açabileceği problemleri çözebilme",
+        "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
-        "contextText": "Dünya yörüngesindeki uzay kirliliği ve oluşturduğu tehlikeler.",
-        "stimulus": "Dünya yörüngesinde işlevi bitmiş eski uydular, roket parçaları ve yakıt tankları başıboş halde saatte yaklaşık 28.000 kilometre gibi aşırı yüksek hızlarla dolanmaktadır (Uzay Kirliliği).",
-        "questionText": "a) Bu uzay atıklarının halen görev yapan uydular ve Uluslararası Uzay İstasyonu için oluşturduğu en büyük tehlikeyi açıklayınız.\nb) Uzay kirliliğini azaltmak veya önlemek için bilim insanlarının geliştirebileceği bir çözüm önerisi yazınız.",
-        "solutionExplanation": "Yüksek hızlı çarpışma uyduları parçalar; görevi biten uydular kontrollü olarak atmosfere sokulup yakılmalıdır.",
-        "modelAnswer": "a) Uzay atıkları mermiden katbekat hızlı hareket eder. Küçücük bir metal cıvata bile aktif bir uyduya çarptığında onu parçalayabilir ve kullanılmaz hale getirebilir.\nb) Görev süresi tükenen uydular kontrollü şekilde Dünya atmosferine yönlendirilerek sürtünmeyle yanıp yok edilmeli veya robotik uzay araçlarıyla toplanmalıdır.",
+        "points": 14,
+        "contextText": "Uzay kirliliğinin tehlikeleri ve çözüm önerileri.",
+        "stimulus": "Dünya yörüngesinde görevini tamamlamış ömrü tükenmiş uydular, roket kademeleri ve patlamalar sonucu etrafa saçılan binlerce metal parça saatte on binlerce kilometre süratle kontrolsüz şekilde dönmektedir.",
+        "questionText": "a) Bu uzay kirliliğinin gelecekteki uzay araştırmaları ve aktif uydular açısından doğurabileceği en büyük iki tehlikeyi yazınız.\nb) Uzay kirliliğini önlemek veya azaltmak için uygulanabilecek bilimsel bir çözüm önerisi geliştiriniz.",
+        "solutionExplanation": "Uzay atıkları aktif uydulara ve uzay istasyonuna çarparak büyük hasar verebilir. Çözüm: kontrollü atmosferde yakma veya robotik atık toplama.",
+        "modelAnswer": "a) Tehlikeler:\n1. Kontrolsüz dolaşan uzay atıkları aktif çalışan haberleşme ve gözlem uydularına çarparak onları parçalayabilir.\n2. Uluslararası Uzay İstasyonu'ndaki astronotların can güvenliğini tehdit eder ve gelecekte uzaya fırlatılacak roketlerin yolunu tıkayabilir.\nb) Çözüm Önerisi: Görevi biten uyduları kontrollü şekilde Dünya atmosferine yönlendirip sürtünmeyle yakarak yok etmek ya da manyetik ağlar/robotik kollar yardımıyla uzay atıklarını toplayan temizleme araçları geliştirmek.",
         "rubric": [
           {
-            "criterion": "a şıkkında aşırı yüksek hız nedeniyle oluşacak çarpışma ve hasar riskinin açıklanması",
-            "points": 7
+            "criterion": "Uzay kirliliğinin doğuracağı iki tehlikenin gerekçeli yazımı",
+            "points": 8
           },
           {
-            "criterion": "b şıkkında atmosfere sokup yakma veya uzay araçlarıyla toplama çözümünün yazılması",
-            "points": 7
+            "criterion": "Gerçekçi ve uygulanabilir bir çözüm önerisinin açıklanması",
+            "points": 6
           }
-        ],
-        "questionNumber": 3,
-        "points": 14,
-        "difficulty": "Orta"
+        ]
       },
       {
+        "questionNumber": 4,
         "outcomeCode": "FB.7.1.5",
         "outcomeTitle": "FB.7.1.5. Yıldız, galaksi ve evren kavramlarını açıklayarak yapılandırabilme",
-        "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
-        "contextText": "Galaksi türleri ve Samanyolu Galaksisi.",
-        "stimulus": "Galaksiler (gök adalar) milyarlarca yıldız, gaz ve toz bulutunun bir araya gelmesiyle oluşur. Şekillerine göre Sarmal, Eliptik ve Düzensiz galaksi olmak üzere üçe ayrılırlar.",
-        "questionText": "a) İçinde Dünya'mızın ve Güneş Sistemi'mizin de bulunduğu galaksinin adı ve şekil türü nedir?\nb) Bu galaksiye en yakın olan dev komşu sarmal galaksinin adı nedir?",
-        "solutionExplanation": "Samanyolu Galaksisi sarmaldır; en yakın komşu Andromeda'dır.",
-        "modelAnswer": "a) Galaksimizin adı 'Samanyolu Galaksisi'dir ve şekil olarak 'Sarmal Galaksi' türündedir.\nb) Samanyolu Galaksisi'ne en yakın komşu büyük galaksinin adı 'Andromeda Galaksisi'dir.",
-        "rubric": [
-          {
-            "criterion": "a şıkkında Samanyolu adı ve Sarmal şeklinin doğru yazılması",
-            "points": 7
-          },
-          {
-            "criterion": "b şıkkında Andromeda galaksisinin doğru belirtilmesi",
-            "points": 7
-          }
-        ],
-        "questionNumber": 4,
-        "points": 14,
-        "difficulty": "Kolay"
-      },
-      {
-        "outcomeCode": "FB.7.2.1",
-        "outcomeTitle": "FB.7.2.1. Fiziksel anlamda yapılan işin bağlı olduğu faktörlere ilişkin bilimsel çıkarım yapabilme",
+        "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
-        "contextText": "Fiziksel anlamda iş yapma şartları: kuvvet ve hareket doğrultusu.",
-        "stimulus": "Fen bilimleri dersinde fiziksel anlamda iş yapılmış sayılması için cisme bir kuvvet uygulanmalı ve cisim uygulanan kuvvet doğrultusunda yer değiştirmelidir.\n1. Durum: Ahmet, 10 kg'lık okul çantasını sırtında taşıyarak düz yatay koridorda 20 metre yürüyor.\n2. Durum: Ahmet, aynı çantayı yerden kaldırıp merdivenlerden 2. kata (yukarıya) çıkarıyor.",
-        "questionText": "a) 1. ve 2. durumdan hangisinde YER ÇEKİMİ KUVVETİNE KARŞI fiziksel anlamda iş yapılmıştır? Nedenini açıklayınız.\nb) 1. durumda yatay yolda yürürken neden yer çekimine karşı iş yapılmamıştır?",
-        "solutionExplanation": "Kuvvet ile hareket aynı doğrultuda olmalıdır. Yukarı çıkarken iş yapılır, yatayda yürürken kuvvet ve hareket birbirine diktir.",
-        "modelAnswer": "a) 2. durumda yer çekimine karşı iş yapılmıştır. Çünkü çanta yukarı kaldırılırken yer çekimine zıt yönde yukarı doğru kuvvet uygulanmış ve çanta kuvvet doğrultusunda yukarı doğru hareket etmiştir.\nb) 1. durumda ise çanta yatayda hareket etmektedir; yer çekimi kuvveti ise düşeydir. Kuvvet ve hareket doğrultusu birbirine dik olduğu için yer çekimine karşı iş yapılmaz.",
+        "points": 14,
+        "contextText": "Evren, uzay ve gök cisimlerinin büyüklük hiyerarşisi.",
+        "stimulus": "Bir fen bilimleri öğretmeni tahtaya şu kavramları karışık olarak yazar:\n• Evren  • Güneş  • Samanyolu Galaksisi  • Uzay  • Dünya",
+        "questionText": "a) Bu kavramları kapsama alanlarına (büyüklüklerine) göre en geniş olandan en dar olana doğru sıralayınız.\nb) \"Evren\" ile \"Uzay\" kavramları arasındaki temel farkı Dünya'yı referans alarak açıklayınız.",
+        "solutionExplanation": "Evren > Uzay > Samanyolu > Güneş > Dünya. Evren Dünya dahil her şeydir; uzay Dünya dışıdır.",
+        "modelAnswer": "a) Sıralama: Evren > Uzay > Samanyolu Galaksisi > Güneş > Dünya\nb) Temel Fark: Evren; Dünya'mız da dahil olmak üzere var olan tüm maddeleri, enerjiyi ve sonsuz boşluğu içine alan bütündür. Uzay ise Evren'in Dünya atmosferi dışında kalan kısmıdır (Evren = Dünya + Uzay).",
         "rubric": [
           {
-            "criterion": "a şıkkında 2. durumun ve kuvvet doğrultusunda yukarı hareket gerekçesinin yazılması",
+            "criterion": "Kavramların büyükten küçüğe hatasız sıralanması",
             "points": 7
           },
           {
-            "criterion": "b şıkkında kuvvet ile hareketin birbirine dik olması nedeniyle iş yapılmadığının açıklanması",
+            "criterion": "Evren ile Uzay farkının Dünya referansıyla doğru tanımlanması",
             "points": 7
           }
-        ],
-        "questionNumber": 5,
-        "points": 14,
-        "difficulty": "Orta"
+        ]
       },
       {
+        "questionNumber": 5,
         "outcomeCode": "FB.7.2.1",
         "outcomeTitle": "FB.7.2.1. Fiziksel anlamda yapılan işin bağlı olduğu faktörlere ilişkin bilimsel çıkarım yapabilme",
+        "difficulty": "Kolay",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+        "points": 14,
+        "contextText": "Günlük hayatta fiziksel iş yapılıp yapılmadığının doğrultu ilişkisiyle tespiti.",
+        "stimulus": "Aşağıda üç farklı öğrencinin günlük hayattaki durumları verilmiştir:\n1. Durum: Can, sırtındaki ağır okul çantasıyla yatay düz yolda sabit süratle yürümektedir.\n2. Durum: Elif, yerdeki ağır bir koliye yukarı yönlü kuvvet uygulayarak merdivenlerden 2. kata çıkarmaktadır.\n3. Durum: Murat, tekerlekli pazar arabasını yatay doğrultuda kuvvet uygulayarak çekip ilerletmektedir.",
+        "questionText": "a) Verilen durumlardan hangilerinde FİZİKSEL ANLAMDA İŞ YAPILMIŞTIR?\nb) 1. Durum'da Can'ın sırt çantası üzerinde neden fiziksel anlamda iş yapmadığını kuvvet ve hareket doğrultusu bakımından açıklayınız.",
+        "solutionExplanation": "Fiziksel iş için kuvvet ile hareket aynı doğrultuda olmalıdır. Çanta taşırken kuvvet düşey, hareket yataydır.",
+        "modelAnswer": "a) Fiziksel Anlamda İş Yapılan Durumlar: 2. Durum (Elif) ve 3. Durum (Murat).\nb) 1. Durum Açıklaması: Can sırt çantasına düşey doğrultuda (yukarı yönlü) kuvvet uygulamaktadır ancak hareket yatay doğrultudadır. Bir kuvvetin fiziksel anlamda iş yapabilmesi için cismin kuvvet doğrultusunda hareket etmesi gerekir. Doğrultular birbirine dik olduğu için Can fiziksel anlamda iş yapmamıştır.",
+        "rubric": [
+          {
+            "criterion": "İş yapılan durumların (2 ve 3) hatasız belirlenmesi",
+            "points": 6
+          },
+          {
+            "criterion": "1. Durumda kuvvet ve hareket doğrultusunun dik olduğunun gerekçelendirilmesi",
+            "points": 8
+          }
+        ]
+      },
+      {
+        "questionNumber": 6,
+        "outcomeCode": "FB.7.2.1",
+        "outcomeTitle": "FB.7.2.1. Fiziksel anlamda yapılan işin bağlı olduğu faktörlere ilişkin bilimsel çıkarım yapabilme",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 14,
+        "contextText": "Fiziksel iş miktarının kuvvet ve yer değiştirme bağıntısı (W = F . x).",
+        "stimulus": "Sürtünmesiz yatay düzlemde bulunan özdeş iki kutudan;\n• 1. Kutu: 20 N büyüklüğündeki yatay kuvvet ile 4 metre çekilmiştir.\n• 2. Kutu: 10 N büyüklüğündeki yatay kuvvet ile 8 metre çekilmiştir.",
+        "questionText": "a) 1. ve 2. kutu üzerinde yapılan fiziksel iş miktarlarını (W1 ve W2) Joule birimiyle hesaplayınız.\nb) Yapılan iş miktarlarını karşılaştırarak bir cisme yapılan fiziksel işin hangi iki değişkene bağlı olduğunu açıklayınız.",
+        "solutionExplanation": "W = F . x formülüyle her iki iş de 80 Joule çıkar. İş, kuvvetin büyüklüğüne ve alınan yola bağlıdır.",
+        "modelAnswer": "a) Hesaplama:\n• 1. Kutu: W1 = Kuvvet x Yol = 20 N x 4 m = 80 Joule\n• 2. Kutu: W2 = Kuvvet x Yol = 10 N x 8 m = 80 Joule\nb) Karşılaştırma ve Açıklama: Yapılan iş miktarları birbirine eşittir (W1 = W2 = 80 J). Bu durum fiziksel anlamda yapılan işin uygulanan kuvvetin büyüklüğüne ve cismin bu kuvvet doğrultusunda aldığı yolun (yer değiştirmenin) miktarına bağlı olduğunu gösterir.",
+        "rubric": [
+          {
+            "criterion": "a şıkkında W1 ve W2 işlerinin (80 J) doğru hesaplanması",
+            "points": 7
+          },
+          {
+            "criterion": "b şıkkında işlerin eşitliği ve bağlı olduğu iki değişkenin (kuvvet ve yol) açıklanması",
+            "points": 7
+          }
+        ]
+      },
+      {
+        "questionNumber": 7,
+        "outcomeCode": "FB.7.2.1",
+        "outcomeTitle": "FB.7.2.1. Fiziksel anlamda yapılan işin bağlı olduğu faktörlere ilişkin bilimsel çıkarım yapabilme",
+        "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
         "archetype": "Hata Tespiti & Adım Analizi",
-        "contextText": "Kuvvet uygulanmasına rağmen hareket etmeyen cisimlerde iş kavramı.",
-        "stimulus": "Zeynep, odasındaki ağır kitaplığı yerinden oynatmak için tüm gücüyle 100 N kuvvet uygulayarak 5 dakika boyunca itmiş, terlemiş ve çok yorulmuştur. Ancak kitaplık duvara takılı olduğu için milimetre bile hareket etmemiştir.",
-        "questionText": "Zeynep çok yorulmasına ve 100 N kuvvet uygulamasına rağmen fen bilimleri kurallarına göre neden fiziksel anlamda iş yapmamış sayılır? Gerekçesini yazınız.",
-        "solutionExplanation": "Yol alınmadığı için iş sıfırdır.",
-        "modelAnswer": "Fiziksel anlamda iş yapılabilmesi için cismin kuvvet doğrultusunda mutlaka yol alması (hareket etmesi) gerekir. Kitaplık hareket etmediği (alınan yol sıfır olduğu) için fiziksel anlamda yapılan iş sıfırdır.",
+        "points": 14,
+        "contextText": "Yer çekimine karşı yapılan iş ve sabit durumlarda iş analizi.",
+        "stimulus": "Halter sporuyla uğraşan milli sporcumuz Kerem, antrenmanda:\n1. Aşama: Yerde duran 100 kg'lık halteri yukarı doğru kaldırarak başının üstüne çıkarıyor.\n2. Aşama: Halteri başının üstünde havada hiç kıpırdatmadan 5 saniye boyunca sabit tutuyor.\n3. Aşama: Halteri yere bırakmadan başının üstünde tutarak yatay platformda 3 adım yürüyor.",
+        "questionText": "Kerem'in bu hareketlerinden hangisinde YER ÇEKİMİ KUVVETİNE KARŞI İŞ YAPILMIŞTIR? Diğer aşamalarda neden yer çekimine karşı iş yapılmadığını fiziksel gerekçeleriyle açıklayınız.",
+        "solutionExplanation": "Yalnızca 1. aşamada yer çekimine zıt yönde düşey yer değiştirme vardır. 2. aşamada yol sıfırdır, 3. aşamada hareket yataydır.",
+        "modelAnswer": "• Yer Çekimine Karşı İş Yapılan Aşama: Yalnızca 1. Aşama.\n• Gerekçelendirme:\n- 1. Aşamada halter yer çekimi kuvvetine zıt yönde (düşeyde yukarı) yer değiştirmiştir, bu yüzden yer çekimine karşı iş yapılır.\n- 2. Aşamada kuvvet uygulanmasına rağmen halter hareket etmemiştir (yer değiştirme sıfırdır), bu yüzden iş yapılmaz.\n- 3. Aşamada halterci yukarı yönlü kuvvet uygular ancak hareket yataydır (kuvvet ve hareket doğrultusu diktir), bu yüzden yer çekimine karşı iş yapılmaz.",
         "rubric": [
           {
-            "criterion": "Fiziksel iş için kuvvet doğrultusunda hareket/yol alma şartının belirtilmesi",
-            "points": 7
+            "criterion": "Doğru aşamanın (yalnızca 1. Aşama) belirlenmesi",
+            "points": 4
           },
           {
-            "criterion": "Kitaplığın yer değiştirmediği (yol = 0) için işin sıfır olduğunun gerekçelendirilmesi",
-            "points": 7
-          }
-        ],
-        "questionNumber": 6,
-        "points": 14,
-        "difficulty": "Orta"
-      },
-      {
-        "outcomeCode": "FB.7.2.1",
-        "outcomeTitle": "FB.7.2.1. Fiziksel anlamda yapılan işin bağlı olduğu faktörlere ilişkin bilimsel çıkarım yapabilme",
-        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
-        "contextText": "Kuvvetin büyüklüğünün yapılan iş miktarına etkisi.",
-        "stimulus": "Bir süpermarkette özdeş iki alışveriş arabasından:\n• 1. Arabayı Kerem 15 N kuvvetle 10 metre itmiştir.\n• 2. Arabayı Selim 30 N kuvvetle 10 metre itmiştir.",
-        "questionText": "a) Kerem ve Selim'in yaptıkları fiziksel iş miktarlarını karşılaştırınız. Hangi öğrenci daha fazla iş yapmıştır?\nb) Alınan yollar eşit olduğuna göre kuvvetin büyüklüğü ile yapılan iş arasındaki ilişkiyi açıklayınız.",
-        "solutionExplanation": "Yollar eşitken kuvvet büyük olan daha çok iş yapar.",
-        "modelAnswer": "a) Selim'in yaptığı iş daha fazladır (2 katıdır).\nb) Alınan yollar eşit olduğunda cisme uygulanan kuvvetin büyüklüğü arttıkça yapılan fiziksel iş miktarı da doğru orantılı olarak artar.",
-        "rubric": [
-          {
-            "criterion": "a şıkkında Selim'in daha çok iş yaptığının tespiti",
-            "points": 7
+            "criterion": "2. Aşamada yer değiştirme sıfır olduğu için iş yapılmadığının açıklanması",
+            "points": 5
           },
           {
-            "criterion": "b şıkkında yol eşitken kuvvet arttıkça işin artacağının gerekçelendirilmesi",
-            "points": 7
+            "criterion": "3. Aşamada kuvvet ve hareket doğrultusunun dik olması gerekçesi",
+            "points": 5
           }
-        ],
-        "questionNumber": 7,
-        "points": 14,
-        "difficulty": "Zor"
+        ]
       }
     ]
   },
@@ -12389,52 +12237,52 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
     ],
     "questions": [
       {
+        "questionNumber": 1,
         "outcomeCode": "FB.7.1.1",
         "outcomeTitle": "FB.7.1.1. Uzay araştırmaları için geliştirilen teknolojileri karşılaştırabilme",
-        "cognitiveLevel": "Basit Bilişsel Süreçler",
+        "difficulty": "Kolay",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
-        "contextText": "Gözlemevi (rasathane) yer seçiminde coğrafi ve atmosferik şartlar.",
-        "stimulus": "Gök bilimciler uzaydaki gök cisimlerini ve gezegenleri incelemek için gözlemevlerini (rasathaneleri) şehir merkezleri yerine şehirlerden uzak ve yüksek dağların tepelerine kurarlar.",
-        "questionText": "a) Gözlemevlerinin şehir ışıklarından uzak yerlere kurulmasının temel nedenini yazınız.\nb) Yüksek dağ zirvelerinin tercih edilmesinin atmosfer ve hava şartlarıyla ilgili nedenini açıklayınız.",
-        "solutionExplanation": "Işık kirliliğinden uzaklaşmak ve dağlarda nem, bulut ve hava kirliliğinin az olması.",
-        "modelAnswer": "a) Şehirlerdeki yoğun yapay ışıklar gökyüzünü aydınlatarak ışık kirliliğine neden olur; bu durum gök cisimlerinin teleskopla net görülmesini engeller.\nb) Yüksek dağ zirvelerinde atmosfer tabakası daha incedir, hava kirliliği ve nem oranı çok düşüktür, ayrıca açık ve bulutsuz gece sayısı fazladır. Böylece uzaydan gelen ışık bozulmadan teleskoba ulaşır.",
+        "points": 12,
+        "contextText": "Işık kirliliği ve rasathanelerin optik teleskop gözlemlerine etkisi.",
+        "stimulus": "Şehirleşmenin ve kontrolsüz yapay aydınlatmanın artmasıyla gökyüzüne yayılan aşırı ışık, gece gökyüzünün parlak görünmesine neden olmakta ve sönük yıldızların gözlenmesini engellemektedir.",
+        "questionText": "a) Işık kirliliğinin optik teleskoplarla yapılan gök bilimi gözlemlerine olumsuz etkisini açıklayınız.\nb) Bir şehirde gökyüzü gözlemlerini korumak ve ışık kirliliğini azaltmak için sokak lambalarında nasıl bir tasarım önlemi alınmalıdır?",
+        "solutionExplanation": "Işık kirliliği gökyüzü fon parlaklığını artırarak gök cisimlerinin kontrastını yok eder. Siperlikli aşağı yönlü aydınlatma yapılmalıdır.",
+        "modelAnswer": "a) Işık kirliliği gökyüzünün aşırı aydınlanmasına yol açarak gök cisimlerinden gelen zayıf ışıkların görünmesini engeller; teleskop görüntülerinde parlamaya ve netlik kaybına sebep olur.\nb) Sokak ve park lambalarının gökyüzüne doğru değil, sadece zemine doğru ışık verecek şekilde siperlikli (kapaklı) tasarlanması ve gereksiz aydınlatmaların kapatılması gerekir.",
         "rubric": [
           {
-            "criterion": "a şıkkında yapay ışık kirliliğinin gök cisimlerinin gözlemini engellediğinin belirtilmesi",
-            "points": 7
+            "criterion": "Işık kirliliğinin optik gözleme olumsuz etkisinin yazılması",
+            "points": 6
           },
           {
-            "criterion": "b şıkkında dağ zirvelerindeki ince atmosfer, az nem veya bulutsuz/temiz hava şartının gerekçelendirilmesi",
+            "criterion": "Siperlikli/aşağı yönlü aydınlatma tasarım önleminin açıklanması",
             "points": 6
           }
-        ],
-        "questionNumber": 1,
-        "points": 13,
-        "difficulty": "Kolay"
+        ]
       },
       {
+        "questionNumber": 2,
         "outcomeCode": "FB.7.1.1",
         "outcomeTitle": "FB.7.1.1. Uzay araştırmaları için geliştirilen teknolojileri karşılaştırabilme",
+        "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
-        "contextText": "Uzay teleskopları ile yeryüzü teleskoplarının görüntü kalitesi farkı.",
-        "stimulus": "Astronomi panosu hazırlayan iki öğrenci arasında şu konuşma geçer:\nCan: \"James Webb ve Hubble gibi uzay teleskopları, yeryüzündeki en büyük teleskoplardan bile çok daha net ve kaliteli fotoğraflar çeker.\"\nAlp: \"Bence uzayda veya yeryüzünde olmasının önemi yoktur, sadece ayna boyutu büyük olan teleskop her zaman daha net çeker.\"",
-        "questionText": "Hangi öğrencinin açıklaması doğrudur? Uzay teleskoplarının Dünya atmosferinin olumsuz etkilerinden neden etkilenmediğini açıklayınız.",
-        "solutionExplanation": "Can haklıdır. Dünya atmosferi ışığı kırar ve bozar; uzayda atmosfer olmadığı için görüntü nettir.",
-        "modelAnswer": "Can haklıdır. Çünkü Dünya atmosferindeki hava hareketleri, tozlar ve bulutlar gök cisimlerinden gelen ışığı kırarak görüntünün bulanıklaşmasına yol açar. Uzay teleskopları ise atmosferin dışında, uzay boşluğunda görev yaptığı için ışık hiçbir engelle karşılaşmadan doğrudan teleskoba ulaşır.",
+        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "points": 12,
+        "contextText": "Optik teleskoplar ile radyo teleskoplarının karşılaştırılması.",
+        "stimulus": "Gök bilimciler uzayı gözlemlemek için mercekli ve aynalı optik teleskopların yanı sıra dev çanak antenlere benzeyen radyo teleskoplarını da kullanırlar.",
+        "questionText": "Optik teleskoplar ile radyo teleskoplarının algıladığı dalga türü farkını açıklayınız. Radyo teleskoplarının bulutlu veya yağışlı havalarda bile gözlem yapabilmesinin sebebini belirtiniz.",
+        "solutionExplanation": "Optik teleskoplar görünür ışığı, radyo teleskopları ise radyo dalgalarını toplar. Radyo dalgaları bulut ve gazlardan geçebilir.",
+        "modelAnswer": "• Dalga Farkı: Optik teleskoplar gök cisimlerinden yayılan görünür ışığı toplarken, radyo teleskopları insan gözünün göremediği radyo dalgalarını çanak antenleriyle yakalar.\n• Hava Şartı Avantajı: Radyo dalgaları atmosferdeki bulut, toz ve sis gibi engellerden etkilenmeden geçebildiği için radyo teleskopları kapalı havalarda ve gündüz saatlerinde bile kesintisiz gözlem yapabilir.",
         "rubric": [
           {
-            "criterion": "Can'ın haklı olduğunun doğru tespiti",
+            "criterion": "Görünür ışık ile radyo dalgası farkının belirtilmesi",
             "points": 6
           },
           {
-            "criterion": "Dünya atmosferindeki gaz ve tozların görüntüyü bozduğunun, uzayda ise atmosfer olmadığı için görüntünün net kaldığının açıklanması",
-            "points": 7
+            "criterion": "Radyo dalgalarının bulut ve tozlardan etkilenmeden geçebilmesinin açıklanması",
+            "points": 6
           }
-        ],
-        "questionNumber": 2,
-        "points": 13,
-        "difficulty": "Kolay"
+        ]
       },
       {
         "outcomeCode": "FB.7.1.3",
@@ -12485,28 +12333,28 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "difficulty": "Orta"
       },
       {
+        "questionNumber": 5,
         "outcomeCode": "FB.7.2.1",
         "outcomeTitle": "FB.7.2.1. Fiziksel anlamda yapılan işin bağlı olduğu faktörlere ilişkin bilimsel çıkarım yapabilme",
+        "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
-        "contextText": "Fiziksel anlamda iş yapma şartları: kuvvet ve hareket doğrultusu.",
-        "stimulus": "Fen bilimleri dersinde fiziksel anlamda iş yapılmış sayılması için cisme bir kuvvet uygulanmalı ve cisim uygulanan kuvvet doğrultusunda yer değiştirmelidir.\n1. Durum: Ahmet, 10 kg'lık okul çantasını sırtında taşıyarak düz yatay koridorda 20 metre yürüyor.\n2. Durum: Ahmet, aynı çantayı yerden kaldırıp merdivenlerden 2. kata (yukarıya) çıkarıyor.",
-        "questionText": "a) 1. ve 2. durumdan hangisinde YER ÇEKİMİ KUVVETİNE KARŞI fiziksel anlamda iş yapılmıştır? Nedenini açıklayınız.\nb) 1. durumda yatay yolda yürürken neden yer çekimine karşı iş yapılmamıştır?",
-        "solutionExplanation": "Kuvvet ile hareket aynı doğrultuda olmalıdır. Yukarı çıkarken iş yapılır, yatayda yürürken kuvvet ve hareket birbirine diktir.",
-        "modelAnswer": "a) 2. durumda yer çekimine karşı iş yapılmıştır. Çünkü çanta yukarı kaldırılırken yer çekimine zıt yönde yukarı doğru kuvvet uygulanmış ve çanta kuvvet doğrultusunda yukarı doğru hareket etmiştir.\nb) 1. durumda ise çanta yatayda hareket etmektedir; yer çekimi kuvveti ise düşeydir. Kuvvet ve hareket doğrultusu birbirine dik olduğu için yer çekimine karşı iş yapılmaz.",
+        "points": 13,
+        "contextText": "Sürtünmeli yüzeyde net kuvvet ve iş ilişkisi.",
+        "stimulus": "Yatay tahta zemin üzerinde duran bir sandığa Ali doğu yönünde 50 N büyüklüğünde kuvvet uygulamaktadır. Sandık ile zemin arasındaki sürtünme kuvveti ise harekete zıt yönde 20 N büyüklüğündedir. Sandık bu kuvvetlerin etkisinde doğu yönünde 5 metre yer değiştirmiştir.",
+        "questionText": "a) Ali'nin uyguladığı kuvvetin yaptığı işi (W_Ali) hesaplayınız.\nb) Sürtünme kuvvetine rağmen sandığı hareket ettiren NET KUVVETİN yaptığı işi Joule cinsinden hesaplayınız.",
+        "solutionExplanation": "W_Ali = 50 N x 5 m = 250 J. F_net = 50 - 20 = 30 N. W_net = 30 N x 5 m = 150 J.",
+        "modelAnswer": "a) Ali'nin Yaptığı İş: W_Ali = Kuvvet x Yol = 50 N x 5 m = 250 Joule\nb) Net Kuvvetin Yaptığı İş: F_net = 50 N - 20 N = 30 N\nW_net = F_net x Yol = 30 N x 5 m = 150 Joule",
         "rubric": [
           {
-            "criterion": "a şıkkında 2. durumun ve kuvvet doğrultusunda yukarı hareket gerekçesinin yazılması",
+            "criterion": "Ali'nin yaptığı işin (250 J) doğru hesaplanması",
             "points": 6
           },
           {
-            "criterion": "b şıkkında kuvvet ile hareketin birbirine dik olması nedeniyle iş yapılmadığının açıklanması",
-            "points": 6
+            "criterion": "Net kuvvetin (30 N) ve net işin (150 J) doğru hesaplanması",
+            "points": 7
           }
-        ],
-        "questionNumber": 5,
-        "points": 12,
-        "difficulty": "Orta"
+        ]
       },
       {
         "outcomeCode": "FB.7.2.1",
@@ -12533,52 +12381,52 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "difficulty": "Orta"
       },
       {
+        "questionNumber": 7,
         "outcomeCode": "FB.7.2.2",
         "outcomeTitle": "FB.7.2.2. Enerji çeşitlerinden kinetik ve potansiyel enerjiyi karşılaştırabilme",
+        "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
-        "contextText": "Kinetik enerjinin kütle ve sürat ilişkisi.",
-        "stimulus": "Düz ve sürtünmesiz bir karayolunda aynı 60 km/h süratle hareket eden boş bir kamyon ile küçük bir otomobil aynı anda frene basmaktadır.",
-        "questionText": "a) Kamyon ve otomobilin kinetik (hareket) enerjilerini karşılaştırınız. Hangisinin kinetik enerjisi daha büyüktür? Neden?\nb) Otomobilin kamyonla aynı kinetik enerjiye ulaşması için sürati nasıl değiştirilmelidir?",
-        "solutionExplanation": "Süratler eşitken kütlesi büyük olan kamyonun kinetik enerjisi fazladır. Otomobilin sürati artırılmalıdır.",
-        "modelAnswer": "a) Kamyonun kinetik enerjisi daha büyüktür. Çünkü hareket halindeki cisimlerin süratleri eşit olduğunda kütlesi daha büyük olan cismin kinetik enerjisi daha fazla olur.\nb) Kütlesi küçük olan otomobilin kamyonla aynı enerjiye ulaşabilmesi için süratinin artırılması gerekir.",
+        "points": 13,
+        "contextText": "Kinetik enerjinin cismin süratiyle ilişkisi.",
+        "stimulus": "Trafik güvenliği araştırmasında özdeş (aynı kütleli) iki test otomobilinden;\n• A aracı: 40 km/h süratle\n• B aracı: 80 km/h süratle\nhareket ederek aynı sert engele çarpmıştır.",
+        "questionText": "a) A ve B araçlarının sahip olduğu kinetik enerji miktarlarını karşılaştırınız. B aracının kinetik enerjisi A aracının kaç katıdır?\nb) Trafikte araçların sürati iki katına çıktığında durma mesafesinin ve çarpma etkisinin neden çok daha fazla arttığını kinetik enerji formülü mantığıyla açıklayınız.",
+        "solutionExplanation": "Kinetik enerji süratin karesiyle orantılıdır (1/2 m v^2). Sürat 2 katına çıkınca kinetik enerji 4 katına çıkar.",
+        "modelAnswer": "a) B aracının kinetik enerjisi, A aracının kinetik enerjisinin 4 katıdır (E_k ∝ v²).\nb) Kinetik enerji formülünde süratin karesi alındığı için aracın sürati 2 katına çıktığında enerjisi 4 katına, sürati 3 katına çıktığında enerjisi 9 katına fırlar. Bu nedenle sürat arttıkça aracı durdurmak için gereken mesafe ve çarpışma anındaki hasar katlanarak artar.",
         "rubric": [
           {
-            "criterion": "a şıkkında kamyonun kinetik enerjisinin büyük olduğunun ve kütle gerekçesinin yazılması",
+            "criterion": "B aracının kinetik enerjisinin 4 kat olduğunun belirtilmesi",
             "points": 6
           },
           {
-            "criterion": "b şıkkında otomobilin süratinin artırılması gerektiğinin belirtilmesi",
-            "points": 6
+            "criterion": "Kinetik enerjinin süratin karesiyle arttığının gerekçelendirilmesi",
+            "points": 7
           }
-        ],
-        "questionNumber": 7,
-        "points": 12,
-        "difficulty": "Zor"
+        ]
       },
       {
+        "questionNumber": 8,
         "outcomeCode": "FB.7.2.2",
         "outcomeTitle": "FB.7.2.2. Enerji çeşitlerinden kinetik ve potansiyel enerjiyi karşılaştırabilme",
+        "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
-        "contextText": "Çekim potansiyel enerjisinde yükseklik ve kütle etkisi.",
-        "stimulus": "Laboratuvarda özdeş iki metal bilyeden biri 1 metre yüksekliğindeki masadan, diğeri 2 metre yüksekliğindeki dolaptan kum havuzuna bırakılmıştır.\nÖğrencilerden Can: \"2 metre yükseklikten bırakılan bilye kumda daha derin bir iz bırakır çünkü çekim potansiyel enerjisi daha fazladır.\"\nAlp: \"Bilyeler özdeş olduğu için kumda bıraktıkları iz aynı derinlikte olur.\"",
-        "questionText": "Hangi öğrencinin açıklaması doğrudur? Yerden yükseklik ile çekim potansiyel enerjisi arasındaki ilişkiyi açıklayınız.",
-        "solutionExplanation": "Can haklıdır. Yükseklik arttıkça çekim potansiyel enerjisi artar.",
-        "modelAnswer": "Can haklıdır. Çünkü kütleleri eşit olan cisimlerden yerden yüksekliği daha fazla olan cismin çekim potansiyel enerjisi daha büyüktür. Dolayısıyla 2 metredeki bilye kum zeminle temas ettiğinde kuma daha fazla enerji aktarır ve daha derin iz bırakır.",
+        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "points": 12,
+        "contextText": "Ok yayında esneklik potansiyel enerjisinin depolanması ve kinetik enerjiye dönüşümü.",
+        "stimulus": "Geleneksel Türk okçuluğu çalışan sporcu Mete, yayının kirişini gererek hedefe nişan almaktadır.\n• 1. Atış: Kirişi 10 cm gererek oku fırlatıyor.\n• 2. Atış: Kirişi 20 cm gererek aynı oku fırlatıyor.",
+        "questionText": "a) Yay gerildiğinde yayda depolanan enerji türünün adını yazınız.\nb) 1. ve 2. atışta depolanan enerjileri karşılaştırarak yayın gerilme miktarının fırlatılan okun menziline ve kinetik enerjisine etkisini açıklayınız.",
+        "solutionExplanation": "Esneklik potansiyel enerjisi depolanır. Gerilme miktarı arttıkça depolanan esneklik potansiyel enerjisi artar ve oka daha fazla kinetik enerji aktarılır.",
+        "modelAnswer": "a) Depolanan Enerji Türü: 'Esneklik Potansiyel Enerjisi'.\nb) Karşılaştırma ve Açıklama: 2. atışta kiriş 20 cm gerildiği için yayda 1. atışa göre çok daha fazla esneklik potansiyel enerjisi depolanır. Kiriş bırakıldığında bu potansiyel enerji okun kinetik enerjisine dönüşür. Bu nedenle 2. atıştaki ok çok daha büyük bir süratle fırlar ve daha uzak bir menzile ulaşır.",
         "rubric": [
           {
-            "criterion": "Can'ın haklı olduğunun doğru tespiti",
-            "points": 6
+            "criterion": "Esneklik potansiyel enerjisi adının doğru yazılması",
+            "points": 5
           },
           {
-            "criterion": "Kütle eşitken yükseklik arttıkça çekim potansiyel enerjisinin artacağının açıklanması",
-            "points": 6
+            "criterion": "Gerilme miktarı arttıkça depolanan enerjinin ve okun süratinin arttığının açıklanması",
+            "points": 7
           }
-        ],
-        "questionNumber": 8,
-        "points": 12,
-        "difficulty": "Zor"
+        ]
       }
     ]
   },
@@ -12597,52 +12445,52 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
     ],
     "questions": [
       {
+        "questionNumber": 1,
         "outcomeCode": "FB.7.1.3",
         "outcomeTitle": "FB.7.1.3. Uzay araştırmalarının yol açabileceği problemleri çözebilme",
+        "difficulty": "Kolay",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
-        "contextText": "Dünya yörüngesindeki uzay kirliliği ve oluşturduğu tehlikeler.",
-        "stimulus": "Dünya yörüngesinde işlevi bitmiş eski uydular, roket parçaları ve yakıt tankları başıboş halde saatte yaklaşık 28.000 kilometre gibi aşırı yüksek hızlarla dolanmaktadır (Uzay Kirliliği).",
-        "questionText": "a) Bu uzay atıklarının halen görev yapan uydular ve Uluslararası Uzay İstasyonu için oluşturduğu en büyük tehlikeyi açıklayınız.\nb) Uzay kirliliğini azaltmak veya önlemek için bilim insanlarının geliştirebileceği bir çözüm önerisi yazınız.",
-        "solutionExplanation": "Yüksek hızlı çarpışma uyduları parçalar; görevi biten uydular kontrollü olarak atmosfere sokulup yakılmalıdır.",
-        "modelAnswer": "a) Uzay atıkları mermiden katbekat hızlı hareket eder. Küçücük bir metal cıvata bile aktif bir uyduya çarptığında onu parçalayabilir ve kullanılmaz hale getirebilir.\nb) Görev süresi tükenen uydular kontrollü şekilde Dünya atmosferine yönlendirilerek sürtünmeyle yanıp yok edilmeli veya robotik uzay araçlarıyla toplanmalıdır.",
+        "points": 16,
+        "contextText": "Uyduların mezarlık yörüngesine taşınması ve uzay enkazı sözleşmeleri.",
+        "stimulus": "Görev süresi dolmak üzere olan uyduların Dünya yörüngesini tıkamaması için uluslararası uzay ajansları \"Mezarlık Yörüngesi\" (Graveyard Orbit) adı verilen özel bir yöntem uygulamaktadır.",
+        "questionText": "a) Uyduların görev süreleri bitmeden önce daha yüksekteki mezarlık yörüngesine taşınmasının temel amacını yazınız.\nb) Alçak yörüngedeki küçük uzay atıklarının kendi kendine yok olabilmesini sağlayan doğal fiziksel mekanizma nedir?",
+        "solutionExplanation": "Aktif uyduların yörüngesini temiz tutmak için ömrü biten uydular uzak yörüngeye çekilir. Alçak atıklar atmosfere sürtünerek yanar.",
+        "modelAnswer": "a) Temel Amaç: Ömrü tükenen uyduların aktif çalışan telekomünikasyon ve gözlem uydularının bulunduğu yörüngelerden uzaklaştırılarak çarpışma ve yeni uzay kirliliği riskini ortadan kaldırmaktır.\nb) Doğal Mekanizma: Alçak yörüngedeki atıklar Dünya atmosferinin üst katmanlarına sürtünür. Bu sürtünme sonucu aşırı ısınıp alev alarak yanar ve kül halinde yok olur.",
         "rubric": [
           {
-            "criterion": "a şıkkında aşırı yüksek hız nedeniyle oluşacak çarpışma ve hasar riskinin açıklanması",
+            "criterion": "Mezarlık yörüngesine taşıma amacının doğru açıklanması",
             "points": 8
           },
           {
-            "criterion": "b şıkkında atmosfere sokup yakma veya uzay araçlarıyla toplama çözümünün yazılması",
-            "points": 9
+            "criterion": "Atmosferik sürtünmeyle yanarak yok olma mekanizmasının belirtilmesi",
+            "points": 8
           }
-        ],
-        "questionNumber": 1,
-        "points": 17,
-        "difficulty": "Orta"
+        ]
       },
       {
+        "questionNumber": 2,
         "outcomeCode": "FB.7.1.4",
         "outcomeTitle": "FB.7.1.4. Yıldızların yaşamını açıklayarak yapılandırabilme",
+        "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
-        "contextText": "Bulutsu (nebula) ve yıldızların yaşam döngüsü.",
-        "stimulus": "Yıldızlar da tıpkı canlılar gibi doğar, büyür ve enerjileri tükenince ömürlerini tamamlarlar. Yıldızların yaşam süreçleri başlangıçtaki kütlelerinin büyüklüğüne göre belirlenir.",
-        "questionText": "a) Bütün yıldızların doğum yeri olan gaz ve toz bulutlarına ne ad verilir?\nb) Güneş gibi küçük kütleli bir yıldızın ömrü bittiğinde geride bıraktığı sıcak ve yoğun kalıntıya ne ad verilir?",
-        "solutionExplanation": "Yıldızlar bulutsuda doğar; küçük kütleliler beyaz cüce olarak sonlanır.",
-        "modelAnswer": "a) Bütün yıldızların doğum yeri olan dev gaz ve toz bulutlarına 'Bulutsu (Nebula)' adı verilir (Örn: Orion Bulutsusu).\nb) Güneş gibi küçük kütleli yıldızlar ömürlerinin sonunda dış katmanlarını uzaya salarak geride 'Beyaz Cüce' bırakırlar.",
+        "points": 17,
+        "contextText": "Yıldızların yüzey sıcaklıkları ile yaydıkları ışığın rengi arasındaki bilimsel ilişki.",
+        "stimulus": "Gökyüzündeki yıldızları teleskopla inceleyen bir astronomi kulübü öğrencisi, yıldızların hepsinin aynı renkte parlamadığını fark eder. Kimi yıldızların mavi-beyaz, kimi yıldızların sarı, kimi yıldızların ise kırmızı renkte ışık yaydığını gözlemler.",
+        "questionText": "a) Yıldızların yaydığı ışığın rengi ile yüzey sıcaklıkları arasındaki ilişkiyi açıklayınız.\nb) Mavi, sarı ve kırmızı renkli yıldızları yüzey sıcaklıklarına göre en sıcaktan en soğuğa doğru sıralayarak Güneş'imizin hangi grupta olduğunu belirtiniz.",
+        "solutionExplanation": "Yıldızların rengi yüzey sıcaklığına bağlıdır. Mavi en sıcak, sarı orta, kırmızı en soğuktur. Güneş sarı renkte orta sıcaklıkta bir yıldızdır.",
+        "modelAnswer": "a) Yıldızların yaydığı ışığın rengi onların yüzey sıcaklığının bir göstergesidir; yüzey sıcaklığı arttıkça yıldızın rengi kırmızıdan sarıya, sarıdan ise mavi-beyaza doğru kayar.\nb) Sıcaklık Sıralaması: Mavi/Beyaz Yıldızlar (En Sıcak) > Sarı Yıldızlar (Orta Sıcaklıkta) > Kırmızı Yıldızlar (En Soğuk).\nGüneş: Yüzey sıcaklığı yaklaşık 6.000 °C olan 'sarı' renkli, orta sıcaklıkta bir yıldızdır.",
         "rubric": [
           {
-            "criterion": "a şıkkında Bulutsu / Nebula teriminin doğru yazılması",
+            "criterion": "Renk ile yüzey sıcaklığı ilişkisinin bilimsel gerekçesi",
             "points": 8
           },
           {
-            "criterion": "b şıkkında Beyaz Cüce kavramının doğru açıklanması",
+            "criterion": "Mavi > Sarı > Kırmızı sıcaklık sıralaması ve Güneş'in sarı olduğunun belirtilmesi",
             "points": 9
           }
-        ],
-        "questionNumber": 2,
-        "points": 17,
-        "difficulty": "Kolay"
+        ]
       },
       {
         "outcomeCode": "FB.7.1.5",
@@ -12669,76 +12517,76 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "difficulty": "Kolay"
       },
       {
-        "outcomeCode": "FB.7.2.1",
-        "outcomeTitle": "FB.7.2.1. Fiziksel anlamda yapılan işin bağlı olduğu faktörlere ilişkin bilimsel çıkarım yapabilme",
-        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Hata Tespiti & Adım Analizi",
-        "contextText": "Kuvvet uygulanmasına rağmen hareket etmeyen cisimlerde iş kavramı.",
-        "stimulus": "Zeynep, odasındaki ağır kitaplığı yerinden oynatmak için tüm gücüyle 100 N kuvvet uygulayarak 5 dakika boyunca itmiş, terlemiş ve çok yorulmuştur. Ancak kitaplık duvara takılı olduğu için milimetre bile hareket etmemiştir.",
-        "questionText": "Zeynep çok yorulmasına ve 100 N kuvvet uygulamasına rağmen fen bilimleri kurallarına göre neden fiziksel anlamda iş yapmamış sayılır? Gerekçesini yazınız.",
-        "solutionExplanation": "Yol alınmadığı için iş sıfırdır.",
-        "modelAnswer": "Fiziksel anlamda iş yapılabilmesi için cismin kuvvet doğrultusunda mutlaka yol alması (hareket etmesi) gerekir. Kitaplık hareket etmediği (alınan yol sıfır olduğu) için fiziksel anlamda yapılan iş sıfırdır.",
-        "rubric": [
-          {
-            "criterion": "Fiziksel iş için kuvvet doğrultusunda hareket/yol alma şartının belirtilmesi",
-            "points": 9
-          },
-          {
-            "criterion": "Kitaplığın yer değiştirmediği (yol = 0) için işin sıfır olduğunun gerekçelendirilmesi",
-            "points": 8
-          }
-        ],
         "questionNumber": 4,
-        "points": 17,
-        "difficulty": "Orta"
-      },
-      {
         "outcomeCode": "FB.7.2.1",
         "outcomeTitle": "FB.7.2.1. Fiziksel anlamda yapılan işin bağlı olduğu faktörlere ilişkin bilimsel çıkarım yapabilme",
+        "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
         "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
-        "contextText": "Kuvvetin büyüklüğünün yapılan iş miktarına etkisi.",
-        "stimulus": "Bir süpermarkette özdeş iki alışveriş arabasından:\n• 1. Arabayı Kerem 15 N kuvvetle 10 metre itmiştir.\n• 2. Arabayı Selim 30 N kuvvetle 10 metre itmiştir.",
-        "questionText": "a) Kerem ve Selim'in yaptıkları fiziksel iş miktarlarını karşılaştırınız. Hangi öğrenci daha fazla iş yapmıştır?\nb) Alınan yollar eşit olduğuna göre kuvvetin büyüklüğü ile yapılan iş arasındaki ilişkiyi açıklayınız.",
-        "solutionExplanation": "Yollar eşitken kuvvet büyük olan daha çok iş yapar.",
-        "modelAnswer": "a) Selim'in yaptığı iş daha fazladır (2 katıdır).\nb) Alınan yollar eşit olduğunda cisme uygulanan kuvvetin büyüklüğü arttıkça yapılan fiziksel iş miktarı da doğru orantılı olarak artar.",
+        "points": 17,
+        "contextText": "Kuvvet uygulanmadan yol alma durumunda fiziksel iş analizi.",
+        "stimulus": "Fen bilimleri laboratuvarında sürtünmesiz buz pisti üzerinde duran bir hokey diskine anlık bir vuruş yapılmış ve disk vuruş bittikten sonra sürtünmesiz pistte 20 metre boyunca sabit süratle kayarak ilerlemiştir.",
+        "questionText": "Diskin vuruş anı bittikten sonraki 20 metrelik serbest kayma hareketi sırasında fiziksel anlamda İŞ YAPILMIŞ MIDIR? Kuvvet ve yer değiştirme şartları açısından gerekçelendiriniz.",
+        "solutionExplanation": "Serbest kayma sırasında cisme etki eden yatay bir net kuvvet yoktur. Kuvvet olmadığı için (F=0) yol alınsa bile iş yapılmaz.",
+        "modelAnswer": "• Fiziksel Anlamda İş: YAPILMAMIŞTIR.\n• Gerekçelendirme: Fiziksel anlamda iş yapılabilmesi için iki temel şart vardır: 1. Cisme bir kuvvet uygulanmalıdır, 2. Cisim bu kuvvet doğrultusunda yol almalıdır. Vuruş bittikten sonraki serbest kayma esnasında disk eylemsizlik kuralıyla ilerler, cisme hareket doğrultusunda uygulanan bir net kuvvet yoktur (F = 0). Kuvvet uygulanmadığı için yol alınmasına rağmen fiziksel anlamda iş yapılmaz.",
         "rubric": [
           {
-            "criterion": "a şıkkında Selim'in daha çok iş yaptığının tespiti",
+            "criterion": "İş yapılmadığının (HAYIR) doğru tespiti",
             "points": 7
           },
           {
-            "criterion": "b şıkkında yol eşitken kuvvet arttıkça işin artacağının gerekçelendirilmesi",
-            "points": 9
+            "criterion": "Kuvvet uygulanmadığı (F = 0) için iş şartının sağlanmadığının gerekçelendirilmesi",
+            "points": 10
           }
-        ],
-        "questionNumber": 5,
-        "points": 16,
-        "difficulty": "Orta"
+        ]
       },
       {
-        "outcomeCode": "FB.7.2.2",
-        "outcomeTitle": "FB.7.2.2. Enerji çeşitlerinden kinetik ve potansiyel enerjiyi karşılaştırabilme",
+        "questionNumber": 5,
+        "outcomeCode": "FB.7.2.1",
+        "outcomeTitle": "FB.7.2.1. Fiziksel anlamda yapılan işin bağlı olduğu faktörlere ilişkin bilimsel çıkarım yapabilme",
+        "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
-        "contextText": "Kinetik enerjinin kütle ve sürat ilişkisi.",
-        "stimulus": "Düz ve sürtünmesiz bir karayolunda aynı 60 km/h süratle hareket eden boş bir kamyon ile küçük bir otomobil aynı anda frene basmaktadır.",
-        "questionText": "a) Kamyon ve otomobilin kinetik (hareket) enerjilerini karşılaştırınız. Hangisinin kinetik enerjisi daha büyüktür? Neden?\nb) Otomobilin kamyonla aynı kinetik enerjiye ulaşması için sürati nasıl değiştirilmelidir?",
-        "solutionExplanation": "Süratler eşitken kütlesi büyük olan kamyonun kinetik enerjisi fazladır. Otomobilin sürati artırılmalıdır.",
-        "modelAnswer": "a) Kamyonun kinetik enerjisi daha büyüktür. Çünkü hareket halindeki cisimlerin süratleri eşit olduğunda kütlesi daha büyük olan cismin kinetik enerjisi daha fazla olur.\nb) Kütlesi küçük olan otomobilin kamyonla aynı enerjiye ulaşabilmesi için süratinin artırılması gerekir.",
+        "points": 17,
+        "contextText": "İnşaat vincinin paletleri yukarı kaldırırken yer çekimine karşı yaptığı iş miktarı.",
+        "stimulus": "Bir inşaat şantiyesinde kule vinç, zemin üzerinde duran 400 kg kütleli (ağırlığı 4000 N olan) tuğla paletini düşey doğrultuda sabit süratle 15 metre yüksekliğindeki 4. kata çıkarmaktadır.",
+        "questionText": "a) Vincin tuğla paletini 4. kata çıkarırken YER ÇEKİMİ KUVVETİNE KARŞI yaptığı işi Joule (J) cinsinden hesaplayınız.\nb) Tuğla paleti 4. katta havada sabit asılı tutulurken vincin yer çekimine karşı iş yapıp yapmadığını açıklayınız.",
+        "solutionExplanation": "W = F x h = 4000 N x 15 m = 60000 J. Sabit tutulurken yer değiştirme sıfırdır, iş yapılmaz.",
+        "modelAnswer": "a) Hesaplama: W = Kuvvet x Alınan Yol = Ağırlık x Yükseklik\nW = 4000 N x 15 m = 60.000 Joule (60 kJ)\nb) Açıklama: Tuğla paleti havada sabit tutulurken vinç yukarı yönlü kuvvet uygulamaktadır ancak yükün yer değiştirmesi sıfırdır (h = 0). Fiziksel anlamda iş için hareket ve yer değiştirme şart olduğundan bu esnada yer çekimine karşı iş yapılmaz.",
         "rubric": [
           {
-            "criterion": "a şıkkında kamyonun kinetik enerjisinin büyük olduğunun ve kütle gerekçesinin yazılması",
+            "criterion": "a şıkkında iş formülüyle 60.000 Joule sonucunun doğru bulunması",
             "points": 9
           },
           {
-            "criterion": "b şıkkında otomobilin süratinin artırılması gerektiğinin belirtilmesi",
-            "points": 7
+            "criterion": "b şıkkında yer değiştirme sıfır olduğu için iş yapılmadığının belirtilmesi",
+            "points": 8
           }
-        ],
+        ]
+      },
+      {
         "questionNumber": 6,
+        "outcomeCode": "FB.7.2.2",
+        "outcomeTitle": "FB.7.2.2. Enerji çeşitlerinden kinetik ve potansiyel enerjiyi karşılaştırabilme",
+        "difficulty": "Zor",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
         "points": 16,
-        "difficulty": "Zor"
+        "contextText": "Hız treninde potansiyel ve kinetik enerjinin birbirine dönüşümü.",
+        "stimulus": "Sürtünmelerin önemsenmediği bir lunapark hız treni (roller coaster) rayında tren:\n• K noktası: Rayın en tepe noktası (yerden yükseklik maksimum, sürat sıfır)\n• L noktası: Rayın zemin seviyesindeki en alt noktası (yükseklik sıfır, sürat maksimum)\narasında hareket etmektedir.",
+        "questionText": "a) K noktasında trenin sahip olduğu enerji türünü ve L noktasına indiğinde bu enerjinin hangi enerji türüne dönüştüğünü yazınız.\nb) Sürtünmesiz bu sistemde tren aşağı inerken 'Toplam Mekanik Enerji'nin değişip değişmeyeceğini enerjinin korunumu kanunuyla açıklayınız.",
+        "solutionExplanation": "K noktasında çekim potansiyel enerjisi vardır. L noktasında kinetik enerjiye dönüşür. Toplam mekanik enerji korunur.",
+        "modelAnswer": "a) Enerji Türleri ve Dönüşüm: K noktasında tren maksimum 'Çekim Potansiyel Enerjisi'ne sahiptir. L noktasına indiğinde bu potansiyel enerjinin tamamı 'Kinetik Enerji'ye dönüşür.\nb) Toplam Mekanik Enerji: DEĞİŞMEZ (Korunur). Enerjinin korunumu kanununa göre enerji yoktan var edilemez, vardan yok edilemez; yalnızca tür değiştirir. Sürtünme olmadığı için azalan çekim potansiyel enerjisi kadar kinetik enerji artar ve toplam mekanik enerji sabit kalır.",
+        "rubric": [
+          {
+            "criterion": "K noktasında çekim potansiyel, L noktasında kinetik enerjiye dönüşümün belirtilmesi",
+            "points": 8
+          },
+          {
+            "criterion": "Mekanik enerjinin korunduğunun bilimsel gerekçeyle açıklanması",
+            "points": 8
+          }
+        ]
       }
     ]
   },
@@ -12812,21 +12660,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "SB.7.1.2. Özel gereksinimli bireyler için fırsat eşitliğini sürdürmeye yönelik fikir üretebilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Tekerlekli sandalye kullanan bireyler için erişilebilirlik.",
-        "stimulus": "Aşağıdaki matriste Etkili İletişim Becerileri ve Beden Dili konusuna yönelik üç farklı durum ve özellikleri verilmiştir:\n\n| Durum / Örnek | 1. Temel Kriter | 2. Ayırt Edici Özellik | Karşılar mı? |\n| :--- | :---: | :---: | :---: |\n| 1. Durum (Örnek A) | VAR | YOK | ............ |\n| 2. Durum (Örnek B) | VAR | VAR | ............ |\n| 3. Durum (Örnek C) | YOK | YOK | ............ |",
-        "questionText": "Matristeki boşlukları özelliğin doğruluğuna göre \"EVET\" veya \"HAYIR\" yazarak doldurunuz. 2. Durum'u diğer durumlardan ayıran en temel şartı gerekçelendirerek yazınız.",
+        "stimulus": "Bedensel engelli (tekerlekli sandalye kullanan) 7. sınıf öğrencisi Umut, okuluna ve mahallesindeki kütüphaneye giderken çeşitli engellerle karşılaşmaktadır.",
+        "questionText": "Umut'un eğitim ve sosyal hayata tam katılımını sağlamak için okulda ve kütüphanede yapılması gereken 2 fiziki/mimari düzenlemeyi yazınız.",
         "solutionExplanation": "Erişilebilir rampa, engelli asansörü, genişletilmiş kapılar vb.",
-        "modelAnswer": "Tablo Tamamlaması: 1. Durum: HAYIR | 2. Durum: EVET | 3. Durum: HAYIR.\nAyırt Edici Gerekçe: 2. Durum hem temel kriteri hem de ayırt edici özelliği eksiksiz sağladığı için Etkili Dinleme: Karşıdaki konuşurken sözünü kesmemek, göz teması kurmak ve başıyla onaylayarak dinlediğini hissettirmek. kuralına tam uygundur.",
+        "modelAnswer": "1. Okul ve kütüphane girişlerine standartlara uygun eğimli tekerlekli sandalye rampaları ve katlar arası erişim için engelli asansörü yapılmalıdır.\n2. Kütüphanedeki çalışma masaları ve kitap reyonları arasındaki koridorlar tekerlekli sandalyenin rahatça dönebileceği genişlikte ve yükseklikte tasarlanmalıdır.",
         "rubric": [
           {
-            "criterion": "Tablodaki boşlukların hatasız doldurulması (HAYIR - EVET - HAYIR)",
-            "points": 7
-          },
-          {
-            "criterion": "2. Durum'un ayırt edici şartının ve kuralının açıklanması",
-            "points": 7
+            "criterion": "İki gerçekçi ve standartlara uygun mimari/fiziki çözümün yazılması",
+            "points": 14
           }
         ]
       },
@@ -12836,25 +12680,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "SB.7.1.3. Türk toplumunun millî meseleler karşısında gösterdiği tutum ve davranışlara ilişkin çıkarım yapabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Hata Tespiti & Adım Analizi",
+        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
         "points": 14,
         "contextText": "Kurtuluş Savaşı'nda Tekâlif-i Milliye ve halkın fedakârlığı.",
-        "stimulus": "Sude, Medya Okuryazarlığı ve İletişim Özgürlüğü ile ilgili açık uçlu bir soruyu çözerken çalışma kağıdına şu adımları yazmıştır:\n1. Adım: Verilen öncülleri ve temel kavramları belirledim.\n2. Adım: Sosyal medyada görülen her haberi teyit etmeden paylaşmak bilgi kirliliği suçuna ortak olmaktır. kabulünü yaparak işleme başladım.\n3. Adım: Bu adımdaki sonuca göre bağlantılı kuralı uyguladım.\n4. Adım: Nihai sonuca ulaştım.",
-        "questionText": "Sude'in çözüm adımlarını inceleyiniz. İlk hata kaçıncı adımda yapılmıştır? Yapılan hatanın gerekçesini açıklayarak o adımın ve nihai cevabın doğru halini yazınız.",
+        "stimulus": "Mustafa Kemal Paşa Sakarya Meydan Muharebesi öncesinde ordunun çorap, çarık, bez, silah ve yiyecek ihtiyacını karşılamak için Tekâlif-i Milliye Emirleri'ni yayımlamıştır. Türk milleti elindeki son çorabına ve buğday çuvalına kadar ordusuna teslim etmiştir.",
+        "questionText": "Türk milletinin bu tutumu, onun hangi millî ve manevi karakter özelliklerini yansıtır? İki kavram belirterek açıklayınız.",
         "solutionExplanation": "Vatanseverlik, dayanışma, bağımsızlık tutkusu ve fedakârlık.",
-        "modelAnswer": "İlk hata 2. adımda yapılmıştır. Çünkü Sude, 'Sosyal medyada görülen her haberi teyit etmeden paylaşmak bilgi kirliliği suçuna ortak olmaktır.' hatasına düşmüştür. Doğrusu: Medya Okuryazarlığı: Medyadan gelen iletileri eleştirel bir gözle analiz etme, doğru ile sahte haberi (dezenformasyon) ayırt etme becerisidir. kuralı işletilmeli ve çözüm bu esasa göre tamamlanmalıdır.",
+        "modelAnswer": "1. Vatanseverlik ve Bağımsızlık Aşkı: Türk halkı bağımsız yaşayabilmek için malını, mülkünü ve canını feda etmekten bir an bile çekinmemiştir.\n2. Topyekûn Dayanışma (İmece Ruhu): Kadını, erkeği, yaşlısıyla tüm halkın tek bir vücut halinde ordusunun arkasında kenetlenmesi eşsiz bir millî birlik şuurunu gösterir.",
         "rubric": [
           {
-            "criterion": "İlk hatanın yapıldığı adımın (2. Adım) doğru belirlenmesi",
-            "points": 5
+            "criterion": "İki millî/manevi değerin doğru belirlenmesi",
+            "points": 7
           },
           {
-            "criterion": "Yapılan kavramsal/işlemsel hatanın gerekçelendirilmesi",
-            "points": 5
-          },
-          {
-            "criterion": "Adımın ve sonucun doğru kurala göre düzeltilmesi",
-            "points": 4
+            "criterion": "Tekâlif-i Milliye ruhunun gerekçeli açıklanması",
+            "points": 7
           }
         ]
       },
@@ -12864,20 +12704,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "SB.7.1.3. Türk toplumunun millî meseleler karşısında gösterdiği tutum ve davranışlara ilişkin çıkarım yapabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
         "points": 14,
         "contextText": "Doğal afetlerde ve depremlerde milletimizin kenetlenmesi.",
-        "stimulus": "Medya Okuryazarlığı ve İletişim Özgürlüğü kapsamında karşılaşılan bir durumu çözmek için uzmanlar iki farklı yöntem geliştirmiştir:\n1. Yöntem: Kısa vadeli hızlı çözüm sunan ancak 'Sosyal medyada görülen her haberi teyit etmeden paylaşmak bilgi kirliliği suçuna ortak olmaktır.' riskini barındıran yaklaşım.\n2. Yöntem: Başlangıçta daha fazla dikkat ve aşama gerektiren ancak 'Medya Okuryazarlığı: Medyadan gelen iletileri eleştirel bir gözle analiz etme, doğru ile sahte haberi (dezenformasyon) ayırt etme becerisidir.' ilkesine tam uyan sürdürülebilir yaklaşım.",
-        "questionText": "Verilen iki yaklaşımı Medya Okuryazarlığı ve İletişim Özgürlüğü ilkeleri bakımından değerlendiriniz. Hangi yöntem daha uygundur? Seçtiğiniz yöntemin güçlü yönlerini ve diğer yöntemin taşıdığı riskleri gerekçelendiriniz.",
-        "solutionExplanation": "Milli birlik, beraberlik ve yardımlaşma şuuru.",
-        "modelAnswer": "2. Yöntem uygundur. Çünkü Medya Okuryazarlığı: Medyadan gelen iletileri eleştirel bir gözle analiz etme, doğru ile sahte haberi (dezenformasyon) ayırt etme becerisidir. ilkesini tam olarak karşılamaktadır. 1. Yöntem ise kısa vadeli olsa da 'Sosyal medyada görülen her haberi teyit etmeden paylaşmak bilgi kirliliği suçuna ortak olmaktır.' sakıncasını doğuracağı için hedeflenen amaca ters düşer.",
+        "stimulus": "Mustafa Kemal Paşa Sakarya Meydan Muharebesi öncesinde ordunun çorap, çarık, bez, silah ve yiyecek ihtiyacını karşılamak için Tekâlif-i Milliye Emirleri'ni yayımlamıştır. Türk milleti elindeki son çorabına ve buğday çuvalına kadar ordusuna teslim etmiştir.",
+        "questionText": "Türk milletinin bu tutumu, onun hangi millî ve manevi karakter özelliklerini yansıtır? İki kavram belirterek açıklayınız.",
+        "solutionExplanation": "Vatanseverlik, dayanışma, bağımsızlık tutkusu ve fedakârlık.",
+        "modelAnswer": "1. Vatanseverlik ve Bağımsızlık Aşkı: Türk halkı bağımsız yaşayabilmek için malını, mülkünü ve canını feda etmekten bir an bile çekinmemiştir.\n2. Topyekûn Dayanışma (İmece Ruhu): Kadını, erkeği, yaşlısıyla tüm halkın tek bir vücut halinde ordusunun arkasında kenetlenmesi eşsiz bir millî birlik şuurunu gösterir.",
         "rubric": [
           {
-            "criterion": "Doğru yaklaşımın (2. Yöntem) tespiti ve güçlü yönünün gerekçelendirilmesi",
+            "criterion": "İki millî/manevi değerin doğru belirlenmesi",
             "points": 7
           },
           {
-            "criterion": "1. Yöntemin taşıdığı kavramsal riskin açıklanması",
+            "criterion": "Tekâlif-i Milliye ruhunun gerekçeli açıklanması",
             "points": 7
           }
         ]
@@ -13002,20 +12842,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "SB.7.1.2. Özel gereksinimli bireyler için fırsat eşitliğini sürdürmeye yönelik fikir üretebilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Görme engelli bireyler için kentsel erişilebilirlik.",
-        "stimulus": "Aşağıdaki matriste Etkili İletişim Becerileri ve Beden Dili konusuna yönelik üç farklı durum ve özellikleri verilmiştir:\n\n| Durum / Örnek | 1. Temel Kriter | 2. Ayırt Edici Özellik | Karşılar mı? |\n| :--- | :---: | :---: | :---: |\n| 1. Durum (Örnek A) | VAR | YOK | ............ |\n| 2. Durum (Örnek B) | VAR | VAR | ............ |\n| 3. Durum (Örnek C) | YOK | YOK | ............ |",
-        "questionText": "Matristeki boşlukları özelliğin doğruluğuna göre \"EVET\" veya \"HAYIR\" yazarak doldurunuz. 2. Durum'u diğer durumlardan ayıran en temel şartı gerekçelendirerek yazınız.",
+        "stimulus": "Beyaz baston kullanan görme engelli bir vatandaş, şehrin ana caddesinde yürürken ve karşıdan karşıya geçerken ciddi güvenlik sorunları yaşamaktadır.",
+        "questionText": "Belediyelerin ve toplumun görme engelli bireylerin bağımsız hareket edebilmesi için şehirde uygulaması gereken 2 kentsel çözümü yazınız.",
         "solutionExplanation": "Sarı kabartmalı hissedilebilir kılavuz yollar, sesli yaya geçidi sinyalizasyonları.",
-        "modelAnswer": "Tablo Tamamlaması: 1. Durum: HAYIR | 2. Durum: EVET | 3. Durum: HAYIR.\nAyırt Edici Gerekçe: 2. Durum hem temel kriteri hem de ayırt edici özelliği eksiksiz sağladığı için Etkili Dinleme: Karşıdaki konuşurken sözünü kesmemek, göz teması kurmak ve başıyla onaylayarak dinlediğini hissettirmek. kuralına tam uygundur.",
+        "modelAnswer": "1. Kaldırımlara ve toplu taşıma istasyonlarına sürekliliği bozulmayan kabartmalı sarı hissedilebilir takip yüzeyleri (kılavuz çizgiler) döşenmelidir ve bu yüzeylerin üzeri araç veya eşyalarla kapatılmamalıdır.\n2. Yaya geçitlerindeki trafik ışıklarına 'geç' ve 'dur' durumunu ses tonuyla bildiren sesli yaya sinyalizasyon butonları monte edilmelidir.",
         "rubric": [
           {
-            "criterion": "Tablodaki boşlukların hatasız doldurulması (HAYIR - EVET - HAYIR)",
+            "criterion": "Hissedilebilir sarı yüzey uygulamasının yazılması",
             "points": 7
           },
           {
-            "criterion": "2. Durum'un ayırt edici şartının ve kuralının açıklanması",
+            "criterion": "Sesli trafik sinyalizasyonu uygulamasının yazılması",
             "points": 7
           }
         ]
@@ -13026,25 +12866,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "SB.7.1.2. Özel gereksinimli bireyler için fırsat eşitliğini sürdürmeye yönelik fikir üretebilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Hata Tespiti & Adım Analizi",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "İşitme engelli bireylerin kamusal hizmete erişimi.",
-        "stimulus": "Sude, Etkili İletişim Becerileri ve Beden Dili ile ilgili açık uçlu bir soruyu çözerken çalışma kağıdına şu adımları yazmıştır:\n1. Adım: Verilen öncülleri ve temel kavramları belirledim.\n2. Adım: Dinlerken kafasında cevap hazırlamak etkili dinleme değil, iletişim engelidir. kabulünü yaparak işleme başladım.\n3. Adım: Bu adımdaki sonuca göre bağlantılı kuralı uyguladım.\n4. Adım: Nihai sonuca ulaştım.",
-        "questionText": "Sude'in çözüm adımlarını inceleyiniz. İlk hata kaçıncı adımda yapılmıştır? Yapılan hatanın gerekçesini açıklayarak o adımın ve nihai cevabın doğru halini yazınız.",
-        "solutionExplanation": "Türk İşaret Dili bilen personeller istihdam edilmeli veya görüntülü işaret dili tercüme merkezleri kurulmalıdır.",
-        "modelAnswer": "İlk hata 2. adımda yapılmıştır. Çünkü Sude, 'Dinlerken kafasında cevap hazırlamak etkili dinleme değil, iletişim engelidir.' hatasına düşmüştür. Doğrusu: Etkili Dinleme: Karşıdaki konuşurken sözünü kesmemek, göz teması kurmak ve başıyla onaylayarak dinlediğini hissettirmek. kuralı işletilmeli ve çözüm bu esasa göre tamamlanmalıdır.",
+        "stimulus": "Beyaz baston kullanan görme engelli bir vatandaş, şehrin ana caddesinde yürürken ve karşıdan karşıya geçerken ciddi güvenlik sorunları yaşamaktadır.",
+        "questionText": "Belediyelerin ve toplumun görme engelli bireylerin bağımsız hareket edebilmesi için şehirde uygulaması gereken 2 kentsel çözümü yazınız.",
+        "solutionExplanation": "Sarı kabartmalı hissedilebilir kılavuz yollar, sesli yaya geçidi sinyalizasyonları.",
+        "modelAnswer": "1. Kaldırımlara ve toplu taşıma istasyonlarına sürekliliği bozulmayan kabartmalı sarı hissedilebilir takip yüzeyleri (kılavuz çizgiler) döşenmelidir ve bu yüzeylerin üzeri araç veya eşyalarla kapatılmamalıdır.\n2. Yaya geçitlerindeki trafik ışıklarına 'geç' ve 'dur' durumunu ses tonuyla bildiren sesli yaya sinyalizasyon butonları monte edilmelidir.",
         "rubric": [
           {
-            "criterion": "İlk hatanın yapıldığı adımın (2. Adım) doğru belirlenmesi",
-            "points": 5
+            "criterion": "Hissedilebilir sarı yüzey uygulamasının yazılması",
+            "points": 7
           },
           {
-            "criterion": "Yapılan kavramsal/işlemsel hatanın gerekçelendirilmesi",
-            "points": 5
-          },
-          {
-            "criterion": "Adımın ve sonucun doğru kurala göre düzeltilmesi",
-            "points": 4
+            "criterion": "Sesli trafik sinyalizasyonu uygulamasının yazılması",
+            "points": 7
           }
         ]
       },
@@ -13054,20 +12890,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "SB.7.1.3. Türk toplumunun millî meseleler karşısında gösterdiği tutum ve davranışlara ilişkin çıkarım yapabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
         "points": 14,
         "contextText": "Çanakkale Savaşı'nda 15'liler ve vatan sevgisi.",
-        "stimulus": "Medya Okuryazarlığı ve İletişim Özgürlüğü kapsamında karşılaşılan bir durumu çözmek için uzmanlar iki farklı yöntem geliştirmiştir:\n1. Yöntem: Kısa vadeli hızlı çözüm sunan ancak 'Sosyal medyada görülen her haberi teyit etmeden paylaşmak bilgi kirliliği suçuna ortak olmaktır.' riskini barındıran yaklaşım.\n2. Yöntem: Başlangıçta daha fazla dikkat ve aşama gerektiren ancak 'Medya Okuryazarlığı: Medyadan gelen iletileri eleştirel bir gözle analiz etme, doğru ile sahte haberi (dezenformasyon) ayırt etme becerisidir.' ilkesine tam uyan sürdürülebilir yaklaşım.",
-        "questionText": "Verilen iki yaklaşımı Medya Okuryazarlığı ve İletişim Özgürlüğü ilkeleri bakımından değerlendiriniz. Hangi yöntem daha uygundur? Seçtiğiniz yöntemin güçlü yönlerini ve diğer yöntemin taşıdığı riskleri gerekçelendiriniz.",
+        "stimulus": "1915 yılında Çanakkale Cephesi'nde vatan tehlikeye düştüğünde Galatasaray Lisesi, Konya Lisesi ve Kastamonu Lisesi'nin 15-16 yaşındaki son sınıf öğrencileri gönüllü olarak askere yazılmış, o yıl pek çok okul mezun verememiştir.",
+        "questionText": "Genç yaştaki lise öğrencilerinin eğitimi bırakıp cepheye koşması, Türk milletinin millî bağımsızlık anlayışı hakkında ne gösterir? Açıklayınız.",
         "solutionExplanation": "Vatan savunmasının her şeyin üstünde tutulduğunu, nesiller boyu aktarılan bağımsızlık andını gösterir.",
-        "modelAnswer": "2. Yöntem uygundur. Çünkü Medya Okuryazarlığı: Medyadan gelen iletileri eleştirel bir gözle analiz etme, doğru ile sahte haberi (dezenformasyon) ayırt etme becerisidir. ilkesini tam olarak karşılamaktadır. 1. Yöntem ise kısa vadeli olsa da 'Sosyal medyada görülen her haberi teyit etmeden paylaşmak bilgi kirliliği suçuna ortak olmaktır.' sakıncasını doğuracağı için hedeflenen amaca ters düşer.",
+        "modelAnswer": "Bu durum, Türk milletinde 'vatan mevzubahis olduğunda her şeyin teferruat olduğu' inancının en somut kanıtıdır. Geleceğin aydınları olan lise gençliği dahi kişisel istikballerini ve rahat hayatlarını bir kenara bırakarak bağımsız yaşama uğruna canlarını feda etmeyi şeref saymıştır.",
         "rubric": [
           {
-            "criterion": "Doğru yaklaşımın (2. Yöntem) tespiti ve güçlü yönünün gerekçelendirilmesi",
+            "criterion": "Vatan sevgisinin ve bağımsızlığın önceliğinin vurgulanması",
             "points": 7
           },
           {
-            "criterion": "1. Yöntemin taşıdığı kavramsal riskin açıklanması",
+            "criterion": "Gençlerin fedakârlığının millî şuur boyutuyla gerekçelendirilmesi",
             "points": 7
           }
         ]
@@ -13192,21 +13028,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "SB.7.1.2. Özel gereksinimli bireyler için fırsat eşitliğini sürdürmeye yönelik fikir üretebilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 13,
         "contextText": "Eğitimde fırsat eşitliği ve kaynaştırma eğitimi.",
-        "stimulus": "Aşağıdaki matriste Etkili İletişim Becerileri ve Beden Dili konusuna yönelik üç farklı durum ve özellikleri verilmiştir:\n\n| Durum / Örnek | 1. Temel Kriter | 2. Ayırt Edici Özellik | Karşılar mı? |\n| :--- | :---: | :---: | :---: |\n| 1. Durum (Örnek A) | VAR | YOK | ............ |\n| 2. Durum (Örnek B) | VAR | VAR | ............ |\n| 3. Durum (Örnek C) | YOK | YOK | ............ |",
-        "questionText": "Matristeki boşlukları özelliğin doğruluğuna göre \"EVET\" veya \"HAYIR\" yazarak doldurunuz. 2. Durum'u diğer durumlardan ayıran en temel şartı gerekçelendirerek yazınız.",
+        "stimulus": "Öğrenme güçlüğü (disleksi) çeken bir öğrencinin sınavlara diğer öğrencilerle tıpatıp aynı sürede ve aynı formatta girmesi onu zorlamaktadır.",
+        "questionText": "Bu öğrenci için MEB sınavlarında sağlanan 2 adil destek uygulamasını (fırsat eşitliği tedbirini) yazınız.",
         "solutionExplanation": "Okuyucu/kodlayıcı desteği, ek sınav süresi, sadeleştirilmiş soru kağıdı.",
-        "modelAnswer": "Tablo Tamamlaması: 1. Durum: HAYIR | 2. Durum: EVET | 3. Durum: HAYIR.\nAyırt Edici Gerekçe: 2. Durum hem temel kriteri hem de ayırt edici özelliği eksiksiz sağladığı için Etkili Dinleme: Karşıdaki konuşurken sözünü kesmemek, göz teması kurmak ve başıyla onaylayarak dinlediğini hissettirmek. kuralına tam uygundur.",
+        "modelAnswer": "1. Disleksili öğrenciye sınav esnasında soruları tane tane seslendirecek özel bir 'okuyucu öğretmen' ve cevapları işaretleyecek 'kodlayıcı' görevlendirilmesi.\n2. Okuma hızındaki zorluğu dengelemek adına öğrenciye resmi ek sınav süresi (örneğin +15-20 dakika) tanımlanması.",
         "rubric": [
           {
-            "criterion": "Tablodaki boşlukların hatasız doldurulması (HAYIR - EVET - HAYIR)",
-            "points": 6
+            "criterion": "Okuyucu/kodlayıcı desteğinin belirtilmesi",
+            "points": 7
           },
           {
-            "criterion": "2. Durum'un ayırt edici şartının ve kuralının açıklanması",
-            "points": 7
+            "criterion": "Ek süre tanımlamasının belirtilmesi",
+            "points": 6
           }
         ]
       },
@@ -13216,25 +13052,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "SB.7.1.3. Türk toplumunun millî meseleler karşısında gösterdiği tutum ve davranışlara ilişkin çıkarım yapabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Hata Tespiti & Adım Analizi",
+        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
         "points": 13,
         "contextText": "Millî Mücadele'de Kastamonu kağnı kolları ve kadın kahramanlar.",
-        "stimulus": "Sude, Medya Okuryazarlığı ve İletişim Özgürlüğü ile ilgili açık uçlu bir soruyu çözerken çalışma kağıdına şu adımları yazmıştır:\n1. Adım: Verilen öncülleri ve temel kavramları belirledim.\n2. Adım: Sosyal medyada görülen her haberi teyit etmeden paylaşmak bilgi kirliliği suçuna ortak olmaktır. kabulünü yaparak işleme başladım.\n3. Adım: Bu adımdaki sonuca göre bağlantılı kuralı uyguladım.\n4. Adım: Nihai sonuca ulaştım.",
-        "questionText": "Sude'in çözüm adımlarını inceleyiniz. İlk hata kaçıncı adımda yapılmıştır? Yapılan hatanın gerekçesini açıklayarak o adımın ve nihai cevabın doğru halini yazınız.",
+        "stimulus": "Kastamonu İnebolu Limanı'na indirilen cephaneleri sırtında çocuğuyla, kağnı arabasında cepheye taşıyan Şerife Bacı, mermiler ıslanmasın diye kazağını cephanelerin üzerine örtmüş ve donarak şehit olmuştur.",
+        "questionText": "Şerife Bacı'nın bu destansı fedakârlığı, Türk kadınının ve milletinin vatan savunmasındaki rolüne dair neyi ispatlar? Açıklayınız.",
         "solutionExplanation": "Vatan savunmasının sadece cephedeki askerle değil, kadın-erkek tüm milletin topyekûn ruhuyla yapıldığını gösterir.",
-        "modelAnswer": "İlk hata 2. adımda yapılmıştır. Çünkü Sude, 'Sosyal medyada görülen her haberi teyit etmeden paylaşmak bilgi kirliliği suçuna ortak olmaktır.' hatasına düşmüştür. Doğrusu: Medya Okuryazarlığı: Medyadan gelen iletileri eleştirel bir gözle analiz etme, doğru ile sahte haberi (dezenformasyon) ayırt etme becerisidir. kuralı işletilmeli ve çözüm bu esasa göre tamamlanmalıdır.",
+        "modelAnswer": "Bu fedakârlık, Türk milletinde vatan savunmasının sadece ordunun değil, kadın-erkek, genç-yaşlı bütün bir milletin ortak davası (topyekûn seferberlik) olduğunu ispatlar. Türk kadını, evladının canını dahi vatanın bağımsızlığından sonra görerek bağımsızlık mücadelesinin en kritik taşıyıcı gücü olmuştur.",
         "rubric": [
           {
-            "criterion": "İlk hatanın yapıldığı adımın (2. Adım) doğru belirlenmesi",
-            "points": 5
+            "criterion": "Topyekûn mücadele bilincinin vurgulanması",
+            "points": 7
           },
           {
-            "criterion": "Yapılan kavramsal/işlemsel hatanın gerekçelendirilmesi",
-            "points": 5
-          },
-          {
-            "criterion": "Adımın ve sonucun doğru kurala göre düzeltilmesi",
-            "points": 3
+            "criterion": "Türk kadınının fedakârlık ve vatan sevgisinin açıklanması",
+            "points": 6
           }
         ]
       },
@@ -13244,20 +13076,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "SB.7.1.3. Türk toplumunun millî meseleler karşısında gösterdiği tutum ve davranışlara ilişkin çıkarım yapabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
         "points": 12,
         "contextText": "Kızılay ve Mehmetçik Vakfı gibi millî dayanışma kurumları.",
-        "stimulus": "Medya Okuryazarlığı ve İletişim Özgürlüğü kapsamında karşılaşılan bir durumu çözmek için uzmanlar iki farklı yöntem geliştirmiştir:\n1. Yöntem: Kısa vadeli hızlı çözüm sunan ancak 'Sosyal medyada görülen her haberi teyit etmeden paylaşmak bilgi kirliliği suçuna ortak olmaktır.' riskini barındıran yaklaşım.\n2. Yöntem: Başlangıçta daha fazla dikkat ve aşama gerektiren ancak 'Medya Okuryazarlığı: Medyadan gelen iletileri eleştirel bir gözle analiz etme, doğru ile sahte haberi (dezenformasyon) ayırt etme becerisidir.' ilkesine tam uyan sürdürülebilir yaklaşım.",
-        "questionText": "Verilen iki yaklaşımı Medya Okuryazarlığı ve İletişim Özgürlüğü ilkeleri bakımından değerlendiriniz. Hangi yöntem daha uygundur? Seçtiğiniz yöntemin güçlü yönlerini ve diğer yöntemin taşıdığı riskleri gerekçelendiriniz.",
-        "solutionExplanation": "Yardımlaşma, diğerkâmlık, şehit ve gazilere vefa, devlet-millet bütünleşmesi.",
-        "modelAnswer": "2. Yöntem uygundur. Çünkü Medya Okuryazarlığı: Medyadan gelen iletileri eleştirel bir gözle analiz etme, doğru ile sahte haberi (dezenformasyon) ayırt etme becerisidir. ilkesini tam olarak karşılamaktadır. 1. Yöntem ise kısa vadeli olsa da 'Sosyal medyada görülen her haberi teyit etmeden paylaşmak bilgi kirliliği suçuna ortak olmaktır.' sakıncasını doğuracağı için hedeflenen amaca ters düşer.",
+        "stimulus": "Kastamonu İnebolu Limanı'na indirilen cephaneleri sırtında çocuğuyla, kağnı arabasında cepheye taşıyan Şerife Bacı, mermiler ıslanmasın diye kazağını cephanelerin üzerine örtmüş ve donarak şehit olmuştur.",
+        "questionText": "Şerife Bacı'nın bu destansı fedakârlığı, Türk kadınının ve milletinin vatan savunmasındaki rolüne dair neyi ispatlar? Açıklayınız.",
+        "solutionExplanation": "Vatan savunmasının sadece cephedeki askerle değil, kadın-erkek tüm milletin topyekûn ruhuyla yapıldığını gösterir.",
+        "modelAnswer": "Bu fedakârlık, Türk milletinde vatan savunmasının sadece ordunun değil, kadın-erkek, genç-yaşlı bütün bir milletin ortak davası (topyekûn seferberlik) olduğunu ispatlar. Türk kadını, evladının canını dahi vatanın bağımsızlığından sonra görerek bağımsızlık mücadelesinin en kritik taşıyıcı gücü olmuştur.",
         "rubric": [
           {
-            "criterion": "Doğru yaklaşımın (2. Yöntem) tespiti ve güçlü yönünün gerekçelendirilmesi",
+            "criterion": "Topyekûn mücadele bilincinin vurgulanması",
             "points": 6
           },
           {
-            "criterion": "1. Yöntemin taşıdığı kavramsal riskin açıklanması",
+            "criterion": "Türk kadınının fedakârlık ve vatan sevgisinin açıklanması",
             "points": 6
           }
         ]
@@ -13394,21 +13226,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "SB.7.1.2. Özel gereksinimli bireyler için fırsat eşitliğini sürdürmeye yönelik fikir üretebilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Engelli otopark yerleri ve toplumsal saygı.",
-        "stimulus": "Aşağıdaki matriste Etkili İletişim Becerileri ve Beden Dili konusuna yönelik üç farklı durum ve özellikleri verilmiştir:\n\n| Durum / Örnek | 1. Temel Kriter | 2. Ayırt Edici Özellik | Karşılar mı? |\n| :--- | :---: | :---: | :---: |\n| 1. Durum (Örnek A) | VAR | YOK | ............ |\n| 2. Durum (Örnek B) | VAR | VAR | ............ |\n| 3. Durum (Örnek C) | YOK | YOK | ............ |",
-        "questionText": "Matristeki boşlukları özelliğin doğruluğuna göre \"EVET\" veya \"HAYIR\" yazarak doldurunuz. 2. Durum'u diğer durumlardan ayıran en temel şartı gerekçelendirerek yazınız.",
+        "stimulus": "Bir alışveriş merkezinin tam giriş kapısının önünde yer alan mavi tabelalı 'Engelli Araç Park Yeri'ne engelli kartı olmayan sağlam bir sürücü arabasını park etmiştir.",
+        "questionText": "Bu sürücünün davranışı toplum sözleşmesi ve fırsat eşitliği açısından neden büyük bir hak ihlalidir? Açıklayınız.",
         "solutionExplanation": "Özel gereksinimli bireyin en temel hareket özgürlüğünü engeller, pozitif ayrımcılık hakkını gasp eder.",
-        "modelAnswer": "Tablo Tamamlaması: 1. Durum: HAYIR | 2. Durum: EVET | 3. Durum: HAYIR.\nAyırt Edici Gerekçe: 2. Durum hem temel kriteri hem de ayırt edici özelliği eksiksiz sağladığı için Etkili Dinleme: Karşıdaki konuşurken sözünü kesmemek, göz teması kurmak ve başıyla onaylayarak dinlediğini hissettirmek. kuralına tam uygundur.",
+        "modelAnswer": "Özel gereksinimli bireylerin hayatlarını kolaylaştırmak için yasal olarak tanınan pozitif ayrımcılık ve erişim hakkının bencilce gasp edilmesidir. Engelli bireyin hareket özgürlüğünü sıfırlayarak onu AVM'ye veya hizmete ulaşamaz hale getiren ağır bir kul hakkı ve toplumsal saygısızlıktır.",
         "rubric": [
           {
-            "criterion": "Tablodaki boşlukların hatasız doldurulması (HAYIR - EVET - HAYIR)",
-            "points": 7
-          },
-          {
-            "criterion": "2. Durum'un ayırt edici şartının ve kuralının açıklanması",
-            "points": 7
+            "criterion": "Pozitif ayrımcılık ve hak ihlali boyutunun açıklanması",
+            "points": 14
           }
         ]
       },
@@ -13418,25 +13246,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "SB.7.1.2. Özel gereksinimli bireyler için fırsat eşitliğini sürdürmeye yönelik fikir üretebilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Hata Tespiti & Adım Analizi",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "İstihdamda fırsat eşitliği ve engelli kotaları.",
-        "stimulus": "Sude, Etkili İletişim Becerileri ve Beden Dili ile ilgili açık uçlu bir soruyu çözerken çalışma kağıdına şu adımları yazmıştır:\n1. Adım: Verilen öncülleri ve temel kavramları belirledim.\n2. Adım: Dinlerken kafasında cevap hazırlamak etkili dinleme değil, iletişim engelidir. kabulünü yaparak işleme başladım.\n3. Adım: Bu adımdaki sonuca göre bağlantılı kuralı uyguladım.\n4. Adım: Nihai sonuca ulaştım.",
-        "questionText": "Sude'in çözüm adımlarını inceleyiniz. İlk hata kaçıncı adımda yapılmıştır? Yapılan hatanın gerekçesini açıklayarak o adımın ve nihai cevabın doğru halini yazınız.",
-        "solutionExplanation": "Pozitif ayrımcılık ile ekonomik bağımsızlık kazandırmak ve topluma üretken bireyler olarak katmak.",
-        "modelAnswer": "İlk hata 2. adımda yapılmıştır. Çünkü Sude, 'Dinlerken kafasında cevap hazırlamak etkili dinleme değil, iletişim engelidir.' hatasına düşmüştür. Doğrusu: Etkili Dinleme: Karşıdaki konuşurken sözünü kesmemek, göz teması kurmak ve başıyla onaylayarak dinlediğini hissettirmek. kuralı işletilmeli ve çözüm bu esasa göre tamamlanmalıdır.",
+        "stimulus": "Bir alışveriş merkezinin tam giriş kapısının önünde yer alan mavi tabelalı 'Engelli Araç Park Yeri'ne engelli kartı olmayan sağlam bir sürücü arabasını park etmiştir.",
+        "questionText": "Bu sürücünün davranışı toplum sözleşmesi ve fırsat eşitliği açısından neden büyük bir hak ihlalidir? Açıklayınız.",
+        "solutionExplanation": "Özel gereksinimli bireyin en temel hareket özgürlüğünü engeller, pozitif ayrımcılık hakkını gasp eder.",
+        "modelAnswer": "Özel gereksinimli bireylerin hayatlarını kolaylaştırmak için yasal olarak tanınan pozitif ayrımcılık ve erişim hakkının bencilce gasp edilmesidir. Engelli bireyin hareket özgürlüğünü sıfırlayarak onu AVM'ye veya hizmete ulaşamaz hale getiren ağır bir kul hakkı ve toplumsal saygısızlıktır.",
         "rubric": [
           {
-            "criterion": "İlk hatanın yapıldığı adımın (2. Adım) doğru belirlenmesi",
-            "points": 5
-          },
-          {
-            "criterion": "Yapılan kavramsal/işlemsel hatanın gerekçelendirilmesi",
-            "points": 5
-          },
-          {
-            "criterion": "Adımın ve sonucun doğru kurala göre düzeltilmesi",
-            "points": 4
+            "criterion": "Pozitif ayrımcılık ve hak ihlali boyutunun açıklanması",
+            "points": 14
           }
         ]
       },
@@ -13446,21 +13266,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "SB.7.1.3. Türk toplumunun millî meseleler karşısında gösterdiği tutum ve davranışlara ilişkin çıkarım yapabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
         "points": 14,
         "contextText": "Kuvâ-yı Millîye ruhu ve yerel direniş.",
-        "stimulus": "Medya Okuryazarlığı ve İletişim Özgürlüğü kapsamında karşılaşılan bir durumu çözmek için uzmanlar iki farklı yöntem geliştirmiştir:\n1. Yöntem: Kısa vadeli hızlı çözüm sunan ancak 'Sosyal medyada görülen her haberi teyit etmeden paylaşmak bilgi kirliliği suçuna ortak olmaktır.' riskini barındıran yaklaşım.\n2. Yöntem: Başlangıçta daha fazla dikkat ve aşama gerektiren ancak 'Medya Okuryazarlığı: Medyadan gelen iletileri eleştirel bir gözle analiz etme, doğru ile sahte haberi (dezenformasyon) ayırt etme becerisidir.' ilkesine tam uyan sürdürülebilir yaklaşım.",
-        "questionText": "Verilen iki yaklaşımı Medya Okuryazarlığı ve İletişim Özgürlüğü ilkeleri bakımından değerlendiriniz. Hangi yöntem daha uygundur? Seçtiğiniz yöntemin güçlü yönlerini ve diğer yöntemin taşıdığı riskleri gerekçelendiriniz.",
+        "stimulus": "Mondros Ateşkes Antlaşması sonrası vatan toprakları işgal edildiğinde, düzenli ordu henüz kurulmamışken halk kendi köylerinde ve kasabalarında Kuvâ-yı Millîye birlikleri kurarak düşmana karşı direnişe geçmiştir.",
+        "questionText": "Halkın kendi imkânlarıyla Kuvâ-yı Millîye'yi kurması, Türk milletinin esarete karşı tavrını nasıl ortaya koyar? Yazınız.",
         "solutionExplanation": "Türk milletinin hiçbir şart altında esareti kabul etmeyeceğini, bağımsızlığın karakteri olduğunu kanıtlar.",
-        "modelAnswer": "2. Yöntem uygundur. Çünkü Medya Okuryazarlığı: Medyadan gelen iletileri eleştirel bir gözle analiz etme, doğru ile sahte haberi (dezenformasyon) ayırt etme becerisidir. ilkesini tam olarak karşılamaktadır. 1. Yöntem ise kısa vadeli olsa da 'Sosyal medyada görülen her haberi teyit etmeden paylaşmak bilgi kirliliği suçuna ortak olmaktır.' sakıncasını doğuracağı için hedeflenen amaca ters düşer.",
+        "modelAnswer": "Bu durum, Türk milletinin bin yıllık tarihinde asla esarete boyun eğmediğini, ordusuz ve silahsız kalsa bile kendi iradesiyle vatanını savunacak bağımsızlık tutkusuna (hürriyet aşkına) sahip olduğunu gösterir.",
         "rubric": [
           {
-            "criterion": "Doğru yaklaşımın (2. Yöntem) tespiti ve güçlü yönünün gerekçelendirilmesi",
-            "points": 7
-          },
-          {
-            "criterion": "1. Yöntemin taşıdığı kavramsal riskin açıklanması",
-            "points": 7
+            "criterion": "Esareti reddetme ve bağımsızlık tutkusunun açıklanması",
+            "points": 14
           }
         ]
       },
@@ -13552,21 +13368,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "SB.7.1.2. Özel gereksinimli bireyler için fırsat eşitliğini sürdürmeye yönelik fikir üretebilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Engelliler için toplu taşıma erişilebilirliği.",
-        "stimulus": "Etkili İletişim Becerileri ve Beden Dili konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nUmut: \"Bu durumda temel kural şudur: Dinlerken kafasında cevap hazırlamak etkili dinleme değil, iletişim engelidir.\"\nEmre: \"Hayır Umut, yanılıyorsun. Çünkü kural gereği: Etkili Dinleme: Karşıdaki konuşurken sözünü kesmemek, göz teması kurmak ve başıyla onaylayarak dinlediğini hissettirmek. Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Umut ve Emre'nin iddialarını Etkili İletişim Becerileri ve Beden Dili ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
+        "stimulus": "Şehir içi belediye otobüslerinin yüksek basamaklı olması tekerlekli sandalyeli ve yürüteç kullanan vatandaşların otobüse binmesini imkânsız hale getirmektedir.",
+        "questionText": "Belediyelerin toplu ulaşım araçlarında fırsat eşitliğini sağlamak için otobüs filosunda yapması gereken 2 teknik/fiziki iyileştirmeyi yazınız.",
         "solutionExplanation": "Alçak tabanlı otobüsler, açılır kapanır mekanik engelli rampaları, otobüs içi emniyet kemerli tekerlekli sandalye alanı.",
-        "modelAnswer": "Emre haklıdır. Çünkü Etkili Dinleme: Karşıdaki konuşurken sözünü kesmemek, göz teması kurmak ve başıyla onaylayarak dinlediğini hissettirmek.. Umut ise 'Dinlerken kafasında cevap hazırlamak etkili dinleme değil, iletişim engelidir.' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "modelAnswer": "1. Şehir içi otobüslerin tamamının kaldırım seviyesine inebilen körüklü 'alçak tabanlı' ve basamaksız modellerle değiştirilmesi.\n2. Orta kapılara tekerlekli sandalyenin kolayca içeri girmesini sağlayan manuel veya otomatik açılır kapanır tekerlekli sandalye rampalarının takılması.",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (Emre) doğru tespiti",
-            "points": 7
+            "criterion": "Alçak tabanlı basamaksız otobüs çözümünün yazılması",
+            "points": 9
           },
           {
-            "criterion": "Umut'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 10
+            "criterion": "Açılır kapanır rampa ve emniyetli alan çözümünün yazılması",
+            "points": 8
           }
         ]
       },
@@ -13576,21 +13392,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "SB.7.1.2. Özel gereksinimli bireyler için fırsat eşitliğini sürdürmeye yönelik fikir üretebilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Dijital ortamda görme engelliler için erişilebilirlik.",
-        "stimulus": "Aşağıdaki matriste Etkili İletişim Becerileri ve Beden Dili konusuna yönelik üç farklı durum ve özellikleri verilmiştir:\n\n| Durum / Örnek | 1. Temel Kriter | 2. Ayırt Edici Özellik | Karşılar mı? |\n| :--- | :---: | :---: | :---: |\n| 1. Durum (Örnek A) | VAR | YOK | ............ |\n| 2. Durum (Örnek B) | VAR | VAR | ............ |\n| 3. Durum (Örnek C) | YOK | YOK | ............ |",
-        "questionText": "Matristeki boşlukları özelliğin doğruluğuna göre \"EVET\" veya \"HAYIR\" yazarak doldurunuz. 2. Durum'u diğer durumlardan ayıran en temel şartı gerekçelendirerek yazınız.",
-        "solutionExplanation": "Ekran okuyucu uyumluluğu, görsellere betimleyici metinler (alt-text) ekleme, sesli yönlendirme.",
-        "modelAnswer": "Tablo Tamamlaması: 1. Durum: HAYIR | 2. Durum: EVET | 3. Durum: HAYIR.\nAyırt Edici Gerekçe: 2. Durum hem temel kriteri hem de ayırt edici özelliği eksiksiz sağladığı için Etkili Dinleme: Karşıdaki konuşurken sözünü kesmemek, göz teması kurmak ve başıyla onaylayarak dinlediğini hissettirmek. kuralına tam uygundur.",
+        "stimulus": "Şehir içi belediye otobüslerinin yüksek basamaklı olması tekerlekli sandalyeli ve yürüteç kullanan vatandaşların otobüse binmesini imkânsız hale getirmektedir.",
+        "questionText": "Belediyelerin toplu ulaşım araçlarında fırsat eşitliğini sağlamak için otobüs filosunda yapması gereken 2 teknik/fiziki iyileştirmeyi yazınız.",
+        "solutionExplanation": "Alçak tabanlı otobüsler, açılır kapanır mekanik engelli rampaları, otobüs içi emniyet kemerli tekerlekli sandalye alanı.",
+        "modelAnswer": "1. Şehir içi otobüslerin tamamının kaldırım seviyesine inebilen körüklü 'alçak tabanlı' ve basamaksız modellerle değiştirilmesi.\n2. Orta kapılara tekerlekli sandalyenin kolayca içeri girmesini sağlayan manuel veya otomatik açılır kapanır tekerlekli sandalye rampalarının takılması.",
         "rubric": [
           {
-            "criterion": "Tablodaki boşlukların hatasız doldurulması (HAYIR - EVET - HAYIR)",
-            "points": 8
+            "criterion": "Alçak tabanlı basamaksız otobüs çözümünün yazılması",
+            "points": 9
           },
           {
-            "criterion": "2. Durum'un ayırt edici şartının ve kuralının açıklanması",
-            "points": 9
+            "criterion": "Açılır kapanır rampa ve emniyetli alan çözümünün yazılması",
+            "points": 8
           }
         ]
       },
@@ -13600,25 +13416,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "SB.7.1.3. Türk toplumunun millî meseleler karşısında gösterdiği tutum ve davranışlara ilişkin çıkarım yapabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Hata Tespiti & Adım Analizi",
+        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
         "points": 17,
         "contextText": "Sütçü İmam ve Maraş millî direnişi.",
-        "stimulus": "Sude, Medya Okuryazarlığı ve İletişim Özgürlüğü ile ilgili açık uçlu bir soruyu çözerken çalışma kağıdına şu adımları yazmıştır:\n1. Adım: Verilen öncülleri ve temel kavramları belirledim.\n2. Adım: Sosyal medyada görülen her haberi teyit etmeden paylaşmak bilgi kirliliği suçuna ortak olmaktır. kabulünü yaparak işleme başladım.\n3. Adım: Bu adımdaki sonuca göre bağlantılı kuralı uyguladım.\n4. Adım: Nihai sonuca ulaştım.",
-        "questionText": "Sude'in çözüm adımlarını inceleyiniz. İlk hata kaçıncı adımda yapılmıştır? Yapılan hatanın gerekçesini açıklayarak o adımın ve nihai cevabın doğru halini yazınız.",
+        "stimulus": "Maraş işgal edildiğinde Fransız ve Ermeni askerlerinin Türk kadınlarının peçesine saldırması üzerine Sütçü İmam ilk kurşunu sıkarak Maraş'ın şanlı direnişini başlatmıştır.",
+        "questionText": "Sütçü İmam'ın bu ilk kurşunu, Türk milletinin millî namus ve bağımsızlık anlayışındaki kırmızı çizgisini nasıl yansıtır? Açıklayınız.",
         "solutionExplanation": "Türk milleti namusuna, bayrağına ve kutsallarına dokunulduğunda hiçbir tereddüt göstermeden canını ortaya koyar.",
-        "modelAnswer": "İlk hata 2. adımda yapılmıştır. Çünkü Sude, 'Sosyal medyada görülen her haberi teyit etmeden paylaşmak bilgi kirliliği suçuna ortak olmaktır.' hatasına düşmüştür. Doğrusu: Medya Okuryazarlığı: Medyadan gelen iletileri eleştirel bir gözle analiz etme, doğru ile sahte haberi (dezenformasyon) ayırt etme becerisidir. kuralı işletilmeli ve çözüm bu esasa göre tamamlanmalıdır.",
+        "modelAnswer": "Bu olay, Türk milletinin kutsal değerlerine, kadınların namusuna ve millî onuruna uzanan ellere karşı hiçbir güçten korkmadan, canı pahasına anında karşılık vereceğini gösterir. Maraş halkının topyekûn şahlanışına kıvılcım olmuş ve kutsallara dokunulamaz olduğunu tarihe kazımıştır.",
         "rubric": [
           {
-            "criterion": "İlk hatanın yapıldığı adımın (2. Adım) doğru belirlenmesi",
-            "points": 6
+            "criterion": "Millî namus ve haysiyet anlayışının açıklanması",
+            "points": 9
           },
           {
-            "criterion": "Yapılan kavramsal/işlemsel hatanın gerekçelendirilmesi",
-            "points": 6
-          },
-          {
-            "criterion": "Adımın ve sonucun doğru kurala göre düzeltilmesi",
-            "points": 5
+            "criterion": "Tereddütsüz direniş refleksinin gerekçelendirilmesi",
+            "points": 8
           }
         ]
       },
@@ -13628,20 +13440,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "SB.7.1.3. Türk toplumunun millî meseleler karşısında gösterdiği tutum ve davranışlara ilişkin çıkarım yapabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
         "points": 16,
         "contextText": "Millî savunma sanayii atılımlarında milletin desteği.",
-        "stimulus": "Medya Okuryazarlığı ve İletişim Özgürlüğü kapsamında karşılaşılan bir durumu çözmek için uzmanlar iki farklı yöntem geliştirmiştir:\n1. Yöntem: Kısa vadeli hızlı çözüm sunan ancak 'Sosyal medyada görülen her haberi teyit etmeden paylaşmak bilgi kirliliği suçuna ortak olmaktır.' riskini barındıran yaklaşım.\n2. Yöntem: Başlangıçta daha fazla dikkat ve aşama gerektiren ancak 'Medya Okuryazarlığı: Medyadan gelen iletileri eleştirel bir gözle analiz etme, doğru ile sahte haberi (dezenformasyon) ayırt etme becerisidir.' ilkesine tam uyan sürdürülebilir yaklaşım.",
-        "questionText": "Verilen iki yaklaşımı Medya Okuryazarlığı ve İletişim Özgürlüğü ilkeleri bakımından değerlendiriniz. Hangi yöntem daha uygundur? Seçtiğiniz yöntemin güçlü yönlerini ve diğer yöntemin taşıdığı riskleri gerekçelendiriniz.",
-        "solutionExplanation": "Tam bağımsızlığın yolunun yerli üretim ve savunma sanayiinden geçtiği bilinci.",
-        "modelAnswer": "2. Yöntem uygundur. Çünkü Medya Okuryazarlığı: Medyadan gelen iletileri eleştirel bir gözle analiz etme, doğru ile sahte haberi (dezenformasyon) ayırt etme becerisidir. ilkesini tam olarak karşılamaktadır. 1. Yöntem ise kısa vadeli olsa da 'Sosyal medyada görülen her haberi teyit etmeden paylaşmak bilgi kirliliği suçuna ortak olmaktır.' sakıncasını doğuracağı için hedeflenen amaca ters düşer.",
+        "stimulus": "Maraş işgal edildiğinde Fransız ve Ermeni askerlerinin Türk kadınlarının peçesine saldırması üzerine Sütçü İmam ilk kurşunu sıkarak Maraş'ın şanlı direnişini başlatmıştır.",
+        "questionText": "Sütçü İmam'ın bu ilk kurşunu, Türk milletinin millî namus ve bağımsızlık anlayışındaki kırmızı çizgisini nasıl yansıtır? Açıklayınız.",
+        "solutionExplanation": "Türk milleti namusuna, bayrağına ve kutsallarına dokunulduğunda hiçbir tereddüt göstermeden canını ortaya koyar.",
+        "modelAnswer": "Bu olay, Türk milletinin kutsal değerlerine, kadınların namusuna ve millî onuruna uzanan ellere karşı hiçbir güçten korkmadan, canı pahasına anında karşılık vereceğini gösterir. Maraş halkının topyekûn şahlanışına kıvılcım olmuş ve kutsallara dokunulamaz olduğunu tarihe kazımıştır.",
         "rubric": [
           {
-            "criterion": "Doğru yaklaşımın (2. Yöntem) tespiti ve güçlü yönünün gerekçelendirilmesi",
+            "criterion": "Millî namus ve haysiyet anlayışının açıklanması",
             "points": 8
           },
           {
-            "criterion": "1. Yöntemin taşıdığı kavramsal riskin açıklanması",
+            "criterion": "Tereddütsüz direniş refleksinin gerekçelendirilmesi",
             "points": 8
           }
         ]
@@ -13718,21 +13530,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "DKAB.7.1.2. Ahiret hayatının aşamalarını çözümleyebilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
         "points": 13,
         "contextText": "Kıyamet ve Ba's kavramları.",
-        "stimulus": "Dört Büyük Melek ve Görevleri konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nUmut: \"Bu durumda temel kural şudur: Kirâmen Kâtibîn melekleri insanların sağ ve solunda durarak iyi ve kötü amellerini kaydeder.\"\nEmre: \"Hayır Umut, yanılıyorsun. Çünkü kural gereği: Meleklerin Özellikleri: Nurdan yaratılmışlardır, günah işlemezler, cinsiyetleri yoktur, yemezler içmezler, daima Allah'a ibadet ederler. Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Umut ve Emre'nin iddialarını Dört Büyük Melek ve Görevleri ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
+        "stimulus": "'Sûr'a üflenir; göklerde ve yerde olanlar, Allah'ın diledikleri müstesna, baygın düşer (ölür). Sonra ona bir daha üflenir; bir de bakarsın ki onlar ayağa kalkmış bakıyorlar.' (Zümer Suresi, 68. ayet)",
+        "questionText": "Ayet metninde Sûr'a birinci ve ikinci üflenişle gerçekleşeceği bildirilen iki ahiret aşamasının adını (kavramları) sırasıyla yazınız.",
         "solutionExplanation": "İlk üfleniş Kıyamet'tir, ikinci üfleniş Ba's (yeniden diriliş)tir.",
-        "modelAnswer": "Emre haklıdır. Çünkü Meleklerin Özellikleri: Nurdan yaratılmışlardır, günah işlemezler, cinsiyetleri yoktur, yemezler içmezler, daima Allah'a ibadet ederler.. Umut ise 'Kirâmen Kâtibîn melekleri insanların sağ ve solunda durarak iyi ve kötü amellerini kaydeder.' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "modelAnswer": "1. Birinci Üfleniş: Kıyamet (Dünya hayatının son bulması, evrendeki kozmik düzenin yıkılması ve canlıların ölmesi).\n2. İkinci Üfleniş: Ba's (Ölen bütün insanların hesaba çekilmek üzere kabirlerinden yeniden diriltilmesi).",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (Emre) doğru tespiti",
-            "points": 5
+            "criterion": "Kıyamet kavramının doğru tespiti ve açıklaması",
+            "points": 7
           },
           {
-            "criterion": "Umut'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 8
+            "criterion": "Ba's (yeniden diriliş) kavramının doğru tespiti",
+            "points": 6
           }
         ]
       },
@@ -13742,21 +13554,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "DKAB.7.1.2. Ahiret hayatının aşamalarını çözümleyebilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
         "points": 13,
         "contextText": "Mizan ve Mahşer kavramları.",
-        "stimulus": "Aşağıdaki matriste Dört Büyük Melek ve Görevleri konusuna yönelik üç farklı durum ve özellikleri verilmiştir:\n\n| Durum / Örnek | 1. Temel Kriter | 2. Ayırt Edici Özellik | Karşılar mı? |\n| :--- | :---: | :---: | :---: |\n| 1. Durum (Örnek A) | VAR | YOK | ............ |\n| 2. Durum (Örnek B) | VAR | VAR | ............ |\n| 3. Durum (Örnek C) | YOK | YOK | ............ |",
-        "questionText": "Matristeki boşlukları özelliğin doğruluğuna göre \"EVET\" veya \"HAYIR\" yazarak doldurunuz. 2. Durum'u diğer durumlardan ayıran en temel şartı gerekçelendirerek yazınız.",
-        "solutionExplanation": "Mahşer toplanma yeridir; Mizan amellerin tartıldığı terazidir.",
-        "modelAnswer": "Tablo Tamamlaması: 1. Durum: HAYIR | 2. Durum: EVET | 3. Durum: HAYIR.\nAyırt Edici Gerekçe: 2. Durum hem temel kriteri hem de ayırt edici özelliği eksiksiz sağladığı için Meleklerin Özellikleri: Nurdan yaratılmışlardır, günah işlemezler, cinsiyetleri yoktur, yemezler içmezler, daima Allah'a ibadet ederler. kuralına tam uygundur.",
+        "stimulus": "'Sûr'a üflenir; göklerde ve yerde olanlar, Allah'ın diledikleri müstesna, baygın düşer (ölür). Sonra ona bir daha üflenir; bir de bakarsın ki onlar ayağa kalkmış bakıyorlar.' (Zümer Suresi, 68. ayet)",
+        "questionText": "Ayet metninde Sûr'a birinci ve ikinci üflenişle gerçekleşeceği bildirilen iki ahiret aşamasının adını (kavramları) sırasıyla yazınız.",
+        "solutionExplanation": "İlk üfleniş Kıyamet'tir, ikinci üfleniş Ba's (yeniden diriliş)tir.",
+        "modelAnswer": "1. Birinci Üfleniş: Kıyamet (Dünya hayatının son bulması, evrendeki kozmik düzenin yıkılması ve canlıların ölmesi).\n2. İkinci Üfleniş: Ba's (Ölen bütün insanların hesaba çekilmek üzere kabirlerinden yeniden diriltilmesi).",
         "rubric": [
           {
-            "criterion": "Tablodaki boşlukların hatasız doldurulması (HAYIR - EVET - HAYIR)",
-            "points": 6
+            "criterion": "Kıyamet kavramının doğru tespiti ve açıklaması",
+            "points": 7
           },
           {
-            "criterion": "2. Durum'un ayırt edici şartının ve kuralının açıklanması",
-            "points": 7
+            "criterion": "Ba's (yeniden diriliş) kavramının doğru tespiti",
+            "points": 6
           }
         ]
       },
@@ -13766,25 +13578,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "DKAB.7.1.3. Melek ve ahiret inancının insana kazandırdıkları konusunda çıkarım yapabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Hata Tespiti & Adım Analizi",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 13,
         "contextText": "Kiramen Kâtibin melekleri ve otokontrol bilinci.",
-        "stimulus": "Sude, Ahiret Hayatının Aşamaları ile ilgili açık uçlu bir soruyu çözerken çalışma kağıdına şu adımları yazmıştır:\n1. Adım: Verilen öncülleri ve temel kavramları belirledim.\n2. Adım: Haşir toplanma olayıdır; Mahşer ise toplanılan yerin (meydanın) adıdır. kabulünü yaparak işleme başladım.\n3. Adım: Bu adımdaki sonuca göre bağlantılı kuralı uyguladım.\n4. Adım: Nihai sonuca ulaştım.",
-        "questionText": "Sude'in çözüm adımlarını inceleyiniz. İlk hata kaçıncı adımda yapılmıştır? Yapılan hatanın gerekçesini açıklayarak o adımın ve nihai cevabın doğru halini yazınız.",
+        "stimulus": "Ahmet, odasında tek başınayken ve hiç kimse kendisini görmüyorken bile internette ahlaka aykırı sitelere girmemekte, haksız bir kazanç teklifini tereddütsüz reddetmektedir.",
+        "questionText": "Ahmet'in hiç kimsenin görmediği yerlerde dahi dürüst davranması, Kiramen Kâtibin meleklerine inanmanın insana kazandırdığı hangi ahlaki bilinçle açıklanır? Yazınız.",
         "solutionExplanation": "Otokontrol (öz denetim) ve her an melekler tarafından gözetlendiği şuuru.",
-        "modelAnswer": "İlk hata 2. adımda yapılmıştır. Çünkü Sude, 'Haşir toplanma olayıdır; Mahşer ise toplanılan yerin (meydanın) adıdır.' hatasına düşmüştür. Doğrusu: Ahiret Yolculuğunun Sıralaması:\n1. Kıyamet: İsrafil'in Sûr'a ilk üflemesiyle evrendeki nizamın son bulması.\n2. Ba's: İkinci üflemeyle insanların yeniden diriltilmesi.\n3. Haşir & Mahşer: Dirilen insanların hesap için toplanması ve toplanma meydanı.\n4. Mizan: Sevap ve günahların tartıldığı ilahi adalet terazisi.\n5. Cennet / Cehennem: Amellerin ebedi karşılığı. kuralı işletilmeli ve çözüm bu esasa göre tamamlanmalıdır.",
+        "modelAnswer": "Bu durum, insanın sağında ve solunda bulunan 'Kiramen Kâtibin (yazıcı melekler)' meleklerinin yapılan her iyi ve kötü ameli kaydettiği bilincinden kaynaklanan 'öz denetim (otokontrol)' duygusudur. Kişi yalnız kalsa bile asla başıboş olmadığını ve Allah'ın huzurunda hesap vereceğini bilir.",
         "rubric": [
           {
-            "criterion": "İlk hatanın yapıldığı adımın (2. Adım) doğru belirlenmesi",
-            "points": 5
+            "criterion": "Kiramen Kâtibin ve amel defteri şuurunun belirtilmesi",
+            "points": 7
           },
           {
-            "criterion": "Yapılan kavramsal/işlemsel hatanın gerekçelendirilmesi",
-            "points": 5
-          },
-          {
-            "criterion": "Adımın ve sonucun doğru kurala göre düzeltilmesi",
-            "points": 3
+            "criterion": "Otokontrol/özdenetim ahlakının gerekçeli açıklanması",
+            "points": 6
           }
         ]
       },
@@ -13794,20 +13602,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "DKAB.7.1.3. Melek ve ahiret inancının insana kazandırdıkları konusunda çıkarım yapabilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "Ahiret inancının acılara ve kayıplara karşı teselli edici gücü.",
-        "stimulus": "Ahiret Hayatının Aşamaları kapsamında karşılaşılan bir durumu çözmek için uzmanlar iki farklı yöntem geliştirmiştir:\n1. Yöntem: Kısa vadeli hızlı çözüm sunan ancak 'Haşir toplanma olayıdır; Mahşer ise toplanılan yerin (meydanın) adıdır.' riskini barındıran yaklaşım.\n2. Yöntem: Başlangıçta daha fazla dikkat ve aşama gerektiren ancak 'Ahiret Yolculuğunun Sıralaması:\n1. Kıyamet: İsrafil'in Sûr'a ilk üflemesiyle evrendeki nizamın son bulması.\n2. Ba's: İkinci üflemeyle insanların yeniden diriltilmesi.\n3. Haşir & Mahşer: Dirilen insanların hesap için toplanması ve toplanma meydanı.\n4. Mizan: Sevap ve günahların tartıldığı ilahi adalet terazisi.\n5. Cennet / Cehennem: Amellerin ebedi karşılığı.' ilkesine tam uyan sürdürülebilir yaklaşım.",
-        "questionText": "Verilen iki yaklaşımı Ahiret Hayatının Aşamaları ilkeleri bakımından değerlendiriniz. Hangi yöntem daha uygundur? Seçtiğiniz yöntemin güçlü yönlerini ve diğer yöntemin taşıdığı riskleri gerekçelendiriniz.",
-        "solutionExplanation": "Yok olma korkusunu yenme, ölümün son değil ebedi hayata geçiş olduğu bilinci, sabır ve umut aşılama.",
-        "modelAnswer": "2. Yöntem uygundur. Çünkü Ahiret Yolculuğunun Sıralaması:\n1. Kıyamet: İsrafil'in Sûr'a ilk üflemesiyle evrendeki nizamın son bulması.\n2. Ba's: İkinci üflemeyle insanların yeniden diriltilmesi.\n3. Haşir & Mahşer: Dirilen insanların hesap için toplanması ve toplanma meydanı.\n4. Mizan: Sevap ve günahların tartıldığı ilahi adalet terazisi.\n5. Cennet / Cehennem: Amellerin ebedi karşılığı. ilkesini tam olarak karşılamaktadır. 1. Yöntem ise kısa vadeli olsa da 'Haşir toplanma olayıdır; Mahşer ise toplanılan yerin (meydanın) adıdır.' sakıncasını doğuracağı için hedeflenen amaca ters düşer.",
+        "stimulus": "Ahmet, odasında tek başınayken ve hiç kimse kendisini görmüyorken bile internette ahlaka aykırı sitelere girmemekte, haksız bir kazanç teklifini tereddütsüz reddetmektedir.",
+        "questionText": "Ahmet'in hiç kimsenin görmediği yerlerde dahi dürüst davranması, Kiramen Kâtibin meleklerine inanmanın insana kazandırdığı hangi ahlaki bilinçle açıklanır? Yazınız.",
+        "solutionExplanation": "Otokontrol (öz denetim) ve her an melekler tarafından gözetlendiği şuuru.",
+        "modelAnswer": "Bu durum, insanın sağında ve solunda bulunan 'Kiramen Kâtibin (yazıcı melekler)' meleklerinin yapılan her iyi ve kötü ameli kaydettiği bilincinden kaynaklanan 'öz denetim (otokontrol)' duygusudur. Kişi yalnız kalsa bile asla başıboş olmadığını ve Allah'ın huzurunda hesap vereceğini bilir.",
         "rubric": [
           {
-            "criterion": "Doğru yaklaşımın (2. Yöntem) tespiti ve güçlü yönünün gerekçelendirilmesi",
+            "criterion": "Kiramen Kâtibin ve amel defteri şuurunun belirtilmesi",
             "points": 6
           },
           {
-            "criterion": "1. Yöntemin taşıdığı kavramsal riskin açıklanması",
+            "criterion": "Otokontrol/özdenetim ahlakının gerekçeli açıklanması",
             "points": 6
           }
         ]
@@ -13866,21 +13674,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "DKAB.7.2.1. Hac ve umre ibadetlerini çözümleyebilme",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "Hac ibadetinde İhram ve eşitlik sembolü.",
-        "stimulus": "Hac ve Umre İbadetleri konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nAlper: \"Bu durumda temel kural şudur: Umrede Arafat vakfesi ve kurban kesme zorunluluğu YOKTUR; sadece Kâbe tavafı ve Sa'y yapılır.\"\nKuzey: \"Hayır Alper, yanılıyorsun. Çünkü kural gereği: Hac: Belirli bir zamanda (Zilhicce ayı) Kâbe, Arafat ve kutsal yerleri ibadet amacıyla ziyaret etmektir (Farzdır). Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Alper ve Kuzey'nin iddialarını Hac ve Umre İbadetleri ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
+        "stimulus": "Hac ibadeti için Mekke'ye giden milyonlarca Müslüman zengin-fakir, cumhurbaşkanı-işçi ayrımı olmaksızın tüm dünyalık elbiselerini çıkararak beyaz iki parça kumaştan oluşan 'ihram' giymektedir.",
+        "questionText": "Hacdaki bu ihram uygulamasının sembolize ettiği 2 temel manevi/toplumsal anlamı yazınız.",
         "solutionExplanation": "Allah katında eşitlik, kefeni hatırlatarak ölümü ve ahireti anımsatma.",
-        "modelAnswer": "Kuzey haklıdır. Çünkü Hac: Belirli bir zamanda (Zilhicce ayı) Kâbe, Arafat ve kutsal yerleri ibadet amacıyla ziyaret etmektir (Farzdır).. Alper ise 'Umrede Arafat vakfesi ve kurban kesme zorunluluğu YOKTUR; sadece Kâbe tavafı ve Sa'y yapılır.' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "modelAnswer": "1. Mahşerdeki Eşitlik: Makam, servet, ırk ve unvanların Allah katında hiçbir üstünlük sağlamadığını, bütün insanların tek bir kefen benzeri örtü içinde eşit olduğunu gösterir.\n2. Dünyevilikten Arınma: İnsana ölümü, kefeni ve geçici dünya süslerini terk edip saf bir kul olarak Allah'ın huzuruna çıkmayı hatırlatır.",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (Kuzey) doğru tespiti",
-            "points": 5
+            "criterion": "Tüm insanların Allah katında eşitliği boyutunun yazılması",
+            "points": 6
           },
           {
-            "criterion": "Alper'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 7
+            "criterion": "Dünyadan arınma ve ölümü/mahşeri hatırlama boyutunun yazılması",
+            "points": 6
           }
         ]
       }
@@ -13932,21 +13740,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "DKAB.7.1.2. Ahiret hayatının aşamalarını çözümleyebilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
         "points": 15,
         "contextText": "Berzah (Kabir Hayatı) aşaması.",
-        "stimulus": "Dört Büyük Melek ve Görevleri konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nUmut: \"Bu durumda temel kural şudur: Kirâmen Kâtibîn melekleri insanların sağ ve solunda durarak iyi ve kötü amellerini kaydeder.\"\nEmre: \"Hayır Umut, yanılıyorsun. Çünkü kural gereği: Meleklerin Özellikleri: Nurdan yaratılmışlardır, günah işlemezler, cinsiyetleri yoktur, yemezler içmezler, daima Allah'a ibadet ederler. Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Umut ve Emre'nin iddialarını Dört Büyük Melek ve Görevleri ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
+        "stimulus": "'Onların arkasında, yeniden diriltilecekleri güne kadar bir berzah (engel) vardır.' (Mü'minûn Suresi, 100. ayet)",
+        "questionText": "İslam ahiret inancında 'Berzah' kavramını tanımlayarak, bu aşamada ölen kişinin sorgusunu gerçekleştiren meleklerin adını yazınız.",
         "solutionExplanation": "Berzah ölümle kıyamet arasındaki kabir hayatıdır. Sorguyu Münker ve Nekir melekleri yapar.",
-        "modelAnswer": "Emre haklıdır. Çünkü Meleklerin Özellikleri: Nurdan yaratılmışlardır, günah işlemezler, cinsiyetleri yoktur, yemezler içmezler, daima Allah'a ibadet ederler.. Umut ise 'Kirâmen Kâtibîn melekleri insanların sağ ve solunda durarak iyi ve kötü amellerini kaydeder.' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "modelAnswer": "• Berzah: İnsanın ölümüyle başlayan ve kıyametteki yeniden dirilişe (Ba's) kadar devam eden ara dönem, yani kabir hayatıdır.\n• Sorgu Melekleri: Münker ve Nekir melekleridir.",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (Emre) doğru tespiti",
-            "points": 6
+            "criterion": "Berzah kavramının ve zaman diliminin doğru tanımlanması",
+            "points": 8
           },
           {
-            "criterion": "Umut'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 9
+            "criterion": "Münker ve Nekir meleklerinin adının doğru yazılması",
+            "points": 7
           }
         ]
       },
@@ -13956,20 +13764,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "DKAB.7.1.2. Ahiret hayatının aşamalarını çözümleyebilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
         "points": 14,
         "contextText": "Haşir ve Mahşer aşaması.",
-        "stimulus": "Aşağıdaki matriste Dört Büyük Melek ve Görevleri konusuna yönelik üç farklı durum ve özellikleri verilmiştir:\n\n| Durum / Örnek | 1. Temel Kriter | 2. Ayırt Edici Özellik | Karşılar mı? |\n| :--- | :---: | :---: | :---: |\n| 1. Durum (Örnek A) | VAR | YOK | ............ |\n| 2. Durum (Örnek B) | VAR | VAR | ............ |\n| 3. Durum (Örnek C) | YOK | YOK | ............ |",
-        "questionText": "Matristeki boşlukları özelliğin doğruluğuna göre \"EVET\" veya \"HAYIR\" yazarak doldurunuz. 2. Durum'u diğer durumlardan ayıran en temel şartı gerekçelendirerek yazınız.",
-        "solutionExplanation": "Sevk edilip toplanmaya Haşir, toplanılan alana Mahşer denir.",
-        "modelAnswer": "Tablo Tamamlaması: 1. Durum: HAYIR | 2. Durum: EVET | 3. Durum: HAYIR.\nAyırt Edici Gerekçe: 2. Durum hem temel kriteri hem de ayırt edici özelliği eksiksiz sağladığı için Meleklerin Özellikleri: Nurdan yaratılmışlardır, günah işlemezler, cinsiyetleri yoktur, yemezler içmezler, daima Allah'a ibadet ederler. kuralına tam uygundur.",
+        "stimulus": "'Onların arkasında, yeniden diriltilecekleri güne kadar bir berzah (engel) vardır.' (Mü'minûn Suresi, 100. ayet)",
+        "questionText": "İslam ahiret inancında 'Berzah' kavramını tanımlayarak, bu aşamada ölen kişinin sorgusunu gerçekleştiren meleklerin adını yazınız.",
+        "solutionExplanation": "Berzah ölümle kıyamet arasındaki kabir hayatıdır. Sorguyu Münker ve Nekir melekleri yapar.",
+        "modelAnswer": "• Berzah: İnsanın ölümüyle başlayan ve kıyametteki yeniden dirilişe (Ba's) kadar devam eden ara dönem, yani kabir hayatıdır.\n• Sorgu Melekleri: Münker ve Nekir melekleridir.",
         "rubric": [
           {
-            "criterion": "Tablodaki boşlukların hatasız doldurulması (HAYIR - EVET - HAYIR)",
+            "criterion": "Berzah kavramının ve zaman diliminin doğru tanımlanması",
             "points": 7
           },
           {
-            "criterion": "2. Durum'un ayırt edici şartının ve kuralının açıklanması",
+            "criterion": "Münker ve Nekir meleklerinin adının doğru yazılması",
             "points": 7
           }
         ]
@@ -13980,25 +13788,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "DKAB.7.1.3. Melek ve ahiret inancının insana kazandırdıkları konusunda çıkarım yapabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Hata Tespiti & Adım Analizi",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Ahiret inancının insanı kötülüklerden alıkoyması.",
-        "stimulus": "Sude, Ahiret Hayatının Aşamaları ile ilgili açık uçlu bir soruyu çözerken çalışma kağıdına şu adımları yazmıştır:\n1. Adım: Verilen öncülleri ve temel kavramları belirledim.\n2. Adım: Haşir toplanma olayıdır; Mahşer ise toplanılan yerin (meydanın) adıdır. kabulünü yaparak işleme başladım.\n3. Adım: Bu adımdaki sonuca göre bağlantılı kuralı uyguladım.\n4. Adım: Nihai sonuca ulaştım.",
-        "questionText": "Sude'in çözüm adımlarını inceleyiniz. İlk hata kaçıncı adımda yapılmıştır? Yapılan hatanın gerekçesini açıklayarak o adımın ve nihai cevabın doğru halini yazınız.",
+        "stimulus": "'Kim zerre miktarı hayır işlemişse onu görür. Kim de zerre miktarı şer işlemişse onu görür.' (Zilzâl Suresi, 7-8. ayetler)",
+        "questionText": "Bu ayetleri ilke edinen bir esnafın tartı ve ölçü yaparken hile yapmaktan neden şiddetle kaçınacağını ahiret sorumluluğu açısından açıklayınız.",
         "solutionExplanation": "Zerre kadar haksızlığın bile hesabının sorulacağı bilinci esnafı dürüstlüğe sevk eder.",
-        "modelAnswer": "İlk hata 2. adımda yapılmıştır. Çünkü Sude, 'Haşir toplanma olayıdır; Mahşer ise toplanılan yerin (meydanın) adıdır.' hatasına düşmüştür. Doğrusu: Ahiret Yolculuğunun Sıralaması:\n1. Kıyamet: İsrafil'in Sûr'a ilk üflemesiyle evrendeki nizamın son bulması.\n2. Ba's: İkinci üflemeyle insanların yeniden diriltilmesi.\n3. Haşir & Mahşer: Dirilen insanların hesap için toplanması ve toplanma meydanı.\n4. Mizan: Sevap ve günahların tartıldığı ilahi adalet terazisi.\n5. Cennet / Cehennem: Amellerin ebedi karşılığı. kuralı işletilmeli ve çözüm bu esasa göre tamamlanmalıdır.",
+        "modelAnswer": "Bu ayetleri kalbine yerleştiren bir esnaf bilir ki kimsenin görmediği bir gramlık eksik tartı dahi zayi olmayacak, Mizan terazisinde önüne çıkacaktır. Kul hakkının hesabını verememe korkusu ve ilahi adalete olan sarsılmaz inancı onu her türlü hile ve haksızlıktan kesin olarak alıkoyar.",
         "rubric": [
           {
-            "criterion": "İlk hatanın yapıldığı adımın (2. Adım) doğru belirlenmesi",
-            "points": 5
+            "criterion": "Zerre kadar hakkın hesabının verileceği bilincinin açıklanması",
+            "points": 7
           },
           {
-            "criterion": "Yapılan kavramsal/işlemsel hatanın gerekçelendirilmesi",
-            "points": 5
-          },
-          {
-            "criterion": "Adımın ve sonucun doğru kurala göre düzeltilmesi",
-            "points": 4
+            "criterion": "Kul hakkı ve Mizan terazisi korkusunun dürüstlüğe etkisinin yazılması",
+            "points": 7
           }
         ]
       },
@@ -14008,20 +13812,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "DKAB.7.1.3. Melek ve ahiret inancının insana kazandırdıkları konusunda çıkarım yapabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Melek inancının insana verdiği manevi güven.",
-        "stimulus": "Ahiret Hayatının Aşamaları kapsamında karşılaşılan bir durumu çözmek için uzmanlar iki farklı yöntem geliştirmiştir:\n1. Yöntem: Kısa vadeli hızlı çözüm sunan ancak 'Haşir toplanma olayıdır; Mahşer ise toplanılan yerin (meydanın) adıdır.' riskini barındıran yaklaşım.\n2. Yöntem: Başlangıçta daha fazla dikkat ve aşama gerektiren ancak 'Ahiret Yolculuğunun Sıralaması:\n1. Kıyamet: İsrafil'in Sûr'a ilk üflemesiyle evrendeki nizamın son bulması.\n2. Ba's: İkinci üflemeyle insanların yeniden diriltilmesi.\n3. Haşir & Mahşer: Dirilen insanların hesap için toplanması ve toplanma meydanı.\n4. Mizan: Sevap ve günahların tartıldığı ilahi adalet terazisi.\n5. Cennet / Cehennem: Amellerin ebedi karşılığı.' ilkesine tam uyan sürdürülebilir yaklaşım.",
-        "questionText": "Verilen iki yaklaşımı Ahiret Hayatının Aşamaları ilkeleri bakımından değerlendiriniz. Hangi yöntem daha uygundur? Seçtiğiniz yöntemin güçlü yönlerini ve diğer yöntemin taşıdığı riskleri gerekçelendiriniz.",
-        "solutionExplanation": "İnsanın yalnız ve sahipsiz olmadığını, Allah'ın koruması altında olduğunu bilerek korku ve yalnızlıktan kurtulması.",
-        "modelAnswer": "2. Yöntem uygundur. Çünkü Ahiret Yolculuğunun Sıralaması:\n1. Kıyamet: İsrafil'in Sûr'a ilk üflemesiyle evrendeki nizamın son bulması.\n2. Ba's: İkinci üflemeyle insanların yeniden diriltilmesi.\n3. Haşir & Mahşer: Dirilen insanların hesap için toplanması ve toplanma meydanı.\n4. Mizan: Sevap ve günahların tartıldığı ilahi adalet terazisi.\n5. Cennet / Cehennem: Amellerin ebedi karşılığı. ilkesini tam olarak karşılamaktadır. 1. Yöntem ise kısa vadeli olsa da 'Haşir toplanma olayıdır; Mahşer ise toplanılan yerin (meydanın) adıdır.' sakıncasını doğuracağı için hedeflenen amaca ters düşer.",
+        "stimulus": "'Kim zerre miktarı hayır işlemişse onu görür. Kim de zerre miktarı şer işlemişse onu görür.' (Zilzâl Suresi, 7-8. ayetler)",
+        "questionText": "Bu ayetleri ilke edinen bir esnafın tartı ve ölçü yaparken hile yapmaktan neden şiddetle kaçınacağını ahiret sorumluluğu açısından açıklayınız.",
+        "solutionExplanation": "Zerre kadar haksızlığın bile hesabının sorulacağı bilinci esnafı dürüstlüğe sevk eder.",
+        "modelAnswer": "Bu ayetleri kalbine yerleştiren bir esnaf bilir ki kimsenin görmediği bir gramlık eksik tartı dahi zayi olmayacak, Mizan terazisinde önüne çıkacaktır. Kul hakkının hesabını verememe korkusu ve ilahi adalete olan sarsılmaz inancı onu her türlü hile ve haksızlıktan kesin olarak alıkoyar.",
         "rubric": [
           {
-            "criterion": "Doğru yaklaşımın (2. Yöntem) tespiti ve güçlü yönünün gerekçelendirilmesi",
+            "criterion": "Zerre kadar hakkın hesabının verileceği bilincinin açıklanması",
             "points": 7
           },
           {
-            "criterion": "1. Yöntemin taşıdığı kavramsal riskin açıklanması",
+            "criterion": "Kul hakkı ve Mizan terazisi korkusunun dürüstlüğe etkisinin yazılması",
             "points": 7
           }
         ]
@@ -14122,21 +13926,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "DKAB.7.1.2. Ahiret hayatının aşamalarını çözümleyebilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
         "points": 17,
         "contextText": "Kıyametin kopması ve evrendeki kozmik düzenin bozulması.",
-        "stimulus": "Dört Büyük Melek ve Görevleri konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nUmut: \"Bu durumda temel kural şudur: Kirâmen Kâtibîn melekleri insanların sağ ve solunda durarak iyi ve kötü amellerini kaydeder.\"\nEmre: \"Hayır Umut, yanılıyorsun. Çünkü kural gereği: Meleklerin Özellikleri: Nurdan yaratılmışlardır, günah işlemezler, cinsiyetleri yoktur, yemezler içmezler, daima Allah'a ibadet ederler. Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Umut ve Emre'nin iddialarını Dört Büyük Melek ve Görevleri ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
+        "stimulus": "'Güneş dürüldüğü zaman, yıldızlar döküldüğü zaman, dağlar yürütüldüğü zaman...' (Tekvîr Suresi, 1-3. ayetler)",
+        "questionText": "Tekvîr suresinde tasvir edilen bu kozmik olay ahiret hayatının hangi ilk durağını anlatmaktadır? Bu olayın ardından yaşanacak aşamayı yazınız.",
         "solutionExplanation": "Kıyametin kopmasıdır. Ardından kabir hayatı (berzah) ve yeniden diriliş (ba's) gelir.",
-        "modelAnswer": "Emre haklıdır. Çünkü Meleklerin Özellikleri: Nurdan yaratılmışlardır, günah işlemezler, cinsiyetleri yoktur, yemezler içmezler, daima Allah'a ibadet ederler.. Umut ise 'Kirâmen Kâtibîn melekleri insanların sağ ve solunda durarak iyi ve kötü amellerini kaydeder.' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "modelAnswer": "• Tasvir Edilen Aşama: Kıyamet (Evrenin düzeninin bozulup dünya hayatının bütünüyle sona ermesi).\n• Sonrasındaki Aşama: İkinci sûr üflenişiyle birlikte insanların mezarlarından yeniden diriltilmesi (Ba's) ve Mahşer meydanına toplanmasıdır.",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (Emre) doğru tespiti",
-            "points": 7
+            "criterion": "Kıyamet olayının doğru tespiti",
+            "points": 9
           },
           {
-            "criterion": "Umut'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 10
+            "criterion": "Kıyamet sonrası diriliş (Ba's) aşamasının açıklanması",
+            "points": 8
           }
         ]
       },
@@ -14146,21 +13950,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "DKAB.7.1.2. Ahiret hayatının aşamalarını çözümleyebilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
         "points": 17,
         "contextText": "Amel defterlerinin dağıtılması ve hesap.",
-        "stimulus": "Aşağıdaki matriste Dört Büyük Melek ve Görevleri konusuna yönelik üç farklı durum ve özellikleri verilmiştir:\n\n| Durum / Örnek | 1. Temel Kriter | 2. Ayırt Edici Özellik | Karşılar mı? |\n| :--- | :---: | :---: | :---: |\n| 1. Durum (Örnek A) | VAR | YOK | ............ |\n| 2. Durum (Örnek B) | VAR | VAR | ............ |\n| 3. Durum (Örnek C) | YOK | YOK | ............ |",
-        "questionText": "Matristeki boşlukları özelliğin doğruluğuna göre \"EVET\" veya \"HAYIR\" yazarak doldurunuz. 2. Durum'u diğer durumlardan ayıran en temel şartı gerekçelendirerek yazınız.",
-        "solutionExplanation": "Sağından alanlar kurtuluşa erip cennete gidecektir; solundan alanlar hüsrana uğrayıp cehenneme gidecektir.",
-        "modelAnswer": "Tablo Tamamlaması: 1. Durum: HAYIR | 2. Durum: EVET | 3. Durum: HAYIR.\nAyırt Edici Gerekçe: 2. Durum hem temel kriteri hem de ayırt edici özelliği eksiksiz sağladığı için Meleklerin Özellikleri: Nurdan yaratılmışlardır, günah işlemezler, cinsiyetleri yoktur, yemezler içmezler, daima Allah'a ibadet ederler. kuralına tam uygundur.",
+        "stimulus": "'Güneş dürüldüğü zaman, yıldızlar döküldüğü zaman, dağlar yürütüldüğü zaman...' (Tekvîr Suresi, 1-3. ayetler)",
+        "questionText": "Tekvîr suresinde tasvir edilen bu kozmik olay ahiret hayatının hangi ilk durağını anlatmaktadır? Bu olayın ardından yaşanacak aşamayı yazınız.",
+        "solutionExplanation": "Kıyametin kopmasıdır. Ardından kabir hayatı (berzah) ve yeniden diriliş (ba's) gelir.",
+        "modelAnswer": "• Tasvir Edilen Aşama: Kıyamet (Evrenin düzeninin bozulup dünya hayatının bütünüyle sona ermesi).\n• Sonrasındaki Aşama: İkinci sûr üflenişiyle birlikte insanların mezarlarından yeniden diriltilmesi (Ba's) ve Mahşer meydanına toplanmasıdır.",
         "rubric": [
           {
-            "criterion": "Tablodaki boşlukların hatasız doldurulması (HAYIR - EVET - HAYIR)",
-            "points": 8
+            "criterion": "Kıyamet olayının doğru tespiti",
+            "points": 9
           },
           {
-            "criterion": "2. Durum'un ayırt edici şartının ve kuralının açıklanması",
-            "points": 9
+            "criterion": "Kıyamet sonrası diriliş (Ba's) aşamasının açıklanması",
+            "points": 8
           }
         ]
       },
@@ -14170,25 +13974,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "DKAB.7.1.3. Melek ve ahiret inancının insana kazandırdıkları konusunda çıkarım yapabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Hata Tespiti & Adım Analizi",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Ahiret inancının insan hayatına anlam katması.",
-        "stimulus": "Sude, Ahiret Hayatının Aşamaları ile ilgili açık uçlu bir soruyu çözerken çalışma kağıdına şu adımları yazmıştır:\n1. Adım: Verilen öncülleri ve temel kavramları belirledim.\n2. Adım: Haşir toplanma olayıdır; Mahşer ise toplanılan yerin (meydanın) adıdır. kabulünü yaparak işleme başladım.\n3. Adım: Bu adımdaki sonuca göre bağlantılı kuralı uyguladım.\n4. Adım: Nihai sonuca ulaştım.",
-        "questionText": "Sude'in çözüm adımlarını inceleyiniz. İlk hata kaçıncı adımda yapılmıştır? Yapılan hatanın gerekçesini açıklayarak o adımın ve nihai cevabın doğru halini yazınız.",
+        "stimulus": "Eğer ahiret inancı olmasaydı, hayat sadece birkaç on yıllık mücadele, hastalık, yaşlılık ve sonunda mutlak bir yok oluştan ibaret kalırdı.",
+        "questionText": "Ahiret inancının dünyadaki hayatımızı anlamsızlıktan ve boşluk hissinden nasıl kurtardığını açıklayınız.",
         "solutionExplanation": "Dünyanın bir imtihan salonu olduğu ve ebedi saadet için fırsat sunduğu bilinci hayata değer katar.",
-        "modelAnswer": "İlk hata 2. adımda yapılmıştır. Çünkü Sude, 'Haşir toplanma olayıdır; Mahşer ise toplanılan yerin (meydanın) adıdır.' hatasına düşmüştür. Doğrusu: Ahiret Yolculuğunun Sıralaması:\n1. Kıyamet: İsrafil'in Sûr'a ilk üflemesiyle evrendeki nizamın son bulması.\n2. Ba's: İkinci üflemeyle insanların yeniden diriltilmesi.\n3. Haşir & Mahşer: Dirilen insanların hesap için toplanması ve toplanma meydanı.\n4. Mizan: Sevap ve günahların tartıldığı ilahi adalet terazisi.\n5. Cennet / Cehennem: Amellerin ebedi karşılığı. kuralı işletilmeli ve çözüm bu esasa göre tamamlanmalıdır.",
+        "modelAnswer": "Ahiret inancı insana varoluşunun gayesini öğretir. İnsanın dünyaya tesadüfen gelmediğini, ömrünün her anının bir imtihan olduğunu ve burada ektiği iyilik tohumlarını ebedi cennette biçeceğini müjdeler. Böylece hayatı boş, anlamsız ve acı bir bekleyiş olmaktan çıkarıp yüce bir hedefe bağlar.",
         "rubric": [
           {
-            "criterion": "İlk hatanın yapıldığı adımın (2. Adım) doğru belirlenmesi",
-            "points": 6
+            "criterion": "Varoluş gayesi ve dünya hayatının imtihan salonu bilincinin yazılması",
+            "points": 9
           },
           {
-            "criterion": "Yapılan kavramsal/işlemsel hatanın gerekçelendirilmesi",
-            "points": 6
-          },
-          {
-            "criterion": "Adımın ve sonucun doğru kurala göre düzeltilmesi",
-            "points": 5
+            "criterion": "Ebedi mükâfat idealiyle hayata anlam ve değer katmasının açıklanması",
+            "points": 8
           }
         ]
       },
@@ -14198,20 +13998,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "DKAB.7.1.3. Melek ve ahiret inancının insana kazandırdıkları konusunda çıkarım yapabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 16,
         "contextText": "Ahiret inancı ve sorumluluk duygusu.",
-        "stimulus": "Ahiret Hayatının Aşamaları kapsamında karşılaşılan bir durumu çözmek için uzmanlar iki farklı yöntem geliştirmiştir:\n1. Yöntem: Kısa vadeli hızlı çözüm sunan ancak 'Haşir toplanma olayıdır; Mahşer ise toplanılan yerin (meydanın) adıdır.' riskini barındıran yaklaşım.\n2. Yöntem: Başlangıçta daha fazla dikkat ve aşama gerektiren ancak 'Ahiret Yolculuğunun Sıralaması:\n1. Kıyamet: İsrafil'in Sûr'a ilk üflemesiyle evrendeki nizamın son bulması.\n2. Ba's: İkinci üflemeyle insanların yeniden diriltilmesi.\n3. Haşir & Mahşer: Dirilen insanların hesap için toplanması ve toplanma meydanı.\n4. Mizan: Sevap ve günahların tartıldığı ilahi adalet terazisi.\n5. Cennet / Cehennem: Amellerin ebedi karşılığı.' ilkesine tam uyan sürdürülebilir yaklaşım.",
-        "questionText": "Verilen iki yaklaşımı Ahiret Hayatının Aşamaları ilkeleri bakımından değerlendiriniz. Hangi yöntem daha uygundur? Seçtiğiniz yöntemin güçlü yönlerini ve diğer yöntemin taşıdığı riskleri gerekçelendiriniz.",
-        "solutionExplanation": "Allah merhamet sahibidir ancak aynı zamanda adildir ve kul hakkını asla affetmez.",
-        "modelAnswer": "2. Yöntem uygundur. Çünkü Ahiret Yolculuğunun Sıralaması:\n1. Kıyamet: İsrafil'in Sûr'a ilk üflemesiyle evrendeki nizamın son bulması.\n2. Ba's: İkinci üflemeyle insanların yeniden diriltilmesi.\n3. Haşir & Mahşer: Dirilen insanların hesap için toplanması ve toplanma meydanı.\n4. Mizan: Sevap ve günahların tartıldığı ilahi adalet terazisi.\n5. Cennet / Cehennem: Amellerin ebedi karşılığı. ilkesini tam olarak karşılamaktadır. 1. Yöntem ise kısa vadeli olsa da 'Haşir toplanma olayıdır; Mahşer ise toplanılan yerin (meydanın) adıdır.' sakıncasını doğuracağı için hedeflenen amaca ters düşer.",
+        "stimulus": "Eğer ahiret inancı olmasaydı, hayat sadece birkaç on yıllık mücadele, hastalık, yaşlılık ve sonunda mutlak bir yok oluştan ibaret kalırdı.",
+        "questionText": "Ahiret inancının dünyadaki hayatımızı anlamsızlıktan ve boşluk hissinden nasıl kurtardığını açıklayınız.",
+        "solutionExplanation": "Dünyanın bir imtihan salonu olduğu ve ebedi saadet için fırsat sunduğu bilinci hayata değer katar.",
+        "modelAnswer": "Ahiret inancı insana varoluşunun gayesini öğretir. İnsanın dünyaya tesadüfen gelmediğini, ömrünün her anının bir imtihan olduğunu ve burada ektiği iyilik tohumlarını ebedi cennette biçeceğini müjdeler. Böylece hayatı boş, anlamsız ve acı bir bekleyiş olmaktan çıkarıp yüce bir hedefe bağlar.",
         "rubric": [
           {
-            "criterion": "Doğru yaklaşımın (2. Yöntem) tespiti ve güçlü yönünün gerekçelendirilmesi",
+            "criterion": "Varoluş gayesi ve dünya hayatının imtihan salonu bilincinin yazılması",
             "points": 8
           },
           {
-            "criterion": "1. Yöntemin taşıdığı kavramsal riskin açıklanması",
+            "criterion": "Ebedi mükâfat idealiyle hayata anlam ve değer katmasının açıklanması",
             "points": 8
           }
         ]
@@ -14288,21 +14088,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "DKAB.7.1.2. Ahiret hayatının aşamalarını çözümleyebilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Cennet ve Cehennem: Ebedi mükâfat ve ceza yurtları.",
-        "stimulus": "Dört Büyük Melek ve Görevleri konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nUmut: \"Bu durumda temel kural şudur: Kirâmen Kâtibîn melekleri insanların sağ ve solunda durarak iyi ve kötü amellerini kaydeder.\"\nEmre: \"Hayır Umut, yanılıyorsun. Çünkü kural gereği: Meleklerin Özellikleri: Nurdan yaratılmışlardır, günah işlemezler, cinsiyetleri yoktur, yemezler içmezler, daima Allah'a ibadet ederler. Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Umut ve Emre'nin iddialarını Dört Büyük Melek ve Görevleri ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
-        "solutionExplanation": "Şartlar: İman ve salih amel. Ebedi olması hayatın geri dönüşü olmayan ciddiyetini kavratır.",
-        "modelAnswer": "Emre haklıdır. Çünkü Meleklerin Özellikleri: Nurdan yaratılmışlardır, günah işlemezler, cinsiyetleri yoktur, yemezler içmezler, daima Allah'a ibadet ederler.. Umut ise 'Kirâmen Kâtibîn melekleri insanların sağ ve solunda durarak iyi ve kötü amellerini kaydeder.' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "stimulus": "Ahiret hayatı insanın ölümüyle başlayıp ebediyete kadar süren basamaklardan oluşur: Kıyamet, Berzah, Ba's, Haşir-Mahşer, Hesap-Mizan, Cennet-Cehennem.",
+        "questionText": "Ölüm ile başlayan bu zincirde: a) Kıyamet ile yeniden diriliş arasındaki ara bekleme dönemine ne ad verilir? b) Amellerin tartıldığı hassas ilahi teraziye ne ad verilir?",
+        "solutionExplanation": "a) Berzah (kabir hayatı), b) Mizan terazisi.",
+        "modelAnswer": "a) Kıyamet ile diriliş arasındaki ara kabir hayatına: Berzah denir.\nb) Amellerin en ince ayrıntısına kadar tartıldığı ilahi adalet terazisine: Mizan denir.",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (Emre) doğru tespiti",
-            "points": 7
+            "criterion": "Berzah kavramının doğru yazılması",
+            "points": 9
           },
           {
-            "criterion": "Umut'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 10
+            "criterion": "Mizan kavramının doğru yazılması",
+            "points": 8
           }
         ]
       },
@@ -14312,21 +14112,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "DKAB.7.1.3. Melek ve ahiret inancının insana kazandırdıkları konusunda çıkarım yapabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Ahiret inancının cömertlik ve infak ahlakına etkisi.",
-        "stimulus": "Aşağıdaki matriste Ahiret Hayatının Aşamaları konusuna yönelik üç farklı durum ve özellikleri verilmiştir:\n\n| Durum / Örnek | 1. Temel Kriter | 2. Ayırt Edici Özellik | Karşılar mı? |\n| :--- | :---: | :---: | :---: |\n| 1. Durum (Örnek A) | VAR | YOK | ............ |\n| 2. Durum (Örnek B) | VAR | VAR | ............ |\n| 3. Durum (Örnek C) | YOK | YOK | ............ |",
-        "questionText": "Matristeki boşlukları özelliğin doğruluğuna göre \"EVET\" veya \"HAYIR\" yazarak doldurunuz. 2. Durum'u diğer durumlardan ayıran en temel şartı gerekçelendirerek yazınız.",
+        "stimulus": "Zengin bir iş insanı olan Kerem Bey, kazancının büyük kısmıyla yetimler için aşevi açmış ve burslar vermiştir. 'Ben bu parayı biriktirip dünyalık yığabilirdim ama asıl zenginlik ahirete gönderilen yatırımdır' demiştir.",
+        "questionText": "Kerem Bey'in bu tutumu, ahiret inancının mal ve servet tutkusunu nasıl terbiye ettiğini gösterir? İki maddeyle açıklayınız.",
         "solutionExplanation": "Dünya malının geçici olduğunu anlamak, infak ve sadaka bilincini artırmak.",
-        "modelAnswer": "Tablo Tamamlaması: 1. Durum: HAYIR | 2. Durum: EVET | 3. Durum: HAYIR.\nAyırt Edici Gerekçe: 2. Durum hem temel kriteri hem de ayırt edici özelliği eksiksiz sağladığı için Ahiret Yolculuğunun Sıralaması:\n1. Kıyamet: İsrafil'in Sûr'a ilk üflemesiyle evrendeki nizamın son bulması.\n2. Ba's: İkinci üflemeyle insanların yeniden diriltilmesi.\n3. Haşir & Mahşer: Dirilen insanların hesap için toplanması ve toplanma meydanı.\n4. Mizan: Sevap ve günahların tartıldığı ilahi adalet terazisi.\n5. Cennet / Cehennem: Amellerin ebedi karşılığı. kuralına tam uygundur.",
+        "modelAnswer": "1. Mal Tutkusunu Terbiye Eder: Servetin fani ve geçici bir emanet olduğunu kavratarak insanı cimrilik ve bencillik hastalığından kurtarır.\n2. Ebedi Kazanç Şuuru: Malı yalnızca dünyada tüketmek yerine, infak ve sadakayla ahirete taşınacak tükenmez bir sevap sermayesine dönüştürür.",
         "rubric": [
           {
-            "criterion": "Tablodaki boşlukların hatasız doldurulması (HAYIR - EVET - HAYIR)",
-            "points": 8
+            "criterion": "Cimrilikten kurtarma ve geçicilik idrakinin açıklanması",
+            "points": 9
           },
           {
-            "criterion": "2. Durum'un ayırt edici şartının ve kuralının açıklanması",
-            "points": 9
+            "criterion": "İnfak ve ahirete yatırım şuurunun belirtilmesi",
+            "points": 8
           }
         ]
       },
@@ -14336,25 +14136,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "DKAB.7.1.3. Melek ve ahiret inancının insana kazandırdıkları konusunda çıkarım yapabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Hata Tespiti & Adım Analizi",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Gıybet, iftira ve kul hakkının ahiretteki karşılığı.",
-        "stimulus": "Sude, Ahiret Hayatının Aşamaları ile ilgili açık uçlu bir soruyu çözerken çalışma kağıdına şu adımları yazmıştır:\n1. Adım: Verilen öncülleri ve temel kavramları belirledim.\n2. Adım: Haşir toplanma olayıdır; Mahşer ise toplanılan yerin (meydanın) adıdır. kabulünü yaparak işleme başladım.\n3. Adım: Bu adımdaki sonuca göre bağlantılı kuralı uyguladım.\n4. Adım: Nihai sonuca ulaştım.",
-        "questionText": "Sude'in çözüm adımlarını inceleyiniz. İlk hata kaçıncı adımda yapılmıştır? Yapılan hatanın gerekçesini açıklayarak o adımın ve nihai cevabın doğru halini yazınız.",
-        "solutionExplanation": "Gıybet ağır bir kul hakkıdır, kişinin dünyadaki ibadet sevaplarının silinmesine ve hak sahibine verilmesine yol açar.",
-        "modelAnswer": "İlk hata 2. adımda yapılmıştır. Çünkü Sude, 'Haşir toplanma olayıdır; Mahşer ise toplanılan yerin (meydanın) adıdır.' hatasına düşmüştür. Doğrusu: Ahiret Yolculuğunun Sıralaması:\n1. Kıyamet: İsrafil'in Sûr'a ilk üflemesiyle evrendeki nizamın son bulması.\n2. Ba's: İkinci üflemeyle insanların yeniden diriltilmesi.\n3. Haşir & Mahşer: Dirilen insanların hesap için toplanması ve toplanma meydanı.\n4. Mizan: Sevap ve günahların tartıldığı ilahi adalet terazisi.\n5. Cennet / Cehennem: Amellerin ebedi karşılığı. kuralı işletilmeli ve çözüm bu esasa göre tamamlanmalıdır.",
+        "stimulus": "Zengin bir iş insanı olan Kerem Bey, kazancının büyük kısmıyla yetimler için aşevi açmış ve burslar vermiştir. 'Ben bu parayı biriktirip dünyalık yığabilirdim ama asıl zenginlik ahirete gönderilen yatırımdır' demiştir.",
+        "questionText": "Kerem Bey'in bu tutumu, ahiret inancının mal ve servet tutkusunu nasıl terbiye ettiğini gösterir? İki maddeyle açıklayınız.",
+        "solutionExplanation": "Dünya malının geçici olduğunu anlamak, infak ve sadaka bilincini artırmak.",
+        "modelAnswer": "1. Mal Tutkusunu Terbiye Eder: Servetin fani ve geçici bir emanet olduğunu kavratarak insanı cimrilik ve bencillik hastalığından kurtarır.\n2. Ebedi Kazanç Şuuru: Malı yalnızca dünyada tüketmek yerine, infak ve sadakayla ahirete taşınacak tükenmez bir sevap sermayesine dönüştürür.",
         "rubric": [
           {
-            "criterion": "İlk hatanın yapıldığı adımın (2. Adım) doğru belirlenmesi",
-            "points": 6
+            "criterion": "Cimrilikten kurtarma ve geçicilik idrakinin açıklanması",
+            "points": 9
           },
           {
-            "criterion": "Yapılan kavramsal/işlemsel hatanın gerekçelendirilmesi",
-            "points": 6
-          },
-          {
-            "criterion": "Adımın ve sonucun doğru kurala göre düzeltilmesi",
-            "points": 5
+            "criterion": "İnfak ve ahirete yatırım şuurunun belirtilmesi",
+            "points": 8
           }
         ]
       },
@@ -14364,20 +14160,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "DKAB.7.1.3. Melek ve ahiret inancının insana kazandırdıkları konusunda çıkarım yapabilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 16,
         "contextText": "Meleklerin insan için dua ve istiğfar etmesi.",
-        "stimulus": "Ahiret Hayatının Aşamaları kapsamında karşılaşılan bir durumu çözmek için uzmanlar iki farklı yöntem geliştirmiştir:\n1. Yöntem: Kısa vadeli hızlı çözüm sunan ancak 'Haşir toplanma olayıdır; Mahşer ise toplanılan yerin (meydanın) adıdır.' riskini barındıran yaklaşım.\n2. Yöntem: Başlangıçta daha fazla dikkat ve aşama gerektiren ancak 'Ahiret Yolculuğunun Sıralaması:\n1. Kıyamet: İsrafil'in Sûr'a ilk üflemesiyle evrendeki nizamın son bulması.\n2. Ba's: İkinci üflemeyle insanların yeniden diriltilmesi.\n3. Haşir & Mahşer: Dirilen insanların hesap için toplanması ve toplanma meydanı.\n4. Mizan: Sevap ve günahların tartıldığı ilahi adalet terazisi.\n5. Cennet / Cehennem: Amellerin ebedi karşılığı.' ilkesine tam uyan sürdürülebilir yaklaşım.",
-        "questionText": "Verilen iki yaklaşımı Ahiret Hayatının Aşamaları ilkeleri bakımından değerlendiriniz. Hangi yöntem daha uygundur? Seçtiğiniz yöntemin güçlü yönlerini ve diğer yöntemin taşıdığı riskleri gerekçelendiriniz.",
-        "solutionExplanation": "Manevi bir güç ve yalnız olmama hissi verir, iyilik yolunda motivasyonu artırır.",
-        "modelAnswer": "2. Yöntem uygundur. Çünkü Ahiret Yolculuğunun Sıralaması:\n1. Kıyamet: İsrafil'in Sûr'a ilk üflemesiyle evrendeki nizamın son bulması.\n2. Ba's: İkinci üflemeyle insanların yeniden diriltilmesi.\n3. Haşir & Mahşer: Dirilen insanların hesap için toplanması ve toplanma meydanı.\n4. Mizan: Sevap ve günahların tartıldığı ilahi adalet terazisi.\n5. Cennet / Cehennem: Amellerin ebedi karşılığı. ilkesini tam olarak karşılamaktadır. 1. Yöntem ise kısa vadeli olsa da 'Haşir toplanma olayıdır; Mahşer ise toplanılan yerin (meydanın) adıdır.' sakıncasını doğuracağı için hedeflenen amaca ters düşer.",
+        "stimulus": "Zengin bir iş insanı olan Kerem Bey, kazancının büyük kısmıyla yetimler için aşevi açmış ve burslar vermiştir. 'Ben bu parayı biriktirip dünyalık yığabilirdim ama asıl zenginlik ahirete gönderilen yatırımdır' demiştir.",
+        "questionText": "Kerem Bey'in bu tutumu, ahiret inancının mal ve servet tutkusunu nasıl terbiye ettiğini gösterir? İki maddeyle açıklayınız.",
+        "solutionExplanation": "Dünya malının geçici olduğunu anlamak, infak ve sadaka bilincini artırmak.",
+        "modelAnswer": "1. Mal Tutkusunu Terbiye Eder: Servetin fani ve geçici bir emanet olduğunu kavratarak insanı cimrilik ve bencillik hastalığından kurtarır.\n2. Ebedi Kazanç Şuuru: Malı yalnızca dünyada tüketmek yerine, infak ve sadakayla ahirete taşınacak tükenmez bir sevap sermayesine dönüştürür.",
         "rubric": [
           {
-            "criterion": "Doğru yaklaşımın (2. Yöntem) tespiti ve güçlü yönünün gerekçelendirilmesi",
+            "criterion": "Cimrilikten kurtarma ve geçicilik idrakinin açıklanması",
             "points": 8
           },
           {
-            "criterion": "1. Yöntemin taşıdığı kavramsal riskin açıklanması",
+            "criterion": "İnfak ve ahirete yatırım şuurunun belirtilmesi",
             "points": 8
           }
         ]
@@ -14454,21 +14250,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "DKAB.7.1.2. Ahiret hayatının aşamalarını çözümleyebilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
         "points": 17,
         "contextText": "Ba's (Yeniden Diriliş) ve tabiat delili.",
-        "stimulus": "Dört Büyük Melek ve Görevleri konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nUmut: \"Bu durumda temel kural şudur: Kirâmen Kâtibîn melekleri insanların sağ ve solunda durarak iyi ve kötü amellerini kaydeder.\"\nEmre: \"Hayır Umut, yanılıyorsun. Çünkü kural gereği: Meleklerin Özellikleri: Nurdan yaratılmışlardır, günah işlemezler, cinsiyetleri yoktur, yemezler içmezler, daima Allah'a ibadet ederler. Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Umut ve Emre'nin iddialarını Dört Büyük Melek ve Görevleri ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
+        "stimulus": "'Ölü toprağa can veren Allah, işte ölüleri de böyle diriltecektir...' Kuran-ı Kerim'de kışın kuruyan ve ölen tabiatın ilkbaharda yemyeşil canlanması yeniden dirilişe delil gösterilir.",
+        "questionText": "Tabiatın ilkbaharda yeniden dirilmesi ile ahiretteki 'Ba's' inancı arasındaki mantıksal bağı açıklayınız.",
         "solutionExplanation": "Kuru toprağa can veren sonsuz kudret sahibi Allah, insanları da çürümüş kemiklerinden kolayca yeniden yaratabilir.",
-        "modelAnswer": "Emre haklıdır. Çünkü Meleklerin Özellikleri: Nurdan yaratılmışlardır, günah işlemezler, cinsiyetleri yoktur, yemezler içmezler, daima Allah'a ibadet ederler.. Umut ise 'Kirâmen Kâtibîn melekleri insanların sağ ve solunda durarak iyi ve kötü amellerini kaydeder.' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "modelAnswer": "Kış mevsiminde kurumuş, ölmüş gibi duran ağaçlara ve toprağa baharda yeniden can veren, yaprak ve çiçek açtıran sonsuz kudret sahibi Allah için, ölüp toprağa karışan insanları ikinci bir üflenişle yeniden diriltmek (Ba's) son derece kolaydır. Tabiat her bahar gözlerimizin önünde Ba's mucizesini sergilemektedir.",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (Emre) doğru tespiti",
-            "points": 7
+            "criterion": "Baharın dirilişi ile Ba's arasındaki analojinin açıklanması",
+            "points": 9
           },
           {
-            "criterion": "Umut'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 10
+            "criterion": "Allah'ın sonsuz yaratma kudretiyle bağ kurulması",
+            "points": 8
           }
         ]
       },
@@ -14478,21 +14274,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "DKAB.7.1.2. Ahiret hayatının aşamalarını çözümleyebilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
         "points": 17,
         "contextText": "Hesap ve şahitlerin konuşması.",
-        "stimulus": "Aşağıdaki matriste Dört Büyük Melek ve Görevleri konusuna yönelik üç farklı durum ve özellikleri verilmiştir:\n\n| Durum / Örnek | 1. Temel Kriter | 2. Ayırt Edici Özellik | Karşılar mı? |\n| :--- | :---: | :---: | :---: |\n| 1. Durum (Örnek A) | VAR | YOK | ............ |\n| 2. Durum (Örnek B) | VAR | VAR | ............ |\n| 3. Durum (Örnek C) | YOK | YOK | ............ |",
-        "questionText": "Matristeki boşlukları özelliğin doğruluğuna göre \"EVET\" veya \"HAYIR\" yazarak doldurunuz. 2. Durum'u diğer durumlardan ayıran en temel şartı gerekçelendirerek yazınız.",
-        "solutionExplanation": "Hiçbir inkarın ve yalanın mümkün olmayacağı, organların bile bizzat hakikati itiraf edeceği mutlak adalet.",
-        "modelAnswer": "Tablo Tamamlaması: 1. Durum: HAYIR | 2. Durum: EVET | 3. Durum: HAYIR.\nAyırt Edici Gerekçe: 2. Durum hem temel kriteri hem de ayırt edici özelliği eksiksiz sağladığı için Meleklerin Özellikleri: Nurdan yaratılmışlardır, günah işlemezler, cinsiyetleri yoktur, yemezler içmezler, daima Allah'a ibadet ederler. kuralına tam uygundur.",
+        "stimulus": "'Ölü toprağa can veren Allah, işte ölüleri de böyle diriltecektir...' Kuran-ı Kerim'de kışın kuruyan ve ölen tabiatın ilkbaharda yemyeşil canlanması yeniden dirilişe delil gösterilir.",
+        "questionText": "Tabiatın ilkbaharda yeniden dirilmesi ile ahiretteki 'Ba's' inancı arasındaki mantıksal bağı açıklayınız.",
+        "solutionExplanation": "Kuru toprağa can veren sonsuz kudret sahibi Allah, insanları da çürümüş kemiklerinden kolayca yeniden yaratabilir.",
+        "modelAnswer": "Kış mevsiminde kurumuş, ölmüş gibi duran ağaçlara ve toprağa baharda yeniden can veren, yaprak ve çiçek açtıran sonsuz kudret sahibi Allah için, ölüp toprağa karışan insanları ikinci bir üflenişle yeniden diriltmek (Ba's) son derece kolaydır. Tabiat her bahar gözlerimizin önünde Ba's mucizesini sergilemektedir.",
         "rubric": [
           {
-            "criterion": "Tablodaki boşlukların hatasız doldurulması (HAYIR - EVET - HAYIR)",
-            "points": 8
+            "criterion": "Baharın dirilişi ile Ba's arasındaki analojinin açıklanması",
+            "points": 9
           },
           {
-            "criterion": "2. Durum'un ayırt edici şartının ve kuralının açıklanması",
-            "points": 9
+            "criterion": "Allah'ın sonsuz yaratma kudretiyle bağ kurulması",
+            "points": 8
           }
         ]
       },
@@ -14502,25 +14298,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "DKAB.7.1.3. Melek ve ahiret inancının insana kazandırdıkları konusunda çıkarım yapabilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Hata Tespiti & Adım Analizi",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Ahiret inancının çevreye ve canlılara merhamet ahlakına etkisi.",
-        "stimulus": "Sude, Ahiret Hayatının Aşamaları ile ilgili açık uçlu bir soruyu çözerken çalışma kağıdına şu adımları yazmıştır:\n1. Adım: Verilen öncülleri ve temel kavramları belirledim.\n2. Adım: Haşir toplanma olayıdır; Mahşer ise toplanılan yerin (meydanın) adıdır. kabulünü yaparak işleme başladım.\n3. Adım: Bu adımdaki sonuca göre bağlantılı kuralı uyguladım.\n4. Adım: Nihai sonuca ulaştım.",
-        "questionText": "Sude'in çözüm adımlarını inceleyiniz. İlk hata kaçıncı adımda yapılmıştır? Yapılan hatanın gerekçesini açıklayarak o adımın ve nihai cevabın doğru halini yazınız.",
+        "stimulus": "Ecdadımız Osmanlı'da kışın dağlardaki kurtlar ve kuşlar aç kalmasın diye vakıflar kurulmuş, cami duvarlarına zarif kuş sarayları inşa edilmiştir.",
+        "questionText": "Canlılara gösterilen bu derin merhametin arkasındaki melek ve ahiret hesabı bilincini açıklayınız.",
         "solutionExplanation": "Dilsiz hayvanların hakkının bile ahirette sorulacağı inancı insanları merhamete sevk eder.",
-        "modelAnswer": "İlk hata 2. adımda yapılmıştır. Çünkü Sude, 'Haşir toplanma olayıdır; Mahşer ise toplanılan yerin (meydanın) adıdır.' hatasına düşmüştür. Doğrusu: Ahiret Yolculuğunun Sıralaması:\n1. Kıyamet: İsrafil'in Sûr'a ilk üflemesiyle evrendeki nizamın son bulması.\n2. Ba's: İkinci üflemeyle insanların yeniden diriltilmesi.\n3. Haşir & Mahşer: Dirilen insanların hesap için toplanması ve toplanma meydanı.\n4. Mizan: Sevap ve günahların tartıldığı ilahi adalet terazisi.\n5. Cennet / Cehennem: Amellerin ebedi karşılığı. kuralı işletilmeli ve çözüm bu esasa göre tamamlanmalıdır.",
+        "modelAnswer": "İslam inancına göre kıyamet gününde boynuzsuz koyun, boynuzlu koyundan hakkını alacaktır. Dilsiz hayvanların dahi ahirette hakkının sorulacağı ve onlara yapılan bir yudum su iyiliğinin amel defterine sevap yazılacağı inancı, ecdadımızı kuşlara dahi saray yapan eşsiz bir merhamet medeniyeti inşa etmeye sevk etmiştir.",
         "rubric": [
           {
-            "criterion": "İlk hatanın yapıldığı adımın (2. Adım) doğru belirlenmesi",
-            "points": 6
+            "criterion": "Hayvan haklarının ahirette sorulacağı inancının yazılması",
+            "points": 9
           },
           {
-            "criterion": "Yapılan kavramsal/işlemsel hatanın gerekçelendirilmesi",
-            "points": 6
-          },
-          {
-            "criterion": "Adımın ve sonucun doğru kurala göre düzeltilmesi",
-            "points": 5
+            "criterion": "Merhamet ve amel defteri bilinciyle bağ kurulması",
+            "points": 8
           }
         ]
       },
@@ -14530,20 +14322,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "DKAB.7.1.3. Melek ve ahiret inancının insana kazandırdıkları konusunda çıkarım yapabilme",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 16,
         "contextText": "Ahiret inancı ve helal kazanç bilinci.",
-        "stimulus": "Ahiret Hayatının Aşamaları kapsamında karşılaşılan bir durumu çözmek için uzmanlar iki farklı yöntem geliştirmiştir:\n1. Yöntem: Kısa vadeli hızlı çözüm sunan ancak 'Haşir toplanma olayıdır; Mahşer ise toplanılan yerin (meydanın) adıdır.' riskini barındıran yaklaşım.\n2. Yöntem: Başlangıçta daha fazla dikkat ve aşama gerektiren ancak 'Ahiret Yolculuğunun Sıralaması:\n1. Kıyamet: İsrafil'in Sûr'a ilk üflemesiyle evrendeki nizamın son bulması.\n2. Ba's: İkinci üflemeyle insanların yeniden diriltilmesi.\n3. Haşir & Mahşer: Dirilen insanların hesap için toplanması ve toplanma meydanı.\n4. Mizan: Sevap ve günahların tartıldığı ilahi adalet terazisi.\n5. Cennet / Cehennem: Amellerin ebedi karşılığı.' ilkesine tam uyan sürdürülebilir yaklaşım.",
-        "questionText": "Verilen iki yaklaşımı Ahiret Hayatının Aşamaları ilkeleri bakımından değerlendiriniz. Hangi yöntem daha uygundur? Seçtiğiniz yöntemin güçlü yönlerini ve diğer yöntemin taşıdığı riskleri gerekçelendiriniz.",
-        "solutionExplanation": "İçsel vicdan, meleklerin kaydettiği şuuru ve ahiret hesap bilinci.",
-        "modelAnswer": "2. Yöntem uygundur. Çünkü Ahiret Yolculuğunun Sıralaması:\n1. Kıyamet: İsrafil'in Sûr'a ilk üflemesiyle evrendeki nizamın son bulması.\n2. Ba's: İkinci üflemeyle insanların yeniden diriltilmesi.\n3. Haşir & Mahşer: Dirilen insanların hesap için toplanması ve toplanma meydanı.\n4. Mizan: Sevap ve günahların tartıldığı ilahi adalet terazisi.\n5. Cennet / Cehennem: Amellerin ebedi karşılığı. ilkesini tam olarak karşılamaktadır. 1. Yöntem ise kısa vadeli olsa da 'Haşir toplanma olayıdır; Mahşer ise toplanılan yerin (meydanın) adıdır.' sakıncasını doğuracağı için hedeflenen amaca ters düşer.",
+        "stimulus": "Ecdadımız Osmanlı'da kışın dağlardaki kurtlar ve kuşlar aç kalmasın diye vakıflar kurulmuş, cami duvarlarına zarif kuş sarayları inşa edilmiştir.",
+        "questionText": "Canlılara gösterilen bu derin merhametin arkasındaki melek ve ahiret hesabı bilincini açıklayınız.",
+        "solutionExplanation": "Dilsiz hayvanların hakkının bile ahirette sorulacağı inancı insanları merhamete sevk eder.",
+        "modelAnswer": "İslam inancına göre kıyamet gününde boynuzsuz koyun, boynuzlu koyundan hakkını alacaktır. Dilsiz hayvanların dahi ahirette hakkının sorulacağı ve onlara yapılan bir yudum su iyiliğinin amel defterine sevap yazılacağı inancı, ecdadımızı kuşlara dahi saray yapan eşsiz bir merhamet medeniyeti inşa etmeye sevk etmiştir.",
         "rubric": [
           {
-            "criterion": "Doğru yaklaşımın (2. Yöntem) tespiti ve güçlü yönünün gerekçelendirilmesi",
+            "criterion": "Hayvan haklarının ahirette sorulacağı inancının yazılması",
             "points": 8
           },
           {
-            "criterion": "1. Yöntemin taşıdığı kavramsal riskin açıklanması",
+            "criterion": "Merhamet ve amel defteri bilinciyle bağ kurulması",
             "points": 8
           }
         ]
@@ -14620,21 +14412,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "E7.1.W1. Students will be able to write simple pieces to compare appearances and personalities of people.",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 25,
         "contextText": "Comparative sentences writing.",
-        "stimulus": "Writing a Short Paragraph Comparing Two People konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nUmut: \"Bu durumda temel kural şudur: İki heceli ve sonu -y ile biten sıfatlar -ier alır (friendly -> friendlier than).\"\nEmre: \"Hayır Umut, yanılıyorsun. Çünkü kural gereği: Sentence Patterns: \"My best friend is taller than me, but I am more punctual than him.\" Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Umut ve Emre'nin iddialarını Writing a Short Paragraph Comparing Two People ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
+        "stimulus": "Look at the information about Kerem and Can:\n• Kerem: 15 years old, 175 cm, 65 kg, gets 95 in math exams, helps friends.\n• Can: 14 years old, 168 cm, 70 kg, gets 80 in math exams, loves talking to everyone.",
+        "questionText": "Write two comparative sentences comparing Kerem and Can by using comparative forms of adjectives:\n1) Compare their physical appearance (e.g. tall, slim, young, etc.)\n2) Compare their personality or abilities (e.g. hardworking, outgoing, etc.)",
         "solutionExplanation": "Forming correct comparative structures: -er than / more ... than.",
-        "modelAnswer": "Emre haklıdır. Çünkü Sentence Patterns: \"My best friend is taller than me, but I am more punctual than him.\". Umut ise 'İki heceli ve sonu -y ile biten sıfatlar -ier alır (friendly -> friendlier than).' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "modelAnswer": "1. Kerem is taller (or slimmer / older) than Can. / Can is shorter (or younger) than Kerem.\n2. Kerem is more hardworking than Can. / Can is more outgoing than Kerem.",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (Emre) doğru tespiti",
-            "points": 10
+            "criterion": "1. cümlede doğru fiziksel karşılaştırma kalıbı kurulması",
+            "points": 13
           },
           {
-            "criterion": "Umut'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 15
+            "criterion": "2. cümlede doğru kişilik/karakter karşılaştırma kalıbı kurulması",
+            "points": 12
           }
         ]
       },
@@ -14644,21 +14436,25 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "E7.2.R1. Students will be able to understand short and simple texts on sports.",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+        "archetype": "Metin İçi Delillendirme & Örtük Anlam",
         "points": 25,
         "contextText": "Reading text about Mete Gazoz.",
-        "stimulus": "Aşağıdaki matriste Sports: Indoor/Outdoor Sports and Equipment konusuna yönelik üç farklı durum ve özellikleri verilmiştir:\n\n| Durum / Örnek | 1. Temel Kriter | 2. Ayırt Edici Özellik | Karşılar mı? |\n| :--- | :---: | :---: | :---: |\n| 1. Durum (Örnek A) | VAR | YOK | ............ |\n| 2. Durum (Örnek B) | VAR | VAR | ............ |\n| 3. Durum (Örnek C) | YOK | YOK | ............ |",
-        "questionText": "Matristeki boşlukları özelliğin doğruluğuna göre \"EVET\" veya \"HAYIR\" yazarak doldurunuz. 2. Durum'u diğer durumlardan ayıran en temel şartı gerekçelendirerek yazınız.",
+        "stimulus": "Read the paragraph about the Turkish Olympic champion Mete Gazoz:\n\n'Mete Gazoz is a world-famous Turkish archer. He won a gold medal at the Tokyo 2020 Olympic Games. Archery is an individual outdoor sport. To practice archery, athletes need a bow, arrows, and an arm guard. Mete trains six days a week. He always wakes up early, does eye exercises, and shoots hundreds of arrows every single day.'",
+        "questionText": "Answer the following questions according to the text:\na) What equipment does an archer need?\nb) Is archery a team sport or an individual sport?\nc) How often does Mete train?",
         "solutionExplanation": "Extracting sports equipment, sport category, and frequency from the text.",
-        "modelAnswer": "Tablo Tamamlaması: 1. Durum: HAYIR | 2. Durum: EVET | 3. Durum: HAYIR.\nAyırt Edici Gerekçe: 2. Durum hem temel kriteri hem de ayırt edici özelliği eksiksiz sağladığı için Play: Top ve takım sporları için kullanılır (play football, play basketball, play tennis). kuralına tam uygundur.",
+        "modelAnswer": "a) An archer needs a bow, arrows, and an arm guard.\nb) Archery is an individual sport.\nc) He trains six days a week (or: He shoots hundreds of arrows every single day).",
         "rubric": [
           {
-            "criterion": "Tablodaki boşlukların hatasız doldurulması (HAYIR - EVET - HAYIR)",
-            "points": 12
+            "criterion": "a şıkkında ekipmanların eksiksiz yazılması",
+            "points": 9
           },
           {
-            "criterion": "2. Durum'un ayırt edici şartının ve kuralının açıklanması",
-            "points": 13
+            "criterion": "b şıkkında bireysel spor olduğunun belirtilmesi",
+            "points": 8
+          },
+          {
+            "criterion": "c şıkkında antrenman sıklığının doğru yazılması",
+            "points": 8
           }
         ]
       },
@@ -14668,24 +14464,24 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "E7.2.W1. Students will be able to write pieces about routines/daily activities by using frequency adverbs.",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Hata Tespiti & Adım Analizi",
+        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
         "points": 25,
         "contextText": "Writing sports routine with frequency adverbs.",
-        "stimulus": "Sude, Writing About Daily Sports Routines and Frequency ile ilgili açık uçlu bir soruyu çözerken çalışma kağıdına şu adımları yazmıştır:\n1. Adım: Verilen öncülleri ve temel kavramları belirledim.\n2. Adım: Frequency adverb özne ile fiil arasına gelir: \"I always play tennis.\" kabulünü yaparak işleme başladım.\n3. Adım: Bu adımdaki sonuca göre bağlantılı kuralı uyguladım.\n4. Adım: Nihai sonuca ulaştım.",
-        "questionText": "Sude'in çözüm adımlarını inceleyiniz. İlk hata kaçıncı adımda yapılmıştır? Yapılan hatanın gerekçesini açıklayarak o adımın ve nihai cevabın doğru halini yazınız.",
+        "stimulus": "Think about your own weekly sports routine or favorite physical activities.",
+        "questionText": "Write a short paragraph (3 full sentences) about your sports routine. You MUST use at least two frequency adverbs (always, usually, often, sometimes, rarely, never) and name at least one sport and piece of equipment.",
         "solutionExplanation": "Using simple present tense, frequency adverbs in correct position, sports vocabulary.",
-        "modelAnswer": "İlk hata 2. adımda yapılmıştır. Çünkü Sude, 'Frequency adverb özne ile fiil arasına gelir: \"I always play tennis.\"' hatasına düşmüştür. Doğrusu: Frequency Adverbs: always, usually, often, sometimes, never. kuralı işletilmeli ve çözüm bu esasa göre tamamlanmalıdır.",
+        "modelAnswer": "Example Student Answer:\n'I usually play basketball with my classmates after school on Fridays. We always take our basketball ball and sneakers to the court. I rarely play tennis because I don't have a racket.'",
         "rubric": [
           {
-            "criterion": "İlk hatanın yapıldığı adımın (2. Adım) doğru belirlenmesi",
-            "points": 9
+            "criterion": "En az 2 sıklık zarfının (usually, always vb.) doğru yerde kullanılması",
+            "points": 10
           },
           {
-            "criterion": "Yapılan kavramsal/işlemsel hatanın gerekçelendirilmesi",
-            "points": 9
+            "criterion": "Spor adı ve spor ekipmanının doğru İngilizceyle yazılması",
+            "points": 8
           },
           {
-            "criterion": "Adımın ve sonucun doğru kurala göre düzeltilmesi",
+            "criterion": "Gramer (Geniş Zaman) ve imla kurallarına tam uyum",
             "points": 7
           }
         ]
@@ -14738,21 +14534,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "E7.1.R1. Students will be able to understand a simple text about appearance and personality.",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 20,
         "contextText": "True / False statements with justifications.",
-        "stimulus": "Describing Appearance, Personality and Comparatives konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nUmut: \"Bu durumda temel kural şudur: \"Stubborn\" (inatçı) ve \"selfish\" (bencil) olumsuz sıfatlardır; \"generous\" ve \"honest\" olumludur.\"\nEmre: \"Hayır Umut, yanılıyorsun. Çünkü kural gereği: Appearance (Dış Görünüş): tall, short, slim, well-built, curly hair, blue eyes. Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Umut ve Emre'nin iddialarını Describing Appearance, Personality and Comparatives ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
-        "solutionExplanation": "Validating comprehension through text evidence.",
-        "modelAnswer": "Emre haklıdır. Çünkü Appearance (Dış Görünüş): tall, short, slim, well-built, curly hair, blue eyes.. Umut ise '\"Stubborn\" (inatçı) ve \"selfish\" (bencil) olumsuz sıfatlardır; \"generous\" ve \"honest\" olumludur.' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "stimulus": "Read the text:\n\n'Clara and Fiona are twin sisters, but they look and act completely different. Clara has got long wavy blonde hair and green eyes. She is plump and short. She is very cheerful and talkative; she makes friends easily. Fiona has got short straight brown hair and dark eyes. She is tall and slim. Unlike Clara, Fiona is quiet and punctual. She never arrives late for appointments.'",
+        "questionText": "Fill in the missing details in the comparison chart based on the text:\n1) Clara's hair and build: ....................................................\n2) Fiona's personality traits: ....................................................",
+        "solutionExplanation": "Extracting physical and personality traits.",
+        "modelAnswer": "1) Clara has got long wavy blonde hair and she is plump and short.\n2) Fiona is quiet and punctual (she never arrives late).",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (Emre) doğru tespiti",
-            "points": 8
+            "criterion": "1. maddede Clara'nın saç ve vücut yapısının yazılması",
+            "points": 10
           },
           {
-            "criterion": "Umut'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 12
+            "criterion": "2. maddede Fiona'nın kişilik özelliklerinin yazılması",
+            "points": 10
           }
         ]
       },
@@ -14762,20 +14558,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "E7.1.W1. Students will be able to write simple pieces to compare appearances and personalities of people.",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 20,
         "contextText": "Comparing two sports players: Arda and Barış.",
-        "stimulus": "Aşağıdaki matriste Writing a Short Paragraph Comparing Two People konusuna yönelik üç farklı durum ve özellikleri verilmiştir:\n\n| Durum / Örnek | 1. Temel Kriter | 2. Ayırt Edici Özellik | Karşılar mı? |\n| :--- | :---: | :---: | :---: |\n| 1. Durum (Örnek A) | VAR | YOK | ............ |\n| 2. Durum (Örnek B) | VAR | VAR | ............ |\n| 3. Durum (Örnek C) | YOK | YOK | ............ |",
-        "questionText": "Matristeki boşlukları özelliğin doğruluğuna göre \"EVET\" veya \"HAYIR\" yazarak doldurunuz. 2. Durum'u diğer durumlardan ayıran en temel şartı gerekçelendirerek yazınız.",
+        "stimulus": "Information card:\n• Arda: 19 years old, 176 cm, generous (donates money to schools), modest.\n• Barış: 24 years old, 186 cm, stingy (hates sharing money), stubborn.",
+        "questionText": "Write two comparative sentences using the given adjectives:\na) (tall / short): Compare Arda and Barış.\nb) (generous / stingy): Compare Arda and Barış.",
         "solutionExplanation": "Comparative adjectives (-er / more).",
-        "modelAnswer": "Tablo Tamamlaması: 1. Durum: HAYIR | 2. Durum: EVET | 3. Durum: HAYIR.\nAyırt Edici Gerekçe: 2. Durum hem temel kriteri hem de ayırt edici özelliği eksiksiz sağladığı için Sentence Patterns: \"My best friend is taller than me, but I am more punctual than him.\" kuralına tam uygundur.",
+        "modelAnswer": "a) Barış is taller than Arda. / Arda is shorter than Barış.\nb) Arda is more generous than Barış. / Barış is stingier than Arda.",
         "rubric": [
           {
-            "criterion": "Tablodaki boşlukların hatasız doldurulması (HAYIR - EVET - HAYIR)",
+            "criterion": "a şıkkında boy karşılaştırma cümlesinin doğru yazılması",
             "points": 10
           },
           {
-            "criterion": "2. Durum'un ayırt edici şartının ve kuralının açıklanması",
+            "criterion": "b şıkkında cömertlik/cimrilik karşılaştırma cümlesinin doğru yazılması",
             "points": 10
           }
         ]
@@ -14786,25 +14582,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "E7.2.R1. Students will be able to understand short and simple texts on sports.",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Hata Tespiti & Adım Analizi",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 20,
         "contextText": "Reading about Volleyball camp.",
-        "stimulus": "Sude, Sports: Indoor/Outdoor Sports and Equipment ile ilgili açık uçlu bir soruyu çözerken çalışma kağıdına şu adımları yazmıştır:\n1. Adım: Verilen öncülleri ve temel kavramları belirledim.\n2. Adım: \"Do football\" denilmez, \"play football\" denir! Spor fiili eşleştirmelerine dikkat ediniz. kabulünü yaparak işleme başladım.\n3. Adım: Bu adımdaki sonuca göre bağlantılı kuralı uyguladım.\n4. Adım: Nihai sonuca ulaştım.",
-        "questionText": "Sude'in çözüm adımlarını inceleyiniz. İlk hata kaçıncı adımda yapılmıştır? Yapılan hatanın gerekçesini açıklayarak o adımın ve nihai cevabın doğru halini yazınız.",
+        "stimulus": "Read the text:\n\n'Volleyball is a popular team sport played with two teams of six players. Players hit the ball over a high net using their hands and arms. To prevent knee injuries when diving on the hard wooden court, volleyball players must wear kneepads. Our school team practices three times a week in the indoor gym.'",
+        "questionText": "Answer the questions according to the paragraph:\na) How many players are there in a volleyball team on the court?\nb) Where do the team players practice and what equipment protects their knees?",
         "solutionExplanation": "Information extraction: number of players, venue, and safety equipment.",
-        "modelAnswer": "İlk hata 2. adımda yapılmıştır. Çünkü Sude, '\"Do football\" denilmez, \"play football\" denir! Spor fiili eşleştirmelerine dikkat ediniz.' hatasına düşmüştür. Doğrusu: Play: Top ve takım sporları için kullanılır (play football, play basketball, play tennis). kuralı işletilmeli ve çözüm bu esasa göre tamamlanmalıdır.",
+        "modelAnswer": "a) There are six players in a team on the court.\nb) They practice in the indoor gym and they wear kneepads to protect their knees.",
         "rubric": [
           {
-            "criterion": "İlk hatanın yapıldığı adımın (2. Adım) doğru belirlenmesi",
-            "points": 7
+            "criterion": "a şıkkında oyuncu sayısının (six) doğru yazılması",
+            "points": 10
           },
           {
-            "criterion": "Yapılan kavramsal/işlemsel hatanın gerekçelendirilmesi",
-            "points": 7
-          },
-          {
-            "criterion": "Adımın ve sonucun doğru kurala göre düzeltilmesi",
-            "points": 6
+            "criterion": "b şıkkında indoor gym ve kneepads bilgisinin yazılması",
+            "points": 10
           }
         ]
       },
@@ -14814,20 +14606,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "E7.2.R1. Students will be able to understand short and simple texts on sports.",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 20,
         "contextText": "Indoor vs outdoor sports classification.",
-        "stimulus": "Sports: Indoor/Outdoor Sports and Equipment kapsamında karşılaşılan bir durumu çözmek için uzmanlar iki farklı yöntem geliştirmiştir:\n1. Yöntem: Kısa vadeli hızlı çözüm sunan ancak '\"Do football\" denilmez, \"play football\" denir! Spor fiili eşleştirmelerine dikkat ediniz.' riskini barındıran yaklaşım.\n2. Yöntem: Başlangıçta daha fazla dikkat ve aşama gerektiren ancak 'Play: Top ve takım sporları için kullanılır (play football, play basketball, play tennis).' ilkesine tam uyan sürdürülebilir yaklaşım.",
-        "questionText": "Verilen iki yaklaşımı Sports: Indoor/Outdoor Sports and Equipment ilkeleri bakımından değerlendiriniz. Hangi yöntem daha uygundur? Seçtiğiniz yöntemin güçlü yönlerini ve diğer yöntemin taşıdığı riskleri gerekçelendiriniz.",
-        "solutionExplanation": "Classifying sports as indoor or outdoor.",
-        "modelAnswer": "2. Yöntem uygundur. Çünkü Play: Top ve takım sporları için kullanılır (play football, play basketball, play tennis). ilkesini tam olarak karşılamaktadır. 1. Yöntem ise kısa vadeli olsa da '\"Do football\" denilmez, \"play football\" denir! Spor fiili eşleştirmelerine dikkat ediniz.' sakıncasını doğuracağı için hedeflenen amaca ters düşer.",
+        "stimulus": "Read the text:\n\n'Volleyball is a popular team sport played with two teams of six players. Players hit the ball over a high net using their hands and arms. To prevent knee injuries when diving on the hard wooden court, volleyball players must wear kneepads. Our school team practices three times a week in the indoor gym.'",
+        "questionText": "Answer the questions according to the paragraph:\na) How many players are there in a volleyball team on the court?\nb) Where do the team players practice and what equipment protects their knees?",
+        "solutionExplanation": "Information extraction: number of players, venue, and safety equipment.",
+        "modelAnswer": "a) There are six players in a team on the court.\nb) They practice in the indoor gym and they wear kneepads to protect their knees.",
         "rubric": [
           {
-            "criterion": "Doğru yaklaşımın (2. Yöntem) tespiti ve güçlü yönünün gerekçelendirilmesi",
+            "criterion": "a şıkkında oyuncu sayısının (six) doğru yazılması",
             "points": 10
           },
           {
-            "criterion": "1. Yöntemin taşıdığı kavramsal riskin açıklanması",
+            "criterion": "b şıkkında indoor gym ve kneepads bilgisinin yazılması",
             "points": 10
           }
         ]
@@ -14880,21 +14672,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "E7.1.R1. Students will be able to understand a simple text about appearance and personality.",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Physical appearance vs personality adjectives.",
-        "stimulus": "Describing Appearance, Personality and Comparatives konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nUmut: \"Bu durumda temel kural şudur: \"Stubborn\" (inatçı) ve \"selfish\" (bencil) olumsuz sıfatlardır; \"generous\" ve \"honest\" olumludur.\"\nEmre: \"Hayır Umut, yanılıyorsun. Çünkü kural gereği: Appearance (Dış Görünüş): tall, short, slim, well-built, curly hair, blue eyes. Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Umut ve Emre'nin iddialarını Describing Appearance, Personality and Comparatives ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
-        "solutionExplanation": "Distinguishing physical appearance adjectives from personality adjectives.",
-        "modelAnswer": "Emre haklıdır. Çünkü Appearance (Dış Görünüş): tall, short, slim, well-built, curly hair, blue eyes.. Umut ise '\"Stubborn\" (inatçı) ve \"selfish\" (bencil) olumsuz sıfatlardır; \"generous\" ve \"honest\" olumludur.' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "stimulus": "Read David's email to his cousin in London:\n\n'Dear Sam, I love my new school in Istanbul! My deskmate Mehmet is very friendly and honest. He never tells lies and always helps me with Turkish words. He is medium-height with short black hair and brown eyes. Our English teacher, Mrs. Demir, is very energetic and patient with all foreign students.'",
+        "questionText": "Based on David's email:\na) Why does David think Mehmet is honest? Write the sentence from the text.\nb) How does David describe Mrs. Demir's personality?",
+        "solutionExplanation": "Extracting reasons and personality adjectives.",
+        "modelAnswer": "a) Because 'He never tells lies (and always helps me with Turkish words)'.\nb) Mrs. Demir is very energetic and patient.",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (Emre) doğru tespiti",
-            "points": 7
+            "criterion": "a şıkkında dürüstlük gerekçesinin doğru alıntılanması",
+            "points": 9
           },
           {
-            "criterion": "Umut'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 10
+            "criterion": "b şıkkında Mrs. Demir'in kişilik özelliklerinin yazılması",
+            "points": 8
           }
         ]
       },
@@ -14904,21 +14696,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "E7.1.W1. Students will be able to write simple pieces to compare appearances and personalities of people.",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Comparing grandfather and grandson.",
-        "stimulus": "Aşağıdaki matriste Writing a Short Paragraph Comparing Two People konusuna yönelik üç farklı durum ve özellikleri verilmiştir:\n\n| Durum / Örnek | 1. Temel Kriter | 2. Ayırt Edici Özellik | Karşılar mı? |\n| :--- | :---: | :---: | :---: |\n| 1. Durum (Örnek A) | VAR | YOK | ............ |\n| 2. Durum (Örnek B) | VAR | VAR | ............ |\n| 3. Durum (Örnek C) | YOK | YOK | ............ |",
-        "questionText": "Matristeki boşlukları özelliğin doğruluğuna göre \"EVET\" veya \"HAYIR\" yazarak doldurunuz. 2. Durum'u diğer durumlardan ayıran en temel şartı gerekçelendirerek yazınız.",
+        "stimulus": "Grandfather Tahsin (72 years old, walks slowly, very wise and patient) and grandson Emre (13 years old, runs fast, energetic and impatient).",
+        "questionText": "Write two sentences comparing Tahsin and Emre:\n1) Use comparative adjective 'younger' or 'older'.\n2) Use comparative adjective 'more patient' or 'more energetic'.",
         "solutionExplanation": "Forming grammatically correct comparative sentences.",
-        "modelAnswer": "Tablo Tamamlaması: 1. Durum: HAYIR | 2. Durum: EVET | 3. Durum: HAYIR.\nAyırt Edici Gerekçe: 2. Durum hem temel kriteri hem de ayırt edici özelliği eksiksiz sağladığı için Sentence Patterns: \"My best friend is taller than me, but I am more punctual than him.\" kuralına tam uygundur.",
+        "modelAnswer": "1) Emre is younger than Tahsin. / Tahsin is older than Emre.\n2) Tahsin is more patient than Emre. / Emre is more energetic than Tahsin.",
         "rubric": [
           {
-            "criterion": "Tablodaki boşlukların hatasız doldurulması (HAYIR - EVET - HAYIR)",
-            "points": 8
+            "criterion": "1. cümlede yaş karşılaştırmasının doğru yapılması",
+            "points": 9
           },
           {
-            "criterion": "2. Durum'un ayırt edici şartının ve kuralının açıklanması",
-            "points": 9
+            "criterion": "2. cümlede kişilik karşılaştırmasının doğru yapılması",
+            "points": 8
           }
         ]
       },
@@ -14928,25 +14720,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "E7.2.R1. Students will be able to understand short and simple texts on sports.",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Hata Tespiti & Adım Analizi",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Reading: Swimming champion Defne.",
-        "stimulus": "Sude, Sports: Indoor/Outdoor Sports and Equipment ile ilgili açık uçlu bir soruyu çözerken çalışma kağıdına şu adımları yazmıştır:\n1. Adım: Verilen öncülleri ve temel kavramları belirledim.\n2. Adım: \"Do football\" denilmez, \"play football\" denir! Spor fiili eşleştirmelerine dikkat ediniz. kabulünü yaparak işleme başladım.\n3. Adım: Bu adımdaki sonuca göre bağlantılı kuralı uyguladım.\n4. Adım: Nihai sonuca ulaştım.",
-        "questionText": "Sude'in çözüm adımlarını inceleyiniz. İlk hata kaçıncı adımda yapılmıştır? Yapılan hatanın gerekçesini açıklayarak o adımın ve nihai cevabın doğru halini yazınız.",
+        "stimulus": "Read the text:\n\n'Defne is a national swimmer. She wakes up at 5:30 am every weekday. She goes to the Olympic pool and swims for two hours before school. She always wears her swimsuit, goggles, and swim cap. She eats healthy food like eggs, fruits, and fish to stay strong.'",
+        "questionText": "Answer the questions:\na) What equipment does Defne use when swimming?\nb) What does Defne eat to stay healthy and strong?",
         "solutionExplanation": "Extracting swimming equipment and dietary habits.",
-        "modelAnswer": "İlk hata 2. adımda yapılmıştır. Çünkü Sude, '\"Do football\" denilmez, \"play football\" denir! Spor fiili eşleştirmelerine dikkat ediniz.' hatasına düşmüştür. Doğrusu: Play: Top ve takım sporları için kullanılır (play football, play basketball, play tennis). kuralı işletilmeli ve çözüm bu esasa göre tamamlanmalıdır.",
+        "modelAnswer": "a) She uses / wears a swimsuit, goggles, and a swim cap.\nb) She eats healthy food like eggs, fruits, and fish.",
         "rubric": [
           {
-            "criterion": "İlk hatanın yapıldığı adımın (2. Adım) doğru belirlenmesi",
-            "points": 6
+            "criterion": "a şıkkında yüzme ekipmanlarının (goggles, swim cap vb.) yazılması",
+            "points": 9
           },
           {
-            "criterion": "Yapılan kavramsal/işlemsel hatanın gerekçelendirilmesi",
-            "points": 6
-          },
-          {
-            "criterion": "Adımın ve sonucun doğru kurala göre düzeltilmesi",
-            "points": 5
+            "criterion": "b şıkkında sağlıklı besinlerin (eggs, fruits, fish) yazılması",
+            "points": 8
           }
         ]
       },
@@ -14956,20 +14744,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "E7.2.R1. Students will be able to understand short and simple texts on sports.",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 16,
         "contextText": "Sports rules and fair play.",
-        "stimulus": "Sports: Indoor/Outdoor Sports and Equipment kapsamında karşılaşılan bir durumu çözmek için uzmanlar iki farklı yöntem geliştirmiştir:\n1. Yöntem: Kısa vadeli hızlı çözüm sunan ancak '\"Do football\" denilmez, \"play football\" denir! Spor fiili eşleştirmelerine dikkat ediniz.' riskini barındıran yaklaşım.\n2. Yöntem: Başlangıçta daha fazla dikkat ve aşama gerektiren ancak 'Play: Top ve takım sporları için kullanılır (play football, play basketball, play tennis).' ilkesine tam uyan sürdürülebilir yaklaşım.",
-        "questionText": "Verilen iki yaklaşımı Sports: Indoor/Outdoor Sports and Equipment ilkeleri bakımından değerlendiriniz. Hangi yöntem daha uygundur? Seçtiğiniz yöntemin güçlü yönlerini ve diğer yöntemin taşıdığı riskleri gerekçelendiriniz.",
-        "solutionExplanation": "Understanding rules of soccer and fair play concept.",
-        "modelAnswer": "2. Yöntem uygundur. Çünkü Play: Top ve takım sporları için kullanılır (play football, play basketball, play tennis). ilkesini tam olarak karşılamaktadır. 1. Yöntem ise kısa vadeli olsa da '\"Do football\" denilmez, \"play football\" denir! Spor fiili eşleştirmelerine dikkat ediniz.' sakıncasını doğuracağı için hedeflenen amaca ters düşer.",
+        "stimulus": "Read the text:\n\n'Defne is a national swimmer. She wakes up at 5:30 am every weekday. She goes to the Olympic pool and swims for two hours before school. She always wears her swimsuit, goggles, and swim cap. She eats healthy food like eggs, fruits, and fish to stay strong.'",
+        "questionText": "Answer the questions:\na) What equipment does Defne use when swimming?\nb) What does Defne eat to stay healthy and strong?",
+        "solutionExplanation": "Extracting swimming equipment and dietary habits.",
+        "modelAnswer": "a) She uses / wears a swimsuit, goggles, and a swim cap.\nb) She eats healthy food like eggs, fruits, and fish.",
         "rubric": [
           {
-            "criterion": "Doğru yaklaşımın (2. Yöntem) tespiti ve güçlü yönünün gerekçelendirilmesi",
+            "criterion": "a şıkkında yüzme ekipmanlarının (goggles, swim cap vb.) yazılması",
             "points": 8
           },
           {
-            "criterion": "1. Yöntemin taşıdığı kavramsal riskin açıklanması",
+            "criterion": "b şıkkında sağlıklı besinlerin (eggs, fruits, fish) yazılması",
             "points": 8
           }
         ]
@@ -15046,21 +14834,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "E7.1.R1. Students will be able to understand a simple text about appearance and personality.",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 15,
         "contextText": "Personality idioms and meanings.",
-        "stimulus": "Describing Appearance, Personality and Comparatives konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nUmut: \"Bu durumda temel kural şudur: \"Stubborn\" (inatçı) ve \"selfish\" (bencil) olumsuz sıfatlardır; \"generous\" ve \"honest\" olumludur.\"\nEmre: \"Hayır Umut, yanılıyorsun. Çünkü kural gereği: Appearance (Dış Görünüş): tall, short, slim, well-built, curly hair, blue eyes. Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Umut ve Emre'nin iddialarını Describing Appearance, Personality and Comparatives ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
-        "solutionExplanation": "Stubborn vs generous definitions.",
-        "modelAnswer": "Emre haklıdır. Çünkü Appearance (Dış Görünüş): tall, short, slim, well-built, curly hair, blue eyes.. Umut ise '\"Stubborn\" (inatçı) ve \"selfish\" (bencil) olumsuz sıfatlardır; \"generous\" ve \"honest\" olumludur.' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "stimulus": "Read the school election notice:\n\n'Two students are running for class president: Zeynep is generous, outgoing, and good at public speaking. She has long dark wavy hair. Murat is smart, punctual, and very calm. He wears glasses and has short curly hair.'",
+        "questionText": "Answer the questions:\na) Who is better at public speaking?\nb) What does Murat look like?",
+        "solutionExplanation": "Information extraction from election profiles.",
+        "modelAnswer": "a) Zeynep is better at public speaking.\nb) Murat wears glasses and has short curly hair.",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (Emre) doğru tespiti",
-            "points": 6
+            "criterion": "a şıkkında Zeynep'in doğru yazılması",
+            "points": 8
           },
           {
-            "criterion": "Umut'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 9
+            "criterion": "b şıkkında Murat'ın gözlük ve kıvırcık saç özelliğinin yazılması",
+            "points": 7
           }
         ]
       },
@@ -15070,21 +14858,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "E7.1.W1. Students will be able to write simple pieces to compare appearances and personalities of people.",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Comparing weights and heights.",
-        "stimulus": "Aşağıdaki matriste Writing a Short Paragraph Comparing Two People konusuna yönelik üç farklı durum ve özellikleri verilmiştir:\n\n| Durum / Örnek | 1. Temel Kriter | 2. Ayırt Edici Özellik | Karşılar mı? |\n| :--- | :---: | :---: | :---: |\n| 1. Durum (Örnek A) | VAR | YOK | ............ |\n| 2. Durum (Örnek B) | VAR | VAR | ............ |\n| 3. Durum (Örnek C) | YOK | YOK | ............ |",
-        "questionText": "Matristeki boşlukları özelliğin doğruluğuna göre \"EVET\" veya \"HAYIR\" yazarak doldurunuz. 2. Durum'u diğer durumlardan ayıran en temel şartı gerekçelendirerek yazınız.",
+        "stimulus": "Ahmet (85 kg) and Tolga (62 kg).",
+        "questionText": "Write a comparative sentence using 'heavier than' or 'slimmer than' to compare Ahmet and Tolga.",
         "solutionExplanation": "Applying comparative adjective rules.",
-        "modelAnswer": "Tablo Tamamlaması: 1. Durum: HAYIR | 2. Durum: EVET | 3. Durum: HAYIR.\nAyırt Edici Gerekçe: 2. Durum hem temel kriteri hem de ayırt edici özelliği eksiksiz sağladığı için Sentence Patterns: \"My best friend is taller than me, but I am more punctual than him.\" kuralına tam uygundur.",
+        "modelAnswer": "Ahmet is heavier than Tolga. / Tolga is slimmer than Ahmet.",
         "rubric": [
           {
-            "criterion": "Tablodaki boşlukların hatasız doldurulması (HAYIR - EVET - HAYIR)",
-            "points": 7
-          },
-          {
-            "criterion": "2. Durum'un ayırt edici şartının ve kuralının açıklanması",
-            "points": 7
+            "criterion": "Ağırlık/zayıflık karşılaştırmasının kurallı İngilizceyle yazılması",
+            "points": 14
           }
         ]
       },
@@ -15094,25 +14878,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "E7.1.W1. Students will be able to write simple pieces to compare appearances and personalities of people.",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Hata Tespiti & Adım Analizi",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Comparing study habits.",
-        "stimulus": "Sude, Writing a Short Paragraph Comparing Two People ile ilgili açık uçlu bir soruyu çözerken çalışma kağıdına şu adımları yazmıştır:\n1. Adım: Verilen öncülleri ve temel kavramları belirledim.\n2. Adım: İki heceli ve sonu -y ile biten sıfatlar -ier alır (friendly -> friendlier than). kabulünü yaparak işleme başladım.\n3. Adım: Bu adımdaki sonuca göre bağlantılı kuralı uyguladım.\n4. Adım: Nihai sonuca ulaştım.",
-        "questionText": "Sude'in çözüm adımlarını inceleyiniz. İlk hata kaçıncı adımda yapılmıştır? Yapılan hatanın gerekçesini açıklayarak o adımın ve nihai cevabın doğru halini yazınız.",
-        "solutionExplanation": "Using 'more hardworking than'.",
-        "modelAnswer": "İlk hata 2. adımda yapılmıştır. Çünkü Sude, 'İki heceli ve sonu -y ile biten sıfatlar -ier alır (friendly -> friendlier than).' hatasına düşmüştür. Doğrusu: Sentence Patterns: \"My best friend is taller than me, but I am more punctual than him.\" kuralı işletilmeli ve çözüm bu esasa göre tamamlanmalıdır.",
+        "stimulus": "Ahmet (85 kg) and Tolga (62 kg).",
+        "questionText": "Write a comparative sentence using 'heavier than' or 'slimmer than' to compare Ahmet and Tolga.",
+        "solutionExplanation": "Applying comparative adjective rules.",
+        "modelAnswer": "Ahmet is heavier than Tolga. / Tolga is slimmer than Ahmet.",
         "rubric": [
           {
-            "criterion": "İlk hatanın yapıldığı adımın (2. Adım) doğru belirlenmesi",
-            "points": 5
-          },
-          {
-            "criterion": "Yapılan kavramsal/işlemsel hatanın gerekçelendirilmesi",
-            "points": 5
-          },
-          {
-            "criterion": "Adımın ve sonucun doğru kurala göre düzeltilmesi",
-            "points": 4
+            "criterion": "Ağırlık/zayıflık karşılaştırmasının kurallı İngilizceyle yazılması",
+            "points": 14
           }
         ]
       },
@@ -15122,20 +14898,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "E7.2.R1. Students will be able to understand short and simple texts on sports.",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Reading: Gymnastics routine of Bilge.",
-        "stimulus": "Sports: Indoor/Outdoor Sports and Equipment kapsamında karşılaşılan bir durumu çözmek için uzmanlar iki farklı yöntem geliştirmiştir:\n1. Yöntem: Kısa vadeli hızlı çözüm sunan ancak '\"Do football\" denilmez, \"play football\" denir! Spor fiili eşleştirmelerine dikkat ediniz.' riskini barındıran yaklaşım.\n2. Yöntem: Başlangıçta daha fazla dikkat ve aşama gerektiren ancak 'Play: Top ve takım sporları için kullanılır (play football, play basketball, play tennis).' ilkesine tam uyan sürdürülebilir yaklaşım.",
-        "questionText": "Verilen iki yaklaşımı Sports: Indoor/Outdoor Sports and Equipment ilkeleri bakımından değerlendiriniz. Hangi yöntem daha uygundur? Seçtiğiniz yöntemin güçlü yönlerini ve diğer yöntemin taşıdığı riskleri gerekçelendiriniz.",
+        "stimulus": "Read the text:\n\n'Bilge is a 12-year-old rhythmic gymnast. She trains in the gym every afternoon. She does stretching exercises, uses ribbons and hoops, and practices on the balance beam. She says gymnastics requires great flexibility, balance, and discipline.'",
+        "questionText": "According to the text:\na) What equipment does Bilge use in rhythmic gymnastics?\nb) Which three qualities does gymnastics require according to Bilge?",
         "solutionExplanation": "Extracting equipment and athlete qualities.",
-        "modelAnswer": "2. Yöntem uygundur. Çünkü Play: Top ve takım sporları için kullanılır (play football, play basketball, play tennis). ilkesini tam olarak karşılamaktadır. 1. Yöntem ise kısa vadeli olsa da '\"Do football\" denilmez, \"play football\" denir! Spor fiili eşleştirmelerine dikkat ediniz.' sakıncasını doğuracağı için hedeflenen amaca ters düşer.",
+        "modelAnswer": "a) She uses ribbons and hoops (and the balance beam).\nb) It requires flexibility, balance, and discipline.",
         "rubric": [
           {
-            "criterion": "Doğru yaklaşımın (2. Yöntem) tespiti ve güçlü yönünün gerekçelendirilmesi",
+            "criterion": "a şıkkında ribbons ve hoops ekipmanlarının yazılması",
             "points": 7
           },
           {
-            "criterion": "1. Yöntemin taşıdığı kavramsal riskin açıklanması",
+            "criterion": "b şıkkında flexibility, balance ve discipline kelimelerinin yazılması",
             "points": 7
           }
         ]
@@ -15236,21 +15012,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "E7.1.R1. Students will be able to understand a simple text about appearance and personality.",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 13,
         "contextText": "Dialogue between Emma and Jack.",
-        "stimulus": "Describing Appearance, Personality and Comparatives konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nUmut: \"Bu durumda temel kural şudur: \"Stubborn\" (inatçı) ve \"selfish\" (bencil) olumsuz sıfatlardır; \"generous\" ve \"honest\" olumludur.\"\nEmre: \"Hayır Umut, yanılıyorsun. Çünkü kural gereği: Appearance (Dış Görünüş): tall, short, slim, well-built, curly hair, blue eyes. Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Umut ve Emre'nin iddialarını Describing Appearance, Personality and Comparatives ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
-        "solutionExplanation": "Dialogue analysis for appearance and personality.",
-        "modelAnswer": "Emre haklıdır. Çünkü Appearance (Dış Görünüş): tall, short, slim, well-built, curly hair, blue eyes.. Umut ise '\"Stubborn\" (inatçı) ve \"selfish\" (bencil) olumsuz sıfatlardır; \"generous\" ve \"honest\" olumludur.' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "stimulus": "Read the text:\n\n'Leo and Max are 13-year-old brothers. Leo is outgoing and cheerful. He loves hanging out with his friends at cafes. Max is clumsy and forgetful; he often drops his glasses and forgets his homework, but he is very honest and generous.'",
+        "questionText": "Answer the questions:\na) What negative personality traits does Max have?\nb) What positive personality traits does Max have?",
+        "solutionExplanation": "Negative vs positive personality traits.",
+        "modelAnswer": "a) Max is clumsy and forgetful.\nb) Max is honest and generous.",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (Emre) doğru tespiti",
-            "points": 5
+            "criterion": "a şıkkında clumsy ve forgetful özelliklerinin yazılması",
+            "points": 7
           },
           {
-            "criterion": "Umut'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 8
+            "criterion": "b şıkkında honest ve generous özelliklerinin yazılması",
+            "points": 6
           }
         ]
       },
@@ -15260,21 +15036,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "E7.1.W1. Students will be able to write simple pieces to compare appearances and personalities of people.",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 13,
         "contextText": "Comparative sentences with irregular and regular adjectives.",
-        "stimulus": "Aşağıdaki matriste Writing a Short Paragraph Comparing Two People konusuna yönelik üç farklı durum ve özellikleri verilmiştir:\n\n| Durum / Örnek | 1. Temel Kriter | 2. Ayırt Edici Özellik | Karşılar mı? |\n| :--- | :---: | :---: | :---: |\n| 1. Durum (Örnek A) | VAR | YOK | ............ |\n| 2. Durum (Örnek B) | VAR | VAR | ............ |\n| 3. Durum (Örnek C) | YOK | YOK | ............ |",
-        "questionText": "Matristeki boşlukları özelliğin doğruluğuna göre \"EVET\" veya \"HAYIR\" yazarak doldurunuz. 2. Durum'u diğer durumlardan ayıran en temel şartı gerekçelendirerek yazınız.",
+        "stimulus": "Adjectives: 'good, easy-going'. Compare Aylin and Buse.",
+        "questionText": "Complete the sentences with the comparative forms of the words in brackets:\na) Aylin plays tennis ................................. than Buse. (good)\nb) Buse is ................................. than Aylin in social relations. (easy-going)",
         "solutionExplanation": "Irregular comparative 'better' and multi-syllable 'more easy-going'.",
-        "modelAnswer": "Tablo Tamamlaması: 1. Durum: HAYIR | 2. Durum: EVET | 3. Durum: HAYIR.\nAyırt Edici Gerekçe: 2. Durum hem temel kriteri hem de ayırt edici özelliği eksiksiz sağladığı için Sentence Patterns: \"My best friend is taller than me, but I am more punctual than him.\" kuralına tam uygundur.",
+        "modelAnswer": "a) Aylin plays tennis better than Buse.\nb) Buse is more easy-going than Aylin in social relations.",
         "rubric": [
           {
-            "criterion": "Tablodaki boşlukların hatasız doldurulması (HAYIR - EVET - HAYIR)",
-            "points": 6
+            "criterion": "a şıkkında 'better' düzensiz sıfatının doğru yazılması",
+            "points": 7
           },
           {
-            "criterion": "2. Durum'un ayırt edici şartının ve kuralının açıklanması",
-            "points": 7
+            "criterion": "b şıkkında 'more easy-going' kalıbının doğru yazılması",
+            "points": 6
           }
         ]
       },
@@ -15284,25 +15060,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "E7.1.W1. Students will be able to write simple pieces to compare appearances and personalities of people.",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Hata Tespiti & Adım Analizi",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 13,
         "contextText": "Writing comparative sentences from a table.",
-        "stimulus": "Sude, Writing a Short Paragraph Comparing Two People ile ilgili açık uçlu bir soruyu çözerken çalışma kağıdına şu adımları yazmıştır:\n1. Adım: Verilen öncülleri ve temel kavramları belirledim.\n2. Adım: İki heceli ve sonu -y ile biten sıfatlar -ier alır (friendly -> friendlier than). kabulünü yaparak işleme başladım.\n3. Adım: Bu adımdaki sonuca göre bağlantılı kuralı uyguladım.\n4. Adım: Nihai sonuca ulaştım.",
-        "questionText": "Sude'in çözüm adımlarını inceleyiniz. İlk hata kaçıncı adımda yapılmıştır? Yapılan hatanın gerekçesini açıklayarak o adımın ve nihai cevabın doğru halini yazınız.",
-        "solutionExplanation": "Sentence construction using comparatives.",
-        "modelAnswer": "İlk hata 2. adımda yapılmıştır. Çünkü Sude, 'İki heceli ve sonu -y ile biten sıfatlar -ier alır (friendly -> friendlier than).' hatasına düşmüştür. Doğrusu: Sentence Patterns: \"My best friend is taller than me, but I am more punctual than him.\" kuralı işletilmeli ve çözüm bu esasa göre tamamlanmalıdır.",
+        "stimulus": "Adjectives: 'good, easy-going'. Compare Aylin and Buse.",
+        "questionText": "Complete the sentences with the comparative forms of the words in brackets:\na) Aylin plays tennis ................................. than Buse. (good)\nb) Buse is ................................. than Aylin in social relations. (easy-going)",
+        "solutionExplanation": "Irregular comparative 'better' and multi-syllable 'more easy-going'.",
+        "modelAnswer": "a) Aylin plays tennis better than Buse.\nb) Buse is more easy-going than Aylin in social relations.",
         "rubric": [
           {
-            "criterion": "İlk hatanın yapıldığı adımın (2. Adım) doğru belirlenmesi",
-            "points": 5
+            "criterion": "a şıkkında 'better' düzensiz sıfatının doğru yazılması",
+            "points": 7
           },
           {
-            "criterion": "Yapılan kavramsal/işlemsel hatanın gerekçelendirilmesi",
-            "points": 5
-          },
-          {
-            "criterion": "Adımın ve sonucun doğru kurala göre düzeltilmesi",
-            "points": 3
+            "criterion": "b şıkkında 'more easy-going' kalıbının doğru yazılması",
+            "points": 6
           }
         ]
       },
@@ -15312,20 +15084,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "E7.2.R1. Students will be able to understand short and simple texts on sports.",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "Extreme sports: Skydiving.",
-        "stimulus": "Sports: Indoor/Outdoor Sports and Equipment kapsamında karşılaşılan bir durumu çözmek için uzmanlar iki farklı yöntem geliştirmiştir:\n1. Yöntem: Kısa vadeli hızlı çözüm sunan ancak '\"Do football\" denilmez, \"play football\" denir! Spor fiili eşleştirmelerine dikkat ediniz.' riskini barındıran yaklaşım.\n2. Yöntem: Başlangıçta daha fazla dikkat ve aşama gerektiren ancak 'Play: Top ve takım sporları için kullanılır (play football, play basketball, play tennis).' ilkesine tam uyan sürdürülebilir yaklaşım.",
-        "questionText": "Verilen iki yaklaşımı Sports: Indoor/Outdoor Sports and Equipment ilkeleri bakımından değerlendiriniz. Hangi yöntem daha uygundur? Seçtiğiniz yöntemin güçlü yönlerini ve diğer yöntemin taşıdığı riskleri gerekçelendiriniz.",
+        "stimulus": "Read the text:\n\n'Skydiving is an extreme outdoor sport. Jumpers jump from an airplane high in the sky and freefall before opening their parachutes. They need a parachute, a helmet, and special goggles. It is a thrilling but dangerous sport.'",
+        "questionText": "Answer the questions:\na) What equipment is necessary for skydiving?\nb) Is skydiving an indoor or outdoor sport?",
         "solutionExplanation": "Extracting skydiving equipment and category.",
-        "modelAnswer": "2. Yöntem uygundur. Çünkü Play: Top ve takım sporları için kullanılır (play football, play basketball, play tennis). ilkesini tam olarak karşılamaktadır. 1. Yöntem ise kısa vadeli olsa da '\"Do football\" denilmez, \"play football\" denir! Spor fiili eşleştirmelerine dikkat ediniz.' sakıncasını doğuracağı için hedeflenen amaca ters düşer.",
+        "modelAnswer": "a) A parachute, a helmet, and special goggles are necessary.\nb) Skydiving is an outdoor (extreme) sport.",
         "rubric": [
           {
-            "criterion": "Doğru yaklaşımın (2. Yöntem) tespiti ve güçlü yönünün gerekçelendirilmesi",
+            "criterion": "a şıkkında paraşüt, kask ve gözlük ekipmanlarının yazılması",
             "points": 6
           },
           {
-            "criterion": "1. Yöntemin taşıdığı kavramsal riskin açıklanması",
+            "criterion": "b şıkkında outdoor sport olduğunun yazılması",
             "points": 6
           }
         ]
@@ -15384,21 +15156,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "E7.2.W1. Students will be able to write pieces about routines/daily activities by using frequency adverbs.",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
         "points": 12,
         "contextText": "Answering frequency questions.",
-        "stimulus": "Writing About Daily Sports Routines and Frequency konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nAlper: \"Bu durumda temel kural şudur: Frequency adverb özne ile fiil arasına gelir: \"I always play tennis.\"\"\nKuzey: \"Hayır Alper, yanılıyorsun. Çünkü kural gereği: Frequency Adverbs: always, usually, often, sometimes, never. Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Alper ve Kuzey'nin iddialarını Writing About Daily Sports Routines and Frequency ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
+        "stimulus": "Question: 'How often do you brush your teeth and do physical exercise?'",
+        "questionText": "Answer the question in two full sentences using frequency adverbs (e.g. twice a day, always, three times a week, usually):\n1) Brushing teeth sentence:\n2) Physical exercise sentence:",
         "solutionExplanation": "Writing full sentences with frequency adverbs.",
-        "modelAnswer": "Kuzey haklıdır. Çünkü Frequency Adverbs: always, usually, often, sometimes, never.. Alper ise 'Frequency adverb özne ile fiil arasına gelir: \"I always play tennis.\"' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "modelAnswer": "1) I always brush my teeth twice a day.\n2) I usually do physical exercise three times a week.",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (Kuzey) doğru tespiti",
-            "points": 5
+            "criterion": "1. cümlede sıklık ifadesiyle diş fırçalama rutininin yazılması",
+            "points": 6
           },
           {
-            "criterion": "Alper'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 7
+            "criterion": "2. cümlede sıklık ifadesiyle egzersiz rutininin yazılması",
+            "points": 6
           }
         ]
       }
@@ -19326,21 +19098,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Mustafa Kemal’in çocukluk ve öğrenim hayatından hareketle onun kişilik özelliklerinin oluşumu hakkında çıkarımlarda bulunur.",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Selanik şehrinin Mustafa Kemal'in gelişimine etkisi.",
-        "stimulus": "Mustafa Kemal'in Çocukluk, Öğrenim Hayatı ve Selanik Şehri konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nAslı: \"Bu durumda temel kural şudur: Selanik'te geleneksel Mahalle Mektebi ile modern Şemsi Efendi Mektebi'nin aynı anda var olması, Osmanlı'da eğitimde birlik (bütünlük) olmadığını kanıtlar.\"\nİrem: \"Hayır Aslı, yanılıyorsun. Çünkü kural gereği: Selanik Şehrinin Önemi: Liman kenti ve Avrupa'ya uzanan demir yolu ağı sayesinde çok kültürlü, ticari ve fikir akımlarına açık bir şehirdir. Bu ortam Mustafa Kemal'in hoşgörülü ve yenilikçi bir vizyon kazanmasını sağlamıştır. Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Aslı ve İrem'nin iddialarını Mustafa Kemal'in Çocukluk, Öğrenim Hayatı ve Selanik Şehri ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
+        "stimulus": "Mustafa Kemal'in doğup büyüdüğü Selanik; gelişmiş bir limana, Avrupa ile doğrudan bağlantılı demir yolu ağına ve Türk, Rum, Musevi, Ermeni gibi farklı milletlerin bir arada yaşadığı kozmopolit bir yapıya sahipti.",
+        "questionText": "Selanik şehrinin bu coğrafi, ekonomik ve kültürel özelliklerinin Mustafa Kemal'in fikir dünyasına sağladığı 2 önemli katkıyı yazınız.",
         "solutionExplanation": "Farklı kültürleri tanıdı, hoşgörülü oldu; Avrupa'daki yeni fikirleri (özgürlük, eşitlik) yakından takip etti.",
-        "modelAnswer": "İrem haklıdır. Çünkü Selanik Şehrinin Önemi: Liman kenti ve Avrupa'ya uzanan demir yolu ağı sayesinde çok kültürlü, ticari ve fikir akımlarına açık bir şehirdir. Bu ortam Mustafa Kemal'in hoşgörülü ve yenilikçi bir vizyon kazanmasını sağlamıştır.. Aslı ise 'Selanik'te geleneksel Mahalle Mektebi ile modern Şemsi Efendi Mektebi'nin aynı anda var olması, Osmanlı'da eğitimde birlik (bütünlük) olmadığını kanıtlar.' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "modelAnswer": "1. Hoşgörü ve Kültürel Zenginlik: Farklı inanç ve milletlerin bir arada barış içinde yaşamasını görerek geniş bir hoşgörü, saygı ve dünya görüşü kazanmasını sağladı.\n2. Yeniliklere Açıklık: Liman ve demir yolu sayesinde Avrupa'da basılan gazete, dergi ve kitaplar şehre hızla ulaşıyordu; Mustafa Kemal Batı'daki bilimsel, siyasi ve fikri gelişmeleri yakından takip ederek aydın bir vizyon geliştirdi.",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (İrem) doğru tespiti",
-            "points": 7
+            "criterion": "Farklı kültürleri tanıma ve hoşgörü katkısı",
+            "points": 9
           },
           {
-            "criterion": "Aslı'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 10
+            "criterion": "Batı'daki yenilikleri ve fikirleri takip etme katkısı",
+            "points": 8
           }
         ]
       },
@@ -19350,21 +19122,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Gençlik döneminde Mustafa Kemal’in fikir hayatını etkileyen önemli kişileri ve olayları kavrar.",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Mustafa Kemal'i etkileyen Türk düşünürler: Namık Kemal.",
-        "stimulus": "Aşağıdaki matriste Mustafa Kemal'in Fikir Hayatını Etkileyen Kişiler ve Olaylar konusuna yönelik üç farklı durum ve özellikleri verilmiştir:\n\n| Durum / Örnek | 1. Temel Kriter | 2. Ayırt Edici Özellik | Karşılar mı? |\n| :--- | :---: | :---: | :---: |\n| 1. Durum (Örnek A) | VAR | YOK | ............ |\n| 2. Durum (Örnek B) | VAR | VAR | ............ |\n| 3. Durum (Örnek C) | YOK | YOK | ............ |",
-        "questionText": "Matristeki boşlukları özelliğin doğruluğuna göre \"EVET\" veya \"HAYIR\" yazarak doldurunuz. 2. Durum'u diğer durumlardan ayıran en temel şartı gerekçelendirerek yazınız.",
+        "stimulus": "Mustafa Kemal Manastır Askeri İdadisi yıllarında 'Vatan Şairi' Namık Kemal'in şiirlerini gizlice okumuş ve 'Türk milletinin yüzyıllardır beklediği ses' olarak nitelendirmiştir.",
+        "questionText": "Namık Kemal'in eserlerinin Mustafa Kemal'de geliştirdiği en temel iki millî duyguyu ve fikri yazınız.",
         "solutionExplanation": "Vatan sevgisi ve hürriyet (özgürlük) aşkı.",
-        "modelAnswer": "Tablo Tamamlaması: 1. Durum: HAYIR | 2. Durum: EVET | 3. Durum: HAYIR.\nAyırt Edici Gerekçe: 2. Durum hem temel kriteri hem de ayırt edici özelliği eksiksiz sağladığı için Yerli Düşünürler: Namık Kemal (Vatan ve Hürriyet Sevgisi), Ziya Gökalp (Milliyetçilik ve Türkçülük), Tevfik Fikret (İnkılapçılık ve Batılılaşma), Mehmet Emin Yurdakul (Millî Kültür ve Şiir). kuralına tam uygundur.",
+        "modelAnswer": "1. Vatan Sevgisi ve Fedakârlık: Vatan toprağının kutsallığını ve gerektiğinde vatan uğruna canını feda etme bilincini aşılamıştır.\n2. Hürriyet ve İstiklal Tutkusu: Milletin baskı ve esaret altında yaşayamayacağı, hürriyet ve bağımsızlığın bir milletin can damarı olduğu inancını pekiştirmiştir.",
         "rubric": [
           {
-            "criterion": "Tablodaki boşlukların hatasız doldurulması (HAYIR - EVET - HAYIR)",
-            "points": 8
+            "criterion": "Vatan sevgisi ve fedakarlık boyutu",
+            "points": 9
           },
           {
-            "criterion": "2. Durum'un ayırt edici şartının ve kuralının açıklanması",
-            "points": 9
+            "criterion": "Hürriyet ve bağımsızlık bilinci boyutu",
+            "points": 8
           }
         ]
       },
@@ -19374,25 +19146,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Mustafa Kemal’in askerlik hayatı ile ilgili olayları ve olguları onun kişilik özellikleri ile ilişkilendirir.",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Hata Tespiti & Adım Analizi",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Mustafa Kemal'in Trablusgarp Savaşı'ndaki rolü.",
-        "stimulus": "Murat, Mustafa Kemal'in Askerlik Hayatı ve Kişilik Özellikleri ile ilgili açık uçlu bir soruyu çözerken çalışma kağıdına şu adımları yazmıştır:\n1. Adım: Verilen öncülleri ve temel kavramları belirledim.\n2. Adım: Trablusgarp Savaşı Mustafa Kemal'in sömürgeciliğe karşı ilk askeri başarısıdır. Burada dağınık yerel halkı bir araya getirmesi onun gelecekte Kuvâ-yı Millîye ve Millî Mücadele'yi teşkilatlandıracağının kanıtıdır. kabulünü yaparak işleme başladım.\n3. Adım: Bu adımdaki sonuca göre bağlantılı kuralı uyguladım.\n4. Adım: Nihai sonuca ulaştım.",
-        "questionText": "Murat'in çözüm adımlarını inceleyiniz. İlk hata kaçıncı adımda yapılmıştır? Yapılan hatanın gerekçesini açıklayarak o adımın ve nihai cevabın doğru halini yazınız.",
+        "stimulus": "1911 yılında İtalya Trablusgarp'a saldırdığında Osmanlı Devleti karadan ve denizden bölgeye ordu gönderememiştir. Mustafa Kemal, Enver Bey ve bir grup genç subay gizlice kılık değiştirerek Trablusgarp'a gitmiştir.",
+        "questionText": "Mustafa Kemal'in Şerif takma adıyla gazeteci kılığında Trablusgarp'a giderek yerli halkı İtalyanlara karşı örgütlemesi onun hangi kişilik özelliklerini yansıtır? (2 özellik belirtiniz).",
         "solutionExplanation": "Teşkilatçılık (örgütleyicilik), vatanseverlik, liderlik, cesaret.",
-        "modelAnswer": "İlk hata 2. adımda yapılmıştır. Çünkü Murat, 'Trablusgarp Savaşı Mustafa Kemal'in sömürgeciliğe karşı ilk askeri başarısıdır. Burada dağınık yerel halkı bir araya getirmesi onun gelecekte Kuvâ-yı Millîye ve Millî Mücadele'yi teşkilatlandıracağının kanıtıdır.' hatasına düşmüştür. Doğrusu: Şam 5. Ordu (İlk Görev): Vatan ve Hürriyet Cemiyeti'ni kurması -> Liderlik, Teşkilatçılık, Vatanseverlik. kuralı işletilmeli ve çözüm bu esasa göre tamamlanmalıdır.",
+        "modelAnswer": "1. Teşkilatçılık (Örgütleyicilik): Bölgedeki dağınık ve eğitimsiz yerli Bedevi halkı Derne ve Tobruk'ta bir araya getirip düzenli bir direniş cephesi oluşturması onun üstün örgütleme yeteneğini gösterir.\n2. Vatanseverlik ve Fedakârlık: Resmî bir emir veya devlet desteği olmadan, canını tehlikeye atarak binlerce kilometre ötedeki vatan toprağını savunmaya koşması yüksek vatan sevgisinin kanıtıdır.",
         "rubric": [
           {
-            "criterion": "İlk hatanın yapıldığı adımın (2. Adım) doğru belirlenmesi",
-            "points": 6
+            "criterion": "Teşkilatçılık özelliğinin gerekçesiyle açıklanması",
+            "points": 9
           },
           {
-            "criterion": "Yapılan kavramsal/işlemsel hatanın gerekçelendirilmesi",
-            "points": 6
-          },
-          {
-            "criterion": "Adımın ve sonucun doğru kurala göre düzeltilmesi",
-            "points": 5
+            "criterion": "Vatanseverlik özelliğinin gerekçesiyle açıklanması",
+            "points": 8
           }
         ]
       },
@@ -19402,20 +19170,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Birinci Dünya Savaşı’nın sebeplerini ve savaşın başlamasına yol açan gelişmeleri kavrar.",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 16,
         "contextText": "Birinci Dünya Savaşı'nın genel sebepleri: Bloklaşma ve silahlanma.",
-        "stimulus": "Birinci Dünya Savaşı'nın Sebepleri ve Bloklaşmalar kapsamında karşılaşılan bir durumu çözmek için uzmanlar iki farklı yöntem geliştirmiştir:\n1. Yöntem: Kısa vadeli hızlı çözüm sunan ancak 'Avusturya veliahdının Saraybosna'da bir Sırp milliyetçisi tarafından vurulması savaşın asıl sebebi değil; fitili ateşleyen kıvılcım (görünürdeki bahane) niteliğindedir.' riskini barındıran yaklaşım.\n2. Yöntem: Başlangıçta daha fazla dikkat ve aşama gerektiren ancak 'Genel Nedenler: Sanayi İnkılabı sonrası hızlanan Sömürgecilik ve Pazar Arayışı, Devletler arası Silahlanma Yarışı ve Bloklaşma, Fransız İhtilali kaynaklı Milliyetçilik Akımı.' ilkesine tam uyan sürdürülebilir yaklaşım.",
-        "questionText": "Verilen iki yaklaşımı Birinci Dünya Savaşı'nın Sebepleri ve Bloklaşmalar ilkeleri bakımından değerlendiriniz. Hangi yöntem daha uygundur? Seçtiğiniz yöntemin güçlü yönlerini ve diğer yöntemin taşıdığı riskleri gerekçelendiriniz.",
+        "stimulus": "19. yüzyılın sonlarında Sanayi İnkılabı'nın getirdiği sömürgecilik yarışı ve Fransız İhtilali'nin yaydığı milliyetçilik akımı dünyayı büyük bir savaşa sürüklemiştir.",
+        "questionText": "Birinci Dünya Savaşı öncesinde kurulan İtilaf ve İttifak devletleri bloklarının kurucu üçer temel üyesini yazınız.",
         "solutionExplanation": "İtilaf Devletleri: İngiltere, Fransa, Rusya. İttifak Devletleri: Almanya, Avusturya-Macaristan, İtalya.",
-        "modelAnswer": "2. Yöntem uygundur. Çünkü Genel Nedenler: Sanayi İnkılabı sonrası hızlanan Sömürgecilik ve Pazar Arayışı, Devletler arası Silahlanma Yarışı ve Bloklaşma, Fransız İhtilali kaynaklı Milliyetçilik Akımı. ilkesini tam olarak karşılamaktadır. 1. Yöntem ise kısa vadeli olsa da 'Avusturya veliahdının Saraybosna'da bir Sırp milliyetçisi tarafından vurulması savaşın asıl sebebi değil; fitili ateşleyen kıvılcım (görünürdeki bahane) niteliğindedir.' sakıncasını doğuracağı için hedeflenen amaca ters düşer.",
+        "modelAnswer": "• İtilaf (Anlaşma) Devletleri: İngiltere, Fransa, Çarlık Rusyası\n• İttifak (Bağlaşma) Devletleri: Almanya, Avusturya-Macaristan İmparatorluğu, İtalya (İtalya savaş başladıktan sonra İtilaf tarafına geçmiştir)",
         "rubric": [
           {
-            "criterion": "Doğru yaklaşımın (2. Yöntem) tespiti ve güçlü yönünün gerekçelendirilmesi",
+            "criterion": "İtilaf devletlerinin 3 kurucu üyesinin yazılması",
             "points": 8
           },
           {
-            "criterion": "1. Yöntemin taşıdığı kavramsal riskin açıklanması",
+            "criterion": "İttifak devletlerinin 3 kurucu üyesinin yazılması",
             "points": 8
           }
         ]
@@ -19492,21 +19260,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Mustafa Kemal’in çocukluk ve öğrenim hayatından hareketle onun kişilik özelliklerinin oluşumu hakkında çıkarımlarda bulunur.",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 15,
         "contextText": "Mustafa Kemal'in öğrenim gördüğü okullar.",
-        "stimulus": "Mustafa Kemal'in Çocukluk, Öğrenim Hayatı ve Selanik Şehri konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nAslı: \"Bu durumda temel kural şudur: Selanik'te geleneksel Mahalle Mektebi ile modern Şemsi Efendi Mektebi'nin aynı anda var olması, Osmanlı'da eğitimde birlik (bütünlük) olmadığını kanıtlar.\"\nİrem: \"Hayır Aslı, yanılıyorsun. Çünkü kural gereği: Selanik Şehrinin Önemi: Liman kenti ve Avrupa'ya uzanan demir yolu ağı sayesinde çok kültürlü, ticari ve fikir akımlarına açık bir şehirdir. Bu ortam Mustafa Kemal'in hoşgörülü ve yenilikçi bir vizyon kazanmasını sağlamıştır. Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Aslı ve İrem'nin iddialarını Mustafa Kemal'in Çocukluk, Öğrenim Hayatı ve Selanik Şehri ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
+        "stimulus": "Mustafa Kemal, Selanik ve Manastır'da farklı nitelikte okullara devam etmiştir.",
+        "questionText": "Mustafa Kemal'in askerlik mesleğine ilk adımı attığı 'Selanik Askeri Rüştiyesi'ne giriş sürecini ve ailesinin tutumunu açıklayınız.",
         "solutionExplanation": "Annesi sivil memur olmasını istiyordu; Mustafa Kemal kendi kararlılığıyla sınavlara gizlice girip kazandı.",
-        "modelAnswer": "İrem haklıdır. Çünkü Selanik Şehrinin Önemi: Liman kenti ve Avrupa'ya uzanan demir yolu ağı sayesinde çok kültürlü, ticari ve fikir akımlarına açık bir şehirdir. Bu ortam Mustafa Kemal'in hoşgörülü ve yenilikçi bir vizyon kazanmasını sağlamıştır.. Aslı ise 'Selanik'te geleneksel Mahalle Mektebi ile modern Şemsi Efendi Mektebi'nin aynı anda var olması, Osmanlı'da eğitimde birlik (bütünlük) olmadığını kanıtlar.' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "modelAnswer": "Annesi Zübeyde Hanım oğlunun asker olmasını tehlikeli bulduğu için istemiyor, onun mülkiye mektebinde okuyup memur olmasını arzuluyordu. Ancak Mustafa Kemal çocukluğundan beri üniformalı askerlere hayrandı. Büyük bir kararlılık ve bağımsızlık göstererek annesinden gizlice Askerî Rüştiye sınavlarına girdi, sınavı üstün başarıyla kazanarak annesini ikna etti ve askerlik mesleğine ilk adımını attı.",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (İrem) doğru tespiti",
-            "points": 6
+            "criterion": "Annesinin çekincelerinin açıklanması",
+            "points": 8
           },
           {
-            "criterion": "Aslı'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 9
+            "criterion": "Gizlice sınava girip kazanma kararlılığı vurgusu",
+            "points": 7
           }
         ]
       },
@@ -19516,20 +19284,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Gençlik döneminde Mustafa Kemal’in fikir hayatını etkileyen önemli kişileri ve olayları kavrar.",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Mustafa Kemal'i etkileyen yabancı düşünürler.",
-        "stimulus": "Aşağıdaki matriste Mustafa Kemal'in Fikir Hayatını Etkileyen Kişiler ve Olaylar konusuna yönelik üç farklı durum ve özellikleri verilmiştir:\n\n| Durum / Örnek | 1. Temel Kriter | 2. Ayırt Edici Özellik | Karşılar mı? |\n| :--- | :---: | :---: | :---: |\n| 1. Durum (Örnek A) | VAR | YOK | ............ |\n| 2. Durum (Örnek B) | VAR | VAR | ............ |\n| 3. Durum (Örnek C) | YOK | YOK | ............ |",
-        "questionText": "Matristeki boşlukları özelliğin doğruluğuna göre \"EVET\" veya \"HAYIR\" yazarak doldurunuz. 2. Durum'u diğer durumlardan ayıran en temel şartı gerekçelendirerek yazınız.",
+        "stimulus": "Mustafa Kemal, Manastır Askeri İdadisi ve Harp Okulu yıllarında Fransız düşünürler Jean-Jacques Rousseau, Montesquieu ve Voltaire'in eserlerini Fransızcalarından okumuştur.",
+        "questionText": "Bu Fransız aydınlarının Mustafa Kemal'in zihninde şekillendirdiği modern devlet ve yönetim ilkelerinden 2 tanesini yazınız.",
         "solutionExplanation": "Milli egemenlik, cumhuriyet, kuvvetler ayrılığı, laiklik ve hukukun üstünlüğü.",
-        "modelAnswer": "Tablo Tamamlaması: 1. Durum: HAYIR | 2. Durum: EVET | 3. Durum: HAYIR.\nAyırt Edici Gerekçe: 2. Durum hem temel kriteri hem de ayırt edici özelliği eksiksiz sağladığı için Yerli Düşünürler: Namık Kemal (Vatan ve Hürriyet Sevgisi), Ziya Gökalp (Milliyetçilik ve Türkçülük), Tevfik Fikret (İnkılapçılık ve Batılılaşma), Mehmet Emin Yurdakul (Millî Kültür ve Şiir). kuralına tam uygundur.",
+        "modelAnswer": "1. Millî Egemenlik ve Cumhuriyetçilik (J.J. Rousseau): Yönetme yetkisinin kral veya sultanda değil, milletin iradesinde olması gerektiği düşüncesini benimsedi.\n2. Güçler Ayrılığı ve Hukukun Üstünlüğü (Montesquieu): Yasama, yürütme ve yargının birbirinden bağımsız olması ve tüm vatandaşların yasalar önünde eşit sayılması fikrini kazandı.",
         "rubric": [
           {
-            "criterion": "Tablodaki boşlukların hatasız doldurulması (HAYIR - EVET - HAYIR)",
+            "criterion": "Milli egemenlik ve cumhuriyet ilkesi",
             "points": 7
           },
           {
-            "criterion": "2. Durum'un ayırt edici şartının ve kuralının açıklanması",
+            "criterion": "Güçler ayrılığı ve eşitlik/hukuk ilkesi",
             "points": 7
           }
         ]
@@ -19540,25 +19308,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Mustafa Kemal’in askerlik hayatı ile ilgili olayları ve olguları onun kişilik özellikleri ile ilişkilendirir.",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Hata Tespiti & Adım Analizi",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Mustafa Kemal ve 31 Mart Vakası (1909).",
-        "stimulus": "Murat, Mustafa Kemal'in Askerlik Hayatı ve Kişilik Özellikleri ile ilgili açık uçlu bir soruyu çözerken çalışma kağıdına şu adımları yazmıştır:\n1. Adım: Verilen öncülleri ve temel kavramları belirledim.\n2. Adım: Trablusgarp Savaşı Mustafa Kemal'in sömürgeciliğe karşı ilk askeri başarısıdır. Burada dağınık yerel halkı bir araya getirmesi onun gelecekte Kuvâ-yı Millîye ve Millî Mücadele'yi teşkilatlandıracağının kanıtıdır. kabulünü yaparak işleme başladım.\n3. Adım: Bu adımdaki sonuca göre bağlantılı kuralı uyguladım.\n4. Adım: Nihai sonuca ulaştım.",
-        "questionText": "Murat'in çözüm adımlarını inceleyiniz. İlk hata kaçıncı adımda yapılmıştır? Yapılan hatanın gerekçesini açıklayarak o adımın ve nihai cevabın doğru halini yazınız.",
+        "stimulus": "Meşrutiyet rejimine karşı İstanbul'da gerici bir ayaklanma çıkınca Selanik'te Mahmut Şevket Paşa komutasında Hareket Ordusu kurulmuştur.",
+        "questionText": "Mustafa Kemal'in bu ordudaki görevi neydi ve 31 Mart İsyanı'nı bastırması onun hangi yönetim anlayışını savunduğunu gösterir?",
         "solutionExplanation": "Görevi: Kurmay Başkanlığı. Savunduğu anlayış: Yenilikleri, anayasal düzeni ve meşrutiyeti (demokrasiyi) korumak.",
-        "modelAnswer": "İlk hata 2. adımda yapılmıştır. Çünkü Murat, 'Trablusgarp Savaşı Mustafa Kemal'in sömürgeciliğe karşı ilk askeri başarısıdır. Burada dağınık yerel halkı bir araya getirmesi onun gelecekte Kuvâ-yı Millîye ve Millî Mücadele'yi teşkilatlandıracağının kanıtıdır.' hatasına düşmüştür. Doğrusu: Şam 5. Ordu (İlk Görev): Vatan ve Hürriyet Cemiyeti'ni kurması -> Liderlik, Teşkilatçılık, Vatanseverlik. kuralı işletilmeli ve çözüm bu esasa göre tamamlanmalıdır.",
+        "modelAnswer": "• Görevi: Mustafa Kemal bu ordunun 'Kurmay Başkanı' olarak görev yapmış, ordunun planlarını ve bildirilerini bizzat kaleme almıştır.\n• Savunduğu Anlayış: Meşrutiyet rejimini ve anayasal düzeni koruyarak gerici ayaklanmayı bastırması, onun yenilikleri, halkın mecliste temsilini ve demokrasiyi savunan ilerici bir komutan olduğunu gösterir.",
         "rubric": [
           {
-            "criterion": "İlk hatanın yapıldığı adımın (2. Adım) doğru belirlenmesi",
-            "points": 5
+            "criterion": "Kurmay Başkanı görevinin belirtilmesi",
+            "points": 7
           },
           {
-            "criterion": "Yapılan kavramsal/işlemsel hatanın gerekçelendirilmesi",
-            "points": 5
-          },
-          {
-            "criterion": "Adımın ve sonucun doğru kurala göre düzeltilmesi",
-            "points": 4
+            "criterion": "Yenilikleri ve anayasal düzeni savunma anlayışı",
+            "points": 7
           }
         ]
       },
@@ -19568,20 +19332,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Birinci Dünya Savaşı’nın sebeplerini ve savaşın başlamasına yol açan gelişmeleri kavrar.",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Savaşın başlamasına yol açan kıvılcım.",
-        "stimulus": "Birinci Dünya Savaşı'nın Sebepleri ve Bloklaşmalar kapsamında karşılaşılan bir durumu çözmek için uzmanlar iki farklı yöntem geliştirmiştir:\n1. Yöntem: Kısa vadeli hızlı çözüm sunan ancak 'Avusturya veliahdının Saraybosna'da bir Sırp milliyetçisi tarafından vurulması savaşın asıl sebebi değil; fitili ateşleyen kıvılcım (görünürdeki bahane) niteliğindedir.' riskini barındıran yaklaşım.\n2. Yöntem: Başlangıçta daha fazla dikkat ve aşama gerektiren ancak 'Genel Nedenler: Sanayi İnkılabı sonrası hızlanan Sömürgecilik ve Pazar Arayışı, Devletler arası Silahlanma Yarışı ve Bloklaşma, Fransız İhtilali kaynaklı Milliyetçilik Akımı.' ilkesine tam uyan sürdürülebilir yaklaşım.",
-        "questionText": "Verilen iki yaklaşımı Birinci Dünya Savaşı'nın Sebepleri ve Bloklaşmalar ilkeleri bakımından değerlendiriniz. Hangi yöntem daha uygundur? Seçtiğiniz yöntemin güçlü yönlerini ve diğer yöntemin taşıdığı riskleri gerekçelendiriniz.",
+        "stimulus": "Avusturya-Macaristan Veliahdı Franz Ferdinand, 28 Haziran 1914'te Saraybosna'yı ziyaret ederken bir Sırp milliyetçisi tarafından öldürülmüştür.",
+        "questionText": "Bu suikastın sadece iki devlet arasında kalmayıp birkaç hafta içinde dünya savaşına dönüşmesinin temel sebebi nedir?",
         "solutionExplanation": "Büyük devletlerin daha önceden kurdukları gizli askeri ittifaklar ve bloklaşma sistemidir.",
-        "modelAnswer": "2. Yöntem uygundur. Çünkü Genel Nedenler: Sanayi İnkılabı sonrası hızlanan Sömürgecilik ve Pazar Arayışı, Devletler arası Silahlanma Yarışı ve Bloklaşma, Fransız İhtilali kaynaklı Milliyetçilik Akımı. ilkesini tam olarak karşılamaktadır. 1. Yöntem ise kısa vadeli olsa da 'Avusturya veliahdının Saraybosna'da bir Sırp milliyetçisi tarafından vurulması savaşın asıl sebebi değil; fitili ateşleyen kıvılcım (görünürdeki bahane) niteliğindedir.' sakıncasını doğuracağı için hedeflenen amaca ters düşer.",
+        "modelAnswer": "Çünkü Avrupalı büyük devletler savaştan çok önce sömürgecilik ve silahlanma nedeniyle iki büyük düşman kampa (İtilaf ve İttifak blokları) ayrılmış ve birbirlerine karşılıklı askeri yardım taahhüt etmişlerdi. Avusturya Sırbistan'a savaş açınca Rusya Sırbistan'ı korumak için seferberlik ilan etti; Almanya Rusya'ya, Fransa ve İngiltere de Almanya'ya savaş açtı ve bloklaşma zincirleme bir dünya çatışması doğurdu.",
         "rubric": [
           {
-            "criterion": "Doğru yaklaşımın (2. Yöntem) tespiti ve güçlü yönünün gerekçelendirilmesi",
+            "criterion": "Önceden kurulmuş askeri bloklaşmanın açıklanması",
             "points": 7
           },
           {
-            "criterion": "1. Yöntemin taşıdığı kavramsal riskin açıklanması",
+            "criterion": "Zincirleme ittifak antlaşmalarının devreye girişi gerekçesi",
             "points": 7
           }
         ]
@@ -19682,21 +19446,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Mustafa Kemal’in çocukluk ve öğrenim hayatından hareketle onun kişilik özelliklerinin oluşumu hakkında çıkarımlarda bulunur.",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 13,
         "contextText": "Manastır Askeri İdadisi ve Mustafa Kemal.",
-        "stimulus": "Mustafa Kemal'in Çocukluk, Öğrenim Hayatı ve Selanik Şehri konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nAslı: \"Bu durumda temel kural şudur: Selanik'te geleneksel Mahalle Mektebi ile modern Şemsi Efendi Mektebi'nin aynı anda var olması, Osmanlı'da eğitimde birlik (bütünlük) olmadığını kanıtlar.\"\nİrem: \"Hayır Aslı, yanılıyorsun. Çünkü kural gereği: Selanik Şehrinin Önemi: Liman kenti ve Avrupa'ya uzanan demir yolu ağı sayesinde çok kültürlü, ticari ve fikir akımlarına açık bir şehirdir. Bu ortam Mustafa Kemal'in hoşgörülü ve yenilikçi bir vizyon kazanmasını sağlamıştır. Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Aslı ve İrem'nin iddialarını Mustafa Kemal'in Çocukluk, Öğrenim Hayatı ve Selanik Şehri ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
+        "stimulus": "Mustafa Kemal, 1896 yılında Manastır Askeri İdadisi'ne girdiğinde burada edebiyat, tarih ve yabancı dil alanında kendini geliştirmiştir.",
+        "questionText": "Manastır Askeri İdadisi'nde Mustafa Kemal'e tarih bilincini aşılayan tarih öğretmeninin adını ve bu okulda Fransızcasını geliştirmek için neler yaptığını yazınız.",
         "solutionExplanation": "Tarih öğretmeni: Kolağası Mehmet Tevfik Bey. Fransızca için tatillerde Selanik'te Frerler okuluna gitmiş, özel dersler almıştır.",
-        "modelAnswer": "İrem haklıdır. Çünkü Selanik Şehrinin Önemi: Liman kenti ve Avrupa'ya uzanan demir yolu ağı sayesinde çok kültürlü, ticari ve fikir akımlarına açık bir şehirdir. Bu ortam Mustafa Kemal'in hoşgörülü ve yenilikçi bir vizyon kazanmasını sağlamıştır.. Aslı ise 'Selanik'te geleneksel Mahalle Mektebi ile modern Şemsi Efendi Mektebi'nin aynı anda var olması, Osmanlı'da eğitimde birlik (bütünlük) olmadığını kanıtlar.' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "modelAnswer": "• Tarih Öğretmeni: Kolağası Mehmet Tevfik (Bilge) Bey'dir. Mustafa Kemal'e Türk tarihi sevgisi ve milli tarih bilinci aşılamıştır.\n• Fransızca Çalışmaları: Askeri rüştiyede Fransızcasının yetersiz olduğunu fark edince tatillerde Selanik'e giderek Fransız Frerler Okulu'nda özel kurslar almış ve yabancı dilini geliştirmiştir.",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (İrem) doğru tespiti",
-            "points": 5
+            "criterion": "Mehmet Tevfik Bey'in doğru yazılması",
+            "points": 7
           },
           {
-            "criterion": "Aslı'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 8
+            "criterion": "Fransızca öğrenme gayreti ve kurslarının belirtilmesi",
+            "points": 6
           }
         ]
       },
@@ -19706,21 +19470,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Gençlik döneminde Mustafa Kemal’in fikir hayatını etkileyen önemli kişileri ve olayları kavrar.",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 13,
         "contextText": "Mustafa Kemal'i etkileyen milliyetçi yazarlar: Ziya Gökalp.",
-        "stimulus": "Aşağıdaki matriste Mustafa Kemal'in Fikir Hayatını Etkileyen Kişiler ve Olaylar konusuna yönelik üç farklı durum ve özellikleri verilmiştir:\n\n| Durum / Örnek | 1. Temel Kriter | 2. Ayırt Edici Özellik | Karşılar mı? |\n| :--- | :---: | :---: | :---: |\n| 1. Durum (Örnek A) | VAR | YOK | ............ |\n| 2. Durum (Örnek B) | VAR | VAR | ............ |\n| 3. Durum (Örnek C) | YOK | YOK | ............ |",
-        "questionText": "Matristeki boşlukları özelliğin doğruluğuna göre \"EVET\" veya \"HAYIR\" yazarak doldurunuz. 2. Durum'u diğer durumlardan ayıran en temel şartı gerekçelendirerek yazınız.",
+        "stimulus": "Mustafa Kemal bir sözünde 'Bedenimin babası Ali Rıza Efendi, hislerimin Namık Kemal, fikirlerimin babası ise Ziya Gökalp'tir.' demiştir.",
+        "questionText": "Ziya Gökalp'in Mustafa Kemal'in düşünce sistemine kazandırdığı en önemli ilkeyi ve bunun Kurtuluş Savaşı'ndaki rolünü açıklayınız.",
         "solutionExplanation": "Türkçülük ve milliyetçilik ilkesi. Türk milletinin bağımsızlık azmini ve milli birliğini sağlamıştır.",
-        "modelAnswer": "Tablo Tamamlaması: 1. Durum: HAYIR | 2. Durum: EVET | 3. Durum: HAYIR.\nAyırt Edici Gerekçe: 2. Durum hem temel kriteri hem de ayırt edici özelliği eksiksiz sağladığı için Yerli Düşünürler: Namık Kemal (Vatan ve Hürriyet Sevgisi), Ziya Gökalp (Milliyetçilik ve Türkçülük), Tevfik Fikret (İnkılapçılık ve Batılılaşma), Mehmet Emin Yurdakul (Millî Kültür ve Şiir). kuralına tam uygundur.",
+        "modelAnswer": "Ziya Gökalp'in kazandırdığı en önemli ilke 'Türk Milliyetçiliği' (Türkçülük) fikridir. Bu fikir, Mustafa Kemal'in milletine sonsuz güven duymasını, ümmetçi ve imparatorlukçu hayaller yerine Türk milletinin bağımsızlığına ve egemenliğine dayalı millî bir devlet kurma ülküsünü benimsemesini sağlamıştır.",
         "rubric": [
           {
-            "criterion": "Tablodaki boşlukların hatasız doldurulması (HAYIR - EVET - HAYIR)",
-            "points": 6
+            "criterion": "Türk milliyetçiliği ilkesinin vurgulanması",
+            "points": 7
           },
           {
-            "criterion": "2. Durum'un ayırt edici şartının ve kuralının açıklanması",
-            "points": 7
+            "criterion": "Milli devlet ve millet egemenliği bağıntısının kurulması",
+            "points": 6
           }
         ]
       },
@@ -19730,25 +19494,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Mustafa Kemal’in askerlik hayatı ile ilgili olayları ve olguları onun kişilik özellikleri ile ilişkilendirir.",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Hata Tespiti & Adım Analizi",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 13,
         "contextText": "Mustafa Kemal'in Çanakkale Savaşları'ndaki zaferleri.",
-        "stimulus": "Murat, Mustafa Kemal'in Askerlik Hayatı ve Kişilik Özellikleri ile ilgili açık uçlu bir soruyu çözerken çalışma kağıdına şu adımları yazmıştır:\n1. Adım: Verilen öncülleri ve temel kavramları belirledim.\n2. Adım: Trablusgarp Savaşı Mustafa Kemal'in sömürgeciliğe karşı ilk askeri başarısıdır. Burada dağınık yerel halkı bir araya getirmesi onun gelecekte Kuvâ-yı Millîye ve Millî Mücadele'yi teşkilatlandıracağının kanıtıdır. kabulünü yaparak işleme başladım.\n3. Adım: Bu adımdaki sonuca göre bağlantılı kuralı uyguladım.\n4. Adım: Nihai sonuca ulaştım.",
-        "questionText": "Murat'in çözüm adımlarını inceleyiniz. İlk hata kaçıncı adımda yapılmıştır? Yapılan hatanın gerekçesini açıklayarak o adımın ve nihai cevabın doğru halini yazınız.",
+        "stimulus": "1915 Çanakkale Kara Savaşları'nda 19. Tümen Komutanı Yarbay Mustafa Kemal, Arıburnu ve Conkbayırı'nda düşman çıkarmasını durdurmuştur.",
+        "questionText": "Mustafa Kemal'in Conkbayırı'nda cephanesi biten askerlerine verdiği tarihi emri yazınız ve bu emrin savaşın kaderine etkisini açıklayınız.",
         "solutionExplanation": "'Ben size taarruzu emretmiyorum, ölmeyi emrediyorum! Biz ölünceye kadar geçecek zaman zarfında yerimize başka kuvvetler ve komutanlar gelecektir.'",
-        "modelAnswer": "İlk hata 2. adımda yapılmıştır. Çünkü Murat, 'Trablusgarp Savaşı Mustafa Kemal'in sömürgeciliğe karşı ilk askeri başarısıdır. Burada dağınık yerel halkı bir araya getirmesi onun gelecekte Kuvâ-yı Millîye ve Millî Mücadele'yi teşkilatlandıracağının kanıtıdır.' hatasına düşmüştür. Doğrusu: Şam 5. Ordu (İlk Görev): Vatan ve Hürriyet Cemiyeti'ni kurması -> Liderlik, Teşkilatçılık, Vatanseverlik. kuralı işletilmeli ve çözüm bu esasa göre tamamlanmalıdır.",
+        "modelAnswer": "• Tarihi Emir: 'Ben size taarruz emretmiyorum; ölmeyi emrediyorum! Biz ölünceye kadar geçecek zaman zarfında yerimize başka kuvvetler ve başka komutanlar gelebilir.'\n• Savaşa Etkisi: Mehmetçik bu emirle süngü takıp siperlere yatmış, düşmanı durdurarak takviye birlikler yetişene kadar Conkbayırı sırtlarının düşman eline geçmesini engellemiş ve Çanakkale zaferinin dönüm noktası olmuştur.",
         "rubric": [
           {
-            "criterion": "İlk hatanın yapıldığı adımın (2. Adım) doğru belirlenmesi",
-            "points": 5
+            "criterion": "Tarihi emrin eksiksiz yazılması",
+            "points": 7
           },
           {
-            "criterion": "Yapılan kavramsal/işlemsel hatanın gerekçelendirilmesi",
-            "points": 5
-          },
-          {
-            "criterion": "Adımın ve sonucun doğru kurala göre düzeltilmesi",
-            "points": 3
+            "criterion": "Zaman kazandırma ve savaşın seyrini değiştirme etkisinin açıklanması",
+            "points": 6
           }
         ]
       },
@@ -19758,20 +19518,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Birinci Dünya Savaşı’nın sebeplerini ve savaşın başlamasına yol açan gelişmeleri kavrar.",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "Almanya ve Fransa arasındaki Alsas-Loren sorunu.",
-        "stimulus": "Birinci Dünya Savaşı'nın Sebepleri ve Bloklaşmalar kapsamında karşılaşılan bir durumu çözmek için uzmanlar iki farklı yöntem geliştirmiştir:\n1. Yöntem: Kısa vadeli hızlı çözüm sunan ancak 'Avusturya veliahdının Saraybosna'da bir Sırp milliyetçisi tarafından vurulması savaşın asıl sebebi değil; fitili ateşleyen kıvılcım (görünürdeki bahane) niteliğindedir.' riskini barındıran yaklaşım.\n2. Yöntem: Başlangıçta daha fazla dikkat ve aşama gerektiren ancak 'Genel Nedenler: Sanayi İnkılabı sonrası hızlanan Sömürgecilik ve Pazar Arayışı, Devletler arası Silahlanma Yarışı ve Bloklaşma, Fransız İhtilali kaynaklı Milliyetçilik Akımı.' ilkesine tam uyan sürdürülebilir yaklaşım.",
-        "questionText": "Verilen iki yaklaşımı Birinci Dünya Savaşı'nın Sebepleri ve Bloklaşmalar ilkeleri bakımından değerlendiriniz. Hangi yöntem daha uygundur? Seçtiğiniz yöntemin güçlü yönlerini ve diğer yöntemin taşıdığı riskleri gerekçelendiriniz.",
+        "stimulus": "1871 Sedan Savaşı'nda Almanya, Fransa'ya ait zengin kömür ve demir yataklarına sahip Alsas-Loren bölgesini ele geçirmiştir.",
+        "questionText": "Alsas-Loren bölgesinin Birinci Dünya Savaşı'nın çıkışındaki ekonomik ve stratejik önemini açıklayınız.",
         "solutionExplanation": "Bölge zengin kömür ve demir yataklarına sahipti, sanayi ve silahlanma için hayati önemdeydi; Fransa burayı geri almak istiyordu.",
-        "modelAnswer": "2. Yöntem uygundur. Çünkü Genel Nedenler: Sanayi İnkılabı sonrası hızlanan Sömürgecilik ve Pazar Arayışı, Devletler arası Silahlanma Yarışı ve Bloklaşma, Fransız İhtilali kaynaklı Milliyetçilik Akımı. ilkesini tam olarak karşılamaktadır. 1. Yöntem ise kısa vadeli olsa da 'Avusturya veliahdının Saraybosna'da bir Sırp milliyetçisi tarafından vurulması savaşın asıl sebebi değil; fitili ateşleyen kıvılcım (görünürdeki bahane) niteliğindedir.' sakıncasını doğuracağı için hedeflenen amaca ters düşer.",
+        "modelAnswer": "Alsas-Loren, Avrupa'nın en zengin taş kömürü ve demir cevheri yataklarına sahip stratejik sanayi havzasıydı. Sanayi İnkılabı ile birlikte ağır sanayi ve silah üretimi için bu madenler hayati önem taşıyordu. Fransa kaptırdığı bu bölgeyi Almanya'dan geri almak, Almanya ise madenleri elinde tutmak istediği için aralarındaki bu intikam ve çıkar çatışması I. Dünya Savaşı'nın en büyük özel sebeplerinden biri olmuştur.",
         "rubric": [
           {
-            "criterion": "Doğru yaklaşımın (2. Yöntem) tespiti ve güçlü yönünün gerekçelendirilmesi",
+            "criterion": "Kömür ve demir madenlerinin sanayi için önemi",
             "points": 6
           },
           {
-            "criterion": "1. Yöntemin taşıdığı kavramsal riskin açıklanması",
+            "criterion": "Almanya-Fransa arasındaki intikam ve savaş sebebi ilişkisi",
             "points": 6
           }
         ]
@@ -19830,21 +19590,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Mondros Ateşkes Antlaşması’nın imzalanması ve uygulanması karşısında Osmanlı yönetiminin, Mustafa Kemal’in ve halkın tutumunu analiz eder.",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "Mondros Ateşkes Antlaşması'nın 24. Maddesi (Vilâyât-ı Sitte).",
-        "stimulus": "Mondros Ateşkes Antlaşması ve İşgaller Karşısında Tutumlar konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nAhmet: \"Bu durumda temel kural şudur: Mondros'un 7. maddesi açıkça yazılmış bir sınır belirtmez; muğlak ve yoruma açıktır. Çünkü İtilaf Devletleri yapacakları her türlü haksız işgale uluslararası hukuk kılıfı hazırlamayı amaçlamıştır.\"\nMehmet: \"Hayır Ahmet, yanılıyorsun. Çünkü kural gereği: Mondros Ateşkes Antlaşması (30 Ekim 1918): Limni Adası'nda imzalandı. Osmanlı fiilen sona ermiştir. Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Ahmet ve Mehmet'nin iddialarını Mondros Ateşkes Antlaşması ve İşgaller Karşısında Tutumlar ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
+        "stimulus": "Mondros'un 24. Maddesi: 'Doğu'daki altı vilayette (Erzurum, Van, Bitlis, Diyarbakır, Elazığ, Sivas) bir karışıklık çıkarsa İtilaf Devletleri buraları işgal edebilecektir.'",
+        "questionText": "İtilaf Devletleri'nin 24. madde ile Doğu Anadolu'da kurmayı amaçladığı devleti yazınız ve bu maddenin gizli hedefini açıklayınız.",
         "solutionExplanation": "Amaç: Bağımsız bir Ermeni devleti kurmak.",
-        "modelAnswer": "Mehmet haklıdır. Çünkü Mondros Ateşkes Antlaşması (30 Ekim 1918): Limni Adası'nda imzalandı. Osmanlı fiilen sona ermiştir.. Ahmet ise 'Mondros'un 7. maddesi açıkça yazılmış bir sınır belirtmez; muğlak ve yoruma açıktır. Çünkü İtilaf Devletleri yapacakları her türlü haksız işgale uluslararası hukuk kılıfı hazırlamayı amaçlamıştır.' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "modelAnswer": "• Kurulması Amaçlanan Devlet: Bağımsız bir Ermenistan Devleti'dir.\n• Gizli Hedef: İngiltere ve Fransa, antlaşma metninde açıkça 'Ermenistan' adını yazmayıp 'Altı Vilayet' (Vilâyât-ı Sitte) ifadesini kullanarak kamuoyunun tepkisini önlemeye çalışmış; ancak bölgede Ermeni çetelerini kışkırtarak çıkarılacak sahte karışıklıklarla Doğu Anadolu'yu işgal edip bir Ermeni devleti kurmayı hedeflemişlerdir.",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (Mehmet) doğru tespiti",
-            "points": 5
+            "criterion": "Ermeni devleti kurma amacının doğru yazılması",
+            "points": 6
           },
           {
-            "criterion": "Ahmet'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 7
+            "criterion": "Karışıklık bahanesiyle işgal zemini hazırlama gerekçesi",
+            "points": 6
           }
         ]
       }
@@ -19896,21 +19656,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Gençlik döneminde Mustafa Kemal’in fikir hayatını etkileyen önemli kişileri ve olayları kavrar.",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Mustafa Kemal'in fikir hayatını etkileyen şehirler: Sofya.",
-        "stimulus": "Mustafa Kemal'in Fikir Hayatını Etkileyen Kişiler ve Olaylar konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nAslı: \"Bu durumda temel kural şudur: Mustafa Kemal yabancı aydınlardan milliyetçilik değil; cumhuriyet, demokrasi, akılcılık ve hukukun üstünlüğü ilkelerini öğrenmiştir. Milliyetçilik duygusunu yerli aydınlardan almıştır.\"\nİrem: \"Hayır Aslı, yanılıyorsun. Çünkü kural gereği: Yerli Düşünürler: Namık Kemal (Vatan ve Hürriyet Sevgisi), Ziya Gökalp (Milliyetçilik ve Türkçülük), Tevfik Fikret (İnkılapçılık ve Batılılaşma), Mehmet Emin Yurdakul (Millî Kültür ve Şiir). Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Aslı ve İrem'nin iddialarını Mustafa Kemal'in Fikir Hayatını Etkileyen Kişiler ve Olaylar ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
+        "stimulus": "Mustafa Kemal 1913 yılında Bulgaristan'ın başkenti Sofya'ya Askeri Ataşe (Ataşemiliter) olarak atanmıştır.",
+        "questionText": "Sofya'daki görevinin Mustafa Kemal'e kazandırdığı diplomatik tecrübeyi ve Bulgar Parlamentosu'nu izlemesinin Cumhuriyet fikirlerine katkısını açıklayınız.",
         "solutionExplanation": "Diplomasiyi, yabancı elçilerle ilişkileri öğrendi; parlamenter sistemin işleyişini inceledi.",
-        "modelAnswer": "İrem haklıdır. Çünkü Yerli Düşünürler: Namık Kemal (Vatan ve Hürriyet Sevgisi), Ziya Gökalp (Milliyetçilik ve Türkçülük), Tevfik Fikret (İnkılapçılık ve Batılılaşma), Mehmet Emin Yurdakul (Millî Kültür ve Şiir).. Aslı ise 'Mustafa Kemal yabancı aydınlardan milliyetçilik değil; cumhuriyet, demokrasi, akılcılık ve hukukun üstünlüğü ilkelerini öğrenmiştir. Milliyetçilik duygusunu yerli aydınlardan almıştır.' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "modelAnswer": "• Diplomatik Tecrübe: Avrupa devletlerinin diplomatlarıyla balolarda, toplantılarda bir araya gelerek uluslararası diplomasi kurallarını, dış politika dengelerini ve müzakere sanatını bizzat uygulayarak öğrendi.\n• Parlamenter Sistem Katkısı: Bulgar Parlamentosu'nun (Meclis) oturumlarını yakından izleyerek çok partili sistemin ve halkın seçtiği milletvekillerinin devleti yönetme usullerini inceledi; bu durum gelecekte TBMM'yi kurmasında önemli bir ilham kaynağı oldu.",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (İrem) doğru tespiti",
-            "points": 7
+            "criterion": "Uluslararası diplomasi tecrübesinin açıklanması",
+            "points": 9
           },
           {
-            "criterion": "Aslı'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 10
+            "criterion": "Parlamento ve meclis sistemini inceleme katkısı",
+            "points": 8
           }
         ]
       },
@@ -19920,21 +19680,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Mustafa Kemal’in askerlik hayatı ile ilgili olayları ve olguları onun kişilik özellikleri ile ilişkilendirir.",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Mustafa Kemal'in Kafkas Cephesi'ndeki başarıları.",
-        "stimulus": "Aşağıdaki matriste Mustafa Kemal'in Askerlik Hayatı ve Kişilik Özellikleri konusuna yönelik üç farklı durum ve özellikleri verilmiştir:\n\n| Durum / Örnek | 1. Temel Kriter | 2. Ayırt Edici Özellik | Karşılar mı? |\n| :--- | :---: | :---: | :---: |\n| 1. Durum (Örnek A) | VAR | YOK | ............ |\n| 2. Durum (Örnek B) | VAR | VAR | ............ |\n| 3. Durum (Örnek C) | YOK | YOK | ............ |",
-        "questionText": "Matristeki boşlukları özelliğin doğruluğuna göre \"EVET\" veya \"HAYIR\" yazarak doldurunuz. 2. Durum'u diğer durumlardan ayıran en temel şartı gerekçelendirerek yazınız.",
+        "stimulus": "Mustafa Kemal 1916 yılında 16. Kolordu Komutanı olarak Kafkas Cephesi'ne atanmıştır.",
+        "questionText": "Mustafa Kemal'in Kafkas Cephesi'nde Rus işgalinden kurtardığı 2 önemli Doğu Anadolu şehrimizi yazınız.",
         "solutionExplanation": "Muş ve Bitlis.",
-        "modelAnswer": "Tablo Tamamlaması: 1. Durum: HAYIR | 2. Durum: EVET | 3. Durum: HAYIR.\nAyırt Edici Gerekçe: 2. Durum hem temel kriteri hem de ayırt edici özelliği eksiksiz sağladığı için Şam 5. Ordu (İlk Görev): Vatan ve Hürriyet Cemiyeti'ni kurması -> Liderlik, Teşkilatçılık, Vatanseverlik. kuralına tam uygundur.",
+        "modelAnswer": "Mustafa Kemal Kafkas Cephesi'nde dağınık birlikleri toparlayıp disipline ederek düzenlediği başarılı taarruzlarla:\n1. Muş'u (Ağustos 1916)\n2. Bitlis'i (Ağustos 1916)\nRus işgalinden geri alarak kurtarmıştır.",
         "rubric": [
           {
-            "criterion": "Tablodaki boşlukların hatasız doldurulması (HAYIR - EVET - HAYIR)",
-            "points": 8
+            "criterion": "Muş şehrinin doğru yazılması",
+            "points": 9
           },
           {
-            "criterion": "2. Durum'un ayırt edici şartının ve kuralının açıklanması",
-            "points": 9
+            "criterion": "Bitlis şehrinin doğru yazılması",
+            "points": 8
           }
         ]
       },
@@ -19944,25 +19704,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Birinci Dünya Savaşı’nın sebeplerini ve savaşın başlamasına yol açan gelişmeleri kavrar.",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Hata Tespiti & Adım Analizi",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "İtalya'nın savaş sırasındaki taraf değiştirmesi.",
-        "stimulus": "Murat, Birinci Dünya Savaşı'nın Sebepleri ve Bloklaşmalar ile ilgili açık uçlu bir soruyu çözerken çalışma kağıdına şu adımları yazmıştır:\n1. Adım: Verilen öncülleri ve temel kavramları belirledim.\n2. Adım: Avusturya veliahdının Saraybosna'da bir Sırp milliyetçisi tarafından vurulması savaşın asıl sebebi değil; fitili ateşleyen kıvılcım (görünürdeki bahane) niteliğindedir. kabulünü yaparak işleme başladım.\n3. Adım: Bu adımdaki sonuca göre bağlantılı kuralı uyguladım.\n4. Adım: Nihai sonuca ulaştım.",
-        "questionText": "Murat'in çözüm adımlarını inceleyiniz. İlk hata kaçıncı adımda yapılmıştır? Yapılan hatanın gerekçesini açıklayarak o adımın ve nihai cevabın doğru halini yazınız.",
+        "stimulus": "İtalya başlangıçta Almanya ve Avusturya ile İttifak grubundayken savaş patlak verdiğinde tarafsızlığını ilan etmiş, 1915 Londra Gizli Antlaşması ile İtilaf Devletleri safına geçmiştir.",
+        "questionText": "İtalya'nın taraf değiştirmesindeki temel menfaati ve İtilaf Devletleri'nin İtalya'ya vadettiği toprakları yazınız.",
         "solutionExplanation": "Menfaati: Akdeniz'de yayılmak. Vaat edilen yerler: On İki Ada, Trablusgarp ve Batı Anadolu (İzmir ve çevresi).",
-        "modelAnswer": "İlk hata 2. adımda yapılmıştır. Çünkü Murat, 'Avusturya veliahdının Saraybosna'da bir Sırp milliyetçisi tarafından vurulması savaşın asıl sebebi değil; fitili ateşleyen kıvılcım (görünürdeki bahane) niteliğindedir.' hatasına düşmüştür. Doğrusu: Genel Nedenler: Sanayi İnkılabı sonrası hızlanan Sömürgecilik ve Pazar Arayışı, Devletler arası Silahlanma Yarışı ve Bloklaşma, Fransız İhtilali kaynaklı Milliyetçilik Akımı. kuralı işletilmeli ve çözüm bu esasa göre tamamlanmalıdır.",
+        "modelAnswer": "İtalya'nın taraf değiştirmesinin temel sebebi çıkarcı ve yayılmacı politikasıdır. İtilaf Devletleri, 1915 Londra Antlaşması ile İtalya'ya Avusturya'nın bazı topraklarının yanı sıra Osmanlı Devleti'nin On İki Ada'sını ve Antalya-İzmir çevresini (Batı Anadolu) vadetmiştir. Kendi müttefiklerinin vermediği bu geniş sömürge ve toprak vaatlerini gören İtalya taraf değiştirmiştir.",
         "rubric": [
           {
-            "criterion": "İlk hatanın yapıldığı adımın (2. Adım) doğru belirlenmesi",
-            "points": 6
+            "criterion": "Çıkarcı yayılma politikasının belirtilmesi",
+            "points": 9
           },
           {
-            "criterion": "Yapılan kavramsal/işlemsel hatanın gerekçelendirilmesi",
-            "points": 6
-          },
-          {
-            "criterion": "Adımın ve sonucun doğru kurala göre düzeltilmesi",
-            "points": 5
+            "criterion": "Batı Anadolu ve On İki Ada vaadinin açıklanması",
+            "points": 8
           }
         ]
       },
@@ -19972,20 +19728,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Birinci Dünya Savaşı’nda Osmanlı Devleti’nin durumu hakkında çıkarımlarda bulunur.",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 16,
         "contextText": "Çanakkale Cephesi'nin dünya savaşına etkileri.",
-        "stimulus": "Birinci Dünya Savaşı'nda Osmanlı Devleti ve Cepheler kapsamında karşılaşılan bir durumu çözmek için uzmanlar iki farklı yöntem geliştirmiştir:\n1. Yöntem: Kısa vadeli hızlı çözüm sunan ancak 'Çanakkale Cephesi Osmanlı Devleti'nin I. Dünya Savaşı'nda zaferle kapattığı tek cephedir. Bu zafer Çarlık Rusya'sına yardım gitmesini engelleyerek Bolşevik İhtilali'nin çıkmasına ve Rusya'nın savaştan çekilmesine yol açmıştır.' riskini barındıran yaklaşım.\n2. Yöntem: Başlangıçta daha fazla dikkat ve aşama gerektiren ancak 'Osmanlı'nın Savaşa Girme Amaçları: Son dönemde kaybedilen toprakları (Balkanlar, Kuzey Afrika) geri alma, kapitülasyonları ve Düyun-ı Umumiye borçlarını kaldırma, yalnızlıktan kurtulma.' ilkesine tam uyan sürdürülebilir yaklaşım.",
-        "questionText": "Verilen iki yaklaşımı Birinci Dünya Savaşı'nda Osmanlı Devleti ve Cepheler ilkeleri bakımından değerlendiriniz. Hangi yöntem daha uygundur? Seçtiğiniz yöntemin güçlü yönlerini ve diğer yöntemin taşıdığı riskleri gerekçelendiriniz.",
+        "stimulus": "Çanakkale Boğazı'nda Türk ordusunun kazandığı muazzam zafer, İtilaf donanmasının boğazları geçmesini engellemiştir.",
+        "questionText": "Çanakkale Zaferi'nin:\na) Birinci Dünya Savaşı'nın süresine etkisini,\nb) Çarlık Rusyası'nın iç siyasetine etkisini açıklayınız.",
         "solutionExplanation": "a) Savaşın süresi en az 2 yıl uzadı. b) Rusya'ya yardım gidemedi, ekonomik kriz derinleşti ve Bolşevik İhtilali çıkarak Çarlık rejimi yıkıldı.",
-        "modelAnswer": "2. Yöntem uygundur. Çünkü Osmanlı'nın Savaşa Girme Amaçları: Son dönemde kaybedilen toprakları (Balkanlar, Kuzey Afrika) geri alma, kapitülasyonları ve Düyun-ı Umumiye borçlarını kaldırma, yalnızlıktan kurtulma. ilkesini tam olarak karşılamaktadır. 1. Yöntem ise kısa vadeli olsa da 'Çanakkale Cephesi Osmanlı Devleti'nin I. Dünya Savaşı'nda zaferle kapattığı tek cephedir. Bu zafer Çarlık Rusya'sına yardım gitmesini engelleyerek Bolşevik İhtilali'nin çıkmasına ve Rusya'nın savaştan çekilmesine yol açmıştır.' sakıncasını doğuracağı için hedeflenen amaca ters düşer.",
+        "modelAnswer": "a) Savaşın Süresine Etkisi: İtilaf Devletleri'nin İstanbul'u ele geçirip savaşı erkenden bitirme planları çökmüş; Birinci Dünya Savaşı en az 2 yıl daha uzamıştır.\nb) Çarlık Rusyası'na Etkisi: İtilaf müttefikleri denizden yardım ulaştıramadığı için ekonomik ve askeri çöküş yaşayan Çarlık Rusyası'nda 1917 Bolşevik İhtilali patlak vermiş; Çarlık rejimi yıkılmış ve Sovyet Rusya savaştan çekilmiştir.",
         "rubric": [
           {
-            "criterion": "Doğru yaklaşımın (2. Yöntem) tespiti ve güçlü yönünün gerekçelendirilmesi",
+            "criterion": "Savaşın süresini 2 yıl uzatma etkisinin yazılması",
             "points": 8
           },
           {
-            "criterion": "1. Yöntemin taşıdığı kavramsal riskin açıklanması",
+            "criterion": "Rusya'ya yardım gidememesi ve Bolşevik İhtilali ilişkisi",
             "points": 8
           }
         ]
@@ -20062,21 +19818,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Mustafa Kemal’in çocukluk ve öğrenim hayatından hareketle onun kişilik özelliklerinin oluşumu hakkında çıkarımlarda bulunur.",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 15,
         "contextText": "Şemsi Efendi Mektebi'nin Mustafa Kemal'e katkısı.",
-        "stimulus": "Mustafa Kemal'in Çocukluk, Öğrenim Hayatı ve Selanik Şehri konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nAslı: \"Bu durumda temel kural şudur: Selanik'te geleneksel Mahalle Mektebi ile modern Şemsi Efendi Mektebi'nin aynı anda var olması, Osmanlı'da eğitimde birlik (bütünlük) olmadığını kanıtlar.\"\nİrem: \"Hayır Aslı, yanılıyorsun. Çünkü kural gereği: Selanik Şehrinin Önemi: Liman kenti ve Avrupa'ya uzanan demir yolu ağı sayesinde çok kültürlü, ticari ve fikir akımlarına açık bir şehirdir. Bu ortam Mustafa Kemal'in hoşgörülü ve yenilikçi bir vizyon kazanmasını sağlamıştır. Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Aslı ve İrem'nin iddialarını Mustafa Kemal'in Çocukluk, Öğrenim Hayatı ve Selanik Şehri ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
+        "stimulus": "Mustafa Kemal önce annesinin isteğiyle geleneksel eğitim veren Mahalle Mektebi'ne gitmiş, daha sonra babasının isteğiyle modern yöntemlerle eğitim yapan Şemsi Efendi Mektebi'ne geçmiştir.",
+        "questionText": "Şemsi Efendi Mektebi'nin geleneksel okullardan farkını ve bu okulun Mustafa Kemal'in zihinsel gelişimine sağladığı faydayı açıklayınız.",
         "solutionExplanation": "Modern sıralar, haritalar ve çağdaş metotlarla eğitim veriyordu; dogmatik ezber yerine sorgulayıcı ve modern bir zihniyet kazandırdı.",
-        "modelAnswer": "İrem haklıdır. Çünkü Selanik Şehrinin Önemi: Liman kenti ve Avrupa'ya uzanan demir yolu ağı sayesinde çok kültürlü, ticari ve fikir akımlarına açık bir şehirdir. Bu ortam Mustafa Kemal'in hoşgörülü ve yenilikçi bir vizyon kazanmasını sağlamıştır.. Aslı ise 'Selanik'te geleneksel Mahalle Mektebi ile modern Şemsi Efendi Mektebi'nin aynı anda var olması, Osmanlı'da eğitimde birlik (bütünlük) olmadığını kanıtlar.' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "modelAnswer": "• Geleneksel Okuldan Farkı: Mahalle mektebinde yere oturularak ezbere dayalı geleneksel dinî eğitim verilirken, Şemsi Efendi Mektebi'nde sıralar, kara tahta, haritalar ve beden eğitimi gibi çağdaş araçlarla modern pedagojik yöntemler uygulanıyordu.\n• Zihinsel Katkısı: Mustafa Kemal'e körü körüne ezbercilik yerine akılcı, sorgulayıcı, modern ve yeniliklere açık bir dünya görüşü kazandırmıştır.",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (İrem) doğru tespiti",
-            "points": 6
+            "criterion": "Modern araç ve yöntemlerle farkın açıklanması",
+            "points": 8
           },
           {
-            "criterion": "Aslı'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 9
+            "criterion": "Akılcı ve sorgulayıcı zihniyet katkısı",
+            "points": 7
           }
         ]
       },
@@ -20086,20 +19842,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Gençlik döneminde Mustafa Kemal’in fikir hayatını etkileyen önemli kişileri ve olayları kavrar.",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Mustafa Kemal'i etkileyen millî şair: Mehmet Emin Yurdakul.",
-        "stimulus": "Aşağıdaki matriste Mustafa Kemal'in Fikir Hayatını Etkileyen Kişiler ve Olaylar konusuna yönelik üç farklı durum ve özellikleri verilmiştir:\n\n| Durum / Örnek | 1. Temel Kriter | 2. Ayırt Edici Özellik | Karşılar mı? |\n| :--- | :---: | :---: | :---: |\n| 1. Durum (Örnek A) | VAR | YOK | ............ |\n| 2. Durum (Örnek B) | VAR | VAR | ............ |\n| 3. Durum (Örnek C) | YOK | YOK | ............ |",
-        "questionText": "Matristeki boşlukları özelliğin doğruluğuna göre \"EVET\" veya \"HAYIR\" yazarak doldurunuz. 2. Durum'u diğer durumlardan ayıran en temel şartı gerekçelendirerek yazınız.",
+        "stimulus": "Mehmet Emin Yurdakul 1897 Türk-Yunan Savaşı sırasında 'Ben bir Türk'üm; dinim, cinsim uludur...' mısralarıyla başlayan ünlü şiirini yazmıştır.",
+        "questionText": "Mustafa Kemal'in 'Şiirlerinde bana milli benliğimin gururunu tattıran ilk anlatımı buldum' dediği Mehmet Emin Yurdakul'un onda güçlendirdiği bilinci yazınız.",
         "solutionExplanation": "Milli benlik, Türklük gururu ve ulusal özgüven.",
-        "modelAnswer": "Tablo Tamamlaması: 1. Durum: HAYIR | 2. Durum: EVET | 3. Durum: HAYIR.\nAyırt Edici Gerekçe: 2. Durum hem temel kriteri hem de ayırt edici özelliği eksiksiz sağladığı için Yerli Düşünürler: Namık Kemal (Vatan ve Hürriyet Sevgisi), Ziya Gökalp (Milliyetçilik ve Türkçülük), Tevfik Fikret (İnkılapçılık ve Batılılaşma), Mehmet Emin Yurdakul (Millî Kültür ve Şiir). kuralına tam uygundur.",
+        "modelAnswer": "Mehmet Emin Yurdakul'un sade Türkçe ile yazdığı millî şiirler, Mustafa Kemal'de derin bir Türklük şuuru, milletine duyduğu sonsuz sevgi ve milli benlik gururu oluşturmuştur. Milletin kendi öz değerlerine dayanarak emperyalist güçlere karşı başı dik durabileceği inancını aşılamıştır.",
         "rubric": [
           {
-            "criterion": "Tablodaki boşlukların hatasız doldurulması (HAYIR - EVET - HAYIR)",
+            "criterion": "Türklük şuuru ve milli benlik gururu vurgusu",
             "points": 7
           },
           {
-            "criterion": "2. Durum'un ayırt edici şartının ve kuralının açıklanması",
+            "criterion": "Ulusal özgüven ve bağımsızlık inancı boyutu",
             "points": 7
           }
         ]
@@ -20110,25 +19866,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Mustafa Kemal’in askerlik hayatı ile ilgili olayları ve olguları onun kişilik özellikleri ile ilişkilendirir.",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Hata Tespiti & Adım Analizi",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Mustafa Kemal'in ilk görev yeri: Şam (1905).",
-        "stimulus": "Murat, Mustafa Kemal'in Askerlik Hayatı ve Kişilik Özellikleri ile ilgili açık uçlu bir soruyu çözerken çalışma kağıdına şu adımları yazmıştır:\n1. Adım: Verilen öncülleri ve temel kavramları belirledim.\n2. Adım: Trablusgarp Savaşı Mustafa Kemal'in sömürgeciliğe karşı ilk askeri başarısıdır. Burada dağınık yerel halkı bir araya getirmesi onun gelecekte Kuvâ-yı Millîye ve Millî Mücadele'yi teşkilatlandıracağının kanıtıdır. kabulünü yaparak işleme başladım.\n3. Adım: Bu adımdaki sonuca göre bağlantılı kuralı uyguladım.\n4. Adım: Nihai sonuca ulaştım.",
-        "questionText": "Murat'in çözüm adımlarını inceleyiniz. İlk hata kaçıncı adımda yapılmıştır? Yapılan hatanın gerekçesini açıklayarak o adımın ve nihai cevabın doğru halini yazınız.",
+        "stimulus": "Mustafa Kemal Harp Akademisi'nden mezun olduktan sonra kurmay yüzbaşı rütbesiyle ilk görev yeri olan Şam'daki 5. Ordu'ya atanmıştır.",
+        "questionText": "Mustafa Kemal'in Şam'da kurduğu gizli cemiyetin adını yazınız ve bu cemiyeti kurma amacını açıklayınız.",
         "solutionExplanation": "Vatan ve Hürriyet Cemiyeti. Amaç: İstibdat rejimine son vermek, vatanı dağılmaktan kurtarmak ve hürriyeti getirmek.",
-        "modelAnswer": "İlk hata 2. adımda yapılmıştır. Çünkü Murat, 'Trablusgarp Savaşı Mustafa Kemal'in sömürgeciliğe karşı ilk askeri başarısıdır. Burada dağınık yerel halkı bir araya getirmesi onun gelecekte Kuvâ-yı Millîye ve Millî Mücadele'yi teşkilatlandıracağının kanıtıdır.' hatasına düşmüştür. Doğrusu: Şam 5. Ordu (İlk Görev): Vatan ve Hürriyet Cemiyeti'ni kurması -> Liderlik, Teşkilatçılık, Vatanseverlik. kuralı işletilmeli ve çözüm bu esasa göre tamamlanmalıdır.",
+        "modelAnswer": "• Cemiyetin Adı: Vatan ve Hürriyet Cemiyeti.\n• Kurma Amacı: Padişahın baskıcı istibdat yönetimine karşı hürriyeti, meşrutiyeti ve anayasal düzeni savunmak; ordu ve aydınlar arasında teşkilatlanarak vatanın parçalanmasını önleyecek kurtuluş çareleri üretmekti.",
         "rubric": [
           {
-            "criterion": "İlk hatanın yapıldığı adımın (2. Adım) doğru belirlenmesi",
-            "points": 5
+            "criterion": "Vatan ve Hürriyet Cemiyeti adının doğru yazılması",
+            "points": 7
           },
           {
-            "criterion": "Yapılan kavramsal/işlemsel hatanın gerekçelendirilmesi",
-            "points": 5
-          },
-          {
-            "criterion": "Adımın ve sonucun doğru kurala göre düzeltilmesi",
-            "points": 4
+            "criterion": "İstibdata karşı hürriyet ve vatanı kurtarma amacının açıklanması",
+            "points": 7
           }
         ]
       },
@@ -20138,20 +19890,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Mustafa Kemal’in askerlik hayatı ile ilgili olayları ve olguları onun kişilik özellikleri ile ilişkilendirir.",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Mustafa Kemal'in Suriye Cephesi ve Yıldırım Orduları Komutanlığı.",
-        "stimulus": "Mustafa Kemal'in Askerlik Hayatı ve Kişilik Özellikleri kapsamında karşılaşılan bir durumu çözmek için uzmanlar iki farklı yöntem geliştirmiştir:\n1. Yöntem: Kısa vadeli hızlı çözüm sunan ancak 'Trablusgarp Savaşı Mustafa Kemal'in sömürgeciliğe karşı ilk askeri başarısıdır. Burada dağınık yerel halkı bir araya getirmesi onun gelecekte Kuvâ-yı Millîye ve Millî Mücadele'yi teşkilatlandıracağının kanıtıdır.' riskini barındıran yaklaşım.\n2. Yöntem: Başlangıçta daha fazla dikkat ve aşama gerektiren ancak 'Şam 5. Ordu (İlk Görev): Vatan ve Hürriyet Cemiyeti'ni kurması -> Liderlik, Teşkilatçılık, Vatanseverlik.' ilkesine tam uyan sürdürülebilir yaklaşım.",
-        "questionText": "Verilen iki yaklaşımı Mustafa Kemal'in Askerlik Hayatı ve Kişilik Özellikleri ilkeleri bakımından değerlendiriniz. Hangi yöntem daha uygundur? Seçtiğiniz yöntemin güçlü yönlerini ve diğer yöntemin taşıdığı riskleri gerekçelendiriniz.",
-        "solutionExplanation": "Düşmanı bugünkü Türkiye sınırlarında (Hatay/Kilis/Antep hattı) durdurdu; Misak-ı Milli'nin güney sınırını fiilen çizdi.",
-        "modelAnswer": "2. Yöntem uygundur. Çünkü Şam 5. Ordu (İlk Görev): Vatan ve Hürriyet Cemiyeti'ni kurması -> Liderlik, Teşkilatçılık, Vatanseverlik. ilkesini tam olarak karşılamaktadır. 1. Yöntem ise kısa vadeli olsa da 'Trablusgarp Savaşı Mustafa Kemal'in sömürgeciliğe karşı ilk askeri başarısıdır. Burada dağınık yerel halkı bir araya getirmesi onun gelecekte Kuvâ-yı Millîye ve Millî Mücadele'yi teşkilatlandıracağının kanıtıdır.' sakıncasını doğuracağı için hedeflenen amaca ters düşer.",
+        "stimulus": "Mustafa Kemal Harp Akademisi'nden mezun olduktan sonra kurmay yüzbaşı rütbesiyle ilk görev yeri olan Şam'daki 5. Ordu'ya atanmıştır.",
+        "questionText": "Mustafa Kemal'in Şam'da kurduğu gizli cemiyetin adını yazınız ve bu cemiyeti kurma amacını açıklayınız.",
+        "solutionExplanation": "Vatan ve Hürriyet Cemiyeti. Amaç: İstibdat rejimine son vermek, vatanı dağılmaktan kurtarmak ve hürriyeti getirmek.",
+        "modelAnswer": "• Cemiyetin Adı: Vatan ve Hürriyet Cemiyeti.\n• Kurma Amacı: Padişahın baskıcı istibdat yönetimine karşı hürriyeti, meşrutiyeti ve anayasal düzeni savunmak; ordu ve aydınlar arasında teşkilatlanarak vatanın parçalanmasını önleyecek kurtuluş çareleri üretmekti.",
         "rubric": [
           {
-            "criterion": "Doğru yaklaşımın (2. Yöntem) tespiti ve güçlü yönünün gerekçelendirilmesi",
+            "criterion": "Vatan ve Hürriyet Cemiyeti adının doğru yazılması",
             "points": 7
           },
           {
-            "criterion": "1. Yöntemin taşıdığı kavramsal riskin açıklanması",
+            "criterion": "İstibdata karşı hürriyet ve vatanı kurtarma amacının açıklanması",
             "points": 7
           }
         ]
@@ -20252,21 +20004,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Mustafa Kemal’in çocukluk ve öğrenim hayatından hareketle onun kişilik özelliklerinin oluşumu hakkında çıkarımlarda bulunur.",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 13,
         "contextText": "Mustafa Kemal'in liderlik vasıflarının çocukluk ve gençlik temelleri.",
-        "stimulus": "Mustafa Kemal'in Çocukluk, Öğrenim Hayatı ve Selanik Şehri konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nAslı: \"Bu durumda temel kural şudur: Selanik'te geleneksel Mahalle Mektebi ile modern Şemsi Efendi Mektebi'nin aynı anda var olması, Osmanlı'da eğitimde birlik (bütünlük) olmadığını kanıtlar.\"\nİrem: \"Hayır Aslı, yanılıyorsun. Çünkü kural gereği: Selanik Şehrinin Önemi: Liman kenti ve Avrupa'ya uzanan demir yolu ağı sayesinde çok kültürlü, ticari ve fikir akımlarına açık bir şehirdir. Bu ortam Mustafa Kemal'in hoşgörülü ve yenilikçi bir vizyon kazanmasını sağlamıştır. Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Aslı ve İrem'nin iddialarını Mustafa Kemal'in Çocukluk, Öğrenim Hayatı ve Selanik Şehri ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
+        "stimulus": "Mustafa Kemal okul yıllarında arkadaşları arasında hitabeti, mantıklı muhakemesi ve grup çalışmalarındaki yönlendiriciliği ile öne çıkıyordu.",
+        "questionText": "Mustafa Kemal'in Manastır ve İstanbul'daki öğrencilik yıllarında gösterdiği hangi faaliyetler onun ileride büyük bir lider ve teşkilatçı olacağının ilk işaretleridir? (2 örnek veriniz).",
         "solutionExplanation": "Arkadaşlarıyla gizli gazete çıkarması, hitabet kulüplerinde etkili konuşmalar yapması, Vatan ve Hürriyet Cemiyeti'ni kurması.",
-        "modelAnswer": "İrem haklıdır. Çünkü Selanik Şehrinin Önemi: Liman kenti ve Avrupa'ya uzanan demir yolu ağı sayesinde çok kültürlü, ticari ve fikir akımlarına açık bir şehirdir. Bu ortam Mustafa Kemal'in hoşgörülü ve yenilikçi bir vizyon kazanmasını sağlamıştır.. Aslı ise 'Selanik'te geleneksel Mahalle Mektebi ile modern Şemsi Efendi Mektebi'nin aynı anda var olması, Osmanlı'da eğitimde birlik (bütünlük) olmadığını kanıtlar.' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "modelAnswer": "1. El Yazısıyla Gazete Çıkarma ve Dağıtma: İstanbul Harp Okulu ve Harp Akademisi'nde ülke sorunlarını tartışmak için arkadaş grubu oluşturup el yazısıyla gizli bir gazete çıkarması ve bunu organize etmesi.\n2. Hitabet ve Fikir Kulüpleri: Manastır'da Ömer Naci'nin etkisiyle şiir ve hitabete yönelmesi; arkadaşlarına vatan sevgisi ve hürriyet aşılayan ateşli konuşmalar yaparak onları ortak hedefler etrafında toplaması.",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (İrem) doğru tespiti",
-            "points": 5
+            "criterion": "Gizli gazete çıkarma örneği ve liderlik analizi",
+            "points": 7
           },
           {
-            "criterion": "Aslı'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 8
+            "criterion": "Hitabet ve arkadaş grubunu yönlendirme örneği",
+            "points": 6
           }
         ]
       },
@@ -20276,21 +20028,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Gençlik döneminde Mustafa Kemal’in fikir hayatını etkileyen önemli kişileri ve olayları kavrar.",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 13,
         "contextText": "Mustafa Kemal'i etkileyen batılılaşma şairi: Tevfik Fikret.",
-        "stimulus": "Aşağıdaki matriste Mustafa Kemal'in Fikir Hayatını Etkileyen Kişiler ve Olaylar konusuna yönelik üç farklı durum ve özellikleri verilmiştir:\n\n| Durum / Örnek | 1. Temel Kriter | 2. Ayırt Edici Özellik | Karşılar mı? |\n| :--- | :---: | :---: | :---: |\n| 1. Durum (Örnek A) | VAR | YOK | ............ |\n| 2. Durum (Örnek B) | VAR | VAR | ............ |\n| 3. Durum (Örnek C) | YOK | YOK | ............ |",
-        "questionText": "Matristeki boşlukları özelliğin doğruluğuna göre \"EVET\" veya \"HAYIR\" yazarak doldurunuz. 2. Durum'u diğer durumlardan ayıran en temel şartı gerekçelendirerek yazınız.",
+        "stimulus": "Mustafa Kemal bir konuşmasında 'Ben inkılap ruhunu ondan aldım' diyerek şair Tevfik Fikret'e olan hayranlığını ifade etmiştir.",
+        "questionText": "Tevfik Fikret'in şiirlerinde savunduğu hangi fikirler Atatürk inkılaplarının (özellikle laiklik ve bilim) temel kaynağı olmuştur?",
         "solutionExplanation": "Dogmatizme ve hurafelere karşı akılcılık, bilim ve fen; Batı'nın çağdaş uygarlık düzeyini yakalama ideali.",
-        "modelAnswer": "Tablo Tamamlaması: 1. Durum: HAYIR | 2. Durum: EVET | 3. Durum: HAYIR.\nAyırt Edici Gerekçe: 2. Durum hem temel kriteri hem de ayırt edici özelliği eksiksiz sağladığı için Yerli Düşünürler: Namık Kemal (Vatan ve Hürriyet Sevgisi), Ziya Gökalp (Milliyetçilik ve Türkçülük), Tevfik Fikret (İnkılapçılık ve Batılılaşma), Mehmet Emin Yurdakul (Millî Kültür ve Şiir). kuralına tam uygundur.",
+        "modelAnswer": "Tevfik Fikret'in şiirlerindeki çağdaşlaşma, hurafelere ve bağnazlığa karşı aklı ve bilimi rehber edinme, Batı medeniyetinin müsbet ilimlerini benimseme ilkeleri; Mustafa Kemal'in Cumhuriyet döneminde gerçekleştireceği laiklik ilkesinin ve eğitim, hukuk alanındaki köklü inkılapların zihinsel temelini oluşturmuştur.",
         "rubric": [
           {
-            "criterion": "Tablodaki boşlukların hatasız doldurulması (HAYIR - EVET - HAYIR)",
-            "points": 6
+            "criterion": "Akılcılık, bilim ve bağnazlığa karşı duruş vurgusu",
+            "points": 7
           },
           {
-            "criterion": "2. Durum'un ayırt edici şartının ve kuralının açıklanması",
-            "points": 7
+            "criterion": "Laiklik ve çağdaşlaşma inkılaplarına ilham olma bağıntısı",
+            "points": 6
           }
         ]
       },
@@ -20300,25 +20052,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Mustafa Kemal’in askerlik hayatı ile ilgili olayları ve olguları onun kişilik özellikleri ile ilişkilendirir.",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Hata Tespiti & Adım Analizi",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 13,
         "contextText": "Mustafa Kemal'in askerî dehası: Çanakkale ve Anafartalar Grup Komutanlığı.",
-        "stimulus": "Murat, Mustafa Kemal'in Askerlik Hayatı ve Kişilik Özellikleri ile ilgili açık uçlu bir soruyu çözerken çalışma kağıdına şu adımları yazmıştır:\n1. Adım: Verilen öncülleri ve temel kavramları belirledim.\n2. Adım: Trablusgarp Savaşı Mustafa Kemal'in sömürgeciliğe karşı ilk askeri başarısıdır. Burada dağınık yerel halkı bir araya getirmesi onun gelecekte Kuvâ-yı Millîye ve Millî Mücadele'yi teşkilatlandıracağının kanıtıdır. kabulünü yaparak işleme başladım.\n3. Adım: Bu adımdaki sonuca göre bağlantılı kuralı uyguladım.\n4. Adım: Nihai sonuca ulaştım.",
-        "questionText": "Murat'in çözüm adımlarını inceleyiniz. İlk hata kaçıncı adımda yapılmıştır? Yapılan hatanın gerekçesini açıklayarak o adımın ve nihai cevabın doğru halini yazınız.",
+        "stimulus": "Mustafa Kemal Çanakkale'de düşmanın nereden çıkarma yapacağını önceden tahmin etmiş ve Anafartalar Grup Komutanı olarak büyük bir zafer kazanmıştır.",
+        "questionText": "Mustafa Kemal'in düşmanın çıkarma yapacağı yerleri önceden isabetle kestirmesi onun hangi askeri ve kişisel yeteneğini kanıtlar?",
         "solutionExplanation": "İleri görüşlülük, coğrafi araziyi mükemmel analiz etme kabiliyeti ve yüksek askeri sevk/idare dehası.",
-        "modelAnswer": "İlk hata 2. adımda yapılmıştır. Çünkü Murat, 'Trablusgarp Savaşı Mustafa Kemal'in sömürgeciliğe karşı ilk askeri başarısıdır. Burada dağınık yerel halkı bir araya getirmesi onun gelecekte Kuvâ-yı Millîye ve Millî Mücadele'yi teşkilatlandıracağının kanıtıdır.' hatasına düşmüştür. Doğrusu: Şam 5. Ordu (İlk Görev): Vatan ve Hürriyet Cemiyeti'ni kurması -> Liderlik, Teşkilatçılık, Vatanseverlik. kuralı işletilmeli ve çözüm bu esasa göre tamamlanmalıdır.",
+        "modelAnswer": "• İleri Görüşlülük (Öngörü Yeteneği): Düşman donanmasının zayıf noktalardan değil, stratejik tepeleri tutmak amacıyla Arıburnu ve Anafartalar bölgesinden çıkarma yapacağını aylar öncesinden sezmiş ve tedbir almıştır.\n• Askerî Deha ve Arazi Hâkimiyeti: Balkan Savaşları sırasında Gelibolu Yarımadası'nda görev yaptığı için bölgenin coğrafi yapısını çok iyi bilmesi ve bunu askeri stratejiyle birleştirmesi onun üstün kurmaylık dehasını kanıtlar.",
         "rubric": [
           {
-            "criterion": "İlk hatanın yapıldığı adımın (2. Adım) doğru belirlenmesi",
-            "points": 5
+            "criterion": "İleri görüşlülük yeteneğinin açıklanması",
+            "points": 7
           },
           {
-            "criterion": "Yapılan kavramsal/işlemsel hatanın gerekçelendirilmesi",
-            "points": 5
-          },
-          {
-            "criterion": "Adımın ve sonucun doğru kurala göre düzeltilmesi",
-            "points": 3
+            "criterion": "Arazi hâkimiyeti ve kurmaylık dehası vurgusu",
+            "points": 6
           }
         ]
       },
@@ -20328,20 +20076,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Birinci Dünya Savaşı’nın sebeplerini ve savaşın başlamasına yol açan gelişmeleri kavrar.",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "Savaş öncesi İngiltere ve Almanya rekabeti.",
-        "stimulus": "Birinci Dünya Savaşı'nın Sebepleri ve Bloklaşmalar kapsamında karşılaşılan bir durumu çözmek için uzmanlar iki farklı yöntem geliştirmiştir:\n1. Yöntem: Kısa vadeli hızlı çözüm sunan ancak 'Avusturya veliahdının Saraybosna'da bir Sırp milliyetçisi tarafından vurulması savaşın asıl sebebi değil; fitili ateşleyen kıvılcım (görünürdeki bahane) niteliğindedir.' riskini barındıran yaklaşım.\n2. Yöntem: Başlangıçta daha fazla dikkat ve aşama gerektiren ancak 'Genel Nedenler: Sanayi İnkılabı sonrası hızlanan Sömürgecilik ve Pazar Arayışı, Devletler arası Silahlanma Yarışı ve Bloklaşma, Fransız İhtilali kaynaklı Milliyetçilik Akımı.' ilkesine tam uyan sürdürülebilir yaklaşım.",
-        "questionText": "Verilen iki yaklaşımı Birinci Dünya Savaşı'nın Sebepleri ve Bloklaşmalar ilkeleri bakımından değerlendiriniz. Hangi yöntem daha uygundur? Seçtiğiniz yöntemin güçlü yönlerini ve diğer yöntemin taşıdığı riskleri gerekçelendiriniz.",
+        "stimulus": "19. yüzyılın sonlarında dünyanın en büyük deniz gücü ve imparatorluğu 'üzerinde güneş batmayan' İngiltere idi. Sanayileşen Almanya ise İngiltere'nin dünya ticaretindeki üstünlüğünü kırmak istiyordu.",
+        "questionText": "Almanya'nın Osmanlı toprakları üzerinden geçen Bağdat Demiryolu (Berlin-Bağdat) projesinin İngiltere'yi neden son derece rahatsız ettiğini açıklayınız.",
         "solutionExplanation": "Demiryolu Ortadoğu petrollerine ve İngiltere'nin sömürgesi Hindistan yoluna uzanıyordu; İngiltere'nin Basra Körfezi'ndeki egemenliğini tehdit etti.",
-        "modelAnswer": "2. Yöntem uygundur. Çünkü Genel Nedenler: Sanayi İnkılabı sonrası hızlanan Sömürgecilik ve Pazar Arayışı, Devletler arası Silahlanma Yarışı ve Bloklaşma, Fransız İhtilali kaynaklı Milliyetçilik Akımı. ilkesini tam olarak karşılamaktadır. 1. Yöntem ise kısa vadeli olsa da 'Avusturya veliahdının Saraybosna'da bir Sırp milliyetçisi tarafından vurulması savaşın asıl sebebi değil; fitili ateşleyen kıvılcım (görünürdeki bahane) niteliğindedir.' sakıncasını doğuracağı için hedeflenen amaca ters düşer.",
+        "modelAnswer": "Berlin-Bağdat (3B) Demiryolu projesi ile Almanya; Osmanlı toprakları üzerinden Basra Körfezi'ne ve Ortadoğu'nun zengin petrol alanlarına doğrudan ulaşma imkânı elde edecekti. Bu durum, İngiltere'nin en büyük sömürgesi olan Hindistan'a giden kara ve deniz yollarını doğrudan Alman tehdidine açık hâle getiriyordu; İngiltere küresel sömürge imparatorluğunun can damarı tehlikeye girdiği için projeye şiddetle karşı çıkmıştır.",
         "rubric": [
           {
-            "criterion": "Doğru yaklaşımın (2. Yöntem) tespiti ve güçlü yönünün gerekçelendirilmesi",
+            "criterion": "Berlin-Bağdat projesinin petrol ve Basra Körfezi bağlantısı",
             "points": 6
           },
           {
-            "criterion": "1. Yöntemin taşıdığı kavramsal riskin açıklanması",
+            "criterion": "İngiltere'nin Hindistan sömürge yoluna tehdit oluşturması",
             "points": 6
           }
         ]
@@ -20400,21 +20148,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Mondros Ateşkes Antlaşması’nın imzalanması ve uygulanması karşısında Osmanlı yönetiminin, Mustafa Kemal’in ve halkın tutumunu analiz eder.",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "Mondros Ateşkes Antlaşması'nın askerî hükümleri.",
-        "stimulus": "Mondros Ateşkes Antlaşması ve İşgaller Karşısında Tutumlar konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nAhmet: \"Bu durumda temel kural şudur: Mondros'un 7. maddesi açıkça yazılmış bir sınır belirtmez; muğlak ve yoruma açıktır. Çünkü İtilaf Devletleri yapacakları her türlü haksız işgale uluslararası hukuk kılıfı hazırlamayı amaçlamıştır.\"\nMehmet: \"Hayır Ahmet, yanılıyorsun. Çünkü kural gereği: Mondros Ateşkes Antlaşması (30 Ekim 1918): Limni Adası'nda imzalandı. Osmanlı fiilen sona ermiştir. Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Ahmet ve Mehmet'nin iddialarını Mondros Ateşkes Antlaşması ve İşgaller Karşısında Tutumlar ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
+        "stimulus": "Mondros Ateşkes Antlaşması'na göre; Osmanlı ordusu derhal terhis edilecek, orduya ait silah, cephane ve telsiz-telgraf hatları İtilaf Devletleri'ne teslim edilecektir.",
+        "questionText": "İtilaf Devletleri'nin Osmanlı ordusunu terhis ettirip silahlarına el koymasının temel hedefini açıklayınız.",
         "solutionExplanation": "Anadolu'yu savunmasız bırakarak planladıkları işgalleri hiçbir direnişle karşılaşmadan kolayca gerçekleştirmektir.",
-        "modelAnswer": "Mehmet haklıdır. Çünkü Mondros Ateşkes Antlaşması (30 Ekim 1918): Limni Adası'nda imzalandı. Osmanlı fiilen sona ermiştir.. Ahmet ise 'Mondros'un 7. maddesi açıkça yazılmış bir sınır belirtmez; muğlak ve yoruma açıktır. Çünkü İtilaf Devletleri yapacakları her türlü haksız işgale uluslararası hukuk kılıfı hazırlamayı amaçlamıştır.' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "modelAnswer": "İtilaf Devletleri'nin asıl amacı; Türk milletini ve Osmanlı Devleti'ni her türlü askeri savunma gücünden tamamen mahrum bırakmaktır. Ordusu terhis edilmiş, silahları elinden alınmış ve haberleşme hatları kesilmiş bir devleti savunmasız bırakarak Anadolu'da başlatacakları haksız işgallere karşı halkın ve devletin silahlı bir direniş göstermesini engellemeyi hedeflemişlerdir.",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (Mehmet) doğru tespiti",
-            "points": 5
+            "criterion": "Vatanı savunmasız bırakma amacının açıklanması",
+            "points": 6
           },
           {
-            "criterion": "Ahmet'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 7
+            "criterion": "Halkın silahlı direniş göstermesini engelleme gerekçesi",
+            "points": 6
           }
         ]
       }
@@ -20466,21 +20214,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Mustafa Kemal’in çocukluk ve öğrenim hayatından hareketle onun kişilik özelliklerinin oluşumu hakkında çıkarımlarda bulunur.",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 13,
         "contextText": "Mustafa Kemal'in öğrenim hayatında öğretmenlerinin rolü.",
-        "stimulus": "Mustafa Kemal'in Çocukluk, Öğrenim Hayatı ve Selanik Şehri konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nAslı: \"Bu durumda temel kural şudur: Selanik'te geleneksel Mahalle Mektebi ile modern Şemsi Efendi Mektebi'nin aynı anda var olması, Osmanlı'da eğitimde birlik (bütünlük) olmadığını kanıtlar.\"\nİrem: \"Hayır Aslı, yanılıyorsun. Çünkü kural gereği: Selanik Şehrinin Önemi: Liman kenti ve Avrupa'ya uzanan demir yolu ağı sayesinde çok kültürlü, ticari ve fikir akımlarına açık bir şehirdir. Bu ortam Mustafa Kemal'in hoşgörülü ve yenilikçi bir vizyon kazanmasını sağlamıştır. Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Aslı ve İrem'nin iddialarını Mustafa Kemal'in Çocukluk, Öğrenim Hayatı ve Selanik Şehri ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
-        "solutionExplanation": "Mehmet Tevfik Bey tarih bilincini, Ömer Naci hitabet ve edebiyat yeteneğini kazandırmıştır.",
-        "modelAnswer": "İrem haklıdır. Çünkü Selanik Şehrinin Önemi: Liman kenti ve Avrupa'ya uzanan demir yolu ağı sayesinde çok kültürlü, ticari ve fikir akımlarına açık bir şehirdir. Bu ortam Mustafa Kemal'in hoşgörülü ve yenilikçi bir vizyon kazanmasını sağlamıştır.. Aslı ise 'Selanik'te geleneksel Mahalle Mektebi ile modern Şemsi Efendi Mektebi'nin aynı anda var olması, Osmanlı'da eğitimde birlik (bütünlük) olmadığını kanıtlar.' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "stimulus": "Mustafa, Selanik Askeri Rüştiyesi'nde öğrenciyken matematik dersindeki üstün başarısıyla dikkat çekiyordu.",
+        "questionText": "Matematik öğretmeni Yüzbaşı Mustafa Bey'in öğrencisine 'Kemal' adını vermesinin gerekçesini ve bu ismin Mustafa Kemal'in karakterine yansımasını açıklayınız.",
+        "solutionExplanation": "'Kemal' olgunluk ve mükemmellik demektir. Öğretmen onun zekasını ve olgunluğunu takdir ederek bu adı vermiştir.",
+        "modelAnswer": "• İsmin Veriliş Gerekçesi: Matematik öğretmeni Yüzbaşı Mustafa Bey, öğrencisinin matematikteki üstün problem çözme yeteneğini, çalışkanlığını ve yaşından beklenmeyen olgunluğunu görerek; 'Benim adım da Mustafa senin adın da Mustafa. Arada bir fark olmalı; bundan sonra senin adın Mustafa Kemal olsun' demiştir.\n• Karaktere Yansıması: 'Kemal' kelimesi Arapçada olgunluk, eksiksizlik ve mükemmellik anlamına gelir. Mustafa Kemal hayatı boyunca her alanda mükemmeli arayan, akılcı ve disiplinli bir karakter sergilemiştir.",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (İrem) doğru tespiti",
-            "points": 5
+            "criterion": "Matematik öğretmeninin gerekçesinin yazılması",
+            "points": 7
           },
           {
-            "criterion": "Aslı'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 8
+            "criterion": "Kemal isminin olgunluk/mükemmellik anlamı ve yansıması",
+            "points": 6
           }
         ]
       },
@@ -20490,21 +20238,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Gençlik döneminde Mustafa Kemal’in fikir hayatını etkileyen önemli kişileri ve olayları kavrar.",
         "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 13,
         "contextText": "Mustafa Kemal'i etkileyen olay: 1897 Türk-Yunan Savaşı (Dömeke).",
-        "stimulus": "Aşağıdaki matriste Mustafa Kemal'in Fikir Hayatını Etkileyen Kişiler ve Olaylar konusuna yönelik üç farklı durum ve özellikleri verilmiştir:\n\n| Durum / Örnek | 1. Temel Kriter | 2. Ayırt Edici Özellik | Karşılar mı? |\n| :--- | :---: | :---: | :---: |\n| 1. Durum (Örnek A) | VAR | YOK | ............ |\n| 2. Durum (Örnek B) | VAR | VAR | ............ |\n| 3. Durum (Örnek C) | YOK | YOK | ............ |",
-        "questionText": "Matristeki boşlukları özelliğin doğruluğuna göre \"EVET\" veya \"HAYIR\" yazarak doldurunuz. 2. Durum'u diğer durumlardan ayıran en temel şartı gerekçelendirerek yazınız.",
+        "stimulus": "1897'de Osmanlı ordusu Yunan ordusunu Dömeke Meydan Muharebesi'nde mağlup etmesine rağmen masa başında (İstanbul Antlaşması) istediğini alamamıştır.",
+        "questionText": "Mustafa Kemal'in henüz Manastır Askeri İdadisi öğrencisiyken cepheye katılmak için okuldan kaçmaya kalkıştığı bu savaşın onda uyandırdığı askerî ve diplomatik dersi açıklayınız.",
         "solutionExplanation": "Meydanda kazanılan zaferin masa başında kaybedilmemesi gerektiğini; güçlü bir diplomasinin önemini anladı.",
-        "modelAnswer": "Tablo Tamamlaması: 1. Durum: HAYIR | 2. Durum: EVET | 3. Durum: HAYIR.\nAyırt Edici Gerekçe: 2. Durum hem temel kriteri hem de ayırt edici özelliği eksiksiz sağladığı için Yerli Düşünürler: Namık Kemal (Vatan ve Hürriyet Sevgisi), Ziya Gökalp (Milliyetçilik ve Türkçülük), Tevfik Fikret (İnkılapçılık ve Batılılaşma), Mehmet Emin Yurdakul (Millî Kültür ve Şiir). kuralına tam uygundur.",
+        "modelAnswer": "Bu savaş Mustafa Kemal'de iki büyük ders bırakmıştır:\n1. Vatan Savunması Aşkı: Henüz genç bir öğrenciyken vatan savunması için cepheye koşacak kadar yüksek bir vatanperverliğe sahip olduğunu göstermiştir.\n2. Diplomasi Dersi: Osmanlı ordusunun meydanda kazandığı kesin zaferin masa başında Avrupalıların baskısıyla heba edilmesi, Mustafa Kemal'e 'askeri zaferlerin mutlaka güçlü bir diplomasi ve siyasi zaferle taçlandırılması gerektiği' gerçeğini öğretmiştir.",
         "rubric": [
           {
-            "criterion": "Tablodaki boşlukların hatasız doldurulması (HAYIR - EVET - HAYIR)",
-            "points": 6
+            "criterion": "Genç yaştaki vatanperverlik vurgusu",
+            "points": 7
           },
           {
-            "criterion": "2. Durum'un ayırt edici şartının ve kuralının açıklanması",
-            "points": 7
+            "criterion": "Meydan zaferinin masa başında kaybedilmemesi dersi",
+            "points": 6
           }
         ]
       },
@@ -20514,25 +20262,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Gençlik döneminde Mustafa Kemal’in fikir hayatını etkileyen önemli kişileri ve olayları kavrar.",
         "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Hata Tespiti & Adım Analizi",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 13,
         "contextText": "Mustafa Kemal'in çok yönlülüğü ve kitap sevgisi.",
-        "stimulus": "Murat, Mustafa Kemal'in Fikir Hayatını Etkileyen Kişiler ve Olaylar ile ilgili açık uçlu bir soruyu çözerken çalışma kağıdına şu adımları yazmıştır:\n1. Adım: Verilen öncülleri ve temel kavramları belirledim.\n2. Adım: Mustafa Kemal yabancı aydınlardan milliyetçilik değil; cumhuriyet, demokrasi, akılcılık ve hukukun üstünlüğü ilkelerini öğrenmiştir. Milliyetçilik duygusunu yerli aydınlardan almıştır. kabulünü yaparak işleme başladım.\n3. Adım: Bu adımdaki sonuca göre bağlantılı kuralı uyguladım.\n4. Adım: Nihai sonuca ulaştım.",
-        "questionText": "Murat'in çözüm adımlarını inceleyiniz. İlk hata kaçıncı adımda yapılmıştır? Yapılan hatanın gerekçesini açıklayarak o adımın ve nihai cevabın doğru halini yazınız.",
-        "solutionExplanation": "Çok yönlülüğü (çok cepheliliği). Cumhuriyet'in sadece askeri değil hukuki, kültürel ve bilimsel temellerini atmasını sağladı.",
-        "modelAnswer": "İlk hata 2. adımda yapılmıştır. Çünkü Murat, 'Mustafa Kemal yabancı aydınlardan milliyetçilik değil; cumhuriyet, demokrasi, akılcılık ve hukukun üstünlüğü ilkelerini öğrenmiştir. Milliyetçilik duygusunu yerli aydınlardan almıştır.' hatasına düşmüştür. Doğrusu: Yerli Düşünürler: Namık Kemal (Vatan ve Hürriyet Sevgisi), Ziya Gökalp (Milliyetçilik ve Türkçülük), Tevfik Fikret (İnkılapçılık ve Batılılaşma), Mehmet Emin Yurdakul (Millî Kültür ve Şiir). kuralı işletilmeli ve çözüm bu esasa göre tamamlanmalıdır.",
+        "stimulus": "1897'de Osmanlı ordusu Yunan ordusunu Dömeke Meydan Muharebesi'nde mağlup etmesine rağmen masa başında (İstanbul Antlaşması) istediğini alamamıştır.",
+        "questionText": "Mustafa Kemal'in henüz Manastır Askeri İdadisi öğrencisiyken cepheye katılmak için okuldan kaçmaya kalkıştığı bu savaşın onda uyandırdığı askerî ve diplomatik dersi açıklayınız.",
+        "solutionExplanation": "Meydanda kazanılan zaferin masa başında kaybedilmemesi gerektiğini; güçlü bir diplomasinin önemini anladı.",
+        "modelAnswer": "Bu savaş Mustafa Kemal'de iki büyük ders bırakmıştır:\n1. Vatan Savunması Aşkı: Henüz genç bir öğrenciyken vatan savunması için cepheye koşacak kadar yüksek bir vatanperverliğe sahip olduğunu göstermiştir.\n2. Diplomasi Dersi: Osmanlı ordusunun meydanda kazandığı kesin zaferin masa başında Avrupalıların baskısıyla heba edilmesi, Mustafa Kemal'e 'askeri zaferlerin mutlaka güçlü bir diplomasi ve siyasi zaferle taçlandırılması gerektiği' gerçeğini öğretmiştir.",
         "rubric": [
           {
-            "criterion": "İlk hatanın yapıldığı adımın (2. Adım) doğru belirlenmesi",
-            "points": 5
+            "criterion": "Genç yaştaki vatanperverlik vurgusu",
+            "points": 7
           },
           {
-            "criterion": "Yapılan kavramsal/işlemsel hatanın gerekçelendirilmesi",
-            "points": 5
-          },
-          {
-            "criterion": "Adımın ve sonucun doğru kurala göre düzeltilmesi",
-            "points": 3
+            "criterion": "Meydan zaferinin masa başında kaybedilmemesi dersi",
+            "points": 6
           }
         ]
       },
@@ -20542,20 +20286,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Mustafa Kemal’in askerlik hayatı ile ilgili olayları ve olguları onun kişilik özellikleri ile ilişkilendirir.",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "Balkan Savaşları'nda Mustafa Kemal: Gelibolu ve Bolayır Kolordusu.",
-        "stimulus": "Mustafa Kemal'in Askerlik Hayatı ve Kişilik Özellikleri kapsamında karşılaşılan bir durumu çözmek için uzmanlar iki farklı yöntem geliştirmiştir:\n1. Yöntem: Kısa vadeli hızlı çözüm sunan ancak 'Trablusgarp Savaşı Mustafa Kemal'in sömürgeciliğe karşı ilk askeri başarısıdır. Burada dağınık yerel halkı bir araya getirmesi onun gelecekte Kuvâ-yı Millîye ve Millî Mücadele'yi teşkilatlandıracağının kanıtıdır.' riskini barındıran yaklaşım.\n2. Yöntem: Başlangıçta daha fazla dikkat ve aşama gerektiren ancak 'Şam 5. Ordu (İlk Görev): Vatan ve Hürriyet Cemiyeti'ni kurması -> Liderlik, Teşkilatçılık, Vatanseverlik.' ilkesine tam uyan sürdürülebilir yaklaşım.",
-        "questionText": "Verilen iki yaklaşımı Mustafa Kemal'in Askerlik Hayatı ve Kişilik Özellikleri ilkeleri bakımından değerlendiriniz. Hangi yöntem daha uygundur? Seçtiğiniz yöntemin güçlü yönlerini ve diğer yöntemin taşıdığı riskleri gerekçelendiriniz.",
+        "stimulus": "II. Balkan Savaşı'nda Mustafa Kemal, Bolayır Kolordusu Kurmay Başkanı olarak Edirne'nin Bulgar işgalinden kurtarılmasında önemli rol oynamıştır.",
+        "questionText": "Mustafa Kemal'in Balkan Savaşları sırasında Gelibolu Yarımadası'nda görev yapmasının, iki yıl sonra başlayacak Çanakkale Savaşları'ndaki zaferine katkısını açıklayınız.",
         "solutionExplanation": "Gelibolu'nun kıyılarını, koylarını ve tepelerini adım adım tanıdı; düşmanın nereden çıkacağını arazi bilgisiyle bildi.",
-        "modelAnswer": "2. Yöntem uygundur. Çünkü Şam 5. Ordu (İlk Görev): Vatan ve Hürriyet Cemiyeti'ni kurması -> Liderlik, Teşkilatçılık, Vatanseverlik. ilkesini tam olarak karşılamaktadır. 1. Yöntem ise kısa vadeli olsa da 'Trablusgarp Savaşı Mustafa Kemal'in sömürgeciliğe karşı ilk askeri başarısıdır. Burada dağınık yerel halkı bir araya getirmesi onun gelecekte Kuvâ-yı Millîye ve Millî Mücadele'yi teşkilatlandıracağının kanıtıdır.' sakıncasını doğuracağı için hedeflenen amaca ters düşer.",
+        "modelAnswer": "Mustafa Kemal, Bolayır Kolordusu'ndaki görevi sırasında Gelibolu Yarımadası'nın her koyunu, tepesini, vadisini ve geçitlerini adım adım gezerek bölgenin topoğrafyasını ve savunma imkânlarını kusursuz şekilde öğrenmiştir. Bu derin arazi tecrübesi sayesinde 1915 Çanakkale Savaşları başladığında İtilaf Devletleri'nin hangi koylardan çıkarma yapacağını ve hangi tepelerin elde tutulması gerektiğini herkesten önce görerek tarihi bir savunma hattı kurmuştur.",
         "rubric": [
           {
-            "criterion": "Doğru yaklaşımın (2. Yöntem) tespiti ve güçlü yönünün gerekçelendirilmesi",
+            "criterion": "Bölgenin arazi ve topoğrafyasını tanıması boyutu",
             "points": 6
           },
           {
-            "criterion": "1. Yöntemin taşıdığı kavramsal riskin açıklanması",
+            "criterion": "Çanakkale çıkarmasında doğru konuşlanma sağlaması katkısı",
             "points": 6
           }
         ]
@@ -20614,21 +20358,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeTitle": "Birinci Dünya Savaşı’nın sebeplerini ve savaşın başlamasına yol açan gelişmeleri kavrar.",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "Almanya'nın Osmanlı Devleti'ni kendi yanında savaşa sokmak isteme nedenleri.",
-        "stimulus": "Birinci Dünya Savaşı'nın Sebepleri ve Bloklaşmalar konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nAhmet: \"Bu durumda temel kural şudur: Avusturya veliahdının Saraybosna'da bir Sırp milliyetçisi tarafından vurulması savaşın asıl sebebi değil; fitili ateşleyen kıvılcım (görünürdeki bahane) niteliğindedir.\"\nMehmet: \"Hayır Ahmet, yanılıyorsun. Çünkü kural gereği: Genel Nedenler: Sanayi İnkılabı sonrası hızlanan Sömürgecilik ve Pazar Arayışı, Devletler arası Silahlanma Yarışı ve Bloklaşma, Fransız İhtilali kaynaklı Milliyetçilik Akımı. Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Ahmet ve Mehmet'nin iddialarını Birinci Dünya Savaşı'nın Sebepleri ve Bloklaşmalar ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
-        "solutionExplanation": "Jeopolitik konum: Yeni cepheler açıp Almanya'nın yükünü hafifletmek ve Rusya'ya boğazları kapatmak. Halifelik: İngiliz ve Fransız sömürgelerindeki Müslümanları cihatla ayaklandırmak.",
-        "modelAnswer": "Mehmet haklıdır. Çünkü Genel Nedenler: Sanayi İnkılabı sonrası hızlanan Sömürgecilik ve Pazar Arayışı, Devletler arası Silahlanma Yarışı ve Bloklaşma, Fransız İhtilali kaynaklı Milliyetçilik Akımı.. Ahmet ise 'Avusturya veliahdının Saraybosna'da bir Sırp milliyetçisi tarafından vurulması savaşın asıl sebebi değil; fitili ateşleyen kıvılcım (görünürdeki bahane) niteliğindedir.' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "stimulus": "Osmanlı Devleti başlangıçta İngiltere ve Fransa ile ittifak yapmak istemiş ancak bu devletler Osmanlı'yı kendi aralarında gizli antlaşmalarla paylaştıkları için teklifi reddetmişlerdir.",
+        "questionText": "İttihat ve Terakki liderlerinin Almanya'nın savaşı kazanacağına inanmalarının ve Almanya ile ittifak kurmalarının 2 temel gerekçesini yazınız.",
+        "solutionExplanation": "1. Kaybedilen toprakları (Balkanlar, Mısır) geri alma arzusu, 2. Alman sanayi ve ordu teknolojisine duyulan aşırı güven.",
+        "modelAnswer": "1. Kaybedilen Toprakları Geri Alma Arzusu: Son yıllarda Balkan Savaşları ve Trablusgarp'ta kaybedilen vatan topraklarını Almanya'nın yanında savaşı kazanarak geri alma ümidi.\n2. Alman Sanayi ve Askeri Üstünlüğüne Güven: Enver Paşa ve İttihatçı liderlerin Almanya'nın güçlü sanayisi ve modern ordusu sayesinde savaşı kısa sürede kesin bir zaferle tamamlayacağına olan sarsılmaz inançları.",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (Mehmet) doğru tespiti",
-            "points": 5
+            "criterion": "Kaybedilen toprakları geri alma ümidi",
+            "points": 6
           },
           {
-            "criterion": "Ahmet'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 7
+            "criterion": "Alman ordusu ve teknolojisine duyulan güven",
+            "points": 6
           }
         ]
       }
