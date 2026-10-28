@@ -5,7 +5,7 @@ import {
   ExamTerm, 
   ExamScenario
 } from '../types';
-import { ALL_SUBJECTS, EXAM_TERMS } from '../data/curriculumData';
+import { ALL_SUBJECTS, EXAM_TERMS, getOfficialOutcomeTitle, formatOutcomeBadgeTitle } from '../data/curriculumData';
 import { 
   X, 
   Sparkles, 
@@ -288,7 +288,7 @@ KESİNLİKLE YASAK OLANLAR:
                             </span>
                             <span className="text-[11px] font-semibold text-indigo-900 bg-indigo-50 px-2.5 py-0.5 rounded border border-indigo-200">
                               <strong className="font-mono text-indigo-700 mr-1">{gq.outcome}</strong>
-                              {gq.outcomeTitle ? `• ${gq.outcomeTitle}` : ''}
+                              {formatOutcomeBadgeTitle(gq.outcomeTitle, gq.outcome) ? `• ${formatOutcomeBadgeTitle(gq.outcomeTitle, gq.outcome)}` : ''}
                             </span>
                             {gq.difficulty && (
                               <span className={`text-[10px] font-bold px-2 py-0.5 rounded ${
@@ -382,10 +382,15 @@ KESİNLİKLE YASAK OLANLAR:
                                   return { criterion: r.item, points: pts };
                                 });
 
+                                const officialTitle = getOfficialOutcomeTitle(q.outcome);
+                                const resolvedOutcomeTitle = (officialTitle && officialTitle !== q.outcome)
+                                  ? officialTitle
+                                  : formatOutcomeBadgeTitle(q.outcomeTitle, q.outcome) || 'MEBİ Öğrenme Çıktısı';
+
                                 return {
                                   questionNumber: q.number,
                                   outcomeCode: q.outcome,
-                                  outcomeTitle: q.outcomeTitle || 'MEBİ Öğrenme Çıktısı',
+                                  outcomeTitle: resolvedOutcomeTitle,
                                   difficulty: q.difficulty || 'Orta',
                                   cognitiveLevel: q.level || 'Karmaşık Bilişsel Süreçler',
                                   archetype: q.templateType,

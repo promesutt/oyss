@@ -15,7 +15,8 @@ import {
 import { 
   ALL_SUBJECTS,
   ALL_GRADES,
-  getScenarios 
+  getScenarios,
+  getOfficialOutcomeTitle
 } from './data/curriculumData';
 import { SAMPLE_EXAMS } from './data/sampleExams';
 import { SAMPLE_STUDY_SHEETS } from './data/studySheets';
@@ -246,10 +247,15 @@ b) Durum 1 ile Durum 2 arasındaki fark, uygulanan yöntemin sürekliliği ve do
 
         const difficulty: 'Kolay' | 'Orta' | 'Zor' = idx % 3 === 0 ? 'Kolay' : idx % 3 === 1 ? 'Orta' : 'Zor';
 
+        const officialOutcome = getOfficialOutcomeTitle(dist.outcomeCode);
+        const resolvedOutcomeTitle = (officialOutcome && officialOutcome !== dist.outcomeCode)
+          ? officialOutcome
+          : (dist.notes || `${subjectName} Temel Öğrenme Çıktısı Analizi`);
+
         return {
           questionNumber: idx + 1,
           outcomeCode: dist.outcomeCode,
-          outcomeTitle: dist.notes || `${subjectName} Temel Öğrenme Çıktısı Analizi`,
+          outcomeTitle: resolvedOutcomeTitle,
           difficulty: difficulty,
           cognitiveLevel: dist.cognitiveLevel,
           archetype: archetype,

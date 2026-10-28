@@ -58,9 +58,10 @@ export async function generateMEBIQuestions(
   const name1 = POOL_NAMES_A[nameIdx1];
   const name2 = POOL_NAMES_B[nameIdx2];
 
-  const distributionsText = scenario.distributions.slice(0, targetCount).map((d, i) => 
-    `Soru ${i + 1}: [Kazanım: ${d.outcomeCode}] [Bilişsel Düzey: ${d.cognitiveLevel}] [Odak: ${d.notes || 'Kavramsal Uygulama'}]`
-  ).join('\n');
+  const distributionsText = scenario.distributions.slice(0, targetCount).map((d, i) => {
+    const officialTitle = getOfficialOutcomeTitle(d.outcomeCode);
+    return `Soru ${i + 1}: [Kazanım Kodu: ${d.outcomeCode}] [Resmi Öğrenme Çıktısı: ${officialTitle || d.notes || 'Kavramsal Uygulama'}] [Bilişsel Düzey: ${d.cognitiveLevel}]`;
+  }).join('\n');
 
   const livePrompt = `SEN MEB TEMEL EĞİTİM VE ÖDSGM SINAV BAŞUZMANISIN.
 Aşağıdaki resmi senaryo kurallarına uygun olarak eksiksiz bir ${grade}. Sınıf ${subjectId} Ortak Yazılı Sınav Kağıdı üret.
@@ -99,8 +100,8 @@ SADECE geçerli bir JSON çıktısı ver. JSON şeması:
   "questions": [
     {
       "number": 1,
-      "outcome": "Kazanım Kodu",
-      "outcomeTitle": "Kazanım Başlığı",
+      "outcome": "Kazanım Kodu (Örn: MAT.7.1.1)",
+      "outcomeTitle": "Resmi Öğrenme Çıktısı (Örn: Gerçek yaşam ya da matematiksel durumlarda doğal sayı, tam sayı ve rasyonel sayıları yorumlayabilme)",
       "difficulty": "Orta",
       "level": "Karmaşık Bilişsel Süreçler",
       "templateType": "Öğrenci Diyaloğu & Kavram Yanılgısı",
@@ -115,6 +116,17 @@ SADECE geçerli bir JSON çıktısı ver. JSON şeması:
     }
   ]
 }`;
+
+  const normalizeOutcomeTitles = (questions: any[]): GeneratedQuestionItem[] => {
+    return questions.map(q => {
+      const officialTitle = getOfficialOutcomeTitle(q.outcome);
+      const hasOfficial = officialTitle && officialTitle !== q.outcome;
+      return {
+        ...q,
+        outcomeTitle: hasOfficial ? officialTitle : (q.outcomeTitle || officialTitle || 'MEBİ Öğrenme Çıktısı')
+      };
+    });
+  };
 
   // 1. TIER 1: Güvenli Sunucu Fonksiyonu (/api/generate)
   try {
@@ -141,13 +153,14 @@ SADECE geçerli bir JSON çıktısı ver. JSON şeması:
 
       if (questionsList && Array.isArray(questionsList) && questionsList.length > 0) {
         const activeModelName = data?.activeModel || 'gemini-3.5-flash-lite';
+        const normalized = normalizeOutcomeTitles(questionsList);
         return {
-          title: `${grade}. Sınıf ${scenario.name} (Canlı Gemini 3.5 Flash-Lite - ${questionsList.length} Soru)`,
+          title: `${grade}. Sınıf ${scenario.name} (Canlı Gemini 3.5 Flash-Lite - ${normalized.length} Soru)`,
           variationNumber: variationIndex + 1,
           generationTime: '0.9 saniye (Tasarruflu Sunucu Değişkeni)',
           model: `Gemini 3.5 Flash-Lite (${activeModelName} - Minimum Token)`,
-          questionsCount: questionsList.length,
-          generatedQuestions: questionsList
+          questionsCount: normalized.length,
+          generatedQuestions: normalized
         };
       }
     }
@@ -196,13 +209,14 @@ SADECE geçerli bir JSON çıktısı ver. JSON şeması:
                 ? 'Gemini 3.5 Flash-Lite'
                 : modelName.replace('-', ' ').toUpperCase();
 
+              const normalized = normalizeOutcomeTitles(parsed.questions);
               return {
-                title: `${grade}. Sınıf ${scenario.name} (Canlı ${usedModelTitle} - ${parsed.questions.length} Soru)`,
+                title: `${grade}. Sınıf ${scenario.name} (Canlı ${usedModelTitle} - ${normalized.length} Soru)`,
                 variationNumber: variationIndex + 1,
                 generationTime: '0.9 saniye (Canlı API)',
                 model: `${usedModelTitle} (Tasarruflu & Hızlı)`,
-                questionsCount: parsed.questions.length,
-                generatedQuestions: parsed.questions
+                questionsCount: normalized.length,
+                generatedQuestions: normalized
               };
             }
           }
@@ -1379,10 +1393,13 @@ ${sName2}: "Hayır, şartlar değiştiğinde doğrudan diğer etkenlerin devreye
         ans = `Seçilen yöntemin gerekçesi ve diğer yöntemin sınırları bilimsel kanıtlarla açıklanmıştır.`;
       }
 
+      const officialOutcome = getOfficialOutcomeTitle(d.outcomeCode);
       return {
         number: idx + 1,
         outcome: d.outcomeCode,
-        outcomeTitle: d.notes || `${dynSubjectName} Temel Öğrenme Çıktısı Analizi`,
+        outcomeTitle: (officialOutcome && officialOutcome !== d.outcomeCode)
+          ? officialOutcome
+          : (d.notes || `${dynSubjectName} Temel Öğrenme Çıktısı Analizi`),
         difficulty: idx % 3 === 0 ? 'Kolay' : idx % 3 === 1 ? 'Orta' : 'Zor',
         level: d.cognitiveLevel,
         templateType: arch,

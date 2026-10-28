@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ExamPaper } from '../types';
 import { MathRenderer } from './MathRenderer';
+import { formatOutcomeBadgeTitle } from '../data/curriculumData';
 import { 
   CheckCircle2, 
   Eye, 
@@ -176,7 +177,7 @@ export const ExamPaperView: React.FC<ExamPaperViewProps> = ({
                   {/* Öğrenme Çıktısı Rozeti (Kodu + Başlığı) */}
                   <span className="text-xs font-semibold text-indigo-900 bg-indigo-50 px-2.5 py-0.5 rounded-md border border-indigo-200">
                     <strong className="font-mono text-indigo-700 mr-1">{q.outcomeCode}</strong>
-                    {q.outcomeTitle ? `• ${q.outcomeTitle}` : ''}
+                    {formatOutcomeBadgeTitle(q.outcomeTitle, q.outcomeCode) ? `• ${formatOutcomeBadgeTitle(q.outcomeTitle, q.outcomeCode)}` : ''}
                   </span>
 
                   {/* Zorluk Derecesi (Kolay / Orta / Zor Dengesi) */}

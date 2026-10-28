@@ -65,7 +65,7 @@ export const OFFICIAL_OUTCOMES: Record<string, OfficialOutcomeMeta> = {
     code: "DKAB",
     unit: "ZEKÂT VE SADAKA",
     topic: "İslam’ın Paylaşma ve Yardımlaşmaya Verdiği Önem",
-    canonicalTitle: "8.2.1. İslam’ın paylaşma ve yardımlaşmaya verdiği önemi ayet ve hadisler ışığında yorumlar.",
+    canonicalTitle: "İslam’ın paylaşma ve yardımlaşmaya verdiği önemi ayet ve hadisler ışığında yorumlar.",
     cognitiveLevel: "Karmaşık Bilişsel Süreçler"
   },
   "DKAB.5.1.2": {
@@ -639,7 +639,7 @@ export const OFFICIAL_OUTCOMES: Record<string, OfficialOutcomeMeta> = {
     code: "MAT.7.1.2",
     unit: "Rasyonel Sayılar ve Farklı Temsilleri",
     topic: "Rasyonel Sayılar ve Farklı Temsilleri",
-    canonicalTitle: "Gerçek yaşam durumlarında rasyonel sayıların ondalık gösterimlerini yansıtabilmea) Bölme işlemini kullanarak her rasyonel sayının bir ondalık gösterimi olduğunu inceler..",
+    canonicalTitle: "Gerçek yaşam durumlarında rasyonel sayıların ondalık gösterimlerini yansıtabilme",
     cognitiveLevel: "Basit Bilişsel Süreçler"
   },
   "MAT.7.1.3": {
@@ -660,7 +660,7 @@ export const OFFICIAL_OUTCOMES: Record<string, OfficialOutcomeMeta> = {
     code: "SB",
     unit: "BİRLİKTE YAŞAMAK",
     topic: "Gruplarda ve Sosyal Hayatta İletişimin Önemi",
-    canonicalTitle: "7.1.1. Dâhil olduğu gruplarda ve sosyal hayatta etkili iletişimin önemini sorgulayabilme",
+    canonicalTitle: "Dâhil olduğu gruplarda ve sosyal hayatta etkili iletişimin önemini sorgulayabilme",
     cognitiveLevel: "Basit Bilişsel Süreçler"
   },
   "SB.5.1.1": {
@@ -1079,11 +1079,26 @@ export const OFFICIAL_OUTCOMES: Record<string, OfficialOutcomeMeta> = {
 };
 
 export function getOfficialOutcomeTitle(code: string): string {
+  if (!code) return '';
   const normalized = code.trim().replace('SB ', 'SB.');
   if (OFFICIAL_OUTCOMES[normalized]) {
-    return `${normalized}. ${OFFICIAL_OUTCOMES[normalized].canonicalTitle}`;
+    let title = OFFICIAL_OUTCOMES[normalized].canonicalTitle.trim();
+    // Clean redundant leading code or numbers e.g. "MAT.7.1.1." or "8.2.1."
+    title = title.replace(/^(?:[A-ZÇĞİÖŞÜa-zçğıöşü]+[.\s]*)?\d+[.]\d+[.]\d+[.]?\s*/i, '').trim();
+    return title;
   }
   return code;
+}
+
+export function formatOutcomeBadgeTitle(outcomeTitle?: string, outcomeCode?: string): string {
+  if (!outcomeTitle) return '';
+  let title = outcomeTitle.trim();
+  if (outcomeCode) {
+    const cleanCode = outcomeCode.trim();
+    const escapedCode = cleanCode.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    title = title.replace(new RegExp(`^${escapedCode}[.:\\s-]*`, 'i'), '').trim();
+  }
+  return title;
 }
 
 // Ortaokul 5, 6, 7, 8. Sınıf MEB ÖDSGM Resmi Konu Soru Dağılım Matrisi
