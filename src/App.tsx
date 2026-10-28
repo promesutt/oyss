@@ -18,6 +18,7 @@ import {
   getScenarios,
   getOfficialOutcomeTitle
 } from './data/curriculumData';
+import { calibrateQuestionDifficulties } from './utils/difficultyCalibrator';
 import { SAMPLE_EXAMS } from './data/sampleExams';
 import { SAMPLE_STUDY_SHEETS } from './data/studySheets';
 import { OUTCOME_STUDY_BANK } from './data/outcomeStudyBank';
@@ -197,7 +198,7 @@ export const App: React.FC = () => {
         'Düz bilgi/ezber yerine verilen vaka, diyalog ve veri tablolarını analiz ederek gerekçenizi yazınız.',
         'Puanlamada MEB Analitik Dereceli Puanlama Anahtarı (Rubrik) basamakları esas alınacaktır.'
       ],
-      questions: currentScenario.distributions.map((dist, idx) => {
+      questions: calibrateQuestionDifficulties(currentScenario.distributions.map((dist, idx) => {
         const archetype = archetypes[idx % archetypes.length];
         
         let stimulusText = '';
@@ -245,8 +246,6 @@ b) Durum 1 ile Durum 2 arasındaki fark, uygulanan yöntemin sürekliliği ve do
           ];
         }
 
-        const difficulty: 'Kolay' | 'Orta' | 'Zor' = idx % 3 === 0 ? 'Kolay' : idx % 3 === 1 ? 'Orta' : 'Zor';
-
         const officialOutcome = getOfficialOutcomeTitle(dist.outcomeCode);
         const resolvedOutcomeTitle = (officialOutcome && officialOutcome !== dist.outcomeCode)
           ? officialOutcome
@@ -256,7 +255,7 @@ b) Durum 1 ile Durum 2 arasındaki fark, uygulanan yöntemin sürekliliği ve do
           questionNumber: idx + 1,
           outcomeCode: dist.outcomeCode,
           outcomeTitle: resolvedOutcomeTitle,
-          difficulty: difficulty,
+          difficulty: 'Orta' as const,
           cognitiveLevel: dist.cognitiveLevel,
           archetype: archetype,
           points: Math.round(100 / currentScenario.distributions.length),
@@ -267,7 +266,7 @@ b) Durum 1 ile Durum 2 arasındaki fark, uygulanan yöntemin sürekliliği ve do
           solutionExplanation: `MEBİ ${archetype} kalıbına uygun analitik değerlendirme.`,
           rubric: rubricItems
         };
-      })
+      }))
     };
   }, [customExamPaper, selectedGrade, selectedSubject, selectedTerm, currentScenario]);
 

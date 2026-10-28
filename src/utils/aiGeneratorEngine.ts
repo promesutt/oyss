@@ -1,5 +1,6 @@
 import { SubjectId, GradeLevel, ExamScenario } from '../types';
 import { getOfficialOutcomeTitle } from '../data/curriculumData';
+import { formatDifficultyPlanText, calibrateQuestionDifficulties } from './difficultyCalibrator';
 
 const POOL_NAMES_A = [
   'Selin', 'Kerem', 'Zehra', 'Burak', 'Aslı', 'Emre', 'Derya', 'Tarık', 
@@ -49,7 +50,16 @@ export async function generateMEBIQuestions(
   apiKey?: string,
   requestedQuestionCount?: number
 ): Promise<GenerationResult> {
-  const targetCount = requestedQuestionCount || scenario.totalQuestions || scenario.distributions.length || 6;
+  const expandedDistributions: typeof scenario.distributions = [];
+  for (const d of scenario.distributions) {
+    const count = d.questionCount || 1;
+    for (let c = 0; c < count; c++) {
+      expandedDistributions.push(d);
+    }
+  }
+
+  const effectiveTotal = expandedDistributions.length || scenario.totalQuestions || 6;
+  const targetCount = requestedQuestionCount || effectiveTotal;
   const pointAllocations = distributePoints(targetCount);
 
   // Rotate names for procedural fallback
@@ -58,17 +68,31 @@ export async function generateMEBIQuestions(
   const name1 = POOL_NAMES_A[nameIdx1];
   const name2 = POOL_NAMES_B[nameIdx2];
 
-  const distributionsText = scenario.distributions.slice(0, targetCount).map((d, i) => {
+  const questionDistributions = Array.from({ length: targetCount }, (_, i) => {
+    return expandedDistributions[i % (expandedDistributions.length || 1)] || scenario.distributions[0];
+  });
+
+  const distributionsText = questionDistributions.map((d, i) => {
     const officialTitle = getOfficialOutcomeTitle(d.outcomeCode);
     return `Soru ${i + 1}: [Kazanım Kodu: ${d.outcomeCode}] [Resmi Öğrenme Çıktısı: ${officialTitle || d.notes || 'Kavramsal Uygulama'}] [Bilişsel Düzey: ${d.cognitiveLevel}]`;
   }).join('\n');
+
+  const difficultyPlanText = formatDifficultyPlanText(targetCount);
 
   const livePrompt = `SEN MEB TEMEL EĞİTİM VE ÖDSGM SINAV BAŞUZMANISIN.
 Aşağıdaki resmi senaryo kurallarına uygun olarak eksiksiz bir ${grade}. Sınıf ${subjectId} Ortak Yazılı Sınav Kağıdı üret.
 TOPLAM SORU SAYISI: ${targetCount} ADET AÇIK UÇLU SORU (1'den ${targetCount}'e kadar her soru eksiksiz üretilmelidir).
 
-SENARYO KAZANIM DAĞILIM PLANI:
+SENARYO KAZANIM DAĞILIM PLANI (${targetCount} Soru):
 ${distributionsText}
+
+MEB ÖDSGM PEDAGOJİK ZORLUK DAĞILIMI (ÇAN EĞRİSİ - EN KRİTİK KURAL):
+- Sınavdaki ${targetCount} sorunun zorluk derecesi MEB Ölçme ve Değerlendirme standartlarına TAM UYGUN olmalıdır:
+  * Zorunlu Zorluk Dağılımı: ${difficultyPlanText}
+  * ASLA eşit sayıda (örneğin 2 kolay, 2 orta, 2 zor gibi) dağıtım yapma! Sınavın omurgasını daima "Orta" düzey oluşturmalıdır.
+  * "Basit Bilişsel Süreçler" etiketli kazanımlar "Kolay" veya "Orta" olmalıdır.
+  * "Karmaşık Bilişsel Süreçler" etiketli kazanımlar "Orta" veya "Zor" olmalıdır.
+  * Sınavın 1. sorusu öğrenciyi cesaretlendirmek için "Kolay" veya "Orta" olmalı; "Zor" soru sınavın sonuna doğru yerleştirilmelidir.
 
 HER SORU İÇİN ZORUNLU BAĞLAM ÇEŞİTLİLİĞİ KURALI (EN KRİTİK KURAL):
 - AYNI SINAV İÇİNDEKİ SORULARDA ASLA AYNI MEKÂN, AYNI ETKİNLİK VEYA AYNI BAĞLAMI TEKRARLAMA!
@@ -117,15 +141,21 @@ SADECE geçerli bir JSON çıktısı ver. JSON şeması:
   ]
 }`;
 
-  const normalizeOutcomeTitles = (questions: any[]): GeneratedQuestionItem[] => {
-    return questions.map(q => {
-      const officialTitle = getOfficialOutcomeTitle(q.outcome);
-      const hasOfficial = officialTitle && officialTitle !== q.outcome;
+  const normalizeAndCalibrateQuestions = (questions: any[]): GeneratedQuestionItem[] => {
+    const withTitles = questions.map((q, idx) => {
+      const distItem = questionDistributions[idx];
+      const outcomeCode = q.outcome || distItem?.outcomeCode || 'MEB.ORTAK';
+      const officialTitle = getOfficialOutcomeTitle(outcomeCode);
+      const hasOfficial = officialTitle && officialTitle !== outcomeCode;
       return {
         ...q,
-        outcomeTitle: hasOfficial ? officialTitle : (q.outcomeTitle || officialTitle || 'MEBİ Öğrenme Çıktısı')
+        number: idx + 1,
+        outcome: outcomeCode,
+        outcomeTitle: hasOfficial ? officialTitle : (q.outcomeTitle || officialTitle || 'MEBİ Öğrenme Çıktısı'),
+        cognitiveLevel: q.level || distItem?.cognitiveLevel || 'Karmaşık Bilişsel Süreçler'
       };
     });
+    return calibrateQuestionDifficulties(withTitles);
   };
 
   // 1. TIER 1: Güvenli Sunucu Fonksiyonu (/api/generate)
@@ -153,7 +183,7 @@ SADECE geçerli bir JSON çıktısı ver. JSON şeması:
 
       if (questionsList && Array.isArray(questionsList) && questionsList.length > 0) {
         const activeModelName = data?.activeModel || 'gemini-3.5-flash-lite';
-        const normalized = normalizeOutcomeTitles(questionsList);
+        const normalized = normalizeAndCalibrateQuestions(questionsList);
         return {
           title: `${grade}. Sınıf ${scenario.name} (Canlı Gemini 3.5 Flash-Lite - ${normalized.length} Soru)`,
           variationNumber: variationIndex + 1,
@@ -209,7 +239,7 @@ SADECE geçerli bir JSON çıktısı ver. JSON şeması:
                 ? 'Gemini 3.5 Flash-Lite'
                 : modelName.replace('-', ' ').toUpperCase();
 
-              const normalized = normalizeOutcomeTitles(parsed.questions);
+              const normalized = normalizeAndCalibrateQuestions(parsed.questions);
               return {
                 title: `${grade}. Sınıf ${scenario.name} (Canlı ${usedModelTitle} - ${normalized.length} Soru)`,
                 variationNumber: variationIndex + 1,
@@ -1357,7 +1387,7 @@ b) Mark NEVER plays tennis.`,
       'Birinci Ağızdan Konuşturma / Rol'
     ];
 
-    dynamicQuestions = scenario.distributions.slice(0, targetCount).map((d, idx) => {
+    dynamicQuestions = questionDistributions.map((d, idx) => {
       const arch = archetypesList[idx % archetypesList.length];
       const sName1 = POOL_NAMES_A[(variationIndex + idx) % POOL_NAMES_A.length];
       const sName2 = POOL_NAMES_B[(variationIndex + idx + 3) % POOL_NAMES_B.length];
@@ -1400,7 +1430,7 @@ ${sName2}: "Hayır, şartlar değiştiğinde doğrudan diğer etkenlerin devreye
         outcomeTitle: (officialOutcome && officialOutcome !== d.outcomeCode)
           ? officialOutcome
           : (d.notes || `${dynSubjectName} Temel Öğrenme Çıktısı Analizi`),
-        difficulty: idx % 3 === 0 ? 'Kolay' : idx % 3 === 1 ? 'Orta' : 'Zor',
+        difficulty: 'Orta',
         level: d.cognitiveLevel,
         templateType: arch,
         points: pointAllocations[idx] || 15,
@@ -1415,12 +1445,14 @@ ${sName2}: "Hayır, şartlar değiştiğinde doğrudan diğer etkenlerin devreye
     });
   }
 
+  const finalDynamicQuestions = calibrateQuestionDifficulties(dynamicQuestions);
+
   return {
-    title: `${grade}. Sınıf ${scenario.name} (Yapay Zekâ Varyasyonu - ${dynamicQuestions.length} Soru)`,
+    title: `${grade}. Sınıf ${scenario.name} (Yapay Zekâ Varyasyonu - ${finalDynamicQuestions.length} Soru)`,
     variationNumber: variationIndex + 1,
     generationTime: '1.1 saniye',
     model: apiKey ? 'Gemini 3.5 Flash-Lite (Canlı)' : 'Gemini TYMM-Engine (Alternatif MEBİ Havuzu)',
-    questionsCount: dynamicQuestions.length,
-    generatedQuestions: dynamicQuestions
+    questionsCount: finalDynamicQuestions.length,
+    generatedQuestions: finalDynamicQuestions
   };
 }

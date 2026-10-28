@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   GradeLevel, 
   SubjectId, 
@@ -6,6 +6,7 @@ import {
   ExamScenario
 } from '../types';
 import { ALL_SUBJECTS, EXAM_TERMS, getOfficialOutcomeTitle, formatOutcomeBadgeTitle } from '../data/curriculumData';
+import { calibrateQuestionDifficulties } from '../utils/difficultyCalibrator';
 import { 
   X, 
   Sparkles, 
@@ -43,6 +44,13 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
   const [outputType, setOutputType] = useState<'exam' | 'study_sheet' | 'practice_question'>('exam');
   const [cognitiveWeight, setCognitiveWeight] = useState<'standard' | 'more_complex' | 'foundational'>('standard');
   const [questionCountChoice, setQuestionCountChoice] = useState<number>(scenario.totalQuestions || 6);
+
+  // Sync question count choice whenever scenario changes
+  useEffect(() => {
+    if (scenario?.totalQuestions) {
+      setQuestionCountChoice(scenario.totalQuestions);
+    }
+  }, [scenario?.id, scenario?.totalQuestions]);
   const [isGenerating, setIsGenerating] = useState<boolean>(false);
   const [generatedResult, setGeneratedResult] = useState<GenerationResult | null>(null);
   const [variationCount, setVariationCount] = useState<number>(0);
@@ -206,7 +214,7 @@ KESİNLİKLE YASAK OLANLAR:
                 onChange={(e) => setCognitiveWeight(e.target.value as any)}
                 className="w-full bg-white border border-slate-300 rounded-lg p-2 text-xs font-semibold text-slate-800 focus:ring-2 focus:ring-indigo-500"
               >
-                <option value="standard">MEB Dengeli (%25 Kolay, %50 Orta, %25 Zor)</option>
+                <option value="standard">MEB Dengeli Dağılım (~%20-25 Kolay, ~%50-60 Orta, ~%15-20 Zor)</option>
                 <option value="more_complex">Karmaşık Bilişsel / Üst Düzey Beceri</option>
                 <option value="foundational">Temel Kavram ve Uygulama Ağırlıklı</option>
               </select>
@@ -404,7 +412,8 @@ KESİNLİKLE YASAK OLANLAR:
                               })
                             };
 
-                            onApplyGeneratedExam(customExam);
+                            const calibratedQuestions = calibrateQuestionDifficulties(customExam.questions);
+                            onApplyGeneratedExam({ ...customExam, questions: calibratedQuestions });
                             onClose();
                           }}
                           className="inline-flex items-center px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold shadow-md transition-all active:scale-95 shrink-0"
