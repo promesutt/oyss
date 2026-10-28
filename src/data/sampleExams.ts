@@ -199,15 +199,19 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "cognitiveLevel": "Basit Bilişsel Süreçler",
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
-        "contextText": "Metnin ana fikrini belirleme.",
+        "contextText": "Metne dayalı 5N1K ve olay akışı.",
         "stimulus": "Yukarıda verilen 1. sorudaki karınca metnini dikkate alınız.",
-        "questionText": "Yazarın bu masal/öykü aracılığıyla çocuklara vermek istediği temel ders (ana fikir) nedir?",
-        "solutionExplanation": "Zorluklar karşısında pes etmeyenler ve dayanışma gösterenler başarıya ulaşır.",
-        "modelAnswer": "Metnin Ana Fikri: Karşılaştığımız engeller ne kadar büyük olursa olsun sabırla gayret gösterir ve pes etmezsek, arkadaşlarımızla iş birliği yaparak her zorluğu aşabiliriz.",
+        "questionText": "Karınca Çıtı buğday tanesini yuvasına taşırken yolda nasıl bir engelle karşılaşmıştır ve buğday tanesini yuvanın kapısına nasıl ulaştırmıştır? Metindeki olay akışına göre açıklayınız.",
+        "solutionExplanation": "Metindeki açık olgular: Buğday tanesinin ağırlığı sebebiyle tepecikten aşağı yuvarlanması ve diğer karıncaların yardıma koşmasıyla yuvaya ulaştırılmasıdır.",
+        "modelAnswer": "• Karşılaştığı Engel: Kendi cüssesinden ağır olan buğday tanesini taşırken yolda defalarca tepeciğin yamacından aşağı yuvarlanmıştır.\n• Çözüm ve Sonuç: Asla yılmayıp her düşüşte taneyi yeniden sırtlamış, diğer karıncaların da yardıma koşmasıyla buğday tanesini yuvanın kapısına ulaştırmıştır.",
         "rubric": [
           {
-            "criterion": "Ana fikrin öğüt bildiren tutarlı bir yargı olarak yazılması",
-            "points": 17
+            "criterion": "Karşılaşılan engelin (buğdayın ağırlığı/tepecikten yuvarlanma) metne uygun yazılması",
+            "points": 8
+          },
+          {
+            "criterion": "Buğdayın diğer karıncaların yardımıyla yuvaya ulaştırıldığının belirtilmesi",
+            "points": 9
           }
         ]
       },
@@ -373,7 +377,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "cognitiveLevel": "Basit Bilişsel Süreçler",
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
-        "contextText": "Metne dayalı neden-sonuç çıkarımı.",
+        "contextText": "Metne dayalı açık bilgi tespiti (neden-sonuç).",
         "stimulus": "Yukarıda verilen 1. sorudaki 'Merhamet Isıtır' metnini dikkate alınız.",
         "questionText": "Çocukların koli kutularını su geçirmez naylonla kaplamalarının ve içlerine eski kazakları sermelerinin AMACI nedir? Açıklayınız.",
         "solutionExplanation": "Kutuları yağmurdan/kardan korumak ve içerisini sıcak tutarak hayvanların üşümesini engellemek.",
@@ -709,15 +713,19 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "cognitiveLevel": "Basit Bilişsel Süreçler",
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 15,
-        "contextText": "Metnin ana fikrini belirleme.",
-        "stimulus": "Metinde Dirse Han'ın oğlunun kaçmak yerine boğanın karşısında cesaretle durması ve onu aklıyla, bilek gücüyle alt etmesi anlatılmaktadır.",
-        "questionText": "Yukarıdaki metnin ana fikrini (vermek istediği temel mesajı) yazınız.",
-        "solutionExplanation": "Zorluklar ve tehlikeler karşısında cesaretle duranlar başarıya ve şerefe ulaşırlar.",
-        "modelAnswer": "Metnin ana fikri: Tehlikeler ve zorluklar karşısında korkup kaçmak yerine cesaret ve azimle mücadele edenler büyük engelleri aşar ve toplumda haklı bir saygı kazanırlar.",
+        "contextText": "Metne dayalı olay örgüsü ve kahramanların eylemleri.",
+        "stimulus": "Yukarıda verilen 1. sorudaki Boğaç Han metnini dikkate alınız.",
+        "questionText": "Azgın boğa meydandan kaçtığında meydandaki diğer insanlar ne yapmış, Dirse Han'ın oğlu nasıl bir tepki vermiştir? Metne göre yazınız.",
+        "solutionExplanation": "Metindeki açık olgular: İnsanlar kaçışırken Dirse Han'ın oğlunun meydanda dimdik durup boğayı alnına yumruk dayayarak dize getirmesidir.",
+        "modelAnswer": "• Meydandaki Diğer İnsanlar: Boğa kaçınca korkup sağa sola kaçışmışlardır.\n• Dirse Han'ın Oğlu: Geri adım atmayarak meydanın ortasında dimdik durmuş, boğa üzerine koştuğunda yumruğunu boğanın alnına dayayarak onu diz çöktürmüştür.",
         "rubric": [
           {
-            "criterion": "Cesaret ve zorluklarla mücadele ana fikrinin doğru ifadesi",
-            "points": 15
+            "criterion": "Meydandaki insanların kaçıştığının metne uygun belirtilmesi",
+            "points": 7
+          },
+          {
+            "criterion": "Dirse Han'ın oğlunun kaçmayıp boğayı yumruğuyla dize getirdiğinin açıklanması",
+            "points": 8
           }
         ]
       },
@@ -3487,8 +3495,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
     "questions": [
       {
         "questionNumber": 1,
-        "outcomeCode": "Evrendeki",
-        "outcomeTitle": "Evrendeki. Mükemmel Düzen",
+        "outcomeCode": "DKAB.5.1.2",
+        "outcomeTitle": "DKAB.5.1.2. Evrendeki mükemmel düzenden hareketle Allah’ın (cc) varlığı ve birliğini müşahede edebilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
@@ -3697,8 +3705,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
     "questions": [
       {
         "questionNumber": 1,
-        "outcomeCode": "Evrendeki",
-        "outcomeTitle": "Evrendeki. Mükemmel Düzen",
+        "outcomeCode": "DKAB.5.1.2",
+        "outcomeTitle": "DKAB.5.1.2. Evrendeki mükemmel düzenden hareketle Allah’ın (cc) varlığı ve birliğini müşahede edebilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
@@ -4045,8 +4053,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
     "questions": [
       {
         "questionNumber": 1,
-        "outcomeCode": "Evrendeki",
-        "outcomeTitle": "Evrendeki. Mükemmel Düzen",
+        "outcomeCode": "DKAB.5.1.2",
+        "outcomeTitle": "DKAB.5.1.2. Evrendeki mükemmel düzenden hareketle Allah’ın (cc) varlığı ve birliğini müşahede edebilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
@@ -5201,14 +5209,14 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "cognitiveLevel": "Basit Bilişsel Süreçler",
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
-        "contextText": "Nasreddin Hoca fıkrasının ana fikri.",
+        "contextText": "Fıkranın konusunu belirleme.",
         "stimulus": "Nasreddin Hoca komşusundan ödünç aldığı kazanı geri verirken içine küçük bir tencere koyar. Komşusu şaşırınca 'Müjde komşu, kazanın doğurdu!' der ve komşusu sevinçle kabul eder. Bir süre sonra Hoca kazanı tekrar ister. Ancak haftalar geçer kazan gelmez. Komşu kazanı isteyince Hoca: 'Başın sağ olsun komşu, senin kazan öldü!' der. Komşu öfkeyle 'Hocam hiç kazan ölür mü?' diye bağırınca Hoca taşı gediğine koyar: 'Doğurduğuna inandın da öldüğüne niye inanmıyorsun?'",
-        "questionText": "Nasreddin Hoca'nın bu fıkrada komşusuna ve okuyucuya vermek istediği temel ahlaki mesajı (ana fikri) yazınız.",
-        "solutionExplanation": "İşine gelince mantıksız bir kârı kabul eden, zarara da katlanmalıdır; dürüstlükten şaşılmamalıdır.",
-        "modelAnswer": "Fıkranın ana fikri: Kendi çıkarına ve menfaatine uygun düştüğünde akıl ve mantık dışı durumları kabullenen insanlar, işlerine gelmeyen olumsuz sonuçlarla karşılaştıklarında itiraz etme hakkına sahip olamazlar; insan menfaatinde de dürüst ve tutarlı olmalıdır.",
+        "questionText": "Nasreddin Hoca ile komşusu arasında geçen kazan olayının anlatıldığı yukarıdaki fıkranın konusunu tek bir cümleyle yazınız.",
+        "solutionExplanation": "Fıkra Nasreddin Hoca'nın komşusundan ödünç aldığı kazanı geri verirken içine küçük tencere koymasını ve ardından kazanın öldüğünü söyleyerek komşunun çıkarcı tutumunu ortaya çıkarmasını konu alır.",
+        "modelAnswer": "Metnin konusu: Nasreddin Hoca'nın komşusundan aldığı kazanı iade ederken içine küçük tencere koyması ve sonrasında kazanın öldüğünü söyleyerek komşusunun çıkarcı tutumunu ortaya çıkarmasıdır.",
         "rubric": [
           {
-            "criterion": "Çıkar ve dürüstlük çelişkisi ana fikrinin doğru ifadesi",
+            "criterion": "Fıkranın konusunun eksiksiz ve tek cümleyle ifade edilmesi",
             "points": 17
           }
         ]
@@ -5218,21 +5226,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "outcomeCode": "T.O.6.6",
         "outcomeTitle": "Metnin yüzey anlamını belirleyebilme",
         "difficulty": "Orta",
-        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "cognitiveLevel": "Basit Bilişsel Süreçler",
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
-        "contextText": "Fıkradaki komşunun karakter tahlili.",
-        "stimulus": "Komşu kazanın doğurduğunu duyunca hiç sorgulamadan küçük tencereyi sahiplenmiş, fakat ölüm haberine şiddetle karşı çıkmıştır.",
-        "questionText": "Komşunun bu iki farklı tepkisinden hareketle onun hangi kişilik özelliğine (zaafına) sahip olduğunu tek bir kavramla yazıp açıklayınız.",
-        "solutionExplanation": "Açgözlülük, menfaatçilik veya tutarsızlık.",
-        "modelAnswer": "Kişilik Zaafı: Açgözlülük (veya Menfaatçilik / Fırsatçılık).\nAçıklama: Kazan gibi cansız bir varlığın doğuramayacağını bildiği halde sırf bedava tencere kazanmak için bu yalana sevinmiş, işine gelince mantığı bir kenara bırakmıştır.",
+        "contextText": "Metne dayalı olay akışı ve 5N1K tespiti.",
+        "stimulus": "Yukarıda verilen 1. sorudaki Nasreddin Hoca ve kazan fıkrasını dikkate alınız.",
+        "questionText": "Metne göre komşu, kazanın içinde küçük tencereyi gördüğünde ve daha sonra Hoca kazanın öldüğünü söylediğinde nasıl tepkiler vermiştir? İki durumu da metne dayanarak kısaca açıklayınız.",
+        "solutionExplanation": "Komşu tencereyi görünce sevinçle karşılamış, ölüm haberini alınca ise öfkeyle itiraz etmiştir.",
+        "modelAnswer": "• Kazanın doğurduğu söylenip küçük tencere verildiğinde: Hiç sorgulamadan büyük bir sevinç ve memnuniyetle kabul etmiştir.\n• Hoca kazanın öldüğünü söylediğinde: Öfkelenip \"Hiç kazan ölür mü?\" diyerek şiddetle karşı çıkmıştır.",
         "rubric": [
           {
-            "criterion": "Açgözlülük/fırsatçılık kavramının tespiti",
+            "criterion": "Komşunun tencereyi sevinçle kabul ettiğinin metinden hareketle yazılması",
             "points": 9
           },
           {
-            "criterion": "Komşunun çıkar ilişkisi tutarsızlığının açıklanması",
+            "criterion": "Komşunun kazanın ölümüne öfkeyle itiraz ettiğinin metinden hareketle yazılması",
             "points": 8
           }
         ]
@@ -5501,14 +5509,14 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "cognitiveLevel": "Basit Bilişsel Süreçler",
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
-        "contextText": "Kuş evleri metninin ana fikri.",
+        "contextText": "Metnin konusunu belirleme.",
         "stimulus": "Osmanlı mimarisinde camilerin, medreselerin ve köprülerin rüzgâr almayan güneşli cephelerine taştan ve ahşaptan zarif kuş köşkleri inşa edilmiştir. Bu minik saraylar sayesinde serçeler, güvercinler ve kırlangıçlar kışın dondurucu soğuğundan ve yırtıcı hayvanlardan korunmuştur. Ecdadımız bu eserlerle canlılara merhamet etmeyi mimari bir zarafete dönüştürmüştür.",
-        "questionText": "Kuş evlerini ve ecdadımızın merhametini anlatan yukarıdaki metnin ana fikrini yazınız.",
-        "solutionExplanation": "Gerçek medeniyet ve gelişmişlik, dilsiz hayvanlara ve tüm canlılara gösterilen şefkat ve koruma zarafetiyle ölçülür.",
-        "modelAnswer": "Metnin ana fikri: Gerçek insanlık ve medeniyet, yalnızca insanları değil doğadaki en savunmasız dilsiz canlıları da şefkatle korumak, onlara merhamet göstermeyi mimari ve kültürel bir sorumluluk bilmektir.",
+        "questionText": "Osmanlı mimarisindeki zarif kuş köşklerini anlatan yukarıdaki metnin konusunu tek bir cümleyle yazınız.",
+        "solutionExplanation": "Metin Osmanlı mimarisinde kuşları dondurucu soğuktan ve yırtıcı hayvanlardan korumak için inşa edilen zarif kuş köşklerini konu almaktadır.",
+        "modelAnswer": "Metnin konusu: Osmanlı mimarisinde cami, medrese ve köprülere kuşları dondurucu kış soğuklarından ve yırtıcı hayvanlardan korumak amacıyla zarif kuş köşklerinin inşa edilmesidir.",
         "rubric": [
           {
-            "criterion": "Canlılara merhamet ve mimari zarafet ana fikrinin doğru ifadesi",
+            "criterion": "Metnin konusunun eksiksiz ve tek cümleyle yazılması",
             "points": 17
           }
         ]
@@ -10551,14 +10559,14 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "cognitiveLevel": "Basit Bilişsel Süreçler",
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
-        "contextText": "Metnin ana fikrini/ana düşüncesini belirleme.",
+        "contextText": "Metne dayalı açık bilgi ve neden-sonuç tespiti.",
         "stimulus": "Yukarıda verilen 1. sorudaki tebessüm ve iletişim metnini dikkate alınız.",
-        "questionText": "Yazarın bu metinde okuyucuya vermek istediği temel mesaj (ana fikir) nedir? Bir cümleyle yazınız.",
-        "solutionExplanation": "İletişimde en etkili yol nezaket ve tebessümdür.",
-        "modelAnswer": "Metnin Ana Fikri: İnsanlarla sağlıklı, güçlü ve sıcak ilişkiler kurmanın yolu; kelimelerimizden önce yüzümüzdeki içten bir tebessüm ve sesimizdeki nezakettir.",
+        "questionText": "Metne göre asık suratlı, sürekli eleştiren ve etrafına öfke saçan insanlar çevrelerinde nasıl bir sonuçla karşılaşmaktadır? Metinden hareketle yazınız.",
+        "solutionExplanation": "Metinde açıkça yazan olgu: Çevrelerindeki en candan dostlarını bile zamanla uzaklaştırmalarıdır.",
+        "modelAnswer": "Metne göre asık suratlı, sürekli eleştiren ve öfke saçan insanlar; çevrelerindeki en candan, en yakın dostlarını bile zamanla kendilerinden uzaklaştırırlar.",
         "rubric": [
           {
-            "criterion": "Ana fikrin bir öğüt veya genel yargı cümlesi olarak doğru yazılması",
+            "criterion": "Candan dostlarını zamanla uzaklaştırdıklarının metne uygun yazılması",
             "points": 14
           }
         ]
@@ -10729,15 +10737,19 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "cognitiveLevel": "Basit Bilişsel Süreçler",
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
-        "contextText": "Metnin ana fikrini belirleme.",
+        "contextText": "Metne dayalı açık bilgi ve detay tespiti.",
         "stimulus": "Yukarıda verilen 1. sorudaki çınar ağacı metnini dikkate alınız.",
-        "questionText": "Yazarın bu metindeki asırlık çınar üzerinden insanlara iletmek istediği ana fikir (ana düşünce) nedir?",
-        "solutionExplanation": "Köklerine bağlı olan bireyler ve toplumlar fırtınalara karşı dimdik durur.",
-        "modelAnswer": "Metnin Ana Fikri: Tıpkı kökleri derine inen bir çınar ağacı gibi, geçmişine, kültürüne ve köklerine vefayla bağlı olan toplumlar hayatın zorlukları ve fırtınaları karşısında dimdik ayakta kalırlar.",
+        "questionText": "Metne göre köylüler altı asırlık ulu çınarın gölgesinde hangi amaçlarla bir araya gelmektedir? Metinden iki durum yazınız.",
+        "solutionExplanation": "Metinde açıkça yazan durumlar: Köylülerin gölgede toplanması, soluklanması ve geçmişin hatıralarını yâd etmesidir.",
+        "modelAnswer": "Metne göre köylüler ulu çınarın gölgesinde:\n1. Toplanıp soluklanmak (dinlenmek),\n2. Geçmişin hatıralarını yâd etmek (anmak) amacıyla bir araya gelmektedir.",
         "rubric": [
           {
-            "criterion": "Ana fikrin öğüt verici ve genelleyici bir yargı olarak sunulması",
-            "points": 14
+            "criterion": "Toplanıp soluklanma durumunun doğru yazılması",
+            "points": 7
+          },
+          {
+            "criterion": "Geçmişin hatıralarını yâd etme durumunun doğru yazılması",
+            "points": 7
           }
         ]
       },
@@ -10903,15 +10915,19 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "cognitiveLevel": "Basit Bilişsel Süreçler",
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
-        "contextText": "Metnin ana fikrini belirleme.",
+        "contextText": "Metne dayalı tarihsel bilgi ve aşamaları tespit etme.",
         "stimulus": "Yukarıda verilen 1. sorudaki kitap metnini dikkate alınız.",
-        "questionText": "Bu metnin ana düşüncesini (yazarın iletmek istediği asıl mesajı) bir cümleyle yazınız.",
-        "solutionExplanation": "Kitabın şekli değişse de insanın bilgiye ulaşma arzusu değişmez.",
-        "modelAnswer": "Metnin Ana Düşüncesi: Kitapların biçimi çağlar içinde tabletten ekrana doğru değişse de insanın bilgi edinme, öğrenme ve dünyayı anlama tutkusu asla değişmez.",
+        "questionText": "Metne göre kitabın tarihsel serüveninde Sümerler ve Gutenberg hangi aşamalara öncülük etmiştir? Metinden hareketle açıklayınız.",
+        "solutionExplanation": "Metindeki açık olgular: Sümerlerin çivi yazısıyla kile kazıması ve Gutenberg'in hareketli harflerle ilk matbaa baskısını yapmasıdır.",
+        "modelAnswer": "• Sümerler: Çivi yazısını kullanarak ilk satırları kil tabletlere kazımışlardır.\n• Gutenberg: Hareketli harflerle ilk sayfaları basarak modern matbaayı ve kütüphaneleri doğurmuştur.",
         "rubric": [
           {
-            "criterion": "Ana fikrin doğru ve eksiksiz çıkarılması",
-            "points": 17
+            "criterion": "Sümerlerin kil tablet ve çivi yazısı aşamasının doğru yazılması",
+            "points": 9
+          },
+          {
+            "criterion": "Gutenberg'in matbaa ve basılı kitap aşamasının doğru yazılması",
+            "points": 8
           }
         ]
       },
@@ -11057,15 +11073,19 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "cognitiveLevel": "Basit Bilişsel Süreçler",
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
-        "contextText": "Metnin ana fikrini belirleme.",
+        "contextText": "Metne dayalı doğrudan alıntı ve bilgi tespiti.",
         "stimulus": "Yukarıda verilen 1. sorudaki Neşet Ertaş metnini dikkate alınız.",
-        "questionText": "Yazarın 'Türkülerini unutan bir millet, ruhunun en derin ezgilerini kaybetmiş demektir' sözüyle anlatmak istediği ana düşünce nedir?",
-        "solutionExplanation": "Türküler bir milletin kimliği ve ruhudur; unutulursa kimlik kaybolur.",
-        "modelAnswer": "Metnin Ana Düşüncesi: Türküler bir milletin ortak vicdanı, hafızası ve duygusal kimliğidir; türkülerinden kopan bir millet millî ve manevi bağlarını kaybeder.",
+        "questionText": "Neşet Ertaş metinde türkü söyleyen insanlarla ilgili nasıl bir tavsiyede bulunmuştur ve bunun gerekçesini hangi sözlerle açıklamıştır? Metne göre yazınız.",
+        "solutionExplanation": "Metindeki açık olgu: 'Nerede bir türkü söyleyen görürsen korkma, yanına otur' tavsiyesi ve 'çünkü kötü insanların türküleri yoktur' gerekçesidir.",
+        "modelAnswer": "• Tavsiyesi: 'Nerede bir türkü söyleyen görürsen korkma, yanına otur.'\n• Gerekçesi: 'Çünkü kötü insanların türküleri yoktur.'",
         "rubric": [
           {
-            "criterion": "Ana fikrin doğru ve güçlü bir biçimde ifade edilmesi",
-            "points": 17
+            "criterion": "Tavsiyenin metne uygun eksiksiz yazılması",
+            "points": 9
+          },
+          {
+            "criterion": "Tavsiyenin gerekçesinin metinden hareketle doğru açıklanması",
+            "points": 8
           }
         ]
       },
@@ -11902,18 +11922,18 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "cognitiveLevel": "Basit Bilişsel Süreçler",
         "archetype": "Hata Tespiti & Adım Analizi",
         "contextText": "Galaksi türleri ve Samanyolu Galaksisi.",
-        "stimulus": "Bir fen deneyinde üç farklı öğrencinin eylemleri gözlenmiştir:\n1. Durum: Can, sırtındaki 5 kg'lık okul çantasıyla düz bir koridorda sabit hızla 20 metre yürümüştür.\n2. Durum: Elif, yerde duran 10 kg'lık koliyi 50 N'luk yatay kuvvet uygulayarak yatay zeminde 4 metre ileri itmiştir.\n3. Durum: Burak, duvara 100 N'luk kuvvetle 10 dakika boyunca bastırmış ancak duvar hareket etmemiştir.",
-        "questionText": "a) Bu durumlardan hangisinde/hangilerinde fiziksel anlamda İŞ YAPILMIŞTIR? Nedenini işin fiziksel formülü ve doğrultu kuralına göre açıklayınız.\nb) Fiziksel anlamda iş yapılan durumdaki iş miktarını Joule (J) cinsinden hesaplayınız.",
-        "solutionExplanation": "İş = Kuvvet * Yol. Kuvvet ile hareket doğrultusu aynı olmalıdır. 1. durumda kuvvet yukarı yol yatay (iş yok). 3. durumda yol sıfır (iş yok). 2. durumda iş = 50 N * 4 m = 200 J.",
-        "modelAnswer": "a) Yalnızca 2. DURUMDA (Elif'in durumunda) fiziksel anlamda iş yapılmıştır.\nGerekçeler:\n• 1. Durumda: Çantaya uygulanan kaldırma kuvveti DİKEY doğrultuda iken, hareket YATAY doğrultudadır. Kuvvet ile hareket doğrultusu dik olduğu için fiziksel iş yapılmaz.\n• 2. Durumda: Uygulanan kuvvet de hareket de YATAY doğrultudadır ve cisim yol almıştır. Bu nedenle iş yapılmıştır.\n• 3. Durumda: Duvar hareket etmediği için (alınan yol = 0), kuvvet ne kadar büyük olursa olsun iş yapılmamıştır.\nb) Yapılan İş Hesabı: İş = Kuvvet × Alınan Yol = 50 N × 4 m = 200 Joule (J) bulunur.",
+        "stimulus": "Uzay araştırmalarında gök adalar (galaksiler) şekillerine ve yapılarına göre sarmal (spiral), eliptik ve düzensiz olmak üzere üç ana gruba ayrılır. Güneş Sistemi'mizin içinde bulunduğu Samanyolu Galaksisi ile ona en yakın dev komşusu olan Andromeda Galaksisi bu türlerden birine örnektir.",
+        "questionText": "a) İçinde bulunduğumuz Samanyolu Galaksisi ve komşusu Andromeda Galaksisi şekillerine göre hangi galaksi türüne girer?\nb) Samanyolu Galaksisi'nin merkezinden dışa doğru uzanan sarmal kollarından hangisinde Güneş Sistemi'miz yer almaktadır? Belirtiniz.",
+        "solutionExplanation": "Samanyolu ve Andromeda sarmal galaksilerdir. Güneş Sistemi Avcı (Orion) kolunda yer alır.",
+        "modelAnswer": "a) Samanyolu Galaksisi ve komşusu Andromeda Galaksisi şekillerine göre SARMAL (Spiral) Galaksi türüne girer.\nb) Güneş Sistemi'miz, Samanyolu Galaksisi'nin \"Avcı (Orion)\" kolu üzerinde yer almaktadır.",
         "rubric": [
           {
-            "criterion": "Durumların fiziksel iş kuralına (doğrultu ve yol şartı) göre doğru tahlil edilmesi",
-            "points": 7
+            "criterion": "Sarmal (spiral) galaksi türünün doğru yazılması",
+            "points": 6
           },
           {
-            "criterion": "İş hesabının (50 × 4 = 200 Joule) doğru yapılması",
-            "points": 4
+            "criterion": "Güneş Sistemi'nin Avcı (Orion) kolunda bulunduğunun belirtilmesi",
+            "points": 5
           }
         ],
         "questionNumber": 4,

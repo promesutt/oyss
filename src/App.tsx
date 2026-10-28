@@ -314,9 +314,13 @@ b) Durum 1 ile Durum 2 arasındaki fark, uygulanan yöntemin sürekliliği ve do
         return sectionMatch;
       }
 
+      const cleanTitle = d.notes 
+        ? (d.notes.toLowerCase().includes(subjectName.toLowerCase()) ? d.notes : `${subjectName} - ${d.notes}`)
+        : `${subjectName} - ${d.outcomeCode}`;
+
       return {
         outcomeCode: d.outcomeCode,
-        topicTitle: `${subjectName} - ${d.notes || d.outcomeCode}`,
+        topicTitle: cleanTitle,
         quickNotes: [
           `${subjectName} dersi ${d.outcomeCode} öğrenme çıktısında kavramlar arası neden-sonuç bağını kurunuz.`,
           'Açık uçlu sorularda doğrudan ezber tanım yerine verilen öncülü ve vaka durumunu gerekçelendiriniz.'
