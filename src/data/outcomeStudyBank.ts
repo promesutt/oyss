@@ -171,12 +171,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "MAT.5.3.1",
     "topicTitle": "GEOMETRİK ŞEKİLLER - Temel Geometrik Çizimler ve İnşalar",
     "quickNotes": [
-      "MEB Önemli Kural: Temel geometrik çizimler için matematiksel araç ve teknolojiden yararlanabilme",
+      "Kazanım Odaklı Temel İlke: Temel geometrik çizimler için matematiksel araç ve teknolojiden yararlanabilme",
       "Kavramsal İlke: Tren rayları, paket lastiği ve fener ışığı modelleri.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Temel geometrik çizimler için matematiksel araç ve teknolojiden yararlanabilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Aşağıdaki modeller verilmiştir:\n1. İki yönden sonsuza uzanan tren rayı\n2. İki ucu da kesilmiş 40 cm'lik tahta cetvel\n3. Deniz fenerinden karanlık denize yayılan ışık huzmesi\n\nNumaralandırılmış modellerin hangi temel geometrik kavramları (doğru, doğru parçası, ışın) temsil ettiğini gerekçeleriyle sırasıyla yazınız.",
@@ -192,12 +192,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "MAT.5.3.2",
     "topicTitle": "Temel geometrik çizimlere dayalı deneyimlerini yansıtabilme",
     "quickNotes": [
-      "MEB Önemli Kural: Temel geometrik çizimlere dayalı deneyimlerini yansıtabilme",
+      "Kazanım Odaklı Temel İlke: Temel geometrik çizimlere dayalı deneyimlerini yansıtabilme",
       "Kavramsal İlke: Gönye ile 90 derecelik dikme çizimi.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Temel geometrik çizimlere dayalı deneyimlerini yansıtabilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Yatay bir tahta çıtaya tam 90 derecelik dikey bir destek tahtası monte edilecektir.\n\nBir doğruya üzerindeki bir noktadan dik doğru (dikme) çizebilmek için hangi matematiksel çizim aracı kullanılır? Kısaca açıklayınız.",
@@ -213,12 +213,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "MAT.5.3.3",
     "topicTitle": "Açı Ölçme - Açı Ölçme",
     "quickNotes": [
-      "MEB Önemli Kural: Açıları ölçmek için matematiksel araç ve teknolojiden yararlanabilme",
+      "Kazanım Odaklı Temel İlke: Açıları ölçmek için matematiksel araç ve teknolojiden yararlanabilme",
       "Kavramsal İlke: Açı çeşitleri sınıflandırması.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Açıları ölçmek için matematiksel araç ve teknolojiden yararlanabilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Ölçüleri verilen açılar:\nK = 35°, L = 90°, M = 140°, N = 180°\n\nK, L, M ve N açılarının çeşitlerini (dar açı, dik açı, geniş açı, doğru açı) karşılarına sırasıyla yazınız.",
@@ -234,12 +234,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "MAT.5.3.4",
     "topicTitle": "Düzlemde iki veya üç doğrunun birbirine göre durumuna bağlı olarak oluşabilecek açılara dair çıkarım yapabilme",
     "quickNotes": [
-      "MEB Önemli Kural: Düzlemde iki veya üç doğrunun birbirine göre durumuna bağlı olarak oluşabilecek açılara dair çıkarım yapabilme",
+      "Kazanım Odaklı Temel İlke: Düzlemde iki veya üç doğrunun birbirine göre durumuna bağlı olarak oluşabilecek açılara dair çıkarım yapabilme",
       "Kavramsal İlke: Sokak krokisinde paralel ve dik kesişen yollar.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Düzlemde iki veya üç doğrunun birbirine göre durumuna bağlı olarak oluşabilecek açılara dair çıkarım yapabilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Şehir krokisinde Gül Sokak ile Karanfil Sokak birbirini hiç kesmemektedir. Lale Caddesi ise hem Gül Sokak'ı hem de Karanfil Sokak'ı 90 derecelik açıyla kesmektedir.\n\na) Gül Sokak ile Karanfil Sokak birbirine göre nasıl doğrulardır?\nb) Lale Caddesi ile Gül Sokak birbirine göre nasıl doğrulardır?",
@@ -255,12 +255,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "MAT.5.3.5",
     "topicTitle": "Çokgenler ve Çember - Çokgenler ve Çember",
     "quickNotes": [
-      "MEB Önemli Kural: Çokgenleri düzlemde ardışık olarak kesişen doğruların oluşturduğu kapalı şekiller olarak yorumlayabilme",
+      "Kazanım Odaklı Temel İlke: Çokgenleri düzlemde ardışık olarak kesişen doğruların oluşturduğu kapalı şekiller olarak yorumlayabilme",
       "Kavramsal İlke: Çokgen olma şartları.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Çokgenleri düzlemde ardışık olarak kesişen doğruların oluşturduğu kapalı şekiller olarak yorumlayabilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Şekil 1: Üç doğru parçasının uç uca eklenmesiyle oluşan kapalı şekil\nŞekil 2: Dört doğru parçasıyla çizilmiş fakat bir köşesi açık bırakılmış şekil\nŞekil 3: Bir kenarı çember yayı olan kapalı şekil\n\nVerilen şekillerden hangisi çokgendir? Çokgen olabilmesi için gereken 2 temel kuralı yazınız.",
@@ -276,12 +276,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "MAT.5.3.6",
     "topicTitle": "Çokgenlerin özellikleri ile ilgili edindiği deneyimleri yansıtabilme",
     "quickNotes": [
-      "MEB Önemli Kural: Çokgenlerin özellikleri ile ilgili edindiği deneyimleri yansıtabilme",
+      "Kazanım Odaklı Temel İlke: Çokgenlerin özellikleri ile ilgili edindiği deneyimleri yansıtabilme",
       "Kavramsal İlke: Dörtgen köşegenleri ve üçgen istisnası.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Çokgenlerin özellikleri ile ilgili edindiği deneyimleri yansıtabilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Çokgenlerde komşu olmayan iki köşeyi birleştiren doğru parçasına 'köşegen' denir.\n\na) Bir dörtgenin (örneğin dikdörtgenin) kaç köşegeni vardır?\nb) Bir üçgenin neden köşegeni yoktur? Gerekçesini yazınız.",
@@ -297,12 +297,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "MAT.5.3.7",
     "topicTitle": "Matematiksel araç ve teknoloji yardımıyla düzlemde iki noktada kesişen çember çiftinin merkezleri ve kesişim noktalarından biri ile inşa edilen üçgenlerin kenar özelliklerine yönelik çıkarım yapabilme",
     "quickNotes": [
-      "MEB Önemli Kural: Matematiksel araç ve teknoloji yardımıyla düzlemde iki noktada kesişen çember çiftinin merkezleri ve kesişim noktalarından biri ile inşa edilen üçgenlerin kenar özelliklerine yönelik çıkarım yapabilme",
+      "Kazanım Odaklı Temel İlke: Matematiksel araç ve teknoloji yardımıyla düzlemde iki noktada kesişen çember çiftinin merkezleri ve kesişim noktalarından biri ile inşa edilen üçgenlerin kenar özelliklerine yönelik çıkarım yapabilme",
       "Kavramsal İlke: Kareli kâğıtta okul ve kütüphane konumu.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Matematiksel araç ve teknoloji yardımıyla düzlemde iki noktada kesişen çember çiftinin merkezleri ve kesişim noktalarından biri ile inşa edilen üçgenlerin kenar özelliklerine yönelik çıkarım yapabilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Kareli zeminde okul A noktasında, kütüphane B noktasındadır. B noktası A noktasından 5 birim sağda ve 2 birim yukarıdadır.\n\nB noktasının A noktasına göre konumunu tek bir cümleyle ifade ediniz.",
@@ -318,12 +318,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "FB.5.1.2",
     "topicTitle": "Gökyüzündeki Komşumuz: Ay - Gökyüzündeki Komşumuz: Ay",
     "quickNotes": [
-      "MEB Önemli Kural: Ay’ın özellikleri, dönme ve dolanma hareketleri ile ilgili bilimsel çıkarım yapabilme",
+      "Kazanım Odaklı Temel İlke: Ay’ın özellikleri, dönme ve dolanma hareketleri ile ilgili bilimsel çıkarım yapabilme",
       "Kavramsal İlke: Ay'ın dönme ve dolanma sürelerinin eşitliği.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Ay’ın özellikleri, dönme ve dolanma hareketleri ile ilgili bilimsel çıkarım yapabilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Dünya'dan gökyüzüne bakan bir insan hangi tarihte bakarsa baksın Ay'ın hep aynı yüzey şekillerini (aynı yüzünü) görür.\n\nDünya'dan bakıldığında Ay'ın hep aynı yüzünün görülmesinin bilimsel gerekçesini Ay'ın dönme ve dolanma süreleri bakımından açıklayınız.",
@@ -339,12 +339,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "FB.5.1.3",
     "topicTitle": "Ay’ın evrelerini temsil eden bilimsel model oluşturabilme",
     "quickNotes": [
-      "MEB Önemli Kural: Ay’ın evrelerini temsil eden bilimsel model oluşturabilme",
+      "Kazanım Odaklı Temel İlke: Ay’ın evrelerini temsil eden bilimsel model oluşturabilme",
       "Kavramsal İlke: Ay'ın ana evreleri sıralaması.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Ay’ın evrelerini temsil eden bilimsel model oluşturabilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Ay'ın Dünya etrafındaki dolanımı sırasında gökyüzündeki görünümü periyodik olarak değişir.\n\nAy'ın 4 ana evresinin isimlerini sırasıyla yazınız ve art arda gelen iki ana evre arasında geçen süreyi belirtiniz.",
@@ -360,12 +360,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "FB.5.1.4",
     "topicTitle": "Dünya’mız ve Gökyüzündeki Komşularımız - Dünya’mız ve Gökyüzündeki Komşularımız",
     "quickNotes": [
-      "MEB Önemli Kural: Güneş, Dünya ve Ay’ın birbirlerine göre hareketlerini ve hacimsel büyüklüklerini temsil eden bilimsel model oluşturabilme",
+      "Kazanım Odaklı Temel İlke: Güneş, Dünya ve Ay’ın birbirlerine göre hareketlerini ve hacimsel büyüklüklerini temsil eden bilimsel model oluşturabilme",
       "Kavramsal İlke: Güneş, Dünya ve Ay büyüklük modeli.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Güneş, Dünya ve Ay’ın birbirlerine göre hareketlerini ve hacimsel büyüklüklerini temsil eden bilimsel model oluşturabilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Öğretmen masaya bir karpuz, bir ceviz ve bir karabiber tanesi koymuştur.\n\nBu üç nesneyi hacimsel büyüklüklerine göre Güneş, Dünya ve Ay ile doğru şekilde eşleştiriniz.",
@@ -381,12 +381,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "FB.5.2.1",
     "topicTitle": "2. ÜNİTE: KUVVETİ TANIYALIM - Kuvvet ve Kuvvetin Ölçülmesi",
     "quickNotes": [
-      "MEB Önemli Kural: Kuvveti büyüklüğü ile operasyonel tanımlayabilme",
+      "Kazanım Odaklı Temel İlke: Kuvveti büyüklüğü ile operasyonel tanımlayabilme",
       "Kavramsal İlke: Dinamometre çalışma ilkesi.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Kuvveti büyüklüğü ile operasyonel tanımlayabilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Kuvvet ölçümünde kullanılan dinamometrenin içerisinde sarmal bir çelik yay bulunmaktadır.\n\na) Dinamometrenin çalışma prensibi yayın hangi özelliğine dayanır?\nb) Kuvvetin birimi ve sembolü nedir?",
@@ -402,12 +402,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "SB.5.1.1",
     "topicTitle": "BİRLİKTE YAŞAMAK - Gruplar ve Roller",
     "quickNotes": [
-      "MEB Önemli Kural: Dâhil olduğu gruplar ve bu gruplardaki rolleri arasındaki ilişkileri çözümleyebilme",
+      "Kazanım Odaklı Temel İlke: Dâhil olduğu gruplar ve bu gruplardaki rolleri arasındaki ilişkileri çözümleyebilme",
       "Kavramsal İlke: Sosyal roller ve sorumluluklar.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Dâhil olduğu gruplar ve bu gruplardaki rolleri arasındaki ilişkileri çözümleyebilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "5. sınıf öğrencisi Selim, evde anne ve babasının evladı, okulda 5-A sınıfının başkanı, basketbol kulübünde ise oyun kurucudur.\n\nSelim'in dahil olduğu bu üç gruptaki rollerini yazarak, roller değiştikçe sorumlulukların nasıl değiştiğini açıklayınız.",
@@ -423,12 +423,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "SB.5.1.2",
     "topicTitle": "Kültürel Özelliklere Saygı ve Birlikte Yaşama Kültürü - Kültürel Özelliklere Saygı ve Birlikte Yaşama Kültürü",
     "quickNotes": [
-      "MEB Önemli Kural: Kültürel özelliklere saygı duymanın birlikte yaşamaya etkisini yorumlayabilme",
+      "Kazanım Odaklı Temel İlke: Kültürel özelliklere saygı duymanın birlikte yaşamaya etkisini yorumlayabilme",
       "Kavramsal İlke: Yöresel halk oyunlarımız.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Kültürel özelliklere saygı duymanın birlikte yaşamaya etkisini yorumlayabilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Ege'de efelerin zeybeği, Karadeniz'de coşkulu horon ve Erzurum'da yiğitçe oynanan bar oyunu sergilenmektedir.\n\nFarklı yörelerimize ait bu halk oyunlarının milletimizin ortak kültürüne sağladığı zenginliği 2 cümleyle açıklayınız.",
@@ -444,12 +444,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "SB.5.1.3",
     "topicTitle": "Yardımlaşma ve Dayanışma Faaliyetlerinin Toplumsal Birliğe Etkisi - Yardımlaşma ve Dayanışma Faaliyetlerinin Toplumsal Birliğe Etkisi",
     "quickNotes": [
-      "MEB Önemli Kural: Toplumsal birliği sürdürmeye yönelik yardımlaşma ve dayanışma faaliyetlerine katkı sağlayabilme",
+      "Kazanım Odaklı Temel İlke: Toplumsal birliği sürdürmeye yönelik yardımlaşma ve dayanışma faaliyetlerine katkı sağlayabilme",
       "Kavramsal İlke: İmece usulü yardımlaşma.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Toplumsal birliği sürdürmeye yönelik yardımlaşma ve dayanışma faaliyetlerine katkı sağlayabilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Anadolu köylerinde kış hazırlığı yapan komşular, her gün bir ailenin odun kırma ve un öğütme işini toplanıp hep birlikte bitirmektedir.\n\nKöylerde uygulanan bu 'imece' geleneğinin toplumsal dayanışmaya ve zorlukların aşılmasına sağladığı 2 faydayı yazınız.",
@@ -486,12 +486,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "Evrendeki",
     "topicTitle": "ALLAH İNANCI - Evrendeki Mükemmel Düzen",
     "quickNotes": [
-      "MEB Önemli Kural: Mükemmel Düzen",
+      "Kazanım Odaklı Temel İlke: Mükemmel Düzen",
       "Kavramsal İlke: Evrendeki ölçü ve ilahi ahenk.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Mükemmel Düzen ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "'Gökleri ve yeri yaratan, gece ile gündüzü birbiri ardınca getiren Allah'tır...' (Âl-i İmrân Suresi, 190. ayet)\n\nAyetten hareketle evrendeki kusursuz düzene ve ölçüye günlük hayattan 2 somut tabiat olayı örneği veriniz.",
@@ -507,12 +507,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "DKAB.5.1.2",
     "topicTitle": "Allah’ın Varlığı ve Birliği - Allah’ın Varlığı ve Birliği",
     "quickNotes": [
-      "MEB Önemli Kural: Evrendeki mükemmel düzenden hareketle Allah’ın (cc) varlığı ve birliğini müşahede edebilme",
+      "Kazanım Odaklı Temel İlke: Evrendeki mükemmel düzenden hareketle Allah’ın (cc) varlığı ve birliğini müşahede edebilme",
       "Kavramsal İlke: Tevhid inancı tanımı.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Evrendeki mükemmel düzenden hareketle Allah’ın (cc) varlığı ve birliğini müşahede edebilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Kelime-i Şehadet ve Kelime-i Tevhid İslam inancının omurgasını oluşturan Tevhid ilkesini ifade eder.\n\nTevhid inancını tanımlayarak, evrende birden fazla yaratıcı olsaydı bu düzenin nasıl bozulacağını açıklayınız.",
@@ -528,12 +528,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "DKAB.5.1.3",
     "topicTitle": "Allah’ın Güzel İsimleri - Allah’ın Güzel İsimleri",
     "quickNotes": [
-      "MEB Önemli Kural: Allah’ın (cc) güzel isimlerini bağlamına uygun kullanabilme",
+      "Kazanım Odaklı Temel İlke: Allah’ın (cc) güzel isimlerini bağlamına uygun kullanabilme",
       "Kavramsal İlke: Rahman ve Rahim isimleri arasındaki fark.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Allah’ın (cc) güzel isimlerini bağlamına uygun kullanabilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Her işe başlarken söylediğimiz Besmele'de Allah'ın Rahman ve Rahim isimleri zikredilir.\n\nRahman ile Rahim isimlerinin anlamlarını dünya ve ahiret merhameti bakımından karşılaştırınız.",
@@ -549,12 +549,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "DKAB.5.1.4",
     "topicTitle": "Bir Sure Öğreniyorum: İhlas Suresi - Bir Sure Öğreniyorum: İhlas Suresi",
     "quickNotes": [
-      "MEB Önemli Kural: İhlas suresini ve bu surenin anlamını okuyarak yorumlayabilme",
+      "Kazanım Odaklı Temel İlke: İhlas suresini ve bu surenin anlamını okuyarak yorumlayabilme",
       "Kavramsal İlke: İhlas Suresi ve Samed kavramı.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: İhlas suresini ve bu surenin anlamını okuyarak yorumlayabilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "İhlas Suresi'nin 2. ayetinde 'Allâhü's-Samed' buyrulmaktadır.\n\n'Samed' kelimesinin anlamını açıklayarak, bu ismin Allah'ın hiçbir şeye muhtaç olmaması yönünü belirtiniz.",
@@ -570,12 +570,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "DKAB.5.2.1",
     "topicTitle": "NAMAZ - Allah’ın Huzurunda Olmak: Namaz",
     "quickNotes": [
-      "MEB Önemli Kural: Namaz ibadetini özetleyebilme",
+      "Kazanım Odaklı Temel İlke: Namaz ibadetini özetleyebilme",
       "Kavramsal İlke: Namazın farzları: Şartlar ve rükünler.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Namaz ibadetini özetleyebilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Namaz kılacak bir kimse namaza başlamadan önce ve namazın içinde belirli farzları yerine getirir.\n\na) Namazın dışındaki şartlardan 2 tanesini yazınız (Örn: Abdest almak vb.).\nb) Namazın içindeki rükünlerden 2 tanesini yazınız (Örn: Secde vb.).",
@@ -591,12 +591,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "ENG.5.1.R2",
     "topicTitle": "SCHOOL LIFE - SCHOOL LIFE",
     "quickNotes": [
-      "MEB Önemli Kural: Students can bring information about the current content on “school life with people, places and rules at school; school clubs; countries; national days and celebrations” through skimming (looking quickly at) the audio-visual elements and reading the content very quickly.",
+      "Kazanım Odaklı Temel İlke: Students can bring information about the current content on “school life with people, places and rules at school; school clubs; countries; national days and celebrations” through skimming (looking quickly at) the audio-visual elements and reading the content very quickly.",
       "Kavramsal İlke: Reading comprehension: Country and nationality.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Students can bring information about the current content on “school life with people, places and rules at school; school clubs; countries; national days and celebrations” through skimming (looking quickly at) the audio-visual elements and reading the content very quickly. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Read the text:\n\n'Hello! My name is Pierre. I am 11 years old. I am from France, so I am French. I speak French and English.'\n\nAnswer the questions in full English sentences:\na) Where is Pierre from and what is his nationality?\nb) Which languages can Pierre speak?",
@@ -612,12 +612,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "ENG.5.1.R3",
     "topicTitle": "Students can make meaning of / derive meaning from the current content about “school life with people, places and rules at school; school clubs; countries; national days and celebrations” by reading it carefully.",
     "quickNotes": [
-      "MEB Önemli Kural: Students can make meaning of / derive meaning from the current content about “school life with people, places and rules at school; school clubs; countries; national days and celebrations” by reading it carefully.",
+      "Kazanım Odaklı Temel İlke: Students can make meaning of / derive meaning from the current content about “school life with people, places and rules at school; school clubs; countries; national days and celebrations” by reading it carefully.",
       "Kavramsal İlke: Reading about school subjects: Kerem.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Students can make meaning of / derive meaning from the current content about “school life with people, places and rules at school; school clubs; countries; national days and celebrations” by reading it carefully. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Read Kerem's notes:\n\n'On Mondays, I have double Math and Science. I really love Science because we do fun experiments in the lab. However, I dislike History because memorizing dates is boring for me.'\n\nAnswer the questions:\na) Which class does Kerem dislike and why?\nb) Why does Kerem love Science?",
@@ -633,12 +633,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "ENG.5.1.V1",
     "topicTitle": "Students can select and use the target vocabulary of the current content about “school life with people, places and rules at school; school clubs; countries; national days and celebrations” accurately, authentically, spontaneously, and naturally and use it appropriately and effectively when communicating with others.",
     "quickNotes": [
-      "MEB Önemli Kural: Students can select and use the target vocabulary of the current content about “school life with people, places and rules at school; school clubs; countries; national days and celebrations” accurately, authentically, spontaneously, and naturally and use it appropriately and effectively when communicating with others.",
+      "Kazanım Odaklı Temel İlke: Students can select and use the target vocabulary of the current content about “school life with people, places and rules at school; school clubs; countries; national days and celebrations” accurately, authentically, spontaneously, and naturally and use it appropriately and effectively when communicating with others.",
       "Kavramsal İlke: Places in a town: Library, pharmacy, bakery.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Students can select and use the target vocabulary of the current content about “school life with people, places and rules at school; school clubs; countries; national days and celebrations” accurately, authentically, spontaneously, and naturally and use it appropriately and effectively when communicating with others. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Definitions of city places:\n1. A place where you can borrow and read books.\n2. A place where you can buy medicine and aspirin.\n3. A place where bakers make fresh bread and bagels.\n\nWrite the English names of these places (choose from: pharmacy, bakery, library):\n1: .................................\n2: .................................\n3: .................................",
@@ -654,12 +654,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "ENG.5.1.G1",
     "topicTitle": "Students can select and use the target grammatical elements of the current content about “school life with people, places and rules at school; school clubs; countries; national days and celebrations” accurately, authentically, spontaneously, and naturally and use it appropriately and effectively when communicating with others.",
     "quickNotes": [
-      "MEB Önemli Kural: Students can select and use the target grammatical elements of the current content about “school life with people, places and rules at school; school clubs; countries; national days and celebrations” accurately, authentically, spontaneously, and naturally and use it appropriately and effectively when communicating with others.",
+      "Kazanım Odaklı Temel İlke: Students can select and use the target grammatical elements of the current content about “school life with people, places and rules at school; school clubs; countries; national days and celebrations” accurately, authentically, spontaneously, and naturally and use it appropriately and effectively when communicating with others.",
       "Kavramsal İlke: Prepositions of place: between and opposite.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Students can select and use the target grammatical elements of the current content about “school life with people, places and rules at school; school clubs; countries; national days and celebrations” accurately, authentically, spontaneously, and naturally and use it appropriately and effectively when communicating with others. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "On Green Street:\n• The bank is located with the pharmacy on its left and the bookshop on its right.\n• The hospital is facing the school on the other side of the road.\n\nComplete the sentences using 'between' or 'opposite':\na) The bank is ................................. the pharmacy and the bookshop.\nb) The hospital is ................................. the school.",
@@ -675,12 +675,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "ENG.5.1.W3",
     "topicTitle": "Students can organise a content for the assigned writing task on the current content “school life with people, places and rules at school; school clubs; countries; national days and celebrations” based on the model/example provided.",
     "quickNotes": [
-      "MEB Önemli Kural: Students can organise a content for the assigned writing task on the current content “school life with people, places and rules at school; school clubs; countries; national days and celebrations” based on the model/example provided.",
+      "Kazanım Odaklı Temel İlke: Students can organise a content for the assigned writing task on the current content “school life with people, places and rules at school; school clubs; countries; national days and celebrations” based on the model/example provided.",
       "Kavramsal İlke: Writing likes and dislikes.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Students can organise a content for the assigned writing task on the current content “school life with people, places and rules at school; school clubs; countries; national days and celebrations” based on the model/example provided. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Information about Selin:\n• Loves: Art (drawing nature)\n• Dislikes: P.E. (hates running)\n\nWrite two full English sentences about Selin's preferences using 'loves' and 'dislikes':\n1) Sentence about Art:\n2) Sentence about P.E.:",
@@ -696,12 +696,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "ENG.5.1.W4",
     "topicTitle": "Students can individually construct/form content for the assigned writing task on the current content “school life with people, places and rules at school; school clubs; countries; national days and celebrations”.",
     "quickNotes": [
-      "MEB Önemli Kural: Students can individually construct/form content for the assigned writing task on the current content “school life with people, places and rules at school; school clubs; countries; national days and celebrations”.",
+      "Kazanım Odaklı Temel İlke: Students can individually construct/form content for the assigned writing task on the current content “school life with people, places and rules at school; school clubs; countries; national days and celebrations”.",
       "Kavramsal İlke: Writing a self-introduction paragraph.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Students can individually construct/form content for the assigned writing task on the current content “school life with people, places and rules at school; school clubs; countries; national days and celebrations”. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Imagine you are writing a letter to an international penfriend.\n\nWrite a short self-introduction paragraph (3 full sentences) in English. Include:\n1. Your name and age\n2. Your country and nationality\n3. Your favorite school subject",
@@ -717,12 +717,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "T.O.6.5",
     "topicTitle": "Metinde geçen anlamını bilmediği söz varlığı unsurlarının anlamını tahmin edebilme",
     "quickNotes": [
-      "MEB Önemli Kural: Metinde geçen anlamını bilmediği söz varlığı unsurlarının anlamını tahmin edebilme",
+      "Kazanım Odaklı Temel İlke: Metinde geçen anlamını bilmediği söz varlığı unsurlarının anlamını tahmin edebilme",
       "Kavramsal İlke: Göbeklitepe metninde geçen sözcükler.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Metinde geçen anlamını bilmediği söz varlığı unsurlarının anlamını tahmin edebilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Şanlıurfa yakınlarındaki Göbeklitepe, insanlık tarihinin bilinen en kadim tapınak merkezidir. T biçimindeki devasa kireçtaşı sütunların üzerine tilki, yaban domuzu ve turna kabartmaları büyük bir ustalıkla nakşedilmiştir. Arkeologlar bu kazıların yerleşik hayata geçiş teorilerini kökünden değiştirdiğini belirtmektedir.\n\nMetinde geçen 'kadim' ve 'nakşetmek' sözcüklerinin anlamlarını metnin bağlamından tahmin ederek karşılarına yazınız.",
@@ -738,12 +738,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "T.O.6.6",
     "topicTitle": "Metnin yüzey anlamını belirleyebilme",
     "quickNotes": [
-      "MEB Önemli Kural: Metnin yüzey anlamını belirleyebilme",
+      "Kazanım Odaklı Temel İlke: Metnin yüzey anlamını belirleyebilme",
       "Kavramsal İlke: Göbeklitepe metninin konusu.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Metnin yüzey anlamını belirleyebilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Metinde Şanlıurfa Göbeklitepe'deki kazılar, T sütunlarındaki kabartmalar ve yerleşik hayata geçiş teorilerine etkisi anlatılmaktadır.\n\nGöbeklitepe'yi ve üzerindeki kabartmaları anlatan yukarıdaki metnin konusunu tek bir cümleyle yazınız.",
@@ -759,12 +759,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "T.O.6.21",
     "topicTitle": "Metinden hareketle söz varlığını geliştirmeye yönelik çözümleme yapabilme",
     "quickNotes": [
-      "MEB Önemli Kural: Metinden hareketle söz varlığını geliştirmeye yönelik çözümleme yapabilme",
+      "Kazanım Odaklı Temel İlke: Metinden hareketle söz varlığını geliştirmeye yönelik çözümleme yapabilme",
       "Kavramsal İlke: Eş ve zıt anlamlı kelimeler.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Metinden hareketle söz varlığını geliştirmeye yönelik çözümleme yapabilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Metindeki sözcükler: 'asır', 'ilkel'.\n\na) 'asır' sözcüğünün eş anlamlısını yazınız.\nb) 'ilkel' sözcüğünün zıt anlamlısını yazınız.",
@@ -780,12 +780,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "T.Y.6.18",
     "topicTitle": "Yazısını zenginleştirecek biçimde söz varlığını kullanabilme",
     "quickNotes": [
-      "MEB Önemli Kural: Yazısını zenginleştirecek biçimde söz varlığını kullanabilme",
+      "Kazanım Odaklı Temel İlke: Yazısını zenginleştirecek biçimde söz varlığını kullanabilme",
       "Kavramsal İlke: Deyim kullanımı: 'çığır açmak'.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Yazısını zenginleştirecek biçimde söz varlığını kullanabilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "'Çığır açmak' deyimi yeni bir yol açmak, bir alanda köklü bir yenilik ve başlangıç yapmak anlamına gelir.\n\n'Çığır açmak' deyimini Göbeklitepe'nin bilim dünyasındaki etkisini anlatacak şekilde anlamlı ve kurallı bir cümlede kullanınız.",
@@ -801,12 +801,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "T.Y.6.21",
     "topicTitle": "Yazım kuralları ve noktalama işaretlerini uygulayabilme",
     "quickNotes": [
-      "MEB Önemli Kural: Yazım kuralları ve noktalama işaretlerini uygulayabilme",
+      "Kazanım Odaklı Temel İlke: Yazım kuralları ve noktalama işaretlerini uygulayabilme",
       "Kavramsal İlke: Büyük harflerin yazımı ve kesme işareti.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Yazım kuralları ve noktalama işaretlerini uygulayabilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Cümle: 'arkeologlar 2026 yılının eylül ayında şanlıurfa'daki göbeklitepe ören yerinde yeni bulgulara ulaştı.'\n\nYukarıdaki cümlede yer alan büyük harflerin yazımı hatalarını düzelterek cümlenin doğru halini yeniden yazınız.",
@@ -822,12 +822,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "T.O.6.16",
     "topicTitle": "Bilgilendirici metinde anahtar kelimeleri belirlemeye yönelik çözümleme yapabilme",
     "quickNotes": [
-      "MEB Önemli Kural: Bilgilendirici metinde anahtar kelimeleri belirlemeye yönelik çözümleme yapabilme",
+      "Kazanım Odaklı Temel İlke: Bilgilendirici metinde anahtar kelimeleri belirlemeye yönelik çözümleme yapabilme",
       "Kavramsal İlke: Fıkranın anahtar kelimeleri.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Bilgilendirici metinde anahtar kelimeleri belirlemeye yönelik çözümleme yapabilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Fıkra kazan, doğum, ölüm, menfaat ve adalet kavramları etrafında gelişmektedir.\n\nNasreddin Hoca'nın kazan fıkrasını en iyi özetleyen 3 anahtar kelimeyi yazınız.",
@@ -843,12 +843,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "T.Y.6.3",
     "topicTitle": "Yazısında içerik ve yapıya yönelik seçimlerini yönetebilme",
     "quickNotes": [
-      "MEB Önemli Kural: Yazısında içerik ve yapıya yönelik seçimlerini yönetebilme",
+      "Kazanım Odaklı Temel İlke: Yazısında içerik ve yapıya yönelik seçimlerini yönetebilme",
       "Kavramsal İlke: Metne uygun başlık belirleme.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Yazısında içerik ve yapıya yönelik seçimlerini yönetebilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Okuduğunuz fıkra mizah yoluyla insanlardaki açgözlülük zaafını yermektedir.\n\nBu fıkraya içeriğin nükteli yönünü yansıtan 2 farklı özgün başlık önerisi yazınız.",
@@ -864,12 +864,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "MAT.6.1.1",
     "topicTitle": "SAYILAR VE NİCELİKLER (1) - Bir Doğal Sayının Çarpanları ve Katları",
     "quickNotes": [
-      "MEB Önemli Kural: Karşılaştığı problem durumlarında bir doğal sayının çarpanlarını ve katlarını belirleyebilme",
+      "Kazanım Odaklı Temel İlke: Karşılaştığı problem durumlarında bir doğal sayının çarpanlarını ve katlarını belirleyebilme",
       "Kavramsal İlke: Doğal sayının çarpanları (bölenleri).",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Karşılaştığı problem durumlarında bir doğal sayının çarpanlarını ve katlarını belirleyebilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "48 kişilik bir turist grubu bir otelde her odada eşit sayıda kişi kalacak şekilde odalara yerleştirilecektir.\n\n48 sayısının tüm pozitif doğal sayı çarpanlarını küçükten büyüğe sırasıyla yazınız ve odalarda kalabilecek kişi sayısı seçeneklerini belirtiniz.",
@@ -885,12 +885,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "MAT.6.1.2",
     "topicTitle": "SAYILAR VE NİCELİKLER (1) - Bölünebilme Kriterleri",
     "quickNotes": [
-      "MEB Önemli Kural: Bir doğal sayının 2, 3, 4, 5, 6, 9 ve 10'a kalansız bölünebilme kurallarını açıklayabilme ve kullanabilme",
+      "Kazanım Odaklı Temel İlke: Bir doğal sayının 2, 3, 4, 5, 6, 9 ve 10'a kalansız bölünebilme kurallarını açıklayabilme ve kullanabilme",
       "Kavramsal İlke: 3 ve 5 ile kalansız bölünebilme kuralı.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Bir doğal sayının 2, 3, 4, 5, 6, 9 ve 10'a kalansız bölünebilme kurallarını açıklayabilme ve kullanabilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Dört basamaklı 542A sayısı hem 3'e hem de 5'e kalansız bölünebilmektedir.\n\nBuna göre 'A' yerine yazılabilecek rakamı işlem basamaklarını ve bölünebilme kurallarını açıklayarak bulunuz.",
@@ -906,12 +906,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "MAT.6.1.3",
     "topicTitle": "SAYILAR VE NİCELİKLER (1) - Asal Sayılar ve Asal Çarpanlar",
     "quickNotes": [
-      "MEB Önemli Kural: Bir doğal sayının asal olma durumunu ve asal çarpanlarını belirleyebilme",
+      "Kazanım Odaklı Temel İlke: Bir doğal sayının asal olma durumunu ve asal çarpanlarını belirleyebilme",
       "Kavramsal İlke: Asal sayılar ve asal çarpanlar.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Bir doğal sayının asal olma durumunu ve asal çarpanlarını belirleyebilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "72 sayısı asal çarpanlarına ayrılacaktır.\n\n72 sayısını bölen listesi (algoritma) yöntemiyle asal çarpanlarına ayırınız ve üslü ifadelerin çarpımı şeklinde yazınız.",
@@ -927,12 +927,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "MAT.6.1.4",
     "topicTitle": "SAYILAR VE NİCELİKLER (1) - Bir Doğal Sayının Çarpanları ve Katları",
     "quickNotes": [
-      "MEB Önemli Kural: Günlük hayat problemleri ya da matematiksel durumlarda iki doğal sayının ortak bölenleri ve katlarını yorumlayabilme",
+      "Kazanım Odaklı Temel İlke: Günlük hayat problemleri ya da matematiksel durumlarda iki doğal sayının ortak bölenleri ve katlarını yorumlayabilme",
       "Kavramsal İlke: Ortak bölen problemi (EBOB mantığı).",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Günlük hayat problemleri ya da matematiksel durumlarda iki doğal sayının ortak bölenleri ve katlarını yorumlayabilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Bir manav 45 kg elma ve 60 kg portakalı birbirine karıştırmadan ve hiç artmayacak şekilde eşit ağırlıktaki kasalara paylaştıracaktır.\n\nKasaların alabileceği en büyük ağırlık kaç kg olmalıdır? Bu iş için toplam kaç kasa gerekir? İşlem basamaklarını gösteriniz.",
@@ -948,12 +948,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "FB.6.1.1",
     "topicTitle": "1. ÜNİTE: GÜNEŞ SİSTEMİ - Güneş Sistemi",
     "quickNotes": [
-      "MEB Önemli Kural: Güneş sistemindeki gezegenleri niteliklerine göre sınıflandırabilme",
+      "Kazanım Odaklı Temel İlke: Güneş sistemindeki gezegenleri niteliklerine göre sınıflandırabilme",
       "Kavramsal İlke: Karasal ve gazsal gezegenler ayrımı.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Güneş sistemindeki gezegenleri niteliklerine göre sınıflandırabilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Güneş sistemindeki 8 gezegen yapısal özelliklerine göre 'İç (Karasal) Gezegenler' ve 'Dış (Gazsal) Gezegenler' olarak ikiye ayrılır.\n\nİç gezegenlerin ve dış gezegenlerin adlarını Güneş'e yakınlık sırasına göre yazınız.",
@@ -969,12 +969,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "FB.6.1.3",
     "topicTitle": "Güneş ve Ay Tutulmaları - Güneş ve Ay Tutulmaları",
     "quickNotes": [
-      "MEB Önemli Kural: Güneş ve Ay tutulması ile ilgili bilimsel çıkarım yapabilme",
+      "Kazanım Odaklı Temel İlke: Güneş ve Ay tutulması ile ilgili bilimsel çıkarım yapabilme",
       "Kavramsal İlke: Güneş tutulması modeli.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Güneş ve Ay tutulması ile ilgili bilimsel çıkarım yapabilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Güneş tutulması sırasında gök cisimleri aynı doğrultuya gelir ve Dünya'nın gündüz olan bir bölgesinde gündüz vakti aniden kararır.\n\nGüneş tutulması sırasında Güneş, Dünya ve Ay'ın dizilim sırasını yazınız ve bu tutulmanın Ay'ın hangi evresinde gerçekleştiğini belirtiniz.",
@@ -990,12 +990,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "FB.6.2.1",
     "topicTitle": "2. ÜNİTE: KUVVETİN ETKİSİNDE HAREKET - Bileşke Kuvvet",
     "quickNotes": [
-      "MEB Önemli Kural: Bir cisme etki eden aynı doğrultudaki kuvvetler arasındaki ilişkileri açıklayarak bileşke kuvveti yapılandırabilme",
+      "Kazanım Odaklı Temel İlke: Bir cisme etki eden aynı doğrultudaki kuvvetler arasındaki ilişkileri açıklayarak bileşke kuvveti yapılandırabilme",
       "Kavramsal İlke: Zıt yönlü kuvvetlerin bileşkesi.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Bir cisme etki eden aynı doğrultudaki kuvvetler arasındaki ilişkileri açıklayarak bileşke kuvveti yapılandırabilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Bir cisme aynı doğrultuda Doğu yönünde $F_1 = 25$ N ve Batı yönünde $F_2 = 15$ N büyüklüğünde iki kuvvet uygulanmaktadır.\n\nCisme etki eden bileşke kuvvetin (net kuvvetin) büyüklüğünü ve yönünü işlem yaparak bulunuz.",
@@ -1011,12 +1011,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "FB.6.2.2",
     "topicTitle": "Dengelenmiş ve dengelenmemiş kuvvetlerin etkisi altındaki bir cismin hareketine yönelik deney yapabilme",
     "quickNotes": [
-      "MEB Önemli Kural: Dengelenmiş ve dengelenmemiş kuvvetlerin etkisi altındaki bir cismin hareketine yönelik deney yapabilme",
+      "Kazanım Odaklı Temel İlke: Dengelenmiş ve dengelenmemiş kuvvetlerin etkisi altındaki bir cismin hareketine yönelik deney yapabilme",
       "Kavramsal İlke: Dengelenmiş kuvvetler altında cismin durumu.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Dengelenmiş ve dengelenmemiş kuvvetlerin etkisi altındaki bir cismin hareketine yönelik deney yapabilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Bir cisme etki eden net kuvvet (bileşke kuvvet) sıfır ise ($F_{net} = 0$) cisim dengelenmiş kuvvetlerin etkisindedir.\n\nDengelenmiş kuvvetlerin etkisindeki bir cismin sergileyebileceği 2 farklı hareket durumunu yazınız.",
@@ -1032,12 +1032,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "FB.6.2.3",
     "topicTitle": "Sabit Süratli ve Sabit Hızlı Hareket - Sabit Süratli ve Sabit Hızlı Hareket",
     "quickNotes": [
-      "MEB Önemli Kural: Sürat ve hız kavramlarını karşılaştırabilme",
+      "Kazanım Odaklı Temel İlke: Sürat ve hız kavramlarını karşılaştırabilme",
       "Kavramsal İlke: Sürat formülü ve birimi.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Sürat ve hız kavramlarını karşılaştırabilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Bir hareketlinin birim zamanda aldığı yola 'sürat' denir.\n\na) Süratin hesaplama formülünü (yol ve zaman ilişkisini) yazınız.\nb) Bilimde en yaygın kullanılan iki sürat birimini belirtiniz.",
@@ -1053,12 +1053,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "FB.6.3.1",
     "topicTitle": "3. ÜNİTE: CANLILARDA SİSTEMLER - Bitki ve Hayvanlarda Üreme, Büyüme ve Gelişme",
     "quickNotes": [
-      "MEB Önemli Kural: Eşeyli ve eşeysiz üremeyi karşılaştırabilme",
+      "Kazanım Odaklı Temel İlke: Eşeyli ve eşeysiz üremeyi karşılaştırabilme",
       "Kavramsal İlke: Eşeyli ve eşeysiz üreme temel farkı.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Eşeyli ve eşeysiz üremeyi karşılaştırabilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Canlılarda soyun devamını sağlayan üreme faaliyeti eşeyli ve eşeysiz olmak üzere iki şekilde gerçekleşir.\n\nEşeyli üreme ile eşeysiz üremeyi üreme hücreleri (gametler) ve genetik çeşitlilik bakımından 2 maddeyle karşılaştırınız.",
@@ -1074,12 +1074,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "SB.6.1.1",
     "topicTitle": "BİRLİKTE YAŞAMAK - Zaman İçinde Değişen Gruplar ve Roller",
     "quickNotes": [
-      "MEB Önemli Kural: Dâhil olduğu grupların ve bu gruplardaki rollerinin zaman içerisinde değişebile ceğine ilişkin çıkarım yapabilme",
+      "Kazanım Odaklı Temel İlke: Dâhil olduğu grupların ve bu gruplardaki rollerinin zaman içerisinde değişebile ceğine ilişkin çıkarım yapabilme",
       "Kavramsal İlke: Büyüdükçe değişen roller ve sorumluluklar.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Dâhil olduğu grupların ve bu gruplardaki rollerinin zaman içerisinde değişebile ceğine ilişkin çıkarım yapabilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Bebekken sadece ilgiye muhtaç olan bir birey, 6. sınıfa geldiğinde okulda öğrenci, evde kardeşine bakan bir abla veya ağabey olur; yetişkinlikte ise anne-baba ve meslek sahibi bir çalışan olur.\n\nZaman içinde insanın rollerinin değişmesinin arkasındaki 2 temel nedeni (yaş, eğitim, sosyal çevre) yazınız.",
@@ -1095,12 +1095,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "SB.6.1.2",
     "topicTitle": "Kültürel Bağlarımızın ve Millî Değerlerimizin Toplumsal Birlikteliğe Etkisi - Kültürel Bağlarımızın ve Millî Değerlerimizin Toplumsal Birlikteliğe Etkisi",
     "quickNotes": [
-      "MEB Önemli Kural: Kültürel bağlarımızın ve millî değerlerimizin toplumsal birliğe etkisini yorumlayabilme",
+      "Kazanım Odaklı Temel İlke: Kültürel bağlarımızın ve millî değerlerimizin toplumsal birliğe etkisini yorumlayabilme",
       "Kavramsal İlke: İstiklal Marşı ve bayrak sevgisi.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Kültürel bağlarımızın ve millî değerlerimizin toplumsal birliğe etkisini yorumlayabilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Her pazartesi sabahı ve cuma akşamı okullarda milyonlarca öğrenci ve öğretmen hazır ol duruşuna geçerek İstiklal Marşı'mızı coşkuyla söyler.\n\nBayrağımızın ve İstiklal Marşı'mızın milletimiz için taşıdığı bağımsızlık sembolü anlamını 2 cümleyle açıklayınız.",
@@ -1116,12 +1116,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "SB.6.1.3",
     "topicTitle": "Toplumsal Sorunlar ve Çözümler Önerileri - Toplumsal Sorunlar ve Çözümler Önerileri",
     "quickNotes": [
-      "MEB Önemli Kural: Toplumsal hayatta karşılaşılan sorunlara yönelik çözüm önerilerini müzakere edebilme",
+      "Kazanım Odaklı Temel İlke: Toplumsal hayatta karşılaşılan sorunlara yönelik çözüm önerilerini müzakere edebilme",
       "Kavramsal İlke: Çevre kirliliği ve sıfır atık.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Toplumsal hayatta karşılaşılan sorunlara yönelik çözüm önerilerini müzakere edebilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Şehirlerde sokaklara atılan plastik şişeler, poşetler ve ambalajlar hem doğayı zehirlemekte hem de görüntü kirliliği oluşturmaktadır.\n\nOkulunuzda çevre kirliliğini önlemek ve geri dönüşümü yaygınlaştırmak için uygulayabileceğiniz 2 somut proje önerisi yazınız.",
@@ -1137,12 +1137,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "DKAB.6.1.2",
     "topicTitle": "Peygamberlerin İlettiği Mesaj: Vahiy - Peygamberlerin İlettiği Mesaj: Vahiy",
     "quickNotes": [
-      "MEB Önemli Kural: Vahyin gönderiliş amacını idrak edebilme",
+      "Kazanım Odaklı Temel İlke: Vahyin gönderiliş amacını idrak edebilme",
       "Kavramsal İlke: Vahyin gönderiliş amacı ve aklın rehberliği.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Vahyin gönderiliş amacını idrak edebilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Ayet Meali: 'İnsanlar tek bir ümmetti. Allah, müjdeciler ve uyarıcılar olarak peygamberler gönderdi ve anlaşmazlığa düştükleri konularda insanlar arasında hak ile hükmetsin diye onlarla birlikte hak kitabı indirdi.' (Bakara suresi, 213. ayet)\n\nVerilen ayetten hareketle, Allah'ın insanlara peygamberler ve vahiy göndermesinin iki temel amacını yazınız.",
@@ -1158,12 +1158,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "DKAB.6.1.3",
     "topicTitle": "İlahi Kitaplar - İlahi Kitaplar",
     "quickNotes": [
-      "MEB Önemli Kural: İlahi kitaplarla ilgili bilgileri çözümleyebilme",
+      "Kazanım Odaklı Temel İlke: İlahi kitaplarla ilgili bilgileri çözümleyebilme",
       "Kavramsal İlke: Dört büyük ilahi kitap ve gönderildikleri peygamberler.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: İlahi kitaplarla ilgili bilgileri çözümleyebilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "İlahi kitaplar, peygamberler aracılığıyla insanlara ulaştırılan kutsal metinlerdir.\n\nDört büyük ilahi kitabı ve bu kitapların gönderildiği peygamberleri eksiksiz eşleştirerek yazınız.",
@@ -1179,12 +1179,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "DKAB.6.1.4",
     "topicTitle": "Bir Sure Öğreniyorum: Felak Suresi - Bir Sure Öğreniyorum: Felak Suresi",
     "quickNotes": [
-      "MEB Önemli Kural: Felak suresini ve bu surenin anlamını okuyarak yorumlayabilme",
+      "Kazanım Odaklı Temel İlke: Felak suresini ve bu surenin anlamını okuyarak yorumlayabilme",
       "Kavramsal İlke: Felak suresinin 1-2. ayetlerinin tefsiri.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Felak suresini ve bu surenin anlamını okuyarak yorumlayabilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Ayet Meali: 'De ki: Yarattığı şeylerin şerrinden sabahın Rabbine sığınırım.' (Felak suresi, 1-2. ayetler)\n\nFelak suresinin ilk iki ayetinden hareketle, bir Müslümanın kötülük ve tehlikeler karşısında nasıl bir inanç tutumu sergilemesi gerektiğini açıklayınız.",
@@ -1200,12 +1200,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "DKAB.6.2.1",
     "topicTitle": "RAMAZAN VE ORUÇ - Oruç ve Kur’an Ayı Ramazan",
     "quickNotes": [
-      "MEB Önemli Kural: Ramazan ayının oruç ve Kur’an ayı olduğunu çözümleyebilme",
+      "Kazanım Odaklı Temel İlke: Ramazan ayının oruç ve Kur’an ayı olduğunu çözümleyebilme",
       "Kavramsal İlke: Ramazan ayı ve Kur'an'ın indirilişi.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Ramazan ayının oruç ve Kur’an ayı olduğunu çözümleyebilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Ayet Meali: 'Ramazan ayı, insanlara yol gösterici, doğrunun ve doğruyu eğriden ayırmanın açık delilleri olarak Kur'an'ın indirildiği aydır...' (Bakara suresi, 185. ayet)\n\nRamazan ayının İslam kültüründe 'Kur'an Ayı' olarak adlandırılmasının nedenini ve bu ayda uygulanan 'mukabele' geleneğinin ne olduğunu açıklayınız.",
@@ -1221,12 +1221,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "ENG.6.1.R2",
     "topicTitle": "SCHOOL LIFE - SCHOOL LIFE",
     "quickNotes": [
-      "MEB Önemli Kural: Students can bring information about the current content on “school life with roles, and responsibilities at school; school routines; national days and celebrations” through skimming (looking quickly at) the audio-visual elements and reading the content very quickly.",
+      "Kazanım Odaklı Temel İlke: Students can bring information about the current content on “school life with roles, and responsibilities at school; school routines; national days and celebrations” through skimming (looking quickly at) the audio-visual elements and reading the content very quickly.",
       "Kavramsal İlke: School club notice board schedule.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Students can bring information about the current content on “school life with roles, and responsibilities at school; school routines; national days and celebrations” through skimming (looking quickly at) the audio-visual elements and reading the content very quickly. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "NOTICE BOARD - ATATÜRK MIDDLE SCHOOL:\n• Chess Club: Monday at 15:30 (Room 102)\n• Music Club: Wednesday at 16:00 (Hall B)\n• Drama Club: Friday at 15:45 (Main Theatre)\n\nQuickly scan the notice board and answer the questions:\na) Which club meets on Wednesday?\nb) What time does the Chess Club start?",
@@ -1242,12 +1242,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "ENG.6.1.R3",
     "topicTitle": "Students can make meaning of / derive meaning from the current content about “school life with roles, and responsibilities at school; school routines; national days and celebrations” by reading it carefully.",
     "quickNotes": [
-      "MEB Önemli Kural: Students can make meaning of / derive meaning from the current content about “school life with roles, and responsibilities at school; school routines; national days and celebrations” by reading it carefully.",
+      "Kazanım Odaklı Temel İlke: Students can make meaning of / derive meaning from the current content about “school life with roles, and responsibilities at school; school routines; national days and celebrations” by reading it carefully.",
       "Kavramsal İlke: Zeynep's daily school routine and library responsibility.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Students can make meaning of / derive meaning from the current content about “school life with roles, and responsibilities at school; school routines; national days and celebrations” by reading it carefully. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Text: 'Hello! I am Zeynep. I am an active 6th-grade student. I wake up at 07:00 every morning. My school starts at 08:30 and finishes at 15:10. On Tuesdays and Thursdays, I work as the school library monitor. I help our teacher put the books on the shelves and keep the library quiet.'\n\nRead the text carefully and answer:\na) What is Zeynep's special duty at school on Tuesdays?\nb) How does she help the teacher in the library?",
@@ -1263,12 +1263,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "ENG.6.1.V1",
     "topicTitle": "Students can select and use the target vocabulary of the current content about “school life with roles, and responsibilities at school; school routines; national days and celebrations” accurately, authentically, spontaneously, and naturally and use it appropriately and effectively when communicating with others.",
     "quickNotes": [
-      "MEB Önemli Kural: Students can select and use the target vocabulary of the current content about “school life with roles, and responsibilities at school; school routines; national days and celebrations” accurately, authentically, spontaneously, and naturally and use it appropriately and effectively when communicating with others.",
+      "Kazanım Odaklı Temel İlke: Students can select and use the target vocabulary of the current content about “school life with roles, and responsibilities at school; school routines; national days and celebrations” accurately, authentically, spontaneously, and naturally and use it appropriately and effectively when communicating with others.",
       "Kavramsal İlke: School responsibility and places vocabulary.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Students can select and use the target vocabulary of the current content about “school life with roles, and responsibilities at school; school routines; national days and celebrations” accurately, authentically, spontaneously, and naturally and use it appropriately and effectively when communicating with others. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Vocabulary bank: [canteen, timetable, class president, library, whiteboard]\n\nChoose the correct words from the box to complete the sentences:\n1. Ahmet is our ....................; he helps our teacher and takes attendance.\n2. We buy sandwiches and water from the school .................... during the lunch break.\n3. Students borrow story books from the ....................",
@@ -1284,12 +1284,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "ENG.6.1.G1",
     "topicTitle": "Students can select and use the target grammatical elements of the current content about “school life with roles, and responsibilities at school; school routines; national days and celebrations” accurately, authentically, spontaneously, and naturally and use it appropriately and effectively when communicating with others.",
     "quickNotes": [
-      "MEB Önemli Kural: Students can select and use the target grammatical elements of the current content about “school life with roles, and responsibilities at school; school routines; national days and celebrations” accurately, authentically, spontaneously, and naturally and use it appropriately and effectively when communicating with others.",
+      "Kazanım Odaklı Temel İlke: Students can select and use the target grammatical elements of the current content about “school life with roles, and responsibilities at school; school routines; national days and celebrations” accurately, authentically, spontaneously, and naturally and use it appropriately and effectively when communicating with others.",
       "Kavramsal İlke: Simple Present Tense third-person affirmative and negative forms.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Students can select and use the target grammatical elements of the current content about “school life with roles, and responsibilities at school; school routines; national days and celebrations” accurately, authentically, spontaneously, and naturally and use it appropriately and effectively when communicating with others. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Grammar task on school habits.\n\nComplete the sentences with the correct Simple Present forms of the verbs in brackets:\na) Selim .................... (walk) to school every morning, but he .................... (not / take) the bus.\nb) Our teacher always .................... (arrive) at school at 08:15.",
@@ -1305,12 +1305,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "ENG.6.1.W3",
     "topicTitle": "Students can organise a content for the assigned writing task on the current content “school life with roles, and responsibilities at school; school routines; national days and celebrations” based on the model/example provided.",
     "quickNotes": [
-      "MEB Önemli Kural: Students can organise a content for the assigned writing task on the current content “school life with roles, and responsibilities at school; school routines; national days and celebrations” based on the model/example provided.",
+      "Kazanım Odaklı Temel İlke: Students can organise a content for the assigned writing task on the current content “school life with roles, and responsibilities at school; school routines; national days and celebrations” based on the model/example provided.",
       "Kavramsal İlke: Guided writing based on a model: Morning school routine.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Students can organise a content for the assigned writing task on the current content “school life with roles, and responsibilities at school; school routines; national days and celebrations” based on the model/example provided. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Model text: 'I wake up at 07:15. I brush my teeth and have breakfast. Then, I leave home at 08:00 for school.'\n\nWrite 3 sentences about your own morning routine before school, following the example model.",
@@ -1326,12 +1326,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "ENG.6.1.W4",
     "topicTitle": "Students can individually construct/form content for the assigned writing task on the current content “school life with roles, and responsibilities at school; school routines; national days and celebrations”.",
     "quickNotes": [
-      "MEB Önemli Kural: Students can individually construct/form content for the assigned writing task on the current content “school life with roles, and responsibilities at school; school routines; national days and celebrations”.",
+      "Kazanım Odaklı Temel İlke: Students can individually construct/form content for the assigned writing task on the current content “school life with roles, and responsibilities at school; school routines; national days and celebrations”.",
       "Kavramsal İlke: Independent writing: Celebrating a national day.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Students can individually construct/form content for the assigned writing task on the current content “school life with roles, and responsibilities at school; school routines; national days and celebrations”. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "National celebrations at Turkish schools (e.g., 29th October Republic Day or 23rd April Children's Day).\n\nWrite 3 full sentences describing how you and your classmates celebrate a national day at school (mention decorations, singing, or activities).",
@@ -1761,12 +1761,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "SB.7.1.1",
     "topicTitle": "BİRLİKTE YAŞAMAK - Gruplarda ve Sosyal Hayatta İletişimin Önemi",
     "quickNotes": [
-      "MEB Önemli Kural: Dâhil olduğu gruplarda ve sosyal hayatta etkili iletişimin önemini sorgulayabilme",
+      "Kazanım Odaklı Temel İlke: Dâhil olduğu gruplarda ve sosyal hayatta etkili iletişimin önemini sorgulayabilme",
       "Kavramsal İlke: Sen dili ve ben dili dönüştürme.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Dâhil olduğu gruplarda ve sosyal hayatta etkili iletişimin önemini sorgulayabilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Bir anne çocuğuna şu şekilde seslenmektedir: 'Her zaman odanı darmadağın bırakıyorsun, çok sorumsuz bir çocuksun!'\n\na) Annenin bu cümlesi neden 'Sen Dili'ne örnektir ve çocuk üzerinde nasıl bir psikolojik tepki doğurur?\nb) Bu iletişimi, çatışmaya yol açmayacak şekilde 'Ben Dili'ne dönüştürerek yeniden yazınız.",
@@ -1822,12 +1822,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "SB.7.2.1",
     "topicTitle": "EVİMİZ DÜNYA - Küreselleşmenin İnsan ve Toplum Hayatına Etkisi",
     "quickNotes": [
-      "MEB Önemli Kural: Küreselleşmenin insan ve toplum hayatı üzerindeki etkilerini analiz edebilme",
+      "Kazanım Odaklı Temel İlke: Küreselleşmenin insan ve toplum hayatı üzerindeki etkilerini analiz edebilme",
       "Kavramsal İlke: Küreselleşme ve kültürel etkileşim.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Küreselleşmenin insan ve toplum hayatı üzerindeki etkilerini analiz edebilme ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "İnternet, sosyal medya ve uluslararası ticaret sayesinde dünyanın bir ucunda üretilen müzik, film, giyim tarzı veya yemek alışkanlığı birkaç gün içinde tüm dünyaya yayılmaktadır.\n\na) Küreselleşmenin toplumlar arasındaki kültürel zenginliğe sağladığı 1 OLUMLU katkıyı yazınız.\nb) Küreselleşmenin yerel kültürler üzerindeki 1 OLUMSUZ (riskli) etkisini yazınız.",
@@ -2027,12 +2027,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "T.8.3.5",
     "topicTitle": "Bağlamdan yararlanarak bilmediği kelime ve kelime gruplarının anlamını tahmin eder.",
     "quickNotes": [
-      "MEB Önemli Kural: Bağlamdan yararlanarak bilmediği kelime ve kelime gruplarının anlamını tahmin eder.",
+      "Kazanım Odaklı Temel İlke: Bağlamdan yararlanarak bilmediği kelime ve kelime gruplarının anlamını tahmin eder.",
       "Kavramsal İlke: Çanakkale metninde geçen sözcükler.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Bağlamdan yararlanarak bilmediği kelime ve kelime gruplarının anlamını tahmin eder. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Metin Parçası: '18 Mart 1915 günü Çanakkale Boğazı'nda top sesleri yeri göğü inletiyordu. Rumeli Mecidiye Tabyası ağır bir bombardıman altında kalmış, topun vinci parçalanmıştı. Havranlı Seyit Onbaşı, vatan aşkıyla devasa 215 okkalık mermiyi sırtlayarak namluya sürdü ve İngiliz zırhlısı Ocean'ı dümeninden vurarak saf dışı bıraktı.'\n\nMetinde altı çizili 'saf dışı bırakmak' deyiminin metne kattığı anlamı bağlamdan hareketle açıklayınız.",
@@ -2048,12 +2048,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "T.8.3.7",
     "topicTitle": "Metindeki söz sanatlarını tespit eder.",
     "quickNotes": [
-      "MEB Önemli Kural: Metindeki söz sanatlarını tespit eder.",
+      "Kazanım Odaklı Temel İlke: Metindeki söz sanatlarını tespit eder.",
       "Kavramsal İlke: Metindeki söz sanatları.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Metindeki söz sanatlarını tespit eder. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Cümle: 'Top sesleri adeta yeri göğü inletiyor, koca tabyadaki toplar birer dev gibi denize meydan okuyordu.'\n\nVerilen cümlede yer alan benzetme (teşbih) ve abartma (mübalağa) sanatlarını unsurlarıyla birlikte gösteriniz.",
@@ -2069,12 +2069,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "T.8.3.9",
     "topicTitle": "Fiilimsilerin cümledeki işlevlerini kavrar.",
     "quickNotes": [
-      "MEB Önemli Kural: Fiilimsilerin cümledeki işlevlerini kavrar.",
+      "Kazanım Odaklı Temel İlke: Fiilimsilerin cümledeki işlevlerini kavrar.",
       "Kavramsal İlke: Fiilimsilerin türleri ve cümledeki işlevi.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Fiilimsilerin cümledeki işlevlerini kavrar. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Cümle: 'Vincin kırılması üzerine devasa mermiyi sırtlayan Seyit, basamakları inleyerek tırmandı.'\n\nCümledeki üç farklı fiilimsiyi bularak türlerini (isim-fiil, sıfat-fiil, zarf-fiil) karşılarına yazınız:\n1. ................................. -> .................................\n2. ................................. -> .................................\n3. ................................. -> .................................",
@@ -2090,12 +2090,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "T.8.3.14",
     "topicTitle": "Metinle ilgili soruları cevaplar.",
     "quickNotes": [
-      "MEB Önemli Kural: Metinle ilgili soruları cevaplar.",
+      "Kazanım Odaklı Temel İlke: Metinle ilgili soruları cevaplar.",
       "Kavramsal İlke: Metin anlama ve çıkarım.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Metinle ilgili soruları cevaplar. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Metin Parçası: 'Rumeli Mecidiye Tabyası'nda vinç mekanizması bozulduğunda hiçbir askerin umutsuzluğa kapılmaması, Seyit Onbaşı'nın insanüstü bir gayretle tek başına mermiyi kaldırmasını sağlamıştır.'\n\nSeyit Onbaşı'yı devasa top mermisini tek başına taşımaya sevk eden temel duygu ve inanç nedir? Metinden hareketle açıklayınız.",
@@ -2111,12 +2111,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "T.8.3.16",
     "topicTitle": "Metnin konusunu belirler.",
     "quickNotes": [
-      "MEB Önemli Kural: Metnin konusunu belirler.",
+      "Kazanım Odaklı Temel İlke: Metnin konusunu belirler.",
       "Kavramsal İlke: Metnin konusunu belirleme.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Metnin konusunu belirler. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Çanakkale Deniz Zaferi ve Seyit Onbaşı anlatımı.\n\nÇanakkale Savaşı ve Seyit Onbaşı'nın kahramanlığını anlatan metnin konusunu tek bir cümleyle yazınız.",
@@ -2132,12 +2132,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "T.8.3.34",
     "topicTitle": "Okuduklarında kullanılan düşünceyi geliştirme yollarını belirler.",
     "quickNotes": [
-      "MEB Önemli Kural: Okuduklarında kullanılan düşünceyi geliştirme yollarını belirler.",
+      "Kazanım Odaklı Temel İlke: Okuduklarında kullanılan düşünceyi geliştirme yollarını belirler.",
       "Kavramsal İlke: Düşünceyi geliştirme yolları.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Okuduklarında kullanılan düşünceyi geliştirme yollarını belirler. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Cümle: 'Seyit Onbaşı'nın kaldırdığı mermi tam 215 okka, yani yaklaşık 276 kilogram ağırlığındaydı. Oysa normal bir insanın sırtında taşıyabileceği ağırlık en fazla 50-60 kilogramdır.'\n\nYazarın bu parçada düşüncesini kanıtlamak ve inandırıcı kılmak için başvurduğu 2 düşünceyi geliştirme yolunu yazınız.",
@@ -2153,12 +2153,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "T.8.4.1",
     "topicTitle": "YAZMA - Alt Öğrenme Alanı Yok",
     "quickNotes": [
-      "MEB Önemli Kural: Şiir yazar.",
+      "Kazanım Odaklı Temel İlke: Şiir yazar.",
       "Kavramsal İlke: Şiir yazma becerisi.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Şiir yazar. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Tema: Çanakkale Zaferi, vatan sevgisi ve Mehmetçik.\n\nÇanakkale şehitlerimizin ve gazilerimizin kahramanlığını anlatan, kafiye ve redif uyumuna dikkat edilmiş 4 dizelik (bir kıtalık) özgün bir şiir yazınız.",
@@ -2174,12 +2174,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "T.8.4.15",
     "topicTitle": "Yazılarında uygun geçiş ve bağlantı ifadelerini kullanır.",
     "quickNotes": [
-      "MEB Önemli Kural: Yazılarında uygun geçiş ve bağlantı ifadelerini kullanır.",
+      "Kazanım Odaklı Temel İlke: Yazılarında uygun geçiş ve bağlantı ifadelerini kullanır.",
       "Kavramsal İlke: Geçiş ve bağlantı ifadeleri.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Yazılarında uygun geçiş ve bağlantı ifadelerini kullanır. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Geçiş ifadeleri: 'özellikle', 'oysaki', 'başka bir deyişle'.\n\nVerilen geçiş ve bağlantı ifadelerinden 'özellikle' ve 'oysaki' sözcüklerini Çanakkale savunmasını anlatan iki farklı anlamlı cümlede kullanınız.",
@@ -2195,12 +2195,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "T.8.3.11",
     "topicTitle": "Metindeki anlatım biçimlerini belirler.",
     "quickNotes": [
-      "MEB Önemli Kural: Metindeki anlatım biçimlerini belirler.",
+      "Kazanım Odaklı Temel İlke: Metindeki anlatım biçimlerini belirler.",
       "Kavramsal İlke: Anlatım biçimlerini belirleme.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Metindeki anlatım biçimlerini belirler. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Parça: 'Yapay zekâ, insan zekâsını taklit ederek öğrenme, problem çözme ve karar verme yeteneklerini bilgisayar yazılımlarına kazandıran bilim dalıdır. Günümüzde otonom araçlardan tıbbi görüntülemeye kadar her alanda nesnel verilerle çalışır.'\n\nBu parçada kullanılan temel anlatım biçimini belirleyiniz ve bu biçimin tercih edilme nedenini yazınız.",
@@ -2216,12 +2216,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "T.8.3.17",
     "topicTitle": "Metnin ana fikrini/ana duygusunu belirler.",
     "quickNotes": [
-      "MEB Önemli Kural: Metnin ana fikrini/ana duygusunu belirler.",
+      "Kazanım Odaklı Temel İlke: Metnin ana fikrini/ana duygusunu belirler.",
       "Kavramsal İlke: Metnin ana fikrini belirleme.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Metnin ana fikrini/ana duygusunu belirler. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Yapay zekâ ve insan aklı iş birliği metni.\n\nYazarın okuyucuya iletmek istediği asıl mesajı (ana fikri) bir cümleyle ifade ediniz.",
@@ -2237,12 +2237,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "T.8.3.25",
     "topicTitle": "Okudukları ile ilgili çıkarımlarda bulunur.",
     "quickNotes": [
-      "MEB Önemli Kural: Okudukları ile ilgili çıkarımlarda bulunur.",
+      "Kazanım Odaklı Temel İlke: Okudukları ile ilgili çıkarımlarda bulunur.",
       "Kavramsal İlke: Metinden çıkarım yapma.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Okudukları ile ilgili çıkarımlarda bulunur. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Parça: 'Sadece veriyi işlemek bir yapay zekâyı başarılı kılabilir; ancak ona etik kurallar koymak ve nerede duracağını belirlemek ancak insan vicdanının işidir.'\n\nBu parçadan hareketle bilimsel ilerlemede 'insan vicdanı ve etik' hakkında yapılabilecek en temel çıkarımı yazınız.",
@@ -2258,12 +2258,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "T.8.3.26",
     "topicTitle": "Metin türlerini ayırt eder.",
     "quickNotes": [
-      "MEB Önemli Kural: Metin türlerini ayırt eder.",
+      "Kazanım Odaklı Temel İlke: Metin türlerini ayırt eder.",
       "Kavramsal İlke: Metin türlerini ayırt etme.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Metin türlerini ayırt eder. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Parça: 'Yapay zekâ algoritmalarının eğitim verilerindeki önyargıları devralması, günümüz bilgisayar mühendisliğinin en tartışmalı konusudur. 2024 yılında yapılan bir araştırmaya göre, yüz tanıma modellerinin hata oranı farklı ten renklerinde %15'e kadar çıkabilmektedir.'\n\nBu metnin türünü (makale, deneme, anı, gezi yazısı) belirleyiniz ve bu türe ait olduğunu gösteren 2 kanıt gösteriniz.",
@@ -2279,12 +2279,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "T.8.4.9",
     "topicTitle": "Yazılarında anlatım biçimlerini kullanır.",
     "quickNotes": [
-      "MEB Önemli Kural: Yazılarında anlatım biçimlerini kullanır.",
+      "Kazanım Odaklı Temel İlke: Yazılarında anlatım biçimlerini kullanır.",
       "Kavramsal İlke: Açıklayıcı ve tartışmacı anlatım biçimlerini yazıda kullanma.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Yazılarında anlatım biçimlerini kullanır. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Konu: 'Yapay zekâ gelecekte meslekleri yok mu edecek, yoksa yeni meslekler mi doğuracak?'\n\nYukarıdaki soru etrafında kendi görüşünüzü savunan, tartışmacı anlatım biçimini kullanarak 3-4 cümlelik kısa bir paragraf yazınız.",
@@ -2300,12 +2300,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "T.8.4.18",
     "topicTitle": "Cümlenin ögelerini ayırt eder.",
     "quickNotes": [
-      "MEB Önemli Kural: Cümlenin ögelerini ayırt eder.",
+      "Kazanım Odaklı Temel İlke: Cümlenin ögelerini ayırt eder.",
       "Kavramsal İlke: Cümlenin ögelerini bulma.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Cümlenin ögelerini ayırt eder. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Cümle: 'Usta sanatçı, teknedeki renkli damlaları ince bir bizle yavaşça dağıttı.'\n\nYukarıdaki cümlenin ögelerini (Özne, Belirtili Nesne, Zarf Tamlayıcısı, Yer Tamlayıcısı, Yüklem) eksiksiz olarak ayırıp yazınız:\n• Dağıttı: .................................\n• Usta sanatçı: .................................\n• Teknedeki renkli damlaları: .................................\n• İnce bir bizle: .................................\n• Yavaşça: .................................",
@@ -2321,12 +2321,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "T.8.4.4",
     "topicTitle": "Yazma stratejilerini uygular.",
     "quickNotes": [
-      "MEB Önemli Kural: Yazma stratejilerini uygular.",
+      "Kazanım Odaklı Temel İlke: Yazma stratejilerini uygular.",
       "Kavramsal İlke: Yazma stratejileri: Taslak oluşturma.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Yazma stratejilerini uygular. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Tema: 'Gelecek Nesillere Yeşil Bir Dünya Bırakmak'.\n\nBu tema çerçevesinde yazacağınız bir bilgilendirici metin için giriş, gelişme ve sonuç paragraflarında ele alacağınız ana noktaları birer cümleyle taslak halinde yazınız.",
@@ -2342,12 +2342,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "T.8.3.15",
     "topicTitle": "Metinle ilgili sorular sorar.",
     "quickNotes": [
-      "MEB Önemli Kural: Metinle ilgili sorular sorar.",
+      "Kazanım Odaklı Temel İlke: Metinle ilgili sorular sorar.",
       "Kavramsal İlke: Metinle ilgili soru sorma.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Metinle ilgili sorular sorar. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Kütüphanelerin sessizlik kuralı ve sosyal hafıza rolü.\n\nMetinde geçen 'Kütüphaneler bir milletin bin yıllık kültürel hafızasını koruyan ve nesillere aktaran mabetlerdir.' cümlesine yönelik cevabı doğrudan bu cümlede olan 2 nitelikli soru yazınız.",
@@ -2363,12 +2363,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "T.8.3.19",
     "topicTitle": "Metnin içeriğine uygun başlık/başlıklar belirler.",
     "quickNotes": [
-      "MEB Önemli Kural: Metnin içeriğine uygun başlık/başlıklar belirler.",
+      "Kazanım Odaklı Temel İlke: Metnin içeriğine uygun başlık/başlıklar belirler.",
       "Kavramsal İlke: Metne uygun başlık belirleme.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Metnin içeriğine uygun başlık/başlıklar belirler. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "İmece, köy odaları ve Anadolu misafirperverliği metni.\n\nOkuduğunuz metnin içeriğine ve ana fikrine tam uyumlu, biri çarpıcı iki farklı özgün başlık önerisi yazınız.",
@@ -2384,12 +2384,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "M.8.1.1.1",
     "topicTitle": "SAYILAR VE İŞLEMLER - Çarpanlar ve Katlar",
     "quickNotes": [
-      "MEB Önemli Kural: Verilen pozitif tam sayıların pozitif tam sayı çarpanlarını bulur, pozitif tam sayıların pozitif tam sayı çarpanlarını üslü ifadelerin çarpımı şeklinde yazar.",
+      "Kazanım Odaklı Temel İlke: Verilen pozitif tam sayıların pozitif tam sayı çarpanlarını bulur, pozitif tam sayıların pozitif tam sayı çarpanlarını üslü ifadelerin çarpımı şeklinde yazar.",
       "Kavramsal İlke: Pozitif tam sayının çarpanları ve asal çarpanlar.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Verilen pozitif tam sayıların pozitif tam sayı çarpanlarını bulur, pozitif tam sayıların pozitif tam sayı çarpanlarını üslü ifadelerin çarpımı şeklinde yazar. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Bir manavdaki kasada 72 kg elma bulunmaktadır. Manav bu elmaları her poşette eşit miktarda ve tam sayı olacak şekilde paylaştırmak istiyor.\n\n72 sayısının tüm pozitif tam sayı çarpanlarını küçükten büyüğe yazınız ve asal çarpan algoritması kullanarak 72'yi üslü ifadelerin çarpımı şeklinde gösteriniz.",
@@ -2405,12 +2405,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "M.8.1.1.2",
     "topicTitle": "İki doğal sayının en büyük ortak bölenini (EBOB) ve en küçük ortak katını (EKOK) hesaplar, ilgili problemleri çözer.",
     "quickNotes": [
-      "MEB Önemli Kural: İki doğal sayının en büyük ortak bölenini (EBOB) ve en küçük ortak katını (EKOK) hesaplar, ilgili problemleri çözer.",
+      "Kazanım Odaklı Temel İlke: İki doğal sayının en büyük ortak bölenini (EBOB) ve en küçük ortak katını (EKOK) hesaplar, ilgili problemleri çözer.",
       "Kavramsal İlke: EBOB problemi: Dikdörtgen bahçe etrafına ağaç dikme.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: İki doğal sayının en büyük ortak bölenini (EBOB) ve en küçük ortak katını (EKOK) hesaplar, ilgili problemleri çözer. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Eni 48 metre, boyu 60 metre olan dikdörtgen şeklindeki bir bahçenin etrafına, köşelere de gelmek şartıyla eşit aralıklarla fidan dikilecektir.\n\na) İki fidan arasındaki mesafe en fazla kaç metre olabilir?\nb) Bu iş için en az kaç fidan gereklidir?",
@@ -2426,12 +2426,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "M.8.1.1.3",
     "topicTitle": "Verilen iki doğal sayının aralarında asal olup olmadığını belirler.",
     "quickNotes": [
-      "MEB Önemli Kural: Verilen iki doğal sayının aralarında asal olup olmadığını belirler.",
+      "Kazanım Odaklı Temel İlke: Verilen iki doğal sayının aralarında asal olup olmadığını belirler.",
       "Kavramsal İlke: Aralarında asal sayılar.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Verilen iki doğal sayının aralarında asal olup olmadığını belirler. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "İki doğal sayının 1'den başka ortak pozitif böleni yoksa bu sayılar aralarında asaldır.\n\n14 ile 25 sayılarının pozitif bölenlerini yazarak bu iki sayının aralarında asal olup olmadığını gerekçesiyle açıklayınız.",
@@ -2447,12 +2447,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "M.8.1.2.1",
     "topicTitle": "Üslü İfadeler - Üslü İfadeler",
     "quickNotes": [
-      "MEB Önemli Kural: Tam sayıların, tam sayı kuvvetlerini hesaplar.",
+      "Kazanım Odaklı Temel İlke: Tam sayıların, tam sayı kuvvetlerini hesaplar.",
       "Kavramsal İlke: Negatif üs ve tam sayı kuvvetleri.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Tam sayıların, tam sayı kuvvetlerini hesaplar. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Bir tam sayının negatif kuvveti o sayının çarpma işlemine göre tersinin pozitif kuvvetine eşittir: a^(-n) = 1 / a^n.\n\nAşağıdaki üslü ifadelerin sayısal değerlerini rasyonel sayı veya tam sayı olarak hesaplayınız:\na) 2^(-4) = ?\nb) (-3)^(-2) = ?\nc) (-5)^3 = ?",
@@ -2468,12 +2468,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "M.8.1.2.2",
     "topicTitle": "Üslü ifadelerle ilgili temel kuralları anlar, birbirine denk ifadeler oluşturur.",
     "quickNotes": [
-      "MEB Önemli Kural: Üslü ifadelerle ilgili temel kuralları anlar, birbirine denk ifadeler oluşturur.",
+      "Kazanım Odaklı Temel İlke: Üslü ifadelerle ilgili temel kuralları anlar, birbirine denk ifadeler oluşturur.",
       "Kavramsal İlke: Üslü ifadelerde çarpma ve bölme kuralları.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Üslü ifadelerle ilgili temel kuralları anlar, birbirine denk ifadeler oluşturur. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "İşlem: (8⁴ × 4⁵) / 16³\n\nVerilen işlemin sonucunu 2'nin bir kuvveti şeklinde işlem adımlarını göstererek hesaplayınız.",
@@ -2489,12 +2489,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "M.8.1.2.3",
     "topicTitle": "Sayıların ondalık gösterimlerini 10’un tam sayı kuvvetlerini kullanarak çözümler.",
     "quickNotes": [
-      "MEB Önemli Kural: Sayıların ondalık gösterimlerini 10’un tam sayı kuvvetlerini kullanarak çözümler.",
+      "Kazanım Odaklı Temel İlke: Sayıların ondalık gösterimlerini 10’un tam sayı kuvvetlerini kullanarak çözümler.",
       "Kavramsal İlke: Ondalık gösterimlerin 10'un kuvvetleriyle çözümlenmesi.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Sayıların ondalık gösterimlerini 10’un tam sayı kuvvetlerini kullanarak çözümler. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Sayı: 345,608\n\n345,608 sayısını 10'un tam sayı kuvvetlerini kullanarak çözümleyiniz.",
@@ -2510,12 +2510,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "M.8.1.2.4",
     "topicTitle": "Verilen bir sayıyı 10’un farklı tam sayı kuvvetlerini kullanarak ifade eder.",
     "quickNotes": [
-      "MEB Önemli Kural: Verilen bir sayıyı 10’un farklı tam sayı kuvvetlerini kullanarak ifade eder.",
+      "Kazanım Odaklı Temel İlke: Verilen bir sayıyı 10’un farklı tam sayı kuvvetlerini kullanarak ifade eder.",
       "Kavramsal İlke: 10'un farklı tam sayı kuvvetleriyle ifade etme.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Verilen bir sayıyı 10’un farklı tam sayı kuvvetlerini kullanarak ifade eder. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Eşitlik: 0,00045 = 45 × 10^x = 4,5 × 10^y\n\nYukarıda verilen eşitliklerdeki x ve y tam sayılarının değerlerini bularak (x + y) toplamını hesaplayınız.",
@@ -2531,12 +2531,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "M.8.1.2.5",
     "topicTitle": "Çok büyük ve çok küçük sayıları bilimsel gösterimle ifade eder ve karşılaştırır.",
     "quickNotes": [
-      "MEB Önemli Kural: Çok büyük ve çok küçük sayıları bilimsel gösterimle ifade eder ve karşılaştırır.",
+      "Kazanım Odaklı Temel İlke: Çok büyük ve çok küçük sayıları bilimsel gösterimle ifade eder ve karşılaştırır.",
       "Kavramsal İlke: Bilimsel gösterim.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Çok büyük ve çok küçük sayıları bilimsel gösterimle ifade eder ve karşılaştırır. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Işık boşlukta 1 saniyede yaklaşık 300 000 km yol almaktadır. 1 km = 1000 m olduğuna göre ışık 1 saniyede 300 000 000 metre yol alır.\n\nIşığın 1 saniyede aldığı bu yolun metre cinsinden bilimsel gösterimini yazınız.",
@@ -2552,12 +2552,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "M.8.1.3.1",
     "topicTitle": "Kareköklü İfadeler - Kareköklü İfadeler",
     "quickNotes": [
-      "MEB Önemli Kural: Tamkare pozitif tam sayılarla bu sayıların karekökleri arasındaki ilişkiyi belirler.",
+      "Kazanım Odaklı Temel İlke: Tamkare pozitif tam sayılarla bu sayıların karekökleri arasındaki ilişkiyi belirler.",
       "Kavramsal İlke: Tam kare sayılar ve karekök ilişkisi.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Tamkare pozitif tam sayılarla bu sayıların karekökleri arasındaki ilişkiyi belirler. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Alanı 196 cm² olan kare şeklindeki bir kartonun bir kenar uzunluğu cetvelle ölçülecektir.\n\nBu karenin bir kenar uzunluğunun kaç cm olduğunu karekök alma işlemiyle gösteriniz ve çevresini hesaplayınız.",
@@ -2573,12 +2573,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "M.8.1.3.2",
     "topicTitle": "Tam kare olmayan kareköklü bir sayının hangi iki doğal sayı arasında olduğunu belirler.",
     "quickNotes": [
-      "MEB Önemli Kural: Tam kare olmayan kareköklü bir sayının hangi iki doğal sayı arasında olduğunu belirler.",
+      "Kazanım Odaklı Temel İlke: Tam kare olmayan kareköklü bir sayının hangi iki doğal sayı arasında olduğunu belirler.",
       "Kavramsal İlke: Tam kare olmayan sayının ardışık iki doğal sayı arasında belirlenmesi.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Tam kare olmayan kareköklü bir sayının hangi iki doğal sayı arasında olduğunu belirler. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Karekök değeri: √75\n\n√75 sayısının hangi iki ardışık tam sayı arasında olduğunu bulunuz ve bu sayılardan hangisine daha yakın olduğunu işlemle gösteriniz.",
@@ -2594,12 +2594,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "M.8.1.3.3",
     "topicTitle": "Kareköklü bir ifadeyi a√b şeklinde yazar ve a√b şeklindeki ifadede katsayıyı kök içine alır.",
     "quickNotes": [
-      "MEB Önemli Kural: Kareköklü bir ifadeyi a√b şeklinde yazar ve a√b şeklindeki ifadede katsayıyı kök içine alır.",
+      "Kazanım Odaklı Temel İlke: Kareköklü bir ifadeyi a√b şeklinde yazar ve a√b şeklindeki ifadede katsayıyı kök içine alır.",
       "Kavramsal İlke: Kareköklü ifadeyi a√b şeklinde yazma ve katsayıyı içeri alma.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Kareköklü bir ifadeyi a√b şeklinde yazar ve a√b şeklindeki ifadede katsayıyı kök içine alır. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "İki kareköklü ifade: A = √108 ve B = 5√3\n\na) A = √108 sayısını a√b şeklinde en sade biçimde yazınız.\nb) B = 5√3 sayısında kök dışındaki katsayıyı kök içine alarak tek bir karekök olarak yazınız.",
@@ -2615,12 +2615,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "F.8.1.1.1",
     "topicTitle": "1.ÜNİTE: MEVSİMLER VE İKLİM - 8.1.1. Mevsimlerin Oluşumu",
     "quickNotes": [
-      "MEB Önemli Kural: Mevsimlerin oluşumuna yönelik tahminlerde bulunur.",
+      "Kazanım Odaklı Temel İlke: Mevsimlerin oluşumuna yönelik tahminlerde bulunur.",
       "Kavramsal İlke: Mevsimlerin oluşumu ve eksen eğikliği.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Mevsimlerin oluşumuna yönelik tahminlerde bulunur. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Dünya'nın dönme ekseni, Güneş etrafındaki dolanma düzlemine (ekliptik) 23° 27' (yaklaşık 23,5 derece) eğiktir.\n\nDünya'da aynı anda Kuzey Yarım Küre'de yaz mevsimi yaşanırken Güney Yarım Küre'de kış mevsimi yaşanmasının 2 temel astronomik nedenini yazınız.",
@@ -2636,12 +2636,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "F.8.2.1.1",
     "topicTitle": "2.ÜNİTE: DNA VE GENETİK KOD - 8.2.1. DNA ve Genetik Kod",
     "quickNotes": [
-      "MEB Önemli Kural: Nükleotid, gen, DNA ve kromozom kavramlarını açıklayarak bu kavramlar arasında ilişki kurar.",
+      "Kazanım Odaklı Temel İlke: Nükleotid, gen, DNA ve kromozom kavramlarını açıklayarak bu kavramlar arasında ilişki kurar.",
       "Kavramsal İlke: Kromozom, DNA, gen ve nükleotid ilişkisi.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Nükleotid, gen, DNA ve kromozom kavramlarını açıklayarak bu kavramlar arasında ilişki kurar. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Kalıtsal yapılar karmaşıktan basite (büyükten küçüğe) doğru sıralanabilir.\n\nKromozom, nükleotid, gen ve DNA kavramlarını karmaşıktan basite (büyükten küçüğe) doğru sıralayınız ve 'gen' kavramının görevini açıklayınız.",
@@ -2657,12 +2657,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "F.8.2.1.2",
     "topicTitle": "DNA’nın yapısını model üzerinde gösterir.",
     "quickNotes": [
-      "MEB Önemli Kural: DNA’nın yapısını model üzerinde gösterir.",
+      "Kazanım Odaklı Temel İlke: DNA’nın yapısını model üzerinde gösterir.",
       "Kavramsal İlke: DNA çift sarmal modeli ve baz eşleşmesi.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: DNA’nın yapısını model üzerinde gösterir. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "DNA çift zincirli ve sarmal bir yapıya sahiptir. Karşılıklı zincirlerdeki nükleotidler hidrojen bağlarıyla birbirine bağlanır.\n\nDNA molekülünde organik bazların karşılıklı eşleşme kuralını ve aralarındaki hidrojen bağı sayılarını yazınız.",
@@ -2678,12 +2678,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "F.8.2.1.3",
     "topicTitle": "DNA’nın kendini nasıl eşlediğini ifade eder.",
     "quickNotes": [
-      "MEB Önemli Kural: DNA’nın kendini nasıl eşlediğini ifade eder.",
+      "Kazanım Odaklı Temel İlke: DNA’nın kendini nasıl eşlediğini ifade eder.",
       "Kavramsal İlke: DNA'nın kendini eşleme aşamaları.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: DNA’nın kendini nasıl eşlediğini ifade eder. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Hücre bölünmesi öncesinde DNA miktarını iki katına çıkarmak için kendini eşler (replikasyon).\n\nDNA'nın kendini eşlemesi sürecinde gerçekleşen temel basamakları sırasıyla yazınız.",
@@ -2699,12 +2699,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "F.8.2.2.2",
     "topicTitle": "Tek karakter çaprazlamaları ile ilgili problemler çözerek sonuçlar hakkında yorum yapar.",
     "quickNotes": [
-      "MEB Önemli Kural: Tek karakter çaprazlamaları ile ilgili problemler çözerek sonuçlar hakkında yorum yapar.",
+      "Kazanım Odaklı Temel İlke: Tek karakter çaprazlamaları ile ilgili problemler çözerek sonuçlar hakkında yorum yapar.",
       "Kavramsal İlke: Mendel genetiği: Tohum rengi çaprazlaması.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Tek karakter çaprazlamaları ile ilgili problemler çözerek sonuçlar hakkında yorum yapar. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Bezelyelerde sarı tohum geni (S), yeşil tohum genine (s) baskındır. Homozigot (saf) sarı tohumlu bir bezelye ile yeşil tohumlu bir bezelye çaprazlanıyor.\n\nBu çaprazlama sonucunda oluşacak 1. kuşağın (F1):\na) Genotip oranlarını,\nb) Fenotip oranlarını Punnett karesi veya çaprazlama basamaklarıyla bulunuz.",
@@ -2720,12 +2720,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "F.8.2.2.1",
     "topicTitle": "8.2.2. Kalıtım - 8.2.2. Kalıtım",
     "quickNotes": [
-      "MEB Önemli Kural: Kalıtım ile ilgili kavramları tanımlar.",
+      "Kazanım Odaklı Temel İlke: Kalıtım ile ilgili kavramları tanımlar.",
       "Kavramsal İlke: Genetik kavramlar: Genotip ve Fenotip.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Kalıtım ile ilgili kavramları tanımlar. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Kalıtımda bir canlının sahip olduğu genlerin tamamına genotip, genotip ve çevrenin etkisiyle dışarıya yansıyan özelliklerine fenotip denir.\n\n'Homozigot baskın', 'Heterozigot baskın' ve 'Homozigot çekinik' genotip terimlerini 'A' ve 'a' harflerini kullanarak yazınız.",
@@ -2888,12 +2888,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "DKAB.8.1.1",
     "topicTitle": "KADER İNANCI - Kader ve Kaza İnancı",
     "quickNotes": [
-      "MEB Önemli Kural: 8.1.1. Kader ve kaza inancını ayet ve hadislerle açıklar.",
+      "Kazanım Odaklı Temel İlke: 8.1.1. Kader ve kaza inancını ayet ve hadislerle açıklar.",
       "Kavramsal İlke: Kader ve kaza kavramları ve evrendeki ölçü.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: 8.1.1. Kader ve kaza inancını ayet ve hadislerle açıklar. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Ayet Meali: 'Şüphesiz biz her şeyi bir ölçüye (kadere) göre yarattık.' (Kamer suresi, 49. ayet)\n\nKader ve kaza kavramlarını tanımlayarak, verilen ayetten hareketle evrendeki düzen ve kader inancı arasındaki ilişkiyi açıklayınız.",
@@ -2909,12 +2909,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "DKAB.8.1.2",
     "topicTitle": "İnsanın İradesi ve Kader - İnsanın İradesi ve Kader",
     "quickNotes": [
-      "MEB Önemli Kural: 8.1.2. İnsanın ilmi, iradesi, sorumluluğu ile kader arasında ilişki kurar.",
+      "Kazanım Odaklı Temel İlke: 8.1.2. İnsanın ilmi, iradesi, sorumluluğu ile kader arasında ilişki kurar.",
       "Kavramsal İlke: Külli irade ve cüzi irade kavramları.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: 8.1.2. İnsanın ilmi, iradesi, sorumluluğu ile kader arasında ilişki kurar. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "İslam inancına göre insanın iradesi ile Allah'ın mutlak iradesi arasında temel bir sınır vardır.\n\n'Külli irade' ile 'Cüzi irade' kavramlarını açıklayınız ve insanın cüzi iradesiyle seçtiği fiillerden neden sorumlu olduğunu belirtiniz.",
@@ -2930,12 +2930,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "DKAB.8.1.3",
     "topicTitle": "Kaderle İlgili Kavramlar - Kaderle İlgili Kavramlar",
     "quickNotes": [
-      "MEB Önemli Kural: 8.1.3. Kaza ve kader ile ilgili kavramları analiz eder.",
+      "Kazanım Odaklı Temel İlke: 8.1.3. Kaza ve kader ile ilgili kavramları analiz eder.",
       "Kavramsal İlke: Kaderle ilgili kavramlar: Tevekkül.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: 8.1.3. Kaza ve kader ile ilgili kavramları analiz eder. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Bir adam Hz. Peygamber'e gelerek: 'Ey Allah'ın Resulü! Devemi bağlayıp da mı tevekkül edeyim, yoksa bağlamadan mı?' diye sormuştur.\n\nHz. Peygamber'in bu adama verdiği cevabı yazınız ve İslam'da doğru tevekkül anlayışının aşamalarını açıklayınız.",
@@ -2951,12 +2951,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "DKAB.8.1.4",
     "topicTitle": "8.1.4. Toplumda kader ve kaza ile ilgili yaygın olan yanlış anlayışları sorgular",
     "quickNotes": [
-      "MEB Önemli Kural: 8.1.4. Toplumda kader ve kaza ile ilgili yaygın olan yanlış anlayışları sorgular",
+      "Kazanım Odaklı Temel İlke: 8.1.4. Toplumda kader ve kaza ile ilgili yaygın olan yanlış anlayışları sorgular",
       "Kavramsal İlke: Toplumdaki yanlış kader anlayışları: 'Kader mahkumu'.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: 8.1.4. Toplumda kader ve kaza ile ilgili yaygın olan yanlış anlayışları sorgular ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Kendi isteğiyle suç işleyip cezaevine düşen birinin 'Ben ne yapayım, kader mahkumuyum!' diyerek suçu kadere yüklemesi.\n\nBu tutumun İslam'ın irade ve sorumluluk inancıyla neden çeliştiğini gerekçeleriyle sorgulayınız.",
@@ -2972,12 +2972,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "DKAB.8.1.5",
     "topicTitle": "Bir Peygamber Tanıyorum: Hz. Musa (a.s.) - Bir Peygamber Tanıyorum: Hz. Musa (a.s.)",
     "quickNotes": [
-      "MEB Önemli Kural: 8.1.5. Hz. Musa’nın (a.s.) hayatını ana hatlarıyla tanır.",
+      "Kazanım Odaklı Temel İlke: 8.1.5. Hz. Musa’nın (a.s.) hayatını ana hatlarıyla tanır.",
       "Kavramsal İlke: Hz. Musa'nın (a.s.) hayatı ve Firavun ile mücadelesi.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: 8.1.5. Hz. Musa’nın (a.s.) hayatını ana hatlarıyla tanır. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Hz. Musa, Mısır'da İsrailoğullarını köleleştiren ve ilahlık taslayan Firavun'a karşı hak dini tebliğ etmekle görevlendirilmiştir.\n\nYüce Allah'ın Hz. Musa ve kardeşi Hz. Harun'u Firavun'a gönderirken 'Ona yumuşak söz (kavl-i leyyin) söyleyin, belki öğüt alır' buyurmasının tebliğ ahlakı açısından önemini açıklayınız.",
@@ -2993,12 +2993,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "DKAB.8.1.6",
     "topicTitle": "Bir Ayet Tanıyorum: Ayetelkürsi ve Anlamı - Bir Ayet Tanıyorum: Ayetelkürsi ve Anlamı",
     "quickNotes": [
-      "MEB Önemli Kural: 8.1.6. Ayet el-Kürsi’yi okur, anlamını söyler.",
+      "Kazanım Odaklı Temel İlke: 8.1.6. Ayet el-Kürsi’yi okur, anlamını söyler.",
       "Kavramsal İlke: Ayet el-Kürsi'nin mesajı ve Allah'ın sıfatları.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: 8.1.6. Ayet el-Kürsi’yi okur, anlamını söyler. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Ayet el-Kürsi (Bakara suresi 255. ayet), tevhid inancının ve Allah'ın yüce kudretinin en kapsamlı anlatıldığı ayettir.\n\nAyet el-Kürsi'de geçen 'el-Hayy' ve 'el-Kayyûm' esmalarının anlamlarını yazarak bu ayetin ana mesajını açıklayınız.",
@@ -3014,12 +3014,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "DKAB.8.2.1",
     "topicTitle": "ZEKÂT VE SADAKA - İslam’ın Paylaşma ve Yardımlaşmaya Verdiği Önem",
     "quickNotes": [
-      "MEB Önemli Kural: 8.2.1. İslam’ın paylaşma ve yardımlaşmaya verdiği önemi ayet ve hadisler ışığında yorumlar.",
+      "Kazanım Odaklı Temel İlke: 8.2.1. İslam’ın paylaşma ve yardımlaşmaya verdiği önemi ayet ve hadisler ışığında yorumlar.",
       "Kavramsal İlke: İslam'da paylaşma ve zekât ibadeti.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: 8.2.1. İslam’ın paylaşma ve yardımlaşmaya verdiği önemi ayet ve hadisler ışığında yorumlar. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Zekât, dinen zengin sayılan Müslümanların yılda bir kez mallarının belirli bir oranını ihtiyaç sahiplerine vermesidir.\n\nZekât ibadetinin zengin ile fakir arasındaki kıskançlık ve kin duygularını nasıl giderdiğini ve toplumsal barışa katkısını açıklayınız.",
@@ -3035,12 +3035,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "E8.1.R1",
     "topicTitle": "Friendship - Friendship",
     "quickNotes": [
-      "MEB Önemli Kural: Students will be able to understand short and simple texts about friendship.",
+      "Kazanım Odaklı Temel İlke: Students will be able to understand short and simple texts about friendship.",
       "Kavramsal İlke: Personal characteristics of true friends.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Students will be able to understand short and simple texts about friendship. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Text: 'True friends are like stars; you do not always see them, but you know they are always there. A true friend always backs you up when you have a problem. They are honest, loyal, and they never share your secrets with others.'\n\nAccording to the text, what are two main qualities of a true friend? Mention their attitude towards secrets.",
@@ -3056,12 +3056,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "E8.1.W1",
     "topicTitle": "Students will be able to write a short and simple letter apologizing and giving reasons for not attending a party in response to an invitation.",
     "quickNotes": [
-      "MEB Önemli Kural: Students will be able to write a short and simple letter apologizing and giving reasons for not attending a party in response to an invitation.",
+      "Kazanım Odaklı Temel İlke: Students will be able to write a short and simple letter apologizing and giving reasons for not attending a party in response to an invitation.",
       "Kavramsal İlke: Writing a letter of refusal with an excuse.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Students will be able to write a short and simple letter apologizing and giving reasons for not attending a party in response to an invitation. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Your close friend Sally invites you to her birthday barbecue party this Saturday afternoon, but you have a tennis tournament.\n\nWrite a short reply email (3 sentences) to Sally. Thank her for the invitation, refuse it politely, and state your excuse.",
@@ -3077,12 +3077,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "E8.2.R1",
     "topicTitle": "Teen Life - Teen Life",
     "quickNotes": [
-      "MEB Önemli Kural: Students will be able to understand short and simple texts about regular activities of teenagers.",
+      "Kazanım Odaklı Temel İlke: Students will be able to understand short and simple texts about regular activities of teenagers.",
       "Kavramsal İlke: Teenager daily routine and music preferences.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Students will be able to understand short and simple texts about regular activities of teenagers. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Interview: 'Mark: I am crazy about rock music because the energetic rhythm keeps me motivated. However, I can't stand classical music; to be honest, I find it quite boring. In my free time, I usually go camping with my scouting group.'\n\nRead the interview snippet and answer:\na) Why does Mark love rock music?\nb) What type of music does he dislike, and what is his opinion of it?",
@@ -3098,12 +3098,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "E8.1.R2",
     "topicTitle": "Students will be able to understand short and simple invitation letters, cards and e-mails.",
     "quickNotes": [
-      "MEB Önemli Kural: Students will be able to understand short and simple invitation letters, cards and e-mails.",
+      "Kazanım Odaklı Temel İlke: Students will be able to understand short and simple invitation letters, cards and e-mails.",
       "Kavramsal İlke: Invitation card comprehension.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Students will be able to understand short and simple invitation letters, cards and e-mails. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "INVITATION CARD:\n'Join Us for a Movie Night!\nDate: Friday, 14th November\nTime: 19:30\nPlace: Kevin's Home (Green Street No: 12)\nPS: Please bring your favorite popcorn or snacks!'\n\nRead the invitation card and answer:\na) What kind of event is Kevin organizing?\nb) What are guests asked to bring with them?",
@@ -3119,12 +3119,12 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     "outcomeCode": "E8.2.W1",
     "topicTitle": "Students will be able to write a short and simple paragraph about regular activities of teenagers.",
     "quickNotes": [
-      "MEB Önemli Kural: Students will be able to write a short and simple paragraph about regular activities of teenagers.",
+      "Kazanım Odaklı Temel İlke: Students will be able to write a short and simple paragraph about regular activities of teenagers.",
       "Kavramsal İlke: Writing about teen daily routine and hobbies.",
       "Soru Çözüm Tekniği: Soruda verilen öncülleri, verileri ve bağıntıları dikkatlice tespit ederek doğrudan gerekçeli sonuca ulaşınız."
     ],
     "examTraps": [
-      "DİKKAT: Students will be able to write a short and simple paragraph about regular activities of teenagers. ile ilgili sorularda yüzeysel ezber değil, neden-sonuç bağı ve adım adım çözüm puan kazandırır."
+      "Soruda verilen öncülleri ve temel kavramları dikkatlice analiz ediniz; yüzeysel ezber yerine bilimsel/mantıksal gerekçeleri adım adım yazınız."
     ],
     "solvedExample": {
       "question": "Prompt: Describe your typical Saturday routine and your favorite hobbies as an 8th-grade teen.\n\nWrite a 3-4 sentence paragraph describing your favorite weekend routine, including what time you wake up, your hobby, and your music preference.",
