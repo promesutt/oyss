@@ -1,5 +1,6 @@
 import { SubjectId, GradeLevel, ExamScenario } from '../types';
 import { getOfficialOutcomeTitle } from '../data/curriculumData';
+import { SAMPLE_EXAMS } from '../data/sampleExams';
 import { formatDifficultyPlanText, calibrateQuestionDifficulties } from './difficultyCalibrator';
 
 const POOL_NAMES_A = [
@@ -79,12 +80,24 @@ export async function generateMEBIQuestions(
 
   const difficultyPlanText = formatDifficultyPlanText(targetCount);
 
-  const livePrompt = `SEN MEB TEMEL EĞİTİM VE ÖDSGM SINAV BAŞUZMANISIN.
+  const livePrompt = `SEN MEB TEMEL EĞİTİM GENEL MÜDÜRLÜĞÜ VE ÖDSGM ORTAK SINAVLAR BAŞUZMANISIN.
 Aşağıdaki resmi senaryo kurallarına uygun olarak eksiksiz bir ${grade}. Sınıf ${subjectId} Ortak Yazılı Sınav Kağıdı üret.
-TOPLAM SORU SAYISI: ${targetCount} ADET AÇIK UÇLU SORU (1'den ${targetCount}'e kadar her soru eksiksiz üretilmelidir).
+TOPLAM SORU SAYISI: KESİNLİKLE VE TAM OLARAK ${targetCount} ADET AÇIK UÇLU SORU (1'den ${targetCount}'e kadar her soru eksiksiz üretilmelidir).
 
-SENARYO KAZANIM DAĞILIM PLANI (${targetCount} Soru):
+SENARYO RESMİ KAZANIM DAĞILIM PLANI (${targetCount} SORU):
 ${distributionsText}
+
+ZORUNLU KAZANIM EŞLEŞMESİ (EN KATI VE DEĞİŞTİRİLEMEZ 1. KURAL):
+- Sınavdaki Soru 1'den Soru ${targetCount}'e kadar HER BİR SORU, yukarıdaki dağılım tablosunda kendisine atanan [Kazanım Kodu] ve [Resmi Öğrenme Çıktısı] ile %100 BİRE BİR EŞLEŞMEK ZORUNDADIR!
+- Sırayı ASLA bozma! Örneğin Dağılım planında Soru 4 için [Kazanım Kodu: FB.7.1.5] yazıyorsa, Soru 4 KESİNLİKLE FB.7.1.5 kazanımından sorulmalıdır. Asla FB.7.1.4, FB.7.2.2 veya başka bir kazanımdan soru üretilemez!
+- Senaryoda yer almayan hiçbir kazanımdan soru üretilemez! Dağılım planındaki sıra ve kazanım kodları ASLA değiştirilemez!
+- JSON çıktısında her sorunun 'outcome' alanına mutlaka dağılım planındaki ilgili sorunun resmi kazanım kodu (Örn: 'FB.7.1.5') yazılmalıdır.
+
+ÖĞRENCİ YAŞ DÜZEYİNE UYGUN SADE VE AKICI TÜRKÇE (7. SINIF SEVİYESİ - EN KRİTİK PEDAGOJİK KURAL):
+- Sorularda kullanılan dil, 12-13 yaşındaki bir ortaokul 7. sınıf öğrencisinin rahatlıkla, takılmadan anlayabileceği duru, yalın, açık ve anlaşılır bir Türkçe olmalıdır.
+- Ağır akademik terminoloji, üniversite düzeyinde fizik/astronomi/biyoloji teorileri (örneğin pulsar, kuantum fiziği, ileri optik kırınım teorileri) KESİNLİKLE YASAKTIR.
+- Soru kökleri, öncüller ve diyaloglar günlük hayatın içinden, öğrencinin yabancılık çekmeyeceği durumlar (ev yaşamı, spor, bisiklet sürmek, okul bahçesi, dağ gözlemevi, alışveriş sepeti, bahçe sulama vb.) üzerinden kurgulanmalıdır.
+- Metinler gereksiz laf kalabalığından arındırılmalı, öğrencinin neyi çözeceği net ve samimi olmalıdır.
 
 MEB ÖDSGM PEDAGOJİK ZORLUK DAĞILIMI (ÇAN EĞRİSİ - EN KRİTİK KURAL):
 - Sınavdaki ${targetCount} sorunun zorluk derecesi MEB Ölçme ve Değerlendirme standartlarına TAM UYGUN olmalıdır:
@@ -142,17 +155,17 @@ SADECE geçerli bir JSON çıktısı ver. JSON şeması:
 }`;
 
   const normalizeAndCalibrateQuestions = (questions: any[]): GeneratedQuestionItem[] => {
-    const withTitles = questions.map((q, idx) => {
-      const distItem = questionDistributions[idx];
-      const outcomeCode = q.outcome || distItem?.outcomeCode || 'MEB.ORTAK';
-      const officialTitle = getOfficialOutcomeTitle(outcomeCode);
-      const hasOfficial = officialTitle && officialTitle !== outcomeCode;
+    const withTitles = questions.slice(0, targetCount).map((q, idx) => {
+      const distItem = questionDistributions[idx] || scenario.distributions[0];
+      const requiredOutcome = distItem.outcomeCode;
+      const officialTitle = getOfficialOutcomeTitle(requiredOutcome) || distItem.notes || q.outcomeTitle || 'MEBİ Öğrenme Çıktısı';
       return {
         ...q,
         number: idx + 1,
-        outcome: outcomeCode,
-        outcomeTitle: hasOfficial ? officialTitle : (q.outcomeTitle || officialTitle || 'MEBİ Öğrenme Çıktısı'),
-        cognitiveLevel: q.level || distItem?.cognitiveLevel || 'Karmaşık Bilişsel Süreçler'
+        outcome: requiredOutcome,
+        outcomeTitle: officialTitle,
+        cognitiveLevel: distItem.cognitiveLevel || q.level || 'Karmaşık Bilişsel Süreçler',
+        points: pointAllocations[idx] || q.points || 15
       };
     });
     return calibrateQuestionDifficulties(withTitles);
@@ -199,11 +212,15 @@ SADECE geçerli bir JSON çıktısı ver. JSON şeması:
   }
 
   // 2. TIER 2: İstemci Tarafı Ortam Değişkeni veya Modal Girişi (Gemini 3.5 Flash-Lite / 3.5 Flash)
+  const envKey = (typeof import.meta !== 'undefined' && (import.meta as any)?.env?.VITE_GEMINI_API_KEY)
+    ? String((import.meta as any).env.VITE_GEMINI_API_KEY).trim()
+    : (typeof globalThis !== 'undefined' && (globalThis as any)?.process?.env?.VITE_GEMINI_API_KEY)
+    ? String((globalThis as any).process.env.VITE_GEMINI_API_KEY).trim()
+    : '';
+
   const directApiKey = (apiKey && apiKey.trim().length > 15)
     ? apiKey.trim()
-    : (import.meta.env.VITE_GEMINI_API_KEY && import.meta.env.VITE_GEMINI_API_KEY.trim().length > 15)
-    ? import.meta.env.VITE_GEMINI_API_KEY.trim()
-    : null;
+    : (envKey.length > 15 ? envKey : null);
 
   if (directApiKey) {
     try {
@@ -259,7 +276,8 @@ SADECE geçerli bir JSON çıktısı ver. JSON şeması:
 
   // 3. TIER 3: Tamamen Özgün, Sıfırdan Kurgulanmış Prosedürel MEBİ Motoru
   // NOT: Bu sorular varsayılan SAMPLE_EXAMS dosyasındaki sorulardan %100 FARKLI VE HER DERSE ÖZGÜDÜR!
-  const cycle = variationIndex % 2;
+  const _cycle = variationIndex % 2;
+  void _cycle;
 
   // ---------------------------------------------------------------------------
   // A. FEN BİLİMLERİ (Set A & Set B)
@@ -293,121 +311,113 @@ b) Bilimsel Gerekçe: Yüksek dağ zirvelerinde atmosfer tabakası daha incedir,
     {
       number: 2,
       outcome: 'FB.7.1.1',
-      outcomeTitle: 'Optik ve kızılötesi uzay teleskoplarının çalışma prensiplerini karşılaştırabilme',
+      outcomeTitle: 'Optik ve uzay teleskoplarının gözlem avantajlarını karşılaştırabilme',
       difficulty: 'Orta',
       level: 'Karmaşık Bilişsel Süreçler',
       templateType: 'Öğrenci Diyaloğu & Kavram Yanılgısı',
       points: pointAllocations[1] || 15,
-      stimulus: `Astronomi panosunu hazırlayan ${name1} ve ${name2} James Webb ile Hubble teleskoplarını tartışmaktadır:
-${name1}: "James Webb Uzay Teleskobu'nun Hubble'a göre en büyük üstünlüğü, görünür ışık yerine kızılötesi ışığı algılamasıdır. Kızılötesi dalgalar uzaydaki toz bulutlarının içinden geçebildiği için en eski yıldızları görebilir."
-${name2}: "Bence dalga boyunun bir önemi yoktur; James Webb daha net çekiyor çünkü aynası altın kaplamadır ve altın ışığı büyüterek odaklar."`,
-      question: `${name1} ve ${name2}'nin açıklamalarını fen bilimleri optik ve dalga ilkeleri bakımından değerlendiriniz. Hangi öğrenci bilimsel olarak haklıdır? Kızılötesi ışığın kozmik toz bulutlarını delip geçme avantajını gerekçelendiriniz.`,
-      answer: `${name1} haklıdır. Uzaydaki dev gaz ve toz bulutları görünür ışığı soğurarak engeller; oysa kızılötesi dalgalar daha uzun dalga boyuna sahip olduğu için bu toz zerrelerine çarpmadan içinden geçebilir. James Webb bu sayede toz bulutlarının ardındaki ilk galaksileri gözlemleyebilir. Altın kaplama ise sadece kızılötesi ışınları maksimum verimle (%98) yansıtmak içindir, ışığı büyütme etkisi yoktur.`,
+      stimulus: `Astronomi panosu hazırlayan ${name1} ve ${name2} uzay teleskopları hakkında tartışmaktadır:
+${name1}: "Hubble ve James Webb gibi uzay teleskopları, yeryüzündeki dev gözlemevi teleskoplarından bile çok daha net ve kaliteli fotoğraflar çeker."
+${name2}: "Bence uzayda olmasının bir farkı yoktur; yeryüzündeki teleskopların aynası biraz daha büyük yapılırsa uzaydakilerden her zaman daha net çeker."`,
+      question: `${name1} ve ${name2}'nin açıklamalarını değerlendiriniz. Hangi öğrenci haklıdır? Uzay teleskoplarının Dünya atmosferinin olumsuz etkilerinden (ışık kırılması, hava kirliliği, bulutlar) neden etkilenmediğini açıklayınız.`,
+      answer: `${name1} haklıdır. Çünkü Dünya atmosferindeki hava hareketleri, tozlar ve bulutlar uzaydan gelen ışığı kırıp dalgalandırarak görüntünün bulanıklaşmasına yol açar. Uzay teleskopları ise atmosferin dışında, uzay boşluğunda görev yaptığı için ışık hiçbir engelle karşılaşmadan doğrudan ve net olarak teleskoba ulaşır.`,
       rubric: [
-        { item: `${name1}'in haklı olduğunun ve ${name2}'nin altın yanılgısının açıklanması`, pts: Math.round((pointAllocations[1] || 15) * 0.4) },
-        { item: 'Kızılötesi ışığın uzun dalga boyu sayesinde tozlardan geçebilme gerekçesi', pts: Math.round((pointAllocations[1] || 15) * 0.35) },
-        { item: 'Altının yansıtıcı rolünün doğru belirtilmesi', pts: Math.round((pointAllocations[1] || 15) * 0.25) }
+        { item: `${name1}'in haklı olduğunun ve ${name2}'nin yanılgısının açıklanması`, pts: Math.round((pointAllocations[1] || 15) * 0.4) },
+        { item: 'Dünya atmosferinin ışığı kırma ve görüntüyü bozma etkisinin belirtilmesi', pts: Math.round((pointAllocations[1] || 15) * 0.35) },
+        { item: 'Uzay teleskoplarının atmosfer dışındaki avantajının açıklanması', pts: Math.round((pointAllocations[1] || 15) * 0.25) }
       ]
     },
     {
       number: 3,
       outcome: 'FB.7.1.3',
-      outcomeTitle: 'Asteroit madenciliği ve uzay araştırmalarının getirdiği etik/teknik ikilemleri değerlendirebilme',
+      outcomeTitle: 'Uzay araştırmalarının yol açabileceği problemleri çözebilme',
       difficulty: 'Zor',
       level: 'Karmaşık Bilişsel Süreçler',
-      templateType: 'Dilemma (İkilem) & Çözüm Değerlendirme',
+      templateType: 'Kurgusal Senaryo & Çözüm Üretme',
       points: pointAllocations[2] || 15,
-      stimulus: `Gelecekte Dünya'daki nadir madenlerin (platin, lityum, nikel) tükenme tehlikesine karşı iki uzay madenciliği stratejisi önerilmiştir:
-Strateji A: Yakın Dünya asteroitlerini itici roketlerle Ay yörüngesine çekip orada astronotlar ve robotlarla maden çıkarmak.
-Strateji B: Asteroiti yerinde bırakıp insansız otonom sondalarla maden cevherlerini eriterek sadece değerli metalleri küçük kapsüllerle Dünya'ya fırlatmak.`,
-      question: `Strateji A ve Strateji B'yi yörünge güvenliği (çarpışma riski) ve lojistik maliyet açısından karşılaştırınız. Sizce insanlık için hangi strateji daha güvenlidir? Bilimsel argümanlarla savunup gerekçelendiriniz.`,
-      answer: `(Öğrenci tercih ettiği stratejiyi tutarlı argümanlarla savunduğunda tam puan verilir):
-• Strateji B'yi Seçenler: Devasa bir göktaşını Ay veya Dünya yörüngesine çekmeye çalışmak kontrolden çıkma ve olası bir yörünge çarpışması riski taşır. Asteroiti yerinde bırakıp sadece işlenmiş maden kapsüllerini fırlatmak Dünya ve Ay için maksimum güvenlik sağlar.
-• Strateji A'yı Seçenler: Asteroiti Ay yörüngesine çekmek bir defalık zahmettir; kalıcı bir Ay üssü kurulduğunda madenler Ay'da işlenerek uzay istasyonu inşasında hammadde olarak kullanılabilir ve Dünya'dan fırlatma maliyetini sıfıra indirir.`,
+      stimulus: `Dünya'nın yörüngesinde görevini tamamlamış eski uydular, roket parçaları ve fırlatmalardan kalan binlerce metal atık saatte 28.000 kilometre gibi büyük bir hızla başıboş dolanmaktadır. Bu duruma 'Uzay Kirliliği' adı verilir.`,
+      question: `a) Yörüngedeki bu uzay atıklarının halen görev yapmakta olan aktif uydular ve Uluslararası Uzay İstasyonu için oluşturduğu en büyük tehlikeyi açıklayınız.
+b) Uzay kirliliğini azaltmak veya önlemek için bilim insanlarının uygulayabileceği bir çözüm önerisi yazınız.`,
+      answer: `a) Tehlike: Uzay atıkları mermiden katbekat daha hızlı hareket ettiği için küçücük bir metal cıvata bile aktif bir uyduya çarptığında onu parçalayabilir ve kullanılmaz hale getirebilir.
+b) Çözüm Önerisi: Görev süresi tükenen uydular kontrollü şekilde Dünya atmosferine yönlendirilerek sürtünmeyle yakılıp yok edilmeli veya robotik uzay araçlarıyla toplanarak temizlenmelidir.`,
       rubric: [
-        { item: 'Seçilen stratejinin teknik ve güvenlik avantajının tutarlı sunulması', pts: Math.round((pointAllocations[2] || 15) * 0.5) },
-        { item: 'Diğer stratejinin karşılaşacağı kaza/maliyet riskinin açıklanması', pts: Math.round((pointAllocations[2] || 15) * 0.5) }
+        { item: 'Yüksek hızdaki uzay atıklarının aktif uyduları parçalama tehlikesinin açıklanması', pts: Math.round((pointAllocations[2] || 15) * 0.5) },
+        { item: 'Ömrü biten uyduları atmosferde kontrollü yakma veya temizleme çözüm önerisi', pts: Math.round((pointAllocations[2] || 15) * 0.5) }
       ]
     },
     {
       number: 4,
       outcome: 'FB.7.1.4',
-      outcomeTitle: 'Süpernova patlamalarını ve nötron yıldızı/pulsar oluşumunu kütle ilişkisiyle açıklayabilme',
+      outcomeTitle: 'Yıldızların yaşam döngüsünü açıklayarak yapılandırabilme',
       difficulty: 'Orta',
       level: 'Karmaşık Bilişsel Süreçler',
-      templateType: 'Kurgusal Tarihi Vaka & Bilimsel Çıkarım',
+      templateType: 'Kurgusal Senaryo & Bilimsel Çıkarım',
       points: pointAllocations[3] || 15,
-      stimulus: `Tarihî kayıtlara göre 1054 yılında Çinli ve İslam gök bilimciler gökyüzünde gündüz vakti bile 23 gün boyunca Güneş'in yanında parlayan yeni bir "konuk yıldız" gözlemlemiştir.
-Günümüzde modern teleskoplar aynı bölgeye baktıklarında gaz bulutlarından oluşan "Yengeç Bulutsusu"nu ve merkezinde saniyede 30 kez kendi etrafında dönerek radyo dalgaları yayan minik bir "nötron yıldızı (pulsar)" keşfetmiştir.`,
-      question: `a) 1054 yılında gözlemlenen bu şiddetli gök olayının bilimsel adı nedir?
-b) Patlayan bu yıldızın başlangıç kütlesinin Güneş'e kıyasla durumunu ve patlama sonrasında neden bir beyaz cüce değil de nötron yıldızı kaldığını açıklayınız.`,
-      answer: `a) Bu olay bir "Süpernova Patlaması"dır.
-b) Kütle Gerekçesi: Bu yıldız başlangıç kütlesi Güneş'in kütlesinden çok daha büyük (büyük kütleli) bir dev yıldızdır. Güneş gibi küçük kütleli yıldızlar süpernova patlaması geçiremez, dış katmanlarını sakince salarak beyaz cüceye dönüşür. Büyük kütleli yıldızlar ise demir çekirdeğin çökmesiyle süpernova geçirir ve geride atom çekirdeği yoğunluğunda bir nötron yıldızı (pulsar) bırakır.`,
+      stimulus: `Yıldızlar uzaydaki gaz ve toz bulutlarının (bulutsu/nebula) bir araya gelip sıkışmasıyla doğar. Yıldızların ömrünün nasıl sonlanacağı ise başlangıç kütlelerinin büyüklüğüne bağlıdır.`,
+      question: `a) Güneş'imiz küçük kütleli bir yıldız olduğuna göre, yakıtını tükettiğinde hangi aşamalardan geçerek neye dönüşecektir?
+b) Başlangıç kütlesi Güneş'ten çok daha büyük olan dev yıldızların ömrünün sonunda geçirdiği şiddetli patlamaya ve geride bırakabileceği yapılara ne ad verilir?`,
+      answer: `a) Güneş gibi küçük kütleli yıldızlar önce genişleyerek kırmızı dev aşamasına geçer, ardından dış katmanlarını uzaya salarak merkezinde beyaz cüce kalır.
+b) Büyük kütleli yıldızlar ise süpernova patlaması geçirir ve geride nötron yıldızı veya kara delik bırakır.`,
       rubric: [
-        { item: 'Olayın Süpernova Patlaması olduğunun doğru tespiti', pts: Math.round((pointAllocations[3] || 15) * 0.4) },
-        { item: 'Yıldızın büyük kütleli olduğunun belirtilmesi', pts: Math.round((pointAllocations[3] || 15) * 0.3) },
-        { item: 'Beyaz cüce ile nötron yıldızının başlangıç kütlesi farkının açıklanması', pts: Math.round((pointAllocations[3] || 15) * 0.3) }
+        { item: 'Küçük kütleli yıldızların kırmızı dev ve beyaz cüceye dönüşümünün doğru yazılması', pts: Math.round((pointAllocations[3] || 15) * 0.5) },
+        { item: 'Büyük kütleli yıldızların süpernova patlaması ve nötron yıldızı/kara delik oluşturmasının belirtilmesi', pts: Math.round((pointAllocations[3] || 15) * 0.5) }
       ]
     },
     {
       number: 5,
       outcome: 'FB.7.1.5',
-      outcomeTitle: 'Galaksi türlerini sınıflandırabilme ve Samanyolu-Andromeda birleşmesini modelleyebilme',
+      outcomeTitle: 'Yıldız, galaksi ve evren kavramlarını açıklayarak yapılandırabilme',
       difficulty: 'Kolay',
       level: 'Basit Bilişsel Süreçler',
       templateType: 'Kurgusal Vaka & Senaryo İncelemesi',
       points: pointAllocations[4] || 14,
-      stimulus: `Gök bilimciler, yaklaşık 4,5 milyar yıl sonra Samanyolu Galaksisi ile komşumuz Andromeda Galaksisi'nin saniyede 110 km hızla birbirine doğru çekilerek birleşeceğini (çarpışacağını) hesaplamıştır.
-${name1}: "Milyarlarca yıldız birbirine kafa kafaya çarpıp patlayacak ve Güneş Sistemi yok olacak!" demiştir.
-${name2}: "Hayır, galaksiler birleştiğinde yıldızların birbirine çarpma ihtimali neredeyse sıfırdır; sadece iki sarmal galaksi birleşip devasa tek bir eliptik galaksi oluşturacaktır." demiştir.`,
-      question: `${name1} ve ${name2}'den hangisinin açıklaması astronomik verilere uygundur? İki dev galaksi birleşmesine rağmen yıldızların neden doğrudan birbirine çarpmayacağını galaksilerin iç yapısındaki devasa boşluklarla açıklayınız.`,
-      answer: `${name2} haklıdır.
-Gerekçe: Galaksiler dışarıdan bakıldığında yoğun görünse de yıldızlar arasındaki mesafeler hayal edilemeyecek kadar büyüktür. İki galaksi birleştiğinde yıldızlar birbiri arasından süzülerek geçer ve kütleçekimiyle yeni bir eliptik galaksi dengesine kavuşur.`,
+      stimulus: `Galaksiler (gök adalar) milyarlarca yıldız, gaz ve toz bulutunun kütleçekimiyle bir arada tutulduğu devasa sistemlerdir. Şekillerine göre sarmal, eliptik ve düzensiz galaksi olmak üzere sınıflandırılırlar.`,
+      question: `a) İçinde Dünya'mızın ve Güneş Sistemi'mizin de bulunduğu galaksinin adı ve şekil türü nedir?
+b) Galaksimize en yakın olan büyük komşu sarmal galaksinin adı nedir?`,
+      answer: `a) Galaksimizin adı 'Samanyolu Galaksisi'dir ve şekil olarak 'Sarmal Galaksi' türündedir.
+b) Samanyolu'na en yakın büyük komşu galaksinin adı 'Andromeda Galaksisi'dir.`,
       rubric: [
-        { item: `${name2}'nin haklı olduğunun tespiti`, pts: Math.round((pointAllocations[4] || 14) * 0.4) },
-        { item: 'Yıldızlar arasındaki trilyonlarca kilometrelik boşluğun açıklanması', pts: Math.round((pointAllocations[4] || 14) * 0.35) },
-        { item: 'Birleşme sonucu eliptik galaksi oluşumunun belirtilmesi', pts: Math.round((pointAllocations[4] || 14) * 0.25) }
+        { item: 'Samanyolu Galaksisi ve Sarmal Galaksi türünün doğru yazılması', pts: Math.round((pointAllocations[4] || 14) * 0.5) },
+        { item: 'Andromeda Galaksisi adının doğru belirtilmesi', pts: Math.round((pointAllocations[4] || 14) * 0.5) }
       ]
     },
     {
       number: 6,
       outcome: 'FB.7.2.1',
-      outcomeTitle: 'Fiziksel anlamda yapılan işi kuvvet yönü ve yerçekimine karşı yapılan iş bakımından çözümleyebilme',
+      outcomeTitle: 'Fiziksel anlamda yapılan işin bağlı olduğu faktörlere ilişkin bilimsel çıkarım yapabilme',
       difficulty: 'Zor',
       level: 'Karmaşık Bilişsel Süreçler',
       templateType: 'Kurgusal Senaryo & Vaka İncelemesi',
       points: pointAllocations[5] || 14,
-      stimulus: `${name1}, okul bahçesindeki merdiven ve rampa deneyinde iki farklı durumu ölçmüştür:
-Durum 1: 10 kg ağırlığındaki çantayı sırtında taşıyarak yatay düz koridorda 20 metre yürümüştür.
-Durum 2: Aynı çantayı kucağına alarak okul merdivenlerinden 2. kata (dikey 6 metre yukarıya) çıkarmıştır.`,
-      question: `a) Durum 1 ve Durum 2'den hangisinde YERÇEKİMİ KUVVETİNE KARŞI fiziksel anlamda iş yapılmıştır?
-b) Durum 1'de yatay yolda yürürken neden yerçekimine karşı iş yapılmadığını kuvvet ve hareket doğrultusu arasındaki açı ilişkisiyle açıklayınız.`,
-      answer: `a) Yalnızca Durum 2'de yerçekimine karşı iş yapılmıştır.
-b) Bilimsel Gerekçe: Bir kuvvetin fiziksel anlamda iş yapabilmesi için cismin uygulanan kuvvet doğrultusunda yer değiştirmesi gerekir. Durum 1'de çantayı taşırken uygulanan kuvvet YUKARI yönlüdür; yürünen yol ise YATAYDIR. Kuvvet ile hareket yönü birbirine DİK (90 derece) olduğundan kuvvet doğrultusunda yer değiştirme sıfırdır ve iş yapılmaz. Durum 2'de ise çanta dikey yukarı taşındığı için yerçekimine zıt yönde iş yapılmıştır.`,
+      stimulus: `${name1}, okul binasında iki farklı durum gerçekleştirmiştir:
+1. Durum: 10 kg ağırlığındaki okul çantasını sırtında taşıyarak düz yatay koridorda 20 metre yürümüştür.
+2. Durum: Aynı çantayı kucağına alarak okul merdivenlerinden 2. kata (yukarıya) çıkarmıştır.`,
+      question: `a) 1. ve 2. durumdan hangisinde YER ÇEKİMİ KUVVETİNE KARŞI fiziksel anlamda iş yapılmıştır? Nedenini yazınız.
+b) 1. durumda yatay yolda yürürken neden yer çekimine karşı iş yapılmadığını kuvvet doğrultusu ile hareket yönü ilişkisiyle açıklayınız.`,
+      answer: `a) Yalnızca 2. durumda yer çekimine karşı iş yapılmıştır. Çünkü çanta yukarı kaldırılırken yer çekimine zıt yönde yukarı doğru kuvvet uygulanmış ve çanta kuvvet doğrultusunda yukarı taşınmıştır.
+b) 1. durumda ise çanta taşınırken uygulanan kuvvet yukarı yönlü, hareket ise yataydır. Kuvvet ile hareket doğrultusu birbirine dik olduğu için yer çekimi kuvveti doğrultusunda yol alınmamıştır ve iş yapılmaz.`,
       rubric: [
-        { item: 'Durum 2\'de yerçekimine karşı iş yapıldığının doğru teşhisi', pts: Math.round((pointAllocations[5] || 14) * 0.4) },
-        { item: 'Durum 1\'de kuvvet ile hareketin birbirine dik olması kuralının açıklanması', pts: Math.round((pointAllocations[5] || 14) * 0.6) }
+        { item: '2. durumda yer çekimine karşı iş yapıldığının doğru teşhisi', pts: Math.round((pointAllocations[5] || 14) * 0.4) },
+        { item: '1. durumda kuvvet ile hareket doğrultusunun birbirine dik olması kuralının açıklanması', pts: Math.round((pointAllocations[5] || 14) * 0.6) }
       ]
     },
     {
       number: 7,
       outcome: 'FB.7.2.2',
-      outcomeTitle: 'Hız treni ve lunapark düzeneklerinde mekanik enerji dönüşümü ile sürtünme kaybını açıklayabilme',
+      outcomeTitle: 'Kinetik ve potansiyel enerjiyi karşılaştırarak enerji dönüşümünü açıklayabilme',
       difficulty: 'Orta',
       level: 'Karmaşık Bilişsel Süreçler',
       templateType: 'Öğrenci Diyaloğu & Kavram Yanılgısı',
       points: pointAllocations[6] || 13,
-      stimulus: `Lunaparkta hız trenini (roller coaster) izleyen ${name1} ve ${name2} arasında şu konuşma geçer:
-${name1}: "Tren 30 metre yüksekliğindeki ilk tepeden serbest bırakıldığında en alt çukurdan geçerken hem potansiyel hem kinetik enerjisi en yüksek değerdedir."
-${name2}: "Hayır, en alt çukurda yükseklik sıfırlandığı için potansiyel enerji minimuma iner, ancak tepeden aşağı inerken potansiyel enerji kinetik enerjiye dönüştüğü için sürat ve kinetik enerji maksimuma ulaşır."`,
-      question: `${name1} ve ${name2}'nin açıklamalarını değerlendiriniz. Hangi öğrenci haklıdır? Tren istasyona girdiğinde manyetik frenlerle durdurulduğunda mekanik enerjinin nereye kaybolduğunu enerjinin korunumu ilkesiyle açıklayınız.`,
-      answer: `${name2} haklıdır.
-Enerji Dönüşümü: Tepe noktada çekim potansiyel enerjisi maksimumdur; aşağı inişte kinetik enerjiye dönüşür ve çukurda kinetik enerji tavan yapar.
-Frenleme: Enerji asla yok olmaz; fren yapıldığında kinetik enerji sürtünme nedeniyle ISI ve SES enerjisine dönüşür, toplam enerji korunur.`,
+      stimulus: `Parkta kaykay pistinde kayan ${name1}, pistin en üst noktasından (3 metre yükseklikten) harekete başlamış, en alt çukurdan hızla geçerek karşıdaki tepeye doğru çıkmıştır.`,
+      question: `a) ${name1}'in çekim potansiyel enerjisinin en fazla olduğu ve kinetik enerjisinin en fazla olduğu noktaları belirleyiniz.
+b) Pistin en üst noktasından en alt çukuruna doğru inerken enerjisinde gerçekleşen dönüşümü (hangi enerjinin hangi enerjiye dönüştüğünü) açıklayınız.`,
+      answer: `a) Çekim Potansiyel Enerjisi: En üst tepe noktada en fazladır (çünkü yükseklik maksimumdur).
+Kinetik Enerji: En alt çukurdan geçerken en fazladır (çünkü sürat maksimumdur).
+b) Enerji Dönüşümü: Yukarıdan aşağıya inerken yükseklik azaldığı için çekim potansiyel enerjisi kinetik (hareket) enerjisine dönüşür.`,
       rubric: [
-        { item: `${name2}'nin haklılığının tespiti`, pts: Math.round((pointAllocations[6] || 13) * 0.4) },
-        { item: 'Potansiyel/kinetik dönüşümünün gerekçesi', pts: Math.round((pointAllocations[6] || 13) * 0.3) },
-        { item: 'Sürtünmeyle ısıya dönüşüm ilkesi', pts: Math.round((pointAllocations[6] || 13) * 0.3) }
+        { item: 'Potansiyel enerjinin tepede, kinetik enerjinin çukurda en fazla olduğunun tespiti', pts: Math.round((pointAllocations[6] || 13) * 0.5) },
+        { item: 'Aşağı inişte çekim potansiyel enerjisinin kinetik enerjiye dönüştüğünün açıklanması', pts: Math.round((pointAllocations[6] || 13) * 0.5) }
       ]
     }
   ];
@@ -1344,38 +1354,104 @@ b) Mark NEVER plays tennis.`,
   ];
 
   // ---------------------------------------------------------------------------
-  // AKTİF DERS HAVUZU SEÇİMİ (Matematik, Fen, Türkçe, Sosyal, Din, İngilizce)
+  // KAZANIM ODAKLI VE RESMİ MEBİ DAĞILIMINA %100 UYUMLU PROSEDÜREL SEÇİCİ
   // ---------------------------------------------------------------------------
-  let activePool: GeneratedQuestionItem[] = [];
+  // Her ders ve her senaryo için soru seçimi; soru numarasına veya sıralı döngüye göre DEĞİL,
+  // Soru i için belirlenen resmi "d.outcomeCode" kazanımına göre TAM EŞLEŞME ile yapılır.
+  const occurrenceCount: Record<string, number> = {};
 
-  if (subjectId === 'fen_bilimleri') {
-    activePool = cycle === 0 ? fenQuestions_SetA : fenQuestions_SetB;
-  } else if (subjectId === 'matematik') {
-    activePool = cycle === 0 ? matQuestions_SetA : matQuestions_SetB;
-  } else if (subjectId === 'turkce') {
-    activePool = turkceQuestions;
-  } else if (subjectId === 'sosyal_bilgiler') {
-    activePool = sosyalQuestions;
-  } else if (subjectId === 'din_kulturu') {
-    activePool = dinQuestions;
-  } else if (subjectId === 'ingilizce') {
-    activePool = ingilizceQuestions;
-  }
+  const internalAllQuestions: GeneratedQuestionItem[] = [
+    ...fenQuestions_SetA,
+    ...fenQuestions_SetB,
+    ...matQuestions_SetA,
+    ...matQuestions_SetB,
+    ...turkceQuestions,
+    ...sosyalQuestions,
+    ...dinQuestions,
+    ...ingilizceQuestions
+  ];
 
-  let dynamicQuestions: GeneratedQuestionItem[] = [];
+  const dynamicQuestions: GeneratedQuestionItem[] = questionDistributions.map((d, idx) => {
+    const outcomeCode = d.outcomeCode;
+    const occ = occurrenceCount[outcomeCode] || 0;
+    occurrenceCount[outcomeCode] = occ + 1;
 
-  if (activePool.length > 0) {
-    dynamicQuestions = Array.from({ length: targetCount }, (_, idx) => {
-      const q = activePool[idx % activePool.length];
+    const officialOutcome = getOfficialOutcomeTitle(outcomeCode);
+    const resolvedTitle = (officialOutcome && officialOutcome !== outcomeCode)
+      ? officialOutcome
+      : (d.notes || 'MEBİ Öğrenme Çıktısı');
+
+    // 1. Önce SAMPLE_EXAMS içerisinden aynı kademe ve aynı derse ait ilgili kazanımdaki soruları filtrele
+    const matchingSampleQuestions = SAMPLE_EXAMS
+      .filter((e) => e.grade === grade && e.subjectId === subjectId)
+      .flatMap((e) => e.questions)
+      .filter((q) => q.outcomeCode === outcomeCode);
+
+    // 2. Ardından içeride tanımlı zengin MEBİ havuzundaki ilgili kazanım sorularını filtrele
+    const internalPool = internalAllQuestions.filter((q) => q.outcome === outcomeCode);
+
+    // 3. Genel SAMPLE_EXAMS havuzunda bu kazanım var mı (farklı sınıf/şube olsa dahi)
+    const crossGradeSampleQuestions = matchingSampleQuestions.length === 0
+      ? SAMPLE_EXAMS.flatMap((e) => e.questions).filter((q) => q.outcomeCode === outcomeCode)
+      : [];
+
+    const availablePool = [
+      ...matchingSampleQuestions.map((q) => ({
+        outcome: q.outcomeCode,
+        outcomeTitle: q.outcomeTitle,
+        difficulty: q.difficulty,
+        level: q.cognitiveLevel,
+        templateType: q.archetype,
+        stimulus: q.stimulus || '',
+        question: q.questionText,
+        answer: q.modelAnswer,
+        rubric: (q.rubric || []).map((r) => ({ item: r.criterion, pts: r.points }))
+      })),
+      ...internalPool.map((q) => ({
+        outcome: q.outcome,
+        outcomeTitle: q.outcomeTitle,
+        difficulty: q.difficulty,
+        level: q.level,
+        templateType: q.templateType,
+        stimulus: q.stimulus || '',
+        question: q.question,
+        answer: q.answer,
+        rubric: q.rubric
+      })),
+      ...crossGradeSampleQuestions.map((q) => ({
+        outcome: q.outcomeCode,
+        outcomeTitle: q.outcomeTitle,
+        difficulty: q.difficulty,
+        level: q.cognitiveLevel,
+        templateType: q.archetype,
+        stimulus: q.stimulus || '',
+        question: q.questionText,
+        answer: q.modelAnswer,
+        rubric: (q.rubric || []).map((r) => ({ item: r.criterion, pts: r.points }))
+      }))
+    ];
+
+    if (availablePool.length > 0) {
+      const q = availablePool[(variationIndex * 2 + occ - 1 + availablePool.length) % availablePool.length];
       return {
-        ...q,
         number: idx + 1,
-        outcomeTitle: getOfficialOutcomeTitle(q.outcome) || q.outcomeTitle,
-        points: pointAllocations[idx] || q.points
+        outcome: outcomeCode,
+        outcomeTitle: resolvedTitle,
+        difficulty: q.difficulty || 'Orta',
+        level: d.cognitiveLevel || q.level || 'Karmaşık Bilişsel Süreçler',
+        templateType: q.templateType || 'Kurgusal Senaryo & Vaka İncelemesi',
+        points: pointAllocations[idx] || 15,
+        stimulus: q.stimulus || '',
+        question: q.question,
+        answer: q.answer,
+        rubric: (q.rubric && q.rubric.length > 0) ? q.rubric : [
+          { item: 'Kavramsal teşhis ve bilimsel tespit', pts: Math.round((pointAllocations[idx] || 15) * 0.5) },
+          { item: 'Analitik gerekçelendirme ve modelleme basamağı', pts: Math.round((pointAllocations[idx] || 15) * 0.5) }
+        ]
       };
-    });
-  } else {
-    // Lise dersleri ve diğer sınıflar için her sorusu FARKLI bir MEBİ şablonu olan dinamik sentez
+    }
+
+    // 4. Havuzda henüz bulunmayan lise veya nadir dersler için pedagojik dinamik MEBİ sentezi
     const dynSubjectName = subjectId.replace(/_/g, ' ').toUpperCase();
     const archetypesList = [
       'Durum & Özellik Matrisi (VAR/YOK Tablosu)',
@@ -1386,64 +1462,58 @@ b) Mark NEVER plays tennis.`,
       'Metin İçi Delillendirme & Örtük Anlam',
       'Birinci Ağızdan Konuşturma / Rol'
     ];
+    const arch = archetypesList[idx % archetypesList.length];
+    const sName1 = POOL_NAMES_A[(variationIndex + idx) % POOL_NAMES_A.length];
+    const sName2 = POOL_NAMES_B[(variationIndex + idx + 3) % POOL_NAMES_B.length];
 
-    dynamicQuestions = questionDistributions.map((d, idx) => {
-      const arch = archetypesList[idx % archetypesList.length];
-      const sName1 = POOL_NAMES_A[(variationIndex + idx) % POOL_NAMES_A.length];
-      const sName2 = POOL_NAMES_B[(variationIndex + idx + 3) % POOL_NAMES_B.length];
+    let stim = '';
+    let qText = '';
+    let ans = '';
 
-      let stim = '';
-      let qText = '';
-      let ans = '';
-
-      if (arch.includes('Matris')) {
-        stim = `Tablo: ${dynSubjectName} Temel Kavramları ve Özellikleri
+    if (arch.includes('Matris')) {
+      stim = `Tablo: ${dynSubjectName} Temel Kavramları ve Özellikleri
 ----------------------------------------------------------------------
 | Kavram / Durum | Temel İlke Şartı | Gerçek Yaşam Uygulaması |
 | Durum A        | ................ | ....................... |
 | Durum B        | ................ | ....................... |`;
-        qText = `Tabloda boş bırakılan yerleri ${d.outcomeCode} öğrenme çıktısına göre uygun bilimsel/kavramsal ifadelerle doldurunuz.`;
-        ans = `Durum A ve Durum B özellikleri ders ilkeleri doğrultusunda eksiksiz eşleştirilmiştir.`;
-      } else if (arch.includes('Diyalog')) {
-        stim = `${sName1} ve ${sName2} ders çalışırken şu konuda farklı görüşler belirtmiştir:
+      qText = `Tabloda boş bırakılan yerleri ${outcomeCode} [${resolvedTitle}] öğrenme çıktısına göre uygun bilimsel/kavramsal ifadelerle doldurunuz.`;
+      ans = `Durum A ve Durum B özellikleri ders ilkeleri doğrultusunda eksiksiz eşleştirilmiştir.`;
+    } else if (arch.includes('Diyalog')) {
+      stim = `${sName1} ve ${sName2} ders çalışırken ${resolvedTitle} konusunda farklı görüşler belirtmiştir:
 ${sName1}: "Bu olayda sadece ilk değişken belirleyicidir ve sonuç buna göre şekillenir."
 ${sName2}: "Hayır, şartlar değiştiğinde doğrudan diğer etkenlerin devreye girdiği ve sonuca etki ettiği görülür."`;
-        qText = `${sName1} ve ${sName2}'nin açıklamalarını ${d.outcomeCode} ilkeleri doğrultusunda değerlendiriniz. Hangisi haklıdır? Gerekçelendiriniz.`;
-        ans = `${sName2} haklıdır. Çünkü süreç tek bir değişkene indirgenemez, bağlamsal şartlar belirleyicidir.`;
-      } else if (arch.includes('Hata')) {
-        stim = `${sName1}, tahtadaki problem çözümünde 3 adım uygulamıştır:
+      qText = `${sName1} ve ${sName2}'nin açıklamalarını ${outcomeCode} ilkeleri doğrultusunda değerlendiriniz. Hangisi haklıdır? Gerekçelendiriniz.`;
+      ans = `${sName2} haklıdır. Çünkü süreç tek bir değişkene indirgenemez, bağlamsal şartlar belirleyicidir.`;
+    } else if (arch.includes('Hata')) {
+      stim = `${sName1}, problem çözümünde 3 adım uygulamıştır:
 1. Adım: Temel tanımı ve değişkenleri belirlemiştir.
 2. Adım: Verilen kuralları işleme koymuştur.
 3. Adım: Çıkan sonucu ilk durumla karşılaştırıp sonuca varmıştır.`;
-        qText = `${sName1}'in çözüm adımlarını ${d.outcomeCode} doğrultusunda analiz ediniz. İlk hata hangi adımda yapılmıştır? Doğru adımı yazınız.`;
-        ans = `Hata tespiti ve kavramsal gerekçelendirme adım basamaklarıyla sunulmuştur.`;
-      } else {
-        stim = `Bir araştırma laboratuvarında ${dynSubjectName} kapsamında iki farklı yöntem (Yöntem 1 ve Yöntem 2) karşılaştırılmaktadır.`;
-        qText = `Yöntem 1 ve Yöntem 2'yi avantaj ve dezavantajları bakımından karşılaştırınız. Hangi yöntemin daha verimli olduğunu gerekçelendiriniz.`;
-        ans = `Seçilen yöntemin gerekçesi ve diğer yöntemin sınırları bilimsel kanıtlarla açıklanmıştır.`;
-      }
+      qText = `${sName1}'in çözüm adımlarını ${outcomeCode} doğrultusunda analiz ediniz. İlk hata hangi adımda yapılmıştır? Doğru adımı yazınız.`;
+      ans = `Hata tespiti ve kavramsal gerekçelendirme adım basamaklarıyla sunulmuştur.`;
+    } else {
+      stim = `Bir araştırma ve uygulama ortamında ${dynSubjectName} kapsamında iki farklı yöntem (Yöntem 1 ve Yöntem 2) karşılaştırılmaktadır.`;
+      qText = `Yöntem 1 ve Yöntem 2'yi ${resolvedTitle} bakımından karşılaştırınız. Hangi yöntemin daha verimli olduğunu gerekçelendiriniz.`;
+      ans = `Seçilen yöntemin gerekçesi ve diğer yöntemin sınırları bilimsel kanıtlarla açıklanmıştır.`;
+    }
 
-      const officialOutcome = getOfficialOutcomeTitle(d.outcomeCode);
-      return {
-        number: idx + 1,
-        outcome: d.outcomeCode,
-        outcomeTitle: (officialOutcome && officialOutcome !== d.outcomeCode)
-          ? officialOutcome
-          : (d.notes || `${dynSubjectName} Temel Öğrenme Çıktısı Analizi`),
-        difficulty: 'Orta',
-        level: d.cognitiveLevel,
-        templateType: arch,
-        points: pointAllocations[idx] || 15,
-        stimulus: stim,
-        question: qText,
-        answer: ans,
-        rubric: [
-          { item: 'Kavramsal teşhis ve doğru tespit', pts: Math.round((pointAllocations[idx] || 15) * 0.5) },
-          { item: 'Bilimsel/mantıksal gerekçelendirme basamağı', pts: Math.round((pointAllocations[idx] || 15) * 0.5) }
-        ]
-      };
-    });
-  }
+    return {
+      number: idx + 1,
+      outcome: outcomeCode,
+      outcomeTitle: resolvedTitle,
+      difficulty: 'Orta',
+      level: d.cognitiveLevel,
+      templateType: arch,
+      points: pointAllocations[idx] || 15,
+      stimulus: stim,
+      question: qText,
+      answer: ans,
+      rubric: [
+        { item: 'Kavramsal teşhis ve doğru tespit', pts: Math.round((pointAllocations[idx] || 15) * 0.5) },
+        { item: 'Bilimsel/mantıksal gerekçelendirme basamağı', pts: Math.round((pointAllocations[idx] || 15) * 0.5) }
+      ]
+    };
+  });
 
   const finalDynamicQuestions = calibrateQuestionDifficulties(dynamicQuestions);
 

@@ -1316,7 +1316,7 @@ export const MIDDLE_SCHOOL_OFFICIAL_SCENARIOS: Record<number, Partial<Record<Sub
         { outcomeCode: "SB.5.1.1", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Gruplar ve Roller" },
         { outcomeCode: "SB.5.1.2", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Kültürel Özelliklere Saygı ve Birlikte Yaşama Kültürü" },
         { outcomeCode: "SB.5.1.3", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Yardımlaşma ve Dayanışma Faaliyetlerinin Toplumsal Birliğe Etkisi" },
-        { outcomeCode: "EVİMİZ", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Küreselleşmenin İnsan ve Toplum Hayatına Etkisi" },
+        { outcomeCode: "SB.5.2.1", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Küreselleşmenin İnsan ve Toplum Hayatına Etkisi" },
         ]
       },
       {
@@ -1339,7 +1339,7 @@ export const MIDDLE_SCHOOL_OFFICIAL_SCENARIOS: Record<number, Partial<Record<Sub
         { outcomeCode: "SB.5.1.1", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Gruplar ve Roller" },
         { outcomeCode: "SB.5.1.2", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Kültürel Özelliklere Saygı ve Birlikte Yaşama Kültürü" },
         { outcomeCode: "SB.5.1.3", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Yardımlaşma ve Dayanışma Faaliyetlerinin Toplumsal Birliğe Etkisi" },
-        { outcomeCode: "EVİMİZ", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Küreselleşmenin İnsan ve Toplum Hayatına Etkisi" },
+        { outcomeCode: "SB.5.2.1", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Küreselleşmenin İnsan ve Toplum Hayatına Etkisi" },
         ]
       },
       {
@@ -1362,7 +1362,7 @@ export const MIDDLE_SCHOOL_OFFICIAL_SCENARIOS: Record<number, Partial<Record<Sub
         { outcomeCode: "SB.5.1.1", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Gruplar ve Roller" },
         { outcomeCode: "SB.5.1.2", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Kültürel Özelliklere Saygı ve Birlikte Yaşama Kültürü" },
         { outcomeCode: "SB.5.1.3", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Yardımlaşma ve Dayanışma Faaliyetlerinin Toplumsal Birliğe Etkisi" },
-        { outcomeCode: "EVİMİZ", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Küreselleşmenin İnsan ve Toplum Hayatına Etkisi" },
+        { outcomeCode: "SB.5.2.1", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Küreselleşmenin İnsan ve Toplum Hayatına Etkisi" },
         ]
       },
     ],
@@ -1694,7 +1694,7 @@ export const MIDDLE_SCHOOL_OFFICIAL_SCENARIOS: Record<number, Partial<Record<Sub
         { outcomeCode: "SB.6.1.1", questionCount: 2, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "Zaman İçinde Değişen Gruplar ve Roller" },
         { outcomeCode: "SB.6.1.2", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Kültürel Bağlarımızın ve Millî Değerlerimizin Toplumsal Birlikteliğe Etkisi" },
         { outcomeCode: "SB.6.1.3", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Toplumsal Sorunlar ve Çözümler Önerileri" },
-        { outcomeCode: "EVİMİZ", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Küreselleşmenin İnsan ve Toplum Hayatına Etkisi" },
+        { outcomeCode: "SB.6.2.1", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Küreselleşmenin İnsan ve Toplum Hayatına Etkisi" },
         ]
       },
       {
@@ -1706,7 +1706,7 @@ export const MIDDLE_SCHOOL_OFFICIAL_SCENARIOS: Record<number, Partial<Record<Sub
         { outcomeCode: "SB.6.1.1", questionCount: 2, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "Zaman İçinde Değişen Gruplar ve Roller" },
         { outcomeCode: "SB.6.1.2", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Kültürel Bağlarımızın ve Millî Değerlerimizin Toplumsal Birlikteliğe Etkisi" },
         { outcomeCode: "SB.6.1.3", questionCount: 3, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Toplumsal Sorunlar ve Çözümler Önerileri" },
-        { outcomeCode: "EVİMİZ", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Küreselleşmenin İnsan ve Toplum Hayatına Etkisi" },
+        { outcomeCode: "SB.6.2.1", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Küreselleşmenin İnsan ve Toplum Hayatına Etkisi" },
         ]
       },
       {
@@ -1718,7 +1718,7 @@ export const MIDDLE_SCHOOL_OFFICIAL_SCENARIOS: Record<number, Partial<Record<Sub
         { outcomeCode: "SB.6.1.1", questionCount: 2, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "Zaman İçinde Değişen Gruplar ve Roller" },
         { outcomeCode: "SB.6.1.2", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Kültürel Bağlarımızın ve Millî Değerlerimizin Toplumsal Birlikteliğe Etkisi" },
         { outcomeCode: "SB.6.1.3", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Toplumsal Sorunlar ve Çözümler Önerileri" },
-        { outcomeCode: "EVİMİZ", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Küreselleşmenin İnsan ve Toplum Hayatına Etkisi" },
+        { outcomeCode: "SB.6.2.1", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Küreselleşmenin İnsan ve Toplum Hayatına Etkisi" },
         ]
       },
       {
@@ -1730,7 +1730,7 @@ export const MIDDLE_SCHOOL_OFFICIAL_SCENARIOS: Record<number, Partial<Record<Sub
         { outcomeCode: "SB.6.1.1", questionCount: 1, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "Zaman İçinde Değişen Gruplar ve Roller" },
         { outcomeCode: "SB.6.1.2", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Kültürel Bağlarımızın ve Millî Değerlerimizin Toplumsal Birlikteliğe Etkisi" },
         { outcomeCode: "SB.6.1.3", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Toplumsal Sorunlar ve Çözümler Önerileri" },
-        { outcomeCode: "EVİMİZ", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Küreselleşmenin İnsan ve Toplum Hayatına Etkisi" },
+        { outcomeCode: "SB.6.2.1", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Küreselleşmenin İnsan ve Toplum Hayatına Etkisi" },
         ]
       },
       {
@@ -2065,10 +2065,10 @@ export const MIDDLE_SCHOOL_OFFICIAL_SCENARIOS: Record<number, Partial<Record<Sub
         description: "MEB ÖDSGM 2026-2027 1. Dönem 1. Yazılı Konu Soru Dağılım Tablosu resmi Senaryo 1 (7 Soru) formatı (Toplam 100 Puan).",
         totalQuestions: 7,
         distributions: [
-        { outcomeCode: "SB", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Gruplarda ve Sosyal Hayatta İletişimin Önemi" },
+        { outcomeCode: "SB.7.1.1", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Gruplarda ve Sosyal Hayatta İletişimin Önemi" },
         { outcomeCode: "SB.7.1.2", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Özel Gereksinimli Bireyler İçin Fırsat Eşitliği" },
         { outcomeCode: "SB.7.1.3", questionCount: 2, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "Millî Meseleler Karşısında Türk Toplumunun Tutum ve Davranışları" },
-        { outcomeCode: "EVİMİZ", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Küreselleşmenin İnsan ve Toplum Hayatına Etkisi" },
+        { outcomeCode: "SB.7.2.1", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Küreselleşmenin İnsan ve Toplum Hayatına Etkisi" },
         ]
       },
       {
@@ -2077,10 +2077,10 @@ export const MIDDLE_SCHOOL_OFFICIAL_SCENARIOS: Record<number, Partial<Record<Sub
         description: "MEB ÖDSGM 2026-2027 1. Dönem 1. Yazılı Konu Soru Dağılım Tablosu resmi Senaryo 2 (7 Soru) formatı (Toplam 100 Puan).",
         totalQuestions: 7,
         distributions: [
-        { outcomeCode: "SB", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Gruplarda ve Sosyal Hayatta İletişimin Önemi" },
+        { outcomeCode: "SB.7.1.1", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Gruplarda ve Sosyal Hayatta İletişimin Önemi" },
         { outcomeCode: "SB.7.1.2", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Özel Gereksinimli Bireyler İçin Fırsat Eşitliği" },
         { outcomeCode: "SB.7.1.3", questionCount: 2, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "Millî Meseleler Karşısında Türk Toplumunun Tutum ve Davranışları" },
-        { outcomeCode: "EVİMİZ", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Küreselleşmenin İnsan ve Toplum Hayatına Etkisi" },
+        { outcomeCode: "SB.7.2.1", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Küreselleşmenin İnsan ve Toplum Hayatına Etkisi" },
         ]
       },
       {
@@ -2089,10 +2089,10 @@ export const MIDDLE_SCHOOL_OFFICIAL_SCENARIOS: Record<number, Partial<Record<Sub
         description: "MEB ÖDSGM 2026-2027 1. Dönem 1. Yazılı Konu Soru Dağılım Tablosu resmi Senaryo 3 (8 Soru) formatı (Toplam 100 Puan).",
         totalQuestions: 8,
         distributions: [
-        { outcomeCode: "SB", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Gruplarda ve Sosyal Hayatta İletişimin Önemi" },
+        { outcomeCode: "SB.7.1.1", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Gruplarda ve Sosyal Hayatta İletişimin Önemi" },
         { outcomeCode: "SB.7.1.2", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Özel Gereksinimli Bireyler İçin Fırsat Eşitliği" },
         { outcomeCode: "SB.7.1.3", questionCount: 3, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "Millî Meseleler Karşısında Türk Toplumunun Tutum ve Davranışları" },
-        { outcomeCode: "EVİMİZ", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Küreselleşmenin İnsan ve Toplum Hayatına Etkisi" },
+        { outcomeCode: "SB.7.2.1", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Küreselleşmenin İnsan ve Toplum Hayatına Etkisi" },
         ]
       },
       {
@@ -2101,7 +2101,7 @@ export const MIDDLE_SCHOOL_OFFICIAL_SCENARIOS: Record<number, Partial<Record<Sub
         description: "MEB ÖDSGM 2026-2027 1. Dönem 1. Yazılı Konu Soru Dağılım Tablosu resmi Senaryo 4 (7 Soru) formatı (Toplam 100 Puan).",
         totalQuestions: 7,
         distributions: [
-        { outcomeCode: "SB", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Gruplarda ve Sosyal Hayatta İletişimin Önemi" },
+        { outcomeCode: "SB.7.1.1", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Gruplarda ve Sosyal Hayatta İletişimin Önemi" },
         { outcomeCode: "SB.7.1.2", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Özel Gereksinimli Bireyler İçin Fırsat Eşitliği" },
         { outcomeCode: "SB.7.1.3", questionCount: 3, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "Millî Meseleler Karşısında Türk Toplumunun Tutum ve Davranışları" },
         ]
@@ -2112,10 +2112,10 @@ export const MIDDLE_SCHOOL_OFFICIAL_SCENARIOS: Record<number, Partial<Record<Sub
         description: "MEB ÖDSGM 2026-2027 1. Dönem 1. Yazılı Konu Soru Dağılım Tablosu resmi Senaryo 5 (6 Soru) formatı (Toplam 100 Puan).",
         totalQuestions: 6,
         distributions: [
-        { outcomeCode: "SB", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Gruplarda ve Sosyal Hayatta İletişimin Önemi" },
+        { outcomeCode: "SB.7.1.1", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Gruplarda ve Sosyal Hayatta İletişimin Önemi" },
         { outcomeCode: "SB.7.1.2", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Özel Gereksinimli Bireyler İçin Fırsat Eşitliği" },
         { outcomeCode: "SB.7.1.3", questionCount: 2, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "Millî Meseleler Karşısında Türk Toplumunun Tutum ve Davranışları" },
-        { outcomeCode: "EVİMİZ", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Küreselleşmenin İnsan ve Toplum Hayatına Etkisi" },
+        { outcomeCode: "SB.7.2.1", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Küreselleşmenin İnsan ve Toplum Hayatına Etkisi" },
         ]
       },
     ],
@@ -2623,13 +2623,13 @@ export const MIDDLE_SCHOOL_OFFICIAL_SCENARIOS: Record<number, Partial<Record<Sub
         description: "MEB ÖDSGM 2026-2027 1. Dönem 1. Yazılı Konu Soru Dağılım Tablosu resmi Senaryo 1 (9 Soru) formatı (Toplam 100 Puan).",
         totalQuestions: 9,
         distributions: [
-        { outcomeCode: "DKAB", questionCount: 1, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "İslam’ın Paylaşma ve Yardımlaşmaya Verdiği Önem" },
-        { outcomeCode: "DKAB", questionCount: 1, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "İslam’ın Paylaşma ve Yardımlaşmaya Verdiği Önem" },
-        { outcomeCode: "DKAB", questionCount: 2, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "İslam’ın Paylaşma ve Yardımlaşmaya Verdiği Önem" },
-        { outcomeCode: "DKAB", questionCount: 2, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "İslam’ın Paylaşma ve Yardımlaşmaya Verdiği Önem" },
-        { outcomeCode: "DKAB", questionCount: 1, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "İslam’ın Paylaşma ve Yardımlaşmaya Verdiği Önem" },
-        { outcomeCode: "DKAB", questionCount: 1, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "İslam’ın Paylaşma ve Yardımlaşmaya Verdiği Önem" },
-        { outcomeCode: "DKAB", questionCount: 1, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "İslam’ın Paylaşma ve Yardımlaşmaya Verdiği Önem" },
+        { outcomeCode: "DKAB.8.1.1", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Kader ve kaza inancını ayet ve hadislerle açıklar." },
+        { outcomeCode: "DKAB.8.1.2", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "İnsanın ilmi, iradesi, sorumluluğu ile kader arasında ilişki kurar." },
+        { outcomeCode: "DKAB.8.1.3", questionCount: 2, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "Kaza ve kader ile ilgili kavramları analiz eder." },
+        { outcomeCode: "DKAB.8.1.4", questionCount: 2, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "Toplumda kader ve kaza ile ilgili yaygın olan yanlış anlayışları sorgular." },
+        { outcomeCode: "DKAB.8.1.5", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Hz. Musa’nın (a.s.) hayatını ana hatlarıyla tanır." },
+        { outcomeCode: "DKAB.8.1.6", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Ayet el-Kürsi’yi okur, anlamını söyler." },
+        { outcomeCode: "DKAB.8.2.1", questionCount: 1, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "İslam’ın paylaşma ve yardımlaşmaya verdiği önemi ayet ve hadisler ışığında yorumlar." },
         ]
       },
       {
@@ -2638,11 +2638,11 @@ export const MIDDLE_SCHOOL_OFFICIAL_SCENARIOS: Record<number, Partial<Record<Sub
         description: "MEB ÖDSGM 2026-2027 1. Dönem 1. Yazılı Konu Soru Dağılım Tablosu resmi Senaryo 2 (8 Soru) formatı (Toplam 100 Puan).",
         totalQuestions: 8,
         distributions: [
-        { outcomeCode: "DKAB", questionCount: 2, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "İslam’ın Paylaşma ve Yardımlaşmaya Verdiği Önem" },
-        { outcomeCode: "DKAB", questionCount: 2, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "İslam’ın Paylaşma ve Yardımlaşmaya Verdiği Önem" },
-        { outcomeCode: "DKAB", questionCount: 2, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "İslam’ın Paylaşma ve Yardımlaşmaya Verdiği Önem" },
-        { outcomeCode: "DKAB", questionCount: 1, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "İslam’ın Paylaşma ve Yardımlaşmaya Verdiği Önem" },
-        { outcomeCode: "DKAB", questionCount: 1, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "İslam’ın Paylaşma ve Yardımlaşmaya Verdiği Önem" },
+        { outcomeCode: "DKAB.8.1.2", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "İnsanın ilmi, iradesi, sorumluluğu ile kader arasında ilişki kurar." },
+        { outcomeCode: "DKAB.8.1.3", questionCount: 2, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "Kaza ve kader ile ilgili kavramları analiz eder." },
+        { outcomeCode: "DKAB.8.1.4", questionCount: 2, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "Toplumda kader ve kaza ile ilgili yaygın olan yanlış anlayışları sorgular." },
+        { outcomeCode: "DKAB.8.1.5", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Hz. Musa’nın (a.s.) hayatını ana hatlarıyla tanır." },
+        { outcomeCode: "DKAB.8.2.1", questionCount: 1, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "İslam’ın paylaşma ve yardımlaşmaya verdiği önemi ayet ve hadisler ışığında yorumlar." },
         ]
       },
       {
@@ -2651,10 +2651,10 @@ export const MIDDLE_SCHOOL_OFFICIAL_SCENARIOS: Record<number, Partial<Record<Sub
         description: "MEB ÖDSGM 2026-2027 1. Dönem 1. Yazılı Konu Soru Dağılım Tablosu resmi Senaryo 3 (6 Soru) formatı (Toplam 100 Puan).",
         totalQuestions: 6,
         distributions: [
-        { outcomeCode: "DKAB", questionCount: 2, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "İslam’ın Paylaşma ve Yardımlaşmaya Verdiği Önem" },
-        { outcomeCode: "DKAB", questionCount: 2, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "İslam’ın Paylaşma ve Yardımlaşmaya Verdiği Önem" },
-        { outcomeCode: "DKAB", questionCount: 1, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "İslam’ın Paylaşma ve Yardımlaşmaya Verdiği Önem" },
-        { outcomeCode: "DKAB", questionCount: 1, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "İslam’ın Paylaşma ve Yardımlaşmaya Verdiği Önem" },
+        { outcomeCode: "DKAB.8.1.2", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "İnsanın ilmi, iradesi, sorumluluğu ile kader arasında ilişki kurar." },
+        { outcomeCode: "DKAB.8.1.3", questionCount: 2, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "Kaza ve kader ile ilgili kavramları analiz eder." },
+        { outcomeCode: "DKAB.8.1.4", questionCount: 1, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "Toplumda kader ve kaza ile ilgili yaygın olan yanlış anlayışları sorgular." },
+        { outcomeCode: "DKAB.8.1.6", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Ayet el-Kürsi’yi okur, anlamını söyler." },
         ]
       },
       {
@@ -2663,10 +2663,10 @@ export const MIDDLE_SCHOOL_OFFICIAL_SCENARIOS: Record<number, Partial<Record<Sub
         description: "MEB ÖDSGM 2026-2027 1. Dönem 1. Yazılı Konu Soru Dağılım Tablosu resmi Senaryo 4 (8 Soru) formatı (Toplam 100 Puan).",
         totalQuestions: 8,
         distributions: [
-        { outcomeCode: "DKAB", questionCount: 1, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "İslam’ın Paylaşma ve Yardımlaşmaya Verdiği Önem" },
-        { outcomeCode: "DKAB", questionCount: 2, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "İslam’ın Paylaşma ve Yardımlaşmaya Verdiği Önem" },
-        { outcomeCode: "DKAB", questionCount: 3, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "İslam’ın Paylaşma ve Yardımlaşmaya Verdiği Önem" },
-        { outcomeCode: "DKAB", questionCount: 2, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "İslam’ın Paylaşma ve Yardımlaşmaya Verdiği Önem" },
+        { outcomeCode: "DKAB.8.1.1", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Kader ve kaza inancını ayet ve hadislerle açıklar." },
+        { outcomeCode: "DKAB.8.1.2", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "İnsanın ilmi, iradesi, sorumluluğu ile kader arasında ilişki kurar." },
+        { outcomeCode: "DKAB.8.1.3", questionCount: 3, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "Kaza ve kader ile ilgili kavramları analiz eder." },
+        { outcomeCode: "DKAB.8.1.4", questionCount: 2, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "Toplumda kader ve kaza ile ilgili yaygın olan yanlış anlayışları sorgular." },
         ]
       },
       {
@@ -2675,11 +2675,11 @@ export const MIDDLE_SCHOOL_OFFICIAL_SCENARIOS: Record<number, Partial<Record<Sub
         description: "MEB ÖDSGM 2026-2027 1. Dönem 1. Yazılı Konu Soru Dağılım Tablosu resmi Senaryo 5 (7 Soru) formatı (Toplam 100 Puan).",
         totalQuestions: 7,
         distributions: [
-        { outcomeCode: "DKAB", questionCount: 1, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "İslam’ın Paylaşma ve Yardımlaşmaya Verdiği Önem" },
-        { outcomeCode: "DKAB", questionCount: 1, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "İslam’ın Paylaşma ve Yardımlaşmaya Verdiği Önem" },
-        { outcomeCode: "DKAB", questionCount: 2, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "İslam’ın Paylaşma ve Yardımlaşmaya Verdiği Önem" },
-        { outcomeCode: "DKAB", questionCount: 2, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "İslam’ın Paylaşma ve Yardımlaşmaya Verdiği Önem" },
-        { outcomeCode: "DKAB", questionCount: 1, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "İslam’ın Paylaşma ve Yardımlaşmaya Verdiği Önem" },
+        { outcomeCode: "DKAB.8.1.1", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Kader ve kaza inancını ayet ve hadislerle açıklar." },
+        { outcomeCode: "DKAB.8.1.2", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "İnsanın ilmi, iradesi, sorumluluğu ile kader arasında ilişki kurar." },
+        { outcomeCode: "DKAB.8.1.3", questionCount: 2, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "Kaza ve kader ile ilgili kavramları analiz eder." },
+        { outcomeCode: "DKAB.8.1.4", questionCount: 2, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "Toplumda kader ve kaza ile ilgili yaygın olan yanlış anlayışları sorgular." },
+        { outcomeCode: "DKAB.8.1.6", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Ayet el-Kürsi’yi okur, anlamını söyler." },
         ]
       },
     ],

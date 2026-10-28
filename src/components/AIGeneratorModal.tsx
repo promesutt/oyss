@@ -68,10 +68,39 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
 
   // Generate the strict MEBİ TYMM Prompt with explicit non-literal example directive
   const buildSystemPrompt = () => {
-    return `SEN MİLLÎ EĞİTİM BAKANLIĞI TEMEL EĞİTİM GENEL MÜDÜRLÜĞÜ MEBİ VE ÖDSGM ORTAK YAZILI SINAV BAŞUZMANISIN.
+    const expandedDistributions: typeof scenario.distributions = [];
+    for (const d of scenario.distributions) {
+      const count = d.questionCount || 1;
+      for (let c = 0; c < count; c++) {
+        expandedDistributions.push(d);
+      }
+    }
+    const targetCount = questionCountChoice || expandedDistributions.length || scenario.totalQuestions || 6;
+    const questionDistributions = Array.from({ length: targetCount }, (_, i) => {
+      return expandedDistributions[i % (expandedDistributions.length || 1)] || scenario.distributions[0];
+    });
+    const distributionsText = questionDistributions.map((d, i) => {
+      const officialTitle = getOfficialOutcomeTitle(d.outcomeCode);
+      return `Soru ${i + 1}: [Kazanım Kodu: ${d.outcomeCode}] [Resmi Öğrenme Çıktısı: ${officialTitle || d.notes || 'Kavramsal Uygulama'}] [Bilişsel Düzey: ${d.cognitiveLevel}]`;
+    }).join('\n');
+
+    return `SEN MİLLÎ EĞİTİM BAKANLIĞI TEMEL EĞİTİM GENEL MÜDÜRLÜĞÜ VE ÖDSGM ORTAK SINAVLAR BAŞUZMANISIN.
 
 MİSYON:
-Aşağıdaki parametreler doğrultusunda ${grade}. Sınıf ${subjectMeta?.name} "${scenario.name}" için DÜZ BİLGİ/TANIM İÇERMEYEN, tamamen MEBİ resmi açık uçlu soru kalıplarına (%100 beceri ve durum temelli) uygun bir sınav seti üret.
+${grade}. Sınıf ${subjectMeta?.name} "${scenario.name}" için DÜZ BİLGİ/TANIM İÇERMEYEN, tamamen MEBİ resmi açık uçlu soru kalıplarına (%100 beceri ve durum temelli) uygun bir sınav seti üret.
+TOPLAM SORU SAYISI: KESİNLİKLE VE TAM OLARAK ${targetCount} ADET AÇIK UÇLU SORU (1'den ${targetCount}'e kadar her soru eksiksiz üretilmelidir).
+
+SENARYO RESMİ KAZANIM DAĞILIM PLANI (${targetCount} SORU):
+${distributionsText}
+
+ZORUNLU KAZANIM EŞLEŞMESİ (EN KATI VE DEĞİŞTİRİLEMEZ 1. KURAL):
+- Sınavdaki Soru 1'den Soru ${targetCount}'e kadar HER BİR SORU, yukarıdaki dağılım tablosunda kendisine atanan [Kazanım Kodu] ve [Resmi Öğrenme Çıktısı] ile %100 BİRE BİR EŞLEŞMEK ZORUNDADIR!
+- Dağılım sırası ve kazanım kodları ASLA değiştirilemez! Senaryoda yer almayan hiçbir kazanımdan soru üretilemez!
+
+ÖĞRENCİ YAŞ DÜZEYİNE UYGUN SADE VE AKICI TÜRKÇE (${grade}. SINIF SEVİYESİ - ÇOK ÖNEMLİ):
+- Sorularda kullanılan dil, 12-13 yaşındaki bir ortaokul öğrencisinin rahatlıkla anlayabileceği duru, yalın, açık ve anlaşılır bir Türkçe olmalıdır.
+- Ağır akademik terminoloji, üniversite düzeyinde fizik/kimya/astronomi jargonları KESİNLİKLE YASAKTIR.
+- Soru kökleri, öncüller ve diyaloglar günlük hayatın içinden, öğrencinin yabancılık çekmeyeceği durumlar üzerinden kurgulanmalıdır.
 
 DİKKAT EDİLECEK EN KRİTİK TALİMAT (BAĞLAM ÇEŞİTLİLİĞİ VE TEKRAR YASAĞI):
 - AYNI SINAV İÇİNDEKİ SORULARDA ASLA AYNI MEKÂN, AYNI ETKİNLİK VEYA AYNI BAĞLAMI TEKRARLAMA!
@@ -99,7 +128,7 @@ HEDEF PARAMETRELER:
 - Kademeler: ${grade}. Sınıf
 - Ders: ${subjectMeta?.name}
 - Sınav: ${termMeta?.name}
-- Senaryo: ${scenario.name} (ZORUNLU SORU SAYISI: ${questionCountChoice} Açık Uçlu Soru)
+- Senaryo: ${scenario.name} (ZORUNLU SORU SAYISI: ${targetCount} Açık Uçlu Soru)
 - Zorluk Dengesi: Kolay (%20-25), Orta (%50-60), Zor (%20-25)
 
 KESİNLİKLE YASAK OLANLAR:
@@ -384,9 +413,10 @@ KESİNLİKLE YASAK OLANLAR:
                                 'Puanlamada MEB Analitik Dereceli Puanlama Anahtarı (Rubrik) basamakları esas alınacaktır.'
                               ],
                               questions: generatedResult.generatedQuestions.map((q) => {
+                                const questionPts = q.points || qPoints;
                                 const rawRubricSum = (q.rubric || []).reduce((sum, r) => sum + (r.pts || 0), 0);
                                 const rubricList = (q.rubric || []).map((r) => {
-                                  const pts = rawRubricSum > 0 ? Math.round((r.pts / rawRubricSum) * qPoints) : 10;
+                                  const pts = rawRubricSum > 0 ? Math.round((r.pts / rawRubricSum) * questionPts) : 10;
                                   return { criterion: r.item, points: pts };
                                 });
 
@@ -402,7 +432,7 @@ KESİNLİKLE YASAK OLANLAR:
                                   difficulty: q.difficulty || 'Orta',
                                   cognitiveLevel: q.level || 'Karmaşık Bilişsel Süreçler',
                                   archetype: q.templateType,
-                                  points: qPoints,
+                                  points: questionPts,
                                   stimulus: q.stimulus,
                                   questionText: q.question,
                                   modelAnswer: q.answer,

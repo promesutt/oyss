@@ -2889,8 +2889,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
       },
       {
         "questionNumber": 6,
-        "outcomeCode": "EVİMİZ",
-        "outcomeTitle": "EVİMİZ. DÜNYA",
+        "outcomeCode": "SB.5.2.1",
+        "outcomeTitle": "SB.5.2.1. Küreselleşmenin insan ve toplum hayatı üzerindeki etkilerini analiz edebilme",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
@@ -3269,8 +3269,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
       },
       {
         "questionNumber": 7,
-        "outcomeCode": "EVİMİZ",
-        "outcomeTitle": "EVİMİZ. DÜNYA",
+        "outcomeCode": "SB.5.2.1",
+        "outcomeTitle": "SB.5.2.1. Küreselleşmenin insan ve toplum hayatı üzerindeki etkilerini analiz edebilme",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
         "archetype": "Görsel / Deney / Günlük Hayat Durumu",
@@ -3601,8 +3601,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
       },
       {
         "questionNumber": 6,
-        "outcomeCode": "EVİMİZ",
-        "outcomeTitle": "EVİMİZ. DÜNYA",
+        "outcomeCode": "SB.5.2.1",
+        "outcomeTitle": "SB.5.2.1. Küreselleşmenin insan ve toplum hayatı üzerindeki etkilerini analiz edebilme",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
@@ -8087,8 +8087,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
       },
       {
         "questionNumber": 6,
-        "outcomeCode": "EVİMİZ",
-        "outcomeTitle": "DÜNYA",
+        "outcomeCode": "SB.6.2.1",
+        "outcomeTitle": "SB.6.2.1. Küreselleşmenin insan ve toplum hayatı üzerindeki etkilerini analiz edebilme",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
@@ -8301,8 +8301,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
       },
       {
         "questionNumber": 8,
-        "outcomeCode": "EVİMİZ",
-        "outcomeTitle": "DÜNYA",
+        "outcomeCode": "SB.6.2.1",
+        "outcomeTitle": "SB.6.2.1. Küreselleşmenin insan ve toplum hayatı üzerindeki etkilerini analiz edebilme",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
         "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
@@ -8443,8 +8443,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
       },
       {
         "questionNumber": 5,
-        "outcomeCode": "EVİMİZ",
-        "outcomeTitle": "DÜNYA",
+        "outcomeCode": "SB.6.2.1",
+        "outcomeTitle": "SB.6.2.1. Küreselleşmenin insan ve toplum hayatı üzerindeki etkilerini analiz edebilme",
         "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
         "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
@@ -8467,8 +8467,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
       },
       {
         "questionNumber": 6,
-        "outcomeCode": "EVİMİZ",
-        "outcomeTitle": "DÜNYA",
+        "outcomeCode": "SB.6.2.1",
+        "outcomeTitle": "SB.6.2.1. Küreselleşmenin insan ve toplum hayatı üzerindeki etkilerini analiz edebilme",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
@@ -8633,8 +8633,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
       },
       {
         "questionNumber": 6,
-        "outcomeCode": "EVİMİZ",
-        "outcomeTitle": "DÜNYA",
+        "outcomeCode": "SB.6.2.1",
+        "outcomeTitle": "SB.6.2.1. Küreselleşmenin insan ve toplum hayatı üzerindeki etkilerini analiz edebilme",
         "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
@@ -12283,7 +12283,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
     "subjectId": "fen_bilimleri",
     "examTerm": "1_donem_1_yazili",
     "scenarioId": "senaryo_1",
-    "title": "7. Sınıf Fen Bilimleri 1. Dönem 1. Ortak Yazılı Sınavı (Senaryo 1) (4 Soru)",
+    "title": "7. Sınıf Fen Bilimleri 1. Dönem 1. Ortak Yazılı Sınavı (Senaryo 1) (9 Soru)",
     "durationMinutes": 40,
     "totalPoints": 100,
     "instructions": [
@@ -12293,100 +12293,220 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
     ],
     "questions": [
       {
-        "questionNumber": 1,
         "outcomeCode": "FB.7.1.1",
         "outcomeTitle": "FB.7.1.1. Uzay araştırmaları için geliştirilen teknolojileri karşılaştırabilme",
-        "difficulty": "Kolay",
-        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "cognitiveLevel": "Basit Bilişsel Süreçler",
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
-        "points": 25,
-        "contextText": "Yeryüzü teleskopları ile uzay teleskoplarının gözlem kalitesi farkı.",
-        "stimulus": "Gökbilimciler uzayı incelemek için hem Dünya yüzeyindeki yüksek dağların zirvelerine dev gözlemevleri (rasathaneler) kurmakta hem de James Webb gibi teleskopları uzay boşluğuna yerleştirmektedir.",
-        "questionText": "a) Uzay teleskoplarının, yeryüzündeki en gelişmiş gözlemevlerinden bile daha net ve kaliteli görüntü elde etmesinin 2 temel bilimsel nedenini açıklayınız.\nb) Rasathanelerin (gözlemevlerinin) kurulacağı yer seçiminde dikkat edilen 2 coğrafi/çevresel kriteri yazınız.",
-        "solutionExplanation": "Atmosfer ışığı saçar, soğurur ve hava olayları gözlemi engeller. Uzayda atmosfer yoktur. Rasathaneler ışık kirliliğinden uzak ve yüksek yerlere kurulur.",
-        "modelAnswer": "a) 1. Neden: Dünya atmosferindeki gaz tabakası, tozlar ve bulutlar ışığı kırarak dağıtır ve görüntüyü bozar. Uzay boşluğunda atmosfer olmadığı için ışık bozulmadan teleskoba ulaşır.\n2. Neden: Yeryüzündeki yapay ışık kirliliği ve hava olayları (sis, yağmur, bulut) uzay teleskoplarını etkilemez.\nb) Rasathane yer seçim kriterleri: 1) Şehir ışıklarından uzak, ışık kirliliğinin en az olduğu yerler olmalıdır. 2) Havadaki nem ve bulutluluk oranının düşük, açık gece sayısının fazla olduğu yüksek rakımlı dağ zirveleri seçilmelidir.",
+        "contextText": "Gözlemevi (rasathane) yer seçiminde coğrafi ve atmosferik şartlar.",
+        "stimulus": "Gök bilimciler uzaydaki gök cisimlerini ve gezegenleri incelemek için gözlemevlerini (rasathaneleri) şehir merkezleri yerine şehirlerden uzak ve yüksek dağların tepelerine kurarlar.",
+        "questionText": "a) Gözlemevlerinin şehir ışıklarından uzak yerlere kurulmasının temel nedenini yazınız.\nb) Yüksek dağ zirvelerinin tercih edilmesinin atmosfer ve hava şartlarıyla ilgili nedenini açıklayınız.",
+        "solutionExplanation": "Işık kirliliğinden uzaklaşmak ve dağlarda nem, bulut ve hava kirliliğinin az olması.",
+        "modelAnswer": "a) Şehirlerdeki yoğun yapay ışıklar gökyüzünü aydınlatarak ışık kirliliğine neden olur; bu durum gök cisimlerinin teleskopla net görülmesini engeller.\nb) Yüksek dağ zirvelerinde atmosfer tabakası daha incedir, hava kirliliği ve nem oranı çok düşüktür, ayrıca açık ve bulutsuz gece sayısı fazladır. Böylece uzaydan gelen ışık bozulmadan teleskoba ulaşır.",
         "rubric": [
           {
-            "criterion": "Uzay teleskoplarının atmosferik avantajının doğru açıklanması",
-            "points": 13
+            "criterion": "a şıkkında yapay ışık kirliliğinin gök cisimlerinin gözlemini engellediğinin belirtilmesi",
+            "points": 8
           },
           {
-            "criterion": "Rasathane yeri için 2 bilimsel kriterin doğru yazılması",
-            "points": 12
+            "criterion": "b şıkkında dağ zirvelerindeki ince atmosfer, az nem veya bulutsuz/temiz hava şartının gerekçelendirilmesi",
+            "points": 7
           }
-        ]
+        ],
+        "questionNumber": 1,
+        "points": 11,
+        "difficulty": "Kolay"
       },
       {
-        "questionNumber": 2,
-        "outcomeCode": "FB.7.1.3",
-        "outcomeTitle": "FB.7.1.3. Uzay araştırmalarının yol açabileceği problemleri çözebilme",
-        "difficulty": "Orta",
+        "outcomeCode": "FB.7.1.1",
+        "outcomeTitle": "FB.7.1.1. Uzay araştırmaları için geliştirilen teknolojileri karşılaştırabilme",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
         "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
-        "points": 25,
-        "contextText": "Uzay kirliliği ve Kessler sendromu tehlikesi.",
-        "stimulus": "Türkiye'nin Aktif Yapay Uyduları ve Görevleri konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nUmut: \"Bu durumda temel kural şudur: Türksat serisi TV/İletişim uydusudur; Göktürk ve İMECE ise askeri/harita/tarım gözlem uydusudur.\"\nEmre: \"Hayır Umut, yanılıyorsun. Çünkü kural gereği: Haberleşme (İletişim) Uydularımız: Türksat 3A, Türksat 4A, Türksat 4B, Türksat 5A, Türksat 5B, Türksat 6A (İlk yerli haberleşme uydumuz). Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Umut ve Emre'nin iddialarını Türkiye'nin Aktif Yapay Uyduları ve Görevleri ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
-        "solutionExplanation": "Yüksek hızda çarpışma zincirleme reaksiyon (Kessler sendromu) yaratır. Çözümler: Kendi kendini imha/atmosfere sokma, lazer veya manyetik ağ ile toplama.",
-        "modelAnswer": "Emre haklıdır. Çünkü Haberleşme (İletişim) Uydularımız: Türksat 3A, Türksat 4A, Türksat 4B, Türksat 5A, Türksat 5B, Türksat 6A (İlk yerli haberleşme uydumuz).. Umut ise 'Türksat serisi TV/İletişim uydusudur; Göktürk ve İMECE ise askeri/harita/tarım gözlem uydusudur.' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "contextText": "Uzay teleskopları ile yeryüzü teleskoplarının görüntü kalitesi farkı.",
+        "stimulus": "Astronomi panosu hazırlayan iki öğrenci arasında şu konuşma geçer:\nCan: \"James Webb ve Hubble gibi uzay teleskopları, yeryüzündeki en büyük teleskoplardan bile çok daha net ve kaliteli fotoğraflar çeker.\"\nAlp: \"Bence uzayda veya yeryüzünde olmasının önemi yoktur, sadece ayna boyutu büyük olan teleskop her zaman daha net çeker.\"",
+        "questionText": "Hangi öğrencinin açıklaması doğrudur? Uzay teleskoplarının Dünya atmosferinin olumsuz etkilerinden neden etkilenmediğini açıklayınız.",
+        "solutionExplanation": "Can haklıdır. Dünya atmosferi ışığı kırar ve bozar; uzayda atmosfer olmadığı için görüntü nettir.",
+        "modelAnswer": "Can haklıdır. Çünkü Dünya atmosferindeki hava hareketleri, tozlar ve bulutlar gök cisimlerinden gelen ışığı kırarak görüntünün bulanıklaşmasına yol açar. Uzay teleskopları ise atmosferin dışında, uzay boşluğunda görev yaptığı için ışık hiçbir engelle karşılaşmadan doğrudan teleskoba ulaşır.",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (Emre) doğru tespiti",
-            "points": 10
+            "criterion": "Can'ın haklı olduğunun doğru tespiti",
+            "points": 7
           },
           {
-            "criterion": "Umut'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 15
+            "criterion": "Dünya atmosferindeki gaz ve tozların görüntüyü bozduğunun, uzayda ise atmosfer olmadığı için görüntünün net kaldığının açıklanması",
+            "points": 8
           }
-        ]
+        ],
+        "questionNumber": 2,
+        "points": 11,
+        "difficulty": "Orta"
       },
       {
-        "questionNumber": 3,
         "outcomeCode": "FB.7.1.4",
         "outcomeTitle": "FB.7.1.4. Yıldızların yaşamını açıklayarak yapılandırabilme",
-        "difficulty": "Orta",
-        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
-        "points": 25,
-        "contextText": "Yıldızların başlangıç kütlesine göre yaşam döngüsü.",
-        "stimulus": "Aşağıdaki matriste Uzay Kirliliği ve Kessler Sendromu konusuna yönelik üç farklı durum ve özellikleri verilmiştir:\n\n| Durum / Örnek | 1. Temel Kriter | 2. Ayırt Edici Özellik | Karşılar mı? |\n| :--- | :---: | :---: | :---: |\n| 1. Durum (Örnek A) | VAR | YOK | ............ |\n| 2. Durum (Örnek B) | VAR | VAR | ............ |\n| 3. Durum (Örnek C) | YOK | YOK | ............ |",
-        "questionText": "Matristeki boşlukları özelliğin doğruluğuna göre \"EVET\" veya \"HAYIR\" yazarak doldurunuz. 2. Durum'u diğer durumlardan ayıran en temel şartı gerekçelendirerek yazınız.",
-        "solutionExplanation": "Küçük kütle: Bulutsu -> Küçük kütleli yıldız -> Kırmızı Dev -> Gezegenimsi Bulutsu -> Beyaz Cüce. Güneş kara delik olamaz çünkü kütlesi yetersizdir.",
-        "modelAnswer": "Tablo Tamamlaması: 1. Durum: HAYIR | 2. Durum: EVET | 3. Durum: HAYIR.\nAyırt Edici Gerekçe: 2. Durum hem temel kriteri hem de ayırt edici özelliği eksiksiz sağladığı için Uzay Kirliliği: Dünya yörüngesinde dönen işlevini yitirmiş uydular, roket parçaları ve yakıt tanklarının oluşturduğu tehlikeli atık yığınıdır. kuralına tam uygundur.",
+        "cognitiveLevel": "Basit Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "contextText": "Bulutsu (nebula) ve yıldızların yaşam döngüsü.",
+        "stimulus": "Yıldızlar da tıpkı canlılar gibi doğar, büyür ve enerjileri tükenince ömürlerini tamamlarlar. Yıldızların yaşam süreçleri başlangıçtaki kütlelerinin büyüklüğüne göre belirlenir.",
+        "questionText": "a) Bütün yıldızların doğum yeri olan gaz ve toz bulutlarına ne ad verilir?\nb) Güneş gibi küçük kütleli bir yıldızın ömrü bittiğinde geride bıraktığı sıcak ve yoğun kalıntıya ne ad verilir?",
+        "solutionExplanation": "Yıldızlar bulutsuda doğar; küçük kütleliler beyaz cüce olarak sonlanır.",
+        "modelAnswer": "a) Bütün yıldızların doğum yeri olan dev gaz ve toz bulutlarına 'Bulutsu (Nebula)' adı verilir (Örn: Orion Bulutsusu).\nb) Güneş gibi küçük kütleli yıldızlar ömürlerinin sonunda dış katmanlarını uzaya salarak geride 'Beyaz Cüce' bırakırlar.",
         "rubric": [
           {
-            "criterion": "Tablodaki boşlukların hatasız doldurulması (HAYIR - EVET - HAYIR)",
-            "points": 12
+            "criterion": "a şıkkında Bulutsu / Nebula teriminin doğru yazılması",
+            "points": 7
           },
           {
-            "criterion": "2. Durum'un ayırt edici şartının ve kuralının açıklanması",
-            "points": 13
+            "criterion": "b şıkkında Beyaz Cüce kavramının doğru açıklanması",
+            "points": 8
           }
-        ]
+        ],
+        "questionNumber": 3,
+        "points": 11,
+        "difficulty": "Kolay"
       },
       {
-        "questionNumber": 4,
-        "outcomeCode": "FB.7.2.1",
-        "outcomeTitle": "FB.7.2.1. Fiziksel anlamda yapılan işin bağlı olduğu faktörlere ilişkin bilimsel çıkarım yapabilme",
-        "difficulty": "Zor",
-        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Hata Tespiti & Adım Analizi",
-        "points": 25,
-        "contextText": "Fiziksel anlamda iş yapılabilme şartları (Kuvvet ve yer değiştirme doğrultusu).",
-        "stimulus": "Bir fen deneyinde üç farklı öğrencinin eylemleri gözlenmiştir:\n1. Durum: Can, sırtındaki 5 kg'lık okul çantasıyla düz bir koridorda sabit hızla 20 metre yürümüştür.\n2. Durum: Elif, yerde duran 10 kg'lık koliyi 50 N'luk yatay kuvvet uygulayarak yatay zeminde 4 metre ileri itmiştir.\n3. Durum: Burak, duvara 100 N'luk kuvvetle 10 dakika boyunca bastırmış ancak duvar hareket etmemiştir.",
-        "questionText": "a) Bu durumlardan hangisinde/hangilerinde fiziksel anlamda İŞ YAPILMIŞTIR? Nedenini işin fiziksel formülü ve doğrultu kuralına göre açıklayınız.\nb) Fiziksel anlamda iş yapılan durumdaki iş miktarını Joule (J) cinsinden hesaplayınız.",
-        "solutionExplanation": "İş = Kuvvet * Yol. Kuvvet ile hareket doğrultusu aynı olmalıdır. 1. durumda kuvvet yukarı yol yatay (iş yok). 3. durumda yol sıfır (iş yok). 2. durumda iş = 50 N * 4 m = 200 J.",
-        "modelAnswer": "a) Yalnızca 2. DURUMDA (Elif'in durumunda) fiziksel anlamda iş yapılmıştır.\nGerekçeler:\n• 1. Durumda: Çantaya uygulanan kaldırma kuvveti DİKEY doğrultuda iken, hareket YATAY doğrultudadır. Kuvvet ile hareket doğrultusu dik olduğu için fiziksel iş yapılmaz.\n• 2. Durumda: Uygulanan kuvvet de hareket de YATAY doğrultudadır ve cisim yol almıştır. Bu nedenle iş yapılmıştır.\n• 3. Durumda: Duvar hareket etmediği için (alınan yol = 0), kuvvet ne kadar büyük olursa olsun iş yapılmamıştır.\nb) Yapılan İş Hesabı: İş = Kuvvet × Alınan Yol = 50 N × 4 m = 200 Joule (J) bulunur.",
+        "outcomeCode": "FB.7.1.5",
+        "outcomeTitle": "FB.7.1.5. Yıldız, galaksi ve evren kavramlarını açıklayarak yapılandırabilme",
+        "cognitiveLevel": "Basit Bilişsel Süreçler",
+        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+        "contextText": "Galaksi türleri ve Samanyolu Galaksisi.",
+        "stimulus": "Galaksiler (gök adalar) milyarlarca yıldız, gaz ve toz bulutunun bir araya gelmesiyle oluşur. Şekillerine göre Sarmal, Eliptik ve Düzensiz galaksi olmak üzere üçe ayrılırlar.",
+        "questionText": "a) İçinde Dünya'mızın ve Güneş Sistemi'mizin de bulunduğu galaksinin adı ve şekil türü nedir?\nb) Bu galaksiye en yakın olan dev komşu sarmal galaksinin adı nedir?",
+        "solutionExplanation": "Samanyolu Galaksisi sarmaldır; en yakın komşu Andromeda'dır.",
+        "modelAnswer": "a) Galaksimizin adı 'Samanyolu Galaksisi'dir ve şekil olarak 'Sarmal Galaksi' türündedir.\nb) Samanyolu Galaksisi'ne en yakın komşu büyük galaksinin adı 'Andromeda Galaksisi'dir.",
         "rubric": [
           {
-            "criterion": "Durumların fiziksel iş kuralına (doğrultu ve yol şartı) göre doğru tahlil edilmesi",
-            "points": 15
+            "criterion": "a şıkkında Samanyolu adı ve Sarmal şeklinin doğru yazılması",
+            "points": 8
           },
           {
-            "criterion": "İş hesabının (50 × 4 = 200 Joule) doğru yapılması",
-            "points": 10
+            "criterion": "b şıkkında Andromeda galaksisinin doğru belirtilmesi",
+            "points": 7
           }
-        ]
+        ],
+        "questionNumber": 4,
+        "points": 11,
+        "difficulty": "Orta"
+      },
+      {
+        "outcomeCode": "FB.7.2.1",
+        "outcomeTitle": "FB.7.2.1. Fiziksel anlamda yapılan işin bağlı olduğu faktörlere ilişkin bilimsel çıkarım yapabilme",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "contextText": "Fiziksel anlamda iş yapma şartları: kuvvet ve hareket doğrultusu.",
+        "stimulus": "Fen bilimleri dersinde fiziksel anlamda iş yapılmış sayılması için cisme bir kuvvet uygulanmalı ve cisim uygulanan kuvvet doğrultusunda yer değiştirmelidir.\n1. Durum: Ahmet, 10 kg'lık okul çantasını sırtında taşıyarak düz yatay koridorda 20 metre yürüyor.\n2. Durum: Ahmet, aynı çantayı yerden kaldırıp merdivenlerden 2. kata (yukarıya) çıkarıyor.",
+        "questionText": "a) 1. ve 2. durumdan hangisinde YER ÇEKİMİ KUVVETİNE KARŞI fiziksel anlamda iş yapılmıştır? Nedenini açıklayınız.\nb) 1. durumda yatay yolda yürürken neden yer çekimine karşı iş yapılmamıştır?",
+        "solutionExplanation": "Kuvvet ile hareket aynı doğrultuda olmalıdır. Yukarı çıkarken iş yapılır, yatayda yürürken kuvvet ve hareket birbirine diktir.",
+        "modelAnswer": "a) 2. durumda yer çekimine karşı iş yapılmıştır. Çünkü çanta yukarı kaldırılırken yer çekimine zıt yönde yukarı doğru kuvvet uygulanmış ve çanta kuvvet doğrultusunda yukarı doğru hareket etmiştir.\nb) 1. durumda ise çanta yatayda hareket etmektedir; yer çekimi kuvveti ise düşeydir. Kuvvet ve hareket doğrultusu birbirine dik olduğu için yer çekimine karşı iş yapılmaz.",
+        "rubric": [
+          {
+            "criterion": "a şıkkında 2. durumun ve kuvvet doğrultusunda yukarı hareket gerekçesinin yazılması",
+            "points": 8
+          },
+          {
+            "criterion": "b şıkkında kuvvet ile hareketin birbirine dik olması nedeniyle iş yapılmadığının açıklanması",
+            "points": 7
+          }
+        ],
+        "questionNumber": 5,
+        "points": 11,
+        "difficulty": "Orta"
+      },
+      {
+        "outcomeCode": "FB.7.2.1",
+        "outcomeTitle": "FB.7.2.1. Fiziksel anlamda yapılan işin bağlı olduğu faktörlere ilişkin bilimsel çıkarım yapabilme",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Hata Tespiti & Adım Analizi",
+        "contextText": "Kuvvet uygulanmasına rağmen hareket etmeyen cisimlerde iş kavramı.",
+        "stimulus": "Zeynep, odasındaki ağır kitaplığı yerinden oynatmak için tüm gücüyle 100 N kuvvet uygulayarak 5 dakika boyunca itmiş, terlemiş ve çok yorulmuştur. Ancak kitaplık duvara takılı olduğu için milimetre bile hareket etmemiştir.",
+        "questionText": "Zeynep çok yorulmasına ve 100 N kuvvet uygulamasına rağmen fen bilimleri kurallarına göre neden fiziksel anlamda iş yapmamış sayılır? Gerekçesini yazınız.",
+        "solutionExplanation": "Yol alınmadığı için iş sıfırdır.",
+        "modelAnswer": "Fiziksel anlamda iş yapılabilmesi için cismin kuvvet doğrultusunda mutlaka yol alması (hareket etmesi) gerekir. Kitaplık hareket etmediği (alınan yol sıfır olduğu) için fiziksel anlamda yapılan iş sıfırdır.",
+        "rubric": [
+          {
+            "criterion": "Fiziksel iş için kuvvet doğrultusunda hareket/yol alma şartının belirtilmesi",
+            "points": 8
+          },
+          {
+            "criterion": "Kitaplığın yer değiştirmediği (yol = 0) için işin sıfır olduğunun gerekçelendirilmesi",
+            "points": 7
+          }
+        ],
+        "questionNumber": 6,
+        "points": 11,
+        "difficulty": "Orta"
+      },
+      {
+        "outcomeCode": "FB.7.2.1",
+        "outcomeTitle": "FB.7.2.1. Fiziksel anlamda yapılan işin bağlı olduğu faktörlere ilişkin bilimsel çıkarım yapabilme",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "contextText": "Kuvvetin büyüklüğünün yapılan iş miktarına etkisi.",
+        "stimulus": "Bir süpermarkette özdeş iki alışveriş arabasından:\n• 1. Arabayı Kerem 15 N kuvvetle 10 metre itmiştir.\n• 2. Arabayı Selim 30 N kuvvetle 10 metre itmiştir.",
+        "questionText": "a) Kerem ve Selim'in yaptıkları fiziksel iş miktarlarını karşılaştırınız. Hangi öğrenci daha fazla iş yapmıştır?\nb) Alınan yollar eşit olduğuna göre kuvvetin büyüklüğü ile yapılan iş arasındaki ilişkiyi açıklayınız.",
+        "solutionExplanation": "Yollar eşitken kuvvet büyük olan daha çok iş yapar.",
+        "modelAnswer": "a) Selim'in yaptığı iş daha fazladır (2 katıdır).\nb) Alınan yollar eşit olduğunda cisme uygulanan kuvvetin büyüklüğü arttıkça yapılan fiziksel iş miktarı da doğru orantılı olarak artar.",
+        "rubric": [
+          {
+            "criterion": "a şıkkında Selim'in daha çok iş yaptığının tespiti",
+            "points": 7
+          },
+          {
+            "criterion": "b şıkkında yol eşitken kuvvet arttıkça işin artacağının gerekçelendirilmesi",
+            "points": 8
+          }
+        ],
+        "questionNumber": 7,
+        "points": 11,
+        "difficulty": "Orta"
+      },
+      {
+        "outcomeCode": "FB.7.2.2",
+        "outcomeTitle": "FB.7.2.2. Enerji çeşitlerinden kinetik ve potansiyel enerjiyi karşılaştırabilme",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "contextText": "Kinetik enerjinin kütle ve sürat ilişkisi.",
+        "stimulus": "Düz ve sürtünmesiz bir karayolunda aynı 60 km/h süratle hareket eden boş bir kamyon ile küçük bir otomobil aynı anda frene basmaktadır.",
+        "questionText": "a) Kamyon ve otomobilin kinetik (hareket) enerjilerini karşılaştırınız. Hangisinin kinetik enerjisi daha büyüktür? Neden?\nb) Otomobilin kamyonla aynı kinetik enerjiye ulaşması için sürati nasıl değiştirilmelidir?",
+        "solutionExplanation": "Süratler eşitken kütlesi büyük olan kamyonun kinetik enerjisi fazladır. Otomobilin sürati artırılmalıdır.",
+        "modelAnswer": "a) Kamyonun kinetik enerjisi daha büyüktür. Çünkü hareket halindeki cisimlerin süratleri eşit olduğunda kütlesi daha büyük olan cismin kinetik enerjisi daha fazla olur.\nb) Kütlesi küçük olan otomobilin kamyonla aynı enerjiye ulaşabilmesi için süratinin artırılması gerekir.",
+        "rubric": [
+          {
+            "criterion": "a şıkkında kamyonun kinetik enerjisinin büyük olduğunun ve kütle gerekçesinin yazılması",
+            "points": 8
+          },
+          {
+            "criterion": "b şıkkında otomobilin süratinin artırılması gerektiğinin belirtilmesi",
+            "points": 7
+          }
+        ],
+        "questionNumber": 8,
+        "points": 12,
+        "difficulty": "Zor"
+      },
+      {
+        "outcomeCode": "FB.7.2.2",
+        "outcomeTitle": "FB.7.2.2. Enerji çeşitlerinden kinetik ve potansiyel enerjiyi karşılaştırabilme",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "contextText": "Çekim potansiyel enerjisinde yükseklik ve kütle etkisi.",
+        "stimulus": "Laboratuvarda özdeş iki metal bilyeden biri 1 metre yüksekliğindeki masadan, diğeri 2 metre yüksekliğindeki dolaptan kum havuzuna bırakılmıştır.\nÖğrencilerden Can: \"2 metre yükseklikten bırakılan bilye kumda daha derin bir iz bırakır çünkü çekim potansiyel enerjisi daha fazladır.\"\nAlp: \"Bilyeler özdeş olduğu için kumda bıraktıkları iz aynı derinlikte olur.\"",
+        "questionText": "Hangi öğrencinin açıklaması doğrudur? Yerden yükseklik ile çekim potansiyel enerjisi arasındaki ilişkiyi açıklayınız.",
+        "solutionExplanation": "Can haklıdır. Yükseklik arttıkça çekim potansiyel enerjisi artar.",
+        "modelAnswer": "Can haklıdır. Çünkü kütleleri eşit olan cisimlerden yerden yüksekliği daha fazla olan cismin çekim potansiyel enerjisi daha büyüktür. Dolayısıyla 2 metredeki bilye kum zeminle temas ettiğinde kuma daha fazla enerji aktarır ve daha derin iz bırakır.",
+        "rubric": [
+          {
+            "criterion": "Can'ın haklı olduğunun doğru tespiti",
+            "points": 7
+          },
+          {
+            "criterion": "Kütle eşitken yükseklik arttıkça çekim potansiyel enerjisinin artacağının açıklanması",
+            "points": 8
+          }
+        ],
+        "questionNumber": 9,
+        "points": 12,
+        "difficulty": "Zor"
       }
     ]
   },
@@ -12396,7 +12516,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
     "subjectId": "fen_bilimleri",
     "examTerm": "1_donem_1_yazili",
     "scenarioId": "senaryo_2",
-    "title": "7. Sınıf Fen Bilimleri 1. Dönem 1. Ortak Yazılı Sınavı (Senaryo 2) (5 Soru)",
+    "title": "7. Sınıf Fen Bilimleri 1. Dönem 1. Ortak Yazılı Sınavı (Senaryo 2) (7 Soru)",
     "durationMinutes": 40,
     "totalPoints": 100,
     "instructions": [
@@ -12405,128 +12525,172 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
     ],
     "questions": [
       {
-        "questionNumber": 1,
         "outcomeCode": "FB.7.1.1",
         "outcomeTitle": "FB.7.1.1. Uzay araştırmaları için geliştirilen teknolojileri karşılaştırabilme",
-        "difficulty": "Orta",
-        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
-        "points": 20,
-        "contextText": "Teleskop türlerinin çalışma prensibi (Mercekli vs Aynalı).",
-        "stimulus": "Tarihte gökyüzünü incelemek için ilk teleskobu Galileo geliştirirken (mercekli teleskop), daha sonra Isaac Newton ışığı aynalarla yansıtan 'aynalı teleskobu' icat etmiştir.",
-        "questionText": "Mercekli teleskop ile aynalı (yansıtmalı) teleskop arasındaki temel optik farkı açıklayınız. Günümüzdeki dev teleskoplarda neden aynalı sistemler tercih edilmektedir?",
-        "solutionExplanation": "Mercekli teleskopta ışık mercekten kırılarak odaklanır; aynalıda çukur ayna ile yansıtılır. Dev merceklerin ağırlıktan bükülmesi ve renk sapması nedeniyle aynalar tercih edilir.",
-        "modelAnswer": "• Optik Fark: Mercekli teleskoplar ışığı kırma prensibiyle çalışır ve ışık bir cam mercekten geçer. Aynalı teleskoplar ise ışığı çukur bir ayna ile yansıtarak odaklar.\n• Neden Aynalı Tercih Edilir: Çok büyük cam mercekler kendi ağırlıkları altında esner, şekli bozulur ve ışığın renklerini ayırarak (renk sapması) bulanık görüntü verir. Aynalar ise arkadan kolayca desteklenebilir, daha hafif ve devasa boyutlarda üretilerek çok daha uzaktaki sönük yıldızları net gösterebilir.",
-        "rubric": [
-          {
-            "criterion": "Mercekli (kırılma) ve aynalı (yansıma) prensibinin doğru karşılaştırılması",
-            "points": 10
-          },
-          {
-            "criterion": "Aynalı sistemlerin dev boyut avantajının gerekçelendirilmesi",
-            "points": 10
-          }
-        ]
-      },
-      {
-        "questionNumber": 2,
-        "outcomeCode": "FB.7.1.1",
-        "outcomeTitle": "FB.7.1.1. Uzay araştırmaları için geliştirilen teknolojileri karşılaştırabilme",
-        "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
-        "points": 20,
-        "contextText": "Türkiye'nin aktif uzay uyduları ve görevleri.",
-        "stimulus": "Uzay Araştırmaları ve Teleskoplar konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nUmut: \"Bu durumda temel kural şudur: Uzay teleskopları (Hubble, James Webb) atmosferin olumsuz etkilerinden (ışık kırılması, bulut) etkilenmemek için uzaya yerleştirilmiştir.\"\nEmre: \"Hayır Umut, yanılıyorsun. Çünkü kural gereği: Teleskop: Gök cisimlerinden gelen ışığı toplayıp odaklayarak büyüten araçtır (Optik, Radyo, X-ışını, Aynalı/Mercekli). Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Umut ve Emre'nin iddialarını Uzay Araştırmaları ve Teleskoplar ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
-        "solutionExplanation": "Türksat serisi haberleşme, Göktürk ve İMECE gözlem. İlk yerli haberleşme: Türksat 6A.",
-        "modelAnswer": "Emre haklıdır. Çünkü Teleskop: Gök cisimlerinden gelen ışığı toplayıp odaklayarak büyüten araçtır (Optik, Radyo, X-ışını, Aynalı/Mercekli).. Umut ise 'Uzay teleskopları (Hubble, James Webb) atmosferin olumsuz etkilerinden (ışık kırılması, bulut) etkilenmemek için uzaya yerleştirilmiştir.' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "contextText": "Gözlemevi (rasathane) yer seçiminde coğrafi ve atmosferik şartlar.",
+        "stimulus": "Gök bilimciler uzaydaki gök cisimlerini ve gezegenleri incelemek için gözlemevlerini (rasathaneleri) şehir merkezleri yerine şehirlerden uzak ve yüksek dağların tepelerine kurarlar.",
+        "questionText": "a) Gözlemevlerinin şehir ışıklarından uzak yerlere kurulmasının temel nedenini yazınız.\nb) Yüksek dağ zirvelerinin tercih edilmesinin atmosfer ve hava şartlarıyla ilgili nedenini açıklayınız.",
+        "solutionExplanation": "Işık kirliliğinden uzaklaşmak ve dağlarda nem, bulut ve hava kirliliğinin az olması.",
+        "modelAnswer": "a) Şehirlerdeki yoğun yapay ışıklar gökyüzünü aydınlatarak ışık kirliliğine neden olur; bu durum gök cisimlerinin teleskopla net görülmesini engeller.\nb) Yüksek dağ zirvelerinde atmosfer tabakası daha incedir, hava kirliliği ve nem oranı çok düşüktür, ayrıca açık ve bulutsuz gece sayısı fazladır. Böylece uzaydan gelen ışık bozulmadan teleskoba ulaşır.",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (Emre) doğru tespiti",
+            "criterion": "a şıkkında yapay ışık kirliliğinin gök cisimlerinin gözlemini engellediğinin belirtilmesi",
             "points": 8
           },
           {
-            "criterion": "Umut'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 12
+            "criterion": "b şıkkında dağ zirvelerindeki ince atmosfer, az nem veya bulutsuz/temiz hava şartının gerekçelendirilmesi",
+            "points": 7
           }
-        ]
+        ],
+        "questionNumber": 1,
+        "points": 14,
+        "difficulty": "Kolay"
       },
       {
-        "questionNumber": 3,
-        "outcomeCode": "FB.7.1.4",
-        "outcomeTitle": "FB.7.1.4. Yıldızların yaşamını açıklayarak yapılandırabilme",
-        "difficulty": "Orta",
+        "outcomeCode": "FB.7.1.1",
+        "outcomeTitle": "FB.7.1.1. Uzay araştırmaları için geliştirilen teknolojileri karşılaştırabilme",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
-        "points": 20,
-        "contextText": "Büyük kütleli yıldızların son durakları.",
-        "stimulus": "Aşağıdaki matriste Uzay Kirliliği ve Kessler Sendromu konusuna yönelik üç farklı durum ve özellikleri verilmiştir:\n\n| Durum / Örnek | 1. Temel Kriter | 2. Ayırt Edici Özellik | Karşılar mı? |\n| :--- | :---: | :---: | :---: |\n| 1. Durum (Örnek A) | VAR | YOK | ............ |\n| 2. Durum (Örnek B) | VAR | VAR | ............ |\n| 3. Durum (Örnek C) | YOK | YOK | ............ |",
-        "questionText": "Matristeki boşlukları özelliğin doğruluğuna göre \"EVET\" veya \"HAYIR\" yazarak doldurunuz. 2. Durum'u diğer durumlardan ayıran en temel şartı gerekçelendirerek yazınız.",
-        "solutionExplanation": "Nötron yıldızı (Pulsar) ve Kara Delik.",
-        "modelAnswer": "Tablo Tamamlaması: 1. Durum: HAYIR | 2. Durum: EVET | 3. Durum: HAYIR.\nAyırt Edici Gerekçe: 2. Durum hem temel kriteri hem de ayırt edici özelliği eksiksiz sağladığı için Uzay Kirliliği: Dünya yörüngesinde dönen işlevini yitirmiş uydular, roket parçaları ve yakıt tanklarının oluşturduğu tehlikeli atık yığınıdır. kuralına tam uygundur.",
+        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "contextText": "Uzay teleskopları ile yeryüzü teleskoplarının görüntü kalitesi farkı.",
+        "stimulus": "Astronomi panosu hazırlayan iki öğrenci arasında şu konuşma geçer:\nCan: \"James Webb ve Hubble gibi uzay teleskopları, yeryüzündeki en büyük teleskoplardan bile çok daha net ve kaliteli fotoğraflar çeker.\"\nAlp: \"Bence uzayda veya yeryüzünde olmasının önemi yoktur, sadece ayna boyutu büyük olan teleskop her zaman daha net çeker.\"",
+        "questionText": "Hangi öğrencinin açıklaması doğrudur? Uzay teleskoplarının Dünya atmosferinin olumsuz etkilerinden neden etkilenmediğini açıklayınız.",
+        "solutionExplanation": "Can haklıdır. Dünya atmosferi ışığı kırar ve bozar; uzayda atmosfer olmadığı için görüntü nettir.",
+        "modelAnswer": "Can haklıdır. Çünkü Dünya atmosferindeki hava hareketleri, tozlar ve bulutlar gök cisimlerinden gelen ışığı kırarak görüntünün bulanıklaşmasına yol açar. Uzay teleskopları ise atmosferin dışında, uzay boşluğunda görev yaptığı için ışık hiçbir engelle karşılaşmadan doğrudan teleskoba ulaşır.",
         "rubric": [
           {
-            "criterion": "Tablodaki boşlukların hatasız doldurulması (HAYIR - EVET - HAYIR)",
-            "points": 10
+            "criterion": "Can'ın haklı olduğunun doğru tespiti",
+            "points": 7
           },
           {
-            "criterion": "2. Durum'un ayırt edici şartının ve kuralının açıklanması",
-            "points": 10
+            "criterion": "Dünya atmosferindeki gaz ve tozların görüntüyü bozduğunun, uzayda ise atmosfer olmadığı için görüntünün net kaldığının açıklanması",
+            "points": 8
           }
-        ]
+        ],
+        "questionNumber": 2,
+        "points": 14,
+        "difficulty": "Orta"
       },
       {
-        "questionNumber": 4,
+        "outcomeCode": "FB.7.1.3",
+        "outcomeTitle": "FB.7.1.3. Uzay araştırmalarının yol açabileceği problemleri çözebilme",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "contextText": "Dünya yörüngesindeki uzay kirliliği ve oluşturduğu tehlikeler.",
+        "stimulus": "Dünya yörüngesinde işlevi bitmiş eski uydular, roket parçaları ve yakıt tankları başıboş halde saatte yaklaşık 28.000 kilometre gibi aşırı yüksek hızlarla dolanmaktadır (Uzay Kirliliği).",
+        "questionText": "a) Bu uzay atıklarının halen görev yapan uydular ve Uluslararası Uzay İstasyonu için oluşturduğu en büyük tehlikeyi açıklayınız.\nb) Uzay kirliliğini azaltmak veya önlemek için bilim insanlarının geliştirebileceği bir çözüm önerisi yazınız.",
+        "solutionExplanation": "Yüksek hızlı çarpışma uyduları parçalar; görevi biten uydular kontrollü olarak atmosfere sokulup yakılmalıdır.",
+        "modelAnswer": "a) Uzay atıkları mermiden katbekat hızlı hareket eder. Küçücük bir metal cıvata bile aktif bir uyduya çarptığında onu parçalayabilir ve kullanılmaz hale getirebilir.\nb) Görev süresi tükenen uydular kontrollü şekilde Dünya atmosferine yönlendirilerek sürtünmeyle yanıp yok edilmeli veya robotik uzay araçlarıyla toplanmalıdır.",
+        "rubric": [
+          {
+            "criterion": "a şıkkında aşırı yüksek hız nedeniyle oluşacak çarpışma ve hasar riskinin açıklanması",
+            "points": 7
+          },
+          {
+            "criterion": "b şıkkında atmosfere sokup yakma veya uzay araçlarıyla toplama çözümünün yazılması",
+            "points": 8
+          }
+        ],
+        "questionNumber": 3,
+        "points": 14,
+        "difficulty": "Orta"
+      },
+      {
         "outcomeCode": "FB.7.1.5",
         "outcomeTitle": "FB.7.1.5. Yıldız, galaksi ve evren kavramlarını açıklayarak yapılandırabilme",
-        "difficulty": "Orta",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Hata Tespiti & Adım Analizi",
-        "points": 20,
-        "contextText": "Galaksi çeşitleri ve Samanyolu.",
-        "stimulus": "Sude, Yıldızların Yaşam Döngüsü ve Bulutsular (Nebula) ile ilgili açık uçlu bir soruyu çözerken çalışma kağıdına şu adımları yazmıştır:\n1. Adım: Verilen öncülleri ve temel kavramları belirledim.\n2. Adım: Güneş bir kara deliğe dönüşmeyecektir; küçük kütleli olduğu için ömrünün sonunda Beyaz Cüce olacaktır. kabulünü yaparak işleme başladım.\n3. Adım: Bu adımdaki sonuca göre bağlantılı kuralı uyguladım.\n4. Adım: Nihai sonuca ulaştım.",
-        "questionText": "Sude'in çözüm adımlarını inceleyiniz. İlk hata kaçıncı adımda yapılmıştır? Yapılan hatanın gerekçesini açıklayarak o adımın ve nihai cevabın doğru halini yazınız.",
-        "solutionExplanation": "Samanyolu sarmal galaksidir (Avcı kolu). Evren: Dünya dahil tüm uzaydır; Uzay: Dünya dışındaki evren kısmıdır.",
-        "modelAnswer": "İlk hata 2. adımda yapılmıştır. Çünkü Sude, 'Güneş bir kara deliğe dönüşmeyecektir; küçük kütleli olduğu için ömrünün sonunda Beyaz Cüce olacaktır.' hatasına düşmüştür. Doğrusu: Yıldızların Doğumu: Bulutsu (Nebula) adı verilen dev gaz ve toz bulutlarının kütleçekimle sıkışmasıyla yıldızlar doğar (Örn: Orion, Kartal bulutsusu). kuralı işletilmeli ve çözüm bu esasa göre tamamlanmalıdır.",
+        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
+        "contextText": "Galaksi türleri ve Samanyolu Galaksisi.",
+        "stimulus": "Galaksiler (gök adalar) milyarlarca yıldız, gaz ve toz bulutunun bir araya gelmesiyle oluşur. Şekillerine göre Sarmal, Eliptik ve Düzensiz galaksi olmak üzere üçe ayrılırlar.",
+        "questionText": "a) İçinde Dünya'mızın ve Güneş Sistemi'mizin de bulunduğu galaksinin adı ve şekil türü nedir?\nb) Bu galaksiye en yakın olan dev komşu sarmal galaksinin adı nedir?",
+        "solutionExplanation": "Samanyolu Galaksisi sarmaldır; en yakın komşu Andromeda'dır.",
+        "modelAnswer": "a) Galaksimizin adı 'Samanyolu Galaksisi'dir ve şekil olarak 'Sarmal Galaksi' türündedir.\nb) Samanyolu Galaksisi'ne en yakın komşu büyük galaksinin adı 'Andromeda Galaksisi'dir.",
         "rubric": [
           {
-            "criterion": "İlk hatanın yapıldığı adımın (2. Adım) doğru belirlenmesi",
-            "points": 7
+            "criterion": "a şıkkında Samanyolu adı ve Sarmal şeklinin doğru yazılması",
+            "points": 8
           },
           {
-            "criterion": "Yapılan kavramsal/işlemsel hatanın gerekçelendirilmesi",
+            "criterion": "b şıkkında Andromeda galaksisinin doğru belirtilmesi",
             "points": 7
-          },
-          {
-            "criterion": "Adımın ve sonucun doğru kurala göre düzeltilmesi",
-            "points": 6
           }
-        ]
+        ],
+        "questionNumber": 4,
+        "points": 14,
+        "difficulty": "Kolay"
       },
       {
-        "questionNumber": 5,
         "outcomeCode": "FB.7.2.1",
         "outcomeTitle": "FB.7.2.1. Fiziksel anlamda yapılan işin bağlı olduğu faktörlere ilişkin bilimsel çıkarım yapabilme",
-        "difficulty": "Zor",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
-        "points": 20,
-        "contextText": "İş formülü ve değişkenlerin karşılaştırılması.",
-        "stimulus": "Mitoz Bölünme: Aşamaları ve Önemi kapsamında karşılaşılan bir durumu çözmek için uzmanlar iki farklı yöntem geliştirmiştir:\n1. Yöntem: Kısa vadeli hızlı çözüm sunan ancak 'Mitozda parça değişimi (krossing-over) ASLA görülmez; oluşan hücreler ana hücrenin genetik ikizidir.' riskini barındıran yaklaşım.\n2. Yöntem: Başlangıçta daha fazla dikkat ve aşama gerektiren ancak 'Mitoz Bölünmenin Amacı: Tek hücrelilerde üreme (çoğalma); çok hücrelilerde büyüme, gelişme ve yaraların onarımıdır.' ilkesine tam uyan sürdürülebilir yaklaşım.",
-        "questionText": "Verilen iki yaklaşımı Mitoz Bölünme: Aşamaları ve Önemi ilkeleri bakımından değerlendiriniz. Hangi yöntem daha uygundur? Seçtiğiniz yöntemin güçlü yönlerini ve diğer yöntemin taşıdığı riskleri gerekçelendiriniz.",
-        "solutionExplanation": "K işi = 20 * 6 = 120 J. L işi = 30 * 5 = 150 J. L > K.",
-        "modelAnswer": "2. Yöntem uygundur. Çünkü Mitoz Bölünmenin Amacı: Tek hücrelilerde üreme (çoğalma); çok hücrelilerde büyüme, gelişme ve yaraların onarımıdır. ilkesini tam olarak karşılamaktadır. 1. Yöntem ise kısa vadeli olsa da 'Mitozda parça değişimi (krossing-over) ASLA görülmez; oluşan hücreler ana hücrenin genetik ikizidir.' sakıncasını doğuracağı için hedeflenen amaca ters düşer.",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "contextText": "Fiziksel anlamda iş yapma şartları: kuvvet ve hareket doğrultusu.",
+        "stimulus": "Fen bilimleri dersinde fiziksel anlamda iş yapılmış sayılması için cisme bir kuvvet uygulanmalı ve cisim uygulanan kuvvet doğrultusunda yer değiştirmelidir.\n1. Durum: Ahmet, 10 kg'lık okul çantasını sırtında taşıyarak düz yatay koridorda 20 metre yürüyor.\n2. Durum: Ahmet, aynı çantayı yerden kaldırıp merdivenlerden 2. kata (yukarıya) çıkarıyor.",
+        "questionText": "a) 1. ve 2. durumdan hangisinde YER ÇEKİMİ KUVVETİNE KARŞI fiziksel anlamda iş yapılmıştır? Nedenini açıklayınız.\nb) 1. durumda yatay yolda yürürken neden yer çekimine karşı iş yapılmamıştır?",
+        "solutionExplanation": "Kuvvet ile hareket aynı doğrultuda olmalıdır. Yukarı çıkarken iş yapılır, yatayda yürürken kuvvet ve hareket birbirine diktir.",
+        "modelAnswer": "a) 2. durumda yer çekimine karşı iş yapılmıştır. Çünkü çanta yukarı kaldırılırken yer çekimine zıt yönde yukarı doğru kuvvet uygulanmış ve çanta kuvvet doğrultusunda yukarı doğru hareket etmiştir.\nb) 1. durumda ise çanta yatayda hareket etmektedir; yer çekimi kuvveti ise düşeydir. Kuvvet ve hareket doğrultusu birbirine dik olduğu için yer çekimine karşı iş yapılmaz.",
         "rubric": [
           {
-            "criterion": "Doğru yaklaşımın (2. Yöntem) tespiti ve güçlü yönünün gerekçelendirilmesi",
-            "points": 10
+            "criterion": "a şıkkında 2. durumun ve kuvvet doğrultusunda yukarı hareket gerekçesinin yazılması",
+            "points": 8
           },
           {
-            "criterion": "1. Yöntemin taşıdığı kavramsal riskin açıklanması",
-            "points": 10
+            "criterion": "b şıkkında kuvvet ile hareketin birbirine dik olması nedeniyle iş yapılmadığının açıklanması",
+            "points": 7
           }
-        ]
+        ],
+        "questionNumber": 5,
+        "points": 15,
+        "difficulty": "Orta"
+      },
+      {
+        "outcomeCode": "FB.7.2.1",
+        "outcomeTitle": "FB.7.2.1. Fiziksel anlamda yapılan işin bağlı olduğu faktörlere ilişkin bilimsel çıkarım yapabilme",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Hata Tespiti & Adım Analizi",
+        "contextText": "Kuvvet uygulanmasına rağmen hareket etmeyen cisimlerde iş kavramı.",
+        "stimulus": "Zeynep, odasındaki ağır kitaplığı yerinden oynatmak için tüm gücüyle 100 N kuvvet uygulayarak 5 dakika boyunca itmiş, terlemiş ve çok yorulmuştur. Ancak kitaplık duvara takılı olduğu için milimetre bile hareket etmemiştir.",
+        "questionText": "Zeynep çok yorulmasına ve 100 N kuvvet uygulamasına rağmen fen bilimleri kurallarına göre neden fiziksel anlamda iş yapmamış sayılır? Gerekçesini yazınız.",
+        "solutionExplanation": "Yol alınmadığı için iş sıfırdır.",
+        "modelAnswer": "Fiziksel anlamda iş yapılabilmesi için cismin kuvvet doğrultusunda mutlaka yol alması (hareket etmesi) gerekir. Kitaplık hareket etmediği (alınan yol sıfır olduğu) için fiziksel anlamda yapılan iş sıfırdır.",
+        "rubric": [
+          {
+            "criterion": "Fiziksel iş için kuvvet doğrultusunda hareket/yol alma şartının belirtilmesi",
+            "points": 8
+          },
+          {
+            "criterion": "Kitaplığın yer değiştirmediği (yol = 0) için işin sıfır olduğunun gerekçelendirilmesi",
+            "points": 7
+          }
+        ],
+        "questionNumber": 6,
+        "points": 15,
+        "difficulty": "Orta"
+      },
+      {
+        "outcomeCode": "FB.7.2.1",
+        "outcomeTitle": "FB.7.2.1. Fiziksel anlamda yapılan işin bağlı olduğu faktörlere ilişkin bilimsel çıkarım yapabilme",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "contextText": "Kuvvetin büyüklüğünün yapılan iş miktarına etkisi.",
+        "stimulus": "Bir süpermarkette özdeş iki alışveriş arabasından:\n• 1. Arabayı Kerem 15 N kuvvetle 10 metre itmiştir.\n• 2. Arabayı Selim 30 N kuvvetle 10 metre itmiştir.",
+        "questionText": "a) Kerem ve Selim'in yaptıkları fiziksel iş miktarlarını karşılaştırınız. Hangi öğrenci daha fazla iş yapmıştır?\nb) Alınan yollar eşit olduğuna göre kuvvetin büyüklüğü ile yapılan iş arasındaki ilişkiyi açıklayınız.",
+        "solutionExplanation": "Yollar eşitken kuvvet büyük olan daha çok iş yapar.",
+        "modelAnswer": "a) Selim'in yaptığı iş daha fazladır (2 katıdır).\nb) Alınan yollar eşit olduğunda cisme uygulanan kuvvetin büyüklüğü arttıkça yapılan fiziksel iş miktarı da doğru orantılı olarak artar.",
+        "rubric": [
+          {
+            "criterion": "a şıkkında Selim'in daha çok iş yaptığının tespiti",
+            "points": 7
+          },
+          {
+            "criterion": "b şıkkında yol eşitken kuvvet arttıkça işin artacağının gerekçelendirilmesi",
+            "points": 8
+          }
+        ],
+        "questionNumber": 7,
+        "points": 14,
+        "difficulty": "Zor"
       }
     ]
   },
@@ -12536,7 +12700,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
     "subjectId": "fen_bilimleri",
     "examTerm": "1_donem_1_yazili",
     "scenarioId": "senaryo_3",
-    "title": "7. Sınıf Fen Bilimleri 1. Dönem 1. Ortak Yazılı Sınavı (Senaryo 3) (4 Soru)",
+    "title": "7. Sınıf Fen Bilimleri 1. Dönem 1. Ortak Yazılı Sınavı (Senaryo 3) (8 Soru)",
     "durationMinutes": 40,
     "totalPoints": 100,
     "instructions": [
@@ -12545,104 +12709,196 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
     ],
     "questions": [
       {
-        "questionNumber": 1,
         "outcomeCode": "FB.7.1.1",
         "outcomeTitle": "FB.7.1.1. Uzay araştırmaları için geliştirilen teknolojileri karşılaştırabilme",
-        "difficulty": "Kolay",
-        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "cognitiveLevel": "Basit Bilişsel Süreçler",
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
-        "points": 25,
-        "contextText": "Uzay araştırmaları teknolojilerinin günlük hayata transferi.",
-        "stimulus": "Uzay araştırmaları için geliştirilen birçok teknoloji ve malzeme, zamanla günlük yaşantımızda kullandığımız sivil ürünlere dönüşmüştür.",
-        "questionText": "Aslında uzay yolculukları ve astronotların ihtiyaçları için icat edilmiş olup günümüzde evlerimizde veya hastanelerde yaygın kullanılan 3 farklı teknolojik ürünü yazınız.",
-        "solutionExplanation": "Hafızalı sünger (visco), teflon kaplama, kulaktan ateş ölçer, duman dedektörü, çizilmez gözlük camı vb.",
-        "modelAnswer": "1. Hafızalı Sünger (Visco Yatak/Yastık): Astronotların fırlatma anında omurgalarına binen aşırı yer çekimi (G kuvveti) etkisini azaltmak için geliştirilmiştir.\n2. Dijital Kulaktan Ateş Ölçer: Yıldızların ve gezegenlerin sıcaklığını uzaktan ölçen kızılötesi (infrared) sensör teknolojisinden uyarlanmıştır.\n3. Çizilmez Gözlük Camı ve Güneş Filtreleri: Astronot kasklarındaki vizörleri uzay tozlarından ve zararlı kozmik ışınlardan korumak için geliştirilen kaplamadır.",
+        "contextText": "Gözlemevi (rasathane) yer seçiminde coğrafi ve atmosferik şartlar.",
+        "stimulus": "Gök bilimciler uzaydaki gök cisimlerini ve gezegenleri incelemek için gözlemevlerini (rasathaneleri) şehir merkezleri yerine şehirlerden uzak ve yüksek dağların tepelerine kurarlar.",
+        "questionText": "a) Gözlemevlerinin şehir ışıklarından uzak yerlere kurulmasının temel nedenini yazınız.\nb) Yüksek dağ zirvelerinin tercih edilmesinin atmosfer ve hava şartlarıyla ilgili nedenini açıklayınız.",
+        "solutionExplanation": "Işık kirliliğinden uzaklaşmak ve dağlarda nem, bulut ve hava kirliliğinin az olması.",
+        "modelAnswer": "a) Şehirlerdeki yoğun yapay ışıklar gökyüzünü aydınlatarak ışık kirliliğine neden olur; bu durum gök cisimlerinin teleskopla net görülmesini engeller.\nb) Yüksek dağ zirvelerinde atmosfer tabakası daha incedir, hava kirliliği ve nem oranı çok düşüktür, ayrıca açık ve bulutsuz gece sayısı fazladır. Böylece uzaydan gelen ışık bozulmadan teleskoba ulaşır.",
         "rubric": [
           {
-            "criterion": "Uzay araştırması kökenli 3 geçerli günlük hayat ürününün yazılması",
-            "points": 15
+            "criterion": "a şıkkında yapay ışık kirliliğinin gök cisimlerinin gözlemini engellediğinin belirtilmesi",
+            "points": 8
           },
           {
-            "criterion": "Ürünlerin uzaydaki çıkış amacının doğru açıklanması",
-            "points": 10
-          }
-        ]
-      },
-      {
-        "questionNumber": 2,
-        "outcomeCode": "FB.7.1.3",
-        "outcomeTitle": "FB.7.1.3. Uzay araştırmalarının yol açabileceği problemleri çözebilme",
-        "difficulty": "Orta",
-        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
-        "points": 25,
-        "contextText": "Doğal gök cisimleri ile uzay kirliliğinin ayırt edilmesi.",
-        "stimulus": "Türkiye'nin Aktif Yapay Uyduları ve Görevleri konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nUmut: \"Bu durumda temel kural şudur: Türksat serisi TV/İletişim uydusudur; Göktürk ve İMECE ise askeri/harita/tarım gözlem uydusudur.\"\nEmre: \"Hayır Umut, yanılıyorsun. Çünkü kural gereği: Haberleşme (İletişim) Uydularımız: Türksat 3A, Türksat 4A, Türksat 4B, Türksat 5A, Türksat 5B, Türksat 6A (İlk yerli haberleşme uydumuz). Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Umut ve Emre'nin iddialarını Türkiye'nin Aktif Yapay Uyduları ve Görevleri ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
-        "solutionExplanation": "Burak haklıdır. Uzay kirliliği sadece yapay/insan kaynaklı atıklardır.",
-        "modelAnswer": "Emre haklıdır. Çünkü Haberleşme (İletişim) Uydularımız: Türksat 3A, Türksat 4A, Türksat 4B, Türksat 5A, Türksat 5B, Türksat 6A (İlk yerli haberleşme uydumuz).. Umut ise 'Türksat serisi TV/İletişim uydusudur; Göktürk ve İMECE ise askeri/harita/tarım gözlem uydusudur.' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
-        "rubric": [
-          {
-            "criterion": "Haklı olan öğrencinin (Emre) doğru tespiti",
-            "points": 10
-          },
-          {
-            "criterion": "Umut'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 15
-          }
-        ]
-      },
-      {
-        "questionNumber": 3,
-        "outcomeCode": "FB.7.1.4",
-        "outcomeTitle": "FB.7.1.4. Yıldızların yaşamını açıklayarak yapılandırabilme",
-        "difficulty": "Orta",
-        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
-        "points": 25,
-        "contextText": "Bulutsu (Nebula) türleri ve yıldız oluşumu.",
-        "stimulus": "Aşağıdaki matriste Uzay Kirliliği ve Kessler Sendromu konusuna yönelik üç farklı durum ve özellikleri verilmiştir:\n\n| Durum / Örnek | 1. Temel Kriter | 2. Ayırt Edici Özellik | Karşılar mı? |\n| :--- | :---: | :---: | :---: |\n| 1. Durum (Örnek A) | VAR | YOK | ............ |\n| 2. Durum (Örnek B) | VAR | VAR | ............ |\n| 3. Durum (Örnek C) | YOK | YOK | ............ |",
-        "questionText": "Matristeki boşlukları özelliğin doğruluğuna göre \"EVET\" veya \"HAYIR\" yazarak doldurunuz. 2. Durum'u diğer durumlardan ayıran en temel şartı gerekçelendirerek yazınız.",
-        "solutionExplanation": "Gaz ve toz kütle çekimiyle büzülür, sıcaklık milyonlarca dereceye çıkarak hidrojen helyuma dönüşür. Parlak ışığı yansıtır/yayar, karanlık arkadaki ışığı perdeler.",
-        "modelAnswer": "Tablo Tamamlaması: 1. Durum: HAYIR | 2. Durum: EVET | 3. Durum: HAYIR.\nAyırt Edici Gerekçe: 2. Durum hem temel kriteri hem de ayırt edici özelliği eksiksiz sağladığı için Uzay Kirliliği: Dünya yörüngesinde dönen işlevini yitirmiş uydular, roket parçaları ve yakıt tanklarının oluşturduğu tehlikeli atık yığınıdır. kuralına tam uygundur.",
-        "rubric": [
-          {
-            "criterion": "Tablodaki boşlukların hatasız doldurulması (HAYIR - EVET - HAYIR)",
-            "points": 12
-          },
-          {
-            "criterion": "2. Durum'un ayırt edici şartının ve kuralının açıklanması",
-            "points": 13
-          }
-        ]
-      },
-      {
-        "questionNumber": 4,
-        "outcomeCode": "FB.7.2.2",
-        "outcomeTitle": "FB.7.2.2. Enerji çeşitlerinden kinetik ve potansiyel enerjiyi karşılaştırabilme",
-        "difficulty": "Zor",
-        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Hata Tespiti & Adım Analizi",
-        "points": 25,
-        "contextText": "Kaykay pistinde kinetik ve potansiyel enerji dönüşümü.",
-        "stimulus": "Sude, Mayoz Bölünme: Parça Değişimi ve Kalıtsal Çeşitlilik ile ilgili açık uçlu bir soruyu çözerken çalışma kağıdına şu adımları yazmıştır:\n1. Adım: Verilen öncülleri ve temel kavramları belirledim.\n2. Adım: Kromozom sayısının tür içinde nesiller boyu sabit kalmasını sağlayan olay MAYOZ ve DÖLLENME birlikteliğidir. kabulünü yaparak işleme başladım.\n3. Adım: Bu adımdaki sonuca göre bağlantılı kuralı uyguladım.\n4. Adım: Nihai sonuca ulaştım.",
-        "questionText": "Sude'in çözüm adımlarını inceleyiniz. İlk hata kaçıncı adımda yapılmıştır? Yapılan hatanın gerekçesini açıklayarak o adımın ve nihai cevabın doğru halini yazınız.",
-        "solutionExplanation": "K ve M tepede potansiyel maksimum, kinetik sıfır. L tabanda potansiyel minimum, kinetik maksimum (hız maksimum). Sürtünmesiz ortamda toplam mekanik enerji korunur.",
-        "modelAnswer": "İlk hata 2. adımda yapılmıştır. Çünkü Sude, 'Kromozom sayısının tür içinde nesiller boyu sabit kalmasını sağlayan olay MAYOZ ve DÖLLENME birlikteliğidir.' hatasına düşmüştür. Doğrusu: Mayozun Amacı: Eşeyli üreyen canlılarda sperm ve yumurta gibi \"üreme hücrelerini (gametleri)\" oluşturmaktır. kuralı işletilmeli ve çözüm bu esasa göre tamamlanmalıdır.",
-        "rubric": [
-          {
-            "criterion": "İlk hatanın yapıldığı adımın (2. Adım) doğru belirlenmesi",
-            "points": 9
-          },
-          {
-            "criterion": "Yapılan kavramsal/işlemsel hatanın gerekçelendirilmesi",
-            "points": 9
-          },
-          {
-            "criterion": "Adımın ve sonucun doğru kurala göre düzeltilmesi",
+            "criterion": "b şıkkında dağ zirvelerindeki ince atmosfer, az nem veya bulutsuz/temiz hava şartının gerekçelendirilmesi",
             "points": 7
           }
-        ]
+        ],
+        "questionNumber": 1,
+        "points": 12,
+        "difficulty": "Kolay"
+      },
+      {
+        "outcomeCode": "FB.7.1.1",
+        "outcomeTitle": "FB.7.1.1. Uzay araştırmaları için geliştirilen teknolojileri karşılaştırabilme",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "contextText": "Uzay teleskopları ile yeryüzü teleskoplarının görüntü kalitesi farkı.",
+        "stimulus": "Astronomi panosu hazırlayan iki öğrenci arasında şu konuşma geçer:\nCan: \"James Webb ve Hubble gibi uzay teleskopları, yeryüzündeki en büyük teleskoplardan bile çok daha net ve kaliteli fotoğraflar çeker.\"\nAlp: \"Bence uzayda veya yeryüzünde olmasının önemi yoktur, sadece ayna boyutu büyük olan teleskop her zaman daha net çeker.\"",
+        "questionText": "Hangi öğrencinin açıklaması doğrudur? Uzay teleskoplarının Dünya atmosferinin olumsuz etkilerinden neden etkilenmediğini açıklayınız.",
+        "solutionExplanation": "Can haklıdır. Dünya atmosferi ışığı kırar ve bozar; uzayda atmosfer olmadığı için görüntü nettir.",
+        "modelAnswer": "Can haklıdır. Çünkü Dünya atmosferindeki hava hareketleri, tozlar ve bulutlar gök cisimlerinden gelen ışığı kırarak görüntünün bulanıklaşmasına yol açar. Uzay teleskopları ise atmosferin dışında, uzay boşluğunda görev yaptığı için ışık hiçbir engelle karşılaşmadan doğrudan teleskoba ulaşır.",
+        "rubric": [
+          {
+            "criterion": "Can'ın haklı olduğunun doğru tespiti",
+            "points": 7
+          },
+          {
+            "criterion": "Dünya atmosferindeki gaz ve tozların görüntüyü bozduğunun, uzayda ise atmosfer olmadığı için görüntünün net kaldığının açıklanması",
+            "points": 8
+          }
+        ],
+        "questionNumber": 2,
+        "points": 12,
+        "difficulty": "Kolay"
+      },
+      {
+        "outcomeCode": "FB.7.1.3",
+        "outcomeTitle": "FB.7.1.3. Uzay araştırmalarının yol açabileceği problemleri çözebilme",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "contextText": "Dünya yörüngesindeki uzay kirliliği ve oluşturduğu tehlikeler.",
+        "stimulus": "Dünya yörüngesinde işlevi bitmiş eski uydular, roket parçaları ve yakıt tankları başıboş halde saatte yaklaşık 28.000 kilometre gibi aşırı yüksek hızlarla dolanmaktadır (Uzay Kirliliği).",
+        "questionText": "a) Bu uzay atıklarının halen görev yapan uydular ve Uluslararası Uzay İstasyonu için oluşturduğu en büyük tehlikeyi açıklayınız.\nb) Uzay kirliliğini azaltmak veya önlemek için bilim insanlarının geliştirebileceği bir çözüm önerisi yazınız.",
+        "solutionExplanation": "Yüksek hızlı çarpışma uyduları parçalar; görevi biten uydular kontrollü olarak atmosfere sokulup yakılmalıdır.",
+        "modelAnswer": "a) Uzay atıkları mermiden katbekat hızlı hareket eder. Küçücük bir metal cıvata bile aktif bir uyduya çarptığında onu parçalayabilir ve kullanılmaz hale getirebilir.\nb) Görev süresi tükenen uydular kontrollü şekilde Dünya atmosferine yönlendirilerek sürtünmeyle yanıp yok edilmeli veya robotik uzay araçlarıyla toplanmalıdır.",
+        "rubric": [
+          {
+            "criterion": "a şıkkında aşırı yüksek hız nedeniyle oluşacak çarpışma ve hasar riskinin açıklanması",
+            "points": 7
+          },
+          {
+            "criterion": "b şıkkında atmosfere sokup yakma veya uzay araçlarıyla toplama çözümünün yazılması",
+            "points": 8
+          }
+        ],
+        "questionNumber": 3,
+        "points": 13,
+        "difficulty": "Orta"
+      },
+      {
+        "outcomeCode": "FB.7.1.4",
+        "outcomeTitle": "FB.7.1.4. Yıldızların yaşamını açıklayarak yapılandırabilme",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "contextText": "Büyük kütleli yıldızların sonu ve süpernova patlamaları.",
+        "stimulus": "Fen bilimleri öğretmeni tahtaya şu bilgiyi yazmıştır: 'Başlangıç kütlesi Güneş'ten çok daha büyük olan dev yıldızlar, ömürlerinin sonunda çok şiddetli bir patlamayla patlarlar.'",
+        "questionText": "Dev yıldızların ömrünü noktalayan bu şiddetli patlamaya ve patlama sonrasında geriye kalan en gizemli gök cismine ne ad verilir? Açıklayınız.",
+        "solutionExplanation": "Süpernova patlaması ve ardından nötron yıldızı veya kara delik kalır.",
+        "modelAnswer": "Bu şiddetli patlamaya 'Süpernova Patlaması' denir. Patlamadan sonra geriye atom çekirdeği yoğunluğundaki bir 'Nötron Yıldızı' ya da çekim kuvveti o kadar güçlü olan ve ışığı bile içine çeken bir 'Kara Delik' kalır.",
+        "rubric": [
+          {
+            "criterion": "Süpernova patlaması kavramının doğru belirtilmesi",
+            "points": 7
+          },
+          {
+            "criterion": "Patlama sonrasında Kara Delik veya Nötron Yıldızı oluşumunun açıklanması",
+            "points": 8
+          }
+        ],
+        "questionNumber": 4,
+        "points": 13,
+        "difficulty": "Orta"
+      },
+      {
+        "outcomeCode": "FB.7.2.1",
+        "outcomeTitle": "FB.7.2.1. Fiziksel anlamda yapılan işin bağlı olduğu faktörlere ilişkin bilimsel çıkarım yapabilme",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "contextText": "Fiziksel anlamda iş yapma şartları: kuvvet ve hareket doğrultusu.",
+        "stimulus": "Fen bilimleri dersinde fiziksel anlamda iş yapılmış sayılması için cisme bir kuvvet uygulanmalı ve cisim uygulanan kuvvet doğrultusunda yer değiştirmelidir.\n1. Durum: Ahmet, 10 kg'lık okul çantasını sırtında taşıyarak düz yatay koridorda 20 metre yürüyor.\n2. Durum: Ahmet, aynı çantayı yerden kaldırıp merdivenlerden 2. kata (yukarıya) çıkarıyor.",
+        "questionText": "a) 1. ve 2. durumdan hangisinde YER ÇEKİMİ KUVVETİNE KARŞI fiziksel anlamda iş yapılmıştır? Nedenini açıklayınız.\nb) 1. durumda yatay yolda yürürken neden yer çekimine karşı iş yapılmamıştır?",
+        "solutionExplanation": "Kuvvet ile hareket aynı doğrultuda olmalıdır. Yukarı çıkarken iş yapılır, yatayda yürürken kuvvet ve hareket birbirine diktir.",
+        "modelAnswer": "a) 2. durumda yer çekimine karşı iş yapılmıştır. Çünkü çanta yukarı kaldırılırken yer çekimine zıt yönde yukarı doğru kuvvet uygulanmış ve çanta kuvvet doğrultusunda yukarı doğru hareket etmiştir.\nb) 1. durumda ise çanta yatayda hareket etmektedir; yer çekimi kuvveti ise düşeydir. Kuvvet ve hareket doğrultusu birbirine dik olduğu için yer çekimine karşı iş yapılmaz.",
+        "rubric": [
+          {
+            "criterion": "a şıkkında 2. durumun ve kuvvet doğrultusunda yukarı hareket gerekçesinin yazılması",
+            "points": 8
+          },
+          {
+            "criterion": "b şıkkında kuvvet ile hareketin birbirine dik olması nedeniyle iş yapılmadığının açıklanması",
+            "points": 7
+          }
+        ],
+        "questionNumber": 5,
+        "points": 13,
+        "difficulty": "Orta"
+      },
+      {
+        "outcomeCode": "FB.7.2.1",
+        "outcomeTitle": "FB.7.2.1. Fiziksel anlamda yapılan işin bağlı olduğu faktörlere ilişkin bilimsel çıkarım yapabilme",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "contextText": "Alınan yolun uzunluğunun yapılan iş miktarına etkisi.",
+        "stimulus": "Özdeş iki koliden birini Ahmet 20 N kuvvet uygulayarak 5 metre itmiş, diğerini Mehmet aynı 20 N kuvvet uygulayarak 10 metre itmiştir.",
+        "questionText": "Uygulanan kuvvetler eşit olduğuna göre Ahmet ve Mehmet'in yaptıkları işleri karşılaştırınız. Alınan yol ile yapılan iş arasındaki ilişkiyi açıklayınız.",
+        "solutionExplanation": "Kuvvetler eşitken yol uzadıkça iş artar.",
+        "modelAnswer": "Mehmet'in yaptığı iş Ahmet'in yaptığı işten daha fazladır (2 katıdır). Çünkü uygulanan kuvvet aynı kaldığında cismin kuvvet doğrultusunda aldığı yol arttıkça yapılan fiziksel iş miktarı da artar.",
+        "rubric": [
+          {
+            "criterion": "Mehmet'in yaptığı işin fazla olduğunun tespiti",
+            "points": 7
+          },
+          {
+            "criterion": "Kuvvet eşitken alınan yol arttıkça işin artacağı ilişkisinin açıklanması",
+            "points": 8
+          }
+        ],
+        "questionNumber": 6,
+        "points": 12,
+        "difficulty": "Orta"
+      },
+      {
+        "outcomeCode": "FB.7.2.2",
+        "outcomeTitle": "FB.7.2.2. Enerji çeşitlerinden kinetik ve potansiyel enerjiyi karşılaştırabilme",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "contextText": "Kinetik enerjinin kütle ve sürat ilişkisi.",
+        "stimulus": "Düz ve sürtünmesiz bir karayolunda aynı 60 km/h süratle hareket eden boş bir kamyon ile küçük bir otomobil aynı anda frene basmaktadır.",
+        "questionText": "a) Kamyon ve otomobilin kinetik (hareket) enerjilerini karşılaştırınız. Hangisinin kinetik enerjisi daha büyüktür? Neden?\nb) Otomobilin kamyonla aynı kinetik enerjiye ulaşması için sürati nasıl değiştirilmelidir?",
+        "solutionExplanation": "Süratler eşitken kütlesi büyük olan kamyonun kinetik enerjisi fazladır. Otomobilin sürati artırılmalıdır.",
+        "modelAnswer": "a) Kamyonun kinetik enerjisi daha büyüktür. Çünkü hareket halindeki cisimlerin süratleri eşit olduğunda kütlesi daha büyük olan cismin kinetik enerjisi daha fazla olur.\nb) Kütlesi küçük olan otomobilin kamyonla aynı enerjiye ulaşabilmesi için süratinin artırılması gerekir.",
+        "rubric": [
+          {
+            "criterion": "a şıkkında kamyonun kinetik enerjisinin büyük olduğunun ve kütle gerekçesinin yazılması",
+            "points": 8
+          },
+          {
+            "criterion": "b şıkkında otomobilin süratinin artırılması gerektiğinin belirtilmesi",
+            "points": 7
+          }
+        ],
+        "questionNumber": 7,
+        "points": 13,
+        "difficulty": "Zor"
+      },
+      {
+        "outcomeCode": "FB.7.2.2",
+        "outcomeTitle": "FB.7.2.2. Enerji çeşitlerinden kinetik ve potansiyel enerjiyi karşılaştırabilme",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "contextText": "Çekim potansiyel enerjisinde yükseklik ve kütle etkisi.",
+        "stimulus": "Laboratuvarda özdeş iki metal bilyeden biri 1 metre yüksekliğindeki masadan, diğeri 2 metre yüksekliğindeki dolaptan kum havuzuna bırakılmıştır.\nÖğrencilerden Can: \"2 metre yükseklikten bırakılan bilye kumda daha derin bir iz bırakır çünkü çekim potansiyel enerjisi daha fazladır.\"\nAlp: \"Bilyeler özdeş olduğu için kumda bıraktıkları iz aynı derinlikte olur.\"",
+        "questionText": "Hangi öğrencinin açıklaması doğrudur? Yerden yükseklik ile çekim potansiyel enerjisi arasındaki ilişkiyi açıklayınız.",
+        "solutionExplanation": "Can haklıdır. Yükseklik arttıkça çekim potansiyel enerjisi artar.",
+        "modelAnswer": "Can haklıdır. Çünkü kütleleri eşit olan cisimlerden yerden yüksekliği daha fazla olan cismin çekim potansiyel enerjisi daha büyüktür. Dolayısıyla 2 metredeki bilye kum zeminle temas ettiğinde kuma daha fazla enerji aktarır ve daha derin iz bırakır.",
+        "rubric": [
+          {
+            "criterion": "Can'ın haklı olduğunun doğru tespiti",
+            "points": 7
+          },
+          {
+            "criterion": "Kütle eşitken yükseklik arttıkça çekim potansiyel enerjisinin artacağının açıklanması",
+            "points": 8
+          }
+        ],
+        "questionNumber": 8,
+        "points": 12,
+        "difficulty": "Zor"
       }
     ]
   },
@@ -12652,7 +12908,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
     "subjectId": "fen_bilimleri",
     "examTerm": "1_donem_1_yazili",
     "scenarioId": "senaryo_4",
-    "title": "7. Sınıf Fen Bilimleri 1. Dönem 1. Ortak Yazılı Sınavı (Senaryo 4) (4 Soru)",
+    "title": "7. Sınıf Fen Bilimleri 1. Dönem 1. Ortak Yazılı Sınavı (Senaryo 4) (6 Soru)",
     "durationMinutes": 40,
     "totalPoints": 100,
     "instructions": [
@@ -12661,104 +12917,148 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
     ],
     "questions": [
       {
-        "questionNumber": 1,
-        "outcomeCode": "FB.7.1.1",
-        "outcomeTitle": "FB.7.1.1. Uzay araştırmaları için geliştirilen teknolojileri karşılaştırabilme",
-        "difficulty": "Orta",
-        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
-        "points": 25,
-        "contextText": "Türk-İslam gökbilimcileri ve uzay bilimine katkıları.",
-        "stimulus": "Ali Kuşçu, Fatih Sultan Mehmet döneminde İstanbul'a gelerek Semerkant rasathanesindeki bilgi birikimini Osmanlı'ya taşımış ve Ay'ın ilk haritasını çıkaran öncü gökbilimci olmuştur.",
-        "questionText": "a) Ali Kuşçu ve Uluğ Bey'in teleskop henüz icat edilmeden önceki dönemde gök cisimlerinin hareketlerini nasıl yüksek doğrulukla hesapladıklarını açıklayınız.\nb) Günümüzde NASA'nın Ay üzerindeki bir kratere 'Ali Kuşçu' adını vermesinin bilim tarihi açısından önemini yazınız.",
-        "solutionExplanation": "Gözlem aletleri (rubu tahtası, usturlap, dev sekstantlar) ve ileri matematik/trigonometri kullanmışlardır.",
-        "modelAnswer": "a) Teleskobun olmadığı dönemde Ali Kuşçu ve Uluğ Bey; 'usturlap', 'sekstant' gibi dev açıölçer aletler, güneş saatleri ve çok ileri düzey küresel geometri/trigonometri hesaplamaları kullanarak yıldızların ve gezegenlerin yörüngelerini günümüz değerlerine çok yakın bir hassasiyetle hesaplamışlardır.\nb) NASA'nın Ay'daki bir kratere Ali Kuşçu adını vermesi; Türk-İslam medeniyetinin astronomi ve bilimin evrensel gelişimine yaptığı katkıların dünya çapında kabul edildiğini ve tescillendiğini göstermektedir.",
-        "rubric": [
-          {
-            "criterion": "Teleskop öncesi gözlem aletleri ve matematiksel dehanın açıklanması",
-            "points": 13
-          },
-          {
-            "criterion": "Bilim tarihi ve evrensel miras açısından krater isimlendirmesinin yorumlanması",
-            "points": 12
-          }
-        ]
-      },
-      {
-        "questionNumber": 2,
         "outcomeCode": "FB.7.1.3",
         "outcomeTitle": "FB.7.1.3. Uzay araştırmalarının yol açabileceği problemleri çözebilme",
-        "difficulty": "Orta",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
-        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
-        "points": 25,
-        "contextText": "Işık kirliliği ve astronomi araştırmalarına etkisi.",
-        "stimulus": "Türkiye'nin Aktif Yapay Uyduları ve Görevleri konusu üzerine çalışan iki öğrenci arasında şu tartışma geçmektedir:\nUmut: \"Bu durumda temel kural şudur: Türksat serisi TV/İletişim uydusudur; Göktürk ve İMECE ise askeri/harita/tarım gözlem uydusudur.\"\nEmre: \"Hayır Umut, yanılıyorsun. Çünkü kural gereği: Haberleşme (İletişim) Uydularımız: Türksat 3A, Türksat 4A, Türksat 4B, Türksat 5A, Türksat 5B, Türksat 6A (İlk yerli haberleşme uydumuz). Bu yüzden senin ileri sürdüğün iddia geçerli değildir.\"",
-        "questionText": "Umut ve Emre'nin iddialarını Türkiye'nin Aktif Yapay Uyduları ve Görevleri ilkeleri bakımından değerlendiriniz. Hangi öğrenci haklıdır? Yanılan öğrencinin kavram yanılgısını bilimsel/mantıksal gerekçesiyle açıklayınız.",
-        "solutionExplanation": "Işık kirliliği yıldızların sönük ışığını boğar, göçmen kuşların yön bulmasını engeller, yavru kaplumbağaları şaşırtır. Çözüm: Işığı sadece yere yönlendiren siperlikli armatür.",
-        "modelAnswer": "Emre haklıdır. Çünkü Haberleşme (İletişim) Uydularımız: Türksat 3A, Türksat 4A, Türksat 4B, Türksat 5A, Türksat 5B, Türksat 6A (İlk yerli haberleşme uydumuz).. Umut ise 'Türksat serisi TV/İletişim uydusudur; Göktürk ve İMECE ise askeri/harita/tarım gözlem uydusudur.' varsayımında bulunarak temel kuralı ve şartları göz ardı etmiştir.",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "contextText": "Dünya yörüngesindeki uzay kirliliği ve oluşturduğu tehlikeler.",
+        "stimulus": "Dünya yörüngesinde işlevi bitmiş eski uydular, roket parçaları ve yakıt tankları başıboş halde saatte yaklaşık 28.000 kilometre gibi aşırı yüksek hızlarla dolanmaktadır (Uzay Kirliliği).",
+        "questionText": "a) Bu uzay atıklarının halen görev yapan uydular ve Uluslararası Uzay İstasyonu için oluşturduğu en büyük tehlikeyi açıklayınız.\nb) Uzay kirliliğini azaltmak veya önlemek için bilim insanlarının geliştirebileceği bir çözüm önerisi yazınız.",
+        "solutionExplanation": "Yüksek hızlı çarpışma uyduları parçalar; görevi biten uydular kontrollü olarak atmosfere sokulup yakılmalıdır.",
+        "modelAnswer": "a) Uzay atıkları mermiden katbekat hızlı hareket eder. Küçücük bir metal cıvata bile aktif bir uyduya çarptığında onu parçalayabilir ve kullanılmaz hale getirebilir.\nb) Görev süresi tükenen uydular kontrollü şekilde Dünya atmosferine yönlendirilerek sürtünmeyle yanıp yok edilmeli veya robotik uzay araçlarıyla toplanmalıdır.",
         "rubric": [
           {
-            "criterion": "Haklı olan öğrencinin (Emre) doğru tespiti",
-            "points": 10
+            "criterion": "a şıkkında aşırı yüksek hız nedeniyle oluşacak çarpışma ve hasar riskinin açıklanması",
+            "points": 7
           },
           {
-            "criterion": "Umut'nın kavram yanılgısının kural ve gerekçeyle çürütülmesi",
-            "points": 15
+            "criterion": "b şıkkında atmosfere sokup yakma veya uzay araçlarıyla toplama çözümünün yazılması",
+            "points": 8
           }
-        ]
+        ],
+        "questionNumber": 1,
+        "points": 16,
+        "difficulty": "Orta"
       },
       {
-        "questionNumber": 3,
+        "outcomeCode": "FB.7.1.4",
+        "outcomeTitle": "FB.7.1.4. Yıldızların yaşamını açıklayarak yapılandırabilme",
+        "cognitiveLevel": "Basit Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "contextText": "Bulutsu (nebula) ve yıldızların yaşam döngüsü.",
+        "stimulus": "Yıldızlar da tıpkı canlılar gibi doğar, büyür ve enerjileri tükenince ömürlerini tamamlarlar. Yıldızların yaşam süreçleri başlangıçtaki kütlelerinin büyüklüğüne göre belirlenir.",
+        "questionText": "a) Bütün yıldızların doğum yeri olan gaz ve toz bulutlarına ne ad verilir?\nb) Güneş gibi küçük kütleli bir yıldızın ömrü bittiğinde geride bıraktığı sıcak ve yoğun kalıntıya ne ad verilir?",
+        "solutionExplanation": "Yıldızlar bulutsuda doğar; küçük kütleliler beyaz cüce olarak sonlanır.",
+        "modelAnswer": "a) Bütün yıldızların doğum yeri olan dev gaz ve toz bulutlarına 'Bulutsu (Nebula)' adı verilir (Örn: Orion Bulutsusu).\nb) Güneş gibi küçük kütleli yıldızlar ömürlerinin sonunda dış katmanlarını uzaya salarak geride 'Beyaz Cüce' bırakırlar.",
+        "rubric": [
+          {
+            "criterion": "a şıkkında Bulutsu / Nebula teriminin doğru yazılması",
+            "points": 7
+          },
+          {
+            "criterion": "b şıkkında Beyaz Cüce kavramının doğru açıklanması",
+            "points": 8
+          }
+        ],
+        "questionNumber": 2,
+        "points": 17,
+        "difficulty": "Kolay"
+      },
+      {
         "outcomeCode": "FB.7.1.5",
         "outcomeTitle": "FB.7.1.5. Yıldız, galaksi ve evren kavramlarını açıklayarak yapılandırabilme",
-        "difficulty": "Kolay",
         "cognitiveLevel": "Basit Bilişsel Süreçler",
-        "archetype": "Durum & Özellik Matrisi (VAR/YOK/Tik)",
-        "points": 25,
-        "contextText": "Kuyruklu yıldız ve meteor kavram yanılgıları.",
-        "stimulus": "Aşağıdaki matriste Yıldızların Yaşam Döngüsü ve Bulutsular (Nebula) konusuna yönelik üç farklı durum ve özellikleri verilmiştir:\n\n| Durum / Örnek | 1. Temel Kriter | 2. Ayırt Edici Özellik | Karşılar mı? |\n| :--- | :---: | :---: | :---: |\n| 1. Durum (Örnek A) | VAR | YOK | ............ |\n| 2. Durum (Örnek B) | VAR | VAR | ............ |\n| 3. Durum (Örnek C) | YOK | YOK | ............ |",
-        "questionText": "Matristeki boşlukları özelliğin doğruluğuna göre \"EVET\" veya \"HAYIR\" yazarak doldurunuz. 2. Durum'u diğer durumlardan ayıran en temel şartı gerekçelendirerek yazınız.",
-        "solutionExplanation": "Yıldız kayması meteorun atmosferde sürtünmeyle yanmasıdır. Kuyruklu yıldız donmuş gaz, toz ve buz kütlesidir (kirli kartopu); Güneş'e yaklaşınca buharlaşan gaz kuyruk oluşturur.",
-        "modelAnswer": "Tablo Tamamlaması: 1. Durum: HAYIR | 2. Durum: EVET | 3. Durum: HAYIR.\nAyırt Edici Gerekçe: 2. Durum hem temel kriteri hem de ayırt edici özelliği eksiksiz sağladığı için Yıldızların Doğumu: Bulutsu (Nebula) adı verilen dev gaz ve toz bulutlarının kütleçekimle sıkışmasıyla yıldızlar doğar (Örn: Orion, Kartal bulutsusu). kuralına tam uygundur.",
+        "archetype": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "contextText": "Evren ve Uzay kavramları arasındaki fark.",
+        "stimulus": "Sınıfta Elif ile Kerem evren ve uzay kavramlarını tartışmaktadır:\nElif: \"Evren; Dünya dahil var olan bütün gök cisimlerini, enerjiyi ve boşlukları içine alan sınırsız bütündür.\"\nKerem: \"Uzay ise Dünya'nın atmosferi dışında kalan sonsuz boşluktur.\"",
+        "questionText": "Elif ve Kerem'in tanımlarını değerlendiriniz. Hangisi haklıdır? Evren ile uzay arasındaki büyüklük/kapsam ilişkisini açıklayınız.",
+        "solutionExplanation": "İkisi de haklıdır. Evren = Dünya + Uzay'dır.",
+        "modelAnswer": "Her iki öğrenci de haklıdır. Evren her şeyi (Dünya ve uzayı) kapsayan en büyük bütündür. Uzay ise evrenin Dünya atmosferi dışında kalan kısmıdır. Dolayısıyla Evren, uzaydan daha kapsamlıdır.",
         "rubric": [
           {
-            "criterion": "Tablodaki boşlukların hatasız doldurulması (HAYIR - EVET - HAYIR)",
-            "points": 12
+            "criterion": "Her iki öğrencinin tanımının da doğru olduğunun tespiti",
+            "points": 7
           },
           {
-            "criterion": "2. Durum'un ayırt edici şartının ve kuralının açıklanması",
-            "points": 13
+            "criterion": "Evrenin Dünya'yı da kapsadığını, uzayın ise atmosferin dışında kalan kısım olduğunu belirten kapsam ilişkisinin açıklanması",
+            "points": 8
           }
-        ]
+        ],
+        "questionNumber": 3,
+        "points": 17,
+        "difficulty": "Kolay"
       },
       {
-        "questionNumber": 4,
-        "outcomeCode": "FB.7.2.2",
-        "outcomeTitle": "FB.7.2.2. Enerji çeşitlerinden kinetik ve potansiyel enerjiyi karşılaştırabilme",
-        "difficulty": "Zor",
+        "outcomeCode": "FB.7.2.1",
+        "outcomeTitle": "FB.7.2.1. Fiziksel anlamda yapılan işin bağlı olduğu faktörlere ilişkin bilimsel çıkarım yapabilme",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
         "archetype": "Hata Tespiti & Adım Analizi",
-        "points": 25,
-        "contextText": "Esneklik potansiyel enerjisi ve kinetik enerji.",
-        "stimulus": "Sude, Mayoz Bölünme: Parça Değişimi ve Kalıtsal Çeşitlilik ile ilgili açık uçlu bir soruyu çözerken çalışma kağıdına şu adımları yazmıştır:\n1. Adım: Verilen öncülleri ve temel kavramları belirledim.\n2. Adım: Kromozom sayısının tür içinde nesiller boyu sabit kalmasını sağlayan olay MAYOZ ve DÖLLENME birlikteliğidir. kabulünü yaparak işleme başladım.\n3. Adım: Bu adımdaki sonuca göre bağlantılı kuralı uyguladım.\n4. Adım: Nihai sonuca ulaştım.",
-        "questionText": "Sude'in çözüm adımlarını inceleyiniz. İlk hata kaçıncı adımda yapılmıştır? Yapılan hatanın gerekçesini açıklayarak o adımın ve nihai cevabın doğru halini yazınız.",
-        "solutionExplanation": "Esneklik potansiyel enerjisi depolanır (gerilme miktarı ve yayın cinsine bağlı). Serbest kalınca oka kinetik enerji olarak aktarılır.",
-        "modelAnswer": "İlk hata 2. adımda yapılmıştır. Çünkü Sude, 'Kromozom sayısının tür içinde nesiller boyu sabit kalmasını sağlayan olay MAYOZ ve DÖLLENME birlikteliğidir.' hatasına düşmüştür. Doğrusu: Mayozun Amacı: Eşeyli üreyen canlılarda sperm ve yumurta gibi \"üreme hücrelerini (gametleri)\" oluşturmaktır. kuralı işletilmeli ve çözüm bu esasa göre tamamlanmalıdır.",
+        "contextText": "Kuvvet uygulanmasına rağmen hareket etmeyen cisimlerde iş kavramı.",
+        "stimulus": "Zeynep, odasındaki ağır kitaplığı yerinden oynatmak için tüm gücüyle 100 N kuvvet uygulayarak 5 dakika boyunca itmiş, terlemiş ve çok yorulmuştur. Ancak kitaplık duvara takılı olduğu için milimetre bile hareket etmemiştir.",
+        "questionText": "Zeynep çok yorulmasına ve 100 N kuvvet uygulamasına rağmen fen bilimleri kurallarına göre neden fiziksel anlamda iş yapmamış sayılır? Gerekçesini yazınız.",
+        "solutionExplanation": "Yol alınmadığı için iş sıfırdır.",
+        "modelAnswer": "Fiziksel anlamda iş yapılabilmesi için cismin kuvvet doğrultusunda mutlaka yol alması (hareket etmesi) gerekir. Kitaplık hareket etmediği (alınan yol sıfır olduğu) için fiziksel anlamda yapılan iş sıfırdır.",
         "rubric": [
           {
-            "criterion": "İlk hatanın yapıldığı adımın (2. Adım) doğru belirlenmesi",
-            "points": 9
+            "criterion": "Fiziksel iş için kuvvet doğrultusunda hareket/yol alma şartının belirtilmesi",
+            "points": 8
           },
           {
-            "criterion": "Yapılan kavramsal/işlemsel hatanın gerekçelendirilmesi",
-            "points": 9
-          },
-          {
-            "criterion": "Adımın ve sonucun doğru kurala göre düzeltilmesi",
+            "criterion": "Kitaplığın yer değiştirmediği (yol = 0) için işin sıfır olduğunun gerekçelendirilmesi",
             "points": 7
           }
-        ]
+        ],
+        "questionNumber": 4,
+        "points": 17,
+        "difficulty": "Orta"
+      },
+      {
+        "outcomeCode": "FB.7.2.1",
+        "outcomeTitle": "FB.7.2.1. Fiziksel anlamda yapılan işin bağlı olduğu faktörlere ilişkin bilimsel çıkarım yapabilme",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "contextText": "Kuvvetin büyüklüğünün yapılan iş miktarına etkisi.",
+        "stimulus": "Bir süpermarkette özdeş iki alışveriş arabasından:\n• 1. Arabayı Kerem 15 N kuvvetle 10 metre itmiştir.\n• 2. Arabayı Selim 30 N kuvvetle 10 metre itmiştir.",
+        "questionText": "a) Kerem ve Selim'in yaptıkları fiziksel iş miktarlarını karşılaştırınız. Hangi öğrenci daha fazla iş yapmıştır?\nb) Alınan yollar eşit olduğuna göre kuvvetin büyüklüğü ile yapılan iş arasındaki ilişkiyi açıklayınız.",
+        "solutionExplanation": "Yollar eşitken kuvvet büyük olan daha çok iş yapar.",
+        "modelAnswer": "a) Selim'in yaptığı iş daha fazladır (2 katıdır).\nb) Alınan yollar eşit olduğunda cisme uygulanan kuvvetin büyüklüğü arttıkça yapılan fiziksel iş miktarı da doğru orantılı olarak artar.",
+        "rubric": [
+          {
+            "criterion": "a şıkkında Selim'in daha çok iş yaptığının tespiti",
+            "points": 7
+          },
+          {
+            "criterion": "b şıkkında yol eşitken kuvvet arttıkça işin artacağının gerekçelendirilmesi",
+            "points": 8
+          }
+        ],
+        "questionNumber": 5,
+        "points": 17,
+        "difficulty": "Orta"
+      },
+      {
+        "outcomeCode": "FB.7.2.2",
+        "outcomeTitle": "FB.7.2.2. Enerji çeşitlerinden kinetik ve potansiyel enerjiyi karşılaştırabilme",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "contextText": "Kinetik enerjinin kütle ve sürat ilişkisi.",
+        "stimulus": "Düz ve sürtünmesiz bir karayolunda aynı 60 km/h süratle hareket eden boş bir kamyon ile küçük bir otomobil aynı anda frene basmaktadır.",
+        "questionText": "a) Kamyon ve otomobilin kinetik (hareket) enerjilerini karşılaştırınız. Hangisinin kinetik enerjisi daha büyüktür? Neden?\nb) Otomobilin kamyonla aynı kinetik enerjiye ulaşması için sürati nasıl değiştirilmelidir?",
+        "solutionExplanation": "Süratler eşitken kütlesi büyük olan kamyonun kinetik enerjisi fazladır. Otomobilin sürati artırılmalıdır.",
+        "modelAnswer": "a) Kamyonun kinetik enerjisi daha büyüktür. Çünkü hareket halindeki cisimlerin süratleri eşit olduğunda kütlesi daha büyük olan cismin kinetik enerjisi daha fazla olur.\nb) Kütlesi küçük olan otomobilin kamyonla aynı enerjiye ulaşabilmesi için süratinin artırılması gerekir.",
+        "rubric": [
+          {
+            "criterion": "a şıkkında kamyonun kinetik enerjisinin büyük olduğunun ve kütle gerekçesinin yazılması",
+            "points": 8
+          },
+          {
+            "criterion": "b şıkkında otomobilin süratinin artırılması gerektiğinin belirtilmesi",
+            "points": 7
+          }
+        ],
+        "questionNumber": 6,
+        "points": 16,
+        "difficulty": "Zor"
       }
     ]
   },
