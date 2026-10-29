@@ -4,8 +4,10 @@ import {
   PracticeFeedbackMode, 
   StudentExamSession, 
   QuestionSessionData,
+  GeneralSelfEvaluationOption,
   OutcomeDiagnosticItem,
-  ExamSessionSummary 
+  ExamSessionSummary,
+  isValidStudentAnswer
 } from '../types/practice';
 import { OUTCOME_STUDY_BANK } from '../data/outcomeStudyBank';
 import { formatOutcomeBadgeTitle } from '../data/curriculumData';
@@ -31,6 +33,33 @@ import {
   Square,
   BarChart3
 } from 'lucide-react';
+
+const GENERAL_SELF_EVAL_OPTIONS: {
+  key: GeneralSelfEvaluationOption;
+  label: string;
+  activeClasses: string;
+}[] = [
+  {
+    key: 'dogru',
+    label: 'Cevabım doğru.',
+    activeClasses: 'bg-emerald-100 border-emerald-400 text-emerald-950 font-bold ring-2 ring-emerald-500/20 shadow-2xs'
+  },
+  {
+    key: 'kismen_dogru',
+    label: 'Cevabım kısmen doğru.',
+    activeClasses: 'bg-amber-100 border-amber-400 text-amber-950 font-bold ring-2 ring-amber-500/20 shadow-2xs'
+  },
+  {
+    key: 'yanlis',
+    label: 'Cevabım yanlış.',
+    activeClasses: 'bg-rose-100 border-rose-400 text-rose-950 font-bold ring-2 ring-rose-500/20 shadow-2xs'
+  },
+  {
+    key: 'emin_degilim',
+    label: 'Emin değilim.',
+    activeClasses: 'bg-indigo-100 border-indigo-400 text-indigo-950 font-bold ring-2 ring-indigo-500/20 shadow-2xs'
+  }
+];
 
 interface InteractivePracticeViewProps {
   examPaper: ExamPaper;
@@ -61,7 +90,7 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
       grade: examPaper.grade,
       subjectId: examPaper.subjectId,
       scenarioId: examPaper.scenarioId,
-      feedbackMode: 'immediate',
+      feedbackMode: 'end_of_exam', // Varsayılan geri bildirim modu: Sınav Sonunda Toplu
       currentQuestionIndex: 0,
       isCompleted: false,
       createdAt: Date.now(),
@@ -104,12 +133,11 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
     earnedPoints: 0
   };
 
-  const hasStudentAnswer = Boolean(currentAnswerData.studentAnswer && currentAnswerData.studentAnswer.trim().length > 0);
+  const hasStudentAnswer = isValidStudentAnswer(currentAnswerData.studentAnswer);
   const isEvaluationRevealed = Boolean(revealedQuestions[qNum]);
 
   // Öğrenci metin yanıtını güncelle
   const handleAnswerTextChange = (text: string) => {
-    const trimmed = text.trim();
     setSession(prev => ({
       ...prev,
       answers: {
@@ -117,7 +145,39 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
         [qNum]: {
           ...currentAnswerData,
           studentAnswer: text,
-          isAnswered: trimmed.length > 0
+          isAnswered: isValidStudentAnswer(text)
+        }
+      }
+    }));
+  };
+
+  // Öğrencinin genel öz değerlendirme kanaatini kaydet ("Cevabım doğru", "kısmen doğru", "yanlış", "emin değilim")
+  const handleSetGeneralSelfEvaluation = (
+    option: GeneralSelfEvaluationOption,
+    targetQNum: number = qNum
+  ) => {
+    const ansData: QuestionSessionData = session.answers[targetQNum] || {
+      questionNumber: targetQNum,
+      studentAnswer: '',
+      isAnswered: false,
+      isEvaluated: false,
+      checkedCriteriaIndices: [],
+      earnedPoints: 0
+    };
+
+    // Boş veya tek harf/sembol gibi yetersiz cevaplarda genel değerlendirme yapılamaz
+    if (!isValidStudentAnswer(ansData.studentAnswer)) {
+      return;
+    }
+
+    setSession(prev => ({
+      ...prev,
+      answers: {
+        ...prev.answers,
+        [targetQNum]: {
+          ...ansData,
+          generalSelfEvaluation: option
+          // ÖNEMLİ: Genel kanaat rubrik puanını değiştirmez, tek başına puan üretmez.
         }
       }
     }));
@@ -134,6 +194,11 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
       checkedCriteriaIndices: [],
       earnedPoints: 0
     };
+
+    // Boş veya tek harf/sembol gibi yetersiz cevaplarda rubrik üzerinden puan kazanılamaz
+    if (!isValidStudentAnswer(ansData.studentAnswer)) {
+      return;
+    }
 
     const currentChecked = ansData.checkedCriteriaIndices || [];
     let updatedChecked: number[];
@@ -177,6 +242,11 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
       checkedCriteriaIndices: [],
       earnedPoints: 0
     };
+
+    // Boş veya tek harf/sembol gibi yetersiz cevaplarda rubrik üzerinden puan kazanılamaz
+    if (!isValidStudentAnswer(ansData.studentAnswer)) {
+      return;
+    }
 
     const rubric = targetQ?.rubric || [];
     const updatedChecked = checkAll ? rubric.map((_, i) => i) : [];
@@ -225,7 +295,7 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
         grade: examPaper.grade,
         subjectId: examPaper.subjectId,
         scenarioId: examPaper.scenarioId,
-        feedbackMode: session.feedbackMode,
+        feedbackMode: session.feedbackMode || 'end_of_exam',
         currentQuestionIndex: 0,
         isCompleted: false,
         createdAt: Date.now(),
@@ -260,7 +330,7 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
       totalExamPoints += q.points;
       const ans = session.answers[num];
 
-      if (ans && ans.isAnswered && ans.studentAnswer.trim().length > 0) {
+      if (ans && isValidStudentAnswer(ans.studentAnswer)) {
         answeredCount++;
       } else {
         emptyCount++;
@@ -334,7 +404,7 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
   // Soru durumu rozeti
   const getQuestionStatusBadge = (questionNum: number) => {
     const a = session.answers[questionNum];
-    if (!a || (!a.isAnswered && !a.isEvaluated)) {
+    if (!a || (!isValidStudentAnswer(a.studentAnswer) && !a.isEvaluated)) {
       return { label: 'Boş', bg: 'bg-slate-100 text-slate-500 border-slate-200' };
     }
     if (a.isEvaluated) {
@@ -643,17 +713,45 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
           </div>
 
           {/* Soru Bazında Ayrıntılı Cevap ve Rubrik İnceleme Tablosu */}
-          <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm space-y-4">
-            <h3 className="text-base font-bold text-slate-900 flex items-center">
-              <CheckSquare className="w-5 h-5 text-indigo-600 mr-2" />
-              Soru Bazında Cevaplar ve Rubrik Ölçütleri Dökümü
-            </h3>
+          <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm space-y-5">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 pb-3">
+              <h3 className="text-base font-bold text-slate-900 flex items-center">
+                <CheckSquare className="w-5 h-5 text-indigo-600 mr-2" />
+                Soru Bazında Cevaplar ve Rubrik Ölçütleri Dökümü
+              </h3>
+              <span className="text-xs text-slate-500 font-medium">
+                Öz Değerlendirme & Geri Bildirim
+              </span>
+            </div>
+
+            {/* Öğrenci Yaşına Uygun Öz Değerlendirme Açıklama Kartı */}
+            <div className="bg-gradient-to-r from-indigo-50 via-blue-50 to-indigo-50 border border-indigo-200 rounded-xl p-4 sm:p-5 text-xs text-indigo-950 flex items-start space-x-3 shadow-2xs">
+              <HelpCircle className="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" />
+              <div className="space-y-1.5">
+                <strong className="block text-indigo-900 font-bold text-xs uppercase tracking-wide">
+                  Öğrenci Öz Değerlendirme Rehberi:
+                </strong>
+                <p className="leading-relaxed text-indigo-900 text-xs sm:text-[13px] font-medium">
+                  Önce cevabını model cevapla karşılaştır. Sonra cevabının ne kadar doğru olduğunu düşündüğünü seç. Ardından aşağıdaki ölçütleri tek tek inceleyerek karşıladıklarını işaretle. Bir sorunun bazı bölümlerini doğru yapmış olabilirsin. Kendini dürüstçe değerlendirmen öğrenmene yardımcı olur.
+                </p>
+                <div className="pt-1 text-[11px] text-indigo-700/90 font-semibold border-t border-indigo-200/60 flex items-center space-x-1.5">
+                  <span>ℹ️</span>
+                  <span>
+                    Bu puan senin kendi öğrenme sürecin için yaptığın <strong>öz değerlendirmedir</strong>; okul idaresi veya öğretmen tarafından verilmiş resmî bir sınav notu değildir.
+                  </span>
+                </div>
+              </div>
+            </div>
 
             <div className="space-y-4">
               {questions.map((q, idx) => {
                 const num = q.questionNumber || (idx + 1);
                 const ans = session.answers[num];
                 const checked = ans?.checkedCriteriaIndices || [];
+                const rawAnswer = ans?.studentAnswer || '';
+                const trimmedAnswer = rawAnswer.trim();
+                const isCompletelyEmpty = trimmedAnswer.length === 0;
+                const hasValidAnswer = isValidStudentAnswer(rawAnswer);
 
                 return (
                   <div key={num} className="border border-slate-200 rounded-xl p-4 bg-slate-50/50 space-y-3">
@@ -671,7 +769,7 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
                       </div>
                       <div className="flex items-center space-x-2">
                         <span className="text-xs font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded">
-                          {ans?.isEvaluated ? `${ans.earnedPoints} / ${q.points} p` : `Değerlendirilmedi (${q.points} p)`}
+                          {ans?.isEvaluated ? `Öz Değerlendirme: ${ans.earnedPoints} / ${q.points} p` : `Değerlendirilmedi (${q.points} p)`}
                         </span>
                         <button
                           onClick={() => {
@@ -688,12 +786,21 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
                     {/* Student text preview */}
                     <div className="text-xs text-slate-700 bg-white p-3 rounded-lg border border-slate-200">
                       <strong className="block text-slate-500 text-[11px] mb-1">Öğrenci Yanıtı:</strong>
-                      {ans?.studentAnswer?.trim() ? (
+                      {hasValidAnswer ? (
                         <div className="whitespace-pre-line font-medium text-slate-800 leading-relaxed">
                           <MathRenderer content={ans.studentAnswer} />
                         </div>
-                      ) : (
+                      ) : isCompletelyEmpty ? (
                         <p className="italic text-slate-400">Bu soru için yanıt yazılmadı (Boş bırakıldı).</p>
+                      ) : (
+                        <div className="space-y-1.5">
+                          <div className="whitespace-pre-line font-medium text-slate-600 bg-amber-50/60 p-2.5 rounded-lg border border-amber-200">
+                            <MathRenderer content={rawAnswer} />
+                          </div>
+                          <p className="text-[11px] text-amber-800 font-medium flex items-center">
+                            <span>⚠️ Yanıtınız öz değerlendirme için çok kısa veya anlamsız (tek harf/sembol yerine en az 2 karakter, anlamlı açıklama veya işlem basamağı beklenmektedir).</span>
+                          </p>
+                        </div>
                       )}
                     </div>
 
@@ -705,13 +812,69 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
                       </div>
                     </div>
 
-                    {/* Rubric Checked Breakdown */}
-                    <div className="text-xs space-y-2">
+                    {/* Solution Explanation if present */}
+                    {q.solutionExplanation && (
+                      <div className="bg-white/90 p-3 rounded-lg border border-slate-200 text-slate-700 text-xs">
+                        <strong className="block text-indigo-900 mb-0.5 font-bold">Çözüm Adımları Açıklaması:</strong>
+                        <p className="whitespace-pre-line leading-relaxed">{q.solutionExplanation}</p>
+                      </div>
+                    )}
+
+                    {/* 1. Genel Öz Değerlendirme Kanaati */}
+                    {hasValidAnswer ? (
+                      <div className="bg-slate-50 border border-slate-200 rounded-xl p-3.5 space-y-2">
+                        <div className="flex flex-wrap items-center justify-between gap-1.5">
+                          <strong className="text-slate-800 text-xs font-bold flex items-center">
+                            <span className="w-4 h-4 rounded-full bg-indigo-600 text-white text-[10px] font-bold inline-flex items-center justify-center mr-1.5">1</span>
+                            Genel Kanaatin: Cevabının ne kadar doğru olduğunu düşünüyorsun?
+                          </strong>
+                          {ans?.generalSelfEvaluation && (
+                            <span className="text-[11px] font-semibold text-indigo-700 bg-indigo-50 border border-indigo-200 px-2 py-0.5 rounded-md">
+                              Seçim: {GENERAL_SELF_EVAL_OPTIONS.find(o => o.key === ans.generalSelfEvaluation)?.label}
+                            </span>
+                          )}
+                        </div>
+                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-0.5">
+                          {GENERAL_SELF_EVAL_OPTIONS.map(opt => {
+                            const isSelected = ans?.generalSelfEvaluation === opt.key;
+                            return (
+                              <button
+                                key={opt.key}
+                                type="button"
+                                onClick={() => handleSetGeneralSelfEvaluation(opt.key, num)}
+                                className={`px-2.5 py-2 rounded-xl text-xs font-semibold border transition-all text-center cursor-pointer ${
+                                  isSelected
+                                    ? opt.activeClasses
+                                    : 'bg-white hover:bg-slate-100 border-slate-200 text-slate-700'
+                                }`}
+                              >
+                                {opt.label}
+                              </button>
+                            );
+                          })}
+                        </div>
+                        <p className="text-[10px] text-slate-500 italic">
+                          * Bu seçim senin kişisel kanaatindir; doğrudan puan üretmez ve aşağıdaki rubrik puanını değiştirmez.
+                        </p>
+                      </div>
+                    ) : (
+                      <div className="p-3 bg-slate-100/80 border border-slate-200 rounded-xl text-xs text-slate-500 flex items-center justify-between">
+                        <span>
+                          {isCompletelyEmpty 
+                            ? 'Bu soru için yanıt yazılmadığından genel öz değerlendirme yapılamaz.' 
+                            : 'Yeterli bir yanıt girilmediğinden (tek harf veya sembol) genel öz değerlendirme yapılamaz.'}
+                        </span>
+                      </div>
+                    )}
+
+                    {/* 2. Rubrik Bazlı Ayrıntılı Öz Değerlendirme */}
+                    <div className="text-xs space-y-2 pt-1">
                       <div className="flex flex-wrap items-center justify-between gap-1.5">
-                        <strong className="block text-slate-700 text-xs font-bold">
-                          Analitik Rubrik Değerlendirmesi:
+                        <strong className="text-slate-800 text-xs font-bold flex items-center">
+                          <span className="w-4 h-4 rounded-full bg-indigo-600 text-white text-[10px] font-bold inline-flex items-center justify-center mr-1.5">2</span>
+                          Analitik Rubrik Ölçütleri:
                         </strong>
-                        {ans?.studentAnswer?.trim() && (
+                        {hasValidAnswer && (
                           <div className="flex items-center space-x-1.5 text-[11px]">
                             <button
                               type="button"
@@ -731,7 +894,7 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
                         )}
                       </div>
 
-                      {ans?.studentAnswer?.trim() ? (
+                      {hasValidAnswer ? (
                         <div className="space-y-1">
                           {q.rubric.map((r, rIdx) => {
                             const isMet = checked.includes(rIdx);
@@ -763,7 +926,11 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
                         </div>
                       ) : (
                         <div className="p-2.5 rounded-lg bg-slate-100/70 border border-slate-200 text-[11px] text-slate-500 italic flex items-center justify-between">
-                          <span>Bu soruya henüz yanıt yazılmadığı için rubrik öz değerlendirmesi yapılamaz.</span>
+                          <span>
+                            {isCompletelyEmpty 
+                              ? 'Bu soruya henüz yanıt yazılmadığı için rubrik öz değerlendirmesi yapılamaz (0 puan).'
+                              : 'Cevabınız çok kısa veya eksik olduğu için rubrik öz değerlendirmesi yapılamaz (0 puan).'}
+                          </span>
                           <button
                             type="button"
                             onClick={() => {
@@ -772,7 +939,7 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
                             }}
                             className="ml-2 font-bold text-indigo-600 hover:underline not-italic cursor-pointer shrink-0"
                           >
-                            Cevap Yaz →
+                            {isCompletelyEmpty ? 'Cevap Yaz →' : 'Cevabı Tamamla →'}
                           </button>
                         </div>
                       )}
@@ -891,9 +1058,17 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
                     <div className="p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-500 flex items-center justify-between">
                       <span className="flex items-center">
                         <HelpCircle className="w-4 h-4 mr-2 text-slate-400 shrink-0" />
-                        Model cevabı, çözüm adımlarını ve rubrik öz değerlendirmesini açmak için lütfen önce cevabınızı yazınız.
+                        {currentAnswerData.studentAnswer.trim().length > 0 ? (
+                          <span>
+                            Model cevabı ve rubrik öz değerlendirmesini açmak için lütfen yanıtınızı tamamlayınız (tek harf veya sembol yerine çözümünüzü veya işlem basamaklarınızı yazınız, en az 2 karakter).
+                          </span>
+                        ) : (
+                          <span>
+                            Model cevabı, çözüm adımlarını ve rubrik öz değerlendirmesini açmak için lütfen önce cevabınızı yazınız.
+                          </span>
+                        )}
                       </span>
-                      <span className="text-[11px] font-semibold text-slate-400 hidden sm:inline bg-white px-2 py-0.5 rounded border border-slate-200">
+                      <span className="text-[11px] font-semibold text-slate-400 hidden sm:inline bg-white px-2 py-0.5 rounded border border-slate-200 shrink-0 ml-2">
                         Anında Geri Bildirim Modu
                       </span>
                     </div>
@@ -934,11 +1109,17 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
                   {isEvaluationRevealed && (
                     <div className="bg-emerald-50/70 border border-emerald-200 rounded-xl p-4 sm:p-5 space-y-4 text-xs">
                       
-                      {/* Notice Badge */}
-                      <div className="bg-white/90 border border-emerald-200 p-2.5 rounded-lg text-emerald-950 text-[11px] flex items-start space-x-2">
+                      {/* Notice Badge with Age-Appropriate Guidance */}
+                      <div className="bg-white/90 border border-emerald-200 p-3 rounded-xl text-emerald-950 text-xs flex items-start space-x-2.5 shadow-2xs">
                         <HelpCircle className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
-                        <div>
-                          <strong>MEBİ Değerlendirme İlkesi:</strong> Model cevap rehber niteliğindedir. Aynı mantığı, bilimsel ilkeyi ve gerekçeyi içeren farklı ifadeler de tam puan alır.
+                        <div className="space-y-1">
+                          <strong className="block text-emerald-900 font-bold">Öz Değerlendirme Rehberi:</strong>
+                          <p className="leading-relaxed text-emerald-900/90 font-medium text-[11px] sm:text-xs">
+                            Önce cevabını model cevapla karşılaştır. Sonra cevabının ne kadar doğru olduğunu düşündüğünü seç. Ardından aşağıdaki ölçütleri tek tek inceleyerek karşıladıklarını işaretle. Bir sorunun bazı bölümlerini doğru yapmış olabilirsin. Kendini dürüstçe değerlendirmen öğrenmene yardımcı olur.
+                          </p>
+                          <span className="text-[10px] text-emerald-700 block font-semibold pt-0.5">
+                            * Bu puan senin kendi öz değerlendirmendir; öğretmen tarafından verilmiş resmî bir not değildir.
+                          </span>
                         </div>
                       </div>
 
@@ -960,14 +1141,52 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
                         </div>
                       )}
 
-                      {/* Interactive Rubric Checklist */}
-                      <div className="space-y-2">
-                        <div className="flex items-center justify-between text-xs">
-                          <span className="font-bold text-slate-800">
+                      {/* 1. Genel Öz Değerlendirme Kanaati */}
+                      <div className="bg-white p-3.5 rounded-xl border border-emerald-100 space-y-2">
+                        <div className="flex flex-wrap items-center justify-between gap-1.5">
+                          <strong className="text-slate-800 text-xs font-bold flex items-center">
+                            <span className="w-4 h-4 rounded-full bg-indigo-600 text-white text-[10px] font-bold inline-flex items-center justify-center mr-1.5">1</span>
+                            Genel Kanaatin: Cevabının ne kadar doğru olduğunu düşünüyorsun?
+                          </strong>
+                          {currentAnswerData.generalSelfEvaluation && (
+                            <span className="text-[11px] font-semibold text-indigo-700 bg-indigo-50 border border-indigo-200 px-2 py-0.5 rounded-md">
+                              Seçim: {GENERAL_SELF_EVAL_OPTIONS.find(o => o.key === currentAnswerData.generalSelfEvaluation)?.label}
+                            </span>
+                          )}
+                        </div>
+                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-0.5">
+                          {GENERAL_SELF_EVAL_OPTIONS.map(opt => {
+                            const isSelected = currentAnswerData.generalSelfEvaluation === opt.key;
+                            return (
+                              <button
+                                key={opt.key}
+                                type="button"
+                                onClick={() => handleSetGeneralSelfEvaluation(opt.key, qNum)}
+                                className={`px-2.5 py-2 rounded-xl text-xs font-semibold border transition-all text-center cursor-pointer ${
+                                  isSelected
+                                    ? opt.activeClasses
+                                    : 'bg-white hover:bg-slate-100 border-slate-200 text-slate-700'
+                                }`}
+                              >
+                                {opt.label}
+                              </button>
+                            );
+                          })}
+                        </div>
+                        <p className="text-[10px] text-slate-500 italic">
+                          * Bu seçim senin kişisel kanaatindir; doğrudan puan üretmez ve aşağıdaki rubrik puanını değiştirmez.
+                        </p>
+                      </div>
+
+                      {/* 2. Interactive Rubric Checklist */}
+                      <div className="space-y-2 pt-1">
+                        <div className="flex flex-wrap items-center justify-between gap-1.5 text-xs">
+                          <span className="font-bold text-slate-800 flex items-center">
+                            <span className="w-4 h-4 rounded-full bg-indigo-600 text-white text-[10px] font-bold inline-flex items-center justify-center mr-1.5">2</span>
                             Analitik Rubrik Ölçütlerini İşaretleyiniz:
                           </span>
                           <span className="text-emerald-900 font-black">
-                            Alınan Puan: {currentAnswerData.earnedPoints} / {currentQ.points} p
+                            Öz Değerlendirme Puanı: {currentAnswerData.earnedPoints} / {currentQ.points} p
                           </span>
                         </div>
 

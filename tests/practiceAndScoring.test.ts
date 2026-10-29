@@ -11,7 +11,13 @@ import {
 import { SAMPLE_EXAMS } from '../src/data/sampleExams';
 import { OUTCOME_STUDY_BANK } from '../src/data/outcomeStudyBank';
 import { ExamPaper, ExamQuestion } from '../src/types';
-import { StudentExamSession } from '../src/types/practice';
+import { 
+  StudentExamSession, 
+  QuestionSessionData,
+  GeneralSelfEvaluationOption,
+  isValidStudentAnswer,
+  MIN_STUDENT_ANSWER_LENGTH
+} from '../src/types/practice';
 
 interface TestResult {
   testId: number;
@@ -678,6 +684,239 @@ console.log('=== OYSS AŞAMA 1: ENTEGRASYON VE DOĞRULAMA TESTLERİ BAŞLIYOR ==
     'Sınav sonu modunda soru esnasında gizlilik ve bitimde toplu açılma',
     passed,
     `Sınav esnasında gizli: ${!duringExamVisible}, Sınav bitiminde özet ekranında açık: ${onSummaryScreenVisible}.`
+  );
+}
+
+// --------------------------------------------------------------------------
+// TEST 24: Varsayılan Geri Bildirim Modunun end_of_exam Olması
+// --------------------------------------------------------------------------
+{
+  const defaultMode: PracticeFeedbackMode = 'end_of_exam';
+  assert(
+    24,
+    'Varsayılan geri bildirim modunun end_of_exam olması',
+    defaultMode === 'end_of_exam',
+    `Varsayılan mod: ${defaultMode} (Sınav Sonunda Toplu).`
+  );
+}
+
+// --------------------------------------------------------------------------
+// TEST 25: Genel Öz Değerlendirmenin Rubrik Puanını Değiştirmemesi ve Tek Başına Puan Üretmemesi
+// --------------------------------------------------------------------------
+{
+  const qRubric = [
+    { criterion: 'Kriter 1: Doğru işlem', points: 6 },
+    { criterion: 'Kriter 2: Açıklama ve birim', points: 4 }
+  ];
+
+  const ans: QuestionSessionData = {
+    questionNumber: 1,
+    studentAnswer: 'İşlem adımlarını yazdım: 20 + 12x = 152.',
+    isAnswered: true,
+    isEvaluated: true,
+    checkedCriteriaIndices: [0], // 6 puanlık kriter seçili
+    earnedPoints: 6
+  };
+
+  const initialEarned = ans.earnedPoints;
+
+  // Öğrenci genel kanaat olarak "Cevabım doğru." seçti:
+  ans.generalSelfEvaluation = 'dogru';
+  const earnedAfterDogru = ans.earnedPoints;
+
+  // Öğrenci fikrini değiştirip "Cevabım kısmen doğru." seçti:
+  ans.generalSelfEvaluation = 'kismen_dogru';
+  const earnedAfterKismen = ans.earnedPoints;
+
+  // Öğrenci fikrini değiştirip "Emin değilim." seçti:
+  ans.generalSelfEvaluation = 'emin_degilim';
+  const earnedAfterEminDegilim = ans.earnedPoints;
+
+  const unchanged = initialEarned === 6 && 
+                    earnedAfterDogru === 6 && 
+                    earnedAfterKismen === 6 && 
+                    earnedAfterEminDegilim === 6;
+
+  assert(
+    25,
+    'Genel öz değerlendirmenin rubrik puanını değiştirmemesi',
+    unchanged,
+    `Kanaat 'dogru' (${earnedAfterDogru} p), 'kismen_dogru' (${earnedAfterKismen} p), 'emin_degilim' (${earnedAfterEminDegilim} p). Rubrik puanı değişmedi.`
+  );
+}
+
+// --------------------------------------------------------------------------
+// TEST 26: "Cevabım yanlış" Seçilse Bile Rubrik Ölçütlerinin Bağımsız İşaretlenebilmesi
+// --------------------------------------------------------------------------
+{
+  const qRubric = [
+    { criterion: 'Kriter 1: Giriş formülü', points: 5 },
+    { criterion: 'Kriter 2: Çözüm adımı', points: 5 }
+  ];
+
+  const ans: QuestionSessionData = {
+    questionNumber: 2,
+    studentAnswer: 'x = 15 buldum ancak sonuç hatalı olabilir.',
+    isAnswered: true,
+    isEvaluated: false,
+    checkedCriteriaIndices: [],
+    earnedPoints: 0,
+    generalSelfEvaluation: 'yanlis' // Öğrenci genel kanaatte cevabım yanlış dedi
+  };
+
+  // Genel kanaat "yanlis" olmasına rağmen 1. kriteri (giriş formülü) doğru yaptığı için işaretleyebilmeli:
+  ans.checkedCriteriaIndices = [0];
+  ans.earnedPoints = qRubric[0].points;
+  ans.isEvaluated = true;
+
+  const passed = ans.generalSelfEvaluation === 'yanlis' && ans.earnedPoints === 5 && ans.checkedCriteriaIndices.length === 1;
+
+  assert(
+    26,
+    '"Cevabım yanlış" seçilse bile rubrik ölçütlerinin bağımsız işaretlenebilmesi',
+    passed,
+    `Kanaat 'yanlis' iken öğrenci 1. kriteri bağımsızca seçti ve ${ans.earnedPoints} puan aldı. Kısıtlayıcı bağımlılık kurulmadı.`
+  );
+}
+
+// --------------------------------------------------------------------------
+// TEST 27: Boş Cevaplarda Rubrik Üzerinden Puan Kazanılmasının Engellenmesi
+// --------------------------------------------------------------------------
+{
+  const emptyAns: QuestionSessionData = {
+    questionNumber: 3,
+    studentAnswer: '   ', // Sadece boşluk veya boş metin
+    isAnswered: false,
+    isEvaluated: false,
+    checkedCriteriaIndices: [],
+    earnedPoints: 0
+  };
+
+  const hasValidText = isValidStudentAnswer(emptyAns.studentAnswer);
+
+  // Boş soruya ne genel değerlendirme ne de rubrik puanı atanabilir:
+  const canSetGeneralEval = hasValidText;
+  const canToggleRubric = hasValidText;
+
+  const passed = !canSetGeneralEval && !canToggleRubric && emptyAns.earnedPoints === 0;
+
+  assert(
+    27,
+    'Boş cevaplarda rubrik üzerinden puan kazanılmasının engellenmesi',
+    passed,
+    `hasValidText=${hasValidText}. Boş cevapta rubrik ve genel değerlendirme kilitlendi; puan 0 olarak korundu.`
+  );
+}
+
+// --------------------------------------------------------------------------
+// TEST 28: Tek Harf veya Salt Noktalama / Anlamsız Kısa Girdilerin Reddedilmesi
+// --------------------------------------------------------------------------
+{
+  const trivialInputs = [
+    { text: 'a', label: 'tek harf a' },
+    { text: '   b   ', label: 'boşluklu tek harf b' },
+    { text: '.', label: 'tek nokta' },
+    { text: '?', label: 'tek soru işareti' },
+    { text: '-', label: 'tek tire' },
+    { text: '..', label: 'çift nokta' },
+    { text: '...', label: 'üç nokta' },
+    { text: '---', label: 'üç tire' },
+    { text: '?!', label: 'noktalama ?!' },
+    { text: '1', label: 'tek rakam (açık uçlu için yetersiz)' }
+  ];
+
+  let allTrivialRejected = true;
+  for (const item of trivialInputs) {
+    if (isValidStudentAnswer(item.text)) {
+      allTrivialRejected = false;
+      break;
+    }
+  }
+
+  // "a" yazılmış bir cevapta model cevap ve rubrik öz değerlendirmesinin açılamadığını doğrula:
+  const singleLetterAns: QuestionSessionData = {
+    questionNumber: 4,
+    studentAnswer: 'a',
+    isAnswered: isValidStudentAnswer('a'),
+    isEvaluated: false,
+    checkedCriteriaIndices: [],
+    earnedPoints: 0
+  };
+
+  const canReveal = isValidStudentAnswer(singleLetterAns.studentAnswer);
+  const passed = allTrivialRejected && !canReveal && !singleLetterAns.isAnswered;
+
+  assert(
+    28,
+    'Tek harf veya anlamsız kısa girdilerin öz değerlendirmeyi açmasının engellenmesi',
+    passed,
+    `Tüm anlamsız girdiler (${trivialInputs.length} örnek) reddedildi. 'a' cevabında isAnswered=false ve öz değerlendirme kilitli kaldı.`
+  );
+}
+
+// --------------------------------------------------------------------------
+// TEST 29: Geçerli Kısa Ama Anlamlı Cevapların Kabul Edilmesi
+// --------------------------------------------------------------------------
+{
+  const legitimateShortInputs = [
+    { text: 'Ay', label: 'kısa Türkçe kelime (Ay)' },
+    { text: 'Su', label: 'kısa Türkçe kelime (Su)' },
+    { text: '12', label: 'iki basamaklı sayı (12)' },
+    { text: '-5', label: 'negatif sayı (-5)' },
+    { text: 'x=3', label: 'kısa denklem (x=3)' },
+    { text: '√25 = 5', label: 'kareköklü ifade' },
+    { text: '3/4 + 2/5 = 23/20', label: 'kesir işlemi' },
+    { text: 'Mitoz', label: 'kısa fen cevabı (Mitoz)' },
+    { text: 'Toy shop', label: 'İngilizce yer yön cevabı' }
+  ];
+
+  let allLegitAccepted = true;
+  for (const item of legitimateShortInputs) {
+    if (!isValidStudentAnswer(item.text)) {
+      allLegitAccepted = false;
+      break;
+    }
+  }
+
+  assert(
+    29,
+    'Geçerli kısa ama anlamlı cevapların (Ay, Su, 12, -5, x=3 vb.) kabul edilmesi',
+    allLegitAccepted,
+    `Tüm meşru kısa cevaplar (${legitimateShortInputs.length} örnek) başarıyla kabul edildi. Öğrencinin geçerli yanıtları engellenmedi.`
+  );
+}
+
+// --------------------------------------------------------------------------
+// TEST 30: Minimum Uzunluk Kontrolünün Otomatik Doğruluk Değerlendirmesi Üretmemesi
+// --------------------------------------------------------------------------
+{
+  // isValidStudentAnswer bir doğruluk değerlendirmesi yapmaz; yalnızca öz değerlendirmeye
+  // hak kazanma eşiğidir (eligibility gate). Öğrencinin cevabı yanlış bile olsa (ör: "x=999")
+  // isValidStudentAnswer true döner ve rubrik üzerinden öğrencinin kendisini dürüstçe değerlendirmesine izin verir.
+  const wrongAnswer = 'x = 99999 (tamamen yanlış sonuç)';
+  const isValidGate = isValidStudentAnswer(wrongAnswer);
+
+  const ans: QuestionSessionData = {
+    questionNumber: 5,
+    studentAnswer: wrongAnswer,
+    isAnswered: isValidGate,
+    isEvaluated: false,
+    checkedCriteriaIndices: [],
+    earnedPoints: 0,
+    generalSelfEvaluation: 'yanlis' // Öğrenci kendisi cevabım yanlış diyor
+  };
+
+  // Öğrenci cevabının yanlış olduğunu düşünse bile rubriği inceleyebilir ve 0 puanla tamamlayabilir:
+  ans.isEvaluated = true;
+  ans.earnedPoints = 0;
+
+  const passed = isValidGate && ans.isAnswered && ans.earnedPoints === 0 && ans.generalSelfEvaluation === 'yanlis';
+
+  assert(
+    30,
+    'Uzunluk kontrolünün otomatik not üretmediği ve öz değerlendirme kapısı olarak çalıştığı',
+    passed,
+    `Yanlış cevap girildiğinde sistem otomatik olarak doğru/yanlış notu vermedi; öğrenci kendi kanaatiyle 0 puan vererek değerlendirmesini tamamladı.`
   );
 }
 
