@@ -1,7 +1,7 @@
 // In-memory rate limiting map for basic per-instance sliding window protection
 const ipRateLimitMap = new Map<string, { count: number; resetAt: number }>();
 const RATE_LIMIT_WINDOW_MS = 60 * 1000; // 1 minute
-const MAX_REQUESTS_PER_WINDOW = 6; // Max 6 generation requests per minute per IP
+const MAX_REQUESTS_PER_WINDOW = 30; // Max 30 generation requests per minute per IP
 
 function cleanupRateLimitMap() {
   const now = Date.now();
@@ -75,7 +75,10 @@ export default async (req: Request) => {
     if (now < clientLimit.resetAt) {
       if (clientLimit.count >= MAX_REQUESTS_PER_WINDOW) {
         return new Response(
-          JSON.stringify({ error: 'Çok sık istek gönderildi. Lütfen bir dakika bekledikten sonra tekrar deneyiniz.' }), 
+          JSON.stringify({
+            error: 'Çok sık istek gönderildi. Lütfen bir dakika bekledikten sonra tekrar deneyiniz.',
+            code: 'RATE_LIMIT_EXCEEDED'
+          }),
           {
             status: 429,
             headers: corsHeaders
@@ -177,8 +180,8 @@ export default async (req: Request) => {
         body: JSON.stringify({
           contents: [{ parts: [{ text: prompt }] }],
           generationConfig: {
-            temperature: 0.65,
-            maxOutputTokens: 5000,
+            temperature: 0.75,
+            maxOutputTokens: 6000,
             responseMimeType: 'application/json'
           }
         }),

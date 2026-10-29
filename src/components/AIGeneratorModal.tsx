@@ -66,7 +66,9 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
   }, [scenario?.id, scenario?.totalQuestions]);
 
   const [isGenerating, setIsGenerating] = useState<boolean>(false);
-  const [variationCount, setVariationCount] = useState<number>(0);
+  const [variationCountByContext, setVariationCountByContext] = useState<Record<string, number>>({});
+  const variationCount = variationCountByContext[currentContextKey] || 0;
+  const [generationError, setGenerationError] = useState<string | null>(null);
 
   if (!isOpen) return null;
 
@@ -76,24 +78,39 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
     const targetKey = currentContextKey;
     generatingContextRef.current = targetKey;
     setIsGenerating(true);
+    setGenerationError(null);
     try {
       const nextIndex = variationCount;
+      const prevResult = resultsByContext[targetKey];
+      const avoidQuestionTexts = prevResult?.generatedQuestions?.map(q => q.question) || [];
+      const avoidStimuli = prevResult?.generatedQuestions?.map(q => q.stimulus) || [];
+
       const res = await generateMEBIQuestions(
         subjectId,
         grade,
         scenario,
         nextIndex,
         undefined,
-        questionCountChoice
+        questionCountChoice,
+        {
+          avoidQuestionTexts,
+          avoidStimuli,
+          preferredDifficulty: cognitiveWeight,
+          outputType
+        }
       );
-      setVariationCount(nextIndex + 1);
+      setVariationCountByContext(prev => ({
+        ...prev,
+        [targetKey]: nextIndex + 1
+      }));
       // Sadece hedeflenen bağlam için kaydet
       setResultsByContext(prev => ({
         ...prev,
         [targetKey]: res
       }));
-    } catch (err) {
+    } catch (err: any) {
       console.error('Generation error:', err);
+      setGenerationError(err?.message || 'Soru seti hazırlanırken bir hata oluştu. Lütfen tekrar deneyiniz.');
     } finally {
       setIsGenerating(false);
       generatingContextRef.current = null;
@@ -215,19 +232,57 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
             </button>
           </div>
 
+          {/* Error Alert if any */}
+          {generationError && (
+            <div className="bg-rose-50 border border-rose-300 p-4 rounded-xl text-xs text-rose-900 flex items-start justify-between gap-3">
+              <div className="flex items-start space-x-2.5">
+                <AlertTriangle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
+                <div>
+                  <strong className="block text-rose-950 font-bold mb-0.5">Soru Üretimi Başarısız Oldu:</strong>
+                  <span>{generationError}</span>
+                </div>
+              </div>
+              <button
+                onClick={handleGenerate}
+                className="px-3 py-1 bg-rose-600 hover:bg-rose-700 text-white rounded-lg text-xs font-bold transition-colors cursor-pointer shrink-0"
+              >
+                Tekrar Dene
+              </button>
+            </div>
+          )}
+
           {/* Preview or Empty State */}
           <div>
             {generatedResult ? (
               <div className="space-y-4">
-                <div className="flex flex-wrap items-center justify-between bg-emerald-50 border border-emerald-200 p-3 rounded-xl text-xs text-emerald-900 font-semibold gap-2">
-                  <span className="flex items-center">
-                    <CheckCircle2 className="w-4 h-4 mr-1.5 text-emerald-600 shrink-0" />
-                    Başarıyla hazırlandı: Soru Seti #{generatedResult.variationNumber} ({generatedResult.questionsCount} açık uçlu soru ve MEB puanlama rubriği).
-                  </span>
-                  <span className="text-[11px] text-slate-500">
-                    MEBİ Uyumlu Akıllı Motor • {generatedResult.generationTime}
-                  </span>
-                </div>
+                {generatedResult.isFallback ? (
+                  <div className="flex flex-wrap items-center justify-between bg-amber-50/90 border border-amber-300 p-3.5 rounded-xl text-xs text-amber-950 font-semibold gap-2 shadow-xs">
+                    <div className="flex items-start space-x-2">
+                      <AlertTriangle className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
+                      <div>
+                        <span className="font-bold block text-amber-950">
+                          Yerel MEBİ Standart Motoru Devreye Girdi (Soru Seti #{generatedResult.variationNumber}):
+                        </span>
+                        <span className="text-[11px] text-amber-800 font-normal">
+                          {generatedResult.fallbackReason || 'Yapay zekâ servisi meşgul olduğundan sorular yerel MEBİ kural tabanlı motoruyla özgün olarak hazırlandı.'}
+                        </span>
+                      </div>
+                    </div>
+                    <span className="text-[11px] text-amber-800 bg-amber-100 border border-amber-300 px-2 py-0.5 rounded-md shrink-0 font-bold">
+                      {generatedResult.model} • {generatedResult.generationTime}
+                    </span>
+                  </div>
+                ) : (
+                  <div className="flex flex-wrap items-center justify-between bg-emerald-50 border border-emerald-200 p-3 rounded-xl text-xs text-emerald-900 font-semibold gap-2">
+                    <span className="flex items-center">
+                      <CheckCircle2 className="w-4 h-4 mr-1.5 text-emerald-600 shrink-0" />
+                      Başarıyla hazırlandı: Soru Seti #{generatedResult.variationNumber} ({generatedResult.questionsCount} açık uçlu soru ve MEB puanlama rubriği).
+                    </span>
+                    <span className="text-[11px] text-emerald-800 bg-emerald-100 border border-emerald-300 px-2 py-0.5 rounded-md font-bold">
+                      {generatedResult.model} • {generatedResult.generationTime}
+                    </span>
+                  </div>
+                )}
 
                 {/* Kaynak Doğrulama Uyarı Bandı */}
                 {generatedResult.generatedQuestions.some(q => q.hasMissingSourceError) && (

@@ -44,6 +44,8 @@ export interface GenerationResult {
   variationNumber: number;
   generationTime: string;
   model: string;
+  isFallback?: boolean;
+  fallbackReason?: string;
   questionsCount: number;
   generatedQuestions: GeneratedQuestionItem[];
   sourceValidationSummary?: {
@@ -53,14 +55,72 @@ export interface GenerationResult {
   };
 }
 
+export interface GeneratorOptions {
+  avoidQuestionTexts?: string[];
+  avoidStimuli?: string[];
+  preferredDifficulty?: 'standard' | 'more_complex' | 'foundational';
+  outputType?: 'exam' | 'study_sheet' | 'practice_question';
+}
+
+/**
+ * Kelime düzeyinde Jaccard ve alt dize benzerliği hesaplayarak mükerrer veya
+ * yalnızca birkaç kelimesi değiştirilmiş soruları tespit eder.
+ */
+export function calculateQuestionSimilarity(textA: string, textB: string): number {
+  if (!textA || !textB) return 0;
+  const cleanA = textA.toLowerCase().replace(/[^a-z0-9ğüşıöç\s]/gi, ' ').trim();
+  const cleanB = textB.toLowerCase().replace(/[^a-z0-9ğüşıöç\s]/gi, ' ').trim();
+  if (cleanA === cleanB) return 1.0;
+  if (cleanA.includes(cleanB) || cleanB.includes(cleanA)) {
+    const minLen = Math.min(cleanA.length, cleanB.length);
+    const maxLen = Math.max(cleanA.length, cleanB.length);
+    if (minLen / maxLen > 0.6) return 0.85;
+  }
+
+  const wordsA = new Set(cleanA.split(/\s+/).filter(w => w.length > 2));
+  const wordsB = new Set(cleanB.split(/\s+/).filter(w => w.length > 2));
+  if (wordsA.size === 0 || wordsB.size === 0) return 0;
+
+  let intersection = 0;
+  for (const w of wordsA) {
+    if (wordsB.has(w)) intersection++;
+  }
+  const union = wordsA.size + wordsB.size - intersection;
+  return union > 0 ? intersection / union : 0;
+}
+
+export function isDuplicateOrTooSimilar(
+  candidateQuestionText: string,
+  candidateStimulus: string | undefined,
+  avoidQuestionTexts: string[],
+  avoidStimuli: string[] = [],
+  threshold = 0.38
+): boolean {
+  for (const avoidQ of avoidQuestionTexts) {
+    if (calculateQuestionSimilarity(candidateQuestionText, avoidQ) >= threshold) {
+      return true;
+    }
+  }
+  if (candidateStimulus && candidateStimulus.length > 25) {
+    for (const avoidS of avoidStimuli) {
+      if (avoidS && avoidS.length > 25 && calculateQuestionSimilarity(candidateStimulus, avoidS) >= threshold) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
 export async function generateMEBIQuestions(
   subjectId: SubjectId,
   grade: GradeLevel,
   scenario: ExamScenario,
   variationIndex: number,
   _ignoredApiKey?: string,
-  requestedQuestionCount?: number
+  requestedQuestionCount?: number,
+  options?: GeneratorOptions
 ): Promise<GenerationResult> {
+  const startTime = Date.now();
   const expandedDistributions: typeof scenario.distributions = [];
   for (const d of scenario.distributions) {
     const count = d.questionCount || 1;
@@ -91,6 +151,38 @@ export async function generateMEBIQuestions(
   const difficultyPlanText = formatDifficultyPlanText(targetCount);
   const isGrade7Turkish = grade === 7 && subjectId === 'turkce';
 
+  // Mevcut senaryoya ait hazır sınav sorularını tespit et ve kaçınılacaklar listesine ekle
+  const baseExam = SAMPLE_EXAMS.find(e =>
+    e.grade === grade &&
+    e.subjectId === subjectId &&
+    (e.scenarioId === scenario.id || e.id.endsWith(scenario.id) || e.id.includes(scenario.id))
+  );
+
+  const baseQuestionTexts = baseExam ? baseExam.questions.map(q => q.questionText) : [];
+  const baseStimuli = baseExam ? baseExam.questions.map(q => q.stimulus || '') : [];
+
+  const allAvoidTexts = Array.from(new Set([
+    ...baseQuestionTexts,
+    ...(options?.avoidQuestionTexts || [])
+  ])).filter(t => typeof t === 'string' && t.trim().length > 0);
+
+  const allAvoidStimuli = Array.from(new Set([
+    ...baseStimuli,
+    ...(options?.avoidStimuli || [])
+  ])).filter(s => typeof s === 'string' && s.trim().length > 0);
+
+  const variationToken = `${variationIndex + 1}_${Date.now().toString(36)}`;
+
+  const avoidDirectives = allAvoidTexts.length > 0 ? `
+ÖZGÜNLÜK VE MEVCUT SORULARI TEKRARLAMAMA KURALI (EN KATI VE ZORUNLU KURAL):
+- Bu sınav ${variationIndex + 1}. FARKLI varyasyon setidir (Varyasyon Belirteci: ${variationToken}).
+- Mevcut sınav kâğıdında bulunan aşağıdaki soru konularını, olay örgülerini, metinleri, karakterleri ve durumları KESİNLİKLE TEKRARLAMA:
+${allAvoidTexts.slice(0, 7).map((t, i) => `  * Yasaklı/Mevcut Soru ${i + 1}: "${t.slice(0, 95)}..."`).join('\n')}
+- Yukarıdaki metin ve olaylardan TAMAMEN FARKLI, YEPYENİ bir kurgu, yeni karakterler ve taze bir hayat durumu inşa et!
+` : `
+VARYASYON PLANI: Bu ${variationIndex + 1}. sınav varyasyonudur (Varyasyon Belirteci: ${variationToken}). Standart ve klişe kurguların dışında özgün senaryo oluşturunuz.
+`;
+
   const turkishMebiDirectives = isGrade7Turkish ? `
 MEBİ 7. SINIF TÜRKÇE SORU YAZIM VE ÖLÇME YÖNERGESİ (PİLOT STANDART):
 1. Soru kökleri duru, net ve açık emir kipleriyle bitmelidir ("...yazınız", "...açıklayınız", "...tahmin ediniz").
@@ -112,6 +204,7 @@ TOPLAM SORU SAYISI: KESİNLİKLE VE TAM OLARAK ${targetCount} ADET AÇIK UÇLU S
 
 SENARYO RESMİ KAZANIM DAĞILIM PLANI (${targetCount} SORU):
 ${distributionsText}
+${avoidDirectives}
 
 ZORUNLU KAZANIM EŞLEŞMESİ (EN KATI VE DEĞİŞTİRİLEMEZ 1. KURAL):
 - Sınavdaki Soru 1'den Soru ${targetCount}'e kadar HER BİR SORU, yukarıdaki dağılım tablosunda kendisine atanan [Kazanım Kodu] ve [Resmi Öğrenme Çıktısı] ile %100 BİRE BİR EŞLEŞMEK ZORUNDADIR!
@@ -258,16 +351,22 @@ SADECE geçerli bir JSON çıktısı ver. JSON şeması:
     return enrichedQuestions as GeneratedQuestionItem[];
   };
 
+  let fallbackReason: string | undefined;
+
   // 1. TIER 1: Güvenli Sunucu Fonksiyonu Proxy (/api/generate)
   // Tüm yapay zekâ istekleri istemciden gizlenmiş sunucu tarafı Netlify Function üzerinden yürütülür.
   try {
     const proxyRes = await fetch('/api/generate', {
       method: 'POST',
-      headers: { 
+      headers: {
         'Content-Type': 'application/json',
         'X-App-Client': 'oyss-portal-v1'
       },
-      body: JSON.stringify({ prompt: livePrompt })
+      body: JSON.stringify({
+        prompt: livePrompt,
+        variationIndex,
+        variationToken
+      })
     });
 
     if (proxyRes.ok) {
@@ -287,24 +386,51 @@ SADECE geçerli bir JSON çıktısı ver. JSON şeması:
 
       if (questionsList && Array.isArray(questionsList) && questionsList.length > 0) {
         const normalized = normalizeAndCalibrateQuestions(questionsList);
-        const activeModelName = data?.activeModel || 'Gemini Akıllı Soru Motoru';
-        return {
-          title: `${grade}. Sınıf ${scenario.name} (Özgün Çalışma Seti - ${normalized.length} Soru)`,
-          variationNumber: variationIndex + 1,
-          generationTime: '0.9 saniye (Hızlı Üretim)',
-          model: `${activeModelName}`,
-          questionsCount: normalized.length,
-          generatedQuestions: normalized,
-          sourceValidationSummary: {
-            isFullyValid: !normalized.some(q => q.hasMissingSourceError),
-            missingSourceCount: normalized.filter(q => q.hasMissingSourceError).length,
-            recoveredCount: normalized.filter(q => q.commonStimulus || q.sharedSourceId).length
-          }
-        };
+
+        // Anti-duplication sanity check: Canlı Gemini çıktısının mevcut sınav sorularını birebir tekrarlamadığından emin ol
+        const hasDirectDuplicate = normalized.some(nq =>
+          isDuplicateOrTooSimilar(nq.question, nq.stimulus, allAvoidTexts, allAvoidStimuli, 0.45)
+        );
+
+        if (!hasDirectDuplicate) {
+          const activeModelName = data?.activeModel || 'Gemini Akıllı Soru Motoru';
+          const elapsedSec = Math.max(0.7, (Date.now() - startTime) / 1000).toFixed(1) + ' saniye';
+          return {
+            title: `${grade}. Sınıf ${scenario.name} (Özgün Sınav Seti - ${normalized.length} Soru)`,
+            variationNumber: variationIndex + 1,
+            generationTime: elapsedSec,
+            model: `${activeModelName}`,
+            isFallback: false,
+            questionsCount: normalized.length,
+            generatedQuestions: normalized,
+            sourceValidationSummary: {
+              isFullyValid: !normalized.some(q => q.hasMissingSourceError),
+              missingSourceCount: normalized.filter(q => q.hasMissingSourceError).length,
+              recoveredCount: normalized.filter(q => q.commonStimulus || q.sharedSourceId).length
+            }
+          };
+        } else {
+          console.warn('Canlı model çıktısında mevcut sınavla çakışan soru tespit edildi; yerel MEBİ özgünleştirme motoruna aktarılıyor.');
+          fallbackReason = 'Canlı yapay zekâ çıktısı mevcut sınavla benzerlik gösterdiğinden yerel MEBİ özgünleştirme motoru devreye alındı.';
+        }
+      }
+    } else {
+      let errJson: any = null;
+      try {
+        errJson = await proxyRes.json();
+      } catch {}
+
+      if (proxyRes.status === 429) {
+        fallbackReason = 'Yapay zekâ servisi kota sınırında (429 - Çok sık istek). Lütfen bir dakika sonra tekrar deneyiniz.';
+      } else if (proxyRes.status === 502 || proxyRes.status === 503) {
+        fallbackReason = 'Yapay zekâ servisi şu anda meşgul veya geçici olarak yanıt veremiyor (503).';
+      } else {
+        fallbackReason = errJson?.error || `Yapay zekâ servisi yanıt veremedi (HTTP ${proxyRes.status}).`;
       }
     }
-  } catch (proxyErr) {
-    console.warn('Sunucu proxy çağrısı başarısız, yerel yedek motora geçiliyor:', proxyErr);
+  } catch (proxyErr: any) {
+    console.warn('Sunucu proxy çağrısı başarısız, yerel yedek motora geçiliyor:', proxyErr?.message || proxyErr);
+    fallbackReason = 'Canlı yapay zekâ servisiyle bağlantı kurulamadı (Ağ/Çevrimdışı).';
   }
 
   // 2. TIER 2: Prosedürel MEBİ Müfredat Motoru (Çevrimdışı / Güvenli Yedek)
@@ -938,7 +1064,458 @@ Kontrol: 14 × 10 = 140 TL, 16 × 5 = 80 TL. Toplam: 140 + 80 = 220 TL.`,
   ];
 
   // ---------------------------------------------------------------------------
-  // C. TÜRKÇE (Set A)
+  // C-1. 5. SINIF TÜRKÇE (Set A: Deniz Feneri Bekçisi & Yardımlaşma)
+  // ---------------------------------------------------------------------------
+  const turkceQuestions_5th_SetA: GeneratedQuestionItem[] = [
+    {
+      number: 1,
+      outcome: 'T.O.5.6',
+      outcomeTitle: 'Metnin yüzey anlamını belirleyebilme',
+      difficulty: 'Kolay',
+      level: 'Basit Bilişsel Süreçler',
+      points: pointAllocations[0] || 15,
+      templateType: 'Kurgusal Senaryo & Vaka İncelemesi',
+      stimulus: `Karadeniz kıyısındaki sarp kayalıkların üzerinde yükselen fenerin bekçisi Hasan Dede, elli yıldır her akşam gün batarken fenerin dev lambasını yakardı. Fırtınalı gecelerde gözünü bile kırpmaz, dalgaların arasında yolunu bulmaya çalışan balıkçı takalarını emniyetle limana ulaştırmak için ışığı yönlendirirdi. Köyün gençleri ona 'denizin gözü' derdi.`,
+      question: `Metne göre fener bekçisi Hasan Dede'nin balıkçıları emniyetle limana ulaştırmak için fırtınalı gecelerde yaptığı fedakârlığı açıklayınız.`,
+      answer: `Hasan Dede elli yıl boyunca her akşam gün batımında feneri yakmış; fırtınalı gecelerde gözünü dahi kırpmadan fenerin ışığını yönlendirerek balıkçı teknelerinin kayalıklara çarpmadan emniyetle limana sığınmasını sağlamıştır.`,
+      alternativeAnswers: [
+        'Fırtınalı havalarda hiç uyumadan fenerin ışığını dalgaların arasındaki balıkçı takalarına doğrultarak onların güvenle karaya varmasını sağlamasıdır.',
+        'Denizin ortasındaki teknelerin kayalıklara çarpmaması için uykusuz kalarak fener ışığıyla onlara yol göstermesidir.'
+      ],
+      rubric: [
+        { item: "Hasan Dede'nin uykusuz kalarak feneri yönlendirdiğinin belirtilmesi", pts: Math.round((pointAllocations[0] || 15) * 0.5) },
+        { item: 'Balıkçıların güvenle limana ulaşmasını sağlama amacının yazılması', pts: Math.round((pointAllocations[0] || 15) * 0.5) }
+      ]
+    },
+    {
+      number: 2,
+      outcome: 'T.O.5.7',
+      outcomeTitle: 'Görselle iletilen anlamı belirleyebilme',
+      difficulty: 'Orta',
+      level: 'Basit Bilişsel Süreçler',
+      points: pointAllocations[1] || 15,
+      templateType: 'Görsel Yorumlama & İleti Çıkarımı',
+      stimulus: `[Görsel Açıklaması: Afişin üst tarafında karanlık ve hırçın dalgalar arasında yol alan küçük bir balıkçı teknesi, arka planda ise sarp kayalıklardan gökyüzüne uzanan parlak beyaz bir fener ışığı demeti yer almaktadır. Afişin altında büyük harflerle 'Karanlığa Değil, Umuda Bak!' sloganı yazılıdır.]`,
+      question: `Yukarıda betimlenen afişteki 'hırçın dalgalar' ve 'fener ışığı' arasındaki tezatlıktan (karşıtlıktan) hareketle verilmek istenen ana iletiyi açıklayınız.`,
+      answer: `Afişteki hırçın dalgalar hayatta karşılaşılan zorlukları, fırtınaları ve tehlikeleri simgelerken fener ışığı ise rehberliği, umudu ve dayanışmayı temsil etmektedir. Verilmek istenen mesaj; en zor anlarda bile karamsarlığa kapılmamak ve doğru yol göstericilere güvenmektir.`,
+      alternativeAnswers: [
+        'Zorluklar ve engeller karşısında umutsuzluğa kapılmayıp rehberliğin ve umudun aydınlığına tutunmak gerektiği anlatılmaktadır.',
+        'Fırtınalı dalgalar hayatın zorluklarını, fener ışığı ise güveni ve kurtuluşu ifade eder.'
+      ],
+      rubric: [
+        { item: 'Dalga ve fener ışığı sembollerinin karşıtlığının doğru yorumlanması', pts: Math.round((pointAllocations[1] || 15) * 0.5) },
+        { item: 'Afişin ana iletisinin (umudu kaybetmeme / yol göstericiye güvenme) yazılması', pts: Math.round((pointAllocations[1] || 15) * 0.5) }
+      ]
+    },
+    {
+      number: 3,
+      outcome: 'T.O.5.20',
+      outcomeTitle: 'Metinden hareketle söz varlığını geliştirmeye yönelik çözümleme yapabilme',
+      difficulty: 'Orta',
+      level: 'Basit Bilişsel Süreçler',
+      points: pointAllocations[2] || 15,
+      templateType: 'Kelime Anlamı & Bağlamsal Çözümleme',
+      stimulus: `Hasan Dede, yeni yetişen genç kaptanlara denizin şakaya gelmeyeceğini, her zaman 'ihtiyatlı' davranmaları gerektiğini öğütlerdi. Yılların tecrübesiyle 'engin' suların huyunu bir kitap gibi okurdu.`,
+      question: `a) Metindeki altı çizili 'ihtiyatlı' ve 'engin' sözcüklerinin anlamlarını bağlamdan hareketle yazınız.
+b) Bu iki sözcüğü anlamına uygun birer cümlede kullanınız.`,
+      answer: `a) İhtiyatlı: Tedbirli, dikkatli, ileriyi düşünerek hareket eden. Engin: Ucu bucağı görünmeyecek kadar geniş, açık deniz.
+b) Örnek cümleler: 'Buzlu yollarda ihtiyatlı adım atmak gerekir.' / 'Gemi engin maviliklere doğru yol aldı.'`,
+      alternativeAnswers: [
+        'İhtiyatlı: Sakıngan ve tedbirli davranan. Engin: Uçsuz bucaksız deniz veya derinlik.',
+        'İhtiyatlı: Her türlü tehlikeye karşı önceden önlem alan kimse.'
+      ],
+      rubric: [
+        { item: "'İhtiyatlı' ve 'engin' kelimelerinin bağlama uygun anlamının tespiti", pts: Math.round((pointAllocations[2] || 15) * 0.5) },
+        { item: 'Her iki kelimenin doğru birer cümlede kullanılması', pts: Math.round((pointAllocations[2] || 15) * 0.5) }
+      ]
+    },
+    {
+      number: 4,
+      outcome: 'T.Y.5.13',
+      outcomeTitle: 'Yazısını zenginleştirecek biçimde söz varlığını kullanabilme',
+      difficulty: 'Zor',
+      level: 'Karmaşık Bilişsel Süreçler',
+      points: pointAllocations[3] || 15,
+      templateType: 'Deyim ve Zengin Söz Varlığıyla Yazma',
+      stimulus: `Köy halkı, fener bekçisi Hasan Dede'nin yarım asırlık emeğine teşekkür etmek için bir anma etkinliği düzenlemiştir.`,
+      question: `Hasan Dede'nin fedakârlığını ve fenerin önemini anlatan; içinde 'kol kanat germek' ve 'göz nuru dökmek' deyimlerinin geçtiği anlamlı ve kurallı bir paragraf yazınız.`,
+      answer: `Hasan Dede, elli yıl boyunca bu fenerde gecesini gündüzüne katarak göz nuru dökmüştür. Her fırtınada limana sığınan balıkçılara kol kanat germiş, onları karanlık sulardan esirgeyerek yuvalarına sağ salim kavuşturmuştur.`,
+      alternativeAnswers: [
+        'Fenerin ışığı altında yıllarca göz nuru döken Hasan Dede, zor durumda kalan herkese kol kanat gererek köyün en büyük güvencesi olmuştur.'
+      ],
+      rubric: [
+        { item: "'Göz nuru dökmek' ve 'kol kanat germek' deyimlerinin anlamına uygun kullanılması", pts: Math.round((pointAllocations[3] || 15) * 0.5) },
+        { item: 'Metin bağlamına uygun kurallı ve akıcı paragraf yazımı', pts: Math.round((pointAllocations[3] || 15) * 0.5) }
+      ]
+    },
+    {
+      number: 5,
+      outcome: 'T.Y.5.16',
+      outcomeTitle: 'Yazım ve noktalama işaretleriyle ilgili kuralları uygulayabilme',
+      difficulty: 'Kolay',
+      level: 'Basit Bilişsel Süreçler',
+      points: pointAllocations[4] || 14,
+      templateType: 'Hata Tespiti & Düzeltme',
+      stimulus: `Hasan dede, 15 temmuz akşamı karadeniz'in serin sularına bakarak torununa şöyle dedi; Deniz insanı terbiye eder oğlum.`,
+      question: `Yukarıdaki cümlede yer alan büyük harflerin yazımı ve noktalama işaretleriyle ilgili yapılan 3 hatayı belirleyip cümlenin doğru halini yeniden yazınız.`,
+      answer: `Hatalar:
+1. 'Hasan dede' ifadesindeki 'Dede' lakap/saygı sözü olduğu için 'Dede' şeklinde büyük harfle yazılmalıdır.
+2. '15 temmuz' belirli bir tarih bildirdiği için ay adı 'Temmuz' şeklinde büyük harfle yazılmalıdır.
+3. Konuşma bildiren 'dedi' sözcüğünden sonra noktalı virgül (;) değil İKİ NOKTA (:) kullanılmalıdır.
+Doğrusu: 'Hasan Dede, 15 Temmuz akşamı Karadeniz'in serin sularına bakarak torununa şöyle dedi: Deniz insanı terbiye eder oğlum.'`,
+      alternativeAnswers: [
+        'Dede kelimesinin büyük yazılması, Temmuz ay adının büyük harfle başlaması ve noktalı virgül yerine iki nokta konulması.'
+      ],
+      rubric: [
+        { item: 'Büyük harf ve noktalama hatalarının doğru tespit edilmesi', pts: Math.round((pointAllocations[4] || 14) * 0.5) },
+        { item: 'Cümlenin kurallara uygun hatasız biçimde yeniden yazılması', pts: Math.round((pointAllocations[4] || 14) * 0.5) }
+      ]
+    },
+    {
+      number: 6,
+      outcome: 'T.O.5.8',
+      outcomeTitle: 'Metindeki çıkarımları ve örtük anlamı belirleyebilme',
+      difficulty: 'Zor',
+      level: 'Karmaşık Bilişsel Süreçler',
+      points: pointAllocations[5] || 13,
+      templateType: 'Metin İçi Delillendirme & Örtük Anlam',
+      stimulus: `Fırtına dindiğinde köylüler limana koştu. Hasan Dede'nin fener lambasını söndürüp kulübesinin önündeki eski tahta sandalyeye oturarak derin bir nefes aldığını ve hafifçe gülümsediğini gördüler.`,
+      question: `Hasan Dede'nin fırtına dindikten sonra derin bir nefes alıp gülümsemesindeki duyguyu ve örtük anlamı metinden hareketle açıklayınız.`,
+      answer: `Hasan Dede, bütün gece gösterdiği çabanın ve uykusuz nöbetin ardından balıkçıların hiçbir zarar görmeden kıyıya ulaştığını bilmenin getirdiği büyük bir vicdani huzur, rahatlama ve görevini yapmış olmanın mutluluğunu yaşamaktadır.`,
+      alternativeAnswers: [
+        'Bütün teknelerin sağ salim limana dönmesiyle içindeki endişenin yerini derin bir huzur ve görevini tamamlamış olmanın kıvancına bıraktığı anlaşılmaktadır.'
+      ],
+      rubric: [
+        { item: 'Vicdani huzur ve rahatlama duygusunun doğru tespiti', pts: Math.round((pointAllocations[5] || 13) * 0.5) },
+        { item: 'Teknelerin kurtulmuş olmasının gerekçe olarak sunulması', pts: Math.round((pointAllocations[5] || 13) * 0.5) }
+      ]
+    },
+    {
+      number: 7,
+      outcome: 'T.O.5.21',
+      outcomeTitle: 'Deyim ve atasözlerinin metnin anlamına katkısını belirleyebilme',
+      difficulty: 'Orta',
+      level: 'Basit Bilişsel Süreçler',
+      points: pointAllocations[6] || 13,
+      templateType: 'Deyim ve Atasözü Analizi',
+      stimulus: `Köyün ihtiyar balıkçısı Hasan Dede'ye sarılarak: "Sen bizim fırtınada limanımız, zor günümüzde sığınağımız oldun. 'Dost kara günde belli olur' atasözünü bize her fırtınada yeniden yaşattın." demiştir.`,
+      question: `Metinde geçen "Dost kara günde belli olur" atasözünün metne kattığı anlamı Hasan Dede'nin eylemleriyle ilişkilendirerek açıklayınız.`,
+      answer: `Gerçek dostluğun ve insan sevgisinin sadece sakin ve güzel günlerde değil; tehlikeli, fırtınalı ve zor zamanlarda yapılan fedakârlıklarla kanıtlandığını ifade eder. Hasan Dede de balıkçılar için bu zor günün gerçek ve sarsılmaz dostu olmuştur.`,
+      alternativeAnswers: [
+        'Zor ve tehlikeli zamanlarda insanların birbirine sahip çıkması gerektiği, Hasan Dede\'nin de fırtınalı gecelerde köylülere can yoldaşı olduğu vurgulanmaktadır.'
+      ],
+      rubric: [
+        { item: 'Atasözünün anlamının doğru açıklanması', pts: Math.round((pointAllocations[6] || 13) * 0.5) },
+        { item: "Hasan Dede'nin fırtınadaki yardımlarıyla bağ kurulması", pts: Math.round((pointAllocations[6] || 13) * 0.5) }
+      ]
+    }
+  ];
+
+  // ---------------------------------------------------------------------------
+  // C-2. 5. SINIF TÜRKÇE (Set B: Avanoslu Çömlek Ustası & Emek)
+  // ---------------------------------------------------------------------------
+  const turkceQuestions_5th_SetB: GeneratedQuestionItem[] = [
+    {
+      number: 1,
+      outcome: 'T.O.5.6',
+      outcomeTitle: 'Metnin yüzey anlamını belirleyebilme',
+      difficulty: 'Kolay',
+      level: 'Basit Bilişsel Süreçler',
+      points: pointAllocations[0] || 15,
+      templateType: 'Kurgusal Senaryo & Vaka İncelemesi',
+      stimulus: `Kızılırmak'ın kırmızı killi toprağını atölyesinde yoğuran Salih Usta, ayakla dönen çarkın başına geçti. Küçük bir kil parçasını ellerinin arasında nazikçe yükseltirken çırağına döndü: 'Toprak sabırsızlığı sevmez evlat, parmaklarının ucuyla dinleyeceksin onu. Acele edersen çatlar, emek verirsen vazo olur.' dedi.`,
+      question: `Metne göre Salih Usta'nın toprağı şekillendirirken çırağına sabırlı olmayı öğütlemesinin nedenini metinden hareketle açıklayınız.`,
+      answer: `Salih Usta'ya göre killi toprak sabırsızlığı kabul etmez; aceleyle şekillendirilmeye çalışılırsa çatlar ve bozulur. Yalnızca sevgi, dikkat ve sabırla emek verildiğinde sağlam bir vazoya dönüşebilir.`,
+      alternativeAnswers: [
+        'Acele davranıldığında toprağın çatlayıp bozulacağı, ancak sabır ve emekle parmak uçlarıyla dinlenerek şekil alabileceği için çırağına sabırlı olmasını öğütlemiştir.'
+      ],
+      rubric: [
+        { item: 'Acele edildiğinde toprağın çatlayıp bozulacağı gerekçesinin yazılması', pts: Math.round((pointAllocations[0] || 15) * 0.5) },
+        { item: 'Sabır ve emekle sanat eserine dönüşeceği fikrinin açıklanması', pts: Math.round((pointAllocations[0] || 15) * 0.5) }
+      ]
+    },
+    {
+      number: 2,
+      outcome: 'T.O.5.7',
+      outcomeTitle: 'Görselle iletilen anlamı belirleyebilme',
+      difficulty: 'Orta',
+      level: 'Basit Bilişsel Süreçler',
+      points: pointAllocations[1] || 15,
+      templateType: 'Görsel Yorumlama & İleti Çıkarımı',
+      stimulus: `[Görsel Açıklaması: Bir el sanatları afişinde, sol tarafta çatlamış ve dağılmış kuru bir çamur yığını, sağ tarafta ise üzerinde geleneksel lale motifleri parıldayan zarif bir porselen vazo resmedilmiştir. Ortada bir kum saati ve altında 'Emek ve Zaman, Çamuru Sanata Dönüştürür' sloganı bulunmaktadır.]`,
+      question: `Afişteki 'dağılmış çamur' ile 'işlenmiş vazo' arasındaki dönüşümü kum saati sembolüyle ilişkilendirerek afişin vermek istediği mesajı açıklayınız.`,
+      answer: `Ham çamurun paha biçilmez bir sanat eserine dönüşmesi için zamana ve sabırla gösterilen emeğe ihtiyaç vardır. Kum saati sabırlı bekleyişi ve zamanı, işlenmiş vazo ise bu sürecin sonunda elde edilen başarıyı simgeler.`,
+      alternativeAnswers: [
+        'Ham maddelerin değerli bir esere dönüşmesi için sabırla çalışmak ve zamana ihtiyaç duymak gerektiği anlatılmaktadır.'
+      ],
+      rubric: [
+        { item: 'Kum saati ve dönüşüm ilişkisinin doğru açıklanması', pts: Math.round((pointAllocations[1] || 15) * 0.5) },
+        { item: 'Emek ve sabrın değeri mesajının eksiksiz yazılması', pts: Math.round((pointAllocations[1] || 15) * 0.5) }
+      ]
+    },
+    {
+      number: 3,
+      outcome: 'T.O.5.20',
+      outcomeTitle: 'Metinden hareketle söz varlığını geliştirmeye yönelik çözümleme yapabilme',
+      difficulty: 'Orta',
+      level: 'Basit Bilişsel Süreçler',
+      points: pointAllocations[2] || 15,
+      templateType: 'Kelime Anlamı & Bağlamsal Çözümleme',
+      stimulus: `Salih Usta, atölyesinde toprağı 'maharetli' elleriyle yoğurur, fırında pişen kapların 'ahenkli' renklerini hayranlıkla incelerdi.`,
+      question: `a) Altı çizili 'maharetli' ve 'ahenkli' kelimelerinin metindeki anlamlarını yazınız.
+b) Bu kelimelerin yerine kullanılabilecek birer eş anlamlı sözcük yazınız.`,
+      answer: `a) Maharetli: Becerikli, usta, elinden iş gelen. Ahenkli: Uyumlu, birbiriyle dengeli ve güzel görünen.
+b) Eş anlamlıları: Maharetli -> Becerikli / Usta; Ahenkli -> Uyumlu.`,
+      alternativeAnswers: [
+        'Maharetli: İşi ustalıkla yapan, hünerli. Ahenkli: Renkleri ve çizgileri birbiriyle uyum içinde olan.'
+      ],
+      rubric: [
+        { item: "'Maharetli' ve 'ahenkli' sözcüklerinin anlamlarının doğru tespiti", pts: Math.round((pointAllocations[2] || 15) * 0.5) },
+        { item: 'Her iki kelime için uygun eş anlamlıların yazılması', pts: Math.round((pointAllocations[2] || 15) * 0.5) }
+      ]
+    },
+    {
+      number: 4,
+      outcome: 'T.Y.5.13',
+      outcomeTitle: 'Yazısını zenginleştirecek biçimde söz varlığını kullanabilme',
+      difficulty: 'Zor',
+      level: 'Karmaşık Bilişsel Süreçler',
+      points: pointAllocations[3] || 15,
+      templateType: 'Deyim ve Zengin Söz Varlığıyla Yazma',
+      stimulus: `Salih Usta'nın çırağı Kerem, ilk vazosunu tamamladığında ustasının yanına heyecanla gelmiştir.`,
+      question: `Kerem'in çömlek yaparken harcadığı çabayı ve başarısını anlatan; içinde 'alın teri dökmek' ve 'canla başla çalışmak' deyimlerinin yer aldığı kısa bir metin yazınız.`,
+      answer: `Kerem, günlerdir çarkın başında canla başla çalışarak kili şekillendirmeye gayret etti. Döktüğü her damla alın teri, fırından çıkan pürüzsüz vazonun üzerinde bir gurur madalyası gibi parıldıyordu.`,
+      alternativeAnswers: [
+        'İlk eserini ortaya koymak için günlerce alın teri döken Kerem, ustasının dediklerini uygulayarak canla başla çalıştı ve vazosunu başarıyla tamamladı.'
+      ],
+      rubric: [
+        { item: "'Alın teri dökmek' ve 'canla başla çalışmak' deyimlerinin bağlama uygun kullanımı", pts: Math.round((pointAllocations[3] || 15) * 0.5) },
+        { item: 'Anlamlı ve tutarlı kurgusal metin oluşturma', pts: Math.round((pointAllocations[3] || 15) * 0.5) }
+      ]
+    },
+    {
+      number: 5,
+      outcome: 'T.Y.5.16',
+      outcomeTitle: 'Yazım ve noktalama işaretleriyle ilgili kuralları uygulayabilme',
+      difficulty: 'Kolay',
+      level: 'Basit Bilişsel Süreçler',
+      points: pointAllocations[4] || 14,
+      templateType: 'Hata Tespiti & Düzeltme',
+      stimulus: `Salih Usta çırağına sordu; Nevşehir'deki atölyemizde üretilen kaplar, ankara ve istanbul'a da gönderilecek mi.`,
+      question: `Yukarıdaki cümlede büyük harflerin yazımı ve noktalama işaretleriyle ilgili yapılan 3 hatayı düzeltiniz ve cümlenin doğru şeklini yazınız.`,
+      answer: `Hatalar:
+1. Konuşma bildiren 'sordu' sözcüğünden sonra noktalı virgül (;) değil İKİ NOKTA (:) konmalıdır.
+2. 'ankara ve istanbul' özel isim oldukları için büyük harfle 'Ankara ve İstanbul' şeklinde başlamalı ve gelen ekler kesme işaretiyle ayrılmalıdır (İstanbul'a).
+3. Soru anlamı taşıyan cümlenin sonuna nokta (.) değil SORU İŞARETİ (?) konmalıdır.
+Doğrusu: Salih Usta çırağına sordu: Nevşehir'deki atölyemizde üretilen kaplar, Ankara ve İstanbul'a da gönderilecek mi?`,
+      alternativeAnswers: [
+        'Noktalı virgül yerine iki nokta konulmalı, Ankara ve İstanbul büyük harfle yazılmalı, cümlenin sonuna soru işareti getirilmelidir.'
+      ],
+      rubric: [
+        { item: 'İki nokta, büyük harf ve soru işareti hatalarının doğru tespiti', pts: Math.round((pointAllocations[4] || 14) * 0.5) },
+        { item: 'Cümlenin imla kurallarına uygun hatasız yazılması', pts: Math.round((pointAllocations[4] || 14) * 0.5) }
+      ]
+    }
+  ];
+
+  // ---------------------------------------------------------------------------
+  // C-3. 5. SINIF TÜRKÇE (Set C: Okul Botanik Bahçesi & Doğa)
+  // ---------------------------------------------------------------------------
+  const turkceQuestions_5th_SetC: GeneratedQuestionItem[] = [
+    {
+      number: 1,
+      outcome: 'T.O.5.6',
+      outcomeTitle: 'Metnin yüzey anlamını belirleyebilme',
+      difficulty: 'Kolay',
+      level: 'Basit Bilişsel Süreçler',
+      points: pointAllocations[0] || 15,
+      templateType: 'Kurgusal Senaryo & Vaka İncelemesi',
+      stimulus: `Okul bahçesinin atıl köşesini yeşertmek isteyen 5. sınıf öğrencileri, fen öğretmenleriyle birlikte bir botanik serası kurdular. Her öğrenci evinden getirdiği tohumları saksılara ekti, nöbetleşe sulama takvimi hazırladılar. Kurak geçen günlerde damla sulama borularını elleriyle döşeyerek tek bir damla suyun bile boşa gitmesini engellediler.`,
+      question: `Metne göre öğrencilerin kurak günlerde fidanları yaşatmak ve suyu korumak için aldıkları somut önlemi yazınız.`,
+      answer: `Öğrenciler kurak günlerde tek bir damla suyun bile israf olmasını önlemek için elleriyle damla sulama boruları döşemiş ve nöbetleşe sulama takvimi uygulayarak fidanları korumuşlardır.`,
+      alternativeAnswers: [
+        'Damla sulama sistemi borularını kendileri döşeyerek su israfını engellemişler ve nöbetleşe sulama yapmışlardır.'
+      ],
+      rubric: [
+        { item: 'Damla sulama sisteminin döşenmesi önleminin yazılması', pts: Math.round((pointAllocations[0] || 15) * 0.5) },
+        { item: 'Suyun israfını engelleme ve nöbetleşe bakım bilincinin açıklanması', pts: Math.round((pointAllocations[0] || 15) * 0.5) }
+      ]
+    },
+    {
+      number: 2,
+      outcome: 'T.O.5.7',
+      outcomeTitle: 'Görselle iletilen anlamı belirleyebilme',
+      difficulty: 'Orta',
+      level: 'Basit Bilişsel Süreçler',
+      points: pointAllocations[1] || 15,
+      templateType: 'Görsel Yorumlama & İleti Çıkarımı',
+      stimulus: `[Görsel Açıklaması: Bir çevre koruma afişinde, bir musluktan damlayan tek bir su damlasının içinde yeşeren küçük bir meşe fidanı resmi bulunmaktadır. Afişin sağ tarafında 'Bir Damla Su, Bir Orman Hayat' sloganı yer almaktadır.]`,
+      question: `Afişteki su damlasının içinde filizlenen fidan görselinden hareketle afişin vermek istediği temel düşünceyi açıklayınız.`,
+      answer: `Küçük görünen tek bir su damlasının bile bir fidanın büyümesi ve gelecekte büyük bir ormana dönüşmesi için hayati değer taşıdığı, bu yüzden her damla suyun korunması gerektiği vurgulanmaktadır.`,
+      alternativeAnswers: [
+        'En küçük su tasarrufunun bile canlıların yaşamı ve doğanın yeşermesi için çok kıymetli olduğu anlatılmaktadır.'
+      ],
+      rubric: [
+        { item: 'Su damlası ve fidan ilişkisinin doğru çözümlenmesi', pts: Math.round((pointAllocations[1] || 15) * 0.5) },
+        { item: 'Su tasarrufu ve doğayı koruma ana fikrinin yazılması', pts: Math.round((pointAllocations[1] || 15) * 0.5) }
+      ]
+    },
+    {
+      number: 3,
+      outcome: 'T.O.5.20',
+      outcomeTitle: 'Metinden hareketle söz varlığını geliştirmeye yönelik çözümleme yapabilme',
+      difficulty: 'Orta',
+      level: 'Basit Bilişsel Süreçler',
+      points: pointAllocations[2] || 15,
+      templateType: 'Kelime Anlamı & Bağlamsal Çözümleme',
+      stimulus: `Fidanların toprağa tutunabilmesi için gereken 'can suyu' verildiğinde bahçe adeta 'şenlik' havasına büründü.`,
+      question: `a) Metinde geçen 'can suyu' teriminin anlamını açıklayınız.
+b) 'Şenlik' kelimesinin metindeki bağlamsal anlamını yazıp bir cümlede kullanınız.`,
+      answer: `a) Can suyu: Yeni dikilen fidanın köklerinin toprakla kaynaşması için dikilir dikilmez verilen ilk su.
+b) Şenlik: Neşeli, coşkulu ve sevinç dolu ortam. Örnek cümle: 'Bahçedeki kuş cıvıltıları mahalleye şenlik getirdi.'`,
+      alternativeAnswers: [
+        'Can suyu: Fidan dikildikten hemen sonra verilen ilk hayat suyu. Şenlik: Büyük neşe ve sevinç kaynağı.'
+      ],
+      rubric: [
+        { item: "'Can suyu' kavramının doğru açıklanması", pts: Math.round((pointAllocations[2] || 15) * 0.5) },
+        { item: "'Şenlik' kelimesinin bağlamsal anlamı ve örnek cümlesi", pts: Math.round((pointAllocations[2] || 15) * 0.5) }
+      ]
+    },
+    {
+      number: 4,
+      outcome: 'T.Y.5.13',
+      outcomeTitle: 'Yazısını zenginleştirecek biçimde söz varlığını kullanabilme',
+      difficulty: 'Zor',
+      level: 'Karmaşık Bilişsel Süreçler',
+      points: pointAllocations[3] || 15,
+      templateType: 'Deyim ve Zengin Söz Varlığıyla Yazma',
+      stimulus: `Öğrenciler seranın ilk hasadında yetiştirdikleri taze çilekleri okulun diğer sınıflarıyla paylaşmıştır.`,
+      question: `Öğrencilerin bahçedeki dayanışmasını ve emeğini anlatan; içinde 'el birliği yapmak' ve 'yüreğini koymak' deyimlerinin geçtiği bir paragraf yazınız.`,
+      answer: `Öğrenciler atıl bahçeyi bir cennete dönüştürmek için el birliği yaptılar. Her biri bu projeye yüreğini koyarak tohumları sevgiyle suladı ve sonunda bereketli bir hasada ulaştılar.`,
+      alternativeAnswers: [
+        'Tüm sınıf el birliği yaparak serayı kurdu; herkes yüreğini koyarak çalıştığı için ortaya harika bir bahçe çıktı.'
+      ],
+      rubric: [
+        { item: "'El birliği yapmak' ve 'yüreğini koymak' deyimlerinin yerinde kullanımı", pts: Math.round((pointAllocations[3] || 15) * 0.5) },
+        { item: 'Dayanışmayı anlatan anlamlı paragraf oluşturma', pts: Math.round((pointAllocations[3] || 15) * 0.5) }
+      ]
+    },
+    {
+      number: 5,
+      outcome: 'T.Y.5.16',
+      outcomeTitle: 'Yazım ve noktalama işaretleriyle ilgili kuralları uygulayabilme',
+      difficulty: 'Kolay',
+      level: 'Basit Bilişsel Süreçler',
+      points: pointAllocations[4] || 14,
+      templateType: 'Hata Tespiti & Düzeltme',
+      stimulus: `Öğretmenimiz şöyle dedi; 23 nisan günü seramızdaki çiçekleri van'dan gelen misafirlerimize hediye edeceğiz.`,
+      question: `Yukarıdaki cümlede büyük harf ve noktalama kurallarına aykırı 3 hatayı düzeltip cümlenin doğrusunu yazınız.`,
+      answer: `Hatalar:
+1. 'dedi' kelimesinden sonra noktalı virgül (;) değil İKİ NOKTA (:) konmalıdır.
+2. '23 nisan' belirli bir tarihi belirttiği için ay adı büyük harfle '23 Nisan' yazılmalıdır.
+3. 'van'dan' özel isim olduğu için büyük harfle 'Van'dan' şeklinde yazılmalıdır.
+Doğrusu: Öğretmenimiz şöyle dedi: 23 Nisan günü seramızdaki çiçekleri Van'dan gelen misafirlerimize hediye edeceğiz.`,
+      alternativeAnswers: [
+        'Noktalı virgül yerine iki nokta gelmeli, Nisan ve Van kelimeleri büyük harfle başlamalıdır.'
+      ],
+      rubric: [
+        { item: 'İki nokta, Nisan ve Van yazım hatalarının tespiti', pts: Math.round((pointAllocations[4] || 14) * 0.5) },
+        { item: 'Cümlenin hatasız yazılması', pts: Math.round((pointAllocations[4] || 14) * 0.5) }
+      ]
+    }
+  ];
+
+  // ---------------------------------------------------------------------------
+  // C-4. 7. SINIF TÜRKÇE (Set B: Asırlık Ulu Çınar & Tarihsel Vefa)
+  // ---------------------------------------------------------------------------
+  const turkceQuestions_7th_SetB: GeneratedQuestionItem[] = [
+    {
+      number: 1,
+      outcome: 'T.O.7.8',
+      outcomeTitle: 'Metindeki çıkarımları ve örtük anlamı belirleyebilme',
+      difficulty: 'Orta',
+      level: 'Karmaşık Bilişsel Süreçler',
+      points: pointAllocations[0] || 15,
+      templateType: 'Metin İçi Delillendirme & Örtük Anlam',
+      stimulus: `Bursa'nın altı asırlık ulu çınarı, gövdesindeki derin kovuklarda sincapları ve göçmen kuşları konuk ederdi. Köyün çocukları her bahar çınarın heybetli dalları altına toplanır, yaşlıların anlattığı eski sefer hikâyelerini dinlerdi. Çınar, yüzyıllardır değişen insanlara rağmen kökleriyle toprağa, dallarıyla zamana meydan okurdu.`,
+      question: `a) Asırlık çınarın kovuklarında kuşları barındırmasındaki ve çocukların onun gölgesinde toplanmasındaki örtük anlamı açıklayınız.
+b) Çınarın zamana meydan okuduğunu kanıtlayan iki ifadeyi metinden yazınız.`,
+      answer: `a) Örtük Anlam: Çınar sadece bir ağaç değil, geçmişle geleceği birbirine bağlayan şefkatli bir koruyucu, ortak hafıza ve millî birlik sembolüdür.
+b) Kanıtlar: 1. Altı asırdır derin kovuklarında canlıları konuk etmesi, 2. Yüzyıllardır değişen nesillere rağmen kökleriyle toprağa sımsıkı tutunması.`,
+      alternativeAnswers: [
+        'Çınarın nesiller boyu insanları bir araya getiren köklü bir tarihî miras ve koruyucu manevi sığınak olduğunu göstermektedir.',
+        'Kanıtlar: Canlıları koynunda yaşatması ve asırlar boyunca ayakta kalarak kökleriyle toprağa bağlanmasıdır.'
+      ],
+      rubric: [
+        { item: 'Çınarın ortak hafıza ve koruyucu sembol olduğunun açıklanması', pts: Math.round((pointAllocations[0] || 15) * 0.5) },
+        { item: 'Metinden iki somut zaman ve kök kanıtının gösterilmesi', pts: Math.round((pointAllocations[0] || 15) * 0.5) }
+      ]
+    },
+    {
+      number: 2,
+      outcome: 'T.O.7.4',
+      outcomeTitle: 'Bağlamdan yararlanarak bilmediği kelime ve kelime gruplarının anlamını tahmin edebilme',
+      difficulty: 'Orta',
+      level: 'Karmaşık Bilişsel Süreçler',
+      points: pointAllocations[1] || 15,
+      templateType: 'Kelime Anlamı Tahmini & Delillendirme',
+      stimulus: `Ulu çınar, 'metanetle' rüzgârlara göğüs geriyor; çevresindeki beton binaların soğukluğuna inat toprağın 'özünden' kopmuyordu.`,
+      question: `Metindeki altı çizili 'metanetle' sözcüğünün anlamını tahmin ediniz. Tahmininizi metindeki hangi ipucuna dayandırdığınızı açıklayınız.`,
+      answer: `Tahmin: Metanetle: Dayanıklılıkla, güçlü bir sabır ve sarsılmaz bir dirençle demektir. İpucu: Şiddetli rüzgârlara göğüs germesi ve asırlardır devrilmeden ayakta kalmasıdır.`,
+      alternativeAnswers: [
+        'Metanetle: Sabırla ve sarsılmadan zorluklara karşı durarak anlamındadır. İpucu: Çınarın rüzgârlara karşı direnmesi ve devrilmemesidir.'
+      ],
+      rubric: [
+        { item: "'Metanetle' sözcüğünün doğru tahmin edilmesi (sabır, dayanıklılık)", pts: Math.round((pointAllocations[1] || 15) * 0.5) },
+        { item: 'Metindeki rüzgâra göğüs germe ipucuyla gerekçelendirilmesi', pts: Math.round((pointAllocations[1] || 15) * 0.5) }
+      ]
+    },
+    {
+      number: 3,
+      outcome: 'T.O.7.5',
+      outcomeTitle: 'Metnin yüzey anlamını belirleyebilme',
+      difficulty: 'Kolay',
+      level: 'Basit Bilişsel Süreçler',
+      points: pointAllocations[2] || 15,
+      templateType: 'Ana Fikir / Konu Tespiti',
+      stimulus: `Bursa'daki altı asırlık İnkaya çınarı, geniş gövdesi ve metrelerce uzanan kollarıyla köy meydanının simgesidir.`,
+      question: `Metnin konusunu eksiksiz tek bir cümleyle yazınız.`,
+      answer: `Metnin konusu: Bursa'daki asırlık İnkaya çınarının köklü varlığı ve köy meydanındaki tarihî önemidir.`,
+      alternativeAnswers: [
+        'Metnin konusu: Altı yüz yıllık ulu çınarın heybeti ve tarihî simgeselliğidir.',
+        'Metnin konusu: Asırlık İnkaya çınarının doğadaki görkemli duruşudur.'
+      ],
+      rubric: [
+        { item: 'Metnin konusunun tek cümleyle eksiksiz ifade edilmesi', pts: pointAllocations[2] || 15 }
+      ]
+    },
+    {
+      number: 4,
+      outcome: 'T.Y.7.21',
+      outcomeTitle: 'Yazım kurallarını ve noktalama işaretlerini uygulayabilme',
+      difficulty: 'Orta',
+      level: 'Karmaşık Bilişsel Süreçler',
+      points: pointAllocations[3] || 15,
+      templateType: 'Hata Tespiti & Düzeltme',
+      stimulus: `Dedem çınarın gölgesinde oturdu; cebinden ahşap tarağını çıkarıp 19 mayıs 1919'da samsun'a çıkan atatürk'ü anlattı.`,
+      question: `Cümledeki noktalama ve büyük harf hatalarını belirleyip cümlenin doğru şeklini yazınız.`,
+      answer: `Hatalar:
+1. 'oturdu'dan sonra noktalı virgül değil İKİ NOKTA (:) gelmelidir.
+2. '19 mayıs' belirli bir tarihi bildirdiği için '19 Mayıs' şeklinde büyük yazılmalıdır.
+3. 'samsun'a' ve 'atatürk'ü' özel isimler olduğu için büyük harfle 'Samsun'a' ve 'Atatürk'ü' yazılmalıdır.
+Doğrusu: Dedem çınarın gölgesinde oturdu: cebinden ahşap tarağını çıkarıp 19 Mayıs 1919'da Samsun'a çıkan Atatürk'ü anlattı.`,
+      alternativeAnswers: [
+        'Mayıs, Samsun ve Atatürk sözcükleri büyük harfle yazılmalı, noktalı virgül yerine iki nokta kullanılmalıdır.'
+      ],
+      rubric: [
+        { item: 'İki nokta ve büyük harf hatalarının tespiti', pts: Math.round((pointAllocations[3] || 15) * 0.5) },
+        { item: 'Cümlenin kurallara uygun hatasız yazımı', pts: Math.round((pointAllocations[3] || 15) * 0.5) }
+      ]
+    }
+  ];
+
+  // ---------------------------------------------------------------------------
+  // C-5. 7. SINIF TÜRKÇE (Set A)
   // ---------------------------------------------------------------------------
   const turkceQuestions: GeneratedQuestionItem[] = [
     {
@@ -1402,11 +1979,17 @@ b) Mark NEVER plays tennis.`,
     ...fenQuestions_SetB,
     ...matQuestions_SetA,
     ...matQuestions_SetB,
+    ...turkceQuestions_5th_SetA,
+    ...turkceQuestions_5th_SetB,
+    ...turkceQuestions_5th_SetC,
+    ...turkceQuestions_7th_SetB,
     ...turkceQuestions,
     ...sosyalQuestions,
     ...dinQuestions,
     ...ingilizceQuestions
   ];
+
+  const isCurrentExam = (e: any) => e.scenarioId === scenario.id || e.id.endsWith(scenario.id) || e.id.includes(scenario.id);
 
   const dynamicQuestions: GeneratedQuestionItem[] = questionDistributions.map((d, idx) => {
     const outcomeCode = d.outcomeCode;
@@ -1419,9 +2002,10 @@ b) Mark NEVER plays tennis.`,
       : (d.notes || 'MEBİ Öğrenme Çıktısı');
 
     // 1. Önce SAMPLE_EXAMS içerisinden aynı kademe ve aynı derse ait ilgili kazanımdaki soruları filtrele
+    // DİKKAT: Mevcut senaryo (e.scenarioId === scenario.id) KESİNLİKLE HARİÇ TUTULUR!
     const matchingSampleQuestionsWithExam: { q: any; parentExam: any }[] = [];
     SAMPLE_EXAMS
-      .filter((e) => e.grade === grade && e.subjectId === subjectId)
+      .filter((e) => e.grade === grade && e.subjectId === subjectId && !isCurrentExam(e))
       .forEach((e) => {
         e.questions.forEach((q) => {
           if (q.outcomeCode === outcomeCode) {
@@ -1433,16 +2017,18 @@ b) Mark NEVER plays tennis.`,
     // 2. Ardından içeride tanımlı zengin MEBİ havuzundaki ilgili kazanım sorularını filtrele
     const internalPool = internalAllQuestions.filter((q) => q.outcome === outcomeCode);
 
-    // 3. Genel SAMPLE_EXAMS havuzunda bu kazanım var mı (farklı sınıf/şube olsa dahi)
+    // 3. Genel SAMPLE_EXAMS havuzunda bu kazanım var mı (farklı sınıf/şube olsa dahi, mevcut senaryo hariç)
     const crossGradeSampleQuestionsWithExam: { q: any; parentExam: any }[] = [];
     if (matchingSampleQuestionsWithExam.length === 0) {
-      SAMPLE_EXAMS.forEach((e) => {
-        e.questions.forEach((q) => {
-          if (q.outcomeCode === outcomeCode) {
-            crossGradeSampleQuestionsWithExam.push({ q, parentExam: e });
-          }
+      SAMPLE_EXAMS
+        .filter((e) => !isCurrentExam(e))
+        .forEach((e) => {
+          e.questions.forEach((q) => {
+            if (q.outcomeCode === outcomeCode) {
+              crossGradeSampleQuestionsWithExam.push({ q, parentExam: e });
+            }
+          });
         });
-      });
     }
 
     const availablePool = [
@@ -1515,9 +2101,14 @@ b) Mark NEVER plays tennis.`,
       })
     ];
 
-    if (availablePool.length > 0) {
-      const pickIdx = (variationIndex * 2 + occ) % availablePool.length;
-      const q = availablePool[pickIdx];
+    // Anti-duplication filtreleme: Mevcut sınav soruları veya daha önce üretilen sorularla eşleşenleri ayıkla
+    const filteredPool = availablePool.filter((cand) => {
+      return !isDuplicateOrTooSimilar(cand.question, cand.stimulus, allAvoidTexts, allAvoidStimuli, 0.38);
+    });
+
+    if (filteredPool.length > 0) {
+      const pickIdx = (variationIndex * 3 + occ) % filteredPool.length;
+      const q = filteredPool[pickIdx];
       return {
         number: idx + 1,
         outcome: outcomeCode,
@@ -1537,8 +2128,125 @@ b) Mark NEVER plays tennis.`,
       };
     }
 
-    // 4. Havuzda henüz bulunmayan lise veya nadir dersler için pedagojik dinamik MEBİ sentezi
+    // 4. Havuzda henüz bulunmayan veya mükerrerlik filtresi sonrası boş kalan kazanımlar için pedagojik dinamik MEBİ sentezi
     const dynSubjectName = subjectId.replace(/_/g, ' ').toUpperCase();
+
+    // Türkçe dersi için özel bağlamsal edebî kurgular
+    if (subjectId === 'turkce') {
+      const turkishContexts = [
+        {
+          theme: 'Köy Çeşmesi ve İmece',
+          stim: `Köyün asırlık taş çeşmesinin oluğundan akan kaynak suyu, tarladan dönen köylülerin ve yolcuların nefeslendiği ortak duraktı. Muhtar Salih Bey, kuraklık tehlikesine karşı çeşmenin arkasındaki su deposunu imece usulüyle temizletmiş; israfı önlemek için de gençlerle birlikte bir su saati düzeneği kurmuştu.`,
+          meaningQ: `Metne göre köylülerin kuraklık tehlikesine karşı suyu korumak ve paylaşmak için aldığı tedbiri açıklayınız.`,
+          meaningAns: `Muhtar Salih Bey ve köy halkı imece usulüyle su deposunu temizletmiş ve israfı önlemek amacıyla gençlerle su saati düzeneği kurarak suyu koruma altına almıştır.`,
+          vocabWords: ['imece', 'oluk'],
+          idioms: ['gönül birliği etmek', 'alın teri dökmek'],
+          errSentence: `Muhtar salih bey, 29 ekim günü çeşmenin başında toplanan köylülere şöyle dedi; Suyumuz bizim geleceğimizdir.`
+        },
+        {
+          theme: 'Tarihî Kütüphane ve Antika Saat',
+          stim: `Tarihî okul kütüphanesinin başköşesinde duran sarkaçlı pirinç saat, tam doksan yıldır her saat başında tok bir sesle çalardı. Kütüphaneci Emine Hanım, 'Bu saat sadece dakikaları değil, bu salonda sabırla okuyan binlerce gencin hayallerini de saydı.' diyerek saatin tozunu ipek bir mendille özenle alırdı.`,
+          meaningQ: `Kütüphaneci Emine Hanım'ın saatin tozunu alırken söylediği sözdeki örtük anlamı ve saate duyduğu vefa duygusunu açıklayınız.`,
+          meaningAns: `Pirinç saatin sadece zamanı gösteren bir aygıt olmadığını, o kütüphanede emek veren nesillerin ortak hatırasını ve ilim yolculuğunu simgelediğini ifade etmektedir.`,
+          vocabWords: ['sarkaç', 'başköşe'],
+          idioms: ['can kulağıyla dinlemek', 'el üstünde tutmak'],
+          errSentence: `Emine hanım, kütüphanedeki eski kitapları istanbul ve ankara'dan gelen araştırmacılara gösterdi.`
+        },
+        {
+          theme: 'Tarihî Rüzgâr Değirmeni',
+          stim: `Ege kıyılarındaki tepeye kurulu yel değirmeni, sonbahar rüzgârları başladığında dev kanatlarını döndürmeye başlardı. Değirmenci İbrahim Usta, köylülerin getirdiği buğday çuvallarını sırayla tartar, hiçbir çuvalı ayırt etmeden taşların arasında una dönüştürürdü. Değirmenin kapısında 'Hak geçmesin, un tükenmesin' levhası asılıydı.`,
+          meaningQ: `Değirmenin kapısında asılı olan 'Hak geçmesin, un tükenmesin' levhasındaki ilkeyi İbrahim Usta'nın dürüstlüğüyle ilişkilendirerek açıklayınız.`,
+          meaningAns: `İbrahim Usta köylülerin buğdaylarını ayrım yapmadan sırayla tartıp adaletle öğüterek hiç kimsenin hakkını yememiş, emeğe ve berekete duyduğu saygıyı dürüstlüğüyle somutlaştırmıştır.`,
+          vocabWords: ['öğütmek', 'ayrım'],
+          idioms: ['hak gözetmek', 'eli açık olmak'],
+          errSentence: `İbrahim usta, her sabah gün doğarken izmir'in dağlarına bakar ve fırıncı ahmet'e selam verirdi.`
+        }
+      ];
+
+      const ctx = turkishContexts[(variationIndex + idx) % turkishContexts.length];
+
+      if (outcomeCode.includes('T.O.5.6') || outcomeCode.includes('T.O.7.5')) {
+        return {
+          number: idx + 1,
+          outcome: outcomeCode,
+          outcomeTitle: resolvedTitle,
+          difficulty: 'Kolay',
+          level: d.cognitiveLevel || 'Basit Bilişsel Süreçler',
+          templateType: 'Kurgusal Senaryo & Vaka İncelemesi',
+          points: pointAllocations[idx] || 15,
+          stimulus: ctx.stim,
+          question: ctx.meaningQ,
+          answer: ctx.meaningAns,
+          alternativeAnswers: [
+            `Metinde anlatılan ${ctx.theme} olayında adalet, emek ve paylaşım bilinci vurgulanmaktadır.`
+          ],
+          rubric: [
+            { item: 'Metnin ana konusunun ve olay örgüsünün doğru tespiti', pts: Math.round((pointAllocations[idx] || 15) * 0.5) },
+            { item: 'Gerekçenin metindeki somut eylemlerle delillendirilmesi', pts: Math.round((pointAllocations[idx] || 15) * 0.5) }
+          ]
+        };
+      } else if (outcomeCode.includes('T.O.5.20') || outcomeCode.includes('T.O.7.4')) {
+        return {
+          number: idx + 1,
+          outcome: outcomeCode,
+          outcomeTitle: resolvedTitle,
+          difficulty: 'Orta',
+          level: d.cognitiveLevel || 'Basit Bilişsel Süreçler',
+          templateType: 'Kelime Anlamı & Bağlamsal Çözümleme',
+          points: pointAllocations[idx] || 15,
+          stimulus: ctx.stim,
+          question: `Metinde geçen '${ctx.vocabWords[0]}' ve '${ctx.vocabWords[1]}' kelimelerinin bağlamsal anlamlarını yazınız ve birer cümlede kullanınız.`,
+          answer: `'${ctx.vocabWords[0]}' ve '${ctx.vocabWords[1]}' kelimelerinin metindeki bağlama uygun anlamı yazılmış ve kurallı cümleler kurulmuştur.`,
+          alternativeAnswers: [
+            `Kelimeler metindeki bağlama uygun olarak doğru anlamlandırılmıştır.`
+          ],
+          rubric: [
+            { item: 'Kelimelerin bağlama uygun doğru anlamlandırılması', pts: Math.round((pointAllocations[idx] || 15) * 0.5) },
+            { item: 'Örnek cümlelerin anlam bütünlüğü ve dilbilgisi kurallarına uygunluğu', pts: Math.round((pointAllocations[idx] || 15) * 0.5) }
+          ]
+        };
+      } else if (outcomeCode.includes('T.Y.5.13') || outcomeCode.includes('T.Y.7.13')) {
+        return {
+          number: idx + 1,
+          outcome: outcomeCode,
+          outcomeTitle: resolvedTitle,
+          difficulty: 'Zor',
+          level: d.cognitiveLevel || 'Karmaşık Bilişsel Süreçler',
+          templateType: 'Deyim ve Zengin Söz Varlığıyla Yazma',
+          points: pointAllocations[idx] || 15,
+          stimulus: ctx.stim,
+          question: `İçinde '${ctx.idioms[0]}' ve '${ctx.idioms[1]}' deyimlerinin geçtiği, ${ctx.theme} konusuna uygun akıcı ve kurallı bir paragraf yazınız.`,
+          answer: `Her iki deyim anlamına uygun biçimde kullanılarak kurallı ve anlamlı bir paragraf oluşturulmuştur.`,
+          alternativeAnswers: [
+            `Deyimler yerinde ve doğru anlamda kullanılarak tutarlı bir metin kurgulanmıştır.`
+          ],
+          rubric: [
+            { item: 'Deyimlerin yerinde ve doğru anlamda kullanılması', pts: Math.round((pointAllocations[idx] || 15) * 0.5) },
+            { item: 'Paragrafın kurgusal bütünlüğü ve akıcılığı', pts: Math.round((pointAllocations[idx] || 15) * 0.5) }
+          ]
+        };
+      } else if (outcomeCode.includes('T.Y.5.16') || outcomeCode.includes('T.Y.7.21')) {
+        return {
+          number: idx + 1,
+          outcome: outcomeCode,
+          outcomeTitle: resolvedTitle,
+          difficulty: 'Kolay',
+          level: d.cognitiveLevel || 'Basit Bilişsel Süreçler',
+          templateType: 'Hata Tespiti & Düzeltme',
+          points: pointAllocations[idx] || 14,
+          stimulus: ctx.errSentence,
+          question: `Yukarıdaki cümlede büyük harf ve noktalama kurallarına aykırı yapılan 3 hatayı belirleyip cümlenin doğrusunu yazınız.`,
+          answer: `Hatalar tespit edilerek büyük harfler ve noktalama işaretleri kurallara uygun biçimde düzeltilmiştir.`,
+          alternativeAnswers: [
+            `Büyük harf ve noktalama işaretleri eksiksiz düzeltilmiştir.`
+          ],
+          rubric: [
+            { item: 'Büyük harf ve noktalama hatalarının tespiti', pts: Math.round((pointAllocations[idx] || 15) * 0.5) },
+            { item: 'Cümlenin hatasız yeniden yazımı', pts: Math.round((pointAllocations[idx] || 15) * 0.5) }
+          ]
+        };
+      }
+    }
     const archetypesList = [
       'Durum & Özellik Matrisi (VAR/YOK Tablosu)',
       'Kurgusal Senaryo & Vaka İncelemesi',
@@ -1603,11 +2311,15 @@ ${sName2}: "Hayır, şartlar değiştiğinde doğrudan diğer etkenlerin devreye
 
   const finalDynamicQuestions = normalizeAndCalibrateQuestions(dynamicQuestions);
 
+  const elapsedFormatted = Math.max(0.6, (Date.now() - startTime) / 1000).toFixed(1) + ' saniye';
+
   return {
     title: `${grade}. Sınıf ${scenario.name} (Özgün Sınav Seti - ${finalDynamicQuestions.length} Soru)`,
     variationNumber: variationIndex + 1,
-    generationTime: '1.1 saniye',
-    model: 'MEBİ Standartlı Soru Motoru',
+    generationTime: elapsedFormatted,
+    model: 'MEBİ Kural Tabanlı Standart Motor',
+    isFallback: true,
+    fallbackReason: fallbackReason || 'Canlı yapay zekâ servisi şu anda meşgul veya çevrimdışı olduğundan sorular yerel MEBİ kural motoruyla hazırlandı.',
     questionsCount: finalDynamicQuestions.length,
     generatedQuestions: finalDynamicQuestions,
     sourceValidationSummary: {
