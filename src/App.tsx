@@ -33,6 +33,7 @@ import { AIGeneratorModal } from './components/AIGeneratorModal';
 import { OfficialSourcesModal } from './components/OfficialSourcesModal';
 import { FeedbackModal } from './components/FeedbackModal';
 import { InteractivePracticeView } from './components/InteractivePracticeView';
+import { QuickStartGuide } from './components/QuickStartGuide';
 import { loadCustomExamPaper, clearCustomExamPaper } from './utils/practiceStorage';
 import { validateAndEnrichExamQuestions } from './utils/sourceMaterialValidator';
 import { 
@@ -277,6 +278,9 @@ export const App: React.FC = () => {
         onOpenFeedbackModal={() => setIsFeedbackModalOpen(true)}
         onPrint={() => window.print()}
       />
+
+      {/* İlk Kullanım ve Yönlendirme Rehberi */}
+      <QuickStartGuide onOpenAIModal={() => setIsAIModalOpen(true)} />
 
       {/* Main Filter Bar */}
       <FilterBar
