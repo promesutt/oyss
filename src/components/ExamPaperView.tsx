@@ -8,7 +8,8 @@ import {
   EyeOff, 
   Award,
   Sparkles,
-  Printer
+  Printer,
+  PenTool
 } from 'lucide-react';
 
 interface ExamPaperViewProps {
@@ -16,13 +17,15 @@ interface ExamPaperViewProps {
   isCustomAIExam?: boolean;
   onResetToDefaultExam?: () => void;
   onOpenAIGenerator: () => void;
+  onOpenInteractivePractice?: () => void;
 }
 
 export const ExamPaperView: React.FC<ExamPaperViewProps> = ({ 
   examPaper,
   isCustomAIExam = false,
   onResetToDefaultExam,
-  onOpenAIGenerator
+  onOpenAIGenerator,
+  onOpenInteractivePractice
 }) => {
   const [showRubric, setShowRubric] = useState<boolean>(false);
   const [answerLineCount, setAnswerLineCount] = useState<number>(3);
@@ -38,18 +41,18 @@ export const ExamPaperView: React.FC<ExamPaperViewProps> = ({
               <Sparkles className="w-4 h-4 text-amber-300" />
             </span>
             <div>
-              <span>Özgün Sınav Kâğıdı Aktarıldı</span>
+              <span>Özgün Çalışma ve Alıştırma Seti (Taslak)</span>
               <p className="text-[11px] font-normal text-indigo-700">
-                Aşağıdaki A4 kâğıdında senaryoya uygun üretilen MEBİ soruları yer almaktadır.
+                Aşağıdaki A4 kâğıdında senaryonun öğrenme çıktılarına göre hazırlanan taslak alıştırma soruları yer almaktadır. Resmî MEB sınavı yerine geçmez.
               </p>
             </div>
           </div>
           {onResetToDefaultExam && (
             <button
               onClick={onResetToDefaultExam}
-              className="px-3 py-1.5 bg-white hover:bg-slate-50 border border-indigo-300 text-indigo-700 rounded-lg text-xs font-bold transition-all shadow-2xs hover:shadow-xs active:scale-95"
+              className="px-3 py-1.5 bg-white hover:bg-slate-50 border border-indigo-300 text-indigo-700 rounded-lg text-xs font-bold transition-all shadow-2xs hover:shadow-xs active:scale-95 cursor-pointer"
             >
-              ← Varsayılan MEB Sınavına Dön
+              ← Örnek Sınav Arşivine Dön
             </button>
           )}
         </div>
@@ -61,7 +64,7 @@ export const ExamPaperView: React.FC<ExamPaperViewProps> = ({
           <div className="flex items-center space-x-2">
             <Award className="w-5 h-5 text-red-600 shrink-0" />
             <span className="text-xs sm:text-sm text-slate-700 font-medium">
-              <strong>MEB ÖDSGM Uyumlu:</strong> Resmi konu soru dağılımı ve bilişsel süreç düzeylerine tam uyumlu ortak yazılı kağıdı.
+              <strong>MEB ÖDSGM Uyumlu:</strong> Resmi konu-soru dağılımı ve bilişsel süreç düzeylerine göre hazırlanmış örnek ortak yazılı kâğıdı.
             </span>
           </div>
           <div className="flex items-center space-x-1.5 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-lg font-semibold shrink-0">
@@ -126,6 +129,17 @@ export const ExamPaperView: React.FC<ExamPaperViewProps> = ({
 
           {/* Action Buttons */}
           <div className="flex flex-wrap items-center gap-2">
+            {onOpenInteractivePractice && (
+              <button
+                onClick={onOpenInteractivePractice}
+                className="inline-flex items-center px-3.5 py-1.5 rounded-lg text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white shadow-xs transition-colors cursor-pointer active:scale-95"
+                title="Sınavı ekran üzerinde açık uçlu olarak çöz ve rubrikle öz değerlendirme yap"
+              >
+                <PenTool className="w-3.5 h-3.5 mr-1.5 text-amber-300" />
+                Etkileşimli Çöz
+              </button>
+            )}
+
             <button
               onClick={() => setShowRubric(!showRubric)}
               className={`inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors cursor-pointer ${

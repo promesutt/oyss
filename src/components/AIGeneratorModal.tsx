@@ -18,6 +18,9 @@ import {
 } from 'lucide-react';
 import { MathRenderer } from './MathRenderer';
 import { generateMEBIQuestions, GenerationResult } from '../utils/aiGeneratorEngine';
+import { distributeExamPoints, reconcileRubricPoints } from '../utils/examScoring';
+import { saveCustomExamPaper } from '../utils/practiceStorage';
+import { ExamPaper } from '../types';
 
 interface AIGeneratorModalProps {
   isOpen: boolean;
@@ -42,25 +45,35 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
   const [cognitiveWeight, setCognitiveWeight] = useState<'standard' | 'more_complex' | 'foundational'>('standard');
   const [questionCountChoice, setQuestionCountChoice] = useState<number>(scenario.totalQuestions || 6);
 
+  // Context key for grade, subject, term, and scenario
+  const currentContextKey = `${grade}_${subjectId}_${examTerm}_${scenario?.id || 'senaryo_1'}`;
+
+  // Cache generated results per context so that:
+  // 1. Same context retains questions when closed and reopened
+  // 2. Different context shows clean empty state and never shows another subject's questions
+  const [resultsByContext, setResultsByContext] = useState<Record<string, GenerationResult>>({});
+  const generatedResult = resultsByContext[currentContextKey] || null;
+
+  // Active generating context tracker to prevent race conditions when user switches subject while generating
+  const generatingContextRef = React.useRef<string | null>(null);
+
   // Sync question count choice whenever scenario changes
   useEffect(() => {
     if (scenario?.totalQuestions) {
       setQuestionCountChoice(scenario.totalQuestions);
     }
   }, [scenario?.id, scenario?.totalQuestions]);
+
   const [isGenerating, setIsGenerating] = useState<boolean>(false);
-  const [generatedResult, setGeneratedResult] = useState<GenerationResult | null>(null);
   const [variationCount, setVariationCount] = useState<number>(0);
-  const apiKey = 
-    (typeof import.meta !== 'undefined' && import.meta.env?.VITE_GEMINI_API_KEY) ||
-    (typeof window !== 'undefined' && sessionStorage.getItem('gemini_api_key')) ||
-    '';
 
   if (!isOpen) return null;
 
   const subjectMeta = ALL_SUBJECTS.find((s) => s.id === subjectId);
 
   const handleGenerate = async () => {
+    const targetKey = currentContextKey;
+    generatingContextRef.current = targetKey;
     setIsGenerating(true);
     try {
       const nextIndex = variationCount;
@@ -69,15 +82,20 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
         grade,
         scenario,
         nextIndex,
-        apiKey,
+        undefined,
         questionCountChoice
       );
       setVariationCount(nextIndex + 1);
-      setGeneratedResult(res);
+      // Sadece hedeflenen bağlam için kaydet
+      setResultsByContext(prev => ({
+        ...prev,
+        [targetKey]: res
+      }));
     } catch (err) {
       console.error('Generation error:', err);
     } finally {
       setIsGenerating(false);
+      generatingContextRef.current = null;
     }
   };
 
@@ -292,54 +310,65 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
                         <button
                           onClick={() => {
                             const qCount = generatedResult.generatedQuestions.length;
-                            const qPoints = qCount > 0 ? Math.round(100 / qCount) : 50;
+                            const pointAllocations = distributeExamPoints(qCount);
 
-                            const customExam = {
+                            const customExam: ExamPaper = {
                               id: `ai_generated_${Date.now()}`,
                               grade: grade,
                               subjectId: subjectId,
                               examTerm: examTerm,
                               scenarioId: scenario.id,
-                              title: `${grade}. Sınıf ${subjectMeta?.name} (${scenario.name}) - Özgün MEBİ Sınavı (#${generatedResult.variationNumber})`,
+                              title: `${grade}. Sınıf ${subjectMeta?.name} (${scenario.name}) - Özgün Çalışma ve Alıştırma Seti (#${generatedResult.variationNumber})`,
                               durationMinutes: 40,
                               totalPoints: 100,
                               instructions: [
-                                'Bu sınav resmi senaryo kurallarına göre özel olarak hazırlanmıştır.',
-                                'Soruları analitik düşünme adımlarını ve bilimsel gerekçelerinizi belirterek açık uçlu cevaplayınız.',
+                                'Bu sınav kağıdı, ilgili MEB senaryosunun öğrenme çıktıları esas alınarak hazırlanan bir ÖZGÜN ÇALIŞMA VE ALIŞTIRMA TASLAĞIDIR.',
+                                'Soruları analitik düşünme adımlarını ve gerekçelerinizi belirterek açık uçlu cevaplayınız.',
                                 'Puanlamada MEB Analitik Dereceli Puanlama Anahtarı (Rubrik) basamakları esas alınacaktır.'
                               ],
-                              questions: generatedResult.generatedQuestions.map((q) => {
-                                const questionPts = q.points || qPoints;
-                                const rawRubricSum = (q.rubric || []).reduce((sum, r) => sum + (r.pts || 0), 0);
-                                const rubricList = (q.rubric || []).map((r) => {
-                                  const pts = rawRubricSum > 0 ? Math.round((r.pts / rawRubricSum) * questionPts) : 10;
-                                  return { criterion: r.item, points: pts };
-                                });
+                              questions: generatedResult.generatedQuestions.map((q, idx) => {
+                                const questionPts = pointAllocations[idx] || q.points || 15;
+                                const rawRubric = (q.rubric || []).map((r) => ({
+                                  criterion: r.item || 'Değerlendirme Ölçütü',
+                                  points: r.pts ?? 0
+                                }));
+                                const rubricList = reconcileRubricPoints(rawRubric, questionPts);
 
                                 const officialTitle = getOfficialOutcomeTitle(q.outcome);
                                 const resolvedOutcomeTitle = (officialTitle && officialTitle !== q.outcome)
                                   ? officialTitle
                                   : formatOutcomeBadgeTitle(q.outcomeTitle, q.outcome) || 'MEBİ Öğrenme Çıktısı';
 
+                                const specificExplanation = q.solutionExplanation
+                                  ? q.solutionExplanation
+                                  : q.answer
+                                  ? `MEBİ analitik çözüm adımları ve gerekçeli dereceli puanlama: ${q.answer}`
+                                  : 'Bu soru için MEBİ dereceli puanlama anahtarı basamakları esas alınmıştır.';
+
                                 return {
-                                  questionNumber: q.number,
+                                  questionNumber: q.number || (idx + 1),
                                   outcomeCode: q.outcome,
                                   outcomeTitle: resolvedOutcomeTitle,
                                   difficulty: q.difficulty || 'Orta',
-                                  cognitiveLevel: q.level || 'Karmaşık Bilişsel Süreçler',
-                                  archetype: q.templateType,
+                                  cognitiveLevel: (q.level || 'Karmaşık Bilişsel Süreçler') as any,
+                                  archetype: q.templateType as any,
                                   points: questionPts,
                                   stimulus: q.stimulus,
                                   questionText: q.question,
                                   modelAnswer: q.answer,
-                                  solutionExplanation: 'MEBİ kuralına uygun analitik çözüm ve dereceli puanlama.',
+                                  solutionExplanation: specificExplanation,
                                   rubric: rubricList
                                 };
                               })
                             };
 
                             const calibratedQuestions = calibrateQuestionDifficulties(customExam.questions);
-                            onApplyGeneratedExam({ ...customExam, questions: calibratedQuestions });
+                            const finalExam = { ...customExam, questions: calibratedQuestions };
+
+                            // Tarayıcı yenilemelerinde kaybolmaması için localStorage'a kaydet
+                            saveCustomExamPaper(finalExam);
+
+                            onApplyGeneratedExam(finalExam);
                             onClose();
                           }}
                           className="inline-flex items-center px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold shadow-md transition-all active:scale-95 shrink-0"

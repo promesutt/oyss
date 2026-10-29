@@ -28,6 +28,7 @@ import {
   FlaskConical,
   Dna,
   Landmark,
+  PenTool,
   Map,
   Brain,
   School,
@@ -363,6 +364,21 @@ export const FilterBar: React.FC<FilterBarProps> = ({
             >
               <FileText className="w-4 h-4 mr-1.5" />
               Örnek Sınav Kağıdı (MEBİ Şablonlu)
+            </button>
+
+            <button
+              onClick={() => onSelectMaterial('interactive_exam')}
+              className={`pb-3 px-3 inline-flex items-center text-xs sm:text-sm font-semibold border-b-2 transition-colors shrink-0 ${
+                selectedMaterial === 'interactive_exam'
+                  ? 'border-emerald-600 text-emerald-600'
+                  : 'border-transparent text-slate-500 hover:text-slate-800'
+              }`}
+            >
+              <PenTool className="w-4 h-4 mr-1.5" />
+              Etkileşimli Sınav Çöz & Öz Değerlendir
+              <span className="ml-1.5 text-[10px] bg-emerald-100 text-emerald-800 px-1.5 py-0.2 rounded-full font-bold">
+                Yeni
+              </span>
             </button>
 
             <button

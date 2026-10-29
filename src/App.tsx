@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { 
   GradeLevel, 
   SubjectId, 
@@ -9,16 +9,13 @@ import {
   StudySheetSection,
   InfographicItem,
   SpeakingGuide,
-  SchoolStage,
-  QuestionArchetype
+  SchoolStage
 } from './types';
 import { 
   ALL_SUBJECTS,
   ALL_GRADES,
-  getScenarios,
-  getOfficialOutcomeTitle
+  getScenarios
 } from './data/curriculumData';
-import { calibrateQuestionDifficulties } from './utils/difficultyCalibrator';
 import { SAMPLE_EXAMS } from './data/sampleExams';
 import { SAMPLE_STUDY_SHEETS } from './data/studySheets';
 import { OUTCOME_STUDY_BANK } from './data/outcomeStudyBank';
@@ -34,6 +31,17 @@ import { SpeakingGuideView } from './components/SpeakingGuideView';
 import { AIGeneratorModal } from './components/AIGeneratorModal';
 import { OfficialSourcesModal } from './components/OfficialSourcesModal';
 import { FeedbackModal } from './components/FeedbackModal';
+import { InteractivePracticeView } from './components/InteractivePracticeView';
+import { loadCustomExamPaper, clearCustomExamPaper } from './utils/practiceStorage';
+import { 
+  BookOpen, 
+  Mic, 
+  Sparkles, 
+  AlertCircle, 
+  ArrowRight, 
+  RotateCcw, 
+  FileText 
+} from 'lucide-react';
 
 export const App: React.FC = () => {
   // Navigation / Filter State (Default: 5. Sınıf Türkçe Senaryo 1 Sınav Kağıdı)
@@ -43,7 +51,17 @@ export const App: React.FC = () => {
   const [selectedTerm, setSelectedTerm] = useState<ExamTerm>('1_donem_1_yazili');
   const [selectedScenarioId, setSelectedScenarioId] = useState<string>('senaryo_1');
   const [selectedMaterial, setSelectedMaterial] = useState<MaterialType>('exam_paper');
-  const [customExamPaper, setCustomExamPaper] = useState<ExamPaper | null>(null);
+  const [customExamPaper, setCustomExamPaper] = useState<ExamPaper | null>(() => {
+    return loadCustomExamPaper(5, 'turkce');
+  });
+
+  // Sync saved custom AI exam for the active grade, subject & scenario
+  useEffect(() => {
+    const saved = loadCustomExamPaper(selectedGrade, selectedSubject);
+    if (saved && saved.scenarioId === selectedScenarioId) {
+      setCustomExamPaper(saved);
+    }
+  }, [selectedGrade, selectedSubject, selectedScenarioId]);
 
   // Modal States
   const [isAIModalOpen, setIsAIModalOpen] = useState<boolean>(false);
@@ -75,6 +93,10 @@ export const App: React.FC = () => {
     if (found) return found;
     return scenarios[0];
   }, [scenarios, selectedScenarioId]);
+
+  const currentSubjectMeta = useMemo(() => {
+    return ALL_SUBJECTS.find(s => s.id === selectedSubject);
+  }, [selectedSubject]);
 
   // Subject change handler
   const handleSelectSubject = (subjectId: SubjectId) => {
@@ -117,14 +139,16 @@ export const App: React.FC = () => {
   };
 
   // Universal MEBİ Question Synthesis for ANY grade, subject, and scenario
-  const activeExamPaper: ExamPaper = useMemo(() => {
-    // If a custom AI generated exam paper is active for this grade and subject, show it directly!
+  // Active Exam Paper: Prioritize verified teacher-curated sample exam
+  const activeExamPaper: ExamPaper | null = useMemo(() => {
+    // 1. If a custom AI generated exam paper is active for this grade and subject, show it directly!
     if (customExamPaper && 
         customExamPaper.grade === selectedGrade && 
         customExamPaper.subjectId === selectedSubject) {
       return customExamPaper;
     }
 
+    // 2. Direct match in verified teacher-curated repository
     const match = SAMPLE_EXAMS.find(
       e => e.grade === selectedGrade && 
            e.subjectId === selectedSubject && 
@@ -134,142 +158,9 @@ export const App: React.FC = () => {
 
     if (match) return match;
 
-    // 2. Check for sibling scenario match in the same subject and grade
-    const siblingMatch = SAMPLE_EXAMS.find(
-      e => e.grade === selectedGrade && 
-           e.subjectId === selectedSubject && 
-           e.examTerm === selectedTerm
-    );
-
-    if (siblingMatch) {
-      const targetCount = currentScenario.totalQuestions || 6;
-      const baseQuestions = siblingMatch.questions;
-      const pointPerQ = Math.floor(100 / targetCount);
-      const remainder = 100 - (pointPerQ * targetCount);
-
-      const adaptedQuestions = Array.from({ length: targetCount }).map((_, idx) => {
-        const sourceQ = baseQuestions[idx % baseQuestions.length];
-        const pts = pointPerQ + (idx === 0 ? remainder : 0);
-        return {
-          ...sourceQ,
-          questionNumber: idx + 1,
-          points: pts,
-          rubric: sourceQ.rubric.map(r => ({
-            ...r,
-            points: Math.max(1, Math.round((r.points / (sourceQ.points || 15)) * pts))
-          }))
-        };
-      });
-
-      return {
-        ...siblingMatch,
-        id: `adapted_${selectedSubject}_${selectedGrade}_${currentScenario.id}`,
-        scenarioId: currentScenario.id,
-        title: `${selectedGrade}. Sınıf ${siblingMatch.title.split('(')[0].trim()} (${currentScenario.name})`,
-        questions: adaptedQuestions
-      };
-    }
-
-    const subMeta = ALL_SUBJECTS.find(s => s.id === selectedSubject);
-    const subjectName = (selectedSubject === 'sosyal_bilgiler' && selectedGrade === 8)
-      ? 'T.C. İnkılap Tarihi ve Atatürkçülük'
-      : (subMeta ? subMeta.name : 'Ders');
-
-    // Archetype templates cycling across MEBİ pedagogy
-    const archetypes: QuestionArchetype[] = [
-      'Durum & Özellik Matrisi (VAR/YOK/Tik)',
-      'Kurgusal Senaryo & Vaka İncelemesi',
-      'Öğrenci Diyaloğu & Kavram Yanılgısı',
-      'Hata Tespiti & Adım Analizi',
-      'Dilemma (İkilem) & Çözüm Değerlendirme',
-      'Görsel / Deney / Günlük Hayat Durumu',
-      'Birinci Ağızdan Konuşturma / Rol'
-    ];
-
-    return {
-      id: `generated_${selectedSubject}_${selectedGrade}_${currentScenario.id}`,
-      grade: selectedGrade,
-      subjectId: selectedSubject,
-      examTerm: selectedTerm,
-      scenarioId: currentScenario.id,
-      title: `${selectedGrade}. Sınıf ${subjectName} Ortak Yazılı Sınavı (${currentScenario.name})`,
-      durationMinutes: 40,
-      totalPoints: 100,
-      instructions: [
-        `Bu sınav Temel Eğitim / Ortaöğretim Genel Müdürlüğü MEBİ soru standartları ve ÖDSGM ${currentScenario.name} dağılımına göre yapılandırılmıştır.`,
-        'Düz bilgi/ezber yerine verilen vaka, diyalog ve veri tablolarını analiz ederek gerekçenizi yazınız.',
-        'Puanlamada MEB Analitik Dereceli Puanlama Anahtarı (Rubrik) basamakları esas alınacaktır.'
-      ],
-      questions: calibrateQuestionDifficulties(currentScenario.distributions.map((dist, idx) => {
-        const archetype = archetypes[idx % archetypes.length];
-        
-        let stimulusText = '';
-        let questionText = '';
-        let modelAns = '';
-        let rubricItems = [];
-
-        if (archetype === 'Öğrenci Diyaloğu & Kavram Yanılgısı') {
-          stimulusText = `Öğretmen tahtaya ${subjectName} dersiyle ilgili temel bir durum yazmıştır. İki öğrenci arasında şu tartışma geçmektedir:
-Öğrenci A: "Bu durumda uygulanması gereken temel kural X'tir çünkü önceki deneyimler bunu göstermiştir."
-Öğrenci B: "Hayır, veriler incelendiğinde Y kuralının geçerli olduğu ve A'nın değişkeni göz ardı ettiği görülür."`;
-          questionText = `Öğrenci A ve Öğrenci B'nin iddialarını ${dist.outcomeCode} öğrenme çıktısı bakımından değerlendiriniz. Hangi öğrencinin haklı olduğunu bilimsel/mantıksal gerekçeleriyle açıklayınız.`;
-          modelAns = `Öğrenci B haklıdır. Çünkü Öğrenci A temel değişkeni göz ardı etmiştir. Bilimsel/kavramsal kural gereği Y durumu geçerlidir.`;
-          rubricItems = [
-            { criterion: 'Haklı olan öğrencinin doğru tespiti', points: 8 },
-            { criterion: 'Kavram yanılgısının bilimsel/mantıksal gerekçeyle kanıtlanması', points: 7 }
-          ];
-        } else if (archetype === 'Kurgusal Senaryo & Vaka İncelemesi') {
-          stimulusText = `Bir araştırma ekibi ${subjectName} kapsamında bir proje geliştirmektedir. Projede 3 farklı durum (Durum 1, Durum 2, Durum 3) test edilmiş ve sonuçlar kayıt altına alınmıştır.`;
-          questionText = `a) Verilen kurgusal durumlardan hangisi hedeflenen temel kavrama uygun bir model oluşturur? Nedenini bir cümleyle açıklayınız.
-b) Durum 1 ile Durum 2 arasındaki en temel farklılığı gerekçelendiriniz.`;
-          modelAns = `a) Hedeflenen kavrama uygun olan model Durum 2'dir çünkü şartları eksiksiz karşılamaktadır.
-b) Durum 1 ile Durum 2 arasındaki fark, uygulanan yöntemin sürekliliği ve doğrudan etki mekanizmasıdır.`;
-          rubricItems = [
-            { criterion: 'a şıkkında doğru model tespiti ve gerekçesi', points: 8 },
-            { criterion: 'b şıkkında iki durum arasındaki ayırt edici farkın yazılması', points: 7 }
-          ];
-        } else if (archetype === 'Dilemma (İkilem) & Çözüm Değerlendirme') {
-          stimulusText = `Ortaya çıkan bir sorunu çözmek için uzmanlar iki farklı çözüm yaklaşımı önermiştir:
-1. Yaklaşım: Mevcut sistemi tamamen durdurup yeni bir altyapı inşa etmek.
-2. Yaklaşım: Mevcut sistem çalışırken kademeli iyileştirme adımları uygulamak.`;
-          questionText = `Sizce yukarıdaki çözüm yollarından hangisi daha uygulanabilir ve sürdürülebilirdir? Seçtiğiniz yaklaşımın güçlü yönlerini ve diğer yaklaşımın taşıdığı riskleri değerlendirerek gerekçelendiriniz.`;
-          modelAns = `(Öğrenci 1. veya 2. yaklaşımı seçip tutarlı bilimsel/mantıksal argüman sunduğunda tam puan verilir).`;
-          rubricItems = [
-            { criterion: 'Seçilen yaklaşımın güçlü yönünün gerekçelendirilmesi', points: 8 },
-            { criterion: 'Alternatif yaklaşımın risk/sınırlarının analizi', points: 7 }
-          ];
-        } else {
-          stimulusText = `Aşağıdaki tabloda ${subjectName} dersi ${dist.outcomeCode} çıktısına yönelik 3 farklı durum ve bu durumlara ait özellikler verilmiştir.`;
-          questionText = `Tablodaki boşlukları ilgili durumun özelliğine göre "VAR" veya "YOK" yazarak doldurunuz ve bu özelliklerin pratik hayattaki önemini bir cümleyle açıklayınız.`;
-          modelAns = `Tablo eksiksiz doldurulur ve ilgili kavramın işlevi açıklanır.`;
-          rubricItems = [
-            { criterion: 'Tablo özelliklerinin doğru analiz edilmesi', points: 8 },
-            { criterion: 'Kavramsal gerekçelendirme cümlesi', points: 7 }
-          ];
-        }
-
-        const officialOutcome = getOfficialOutcomeTitle(dist.outcomeCode);
-        const resolvedOutcomeTitle = (officialOutcome && officialOutcome !== dist.outcomeCode)
-          ? officialOutcome
-          : (dist.notes || `${subjectName} Temel Öğrenme Çıktısı Analizi`);
-
-        return {
-          questionNumber: idx + 1,
-          outcomeCode: dist.outcomeCode,
-          outcomeTitle: resolvedOutcomeTitle,
-          difficulty: 'Orta' as const,
-          cognitiveLevel: dist.cognitiveLevel,
-          archetype: archetype,
-          points: Math.round(100 / currentScenario.distributions.length),
-          contextText: dist.notes ? `Odak Alanı: ${dist.notes}` : undefined,
-          stimulus: stimulusText,
-          questionText: questionText,
-          modelAnswer: modelAns,
-          solutionExplanation: `MEBİ ${archetype} kalıbına uygun analitik değerlendirme.`,
-          rubric: rubricItems
-        };
-      }))
-    };
+    // Do NOT silently borrow questions from another scenario
+    // Do NOT generate fake robotic placeholder templates disguised as official exams
+    return null;
   }, [customExamPaper, selectedGrade, selectedSubject, selectedTerm, currentScenario]);
 
   // Active Study Sheet - Powered by 100% Curriculum-Aligned Pedagogical OUTCOME_STUDY_BANK
@@ -351,50 +242,12 @@ b) Durum 1 ile Durum 2 arasındaki fark, uygulanan yöntemin sürekliliği ve do
     };
   }, [selectedGrade, selectedSubject, selectedTerm, currentScenario]);
 
-  // Active Infographics
+  // Active Infographics: Return verified items only (empty state handles missing items)
   const activeInfographics: InfographicItem[] = useMemo(() => {
-    const match = SAMPLE_INFOGRAPHICS.filter(
+    return SAMPLE_INFOGRAPHICS.filter(
       i => i.grade === selectedGrade && i.subjectId === selectedSubject
     );
-    if (match.length > 0) return match;
-
-    const subMeta = ALL_SUBJECTS.find(s => s.id === selectedSubject);
-    const effectiveSubjectName = (selectedSubject === 'sosyal_bilgiler' && selectedGrade === 8)
-      ? 'T.C. İnkılap Tarihi ve Atatürkçülük'
-      : (subMeta?.name || 'Ders');
-    return [
-      {
-        id: `info_${selectedSubject}_${selectedGrade}`,
-        grade: selectedGrade,
-        subjectId: selectedSubject,
-        examTerm: selectedTerm,
-        title: `${selectedGrade}. Sınıf ${effectiveSubjectName} MEBİ Soru Şifreleri`,
-        subtitle: 'Sınavda Karşılaşabileceğiniz Temel Şablonlar ve Ayırt Edici Noktalar',
-        category: 'MEBİ Kavram Haritası',
-        memoryHook: 'Hatırla: MEB sınavlarında ezber bilgi değil; "neden" ve "nasıl" gerekçesi puan getirir!',
-        summaryCards: [
-          {
-            title: 'Soru Tipi: Öğrenci Diyaloğu',
-            badge: 'Hata Yakalama',
-            points: [
-              'İki öğrencinin tartışmasında işlem sırasını kontrol et',
-              'Kavram yanılgısını bilimsel terimlerle açıkla',
-              'Sonuca değil gerekçeye odaklan'
-            ]
-          },
-          {
-            title: 'Soru Tipi: Karşılaştırma Matrisi',
-            badge: 'VAR / YOK',
-            points: [
-              'Tablodaki ortak özellikleri belirle',
-              'Ayırt edici tek bir farkı yakala',
-              'Kural istisnalarına dikkat et'
-            ]
-          }
-        ]
-      }
-    ];
-  }, [selectedGrade, selectedSubject, selectedTerm]);
+  }, [selectedGrade, selectedSubject]);
 
   // Active Speaking Guide (for Language subjects)
   const activeSpeakingGuide: SpeakingGuide | undefined = useMemo(() => {
@@ -433,12 +286,124 @@ b) Durum 1 ile Durum 2 arasındaki fark, uygulanan yöntemin sürekliliği ve do
       {/* Main Content Area */}
       <main className="flex-1 pb-16">
         {selectedMaterial === 'exam_paper' && (
-          <ExamPaperView 
-            examPaper={activeExamPaper}
-            isCustomAIExam={Boolean(customExamPaper && activeExamPaper.id === customExamPaper.id)}
-            onResetToDefaultExam={() => setCustomExamPaper(null)}
-            onOpenAIGenerator={() => setIsAIModalOpen(true)}
-          />
+          activeExamPaper ? (
+            <ExamPaperView 
+              examPaper={activeExamPaper}
+              isCustomAIExam={Boolean(customExamPaper && activeExamPaper.id === customExamPaper.id)}
+              onResetToDefaultExam={() => {
+                clearCustomExamPaper(selectedGrade, selectedSubject);
+                setCustomExamPaper(null);
+              }}
+              onOpenAIGenerator={() => setIsAIModalOpen(true)}
+              onOpenInteractivePractice={() => setSelectedMaterial('interactive_exam')}
+            />
+          ) : (
+            <div className="max-w-4xl mx-auto py-10 px-4 sm:px-6 animate-in fade-in duration-200">
+              <div className="bg-white rounded-2xl border-2 border-dashed border-amber-200 p-8 sm:p-10 text-center shadow-xs">
+                <div className="w-14 h-14 bg-amber-50 rounded-2xl border border-amber-200 flex items-center justify-center mx-auto mb-4 text-amber-600">
+                  <AlertCircle className="w-7 h-7" />
+                </div>
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-xs font-semibold mb-3">
+                  ÖDSGM Senaryo Uyumlu Örnek Sınav Hazırlanıyor
+                </div>
+                <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2">
+                  {selectedGrade}. Sınıf {currentSubjectMeta?.name || 'Ders'} ({currentScenario?.name || 'Senaryo'}) İçin Hazır Örnek Sınav Bulunamadı
+                </h3>
+                <p className="text-sm text-slate-600 max-w-xl mx-auto mb-6 leading-relaxed">
+                  Bu dönem ve senaryoya ait ÖDSGM senaryo uyumlu örnek sınav kâğıdı henüz sisteme eklenmemiştir. Öğrencileri yanıltmamak adına 
+                  başka senaryolardan izinsiz soru ödünç alma veya genel şablonları senaryoya ait gibi gösterme uygulaması kaldırılmıştır.
+                </p>
+
+                <div className="grid sm:grid-cols-2 gap-3 max-w-lg mx-auto text-left mb-6">
+                  <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                    <p className="text-xs font-bold text-slate-800 flex items-center gap-1.5 mb-1">
+                      <BookOpen className="w-4 h-4 text-blue-600" />
+                      1. Dönem 1. Yazılı Arşivi
+                    </p>
+                    <p className="text-xs text-slate-500 mb-3">
+                      Sistemimizde 1. Dönem 1. Yazılı için ÖDSGM konu-soru dağılım tabloları esas alınarak hazırlanmış 123 örnek sınav mevcuttur.
+                    </p>
+                    <button
+                      onClick={() => {
+                        setSelectedTerm('1_donem_1_yazili');
+                        setSelectedScenarioId('senaryo_1');
+                      }}
+                      className="text-xs font-bold text-blue-600 hover:text-blue-700 inline-flex items-center gap-1 cursor-pointer"
+                    >
+                      1. Dönem 1. Yazılıya Geç <ArrowRight className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
+
+                  <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                    <p className="text-xs font-bold text-slate-800 flex items-center gap-1.5 mb-1">
+                      <Sparkles className="w-4 h-4 text-purple-600" />
+                      Özgün Alıştırma Seti
+                    </p>
+                    <p className="text-xs text-slate-500 mb-3">
+                      Bu senaryonun öğrenme çıktılarına uygun taslak bir çalışma ve alıştırma seti oluşturun.
+                    </p>
+                    <button
+                      onClick={() => setIsAIModalOpen(true)}
+                      className="text-xs font-bold text-purple-600 hover:text-purple-700 inline-flex items-center gap-1 cursor-pointer"
+                    >
+                      Alıştırma Seti Oluştur <ArrowRight className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap items-center justify-center gap-3">
+                  <button
+                    onClick={() => setSelectedMaterial('study_sheet')}
+                    className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-xs font-bold shadow-xs transition-colors cursor-pointer inline-flex items-center gap-1.5"
+                  >
+                    <FileText className="w-4 h-4" />
+                    Senaryonun Çalışma Föyünü İncele
+                  </button>
+                  <button
+                    onClick={() => {
+                      setSelectedTerm('1_donem_1_yazili');
+                      setSelectedScenarioId('senaryo_1');
+                    }}
+                    className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-bold transition-colors cursor-pointer inline-flex items-center gap-1.5"
+                  >
+                    <RotateCcw className="w-4 h-4" />
+                    Varsayılan Senaryo 1'e Dön
+                  </button>
+                </div>
+              </div>
+            </div>
+          )
+        )}
+
+        {selectedMaterial === 'interactive_exam' && (
+          activeExamPaper ? (
+            <InteractivePracticeView 
+              examPaper={activeExamPaper}
+              isCustomAIExam={Boolean(customExamPaper && activeExamPaper.id === customExamPaper.id)}
+              onBackToPaperView={() => setSelectedMaterial('exam_paper')}
+              onOpenStudySheet={() => setSelectedMaterial('study_sheet')}
+            />
+          ) : (
+            <div className="max-w-4xl mx-auto py-10 px-4 sm:px-6 animate-in fade-in duration-200">
+              <div className="bg-white rounded-2xl border-2 border-dashed border-amber-200 p-8 sm:p-10 text-center shadow-xs">
+                <div className="w-14 h-14 bg-amber-50 rounded-2xl border border-amber-200 flex items-center justify-center mx-auto mb-4 text-amber-600">
+                  <AlertCircle className="w-7 h-7" />
+                </div>
+                <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2">
+                  Etkileşimli Çözüm İçin Sınav Bulunamadı
+                </h3>
+                <p className="text-sm text-slate-600 max-w-xl mx-auto mb-6">
+                  Bu sınıf ve senaryo için hazır sınav bulunmamaktadır. Aşağıdaki butona tıklayarak yapay zekâ ile özgün bir sınav üretebilir ve hemen etkileşimli olarak çözebilirsiniz.
+                </p>
+                <button
+                  onClick={() => setIsAIModalOpen(true)}
+                  className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-xs font-bold shadow-xs transition-colors cursor-pointer"
+                >
+                  Yapay Zekâ ile Özgün Sınav Üret
+                </button>
+              </div>
+            </div>
+          )
         )}
 
         {selectedMaterial === 'study_sheet' && (
@@ -454,10 +419,45 @@ b) Durum 1 ile Durum 2 arasındaki fark, uygulanan yöntemin sürekliliği ve do
           />
         )}
 
-        {selectedMaterial === 'speaking_guide' && activeSpeakingGuide && (
-          <SpeakingGuideView 
-            guide={activeSpeakingGuide}
-          />
+        {selectedMaterial === 'speaking_guide' && (
+          activeSpeakingGuide ? (
+            <SpeakingGuideView 
+              guide={activeSpeakingGuide}
+            />
+          ) : (
+            <div className="max-w-4xl mx-auto py-12 px-4 sm:px-6 animate-in fade-in duration-200">
+              <div className="bg-white rounded-2xl border border-slate-200 p-8 sm:p-10 text-center shadow-xs">
+                <div className="w-14 h-14 bg-indigo-50 rounded-2xl border border-indigo-200 flex items-center justify-center mx-auto mb-4 text-indigo-600">
+                  <Mic className="w-7 h-7" />
+                </div>
+                <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2">
+                  Konuşma ve Dinleme Kılavuzu Bulunmuyor
+                </h3>
+                <p className="text-sm text-slate-600 max-w-lg mx-auto mb-6 leading-relaxed">
+                  MEB mevzuatına göre 4 temel dil becerisini (dinleme, konuşma, okuma, yazma) içeren uygulama kılavuzları 
+                  yalnızca <strong>Türkçe</strong> ve <strong>İngilizce</strong> dersleri için hazırlanmaktadır. 
+                  Seçili ders ({currentSubjectMeta?.name || 'Ders'}) için konuşma kılavuzu geçerli değildir.
+                </p>
+                <div className="flex flex-wrap items-center justify-center gap-3">
+                  <button
+                    onClick={() => {
+                      setSelectedSubject('turkce');
+                      setSelectedMaterial('speaking_guide');
+                    }}
+                    className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-xs font-bold shadow-xs transition-colors cursor-pointer"
+                  >
+                    Türkçe Konuşma Kılavuzunu Aç
+                  </button>
+                  <button
+                    onClick={() => setSelectedMaterial('exam_paper')}
+                    className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-bold transition-colors cursor-pointer"
+                  >
+                    Yazılı Sınav Kâğıdına Dön
+                  </button>
+                </div>
+              </div>
+            </div>
+          )
         )}
       </main>
 

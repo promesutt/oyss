@@ -15,6 +15,9 @@ dist-ssr/
 .env.test.local
 .env.production.local
 
+# Large temporary archives
+meb_data.zip
+
 # Editor and OS files
 .vscode/
 .idea/

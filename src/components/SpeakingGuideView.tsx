@@ -26,7 +26,7 @@ export const SpeakingGuideView: React.FC<SpeakingGuideViewProps> = ({ guide }) =
       <div className="flex flex-wrap items-center justify-between gap-3 bg-white p-3.5 sm:p-4 rounded-xl border border-slate-200 shadow-xs print:hidden">
         <div className="flex items-center space-x-2 text-xs sm:text-sm text-slate-700 font-medium">
           <span className="w-2 h-2 rounded-full bg-amber-600"></span>
-          <span><strong>Resmi Dinleme ve Konuşma Kılavuzu:</strong> MEB 4 Becerili Dil Değerlendirme Çerçevesi.</span>
+          <span><strong>Dinleme ve Konuşma Uygulama Kılavuzu:</strong> MEB 4 Becerili Dil Değerlendirme Çerçevesi ve Ölçme Yönetmeliği esas alınarak hazırlanmıştır.</span>
         </div>
         <button
           onClick={handlePrint}

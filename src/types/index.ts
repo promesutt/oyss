@@ -29,7 +29,7 @@ export type SubjectId =
 
 export type ExamTerm = '1_donem_1_yazili' | '1_donem_2_yazili' | '2_donem_1_yazili' | '2_donem_2_yazili';
 
-export type MaterialType = 'exam_paper' | 'study_sheet' | 'infographic' | 'speaking_guide' | 'ai_generator';
+export type MaterialType = 'exam_paper' | 'study_sheet' | 'infographic' | 'speaking_guide' | 'ai_generator' | 'interactive_exam';
 
 export type CognitiveLevel = 'Basit Bilişsel Süreçler' | 'Karmaşık Bilişsel Süreçler';
 

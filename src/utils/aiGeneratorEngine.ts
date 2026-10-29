@@ -2,6 +2,7 @@ import { SubjectId, GradeLevel, ExamScenario } from '../types';
 import { getOfficialOutcomeTitle } from '../data/curriculumData';
 import { SAMPLE_EXAMS } from '../data/sampleExams';
 import { formatDifficultyPlanText, calibrateQuestionDifficulties } from './difficultyCalibrator';
+import { distributeExamPoints, reconcileRubricPoints } from './examScoring';
 
 const POOL_NAMES_A = [
   'Selin', 'Kerem', 'Zehra', 'Burak', 'Aslı', 'Emre', 'Derya', 'Tarık', 
@@ -24,6 +25,7 @@ export interface GeneratedQuestionItem {
   stimulus: string;
   question: string;
   answer: string;
+  solutionExplanation?: string;
   rubric: { item: string; pts: number }[];
 }
 
@@ -36,19 +38,12 @@ export interface GenerationResult {
   generatedQuestions: GeneratedQuestionItem[];
 }
 
-function distributePoints(count: number): number[] {
-  if (count <= 0) return [];
-  const base = Math.floor(100 / count);
-  const remainder = 100 % count;
-  return Array.from({ length: count }, (_, i) => base + (i < remainder ? 1 : 0));
-}
-
 export async function generateMEBIQuestions(
   subjectId: SubjectId,
   grade: GradeLevel,
   scenario: ExamScenario,
   variationIndex: number,
-  apiKey?: string,
+  _ignoredApiKey?: string,
   requestedQuestionCount?: number
 ): Promise<GenerationResult> {
   const expandedDistributions: typeof scenario.distributions = [];
@@ -61,7 +56,7 @@ export async function generateMEBIQuestions(
 
   const effectiveTotal = expandedDistributions.length || scenario.totalQuestions || 6;
   const targetCount = requestedQuestionCount || effectiveTotal;
-  const pointAllocations = distributePoints(targetCount);
+  const pointAllocations = distributeExamPoints(targetCount);
 
   // Rotate names for procedural fallback
   const nameIdx1 = (variationIndex * 3 + 1) % POOL_NAMES_A.length;
@@ -155,27 +150,73 @@ SADECE geçerli bir JSON çıktısı ver. JSON şeması:
 }`;
 
   const normalizeAndCalibrateQuestions = (questions: any[]): GeneratedQuestionItem[] => {
-    const withTitles = questions.slice(0, targetCount).map((q, idx) => {
+    const safeQuestions = Array.isArray(questions) ? [...questions] : [];
+
+    // Eksik soru gelirse senaryo dağılımına göre eksik soruları tamamla
+    if (safeQuestions.length < targetCount) {
+      const missingCount = targetCount - safeQuestions.length;
+      for (let m = 0; m < missingCount; m++) {
+        const missingIdx = safeQuestions.length;
+        const distItem = questionDistributions[missingIdx] || scenario.distributions[0];
+        const reqOutcome = distItem.outcomeCode;
+        const reqTitle = getOfficialOutcomeTitle(reqOutcome) || distItem.notes || 'MEBİ Öğrenme Çıktısı';
+        const targetPts = pointAllocations[missingIdx] || 15;
+        safeQuestions.push({
+          number: missingIdx + 1,
+          outcome: reqOutcome,
+          outcomeTitle: reqTitle,
+          difficulty: 'Orta',
+          level: distItem.cognitiveLevel || 'Karmaşık Bilişsel Süreçler',
+          templateType: 'Kurgusal Senaryo & Vaka İncelemesi',
+          points: targetPts,
+          stimulus: `${reqTitle} ile ilgili günlük hayat durumu ve uygulama basamakları incelenmektedir.`,
+          question: `${reqOutcome} [${reqTitle}] öğrenme çıktısına uygun olarak verilen durumu analitik olarak açıklayınız.`,
+          answer: `Öğrencinin kavramsal ilkeleri doğru tespit etmesi ve mantıksal çözüm basamaklarını gerekçelendirmesi beklenir.`,
+          solutionExplanation: `MEBİ analitik çözüm kuralına göre ${reqOutcome} çıktısı gerekçelendirilmelidir.`,
+          rubric: [
+            { item: 'Kavramsal teşhis ve bilimsel tespit', pts: Math.ceil(targetPts / 2) },
+            { item: 'Analitik gerekçelendirme ve çözüm adımı', pts: Math.floor(targetPts / 2) }
+          ]
+        });
+      }
+    }
+
+    const withTitles = safeQuestions.slice(0, targetCount).map((q, idx) => {
       const distItem = questionDistributions[idx] || scenario.distributions[0];
       const requiredOutcome = distItem.outcomeCode;
       const officialTitle = getOfficialOutcomeTitle(requiredOutcome) || distItem.notes || q.outcomeTitle || 'MEBİ Öğrenme Çıktısı';
+      const targetPts = pointAllocations[idx] || q.points || 15;
+
+      const rawRubric = (q.rubric || []).map((r: any) => ({
+        criterion: r.item || r.criterion || 'Değerlendirme Ölçütü',
+        points: r.pts ?? r.points
+      }));
+
+      const reconciled = reconcileRubricPoints(rawRubric, targetPts);
+
       return {
         ...q,
         number: idx + 1,
         outcome: requiredOutcome,
         outcomeTitle: officialTitle,
         cognitiveLevel: distItem.cognitiveLevel || q.level || 'Karmaşık Bilişsel Süreçler',
-        points: pointAllocations[idx] || q.points || 15
+        points: targetPts,
+        solutionExplanation: q.solutionExplanation || q.explanation || (q.answer ? `Analitik çözüm adımları ve gerekçe: ${q.answer}` : undefined),
+        rubric: reconciled.map(r => ({ item: r.criterion, pts: r.points }))
       };
     });
     return calibrateQuestionDifficulties(withTitles);
   };
 
-  // 1. TIER 1: Güvenli Sunucu Fonksiyonu (/api/generate)
+  // 1. TIER 1: Güvenli Sunucu Fonksiyonu Proxy (/api/generate)
+  // Tüm yapay zekâ istekleri istemciden gizlenmiş sunucu tarafı Netlify Function üzerinden yürütülür.
   try {
     const proxyRes = await fetch('/api/generate', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 
+        'Content-Type': 'application/json',
+        'X-App-Client': 'oyss-portal-v1'
+      },
       body: JSON.stringify({ prompt: livePrompt })
     });
 
@@ -196,85 +237,23 @@ SADECE geçerli bir JSON çıktısı ver. JSON şeması:
 
       if (questionsList && Array.isArray(questionsList) && questionsList.length > 0) {
         const normalized = normalizeAndCalibrateQuestions(questionsList);
+        const activeModelName = data?.activeModel || 'Gemini Akıllı Soru Motoru';
         return {
-          title: `${grade}. Sınıf ${scenario.name} (Özgün Sınav Seti - ${normalized.length} Soru)`,
+          title: `${grade}. Sınıf ${scenario.name} (Özgün Çalışma Seti - ${normalized.length} Soru)`,
           variationNumber: variationIndex + 1,
           generationTime: '0.9 saniye (Hızlı Üretim)',
-          model: `TYMM Akıllı Soru Motoru`,
+          model: `${activeModelName}`,
           questionsCount: normalized.length,
           generatedQuestions: normalized
         };
       }
     }
-  } catch {
-    // Continue
+  } catch (proxyErr) {
+    console.warn('Sunucu proxy çağrısı başarısız, yerel yedek motora geçiliyor:', proxyErr);
   }
 
-  // 2. TIER 2: İstemci Tarafı Ortam Değişkeni veya Modal Girişi (Gemini 3.5 Flash-Lite / 3.5 Flash)
-  const envKey = (typeof import.meta !== 'undefined' && (import.meta as any)?.env?.VITE_GEMINI_API_KEY)
-    ? String((import.meta as any).env.VITE_GEMINI_API_KEY).trim()
-    : (typeof globalThis !== 'undefined' && (globalThis as any)?.process?.env?.VITE_GEMINI_API_KEY)
-    ? String((globalThis as any).process.env.VITE_GEMINI_API_KEY).trim()
-    : '';
-
-  const directApiKey = (apiKey && apiKey.trim().length > 15)
-    ? apiKey.trim()
-    : (envKey.length > 15 ? envKey : null);
-
-  if (directApiKey) {
-    try {
-      const targetModels = [
-        'gemini-3.5-flash-lite',
-        'gemini-3.5-flash',
-        'gemini-2.5-flash-lite',
-        'gemini-2.5-flash'
-      ];
-
-      for (const modelName of targetModels) {
-        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${directApiKey}`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            contents: [{ parts: [{ text: livePrompt }] }],
-            generationConfig: {
-              temperature: 0.65,
-              responseMimeType: 'application/json'
-            }
-          })
-        });
-
-        if (response.ok) {
-          const data = await response.json();
-          const rawText = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
-          const cleanJson = rawText.replace(/```(?:json)?/gi, '').trim();
-
-          if (cleanJson) {
-            const parsed = JSON.parse(cleanJson);
-            if (parsed.questions && Array.isArray(parsed.questions) && parsed.questions.length > 0) {
-              const usedModelTitle = modelName.includes('3.5-flash-lite')
-                ? 'Gemini 3.5 Flash-Lite'
-                : modelName.replace('-', ' ').toUpperCase();
-
-              const normalized = normalizeAndCalibrateQuestions(parsed.questions);
-              return {
-                title: `${grade}. Sınıf ${scenario.name} (Canlı ${usedModelTitle} - ${normalized.length} Soru)`,
-                variationNumber: variationIndex + 1,
-                generationTime: '0.9 saniye (Canlı API)',
-                model: `${usedModelTitle} (Tasarruflu & Hızlı)`,
-                questionsCount: normalized.length,
-                generatedQuestions: normalized
-              };
-            }
-          }
-        }
-      }
-    } catch {
-      // Fallback to internal procedural engine
-    }
-  }
-
-  // 3. TIER 3: Tamamen Özgün, Sıfırdan Kurgulanmış Prosedürel MEBİ Motoru
-  // NOT: Bu sorular varsayılan SAMPLE_EXAMS dosyasındaki sorulardan %100 FARKLI VE HER DERSE ÖZGÜDÜR!
+  // 2. TIER 2: Prosedürel MEBİ Müfredat Motoru (Çevrimdışı / Güvenli Yedek)
+  // Sunucu API yanıt veremediğinde veya bağlantı olmadığında devreye giren deterministik üretim motoru.
   const _cycle = variationIndex % 2;
   void _cycle;
 
@@ -1514,7 +1493,7 @@ ${sName2}: "Hayır, şartlar değiştiğinde doğrudan diğer etkenlerin devreye
     };
   });
 
-  const finalDynamicQuestions = calibrateQuestionDifficulties(dynamicQuestions);
+  const finalDynamicQuestions = normalizeAndCalibrateQuestions(dynamicQuestions);
 
   return {
     title: `${grade}. Sınıf ${scenario.name} (Özgün Sınav Seti - ${finalDynamicQuestions.length} Soru)`,

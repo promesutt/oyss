@@ -7,15 +7,25 @@ interface MathRendererProps {
 }
 
 export const MathRenderer: React.FC<MathRendererProps> = ({ content, className = '' }) => {
+  if (!content) return null;
+
+  // Unicode matematik sembollerini standart KaTeX biçimine dönüştür (örn: √25 veya √(x+1) -> \sqrt{...})
+  let normalized = content;
+  if (normalized.includes('√')) {
+    normalized = normalized
+      .replace(/√\(([^)]+)\)/g, '$\\sqrt{$1}$')
+      .replace(/√([0-9a-zA-Z]+)/g, '$\\sqrt{$1}$');
+  }
+
   // LaTeX inline ($...$) or block ($$...$$) or KaTeX commands like \times, \div, \frac
   // If the content doesn't contain backslashes or $, return clean text with preserved newlines
-  if (!content.includes('$') && !content.includes('\\')) {
+  if (!normalized.includes('$') && !normalized.includes('\\')) {
     return (
       <span className={className}>
-        {content.split('\n').map((line, idx) => (
+        {normalized.split('\n').map((line, idx) => (
           <React.Fragment key={idx}>
             {line}
-            {idx < content.split('\n').length - 1 && <br />}
+            {idx < normalized.split('\n').length - 1 && <br />}
           </React.Fragment>
         ))}
       </span>
@@ -23,16 +33,18 @@ export const MathRenderer: React.FC<MathRendererProps> = ({ content, className =
   }
 
   // Parse lines and math expressions
-  const parts = content.split(/(\$\$[\s\S]*?\$\$|\$[^\$]+?\$)/g);
+  const parts = normalized.split(/(\$\$[\s\S]*?\$\$|\$[^\$]+?\$)/g);
 
   return (
     <span className={className}>
       {parts.map((part, index) => {
+        if (!part) return null;
+
         if (part.startsWith('$$') && part.endsWith('$$')) {
           const math = part.slice(2, -2).trim();
           try {
             const html = katex.renderToString(math, { displayMode: true, throwOnError: false });
-            return <span key={index} dangerouslySetInnerHTML={{ __html: html }} className="block my-2" />;
+            return <span key={index} dangerouslySetInnerHTML={{ __html: html }} className="block my-2 overflow-x-auto py-1" />;
           } catch {
             return <code key={index} className="block my-2">{math}</code>;
           }
@@ -46,10 +58,21 @@ export const MathRenderer: React.FC<MathRendererProps> = ({ content, className =
           }
         }
 
-        // Check if there are raw LaTeX expressions like \times, \div, \pm
-        if (part.includes('\\times') || part.includes('\\div') || part.includes('\\frac')) {
+        // Check if there are raw LaTeX expressions like \times, \div, \pm, \sqrt, \frac
+        if (
+          part.includes('\\times') || 
+          part.includes('\\div') || 
+          part.includes('\\frac') || 
+          part.includes('\\sqrt') || 
+          part.includes('\\pm') || 
+          part.includes('\\le') || 
+          part.includes('\\ge') || 
+          part.includes('\\ne') ||
+          part.includes('\\cdot') ||
+          part.includes('\\pi')
+        ) {
           try {
-            const html = katex.renderToString(part, { displayMode: false, throwOnError: false });
+            const html = katex.renderToString(part.trim(), { displayMode: false, throwOnError: false });
             return <span key={index} dangerouslySetInnerHTML={{ __html: html }} />;
           } catch {
             // fallback
