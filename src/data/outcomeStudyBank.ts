@@ -1589,59 +1589,81 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "MAT.7.1.1": {
     "outcomeCode": "MAT.7.1.1",
-    "topicTitle": "Tam Sayılarla Toplama ve Çıkarma İşlemleri",
+    "topicTitle": "Tam Sayılar, Rasyonel Sayılar ve Farklı Temsilleri (Ders Kitabı 1. Kitap, Sayfa 14-40)",
+    "textbookUnit": "1. Kitap, 1. Tema: Sayılar ve Nicelikler (1)",
+    "textbookPageRange": "Sayfa 14-40",
+    "textbookExamples": [
+      "ASELSAN Deringöz otonom su altı aracı dikey farkı: (+10) - (-8) = 18 m (Sayfa 17)",
+      "Ocak ayı son günü illerin hava sıcaklıkları (+12, +7, +4, 0, -1, -4, -9 °C) ve farkı (Sayfa 19)",
+      "Mert'in dijital harçlık kartı borç bakiyesi (+300) - (+360) = -60 TL (Sayfa 18)"
+    ],
     "quickNotes": [
-      "İşaret Kuralı (Toplama): Aynı işaretliler toplanır, ortak işaret yazılır: (+5) + (+3) = +8; (-4) + (-6) = -10.",
-      "Farklı İşaretliler: Mutlak değeri büyük olandan küçük çıkarılır, büyüğün işareti verilir: (-9) + (+4) = -5.",
-      "Çıkarma Kuralı: Çıkarma işlemi çıkan sayının işareti değiştirilerek toplama işlemine dönüştürülür: A - B = A + (-B).",
-      "Modelleme: Sayma pullarında (+ pul) ve (- pul) bir araya gelince \"sıfır çifti\" oluşturur."
+      "Referans Noktası: Sayı doğrusunda başlangıç noktası sıfırdır (0). Deniz seviyesi, bütçede sıfır bakiye, termometrede 0 °C referans noktası kabul edilir (Ders Kitabı 1. Kitap, s. 17).",
+      "Yönlü Sayılar: Referansın üstü/sağı/alacağı pozitif (+), altı/solu/borcu negatif (-) tam sayılarla temsil edilir.",
+      "Mutlak Değer: Bir sayının başlangıç noktasına (0) olan geometrik uzaklığıdır; uzaklık negatif olamayacağından mutlak değer daima sıfır veya pozitiftir: |-8| = 8, |+10| = 10.",
+      "Farklı İşaretlilerde Çıkarma: Çıkarma işlemi çıkan sayının işareti değiştirilerek toplama işlemine dönüştürülür: A - B = A + (-B). Dikey mesafe: (+10) - (-8) = 18 m."
     ],
     "examTraps": [
-      "EN KRİTİK TUZAK: Parantez önündeki eksi işareti içerideki sayının işaretini tersine çevirir! - (-7) = +7 olur."
+      "EN KRİTİK TUZAK: Parantez önündeki eksi işareti içerideki sayının işaretini tersine çevirir! - (-7) = +7 olur.",
+      "Mutlak değer işaret değiştirmez; sıfıra olan mesafeyi gösterir: |-120| = 120."
     ],
     "solvedExample": {
-      "question": "Kutup biyomunda yaşayan üç canlının dayanabildiği en düşük hava sıcaklıkları şöyledir:\n• Kutup Ayısı: -42 °C\n• İmparator Penguen: -35 °C\n• Kutup Tilkisi: -50 °C\nBir kış günü bölgede ölçülen hava sıcaklığı -38 °C olarak kaydedilmiştir.\n\na) -38 °C sıcaklıkta bu üç canlıdan hangileri hayatta kalma sınırları içerisindedir? Gerekçesini tam sayıların büyüklük-küçüklük ilişkisine göre yazınız.\nb) En soğuğa dayanıklı canlı ile en az dayanıklı canlı arasındaki sıcaklık farkı kaç °C'dir? İşlemini gösteriniz.",
-      "analysis": "-38 °C, -42 °C ve -50 °C'den büyüktür, -35 °C'den küçüktür. Fark: (-35) - (-50) = +15 °C.",
-      "solution": "a) -50 < -42 < -38 < -35 olduğu için; -38 °C sıcaklık Kutup Ayısı (-42 °C'ye kadar dayanır) ve Kutup Tilkisi (-50 °C'ye kadar dayanır) için yaşam sınırları içindedir. Penguen ise -35 °C'ye kadar dayanabildiğinden (-38 < -35) sınırın dışındadır.\nb) Sıcaklık farkı: (-35) - (-50) = -35 + 50 = 15 °C'dir."
+      "question": "ASELSAN'ın geliştirdiği Deringöz su altı aracı deniz seviyesinin 8 metre altındadır (-8 m). Araştırma ekibi ise deniz yüzeyinin 10 metre üstündeki (+10 m) keşif gemisinde bulunmaktadır.\n\na) Ekip ile Deringöz arasındaki dikey mesafe farkını tam sayılarda çıkarma işlemiyle gösteriniz.\nb) Başlangıç noktasına (deniz seviyesine) olan mutlak uzaklıklarını karşılaştırınız.",
+      "analysis": "Dikey mesafe: (+10) - (-8) = 18 m. Mutlak değerler: |+10| = 10 m, |-8| = 8 m. 10 > 8.",
+      "solution": "a) Dikey Fark = (+10) - (-8) = (+10) + (+8) = 18 metredir.\nb) Mutlak Uzaklıklar: |+10| = 10 m, |-8| = 8 m. Araştırma ekibinin deniz seviyesine uzaklığı (10 m), Deringöz'ün uzaklığından (8 m) büyüktür (10 > 8)."
     },
     "practiceQuestion": {
-      "question": "(-18) - (-24) + (-10) işleminin sonucunu işlem basamaklarıyla hesaplayınız.",
-      "hint": "- (-24) ifadesini +24 yapıp soldan sağa toplayınız: -18 + 24 = +6; +6 - 10 = -4."
+      "question": "Ocak ayında Antalya'da sıcaklık +12 °C, Hakkâri'de -9 °C ölçülmüştür. İki il arasındaki sıcaklık farkını bulunuz.",
+      "hint": "(+12) - (-9) = +12 + 9 = 21 °C."
     }
   },
   "MAT.7.1.2": {
     "outcomeCode": "MAT.7.1.2",
-    "topicTitle": "Tam Sayılarla Çarpma ve Bölme İşlemleri",
+    "topicTitle": "Rasyonel Sayıların Farklı Temsilleri ve Ondalık Gösterim (Ders Kitabı 1. Kitap, Sayfa 41-49)",
+    "textbookUnit": "1. Kitap, 1. Tema: Sayılar ve Nicelikler (1)",
+    "textbookPageRange": "Sayfa 41-49",
+    "textbookExamples": [
+      "Kutu süt 1/5 L (0,2 sonlu), su şişesi 1/3 L (0,\\bar{3} devirli) (Sayfa 41)",
+      "Kuyumcu hassas terazisinde gram altın devirli gösterimi 2,\\bar{36} = 26/11 (Sayfa 43)",
+      "Su sayacı doluluk oranları 3/6 = 4/8 = 1/2 = 0,5 denk kesirler (Sayfa 26)"
+    ],
     "quickNotes": [
-      "Çarpma ve Bölme İşaret Kuralları:\n• (+) × (+) = (+)\n• (-) × (-) = (+)\n• (+) × (-) = (-)\n• (-) × (+) = (-)",
-      "Aynı işaretli iki tam sayının çarpımı ve bölümü daima POZİTİFTİR.",
-      "Ters işaretli iki tam sayının çarpımı ve bölümü daima NEGATİFTİR.",
-      "Sıfır Kuralları: Sıfırın bir sayıya bölümü 0'dır (0 / 5 = 0); ancak bir sayının sıfıra bölümü TANIMSIZDIR (5 / 0 tanımsız)."
+      "Rasyonel Sayı Temsili: a ve b birer tam sayı ve b ≠ 0 olmak üzere a/b şeklinde yazılabilen sayılardır.",
+      "Sonlu Ondalık Gösterim: En sade haldeki rasyonel sayının paydasında 2 ve 5 dışında başka bir asal çarpan yoksa (1/5 = 0,2; 1/4 = 0,25) sonlu ondalıktır (Ders Kitabı 1. Kitap, s. 43).",
+      "Devirli Ondalık Gösterim: Paydada 2 ve 5 dışında en az bir asal çarpan varsa (1/3 = 0,333... = 0,\bar{3}) devirli ondalıktır.",
+      "Devirliyi Rasyonel Yapma Formülü: (Tüm Sayı - Devretmeyen Kısım) / (Devreden kadar 9, Devretmeyen kadar 0)."
     ],
     "examTraps": [
-      "TUZAK: Çift sayıda negatif sayının çarpımı pozitif (+), tek sayıda negatif sayının çarpımı negatiftir (-)."
+      "TUZAK: Ondalık türünü belirlemeden önce kesir mutlaka EN SADE haline getirilmelidir! Örneğin 3/6 kesri devirli değil, 1/2 = 0,5 sonlu ondalıktır."
     ],
     "solvedExample": {
-      "question": "Bir laboratuvarda yapılan hassas kütle ölçümünde cihaz ekranında 2,363636... (2,36; 36 devrediyor) değeri okunmuştur.\n\na) Bu devirli ondalık gösterimi rasyonel sayıya çevirme formülünü (Tüm Sayı - Devretmeyen Kısım) / (Devreden kadar 9, Devretmeyen kadar 0) kullanarak kesir olarak yazınız.\nb) Bulduğunuz rasyonel sayıyı en sade (en küçük tam sayılarla) haline getiriniz.",
+      "question": "Bir laboratuvarda yapılan hassas kütle ölçümünde cihaz ekranında 2,363636... (2,\bar{36}) değeri okunmuştur.\n\na) Bu devirli ondalık gösterimi rasyonel sayıya çevirme formülüyle kesir olarak yazınız.\nb) Bulduğunuz rasyonel sayıyı en sade haline getiriniz.",
       "analysis": "(236 - 2) / 99 = 234 / 99 = 26 / 11.",
       "solution": "a) Formül: (236 - 2) / 99 = 234 / 99\nb) Sadeleştirme: 234 ve 99 sayıları 9'a bölünür: 234 ÷ 9 = 26, 99 ÷ 9 = 11. En sade hali: 26 / 11 (veya 2 tam 4/11)."
     },
     "practiceQuestion": {
-      "question": "[(-4) × (+6)] / (-3) işleminin sonucunu bulunuz.",
-      "hint": "Pay: (-4) x (+6) = -24. Bölme: (-24) / (-3) = +8."
+      "question": "1/5 litre kutu süt ve 1/3 litre su şişesinin ondalık açılımlarını ve türlerini yazınız.",
+      "hint": "1/5 = 0,2 (sonlu); 1/3 = 0,\bar{3} (devirli)."
     }
   },
   "MAT.7.1.3": {
     "outcomeCode": "MAT.7.1.3",
-    "topicTitle": "Tam Sayıların Kuvvetleri (Üslü İfadeler)",
+    "topicTitle": "Rasyonel Sayıların Karşılaştırma ve Sıralama İlişkileri (Ders Kitabı 1. Kitap, Sayfa 50-61)",
+    "textbookUnit": "1. Kitap, 1. Tema: Sayılar ve Nicelikler (1)",
+    "textbookPageRange": "Sayfa 50-61",
+    "textbookExamples": [
+      "Mars (-125/2 °C) ve Neptün (-401/2 °C) yüzey sıcaklıkları karşılaştırması (Sayfa 50)",
+      "Yarıma ve bütüne yakınlık ile A=7/15, B=9/10, C=4/7 sıralaması (Sayfa 52)",
+      "Futbol turnuvası averaj sıralaması -7 < -3 < 0 < +2 (Sayfa 51)"
+    ],
     "quickNotes": [
-      "Pozitif sayıların tüm kuvvetleri pozitiftir: (+2)³ = +8, (+3)² = +9.",
-      "Negatif Taban - Çift Kuvvet: Parantez içindeki negatif sayının çift kuvveti POZİTİFTİR: (-3)² = +9.",
-      "Negatif Taban - Tek Kuvvet: Negatif sayının tek kuvveti NEGATİFTİR: (-2)³ = -8.",
-      "Parantezsiz Negatif Sayı: Parantez yoksa kuvvet sadece sayıyı bağlar, eksi işareti aynen kalır: -3² = -9!"
+      "Pozitif Rasyonel Sayılarda: Paydaları eşitse payı büyük olan büyüktür; payları eşitse paydası küçük olan büyüktür.",
+      "Negatif Rasyonel Sayılarda Sıralama: Sayı doğrusunda sıfıra daha yakın (sağda) olan negatif sayı DAHA BÜYÜKTÜR! Mutlak değeri büyük olan daha küçüktür (Ders Kitabı 1. Kitap, s. 50).",
+      "Stratejiler: Payda eşitleme, yarıma (1/2) ve bütüne (1) yakınlık kıyaslaması.",
+      "Gezegen Yüzey Sıcaklıkları: Mars (-125/2 °C) ve Neptün (-401/2 °C) kıyasında -125/2 > -401/2 olduğundan Mars daha sıcaktır."
     ],
     "examTraps": [
-      "SINAVIN EN BÜYÜK TUZAĞI: (-4)² ile -4² AYNI DEĞİLDİR!\n(-4)² = (-4) × (-4) = +16 iken,\n-4² = - (4 × 4) = -16'dır!"
+      "SINAVIN EN BÜYÜK TUZAĞI: Negatif sayılarda 10 > 9 iken, -10 < -9 olur! Dolayısıyla -10/12 < -9/12 (-5/6 < -3/4) sıralaması yapılır."
     ],
     "solvedExample": {
       "question": "Mert ile Ece, -3/4 ve -5/6 rasyonel sayılarını karşılaştırmaktadır:\n• Mert: \"Paydaları eşitlediğimizde -9/12 ve -10/12 olur. -10 sayısı -9'dan küçük olduğu için -5/6 < -3/4'tür.\"\n• Ece: \"Hayır, pozitif sayılarda 10, 9'dan büyük olduğu için negatifte de -10/12 daha büyüktür.\"\n\nMert ve Ece'den hangisinin argümanı doğrudur? Sayı doğrusu üzerindeki konumlarını ve sıfıra olan mesafelerini gerekçe göstererek açıklayınız.",
@@ -1649,29 +1671,38 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
       "solution": "Mert haklıdır. Paydalar 12'de eşitlendiğinde -3/4 = -9/12 ve -5/6 = -10/12 olur. Sayı doğrusunda sıfırın solundaki negatif sayılarda sıfırdan uzaklaştıkça sayı küçülür. -10/12 sayısı sayı doğrusunda -9/12'nin daha solundadır. Bu nedenle -5/6 < -3/4 sıralaması doğrudur."
     },
     "practiceQuestion": {
-      "question": "(-2)⁴ - 2⁴ + (-1)⁷ işleminin sonucunu bulunuz.",
-      "hint": "(-2)^4 = +16; 2^4 = 16 (önünde eksi var -16); (-1)^7 = -1. Toplam: 16 - 16 - 1 = -1."
+      "question": "Mars (-125/2 °C) ve Neptün (-401/2 °C) sıcaklıklarını sayı doğrusunda karşılaştırınız.",
+      "hint": "-125 > -401 olduğundan -125/2 > -401/2 (Mars daha sıcaktır)."
     }
   },
   "MAT.7.1.4": {
     "outcomeCode": "MAT.7.1.4",
-    "topicTitle": "Rasyonel Sayılar ve Ondalık Gösterim",
+    "topicTitle": "Rasyonel Sayılarla İşlemler ve Problem Çözme (Ders Kitabı 1. Kitap, Sayfa 62-113)",
+    "textbookUnit": "1. Kitap, 1. Tema: Sayılar ve Nicelikler (1)",
+    "textbookPageRange": "Sayfa 62-113",
+    "textbookExamples": [
+      "Araştırma denizaltısı mikroplastik dikey hareketi: (-3/4) + (+1/8) = -5/8 km = -0,625 km (Sayfa 82)",
+      "Çok adımlı işlemlerde işlem önceliği: 3 - (2/5) ÷ (4/15) = 3/2 (Sayfa 108)",
+      "Gençtürk ailesi enerji bütçesi aylık değişimi (+140) + (-260) = -120 TL (Sayfa 62)",
+      "Marangoz 180 cm çıtadan 7 1/2 cm parça kesimi (24 parça, 23 kesim, 345 sn) (Sayfa 84)"
+    ],
     "quickNotes": [
-      "Rasyonel Sayı Tanımı: a ve b birer tam sayı ve b ≠ 0 olmak üzere a/b şeklinde yazılabilen sayılardır.",
-      "Devirli Ondalık Sayıyı Çevirme Formülü: Rasyonel Hali = (Sayının Tamamı - Devretmeyen Kısım) / (Virgülden sonra devreden kadar 9, devretmeyen kadar 0).",
-      "Sıralama Kuralı: Paydaları eşitleyerek veya pozitif gibi sıralayıp negatifte yön değiştirerek sıralayınız."
+      "Toplama ve Çıkarma: Paydalar eşitlenir; ortak payda yazılır, paylar toplanır/çıkarılır.",
+      "Dikey Hareketlerde İşlem: Deniz seviyesinin -3/4 km altına inip +1/8 km yukarı çıkıldığında: (-3/4) + (+1/8) = (-6/8) + (+1/8) = -5/8 km (Ders Kitabı 1. Kitap, s. 82).",
+      "Çarpma ve Bölme: Çarpmada paylar kendi arasında, paydalar kendi arasında çarpılır. Bölmede birinci kesir aynen kalır, ikinci kesir ters çevrilip çarpılır.",
+      "İşlem Önceliği: 1) Üslü ifadeler, 2) Parantez içi, 3) Çarpma/Bölme, 4) Toplama/Çıkarma (soldan sağa)."
     ],
     "examTraps": [
-      "Negatif rasyonel sayıları sıralarken dikkat: Sıfıra daha yakın olan negatif sayı DAHA BÜYÜKTÜR! (-1/2 > -3/4)."
+      "Çok adımlı işlemlerde çıkarma işlemini bölmeden önce yapmak en yaygın işlem önceliği hatasıdır: 3 - (2/5) ÷ (4/15) işleminde önce bölme yapılmalıdır!"
     ],
     "solvedExample": {
-      "question": "Bir marangoz 180 cm uzunluğundaki ahşap çıtayı, her birinin uzunluğu 7 tam 1/2 cm olan eşit parçalara ayırmak istemektedir. Her bir kesim işlemi 15 saniye sürmektedir.\n\na) Bu çıtadan kaç adet parça elde edilir? İşlemini gösteriniz.\nb) Tüm kesim işlemlerinin toplamda kaç saniye süreceğini hesaplayınız. (Püf noktaya dikkat ediniz!).",
-      "analysis": "Parça sayısı: 180 / (15/2) = 180 * 2 / 15 = 24 parça. Kesim sayısı = parça sayısı - 1 = 23 kesim! 23 * 15 = 345 saniye.",
-      "solution": "a) 7 tam 1/2 = 15/2 cm.\nParça Sayısı = 180 ÷ (15/2) = 180 × (2/15) = 12 × 2 = 24 adet parça elde edilir.\nb) TUZAK / PÜF NOKTA: 24 parça elde etmek için (24 - 1) = 23 kesim yapılır!\nToplam Süre = 23 kesim × 15 saniye = 345 saniye sürer (5 dakika 45 saniye)."
+      "question": "Bir araştırma denizaltısı deniz seviyesinin 3/4 km altına inmiştir. Daha sonra bulunduğu derinlikten 1/8 km yukarı çıkmıştır.\n\na) Denizaltının son konumunu veren işlemi yönlü rasyonel sayılarla yazınız.\nb) Denizaltının son durumdaki derinliğini rasyonel ve ondalık sayı olarak bulunuz.",
+      "analysis": "(-3/4) + (+1/8) = (-6/8) + (+1/8) = -5/8 km = -0,625 km.",
+      "solution": "a) İşlem: (-3/4) + (+1/8)\nb) Payda eşitleme: (-6/8) + (+1/8) = -5/8 km.\nOndalık gösterim: -5/8 = -625/1000 = -0,625 km (Deniz seviyesinin 0,625 km altındadır)."
     },
     "practiceQuestion": {
-      "question": "1,444... (1,4 devirli) sayısını rasyonel sayı (a/b) olarak en sade biçimde yazınız.",
-      "hint": "(14 - 1) / 9 = 13/9."
+      "question": "3 - (2/5) ÷ (4/15) işleminin sonucunu işlem sırasını belirterek bulunuz.",
+      "hint": "Önce bölme: (2/5) x (15/4) = 3/2. Sonra çıkarma: 3 - 3/2 = 3/2 (1,5)."
     }
   },
   "FB.7.1.1": {

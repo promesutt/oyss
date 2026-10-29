@@ -11269,6 +11269,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "a) -38 °C sıcaklıkta bu üç canlıdan hangileri hayatta kalma sınırları içerisindedir? Gerekçesini tam sayıların büyüklük-küçüklük ilişkisine göre yazınız.\nb) En soğuğa dayanıklı canlı ile en az dayanıklı canlı arasındaki sıcaklık farkı kaç °C'dir? İşlemini gösteriniz.",
         "solutionExplanation": "-38 °C, -42 °C ve -50 °C'den büyüktür, -35 °C'den küçüktür. Fark: (-35) - (-50) = +15 °C.",
         "modelAnswer": "a) -50 < -42 < -38 < -35 olduğu için; -38 °C sıcaklık Kutup Ayısı (-42 °C'ye kadar dayanır) ve Kutup Tilkisi (-50 °C'ye kadar dayanır) için yaşam sınırları içindedir. Penguen ise -35 °C'ye kadar dayanabildiğinden (-38 < -35) sınırın dışındadır.\nb) Sıcaklık farkı: (-35) - (-50) = -35 + 50 = 15 °C'dir.",
+        "alternativeAnswers": [
+          "a) Kutup Ayısı ve Kutup Tilkisi yaşayabilir çünkü -38 °C bu canlıların dayanma sınırlarından (-42 °C ve -50 °C) daha sıcaktır; penguen yaşayamaz. b) (-35) - (-50) = +15 °C fark vardır.",
+          "a) Yaşayabilenler: Kutup Ayısı ve Tilkisi (-38 > -42 ve -38 > -50). Penguen dayanamaz (-38 < -35). b) +15 °C."
+        ],
         "rubric": [
           {
             "criterion": "a şıkkında tam sayı sıralaması ve canlıların doğru belirlenmesi",
@@ -11293,6 +11297,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "a) Bu devirli ondalık gösterimi rasyonel sayıya çevirme formülünü (Tüm Sayı - Devretmeyen Kısım) / (Devreden kadar 9, Devretmeyen kadar 0) kullanarak kesir olarak yazınız.\nb) Bulduğunuz rasyonel sayıyı en sade (en küçük tam sayılarla) haline getiriniz.",
         "solutionExplanation": "(236 - 2) / 99 = 234 / 99 = 26 / 11.",
         "modelAnswer": "a) Formül: (236 - 2) / 99 = 234 / 99\nb) Sadeleştirme: 234 ve 99 sayıları 9'a bölünür: 234 ÷ 9 = 26, 99 ÷ 9 = 11. En sade hali: 26 / 11 (veya 2 tam 4/11).",
+        "alternativeAnswers": [
+          "a) $\\frac{236 - 2}{99} = \\frac{234}{99}$ b) $\\frac{26}{11}$ veya $2\\frac{4}{11}$",
+          "a) 234/99 b) 26/11 (9 ile sadeleştirilerek)"
+        ],
         "rubric": [
           {
             "criterion": "Formülün doğru uygulanarak 234 / 99 kesrinin bulunması",
@@ -11317,6 +11325,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "7 / 8 rasyonel sayısını uzun bölme işlemi adımlarını göstererek ondalık gösterim biçiminde yazınız ve devirli olup olmadığını belirtiniz.",
         "solutionExplanation": "7 / 8 = 0,875 (devirsiz, sonlu ondalık gösterim).",
         "modelAnswer": "7'nin içinde 8 yoktur, bölüme '0,' yazılır. 70'te 8 sekiz defa (8×8=64), kalan 6. 60'ta 8 yedi defa (7×8=56), kalan 4. 40'ta 8 beş defa (5×8=40), kalan 0.\nSonuç: 0,875'tir. Kalan sıfır olduğu için devirsiz (sonlu) bir ondalık gösterimdir.",
+        "alternativeAnswers": [
+          "$\\frac{7}{8} = \\frac{7 \\times 125}{8 \\times 125} = \\frac{875}{1000} = 0,875$; sonlu (devirsiz) ondalık gösterimdir.",
+          "0,875 (Kalan 0 olduğu için sonlu ondalık açılımdır)."
+        ],
         "rubric": [
           {
             "criterion": "Uzun bölme adımlarının doğru gösterilmesi",
@@ -11341,6 +11353,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Mert ve Ece'den hangisinin argümanı doğrudur? Sayı doğrusu üzerindeki konumlarını ve sıfıra olan mesafelerini gerekçe göstererek açıklayınız.",
         "solutionExplanation": "Mert haklıdır. Sayı doğrusunda sola gidildikçe sayılar küçülür, -10/12 daha soldadır.",
         "modelAnswer": "Mert haklıdır. Paydalar 12'de eşitlendiğinde -3/4 = -9/12 ve -5/6 = -10/12 olur. Sayı doğrusunda sıfırın solundaki negatif sayılarda sıfırdan uzaklaştıkça sayı küçülür. -10/12 sayısı sayı doğrusunda -9/12'nin daha solundadır. Bu nedenle -5/6 < -3/4 sıralaması doğrudur.",
+        "alternativeAnswers": [
+          "Mert haklıdır. Sayı doğrusunda $-\\frac{10}{12}$ sayısı $-\\frac{9}{12}$'nin solunda kalır; negatif sayılarda mutlak değeri büyük olan daha küçüktür ($-\\frac{5}{6} < -\\frac{3}{4}$).",
+          "Mert'in argümanı doğrudur. $-10/12 < -9/12$ olduğundan $-5/6 < -3/4$'tür."
+        ],
         "rubric": [
           {
             "criterion": "Mert'in haklı olduğunun doğru tespiti",
@@ -11365,6 +11381,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "A, B ve C rasyonel sayılarını payda eşitlemeden, 'yarıma ve bütüne yakınlık' stratejisini kullanarak küçükten büyüğe sıralayınız. Sıralamadaki mantığınızı açıklayınız.",
         "solutionExplanation": "A yarımdan küçük (7/15 < 7.5/15), C yarımdan büyük (4/7 > 3.5/7), B bütüne çok yakın (9/10). Sıralama: A < C < B.",
         "modelAnswer": "• A = 7/15: Yarım 7,5/15 olduğu için A sayısı yarımdan küçüktür (A < 1/2).\n• C = 4/7: Yarım 3,5/7 olduğu için C sayısı yarımdan büyüktür (C > 1/2).\n• B = 9/10: Bütüne (1 tam) sadece 1/10 kalmıştır, 1'e çok yakındır.\nBu durumda sıralama: A < C < B (7/15 < 4/7 < 9/10) şeklindedir.",
+        "alternativeAnswers": [
+          "A yarımdan küçük ($A < 0,5$), C yarımdan büyük ($C > 0,5$), B bütüne yakındır. Sıralama: $A < C < B$ veya $\\frac{7}{15} < \\frac{4}{7} < \\frac{9}{10}$.",
+          "7/15 < 4/7 < 9/10 (Yarıma ve bütüne kıyasla: A < 1/2 < C < 1 < B)."
+        ],
         "rubric": [
           {
             "criterion": "A, B ve C'nin yarıma/bütüne durumlarının doğru analiz edilmesi",
@@ -11389,6 +11409,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "a) Bu çıtadan kaç adet parça elde edilir? İşlemini gösteriniz.\nb) Tüm kesim işlemlerinin toplamda kaç saniye süreceğini hesaplayınız. (Püf noktaya dikkat ediniz!).",
         "solutionExplanation": "Parça sayısı: 180 / (15/2) = 180 * 2 / 15 = 24 parça. Kesim sayısı = parça sayısı - 1 = 23 kesim! 23 * 15 = 345 saniye.",
         "modelAnswer": "a) 7 tam 1/2 = 15/2 cm.\nParça Sayısı = 180 ÷ (15/2) = 180 × (2/15) = 12 × 2 = 24 adet parça elde edilir.\nb) TUZAK / PÜF NOKTA: 24 parça elde etmek için (24 - 1) = 23 kesim yapılır!\nToplam Süre = 23 kesim × 15 saniye = 345 saniye sürer (5 dakika 45 saniye).",
+        "alternativeAnswers": [
+          "a) $180 \\div \\frac{15}{2} = 24$ parça. b) 24 parça için 23 kesim yapılır; $23 \\times 15 = 345$ saniye (5 dk 45 sn).",
+          "a) 24 parça b) 345 saniye (23 kesim işlemi)"
+        ],
         "rubric": [
           {
             "criterion": "a şıkkında rasyonel bölme ile 24 parça sonucunun bulunması",
@@ -11413,6 +11437,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Ali Bey'in toplam aylık maaşı kaç TL'dir? Adım adım modelleyerek veya işlem basamaklarıyla çözünüz.",
         "solutionExplanation": "Kira: 1/4, Kalan: 3/4. Mutfak: 3/4 * 2/5 = 6/20 = 3/10. Toplam harcanan: 1/4 + 3/10 = 5/20 + 6/20 = 11/20. Kalan: 9/20 = 18.000 TL ise Tamamı = 40.000 TL.",
         "modelAnswer": "• Kira sonrası kalan kısım: 1 - 1/4 = 3/4.\n• Mutfak masrafı: 3/4 × 2/5 = 6/20 = 3/10.\n• Toplam harcanan: 1/4 + 3/10 = 5/20 + 6/20 = 11/20.\n• Geriye kalan kesir: 1 - 11/20 = 9/20.\n• 9 birim = 18.000 TL ise 1 birim = 18.000 ÷ 9 = 2.000 TL.\n• Ali Bey'in toplam maaşı: 20 × 2.000 = 40.000 TL'dir.",
+        "alternativeAnswers": [
+          "Kalan $1 - \\frac{11}{20} = \\frac{9}{20}$. Maaşın $\\frac{9}{20}$'si 18.000 TL ise toplam maaş $18.000 \\times \\frac{20}{9} = 40.000\\text{ TL}$'dir.",
+          "40.000 TL (veya 40000 TL)."
+        ],
         "rubric": [
           {
             "criterion": "Kalan kesrin (9/20) doğru modellenmesi/hesaplanması",

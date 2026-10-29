@@ -99,6 +99,9 @@ export interface ExamPaper {
 export interface StudySheetSection {
   outcomeCode: string;
   topicTitle: string;
+  textbookUnit?: string;
+  textbookPageRange?: string;
+  textbookExamples?: string[];
   quickNotes: string[]; // Hap Bilgiler
   examTraps: string[];  // Sınav Tuzakları & Püf Noktalar
   solvedExample: {

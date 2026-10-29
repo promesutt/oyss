@@ -150,6 +150,7 @@ export async function generateMEBIQuestions(
 
   const difficultyPlanText = formatDifficultyPlanText(targetCount);
   const isGrade7Turkish = grade === 7 && subjectId === 'turkce';
+  const isGrade7Math = grade === 7 && subjectId === 'matematik';
 
   // Mevcut senaryoya ait hazır sınav sorularını tespit et ve kaçınılacaklar listesine ekle
   const baseExam = SAMPLE_EXAMS.find(e =>
@@ -196,6 +197,21 @@ MEBİ 7. SINIF TÜRKÇE SORU YAZIM VE ÖLÇME YÖNERGESİ (PİLOT STANDART):
    - Çıkarım (T.O.7.8) ve söz varlığı tahmini (T.O.7.4) sorularında rubrik ölçütleri "Doğru tespit/tahmin" ve "Metin içi delil/gerekçe" olarak iki bağımsız kritere bölünmelidir (örn: 8 p tespit + 7 p delillendirme). Böylece kısmi başarı öz değerlendirmede doğru yansıtılır.
    - Yüzey anlam (T.O.7.5) gibi tek odaklı sorularda rubrik tek ölçüt olarak kalmalıdır.
 7. Asla hayali ders kitabı sayfa numarası veya MEBİ soru kopyası üretme; metinler özgün, kültürel ve edebi nitelikte Türkçe paragraflar olmalıdır.
+` : '';
+
+  const math7thDirectives = isGrade7Math ? `
+MEBİ 7. SINIF MATEMATİK DERS KİTABI VE ÖLÇME YÖNERGESİ (1. KİTAP 1. TEMA UYUMLU):
+1. KAZANIM EŞLEŞTİRMESİ VE DERS KİTABI BAĞLAMLARI:
+   - MAT.7.1.1: Gerçek yaşam ya da matematiksel durumlarda doğal sayı, tam sayı ve rasyonel sayıları yorumlayabilme (Ders Kitabı 1. Kitap, Sayfa 14-40: ASELSAN Deringöz su altı aracı, Ocak ayı illerin sıcaklık değerleri, Mert'in dijital bütçesi, 0 referans noktası ve mutlak değer).
+   - MAT.7.1.2: Gerçek yaşam durumlarında rasyonel sayıların ondalık gösterimlerini yansıtabilme (Ders Kitabı 1. Kitap, Sayfa 41-49: Günlük hayat nesnelerinin hacim/kütle rasyonel temsilleri, payı paydaya bölme, sonlu vs devirli ondalık, paydada 2 ve 5 dışı asal çarpan kuralı, devirliyi rasyonel yapma formülü).
+   - MAT.7.1.3: Rasyonel sayıların karşılaştırma ve sıralama ilişkilerini yorumlayabilme (Ders Kitabı 1. Kitap, Sayfa 50-61: Gezegenlerin yüzey sıcaklıkları, negatif rasyonel sayılarda sayı doğrusunda sıfıra yakınlık/uzaklık, futbol ligi averaj tablosu, yarıma/bütüne yakınlık).
+   - MAT.7.1.4: Rasyonel sayılar ve işlemler içeren gerçek yaşam problemlerini çözebilme (Ders Kitabı 1. Kitap, Sayfa 62-113: Denizaltının mikroplastik araştırmasında dikey hareketi, Gençtürk ailesi enerji giderleri aylık değişimi, çok adımlı işlemlerde işlem önceliği).
+2. MATEMATİKSEL GÖSTERİM VE KaTeX DESTEĞİ:
+   - Kesirler, denklemler ve matematiksel semboller için standart KaTeX $...$ formatını kullanınız (Örn: $\\frac{3}{4}$, $\\left(-\\frac{3}{4}\\right) + \\left(+\\frac{1}{8}\\right) = -\\frac{5}{8}$, $|+10| = 10$, $-38\\text{ °C}$).
+3. KABUL EDİLEBİLİR DENK ALTERNATİF CEVAPLAR (alternativeAnswers):
+   - Matematiksel olarak birbirine denk olan doğru ifade biçimlerini (Örn: $-\\frac{5}{8}\\text{ km}$ ile $-0,625\\text{ km}$; $\\frac{26}{11}$ ile $2\\frac{4}{11}$; $+15\\text{ °C}$ ile $15$) "alternativeAnswers" dizisine ekleyiniz.
+4. ANALİTİK VE ADIMLI RUBRİK:
+   - Puanlama rubriğinde işlem/modelleme basamakları ve nihai doğru sonuç için ayrı puan kriterleri tanımlayınız.
 ` : '';
 
   const livePrompt = `SEN MEB TEMEL EĞİTİM GENEL MÜDÜRLÜĞÜ VE ÖDSGM ORTAK SINAVLAR BAŞUZMANISIN.
@@ -256,6 +272,7 @@ HER SORU İÇİN ZORUNLU BAĞLAM ÇEŞİTLİLİĞİ KURALI (EN KRİTİK KURAL):
    - Diyalog sorularında konuşan karakterlerin replikleri (Örn: Elif: "...", Kerem: "...") mutlaka "stimulus" içinde yer almalıdır.
    - Öğrenci kaynak metni/veriyi görmeden ASLA soruyu cevaplayamaz!
 ${turkishMebiDirectives}
+${math7thDirectives}
 ÇIKTI FORMATI:
 SADECE geçerli bir JSON çıktısı ver. JSON şeması:
 {
@@ -730,173 +747,224 @@ Adım 4: Türbine bağlı jeneratörün ürettiği elektrik akımı.`,
   ];
 
   // ---------------------------------------------------------------------------
-  // B. MATEMATİK (Set A & Set B) - %100 GERÇEK MATEMATİKSEL MEBİ PROBLEMLERİ
+  // B. MATEMATİK (Set A & Set B) - MEB 7. SINIF MATEMATİK DERS KİTABI (1. KİTAP 1. TEMA)
   // ---------------------------------------------------------------------------
   const matQuestions_SetA: GeneratedQuestionItem[] = [
     {
       number: 1,
       outcome: 'MAT.7.1.1',
-      outcomeTitle: 'Tam sayılarda yönlü sayılar ve sayı doğrusunda referans noktası modellemesi',
+      outcomeTitle: 'Gerçek yaşam ya da matematiksel durumlarda doğal sayı, tam sayı ve rasyonel sayıları yorumlayabilme (Ders Kitabı 1. Kitap, Sayfa 17)',
       difficulty: 'Kolay',
       level: 'Basit Bilişsel Süreçler',
-      templateType: 'Durum & Özellik Matrisi (Tik Tablosu)',
+      templateType: 'Görsel / Deney / Günlük Hayat Durumu',
       points: pointAllocations[0] || 15,
-      stimulus: `Bir maden ve sahil projesinde deniz seviyesi (0 metre) referans kabul edilerek 4 noktanın irtifaları ölçülmüştür:
-Nokta A (Maden Galerisi): -120 metre
-Nokta B (Denizaltı Keşif Aracı): -45 metre
-Nokta C (Sahil Feneri Tepesi): +35 metre
-Nokta D (Gözlem Kulesi Zirvesi): +150 metre`,
-      question: `a) Başlangıç noktasına (deniz seviyesine) olan mutlak uzaklığı en büyük olan nokta hangisidir? Mutlak değer işlemiyle kanıtlayınız.
-b) Nokta A ile Nokta C arasındaki dikey mesafe farkını tam sayılarda çıkarma işlemi kurarak hesaplayınız.`,
-      answer: `a) Mutlak Değerler: |-120| = 120 m, |-45| = 45 m, |+35| = 35 m, |+150| = 150 m.
-En büyük uzaklık: Nokta D (+150 m) noktasıdır (150 > 120).
-b) Dikey Fark = (+35) - (-120) = (+35) + (+120) = 155 metredir.`,
+      stimulus: `ASELSAN'ın geliştirdiği Türkiye'nin ilk otonom su altı aracı olan Deringöz ile deniz altındaki keşif çalışmalarında deniz seviyesi $0\\text{ metre}$ referans kabul edilmiştir.
+Deniz seviyesinin $8\\text{ metre}$ altındaki ($-8\\text{ m}$) Deringöz'ü kullanan bir araştırma ekibi, deniz yüzeyinin $10\\text{ metre}$ üstündeki ($+10\\text{ m}$) keşif gemisinin güvertesinden çalışmayı takip etmektedir.`,
+      question: `a) Araştırma ekibinin bulunduğu nokta ile Deringöz arasındaki dikey mesafe farkını tam sayılarda çıkarma işlemi modelleyerek hesaplayınız.
+b) Başlangıç noktasına (deniz seviyesine) olan mutlak uzaklıklarını mutlak değer sembolüyle ($|a|$) karşılaştırınız.`,
+      answer: `a) Dikey Mesafe Farkı = $(+10) - (-8) = (+10) + (+8) = 18\\text{ metre}$'dir.
+b) Mutlak Uzaklıklar: $|+10| = 10\\text{ m}$, $|-8| = 8\\text{ m}$. Araştırma ekibinin deniz seviyesine olan mutlak uzaklığı ($10\\text{ m}$), Deringöz'ün deniz seviyesine olan mutlak uzaklığından ($8\\text{ m}$) daha büyüktür ($10 > 8$).`,
+      alternativeAnswers: [
+        'a) 18 metre fark vardır [(+10) - (-8) = 18 m]. b) Araştırma ekibi 10 m, Deringöz 8 m uzaktadır; ekibin uzaklığı daha büyüktür.',
+        'a) 18 m b) |+10| > |-8| (10 m > 8 m)'
+      ],
       rubric: [
-        { item: 'Mutlak değer modellerinin doğru kurulması ve Nokta D tespiti', pts: Math.round((pointAllocations[0] || 15) * 0.5) },
-        { item: 'Çıkarma işleminin (+35 - (-120) = 155 m) doğru modellenmesi', pts: Math.round((pointAllocations[0] || 15) * 0.5) }
+        { item: 'a şıkkında dikey fark işleminin [(+10) - (-8) = 18 m] doğru modellenmesi', pts: Math.round((pointAllocations[0] || 15) * 0.5) },
+        { item: 'b şıkkında mutlak değer modellerinin (|10|=10, |-8|=8) ve karşılaştırmanın doğru yapılması', pts: (pointAllocations[0] || 15) - Math.round((pointAllocations[0] || 15) * 0.5) }
       ]
     },
     {
       number: 2,
       outcome: 'MAT.7.1.1',
-      outcomeTitle: 'Tam sayılarda mutlak değer ve hedef sapma miktarı analizi',
+      outcomeTitle: 'Doğal sayı ve tam sayı kavramlarını hava sıcaklığı verileriyle sayı doğrusunda yorumlayabilme (Ders Kitabı 1. Kitap, Sayfa 19)',
       difficulty: 'Orta',
       level: 'Karmaşık Bilişsel Süreçler',
-      templateType: 'Kurgusal Senaryo & Vaka İncelemesi',
+      templateType: 'Durum & Özellik Matrisi (Tik Tablosu)',
       points: pointAllocations[1] || 15,
-      stimulus: `Bir ilaç fabrikasında üretilen şurup şişelerinin standart hacmi 100 mililitre olmalıdır.
-Kalite kontrol uzmanı ${name1}, dolum hattından 3 şişe alıp ölçmüştür:
-1. Şişe: 94 ml
-2. Şişe: 106 ml
-3. Şişe: 98 ml`,
-      question: `a) 1, 2 ve 3. şişelerin 100 ml standardına göre sapma miktarlarını mutlak değer matematiksel modeli ile gösteriniz.
-b) 1. şişe eksik, 2. şişe fazla doldurulmuş olmasına rağmen mutlak değer sapmalarının neden eşit çıktığını sayı doğrusunda sıfıra uzaklık tanımıyla açıklayınız.`,
-      answer: `a) Sapma Modelleri:
-• 1. Şişe: |94 - 100| = |-6| = 6 ml sapma
-• 2. Şişe: |106 - 100| = |+6| = 6 ml sapma
-• 3. Şişe: |98 - 100| = |-2| = 2 ml sapma
-b) Matematiksel Gerekçe: Mutlak değer, sayı doğrusundaki bir noktanın referans kabul edilen noktaya olan geometrik 'uzaklığını' ifade eder. Uzaklık ölçüsü negatif olamayacağından, 94'ün 100'e uzaklığı da 6 birimdir, 106'nın 100'e uzaklığı da 6 birimdir. Yönleri (artı/eksi) farklı olsa da hata payları eşittir.`,
+      stimulus: `Ocak ayının son gününde Türkiye'nin bazı illerinde beklenen en yüksek hava sıcaklıkları şöyledir:
+• Antalya: $+12\\text{ °C}$
+• Samsun: $+7\\text{ °C}$
+• İstanbul: $+4\\text{ °C}$
+• Afyon: $0\\text{ °C}$
+• Ankara: $-1\\text{ °C}$
+• Kars: $-4\\text{ °C}$
+• Hakkâri: $-9\\text{ °C}$`,
+      question: `a) Verilen sıcaklık değerlerinden doğal sayı olanları ve yalnızca tam sayı olup doğal sayı olmayanları ayrı ayrı belirleyiniz.
+b) Ölçülen en yüksek sıcaklık ile en düşük sıcaklık arasındaki fark kaç $\\text{°C}$'dir? İşlemini yazınız.`,
+      answer: `a) Doğal Sayı Olanlar: $+12, +7, +4, 0$ (Doğal sayılar kümesi $0$'dan başlayarak pozitif yöndedir).
+Yalnızca Tam Sayı Olanlar (Negatifler): $-1, -4, -9$ (Doğal sayı değildir).
+b) En yüksek: $+12\\text{ °C}$, En düşük: $-9\\text{ °C}$.
+Sıcaklık Farkı = $(+12) - (-9) = (+12) + (+9) = 21\\text{ °C}$'dir.`,
+      alternativeAnswers: [
+        'a) Doğal sayılar: 0, 4, 7, 12; Yalnızca tam sayılar: -1, -4, -9. b) (+12) - (-9) = 21 °C fark vardır.',
+        'a) Doğal: {0, 4, 7, 12}, Negatif tam sayı: {-1, -4, -9}. b) 21 °C'
+      ],
       rubric: [
-        { item: 'Üç şişenin mutlak değer modellerinin hatasız yazılması', pts: Math.round((pointAllocations[1] || 15) * 0.5) },
-        { item: 'Mutlak değerin referans noktasına uzaklık tanımıyla gerekçelendirilmesi', pts: Math.round((pointAllocations[1] || 15) * 0.5) }
+        { item: 'Doğal sayı olan ve olmayan sıcaklıkların eksiksiz sınıflandırılması', pts: Math.round((pointAllocations[1] || 15) * 0.5) },
+        { item: 'Sıcaklık farkının [(+12) - (-9) = 21 °C] hatasız hesaplanması', pts: (pointAllocations[1] || 15) - Math.round((pointAllocations[1] || 15) * 0.5) }
       ]
     },
     {
       number: 3,
       outcome: 'MAT.7.1.2',
-      outcomeTitle: 'Tam sayılarla çarpma ve bölme işlemlerini günlük hayat finansal borç modelleriyle çözebilme',
-      difficulty: 'Orta',
-      level: 'Karmaşık Bilişsel Süreçler',
-      templateType: 'Öğrenci Diyaloğu & Kavram Yanılgısı',
+      outcomeTitle: 'Rasyonel sayıların ondalık ve devirli ondalık gösterimlerini belirleyebilme (Ders Kitabı 1. Kitap, Sayfa 41)',
+      difficulty: 'Kolay',
+      level: 'Basit Bilişsel Süreçler',
+      templateType: 'Kurgusal Senaryo & Vaka İncelemesi',
       points: pointAllocations[2] || 15,
-      stimulus: `${name1}, cep telefonu faturasında her ay 80 TL aşım ücreti ödemektedir. 5 ay boyunca hiçbir ek ödeme yapmamış ve bu borç katlanmıştır.
-${name1}: "Borcumun toplam değişimi (+5) * (+80) = +400 TL'dir." demiştir.
-${name2}: "Hayır, borç ve para çıkışı negatif tam sayı ile gösterilir; bu yüzden doğru modelleme 5 * (-80) = -400 TL olmalıdır." demiştir.`,
-      question: `${name1} ve ${name2}'den hangisinin matematiksel modellemesi doğrudur? Tam sayılarda negatif işaret kuralını ve bakiye azalmasını açıklayarak gerekçelendiriniz.`,
-      answer: `${name2} haklıdır.
-Gerekçe: Matematikte borçlanma, harcama veya hesaptan para çıkışı NEGATİF tam sayı (-80) ile temsil edilir. 5 ay boyunca her ay 80 TL azalma gerçekleştiğinden:
-Doğru Matematiksel Model: 5 * (-80) = -400 TL'dir.
-Sonuç bakiye yönünden 400 TL'lik bir eksilmeyi ifade eder.`,
+      stimulus: `Bir markette satılan bazı ürünlerin ölçüleri rasyonel sayı biçiminde etiketlenmiştir:
+• Kutu sütün hacmi: $\\frac{1}{5}\\text{ L}$
+• Küçük boy su şişesinin hacmi: $\\frac{1}{3}\\text{ L}$
+• Madenî paranın kalınlığı: $\\frac{1}{4}\\text{ cm}$`,
+      question: `a) Kutu süt ($\\frac{1}{5}$) ve küçük boy su şişesinin ($\\frac{1}{3}$) hacimlerini payı paydaya bölme yöntemiyle ondalık gösterim biçiminde yazınız.
+b) Bu iki rasyonel sayıdan hangisinin 'sonlu ondalık', hangisinin 'devirli ondalık' olduğunu paydalarındaki asal çarpan kuralını açıklayarak belirtiniz.`,
+      answer: `a) Bölme İşlemleri:
+• Kutu Süt: $1 \\div 5 = 0,2\\text{ L}$
+• Su Şişesi: $1 \\div 3 = 0,333... = 0,\\overline{3}\\text{ L}$
+b) Asal Çarpan Kuralı ve Tür Belirleme:
+Bir rasyonel sayı en sade halinde yazıldığında paydasında 2 ve 5 dışında başka bir asal çarpan yoksa 'sonlu ondalık', 2 ve 5 dışında en az bir asal çarpan (3, 7 vb.) varsa 'devirli ondalık' açılıma sahiptir.
+• $\\frac{1}{5}$ kesrinin paydasında yalnızca 5 olduğu için SONLU ondalıktır ($0,2$).
+• $\\frac{1}{3}$ kesrinin paydasında 3 asal çarpanı olduğu için DEVİRLİ ondalıktır ($0,\\overline{3}$).`,
+      alternativeAnswers: [
+        'a) 1/5 = 0,2 ve 1/3 = 0,333... = 0,\\bar{3}. b) 1/5 sonlu ondalık (paydada 5 var), 1/3 devirli ondalıktır (paydasında 3 asal çarpanı bulunduğu için).',
+        'a) 0,2 ve 0,\\bar{3} b) Kutu süt sonlu, su şişesi devirli ondalıktır.'
+      ],
       rubric: [
-        { item: `${name2}'nin haklılığının tespiti`, pts: Math.round((pointAllocations[2] || 15) * 0.4) },
-        { item: 'Para çıkışının negatif tam sayı ile modellenmesi kuralı', pts: Math.round((pointAllocations[2] || 15) * 0.3) },
-        { item: '5 * (-80) = -400 TL işleminin hatasız yazılması', pts: Math.round((pointAllocations[2] || 15) * 0.3) }
+        { item: 'Ondalık gösterimlerin (0,2 ve 0,333... = 0,\\bar{3}) doğru bulunması', pts: Math.round((pointAllocations[2] || 15) * 0.5) },
+        { item: 'Paydadaki asal çarpan kuralıyla sonlu ve devirli ondalık türlerinin gerekçelendirilmesi', pts: (pointAllocations[2] || 15) - Math.round((pointAllocations[2] || 15) * 0.5) }
       ]
     },
     {
       number: 4,
-      outcome: 'MAT.7.1.3',
-      outcomeTitle: 'Rasyonel sayılarda işlem önceliği ve çok adımlı işlemlerde parantez analizi',
-      difficulty: 'Zor',
+      outcome: 'MAT.7.1.2',
+      outcomeTitle: 'Devirli ondalık gösterimleri rasyonel sayı biçiminde temsil edebilme (Ders Kitabı 1. Kitap, Sayfa 43)',
+      difficulty: 'Orta',
       level: 'Karmaşık Bilişsel Süreçler',
       templateType: 'Hata Tespiti & Adım Analizi',
-      points: pointAllocations[3] || 15,
-      stimulus: `Tahtaya yazılan 3 - (2/5) ÷ (4/15) işlemini defterine çözen ${name1} şu adımları uygulamıştır:
-1. Adım: Önce çıkarma işlemini yaparak: 3 - (2/5) = (15/5) - (2/5) = 13/5 bulmuştur.
-2. Adım: Çıkan sonucu 4/15 kesrine bölmek için ters çevirip çarpmıştır: (13/5) * (15/4).
-3. Adım: 15 ile 5'i sadeleştirerek: 13 * 3 / 4 = 39/4 sonucuna ulaşmıştır.`,
-      question: `${name1}'in çözümü doğru mudur? Yanlış ise ilk hatayı hangi adımda yapmıştır? Matematikte işlem önceliği kuralını açıklayarak işlemin doğru sonucunu bulunuz.`,
-      answer: `${name1}'in çözümü YANLIŞTIR. İlk hatasını 1. Adımda yapmıştır.
-Gerekçe: Matematikte işlem önceliği kuralına göre bölme işlemi çıkarma işleminden önce yapılır.
-Doğru Çözüm Adımları:
-1. Adım (Bölme): (2/5) ÷ (4/15) = (2/5) * (15/4) = (2*15) / (5*4) = 30 / 20 = 3/2
-2. Adım (Çıkarma): 3 - (3/2) = (6/2) - (3/2) = 3/2 (veya 1 tam 1/2).`,
+      points: pointAllocations[3] || 14,
+      stimulus: `Bir hassas kuyumcu terazisinde bir gram altının saf kütlesi ekranda $2,\\overline{36}\\text{ g}$ ($2,363636...\\text{ g}$) olarak okunmuştur.`,
+      question: `a) Bu devirli ondalık sayıyı rasyonel sayıya çevirme formülünü kullanarak kesir biçiminde yazınız.
+b) Elde ettiğiniz rasyonel sayıyı en sade (pay ve paydası aralarında asal) kesir haline getiriniz.`,
+      answer: `a) Devirli Ondalık Formülü:
+$\\text{Rasyonel Kesir} = \\frac{\\text{Sayının Tamamı} - \\text{Devretmeyen Kısım}}{\\text{Devreden Kadar 9}} = \\frac{236 - 2}{99} = \\frac{234}{99}$
+b) Sadeleştirme Basamakları:
+234 ve 99 sayıları 9 ile sadeleştirilir:
+$234 \\div 9 = 26$
+$99 \\div 9 = 11$
+En Sade Hali: $\\frac{26}{11}$ (veya $2\\frac{4}{11}$ tam sayılı kesir).`,
+      alternativeAnswers: [
+        'a) (236 - 2) / 99 = 234 / 99 b) 9 ile sadeleştirilerek 26 / 11 veya 2 tam 4/11.',
+        'a) 234/99 b) 26/11'
+      ],
       rubric: [
-        { item: 'Hatanın 1. adımda işlem önceliği ihlalinden kaynaklandığının tespiti', pts: Math.round((pointAllocations[3] || 15) * 0.4) },
-        { item: 'Bölme adımının (3/2) doğru yapılması', pts: Math.round((pointAllocations[3] || 15) * 0.3) },
-        { item: 'Çıkarma işleminin yapılarak 3/2 bulunması', pts: Math.round((pointAllocations[3] || 15) * 0.3) }
+        { item: 'Devirli ondalık çevrim formülünün doğru uygulanarak 234/99 bulunması', pts: Math.round((pointAllocations[3] || 14) * 0.5) },
+        { item: 'Kesrin 9 ile sadeleştirilerek en sade hali olan 26/11 (veya 2 tam 4/11) kesrinin elde edilmesi', pts: (pointAllocations[3] || 14) - Math.round((pointAllocations[3] || 14) * 0.5) }
       ]
     },
     {
       number: 5,
       outcome: 'MAT.7.1.3',
-      outcomeTitle: 'Negatif rasyonel sayıların sayı doğrusunda karşılaştırılması ve sıralama yanılgıları',
-      difficulty: 'Zor',
+      outcomeTitle: 'Rasyonel sayıların karşılaştırma ve sıralama ilişkilerini yorumlayabilme (Ders Kitabı 1. Kitap, Sayfa 50)',
+      difficulty: 'Orta',
       level: 'Karmaşık Bilişsel Süreçler',
       templateType: 'Öğrenci Diyaloğu & Kavram Yanılgısı',
       points: pointAllocations[4] || 14,
-      stimulus: `Tahtadaki -2/3, -5/6 ve -7/12 sayılarını küçükten büyüğe sıralamak isteyen iki öğrenci tartışmaktadır:
-${name1}: "Paydaları 12'de eşitlersek sayılar -8/12, -10/12 ve -7/12 olur. Payı büyük olan daha büyük olduğu için sıralama: -7/12 < -8/12 < -10/12 olmalıdır."
-${name2}: "Negatif sayılarda sayı doğrusunda sıfırdan en uzakta ve en solda olan sayı en küçüktür. -10 sayısı -7'den daha küçük olduğu için en küçük kesir -10/12'dir."`,
-      question: `${name1} ve ${name2}'nin açıklamalarını değerlendiriniz. Hangi öğrenci haklıdır? Verilen rasyonel sayıların doğru küçükten büyüğe sıralamasını yazınız.`,
-      answer: `${name2} haklıdır.
-Gerekçe: Negatif sayılarda mutlak değeri büyük olan sayı, sayı doğrusunda sıfırın daha solunda kaldığı için daha küçüktür (-10 < -8 < -7).
-Doğru Sıralama:
--10/12 < -8/12 < -7/12
-Orijinal halleriyle: -5/6 < -2/3 < -7/12.`,
+      stimulus: `Güneş sistemindeki iki gezegenin ortalama yüzey sıcaklıkları rasyonel sayılarla modellenmiştir:
+• Mars: $-\\frac{125}{2}\\text{ °C}$
+• Neptün: $-\\frac{401}{2}\\text{ °C}$`,
+      question: `a) Mars ve Neptün'ün yüzey sıcaklıklarını rasyonel sayılarda karşılaştırma kurallarını kullanarak karşılaştırınız. Hangi gezegen daha sıcaktır?
+b) Negatif rasyonel sayılarda sayı doğrusundaki konum ve sıfıra yakınlık ilkesini açıklayarak cevabınızı gerekçelendiriniz.`,
+      answer: `a) Karşılaştırma: Paydaları eşit (2) olan negatif rasyonel sayılarda, payı daha büyük olan (sıfıra daha yakın olan) sayı daha büyüktür.
+$-125 > -401$ olduğu için $-\\frac{125}{2} > -\\frac{401}{2}$'dir.
+Bu nedenle Mars ($-\\frac{125}{2}\\text{ °C}$), Neptün'den daha sıcaktır.
+b) Matematiksel Gerekçe: Negatif rasyonel sayılarda sayı doğrusunda sıfıra daha yakın olan sayı daha büyüktür. $-\\frac{125}{2} = -62,5$ sayısı sayı doğrusunda $-\\frac{401}{2} = -200,5$ sayısının daha sağında (sıfıra daha yakın) yer aldığı için daha büyük bir sıcaklık değerini temsil eder.`,
+      alternativeAnswers: [
+        'a) Mars daha sıcaktır (-125/2 > -401/2). b) Sayı doğrusunda -62,5 °C sıfıra daha yakın olduğu için -200,5 °C\'den daha büyüktür.',
+        'a) Mars (-125/2 > -401/2) b) Negatif sayılarda sıfıra yakın olan sayı daha büyüktür.'
+      ],
       rubric: [
-        { item: `${name2}'nin haklılığının tespiti`, pts: Math.round((pointAllocations[4] || 14) * 0.4) },
-        { item: 'Negatif rasyonel sayılarda sıfıra uzaklık kuralının açıklanması', pts: Math.round((pointAllocations[4] || 14) * 0.3) },
-        { item: 'Doğru sıralamanın (-5/6 < -2/3 < -7/12) eksiksiz yazılması', pts: Math.round((pointAllocations[4] || 14) * 0.3) }
+        { item: 'Mars ve Neptün sıcaklıklarının doğru karşılaştırılarak Marsın daha sıcak olduğunun belirlenmesi', pts: Math.round((pointAllocations[4] || 14) * 0.5) },
+        { item: 'Negatif rasyonel sayılarda sıfıra yakınlık kuralının sayı doğrusuyla gerekçelendirilmesi', pts: (pointAllocations[4] || 14) - Math.round((pointAllocations[4] || 14) * 0.5) }
       ]
     },
     {
       number: 6,
-      outcome: 'MAT.7.2.1',
-      outcomeTitle: 'Cebirsel ifadeleri modelleyerek toplama/çıkarma işlemlerini geometrik çevreyle ilişkilendirebilme',
+      outcome: 'MAT.7.1.3',
+      outcomeTitle: 'Yarıma ve bütüne yakınlık stratejisi ile rasyonel sayıları sıralayabilme (Ders Kitabı 1. Kitap, Sayfa 52)',
       difficulty: 'Orta',
       level: 'Karmaşık Bilişsel Süreçler',
-      templateType: 'Kurgusal Senaryo & Vaka İncelemesi',
-      points: pointAllocations[5] || 14,
-      stimulus: `Bir okul bahçesine yapılacak dikdörtgen şeklindeki basketbol sahasının kenar uzunlukları:
-Uzun Kenar: (5x + 3) metre
-Kısa Kenar: (2x - 1) metre olarak projelendirilmiştir.
-Sahanın çevresine güvenlik amacıyla 2 sıra koruyucu şerit çekilecektir.`,
-      question: `a) Basketbol sahasının 1 turluk çevresini x cinsinden en sade cebirsel ifade olarak bulunuz.
-b) x = 6 metre için çekilecek 2 sıra koruyucu şeridin toplam uzunluğunun kaç metre olduğunu hesaplayınız.`,
-      answer: `a) Çevre Formülü = 2 * [Uzun Kenar + Kısa Kenar]
-Çevre = 2 * [(5x + 3) + (2x - 1)] = 2 * (7x + 2) = 14x + 4 metredir.
-b) x = 6 için 1 Turluk Çevre = 14*(6) + 4 = 84 + 4 = 88 metredir.
-2 Sıra Şerit Çekileceği İçin: 88 * 2 = 176 metre şerit gerekir.`,
+      templateType: 'Hata Tespiti & Adım Analizi',
+      points: pointAllocations[4] || 14,
+      stimulus: `Verilen rasyonel sayılar: $A = \\frac{7}{15}$, $B = \\frac{9}{10}$, $C = \\frac{4}{7}$.`,
+      question: `A, B ve C rasyonel sayılarını payda eşitlemeden, 'yarıma ve bütüne yakınlık' stratejisini kullanarak küçükten büyüğe sıralayınız. Sıralamadaki mantığınızı açıklayınız.`,
+      answer: `• $A = \\frac{7}{15}$: Yarım $7,5/15$ olduğu için A sayısı yarımdan küçüktür ($A < 1/2$).
+• $C = \\frac{4}{7}$: Yarım $3,5/7$ olduğu için C sayısı yarımdan büyüktür ($C > 1/2$).
+• $B = \\frac{9}{10}$: Bütüne ($1$ tam) sadece $1/10$ kalmıştır, 1'e çok yakındır.
+Bu durumda sıralama: $A < C < B$ ($\\frac{7}{15} < \\frac{4}{7} < \\frac{9}{10}$) şeklindedir.`,
+      alternativeAnswers: [
+        'A yarımdan küçük (A < 0,5), C yarımdan büyük (C > 0,5), B bütüne yakındır. Sıralama: A < C < B veya 7/15 < 4/7 < 9/10.',
+        '7/15 < 4/7 < 9/10 (Yarıma ve bütüne kıyasla: A < 1/2 < C < 1 < B).'
+      ],
       rubric: [
-        { item: '1 turluk çevre cebirsel ifadesinin (14x + 4) doğru bulunması', pts: Math.round((pointAllocations[5] || 14) * 0.5) },
-        { item: 'x = 6 değerinin yerine konulup 2 sıra ile çarpılarak 176 m bulunması', pts: Math.round((pointAllocations[5] || 14) * 0.5) }
+        { item: 'A, B ve C kesirlerinin yarıma ve bütüne durumlarının doğru analiz edilmesi', pts: Math.round((pointAllocations[4] || 14) * 0.5) },
+        { item: 'A < C < B sıralamasının hatasız yapılması', pts: (pointAllocations[4] || 14) - Math.round((pointAllocations[4] || 14) * 0.5) }
       ]
     },
     {
       number: 7,
-      outcome: 'MAT.7.2.2',
-      outcomeTitle: 'Birinci dereceden bir bilinmeyenli denklemleri kurarak gerçek yaşam problemlerini çözebilme',
+      outcome: 'MAT.7.1.4',
+      outcomeTitle: 'Rasyonel sayılar ve dikey hareket içeren gerçek yaşam problemlerini çözebilme (Ders Kitabı 1. Kitap, Sayfa 82)',
+      difficulty: 'Orta',
+      level: 'Karmaşık Bilişsel Süreçler',
+      templateType: 'Kurgusal Senaryo & Vaka İncelemesi',
+      points: pointAllocations[5] || 14,
+      stimulus: `Bir araştırma denizaltısı, denizlerdeki mikroplastik kirliliğini incelemek için deniz seviyesinin $\\frac{3}{4}\\text{ km}$ altına inmiştir. Denizaltı daha sonra bulunduğu bu derinlikten $\\frac{1}{8}\\text{ km}$ yukarı çıkarak su numuneleri toplamıştır.`,
+      question: `a) Deniz seviyesi $0$ referans kabul edildiğinde, denizaltının ilk inişini ve ardından yukarı çıkışını yönlü rasyonel sayılarla toplama işlemi olarak modelleyiniz.
+b) Denizaltının son durumda deniz seviyesine göre konumunu rasyonel sayı ve ondalık gösterim biçiminde bulunuz.`,
+      answer: `a) Matematiksel Modelleme:
+• Deniz seviyesinin altına iniş: $-\\frac{3}{4}\\text{ km}$
+• Yukarı çıkış: $+\\frac{1}{8}\\text{ km}$
+Toplama İşlemi Modeli: $\\left(-\\frac{3}{4}\\right) + \\left(+\\frac{1}{8}\\right)$
+b) İşlem Basamakları ve Çözüm:
+Paydalar 8'de eşitlenir:
+$-\\frac{3 \\times 2}{4 \\times 2} = -\\frac{6}{8}$
+$\\left(-\\frac{6}{8}\\right) + \\left(+\\frac{1}{8}\\right) = \\frac{-6 + 1}{8} = -\\frac{5}{8}\\text{ km}$
+Ondalık Gösterim: $-\\frac{5}{8} = -\\frac{5 \\times 125}{8 \\times 125} = -\\frac{625}{1000} = -0,625\\text{ km}$ (Deniz seviyesinin $0,625\\text{ km}$ altında).`,
+      alternativeAnswers: [
+        'a) (-3/4) + (+1/8) b) -5/8 km veya -0,625 km (Deniz seviyesinin 5/8 km altında).',
+        'a) -3/4 + 1/8 b) -5/8 km (-0,625 km)'
+      ],
+      rubric: [
+        { item: 'Dikey hareketin yönlü rasyonel sayılarla [(-3/4) + (+1/8)] doğru modellenmesi', pts: Math.round((pointAllocations[5] || 14) * 0.5) },
+        { item: 'Payda eşitleme yapılarak sonucun -5/8 km (veya -0,625 km) olarak bulunması', pts: (pointAllocations[5] || 14) - Math.round((pointAllocations[5] || 14) * 0.5) }
+      ]
+    },
+    {
+      number: 8,
+      outcome: 'MAT.7.1.4',
+      outcomeTitle: 'Çok adımlı rasyonel işlemlerde işlem önceliği ve parantez kurallarını uygulayabilme (Ders Kitabı 1. Kitap, Sayfa 108)',
       difficulty: 'Zor',
       level: 'Karmaşık Bilişsel Süreçler',
-      templateType: 'Dilemma (İkilem) & Denklem Çözümü',
-      points: pointAllocations[6] || 13,
-      stimulus: `Bir kütüphanede düzenlenen kitap bağış kampanyasında ${name1} ve ${name2} kitap toplamıştır:
-• ${name1}'in topladığı kitap sayısı, ${name2}'nin topladığı kitap sayısının 2 katından 15 eksiktir.
-• İki öğrencinin topladığı toplam kitap sayısı 105 adettir.`,
-      question: `a) ${name2}'nin topladığı kitap sayısına x diyerek durumu ifade eden birinci dereceden bir bilinmeyenli denklemi kurunuz.
-b) Denklemi çözerek ${name1} ve ${name2}'nin kaçar adet kitap topladığını ayrı ayrı bulunuz.`,
-      answer: `a) ${name2} = x kitap | ${name1} = (2x - 15) kitap
-Denklem: x + (2x - 15) = 105
-b) Çözüm Adımları:
-3x - 15 = 105
-3x = 105 + 15
-3x = 120 => x = 40 (${name2}'nin topladığı kitap sayısı).
-${name1}'in Kitap Sayısı = 2*(40) - 15 = 80 - 15 = 65 kitaptır.`,
+      templateType: 'Hata Tespiti & Adım Analizi',
+      points: pointAllocations[6] || 14,
+      stimulus: `Matematik dersinde tahtaya yazılan $3 - \\left(\\frac{2}{5}\\right) \\div \\left(\\frac{4}{15}\\right)$ işlemini defterine çözen öğrenci şu adımları uygulamıştır:
+1. Adım: Önce çıkarma işlemini yaparak: $3 - \\frac{2}{5} = \\frac{15}{5} - \\frac{2}{5} = \\frac{13}{5}$ bulmuştur.
+2. Adım: Çıkan sonucu $\\frac{4}{15}$ kesrine bölmek için ters çevirip çarpmıştır: $\\left(\\frac{13}{5}\\right) \\times \\left(\\frac{15}{4}\\right)$.
+3. Adım: Sadeleştirme yaparak: $\\frac{13 \\times 3}{4} = \\frac{39}{4}$ sonucuna ulaşmıştır.`,
+      question: `a) Öğrencinin çözümü doğru mudur? Yanlış ise ilk hatayı hangi adımda yapmıştır? Nedenini işlem önceliği kuralıyla açıklayınız.
+b) İşlemin doğru sonucunu işlem basamaklarını eksiksiz göstererek hesaplayınız.`,
+      answer: `a) Öğrencinin çözümü YANLIŞTIR. İlk hatasını 1. Adımda yapmıştır.
+Gerekçe: Matematikte işlem önceliği kuralına göre bölme işlemi, çıkarma işleminden önce yapılmalıdır. Öğrenci bölme işlemini beklemeden önce çıkarma yapmıştır.
+b) Doğru Çözüm Basamakları:
+1. Adım (Bölme): $\\left(\\frac{2}{5}\\right) \\div \\left(\\frac{4}{15}\\right) = \\left(\\frac{2}{5}\\right) \\times \\left(\\frac{15}{4}\\right) = \\frac{2 \\times 15}{5 \\times 4} = \\frac{30}{20} = \\frac{3}{2}$
+2. Adım (Çıkarma): $3 - \\frac{3}{2} = \\frac{6}{2} - \\frac{3}{2} = \\frac{3}{2}$ (veya $1\\frac{1}{2}$, $1,5$).`,
+      alternativeAnswers: [
+        'a) Yanlıştır, 1. adımda hata yapılmıştır (işlem önceliği kuralına göre bölme çıkarmadan önce yapılmalıdır). b) Doğru sonuç: 3/2 veya 1 tam 1/2 (1,5).',
+        'a) 1. adımda işlem önceliği hatası b) 3/2 (1,5)'
+      ],
       rubric: [
-        { item: 'Denklemin [x + (2x - 15) = 105] hatasız kurulması', pts: Math.round((pointAllocations[6] || 13) * 0.4) },
-        { item: 'Denklemin çözülerek x = 40 bulunması', pts: Math.round((pointAllocations[6] || 13) * 0.3) },
-        { item: `${name1}'in 65 kitap topladığının hesaplanması`, pts: Math.round((pointAllocations[6] || 13) * 0.3) }
+        { item: 'İlk hatanın 1. adımda işlem önceliği kuralı ihlalinden kaynaklandığının gerekçelendirilmesi', pts: Math.round((pointAllocations[6] || 14) * 0.5) },
+        { item: 'Doğru işlem sırası (önce bölme sonra çıkarma) izlenerek 3/2 (veya 1,5) sonucunun bulunması', pts: (pointAllocations[6] || 14) - Math.round((pointAllocations[6] || 14) * 0.5) }
       ]
     }
   ];
@@ -905,164 +973,257 @@ ${name1}'in Kitap Sayısı = 2*(40) - 15 = 80 - 15 = 65 kitaptır.`,
     {
       number: 1,
       outcome: 'MAT.7.1.1',
-      outcomeTitle: 'Tam sayılarda yönlü sayılar ve sıcaklık farkı modelleri',
+      outcomeTitle: 'Tam sayılarda borç ve harçlık yönetimini yönlü sayılarla modelleyebilme (Ders Kitabı 1. Kitap, Sayfa 18)',
       difficulty: 'Kolay',
       level: 'Basit Bilişsel Süreçler',
-      templateType: 'Durum & Özellik Matrisi (Tik Tablosu)',
+      templateType: 'Kurgusal Senaryo & Vaka İncelemesi',
       points: pointAllocations[0] || 15,
-      stimulus: `Bir gıda lojistik deposunda 3 farklı muhafaza odasının sıcaklıkları ölçülmüştür:
-Oda 1 (Taze Meyve/Sebze): +4 °C
-Oda 2 (Dondurulmuş Et/Balık): -18 °C
-Oda 3 (Aşı ve İlaç Şoklama): -26 °C`,
-      question: `a) Sayı doğrusunda başlangıç noktasına (0 °C) en uzak olan odayı mutlak değer işlemiyle belirleyiniz.
-b) Taze Meyve Odası (+4 °C) ile İlaç Şoklama Odası (-26 °C) arasındaki sıcaklık farkını tam sayılarda çıkarma işlemi kurarak hesaplayınız.`,
-      answer: `a) Mutlak Değerler: |+4| = 4, |-18| = 18, |-26| = 26. Sıfıra en uzak olan Oda 3'tür (-26 °C).
-b) Sıcaklık Farkı = (+4) - (-26) = (+4) + (+26) = 30 °C'dir.`,
+      stimulus: `Bir okulda 7. sınıf öğrencisi olan Mert'e ailesi bütçe yönetimini öğrenmesi için dijital bir harçlık kartı vermiştir.
+Kartına her hafta başında ailesi tarafından $300\\text{ TL}$ yüklenen Mert, hafta boyunca okul kırtasiyesinden ve kantinden toplam $360\\text{ TL}$ harcama yapmıştır.`,
+      question: `a) Mert'in kartındaki bakiye değişimini yönlü tam sayılarla çıkarma veya toplama işlemi olarak modelleyiniz.
+b) Hafta sonunda kartın son bakiyesini tam sayıyla ifade edip borç/alacak durumunu açıklayınız.`,
+      answer: `a) Matematiksel Modelleme: $(+300) - (+360) = (+300) + (-360) = -60\\text{ TL}$.
+b) Hafta sonu kart bakiyesi $-60\\text{ TL}$'dir. Bu durum Mert'in kartının $60\\text{ TL}$ eksi bakiyede (borçta) olduğunu gösterir.`,
+      alternativeAnswers: [
+        'a) (+300) - 360 = -60 TL b) Bakiye -60 TL\'dir (60 TL borç bulunmaktadır).',
+        'a) 300 - 360 = -60 b) -60 TL bakiye'
+      ],
       rubric: [
-        { item: 'Mutlak değer modellerinin doğru gösterilmesi ve Oda 3 tespiti', pts: Math.round((pointAllocations[0] || 15) * 0.5) },
-        { item: 'Çıkarma işleminin (+4 - (-26) = 30 °C) hatasız modellenmesi', pts: Math.round((pointAllocations[0] || 15) * 0.5) }
+        { item: 'Harcama ve bakiye değişiminin [(+300) - (+360) = -60 TL] doğru modellenmesi', pts: Math.round((pointAllocations[0] || 15) * 0.5) },
+        { item: 'Sonucun -60 TL borç olarak gerekçelendirilmesi', pts: (pointAllocations[0] || 15) - Math.round((pointAllocations[0] || 15) * 0.5) }
       ]
     },
     {
       number: 2,
       outcome: 'MAT.7.1.1',
-      outcomeTitle: 'Tam sayılarda yönlü hareket ve referans noktasına göre konum analizi',
+      outcomeTitle: 'Mutlak değer ile hedef sapma miktarı analizi (Ders Kitabı 1. Kitap, Sayfa 114)',
       difficulty: 'Orta',
       level: 'Karmaşık Bilişsel Süreçler',
       templateType: 'Kurgusal Senaryo & Vaka İncelemesi',
       points: pointAllocations[1] || 15,
-      stimulus: `Otonom bir su altı araştırma robotu deniz seviyesinden (-45 metre) derinlikte batık aramaktadır.
-Görev sırasında robot sırasıyla şu manevraları yapmıştır:
-1. Manevra: 18 metre dikey YUKARI yükselmiştir.
-2. Manevra: 27 metre dikey AŞAĞI dalmıştır.`,
-      question: `a) Robotun son konumunu tam sayılarla toplama-çıkarma işlemi şeklinde modelleyip deniz seviyesine göre irtifasını bulunuz.
-b) Başlangıç noktası ile son nokta arasındaki net yer değiştirme miktarını yönüyle birlikte belirtiniz.`,
-      answer: `a) Son Konum = (-45) + (+18) + (-27) = -27 + (-27) = -54 metredir (Deniz seviyesinin 54 metre altındadır).
-b) Net Yer Değiştirme = (-54) - (-45) = -9 metredir (9 metre daha derine inmiştir).`,
+      stimulus: `Bir doğa fotoğrafçısı, makro lensiyle bir laleyi fotoğraflamak için kamerasını $90\\text{ cm}$ uzaklığa odaklamıştır. Rüzgâr nedeniyle lale sallanmış ve kaydedilen 3 fotoğrafta mesafe şöyle olmuştur:
+• 1. Kare: $84\\text{ cm}$
+• 2. Kare: $96\\text{ cm}$
+• 3. Kare: $92\\text{ cm}$`,
+      question: `a) Her üç karenin $90\\text{ cm}$ odak uzaklığına göre sapma miktarlarını mutlak değer matematiksel modeliyle ($|x - 90|$) gösteriniz.
+b) Hangi karenin en net fotoğraf olduğunu mutlak sapma değerine göre gerekçelendiriniz.`,
+      answer: `a) Mutlak Sapma Modelleri:
+• 1. Kare: $|84 - 90| = |-6| = 6\\text{ cm}$ sapma
+• 2. Kare: $|96 - 90| = |+6| = 6\\text{ cm}$ sapma
+• 3. Kare: $|92 - 90| = |+2| = 2\\text{ cm}$ sapma
+b) En Net Fotoğraf: 3. karedir ($92\\text{ cm}$). Çünkü mutlak sapma değeri ($2\\text{ cm}$) diğer karelerin sapmasından ($6\\text{ cm}$) daha küçüktür ($2 < 6$); yani hedeflenen $90\\text{ cm}$ odak uzaklığına en yakındır.`,
+      alternativeAnswers: [
+        'a) 1. kare: 6 cm, 2. kare: 6 cm, 3. kare: 2 cm. b) 3. kare en nettir çünkü odak noktasına sapması en azdır (2 cm < 6 cm).',
+        'a) |-6|=6, |+6|=6, |+2|=2 b) 3. kare (sapma 2 cm)'
+      ],
       rubric: [
-        { item: 'İşlemin [(-45) + 18 - 27 = -54 m] doğru kurulup çözülmesi', pts: Math.round((pointAllocations[1] || 15) * 0.6) },
-        { item: 'Net 9 metre aşağı inişin açıklanması', pts: Math.round((pointAllocations[1] || 15) * 0.4) }
+        { item: 'Üç karenin mutlak değer sapma modellerinin (|84-90|=6, |96-90|=6, |92-90|=2) doğru yazılması', pts: Math.round((pointAllocations[1] || 15) * 0.5) },
+        { item: 'En küçük mutlak sapmaya sahip 3. karenin en net fotoğraf olduğunun açıklanması', pts: (pointAllocations[1] || 15) - Math.round((pointAllocations[1] || 15) * 0.5) }
       ]
     },
     {
       number: 3,
       outcome: 'MAT.7.1.2',
-      outcomeTitle: 'Tam sayılarda çarpma ve bölme işlemlerini düzenli değişim problemleriyle ilişkilendirebilme',
-      difficulty: 'Orta',
-      level: 'Karmaşık Bilişsel Süreçler',
-      templateType: 'Öğrenci Diyaloğu & Kavram Yanılgısı',
+      outcomeTitle: 'Su sayacı bölmelerini denk kesir ve ondalık gösterimle ilişkilendirebilme (Ders Kitabı 1. Kitap, Sayfa 26)',
+      difficulty: 'Kolay',
+      level: 'Basit Bilişsel Süreçler',
+      templateType: 'Görsel / Deney / Günlük Hayat Durumu',
       points: pointAllocations[2] || 15,
-      stimulus: `Hava durumu istasyonunda çalışan ${name1} ve ${name2}, yayladaki gece sıcaklık düşüşünü izlemektedir:
-Sıcaklık saat 20.00'den itibaren her saat düzenli olarak 3 °C azalmıştır.
-${name1}: "5 saat sonraki sıcaklık değişimi 5 × (-3) = -15 °C'dir."
-${name2}: "Hayır, sıcaklık azaldığı için bölme yapmalıyız; değişim (-3) ÷ 5 = -0,6 °C olmalıdır."`,
-      question: `${name1} ve ${name2}'den hangisinin matematiksel yaklaşımı doğrudur? Çarpma işleminin tekrarlı toplama (azalma) anlamını açıklayarak gerekçelendiriniz.`,
-      answer: `${name1} haklıdır.
-Gerekçe: Her saat 3 °C düşüş (-3) olarak temsil edilir. 5 saat boyunca bu düşüş 5 kez tekrar etmiştir. Tekrarlı eşit azalmalar çarpma işlemi ile bulunur: 5 × (-3) = -15 °C. Dolayısıyla ortam sıcaklığı toplam 15 °C azalmıştır.`,
+      stimulus: `Bir okulda düzenlenen 'Su Tasarrufu Etkinliği'nde öğrencilere dijital su sayaçları verilmiştir:
+• Beyza'nın su sayacında yer alan 6 eşit bölmeden 3'ü doludur.
+• Yağmur'un su sayacında yer alan 8 eşit bölmeden 4'ü doludur.`,
+      question: `a) Beyza ve Yağmur'un sayaçlarındaki doluluk oranlarını rasyonel sayı olarak yazıp en sade hallerine getiriniz.
+b) Bu iki doluluk oranının ondalık gösterimlerini bulunuz ve denk kesir olup olmadıklarını açıklayınız.`,
+      answer: `a) Doluluk Rasyonel Kesirleri:
+• Beyza: $\\frac{3}{6} = \\frac{3 \\div 3}{6 \\div 3} = \\frac{1}{2}$
+• Yağmur: $\\frac{4}{8} = \\frac{4 \\div 4}{8 \\div 4} = \\frac{1}{2}$
+b) Ondalık Gösterim: $\\frac{1}{2} = \\frac{1 \\times 5}{2 \\times 5} = \\frac{5}{10} = 0,5$.
+Açıklama: Her iki kesrin de en sade hali $\\frac{1}{2}$ ve ondalık değeri $0,5$ çıktığı için bu iki doluluk oranı birbirine DENK kesirlerdir.`,
+      alternativeAnswers: [
+        'a) Beyza: 3/6 = 1/2, Yağmur: 4/8 = 1/2. b) 0,5\'tir; en sade halleri eşit olduğu için denk kesirlerdir.',
+        'a) 1/2 ve 1/2 b) 0,5 (denk kesirlerdir)'
+      ],
       rubric: [
-        { item: `${name1}'in haklı olduğunun doğru tespiti`, pts: Math.round((pointAllocations[2] || 15) * 0.4) },
-        { item: 'Tekrarlı azalmaların çarpma 5 × (-3) = -15 ile modellenmesi gerekçesi', pts: Math.round((pointAllocations[2] || 15) * 0.6) }
+        { item: '3/6 ve 4/8 kesirlerinin sadeleştirilerek 1/2 olarak bulunması', pts: Math.round((pointAllocations[2] || 15) * 0.5) },
+        { item: '0,5 ondalık değerinin ve denk kesir olduklarının doğru açıklanması', pts: (pointAllocations[2] || 15) - Math.round((pointAllocations[2] || 15) * 0.5) }
       ]
     },
     {
       number: 4,
-      outcome: 'MAT.7.1.3',
-      outcomeTitle: 'Rasyonel sayılarda çok adımlı işlemler ve parantezli işlem önceliği',
-      difficulty: 'Zor',
-      level: 'Karmaşık Bilişsel Süreçler',
+      outcome: 'MAT.7.1.2',
+      outcomeTitle: 'Devirli ondalık gösterimleri uzun bölme yöntemiyle belirleyebilme (Ders Kitabı 1. Kitap, Sayfa 43)',
+      difficulty: 'Orta',
+      level: 'Basit Bilişsel Süreçler',
       templateType: 'Hata Tespiti & Adım Analizi',
-      points: pointAllocations[3] || 15,
-      stimulus: `${name1}, tahtadaki rasyonel işlem sorusunu çözerken şu adımları yazmıştır:
-İşlem: [ (1/2 - 1/3) ÷ (5/6) ]
-1. Adım: Parantez içindeki çıkarma için payda eşitlemiştir: (3/6 - 2/6) = 1/6
-2. Adım: Bölme işleminde ikinci kesri aynen tutup çarpmıştır: (1/6) × (5/6)
-3. Adım: Sonucu 5/36 olarak bulmuştur.`,
-      question: `a) ${name1} ilk hatayı kaçıncı adımda yapmıştır?
-b) Hatanın nedenini açıklayınız ve işlemin doğru sonucunu en sade rasyonel sayı olarak bulunuz.`,
-      answer: `a) İlk hata 2. Adımda yapılmıştır.
-b) Hata Açıklaması: Kesirlerde bölme işlemi yapılırken birinci kesir aynen yazılır, ikinci kesir TERS ÇEVRİLİP çarpılır (5/6 yerine 6/5 ile çarpılmalıdır).
-Doğru Çözüm: (1/6) ÷ (5/6) = (1/6) × (6/5) = 6/30 = 1/5'tir.`,
+      points: pointAllocations[3] || 14,
+      stimulus: `$\\frac{5}{6}$ rasyonel sayısı ondalık gösterime dönüştürülmek istenmektedir.`,
+      question: `$\\frac{5}{6}$ rasyonel sayısını payı paydaya bölme yöntemiyle ondalık açılım biçiminde yazınız. Hangi basamağın devrettiğini devir çizgisiyle gösteriniz.`,
+      answer: `Uzun Bölme İşlemi:
+$5$'in içinde $6$ yoktur, bölüme $0,$ yazılır.
+$50$'de $6$ sekiz defa ($8 \\times 6 = 48$), kalan $2$.
+$20$'de $6$ üç defa ($3 \\times 6 = 18$), kalan $2$.
+$20$'de $6$ üç defa ($3 \\times 6 = 18$), kalan $2$...
+Kalan sürekli $2$ olarak tekrar ettiği için 3 basamağı devreder.
+Sonuç: $0,8333... = 0,8\\overline{3}$'tür (Sadece 3'ün üzerinde devir çizgisi bulunur).`,
+      alternativeAnswers: [
+        '5/6 = 0,8333... = 0,8\\bar{3} (Yalnızca 3 devreder).',
+        '0,8\\bar{3}'
+      ],
       rubric: [
-        { item: '2. adımdaki hatanın doğru tespiti', pts: Math.round((pointAllocations[3] || 15) * 0.4) },
-        { item: 'Bölmede ters çevirip çarpma kuralının açıklanması', pts: Math.round((pointAllocations[3] || 15) * 0.3) },
-        { item: 'Doğru sonucun (1/5) sadeleştirilerek bulunması', pts: Math.round((pointAllocations[3] || 15) * 0.3) }
+        { item: 'Uzun bölme işlem basamaklarının doğru kurulması', pts: Math.round((pointAllocations[3] || 14) * 0.5) },
+        { item: '0,8\\bar{3} gösteriminin ve devreden basamağın (3) hatasız belirlenmesi', pts: (pointAllocations[3] || 14) - Math.round((pointAllocations[3] || 14) * 0.5) }
       ]
     },
     {
       number: 5,
-      outcome: 'MAT.7.1.4',
-      outcomeTitle: 'Negatif rasyonel sayıları sayı doğrusunda karşılaştırabilme ve sıralayabilme',
+      outcome: 'MAT.7.1.3',
+      outcomeTitle: 'Futbol ligi averaj tablosunda negatif rasyonel sayıları sıralayabilme (Ders Kitabı 1. Kitap, Sayfa 51)',
       difficulty: 'Orta',
       level: 'Karmaşık Bilişsel Süreçler',
-      templateType: 'Kurgusal Senaryo & Vaka İncelemesi',
+      templateType: 'Durum & Özellik Matrisi (Tik Tablosu)',
       points: pointAllocations[4] || 14,
-      stimulus: `Bir laboratuvar deneyinde üç kimyasal sıvının donma noktaları ölçülmüştür:
-Sıvı X: -7/10 °C
-Sıvı Y: -4/5 °C
-Sıvı Z: -1/2 °C`,
-      question: `a) Sıvıların donma noktalarını paydalarını 10'da eşitleyerek karşılaştırınız.
-b) Donma sıcaklıklarını EN SOĞUKTAN (en küçükten) EN ILIĞA (en büyüğe) doğru "<" sembolü kullanarak sıralayınız.`,
-      answer: `a) Paydaları 10'da Eşitleme:
-• Sıvı X = -7/10 °C
-• Sıvı Y = -4/5 = -8/10 °C
-• Sıvı Z = -1/2 = -5/10 °C
-b) Sıralama: Negatif sayılarda sıfırdan en uzak olan en küçüktür (-8 < -7 < -5).
-Dolayısıyla: Sıvı Y (-4/5) < Sıvı X (-7/10) < Sıvı Z (-1/2). En soğuk sıvı Y'dir.`,
+      stimulus: `Bir okul futbol turnuvasında dört takımın averaj değerleri şöyledir:
+• A Takımı: $-3$
+• B Takımı: $+2$
+• C Takımı: $-7$
+• D Takımı: $0$`,
+      question: `a) Dört takımın averajlarını sayı doğrusundaki yerlerini dikkate alarak küçükten büyüğe sıralayınız.
+b) Negatif averajlarda mutlak değerce büyük olan sayının neden daha küçük kabul edildiğini açıklayınız.`,
+      answer: `a) Sıralama: $-7 < -3 < 0 < +2$ (Takımlar: C Takımı < A Takımı < D Takımı < B Takımı).
+b) Gerekçe: Sayı doğrusunda sıfırın solunda kalan negatif sayılarda sıfırdan uzaklaştıkça sayı küçülür. $-7$ sayısı sayı doğrusunda $-3$'ün daha solunda kaldığı için daha küçük bir averajı ifade eder.`,
+      alternativeAnswers: [
+        'a) -7 < -3 < 0 < +2 (C < A < D < B) b) Sayı doğrusunda daha solda olan sayı daha küçüktür.',
+        'a) C Takımı < A Takımı < D Takımı < B Takımı b) -7 sıfırdan daha uzakta ve soldadır.'
+      ],
       rubric: [
-        { item: 'Payda eşitlemelerinin (-7/10, -8/10, -5/10) hatasız yapılması', pts: Math.round((pointAllocations[4] || 14) * 0.5) },
-        { item: 'Negatif sıralamanın (-4/5 < -7/10 < -1/2) doğru kurulması', pts: Math.round((pointAllocations[4] || 14) * 0.5) }
+        { item: 'Averaj sıralamasının (-7 < -3 < 0 < +2) doğru yapılması', pts: Math.round((pointAllocations[4] || 14) * 0.5) },
+        { item: 'Sayı doğrusunda sola gidildikçe negatif sayıların küçüleceğinin açıklanması', pts: (pointAllocations[4] || 14) - Math.round((pointAllocations[4] || 14) * 0.5) }
       ]
     },
     {
       number: 6,
-      outcome: 'MAT.7.2.1',
-      outcomeTitle: 'Cebirsel ifadeleri modelleyerek geometrik çevre ve alan ilişkilerini açıklayabilme',
-      difficulty: 'Orta',
+      outcome: 'MAT.7.1.3',
+      outcomeTitle: 'Negatif rasyonel sayıların sayı doğrusunda karşılaştırılması (Ders Kitabı 1. Kitap, Sayfa 52)',
+      difficulty: 'Zor',
       level: 'Karmaşık Bilişsel Süreçler',
-      templateType: 'Kurgusal Senaryo & Vaka İncelemesi',
-      points: pointAllocations[5] || 14,
-      stimulus: `Bir belediye parkında projelendirilen dikdörtgen şeklindeki çiçek bahçesinin kenarları:
-Uzun Kenar: (4x + 5) metre
-Kısa Kenar: (3x - 2) metre olarak planlanmıştır.
-Bu bahçenin etrafına 1 sıra dekoratif ahşap çit çekilecektir.`,
-      question: `a) Ahşap çitin toplam uzunluğunu veren çevreyi x cinsinden en sade cebirsel ifade olarak yazınız.
-b) x = 5 metre olduğunda kaç metre ahşap çite ihtiyaç duyulacağını hesaplayınız.`,
-      answer: `a) Çevre = 2 × [Uzun Kenar + Kısa Kenar]
-Çevre = 2 × [(4x + 5) + (3x - 2)] = 2 × (7x + 3) = 14x + 6 metredir.
-b) x = 5 için: Çevre = 14 × (5) + 6 = 70 + 6 = 76 metre ahşap çit gerekir.`,
+      templateType: 'Öğrenci Diyaloğu & Kavram Yanılgısı',
+      points: pointAllocations[4] || 14,
+      stimulus: `Tahtadaki $-\\frac{2}{3}$, $-\\frac{5}{6}$ ve $-\\frac{7}{12}$ rasyonel sayılarını küçükten büyüğe sıralamak isteyen iki öğrenci tartışmaktadır:
+Öğrenci 1: "Paydaları 12'de eşitlersek $-\\frac{8}{12}$, $-\\frac{10}{12}$ ve $-\\frac{7}{12}$ olur. Payı büyük olan daha büyük olduğu için sıralama $-\\frac{7}{12} < -\\frac{8}{12} < -\\frac{10}{12}$ olmalıdır."
+Öğrenci 2: "Negatif sayılarda sayı doğrusunda sıfırdan en uzakta ve en solda olan sayı en küçüktür. $-10$ sayısı $-7$'den küçük olduğu için en küçük kesir $-\\frac{10}{12}$'dir."`,
+      question: `Hangi öğrencinin açıklaması doğrudur? Rasyonel sayıların doğru küçükten büyüğe sıralamasını yazınız.`,
+      answer: `Öğrenci 2 haklıdır.
+Gerekçe: Negatif sayılarda mutlak değeri büyük olan sayı, sayı doğrusunda sıfırın daha solunda kaldığı için daha küçüktür ($-10 < -8 < -7$).
+Doğru Sıralama:
+$-\\frac{10}{12} < -\\frac{8}{12} < -\\frac{7}{12}$
+Orijinal halleriyle: $-\\frac{5}{6} < -\\frac{2}{3} < -\\frac{7}{12}$.`,
+      alternativeAnswers: [
+        'Öğrenci 2 haklıdır. Doğru sıralama: -5/6 < -2/3 < -7/12 (-10/12 < -8/12 < -7/12).',
+        '2. öğrenci haklıdır (-5/6 < -2/3 < -7/12).'
+      ],
       rubric: [
-        { item: 'Çevre cebirsel ifadesinin (14x + 6) hatasız bulunması', pts: Math.round((pointAllocations[5] || 14) * 0.5) },
-        { item: 'x = 5 değerinin yerine konulup 76 m bulunması', pts: Math.round((pointAllocations[5] || 14) * 0.5) }
+        { item: "Öğrenci 2'nin haklı olduğunun tespiti ve gerekçelendirilmesi", pts: Math.round((pointAllocations[4] || 14) * 0.5) },
+        { item: 'Doğru sıralamanın (-5/6 < -2/3 < -7/12) eksiksiz yazılması', pts: (pointAllocations[4] || 14) - Math.round((pointAllocations[4] || 14) * 0.5) }
       ]
     },
     {
       number: 7,
+      outcome: 'MAT.7.1.4',
+      outcomeTitle: 'Enerji giderlerindeki aylık değişimi tam sayı ve rasyonel işlemlerle çözebilme (Ders Kitabı 1. Kitap, Sayfa 62)',
+      difficulty: 'Orta',
+      level: 'Karmaşık Bilişsel Süreçler',
+      templateType: 'Kurgusal Senaryo & Vaka İncelemesi',
+      points: pointAllocations[5] || 14,
+      stimulus: `Gençtürk ailesi bir ay boyunca enerji tasarrufu tedbirleri uygulamıştır:
+• Elektrik tüketiminde tasarruf sağlayarak faturada $+140\\text{ TL}$ tasarruf elde etmişlerdir.
+• Ancak aynı ay sert kış koşulları sebebiyle doğalgazda $-260\\text{ TL}$ ek tüketim gideri oluşmuştur.`,
+      question: `a) Gençtürk ailesinin aylık toplam enerji bütçesindeki değişimi yönlü tam sayılarla işlem kurarak hesaplayınız.
+b) Elde ettiğiniz sonucun ailenin toplam giderini nasıl etkilediğini açıklayınız.`,
+      answer: `a) Bütçe Değişim İşlemi:
+$(+140) + (-260) = -120\\text{ TL}$
+b) Değerlendirme: Sonuç $-120\\text{ TL}$ çıktığı için Gençtürk ailesinin enerji giderlerinde net $120\\text{ TL}$'lik bir artış (ek masraf) meydana gelmiştir.`,
+      alternativeAnswers: [
+        'a) (+140) + (-260) = -120 TL b) Ailenin gideri net 120 TL artmıştır (120 TL ek masraf).',
+        'a) 140 - 260 = -120 TL b) 120 TL ek gider'
+      ],
+      rubric: [
+        { item: 'Toplama işleminin [(+140) + (-260) = -120 TL] doğru kurulması ve hesaplanması', pts: Math.round((pointAllocations[5] || 14) * 0.5) },
+        { item: 'Negatif sonucun 120 TL ek masraf olarak doğru yorumlanması', pts: (pointAllocations[5] || 14) - Math.round((pointAllocations[5] || 14) * 0.5) }
+      ]
+    },
+    {
+      number: 8,
+      outcome: 'MAT.7.1.4',
+      outcomeTitle: 'Rasyonel sayılarda bölme ve kesim problemi (Ders Kitabı 1. Kitap, Sayfa 84)',
+      difficulty: 'Orta',
+      level: 'Karmaşık Bilişsel Süreçler',
+      templateType: 'Kurgusal Senaryo & Vaka İncelemesi',
+      points: pointAllocations[6] || 14,
+      stimulus: `Bir marangoz $180\\text{ cm}$ uzunluğundaki bir ahşap çıtayı, her birinin uzunluğu $7\\frac{1}{2}\\text{ cm}$ olan eşit parçalara ayırmak istemektedir. Her bir kesim işlemi $15\\text{ saniye}$ sürmektedir.`,
+      question: `a) Bu çıtadan kaç adet parça elde edilir? İşlemini gösteriniz.
+b) Tüm kesim işlemlerinin toplamda kaç saniye süreceğini hesaplayınız. (Parça sayısı ile kesim sayısı arasındaki ilişkiye dikkat ediniz).`,
+      answer: `a) Parça Sayısı:
+$7\\frac{1}{2} = \\frac{15}{2}\\text{ cm}$
+$\\text{Parça Sayısı} = 180 \\div \\frac{15}{2} = 180 \\times \\frac{2}{15} = 12 \\times 2 = 24\\text{ adet parça}$.
+b) Toplam Süre:
+24 parça elde etmek için $24 - 1 = 23\\text{ kesim}$ yapılır.
+$\\text{Toplam Süre} = 23 \\times 15 = 345\\text{ saniye}$ sürer ($5\\text{ dakika } 45\\text{ saniye}$).`,
+      alternativeAnswers: [
+        'a) 180 / (15/2) = 24 parça. b) 24 parça için 23 kesim yapılır; 23 x 15 = 345 saniye (5 dk 45 sn).',
+        'a) 24 parça b) 345 saniye (23 kesim)'
+      ],
+      rubric: [
+        { item: 'a şıkkında rasyonel bölme ile 24 parça sonucunun bulunması', pts: Math.round((pointAllocations[6] || 14) * 0.5) },
+        { item: 'b şıkkında kesim sayısının (24 - 1 = 23) alınıp 345 saniyenin hatasız hesaplanması', pts: (pointAllocations[6] || 14) - Math.round((pointAllocations[6] || 14) * 0.5) }
+      ]
+    }
+  ];
+
+  const matQuestions_SetAlgebra: GeneratedQuestionItem[] = [
+    {
+      number: 1,
+      outcome: 'MAT.7.2.1',
+      outcomeTitle: 'Cebirsel ifadeleri modelleyerek toplama/çıkarma işlemlerini geometrik çevreyle ilişkilendirebilme',
+      difficulty: 'Orta',
+      level: 'Karmaşık Bilişsel Süreçler',
+      templateType: 'Kurgusal Senaryo & Vaka İncelemesi',
+      points: 15,
+      stimulus: `Bir okul bahçesine yapılacak dikdörtgen şeklindeki basketbol sahasının kenar uzunlukları:
+Uzun Kenar: $(5x + 3)\\text{ metre}$
+Kısa Kenar: $(2x - 1)\\text{ metre}$ olarak projelendirilmiştir.
+Sahanın çevresine güvenlik amacıyla 2 sıra koruyucu şerit çekilecektir.`,
+      question: `a) Basketbol sahasının 1 turluk çevresini x cinsinden en sade cebirsel ifade olarak bulunuz.
+b) $x = 6\\text{ metre}$ için çekilecek 2 sıra koruyucu şeridin toplam uzunluğunun kaç metre olduğunu hesaplayınız.`,
+      answer: `a) Çevre = $2 \\times [(5x + 3) + (2x - 1)] = 2 \\times (7x + 2) = 14x + 4\\text{ metre}$.
+b) $x = 6$ için 1 tur = $14(6) + 4 = 88\\text{ m}$. 2 sıra şerit: $88 \\times 2 = 176\\text{ metre}$.`,
+      alternativeAnswers: ['a) 14x + 4 b) 176 metre'],
+      rubric: [
+        { item: '1 turluk çevre cebirsel ifadesinin (14x + 4) doğru bulunması', pts: 8 },
+        { item: 'x = 6 konularak 2 sıra için 176 m sonucunun elde edilmesi', pts: 7 }
+      ]
+    },
+    {
+      number: 2,
       outcome: 'MAT.7.2.2',
       outcomeTitle: 'Birinci dereceden bir bilinmeyenli denklem kurarak para ve adet problemlerini çözebilme',
       difficulty: 'Zor',
       level: 'Karmaşık Bilişsel Süreçler',
       templateType: 'Dilemma (İkilem) & Denklem Çözümü',
-      points: pointAllocations[6] || 13,
-      stimulus: `Kumbarasında sadece 5 TL ve 10 TL'lik madeni paralar biriktiren ${name1}'in kumbarasında toplam 30 adet madeni para bulunmaktadır.
-Kumbaradaki paraların toplam parasal değeri 220 TL'dir.`,
-      question: `a) 10 TL'lik madeni paraların sayısına "x" diyerek toplam parasal değeri veren birinci dereceden bir bilinmeyenli denklemi kurunuz.
-b) Denklemi çözerek kumbarada kaç adet 5 TL ve kaç adet 10 TL olduğunu bulunuz.`,
-      answer: `a) 10 TL sayısı = x adet | 5 TL sayısı = (30 - x) adet
-Toplam Değer Denklemi: 10·x + 5·(30 - x) = 220
-b) Çözüm:
-10x + 150 - 5x = 220
-5x + 150 = 220
-5x = 220 - 150 => 5x = 70 => x = 14 adet (10 TL'lik para sayısı).
-5 TL'lik Para Sayısı = 30 - 14 = 16 adettir.
-Kontrol: 14 × 10 = 140 TL, 16 × 5 = 80 TL. Toplam: 140 + 80 = 220 TL.`,
+      points: 15,
+      stimulus: `Kumbarasında sadece $5\\text{ TL}$ ve $10\\text{ TL}$'lik madenî paralar biriktiren öğrencinin kumbarasında toplam 30 adet madenî para bulunmaktadır.
+Kumbaradaki paraların toplam parasal değeri $220\\text{ TL}$'dir.`,
+      question: `a) $10\\text{ TL}$'lik madenî paraların sayısına "x" diyerek toplam parasal değeri veren birinci dereceden bir bilinmeyenli denklemi kurunuz.
+b) Denklemi çözerek kumbarada kaç adet $5\\text{ TL}$ ve kaç adet $10\\text{ TL}$ olduğunu bulunuz.`,
+      answer: `a) $10x + 5(30 - x) = 220$
+b) $10x + 150 - 5x = 220 \\Rightarrow 5x = 70 \\Rightarrow x = 14$ adet ($10\\text{ TL}$).
+$5\\text{ TL}$ sayısı = $30 - 14 = 16\\text{ adet}$.`,
+      alternativeAnswers: ['a) 10x + 5(30-x) = 220 b) 14 adet 10 TL, 16 adet 5 TL'],
       rubric: [
-        { item: 'Denklemin [10x + 5(30 - x) = 220] hatasız kurulması', pts: Math.round((pointAllocations[6] || 13) * 0.4) },
-        { item: 'Denklemin çözülerek x = 14 (10 TL) bulunması', pts: Math.round((pointAllocations[6] || 13) * 0.3) },
-        { item: '16 adet 5 TL olduğunun doğru hesaplanması', pts: Math.round((pointAllocations[6] || 13) * 0.3) }
+        { item: 'Denklemin [10x + 5(30 - x) = 220] hatasız kurulması', pts: 8 },
+        { item: 'x = 14 (10 TL) ve 16 adet 5 TL olduğunun doğru hesaplanması', pts: 7 }
       ]
     }
   ];
-
   // ---------------------------------------------------------------------------
   // C-1. 5. SINIF TÜRKÇE (Set A: Deniz Feneri Bekçisi & Yardımlaşma)
   // ---------------------------------------------------------------------------
@@ -1979,6 +2140,7 @@ b) Mark NEVER plays tennis.`,
     ...fenQuestions_SetB,
     ...matQuestions_SetA,
     ...matQuestions_SetB,
+    ...matQuestions_SetAlgebra,
     ...turkceQuestions_5th_SetA,
     ...turkceQuestions_5th_SetB,
     ...turkceQuestions_5th_SetC,
@@ -2032,6 +2194,18 @@ b) Mark NEVER plays tennis.`,
     }
 
     const availablePool = [
+      ...internalPool.map((q) => ({
+        outcome: q.outcome,
+        outcomeTitle: q.outcomeTitle,
+        difficulty: q.difficulty,
+        level: q.level,
+        templateType: q.templateType,
+        stimulus: q.stimulus || '',
+        question: q.question,
+        answer: q.answer,
+        alternativeAnswers: q.alternativeAnswers,
+        rubric: q.rubric
+      })),
       ...matchingSampleQuestionsWithExam.map(({ q, parentExam }) => {
         let stim = q.stimulus || '';
         const req = detectSourceRequirement(q.questionText, q.archetype, q.contextText, stim);
@@ -2060,18 +2234,6 @@ b) Mark NEVER plays tennis.`,
           rubric: (q.rubric || []).map((r: any) => ({ item: r.criterion, pts: r.points }))
         };
       }),
-      ...internalPool.map((q) => ({
-        outcome: q.outcome,
-        outcomeTitle: q.outcomeTitle,
-        difficulty: q.difficulty,
-        level: q.level,
-        templateType: q.templateType,
-        stimulus: q.stimulus || '',
-        question: q.question,
-        answer: q.answer,
-        alternativeAnswers: q.alternativeAnswers,
-        rubric: q.rubric
-      })),
       ...crossGradeSampleQuestionsWithExam.map(({ q, parentExam }) => {
         let stim = q.stimulus || '';
         const req = detectSourceRequirement(q.questionText, q.archetype, q.contextText, stim);
@@ -2123,7 +2285,7 @@ b) Mark NEVER plays tennis.`,
         alternativeAnswers: q.alternativeAnswers,
         rubric: (q.rubric && q.rubric.length > 0) ? q.rubric : [
           { item: 'Kavramsal teşhis ve bilimsel tespit', pts: Math.round((pointAllocations[idx] || 15) * 0.5) },
-          { item: 'Analitik gerekçelendirme ve modelleme basamağı', pts: Math.round((pointAllocations[idx] || 15) * 0.5) }
+          { item: 'Analitik gerekçelendirme ve modelleme basamağı', pts: (pointAllocations[idx] || 15) - Math.round((pointAllocations[idx] || 15) * 0.5) }
         ]
       };
     }
