@@ -31,7 +31,8 @@ import {
   Save,
   CheckSquare,
   Square,
-  BarChart3
+  BarChart3,
+  AlertTriangle
 } from 'lucide-react';
 
 const GENERAL_SELF_EVAL_OPTIONS: {
@@ -156,6 +157,11 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
     option: GeneralSelfEvaluationOption,
     targetQNum: number = qNum
   ) => {
+    const targetQ = questions.find(q => (q.questionNumber || 0) === targetQNum) || currentQ;
+    if (targetQ?.hasMissingSourceError) {
+      return;
+    }
+
     const ansData: QuestionSessionData = session.answers[targetQNum] || {
       questionNumber: targetQNum,
       studentAnswer: '',
@@ -186,6 +192,10 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
   // Rubrik kriteri işaretle / kaldır
   const handleToggleRubricCriterion = (criterionIdx: number, targetQNum: number = qNum) => {
     const targetQ = questions.find(q => (q.questionNumber || 0) === targetQNum) || currentQ;
+    if (targetQ?.hasMissingSourceError) {
+      return;
+    }
+
     const ansData: QuestionSessionData = session.answers[targetQNum] || {
       questionNumber: targetQNum,
       studentAnswer: '',
@@ -234,6 +244,10 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
   // Tüm kriterleri karşılandı veya sıfırla
   const handleSetAllCriteria = (checkAll: boolean, targetQNum: number = qNum) => {
     const targetQ = questions.find(q => (q.questionNumber || 0) === targetQNum) || currentQ;
+    if (targetQ?.hasMissingSourceError) {
+      return;
+    }
+
     const ansData: QuestionSessionData = session.answers[targetQNum] || {
       questionNumber: targetQNum,
       studentAnswer: '',
@@ -403,12 +417,15 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
 
   // Soru durumu rozeti
   const getQuestionStatusBadge = (questionNum: number) => {
+    const q = questions.find(item => item.questionNumber === questionNum);
+    if (q?.hasMissingSourceError) {
+      return { label: 'Kaynak Eksik', bg: 'bg-amber-100 text-amber-900 border-amber-300 font-bold' };
+    }
     const a = session.answers[questionNum];
     if (!a || (!isValidStudentAnswer(a.studentAnswer) && !a.isEvaluated)) {
       return { label: 'Boş', bg: 'bg-slate-100 text-slate-500 border-slate-200' };
     }
     if (a.isEvaluated) {
-      const q = questions.find(item => item.questionNumber === questionNum);
       const maxPts = q?.points || 15;
       if (a.earnedPoints >= maxPts) {
         return { label: `${a.earnedPoints} p (Tam)`, bg: 'bg-emerald-100 text-emerald-900 border-emerald-300 font-bold' };
@@ -768,9 +785,16 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
                         </span>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <span className="text-xs font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded">
-                          {ans?.isEvaluated ? `Öz Değerlendirme: ${ans.earnedPoints} / ${q.points} p` : `Değerlendirilmedi (${q.points} p)`}
-                        </span>
+                        {q.hasMissingSourceError ? (
+                          <span className="text-xs font-bold text-amber-800 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded flex items-center gap-1">
+                            <AlertTriangle className="w-3 h-3 text-amber-600 shrink-0" />
+                            Kaynak Eksik
+                          </span>
+                        ) : (
+                          <span className="text-xs font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded">
+                            {ans?.isEvaluated ? `Öz Değerlendirme: ${ans.earnedPoints} / ${q.points} p` : `Değerlendirilmedi (${q.points} p)`}
+                          </span>
+                        )}
                         <button
                           onClick={() => {
                             setActiveQuestionIndex(idx);
@@ -783,167 +807,181 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
                       </div>
                     </div>
 
-                    {/* Student text preview */}
-                    <div className="text-xs text-slate-700 bg-white p-3 rounded-lg border border-slate-200">
-                      <strong className="block text-slate-500 text-[11px] mb-1">Öğrenci Yanıtı:</strong>
-                      {hasValidAnswer ? (
-                        <div className="whitespace-pre-line font-medium text-slate-800 leading-relaxed">
-                          <MathRenderer content={ans.studentAnswer} />
+                    {q.hasMissingSourceError ? (
+                      <div className="p-4 rounded-xl bg-amber-50/80 border border-amber-200 text-amber-900 space-y-2">
+                        <div className="flex items-center space-x-2 font-bold text-xs text-amber-800">
+                          <AlertTriangle className="w-4 h-4 text-amber-600 shrink-0" />
+                          <span>Kaynak Materyal Bulunamadı - Değerlendirme Dışı</span>
                         </div>
-                      ) : isCompletelyEmpty ? (
-                        <p className="italic text-slate-400">Bu soru için yanıt yazılmadı (Boş bırakıldı).</p>
-                      ) : (
-                        <div className="space-y-1.5">
-                          <div className="whitespace-pre-line font-medium text-slate-600 bg-amber-50/60 p-2.5 rounded-lg border border-amber-200">
-                            <MathRenderer content={rawAnswer} />
-                          </div>
-                          <p className="text-[11px] text-amber-800 font-medium flex items-center">
-                            <span>⚠️ Yanıtınız öz değerlendirme için çok kısa veya anlamsız (tek harf/sembol yerine en az 2 karakter, anlamlı açıklama veya işlem basamağı beklenmektedir).</span>
-                          </p>
-                        </div>
-                      )}
-                    </div>
-
-                    {/* Model Answer Preview */}
-                    <div className="text-xs text-emerald-950 bg-emerald-50/60 p-3 rounded-lg border border-emerald-200">
-                      <strong className="block text-emerald-800 text-[11px] mb-1">MEBİ Model Cevap & Gerekçe:</strong>
-                      <div className="whitespace-pre-line font-medium text-slate-800">
-                        <MathRenderer content={q.modelAnswer} />
-                      </div>
-                    </div>
-
-                    {/* Solution Explanation if present */}
-                    {q.solutionExplanation && (
-                      <div className="bg-white/90 p-3 rounded-lg border border-slate-200 text-slate-700 text-xs">
-                        <strong className="block text-indigo-900 mb-0.5 font-bold">Çözüm Adımları Açıklaması:</strong>
-                        <p className="whitespace-pre-line leading-relaxed">{q.solutionExplanation}</p>
-                      </div>
-                    )}
-
-                    {/* 1. Genel Öz Değerlendirme Kanaati */}
-                    {hasValidAnswer ? (
-                      <div className="bg-slate-50 border border-slate-200 rounded-xl p-3.5 space-y-2">
-                        <div className="flex flex-wrap items-center justify-between gap-1.5">
-                          <strong className="text-slate-800 text-xs font-bold flex items-center">
-                            <span className="w-4 h-4 rounded-full bg-indigo-600 text-white text-[10px] font-bold inline-flex items-center justify-center mr-1.5">1</span>
-                            Genel Kanaatin: Cevabının ne kadar doğru olduğunu düşünüyorsun?
-                          </strong>
-                          {ans?.generalSelfEvaluation && (
-                            <span className="text-[11px] font-semibold text-indigo-700 bg-indigo-50 border border-indigo-200 px-2 py-0.5 rounded-md">
-                              Seçim: {GENERAL_SELF_EVAL_OPTIONS.find(o => o.key === ans.generalSelfEvaluation)?.label}
-                            </span>
-                          )}
-                        </div>
-                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-0.5">
-                          {GENERAL_SELF_EVAL_OPTIONS.map(opt => {
-                            const isSelected = ans?.generalSelfEvaluation === opt.key;
-                            return (
-                              <button
-                                key={opt.key}
-                                type="button"
-                                onClick={() => handleSetGeneralSelfEvaluation(opt.key, num)}
-                                className={`px-2.5 py-2 rounded-xl text-xs font-semibold border transition-all text-center cursor-pointer ${
-                                  isSelected
-                                    ? opt.activeClasses
-                                    : 'bg-white hover:bg-slate-100 border-slate-200 text-slate-700'
-                                }`}
-                              >
-                                {opt.label}
-                              </button>
-                            );
-                          })}
-                        </div>
-                        <p className="text-[10px] text-slate-500 italic">
-                          * Bu seçim senin kişisel kanaatindir; doğrudan puan üretmez ve aşağıdaki rubrik puanını değiştirmez.
+                        <p className="text-xs text-amber-800 leading-relaxed">
+                          {q.sourceValidationError || 'Bu soru metin, tablo veya görsel gibi bir kaynak materyale dayanmaktadır ancak kaynak materyal sınavda bulunamadığından soru öğrenci öz değerlendirmesine ve puanlamaya dahil edilmemiştir.'}
                         </p>
                       </div>
                     ) : (
-                      <div className="p-3 bg-slate-100/80 border border-slate-200 rounded-xl text-xs text-slate-500 flex items-center justify-between">
-                        <span>
-                          {isCompletelyEmpty 
-                            ? 'Bu soru için yanıt yazılmadığından genel öz değerlendirme yapılamaz.' 
-                            : 'Yeterli bir yanıt girilmediğinden (tek harf veya sembol) genel öz değerlendirme yapılamaz.'}
-                        </span>
-                      </div>
-                    )}
+                      <>
+                        {/* Student text preview */}
+                        <div className="text-xs text-slate-700 bg-white p-3 rounded-lg border border-slate-200">
+                          <strong className="block text-slate-500 text-[11px] mb-1">Öğrenci Yanıtı:</strong>
+                          {hasValidAnswer ? (
+                            <div className="whitespace-pre-line font-medium text-slate-800 leading-relaxed">
+                              <MathRenderer content={ans.studentAnswer} />
+                            </div>
+                          ) : isCompletelyEmpty ? (
+                            <p className="italic text-slate-400">Bu soru için yanıt yazılmadı (Boş bırakıldı).</p>
+                          ) : (
+                            <div className="space-y-1.5">
+                              <div className="whitespace-pre-line font-medium text-slate-600 bg-amber-50/60 p-2.5 rounded-lg border border-amber-200">
+                                <MathRenderer content={rawAnswer} />
+                              </div>
+                              <p className="text-[11px] text-amber-800 font-medium flex items-center">
+                                <span>⚠️ Yanıtınız öz değerlendirme için çok kısa veya anlamsız (tek harf/sembol yerine en az 2 karakter, anlamlı açıklama veya işlem basamağı beklenmektedir).</span>
+                              </p>
+                            </div>
+                          )}
+                        </div>
 
-                    {/* 2. Rubrik Bazlı Ayrıntılı Öz Değerlendirme */}
-                    <div className="text-xs space-y-2 pt-1">
-                      <div className="flex flex-wrap items-center justify-between gap-1.5">
-                        <strong className="text-slate-800 text-xs font-bold flex items-center">
-                          <span className="w-4 h-4 rounded-full bg-indigo-600 text-white text-[10px] font-bold inline-flex items-center justify-center mr-1.5">2</span>
-                          Analitik Rubrik Ölçütleri:
-                        </strong>
-                        {hasValidAnswer && (
-                          <div className="flex items-center space-x-1.5 text-[11px]">
-                            <button
-                              type="button"
-                              onClick={() => handleSetAllCriteria(true, num)}
-                              className="px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 hover:bg-emerald-100 border border-emerald-200 font-semibold cursor-pointer"
-                            >
-                              Tümünü Karşıladım
-                            </button>
-                            <button
-                              type="button"
-                              onClick={() => handleSetAllCriteria(false, num)}
-                              className="px-2 py-0.5 rounded bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 font-semibold cursor-pointer"
-                            >
-                              Temizle
-                            </button>
+                        {/* Model Answer Preview */}
+                        <div className="text-xs text-emerald-950 bg-emerald-50/60 p-3 rounded-lg border border-emerald-200">
+                          <strong className="block text-emerald-800 text-[11px] mb-1">MEBİ Model Cevap & Gerekçe:</strong>
+                          <div className="whitespace-pre-line font-medium text-slate-800">
+                            <MathRenderer content={q.modelAnswer} />
+                          </div>
+                        </div>
+
+                        {/* Solution Explanation if present */}
+                        {q.solutionExplanation && (
+                          <div className="bg-white/90 p-3 rounded-lg border border-slate-200 text-slate-700 text-xs">
+                            <strong className="block text-indigo-900 mb-0.5 font-bold">Çözüm Adımları Açıklaması:</strong>
+                            <p className="whitespace-pre-line leading-relaxed">{q.solutionExplanation}</p>
                           </div>
                         )}
-                      </div>
 
-                      {hasValidAnswer ? (
-                        <div className="space-y-1">
-                          {q.rubric.map((r, rIdx) => {
-                            const isMet = checked.includes(rIdx);
-                            return (
-                              <button 
-                                key={rIdx} 
+                        {/* 1. Genel Öz Değerlendirme Kanaati */}
+                        {hasValidAnswer ? (
+                          <div className="bg-slate-50 border border-slate-200 rounded-xl p-3.5 space-y-2">
+                            <div className="flex flex-wrap items-center justify-between gap-1.5">
+                              <strong className="text-slate-800 text-xs font-bold flex items-center">
+                                <span className="w-4 h-4 rounded-full bg-indigo-600 text-white text-[10px] font-bold inline-flex items-center justify-center mr-1.5">1</span>
+                                Genel Kanaatin: Cevabının ne kadar doğru olduğunu düşünüyorsun?
+                              </strong>
+                              {ans?.generalSelfEvaluation && (
+                                <span className="text-[11px] font-semibold text-indigo-700 bg-indigo-50 border border-indigo-200 px-2 py-0.5 rounded-md">
+                                  Seçim: {GENERAL_SELF_EVAL_OPTIONS.find(o => o.key === ans.generalSelfEvaluation)?.label}
+                                </span>
+                              )}
+                            </div>
+                            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-0.5">
+                              {GENERAL_SELF_EVAL_OPTIONS.map(opt => {
+                                const isSelected = ans?.generalSelfEvaluation === opt.key;
+                                return (
+                                  <button
+                                    key={opt.key}
+                                    type="button"
+                                    onClick={() => handleSetGeneralSelfEvaluation(opt.key, num)}
+                                    className={`px-2.5 py-2 rounded-xl text-xs font-semibold border transition-all text-center cursor-pointer ${
+                                      isSelected
+                                        ? opt.activeClasses
+                                        : 'bg-white hover:bg-slate-100 border-slate-200 text-slate-700'
+                                    }`}
+                                  >
+                                    {opt.label}
+                                  </button>
+                                );
+                              })}
+                            </div>
+                            <p className="text-[10px] text-slate-500 italic">
+                              * Bu seçim senin kişisel kanaatindir; doğrudan puan üretmez ve aşağıdaki rubrik puanını değiştirmez.
+                            </p>
+                          </div>
+                        ) : (
+                          <div className="p-3 bg-slate-100/80 border border-slate-200 rounded-xl text-xs text-slate-500 flex items-center justify-between">
+                            <span>
+                              {isCompletelyEmpty 
+                                ? 'Bu soru için yanıt yazılmadığından genel öz değerlendirme yapılamaz.' 
+                                : 'Yeterli bir yanıt girilmediğinden (tek harf veya sembol) genel öz değerlendirme yapılamaz.'}
+                            </span>
+                          </div>
+                        )}
+
+                        {/* 2. Rubrik Bazlı Ayrıntılı Öz Değerlendirme */}
+                        <div className="text-xs space-y-2 pt-1">
+                          <div className="flex flex-wrap items-center justify-between gap-1.5">
+                            <strong className="text-slate-800 text-xs font-bold flex items-center">
+                              <span className="w-4 h-4 rounded-full bg-indigo-600 text-white text-[10px] font-bold inline-flex items-center justify-center mr-1.5">2</span>
+                              Analitik Rubrik Ölçütleri:
+                            </strong>
+                            {hasValidAnswer && (
+                              <div className="flex items-center space-x-1.5 text-[11px]">
+                                <button
+                                  type="button"
+                                  onClick={() => handleSetAllCriteria(true, num)}
+                                  className="px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 hover:bg-emerald-100 border border-emerald-200 font-semibold cursor-pointer"
+                                >
+                                  Tümünü Karşıladım
+                                </button>
+                                <button
+                                  type="button"
+                                  onClick={() => handleSetAllCriteria(false, num)}
+                                  className="px-2 py-0.5 rounded bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 font-semibold cursor-pointer"
+                                >
+                                  Temizle
+                                </button>
+                              </div>
+                            )}
+                          </div>
+
+                          {hasValidAnswer ? (
+                            <div className="space-y-1">
+                              {q.rubric.map((r, rIdx) => {
+                                const isMet = checked.includes(rIdx);
+                                return (
+                                  <button 
+                                    key={rIdx} 
+                                    type="button"
+                                    onClick={() => handleToggleRubricCriterion(rIdx, num)}
+                                    className={`w-full text-left flex items-center justify-between p-2 rounded-lg border text-[11px] transition-colors cursor-pointer ${
+                                      isMet
+                                        ? 'bg-emerald-50 border-emerald-200 text-emerald-900 font-semibold shadow-2xs'
+                                        : 'bg-white border-slate-200 text-slate-600 hover:border-slate-300'
+                                    }`}
+                                  >
+                                    <span className="flex items-center">
+                                      {isMet ? (
+                                        <CheckSquare className="w-3.5 h-3.5 text-emerald-600 mr-1.5 shrink-0" />
+                                      ) : (
+                                        <Square className="w-3.5 h-3.5 text-slate-300 mr-1.5 shrink-0" />
+                                      )}
+                                      {r.criterion}
+                                    </span>
+                                    <span className={isMet ? 'text-emerald-700 font-bold' : 'text-slate-400 font-medium'}>
+                                      {isMet ? `+${r.points} p` : `0 / ${r.points} p`}
+                                    </span>
+                                  </button>
+                                );
+                              })}
+                            </div>
+                          ) : (
+                            <div className="p-2.5 rounded-lg bg-slate-100/70 border border-slate-200 text-[11px] text-slate-500 italic flex items-center justify-between">
+                              <span>
+                                {isCompletelyEmpty 
+                                  ? 'Bu soruya henüz yanıt yazılmadığı için rubrik öz değerlendirmesi yapılamaz (0 puan).'
+                                  : 'Cevabınız çok kısa veya eksik olduğu için rubrik öz değerlendirmesi yapılamaz (0 puan).'}
+                              </span>
+                              <button
                                 type="button"
-                                onClick={() => handleToggleRubricCriterion(rIdx, num)}
-                                className={`w-full text-left flex items-center justify-between p-2 rounded-lg border text-[11px] transition-colors cursor-pointer ${
-                                  isMet
-                                    ? 'bg-emerald-50 border-emerald-200 text-emerald-900 font-semibold shadow-2xs'
-                                    : 'bg-white border-slate-200 text-slate-600 hover:border-slate-300'
-                                }`}
+                                onClick={() => {
+                                  setActiveQuestionIndex(idx);
+                                  setSession(prev => ({ ...prev, isCompleted: false }));
+                                }}
+                                className="ml-2 font-bold text-indigo-600 hover:underline not-italic cursor-pointer shrink-0"
                               >
-                                <span className="flex items-center">
-                                  {isMet ? (
-                                    <CheckSquare className="w-3.5 h-3.5 text-emerald-600 mr-1.5 shrink-0" />
-                                  ) : (
-                                    <Square className="w-3.5 h-3.5 text-slate-300 mr-1.5 shrink-0" />
-                                  )}
-                                  {r.criterion}
-                                </span>
-                                <span className={isMet ? 'text-emerald-700 font-bold' : 'text-slate-400 font-medium'}>
-                                  {isMet ? `+${r.points} p` : `0 / ${r.points} p`}
-                                </span>
+                                {isCompletelyEmpty ? 'Cevap Yaz →' : 'Cevabı Tamamla →'}
                               </button>
-                            );
-                          })}
+                            </div>
+                          )}
                         </div>
-                      ) : (
-                        <div className="p-2.5 rounded-lg bg-slate-100/70 border border-slate-200 text-[11px] text-slate-500 italic flex items-center justify-between">
-                          <span>
-                            {isCompletelyEmpty 
-                              ? 'Bu soruya henüz yanıt yazılmadığı için rubrik öz değerlendirmesi yapılamaz (0 puan).'
-                              : 'Cevabınız çok kısa veya eksik olduğu için rubrik öz değerlendirmesi yapılamaz (0 puan).'}
-                          </span>
-                          <button
-                            type="button"
-                            onClick={() => {
-                              setActiveQuestionIndex(idx);
-                              setSession(prev => ({ ...prev, isCompleted: false }));
-                            }}
-                            className="ml-2 font-bold text-indigo-600 hover:underline not-italic cursor-pointer shrink-0"
-                          >
-                            {isCompletelyEmpty ? 'Cevap Yaz →' : 'Cevabı Tamamla →'}
-                          </button>
-                        </div>
-                      )}
-                    </div>
+                      </>
+                    )}
                   </div>
                 );
               })}
@@ -1016,12 +1054,37 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
               {/* Special Stimulus (Table, Dialogue, Scenario, Experiment) */}
               {currentQ.stimulus && (
                 <div className="bg-amber-50/80 border border-amber-200 rounded-xl p-4 text-xs sm:text-sm text-slate-800 whitespace-pre-line leading-relaxed shadow-2xs">
-                  <div className="text-[11px] font-bold text-amber-900 uppercase tracking-wider mb-1.5 flex items-center">
-                    <Layers className="w-3.5 h-3.5 mr-1 text-amber-700" />
-                    Durum Senaryosu / Öğrenci Diyaloğu:
+                  <div className="text-[11px] font-bold text-amber-900 uppercase tracking-wider mb-1.5 flex items-center justify-between">
+                    <span className="flex items-center">
+                      <Layers className="w-3.5 h-3.5 mr-1 text-amber-700" />
+                      {currentQ.commonStimulus ? 'Ortak Kaynak Metin / Durum Senaryosu:' : 'Durum Senaryosu / Öğrenci Diyaloğu:'}
+                    </span>
+                    {currentQ.commonStimulus && (
+                      <span className="text-[10px] bg-amber-200/80 text-amber-900 font-bold px-2 py-0.5 rounded">
+                        ★ Ortak Materyal
+                      </span>
+                    )}
                   </div>
                   <div className="font-medium text-slate-800 pl-1 border-l-2 border-amber-300">
                     <MathRenderer content={currentQ.stimulus} />
+                  </div>
+                </div>
+              )}
+
+              {/* Missing Source Material Warning Banner */}
+              {currentQ.hasMissingSourceError && (
+                <div className="bg-rose-50 border border-rose-300 rounded-xl p-4 text-xs sm:text-sm text-rose-950 flex items-start space-x-3 shadow-2xs">
+                  <AlertTriangle className="w-5 h-5 text-rose-600 shrink-0 mt-0.5" />
+                  <div className="space-y-1">
+                    <strong className="block text-rose-900 font-bold text-xs uppercase tracking-wide">
+                      Kaynak Materyal Eksikliği Bildirimi:
+                    </strong>
+                    <p className="leading-relaxed font-medium">
+                      {currentQ.sourceValidationError || 'Bu soru bir kaynak metne/tabloya dayanmaktadır ancak sınavda kaynak materyal bulunamamıştır. Öğrencinin mağduriyet yaşamaması için bu soru için cevaplama ve öz değerlendirme kilitlenmiştir.'}
+                    </p>
+                    <span className="text-[11px] text-rose-700 block font-semibold pt-0.5">
+                      * Sınavın diğer geçerli sorularını çözmeye devam edebilirsiniz.
+                    </span>
                   </div>
                 </div>
               )}
@@ -1041,18 +1104,24 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
 
               {/* Student Response Editor with Math and Live Preview Support */}
               <div className="pt-2">
-                <MathAnswerEditor
-                  value={currentAnswerData.studentAnswer}
-                  onChange={handleAnswerTextChange}
-                  questionNumber={qNum}
-                  subjectId={examPaper.subjectId}
-                  placeholder="Cevabınızı, analitik gerekçelerinizi ve işlem basamaklarınızı buraya yazınız..."
-                  rows={5}
-                />
+                {currentQ.hasMissingSourceError ? (
+                  <div className="p-4 bg-slate-100 border border-slate-200 rounded-xl text-xs text-slate-500 italic text-center">
+                    Bu sorunun dayandığı kaynak materyal eksik olduğu için cevap alanı ve öz değerlendirme devre dışı bırakılmıştır.
+                  </div>
+                ) : (
+                  <MathAnswerEditor
+                    value={currentAnswerData.studentAnswer}
+                    onChange={handleAnswerTextChange}
+                    questionNumber={qNum}
+                    subjectId={examPaper.subjectId}
+                    placeholder="Cevabınızı, analitik gerekçelerinizi ve işlem basamaklarınızı buraya yazınız..."
+                    rows={5}
+                  />
+                )}
               </div>
 
               {/* Immediate Feedback & Self-Assessment Box */}
-              {session.feedbackMode === 'immediate' && (
+              {session.feedbackMode === 'immediate' && !currentQ.hasMissingSourceError && (
                 !hasStudentAnswer ? (
                   <div className="mt-4 pt-4 border-t border-slate-200">
                     <div className="p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-500 flex items-center justify-between">

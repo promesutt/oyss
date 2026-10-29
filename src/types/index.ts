@@ -72,6 +72,10 @@ export interface ExamQuestion {
   points: number;
   contextText?: string;
   stimulus?: string; // Tablo, deney düzeneği, veri, diyalog
+  sharedSourceId?: string; // Birden fazla soru için ortak kullanılan kaynak kimliği
+  commonStimulus?: string; // Ortak kaynak metin, yönerge veya uyarıcı başlığı
+  hasMissingSourceError?: boolean; // Kaynak materyali eksik ve kurtarılamamış soru işareti
+  sourceValidationError?: string; // Kaynak materyal doğrulama hatası açıklaması
   questionText: string;
   solutionExplanation: string;
   modelAnswer: string;

@@ -14,7 +14,8 @@ import {
   CheckCircle2,
   MessageSquareQuote,
   FileCheck2,
-  RotateCw
+  RotateCw,
+  AlertTriangle
 } from 'lucide-react';
 import { MathRenderer } from './MathRenderer';
 import { generateMEBIQuestions, GenerationResult } from '../utils/aiGeneratorEngine';
@@ -228,6 +229,16 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
                   </span>
                 </div>
 
+                {/* Kaynak Doğrulama Uyarı Bandı */}
+                {generatedResult.generatedQuestions.some(q => q.hasMissingSourceError) && (
+                  <div className="bg-rose-50 border border-rose-300 p-3.5 rounded-xl text-xs text-rose-900 flex items-start space-x-2.5">
+                    <AlertTriangle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
+                    <div>
+                      <strong>Dikkat (Kaynak Materyal Eksikliği):</strong> Üretilen bazı sorularda metin veya veri tablosu eksikliği saptandı. Öğrencilerin mağduriyet yaşamaması için eksik sorular kırmızı uyarıyla işaretlenmiştir.
+                    </div>
+                  </div>
+                )}
+
                   <div className="space-y-4">
                     {generatedResult.generatedQuestions.map((gq, i) => (
                       <div key={i} className="border border-slate-200 rounded-xl p-4 sm:p-5 bg-white shadow-xs">
@@ -263,12 +274,29 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
                         {/* Stimulus / Dialogue / Scenario Box (Crucial for MEBİ) */}
                         {gq.stimulus && (
                           <div className="bg-amber-50/80 border border-amber-200 rounded-xl p-3.5 mb-3 text-xs sm:text-sm text-slate-800 whitespace-pre-line leading-relaxed shadow-2xs">
-                            <div className="flex items-center text-[11px] font-bold text-amber-900 uppercase tracking-wider mb-1.5">
-                              <MessageSquareQuote className="w-3.5 h-3.5 mr-1 text-amber-700 shrink-0" />
-                              Durum Senaryosu / Öğrenci Diyaloğu:
+                            <div className="flex items-center justify-between text-[11px] font-bold text-amber-900 uppercase tracking-wider mb-1.5">
+                              <span className="flex items-center">
+                                <MessageSquareQuote className="w-3.5 h-3.5 mr-1 text-amber-700 shrink-0" />
+                                {gq.commonStimulus ? 'Ortak Okuma Metni / Senaryo:' : 'Durum Senaryosu / Öğrenci Diyaloğu:'}
+                              </span>
+                              {gq.commonStimulus && (
+                                <span className="text-[10px] bg-amber-200/80 text-amber-900 font-bold px-2 py-0.5 rounded">
+                                  ★ Ortak Materyal
+                                </span>
+                              )}
                             </div>
                             <div className="font-medium text-slate-800 pl-1 border-l-2 border-amber-300">
                               <MathRenderer content={gq.stimulus} />
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Missing Source Material Warning if any */}
+                        {gq.hasMissingSourceError && (
+                          <div className="p-3 mb-3 bg-rose-50 border border-rose-300 rounded-xl text-xs text-rose-900 font-semibold flex items-start space-x-2">
+                            <AlertTriangle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
+                            <div>
+                              <strong>Kaynak Materyal Eksik:</strong> {gq.sourceValidationError || 'Bu soru bir kaynak metne/tabloya dayanmaktadır ancak geçerli kaynak bulunamamıştır.'}
                             </div>
                           </div>
                         )}
@@ -354,6 +382,10 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
                                   archetype: q.templateType as any,
                                   points: questionPts,
                                   stimulus: q.stimulus,
+                                  sharedSourceId: q.sharedSourceId,
+                                  commonStimulus: q.commonStimulus,
+                                  hasMissingSourceError: q.hasMissingSourceError,
+                                  sourceValidationError: q.sourceValidationError,
                                   questionText: q.question,
                                   modelAnswer: q.answer,
                                   solutionExplanation: specificExplanation,

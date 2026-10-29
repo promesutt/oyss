@@ -5,6 +5,7 @@ import {
   ExamTerm, 
   MaterialType, 
   ExamPaper,
+  ExamQuestion,
   StudySheet,
   StudySheetSection,
   InfographicItem,
@@ -33,6 +34,7 @@ import { OfficialSourcesModal } from './components/OfficialSourcesModal';
 import { FeedbackModal } from './components/FeedbackModal';
 import { InteractivePracticeView } from './components/InteractivePracticeView';
 import { loadCustomExamPaper, clearCustomExamPaper } from './utils/practiceStorage';
+import { validateAndEnrichExamQuestions } from './utils/sourceMaterialValidator';
 import { 
   BookOpen, 
   Mic, 
@@ -145,7 +147,11 @@ export const App: React.FC = () => {
     if (customExamPaper && 
         customExamPaper.grade === selectedGrade && 
         customExamPaper.subjectId === selectedSubject) {
-      return customExamPaper;
+      const { enrichedQuestions } = validateAndEnrichExamQuestions(customExamPaper.questions);
+      return {
+        ...customExamPaper,
+        questions: enrichedQuestions as ExamQuestion[]
+      };
     }
 
     // 2. Direct match in verified teacher-curated repository
@@ -156,7 +162,13 @@ export const App: React.FC = () => {
            e.scenarioId === currentScenario.id
     );
 
-    if (match) return match;
+    if (match) {
+      const { enrichedQuestions } = validateAndEnrichExamQuestions(match.questions);
+      return {
+        ...match,
+        questions: enrichedQuestions as ExamQuestion[]
+      };
+    }
 
     // Do NOT silently borrow questions from another scenario
     // Do NOT generate fake robotic placeholder templates disguised as official exams

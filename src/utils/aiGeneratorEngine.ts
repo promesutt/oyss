@@ -3,6 +3,11 @@ import { getOfficialOutcomeTitle } from '../data/curriculumData';
 import { SAMPLE_EXAMS } from '../data/sampleExams';
 import { formatDifficultyPlanText, calibrateQuestionDifficulties } from './difficultyCalibrator';
 import { distributeExamPoints, reconcileRubricPoints } from './examScoring';
+import { 
+  detectSourceRequirement, 
+  checkStimulusQuality, 
+  validateAndEnrichExamQuestions 
+} from './sourceMaterialValidator';
 
 const POOL_NAMES_A = [
   'Selin', 'Kerem', 'Zehra', 'Burak', 'Aslı', 'Emre', 'Derya', 'Tarık', 
@@ -27,6 +32,10 @@ export interface GeneratedQuestionItem {
   answer: string;
   solutionExplanation?: string;
   rubric: { item: string; pts: number }[];
+  sharedSourceId?: string;
+  commonStimulus?: string;
+  hasMissingSourceError?: boolean;
+  sourceValidationError?: string;
 }
 
 export interface GenerationResult {
@@ -36,6 +45,11 @@ export interface GenerationResult {
   model: string;
   questionsCount: number;
   generatedQuestions: GeneratedQuestionItem[];
+  sourceValidationSummary?: {
+    isFullyValid: boolean;
+    missingSourceCount: number;
+    recoveredCount: number;
+  };
 }
 
 export async function generateMEBIQuestions(
@@ -125,6 +139,12 @@ HER SORU İÇİN ZORUNLU BAĞLAM ÇEŞİTLİLİĞİ KURALI (EN KRİTİK KURAL):
    - Empati & Cümle Dönüştürme
    - Metin İçi Delillendirme & Örtük Anlam
 3. Toplam ${targetCount} sorunun puanları toplamı 100 olacak şekilde paylaştırılmalıdır.
+4. ZORUNLU KAYNAK MATERYAL KURALI (EN KRİTİK KURAL - ASLA İHMAL EDİLEMEZ):
+   - Eğer bir soru "metne göre", "metinden hareketle", "parçaya göre", "şiire göre", "tabloya göre", "grafiğe göre", "diyaloğa göre" veya "verilen duruma göre" kurgulanmışsa; O METNİN, TABLONUN VEYA DİYALOĞUN TAMAMI MUTLAKA "stimulus" ALANINA EKSİKSİZ VE DETAYLI YAZILMALIDIR!
+   - ASLA "Metinde bir olay anlatılmaktadır", "Metinde zeytinyağı aşamaları anlatılmıştır" gibi 1 cümlelik soyut özetler YAZILAMAZ! Metin, öğrencinin soruda sorulan aşamaları, ana fikri, neden-sonuç ilişkisini bizzat metni okuyarak bulabileceği zenginlikte ve somutlukta (en az 2-4 cümlelik somut hikâye/olay örgüsü) yazılmalıdır.
+   - Tablo sorularında veriler (satır ve sütunlar) mutlaka "stimulus" içinde verilmelidir.
+   - Diyalog sorularında konuşan karakterlerin replikleri (Örn: Elif: "...", Kerem: "...") mutlaka "stimulus" içinde yer almalıdır.
+   - Öğrenci kaynak metni/veriyi görmeden ASLA soruyu cevaplayamaz!
 
 ÇIKTI FORMATI:
 SADECE geçerli bir JSON çıktısı ver. JSON şeması:
@@ -205,7 +225,9 @@ SADECE geçerli bir JSON çıktısı ver. JSON şeması:
         rubric: reconciled.map(r => ({ item: r.criterion, pts: r.points }))
       };
     });
-    return calibrateQuestionDifficulties(withTitles);
+    const calibrated = calibrateQuestionDifficulties(withTitles);
+    const { enrichedQuestions } = validateAndEnrichExamQuestions(calibrated);
+    return enrichedQuestions as GeneratedQuestionItem[];
   };
 
   // 1. TIER 1: Güvenli Sunucu Fonksiyonu Proxy (/api/generate)
@@ -244,7 +266,12 @@ SADECE geçerli bir JSON çıktısı ver. JSON şeması:
           generationTime: '0.9 saniye (Hızlı Üretim)',
           model: `${activeModelName}`,
           questionsCount: normalized.length,
-          generatedQuestions: normalized
+          generatedQuestions: normalized,
+          sourceValidationSummary: {
+            isFullyValid: !normalized.some(q => q.hasMissingSourceError),
+            missingSourceCount: normalized.filter(q => q.hasMissingSourceError).length,
+            recoveredCount: normalized.filter(q => q.commonStimulus || q.sharedSourceId).length
+          }
         };
       }
     }
@@ -1360,31 +1387,60 @@ b) Mark NEVER plays tennis.`,
       : (d.notes || 'MEBİ Öğrenme Çıktısı');
 
     // 1. Önce SAMPLE_EXAMS içerisinden aynı kademe ve aynı derse ait ilgili kazanımdaki soruları filtrele
-    const matchingSampleQuestions = SAMPLE_EXAMS
+    const matchingSampleQuestionsWithExam: { q: any; parentExam: any }[] = [];
+    SAMPLE_EXAMS
       .filter((e) => e.grade === grade && e.subjectId === subjectId)
-      .flatMap((e) => e.questions)
-      .filter((q) => q.outcomeCode === outcomeCode);
+      .forEach((e) => {
+        e.questions.forEach((q) => {
+          if (q.outcomeCode === outcomeCode) {
+            matchingSampleQuestionsWithExam.push({ q, parentExam: e });
+          }
+        });
+      });
 
     // 2. Ardından içeride tanımlı zengin MEBİ havuzundaki ilgili kazanım sorularını filtrele
     const internalPool = internalAllQuestions.filter((q) => q.outcome === outcomeCode);
 
     // 3. Genel SAMPLE_EXAMS havuzunda bu kazanım var mı (farklı sınıf/şube olsa dahi)
-    const crossGradeSampleQuestions = matchingSampleQuestions.length === 0
-      ? SAMPLE_EXAMS.flatMap((e) => e.questions).filter((q) => q.outcomeCode === outcomeCode)
-      : [];
+    const crossGradeSampleQuestionsWithExam: { q: any; parentExam: any }[] = [];
+    if (matchingSampleQuestionsWithExam.length === 0) {
+      SAMPLE_EXAMS.forEach((e) => {
+        e.questions.forEach((q) => {
+          if (q.outcomeCode === outcomeCode) {
+            crossGradeSampleQuestionsWithExam.push({ q, parentExam: e });
+          }
+        });
+      });
+    }
 
     const availablePool = [
-      ...matchingSampleQuestions.map((q) => ({
-        outcome: q.outcomeCode,
-        outcomeTitle: q.outcomeTitle,
-        difficulty: q.difficulty,
-        level: q.cognitiveLevel,
-        templateType: q.archetype,
-        stimulus: q.stimulus || '',
-        question: q.questionText,
-        answer: q.modelAnswer,
-        rubric: (q.rubric || []).map((r) => ({ item: r.criterion, pts: r.points }))
-      })),
+      ...matchingSampleQuestionsWithExam.map(({ q, parentExam }) => {
+        let stim = q.stimulus || '';
+        const req = detectSourceRequirement(q.questionText, q.archetype, q.contextText, stim);
+        const quality = checkStimulusQuality(stim, req);
+        // Eğer bu soru bir meta-özet veya önceki soruya referans ise, ana sınavdaki tam okuma metnini devral
+        if (!quality.isValid && (quality.isCrossReference || quality.isMetaSummary)) {
+          const parentSourceQ = parentExam.questions.find((pq: any) => {
+            const pqStim = pq.stimulus?.trim() || '';
+            return pqStim.length >= 100 && !pqStim.startsWith('Metinde') && !pqStim.startsWith('Yukarıda');
+          }) || parentExam.questions[0];
+
+          if (parentSourceQ?.stimulus && parentSourceQ.stimulus.length > 80) {
+            stim = parentSourceQ.stimulus;
+          }
+        }
+        return {
+          outcome: q.outcomeCode,
+          outcomeTitle: q.outcomeTitle,
+          difficulty: q.difficulty,
+          level: q.cognitiveLevel,
+          templateType: q.archetype,
+          stimulus: stim,
+          question: q.questionText,
+          answer: q.modelAnswer,
+          rubric: (q.rubric || []).map((r: any) => ({ item: r.criterion, pts: r.points }))
+        };
+      }),
       ...internalPool.map((q) => ({
         outcome: q.outcome,
         outcomeTitle: q.outcomeTitle,
@@ -1396,17 +1452,32 @@ b) Mark NEVER plays tennis.`,
         answer: q.answer,
         rubric: q.rubric
       })),
-      ...crossGradeSampleQuestions.map((q) => ({
-        outcome: q.outcomeCode,
-        outcomeTitle: q.outcomeTitle,
-        difficulty: q.difficulty,
-        level: q.cognitiveLevel,
-        templateType: q.archetype,
-        stimulus: q.stimulus || '',
-        question: q.questionText,
-        answer: q.modelAnswer,
-        rubric: (q.rubric || []).map((r) => ({ item: r.criterion, pts: r.points }))
-      }))
+      ...crossGradeSampleQuestionsWithExam.map(({ q, parentExam }) => {
+        let stim = q.stimulus || '';
+        const req = detectSourceRequirement(q.questionText, q.archetype, q.contextText, stim);
+        const quality = checkStimulusQuality(stim, req);
+        if (!quality.isValid && (quality.isCrossReference || quality.isMetaSummary)) {
+          const parentSourceQ = parentExam.questions.find((pq: any) => {
+            const pqStim = pq.stimulus?.trim() || '';
+            return pqStim.length >= 100 && !pqStim.startsWith('Metinde') && !pqStim.startsWith('Yukarıda');
+          }) || parentExam.questions[0];
+
+          if (parentSourceQ?.stimulus && parentSourceQ.stimulus.length > 80) {
+            stim = parentSourceQ.stimulus;
+          }
+        }
+        return {
+          outcome: q.outcomeCode,
+          outcomeTitle: q.outcomeTitle,
+          difficulty: q.difficulty,
+          level: q.cognitiveLevel,
+          templateType: q.archetype,
+          stimulus: stim,
+          question: q.questionText,
+          answer: q.modelAnswer,
+          rubric: (q.rubric || []).map((r: any) => ({ item: r.criterion, pts: r.points }))
+        };
+      })
     ];
 
     if (availablePool.length > 0) {
@@ -1501,6 +1572,11 @@ ${sName2}: "Hayır, şartlar değiştiğinde doğrudan diğer etkenlerin devreye
     generationTime: '1.1 saniye',
     model: 'MEBİ Standartlı Soru Motoru',
     questionsCount: finalDynamicQuestions.length,
-    generatedQuestions: finalDynamicQuestions
+    generatedQuestions: finalDynamicQuestions,
+    sourceValidationSummary: {
+      isFullyValid: !finalDynamicQuestions.some(q => q.hasMissingSourceError),
+      missingSourceCount: finalDynamicQuestions.filter(q => q.hasMissingSourceError).length,
+      recoveredCount: finalDynamicQuestions.filter(q => q.commonStimulus || q.sharedSourceId).length
+    }
   };
 }

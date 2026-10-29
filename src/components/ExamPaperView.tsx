@@ -298,7 +298,22 @@ export const ExamPaperView: React.FC<ExamPaperViewProps> = ({
               {/* Special Stimulus (Experiment setup, scenario text, data, dialogue) */}
               {q.stimulus && (
                 <div className="text-xs sm:text-sm text-slate-800 font-medium mb-3 bg-amber-50/70 p-3.5 rounded-xl border border-amber-200 shadow-2xs whitespace-pre-line leading-relaxed print:bg-slate-50/70 print:border print:border-slate-300 print:p-2.5 print:mb-1.5 print:text-[11px] print:leading-snug print:rounded-lg print:shadow-none">
+                  {q.commonStimulus && (
+                    <div className="text-[10px] font-bold text-amber-900 uppercase tracking-wider mb-1 flex items-center print:text-[9px] print:text-slate-800">
+                      ★ {q.commonStimulus}
+                    </div>
+                  )}
                   <MathRenderer content={q.stimulus} />
+                </div>
+              )}
+
+              {/* Missing Source Material Warning Banner */}
+              {q.hasMissingSourceError && (
+                <div className="p-3 mb-3 bg-rose-50 border border-rose-300 rounded-xl text-xs text-rose-900 font-semibold flex items-start space-x-2 print:border-rose-400 print:text-[10px]">
+                  <span>⚠️</span>
+                  <div>
+                    <strong>Eksik Kaynak Uyarısı:</strong> {q.sourceValidationError || 'Bu soru bir kaynak metne/tabloya dayanmaktadır ancak kaynak materyal sınavda bulunamamıştır.'}
+                  </div>
                 </div>
               )}
 
