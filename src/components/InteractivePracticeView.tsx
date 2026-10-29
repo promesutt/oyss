@@ -848,6 +848,25 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
                           </div>
                         </div>
 
+                        {/* Alternative Answers Preview */}
+                        {q.alternativeAnswers && q.alternativeAnswers.length > 0 && (
+                          <div className="text-xs text-slate-700 bg-emerald-50/40 p-3 rounded-lg border border-emerald-200/80 space-y-1">
+                            <strong className="block text-emerald-900 text-[11px] font-bold">
+                              Kabul Edilebilir Diğer Örnek Yanıtlar:
+                            </strong>
+                            <ul className="list-disc list-inside space-y-1 text-slate-700 pl-1 text-[11.5px]">
+                              {q.alternativeAnswers.map((alt, aIdx) => (
+                                <li key={aIdx} className="leading-relaxed">
+                                  <MathRenderer content={alt} />
+                                </li>
+                              ))}
+                            </ul>
+                            <p className="text-[10px] text-slate-500 italic pt-0.5">
+                              * Kendi cevabınız yukarıdaki örneklerle aynı anlama veya kavrama ulaşıyorsa doğru kabul edebilirsiniz.
+                            </p>
+                          </div>
+                        )}
+
                         {/* Solution Explanation if present */}
                         {q.solutionExplanation && (
                           <div className="bg-white/90 p-3 rounded-lg border border-slate-200 text-slate-700 text-xs">
@@ -1201,6 +1220,25 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
                           <MathRenderer content={currentQ.modelAnswer} />
                         </div>
                       </div>
+
+                      {/* Alternative Acceptable Answers */}
+                      {currentQ.alternativeAnswers && currentQ.alternativeAnswers.length > 0 && (
+                        <div className="bg-emerald-50/40 p-3 rounded-xl border border-emerald-200/80 space-y-1 text-xs">
+                          <strong className="block text-emerald-900 text-[11px] font-bold">
+                            Kabul Edilebilir Diğer Örnek Yanıtlar:
+                          </strong>
+                          <ul className="list-disc list-inside space-y-1 text-slate-700 pl-1 text-[11.5px]">
+                            {currentQ.alternativeAnswers.map((alt, aIdx) => (
+                              <li key={aIdx} className="leading-relaxed">
+                                <MathRenderer content={alt} />
+                              </li>
+                            ))}
+                          </ul>
+                          <p className="text-[10px] text-slate-500 italic pt-0.5">
+                            * Kendi cevabınız yukarıdaki örneklerle aynı anlama veya kavrama ulaşıyorsa doğru kabul edebilirsiniz.
+                          </p>
+                        </div>
+                      )}
 
                       {/* Solution Explanation if present */}
                       {currentQ.solutionExplanation && (

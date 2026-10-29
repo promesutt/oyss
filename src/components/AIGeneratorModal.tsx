@@ -315,6 +315,20 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
                           </div>
                         </div>
 
+                        {/* Alternatif Kabul Edilebilir Yanıtlar */}
+                        {gq.alternativeAnswers && gq.alternativeAnswers.length > 0 && (
+                          <div className="bg-emerald-50/50 p-2.5 rounded-lg border border-emerald-200/70 text-[11px] text-slate-700 mb-2">
+                            <strong className="text-emerald-900 block mb-0.5 font-bold">Kabul Edilebilir Diğer Örnek Yanıtlar:</strong>
+                            <ul className="list-disc list-inside space-y-0.5 text-slate-700 pl-1">
+                              {gq.alternativeAnswers.map((alt, aIdx) => (
+                                <li key={aIdx}>
+                                  <MathRenderer content={alt} />
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+
                         {/* Rubrik */}
                         <div className="text-[11px] text-slate-600 bg-white p-2.5 rounded-lg border border-slate-150">
                           <strong className="block text-slate-700 mb-1 font-bold">Puanlama Rubriği:</strong>
@@ -388,6 +402,7 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
                                   sourceValidationError: q.sourceValidationError,
                                   questionText: q.question,
                                   modelAnswer: q.answer,
+                                  alternativeAnswers: q.alternativeAnswers,
                                   solutionExplanation: specificExplanation,
                                   rubric: rubricList
                                 };

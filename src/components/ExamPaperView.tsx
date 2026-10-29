@@ -174,7 +174,7 @@ export const ExamPaperView: React.FC<ExamPaperViewProps> = ({
               className="inline-flex items-center px-3.5 py-1.5 rounded-lg text-xs font-bold bg-slate-900 hover:bg-slate-800 text-white shadow-xs transition-colors cursor-pointer active:scale-95"
             >
               <Printer className="w-3.5 h-3.5 mr-1.5 text-amber-300" />
-              Sınavı Yazdır / PDF İndir
+              {showRubric ? 'Cevap Anahtarını Yazdır / PDF' : 'Sınavı Yazdır / PDF İndir'}
             </button>
           </div>
         </div>
@@ -191,6 +191,11 @@ export const ExamPaperView: React.FC<ExamPaperViewProps> = ({
             </h3>
             <h1 className="text-base sm:text-lg font-black text-slate-900 mt-0.5 tracking-tight uppercase print:text-xs print:font-extrabold print:mt-0">
               {examPaper.title}
+              {showRubric && (
+                <span className="text-emerald-700 ml-2 font-bold normal-case print:text-[10px] print:text-emerald-800">
+                  (Cevap Anahtarı & Rubrik)
+                </span>
+              )}
             </h1>
             <p className="text-xs font-semibold text-slate-600 mt-1 print:text-[9px] print:mt-0.5">
               Türkiye Yüzyılı Maarif Modeli Açık Uçlu Ortak Değerlendirme Kağıdı
@@ -341,39 +346,55 @@ export const ExamPaperView: React.FC<ExamPaperViewProps> = ({
 
               {/* Optional Scoring Rubric & Model Answer Box (Toggled by user) */}
               {showRubric && (
-                <div className="mt-5 p-4 bg-emerald-50/80 rounded-xl border border-emerald-200 text-xs text-slate-800 space-y-3 print:hidden">
-                  <div className="flex flex-wrap items-center justify-between gap-1 text-emerald-900 font-bold border-b border-emerald-200 pb-2">
-                    <span className="flex items-center">
-                      <CheckCircle2 className="w-4 h-4 mr-1.5 text-emerald-700" />
+                <div className="mt-5 p-4 bg-emerald-50/80 rounded-xl border border-emerald-200 text-xs text-slate-800 space-y-3 print:block print:bg-emerald-50/30 print:border print:border-emerald-300 print:p-2.5 print:mt-2.5 print:mb-2 print:space-y-1.5 print:text-[10px] print:leading-snug print:rounded-lg print:break-inside-avoid">
+                  <div className="flex flex-wrap items-center justify-between gap-1 text-emerald-900 font-bold border-b border-emerald-200 pb-2 print:pb-1 print:border-emerald-300">
+                    <span className="flex items-center print:text-[10.5px]">
+                      <CheckCircle2 className="w-4 h-4 mr-1.5 text-emerald-700 print:w-3.5 print:h-3.5" />
                       MEB Model Cevap ve Çözüm Adımları
                     </span>
-                    <span className="text-[11px] font-medium text-emerald-900 bg-emerald-100 px-2.5 py-0.5 rounded border border-emerald-300">
+                    <span className="text-[11px] font-medium text-emerald-900 bg-emerald-100 px-2.5 py-0.5 rounded border border-emerald-300 print:text-[9px] print:px-1.5 print:py-0">
                       ÖDSGM Bilişsel Düzey (Öğretmen Kaydı): <strong>{q.cognitiveLevel}</strong>
                     </span>
                   </div>
 
-                  <div className="bg-white p-3 rounded-lg border border-emerald-100 font-medium whitespace-pre-line text-slate-700">
+                  <div className="bg-white p-3 rounded-lg border border-emerald-100 font-medium whitespace-pre-line text-slate-700 print:p-2 print:text-[10px] print:border-emerald-200 print:bg-white">
                     <MathRenderer content={q.modelAnswer} />
                   </div>
 
+                  {/* Alternatif Kabul Edilebilir Yanıtlar */}
+                  {q.alternativeAnswers && q.alternativeAnswers.length > 0 && (
+                    <div className="bg-emerald-50/50 p-2.5 rounded-lg border border-emerald-200/70 text-xs text-slate-700 space-y-1 print:p-2 print:text-[10px] print:bg-emerald-50/50 print:border-emerald-300">
+                      <span className="font-bold text-emerald-900 block text-[11px] print:text-[9.5px]">
+                        Kabul Edilebilir Diğer Örnek Yanıtlar:
+                      </span>
+                      <ul className="list-disc list-inside space-y-0.5 text-slate-700 pl-1 text-[11px] print:text-[9.5px]">
+                        {q.alternativeAnswers.map((alt, aIdx) => (
+                          <li key={aIdx}>
+                            <MathRenderer content={alt} />
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
                   {/* Rubric Points Breakdown */}
                   <div>
-                    <span className="font-bold text-slate-700 block mb-1">
+                    <span className="font-bold text-slate-700 block mb-1 print:text-[10px] print:mb-0.5">
                       Analitik Dereceli Puanlama Anahtarı (Rubrik):
                     </span>
-                    <div className="bg-white rounded-lg border border-slate-200 overflow-hidden">
-                      <table className="min-w-full divide-y divide-slate-200 text-[11px]">
-                        <thead className="bg-slate-50">
+                    <div className="bg-white rounded-lg border border-slate-200 overflow-hidden print:border-slate-300">
+                      <table className="min-w-full divide-y divide-slate-200 text-[11px] print:text-[9.5px] print:divide-slate-300">
+                        <thead className="bg-slate-50 print:bg-slate-100">
                           <tr>
-                            <th className="px-3 py-1.5 text-left font-bold text-slate-600">Ölçüt / Beklenen Basamak</th>
-                            <th className="px-3 py-1.5 text-right font-bold text-slate-600 w-20">Puan</th>
+                            <th className="px-3 py-1.5 text-left font-bold text-slate-600 print:px-2 print:py-0.5">Ölçüt / Beklenen Basamak</th>
+                            <th className="px-3 py-1.5 text-right font-bold text-slate-600 w-20 print:px-2 print:py-0.5 print:w-16">Puan</th>
                           </tr>
                         </thead>
-                        <tbody className="divide-y divide-slate-100">
+                        <tbody className="divide-y divide-slate-100 print:divide-slate-200">
                           {q.rubric.map((r, rIdx) => (
                             <tr key={rIdx}>
-                              <td className="px-3 py-1.5 text-slate-700">{r.criterion}</td>
-                              <td className="px-3 py-1.5 text-right font-bold text-emerald-700">+{r.points} p</td>
+                              <td className="px-3 py-1.5 text-slate-700 print:px-2 print:py-0.5">{r.criterion}</td>
+                              <td className="px-3 py-1.5 text-right font-bold text-emerald-700 print:px-2 print:py-0.5 print:text-emerald-900">+{r.points} p</td>
                             </tr>
                           ))}
                         </tbody>

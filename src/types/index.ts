@@ -79,6 +79,7 @@ export interface ExamQuestion {
   questionText: string;
   solutionExplanation: string;
   modelAnswer: string;
+  alternativeAnswers?: string[]; // MEBİ yaklaşımı: Anlam bakımından kabul edilebilir diğer örnek yanıtlar
   rubric: QuestionRubricItem[];
 }
 

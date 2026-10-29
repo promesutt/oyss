@@ -10176,14 +10176,27 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Metindeki altı çizili 'mefkûre' kelimesinin ve 'vatan yetim kalamaz' söz öbeğinin anlamlarını metnin bağlamından yararlanarak tahmin ediniz. Tahmininizi metindeki hangi ipuçlarına dayandırdığınızı açıklayınız.",
         "solutionExplanation": "Metin bağlamında mefkûre gaye/ülkü demektir. Vatanın yetim kalmaması ise bağımsızlığını ve devletini kaybetmemesidir.",
         "modelAnswer": "• Mefkûre: Ulaşılmak istenen yüce amaç, ülkü veya gaye anlamındadır. İpucu: Şerife Bacı'nın vatanı kurtarmayı her şeyin üstünde tutmasıdır.\n• Vatan yetim kalamaz: Vatanın sahipsiz, hürriyetsiz ve bağımsızlıktan yoksun bırakılamayacağı anlamına gelir. İpucu: Çocuğunun örtüsünü cephaneye vermesidir.",
+        "alternativeAnswers": [
+          "Mefkûre: Ulaşılmak istenen hedef, ideal veya milletin ortak gayesidir.",
+          "Vatan yetim kalamaz: Vatanın sahipsiz, devletsiz ve esir bırakılamayacağı bilincidir.",
+          "İpuçları: Şerife Bacı'nın dondurucu kış şartlarında bebeğinin örtüsünü cephaneye örtmesi ve vatanı her şeyden aziz bilmesidir."
+        ],
         "rubric": [
           {
-            "criterion": "'mefkûre' kelimesinin bağlama uygun doğru tahmin edilmesi ve gerekçelendirilmesi",
-            "points": 8
+            "criterion": "'mefkûre' kelimesinin bağlama uygun anlamının doğru tahmin edilmesi (ülkü, gaye)",
+            "points": 4
           },
           {
-            "criterion": "'Vatan yetim kalamaz' sözünün derin anlamının açıklanması",
-            "points": 7
+            "criterion": "'mefkûre' tahmininin metindeki ipuçlarıyla (vatanı kurtarma ideali) gerekçelendirilmesi",
+            "points": 4
+          },
+          {
+            "criterion": "'Vatan yetim kalamaz' sözünün bağımsızlık ve hürriyet anlamının doğru tespit edilmesi",
+            "points": 4
+          },
+          {
+            "criterion": "'Vatan yetim kalamaz' çıkarımının metindeki eylemlerle (çocuğunun örtüsünü vermesi) delillendirilmesi",
+            "points": 3
           }
         ]
       },
@@ -10200,6 +10213,11 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Yukarıda Şerife Bacı ve kağnı kollarının anlatıldığı 1. metnin konusunu tek bir cümleyle yazınız.",
         "solutionExplanation": "Metinde Millî Mücadele yıllarında Türk kadınının vatanı uğruna yaptığı fedakârlık ele alınmaktadır.",
         "modelAnswer": "Metnin konusu: Kurtuluş Savaşı'nda Türk kadınlarının (Şerife Bacı'nın) cepheye mermi taşırken gösterdiği eşsiz fedakârlık ve vatan sevgisidir.",
+        "alternativeAnswers": [
+          "Kurtuluş Savaşı'nda kağnı kollarıyla cepheye cephane taşıyan Şerife Bacı'nın kahramanlığı ve fedakârlığı.",
+          "Millî Mücadele yıllarında Türk milletinin ve kadınlarının bağımsızlık uğruna gösterdiği sarsılmaz irade.",
+          "Şerife Bacı'nın dondurucu soğukta bebeği ve vatanı için canını ortaya koyması."
+        ],
         "rubric": [
           {
             "criterion": "Metnin konusunu eksiksiz, tek bir yargı bildiren cümleyle ifade etme",
@@ -10220,13 +10238,18 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Şerife Bacı’nın kendi öz evladının üzerindeki yorganı alıp top mermilerinin üzerine örtmesi, onun hangi değer dünyasını ve psikolojik kararlılığını gösterir? Metinden delil göstererek tahlil ediniz.",
         "solutionExplanation": "Öğrenci bireysel sevgiden daha üstün bir vatan bilincini ve bağımsızlık aşkını tahlil eder.",
         "modelAnswer": "Şerife Bacı, vatanın kurtuluşunu kendi canından ve ailesinden daha üstün tutan sarsılmaz bir fedakârlık ve vatanseverlik anlayışına sahiptir. 'Benim çocuğum yetim kalabilir ama vatan yetim kalamaz' sözü, bağımsız bir vatan olmazsa evladının da geleceğinin olamayacağı bilincini taşıdığını açıkça kanıtlamaktadır.",
+        "alternativeAnswers": [
+          "Değer Dünyası: Vatanın bağımsızlığını her türlü kişisel kaygının ve hatta evladının canının üstünde tutan üstün bir vatanseverlik anlayışı.",
+          "Metin İçi Delil: 'Benim çocuğum yetim kalabilir ama vatan yetim kalamaz' sözü ve bebeğinin yorganını mermilere örtmesi.",
+          "Psikolojik Kararlılık: Bağımsızlık olmadan evladının da bir geleceği olamayacağını bilerek tereddütsüzce vatanı öncelemesi."
+        ],
         "rubric": [
           {
-            "criterion": "Vatanseverlik ve fedakârlık değerinin derinlemesine tahlil edilmesi",
+            "criterion": "Şerife Bacı'nın vatan sevgisi ve fedakârlık kararlılığının doğru belirlenmesi",
             "points": 7
           },
           {
-            "criterion": "Metindeki söz ve eylemlerle tutarlı delillendirme yapılması",
+            "criterion": "Metindeki 'Benim çocuğum yetim kalabilir ama vatan yetim kalamaz' sözü veya mermileri koruma eylemiyle delillendirilmesi",
             "points": 7
           }
         ]
@@ -10244,6 +10267,11 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "a) Metinde geçen 'bağımsızlık' kelimesinin eş anlamlısını yazınız.\nb) 'Yankılanmak' kelimesini metindeki gerçek ses yansıması anlamı dışında, MECÂZ anlamda özgün bir cümle içinde kullanınız.",
         "solutionExplanation": "Bağımsızlık eş anlamlısı hürriyet/istiklaldir. Yankılanmak mecaz kullanımı ise toplumda derin etki bırakmaktır.",
         "modelAnswer": "a) Bağımsızlık = İstiklal (veya Hürriyet)\nb) Mecaz Anlamlı Cümle: 'Genç yazarın bu cesur konuşması tüm ülkede büyük bir yankı uyandırdı.' (veya 'Hocanın son sözleri zihnimde günlerce yankılandı.')",
+        "alternativeAnswers": [
+          "a) İstiklal, hürriyet.",
+          "b) 'Öğretmenin tavsiyeleri yıllar sonra bile zihnimde yankılanıyordu.'",
+          "b) 'Bu önemli zafer tüm dünyada büyük bir yankı uyandırdı.'"
+        ],
         "rubric": [
           {
             "criterion": "Bağımsızlık kelimesinin eş anlamlısının doğru yazılması",
@@ -10362,6 +10390,11 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Yukarıdaki Ahilik teşkilatı ve esnaf ahlakını anlatan metnin konusunu tek bir cümleyle özetleyiniz.",
         "solutionExplanation": "Metin Ahilik teşkilatının dürüst esnaf ahlakını ve 'pabucu dama atılmak' deyiminin kökenini açıklamaktadır.",
         "modelAnswer": "Metnin konusu: Ahilik teşkilatında uygulanan dürüst esnaflık kuralları, tüketici hakkını koruma bilinci ve 'pabucu dama atılmak' deyiminin tarihî doğuşudur.",
+        "alternativeAnswers": [
+          "Ahilik teşkilatında uygulanan dürüst esnaflık kuralları ve tüketici haklarının korunması.",
+          "Geleneksel esnaf teşkilatında meslek ahlakı ve 'pabucu dama atılmak' deyiminin kökeni.",
+          "Ahilik sisteminde hileli üretimi engelleme ve esnaf denetiminin önemi."
+        ],
         "rubric": [
           {
             "criterion": "Metnin konusunu eksiksiz ve net biçimde tek cümleyle özetleme",
@@ -10382,6 +10415,11 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Ahilik teşkilatının kusurlu mal üreten esnafın ayakkabısını dama atması eylemi, çarşıdaki güven ortamı ve üretilen ürünlerin kalitesi açısından nasıl bir sonuç doğurmuştur? Açıklayınız.",
         "solutionExplanation": "Ayakkabının dama atılması caydırıcı bir ceza olup esnafın hileli mal üretmesini engeller.",
         "modelAnswer": "Bu uygulama esnaflar üzerinde çok güçlü bir manevi ve toplumsal otokontrol (caydırıcılık) sağlamıştır. Çarşıda adı kötüye çıkmak istemeyen ustalar mallarını son derece titiz ve kaliteli üretmiş; tüketiciler de çarşıdan güvenle alışveriş yapabilmiştir.",
+        "alternativeAnswers": [
+          "Esnaflar itibar kaybetmemek için hileli ve kalitesiz üretimden kaçınmış, ürün kalitesi yükselmiştir.",
+          "Tüketiciler aldatılma korkusu yaşamadan alışveriş yapmış, çarşıda karşılıklı güven ortamı güçlenmiştir.",
+          "Toplumsal denetim ve lonca disiplini sayesinde haksız kazanç ve çürük mal satışı önlenmiştir."
+        ],
         "rubric": [
           {
             "criterion": "Toplumsal güven ve caydırıcılık etkisinin doğru açıklanması",
@@ -10520,6 +10558,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Metindeki altı çizili 'buzlarını eritmek' deyiminin ve 'nüfuz etmek' kelimesinin anlamlarını metnin bağlamından yararlanarak tahmin edip yazınız.",
         "solutionExplanation": "Buzlarını eritmek aradaki soğukluğu ve gerginliği gidermek; nüfuz etmek ise derinden etkilemek, içine işlemek demektir.",
         "modelAnswer": "• Buzlarını eritmek: İnsanlar arasındaki kırgınlığı, çekingenliği, soğukluğu ve gerginliği ortadan kaldırıp samimi bir ortam kurmak demektir.\n• Nüfuz etmek: Karşı tarafın kalbine ve zihnine derinden işlemek, güçlü bir etki bırakmak anlamına gelir.",
+        "alternativeAnswers": [
+          "Buzlarını eritmek: İletişimdeki soğukluğu, çekingenliği ve mesafeyi kaldırıp sıcaklık sağlamak.",
+          "Nüfuz etmek: Karşı tarafın duygularını derinden etkilemek, içine işlemek, kalbini fethetmek."
+        ],
         "rubric": [
           {
             "criterion": "'Buzlarını eritmek' deyiminin bağlama uygun doğru açıklanması",
@@ -10544,6 +10586,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Yukarıdaki tebessümün ve tatlı dilin önemini vurgulayan metnin konusunu bir cümleyle yazınız.",
         "solutionExplanation": "Metin güler yüzün ve nezaketli iletişimin insan ilişkilerindeki olumlu etkisini anlatmaktadır.",
         "modelAnswer": "Metnin konusu: Güler yüzlü olmanın, tatlı dilin ve nezaketli iletişimin insan ilişkilerini yumuşatmadaki ve dostlukları güçlendirmedeki rolüdür.",
+        "alternativeAnswers": [
+          "İnsan ilişkilerinde tatlı dil, tebessüm ve nezaketin dostlukları güçlendirmedeki önemi.",
+          "İletişimde sözcükler kadar ses tonu ve güler yüzün de insanlar arasındaki bağı güçlendirmesi."
+        ],
         "rubric": [
           {
             "criterion": "Metnin konusunu eksiksiz biçimde tek bir cümleyle yazma",
@@ -10564,6 +10610,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Metne göre asık suratlı, sürekli eleştiren ve etrafına öfke saçan insanlar çevrelerinde nasıl bir sonuçla karşılaşmaktadır? Metinden hareketle yazınız.",
         "solutionExplanation": "Metinde açıkça yazan olgu: Çevrelerindeki en candan dostlarını bile zamanla uzaklaştırmalarıdır.",
         "modelAnswer": "Metne göre asık suratlı, sürekli eleştiren ve öfke saçan insanlar; çevrelerindeki en candan, en yakın dostlarını bile zamanla kendilerinden uzaklaştırırlar.",
+        "alternativeAnswers": [
+          "En yakın ve samimi arkadaşlarını zamanla kendilerinden soğutur ve yalnız kalırlar.",
+          "Çevrelerindeki insanlarla bağları kopar ve güvenilir dostlarını kaybederler."
+        ],
         "rubric": [
           {
             "criterion": "Candan dostlarını zamanla uzaklaştırdıklarının metne uygun yazılması",
@@ -10584,6 +10634,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Metne göre bir insanın yalnızca doğru kelimeleri kullanması etkili bir iletişim için neden yeterli değildir? Metindeki bakış açısıyla açıklayınız.",
         "solutionExplanation": "Çünkü beden dili ve ses tonu kelimelerden daha hızlı ve etkilidir.",
         "modelAnswer": "Çünkü iletişim sadece sözcüklerden oluşmaz. İnsanlar karşısındakinin yüz ifadesine, samimiyetine ve ses tonuna bakar. Eğer sözcükler nazik ama yüz ifadesi asık ve samimiyetsizse, karşı taraf kelimelere değil beden dilindeki bu soğukluğa odaklanır.",
+        "alternativeAnswers": [
+          "Beden dili, ses tonu ve yüz ifadesi samimi olmadığında sadece güzel sözcükler karşı tarafa güven vermez.",
+          "İnsanlar karşılarındakinin içtenliğini sözlerden çok bakışlarındaki nezaketten ve tavırlarından anlarlar."
+        ],
         "rubric": [
           {
             "criterion": "Sözsüz iletişim ve beden dili vurgusunun doğru yapılması",
@@ -10698,6 +10752,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Metindeki altı çizili 'heybet' kelimesinin ve 'yaşayan bir tarihin serinliğini hissetmek' söz öbeğinin anlamlarını metnin bağlamından yararlanarak açıklayınız.",
         "solutionExplanation": "Heybet büyüklük, azamet; yaşayan tarihin serinliği ise geçmişle kurulan canlı bağı ifade eder.",
         "modelAnswer": "• Heybet: İnsana saygı ve hayranlık veren büyüklük, azamet ve gösteriş demektir.\n• Yaşayan bir tarihin serinliği: Ağacın yüzyıllar boyunca tarihi olayları ve kuşakları görmüş olmasından dolayı, onun gölgesinde oturanların geçmişle doğrudan manevi bir bağ kurmasıdır.",
+        "alternativeAnswers": [
+          "Heybet: Görkem, azamet, göz alıcı büyüklük veya saygı uyandıran yüceliktir.",
+          "Yaşayan bir tarihin serinliği: Geçmişin asırlar süren hatıralarını, olaylarını ve ruhunu çınarın gölgesinde hissedip geçmişle bağ kurmaktır."
+        ],
         "rubric": [
           {
             "criterion": "'Heybet' kelimesinin doğru açıklanması",
@@ -10722,6 +10780,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Bursa İnkaya köyündeki asırlık çınarın ele alındığı bu metnin konusunu bir cümleyle yazınız.",
         "solutionExplanation": "Metin asırlık bir çınarın tarihi tanıklığını ve insana verdiği manevi mesajı ele almaktadır.",
         "modelAnswer": "Metnin konusu: Bursa'daki altı asırlık İnkaya çınarının heybetli yapısı, tarihî tanıklığı ve insanlara öğrettiği sabır ve vefa duygusudur.",
+        "alternativeAnswers": [
+          "Metnin konusu: Asırlık İnkaya çınarının tarihi tanıklığı ve insana hissettirdiği vefa duygusudur.",
+          "Metnin konusu: Altı yüz yıllık ulu çınarın gölgesinde geçmişle kurulan bağ ve çınarın köklü varlığıdır."
+        ],
         "rubric": [
           {
             "criterion": "Metnin konusunun eksiksiz ve tek cümleyle yazılması",
@@ -10876,6 +10938,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Metindeki altı çizili 'tekelinde kalmak' söz öbeğinin ve 'bilgi birikimi' kavramının anlamlarını metnin bağlamından yararlanarak tahmin ediniz.",
         "solutionExplanation": "Tekelinde kalmak sadece bir zümrenin kontrolünde olmak; bilgi birikimi ise kuşaktan kuşağa aktarılan tecrübedir.",
         "modelAnswer": "• Tekelinde kalmak: Bir şeyin yalnızca belirli bir grubun veya zümrenin sahipliğinde ve kontrolünde olması, başkalarına kullandırılmaması demektir.\n• Bilgi birikimi: İnsanlığın çağlar boyunca araştırarak, deneyerek elde ettiği ve kitaplar yoluyla nesilden nesile aktardığı kültür ve ilim hazinesidir.",
+        "alternativeAnswers": [
+          "Tekelinde kalmak: Yalnızca imtiyazlı bir zümrenin veya seçkin kesimin elinde bulunmak, başkalarının erişimine kapalı olmak.",
+          "Bilgi birikimi: Geçmişten günümüze nesiller boyunca üretilip kitaplar ve yazıyla geleceğe taşınan ortak insanlık tecrübesi ve mirasıdır."
+        ],
         "rubric": [
           {
             "criterion": "'Tekelinde kalmak' deyiminin doğru açıklanması",
@@ -10900,6 +10966,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Kitabın kil tabletten matbaaya ve ekrana uzanan tarihini anlatan bu metnin konusunu bir cümleyle yazınız.",
         "solutionExplanation": "Metin kitabın tarihsel gelişimi ve matbaanın bilgiyi yaymadaki rolünü ele alır.",
         "modelAnswer": "Metnin konusu: Kitabın kil tabletlerden dijital ekranlara kadar geçirdiği tarihî dönüşüm ve matbaa sayesinde bilginin tüm insanlığa yayılmasıdır.",
+        "alternativeAnswers": [
+          "Metnin konusu: Kitabın tarih boyunca geçirdiği değişimler ve matbaanın bilginin yayılmasındaki önemi.",
+          "Metnin konusu: İnsanlığın bilgi birikimini taşıyan kitabın kil tabletten günümüze kadar uzanan yolculuğudur."
+        ],
         "rubric": [
           {
             "criterion": "Metnin konusunu net ve eksiksiz bir cümleyle özetleme",
@@ -11034,6 +11104,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Metindeki altı çizili 'Bozkırın Tezenesi' lakabının ve 'veciz' kelimesinin anlamlarını metnin bağlamından hareketle açıklayınız.",
         "solutionExplanation": "Tezene mızrap demektir; bozkırın mızrabı/sesi anlamındadır. Veciz ise kısa, öz ve derin anlamlı demektir.",
         "modelAnswer": "• Bozkırın Tezenesi: Orta Anadolu bozkırının saz mızrabı, o coğrafyanın duygularını ve feryadını saza aktaran büyük usta anlamına gelir.\n• Veciz: Kısa, öz, etkili ve derin anlamlar taşıyan söz veya ifade demektir.",
+        "alternativeAnswers": [
+          "Bozkırın Tezenesi: Bozkır halkının acılarını, sevinçlerini ve gönül dünyasını sazının mızrabıyla dile getiren büyük halk ozanı.",
+          "Veciz: Az sözle çok ve derin anlam ifade eden, özlü ve etkileyici sözdür."
+        ],
         "rubric": [
           {
             "criterion": "'Bozkırın Tezenesi' unvanının doğru açıklanması",
@@ -11058,6 +11132,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Neşet Ertaş ve türkülerimizin anlatıldığı bu metnin konusunu bir cümleyle yazınız.",
         "solutionExplanation": "Metin Neşet Ertaş'ın sanatını ve türkülerin milletimizin duygularını yansıtmadaki yerini anlatır.",
         "modelAnswer": "Metnin konusu: Neşet Ertaş'ın sazı ve sözüyle Anadolu insanının duygularına tercüman oluşu ve türkülerimizin millî kültürümüzdeki yeridir.",
+        "alternativeAnswers": [
+          "Metnin konusu: Neşet Ertaş'ın sanatı ve türkülerin milletimizin sevinç ve dertlerini dile getirmedeki önemi.",
+          "Metnin konusu: Bozkırın tezenesi Neşet Ertaş ve türkülerimizin Türk insanının gönül dünyasındaki yeri."
+        ],
         "rubric": [
           {
             "criterion": "Metnin konusunun eksiksiz tek cümleyle sunulması",

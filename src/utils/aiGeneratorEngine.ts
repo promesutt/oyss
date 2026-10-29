@@ -30,6 +30,7 @@ export interface GeneratedQuestionItem {
   stimulus: string;
   question: string;
   answer: string;
+  alternativeAnswers?: string[];
   solutionExplanation?: string;
   rubric: { item: string; pts: number }[];
   sharedSourceId?: string;
@@ -88,6 +89,22 @@ export async function generateMEBIQuestions(
   }).join('\n');
 
   const difficultyPlanText = formatDifficultyPlanText(targetCount);
+  const isGrade7Turkish = grade === 7 && subjectId === 'turkce';
+
+  const turkishMebiDirectives = isGrade7Turkish ? `
+MEBİ 7. SINIF TÜRKÇE SORU YAZIM VE ÖLÇME YÖNERGESİ (PİLOT STANDART):
+1. Soru kökleri duru, net ve açık emir kipleriyle bitmelidir ("...yazınız", "...açıklayınız", "...tahmin ediniz").
+2. Çıkarım ve örtük anlam (T.O.7.8, T.O.7.7) sorularında öğrenciden çıkarımını metindeki somut ipucu ve kanıtla desteklemesi istenmelidir ("en az iki ipucu ile delillendirerek açıklayınız" veya "metindeki ifadelerden hareketle gerekçelendiriniz").
+3. Yüzey anlam (T.O.7.5) sorularında gereksiz yere metin içi delil aranmamalı; konunun veya doğrudan açık bilginin tek bir cümleyle tespiti istenmelidir.
+4. Her soruyu alt maddeli (a, b) yapma! Yalnızca söz varlığı (T.O.7.4, T.O.7.21) ve yazım-noktalama (T.Y.7.21) gibi doğal olarak iki işlemli sorularda a) ve b) alt maddeleri kullan; okuma-anlama ve metin yapısı sorularında tekil ve odaklanmış soru kökü kullan.
+5. KABUL EDİLEBİLİR ALTERNATİF CEVAPLAR (alternativeAnswers):
+   - Her soru için JSON çıktısında "alternativeAnswers" dizisi üretilmelidir (2-3 adet kabul edilebilir alternatif ifade).
+   - Bu alternatifler tek resmi cevap değil, aynı kavrama veya ana fikre ulaşan öğrencinin farklı sözcüklerle ifade edebileceği örneklerdir.
+6. ANALİTİK VE PARÇALI RUBRİK:
+   - Çıkarım (T.O.7.8) ve söz varlığı tahmini (T.O.7.4) sorularında rubrik ölçütleri "Doğru tespit/tahmin" ve "Metin içi delil/gerekçe" olarak iki bağımsız kritere bölünmelidir (örn: 8 p tespit + 7 p delillendirme). Böylece kısmi başarı öz değerlendirmede doğru yansıtılır.
+   - Yüzey anlam (T.O.7.5) gibi tek odaklı sorularda rubrik tek ölçüt olarak kalmalıdır.
+7. Asla hayali ders kitabı sayfa numarası veya MEBİ soru kopyası üretme; metinler özgün, kültürel ve edebi nitelikte Türkçe paragraflar olmalıdır.
+` : '';
 
   const livePrompt = `SEN MEB TEMEL EĞİTİM GENEL MÜDÜRLÜĞÜ VE ÖDSGM ORTAK SINAVLAR BAŞUZMANISIN.
 Aşağıdaki resmi senaryo kurallarına uygun olarak eksiksiz bir ${grade}. Sınıf ${subjectId} Ortak Yazılı Sınav Kağıdı üret.
@@ -145,7 +162,7 @@ HER SORU İÇİN ZORUNLU BAĞLAM ÇEŞİTLİLİĞİ KURALI (EN KRİTİK KURAL):
    - Tablo sorularında veriler (satır ve sütunlar) mutlaka "stimulus" içinde verilmelidir.
    - Diyalog sorularında konuşan karakterlerin replikleri (Örn: Elif: "...", Kerem: "...") mutlaka "stimulus" içinde yer almalıdır.
    - Öğrenci kaynak metni/veriyi görmeden ASLA soruyu cevaplayamaz!
-
+${turkishMebiDirectives}
 ÇIKTI FORMATI:
 SADECE geçerli bir JSON çıktısı ver. JSON şeması:
 {
@@ -161,6 +178,10 @@ SADECE geçerli bir JSON çıktısı ver. JSON şeması:
       "stimulus": "Diyalog veya vaka metni...",
       "question": "Açık uçlu soru...",
       "answer": "MEBİ model cevabı...",
+      ${isGrade7Turkish ? `"alternativeAnswers": [
+        "Kabul edilebilir alternatif örnek ifade 1",
+        "Kabul edilebilir alternatif örnek ifade 2"
+      ],` : ''}
       "rubric": [
         {"item": "Kriter 1", "pts": 8},
         {"item": "Kriter 2", "pts": 7}
@@ -214,6 +235,12 @@ SADECE geçerli bir JSON çıktısı ver. JSON şeması:
 
       const reconciled = reconcileRubricPoints(rawRubric, targetPts);
 
+      const altAnswers = Array.isArray(q.alternativeAnswers)
+        ? q.alternativeAnswers
+            .filter((a: any) => typeof a === 'string' && a.trim().length > 0)
+            .map((a: string) => a.trim())
+        : undefined;
+
       return {
         ...q,
         number: idx + 1,
@@ -221,6 +248,7 @@ SADECE geçerli bir JSON çıktısı ver. JSON şeması:
         outcomeTitle: officialTitle,
         cognitiveLevel: distItem.cognitiveLevel || q.level || 'Karmaşık Bilişsel Süreçler',
         points: targetPts,
+        alternativeAnswers: altAnswers && altAnswers.length > 0 ? altAnswers : undefined,
         solutionExplanation: q.solutionExplanation || q.explanation || (q.answer ? `Analitik çözüm adımları ve gerekçe: ${q.answer}` : undefined),
         rubric: reconciled.map(r => ({ item: r.criterion, pts: r.points }))
       };
@@ -926,6 +954,10 @@ Kontrol: 14 × 10 = 140 TL, 16 × 5 = 80 TL. Toplam: 140 + 80 = 220 TL.`,
 b) Fırıncının yalnızca ticari kazanç gütmediğini kanıtlayan iki davranışı metinden yazınız.`,
       answer: `a) Örtük Anlam: İnsanlar sadece ekmek almamış, orada güveni, komşuluk sıcaklığını ve dayanışmayı yaşamışlardır. Bu hareket nostaljik bir saygı ve vefa göstergesidir.
 b) Kanıtlar: 1. 'Göz hakkı olan alsın' kutusu koyması, 2. 'Parası yetmeyen yarın versin' diyerek borca ve insana güvenmesi.`,
+      alternativeAnswers: [
+        'Mahalle sakinlerinin geçmişteki samimi komşuluk ilişkilerine, fırıncının cömertliğine ve güvene duyduğu vefa duygusudur.',
+        'Kanıtlar: Fırıncının ihtiyacı olanların ücretsiz ekmek alabilmesi için kutu koyması ve parası çıkışmayanlara güvenmesidir.'
+      ],
       rubric: [
         { item: 'Örtük anlamın (vefa ve komşuluk sıcaklığı) doğru açıklanması', pts: Math.round((pointAllocations[0] || 15) * 0.5) },
         { item: 'Metinden iki somut cömertlik kanıtının yazılması', pts: Math.round((pointAllocations[0] || 15) * 0.5) }
@@ -1438,6 +1470,7 @@ b) Mark NEVER plays tennis.`,
           stimulus: stim,
           question: q.questionText,
           answer: q.modelAnswer,
+          alternativeAnswers: q.alternativeAnswers,
           rubric: (q.rubric || []).map((r: any) => ({ item: r.criterion, pts: r.points }))
         };
       }),
@@ -1450,6 +1483,7 @@ b) Mark NEVER plays tennis.`,
         stimulus: q.stimulus || '',
         question: q.question,
         answer: q.answer,
+        alternativeAnswers: q.alternativeAnswers,
         rubric: q.rubric
       })),
       ...crossGradeSampleQuestionsWithExam.map(({ q, parentExam }) => {
@@ -1475,13 +1509,15 @@ b) Mark NEVER plays tennis.`,
           stimulus: stim,
           question: q.questionText,
           answer: q.modelAnswer,
+          alternativeAnswers: q.alternativeAnswers,
           rubric: (q.rubric || []).map((r: any) => ({ item: r.criterion, pts: r.points }))
         };
       })
     ];
 
     if (availablePool.length > 0) {
-      const q = availablePool[(variationIndex * 2 + occ - 1 + availablePool.length) % availablePool.length];
+      const pickIdx = (variationIndex * 2 + occ) % availablePool.length;
+      const q = availablePool[pickIdx];
       return {
         number: idx + 1,
         outcome: outcomeCode,
@@ -1493,6 +1529,7 @@ b) Mark NEVER plays tennis.`,
         stimulus: q.stimulus || '',
         question: q.question,
         answer: q.answer,
+        alternativeAnswers: q.alternativeAnswers,
         rubric: (q.rubric && q.rubric.length > 0) ? q.rubric : [
           { item: 'Kavramsal teşhis ve bilimsel tespit', pts: Math.round((pointAllocations[idx] || 15) * 0.5) },
           { item: 'Analitik gerekçelendirme ve modelleme basamağı', pts: Math.round((pointAllocations[idx] || 15) * 0.5) }
