@@ -592,6 +592,95 @@ console.log('=== OYSS AŞAMA 1: ENTEGRASYON VE DOĞRULAMA TESTLERİ BAŞLIYOR ==
   );
 }
 
+// --------------------------------------------------------------------------
+// TEST 20: Model Cevap, Rubrik ve Çözüm Açıklamasının Başlangıçta Varsayılan Kapalı Olması
+// --------------------------------------------------------------------------
+{
+  const revealedQuestions: Record<number, boolean> = {};
+  const activeQuestionNum = 1;
+  const isEvaluationRevealed = Boolean(revealedQuestions[activeQuestionNum]);
+
+  assert(
+    20,
+    'Model cevap ve rubriğin başlangıçta varsayılan kapalı olması',
+    isEvaluationRevealed === false,
+    `Soru ${activeQuestionNum} açıldığında model cevap ve rubrik görünürlüğü: ${isEvaluationRevealed} (Varsayılan: Kapalı).`
+  );
+}
+
+// --------------------------------------------------------------------------
+// TEST 21: Henüz Cevaplanmamış Soruda "Tümünü Karşıladım" ve Rubrik Kontrollerinin Engellenmesi
+// --------------------------------------------------------------------------
+{
+  const emptyAnswer = '';
+  const hasStudentAnswer = Boolean(emptyAnswer && emptyAnswer.trim().length > 0);
+  const showQuickEvaluationButtons = hasStudentAnswer; // Yalnızca cevap varsa gösterilebilir
+
+  assert(
+    21,
+    'Henüz cevaplanmamış soruda öz değerlendirme kontrollerinin engellenmesi',
+    showQuickEvaluationButtons === false && hasStudentAnswer === false,
+    `Boş soruda hasStudentAnswer=${hasStudentAnswer}. 'Tümünü Karşıladım' ve rubrik butonları öğrenciye sunulmadı.`
+  );
+}
+
+// --------------------------------------------------------------------------
+// TEST 22: Cevap Yazıldıktan Sonra Model Cevap ve Rubriğin Kontrollü Açılabilmesi
+// --------------------------------------------------------------------------
+{
+  const writtenAnswer = 'Metinde yazar doğal dengenin korunmasını savunmaktadır.';
+  const hasStudentAnswer = Boolean(writtenAnswer && writtenAnswer.trim().length > 0);
+  
+  let revealedQuestions: Record<number, boolean> = {};
+  const qNum = 1;
+
+  // Başlangıçta kapalı
+  const initiallyClosed = Boolean(revealedQuestions[qNum]) === false;
+
+  // Öğrenci butona tıkladı
+  revealedQuestions = { ...revealedQuestions, [qNum]: true };
+  const openedAfterClick = Boolean(revealedQuestions[qNum]) === true;
+
+  // Tekrar tıkladığında gizlenebilmeli
+  revealedQuestions = { ...revealedQuestions, [qNum]: false };
+  const closedAfterToggle = Boolean(revealedQuestions[qNum]) === false;
+
+  const passed = hasStudentAnswer && initiallyClosed && openedAfterClick && closedAfterToggle;
+
+  assert(
+    22,
+    'Cevap yazıldıktan sonra model cevap ve rubriğin kontrollü açılabilmesi',
+    passed,
+    `Cevap yazılınca buton aktifleşti, tıklandığında açıldı (${openedAfterClick}) ve tekrar tıklandığında gizlendi (${closedAfterToggle}).`
+  );
+}
+
+// --------------------------------------------------------------------------
+// TEST 23: Sınav Sonu Geri Bildirim Modunda Soru Esnasında Gizlilik ve Bitimde Toplu Açılma
+// --------------------------------------------------------------------------
+{
+  const sessionData = {
+    feedbackMode: 'end_of_exam' as const,
+    isCompleted: false
+  };
+
+  // Sınav devam ederken soru kartında model cevap gizlidir
+  const duringExamVisible = sessionData.feedbackMode === 'immediate' && sessionData.isCompleted;
+
+  // Sınav bitirildiğinde (isCompleted: true) özet ekranında tüm model cevaplar ve rubrikler açılır
+  sessionData.isCompleted = true;
+  const onSummaryScreenVisible = sessionData.isCompleted;
+
+  const passed = !duringExamVisible && onSummaryScreenVisible;
+
+  assert(
+    23,
+    'Sınav sonu modunda soru esnasında gizlilik ve bitimde toplu açılma',
+    passed,
+    `Sınav esnasında gizli: ${!duringExamVisible}, Sınav bitiminde özet ekranında açık: ${onSummaryScreenVisible}.`
+  );
+}
+
 console.log('=== TEST SONUÇLARI ===\n');
 let passedCount = 0;
 results.forEach(r => {

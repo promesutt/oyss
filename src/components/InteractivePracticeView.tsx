@@ -76,7 +76,8 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
   });
 
   const [isSavedIndicator, setIsSavedIndicator] = useState<boolean>(false);
-  const [showSelfEvaluationDetails, setShowSelfEvaluationDetails] = useState<boolean>(true);
+  // Her soru için model cevap ve rubrik alanının açılıp açılmadığı (varsayılan: tüm sorular için kapalı)
+  const [revealedQuestions, setRevealedQuestions] = useState<Record<number, boolean>>({});
 
   // Auto-save session on change
   useEffect(() => {
@@ -103,6 +104,9 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
     earnedPoints: 0
   };
 
+  const hasStudentAnswer = Boolean(currentAnswerData.studentAnswer && currentAnswerData.studentAnswer.trim().length > 0);
+  const isEvaluationRevealed = Boolean(revealedQuestions[qNum]);
+
   // Öğrenci metin yanıtını güncelle
   const handleAnswerTextChange = (text: string) => {
     const trimmed = text.trim();
@@ -120,8 +124,18 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
   };
 
   // Rubrik kriteri işaretle / kaldır
-  const handleToggleRubricCriterion = (criterionIdx: number) => {
-    const currentChecked = currentAnswerData.checkedCriteriaIndices || [];
+  const handleToggleRubricCriterion = (criterionIdx: number, targetQNum: number = qNum) => {
+    const targetQ = questions.find(q => (q.questionNumber || 0) === targetQNum) || currentQ;
+    const ansData: QuestionSessionData = session.answers[targetQNum] || {
+      questionNumber: targetQNum,
+      studentAnswer: '',
+      isAnswered: false,
+      isEvaluated: false,
+      checkedCriteriaIndices: [],
+      earnedPoints: 0
+    };
+
+    const currentChecked = ansData.checkedCriteriaIndices || [];
     let updatedChecked: number[];
     if (currentChecked.includes(criterionIdx)) {
       updatedChecked = currentChecked.filter(i => i !== criterionIdx);
@@ -131,18 +145,18 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
 
     // Seçilen ölçütlerin puanlarını topla
     const earned = updatedChecked.reduce((sum, idx) => {
-      const crit = currentQ?.rubric?.[idx];
+      const crit = targetQ?.rubric?.[idx];
       return sum + (crit?.points || 0);
     }, 0);
 
-    const safeEarned = Math.min(earned, currentQ?.points || 10);
+    const safeEarned = Math.min(earned, targetQ?.points || 10);
 
     setSession(prev => ({
       ...prev,
       answers: {
         ...prev.answers,
-        [qNum]: {
-          ...currentAnswerData,
+        [targetQNum]: {
+          ...ansData,
           isEvaluated: true,
           checkedCriteriaIndices: updatedChecked,
           earnedPoints: safeEarned,
@@ -153,17 +167,27 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
   };
 
   // Tüm kriterleri karşılandı veya sıfırla
-  const handleSetAllCriteria = (checkAll: boolean) => {
-    const rubric = currentQ?.rubric || [];
+  const handleSetAllCriteria = (checkAll: boolean, targetQNum: number = qNum) => {
+    const targetQ = questions.find(q => (q.questionNumber || 0) === targetQNum) || currentQ;
+    const ansData: QuestionSessionData = session.answers[targetQNum] || {
+      questionNumber: targetQNum,
+      studentAnswer: '',
+      isAnswered: false,
+      isEvaluated: false,
+      checkedCriteriaIndices: [],
+      earnedPoints: 0
+    };
+
+    const rubric = targetQ?.rubric || [];
     const updatedChecked = checkAll ? rubric.map((_, i) => i) : [];
-    const earned = checkAll ? currentQ.points : 0;
+    const earned = checkAll ? targetQ.points : 0;
 
     setSession(prev => ({
       ...prev,
       answers: {
         ...prev.answers,
-        [qNum]: {
-          ...currentAnswerData,
+        [targetQNum]: {
+          ...ansData,
           isEvaluated: true,
           checkedCriteriaIndices: updatedChecked,
           earnedPoints: earned,
@@ -209,6 +233,7 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
         answers: {},
         customExamSnapshot: isCustomAIExam ? examPaper : undefined
       });
+      setRevealedQuestions({});
       setActiveQuestionIndex(0);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -681,35 +706,76 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
                     </div>
 
                     {/* Rubric Checked Breakdown */}
-                    <div className="text-xs space-y-1">
-                      <strong className="block text-slate-600 text-[11px]">Rubrik Değerlendirmesi:</strong>
-                      <div className="space-y-1">
-                        {q.rubric.map((r, rIdx) => {
-                          const isMet = checked.includes(rIdx);
-                          return (
-                            <div 
-                              key={rIdx} 
-                              className={`flex items-center justify-between p-2 rounded-lg border text-[11px] ${
-                                isMet
-                                  ? 'bg-emerald-50 border-emerald-200 text-emerald-900 font-semibold'
-                                  : 'bg-white border-slate-200 text-slate-500'
-                              }`}
+                    <div className="text-xs space-y-2">
+                      <div className="flex flex-wrap items-center justify-between gap-1.5">
+                        <strong className="block text-slate-700 text-xs font-bold">
+                          Analitik Rubrik Değerlendirmesi:
+                        </strong>
+                        {ans?.studentAnswer?.trim() && (
+                          <div className="flex items-center space-x-1.5 text-[11px]">
+                            <button
+                              type="button"
+                              onClick={() => handleSetAllCriteria(true, num)}
+                              className="px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 hover:bg-emerald-100 border border-emerald-200 font-semibold cursor-pointer"
                             >
-                              <span className="flex items-center">
-                                {isMet ? (
-                                  <CheckSquare className="w-3.5 h-3.5 text-emerald-600 mr-1.5 shrink-0" />
-                                ) : (
-                                  <Square className="w-3.5 h-3.5 text-slate-300 mr-1.5 shrink-0" />
-                                )}
-                                {r.criterion}
-                              </span>
-                              <span className={isMet ? 'text-emerald-700 font-bold' : 'text-slate-400'}>
-                                {isMet ? `+${r.points} p` : `0 / ${r.points} p`}
-                              </span>
-                            </div>
-                          );
-                        })}
+                              Tümünü Karşıladım
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() => handleSetAllCriteria(false, num)}
+                              className="px-2 py-0.5 rounded bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 font-semibold cursor-pointer"
+                            >
+                              Temizle
+                            </button>
+                          </div>
+                        )}
                       </div>
+
+                      {ans?.studentAnswer?.trim() ? (
+                        <div className="space-y-1">
+                          {q.rubric.map((r, rIdx) => {
+                            const isMet = checked.includes(rIdx);
+                            return (
+                              <button 
+                                key={rIdx} 
+                                type="button"
+                                onClick={() => handleToggleRubricCriterion(rIdx, num)}
+                                className={`w-full text-left flex items-center justify-between p-2 rounded-lg border text-[11px] transition-colors cursor-pointer ${
+                                  isMet
+                                    ? 'bg-emerald-50 border-emerald-200 text-emerald-900 font-semibold shadow-2xs'
+                                    : 'bg-white border-slate-200 text-slate-600 hover:border-slate-300'
+                                }`}
+                              >
+                                <span className="flex items-center">
+                                  {isMet ? (
+                                    <CheckSquare className="w-3.5 h-3.5 text-emerald-600 mr-1.5 shrink-0" />
+                                  ) : (
+                                    <Square className="w-3.5 h-3.5 text-slate-300 mr-1.5 shrink-0" />
+                                  )}
+                                  {r.criterion}
+                                </span>
+                                <span className={isMet ? 'text-emerald-700 font-bold' : 'text-slate-400 font-medium'}>
+                                  {isMet ? `+${r.points} p` : `0 / ${r.points} p`}
+                                </span>
+                              </button>
+                            );
+                          })}
+                        </div>
+                      ) : (
+                        <div className="p-2.5 rounded-lg bg-slate-100/70 border border-slate-200 text-[11px] text-slate-500 italic flex items-center justify-between">
+                          <span>Bu soruya henüz yanıt yazılmadığı için rubrik öz değerlendirmesi yapılamaz.</span>
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setActiveQuestionIndex(idx);
+                              setSession(prev => ({ ...prev, isCompleted: false }));
+                            }}
+                            className="ml-2 font-bold text-indigo-600 hover:underline not-italic cursor-pointer shrink-0"
+                          >
+                            Cevap Yaz →
+                          </button>
+                        </div>
+                      )}
                     </div>
                   </div>
                 );
@@ -820,34 +886,52 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
 
               {/* Immediate Feedback & Self-Assessment Box */}
               {session.feedbackMode === 'immediate' && (
-                <div className="mt-4 pt-4 border-t border-slate-200 space-y-4">
-                  <div className="flex flex-wrap items-center justify-between gap-2">
-                    <button
-                      onClick={() => setShowSelfEvaluationDetails(!showSelfEvaluationDetails)}
-                      className="inline-flex items-center text-xs font-bold text-indigo-700 hover:text-indigo-900 cursor-pointer"
-                    >
-                      <Eye className="w-4 h-4 mr-1" />
-                      {showSelfEvaluationDetails ? 'Model Cevap ve Rubriği Gizle' : 'Model Cevap ve Rubriği İncele (Öz Değerlendirme)'}
-                    </button>
-
-                    <div className="flex items-center space-x-2 text-xs">
-                      <span className="text-slate-500 text-[11px]">Hızlı İşaretle:</span>
-                      <button
-                        onClick={() => handleSetAllCriteria(true)}
-                        className="px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 hover:bg-emerald-100 border border-emerald-200 font-semibold text-[11px] cursor-pointer"
-                      >
-                        Tümünü Karşıladım
-                      </button>
-                      <button
-                        onClick={() => handleSetAllCriteria(false)}
-                        className="px-2 py-0.5 rounded bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 font-semibold text-[11px] cursor-pointer"
-                      >
-                        Temizle
-                      </button>
+                !hasStudentAnswer ? (
+                  <div className="mt-4 pt-4 border-t border-slate-200">
+                    <div className="p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-500 flex items-center justify-between">
+                      <span className="flex items-center">
+                        <HelpCircle className="w-4 h-4 mr-2 text-slate-400 shrink-0" />
+                        Model cevabı, çözüm adımlarını ve rubrik öz değerlendirmesini açmak için lütfen önce cevabınızı yazınız.
+                      </span>
+                      <span className="text-[11px] font-semibold text-slate-400 hidden sm:inline bg-white px-2 py-0.5 rounded border border-slate-200">
+                        Anında Geri Bildirim Modu
+                      </span>
                     </div>
                   </div>
+                ) : (
+                  <div className="mt-4 pt-4 border-t border-slate-200 space-y-4">
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                    <button
+                      type="button"
+                      onClick={() => setRevealedQuestions(prev => ({ ...prev, [qNum]: !isEvaluationRevealed }))}
+                      className="inline-flex items-center px-3.5 py-1.5 rounded-xl text-xs font-bold bg-indigo-50 hover:bg-indigo-100 text-indigo-900 border border-indigo-200 transition-colors cursor-pointer shadow-2xs"
+                    >
+                      <Eye className="w-4 h-4 mr-1.5 text-indigo-600" />
+                      {isEvaluationRevealed ? 'Model Cevap ve Rubriği Gizle' : 'Model Cevap ve Rubriği İncele (Öz Değerlendirme)'}
+                    </button>
 
-                  {showSelfEvaluationDetails && (
+                    {isEvaluationRevealed && (
+                      <div className="flex items-center space-x-2 text-xs">
+                        <span className="text-slate-500 text-[11px]">Hızlı İşaretle:</span>
+                        <button
+                          type="button"
+                          onClick={() => handleSetAllCriteria(true)}
+                          className="px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 hover:bg-emerald-100 border border-emerald-200 font-semibold text-[11px] cursor-pointer"
+                        >
+                          Tümünü Karşıladım
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => handleSetAllCriteria(false)}
+                          className="px-2 py-0.5 rounded bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 font-semibold text-[11px] cursor-pointer"
+                        >
+                          Temizle
+                        </button>
+                      </div>
+                    )}
+                  </div>
+
+                  {isEvaluationRevealed && (
                     <div className="bg-emerald-50/70 border border-emerald-200 rounded-xl p-4 sm:p-5 space-y-4 text-xs">
                       
                       {/* Notice Badge */}
@@ -921,6 +1005,22 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
                       </div>
                     </div>
                   )}
+                </div>
+                )
+              )}
+
+              {/* Sınav Sonu Modu: Soru çözerken model cevap ve rubrik tamamen gizlidir */}
+              {session.feedbackMode === 'end_of_exam' && (
+                <div className="mt-4 pt-4 border-t border-slate-200">
+                  <div className="p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-500 flex items-center justify-between">
+                    <span className="flex items-center">
+                      <HelpCircle className="w-4 h-4 mr-2 text-slate-400 shrink-0" />
+                      Sınav sonu geri bildirim modundasınız. Model cevaplar ve rubrik öz değerlendirmesi sınavı bitirdiğinizde açılacaktır.
+                    </span>
+                    <span className="text-[11px] font-semibold text-slate-400 hidden sm:inline bg-white px-2 py-0.5 rounded border border-slate-200">
+                      Sınav Sonu Modu
+                    </span>
+                  </div>
                 </div>
               )}
             </div>
