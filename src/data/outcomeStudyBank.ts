@@ -1966,7 +1966,15 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "SB.7.1.1": {
     "outcomeCode": "SB.7.1.1",
-    "topicTitle": "İletişim ve İnsan İlişkileri: Ben Dili ve Sen Dili",
+    "topicTitle": "Gruplarda ve Sosyal Hayatta İletişimin Önemi (Ders Kitabı 1. Kitap, Sayfa 12-29)",
+    "textbookUnit": "1. Kitap, 1. Öğrenme Alanı: Birlikte Yaşamak",
+    "textbookPageRange": "Sayfa 12-29",
+    "textbookExamples": [
+      "Trafikte İletişim Dili (1. Kitap s. 14: Nezaket, empati ve hoşgörünün trafikteki çatışmaları önlemesi)",
+      "7/E Sınıfı Mesajlaşma Grubu (1. Kitap s. 13: Dijital iletişimde ses tonu ve jestten yoksunluğun yanlış anlaşılmalara yol açması)",
+      "Ben Dili ve Sen Dili İlkeleri (1. Kitap s. 19: Suçlayıcı sen dili yerine duyguları ifade eden yapıcı ben dili kullanımı)",
+      "Etkin Dinleme ve 'İki Dinle Bir Söyle' Atasözü (1. Kitap s. 20: Göz teması, söz kesmeme ve sabırla anlama)"
+    ],
     "quickNotes": [
       "Ben Dili: Kişinin karşıdakini suçlamadan, kendi duygu, düşünce ve rahatsızlığını anlattığı yapıcı iletişim dilidir. Karşı tarafta savunma veya öfke uyandırmaz; empatiyi tetikler. Örnek: \"Derslerine zaman ayırmadığında sınavların için endişeleniyorum.\"",
       "Sen Dili: Karşı tarafı doğrudan suçlayıcı, yargılayıcı, emir verici ve kırıcı konuşma biçimidir. Savunmaya ve çatışmaya yol açar. Örnek: \"Sen hep sorumsuz davranıyorsun, hiçbir zaman ders çalışmıyorsun!\"",
@@ -1974,7 +1982,7 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
       "İletişimi Engelleyen Faktörler: Ön yargılı olmak, lakap takmak, emir vermek, tehdit etmek, sürekli akıl vermek, alay etmek."
     ],
     "examTraps": [
-      "MEB SINAV TUZAĞI: Sınavlarda bir diyalog verilip \"Hangi cümle ben diline örnektir?\" diye sorulur. Cümlenin sonunda \"...hissediyorum, ...üzülüyorum, ...tedirgin oluyorum\" gibi kendi duygusunu ifade eden cümleler \"ben dili\"dir. \"...yapıyorsun, ...beceriksizsin\" gibi doğrudan kişiyi hedef alan ifadeler \"sen dili\"dir."
+      "MEB SINAV TUZAĞI: Sen dili ('hep böylesin, sorumsuzsun') öfke ve savunma yaratır; ben dili ('çalışmadığında endişeleniyorum') davranışın bendeki duygusal etkisini söyler ve empatiyi tetikler. Her olumsuz cümle sen dili değildir; öznenin ve duygunun kime ait olduğuna bakınız."
     ],
     "solvedExample": {
       "question": "Bir anne çocuğuna şu şekilde seslenmektedir: 'Her zaman odanı darmadağın bırakıyorsun, çok sorumsuz bir çocuksun!'\n\na) Annenin bu cümlesi neden 'Sen Dili'ne örnektir ve çocuk üzerinde nasıl bir psikolojik tepki doğurur?\nb) Bu iletişimi, çatışmaya yol açmayacak şekilde 'Ben Dili'ne dönüştürerek yeniden yazınız.",
@@ -1988,13 +1996,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "SB.7.1.2": {
     "outcomeCode": "SB.7.1.2",
-    "topicTitle": "Etkili İletişim Becerileri ve Beden Dili",
+    "topicTitle": "Özel Gereksinimli Bireyler İçin Fırsat Eşitliği (Ders Kitabı 1. Kitap, Sayfa 30-39)",
+    "textbookUnit": "1. Kitap, 1. Öğrenme Alanı: Birlikte Yaşamak",
+    "textbookPageRange": "Sayfa 30-39",
+    "textbookExamples": [
+      "Engelleri Aşan Paralimpik Sporcular (1. Kitap s. 32: Azim ve fırsat eşitliği sağlandığında elde edilen dünya başarıları)",
+      "Erişilebilirlik ve Fiziki Mimari Düzenlemeler (1. Kitap s. 34-36: Engelli araç park yeri, sarı kılavuz çizgi, rampa, asansör)",
+      "Engelsiz Plaj ve Engelsiz Eğitim (1. Kitap s. 36: Kamusal ve sosyal alanlarda tam katılım için tasarlanan olanaklar)",
+      "Pozitif Ayrımcılık ve Fırsat Eşitliği İlkesi (1. Kitap s. 35: Dezavantajlı gruplara eşit başlangıç koşulu sunulması)"
+    ],
     "quickNotes": [
-      "Etkili Dinleme: Karşıdaki konuşurken sözünü kesmemek, göz teması kurmak ve başıyla onaylayarak dinlediğini hissettirmek.",
-      "Empati: Kendini karşısındaki kişinin yerine koyarak onun duygularını ve düşüncelerini doğru anlama becerisidir."
+      "Fırsat Eşitliği: Bütün bireylerin eğitim, çalışma, kültür ve sosyal hayata engelsiz biçimde katılabilmesi için gerekli koşulların sağlanmasıdır.",
+      "Pozitif Ayrımcılık: Toplumda dezavantajlı konumda olan özel gereksinimli bireylerin diğer bireylerle eşit hak ve imkânlara kavuşabilmesi için sağlanan öncelik ve yasal desteklerdir.",
+      "Fiziki ve Mimari Düzenlemeler: Eğimli tekerlekli sandalye rampaları, asansörler, kabartmalı (Braille) yönlendirme tabelaları, sesli yaya geçidi sinyalizasyonu ve engelli otoparkları.",
+      "Hak Temelli Yaklaşım: Engellilere yönelik düzenlemeler acıma veya yardım değil, doğuştan gelen temel insan haklarının teslim edilmesidir."
     ],
     "examTraps": [
-      "Dinlerken kafasında cevap hazırlamak etkili dinleme değil, iletişim engelidir."
+      "MEB SINAV TUZAĞI: Özel gereksinimli bireylere yönelik düzenlemeler bir lütuf veya yardımseverlik eylemi değil, anayasal bir temel insan hakkı ve eşitlik ilkesidir. Pozitif ayrımcılığı adaletsizlik sanmayınız; dezavantajı giderip adaleti sağlama amacı taşır."
     ],
     "solvedExample": {
       "question": "Bedensel engelli (tekerlekli sandalye kullanan) 7. sınıf öğrencisi Umut, okuluna ve mahallesindeki kütüphaneye giderken çeşitli engellerle karşılaşmaktadır.\n\nUmut'un eğitim ve sosyal hayata tam katılımını sağlamak için okulda ve kütüphanede yapılması gereken 2 fiziki/mimari düzenlemeyi yazınız.",
@@ -2008,13 +2026,24 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "SB.7.1.3": {
     "outcomeCode": "SB.7.1.3",
-    "topicTitle": "Medya Okuryazarlığı ve İletişim Özgürlüğü",
+    "topicTitle": "Millî Meseleler Karşısında Türk Toplumunun Tutum ve Davranışları (Ders Kitabı 1. Kitap, Sayfa 40-50)",
+    "textbookUnit": "1. Kitap, 1. Öğrenme Alanı: Birlikte Yaşamak",
+    "textbookPageRange": "Sayfa 40-50",
+    "textbookExamples": [
+      "Arif Bedii'nin 'Atatürk ve Millî Mücadele' Tablosu (1. Kitap s. 42: Kadın, erkek ve askerin tek yürek halinde cepheye koşması)",
+      "Deprem ve Doğal Afetlerde Milletçe Kenetlenme (1. Kitap s. 43: Arama-kurtarma, yardım tırları ve imece dayanışması)",
+      "Tekâlif-i Milliye Emirleri ve Sakarya Meydan Muharebesi (1. Kitap s. 45: Halkın varını yoğunu ordusuna teslim etmesi)",
+      "Orhun Yazıtları'nda Bilge Kağan'ın Hitabı (1. Kitap s. 46: 'Ey Türk milleti, üstte mavi gök basmasa altta yağız yer delinmese ilini kim bozabilir' birlik çağrısı)",
+      "15 Temmuz Demokrasi ve Millî Birlik Direnişi (1. Kitap s. 48: Milletin bağımsızlığına ve meclisine sahip çıkması)"
+    ],
     "quickNotes": [
-      "Medya Okuryazarlığı: Medyadan gelen iletileri eleştirel bir gözle analiz etme, doğru ile sahte haberi (dezenformasyon) ayırt etme becerisidir.",
-      "Anayasal Haklar: Düşünce ve ifade özgürlüğü (Madde 25-26), Doğru haber alma hakkı, Özel hayatın gizliliği (Madde 20)."
+      "Millî Birlik ve Beraberlik: Millet fertlerinin sevinçte, kederde ve ortak tehlikeler karşısında tek bir yürek olarak hareket etme şuurudur.",
+      "Topyekûn Dayanışma (İmece): Millî Mücadele'deki Tekâlif-i Milliye emirlerinden günümüzdeki deprem ve doğal afet seferberliğine kadar milletimizin ortak dayanışma karakteridir.",
+      "Millî Değerler ve Kimlik: Vatanseverlik, bağımsızlık tutkusu, bayrak sevgisi ve şehitlik-gazilik mertebelerine duyulan derin hürmet.",
+      "Tarihsel Süreklilik: Orhun Yazıtları'ndan Kurtuluş Savaşı'na ve 15 Temmuz'a kadar milletin ortak mukavemet ve vefa ruhu."
     ],
     "examTraps": [
-      "Sosyal medyada görülen her haberi teyit etmeden paylaşmak bilgi kirliliği suçuna ortak olmaktır."
+      "MEB SINAV TUZAĞI: Millî meseleler yalnızca savaş dönemlerini kapsamaz; büyük doğal afetler (deprem, sel, yangın), salgın hastalıklar ve uluslararası krizlerde sergilenen dayanışma da Türk milletinin millî meseleler karşısındaki ortak tutumudur."
     ],
     "solvedExample": {
       "question": "Mustafa Kemal Paşa Sakarya Meydan Muharebesi öncesinde ordunun çorap, çarık, bez, silah ve yiyecek ihtiyacını karşılamak için Tekâlif-i Milliye Emirleri'ni yayımlamıştır. Türk milleti elindeki son çorabına ve buğday çuvalına kadar ordusuna teslim etmiştir.\n\nTürk milletinin bu tutumu, onun hangi millî ve manevi karakter özelliklerini yansıtır? İki kavram belirterek açıklayınız.",
@@ -2028,7 +2057,16 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "SB.7.2.1": {
     "outcomeCode": "SB.7.2.1",
-    "topicTitle": "Küreselleşme ve Dünya Sorunları",
+    "topicTitle": "Küreselleşmenin İnsan ve Toplum Hayatına Etkisi (Ders Kitabı 1. Kitap, Sayfa 58-67)",
+    "textbookUnit": "1. Kitap, 2. Öğrenme Alanı: Evimiz Dünya",
+    "textbookPageRange": "Sayfa 58-67",
+    "textbookExamples": [
+      "Ulaşım ve Uluslararası Lojistik Ağları (1. Kitap s. 61: Hızlı trenler, kargo uçakları ve kıtalararası ticaret köprüleri)",
+      "Görüntülü Görüşme ve Dijital Dünya (1. Kitap s. 62: Anlık iletişim, bilgiye hızlı erişim ve küresel köy kavramı)",
+      "Kahvenin Küresel Yolculuğu (1. Kitap s. 63: Etiyopya'dan Yemen ve Osmanlı'ya, oradan tüm dünyaya yayılan Türk kahvesi ve kültürel etkileşim)",
+      "'Yeşil Vatan - Benim Okulum Geleceğe Çare' Etkinlikleri (1. Kitap s. 64: Küresel çevre sorunları ve ortak gezegen bilinci)",
+      "Popüler Kültür vs. Yerel Kültürler / Kültürel Tek Tipleşme (1. Kitap s. 65: Küresel müzik, giyim ve fast food karşısında yerel zanaat ve gelenekleri koruma)"
+    ],
     "quickNotes": [
       "Küresel Sorun Nedir? Tek bir ülkenin sınırlarını aşan, tüm insanlığı ve gezegenin geleceğini tehdit eden, yalnızca ortak küresel iş birliğiyle çözülebilecek büyük problemlerdir.",
       "Başlıca Küresel Sorunlar:\n• Küresel Isınma ve İklim Değişikliği (kuraklık, buzulların erimesi, deniz seviyesinin yükselmesi)\n• Açlık ve Yoksulluk\n• Salgın Hastalıklar\n• Doğal Afetler (depremler, tsunamiler)\n• Savaşlar ve Zorunlu Göç / Mülteci Sorunu.",
@@ -2036,7 +2074,7 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
       "Bireysel Sorumluluklarımız: Su ve enerji tasarrufu yapmak, geri dönüşüme katılmak, israftan kaçınmak, doğayı korumak."
     ],
     "examTraps": [
-      "KRİTİK ÇIKARIM: Küresel çevre ve iklim sorunları sınır tanımaz; bir ülkenin sanayi atıkları veya karbon salınımı binlerce kilometre ötedeki kıtaları etkiler. Bu nedenle çözüm yerel değil, mutlaka küresel ortak politikalar gerektirir."
+      "MEB SINAV TUZAĞI: Küreselleşmeyi tamamen olumlu ya da tamamen olumsuz bir olgu olarak değerlendirmeyiniz. Küreselleşme bilgiye erişim ve hoşgörü açısından fırsatlar sunarken; yerel diller, mutfaklar ve gelenekler üzerinde kültürel erozyon riski taşır. Analiz ederken her iki yönü de dengeli ele alınız."
     ],
     "solvedExample": {
       "question": "İnternet, sosyal medya ve uluslararası ticaret sayesinde dünyanın bir ucunda üretilen müzik, film, giyim tarzı veya yemek alışkanlığı birkaç gün içinde tüm dünyaya yayılmaktadır.\n\na) Küreselleşmenin toplumlar arasındaki kültürel zenginliğe sağladığı 1 OLUMLU katkıyı yazınız.\nb) Küreselleşmenin yerel kültürler üzerindeki 1 OLUMSUZ (riskli) etkisini yazınız.",

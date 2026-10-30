@@ -12885,9 +12885,13 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "a) Annenin bu cümlesi neden 'Sen Dili'ne örnektir ve çocuk üzerinde nasıl bir psikolojik tepki doğurur?\nb) Bu iletişimi, çatışmaya yol açmayacak şekilde 'Ben Dili'ne dönüştürerek yeniden yazınız.",
         "solutionExplanation": "Sen dili suçlayıcıdır, savunmaya ve öfkeye iter. Ben dili ise davranışın kişide bıraktığı duyguyu anlatır.",
         "modelAnswer": "a) Cümle doğrudan kişiliği hedef aldığı, suçlayıcı, yargılayıcı ve genelleme ('her zaman') içerdiği için Sen Dili'dir. Çocukta savunmaya geçme, öfke ve kendini kapatma tepkisi doğurur.\nb) Ben Dili Dönüşümü: 'Odanı dağınık gördüğümde eşyalarını bulamayacağından endişeleniyorum ve yorulup üzülüyorum.'",
+        "alternativeAnswers": [
+          "a) Karşı tarafı doğrudan suçlayıp kişiliğine ('sorumsuz') saldırdığı ve genelleme yaptığı için sen dilidir; çocukta direnç, öfke ve dinlememe tepkisi uyandırır. b) 'Odan toplu olmadığında aradıklarını bulamamandan endişe duyuyor ve evin düzeni bozulduğu için üzülüyorum.'",
+          "a) Davranış yerine çocuğu yargılayarak suçladığı için sen dilidir; bu durum çocukta yetersizlik duygusu ve iletişimden kaçınma doğurur. b) 'Odanı dağınık bıraktığında eşyalarının zarar görmesinden korkuyorum ve toparlamakta zorlandığım için yoruluyorum.'"
+        ],
         "rubric": [
           {
-            "criterion": "Sen dilinin özellikleri ve olumsuz etkisinin doğru açıklanması",
+            "criterion": "Sen dilinin suçlayıcı niteliği ve savunma/öfke tepkisinin açıklanması",
             "points": 8
           },
           {
@@ -12909,13 +12913,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Mert'in bu davranışındaki 2 temel iletişim hatasını belirtiniz. Mert empati kuran ve etkin dinleyen bir arkadaş olsaydı nasıl davranmalı ve ne söylemeliydi?",
         "solutionExplanation": "Göz teması kurmamış, duyguyu küçümsemiştir. Empatik dinlemede göz teması kurulur ve duygu paylaşılır.",
         "modelAnswer": "• İletişim Hataları: 1) Göz teması kurmamış, telefonuyla ilgilenerek arkadaşını önemsiz hissettirmiştir. 2) Arkadaşının yaşadığı üzüntüyü 'Aman boş ver' diyerek küçümsemiş ve geçiştirmiştir.\n• Olması Gereken Tavır: Telefonu bir kenara bırakıp Selin'in yüzüne bakmalı, dikkatle dinlemeli ve 'Çok emek verdiğini biliyorum, üzülmekte çok haklısın. İstersen eksiklerini birlikte gözden geçirelim, yanındayım.' şeklinde destekleyici olmalıydı.",
+        "alternativeAnswers": [
+          "Hatalar: Göz temasından kaçınarak telefonla meşgul olması ve arkadaşının sınav üzüntüsünü önemsizleştirip geçiştirmesidir. Empatik Tavır: Başını kaldırıp arkadaşıyla göz teması kurmalı, onu ilgiyle dinleyerek 'Çok çalıştığını biliyordum, yaşadığın hayal kırıklığını anlıyorum; canını sıkma bir dahaki sefere birlikte çalışırız.' demeliydi.",
+          "Hatalar: Beden diliyle dinlemediğini belli etmesi ve muhatabının duygusunu hafife almasıdır. Olması Gereken: Tüm dikkatini Selin'e vererek onu kesintisiz dinlemeli, 'Emeklerinin karşılığını alamadığın için üzülmen çok doğal, yanında olduğumu bilmeni isterim.' şeklinde duygu paylaşımı yapmalıydı."
+        ],
         "rubric": [
           {
-            "criterion": "İki somut iletişim hatasının doğru tespit edilmesi",
+            "criterion": "İki somut iletişim hatasının (göz teması kurmama ve duyguyu küçümseme) doğru tespiti",
             "points": 8
           },
           {
-            "criterion": "Empatik yaklaşımın ve örnek konuşmanın doğru kurgulanması",
+            "criterion": "Empatik yaklaşımın ve destekleyici konuşmanın doğru kurgulanması",
             "points": 7
           }
         ]
@@ -12933,10 +12941,18 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Umut'un eğitim ve sosyal hayata tam katılımını sağlamak için okulda ve kütüphanede yapılması gereken 2 fiziki/mimari düzenlemeyi yazınız.",
         "solutionExplanation": "Erişilebilir rampa, engelli asansörü, genişletilmiş kapılar vb.",
         "modelAnswer": "1. Okul ve kütüphane girişlerine standartlara uygun eğimli tekerlekli sandalye rampaları ve katlar arası erişim için engelli asansörü yapılmalıdır.\n2. Kütüphanedeki çalışma masaları ve kitap reyonları arasındaki koridorlar tekerlekli sandalyenin rahatça dönebileceği genişlikte ve yükseklikte tasarlanmalıdır.",
+        "alternativeAnswers": [
+          "1) Bina girişlerindeki basamakların yanına uygun eğimli rampa inşa edilmesi veya engelli kaldırma platformu/asansör kurulması. 2) Kapı eşiklerinin sıfırlanması ve kütüphane masaları ile tuvaletlerin tekerlekli sandalye ergonomisine uygun hale getirilmesi.",
+          "1) Katlar arasında Umut'un tek başına güvenle kullanabileceği geniş kabinli engelli asansörü yapılması. 2) Okul ve kütüphane koridorları ile kitaplık aralıklarının tekerlekli sandalyenin geçişine imkân verecek genişlikte düzenlenmesi."
+        ],
         "rubric": [
           {
-            "criterion": "İki gerçekçi ve standartlara uygun mimari/fiziki çözümün yazılması",
-            "points": 14
+            "criterion": "Giriş ve katlar arası erişim için rampa/asansör çözümünün yazılması",
+            "points": 7
+          },
+          {
+            "criterion": "İç mekan koridor, masa ve ergonomi düzenleme önerisinin yazılması",
+            "points": 7
           }
         ]
       },
@@ -12953,13 +12969,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Türk milletinin bu tutumu, onun hangi millî ve manevi karakter özelliklerini yansıtır? İki kavram belirterek açıklayınız.",
         "solutionExplanation": "Vatanseverlik, dayanışma, bağımsızlık tutkusu ve fedakârlık.",
         "modelAnswer": "1. Vatanseverlik ve Bağımsızlık Aşkı: Türk halkı bağımsız yaşayabilmek için malını, mülkünü ve canını feda etmekten bir an bile çekinmemiştir.\n2. Topyekûn Dayanışma (İmece Ruhu): Kadını, erkeği, yaşlısıyla tüm halkın tek bir vücut halinde ordusunun arkasında kenetlenmesi eşsiz bir millî birlik şuurunu gösterir.",
+        "alternativeAnswers": [
+          "Fedakârlık ve Millî Birlik: Türk milleti bağımsızlığı her türlü maddi varlığın üstünde tutarak elindeki son ekmeğini ve giysisini ordusuyla paylaşmış, ordu-millet dayanışmasının eşsiz bir örneğini sergilemiştir.",
+          "Vatan Sevgisi ve Dayanışma (İmece): Vatanın kurtuluşu için zengin-fakir ayrımı olmadan herkesin ortak sorumluluk üstlenmesi, milletimizin bağımsız yaşama iradesini ve zor zamanlardaki kenetlenme gücünü yansıtır."
+        ],
         "rubric": [
           {
-            "criterion": "İki millî/manevi değerin doğru belirlenmesi",
+            "criterion": "İki millî/manevi değerin (vatanseverlik, bağımsızlık, fedakârlık) doğru belirlenmesi",
             "points": 7
           },
           {
-            "criterion": "Tekâlif-i Milliye ruhunun gerekçeli açıklanması",
+            "criterion": "Tekâlif-i Milliye ruhunun ordu-millet bütünleşmesiyle gerekçeli açıklanması",
             "points": 7
           }
         ]
@@ -12977,10 +12997,18 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Bu durum, Türk milletinin geçmişten gelen hangi tarihî değerinin günümüzde de canlı bir şekilde yaşadığını kanıtlar? Açıklayınız.",
         "solutionExplanation": "Milli birlik, beraberlik ve yardımlaşma şuuru.",
         "modelAnswer": "Bu durum, Türk milletinin bin yıllık tarihinden süzülüp gelen 'millî birlik, beraberlik ve diğerkâmlık (başkalarını düşünme)' hasletinin canlılığını koruduğunu gösterir. Milletimiz felaket ve zor günlerde her türlü ayrılığı bir kenara bırakarak tek yürek olmayı başaran yüce bir dayanışma refleksine sahiptir.",
+        "alternativeAnswers": [
+          "Milletimizin tarih boyunca süregelen 'yardımlaşma, dayanışma ve imece' geleneğinin yaşadığını kanıtlar; acıda ve sevinçte birleşebilen toplumlar felaketleri tek vücut olarak atlatırlar.",
+          "Türk milletinin millî birlik, kardeşlik ve fedakârlık şuurunun devam ettiğini gösterir; vatanın herhangi bir köşesindeki acıyı tüm millet kendi acısı sayarak seferber olmaktadır."
+        ],
         "rubric": [
           {
-            "criterion": "Dayanışma ve millî birlik bilincinin doğru ifade edilmesi",
-            "points": 14
+            "criterion": "Millî birlik, beraberlik ve yardımlaşma hasletinin doğru ifade edilmesi",
+            "points": 7
+          },
+          {
+            "criterion": "Zor zamanlarda tek yürek olma ve tarihsel süreklilik boyutunun gerekçelendirilmesi",
+            "points": 7
           }
         ]
       },
@@ -12997,13 +13025,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "a) Küreselleşmenin toplumlar arasındaki kültürel zenginliğe sağladığı 1 OLUMLU katkıyı yazınız.\nb) Küreselleşmenin yerel kültürler üzerindeki 1 OLUMSUZ (riskli) etkisini yazınız.",
         "solutionExplanation": "Olumlu: Farklı kültürleri tanıma, hoşgörü. Olumsuz: Kültürel tek tipleşme, yerel geleneklerin unutulması.",
         "modelAnswer": "a) Olumlu Katkı: Farklı kültürleri, dilleri ve yaşam tarzlarını tanıma imkânı sunarak toplumlar arasında ön yargıların kırılmasını ve dünya barışına katkı sağlayacak hoşgörüyü geliştirir.\nb) Olumsuz Etki: Popüler kültürün baskısıyla yerel geleneklerin, özgün halk oyunlarının, el sanatlarının ve ana dilin yozlaşmasına (kültürel tek tipleşmeye / yozlaşmaya) yol açabilir.",
+        "alternativeAnswers": [
+          "a) Olumlu: Dünyadaki farklı kültürlerin, mutfakların ve sanatların tanınmasını sağlayarak toplumların bakış açısını genişletir. b) Olumsuz: Küresel tüketim alışkanlıkları ve popüler kültür nedeniyle öz kültür ögelerinin ve geleneksel el sanatlarının unutulmasına neden olabilir.",
+          "a) Olumlu: İletişim ve ulaşım kolaylığı sayesinde dünya milletleri arasında empati, kültürel alışveriş ve iş birliği artar. b) Olumsuz: Baskın kültürlerin yerel dilleri, giyim tarzlarını ve mutfakları dönüştürerek kültürel çeşitliliği azaltması (kültürel erozyon) riskidir."
+        ],
         "rubric": [
           {
-            "criterion": "a şıkkında olumlu katkının doğru açıklanması",
+            "criterion": "a şıkkında kültürel etkileşim ve hoşgörü gibi olumlu katkının açıklanması",
             "points": 7
           },
           {
-            "criterion": "b şıkkında tek tipleşme/kültürel kayıp riskinin açıklanması",
+            "criterion": "b şıkkında tek tipleşme veya yerel değerlerin kaybolması riskinin açıklanması",
             "points": 7
           }
         ]
@@ -13021,13 +13053,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Millî kültür ögelerimizin küresel ölçekte tescillenip tanıtılmasının ülkemizin uluslararası saygınlığı ve turizmi açısından önemini 2 maddeyle açıklayınız.",
         "solutionExplanation": "Kültürel diplomasi gücümüzü artırır, turizm gelirlerini ve saygınlığı yükseltir.",
         "modelAnswer": "1. Kültürel Diplomasi ve Tanıtım: Ülkemizin köklü ve zengin bir medeniyet mirasına sahip olduğunu tüm dünyaya kanıtlayarak Türkiye'nin uluslararası arenadaki saygınlığını ve kültürel marka değerini artırır.\n2. Turizm ve Ekonomik Katkı: Bu geleneksel zenginlikleri yerinde görmek ve deneyimlemek isteyen yabancı turistlerin ülkemizi ziyaret etmesini teşvik ederek kültür turizmini canlandırır.",
+        "alternativeAnswers": [
+          "1) Türkiye'nin zengin tarihsel birikimini dünyaya göstererek kültürel saygınlığımızı pekiştirir ve küresel tanıtımımıza katkı sunar. 2) Somut olmayan kültürel miraslarımızı merak eden turistlerin ülkemize gelmesini sağlayarak turizm gelirlerimizi artırır.",
+          "1) Kültürel değerlerimizin evrensel koruma altına alınmasını sağlayarak uluslararası alanda kültürel gücümüzü yükseltir. 2) Gastronomi ve kültür turlarını canlandırarak yerel zanaatkâr ve esnafa ekonomik kazanç sağlar."
+        ],
         "rubric": [
           {
-            "criterion": "Kültürel diplomasi ve saygınlık etkisinin açıklanması",
+            "criterion": "Kültürel diplomasi, saygınlık ve millî kimliğin küresel temsili boyutu",
             "points": 7
           },
           {
-            "criterion": "Kültür turizmi ve ekonomik boyuta etkisinin yazılması",
+            "criterion": "Kültür turizmi, ziyaretçi ilgisi ve ekonomik katkı boyutu",
             "points": 7
           }
         ]
@@ -13063,6 +13099,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Öğretmenin beden dili ve sözsüz iletişimindeki 2 temel eksikliği belirterek, bunların öğrencinin derse ilgisi üzerindeki olumsuz sonucunu açıklayınız.",
         "solutionExplanation": "Göz teması kurmamak, güler yüzlü olmamak ve monoton bir duruş iletişimi koparır.",
         "modelAnswer": "• Eksiklikler: 1) Öğrencilerle doğrudan göz teması kurmamış, tahtaya dönük ders anlatmıştır. 2) Güler yüzlü, tebessüm eden ve dinleyeni içine çeken bir mimik ve jest kullanmamıştır.\n• Olumsuz Sonuç: Bu tutum öğrencide değersizlik hissi yaratır, dikkat dağılır, motivasyon düşer ve ders monotonlaşarak verimsiz hale gelir.",
+        "alternativeAnswers": [
+          "Eksiklikler: Öğrencilerle göz kontağı kurmaması ve asık suratla monoton şekilde dersi aktarmasıdır. Olumsuz Sonuç: Öğrenciler kendilerini derse ait hissetmezler, dikkatleri hızla dağılır ve derse karşı ilgi kaybı oluşur.",
+          "Eksiklikler: Bedenini öğrencilere dönmemesi ve tebessüm/canlı jestlerden yoksun olmasıdır. Olumsuz Sonuç: Sınıf içi etkileşimi sıfıra indirir; öğrenmede sıkılma ve iletişimin tek taraflı kalması sonucunu doğurur."
+        ],
         "rubric": [
           {
             "criterion": "Göz teması ve mimik eksikliğinin doğru belirlenmesi",
@@ -13087,6 +13127,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Cemil'in bu tutumu hangi iletişim engelidir (kavram)? Bu tür düşüncelerin sınıf içi birlikteliğe ve yeni öğrenciye verdiği 2 zararı yazınız.",
         "solutionExplanation": "Kalıp yargı ve ön yargıdır. Bireyi dışlar ve yalnızlaştırır.",
         "modelAnswer": "• Kavram: Ön yargı (veya kalıp yargı).\n• Zararları: 1) Arda'yı tanımadan etiketlediği için onu sınıfta yalnızlaştırır, dışlanmışlık ve uyum sorunu hissettirir. 2) Sınıf içindeki arkadaşlık, güven ve kaynaşma ortamını zedeler, haksız bir önyargı duvarı örer.",
+        "alternativeAnswers": [
+          "Kavram: Ön yargı (Kalıp yargı). Zararlar: 1) Arda'nın sınıfa uyum sağlamasını zorlaştırıp onu duygusal olarak yalnızlığa iter. 2) Sınıfta ayrışmalara yol açarak güven ve empatiye dayalı arkadaşlık bağlarını zayıflatır.",
+          "Kavram: Ön yargılı yaklaşım. Zararlar: 1) Bireyin potansiyelini ve gerçek kişiliğini tanımayı engelleyerek haksız dışlamaya sebep olur. 2) Öğrenciler arasında gruplaşma ve ötekileştirme yaratarak sınıf huzurunu bozar."
+        ],
         "rubric": [
           {
             "criterion": "Ön yargı / kalıp yargı kavramının doğru teşhisi",
@@ -13111,6 +13155,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Belediyelerin ve toplumun görme engelli bireylerin bağımsız hareket edebilmesi için şehirde uygulaması gereken 2 kentsel çözümü yazınız.",
         "solutionExplanation": "Sarı kabartmalı hissedilebilir kılavuz yollar, sesli yaya geçidi sinyalizasyonları.",
         "modelAnswer": "1. Kaldırımlara ve toplu taşıma istasyonlarına sürekliliği bozulmayan kabartmalı sarı hissedilebilir takip yüzeyleri (kılavuz çizgiler) döşenmelidir ve bu yüzeylerin üzeri araç veya eşyalarla kapatılmamalıdır.\n2. Yaya geçitlerindeki trafik ışıklarına 'geç' ve 'dur' durumunu ses tonuyla bildiren sesli yaya sinyalizasyon butonları monte edilmelidir.",
+        "alternativeAnswers": [
+          "1) Kaldırımlara kabartmalı sarı takip taşlarının döşenmesi ve bu yolların işgal edilmesinin önlenmesi. 2) Trafik lambalarına görme engelliler için sesli ikaz sistemlerinin entegre edilmesi.",
+          "1) Otobüs duraklarına ve metro istasyonlarına Braille alfabeli yönlendirme panoları ve sarı kabartma bantlar konulması. 2) Yaya geçitlerinde güvenli geçiş süresini sesli anonslarla bildiren akıllı sinyalizasyon kurulması."
+        ],
         "rubric": [
           {
             "criterion": "Hissedilebilir sarı yüzey uygulamasının yazılması",
@@ -13135,6 +13183,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Kamusal hizmetlerde fırsat eşitliğini sağlamak için devlet kurumlarında hangi 2 somut uygulamanın yaygınlaştırılması gerekir?",
         "solutionExplanation": "Türk İşaret Dili bilen personeller istihdam edilmeli veya görüntülü işaret dili tercüme merkezleri kurulmalıdır.",
         "modelAnswer": "1. Hastane, adliye, karakol ve nüfus müdürlükleri gibi kamu binalarında Türk İşaret Dili (TİD) bilen uzman personellerin istihdam edilmesi sağlanmalıdır.\n2. Tablet veya kiosklar aracılığıyla 7/24 hizmet veren uzaktan canlı 'Görüntülü İşaret Dili Tercüman Destek Hattı' sistemi kurulmalıdır.",
+        "alternativeAnswers": [
+          "1) Kamu dairelerindeki danışma birimlerinde işaret dili eğitimi almış personelin görev yapması. 2) Başvuru ve muayene süreçlerinde işitme engelliler için görüntülü online tercüman terminallerinin bulundurulması.",
+          "1) Devlet kurumlarında işitme engelli vatandaşların işlemlerini bizzat yürütecek işaret dili tercümanlarının atanması. 2) Kamu binalarındaki duyuruların hem sesli hem de altyazılı/görsel dijital ekranlarla yapılması."
+        ],
         "rubric": [
           {
             "criterion": "İşaret dili personeli istihdamının belirtilmesi",
@@ -13159,6 +13211,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Genç yaştaki lise öğrencilerinin eğitimi bırakıp cepheye koşması, Türk milletinin millî bağımsızlık anlayışı hakkında ne gösterir? Açıklayınız.",
         "solutionExplanation": "Vatan savunmasının her şeyin üstünde tutulduğunu, nesiller boyu aktarılan bağımsızlık andını gösterir.",
         "modelAnswer": "Bu durum, Türk milletinde 'vatan mevzubahis olduğunda her şeyin teferruat olduğu' inancının en somut kanıtıdır. Geleceğin aydınları olan lise gençliği dahi kişisel istikballerini ve rahat hayatlarını bir kenara bırakarak bağımsız yaşama uğruna canlarını feda etmeyi şeref saymıştır.",
+        "alternativeAnswers": [
+          "Türk milletinde bağımsızlığın ve vatan toprağının can ve gelecek dahil her şeyden önce geldiğini, hürriyet uğruna hiçbir fedakârlıktan kaçınılmayacağını gösterir.",
+          "Milletimizin bağımsızlık bilincinin genç yaşta bir vatan borcu olarak içselleştirildiğini ve tehlike anında topyekûn bir vatan savunması refleksi gösterildiğini kanıtlar."
+        ],
         "rubric": [
           {
             "criterion": "Vatan sevgisinin ve bağımsızlığın önceliğinin vurgulanması",
@@ -13183,6 +13239,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Milletimizin bu dik duruşu, Türkiye Cumhuriyeti Anayasası'nda yer alan hangi temel ilkeye bağlılığını ortaya koyar? Gerekçelendiriniz.",
         "solutionExplanation": "Milli irade ve 'Egemenlik kayıtsız şartsız milletindir' ilkesine bağlılık.",
         "modelAnswer": "Bu dik duruş, 'Egemenlik kayıtsız şartsız milletindir' ilkesine ve millî iradeye sarsılmaz bağlılığı gösterir. Türk milleti, kendi oyuyla seçtiği meclisine ve demokrasisine dışarıdan veya içeriden hiçbir vesayetin müdahale edemeyeceğini canı pahasına dünyaya ilan etmiştir.",
+        "alternativeAnswers": [
+          "Millî egemenlik ve demokrasi ilkesine bağlılığı ortaya koyar; Türk halkı meşru iradesinin ve anayasal düzenin zorla gasbedilemeyeceğini sivil direnişiyle göstermiştir.",
+          "'Egemenlik milletindir' prensibine ve cumhuriyet değerlerine bağlılığı gösterir; millet kendi kaderini sadece kendi hür iradesinin tayin edeceğini kanıtlamıştır."
+        ],
         "rubric": [
           {
             "criterion": "Millî irade ve egemenlik ilkesinin doğru belirtilmesi",
@@ -13207,6 +13267,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Bu durumdan hareketle, çevre felaketlerinin çözülmesinde küresel iş birliğinin neden zorunlu olduğunu tek bir cümleyle gerekçelendiriniz.",
         "solutionExplanation": "Hava, su ve atmosfer sınır tanımaz; çevre felaketleri tek bir ülkenin çabasıyla önlenemez, evrensel dayanışma şarttır.",
         "modelAnswer": "Hava, su ve atmosfer sınır tanımaz; çevre krizleri tüm insanlığın ortak meselesi olduğundan, tek bir devletin tek başına başarabileceği bir süreç değil, bütün dünya milletlerinin ortak ve kararlı iş birliğini gerektiren küresel bir sorumluluktur.",
+        "alternativeAnswers": [
+          "Doğanın ve iklimin siyasi sınırları olmadığından, bir yerdeki kirlilik tüm gezegeni tehdit eder ve ancak ortak küresel eylem planlarıyla durdurulabilir.",
+          "İklim değişikliği ve çevre tahribatı sınır tanımayan evrensel bir sorun olduğu için tek taraflı çabalar yetersiz kalır ve tüm devletlerin ortak taahhüdünü gerektirir."
+        ],
         "rubric": [
           {
             "criterion": "Çevre sorunlarının sınır tanımayan ortak niteliğinin açıklanması",
@@ -13249,6 +13313,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "a) Bu durum dijital iletişimde hangi olumsuz kavramla adlandırılır?\nb) Sanal ortamda etkili ve ahlaki bir iletişim için uyulması gereken 1 kural yazınız.",
         "solutionExplanation": "Siber zorbalık. Sanal ortamda da gerçek hayattaki saygı ve nezaket kurallarına uymak gerekir.",
         "modelAnswer": "a) Siber zorbalık (dijital şiddet).\nb) Yüz yüze söyleyemeyeceğimiz hiçbir kırıcı, küçük düşürücü veya alaycı ifadeyi sanal ortamda da yazmamalı; dijital nezaket ve empati kurallarını korumalıyız.",
+        "alternativeAnswers": [
+          "a) Siber zorbalık (Dijital akran zorbalığı). b) İnternette iletişim kurarken karşıdakinin de bir insan olduğunu unutmamak, saygılı bir dil kullanmak ve küçük düşürücü paylaşımlardan kaçınmaktır.",
+          "a) Sanal / siber zorbalık. b) Dijital ayak izlerimizin sorumluluğunu taşımalı, gerçek hayatta suç veya ayıp sayılan hiçbir sözü dijital ortamlarda yazmamalıyız."
+        ],
         "rubric": [
           {
             "criterion": "Siber zorbalık kavramının tespiti",
@@ -13273,10 +13341,18 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Kerem'in bu davranışı grup çalışmalarında hangi iki temel soruna yol açar? Açıklayınız.",
         "solutionExplanation": "Grup içi iletişimi koparır, takım ruhunu yok eder ve ortak akıl üretimini engeller.",
         "modelAnswer": "1. Takım Ruhunun ve Güvenin Yok Olması: Arkadaşının fikrine saygı duyulmadığı için Zehra kendisini değersiz hisseder ve çalışmaya katkı sunmaktan vazgeçer.\n2. Ortak Aklın Engellenmesi: Farklı fikirlerin dinlenmemesi projenin zenginleşmesini engeller ve grubun başarı seviyesini düşürür.",
+        "alternativeAnswers": [
+          "1) Grup üyelerinin motivasyonunu kırarak iş birliğini ve çalışma isteğini bitirir. 2) Farklı ve yaratıcı bakış açılarının tartışılmasını engelleyerek ödevin kalitesini düşürür.",
+          "1) Grupta dışlanma ve iletişim çatışması yaratarak huzursuzluk doğurur. 2) Tek kişinin dayatması yüzünden ortak akıl ve dayanışma kültürünü yok eder."
+        ],
         "rubric": [
           {
-            "criterion": "İki somut grup içi iletişim sorununun gerekçelendirilmesi",
-            "points": 13
+            "criterion": "Takım ruhu ve güven ortamının zedelenmesinin açıklanması",
+            "points": 7
+          },
+          {
+            "criterion": "Farklı fikirlerin engellenip ortak aklın kaybolmasının belirtilmesi",
+            "points": 6
           }
         ]
       },
@@ -13293,6 +13369,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Bu öğrenci için MEB sınavlarında sağlanan 2 adil destek uygulamasını (fırsat eşitliği tedbirini) yazınız.",
         "solutionExplanation": "Okuyucu/kodlayıcı desteği, ek sınav süresi, sadeleştirilmiş soru kağıdı.",
         "modelAnswer": "1. Disleksili öğrenciye sınav esnasında soruları tane tane seslendirecek özel bir 'okuyucu öğretmen' ve cevapları işaretleyecek 'kodlayıcı' görevlendirilmesi.\n2. Okuma hızındaki zorluğu dengelemek adına öğrenciye resmi ek sınav süresi (örneğin +15-20 dakika) tanımlanması.",
+        "alternativeAnswers": [
+          "1) Sınav sorularını sesli okuyacak okuyucu ve cevap kâğıdını dolduracak kodlayıcı temin edilmesi. 2) Okuma güçlüğünü telafi etmek amacıyla öğrenciye ek sınav süresi verilmesi.",
+          "1) Dikkat dağıtıcı unsurlardan arındırılmış tek kişilik özel sınav salonu tahsis edilmesi. 2) Yazı puntosu büyütülmüş ve sadeleştirilmiş soru kitapçığı ile süre desteği sunulması."
+        ],
         "rubric": [
           {
             "criterion": "Okuyucu/kodlayıcı desteğinin belirtilmesi",
@@ -13317,6 +13397,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Şerife Bacı'nın bu destansı fedakârlığı, Türk kadınının ve milletinin vatan savunmasındaki rolüne dair neyi ispatlar? Açıklayınız.",
         "solutionExplanation": "Vatan savunmasının sadece cephedeki askerle değil, kadın-erkek tüm milletin topyekûn ruhuyla yapıldığını gösterir.",
         "modelAnswer": "Bu fedakârlık, Türk milletinde vatan savunmasının sadece ordunun değil, kadın-erkek, genç-yaşlı bütün bir milletin ortak davası (topyekûn seferberlik) olduğunu ispatlar. Türk kadını, evladının canını dahi vatanın bağımsızlığından sonra görerek bağımsızlık mücadelesinin en kritik taşıyıcı gücü olmuştur.",
+        "alternativeAnswers": [
+          "Kurtuluş Savaşı'nın sadece cephedeki askerle değil, kadınların canları pahasına cephe gerisindeki lojistik desteğiyle kazanıldığını ve Türk kadınının vatanseverliğini ispatlar.",
+          "Milletimizin bağımsızlık söz konusu olduğunda evladını ve canını feda edebilecek eşsiz bir vatan sevgisine ve topyekûn direniş ruhuna sahip olduğunu gösterir."
+        ],
         "rubric": [
           {
             "criterion": "Topyekûn mücadele bilincinin vurgulanması",
@@ -13341,10 +13425,18 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Vatandaşlarımızın bu kurumlara gösterdiği yüksek güven ve desteğin arkasındaki temel millî hasletimiz nedir? Yazınız.",
         "solutionExplanation": "Yardımlaşma, diğerkâmlık, şehit ve gazilere vefa, devlet-millet bütünleşmesi.",
         "modelAnswer": "Temel millî hasletimiz 'yardımlaşma, infak ve şehit/gazi emanetine sahip çıkma' bilincidir. Türk toplumu zor durumda olan soydaş ve vatandaşlarının acısını kendi acısı gibi hisseder ve devletin güvenilir şefkat kollarına tereddütsüz destek verir.",
+        "alternativeAnswers": [
+          "Toplumsal dayanışma, diğerkâmlık (başkalarını düşünme) ve ihtiyaç sahiplerine el uzatma erdemidir; milletimiz zor günlerde tek yürek olmayı millî bir görev bilir.",
+          "Milletimizin tarihsel yardımlaşma ve vefa duygusudur; ordusunun ve zor durumdaki kardeşlerinin yanında yer alarak ortak geleceğini güvenceye alır."
+        ],
         "rubric": [
           {
-            "criterion": "Dayanışma ve vefa hasletinin doğru ifade edilmesi",
-            "points": 12
+            "criterion": "Yardımlaşma ve dayanışma hasletinin doğru ifade edilmesi",
+            "points": 6
+          },
+          {
+            "criterion": "Şehit/gaziye vefa ile devlet-millet bütünleşmesi bilincinin açıklanması",
+            "points": 6
           }
         ]
       },
@@ -13361,10 +13453,18 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Sporcularımızın kazandığı uluslararası zaferlerin milletimiz üzerinde oluşturduğu birleştirici etkiyi 2 cümleyle açıklayınız.",
         "solutionExplanation": "Milli birlik, ortak gurur ve bayrak sevgisinde buluşma.",
         "modelAnswer": "Bu başarılar, tüm fertleri ortak bir gurur ve sevinç paydasında birleştirerek millî birlik ve aidiyet duygumuzu güçlendirir. Farklı görüş ve yaşam tarzına sahip tüm vatandaşların aynı bayrak altında tek yürek atmasını sağlar.",
+        "alternativeAnswers": [
+          "Uluslararası başarılar tüm toplumu ortak bir sevinçte buluşturarak millî kimlik ve öz güven duygumuzu pekiştirir. Bayrağımızın dalgalanması fertler arasındaki bağları kuvvetlendirir.",
+          "Kazanılan zaferler milletimizin ortak değerler etrafında kenetlenmesini sağlar ve toplumsal kaynaşmayı artırır. Başarı hissi ortak bir geleceğe inanma motivasyonu sunar."
+        ],
         "rubric": [
           {
-            "criterion": "Ortak gurur ve millî aidiyet hissinin açıklanması",
-            "points": 12
+            "criterion": "Ortak gurur, sevinç ve millî aidiyet hissinin açıklanması",
+            "points": 6
+          },
+          {
+            "criterion": "Toplumsal farklılıkları aşarak aynı bayrak altında kenetlenme etkisinin belirtilmesi",
+            "points": 6
           }
         ]
       },
@@ -13381,10 +13481,18 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Küresel e-ticaretin yerel esnaf ve yerli üretim üzerindeki olumsuz etkisini önlemek için yerli üreticiler nasıl bir strateji izlemelidir? Bir çözüm yazınız.",
         "solutionExplanation": "Yerli esnaf da dijitalleşmeli, özgün ve kaliteli ürünlerini dünyaya pazarlayabilmelidir.",
         "modelAnswer": "Yerli üreticiler ve esnaf da dijitalleşerek kendi e-ticaret altyapılarını kurmalı; geleneksel ve el emeği kaliteli ürünlerini küresel pazarlara ihraç edebilecek e-ihracat standartlarına taşımalıdır.",
+        "alternativeAnswers": [
+          "Yerel esnaf dijital dönüşüme uyum sağlamalı, yöresel ve el emeği ürünlerini internet ortamında dünya pazarlarına tanıtıp satabilecek kooperatifler kurmalıdır.",
+          "Yerli üreticiler geleneksel ürünlerinin kalitesini ve markalaşmasını artırarak güvenilir e-ticaret siteleri üzerinden yurt dışına satış yapmalıdır."
+        ],
         "rubric": [
           {
-            "criterion": "Dijitalleşme ve katma değerli e-ihracat çözümünün belirtilmesi",
-            "points": 12
+            "criterion": "Yerli üreticilerin dijitalleşme ve e-ticaret altyapısı kurması gereğinin belirtilmesi",
+            "points": 6
+          },
+          {
+            "criterion": "Özgün el emeği ürünlerin küresel e-ihracat standartlarına taşınması stratejisinin açıklanması",
+            "points": 6
           }
         ]
       },
@@ -13401,6 +13509,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Küreselleşmenin getirdiği bu dil yozlaşması karşısında Türkçemizi korumak için gençlere düşen 2 temel sorumluluğu yazınız.",
         "solutionExplanation": "Türkçe karşılıkları kullanmak, bol bol nitelikli Türkçe eserler okumak.",
         "modelAnswer": "1. Yabancı kelimeler yerine Türk Dil Kurumu'nun belirlediği güzel Türkçe karşılıklarını (örneğin 'link' yerine 'bağlantı') bilinçli olarak tercih etmek.\n2. Türk edebiyatının klasik ve çağdaş nitelikli eserlerini bol bol okuyarak dil dağarcığını geliştirmek ve Türkçeyi doğru, kurallı kullanmaya özen göstermek.",
+        "alternativeAnswers": [
+          "1) Günlük konuşma ve yazışmalarda yabancı kelimeler yerine Türkçe sözcükleri tercih etmek. 2) Nitelikli kitaplar okuyarak Türkçenin zenginliğini öğrenmek ve dil bilincini geliştirmek.",
+          "1) Sosyal medyada Türkçe yazım kurallarına özen göstermek ve kelimeleri kısaltıp bozmaktan kaçınmak. 2) Dilimizin zengin söz varlığını öğrenmek için Türk edebiyatı eserleriyle bağ kurmak."
+        ],
         "rubric": [
           {
             "criterion": "Türkçe karşılıkları kullanma bilincinin yazılması",
@@ -13443,6 +13555,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "İletişim sürecinde 'geri bildirim (dönüt)' kavramını tanımlayarak, Ali Bey'in hatasını ve bu durumun nasıl engellenebileceğini açıklayınız.",
         "solutionExplanation": "Dönüt, alıcının mesajı anlayıp anlamadığını gösteren tepkidir. Ali Bey teyit almalıydı.",
         "modelAnswer": "• Dönüt: Alıcının, kaynağın gönderdiği mesajı doğru anlayıp anlamadığını göstermek için verdiği sözel veya davranışsal cevaptır.\n• Ali Bey'in Hatası ve Çözüm: Ali Bey mesajı iletmiş ancak geri bildirim almamıştır. 'Anlattıklarımı anladın mı, nasıl yapacağını bana bir tekrar eder misin?' diyerek çırağından dönüt alsaydı hata baştan önlenirdi.",
+        "alternativeAnswers": [
+          "Dönüt: İletilen mesajın hedefe ulaşıp doğru anlaşılıp anlaşılmadığını gösteren karşılıktır. Hata ve Çözüm: Ali Bey tek taraflı konuşmuş, çırağın kavradığını teyit etmemiştir; 'Bunu sırasıyla nasıl yapacağını özetler misin?' diyerek dönüt istemeliydi.",
+          "Dönüt: Alıcının gelen mesaja verdiği tepki ve geri yansıtmadır. Ali Bey çırağa soru sorma veya anladığını kontrol etme fırsatı vermemiştir; işe başlamadan önce kısa bir kontrol sorusuyla dönüt alması gerekirdi."
+        ],
         "rubric": [
           {
             "criterion": "Geri bildirim (dönüt) kavramının doğru tanımlanması",
@@ -13467,6 +13583,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Bu durumun şaka değil bir iletişim suçu ve zorbalık olduğunu gösteren 2 gerekçe yazınız. Caner'in kişilik gelişimine zararını belirtiniz.",
         "solutionExplanation": "Kişilik haklarına saldırı, özgüven kaybı, sosyal içe kapanma.",
         "modelAnswer": "• Gerekçeler: 1) Muhatabın rızası ve hoşnutluğu olmayan, bedensel kusurları hedef alan her hitap kişilik haklarına saygısızlıktır. 2) Süreklilik arz ettiğinde psikolojik bir akran zorbalığına dönüşür.\n• Caner'e Zararı: Caner'de ciddi özgüven kaybına, değersizlik hissine, sosyal ortamlardan kaçınmaya ve okul başarısında düşüşe yol açar.",
+        "alternativeAnswers": [
+          "Gerekçeler: Karşı tarafın rızası olmadan fiziksel özellikleriyle alay edilmesi şaka değil lakap takma ve psikolojik şiddettir. Zararı: Bireyde yetersizlik duygusu, içe kapanma ve okula gelmek istememe gibi olumsuz psikolojik sonuçlar doğurur.",
+          "Gerekçeler: Tek taraflı eğlence amacıyla birinin onurunu kırmak iletişim engeli ve akran zorbalığıdır. Zararı: Öz saygısını zedeler, insanlara güvenini sarsar ve yalnızlaşmasına yol açar."
+        ],
         "rubric": [
           {
             "criterion": "Kişilik hakları ve zorbalık boyutunun açıklanması",
@@ -13491,10 +13611,18 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Bu sürücünün davranışı toplum sözleşmesi ve fırsat eşitliği açısından neden büyük bir hak ihlalidir? Açıklayınız.",
         "solutionExplanation": "Özel gereksinimli bireyin en temel hareket özgürlüğünü engeller, pozitif ayrımcılık hakkını gasp eder.",
         "modelAnswer": "Özel gereksinimli bireylerin hayatlarını kolaylaştırmak için yasal olarak tanınan pozitif ayrımcılık ve erişim hakkının bencilce gasp edilmesidir. Engelli bireyin hareket özgürlüğünü sıfırlayarak onu AVM'ye veya hizmete ulaşamaz hale getiren ağır bir kul hakkı ve toplumsal saygısızlıktır.",
+        "alternativeAnswers": [
+          "Engelli bireylerin toplumsal yaşama katılımını sağlayan pozitif ayrımcılık hakkının ihlalidir; engelli sürücünün bağımsız şekilde binaya ulaşmasını engelleyerek mağduriyet yaratır.",
+          "Özel gereksinimli bireylerin yaşamını kolaylaştırmak için ayrılan alanların işgal edilmesi, onların temel insan haklarına ve toplumsal dayanışma kurallarına açık bir saygısızlıktır."
+        ],
         "rubric": [
           {
-            "criterion": "Pozitif ayrımcılık ve hak ihlali boyutunun açıklanması",
-            "points": 14
+            "criterion": "Pozitif ayrımcılık ve yasal erişim hakkının gasp edildiğinin belirtilmesi",
+            "points": 7
+          },
+          {
+            "criterion": "Hareket özgürlüğünün engellenmesi ve toplumsal saygısızlık boyutunun açıklanması",
+            "points": 7
           }
         ]
       },
@@ -13511,10 +13639,18 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Bu anayasal ilkeye dayanarak, devletin kamu ve özel sektörde engelli vatandaşlar için uyguladığı 'zorunlu istihdam kotası'nın amacını açıklayınız.",
         "solutionExplanation": "Pozitif ayrımcılık ile ekonomik bağımsızlık kazandırmak ve topluma üretken bireyler olarak katmak.",
         "modelAnswer": "Bu uygulamanın amacı pozitif ayrımcılık ilkesini işleterek engelli bireylerin ekonomik bağımsızlıklarını kazanmalarını sağlamaktır. Onların üretken birer yurttaş olarak onurlarıyla çalışmalarını ve toplumda diğer bireylerle eşit hayat standardına erişmelerini temin etmektir.",
+        "alternativeAnswers": [
+          "Özel gereksinimli bireylerin iş hayatına aktif katılarak kendi geçimlerini sağlamaları ve toplumda üretici bireyler olarak yer almaları amaçlanmaktadır.",
+          "Engelli bireylerin dezavantajlı durumlarını dengeleyerek ekonomik ve sosyal hayatta fırsat eşitliği sağlamak ve onurlu bir yaşam sürmelerine destek olmaktır."
+        ],
         "rubric": [
           {
-            "criterion": "Pozitif ayrımcılık ve ekonomik bağımsızlık vurgusunun yapılması",
-            "points": 14
+            "criterion": "Pozitif ayrımcılık ilkesi doğrultusunda ekonomik bağımsızlık kazandırılmasının vurgulanması",
+            "points": 7
+          },
+          {
+            "criterion": "Üretken yurttaş olarak topluma tam katılım ve eşit hayat standardı hedefinin açıklanması",
+            "points": 7
           }
         ]
       },
@@ -13531,10 +13667,18 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Halkın kendi imkânlarıyla Kuvâ-yı Millîye'yi kurması, Türk milletinin esarete karşı tavrını nasıl ortaya koyar? Yazınız.",
         "solutionExplanation": "Türk milletinin hiçbir şart altında esareti kabul etmeyeceğini, bağımsızlığın karakteri olduğunu kanıtlar.",
         "modelAnswer": "Bu durum, Türk milletinin bin yıllık tarihinde asla esarete boyun eğmediğini, ordusuz ve silahsız kalsa bile kendi iradesiyle vatanını savunacak bağımsızlık tutkusuna (hürriyet aşkına) sahip olduğunu gösterir.",
+        "alternativeAnswers": [
+          "Milletimizin hiçbir baskı ve işgale teslim olmayacağını, vatan savunmasını resmî güçler olmasa dahi kendi canıyla üstlenecek bağımsızlık tutkusunu ortaya koyar.",
+          "Türk milletinin bağımsızlığından asla taviz vermeyeceğini ve hür yaşama iradesinin her türlü zorluğu aşabilecek güçte olduğunu kanıtlar."
+        ],
         "rubric": [
           {
-            "criterion": "Esareti reddetme ve bağımsızlık tutkusunun açıklanması",
-            "points": 14
+            "criterion": "Türk milletinin hiçbir şartta esareti kabul etmeme karakterinin vurgulanması",
+            "points": 7
+          },
+          {
+            "criterion": "Hürriyet aşkı ve topyekûn meşru savunma iradesinin gerekçeli açıklanması",
+            "points": 7
           }
         ]
       },
@@ -13551,10 +13695,18 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Balkonları bayraklarla donatmak milletimizin hangi ortak aidiyet bilincini sembolize eder? İki maddeyle açıklayınız.",
         "solutionExplanation": "Ortak vatan sevgisi, bağımsızlık sembolüne saygı ve ortak geçmiş bilinci.",
         "modelAnswer": "1. Bağımsızlık Sembolüne Saygı: Bayrağımızın bağımsızlığımızın ve şehitlerimizin emaneti olduğu bilinciyle ona olan ebedi hürmeti gösterir.\n2. Ortak Tarih ve Birlik Şuuru: Bütün farklılıkların üzerinde, ortak bir vatanda tek millet olarak özgürce yaşama iradesini perçinler.",
+        "alternativeAnswers": [
+          "1) Bağımsızlığımızın ve vatanımızın ortak simgesi olan bayrağa duyulan derin sevgi ve saygıyı simgeler. 2) Bütün vatandaşları aynı geçmiş ve gelecek idealinde birleştiren millî dayanışma ruhunu gösterir.",
+          "1) Şehitlerimizin hatırasına ve millî egemenliğe sahip çıkma kararlılığını ifade eder. 2) Farklılıkları unutup tek bir millet olarak aynı sevinci ve gururu paylaşma arzusunu ortaya koyar."
+        ],
         "rubric": [
           {
-            "criterion": "İki somut aidiyet gerekçesinin doğru açıklanması",
-            "points": 14
+            "criterion": "Bağımsızlık sembolüne ve şehit mirasına saygı boyutunun açıklanması",
+            "points": 7
+          },
+          {
+            "criterion": "Ortak tarih, birlik ve tek millet olma şuuru boyutunun açıklanması",
+            "points": 7
           }
         ]
       },
@@ -13571,10 +13723,18 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Ormanlarımızı bir 'millî mesele' olarak görmek ve el ele vermek vatanseverliğin hangi yönünü kanıtlar? Açıklayınız.",
         "solutionExplanation": "Vatan sevgisinin sadece sınır boylarını değil, toprağı, suyu, ormanı ve doğayı korumayı da kapsadığını kanıtlar.",
         "modelAnswer": "Vatanseverliğin yalnızca askerî savunmadan ibaret olmadığını; vatanın taşını, toprağını, ağacını ve gelecek nesillere kalacak tabiat mirasını korumanın da en yüce millî sorumluluk olduğunu kanıtlar.",
+        "alternativeAnswers": [
+          "Vatanseverliğin sadece sınırları beklemek değil; vatanın yeşilini, suyunu ve doğal zenginliğini korumak anlamına da geldiğini kanıtlar.",
+          "Doğayı ve ormanları korumanın millî serveti ve gelecek kuşakların yaşam hakkını savunmak olduğu bilincini gösterir."
+        ],
         "rubric": [
           {
-            "criterion": "Vatan sevgisinin çevre ve doğa koruma boyutuyla açıklanması",
-            "points": 14
+            "criterion": "Vatan sevgisinin çevre ve tabiat korumayı da kapsadığının belirtilmesi",
+            "points": 7
+          },
+          {
+            "criterion": "Gelecek nesillere yeşil vatan emanet etme sorumluluğunun gerekçeli açıklanması",
+            "points": 7
           }
         ]
       }
@@ -13609,6 +13769,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Ahmet Amca'nın başarısını iletişim ilkeleri (tatlı dil ve tebessüm) açısından değerlendiriniz. İletişimde tatlı dilin insan ilişkilerine 2 katkısını yazınız.",
         "solutionExplanation": "Güler yüz güven verir, sıcaklık oluşturur ve bariyerleri kaldırır.",
         "modelAnswer": "• Değerlendirme: Ahmet Amca pozitif beden dili (tebessüm) ve nezaketli sözlü iletişimi birleştirerek insanlarda samimiyet, güven ve aidiyet hissi oluşturmaktadır.\n• Katkıları: 1) İnsanlar arasındaki gerginlik ve önyargıları eritir, sıcak dostluklar kurar. 2) Muhatabına değer verildiğini hissettirerek toplumsal huzura ve barışa katkı sağlar.",
+        "alternativeAnswers": [
+          "Değerlendirme: Güler yüz ve nezaket iletişimi kolaylaştırarak güven ortamı yaratır. Katkıları: 1) İnsanlar arasındaki soğukluğu ve çatışmaları önler. 2) Karşı tarafa değerli olduğunu hissettirerek muhabbeti ve karşılıklı saygıyı artırır.",
+          "Değerlendirme: Sözlü ve sözsüz iletişimin uyum içinde kullanılması müşteri bağlılığı ve sıcak bağlar kurar. Katkıları: 1) Günlük stres ve gerginlikleri azaltır. 2) Toplumda nezaket ve hoşgörü kültürünün yayılmasına öncülük eder."
+        ],
         "rubric": [
           {
             "criterion": "Pozitif beden dili ve nezaketin etkisinin açıklanması",
@@ -13633,6 +13797,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Belediyelerin toplu ulaşım araçlarında fırsat eşitliğini sağlamak için otobüs filosunda yapması gereken 2 teknik/fiziki iyileştirmeyi yazınız.",
         "solutionExplanation": "Alçak tabanlı otobüsler, açılır kapanır mekanik engelli rampaları, otobüs içi emniyet kemerli tekerlekli sandalye alanı.",
         "modelAnswer": "1. Şehir içi otobüslerin tamamının kaldırım seviyesine inebilen körüklü 'alçak tabanlı' ve basamaksız modellerle değiştirilmesi.\n2. Orta kapılara tekerlekli sandalyenin kolayca içeri girmesini sağlayan manuel veya otomatik açılır kapanır tekerlekli sandalye rampalarının takılması.",
+        "alternativeAnswers": [
+          "1) Otobüslerin basamaksız alçak tabanlı ve yana yatma özellikli olması. 2) Tekerlekli sandalyeli yolcular için katlanır rampa ve içeride özel emniyet kemerli sabitleme alanı yapılması.",
+          "1) Kaldırımla aynı hizaya gelebilen hidrolik basamaksız otobüslerin kullanılması. 2) Giriş kapılarında kolay açılan tekerlekli sandalye rampalarının ve sesli durak anons sistemlerinin bulunması."
+        ],
         "rubric": [
           {
             "criterion": "Alçak tabanlı basamaksız otobüs çözümünün yazılması",
@@ -13657,6 +13825,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Dijital kamu hizmetlerinde fırsat eşitliğini sağlamak için web sitelerinde hangi 2 yazılımsal/erişilebilirlik standardının zorunlu tutulması gerekir?",
         "solutionExplanation": "Ekran okuyucu uyumluluğu, görsellere betimleyici metinler (alt-text) ekleme, sesli yönlendirme.",
         "modelAnswer": "1. Sitedeki bütün görsel, buton ve grafiklere ekran okuyucu yazılımların seslendirebileceği açıklayıcı 'alternatif metin (alt-text)' etiketlerinin eklenmesi.\n2. Görme azlığı olanlar için yüksek kontrast modu ve web sayfalarında metin boyutunu büyütme/sesli okuma düğmelerinin yer alması.",
+        "alternativeAnswers": [
+          "1) Tüm görsellere ve butonlara ekran okuyucu cihazların okuyabileceği betimleme metinlerinin eklenmesi. 2) Sayfalara sesli menü desteği ve zıt renkli (yüksek kontrast) görünüm seçeneği konulması.",
+          "1) Görme engellilerin kullandığı sesli tarayıcılarla uyumlu kodlama yapılması. 2) Yazı boyutunu büyütebilen butonlar ve sitenin içeriğini baştan sona seslendiren akıllı ses butonlarının eklenmesi."
+        ],
         "rubric": [
           {
             "criterion": "Ekran okuyucu ve alternatif metin standardının yazılması",
@@ -13681,6 +13853,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Sütçü İmam'ın bu ilk kurşunu, Türk milletinin millî namus ve bağımsızlık anlayışındaki kırmızı çizgisini nasıl yansıtır? Açıklayınız.",
         "solutionExplanation": "Türk milleti namusuna, bayrağına ve kutsallarına dokunulduğunda hiçbir tereddüt göstermeden canını ortaya koyar.",
         "modelAnswer": "Bu olay, Türk milletinin kutsal değerlerine, kadınların namusuna ve millî onuruna uzanan ellere karşı hiçbir güçten korkmadan, canı pahasına anında karşılık vereceğini gösterir. Maraş halkının topyekûn şahlanışına kıvılcım olmuş ve kutsallara dokunulamaz olduğunu tarihe kazımıştır.",
+        "alternativeAnswers": [
+          "Milletimizin namusuna ve kutsal değerlerine yönelik tehditlere karşı canını hiçe sayarak derhal direnişe geçeceğini ve esareti asla kabullenmeyeceğini yansıtır.",
+          "Türk milletinin bağımsızlığının ve haysiyetinin kutsal olduğunu, halkın kendi onurunu korumak için tek bir an bile beklemeden mücadeleye atılacağını kanıtlar."
+        ],
         "rubric": [
           {
             "criterion": "Millî namus ve haysiyet anlayışının açıklanması",
@@ -13705,10 +13881,18 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Milletimizin yerli ve millî teknoloji atılımlarına gösterdiği bu heyecan, bağımsız devlet olma ideali açısından ne anlam taşır? Yazınız.",
         "solutionExplanation": "Tam bağımsızlığın yolunun yerli üretim ve savunma sanayiinden geçtiği bilinci.",
         "modelAnswer": "Bu heyecan, Atatürk'ün 'İstikbal göklerdedir' ülküsü doğrultusunda tam bağımsız Türkiye idealine milletçe inanıldığını gösterir. Savunmada dışa bağımlılığı bitirmenin millî bir beka ve hürriyet meselesi olduğunun idrak edildiğini kanıtlar.",
+        "alternativeAnswers": [
+          "Tam bağımsızlığın yerli teknoloji ve güçlü millî savunmayla mümkün olduğu bilincini yansıtır; milletin kendi gücüne ve geleceğine duyduğu yüksek güveni gösterir.",
+          "Milletimizin dışa bağımlı kalmadan kendi göklerini ve sınırlarını koruma arzusunu, 'Millî Teknoloji Hamlesi'ne verilen tam halk desteğini ifade eder."
+        ],
         "rubric": [
           {
-            "criterion": "Tam bağımsızlık ve yerli savunma bilincinin açıklanması",
-            "points": 16
+            "criterion": "İstikbal göklerdedir ülküsü ve tam bağımsızlık inancının açıklanması",
+            "points": 8
+          },
+          {
+            "criterion": "Savunmada dışa bağımlılığı bitirme ve millî beka bilincinin belirtilmesi",
+            "points": 8
           }
         ]
       },
@@ -13725,6 +13909,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Türkiye'nin bu insani yardımları, küreselleşen dünyada ülkemizin 'insani diplomasi ve dünya barışı' vizyonuna nasıl katkı sağlar? Açıklayınız.",
         "solutionExplanation": "Türkiye'nin vicdanlı, yardımsever ve güvenilir bir küresel aktör olduğunu gösterir.",
         "modelAnswer": "Türkiye'nin din, dil ve ırk ayrımı gözetmeksizin dünyanın dört bir yanına şefkat eli uzatması, ülkemizin küresel vicdanın sesi olduğunu kanıtlar. Uluslararası arenada Türkiye'nin güvenilir, saygın ve 'dünya beşten büyüktür' anlayışıyla mazlumların yanında duran barışçıl liderliğini pekiştirir.",
+        "alternativeAnswers": [
+          "Zor durumda olan tüm ülkelere ayrım gözetmeksizin yardım eli uzatılması, Türkiye'nin küresel ölçekte vicdanlı ve güvenilir bir barış aktörü olduğunu pekiştirir.",
+          "Küresel krizlerde sergilenen bu dayanışma, ülkemizin uluslararası prestijini yükseltir ve insani diplomaside örnek bir dünya lideri konumuna taşır."
+        ],
         "rubric": [
           {
             "criterion": "İnsani diplomasi ve küresel vicdan vizyonunun açıklanması",

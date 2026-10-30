@@ -213,6 +213,7 @@ export async function generateMEBIQuestions(
   const isGrade7Turkish = grade === 7 && subjectId === 'turkce';
   const isGrade7Math = grade === 7 && subjectId === 'matematik';
   const isGrade7Science = grade === 7 && subjectId === 'fen_bilimleri';
+  const isGrade7Social = grade === 7 && subjectId === 'sosyal_bilgiler';
 
   // Mevcut senaryoya ait hazır sınav sorularını tespit et ve kaçınılacaklar listesine ekle
   const baseExam = SAMPLE_EXAMS.find(e =>
@@ -315,6 +316,43 @@ MEBİ 7. SINIF FEN BİLİMLERİ DERS KİTABI VE ÖLÇME YÖNERGESİ (1. KİTAP 1
    - İki şıklı (a, b) sorularda puanlama parçalı (örn. 6p tespit + 5p bilimsel gerekçe) dağıtılmalıdır.
 ` : '';
 
+  const socialMebiDirectives = isGrade7Social ? `
+MEBİ 7. SINIF SOSYAL BİLGİLER DERS KİTABI ENTEGRASYON VE ÖLÇME YÖNERGESİ (1. KİTAP 1. VE 2. ÖĞRENME ALANI UYUMLU):
+1. KAZANIM EŞLEŞTİRMESİ VE DERS KİTABI BAĞLAMLARI:
+   - SB.7.1.1: Dâhil olduğu gruplarda ve sosyal hayatta etkili iletişimin önemini sorgulayabilme (Ders Kitabı 1. Kitap, Sayfa 12-29):
+     * Trafikte İletişim Dili (s. 14: Nezaket, sabır ve empati ile çatışmaları önleme).
+     * 7/E Sınıfı Mesajlaşma Grubu (s. 13: Dijital iletişimde ses tonu ve yüz ifadesi eksikliğinin yanlış anlaşılmalara yol açması).
+     * Ben Dili vs. Sen Dili (s. 19: Suçlayıcı, yargılayıcı sen dili yerine duyguları ve yapıcı çözümü ifade eden ben dili).
+     * Etkin Dinleme ve 'İki Dinle Bir Söyle' Atasözü (s. 20: Göz teması, söz kesmeme, sabırla anlama).
+     * Jest ve Mimikler / Beden Dili (s. 21: Güleryüz ve tebessümün güven verici etkisi).
+     * İletişim Engelleri ve Ön Yargı / Kalıp Yargı (s. 22-26: Etiketleme, alay etme, lakap takma, siber zorbalık).
+   - SB.7.1.2: Özel gereksinimli bireyler için fırsat eşitliğini sürdürmeye yönelik fikir üretebilme (Ders Kitabı 1. Kitap, Sayfa 30-39):
+     * Engelleri Aşan Paralimpik Şampiyonları (s. 32: Azim ve eşit imkân sunulduğunda elde edilen dünya dereceleri).
+     * Kentsel / Mimari Erişilebilirlik Düzenlemeleri (s. 34-36: Engelli araç park yeri, kabartmalı sarı kılavuz çizgiler, standart eğimli rampa, engelli asansörü, alçak tabanlı otobüsler).
+     * Engelsiz Eğitim ve Engelsiz Plaj (s. 36: Kamusal ve sosyal alanlarda tam katılım olanakları).
+     * Pozitif Ayrımcılık İlkesi (s. 35: Anayasa Madde 10 gereği dezavantajlı gruplara eşit başlangıç fırsatı tanınması).
+     * İşitme / Görme Engelliler İçin Kamusal Destek: Türk İşaret Dili (TİD) personeli, görüntülü tercüman terminalleri, Braille alfabeli yönlendirmeler, ekran okuyucu uyumlu web siteleri (alt-text).
+   - SB.7.1.3: Türk toplumunun millî meseleler karşısında gösterdiği tutum ve davranışlara ilişkin çıkarım yapabilme (Ders Kitabı 1. Kitap, Sayfa 40-50):
+     * Millî Birlik ve Beraberlik Şuurumuz: Arif Bedii'nin 'Atatürk ve Millî Mücadele' tablosu (s. 42), Tekâlif-i Milliye Emirleri ve Sakarya Meydan Muharebesi'nde halkın son ekmeğini ve çorabını ordusuna vermesi (s. 45), Orhun Yazıtları'nda Bilge Kağan hitabı (s. 46), Şerife Bacı ve Kastamonu kağnı kolları, Sütçü İmam ve Maraş direnişi.
+     * Topyekûn Dayanışma (İmece Ruhu): Büyük deprem, sel, orman yangını felaketlerinde ve salgın hastalıklarda milletin kan merkezlerine, yardım tırlarına ve fidan seferberliğine akın etmesi; Türk Kızılayı, AFAD ve Mehmetçik Vakfı dayanışması.
+     * Bağımsızlık ve Egemenlik Tutkusu: 15 Temmuz'da sivil direniş ve 'Egemenlik kayıtsız şartsız milletindir' ilkesine bağlılık; uluslararası spor zaferlerinde ortak gurur ve bayrak sevgisi; TEKNOFEST ve yerli savunma sanayii (İHA, SİHA, KAAN) desteği.
+   - SB.7.2.1: Küreselleşmenin insan ve toplum hayatı üzerindeki etkilerini analiz edebilme (Ders Kitabı 1. Kitap, Sayfa 58-67):
+     * Ulaşım ve Lojistik Ağları (s. 61: Hızlı trenler, hava kargo köprüleri, kıtalararası ticaret).
+     * Görüntülü İletişim ve Dijitalleşme (s. 62: Anlık bilgiye erişim, küresel köy kavramı).
+     * Kahvenin Küresel Yolculuğu (s. 63: Etiyopya'dan Yemen ve Osmanlı'ya, oradan tüm dünyaya uzanan Türk kahvesi ve kültürel etkileşim).
+     * Yeşil Vatan ve Çevre Bilinci (s. 64: Sınır tanımayan küresel çevre sorunları ve ortak gezegen sorumluluğu).
+     * Popüler Kültür vs. Yerel Kültürler / Kültürel Tek Tipleşme (s. 65: Küresel müzik, moda ve fast-food karşısında ana dili, yerel mutfakları, halk oyunlarını ve geleneksel el sanatlarını koruma bilinci).
+     * Kültürel Diplomasi: Türk kahvesi, ebru ve Karagöz'ün UNESCO Somut Olmayan Kültürel Miras listesinde yer alması.
+2. ÖLÇME VE DELİLLENDİRME KURALLARI:
+   - Soru kökleri duru, net ve açık emir kipleriyle bitmelidir ("...yazınız", "...açıklayınız", "...gerekçelendiriniz").
+   - Çıkarım ve analiz sorularında öğrenciden metindeki somut ipuçlarıyla veya tarihsel/hukuki gerekçelerle yanıtını desteklemesi istenmelidir.
+   - İki şıklı (a, b) sorularda puanlama parçalı ve analitik yapılmalıdır.
+3. KABUL EDİLEBİLİR ALTERNATİF CEVAPLAR (alternativeAnswers - ZORUNLU):
+   - Her soru için JSON çıktısında "alternativeAnswers" dizisi KESİNLİKLE üretilmeli ve kavramsal olarak denk en az 2 kabul edilebilir alternatif ifade eklenmelidir.
+4. ANALİTİK VE PARÇALI RUBRİK:
+   - Rubrik basamakları parçalı ve dengeli kriterlere bölünmeli, her kriterin puanı açıkça belirtilmelidir.
+` : '';
+
   const livePrompt = `SEN MEB TEMEL EĞİTİM GENEL MÜDÜRLÜĞÜ VE ÖDSGM ORTAK SINAVLAR BAŞUZMANISIN.
 Aşağıdaki resmi senaryo kurallarına uygun olarak eksiksiz bir ${grade}. Sınıf ${subjectId} Ortak Yazılı Sınav Kağıdı üret.
 TOPLAM SORU SAYISI: KESİNLİKLE VE TAM OLARAK ${targetCount} ADET AÇIK UÇLU SORU (1'den ${targetCount}'e kadar her soru eksiksiz üretilmelidir).
@@ -375,6 +413,7 @@ HER SORU İÇİN ZORUNLU BAĞLAM ÇEŞİTLİLİĞİ KURALI (EN KRİTİK KURAL):
 ${turkishMebiDirectives}
 ${math7thDirectives}
 ${science7thDirectives}
+${socialMebiDirectives}
 ÇIKTI FORMATI:
 SADECE geçerli bir JSON çıktısı ver. JSON şeması:
 {
@@ -390,7 +429,7 @@ SADECE geçerli bir JSON çıktısı ver. JSON şeması:
       "stimulus": "Diyalog veya vaka metni...",
       "question": "Açık uçlu soru...",
       "answer": "MEBİ model cevabı...",
-      ${(isGrade7Turkish || isGrade7Math || isGrade7Science) ? `"alternativeAnswers": [
+      ${(isGrade7Turkish || isGrade7Math || isGrade7Science || isGrade7Social) ? `"alternativeAnswers": [
         "Kabul edilebilir alternatif örnek ifade 1",
         "Kabul edilebilir alternatif örnek ifade 2"
       ],` : ''}
@@ -2084,13 +2123,13 @@ Değişen Fiiller: "çıktım" -> "çıktı" (1. şahıs eki -m kalktı) ve "çe
   ];
 
   // ---------------------------------------------------------------------------
-  // D. SOSYAL BİLGİLER (Set A)
+  // D-1. SOSYAL BİLGİLER (Set A: MEB Ders Kitabı 1. Kitap Temel Kazanımlar)
   // ---------------------------------------------------------------------------
   const sosyalQuestions: GeneratedQuestionItem[] = [
     {
       number: 1,
       outcome: 'SB.7.1.1',
-      outcomeTitle: 'İletişimde ben dili ve sen dili kullanımının kişiler arası ilişkilere etkisini çözümleyebilme',
+      outcomeTitle: 'Dâhil olduğu gruplarda ve sosyal hayatta etkili iletişimin önemini sorgulayabilme',
       difficulty: 'Orta',
       level: 'Karmaşık Bilişsel Süreçler',
       points: pointAllocations[0] || 15,
@@ -2101,6 +2140,10 @@ Değişen Fiiller: "çıktım" -> "çıktı" (1. şahıs eki -m kalktı) ve "çe
 b) Bu çatışmayı önleyecek suçlayıcı olmayan örnek bir 'ben dili' cümlesi kurgulayınız.`,
       answer: `a) Analiz: Cümle doğrudan kişiliği hedef alan suçlayıcı, genelleştirici ("her zaman") ve etiketleyici ("sorumsuz") bir 'sen dili'dir. Savunma refleksini tetikler ve iletişimi koparır.
 b) Ben Dili Cümlesi: "Provalara geç kalındığında rollerimizi planlanan sürede çalışamadığımız için endişeleniyorum ve projemizin aksamasından üzüntü duyuyorum."`,
+      alternativeAnswers: [
+        `a) Karşı tarafı doğrudan suçlayıp kişiliğine saldırdığı için sen dilidir; kişide direnç ve haksızlığa uğramışlık hissi yaratır. b) "Hazırlıklara vaktinde başlanmadığında sahne provasını yetiştiremeyeceğimizi düşünüp kaygılanıyorum."`,
+        `a) Davranış yerine kişiyi peşinen yargıladığı için sen dilidir; ${name2}'nin kendini savunmaya kapatmasına sebep olur. b) "Provalar geciktiğinde planlanan zamanda bitiremeyeceğim için huzursuz oluyorum."`
+      ],
       rubric: [
         { item: 'Sen dilinin savunma doğurucu etkisinin analizi', pts: Math.round((pointAllocations[0] || 15) * 0.5) },
         { item: 'Duygu belirten kuralına uygun Ben Dili cümlesinin kurulması', pts: Math.round((pointAllocations[0] || 15) * 0.5) }
@@ -2109,54 +2152,64 @@ b) Ben Dili Cümlesi: "Provalara geç kalındığında rollerimizi planlanan sü
     {
       number: 2,
       outcome: 'SB.7.1.2',
-      outcomeTitle: 'Medya araçlarını kullanırken doğru bilgi alma ve özel hayatın gizliliği haklarını savunabilme',
-      difficulty: 'Zor',
+      outcomeTitle: 'Özel gereksinimli bireyler için fırsat eşitliğini sürdürmeye yönelik fikir üretebilme',
+      difficulty: 'Orta',
       level: 'Karmaşık Bilişsel Süreçler',
       points: pointAllocations[1] || 15,
-      templateType: 'Dilemma (İkilem) & Hukuki Çıkarım',
-      stimulus: `Bir internet sitesi, ünlü bir bilim insanının evinde ailesiyle otururken gizli kamerayla çekilmiş fotoğraflarını izinsiz yayımlamıştır.
-${name1}: "Halkın bilgi alma hakkı vardır, yayınlanabilir." demiştir.
-${name2}: "Konut dokunulmazlığı ve özel hayatın gizliliği Anayasa ile güvence altındadır; kamusal olmayan alanda izinsiz çekim yapılamaz." demiştir.`,
-      question: `${name1} ve ${name2}'nin görüşlerini değerlendiriniz. Hangi öğrenci haklıdır? Doğru bilgi alma özgürlüğü ile özel hayatın gizliliği arasındaki sınır nerede başlar?`,
-      answer: `${name2} haklıdır. Basın özgürlüğü kamu yararı bulunan durumlarda geçerlidir. Kişilerin evlerinde, rızaları olmadan gizlice çekilen görüntüler haber niteliği taşımaz; özel hayatın gizliliğinin ve konut dokunulmazlığının açık ihlalidir.`,
+      templateType: 'Kurgusal Senaryo & Vaka İncelemesi',
+      stimulus: `Tekerlekli sandalye kullanan ve resim atölyesine devam etmek isteyen 7. sınıf öğrencisi ${name1}, gideceği halk eğitim merkezinin girişinde sadece yüksek merdivenler olduğunu ve binada asansör bulunmadığını görmüştür.`,
+      question: `${name1}'in eğitim ve kültürel faaliyetlere diğer bireylerle eşit şekilde katılabilmesi için kamu binalarında yapılması gereken 2 mimari/fiziki düzenlemeyi yazınız.`,
+      answer: `1. Bina girişine standartlara uygun eğimli tekerlekli sandalye rampası veya engelli kaldırma platformu inşa edilmelidir.
+2. Katlar arasında bağımsız erişimi sağlayacak geniş kabinli ve sesli yönlendirmeli engelli asansörü yapılmalıdır.`,
+      alternativeAnswers: [
+        '1) Giriş basamaklarının yanına uygun eğimli engelli rampası yapılması. 2) Atölye ve tuvalet kapılarının tekerlekli sandalyenin rahatça dönebileceği genişlikte düzenlenmesi.',
+        '1) Bina girişine engelli asansörü kurulması. 2) Koridor ve geçiş alanlarındaki eşiklerin kaldırılarak düz zemin oluşturulması.'
+      ],
       rubric: [
-        { item: `${name2}'nin haklılığının tespiti`, pts: Math.round((pointAllocations[1] || 15) * 0.4) },
-        { item: 'Özel hayatın gizliliği ve kamu yararı sınırının açıklanması', pts: Math.round((pointAllocations[1] || 15) * 0.6) }
+        { item: 'Eğimli rampa veya engelli asansörü/platformu çözümünün belirtilmesi', pts: Math.round((pointAllocations[1] || 15) * 0.5) },
+        { item: 'İç mekan kapı, koridor ve erişilebilirlik standardının açıklanması', pts: Math.round((pointAllocations[1] || 15) * 0.5) }
       ]
     },
     {
       number: 3,
-      outcome: 'SB.7.2.3',
-      outcomeTitle: 'Türkiye\'de nüfusun dağılışını etkileyen doğal ve beşerî faktörleri analiz edebilme',
-      difficulty: 'Zor',
+      outcome: 'SB.7.1.3',
+      outcomeTitle: 'Türk toplumunun millî meseleler karşısında gösterdiği tutum ve davranışlara ilişkin çıkarım yapabilme',
+      difficulty: 'Orta',
       level: 'Karmaşık Bilişsel Süreçler',
       points: pointAllocations[2] || 15,
-      templateType: 'Kurgusal Vaka & Coğrafi Matris',
-      stimulus: `Teke Platosu ile Çatalca-Kocaeli Platosu'nun ikisi de deniz kıyısında olmasına rağmen nüfus yoğunlukları çok farklıdır.`,
-      question: `Bu iki bölgeyi DOĞAL FAKTÖR (arazi yapısı/toprak) ve BEŞERÎ FAKTÖR (sanayi/ulaşım/iş imkânı) bakımından karşılaştırarak nüfus yoğunluğu farkının nedenini açıklayınız.`,
-      answer: `• Teke Platosu: Doğal faktör olarak karstik/kalkerli kireçtaşı arazisi suyu tutamaz, engebeli ve dağlıktır; tarım ve ulaşım kısıtlı olduğundan seyrek nüfusludur.
-• Çatalca-Kocaeli: Beşerî faktör olarak sanayi tesisleri, limanlar, ticaret ve ulaşım ağları gelişmiş, iş imkânları yüksek olduğundan yoğun nüfusludur.`,
+      templateType: 'Metin İçi Delillendirme & Örtük Anlam',
+      stimulus: `Mustafa Kemal Paşa Sakarya Meydan Muharebesi öncesinde ordunun lojistik ve giyim ihtiyacını karşılamak için Tekâlif-i Milliye Emirleri'ni yayımlamıştır. Türk milleti çarık, çorap, bez ve yiyeceğini tereddütsüz ordusuna teslim etmiştir.`,
+      question: `Türk milletinin bu tutumu, onun hangi millî karakter özelliklerini yansıtır? İki kavram belirterek gerekçelendiriniz.`,
+      answer: `1. Vatanseverlik ve Bağımsızlık Tutkusu: Bağımsız yaşayabilmek için milletimiz malını ve canını ordusunun emrine sunmuştur.
+2. Topyekûn Dayanışma (İmece Ruhu): Kadın, yaşlı ve çocuk demeden tüm milletin ordusuyla tek vücut olarak kenetlenmesidir.`,
+      alternativeAnswers: [
+        'Fedakârlık ve Millî Birlik: Türk halkı bağımsızlığı her şeyin üstünde tutmuş, ordusuyla ekmeğini ve giysisini paylaşarak tek yürek olmuştur.',
+        'Vatan Sevgisi ve İmece Geleneği: Milletin varını yoğunu vatan savunmasına adayarak topyekûn seferberlik ruhu sergilemesidir.'
+      ],
       rubric: [
-        { item: 'Teke Platosu karstik engelinin doğal faktör olarak açıklanması', pts: Math.round((pointAllocations[2] || 15) * 0.5) },
-        { item: 'Çatalca-Kocaeli sanayi ve ulaşımının beşeri faktör olarak açıklanması', pts: Math.round((pointAllocations[2] || 15) * 0.5) }
+        { item: 'İki millî karakter özelliğinin (vatanseverlik, dayanışma, fedakârlık) doğru belirlenmesi', pts: Math.round((pointAllocations[2] || 15) * 0.5) },
+        { item: 'Tekâlif-i Milliye ruhunun gerekçeli açıklanması', pts: Math.round((pointAllocations[2] || 15) * 0.5) }
       ]
     },
     {
       number: 4,
       outcome: 'SB.7.2.1',
-      outcomeTitle: 'Osmanlı Devleti\'nin kuruluş sürecinde iskân ve istimâlet (hoşgörü) politikasının rolünü değerlendirebilme',
+      outcomeTitle: 'Küreselleşmenin insan ve toplum hayatı üzerindeki etkilerini analiz edebilme',
       difficulty: 'Orta',
       level: 'Karmaşık Bilişsel Süreçler',
       points: pointAllocations[3] || 15,
       templateType: 'Kurgusal Tarihi Vaka & Karar',
-      stimulus: `Osmanlı Devleti, Rumeli'de fethettiği topraklara Anadolu'dan konargöçer Türkmen aileleri yerleştirmiş (İskân), aynı zamanda yerel gayrimüslim halkın inancına, ibadetine ve geleneklerine dokunmayarak can ve mal güvenliğini teminat altına almıştır (İstimâlet).`,
-      question: `a) İskân politikasının fetihlerin kalıcı olmasına katkısını açıklayınız.
-b) İstimâlet (hoşgörü) politikasının bölge halkının devlete bağlılığını nasıl artırdığını belirtiniz.`,
-      answer: `a) İskân: Fethedilen topraklara Türk nüfus yerleştirilerek bölge Türkleşmiş, isyanlar önlenmiş ve kalıcı bir idari yapı kurulmuştur.
-b) İstimâlet: Halka dini baskı yapılmaması ve adil vergi alınması yerel halkın devlete sadakatini sağlamıştır.`,
+      stimulus: `Etiyopya'da keşfedilen kahve, Yemen üzerinden 16. yüzyılda Osmanlı'ya gelmiş; Türkler tarafından pişirme yöntemi geliştirilerek 'Türk kahvesi' adıyla Avrupa'ya ve tüm dünyaya yayılmıştır. Bugün dünyanın her ülkesinde kahve kültürü yaşamaktadır.`,
+      question: `Kahvenin bu tarihsel yolculuğundan hareketle, küreselleşmenin toplumlar arası kültürel etkileşime ve kültürümüzün dünyaya tanıtılmasına 2 katkısını yazınız.`,
+      answer: `1. Kültürel Etkileşim ve Zenginleşme: Bir coğrafyada ortaya çıkan bir değerin farklı medeniyetlerin katkısıyla harmanlanıp evrensel bir kültüre dönüşmesini sağlar.
+2. Millî Değerlerimizin Evrensel Tanıtımı: Türk kahvesi pişirme ve sunum geleneği sayesinde kültürümüzün dünyaya tanıtılmasını ve UNESCO kültürel mirası olarak tescillenmesini sağlamıştır.`,
+      alternativeAnswers: [
+        '1) Farklı toplumların geleneklerini birleştirerek ortak bir küresel yaşam kültürü oluşturur. 2) Millî kültürümüzün özgün lezzetlerinin dünyaca benimsenip Türkiye\'nin tanıtımına güç katmasını sağlar.',
+        '1) Ticaret ve iletişim yoluyla kültürler arası diyaloğu ve hoşgörüyü pekiştirir. 2) Somut olmayan kültürel mirasımızın küresel ölçekte saygınlık kazanmasına zemin hazırlar.'
+      ],
       rubric: [
-        { item: 'İskânın kalıcılık sağlama etkisinin açıklanması', pts: Math.round((pointAllocations[3] || 15) * 0.5) },
-        { item: 'İstimâletin sadakat ve hoşgörü katkısının açıklanması', pts: Math.round((pointAllocations[3] || 15) * 0.5) }
+        { item: 'Kültürel etkileşim ve küresel harmanlanma boyutunun açıklanması', pts: Math.round((pointAllocations[3] || 15) * 0.5) },
+        { item: 'Millî kültürün dünyaca tanınması ve saygınlık boyutunun belirtilmesi', pts: Math.round((pointAllocations[3] || 15) * 0.5) }
       ]
     },
     {
@@ -2191,6 +2244,97 @@ Etki: Kil tabletler ağır ve kırılgandı; hafif papirüs ve kâğıt bilginin
       rubric: [
         { item: 'Gutenberg matbaasının son sıraya alınması düzeltmesi', pts: Math.round((pointAllocations[5] || 14) * 0.5) },
         { item: 'Kâğıdın taşınabilirlik ve bilgi yayma avantajının açıklanması', pts: Math.round((pointAllocations[5] || 14) * 0.5) }
+      ]
+    }
+  ];
+
+  // ---------------------------------------------------------------------------
+  // D-2. 7. SINIF SOSYAL BİLGİLER (Set B: Dijital İletişim, Paralimpik, Arif Bedii & Kültürel Koruma)
+  // ---------------------------------------------------------------------------
+  const sosyalQuestions_7th_SetB: GeneratedQuestionItem[] = [
+    {
+      number: 1,
+      outcome: 'SB.7.1.1',
+      outcomeTitle: 'Dâhil olduğu gruplarda ve sosyal hayatta etkili iletişimin önemini sorgulayabilme',
+      difficulty: 'Orta',
+      level: 'Karmaşık Bilişsel Süreçler',
+      points: pointAllocations[0] || 15,
+      templateType: 'Kurgusal Senaryo & Vaka İncelemesi',
+      stimulus: `7/E sınıfı mesajlaşma grubunda ${name1}, arkadaşı ${name2}'ın sorduğu soruya sadece "Tamam." yazıp soğuk bir ifade bırakmıştır. ${name2} ise ${name1}'in kendisine kızdığını düşünerek kırılmıştır. Ertesi gün yüz yüze geldiklerinde ${name1}'in aslında aceleyle yazdığı ve hiçbir kızgınlığı olmadığı ortaya çıkmıştır. (Ders Kitabı 1. Kitap, Sayfa 13)`,
+      question: `a) Dijital yazışmalarda yüz yüze iletişime göre hangi 2 temel iletişim unsurunun eksik olması bu yanlış anlaşılmaya yol açmıştır?
+b) Dijital iletişimde bu tür yanlış anlamaları önlemek için ne yapılmalıdır?`,
+      answer: `a) Eksik Unsurlar: 1) Ses tonu ve vurgu, 2) Beden dili (yüz ifadesi, mimikler ve göz teması).
+b) Çözüm: Mesaj yazarken duygu belirten nazik ifadeler seçilmeli, duygu tonunu yansıtan emojiler veya kısa açıklamalar eklenmeli; önemli konular ise yüz yüze konuşulmalıdır.`,
+      alternativeAnswers: [
+        'a) Ses tonlaması ve jest-mimik gibi beden dili ögelerinin olmamasıdır. b) Nezaket belirten cümleler kurulmalı veya yanlış anlama riskine karşı doğrudan sesli/yüz yüze iletişim tercih edilmelidir.',
+        'a) Sözsüz iletişim unsurları (bakış, tebessüm ve ses vurgusu) bulunmadığı için yanlış anlaşılmıştır. b) Kısa ve sert ifadeler yerine açık, samimi ve empatik bir dil kullanılmalıdır.'
+      ],
+      rubric: [
+        { item: 'Ses tonu ve mimik/beden dili eksikliğinin doğru tespiti', pts: Math.round((pointAllocations[0] || 15) * 0.5) },
+        { item: 'Dijital nezaket ve yüz yüze teyit çözümünün açıklanması', pts: Math.round((pointAllocations[0] || 15) * 0.5) }
+      ]
+    },
+    {
+      number: 2,
+      outcome: 'SB.7.1.2',
+      outcomeTitle: 'Özel gereksinimli bireyler için fırsat eşitliğini sürdürmeye yönelik fikir üretebilme',
+      difficulty: 'Orta',
+      level: 'Karmaşık Bilişsel Süreçler',
+      points: pointAllocations[1] || 15,
+      templateType: 'Kurgusal Senaryo & Vaka İncelemesi',
+      stimulus: `Doğuştan iki kolu olmayan veya omurilik felci geçiren millî paralimpik sporcularımız, yüzme ve okçuluk branşlarında dünya ve olimpiyat şampiyonlukları kazanarak İstiklal Marşımızı dünyaya dinletmişlerdir. (Ders Kitabı 1. Kitap, Sayfa 32)`,
+      question: `Paralimpik şampiyonlarımızın bu başarısı, özel gereksinimli bireylere fırsat eşitliği sağlandığında toplumda nelerin değişebileceğini nasıl kanıtlar? İki gerekçeyle açıklayınız.`,
+      answer: `1. Azim ve Fırsat Eşitliği: Özel gereksinimli bireylerin acınmaya değil, sadece eşit imkân, donanımlı tesis ve desteğe ihtiyaç duyduklarını; fırsat verildiğinde her türlü engeli aşabileceklerini kanıtlar.
+2. Toplumsal Ön Yargıların Kırılması: 'Engelliler üretemez veya başaramaz' şeklindeki yanlış kalıp yargıları yıkarak toplumda saygı ve eşit yurttaşlık bilincini güçlendirir.`,
+      alternativeAnswers: [
+        '1) Engelin bedende değil imkânsızlıklarda olduğunu, eşit fırsat sunulduğunda uluslararası zirveye ulaşılabileceğini gösterir. 2) Toplumdaki acıma duygusunu hayranlık ve eşitlik anlayışına dönüştürür.',
+        '1) Uygun spor ve eğitim olanakları tanındığında özel gereksinimli bireylerin ülkenin en büyük gurur kaynağı olabileceğini ispatlar. 2) Diğer engelli gençlere ilham kaynağı olarak sosyal yaşama cesaretle katılmalarını sağlar.'
+      ],
+      rubric: [
+        { item: 'Eşit imkân sunulduğunda engellerin aşılacağı vurgusunun yapılması', pts: Math.round((pointAllocations[1] || 15) * 0.5) },
+        { item: 'Toplumsal ön yargıların kırılması ve ilham kaynağı olma etkisinin açıklanması', pts: Math.round((pointAllocations[1] || 15) * 0.5) }
+      ]
+    },
+    {
+      number: 3,
+      outcome: 'SB.7.1.3',
+      outcomeTitle: 'Türk toplumunun millî meseleler karşısında gösterdiği tutum ve davranışlara ilişkin çıkarım yapabilme',
+      difficulty: 'Orta',
+      level: 'Karmaşık Bilişsel Süreçler',
+      points: pointAllocations[2] || 15,
+      templateType: 'Metin İçi Delillendirme & Örtük Anlam',
+      stimulus: `Ressam Arif Bedii'nin 'Atatürk ve Millî Mücadele' tablosunda kağnısıyla cephane taşıyan köylü kadınlar, cephede süngü takmış Mehmetçikler ve arkalarında dualar eden aksakallı dedeler bir arada tasvir edilmiştir. (Ders Kitabı 1. Kitap, Sayfa 42)`,
+      question: `Arif Bedii'nin bu tablosunda vurgulanan ana düşünceyi Türk milletinin millî birlik ve 'topyekûn seferberlik' anlayışıyla ilişkilendirerek açıklayınız.`,
+      answer: `Tablonun ana düşüncesi, Türk milletinin vatan tehlikeye düştüğünde kadını, erkeği, yaşlısı ve genciyle bütün fertlerinin tek vücut olarak cepheye ve cephe gerisine koştuğudur. Millî Mücadele'nin sadece bir ordu savaşı değil, tüm bir milletin ortak iman, vatan sevgisi ve fedakârlıkla kazandığı topyekûn bir bağımsızlık destanı olduğunu simgeler.`,
+      alternativeAnswers: [
+        'Vatan savunmasının kadın-erkek, genç-yaşlı tüm millet fertlerinin el ele vermesiyle başarıldığını ve milletimizin kenetlenme gücünü anlatmaktadır.',
+        'Kurtuluş Savaşı\'nın cephedeki asker ile cephe gerisindeki halkın ortak dayanışması ve fedakârlığı sayesinde kazanılan bir halk seferberliği olduğunu gösterir.'
+      ],
+      rubric: [
+        { item: 'Kadın, erkek, yaşlı ve askerin tek vücut olduğu topyekûn seferberliğin açıklanması', pts: Math.round((pointAllocations[2] || 15) * 0.5) },
+        { item: 'Millî birlik ve bağımsızlık ruhunun gerekçelendirilmesi', pts: Math.round((pointAllocations[2] || 15) * 0.5) }
+      ]
+    },
+    {
+      number: 4,
+      outcome: 'SB.7.2.1',
+      outcomeTitle: 'Küreselleşmenin insan ve toplum hayatı üzerindeki etkilerini analiz edebilme',
+      difficulty: 'Orta',
+      level: 'Karmaşık Bilişsel Süreçler',
+      points: pointAllocations[3] || 15,
+      templateType: 'Dilemma (İkilem) & Çözüm Değerlendirme',
+      stimulus: `Küreselleşmeyle birlikte tüm dünyada tek tip giyim markaları, aynı yabancı şarkılar ve aynı fast-food restoran zincirleri yaygınlaşmaktadır. Bu durum karşısında bazı ülkeler geleneksel mutfaklarını, yerel zanaatlarını ve ana dillerini korumak için özel festivaller düzenlemektedir. (Ders Kitabı 1. Kitap, Sayfa 65)`,
+      question: `a) Küreselleşmenin yerel kültürler üzerinde yarattığı 'kültürel tek tipleşme' tehlikesini açıklayınız.
+b) Kendi öz kültürümüzü korumak için günlük hayatımızda alabileceğimiz 1 somut önlem yazınız.`,
+      answer: `a) Kültürel Tek Tipleşme: Popüler kültürün küresel pazarlama yoluyla tüm dünyayı etkisi altına alarak yerel gelenekleri, halk oyunlarını, yöresel tatları ve dilleri unutturması ve herkesi tek bir tüketim kalıbına sokması riskidir.
+b) Somut Önlem: Fast-food yerine geleneksel Türk mutfağını ve yöresel ev yemeklerini tercih etmek; ana dilimizde yabancı sözcükler yerine Türkçe kelimeleri kullanmaya özen göstermek.`,
+      alternativeAnswers: [
+        'a) Güçlü küresel kültürlerin yerel kimlikleri yok ederek dünya genelinde tekdüze bir yaşam ve tüketim tarzı oluşturmasıdır. b) Geleneksel el sanatlarımızı öğrenmek, yerli üreticileri desteklemek ve millî bayramlarımızı coşkuyla kutlamaktır.',
+        'a) Özgün millî kültürlerin popüler kültür baskısı altında asimile olması ve çeşitliliğin kaybolmasıdır. b) Türkçemizi yabancı kelimelerden korumak ve halk müziği gibi öz kültür miraslarımıza sahip çıkmaktır.'
+      ],
+      rubric: [
+        { item: 'Kültürel tek tipleşme ve yerel zenginliğin kaybolması tehlikesinin açıklanması', pts: Math.round((pointAllocations[3] || 15) * 0.5) },
+        { item: 'Öz kültürü korumaya yönelik gerçekçi ve somut bir bireysel önlemin yazılması', pts: Math.round((pointAllocations[3] || 15) * 0.5) }
       ]
     }
   ];
@@ -2436,6 +2580,7 @@ b) Mark NEVER plays tennis.`,
     ...turkceQuestions_5th_SetC,
     ...turkceQuestions_7th_SetB,
     ...turkceQuestions,
+    ...sosyalQuestions_7th_SetB,
     ...sosyalQuestions,
     ...dinQuestions,
     ...ingilizceQuestions
