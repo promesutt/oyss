@@ -1385,7 +1385,14 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "T.O.7.4": {
     "outcomeCode": "T.O.7.4",
-    "topicTitle": "Metinde Anlam ve Bağlam Analizi",
+    "topicTitle": "Metinde Geçen Söz Varlığı Unsurlarının Anlamını Tahmin Etme (Ders Kitabı 1. Kitap, Sayfa 12-29 & 2. Kitap, Sayfa 79-89)",
+    "textbookUnit": "1. Kitap, 1. Tema: Hayat Boyu Gelişim & 2. Kitap, 5. Tema: Okuma Kültürü",
+    "textbookPageRange": "1. Kitap s. 12-29, 76-84; 2. Kitap s. 79-89",
+    "textbookExamples": [
+      "Martı Jonathan Livingston (1. Kitap s. 12-29: 'kavis', 'yalıyordu', 'sendelemek' sözcüklerinin bağlamsal tahmini)",
+      "Bayrağımızın Altında (Halide Edip Adıvar, 1. Kitap s. 76-84: 'mefkûre', 'siper', 'hürriyet' ve metin içi ipuçları)",
+      "Kitap (2. Kitap s. 79-89: 'parşömen', 'sahaf', 'tekelinde kalmak' bağlam tahlili)"
+    ],
     "quickNotes": [
       "Sözcüğün Bağlamsal Anlamı: Metnin bütünü içindeki felsefi, kültürel veya terimsel derinliğini yakalama.",
       "Metin Tahlili: Metnin anahtar kelimelerini belirleyerek yazarın ana düşüncesine ulaşma."
@@ -1405,13 +1412,21 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "T.O.7.5": {
     "outcomeCode": "T.O.7.5",
-    "topicTitle": "Deyim ve Atasözlerinin Metne Katkısı",
+    "topicTitle": "Metnin Yüzey Anlamını, Konusunu ve 5N1K Unsurlarını Belirleme (Ders Kitabı 1. Kitap, Sayfa 12-41 & 2. Kitap, Sayfa 12-23)",
+    "textbookUnit": "1. Kitap, 1. Tema: Hayat Boyu Gelişim & 2. Kitap, 4. Tema: Türk Sanatı",
+    "textbookPageRange": "1. Kitap s. 12-41, 85-94; 2. Kitap s. 12-23",
+    "textbookExamples": [
+      "Martı Jonathan Livingston (1. Kitap s. 12-29: Martının tek başına uçuş çalışmaları, kahvaltı mücadelesi)",
+      "Gençliğin Kıymeti (1. Kitap s. 30-41: Gençlik yıllarının değeri ve zaman yönetimi)",
+      "Anadolu'da Kilim Demek (2. Kitap s. 12-23: Kilim motiflerinin yüzey anlamı ve açık bilgiler)"
+    ],
     "quickNotes": [
-      "Deyimler: Genellikle mecaz anlamlı, en az iki sözcükten oluşan kalıplaşmış anlatım kalıplarıdır.",
-      "Atasözleri: Uzun tecrübelere dayanan, ders ve öğüt veren atalar sözüdür."
+      "Yüzey Anlam: Metinde doğrudan doğruya açıkça söylenen, gizli olmayan ve satır aralarında aranmayan apaçık bilgidir.",
+      "5N1K Kuralı: Metindeki olay örgüsünü kavramak için \"Kim, Ne, Nerede, Ne zaman, Nasıl, Neden\" soruları metne yöneltilir.",
+      "Deyim ve Atasözleri: Metne kattığı açık anlam yönüyle incelenir."
     ],
     "examTraps": [
-      "Deyimlerdeki sözcüklerin eş anlamlıları dahi olsa yeri değiştirilemez."
+      "Yüzey anlam sorularında kişisel yorum veya örtük çıkarım yapmayınız; yalnızca metinde açıkça yazılı bilgiyi kullanınız."
     ],
     "solvedExample": {
       "question": "Yukarıda verilen 1. sorudaki Şerife Bacı metnini dikkate alınız.\n\nYukarıda Şerife Bacı ve kağnı kollarının anlatıldığı 1. metnin konusunu tek bir cümleyle yazınız.",
@@ -1425,10 +1440,18 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "T.O.7.8": {
     "outcomeCode": "T.O.7.8",
-    "topicTitle": "Metnin Ana Düşüncesi ve Yardımcı Fikirleri",
+    "topicTitle": "Metnin Derin Anlamını ve Örtük İletisini Üst Düzey Çıkarımlarla Belirleme (Ders Kitabı 1. Kitap, Sayfa 76-84 & 2. Kitap, Sayfa 148-158)",
+    "textbookUnit": "1. Kitap, 2. Tema: Bir Hilal Uğruna & 2. Kitap, 6. Tema: Hak ve Sorumluluklar",
+    "textbookPageRange": "1. Kitap s. 76-84, 122-133; 2. Kitap s. 148-158",
+    "textbookExamples": [
+      "Bayrağımızın Altında (Halide Edip Adıvar, 1. Kitap s. 76-84: Vatan sevgisi, bağımsızlık tutkusu ve metin içi delillendirme)",
+      "Eskici (Refik Halid Karay, 1. Kitap s. 122-133: Ana dil bağı, gurbet psikolojisi ve kültürel aidiyet tahlili)",
+      "Üç Soru (2. Kitap s. 148-158: En önemli zaman, en önemli insan ve en önemli eyleme dair örtük anlam)"
+    ],
     "quickNotes": [
       "Ana Fikir: Metnin omurgasını oluşturan, yazarın okuyucuyu ikna etmek istediği evrensel mesajdır.",
-      "Yardımcı Düşünceler: Ana fikri besleyen, örnekleyen ve kanıtlayan yan yargılardır."
+      "Yardımcı Düşünceler: Ana fikri besleyen, örnekleyen ve kanıtlayan yan yargılardır.",
+      "Metin İçi Delillendirme: Çıkarımı metinden en az iki somut kanıtla destekleme kuralı."
     ],
     "examTraps": [
       "Paragraftaki tek bir cümleye takılmayın; metnin bütününden çıkan genel sonucu bulunuz."
@@ -1445,10 +1468,17 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "T.O.7.21": {
     "outcomeCode": "T.O.7.21",
-    "topicTitle": "Metin Türleri: Söyleşi (Sohbet) ve Fıkra (Köşe Yazısı)",
+    "topicTitle": "Metinden Hareketle Söz Varlığını Geliştirmeye Yönelik Çözümleme (Ders Kitabı 1. Kitap, Sayfa 51-64 & 2. Kitap, Sayfa 47-57)",
+    "textbookUnit": "1. Kitap, 1. Tema: Hayat Boyu Gelişim & 2. Kitap, 4. Tema: Türk Sanatı",
+    "textbookPageRange": "1. Kitap s. 51-64, 134-143; 2. Kitap s. 47-57",
+    "textbookExamples": [
+      "Adını Göklere Yazdıran Çocuk (1. Kitap s. 51-64: Havacılık terimleri, eş ve zıt anlamlı sözcükler)",
+      "Ya Hayır Söyle (1. Kitap s. 134-143: Tatlı dil, güler yüz ve iletişim deyimleri)",
+      "Süleymaniye (2. Kitap s. 47-57: Mimarlık terimleri, kubbe, zarafet, heybet ve mecaz anlam)"
+    ],
     "quickNotes": [
-      "Söyleşi (Sohbet): Yazarın okuyucuyla karşılıklı konuşuyormuş gibi içten, samimi bir dille yazdığı fikir yazısıdır (\"Siz de böyle düşünmez misiniz?\").",
-      "Fıkra (Köşe Yazısı): Günlük siyasi, sosyal olayları günübirlik olarak ele alan, kanıtlama kaygısı gütmeyen gazete yazısıdır."
+      "Söz Varlığı Zenginliği: Eş anlamlılık, zıt anlamlılık, deyimler, atasözleri ve terim anlamlı kelimeler.",
+      "Metin Türleri: Söyleşi (sohbet), fıkra (köşe yazısı), hikâye ve anı türlerinin dil özellikleri."
     ],
     "examTraps": [
       "Mizahi fıkra (Nasreddin Hoca fıkrası) ile gazete köşe yazısı olan fıkrayı karıştırmayınız!"
@@ -1465,11 +1495,17 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "T.Y.7.3": {
     "outcomeCode": "T.Y.7.3",
-    "topicTitle": "Fiillerde Anlam (Zaman) Kayması",
+    "topicTitle": "Yazıda İçerik ve Yapıya Yönelik Seçimleri Yönetebilme (Ders Kitabı 1. Kitap, Sayfa 65-66 & 2. Kitap, Sayfa 108-109)",
+    "textbookUnit": "1. Kitap, 1-3. Temalar: Yazma Atölyesi & 2. Kitap, 5. Tema: Okuma Kültürü",
+    "textbookPageRange": "1. Kitap s. 65-66, 112; 2. Kitap s. 108-109",
+    "textbookExamples": [
+      "Üretim Vakti (1. Kitap s. 65-66: Olay yazılarında serim, düğüm, çözüm bölümlerini planlama)",
+      "Üretim Vakti (1. Kitap s. 112: Düşünce yazılarında giriş, gelişme, sonuç ve ana fikir taslağı)",
+      "Yazma Atölyesi (2. Kitap s. 108-109: Fikir yazısı taslağı, basılı kitap ve e-kitap karşılaştırma planı)"
+    ],
     "quickNotes": [
-      "Tanım: Fiilin aldığı kip ekiyle, cümlede kastettiği zamanın birbirine uymaması durumudur.",
-      "Örnek: \"Fatih Sultan Mehmet 1453'te İstanbul'u fetheder.\" (Geniş zaman eki -r almış, ancak geçmiş zaman kastedilmiştir).",
-      "Dil Bilgisi Durumu: Anlam kayması bir anlatım bozukluğu DEĞİLDİR; Türkçenin anlatım zenginliğidir."
+      "Metin Mimarisi: Giriş (serim), gelişme (düğüm) ve sonuç (çözüm) paragraflarının mantıksal uyumu.",
+      "Fiillerde Anlam (Zaman) Kayması: Fiilin aldığı kip ekiyle kastettiği zamanın anlatımı zenginleştirmesi."
     ],
     "examTraps": [
       "TUZAK: Anlam kaymasını anlatım bozukluğu saymayınız! Kesinlikle bozukluk değildir."
@@ -1486,14 +1522,20 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "T.Y.7.18": {
     "outcomeCode": "T.Y.7.18",
-    "topicTitle": "Ek Fiil (Ek Eylem) ve Görevleri",
+    "topicTitle": "Yazıyı Zenginleştirecek Biçimde Söz Varlığını ve Sanatları Kullanabilme (Ders Kitabı 1. Kitap, Sayfa 102-111 & 2. Kitap, Sayfa 118-129)",
+    "textbookUnit": "1. Kitap, 2. Tema: Bir Hilal Uğruna & 2. Kitap, 6. Tema: Hak ve Sorumluluklar",
+    "textbookPageRange": "1. Kitap s. 102-111; 2. Kitap s. 118-129",
+    "textbookExamples": [
+      "Mustafa Kemal’in Kağnısı (1. Kitap s. 102-111: Teşhis, teşbih sanatları ve çağrışım gücü yüksek söz varlığı)",
+      "Kutadgu Bilig (2. Kitap s. 118-129: Erdem kavramları, adalet ve ahlaki öğüt dili)",
+      "Siyah İnci (2. Kitap s. 130-138: Birinci ağızdan anlatım, empati ve betimleyici söz varlığı)"
+    ],
     "quickNotes": [
-      "Ek Fiil Kökü: \"i- (imek)\" fiilidir (idi, imiş, ise, -dir).",
-      "1. Görevi: İsim ve isim soylu sözcüklere gelerek onları cümlede YÜKLEM yapar (Örn: \"Hava bugün çok güzel-di\").",
-      "2. Görevi: Basit zamanlı fiillere gelerek onları BİRLEŞİK ZAMANLI fiil yapar (Örn: okuyor-du -> Hikâye, okur-sa -> Şart)."
+      "Zenginleştirici Unsurlar: İkilemeler, deyimler, çağrışım değeri yüksek sözcükler ve söz sanatları.",
+      "Ek Fiil (Ek Eylem) ve Görevleri: İsmi yüklem yapma ve birleşik zaman kurma fonksiyonları."
     ],
     "examTraps": [
-      "İsim yüklem olmuşsa orada MUTLAKA ek fiil vardır! \"Geniş zaman 3. tekil eki olan -dir bazen düşebilir: \"O çok çalışkan(dır)\"."
+      "İsim yüklem olmuşsa orada MUTLAKA ek fiil vardır! Geniş zaman 3. tekil eki olan -dir bazen düşebilir."
     ],
     "solvedExample": {
       "question": "Hedef Kelimeler: 'fedakârlık, sarsılmaz irade, hürriyet, vatan sağ olsun'.\n\nŞerife Bacı’nın kağnı kolunun Kastamonu Kışlası kapısına ulaştığı anı; içinde 'fedakârlık', 'sarsılmaz irade', 'hürriyet' ve 'vatan sağ olsun' ifadelerinin geçtiği 3-4 cümlelik etkileyici bir anlatımla tamamlayınız.",
@@ -1507,15 +1549,20 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "T.Y.7.21": {
     "outcomeCode": "T.Y.7.21",
-    "topicTitle": "Anlatım Biçimleri ve Düşünceyi Geliştirme Yolları",
+    "topicTitle": "Yazım Kuralları ve Noktalama İşaretlerini Uygulayabilme (Ders Kitabı 1. Kitap, Sayfa 63-64 & 2. Kitap, Sayfa 60-64)",
+    "textbookUnit": "1. Kitap, 1-3. Temalar: Dil Bilgisi & 2. Kitap, 4-6. Temalar: Dil Bilgisi Atölyesi",
+    "textbookPageRange": "1. Kitap s. 63-64, 107-111; 2. Kitap s. 60-64, 159-162",
+    "textbookExamples": [
+      "Yazım Kuralları Atölyesi (1. Kitap s. 63-64: Büyük harfler, birleşik sözcükler, de/da, ki ve mi'nin yazımı)",
+      "Noktalama Atölyesi (1. Kitap s. 107-111: İki nokta (:), noktalı virgül (;), kesme işareti ve tırnak)",
+      "Dil Bilgisi Uygulamaları (2. Kitap s. 60-64: Sayıların, unvanların ve kısaltmaların eklerle yazımı)"
+    ],
     "quickNotes": [
-      "Öyküleme: Olay, kişi, yer ve zaman akışı vardır (film şeridi gibi hareketlidir).",
-      "Betimleme: Kelimelerle resim çizme sanatıdır (durgun fotoğraf gibidir, sıfatlar yoğundur).",
-      "Açıklama: Bilgi vermek, öğretmek amacıyla nesnel yazılır.",
-      "Tartışma: Yazar karşıt bir fikri çürütüp kendi görüşünü okuyucuya benimsetmeye çalışır."
+      "Noktalama İşlevleri: Noktalı virgül (tür ayırma ve sıralı cümle) ile iki nokta (örnek ve açıklama) ayrımı.",
+      "Yazım Kuralları: Kurum, kuruluş ve özel isimlere gelen eklerin yazımı, sayıların ve bağlaçların kuralları."
     ],
     "examTraps": [
-      "Hareket ve olay varsa öykülemedir; sadece görünüş tasvir ediliyorsa betimlemedir."
+      "İki noktadan sonra gelen kısım tam bir cümle ise büyük harfle, sadece örnekler sıralanıyorsa küçük harfle başlar."
     ],
     "solvedExample": {
       "question": "Hatalı Cümle: 'ılgaz dağında ki fırtınada türk askeri, canla başla cephaneleri taşıyorduki düşman anadoluyu ele geçiremesin.'\n\nYukarıdaki cümlede yer alan yazım ve noktalama hatalarını tespit ediniz ve cümlenin hatasız halini altındaki satıra yazınız.",
@@ -1529,10 +1576,17 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "T.O.7.7": {
     "outcomeCode": "T.O.7.7",
-    "topicTitle": "Söz Sanatları: Tezat (Karşıtlık) ve Abartma (Mübalağa)",
+    "topicTitle": "Metnin Derin Anlamına Yönelik Basit Çıkarımlar Yapabilme (Ders Kitabı 1. Kitap, Sayfa 76-111 & 2. Kitap, Sayfa 118-129)",
+    "textbookUnit": "1. Kitap, 2. Tema: Bir Hilal Uğruna & 2. Kitap, 6. Tema: Hak ve Sorumluluklar",
+    "textbookPageRange": "1. Kitap s. 76-111; 2. Kitap s. 118-129",
+    "textbookExamples": [
+      "Bayrağımızın Altında (Halide Edip Adıvar, 1. Kitap s. 76-84: Karakterlerin söz ve davranışlarından duygu tahlili)",
+      "Mustafa Kemal’in Kağnısı (Fazıl Hüsnü Dağlarca, 1. Kitap s. 102-111: Elif'in fedakârlığından milli şuur çıkarımı)",
+      "Kutadgu Bilig (2. Kitap s. 118-129: Beyitlerden hareketle insan karakterine dair çıkarımlar)"
+    ],
     "quickNotes": [
-      "Tezat: Anlamı güçlendirmek için birbirine zıt kavramların (gece-gündüz, ağlamak-gülmek) bir arada kullanılmasıdır.",
-      "Abartma: Bir durumu olduğundan çok daha büyük veya çok daha küçük göstererek dikkat çekme sanatıdır."
+      "Basit Çıkarım: Metindeki açık bilgilerden hareketle neden-sonuç, amaç-sonuç ve duygu durumlarına akıl yürütme.",
+      "Söz Sanatları: Tezat (karşıtlık), benzetme ve abartmanın anlama katkısını analiz etme."
     ],
     "examTraps": [
       "Her olumsuz sözcük tezat değildir; \"geldi-gelmedi\" tezat değil olumsuzluktur. \"Gülmek-ağlamak\" ise tezattır."
@@ -1549,13 +1603,20 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "T.O.7.14": {
     "outcomeCode": "T.O.7.14",
-    "topicTitle": "Metinle İlgili Soruları Cevaplama ve Çıkarım",
+    "topicTitle": "Bilgilendirici Metinlerde Metin Yapısından Önemli Bilgileri Çözümleme (Ders Kitabı 1. Kitap, Sayfa 30-41 & 2. Kitap, Sayfa 24-37)",
+    "textbookUnit": "1. Kitap, 1. Tema: Hayat Boyu Gelişim & 2. Kitap, 4. Tema: Türk Sanatı",
+    "textbookPageRange": "1. Kitap s. 30-41; 2. Kitap s. 24-37",
+    "textbookExamples": [
+      "Gençliğin Kıymeti (1. Kitap s. 30-41: Bilgilendirici metinde giriş-gelişme-sonuç, ana ve yardımcı düşüncelerin tespiti)",
+      "Anadolu’da Kilim Demek (2. Kitap s. 12-23: Kültürel motifler ve önemli bilgilerin sınıflandırılması)",
+      "Geleneksel Türk Tiyatrosu (2. Kitap s. 24-37: Karagöz ile Hacivat yapısı ve metin özellikleri)"
+    ],
     "quickNotes": [
-      "Doğrudan Bilgi: Metinde açıkça yazan veriler.",
-      "Yoruma Dayalı Bilgi: Karakterlerin psikolojisinden ve olayların gelişiminden ulaşılan mantıksal sonuçlar."
+      "Metin Yapısı: Bilgilendirici metinlerde düşüncelerin sıralanışı (tanımlama, örneklendirme, karşılaştırma).",
+      "Doğrudan ve Önemli Bilgi: Metnin ana fikrini doğrudan besleyen ve kanıtlayan temel argümanlar."
     ],
     "examTraps": [
-      "Metin dışı kişisel ön yargılarınızı cevaba karıştırmayınız."
+      "Metin dışı kişisel ön yargılarınızı cevaba karıştırmayınız; metindeki mantıksal örgüye sadık kalınız."
     ],
     "solvedExample": {
       "question": "Yukarıda verilen 1. sorudaki Ahilik metnini dikkate alınız.\n\nBu metnin giriş, gelişme ve sonuç bölümlerinde okuyucuya aktarılan temel bilgileri tespit ederek metnin yapısını çözümleyiniz.",
@@ -1569,13 +1630,20 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "T.O.7.15": {
     "outcomeCode": "T.O.7.15",
-    "topicTitle": "Metne Dayalı Nitelikli Sorular Sorma",
+    "topicTitle": "Bilgilendirici Metinlerde Anahtar Kelimeleri ve İşlevlerini Belirleme (Ders Kitabı 1. Kitap, Sayfa 30-41 & 2. Kitap, Sayfa 79-99)",
+    "textbookUnit": "1. Kitap, 1. Tema: Hayat Boyu Gelişim & 2. Kitap, 5. Tema: Okuma Kültürü",
+    "textbookPageRange": "1. Kitap s. 30-41; 2. Kitap s. 79-99",
+    "textbookExamples": [
+      "Gençliğin Kıymeti (1. Kitap s. 30-41: 'Zaman', 'emek', 'başarı', 'gençlik' anahtar kelimelerinin tahlili)",
+      "Kitap (2. Kitap s. 79-89: Okuma kültürünü yansıtan anahtar kavramların metin içi rolü)",
+      "Kütüphaneler (2. Kitap s. 90-99: Bilgiye erişim ve kütüphane kültürü anahtar kavramları)"
+    ],
     "quickNotes": [
-      "Açık Uçlu Soru: Cevabı \"evet/hayır\" olmayan, neden-nasıl analizini sorgulayan sorulardır.",
-      "Kritik Düşünme: Metindeki fikirlerin sağlamlığını ölçen derin sorular kurabilme."
+      "Anahtar Kelime: Metnin konusunu ve özünü en yoğun şekilde taşıyan, metinden çıkarıldığında anlamın çökeceği kilit kavramlardır.",
+      "Kavram Ağı: Anahtar kelimelerin metin içindeki yardımcı sözcüklerle oluşturduğu anlam ilişkileri."
     ],
     "examTraps": [
-      "Soru sadece metindeki bir kelimeyi sormamalı; ana düşünceyi tartışmaya açmalıdır."
+      "Soru sadece metindeki bir kelimeyi sormamalı; ana düşünceyi taşıyan kilit kavramı bulmalıdır."
     ],
     "solvedExample": {
       "question": "Yukarıda verilen 1. sorudaki Ahilik metnini dikkate alınız.\n\na) Bu metnin içeriğini en iyi yansıtan 3 anahtar kelimeyi yazınız.\nb) Belirlediğiniz bu anahtar kelimeleri metnin hangi özelliklerine dayanarak seçtiğinizi birer cümleyle gerekçelendiriniz.",

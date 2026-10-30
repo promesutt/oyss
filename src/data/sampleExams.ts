@@ -10296,6 +10296,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Yukarıdaki konuyla ilgili bilgilendirici bir metin yazacak olsaydınız; giriş, gelişme ve sonuç paragraflarında hangi ana fikirlere yer vereceğinizi taslak halinde maddelerle planlayınız.",
         "solutionExplanation": "Kompozisyonun üç ana bölümü için tematik taslak hazırlanır.",
         "modelAnswer": "• Giriş Bölümü: İnsanların tek başlarına aşamayacakları zorlukları dayanışma ve ortak şuurla aşabileceklerinin tanımı yapılır.\n• Gelişme Bölümü: Kurtuluş Savaşı'ndaki Tekâlif-i Milliye emirleri ve Şerife Bacı gibi kahramanların fedakârlıkları somut örneklerle açıklanır.\n• Sonuç Bölümü: Birlik ve beraberliğini koruyan toplumların geleceğe güvenle bakabileceği vurgulanarak genel bir öğütle yazı tamamlanır.",
+        "alternativeAnswers": [
+          "Giriş: Birlik ve beraberliğin tanımı yapılarak toplumsal dayanışmanın önemi belirtilir. Gelişme: Kurtuluş Savaşı ve Milli Mücadele'den somut fedakârlık örnekleri verilir. Sonuç: Kenetlenen bir milletin hiçbir güç tarafından yıkılamayacağı vurgulanır.",
+          "Giriş: Tek başına bir insanın gücünün sınırlı olduğu, birlikte hareket etmenin mucizeler yarattığı açıklanır. Gelişme: Tarihimizden imece ve yardımlaşma hatıraları aktarılır. Sonuç: Gelecek nesillere birlik şuuru aşılanması gerektiği mesajıyla tamamlanır."
+        ],
         "rubric": [
           {
             "criterion": "Giriş bölümünün konuyu tanıtıcı ve ilgi çekici planlanması",
@@ -10324,6 +10328,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Şerife Bacı’nın kağnı kolunun Kastamonu Kışlası kapısına ulaştığı anı; içinde 'fedakârlık', 'sarsılmaz irade', 'hürriyet' ve 'vatan sağ olsun' ifadelerinin geçtiği 3-4 cümlelik etkileyici bir anlatımla tamamlayınız.",
         "solutionExplanation": "Öğrenci verilen 4 anahtar kavramı anlam bütünlüğü içinde kurgular.",
         "modelAnswer": "Kışla nizamiyesinden içeri giren kağnı, bir milletin sarsılmaz iradesini simgeliyordu. Askerler mermileri indirmek için koştuğunda gördükleri bu yüce fedakârlık karşısında gözyaşlarını tutamadılar. Şerife Bacı'nın dudaklarından dökülen son nefes, göklerde yankılanan kutsal bir hürriyet andı gibiydi: 'Vatan sağ olsun!'",
+        "alternativeAnswers": [
+          "Dondurucu soğukta kağnısını çeken Şerife Bacı, canından çok sevdiği hürriyet uğruna büyük bir fedakârlık gösterdi. Cephaneyi kışlaya teslim ettiğinde Türk milletinin sarsılmaz iradesi bir kez daha kanıtlanmıştı. Şehit olurken arkasında tek bir vasiyet bıraktı: Vatan sağ olsun!",
+          "Kışlanın nöbetçileri kapıyı açtığında eşsiz bir fedakârlık tablosuyla karşılaştı. Şerife Bacı'nın sarsılmaz iradesi, Ilgaz Dağları'nın dondurucu ayazını yenmiş ve cephaneyi ulaştırmıştı. Milletimizin hürriyet sevdası dudaklarda yankılanıyordu: Vatan sağ olsun!"
+        ],
         "rubric": [
           {
             "criterion": "Verilen 4 anahtar ifadenin tamamının anlamlı ve yerinde kullanılması",
@@ -10348,6 +10356,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Yukarıdaki cümlede yer alan yazım ve noktalama hatalarını tespit ediniz ve cümlenin hatasız halini altındaki satıra yazınız.",
         "solutionExplanation": "Ilgaz Dağı özel isim büyük harf, dağındaki sıfat yapan -ki bitişik, taşıyordu ki bağlaç ayrı, Türk askeri büyük T, Anadolu'yu kesme işareti.",
         "modelAnswer": "Doğru Cümle: 'Ilgaz Dağı'ndaki fırtınada Türk askeri, canla başla cephaneleri taşıyordu ki düşman Anadolu'yu ele geçiremesin.'\n(Hatalar: Ilgaz Dağı'ndaki büyük harf ve kesme, Türk büyük harf, taşıyordu ki ayrı, Anadolu'yu kesme işareti).",
+        "alternativeAnswers": [
+          "Doğrusu: 'Ilgaz Dağı'ndaki fırtınada Türk askeri, canla başla cephaneleri taşıyordu ki düşman Anadolu'yu ele geçiremesin.' (Hatalar: Ilgaz Dağı büyük harf ve kesme, Türk büyük harf, taşıyordu ki ayrı, Anadolu'yu kesme işareti).",
+          "Ilgaz Dağı'ndaki fırtınada Türk askeri, canla başla cephaneleri taşıyordu ki düşman Anadolu'yu ele geçiremesin."
+        ],
         "rubric": [
           {
             "criterion": "Özel isimlerin ve kesme işaretlerinin doğru yazımı (Ilgaz Dağı'ndaki, Türk, Anadolu'yu)",
@@ -10444,6 +10456,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Bu metnin giriş, gelişme ve sonuç bölümlerinde okuyucuya aktarılan temel bilgileri tespit ederek metnin yapısını çözümleyiniz.",
         "solutionExplanation": "Metnin üç bölümündeki ana düşünceler tespit edilir.",
         "modelAnswer": "• Giriş Bölümü: Ahi Evran ve Ahilik teşkilatının esnaf ahlakını disipline eden kuralları tanıtılmıştır.\n• Gelişme Bölümü: Hatalı mal üreten esnafın pabucunun dama atılması süreci ve deyimin ortaya çıkışı anlatılmıştır.\n• Sonuç Bölümü: Ahilik sisteminde helal kazanç, usta-çırak terbiyesi ve tüketici hakkının önemi vurgulanarak genel ilke ortaya konmuştur.",
+        "alternativeAnswers": [
+          "Giriş: Ahi Evran'ın esnaf ahlakını disipline etmesi ve teşkilatın ilkeleri anlatılmıştır. Gelişme: Kusurlu mal üreten esnafın ayakkabısının dama atılması geleneği verilmiştir. Sonuç: Tüketici hakkına saygı ve helal kazanç ilkesi özetlenmiştir.",
+          "Girişte Ahilik teşkilatının kuruluş felsefesi ve dürüstlük kuralı; gelişmede hileli üretimi cezalandırma yöntemi ve 'pabucu dama atılmak' deyimi; sonuçta ise Ahiliğin ahlak ve tüketiciye saygı mirası aktarılmıştır."
+        ],
         "rubric": [
           {
             "criterion": "Giriş ve gelişme bölümlerindeki yapısal bilginin doğru tespiti",
@@ -10468,6 +10484,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "a) Bu metnin içeriğini en iyi yansıtan 3 anahtar kelimeyi yazınız.\nb) Belirlediğiniz bu anahtar kelimeleri metnin hangi özelliklerine dayanarak seçtiğinizi birer cümleyle gerekçelendiriniz.",
         "solutionExplanation": "Anahtar kelimeler metnin omurgasını oluşturan kavramlardır (Ahilik, ahlak/dürüstlük, pabuç/lonca).",
         "modelAnswer": "a) Anahtar Kelimeler: Ahilik, Esnaf Ahlakı, Pabucu dama atılmak.\nb) Gerekçe: Metnin ana eksenini bu kurum oluşturduğu için 'Ahilik'; çarşı düzeni ahlak ilkelerine dayandığı için 'Esnaf Ahlakı'; deyimin kökeni açıklandığı için 'Pabucu dama atılmak' anahtar kavram olarak seçilmiştir.",
+        "alternativeAnswers": [
+          "a) Ahilik, esnaf ahlakı, pabucu dama atılmak. b) Metin Ahi teşkilatını, mesleki dürüstlüğü ve bu gelenekten doğan deyimi konu aldığı için bu kelimeler seçilmiştir.",
+          "a) Dürüstlük, Ahi Evran, tüketici hakkı. b) Metnin ana fikri ticaret ahlakı ve esnaf denetimi etrafında geliştiği için bu kavramlar temel anahtar kelimelerdir."
+        ],
         "rubric": [
           {
             "criterion": "Metni temsil eden 3 anahtar kelimenin doğru belirlenmesi",
@@ -10492,6 +10512,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Bu konuda yazacağınız bilgilendirici bir metin için; giriş bölümünde savunacağınız ana düşünceyi ve gelişme bölümünde vereceğiniz iki farklı argümanı maddeler halinde yazınız.",
         "solutionExplanation": "Öğrenci meslek ahlakı konusunda planlı bir içerik haritası çıkarır.",
         "modelAnswer": "• Giriş Bölümü Ana Düşüncesi: Bir esnafın veya meslek sahibinin en büyük sermayesi dükkânındaki mallar değil, müşterilerinin ona duyduğu sarsılmaz güvendir.\n• Gelişme Argümanı 1: Hileli mal satanlar kısa vadede para kazansa da uzun vadede itibarını ve müşterilerini tamamen kaybederler.\n• Gelişme Argümanı 2: Dürüst esnaf ise kriz dönemlerinde bile toplumun saygısı ve desteğiyle ayakta kalır.",
+        "alternativeAnswers": [
+          "Giriş Ana Düşüncesi: Meslek hayatında en kalıcı sermaye dürüstlük ve müşteri güvenidir. Gelişme 1: Hile yapan esnaf kısa vadede kazansa da güveni kaybedince iflas eder. Gelişme 2: Doğruluktan ayrılmayan tüccar ise sadık müşteri kitlesi kazanır.",
+          "Giriş: Ticaretin ve zanaatın temeli karşılıklı güvene dayanır. Gelişme Argümanı: Kaliteli ve sağlam ürün üretmek mesleki saygınlık getirir; aldatıcı yöntemler ise esnafın sonunu hazırlar."
+        ],
         "rubric": [
           {
             "criterion": "Giriş bölümü ana düşüncesinin açık ve tutarlı sunulması",
@@ -10516,6 +10540,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Yukarıdaki cümlede yer alan büyük harf, kesme işareti ve iki nokta/noktalı virgül hatalarını düzelterek cümlenin doğru şeklini yazınız.",
         "solutionExplanation": "Kırşehir'de kesme işareti ve büyük harf, Ahi Evran büyük harf, konuşma öncesi iki nokta konur.",
         "modelAnswer": "Doğru Şekil: 'Kırşehir'de yaşayan Ahi Evran, esnaflara şöyle derdi: \"Harama el uzatma, kapını açık tut, müşteriye güler yüz göster.\"' (veya iki nokta konup tırnaksız devam ettirilebilir).",
+        "alternativeAnswers": [
+          "Kırşehir'de yaşayan Ahi Evran, esnaflara şöyle derdi: \"Harama el uzatma, kapını açık tut, müşteriye güler yüz göster.\"",
+          "Doğru Cümle: 'Kırşehir'de yaşayan Ahi Evran esnaflara şöyle derdi: Harama el uzatma, kapını açık tut, müşteriye güler yüz göster.' (Hatalar: Kırşehir'de büyük harf ve kesme, Ahi Evran büyük harf, alıntı öncesi iki nokta)."
+        ],
         "rubric": [
           {
             "criterion": "Özel isimlerin ve eklerinin doğru yazımı (Kırşehir'de, Ahi Evran)",
@@ -10662,6 +10690,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Türkçemizde tatlı dilli olmanın ve güler yüz göstermenin önemini anlatan 2 farklı atasözü veya deyim yazıp anlamlarını kısaca açıklayınız.",
         "solutionExplanation": "Tatlı dil yılanı deliğinden çıkarır, yüzü gülmek, bal damlamak vb.",
         "modelAnswer": "1. Atasözü: 'Tatlı dil yılanı deliğinden çıkarır.' (Anlamı: Kırıcı olmayan, hoş ve yumuşak sözler en inatçı ve öfkeli insanları bile ikna eder).\n2. Deyim: 'Güler yüz göstermek' (Anlamı: Karşılaştığı insanlara samimi, dostça ve sevecen davranmak).",
+        "alternativeAnswers": [
+          "Atasözü: 'Tatlı söz can azığıdır.' (Tatlı konuşmak insana ferahlık ve huzur verir).\nDeyim: 'Ağzından bal damlamak' (Çok tatlı, hoşa giden ve sevindirici sözler söylemek).",
+          "Deyim 1: 'Güler yüz tatlı dil' (İnsanlara samimi, güler yüzlü ve sevecen yaklaşmak).\nDeyim 2: 'Tatlıya bağlamak' (Anlaşmazlıkları kırmadan, yumuşak ve tatlı dille çözüme kavuşturmak)."
+        ],
         "rubric": [
           {
             "criterion": "Konuyla ilgili iki geçerli atasözü/deyimin yazılması",
@@ -10686,6 +10718,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Bu konuda yazacağınız bir bilgilendirici metinde; gelişme bölümünde ele alacağınız 2 iletişim hatasını ve bunların çözüm yollarını maddeler halinde planlayınız.",
         "solutionExplanation": "Öğrenci dinlememe, söz kesme gibi hataları ve empati çözümünü yansıtır.",
         "modelAnswer": "• 1. İletişim Hatası: Arkadaşı konuşurken sözünü kesmek ve onu sonuna kadar dinlememek. Çözüm: Sabırla dinleyip 'aktif dinleyici' olmak.\n• 2. İletişim Hatası: Karşısındakinin yerine kendini koymadan hemen peşin hüküm vermek ve suçlayıcı sen dili kullanmak. Çözüm: Empati kurarak 'ben dili' ile duygularını ifade etmek.",
+        "alternativeAnswers": [
+          "1. Hata: Muhatabının duygularını ve yüz ifadesini yok sayıp sadece kendi fikrini dayatmak. Çözüm: Karşı tarafın bakış açısını anlamaya çalışarak ortak noktada buluşmak.\n2. Hata: Konuşurken alaycı bir üslup takınmak ve lakap takmak. Çözüm: Nezaket ve saygı kurallarına bağlı kalarak yapıcı bir iletişim geliştirmek.",
+          "1. Hata: Karşı tarafı dinlerken başka şeylerle ilgilenmek (örneğin telefona bakmak veya etrafa bakınmak). Çözüm: Göz teması kurarak odaklanmış dinleme sergilemek.\n2. Hata: Sürekli suçlayıcı ve yargılayıcı cümleler kurmak. Çözüm: Durumu 'ben dili' ile ifade ederek empati temelinde konuşmak."
+        ],
         "rubric": [
           {
             "criterion": "İki somut iletişim hatasının doğru tespit edilmesi",
@@ -10710,6 +10746,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Yukarıdaki cümlede yay ayraçla ( ) gösterilen yerlere gelmesi gereken noktalama işaretlerini sırasıyla yazınız.",
         "solutionExplanation": "Özneden sonra virgül, konuşma öncesi iki nokta, konuşma çizgisi veya tırnak, hitap virgülü, soru işareti, tırnak kapama.",
         "modelAnswer": "Sırasıyla: Virgül (,), İki nokta (:), Tırnak işareti (\"), Virgül (,), Soru işareti (?), Tırnak işareti (\").\nCümle: Sabah erkenden okula gelen Mert, nöbetçi öğretmene tebessüm ederek sordu: \"Hocam, kütüphane kaçta açılacak?\"",
+        "alternativeAnswers": [
+          "Yay ayraçlara sırasıyla: virgül (,), iki nokta (:), konuşma çizgisi (—), virgül (,), soru işareti (?) konulabilir: 'Sabah erkenden okula gelen Mert, nöbetçi öğretmene tebessüm ederek sordu: — Hocam, kütüphane kaçta açılacak?'",
+          "Noktalama sırası: virgül, iki nokta, tırnak işareti, hitap bildiren sözcükten sonra virgül, soru işareti ve kapatma tırnağıdır."
+        ],
         "rubric": [
           {
             "criterion": "Virgül ve iki noktanın yerinde doğru kullanımı",
@@ -10804,6 +10844,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Metne göre köylüler altı asırlık ulu çınarın gölgesinde hangi amaçlarla bir araya gelmektedir? Metinden iki durum yazınız.",
         "solutionExplanation": "Metinde açıkça yazan durumlar: Köylülerin gölgede toplanması, soluklanması ve geçmişin hatıralarını yâd etmesidir.",
         "modelAnswer": "Metne göre köylüler ulu çınarın gölgesinde:\n1. Toplanıp soluklanmak (dinlenmek),\n2. Geçmişin hatıralarını yâd etmek (anmak) amacıyla bir araya gelmektedir.",
+        "alternativeAnswers": [
+          "Köylüler ulu çınarın gölgesinde serinleyip dinlenmek ve asırlık hatıraları paylaşarak geçmişi yâd etmek için toplanmaktadır.",
+          "1. Ağacın serinliğinde soluklanıp dinlenmek,\n2. Geçmişe vefa duyup asırlık tarihin huzurunu hissetmek ve sohbet etmek."
+        ],
         "rubric": [
           {
             "criterion": "Toplanıp soluklanma durumunun doğru yazılması",
@@ -10828,6 +10872,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Yazarın çınarı sadece bir bitki olarak değil, 'yaşayan bir tanık' olarak görmesinin sebebini metne dayanarak açıklayınız.",
         "solutionExplanation": "Ağacın Osmanlı'nın kuruluşundan bugüne kadar kuşakları görmüş olması.",
         "modelAnswer": "Çünkü bu ağaç altı asırdır aynı yerde dimdik durarak Osmanlı'nın kuruluşuna, savaşlara, fatihlerin ve sıradan insanların hayatlarına şahitlik etmiş; yüzyılların kültürünü gölgesinde biriktirmiştir.",
+        "alternativeAnswers": [
+          "Çınar altı yüz yıllık ömrüyle Osmanlı'nın kuruluşundan günümüze kadar nice nesillere, olaylara ve tarihe tanıklık ettiği için yaşayan bir tanık olarak nitelendirilmiştir.",
+          "Ağacın köklerinin geçmişe uzanması, asırlar boyu yaşanan sevinç ve hüzünlere bizzat şahit olması ve bu hatıraları günümüze taşımasıdır."
+        ],
         "rubric": [
           {
             "criterion": "Tarihî süreklilik ve tanıklık gerekçesinin açıklanması",
@@ -10848,6 +10896,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "a) 'Derin' kelimesinin zıt anlamlısını yazıp bir cümlede kullanınız.\nb) 'Dimdik' kelimesinin eş anlamlısını veya yakın anlamlı karşılığını yazınız.",
         "solutionExplanation": "Derin zıttı sığ, dimdik eş anlamlısı ayakta/eğilmeden.",
         "modelAnswer": "a) Derin zıt anlamlısı: SIĞ. Cümle: 'Kıyıya yakın sığ sularda çocuklar güvenle yüzüyordu.'\nb) Dimdik eş/yakın anlamı: Sarsılmadan, dosdoğru, eğilmeden, dik bir biçimde.",
+        "alternativeAnswers": [
+          "a) Zıt anlam: 'sığ' (Örnek: Kıyının sığ sularında balıklar yüzüyordu).\nb) Eş/yakın anlam: 'eğilmeden', 'dik', 'dimdik durarak' veya 'ayakta'.",
+          "a) 'Derin' sözcüğünün zıt anlamlısı 'sığ'dır. Cümle: Nehir bu bölgede oldukça sığ aktığı için karşıya kolayca geçtik.\nb) 'Dimdik' kelimesinin yerine 'dosdoğru', 'sapasağlam' veya 'eğilip bükülmeden' kelimeleri kullanılabilir."
+        ],
         "rubric": [
           {
             "criterion": "Zıt anlamın ve örnek cümlenin doğruluğu",
@@ -10872,6 +10924,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Asırlık çınarın ağzından insanlara seslenen; içinde 'kök salmak', 'sabır', 'fırtına' ve 'vefa' kelimelerinin geçtiği 3-4 cümlelik duygu dolu bir paragraf yazınız.",
         "solutionExplanation": "Öğrenci ağacın gözünden insana sesleniş yazar.",
         "modelAnswer": "Altı yüz yıldır bu tepede rüzgârlarla boğuştum ama toprağıma sımsıkı kök salmaktan asla vazgeçmedim. Nice fırtına dallarımı sarstı lakin sabır zırhımı kuşanıp her bahar yeniden yeşerdim. Ey gölgemde soluklanan insan, unutma ki vefa göstermeyen ve köklerini unutan bir dal en hafif rüzgârda bile kırılır.",
+        "alternativeAnswers": [
+          "Ben asırlardır bu tepeye kök salmış ulu bir çınarım. Nice sert fırtına dallarımı hırpalasa da sabır göstererek her kışın ardından yeniden canlandım. Ey insan, geçmişine vefa duy ki köklerin sağlam kalsın ve geleceğe umutla uzanabilesin.",
+          "Asırlar boyu bu topraklarda kök saldım, sayısız fırtınaya göğüs gerdim. Her zorluğa sabır ile direnip dimdik ayakta durdum. Gölgesinde soluklanan her nesle vefa ve dayanışmanın erdemini fısıldarım."
+        ],
         "rubric": [
           {
             "criterion": "Verilen 4 kavramın eksiksiz ve yerinde kullanılması",
@@ -10896,6 +10952,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Yukarıdaki cümlede yer alan büyük harf, kesme işareti ve bağlaç olan 'de'nin yazımıyla ilgili hataları düzelterek cümlenin doğru halini yazınız.",
         "solutionExplanation": "Osmanlı Devleti büyük harf, tarihine de ayrı.",
         "modelAnswer": "Doğru Cümle: 'Bursa'daki ulu çınar ağır ağır büyürken Osmanlı Devleti'nin şanlı tarihine de şahitlik etmiştir.'\n(Düzeltilenler: Osmanlı Devleti'nin büyük harfle yazımı, 'tarihine de' bağlacının ayrı yazımı, gereksiz virgülün kaldırılması).",
+        "alternativeAnswers": [
+          "Bursa'daki ulu çınar ağır ağır büyürken Osmanlı Devleti'nin şanlı tarihine de şahitlik etmiştir. (Düzeltilenler: 'Osmanlı Devleti'nin' özel ismi büyük harfle yazılır ve kesme ile ayrılır; zarf-fiilden sonraki gereksiz virgül kaldırılır; 'tarihine de' bağlacı ayrı yazılır).",
+          "Cümlenin doğru biçimi: 'Bursa'daki ulu çınar ağır ağır büyürken Osmanlı Devleti'nin şanlı tarihine de şahitlik etmiştir.' Kurallar: Devlet adları büyük harfle başlar ve çekim eki kesmeyle ayrılır, dahi anlamındaki 'de' ayrı yazılır."
+        ],
         "rubric": [
           {
             "criterion": "Özel ismin ve kurum adının doğru yazılması (Osmanlı Devleti'nin)",
@@ -10990,6 +11050,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Metne göre kitabın tarihsel serüveninde Sümerler ve Gutenberg hangi aşamalara öncülük etmiştir? Metinden hareketle açıklayınız.",
         "solutionExplanation": "Metindeki açık olgular: Sümerlerin çivi yazısıyla kile kazıması ve Gutenberg'in hareketli harflerle ilk matbaa baskısını yapmasıdır.",
         "modelAnswer": "• Sümerler: Çivi yazısını kullanarak ilk satırları kil tabletlere kazımışlardır.\n• Gutenberg: Hareketli harflerle ilk sayfaları basarak modern matbaayı ve kütüphaneleri doğurmuştur.",
+        "alternativeAnswers": [
+          "Sümerler kil tabletlere çivi yazısıyla ilk satırları kazıyarak bilginin kaydedilmesine öncülük etmiş; Gutenberg ise hareketli matbaayla basılı kitap dönemini başlatıp bilginin geniş kitlelere yayılmasını sağlamıştır.",
+          "1. Sümerler: Bilgiyi kil tabletlere yazarak tarihin ilk kalıcı kayıtlarını oluşturmuşlardır.\n2. Gutenberg: Hareketli harflerle çalışan matbaayı icat ederek kitapların çoğalmasına ve bilginin sarayların tekelinden çıkmasına öncülük etmiştir."
+        ],
         "rubric": [
           {
             "criterion": "Sümerlerin kil tablet ve çivi yazısı aşamasının doğru yazılması",
@@ -11014,6 +11078,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Metinde geçen yazı ve matbaa alanına ait 3 terim anlamlı sözcük belirleyip bunların hangi meslek/bilim dalıyla ilgili olduğunu yazınız.",
         "solutionExplanation": "Papirüs, parşömen, matbaa vb.",
         "modelAnswer": "1. Papirüs (Eski yazı malzemesi / Tarih-Arkeoloji)\n2. Parşömen (İşlenmiş hayvan derisinden yazı kağıdı / Tarih-Yayıncılık)\n3. Matbaa (Basım aleti ve tekniği / Basım-Yayımcılık)",
+        "alternativeAnswers": [
+          "1. Kil tablet (Eski dönem yazı aracı / Tarih-Arkeoloji)\n2. Matbaa (Baskı makinesi / Matbaacılık ve Basın-Yayın)\n3. E-kitap (Elektronik dijital kitap / Bilişim ve Yayıncılık)",
+          "Papirüs (Arkeoloji/Yazı tarihi), Parşömen (Tarih/Kütüphanecilik), Matbaa (Yayımcılık/Teknoloji)."
+        ],
         "rubric": [
           {
             "criterion": "3 terim anlamlı sözcüğün doğru belirlenmesi",
@@ -11038,6 +11106,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Bu konuda yazacağınız tartışmacı bir metin için; savunduğunuz görüşü ve bu görüşü destekleyen 2 güçlü kanıtı maddeler halinde taslaklaştırınız.",
         "solutionExplanation": "Öğrenci basılı veya dijital kitaptan birini seçerek iki sağlam gerekçe sunar.",
         "modelAnswer": "• Savunulan Görüş: Dijital kolaylıklara rağmen basılı kitabın dokusu, göz sağlığına uygunluğu ve odaklanma kolaylığı üstündür.\n• Kanıt 1: Yapılan araştırmalar kâğıttan okumanın ekran ışığına göre gözü daha az yorduğunu ve okuduğunu anlama oranını artırdığını göstermektedir.\n• Kanıt 2: Dijital ekranlarda gelen bildirimler ve internet bağlantısı okuyucunun dikkatini dağıtırken basılı kitap derinleşmeyi sağlar.",
+        "alternativeAnswers": [
+          "Savunulan Görüş: E-kitaplar taşınabilirlik ve çevre koruma açısından daha avantajlıdır.\nKanıt 1: Binlerce kitap tek bir hafif cihazda toplanabilir, her yere taşınabilir.\nKanıt 2: Kâğıt israfını azaltarak ormanların korunmasına katkı sağlar.",
+          "Savunulan Görüş: Basılı kitaplar derinlemesine anlama ve odaklanma bakımından daha verimlidir.\nKanıt 1: Kâğıda dokunmak ve sayfaları çevirmek bilginin zihinde yer etmesini kolaylaştırır.\nKanıt 2: Bildirim ve ekran parlaması gibi dikkat dağıtıcı unsurlar içermez."
+        ],
         "rubric": [
           {
             "criterion": "Savunulan görüşün açıkça belirlenmesi",
@@ -11062,6 +11134,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Yukarıdaki cümlede yer alan yazım yanlışlarını (özel isim eki, üleştirme sayısının yazımı, unvan kelimesi) düzelterek cümlenin doğrusunu yazınız.",
         "solutionExplanation": "Almanya'da kesme işareti, üleştirme sayıları rakamla değil yazıyla yazılır (üçer üçer), unvan değil unvan.",
         "modelAnswer": "Doğru Cümle: '1450'de Almanya'da matbaayı geliştiren Gutenberg, ilk eserini üçer üçer ciltleyip Prof. Dr. unvanlı bilginlere sunmuştu.'\n(Düzeltmeler: Almanya'da kesme işareti, 3'er değil 'üçer üçer', unvan yazımı).",
+        "alternativeAnswers": [
+          "1450'de Almanya'da matbaayı geliştiren Gutenberg, ilk eserini üçer üçer ciltleyip Prof. Dr. unvanlı bilginlere sunmuştu. (Düzeltilenler: 'Almanya'da' özel isim kesme işareti, üleştirme sayısının 'üçer üçer' şeklinde harfle yazılması, 'unvan' kelimesinin doğru yazılışı).",
+          "Cümlenin düzeltilmiş biçimi: '1450'de Almanya'da matbaayı geliştiren Gutenberg, ilk eserini üçer üçer ciltleyip Prof. Dr. unvanlı bilginlere sunmuştu.' (Kurallar: Ülke adlarına gelen çekim ekleri kesmeyle ayrılır, üleştirme sayıları asla rakamla yazılmaz)."
+        ],
         "rubric": [
           {
             "criterion": "Özel ismin ekine kesme işareti konulması (Almanya'da)",
@@ -11156,6 +11232,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Neşet Ertaş metinde türkü söyleyen insanlarla ilgili nasıl bir tavsiyede bulunmuştur ve bunun gerekçesini hangi sözlerle açıklamıştır? Metne göre yazınız.",
         "solutionExplanation": "Metindeki açık olgu: 'Nerede bir türkü söyleyen görürsen korkma, yanına otur' tavsiyesi ve 'çünkü kötü insanların türküleri yoktur' gerekçesidir.",
         "modelAnswer": "• Tavsiyesi: 'Nerede bir türkü söyleyen görürsen korkma, yanına otur.'\n• Gerekçesi: 'Çünkü kötü insanların türküleri yoktur.'",
+        "alternativeAnswers": [
+          "Tavsiyesi: Türkü söyleyen birini gördüğünde çekinmeden yanına oturmaktır.\nGerekçesi: Kötü insanların türkülerinin olamayacağı, türkünün iyilik ve samimiyet taşıdığı düşüncesidir.",
+          "Neşet Ertaş türkü söyleyen kimselerin yanına korkmadan oturulmasını tavsiye etmiştir; gerekçe olarak da türkülerin yalnızca kalbinde kötülük barındırmayan temiz insanlara ait olduğunu belirtmiştir."
+        ],
         "rubric": [
           {
             "criterion": "Tavsiyenin metne uygun eksiksiz yazılması",
@@ -11180,6 +11260,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Metinde geçen 'gönül' kelimesiyle kurulmuş 2 farklı deyim (örn. gönül koymak, gönül almak, gönül bağı) yazıp anlamlarını açıklayınız.",
         "solutionExplanation": "Gönül almak sevindirmek, gönül koymak kırılmak vb.",
         "modelAnswer": "1. Deyim: Gönül almak (Anlamı: Kırılan veya üzülen birini güzel söz ve davranışlarla sevindirmek, teselli etmek).\n2. Deyim: Gönül bağı kurmak (Anlamı: İki insan veya toplum arasında içten, samimi ve sevgiye dayalı bir yakınlık oluşturmak).",
+        "alternativeAnswers": [
+          "1. Gönül koymak: Yapılan bir davranıştan veya söylenen bir sözden ötürü kırılmak, gücenmek.\n2. Gönül vermek: Bir şeye ya da bir kimseye içtenlikle ve büyük bir sevgiyle bağlanmak.",
+          "1. Gönlü olmak: Bir işi yapmaya razı gelmek, onay vermek.\n2. Gönül ferahlığı: İç huzuru, rahatlık ve tasa duymama durumu."
+        ],
         "rubric": [
           {
             "criterion": "İki doğru deyimin yazılması",
@@ -11204,6 +11288,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Türkülerimizin geçmişten geleceğe kültür aktarımındaki rolünü anlatan; içinde 'kültür mirası', 'samimiyet', 'ortak hafıza' ve 'ezgi' kelimelerinin yer aldığı 3-4 cümlelik akıcı bir paragraf yazınız.",
         "solutionExplanation": "Öğrenci 4 anahtar kavramla zengin bir metin kurar.",
         "modelAnswer": "Türkülerimiz, Anadolu'nun asırlar boyunca biriktirdiği en değerli kültür mirasıdır. Her bir ezgi, düğünlerimizden ağıtlarımıza kadar milletimizin ortak hafızasını canlı tutar. Bu dizelerdeki eşsiz samimiyet, kuşakları birbirine bağlayan en güçlü köprüdür.",
+        "alternativeAnswers": [
+          "Asırlardır kuşaktan kuşağa aktarılan türküler, milletimizin paha biçilmez kültür mirasıdır. Sazın tellerinden yükselen her samimiyet dolu ezgi, sevinç ve kederlerimizi ortak hafızamızda daima diri tutar. Bu zenginliğe sahip çıkmak geleceğimize değer katar.",
+          "Türküler Anadolu insanının ruh dünyasını geleceğe taşıyan köklü bir kültür mirasıdır. Yürekten gelen derin samimiyet ile yankılanan her ezgi, halkın ortak hafızasını canlı kılarak bizi birbirimize kenetler."
+        ],
         "rubric": [
           {
             "criterion": "Dört anahtar kelimenin eksiksiz ve yerinde kullanılması",
@@ -11228,6 +11316,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Yukarıdaki cümlede eksik bırakılan noktalama işaretlerini (iki nokta, tırnak işareti, virgül, nokta) uygun yerlere yerleştirerek cümleyi yeniden yazınız.",
         "solutionExplanation": "Açıklama öncesi iki nokta, alıntı tırnak içine alınır, virgül ve nokta konur.",
         "modelAnswer": "Doğru Şekil: Neşet Ertaş şöyle derdi: \"İncinsen de incitme; çünkü gönül kırmak, Kâbe'yi yıkmak gibidir.\"\n(veya: Neşet Ertaş şöyle derdi: \"İncinsen de incitme, çünkü gönül kırmak Kâbe'yi yıkmak gibidir.\")",
+        "alternativeAnswers": [
+          "Neşet Ertaş şöyle derdi: \"İncinsen de incitme; çünkü gönül kırmak, Kâbe'yi yıkmak gibidir.\"",
+          "Neşet Ertaş şöyle derdi: — İncinsen de incitme, çünkü gönül kırmak Kâbe'yi yıkmak gibidir. (Alıntı tırnak veya konuşma çizgisiyle verilir, öncesine iki nokta ve sonuna uygun noktalama konur)."
+        ],
         "rubric": [
           {
             "criterion": "Konuşma öncesi iki nokta (:) ve tırnak işaretlerinin doğru yerleştirilmesi",
