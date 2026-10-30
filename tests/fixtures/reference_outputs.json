@@ -1,0 +1,1998 @@
+{
+  "matematik_setA": {
+    "title": "7. Sınıf Senaryo 1 (7 Soru) (Özgün Sınav Seti - 7 Soru)",
+    "model": "MEBİ Kural Tabanlı Standart Motor",
+    "isFallback": true,
+    "questionsCount": 7,
+    "questions": [
+      {
+        "number": 1,
+        "outcome": "MAT.7.1.1",
+        "outcomeTitle": "Gerçek yaşam ya da matematiksel durumlarda doğal sayı, tam sayı ve rasyonel sayıları yorumlayabilme",
+        "difficulty": "Kolay",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Görsel / Deney / Günlük Hayat Durumu",
+        "points": 15,
+        "stimulus": "ASELSAN'ın geliştirdiği Türkiye'nin ilk otonom su altı aracı olan Deringöz ile deniz altındaki keşif çalışmalarında deniz seviyesi $0\\text{ metre}$ referans kabul edilmiştir.\nDeniz seviyesinin $8\\text{ metre}$ altındaki ($-8\\text{ m}$) Deringöz'ü kullanan bir araştırma ekibi, deniz yüzeyinin $10\\text{ metre}$ üstündeki ($+10\\text{ m}$) keşif gemisinin güvertesinden çalışmayı takip etmektedir.",
+        "question": "a) Araştırma ekibinin bulunduğu nokta ile Deringöz arasındaki dikey mesafe farkını tam sayılarda çıkarma işlemi modelleyerek hesaplayınız.\nb) Başlangıç noktasına (deniz seviyesine) olan mutlak uzaklıklarını mutlak değer sembolüyle ($|a|$) karşılaştırınız.",
+        "answer": "a) Dikey Mesafe Farkı = $(+10) - (-8) = (+10) + (+8) = 18\\text{ metre}$'dir.\nb) Mutlak Uzaklıklar: $|+10| = 10\\text{ m}$, $|-8| = 8\\text{ m}$. Araştırma ekibinin deniz seviyesine olan mutlak uzaklığı ($10\\text{ m}$), Deringöz'ün deniz seviyesine olan mutlak uzaklığından ($8\\text{ m}$) daha büyüktür ($10 > 8$).",
+        "alternativeAnswers": [
+          "a) 18 metre fark vardır [(+10) - (-8) = 18 m]. b) Araştırma ekibi 10 m, Deringöz 8 m uzaktadır; ekibin uzaklığı daha büyüktür.",
+          "a) 18 m b) |+10| > |-8| (10 m > 8 m)"
+        ],
+        "rubric": [
+          {
+            "item": "a şıkkında dikey fark işleminin [(+10) - (-8) = 18 m] doğru modellenmesi",
+            "pts": 8
+          },
+          {
+            "item": "b şıkkında mutlak değer modellerinin (|10|=10, |-8|=8) ve karşılaştırmanın doğru yapılması",
+            "pts": 7
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "outcome": "MAT.7.1.2",
+        "outcomeTitle": "Gerçek yaşam durumlarında rasyonel sayıların ondalık gösterimlerini yansıtabilme",
+        "difficulty": "Kolay",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 15,
+        "stimulus": "Bir markette satılan bazı ürünlerin ölçüleri rasyonel sayı biçiminde etiketlenmiştir:\n• Kutu sütün hacmi: $\\frac{1}{5}\\text{ L}$\n• Küçük boy su şişesinin hacmi: $\\frac{1}{3}\\text{ L}$\n• Madenî paranın kalınlığı: $\\frac{1}{4}\\text{ cm}$",
+        "question": "a) Kutu süt ($\\frac{1}{5}$) ve küçük boy su şişesinin ($\\frac{1}{3}$) hacimlerini payı paydaya bölme yöntemiyle ondalık gösterim biçiminde yazınız.\nb) Bu iki rasyonel sayıdan hangisinin 'sonlu ondalık', hangisinin 'devirli ondalık' olduğunu paydalarındaki asal çarpan kuralını açıklayarak belirtiniz.",
+        "answer": "a) Bölme İşlemleri:\n• Kutu Süt: $1 \\div 5 = 0,2\\text{ L}$\n• Su Şişesi: $1 \\div 3 = 0,333... = 0,\\overline{3}\\text{ L}$\nb) Asal Çarpan Kuralı ve Tür Belirleme:\nBir rasyonel sayı en sade halinde yazıldığında paydasında 2 ve 5 dışında başka bir asal çarpan yoksa 'sonlu ondalık', 2 ve 5 dışında en az bir asal çarpan (3, 7 vb.) varsa 'devirli ondalık' açılıma sahiptir.\n• $\\frac{1}{5}$ kesrinin paydasında yalnızca 5 olduğu için SONLU ondalıktır ($0,2$).\n• $\\frac{1}{3}$ kesrinin paydasında 3 asal çarpanı olduğu için DEVİRLİ ondalıktır ($0,\\overline{3}$).",
+        "alternativeAnswers": [
+          "a) 1/5 = 0,2 ve 1/3 = 0,333... = 0,\\bar{3}. b) 1/5 sonlu ondalık (paydada 5 var), 1/3 devirli ondalıktır (paydasında 3 asal çarpanı bulunduğu için).",
+          "a) 0,2 ve 0,\\bar{3} b) Kutu süt sonlu, su şişesi devirli ondalıktır."
+        ],
+        "rubric": [
+          {
+            "item": "Ondalık gösterimlerin (0,2 ve 0,333... = 0,\\bar{3}) doğru bulunması",
+            "pts": 8
+          },
+          {
+            "item": "Paydadaki asal çarpan kuralıyla sonlu ve devirli ondalık türlerinin gerekçelendirilmesi",
+            "pts": 7
+          }
+        ]
+      },
+      {
+        "number": 3,
+        "outcome": "MAT.7.1.2",
+        "outcomeTitle": "Gerçek yaşam durumlarında rasyonel sayıların ondalık gösterimlerini yansıtabilme",
+        "difficulty": "Orta",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Hata Tespiti & Adım Analizi",
+        "points": 14,
+        "stimulus": "Bir hassas kuyumcu terazisinde bir gram altının saf kütlesi ekranda $2,\\overline{36}\\text{ g}$ ($2,363636...\\text{ g}$) olarak okunmuştur.",
+        "question": "a) Bu devirli ondalık sayıyı rasyonel sayıya çevirme formülünü kullanarak kesir biçiminde yazınız.\nb) Elde ettiğiniz rasyonel sayıyı en sade (pay ve paydası aralarında asal) kesir haline getiriniz.",
+        "answer": "a) Devirli Ondalık Formülü:\n$\\text{Rasyonel Kesir} = \\frac{\\text{Sayının Tamamı} - \\text{Devretmeyen Kısım}}{\\text{Devreden Kadar 9}} = \\frac{236 - 2}{99} = \\frac{234}{99}$\nb) Sadeleştirme Basamakları:\n234 ve 99 sayıları 9 ile sadeleştirilir:\n$234 \\div 9 = 26$\n$99 \\div 9 = 11$\nEn Sade Hali: $\\frac{26}{11}$ (veya $2\\frac{4}{11}$ tam sayılı kesir).",
+        "alternativeAnswers": [
+          "a) (236 - 2) / 99 = 234 / 99 b) 9 ile sadeleştirilerek 26 / 11 veya 2 tam 4/11.",
+          "a) 234/99 b) 26/11"
+        ],
+        "rubric": [
+          {
+            "item": "Devirli ondalık çevrim formülünün doğru uygulanarak 234/99 bulunması",
+            "pts": 7
+          },
+          {
+            "item": "Kesrin 9 ile sadeleştirilerek en sade hali olan 26/11 (veya 2 tam 4/11) kesrinin elde edilmesi",
+            "pts": 7
+          }
+        ]
+      },
+      {
+        "number": 4,
+        "outcome": "MAT.7.1.3",
+        "outcomeTitle": "Rasyonel sayıların karşılaştırma ve sıralama ilişkilerini yorumlayabilme",
+        "difficulty": "Orta",
+        "level": "Karmaşık Bilişsel Süreçler",
+        "templateType": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "points": 14,
+        "stimulus": "Güneş sistemindeki iki gezegenin ortalama yüzey sıcaklıkları rasyonel sayılarla modellenmiştir:\n• Mars: $-\\frac{125}{2}\\text{ °C}$\n• Neptün: $-\\frac{401}{2}\\text{ °C}$",
+        "question": "a) Mars ve Neptün'ün yüzey sıcaklıklarını rasyonel sayılarda karşılaştırma kurallarını kullanarak karşılaştırınız. Hangi gezegen daha sıcaktır?\nb) Negatif rasyonel sayılarda sayı doğrusundaki konum ve sıfıra yakınlık ilkesini açıklayarak cevabınızı gerekçelendiriniz.",
+        "answer": "a) Karşılaştırma: Paydaları eşit (2) olan negatif rasyonel sayılarda, payı daha büyük olan (sıfıra daha yakın olan) sayı daha büyüktür.\n$-125 > -401$ olduğu için $-\\frac{125}{2} > -\\frac{401}{2}$'dir.\nBu nedenle Mars ($-\\frac{125}{2}\\text{ °C}$), Neptün'den daha sıcaktır.\nb) Matematiksel Gerekçe: Negatif rasyonel sayılarda sayı doğrusunda sıfıra daha yakın olan sayı daha büyüktür. $-\\frac{125}{2} = -62,5$ sayısı sayı doğrusunda $-\\frac{401}{2} = -200,5$ sayısının daha sağında (sıfıra daha yakın) yer aldığı için daha büyük bir sıcaklık değerini temsil eder.",
+        "alternativeAnswers": [
+          "a) Mars daha sıcaktır (-125/2 > -401/2). b) Sayı doğrusunda -62,5 °C sıfıra daha yakın olduğu için -200,5 °C'den daha büyüktür.",
+          "a) Mars (-125/2 > -401/2) b) Negatif sayılarda sıfıra yakın olan sayı daha büyüktür."
+        ],
+        "rubric": [
+          {
+            "item": "Mars ve Neptün sıcaklıklarının doğru karşılaştırılarak Marsın daha sıcak olduğunun belirlenmesi",
+            "pts": 7
+          },
+          {
+            "item": "Negatif rasyonel sayılarda sıfıra yakınlık kuralının sayı doğrusuyla gerekçelendirilmesi",
+            "pts": 7
+          }
+        ]
+      },
+      {
+        "number": 5,
+        "outcome": "MAT.7.1.3",
+        "outcomeTitle": "Rasyonel sayıların karşılaştırma ve sıralama ilişkilerini yorumlayabilme",
+        "difficulty": "Orta",
+        "level": "Karmaşık Bilişsel Süreçler",
+        "templateType": "Durum & Özellik Matrisi (Tik Tablosu)",
+        "points": 14,
+        "stimulus": "Bir okul futbol turnuvasında dört takımın averaj değerleri şöyledir:\n• A Takımı: $-3$\n• B Takımı: $+2$\n• C Takımı: $-7$\n• D Takımı: $0$",
+        "question": "a) Dört takımın averajlarını sayı doğrusundaki yerlerini dikkate alarak küçükten büyüğe sıralayınız.\nb) Negatif averajlarda mutlak değerce büyük olan sayının neden daha küçük kabul edildiğini açıklayınız.",
+        "answer": "a) Sıralama: $-7 < -3 < 0 < +2$ (Takımlar: C Takımı < A Takımı < D Takımı < B Takımı).\nb) Gerekçe: Sayı doğrusunda sıfırın solunda kalan negatif sayılarda sıfırdan uzaklaştıkça sayı küçülür. $-7$ sayısı sayı doğrusunda $-3$'ün daha solunda kaldığı için daha küçük bir averajı ifade eder.",
+        "alternativeAnswers": [
+          "a) -7 < -3 < 0 < +2 (C < A < D < B) b) Sayı doğrusunda daha solda olan sayı daha küçüktür.",
+          "a) C Takımı < A Takımı < D Takımı < B Takımı b) -7 sıfırdan daha uzakta ve soldadır."
+        ],
+        "rubric": [
+          {
+            "item": "Averaj sıralamasının (-7 < -3 < 0 < +2) doğru yapılması",
+            "pts": 7
+          },
+          {
+            "item": "Sayı doğrusunda sola gidildikçe negatif sayıların küçüleceğinin açıklanması",
+            "pts": 7
+          }
+        ]
+      },
+      {
+        "number": 6,
+        "outcome": "MAT.7.1.4",
+        "outcomeTitle": "Rasyonel sayılar ve işlemler içeren gerçek yaşam problemlerini çözebilme",
+        "difficulty": "Orta",
+        "level": "Karmaşık Bilişsel Süreçler",
+        "templateType": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 14,
+        "stimulus": "Bir araştırma denizaltısı, denizlerdeki mikroplastik kirliliğini incelemek için deniz seviyesinin $\\frac{3}{4}\\text{ km}$ altına inmiştir. Denizaltı daha sonra bulunduğu bu derinlikten $\\frac{1}{8}\\text{ km}$ yukarı çıkarak su numuneleri toplamıştır.",
+        "question": "a) Deniz seviyesi $0$ referans kabul edildiğinde, denizaltının ilk inişini ve ardından yukarı çıkışını yönlü rasyonel sayılarla toplama işlemi olarak modelleyiniz.\nb) Denizaltının son durumda deniz seviyesine göre konumunu rasyonel sayı ve ondalık gösterim biçiminde bulunuz.",
+        "answer": "a) Matematiksel Modelleme:\n• Deniz seviyesinin altına iniş: $-\\frac{3}{4}\\text{ km}$\n• Yukarı çıkış: $+\\frac{1}{8}\\text{ km}$\nToplama İşlemi Modeli: $\\left(-\\frac{3}{4}\\right) + \\left(+\\frac{1}{8}\\right)$\nb) İşlem Basamakları ve Çözüm:\nPaydalar 8'de eşitlenir:\n$-\\frac{3 \\times 2}{4 \\times 2} = -\\frac{6}{8}$\n$\\left(-\\frac{6}{8}\\right) + \\left(+\\frac{1}{8}\\right) = \\frac{-6 + 1}{8} = -\\frac{5}{8}\\text{ km}$\nOndalık Gösterim: $-\\frac{5}{8} = -\\frac{5 \\times 125}{8 \\times 125} = -\\frac{625}{1000} = -0,625\\text{ km}$ (Deniz seviyesinin $0,625\\text{ km}$ altında).",
+        "alternativeAnswers": [
+          "a) (-3/4) + (+1/8) b) -5/8 km veya -0,625 km (Deniz seviyesinin 5/8 km altında).",
+          "a) -3/4 + 1/8 b) -5/8 km (-0,625 km)"
+        ],
+        "rubric": [
+          {
+            "item": "Dikey hareketin yönlü rasyonel sayılarla [(-3/4) + (+1/8)] doğru modellenmesi",
+            "pts": 7
+          },
+          {
+            "item": "Payda eşitleme yapılarak sonucun -5/8 km (veya -0,625 km) olarak bulunması",
+            "pts": 7
+          }
+        ]
+      },
+      {
+        "number": 7,
+        "outcome": "MAT.7.1.4",
+        "outcomeTitle": "Rasyonel sayılar ve işlemler içeren gerçek yaşam problemlerini çözebilme",
+        "difficulty": "Zor",
+        "level": "Karmaşık Bilişsel Süreçler",
+        "templateType": "Hata Tespiti & Adım Analizi",
+        "points": 14,
+        "stimulus": "Matematik dersinde tahtaya yazılan $3 - \\left(\\frac{2}{5}\\right) \\div \\left(\\frac{4}{15}\\right)$ işlemini defterine çözen öğrenci şu adımları uygulamıştır:\n1. Adım: Önce çıkarma işlemini yaparak: $3 - \\frac{2}{5} = \\frac{15}{5} - \\frac{2}{5} = \\frac{13}{5}$ bulmuştur.\n2. Adım: Çıkan sonucu $\\frac{4}{15}$ kesrine bölmek için ters çevirip çarpmıştır: $\\left(\\frac{13}{5}\\right) \\times \\left(\\frac{15}{4}\\right)$.\n3. Adım: Sadeleştirme yaparak: $\\frac{13 \\times 3}{4} = \\frac{39}{4}$ sonucuna ulaşmıştır.",
+        "question": "a) Öğrencinin çözümü doğru mudur? Yanlış ise ilk hatayı hangi adımda yapmıştır? Nedenini işlem önceliği kuralıyla açıklayınız.\nb) İşlemin doğru sonucunu işlem basamaklarını eksiksiz göstererek hesaplayınız.",
+        "answer": "a) Öğrencinin çözümü YANLIŞTIR. İlk hatasını 1. Adımda yapmıştır.\nGerekçe: Matematikte işlem önceliği kuralına göre bölme işlemi, çıkarma işleminden önce yapılmalıdır. Öğrenci bölme işlemini beklemeden önce çıkarma yapmıştır.\nb) Doğru Çözüm Basamakları:\n1. Adım (Bölme): $\\left(\\frac{2}{5}\\right) \\div \\left(\\frac{4}{15}\\right) = \\left(\\frac{2}{5}\\right) \\times \\left(\\frac{15}{4}\\right) = \\frac{2 \\times 15}{5 \\times 4} = \\frac{30}{20} = \\frac{3}{2}$\n2. Adım (Çıkarma): $3 - \\frac{3}{2} = \\frac{6}{2} - \\frac{3}{2} = \\frac{3}{2}$ (veya $1\\frac{1}{2}$, $1,5$).",
+        "alternativeAnswers": [
+          "a) Yanlıştır, 1. adımda hata yapılmıştır (işlem önceliği kuralına göre bölme çıkarmadan önce yapılmalıdır). b) Doğru sonuç: 3/2 veya 1 tam 1/2 (1,5).",
+          "a) 1. adımda işlem önceliği hatası b) 3/2 (1,5)"
+        ],
+        "rubric": [
+          {
+            "item": "İlk hatanın 1. adımda işlem önceliği kuralı ihlalinden kaynaklandığının gerekçelendirilmesi",
+            "pts": 7
+          },
+          {
+            "item": "Doğru işlem sırası (önce bölme sonra çıkarma) izlenerek 3/2 (veya 1,5) sonucunun bulunması",
+            "pts": 7
+          }
+        ]
+      }
+    ]
+  },
+  "matematik_setB": {
+    "title": "7. Sınıf Senaryo 1 (7 Soru) (Özgün Sınav Seti - 7 Soru)",
+    "model": "MEBİ Kural Tabanlı Standart Motor",
+    "isFallback": true,
+    "questionsCount": 7,
+    "questions": [
+      {
+        "number": 1,
+        "outcome": "MAT.7.1.1",
+        "outcomeTitle": "Gerçek yaşam ya da matematiksel durumlarda doğal sayı, tam sayı ve rasyonel sayıları yorumlayabilme",
+        "difficulty": "Kolay",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Görsel / Deney / Günlük Hayat Durumu",
+        "points": 15,
+        "stimulus": "Bir deniz araştırmasında üç farklı gözlem noktasının deniz seviyesine göre konumları belirlenmiştir:\n• Araştırma Dalgıcı: Deniz seviyesinin 45 m altında (-45 m)\n• Keşif Denizaltısı: Deniz seviyesinin 120 m altında (-120 m)\n• Gözlem Helikopteri: Deniz seviyesinin 80 m üstünde (+80 m)",
+        "question": "a) Gözlem helikopteri ile keşif denizaltısı arasındaki dikey mesafe kaç metredir? İşlemini yazınız.\nb) Bir balık sürüsü dalgıç ile denizaltının tam orta noktasında bulunduğuna göre, balık sürüsünün konumunu gösteren tam sayı kaçtır?",
+        "answer": "a) Helikopter (+80) ve denizaltı (-120) arasındaki dikey mesafe: (+80) - (-120) = 80 + 120 = 200 metredir.\nb) Dalgıç (-45) ve denizaltı (-120) orta noktası: [(-45) + (-120)] ÷ 2 = -165 ÷ 2 = -82,5 m (veya -82 tam 1/2 m).",
+        "rubric": [
+          {
+            "item": "a şıkkında 200 metre dikey mesafenin işlemle bulunması",
+            "pts": 8
+          },
+          {
+            "item": "b şıkkında orta noktanın (-82,5 m) doğru hesaplanması",
+            "pts": 7
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "outcome": "MAT.7.1.2",
+        "outcomeTitle": "Gerçek yaşam durumlarında rasyonel sayıların ondalık gösterimlerini yansıtabilme",
+        "difficulty": "Kolay",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 15,
+        "stimulus": "Verilen devirli ondalık sayı: 0,727272... (0,72; 72 devrediyor).",
+        "question": "Bu sayıyı kesir çizgisi kullanarak rasyonel sayıya çeviriniz ve en sade biçimde yazınız.",
+        "answer": "Formül: (72 - 0) / 99 = 72 / 99.\nSadeleştirme (9 ile): 72 ÷ 9 = 8, 99 ÷ 9 = 11. En sade hali: 8 / 11'dir.",
+        "rubric": [
+          {
+            "item": "72 / 99 kesrinin doğru oluşturulması",
+            "pts": 8
+          },
+          {
+            "item": "8 / 11 en sade kesrinin bulunması",
+            "pts": 7
+          }
+        ]
+      },
+      {
+        "number": 3,
+        "outcome": "MAT.7.1.2",
+        "outcomeTitle": "Gerçek yaşam durumlarında rasyonel sayıların ondalık gösterimlerini yansıtabilme",
+        "difficulty": "Orta",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Hata Tespiti & Adım Analizi",
+        "points": 14,
+        "stimulus": "Verilen sayı: 3,1666... (3,16; sadece 6 devrediyor).",
+        "question": "Bu sayıyı rasyonel sayıya dönüştürünüz. Paydasında neden bir tane 9 ve bir tane 0 olduğunu kuralıyla açıklayınız.",
+        "answer": "Formül: (316 - 31) / 90 = 285 / 90.\nPayda kuralı: Virgülden sonraki kısımda devreden basamak sayısı kadar 9 (bir tane 6 var -> 9), devretmeyen basamak sayısı kadar 0 (bir tane 1 var -> 0) yazılır, payda 90 olur.\nEn sade kesir: 285 ÷ 15 = 19, 90 ÷ 15 = 6 yani 19 / 6 (veya 3 tam 1/6).",
+        "rubric": [
+          {
+            "item": "(316 - 31)/90 işleminin doğru kurulması ve sonucun bulunması",
+            "pts": 7
+          },
+          {
+            "item": "Payda kuralının (bir 9, bir 0) doğru açıklanması",
+            "pts": 7
+          }
+        ]
+      },
+      {
+        "number": 4,
+        "outcome": "MAT.7.1.3",
+        "outcomeTitle": "Rasyonel sayıların karşılaştırma ve sıralama ilişkilerini yorumlayabilme",
+        "difficulty": "Orta",
+        "level": "Karmaşık Bilişsel Süreçler",
+        "templateType": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "points": 14,
+        "stimulus": "İşlem: [(-2/3) + (1/2)] ÷ (-5/6).\n• Can: 'Önce parantez içindeki toplama için payda eşitlenir, ardından bölme çarpma kuralına dönüştürülür.'\n• Alp: 'Bölme işlemi toplamadan önceliklidir, önce 1/2'yi -5/6'ya bölmeliyiz.'",
+        "question": "Hangi öğrencinin işlem sırası kuralı doğrudur? Doğru işlem adımlarını uygulayarak işlemin sonucunu bulunuz.",
+        "answer": "Can haklıdır. Çünkü matematiksel işlem önceliğinde parantez içi daima ilk sırada yapılır.\n1. Adım (Parantez içi): (-2/3) + (1/2) = (-4/6) + (3/6) = -1/6.\n2. Adım (Bölme): (-1/6) ÷ (-5/6) = (-1/6) × (-6/5) = +6/30 = +1/5 bulunur.",
+        "rubric": [
+          {
+            "item": "Can'ın haklı olduğunun doğru gerekçeyle açıklanması",
+            "pts": 6
+          },
+          {
+            "item": "Parantez içi toplama ve bölme işlemleriyle +1/5 sonucunun bulunması",
+            "pts": 8
+          }
+        ]
+      },
+      {
+        "number": 5,
+        "outcome": "MAT.7.1.3",
+        "outcomeTitle": "Rasyonel sayıların karşılaştırma ve sıralama ilişkilerini yorumlayabilme",
+        "difficulty": "Orta",
+        "level": "Karmaşık Bilişsel Süreçler",
+        "templateType": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 14,
+        "stimulus": "Verilen rasyonel sayılar: K = 12/17, L = 12/19, M = 12/13.",
+        "question": "Payları eşit olan pozitif rasyonel sayıların sıralama kuralını yazarak K, L ve M sayılarını büyükten küçüğe sıralayınız.",
+        "answer": "Kural: Payları eşit olan pozitif rasyonel sayılarda; paydası KÜÇÜK olan kesir daha BÜYÜKTÜR (çünkü bütünü daha az parçaya bölmüştür).\nPaydalar: 13 < 17 < 19 olduğu için;\nSıralama: M > K > L (12/13 > 12/17 > 12/19) şeklindedir.",
+        "rubric": [
+          {
+            "item": "Payı eşit kesirlerin kuralının doğru ifade edilmesi",
+            "pts": 7
+          },
+          {
+            "item": "M > K > L sıralamasının doğru yapılması",
+            "pts": 7
+          }
+        ]
+      },
+      {
+        "number": 6,
+        "outcome": "MAT.7.1.4",
+        "outcomeTitle": "Rasyonel sayılar ve işlemler içeren gerçek yaşam problemlerini çözebilme",
+        "difficulty": "Orta",
+        "level": "Karmaşık Bilişsel Süreçler",
+        "templateType": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 14,
+        "stimulus": "Kaan'ın bir adımının uzunluğu 3/5 metredir. Kaan evinden okula giderken 450 adım atmıştır.",
+        "question": "a) Ev ile okul arasındaki mesafe kaç metredir?\nb) Kaan'ın kardeşi Efe'nin bir adımı 1/2 metre olduğuna göre Efe bu yolu kaç adımda gider?",
+        "answer": "a) Yol = 450 × (3/5) = (450 ÷ 5) × 3 = 90 × 3 = 270 metredir.\nb) Efe'nin adım sayısı = 270 ÷ (1/2) = 270 × 2 = 540 adım atar.",
+        "rubric": [
+          {
+            "item": "a şıkkında 270 metrenin bulunması",
+            "pts": 7
+          },
+          {
+            "item": "b şıkkında 540 adım sayısının bulunması",
+            "pts": 7
+          }
+        ]
+      },
+      {
+        "number": 7,
+        "outcome": "MAT.7.1.4",
+        "outcomeTitle": "Rasyonel sayılar ve işlemler içeren gerçek yaşam problemlerini çözebilme",
+        "difficulty": "Zor",
+        "level": "Karmaşık Bilişsel Süreçler",
+        "templateType": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 14,
+        "stimulus": "Gençtürk ailesi bir ay boyunca enerji tasarrufu tedbirleri uygulamıştır:\n• Elektrik tüketiminde tasarruf sağlayarak faturada $+140\\text{ TL}$ tasarruf elde etmişlerdir.\n• Ancak aynı ay sert kış koşulları sebebiyle doğalgazda $-260\\text{ TL}$ ek tüketim gideri oluşmuştur.",
+        "question": "a) Gençtürk ailesinin aylık toplam enerji bütçesindeki değişimi yönlü tam sayılarla işlem kurarak hesaplayınız.\nb) Elde ettiğiniz sonucun ailenin toplam giderini nasıl etkilediğini açıklayınız.",
+        "answer": "a) Bütçe Değişim İşlemi:\n$(+140) + (-260) = -120\\text{ TL}$\nb) Değerlendirme: Sonuç $-120\\text{ TL}$ çıktığı için Gençtürk ailesinin enerji giderlerinde net $120\\text{ TL}$'lik bir artış (ek masraf) meydana gelmiştir.",
+        "alternativeAnswers": [
+          "a) (+140) + (-260) = -120 TL b) Ailenin gideri net 120 TL artmıştır (120 TL ek masraf).",
+          "a) 140 - 260 = -120 TL b) 120 TL ek gider"
+        ],
+        "rubric": [
+          {
+            "item": "Toplama işleminin [(+140) + (-260) = -120 TL] doğru kurulması ve hesaplanması",
+            "pts": 7
+          },
+          {
+            "item": "Negatif sonucun 120 TL ek masraf olarak doğru yorumlanması",
+            "pts": 7
+          }
+        ]
+      }
+    ]
+  },
+  "fen_bilimleri_setA": {
+    "title": "7. Sınıf Senaryo 1 (9 Soru) (Özgün Sınav Seti - 9 Soru)",
+    "model": "MEBİ Kural Tabanlı Standart Motor",
+    "isFallback": true,
+    "questionsCount": 9,
+    "questions": [
+      {
+        "number": 1,
+        "outcome": "FB.7.1.1",
+        "outcomeTitle": "Uzay araştırmaları için geliştirilen teknolojileri karşılaştırabilme",
+        "difficulty": "Orta",
+        "level": "Karmaşık Bilişsel Süreçler",
+        "templateType": "Durum & Özellik Matrisi (VAR/YOK Tablosu)",
+        "points": 12,
+        "stimulus": "Doğu Anadolu Gözlemevi (DAG) projesinde üç farklı bölge araştırılmıştır:\nBölge 1: Erzurum Palandöken Zirvesi (3.170 m yükseklik)\nBölge 2: İstanbul Çamlıca Tepesi (268 m yükseklik)\nBölge 3: Antalya Bakırlıtepe (2.500 m TÜBİTAK Gözlemevi)",
+        "question": "a) Aşağıdaki özelliklerin hangi bölgelerde sağlandığını \"VAR\" veya \"YOK\" yazarak doldurunuz:\n• Işık kirliliğinden ve şehir aydınlatmalarından tamamen uzak olma:\n  - Bölge 1 (Palandöken): ............ | Bölge 2 (Çamlıca): ............ | Bölge 3 (Bakırlıtepe): ............\nb) Neden büyük gözlemevleri deniz seviyesindeki ovalara değil de yüksek dağ zirvelerine kurulur? Atmosfer kalınlığı ve nem oranı bakımından açıklayınız.",
+        "answer": "a) Işık Kirliliğinden Uzak Olma:\n• Bölge 1 (Palandöken): VAR | Bölge 2 (Çamlıca): YOK | Bölge 3 (Bakırlıtepe): VAR\nb) Bilimsel Gerekçe: Yüksek dağ zirvelerinde atmosfer tabakası daha incedir, hava yoğunluğu ve nem oranı düşüktür; ayrıca şehirlerin yapay ışık ve hava kirliliğinden uzaktır. Böylece uzaydan gelen ışık atmosferde daha az kırılır ve teleskoplar çok daha berrak ve net görüntü elde eder.",
+        "alternativeAnswers": [
+          "a) Palandöken: VAR, Çamlıca: YOK, Bakırlıtepe: VAR. b) Yüksek rakımlarda atmosfer tabakasının incelmesi, nemin ve hava kirliliğinin az olması sayesinde ışık kırılması en aza iner ve berrak görüntü sağlanır.",
+          "a) Bölge 1 VAR, Bölge 2 YOK, Bölge 3 VAR. b) Şehir ışıklarından uzak olması, havanın nemsiz ve açık olması, atmosferin ince olması sebebiyle teleskoplar daha net çeker."
+        ],
+        "rubric": [
+          {
+            "item": "Bölgelerin ışık kirliliği eşleştirmesinin doğru yapılması (VAR - YOK - VAR)",
+            "pts": 6
+          },
+          {
+            "item": "Yüksek irtifada atmosferin inceliği ve nemin azlığının bilimsel olarak açıklanması",
+            "pts": 6
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "outcome": "FB.7.1.1",
+        "outcomeTitle": "Uzay araştırmaları için geliştirilen teknolojileri karşılaştırabilme",
+        "difficulty": "Orta",
+        "level": "Karmaşık Bilişsel Süreçler",
+        "templateType": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "points": 11,
+        "stimulus": "Astronomi panosu hazırlayan Kerem ve Alper uzay teleskopları hakkında tartışmaktadır:\nKerem: \"James Webb gibi uzay teleskopları, yeryüzündeki dev gözlemevi teleskoplarından bile çok daha net ve kaliteli fotoğraflar çeker.\"\nAlper: \"Bence uzayda olmasının bir farkı yoktur; yeryüzündeki teleskopların aynasını biraz daha büyük yaparsak uzaydakilerden her zaman daha net çeker.\"",
+        "question": "Kerem ve Alper'nin açıklamalarını değerlendiriniz. Hangi öğrenci haklıdır? Uzay teleskoplarının Dünya atmosferinin olumsuz etkilerinden (ışık kırılması, hava kirliliği, bulutlar) neden etkilenmediğini açıklayınız.",
+        "answer": "Kerem haklıdır. Çünkü Dünya atmosferindeki gaz hareketleri, tozlar ve bulutlar uzaydan gelen ışığı kırıp dalgalandırarak görüntünün bulanıklaşmasına yol açar. Uzay teleskopları ise atmosferin dışında, uzay boşluğunda görev yaptığı için ışık hiçbir engelle karşılaşmadan doğrudan ve net olarak teleskoba ulaşır.",
+        "alternativeAnswers": [
+          "Kerem haklıdır. Uzay teleskopları Dünya atmosferinin dışında yer aldığı için gaz tabakası, ışık kırılması, bulut ve şehir ışık kirliliği gibi engelleyici etkenlerden etkilenmez.",
+          "Kerem'in açıklaması doğrudur. Atmosfer olmadığı için uzay boşluğunda ışık saçılmaz ve bozulmaz; aynayı büyütmek atmosferik bulanıklığı yok edemez."
+        ],
+        "rubric": [
+          {
+            "item": "Kerem'in haklı olduğunun ve Alper'nin yanılgısının doğru açıklanması",
+            "pts": 5
+          },
+          {
+            "item": "Dünya atmosferinin ışığı kırma ve görüntüyü bozma etkisinin açıklanması",
+            "pts": 6
+          }
+        ]
+      },
+      {
+        "number": 3,
+        "outcome": "FB.7.1.4",
+        "outcomeTitle": "Yıldızların yaşamını açıklayarak yapılandırabilme",
+        "difficulty": "Kolay",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Kurgusal Tarihi Vaka & Bilimsel Çıkarım",
+        "points": 11,
+        "stimulus": "Başlangıç kütlesi Güneş'ten katbekat büyük olan dev yıldızlar, yakıtlarını tükettiklerinde yaşamlarını küçük kütleli yıldızlardan çok farklı bir şekilde sonlandırırlar.",
+        "question": "a) Büyük kütleli bir yıldızın yaşam döngüsü basamaklarını Bulutsudan başlayarak sırasıyla yazınız.\nb) Büyük kütleli yıldızların ömrünün sonunda geçirdiği şiddetli patlamaya ne ad verilir? Bu patlama sonrasında hangi gök cisimleri oluşabilir?",
+        "answer": "a) Büyük Kütleli Yıldız Yaşam Döngüsü: Bulutsu (Nebula) → Büyük Kütleli Yıldız → Kırmızı Süperdev → Süpernova Patlaması → Nötron Yıldızı (Pulsar) veya Kara Delik.\nb) Bu şiddetli patlamaya 'Süpernova Patlaması' adı verilir. Patlama sonrasında yıldızın kütlesine göre geride Nötron Yıldızı (Pulsar) veya ışığın dahi kaçamayacağı güçte bir Kara Delik oluşur.",
+        "alternativeAnswers": [
+          "a) Bulutsu → Büyük Yıldız → Kırmızı Süperdev → Süpernova → Nötron Yıldızı veya Kara Delik. b) Süpernova patlaması denir; geride nötron yıldızı veya kara delik kalır.",
+          "a) Nebula → Büyük Kütleli Yıldız → Kırmızı Süperdev → Süpernova Patlaması → Kara Delik / Nötron Yıldızı. b) Süpernova patlamasıdır; nötron yıldızı veya kara delik oluşur."
+        ],
+        "rubric": [
+          {
+            "item": "Büyük kütleli yıldız evrelerinin doğru sıralanması",
+            "pts": 6
+          },
+          {
+            "item": "Süpernova patlamasının ve nötron yıldızı/kara delik çıktılarının doğru belirtilmesi",
+            "pts": 5
+          }
+        ]
+      },
+      {
+        "number": 4,
+        "outcome": "FB.7.1.5",
+        "outcomeTitle": "Yıldız, galaksi ve evren kavramlarını açıklayarak yapılandırabilme",
+        "difficulty": "Kolay",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 11,
+        "stimulus": "Kerem, bir astronomi dergisinde \"Güneş Sistemimize en yakın yıldız olan Proxima Centauri bize $4,24$ ışık yılı uzaklıktadır.\" cümlesini okumuştur.\nKerem: \"Demek ki Proxima Centauri yıldızı 4,24 yıl sonra ömrünü tamamlayacak, ışık yılı bir zaman birimidir.\" yorumunu yapmıştır.",
+        "question": "a) Kerem'in kavram yanılgısını düzeltiniz. \"Işık yılı\" ne birimidir? Tanımını yapınız.\nb) Proxima Centauri yıldızına bugün dev bir teleskopla bakan bir gökbilimci, yıldızın hangi andaki görüntüsünü görmektedir? Zaman-ışık hızı ilişkisiyle açıklayınız.",
+        "answer": "a) Işık yılı zaman birimi değil, astronomik bir UZAKLIK (MESAFE) birimidir. Tanımı: Işığın boşlukta 1 Dünya yılında aldığı devasa mesafedir (yaklaşık 9,46 trilyon kilometre).\nb) Yıldızdan çıkan ışığın Dünya'ya ulaşması tam 4,24 yıl sürer. Dolayısıyla bugün teleskopla bakan gökbilimci yıldızın bugünkü durumunu değil, tam 4,24 yıl önceki geçmiş halini görmektedir.",
+        "alternativeAnswers": [
+          "a) Işık yılı zaman değil, mesafe (uzaklık) birimidir. Işığın 1 yılda aldığı yoldur. b) Yıldızın 4,24 yıl önceki geçmiş halini görür çünkü ışık Dünya'ya 4,24 yılda ulaşır.",
+          "a) Mesafe/uzaklık birimidir (ışığın boşlukta bir yılda katettiği mesafe). b) 4,24 yıl önceki durumunu görür; ışığın bize ulaşması 4,24 yıl sürer."
+        ],
+        "rubric": [
+          {
+            "item": "Işık yılının mesafe/uzaklık birimi olduğunun ve tanımının doğru yapılması",
+            "pts": 6
+          },
+          {
+            "item": "Işığın yol alma süresi sebebiyle yıldızın 4,24 yıl önceki geçmiş halinin görüldüğünün açıklanması",
+            "pts": 5
+          }
+        ]
+      },
+      {
+        "number": 5,
+        "outcome": "FB.7.2.1",
+        "outcomeTitle": "Fiziksel anlamda yapılan işin bağlı olduğu faktörlere ilişkin bilimsel çıkarım yapabilme",
+        "difficulty": "Orta",
+        "level": "Karmaşık Bilişsel Süreçler",
+        "templateType": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "points": 11,
+        "stimulus": "Sürtünmesiz yatay bir deney zemininde özdeş iki oyuncak arabadan:\n• 1. Arabayı Kerem, F_1 = 15\\text{ N}$ kuvvet uygulayarak $\\Delta x = 10\\text{ m}$ itmiştir.\n• 2. Arabayı Alper, F_2 = 30\\text{ N}$ kuvvet uygulayarak $\\Delta x = 10\\text{ m}$ itmiştir.",
+        "question": "a) Kerem ve Alper'nin yaptıkları işleri Joule (J) cinsinden hesaplayarak karşılaştırınız. Hangi öğrenci daha fazla iş yapmıştır?\nb) Bu deneyde kontrol edilen (sabit tutulan), bağımsız ve bağımlı değişkenleri yazınız.",
+        "answer": "a) İş Hesapları: $W_1 = 15\\text{ N} \\cdot 10\\text{ m} = 150\\text{ J}$, $W_2 = 30\\text{ N} \\cdot 10\\text{ m} = 300\\text{ J}$. Alper'nin yaptığı iş daha fazladır (2 katıdır).\nb) Değişkenler: Kontrol Edilen Değişken: Alınan yol (10 m) ve araba kütlesi. Bağımsız Değişken: Uygulanan kuvvet (15 N vs 30 N). Bağımlı Değişken: Yapılan fiziksel iş miktarı (Joule).",
+        "alternativeAnswers": [
+          "a) ${name2} daha fazla iş yapmıştır ($W_2 = 300\\text{ J}$, $W_1 = 150\\text{ J}$). b) Bağımsız değişken: Uygulanan kuvvet, Bağımlı değişken: Yapılan iş, Sabit tutulan: Alınan yol.",
+          "a) ${name2}'nin yaptığı iş (300 J), ${name1}'in yaptığı işten (150 J) büyüktür. b) Kontrol edilen: Yol (10 m), Bağımsız: Kuvvet, Bağımlı: Yapılan iş."
+        ],
+        "rubric": [
+          {
+            "item": "İşlerin formülle hesaplanması (150 J ve 300 J) ve 2. durumun büyük olduğunun tespiti",
+            "pts": 6
+          },
+          {
+            "item": "Bağımsız (kuvvet), bağımlı (yapılan iş) ve sabit değişkenlerin doğru adlandırılması",
+            "pts": 5
+          }
+        ]
+      },
+      {
+        "number": 6,
+        "outcome": "FB.7.2.1",
+        "outcomeTitle": "Fiziksel anlamda yapılan işin bağlı olduğu faktörlere ilişkin bilimsel çıkarım yapabilme",
+        "difficulty": "Orta",
+        "level": "Karmaşık Bilişsel Süreçler",
+        "templateType": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 11,
+        "stimulus": "Sürtünmesiz yatay düzlemde duran özdeş iki koliye eşit büyüklükte $F = 20\\text{ N}$ yatay kuvvet uygulanmıştır:\n• 1. Koli: Kuvvet doğrultusunda $\\Delta x_1 = 5\\text{ m}$ çekilmiştir.\n• 2. Koli: Kuvvet doğrultusunda $\\Delta x_2 = 15\\text{ m}$ çekilmiştir.",
+        "question": "a) Her iki durumda yapılan fiziksel işleri ($W_1$ ve $W_2$) Joule (J) cinsinden hesaplayınız.\nb) Cisme uygulanan kuvvet sabit tutulduğunda alınan yol ile yapılan fiziksel iş arasındaki ilişkiyi açıklayınız.",
+        "answer": "a) İş Hesapları: $W_1 = F \\cdot \\Delta x_1 = 20\\text{ N} \\cdot 5\\text{ m} = 100\\text{ J}$, $W_2 = F \\cdot \\Delta x_2 = 20\\text{ N} \\cdot 15\\text{ m} = 300\\text{ J}$.\nb) Bilimsel İlişki: Cisme uygulanan kuvvet sabit kaldığında cismin aldığı yol arttıkça yapılan fiziksel iş miktarı da doğru orantılı olarak artar (Yol 3 katına çıktığında yapılan iş de 3 katına çıkmıştır).",
+        "alternativeAnswers": [
+          "a) $W_1 = 100\\text{ J}$, $W_2 = 300\\text{ J}$. b) Kuvvet sabitken cismin aldığı yol arttıkça yapılan fiziksel iş de doğru orantılı olarak artar.",
+          "a) 1. koli: 100 J, 2. koli: 300 J. b) Uygulanan kuvvet eşitken alınan yol ile yapılan iş doğru orantılıdır."
+        ],
+        "rubric": [
+          {
+            "item": "Her iki durumdaki işin (100 J ve 300 J) formülle doğru hesaplanması",
+            "pts": 6
+          },
+          {
+            "item": "Kuvvet sabitken yol ile yapılan işin doğru orantılı olduğunun açıklanması",
+            "pts": 5
+          }
+        ]
+      },
+      {
+        "number": 7,
+        "outcome": "FB.7.2.1",
+        "outcomeTitle": "Fiziksel anlamda yapılan işin bağlı olduğu faktörlere ilişkin bilimsel çıkarım yapabilme",
+        "difficulty": "Orta",
+        "level": "Karmaşık Bilişsel Süreçler",
+        "templateType": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "points": 11,
+        "stimulus": "Günlük hayatta gözlenen iki farklı durum şöyledir:\n1. Durum: Sibel Hanım, süpermarkette alışveriş arabasını yatay zeminde $40\\text{ N}$ yatay kuvvet uygulayarak $5\\text{ m}$ ileri itmiştir.\n2. Durum: Kerem, elinde tuttuğu $50\\text{ N}$ ağırlığındaki bavulu yerden kaldırmadan sabit yükseklikte tutarak yatay kaldırımda $10\\text{ m}$ düz yürümüştür.",
+        "question": "a) 1. ve 2. durumdan hangisinde fiziksel anlamda İŞ YAPILMIŞTIR? Yapılan iş miktarını Joule (J) olarak hesaplayınız.\nb) Diğer durumda neden fiziksel anlamda iş yapılmadığını kuvvet doğrultusu ile hareket yönü ilişkisiyle gerekçelendiriniz.",
+        "answer": "a) Yalnızca 1. durumda fiziksel anlamda iş yapılmıştır. Yapılan İş: $W = F \\cdot \\Delta x = 40\\text{ N} \\cdot 5\\text{ m} = 200\\text{ J}$.\nb) 2. durumda bavulu taşımak için uygulanan kaldırma kuvveti düşey yukarı doğrultudadır; bavulun hareketi ise yatay doğrultudadır. Kuvvet ile hareket birbirine dik ($90^\\circ$) olduğu için yer çekimine karşı fiziksel iş yapılmamıştır ($W = 0$).",
+        "alternativeAnswers": [
+          "a) 1. durumda iş yapılmıştır: $W = 40\\text{ N} \\times 5\\text{ m} = 200\\text{ J}$. b) 2. durumda kaldırma kuvveti düşey iken hareket yataydır; kuvvet ve hareket birbirine dik olduğu için iş yapılmaz.",
+          "a) 1. durum, yapılan iş 200 Joule'dür. b) 2. durumda kuvvet yukarı doğru, hareket ise yataydır (birbirine diktir, $W = 0$)."
+        ],
+        "rubric": [
+          {
+            "item": "1. durumda iş yapıldığının tespiti ve 200 J değerinin doğru hesaplanması",
+            "pts": 6
+          },
+          {
+            "item": "2. durumda kaldırma kuvveti ile yatay hareketin birbirine dik olması sebebiyle iş yapılmadığının açıklanması",
+            "pts": 5
+          }
+        ]
+      },
+      {
+        "number": 8,
+        "outcome": "FB.7.2.2",
+        "outcomeTitle": "Enerji çeşitlerinden kinetik ve potansiyel enerjiyi karşılaştırabilme",
+        "difficulty": "Zor",
+        "level": "Karmaşık Bilişsel Süreçler",
+        "templateType": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 11,
+        "stimulus": "Düz bir karayolunda aynı $60\\text{ km/h}$ sabit süratle ilerleyen boş bir yük kamyonu ($m_1 = 8000\\text{ kg}$) ile küçük bir binek otomobil ($m_2 = 1200\\text{ kg}$) fren yaparak kaçış rampasına girmektedir.",
+        "question": "a) Kamyon ve otomobilin kinetik (hareket) enerjilerini gerekçesiyle karşılaştırınız. Hangisinin kinetik enerjisi daha büyüktür?\nb) Otomobilin kamyonla aynı kinetik enerjiye ulaşabilmesi için sürati nasıl değiştirilmelidir? Açıklayınız.",
+        "answer": "a) Kamyonun kinetik enerjisi daha büyüktür. Çünkü hareket halindeki cisimlerin süratleri eşit olduğunda kütlesi daha büyük olan cismin kinetik enerjisi daha fazla olur.\nb) Kütlesi küçük olan otomobilin kamyonla aynı kinetik enerjiye ulaşabilmesi için süratinin artırılması gerekir.",
+        "alternativeAnswers": [
+          "a) Kamyonun kinetik enerjisi büyüktür; süratler eşitken kütlesi büyük olanın kinetik enerjisi daha fazladır. b) Otomobilin sürati artırılmalıdır.",
+          "a) Kamyonunki fazladır (kütlesi büyük olduğu için). b) Kütlesi az olan otomobil daha hızlı gitmelidir."
+        ],
+        "rubric": [
+          {
+            "item": "Kamyonun kinetik enerjisinin büyük olduğunun ve kütle gerekçesinin yazılması",
+            "pts": 6
+          },
+          {
+            "item": "Otomobilin kinetik enerjisinin eşitlenmesi için süratinin artırılması gerektiğinin belirtilmesi",
+            "pts": 5
+          }
+        ]
+      },
+      {
+        "number": 9,
+        "outcome": "FB.7.2.2",
+        "outcomeTitle": "Enerji çeşitlerinden kinetik ve potansiyel enerjiyi karşılaştırabilme",
+        "difficulty": "Zor",
+        "level": "Karmaşık Bilişsel Süreçler",
+        "templateType": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "points": 11,
+        "stimulus": "U şeklindeki sürtünmesiz bir kaykay pistinin en üst tepe noktasından (K noktası, $3\\text{ m}$ yükseklik) serbest bırakılan kaykaycı Anıl, pistin en dip çukur noktasından (L noktası, zemin seviyesi) geçerek karşıdaki tepeye (M noktası) doğru tırmanmaktadır.",
+        "question": "a) Anıl'ın K noktasında ve L noktasında sahip olduğu enerji türlerini (çekim potansiyel / kinetik enerji) belirtiniz.\nb) L noktasında Anıl'ın süratinin en büyük olmasının sebebini enerjinin korunumu ve dönüşümü ilkesine göre açıklayınız.",
+        "answer": "a) Enerji Türleri: K noktasında (en tepe) yükseklik maksimum olduğu için Çekim Potansiyel Enerjisi maksimum, sürat sıfır olduğu için Kinetik Enerji sıfırdır. L noktasında (en dip zemin) yükseklik sıfıra indiği için potansiyel enerjinin tamamı Kinetik Enerjiye dönüşmüştür (Kinetik Enerji maksimumdur).\nb) Sürtünmesiz ortamlarda toplam mekanik enerji korunur ($E_p + E_k = \\text{sabit}$). K noktasındaki potansiyel enerjinin tamamı L noktasında kinetik enerjiye (hareket enerjisine) dönüşmüştür. Kinetik enerji sürate bağlı olduğu için kinetik enerjinin en yüksek olduğu taban noktasında sürat de en büyük değerine ulaşır.",
+        "alternativeAnswers": [
+          "a) K noktasında çekim potansiyel enerjisi en fazladır (kinetik sıfırdır). L noktasında kinetik enerji en fazladır (potansiyel sıfırdır). b) Potansiyel enerjinin tamamı sürtünmesiz ortamda kinetik enerjiye dönüştüğü için tabanda sürat maksimum olur.",
+          "a) K'de potansiyel enerji, L'de kinetik enerji maksimumdur. b) Enerji dönüşümü gereği tepedeki potansiyel enerji dipte kinetik enerjiye dönüştüğünden sürat en büyüktür."
+        ],
+        "rubric": [
+          {
+            "item": "K ve L noktalarındaki potansiyel ve kinetik enerjilerin doğru teşhisi",
+            "pts": 6
+          },
+          {
+            "item": "Sürtünmesiz ortamda potansiyelin kinetiğe dönüşmesi ve süratin maksimum olmasının açıklanması",
+            "pts": 5
+          }
+        ]
+      }
+    ]
+  },
+  "fen_bilimleri_setB": {
+    "title": "7. Sınıf Senaryo 1 (9 Soru) (Özgün Sınav Seti - 9 Soru)",
+    "model": "MEBİ Kural Tabanlı Standart Motor",
+    "isFallback": true,
+    "questionsCount": 9,
+    "questions": [
+      {
+        "number": 1,
+        "outcome": "FB.7.1.1",
+        "outcomeTitle": "Uzay araştırmaları için geliştirilen teknolojileri karşılaştırabilme",
+        "difficulty": "Orta",
+        "level": "Karmaşık Bilişsel Süreçler",
+        "templateType": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "points": 12,
+        "stimulus": "Türkiye'nin uzayda görev yapan yapay uyduları üzerine çalışan iki öğrenci arasında şu tartışma geçer:\nCan: \"Türksat uyduları televizyon yayını ve internet iletişimi sağlarken; Göktürk ve İmece gibi uydular yeryüzünün fotoğraflarını çekerek haritacılık ve afet yönetiminde kullanılır.\"\nBurak: \"Bence tüm yapay uyduların görevi aynıdır, hepsi sadece cep telefonu şebekesi sağlamak için fırlatılmıştır.\"",
+        "question": "a) Can ve Burak'ın ifadelerini değerlendiriniz. Hangi öğrenci haklıdır?\nb) Türkiye'nin uzaydaki aktif haberleşme ve gözlem uydularına ikişer örnek vererek temel görev farklarını açıklayınız.",
+        "answer": "a) Can haklıdır. Çünkü yapay uydular kullanım amaçlarına göre haberleşme ve gözlem uyduları olarak farklı görevler üstlenir.\nb) • Haberleşme Uyduları: TÜRKSAT 4A, TÜRKSAT 5A, TÜRKSAT 5B (herhangi ikisi). İletişim, TV ve internet sağlar.\n• Yer Gözlem Uyduları: GÖKTÜRK-1, GÖKTÜRK-2, İMECE (herhangi ikisi). Haritacılık, tarım, çevre takibi ve savunma amaçlı görüntüleme yapar.",
+        "rubric": [
+          {
+            "item": "Haklı öğrencinin (Can) tespiti ve Burak'ın yanılgısının açıklanması",
+            "pts": 4
+          },
+          {
+            "item": "Haberleşme ve gözlem uydularına ikişer doğru örnek verilmesi",
+            "pts": 4
+          },
+          {
+            "item": "Haberleşme ile gözlem uydularının görev farklarının belirtilmesi",
+            "pts": 4
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "outcome": "FB.7.1.1",
+        "outcomeTitle": "Uzay araştırmaları için geliştirilen teknolojileri karşılaştırabilme",
+        "difficulty": "Orta",
+        "level": "Karmaşık Bilişsel Süreçler",
+        "templateType": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 11,
+        "stimulus": "Şehirleşmenin ve kontrolsüz yapay aydınlatmanın artmasıyla gökyüzüne yayılan aşırı ışık, gece gökyüzünün parlak görünmesine neden olmakta ve sönük yıldızların gözlenmesini engellemektedir.",
+        "question": "a) Işık kirliliğinin optik teleskoplarla yapılan gök bilimi gözlemlerine olumsuz etkisini açıklayınız.\nb) Bir şehirde gökyüzü gözlemlerini korumak ve ışık kirliliğini azaltmak için sokak lambalarında nasıl bir tasarım önlemi alınmalıdır?",
+        "answer": "a) Işık kirliliği gökyüzünün aşırı aydınlanmasına yol açarak gök cisimlerinden gelen zayıf ışıkların görünmesini engeller; teleskop görüntülerinde parlamaya ve netlik kaybına sebep olur.\nb) Sokak ve park lambalarının gökyüzüne doğru değil, sadece zemine doğru ışık verecek şekilde siperlikli (kapaklı) tasarlanması ve gereksiz aydınlatmaların kapatılması gerekir.",
+        "rubric": [
+          {
+            "item": "Işık kirliliğinin optik gözleme olumsuz etkisinin yazılması",
+            "pts": 6
+          },
+          {
+            "item": "Siperlikli/aşağı yönlü aydınlatma tasarım önleminin açıklanması",
+            "pts": 5
+          }
+        ]
+      },
+      {
+        "number": 3,
+        "outcome": "FB.7.1.4",
+        "outcomeTitle": "Yıldızların yaşamını açıklayarak yapılandırabilme",
+        "difficulty": "Kolay",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 11,
+        "stimulus": "Gökyüzündeki yıldızları teleskopla inceleyen bir astronomi kulübü öğrencisi, yıldızların hepsinin aynı renkte parlamadığını fark eder. Kimi yıldızların mavi-beyaz, kimi yıldızların sarı, kimi yıldızların ise kırmızı renkte ışık yaydığını gözlemler.",
+        "question": "a) Yıldızların yaydığı ışığın rengi ile yüzey sıcaklıkları arasındaki ilişkiyi açıklayınız.\nb) Mavi, sarı ve kırmızı renkli yıldızları yüzey sıcaklıklarına göre en sıcaktan en soğuğa doğru sıralayarak Güneş'imizin hangi grupta olduğunu belirtiniz.",
+        "answer": "a) Yıldızların yaydığı ışığın rengi onların yüzey sıcaklığının bir göstergesidir; yüzey sıcaklığı arttıkça yıldızın rengi kırmızıdan sarıya, sarıdan ise mavi-beyaza doğru kayar.\nb) Sıcaklık Sıralaması: Mavi/Beyaz Yıldızlar (En Sıcak) > Sarı Yıldızlar (Orta Sıcaklıkta) > Kırmızı Yıldızlar (En Soğuk).\nGüneş: Yüzey sıcaklığı yaklaşık 6.000 °C olan 'sarı' renkli, orta sıcaklıkta bir yıldızdır.",
+        "rubric": [
+          {
+            "item": "Renk ile yüzey sıcaklığı ilişkisinin bilimsel gerekçesi",
+            "pts": 5
+          },
+          {
+            "item": "Mavi > Sarı > Kırmızı sıcaklık sıralaması ve Güneş'in sarı olduğunun belirtilmesi",
+            "pts": 6
+          }
+        ]
+      },
+      {
+        "number": 4,
+        "outcome": "FB.7.1.5",
+        "outcomeTitle": "Yıldız, galaksi ve evren kavramlarını açıklayarak yapılandırabilme",
+        "difficulty": "Kolay",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "points": 11,
+        "stimulus": "Sınıfta Elif ile Kerem evren ve uzay kavramlarını tartışmaktadır:\nElif: \"Evren; Dünya dahil var olan bütün gök cisimlerini, enerjiyi ve boşlukları içine alan sınırsız bütündür.\"\nKerem: \"Uzay ise Dünya'nın atmosferi dışında kalan sonsuz boşluktur.\"",
+        "question": "Elif ve Kerem'in tanımlarını değerlendiriniz. Hangisi haklıdır? Evren ile uzay arasındaki büyüklük/kapsam ilişkisini açıklayınız.",
+        "answer": "Her iki öğrenci de haklıdır. Evren her şeyi (Dünya ve uzayı) kapsayan en büyük bütündür. Uzay ise evrenin Dünya atmosferi dışında kalan kısmıdır. Dolayısıyla Evren, uzaydan daha kapsamlıdır.",
+        "rubric": [
+          {
+            "item": "Her iki öğrencinin tanımının da doğru olduğunun tespiti",
+            "pts": 5
+          },
+          {
+            "item": "Evrenin Dünya'yı da kapsadığını, uzayın ise atmosferin dışında kalan kısım olduğunu belirten kapsam ilişkisinin açıklanması",
+            "pts": 6
+          }
+        ]
+      },
+      {
+        "number": 5,
+        "outcome": "FB.7.2.1",
+        "outcomeTitle": "Fiziksel anlamda yapılan işin bağlı olduğu faktörlere ilişkin bilimsel çıkarım yapabilme",
+        "difficulty": "Orta",
+        "level": "Karmaşık Bilişsel Süreçler",
+        "templateType": "Hata Tespiti & Adım Analizi",
+        "points": 11,
+        "stimulus": "Halter sporuyla uğraşan milli sporcumuz Kerem, antrenmanda:\n1. Aşama: Yerde duran 100 kg'lık halteri yukarı doğru kaldırarak başının üstüne çıkarıyor.\n2. Aşama: Halteri başının üstünde havada hiç kıpırdatmadan 5 saniye boyunca sabit tutuyor.\n3. Aşama: Halteri yere bırakmadan başının üstünde tutarak yatay platformda 3 adım yürüyor.",
+        "question": "Kerem'in bu hareketlerinden hangisinde YER ÇEKİMİ KUVVETİNE KARŞI İŞ YAPILMIŞTIR? Diğer aşamalarda neden yer çekimine karşı iş yapılmadığını fiziksel gerekçeleriyle açıklayınız.",
+        "answer": "• Yer Çekimine Karşı İş Yapılan Aşama: Yalnızca 1. Aşama.\n• Gerekçelendirme:\n- 1. Aşamada halter yer çekimi kuvvetine zıt yönde (düşeyde yukarı) yer değiştirmiştir, bu yüzden yer çekimine karşı iş yapılır.\n- 2. Aşamada kuvvet uygulanmasına rağmen halter hareket etmemiştir (yer değiştirme sıfırdır), bu yüzden iş yapılmaz.\n- 3. Aşamada halterci yukarı yönlü kuvvet uygular ancak hareket yataydır (kuvvet ve hareket doğrultusu diktir), bu yüzden yer çekimine karşı iş yapılmaz.",
+        "rubric": [
+          {
+            "item": "Doğru aşamanın (yalnızca 1. Aşama) belirlenmesi",
+            "pts": 3
+          },
+          {
+            "item": "2. Aşamada yer değiştirme sıfır olduğu için iş yapılmadığının açıklanması",
+            "pts": 4
+          },
+          {
+            "item": "3. Aşamada kuvvet ve hareket doğrultusunun dik olması gerekçesi",
+            "pts": 4
+          }
+        ]
+      },
+      {
+        "number": 6,
+        "outcome": "FB.7.2.1",
+        "outcomeTitle": "Fiziksel anlamda yapılan işin bağlı olduğu faktörlere ilişkin bilimsel çıkarım yapabilme",
+        "difficulty": "Orta",
+        "level": "Karmaşık Bilişsel Süreçler",
+        "templateType": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 11,
+        "stimulus": "Yatay tahta zemin üzerinde duran bir sandığa Ali doğu yönünde 50 N büyüklüğünde kuvvet uygulamaktadır. Sandık ile zemin arasındaki sürtünme kuvveti ise harekete zıt yönde 20 N büyüklüğündedir. Sandık bu kuvvetlerin etkisinde doğu yönünde 5 metre yer değiştirmiştir.",
+        "question": "a) Ali'nin uyguladığı kuvvetin yaptığı işi (W_Ali) hesaplayınız.\nb) Sürtünme kuvvetine rağmen sandığı hareket ettiren NET KUVVETİN yaptığı işi Joule cinsinden hesaplayınız.",
+        "answer": "a) Ali'nin Yaptığı İş: W_Ali = Kuvvet x Yol = 50 N x 5 m = 250 Joule\nb) Net Kuvvetin Yaptığı İş: F_net = 50 N - 20 N = 30 N\nW_net = F_net x Yol = 30 N x 5 m = 150 Joule",
+        "rubric": [
+          {
+            "item": "Ali'nin yaptığı işin (250 J) doğru hesaplanması",
+            "pts": 5
+          },
+          {
+            "item": "Net kuvvetin (30 N) ve net işin (150 J) doğru hesaplanması",
+            "pts": 6
+          }
+        ]
+      },
+      {
+        "number": 7,
+        "outcome": "FB.7.2.1",
+        "outcomeTitle": "Fiziksel anlamda yapılan işin bağlı olduğu faktörlere ilişkin bilimsel çıkarım yapabilme",
+        "difficulty": "Orta",
+        "level": "Karmaşık Bilişsel Süreçler",
+        "templateType": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 11,
+        "stimulus": "Özdeş iki koliden birini Ahmet 20 N kuvvet uygulayarak 5 metre itmiş, diğerini Mehmet aynı 20 N kuvvet uygulayarak 10 metre itmiştir.",
+        "question": "Uygulanan kuvvetler eşit olduğuna göre Ahmet ve Mehmet'in yaptıkları işleri karşılaştırınız. Alınan yol ile yapılan iş arasındaki ilişkiyi açıklayınız.",
+        "answer": "Mehmet'in yaptığı iş Ahmet'in yaptığı işten daha fazladır (2 katıdır). Çünkü uygulanan kuvvet aynı kaldığında cismin kuvvet doğrultusunda aldığı yol arttıkça yapılan fiziksel iş miktarı da artar.",
+        "rubric": [
+          {
+            "item": "Mehmet'in yaptığı işin fazla olduğunun tespiti",
+            "pts": 6
+          },
+          {
+            "item": "Kuvvet eşitken alınan yol arttıkça işin artacağı ilişkisinin açıklanması",
+            "pts": 5
+          }
+        ]
+      },
+      {
+        "number": 8,
+        "outcome": "FB.7.2.2",
+        "outcomeTitle": "Enerji çeşitlerinden kinetik ve potansiyel enerjiyi karşılaştırabilme",
+        "difficulty": "Zor",
+        "level": "Karmaşık Bilişsel Süreçler",
+        "templateType": "Görsel / Deney / Günlük Hayat Durumu",
+        "points": 11,
+        "stimulus": "Sürtünmelerin önemsenmediği bir lunapark hız treni (roller coaster) rayında tren:\n• K noktası: Rayın en tepe noktası (yerden yükseklik maksimum, sürat sıfır)\n• L noktası: Rayın zemin seviyesindeki en alt noktası (yükseklik sıfır, sürat maksimum)\narasında hareket etmektedir.",
+        "question": "a) K noktasında trenin sahip olduğu enerji türünü ve L noktasına indiğinde bu enerjinin hangi enerji türüne dönüştüğünü yazınız.\nb) Sürtünmesiz bu sistemde tren aşağı inerken 'Toplam Mekanik Enerji'nin değişip değişmeyeceğini enerjinin korunumu kanunuyla açıklayınız.",
+        "answer": "a) Enerji Türleri ve Dönüşüm: K noktasında tren maksimum 'Çekim Potansiyel Enerjisi'ne sahiptir. L noktasına indiğinde bu potansiyel enerjinin tamamı 'Kinetik Enerji'ye dönüşür.\nb) Toplam Mekanik Enerji: DEĞİŞMEZ (Korunur). Enerjinin korunumu kanununa göre enerji yoktan var edilemez, vardan yok edilemez; yalnızca tür değiştirir. Sürtünme olmadığı için azalan çekim potansiyel enerjisi kadar kinetik enerji artar ve toplam mekanik enerji sabit kalır.",
+        "rubric": [
+          {
+            "item": "K noktasında çekim potansiyel, L noktasında kinetik enerjiye dönüşümün belirtilmesi",
+            "pts": 6
+          },
+          {
+            "item": "Mekanik enerjinin korunduğunun bilimsel gerekçeyle açıklanması",
+            "pts": 5
+          }
+        ]
+      },
+      {
+        "number": 9,
+        "outcome": "FB.7.2.2",
+        "outcomeTitle": "Enerji çeşitlerinden kinetik ve potansiyel enerjiyi karşılaştırabilme",
+        "difficulty": "Zor",
+        "level": "Karmaşık Bilişsel Süreçler",
+        "templateType": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 11,
+        "stimulus": "Laboratuvarda aynı $h = 1,5\\text{ m}$ yüksekliğindeki masanın kenarından iki farklı çelik bilye aynı anda kum havuzuna serbest bırakılmıştır:\n• 1. Bilye: Kütlesi $m = 100\\text{ g}$\n• 2. Bilye: Kütlesi $2m = 200\\text{ g}$",
+        "question": "a) 1. ve 2. bilyenin masadayken sahip oldukları çekim potansiyel enerjilerini karşılaştırınız. Hangisinin potansiyel enerjisi daha büyüktür?\nb) Kum havuzunda hangi bilyenin daha derin bir çukur izi oluşturacağını çekim potansiyel enerjisinin kütleye bağlılığı ilkesiyle açıklayınız.",
+        "answer": "a) 2. bilyenin ($2m$) çekim potansiyel enerjisi daha büyüktür (1. bilyenin 2 katıdır). Çünkü yerden yükseklikleri eşit olan cisimlerden kütlesi daha büyük olanın çekim potansiyel enerjisi daha fazladır ($E_p = m \\cdot g \\cdot h$).\nb) 2. bilye kumda daha derin bir çukur oluşturur. Çünkü sahip olduğu çekim potansiyel enerjisi daha fazladır ve kum zemine çarptığında kuma daha fazla enerji aktararak kumu daha derine iter.",
+        "alternativeAnswers": [
+          "a) 2. bilyenin ($2m$) potansiyel enerjisi daha büyüktür çünkü yükseklikler eşitken kütlesi büyük olanın enerjisi fazladır. b) 2. bilye kuma daha fazla enerji aktardığı için kumda daha derin çukur oluşturur.",
+          "a) Kütlesi 200 g olan 2. bilyenin potansiyel enerjisi büyüktür. b) Kütlesi büyük olan bilyenin çekim potansiyel enerjisi fazla olduğundan kumda daha derin iz bırakır."
+        ],
+        "rubric": [
+          {
+            "item": "2. bilyenin potansiyel enerjisinin büyük olduğunun kütle gerekçesiyle açıklanması",
+            "pts": 6
+          },
+          {
+            "item": "Kuma aktarılan enerjinin fazlalığı sebebiyle 2. bilyenin daha derin çukur oluşturacağının belirtilmesi",
+            "pts": 5
+          }
+        ]
+      }
+    ]
+  },
+  "turkce_setA": {
+    "title": "7. Sınıf Senaryo 1 (7 Soru) (Özgün Sınav Seti - 7 Soru)",
+    "model": "MEBİ Kural Tabanlı Standart Motor",
+    "isFallback": true,
+    "questionsCount": 7,
+    "questions": [
+      {
+        "number": 1,
+        "outcome": "T.O.7.4",
+        "outcomeTitle": "Metinde geçen anlamını bilmediği söz varlığı unsurlarının anlamını tahmin edebilme",
+        "difficulty": "Kolay",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Kelime Anlamı Tahmini & Delillendirme",
+        "points": 15,
+        "stimulus": "Ulu çınar, 'metanetle' rüzgârlara göğüs geriyor; çevresindeki beton binaların soğukluğuna inat toprağın 'özünden' kopmuyordu.",
+        "question": "Metindeki altı çizili 'metanetle' sözcüğünün anlamını tahmin ediniz. Tahmininizi metindeki hangi ipucuna dayandırdığınızı açıklayınız.",
+        "answer": "Tahmin: Metanetle: Dayanıklılıkla, güçlü bir sabır ve sarsılmaz bir dirençle demektir. İpucu: Şiddetli rüzgârlara göğüs germesi ve asırlardır devrilmeden ayakta kalmasıdır.",
+        "alternativeAnswers": [
+          "Metanetle: Sabırla ve sarsılmadan zorluklara karşı durarak anlamındadır. İpucu: Çınarın rüzgârlara karşı direnmesi ve devrilmemesidir.",
+          "Metanet sözcüğü dayanıklılık ve sarsılmaz direnç demektir; metinde fırtına ve rüzgârlara göğüs gerilmesi buna açık kanıttır."
+        ],
+        "rubric": [
+          {
+            "item": "'Metanetle' sözcüğünün doğru tahmin edilmesi (sabır, dayanıklılık)",
+            "pts": 8
+          },
+          {
+            "item": "Metindeki rüzgâra göğüs germe ipucuyla gerekçelendirilmesi",
+            "pts": 7
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "outcome": "T.O.7.5",
+        "outcomeTitle": "Metnin yüzey anlamını belirleyebilme",
+        "difficulty": "Kolay",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Ana Fikir / Konu Tespiti",
+        "points": 15,
+        "stimulus": "Bursa'daki altı asırlık İnkaya çınarı, geniş gövdesi ve metrelerce uzanan kollarıyla köy meydanının simgesidir.",
+        "question": "Metnin konusunu eksiksiz tek bir cümleyle yazınız.",
+        "answer": "Metnin konusu: Bursa'daki asırlık İnkaya çınarının köklü varlığı ve köy meydanındaki tarihî önemidir.",
+        "alternativeAnswers": [
+          "Metnin konusu: Altı yüz yıllık ulu çınarın heybeti ve tarihî simgeselliğidir.",
+          "Metnin konusu: Asırlık İnkaya çınarının doğadaki görkemli duruşudur."
+        ],
+        "rubric": [
+          {
+            "item": "Metnin konusunun tek cümleyle eksiksiz ifade edilmesi",
+            "pts": 15
+          }
+        ]
+      },
+      {
+        "number": 3,
+        "outcome": "T.O.7.8",
+        "outcomeTitle": "Metnin derin anlamını belirlemeye yönelik üst düzey çıkarımlar yapabilme",
+        "difficulty": "Zor",
+        "level": "Karmaşık Bilişsel Süreçler",
+        "templateType": "Metin İçi Delillendirme & Örtük Anlam",
+        "points": 14,
+        "stimulus": "Bursa'nın altı asırlık ulu çınarı, gövdesindeki derin kovuklarda sincapları ve göçmen kuşları konuk ederdi. Köyün çocukları her bahar çınarın heybetli dalları altına toplanır, yaşlıların anlattığı eski sefer hikâyelerini dinlerdi. Çınar, yüzyıllardır değişen insanlara rağmen kökleriyle toprağa, dallarıyla zamana meydan okurdu.",
+        "question": "a) Asırlık çınarın kovuklarında kuşları barındırmasındaki ve çocukların onun gölgesinde toplanmasındaki örtük anlamı açıklayınız.\nb) Çınarın zamana meydan okuduğunu kanıtlayan iki ifadeyi metinden yazınız.",
+        "answer": "a) Örtük Anlam: Çınar sadece bir ağaç değil, geçmişle geleceği birbirine bağlayan şefkatli bir koruyucu, ortak hafıza ve millî birlik sembolüdür.\nb) Kanıtlar: 1. Altı asırdır derin kovuklarında canlıları konuk etmesi, 2. Yüzyıllardır değişen nesillere rağmen kökleriyle toprağa sımsıkı tutunması.",
+        "alternativeAnswers": [
+          "Çınarın nesiller boyu insanları bir araya getiren köklü bir tarihî miras ve koruyucu manevi sığınak olduğunu göstermektedir.",
+          "Kanıtlar: Canlıları koynunda yaşatması ve asırlar boyunca ayakta kalarak kökleriyle toprağa bağlanmasıdır."
+        ],
+        "rubric": [
+          {
+            "item": "Çınarın ortak hafıza ve koruyucu sembol olduğunun açıklanması",
+            "pts": 7
+          },
+          {
+            "item": "Metinden iki somut zaman ve kök kanıtının gösterilmesi",
+            "pts": 7
+          }
+        ]
+      },
+      {
+        "number": 4,
+        "outcome": "T.O.7.21",
+        "outcomeTitle": "Metinden hareketle söz varlığını geliştirmeye yönelik çözümleme yapabilme",
+        "difficulty": "Orta",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 14,
+        "stimulus": "Kavramlar: 'Tatlı dil' ve 'Güler yüz'.",
+        "question": "Türkçemizde tatlı dilli olmanın ve güler yüz göstermenin önemini anlatan 2 farklı atasözü veya deyim yazıp anlamlarını kısaca açıklayınız.",
+        "answer": "1. Atasözü: 'Tatlı dil yılanı deliğinden çıkarır.' (Anlamı: Kırıcı olmayan, hoş ve yumuşak sözler en inatçı ve öfkeli insanları bile ikna eder).\n2. Deyim: 'Güler yüz göstermek' (Anlamı: Karşılaştığı insanlara samimi, dostça ve sevecen davranmak).",
+        "alternativeAnswers": [
+          "Atasözü: 'Tatlı söz can azığıdır.' (Tatlı konuşmak insana ferahlık ve huzur verir).\nDeyim: 'Ağzından bal damlamak' (Çok tatlı, hoşa giden ve sevindirici sözler söylemek).",
+          "Deyim 1: 'Güler yüz tatlı dil' (İnsanlara samimi, güler yüzlü ve sevecen yaklaşmak).\nDeyim 2: 'Tatlıya bağlamak' (Anlaşmazlıkları kırmadan, yumuşak ve tatlı dille çözüme kavuşturmak)."
+        ],
+        "rubric": [
+          {
+            "item": "Konuyla ilgili iki geçerli atasözü/deyimin yazılması",
+            "pts": 7
+          },
+          {
+            "item": "Atasözü ve deyimlerin anlamlarının doğru açıklanması",
+            "pts": 7
+          }
+        ]
+      },
+      {
+        "number": 5,
+        "outcome": "T.Y.7.3",
+        "outcomeTitle": "Yazısında içerik ve yapıya yönelik seçimlerini yönetebilme",
+        "difficulty": "Orta",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 14,
+        "stimulus": "Konu: 'Bir Meslekte Başarının Temeli: Dürüstlük ve Güven'",
+        "question": "Bu konuda yazacağınız bilgilendirici bir metin için; giriş bölümünde savunacağınız ana düşünceyi ve gelişme bölümünde vereceğiniz iki farklı argümanı maddeler halinde yazınız.",
+        "answer": "• Giriş Bölümü Ana Düşüncesi: Bir esnafın veya meslek sahibinin en büyük sermayesi dükkânındaki mallar değil, müşterilerinin ona duyduğu sarsılmaz güvendir.\n• Gelişme Argümanı 1: Hileli mal satanlar kısa vadede para kazansa da uzun vadede itibarını ve müşterilerini tamamen kaybederler.\n• Gelişme Argümanı 2: Dürüst esnaf ise kriz dönemlerinde bile toplumun saygısı ve desteğiyle ayakta kalır.",
+        "alternativeAnswers": [
+          "Giriş Ana Düşüncesi: Meslek hayatında en kalıcı sermaye dürüstlük ve müşteri güvenidir. Gelişme 1: Hile yapan esnaf kısa vadede kazansa da güveni kaybedince iflas eder. Gelişme 2: Doğruluktan ayrılmayan tüccar ise sadık müşteri kitlesi kazanır.",
+          "Giriş: Ticaretin ve zanaatın temeli karşılıklı güvene dayanır. Gelişme Argümanı: Kaliteli ve sağlam ürün üretmek mesleki saygınlık getirir; aldatıcı yöntemler ise esnafın sonunu hazırlar."
+        ],
+        "rubric": [
+          {
+            "item": "Giriş bölümü ana düşüncesinin açık ve tutarlı sunulması",
+            "pts": 7
+          },
+          {
+            "item": "Gelişme bölümü için iki ikna edici argümanın oluşturulması",
+            "pts": 7
+          }
+        ]
+      },
+      {
+        "number": 6,
+        "outcome": "T.Y.7.18",
+        "outcomeTitle": "Yazısını zenginleştirecek biçimde söz varlığını kullanabilme",
+        "difficulty": "Orta",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 14,
+        "stimulus": "Bakış Açısı: Asırlık çınar ağacının ağzından anlatım.",
+        "question": "Asırlık çınarın ağzından insanlara seslenen; içinde 'kök salmak', 'sabır', 'fırtına' ve 'vefa' kelimelerinin geçtiği 3-4 cümlelik duygu dolu bir paragraf yazınız.",
+        "answer": "Altı yüz yıldır bu tepede rüzgârlarla boğuştum ama toprağıma sımsıkı kök salmaktan asla vazgeçmedim. Nice fırtına dallarımı sarstı lakin sabır zırhımı kuşanıp her bahar yeniden yeşerdim. Ey gölgemde soluklanan insan, unutma ki vefa göstermeyen ve köklerini unutan bir dal en hafif rüzgârda bile kırılır.",
+        "alternativeAnswers": [
+          "Ben asırlardır bu tepeye kök salmış ulu bir çınarım. Nice sert fırtına dallarımı hırpalasa da sabır göstererek her kışın ardından yeniden canlandım. Ey insan, geçmişine vefa duy ki köklerin sağlam kalsın ve geleceğe umutla uzanabilesin.",
+          "Asırlar boyu bu topraklarda kök saldım, sayısız fırtınaya göğüs gerdim. Her zorluğa sabır ile direnip dimdik ayakta durdum. Gölgesinde soluklanan her nesle vefa ve dayanışmanın erdemini fısıldarım."
+        ],
+        "rubric": [
+          {
+            "item": "Verilen 4 kavramın eksiksiz ve yerinde kullanılması",
+            "pts": 7
+          },
+          {
+            "item": "Kişileştirme ve edebi dilin akıcı uygulanması",
+            "pts": 7
+          }
+        ]
+      },
+      {
+        "number": 7,
+        "outcome": "T.Y.7.21",
+        "outcomeTitle": "Yazım kuralları ve noktalama işaretlerini uygulayabilme",
+        "difficulty": "Orta",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Hata Tespiti & Düzeltme",
+        "points": 14,
+        "stimulus": "Dedem çınarın gölgesinde oturdu; cebinden ahşap tarağını çıkarıp 19 mayıs 1919'da samsun'a çıkan atatürk'ü anlattı.",
+        "question": "Cümledeki noktalama ve büyük harf hatalarını belirleyip cümlenin doğru şeklini yazınız.",
+        "answer": "Hatalar:\n1. 'oturdu'dan sonra noktalı virgül değil İKİ NOKTA (:) gelmelidir.\n2. '19 mayıs' belirli bir tarihi bildirdiği için '19 Mayıs' şeklinde büyük yazılmalıdır.\n3. 'samsun'a' ve 'atatürk'ü' özel isimler olduğu için büyük harfle 'Samsun'a' ve 'Atatürk'ü' yazılmalıdır.\nDoğrusu: Dedem çınarın gölgesinde oturdu: cebinden ahşap tarağını çıkarıp 19 Mayıs 1919'da Samsun'a çıkan Atatürk'ü anlattı.",
+        "alternativeAnswers": [
+          "Mayıs, Samsun ve Atatürk sözcükleri büyük harfle yazılmalı, noktalı virgül yerine iki nokta kullanılmalıdır.",
+          "Özel isimler ve belirli tarihler büyük harfle başlatılmalı (Mayıs, Samsun, Atatürk); konuşma öncesinde noktalı virgül değil iki nokta konmalıdır."
+        ],
+        "rubric": [
+          {
+            "item": "İki nokta ve büyük harf hatalarının tespiti",
+            "pts": 7
+          },
+          {
+            "item": "Cümlenin kurallara uygun hatasız yazımı",
+            "pts": 7
+          }
+        ]
+      }
+    ]
+  },
+  "turkce_setB": {
+    "title": "7. Sınıf Senaryo 1 (7 Soru) (Özgün Sınav Seti - 7 Soru)",
+    "model": "MEBİ Kural Tabanlı Standart Motor",
+    "isFallback": true,
+    "questionsCount": 7,
+    "questions": [
+      {
+        "number": 1,
+        "outcome": "T.O.7.4",
+        "outcomeTitle": "Metinde geçen anlamını bilmediği söz varlığı unsurlarının anlamını tahmin edebilme",
+        "difficulty": "Kolay",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Metin İçi Delillendirme & Örtük Anlam",
+        "points": 15,
+        "stimulus": "“Anadolu’nun bağrından kopan türküler, bu milletin sevinçlerinin ve gurbet acılarının en samimi aynasıdır. 'Bozkırın Tezenesi' olarak anılan Neşet Ertaş; sazının tellerine dokunduğunda sadece bir melodi çalmaz, adeta bir halkın kalbinden geçenleri dile getirirdi. Onun 'Gönülden gönüle bir yol vardır görülmez' deyişi, Türk insanının sevgiye ve samimiyete verdiği değeri en veciz şekilde ortaya koyar. Türkülerini unutan bir millet, ruhunun en derin ezgilerini kaybetmiş demektir.”",
+        "question": "Metindeki altı çizili 'Bozkırın Tezenesi' lakabının ve 'veciz' kelimesinin anlamlarını metnin bağlamından hareketle açıklayınız.",
+        "answer": "• Bozkırın Tezenesi: Orta Anadolu bozkırının saz mızrabı, o coğrafyanın duygularını ve feryadını saza aktaran büyük usta anlamına gelir.\n• Veciz: Kısa, öz, etkili ve derin anlamlar taşıyan söz veya ifade demektir.",
+        "alternativeAnswers": [
+          "Bozkırın Tezenesi: Bozkır halkının acılarını, sevinçlerini ve gönül dünyasını sazının mızrabıyla dile getiren büyük halk ozanı.",
+          "Veciz: Az sözle çok ve derin anlam ifade eden, özlü ve etkileyici sözdür."
+        ],
+        "rubric": [
+          {
+            "item": "'Bozkırın Tezenesi' unvanının doğru açıklanması",
+            "pts": 8
+          },
+          {
+            "item": "'Veciz' kelimesinin sözlük ve bağlam anlamının yazılması",
+            "pts": 7
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "outcome": "T.O.7.5",
+        "outcomeTitle": "Metnin yüzey anlamını belirleyebilme",
+        "difficulty": "Kolay",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 15,
+        "stimulus": "“Bursa’nın İnkaya köyünde heybetiyle göğe yükselen altı asırlık çınar, Osmanlı Devleti’nin kuruluş günlerinden bugüne kadar nice nesillere tanıklık etmiştir. Dalları onlarca metreye yayılan bu ulu ağacın gölgesinde soluklanan insanlar, sadece bir ağacın değil; yaşayan bir tarihin serinliğini hissederler. Kökleri toprağın derinliklerine sımsıkı sarılmış bu çınar; bize sabrı, geçmişe vefa duymayı ve fırtınalara karşı dimdik durmayı fısıldar.”",
+        "question": "Bursa İnkaya köyündeki asırlık çınarın ele alındığı bu metnin konusunu bir cümleyle yazınız.",
+        "answer": "Metnin konusu: Bursa'daki altı asırlık İnkaya çınarının heybetli yapısı, tarihî tanıklığı ve insanlara öğrettiği sabır ve vefa duygusudur.",
+        "alternativeAnswers": [
+          "Metnin konusu: Asırlık İnkaya çınarının tarihi tanıklığı ve insana hissettirdiği vefa duygusudur.",
+          "Metnin konusu: Altı yüz yıllık ulu çınarın gölgesinde geçmişle kurulan bağ ve çınarın köklü varlığıdır."
+        ],
+        "rubric": [
+          {
+            "item": "Metnin konusunun eksiksiz ve tek cümleyle yazılması",
+            "pts": 15
+          }
+        ]
+      },
+      {
+        "number": 3,
+        "outcome": "T.O.7.8",
+        "outcomeTitle": "Metnin derin anlamını belirlemeye yönelik üst düzey çıkarımlar yapabilme",
+        "difficulty": "Zor",
+        "level": "Karmaşık Bilişsel Süreçler",
+        "templateType": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "points": 14,
+        "stimulus": "Bir araştırma ve uygulama ortamında TURKCE kapsamında iki farklı yöntem (Yöntem 1 ve Yöntem 2) karşılaştırılmaktadır.",
+        "question": "Yöntem 1 ve Yöntem 2'yi Metnin derin anlamını belirlemeye yönelik üst düzey çıkarımlar yapabilme bakımından karşılaştırınız. Hangi yöntemin daha verimli olduğunu gerekçelendiriniz.",
+        "answer": "Seçilen yöntemin gerekçesi ve diğer yöntemin sınırları bilimsel kanıtlarla açıklanmıştır.",
+        "rubric": [
+          {
+            "item": "Kavramsal teşhis ve doğru tespit",
+            "pts": 7
+          },
+          {
+            "item": "Bilimsel/mantıksal gerekçelendirme basamağı",
+            "pts": 7
+          }
+        ]
+      },
+      {
+        "number": 4,
+        "outcome": "T.O.7.21",
+        "outcomeTitle": "Metinden hareketle söz varlığını geliştirmeye yönelik çözümleme yapabilme",
+        "difficulty": "Orta",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 14,
+        "stimulus": "Kelimeler: 'derin' ve 'dimdik'.",
+        "question": "a) 'Derin' kelimesinin zıt anlamlısını yazıp bir cümlede kullanınız.\nb) 'Dimdik' kelimesinin eş anlamlısını veya yakın anlamlı karşılığını yazınız.",
+        "answer": "a) Derin zıt anlamlısı: SIĞ. Cümle: 'Kıyıya yakın sığ sularda çocuklar güvenle yüzüyordu.'\nb) Dimdik eş/yakın anlamı: Sarsılmadan, dosdoğru, eğilmeden, dik bir biçimde.",
+        "alternativeAnswers": [
+          "a) Zıt anlam: 'sığ' (Örnek: Kıyının sığ sularında balıklar yüzüyordu).\nb) Eş/yakın anlam: 'eğilmeden', 'dik', 'dimdik durarak' veya 'ayakta'.",
+          "a) 'Derin' sözcüğünün zıt anlamlısı 'sığ'dır. Cümle: Nehir bu bölgede oldukça sığ aktığı için karşıya kolayca geçtik.\nb) 'Dimdik' kelimesinin yerine 'dosdoğru', 'sapasağlam' veya 'eğilip bükülmeden' kelimeleri kullanılabilir."
+        ],
+        "rubric": [
+          {
+            "item": "Zıt anlamın ve örnek cümlenin doğruluğu",
+            "pts": 7
+          },
+          {
+            "item": "Eş anlamın/açıklamanın doğruluğu",
+            "pts": 7
+          }
+        ]
+      },
+      {
+        "number": 5,
+        "outcome": "T.Y.7.3",
+        "outcomeTitle": "Yazısında içerik ve yapıya yönelik seçimlerini yönetebilme",
+        "difficulty": "Orta",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 14,
+        "stimulus": "Konu: 'Sayfaların Kokusu mu, Ekranın Işığı mı? (Basılı Kitap vs E-Kitap)'",
+        "question": "Bu konuda yazacağınız tartışmacı bir metin için; savunduğunuz görüşü ve bu görüşü destekleyen 2 güçlü kanıtı maddeler halinde taslaklaştırınız.",
+        "answer": "• Savunulan Görüş: Dijital kolaylıklara rağmen basılı kitabın dokusu, göz sağlığına uygunluğu ve odaklanma kolaylığı üstündür.\n• Kanıt 1: Yapılan araştırmalar kâğıttan okumanın ekran ışığına göre gözü daha az yorduğunu ve okuduğunu anlama oranını artırdığını göstermektedir.\n• Kanıt 2: Dijital ekranlarda gelen bildirimler ve internet bağlantısı okuyucunun dikkatini dağıtırken basılı kitap derinleşmeyi sağlar.",
+        "alternativeAnswers": [
+          "Savunulan Görüş: E-kitaplar taşınabilirlik ve çevre koruma açısından daha avantajlıdır.\nKanıt 1: Binlerce kitap tek bir hafif cihazda toplanabilir, her yere taşınabilir.\nKanıt 2: Kâğıt israfını azaltarak ormanların korunmasına katkı sağlar.",
+          "Savunulan Görüş: Basılı kitaplar derinlemesine anlama ve odaklanma bakımından daha verimlidir.\nKanıt 1: Kâğıda dokunmak ve sayfaları çevirmek bilginin zihinde yer etmesini kolaylaştırır.\nKanıt 2: Bildirim ve ekran parlaması gibi dikkat dağıtıcı unsurlar içermez."
+        ],
+        "rubric": [
+          {
+            "item": "Savunulan görüşün açıkça belirlenmesi",
+            "pts": 7
+          },
+          {
+            "item": "İki tutarlı ve ikna edici kanıtın sunulması",
+            "pts": 7
+          }
+        ]
+      },
+      {
+        "number": 6,
+        "outcome": "T.Y.7.18",
+        "outcomeTitle": "Yazısını zenginleştirecek biçimde söz varlığını kullanabilme",
+        "difficulty": "Orta",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 14,
+        "stimulus": "Hedef Kavramlar: 'kültür mirası, samimiyet, ortak hafıza, ezgi'.",
+        "question": "Türkülerimizin geçmişten geleceğe kültür aktarımındaki rolünü anlatan; içinde 'kültür mirası', 'samimiyet', 'ortak hafıza' ve 'ezgi' kelimelerinin yer aldığı 3-4 cümlelik akıcı bir paragraf yazınız.",
+        "answer": "Türkülerimiz, Anadolu'nun asırlar boyunca biriktirdiği en değerli kültür mirasıdır. Her bir ezgi, düğünlerimizden ağıtlarımıza kadar milletimizin ortak hafızasını canlı tutar. Bu dizelerdeki eşsiz samimiyet, kuşakları birbirine bağlayan en güçlü köprüdür.",
+        "alternativeAnswers": [
+          "Asırlardır kuşaktan kuşağa aktarılan türküler, milletimizin paha biçilmez kültür mirasıdır. Sazın tellerinden yükselen her samimiyet dolu ezgi, sevinç ve kederlerimizi ortak hafızamızda daima diri tutar. Bu zenginliğe sahip çıkmak geleceğimize değer katar.",
+          "Türküler Anadolu insanının ruh dünyasını geleceğe taşıyan köklü bir kültür mirasıdır. Yürekten gelen derin samimiyet ile yankılanan her ezgi, halkın ortak hafızasını canlı kılarak bizi birbirimize kenetler."
+        ],
+        "rubric": [
+          {
+            "item": "Dört anahtar kelimenin eksiksiz ve yerinde kullanılması",
+            "pts": 7
+          },
+          {
+            "item": "Düşüncelerin akıcı ve edebi bir dille ifade edilmesi",
+            "pts": 7
+          }
+        ]
+      },
+      {
+        "number": 7,
+        "outcome": "T.Y.7.21",
+        "outcomeTitle": "Yazım kuralları ve noktalama işaretlerini uygulayabilme",
+        "difficulty": "Orta",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Hata Tespiti & Adım Analizi",
+        "points": 14,
+        "stimulus": "Cümle: '1450'de Almanyada matbaayı geliştiren Gutenberg, ilk eserini 3'er 3'er ciltleyip Prof. Dr. ünvanlı bilginlere sunmuştu.'",
+        "question": "Yukarıdaki cümlede yer alan yazım yanlışlarını (özel isim eki, üleştirme sayısının yazımı, unvan kelimesi) düzelterek cümlenin doğrusunu yazınız.",
+        "answer": "Doğru Cümle: '1450'de Almanya'da matbaayı geliştiren Gutenberg, ilk eserini üçer üçer ciltleyip Prof. Dr. unvanlı bilginlere sunmuştu.'\n(Düzeltmeler: Almanya'da kesme işareti, 3'er değil 'üçer üçer', unvan yazımı).",
+        "alternativeAnswers": [
+          "1450'de Almanya'da matbaayı geliştiren Gutenberg, ilk eserini üçer üçer ciltleyip Prof. Dr. unvanlı bilginlere sunmuştu. (Düzeltilenler: 'Almanya'da' özel isim kesme işareti, üleştirme sayısının 'üçer üçer' şeklinde harfle yazılması, 'unvan' kelimesinin doğru yazılışı).",
+          "Cümlenin düzeltilmiş biçimi: '1450'de Almanya'da matbaayı geliştiren Gutenberg, ilk eserini üçer üçer ciltleyip Prof. Dr. unvanlı bilginlere sunmuştu.' (Kurallar: Ülke adlarına gelen çekim ekleri kesmeyle ayrılır, üleştirme sayıları asla rakamla yazılmaz)."
+        ],
+        "rubric": [
+          {
+            "item": "Özel ismin ekine kesme işareti konulması (Almanya'da)",
+            "pts": 7
+          },
+          {
+            "item": "Üleştirme sayısının yazıyla yazılması kuralının uygulanması (üçer üçer)",
+            "pts": 7
+          }
+        ]
+      }
+    ]
+  },
+  "sosyal_bilgiler_setA": {
+    "title": "7. Sınıf Senaryo 1 (7 Soru) (Özgün Sınav Seti - 7 Soru)",
+    "model": "MEBİ Kural Tabanlı Standart Motor",
+    "isFallback": true,
+    "questionsCount": 7,
+    "questions": [
+      {
+        "number": 1,
+        "outcome": "SB.7.1.1",
+        "outcomeTitle": "Dâhil olduğu gruplarda ve sosyal hayatta etkili iletişimin önemini sorgulayabilme",
+        "difficulty": "Kolay",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 15,
+        "stimulus": "7/E sınıfı mesajlaşma grubunda Kerem, arkadaşı Alper'ın sorduğu soruya sadece \"Tamam.\" yazıp soğuk bir ifade bırakmıştır. Alper ise Kerem'in kendisine kızdığını düşünerek kırılmıştır. Ertesi gün yüz yüze geldiklerinde Kerem'in aslında aceleyle yazdığı ve hiçbir kızgınlığı olmadığı ortaya çıkmıştır. (Ders Kitabı 1. Kitap, Sayfa 13)",
+        "question": "a) Dijital yazışmalarda yüz yüze iletişime göre hangi 2 temel iletişim unsurunun eksik olması bu yanlış anlaşılmaya yol açmıştır?\nb) Dijital iletişimde bu tür yanlış anlamaları önlemek için ne yapılmalıdır?",
+        "answer": "a) Eksik Unsurlar: 1) Ses tonu ve vurgu, 2) Beden dili (yüz ifadesi, mimikler ve göz teması).\nb) Çözüm: Mesaj yazarken duygu belirten nazik ifadeler seçilmeli, duygu tonunu yansıtan emojiler veya kısa açıklamalar eklenmeli; önemli konular ise yüz yüze konuşulmalıdır.",
+        "alternativeAnswers": [
+          "a) Ses tonlaması ve jest-mimik gibi beden dili ögelerinin olmamasıdır. b) Nezaket belirten cümleler kurulmalı veya yanlış anlama riskine karşı doğrudan sesli/yüz yüze iletişim tercih edilmelidir.",
+          "a) Sözsüz iletişim unsurları (bakış, tebessüm ve ses vurgusu) bulunmadığı için yanlış anlaşılmıştır. b) Kısa ve sert ifadeler yerine açık, samimi ve empatik bir dil kullanılmalıdır."
+        ],
+        "rubric": [
+          {
+            "item": "Ses tonu ve mimik/beden dili eksikliğinin doğru tespiti",
+            "pts": 8
+          },
+          {
+            "item": "Dijital nezaket ve yüz yüze teyit çözümünün açıklanması",
+            "pts": 7
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "outcome": "SB.7.1.1",
+        "outcomeTitle": "Dâhil olduğu gruplarda ve sosyal hayatta etkili iletişimin önemini sorgulayabilme",
+        "difficulty": "Kolay",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Empati & Cümle Dönüştürme",
+        "points": 15,
+        "stimulus": "Okul tiyatrosu projesinde Kerem, provaya sürekli geç kalan arkadaşı Alper'ye öfkeyle:\n\"Her zaman provayı aksatıyorsun, sorumsuz bir insansın ve kimsenin emeğine saygın yok!\" demiştir.",
+        "question": "a) Kerem'in kurduğu cümleyi 'sen dili' ve iletişim engelleri (yargılama/etiketleme) açısından analiz ediniz.\nb) Bu çatışmayı önleyecek suçlayıcı olmayan örnek bir 'ben dili' cümlesi kurgulayınız.",
+        "answer": "a) Analiz: Cümle doğrudan kişiliği hedef alan suçlayıcı, genelleştirici (\"her zaman\") ve etiketleyici (\"sorumsuz\") bir 'sen dili'dir. Savunma refleksini tetikler ve iletişimi koparır.\nb) Ben Dili Cümlesi: \"Provalara geç kalındığında rollerimizi planlanan sürede çalışamadığımız için endişeleniyorum ve projemizin aksamasından üzüntü duyuyorum.\"",
+        "alternativeAnswers": [
+          "a) Karşı tarafı doğrudan suçlayıp kişiliğine saldırdığı için sen dilidir; kişide direnç ve haksızlığa uğramışlık hissi yaratır. b) \"Hazırlıklara vaktinde başlanmadığında sahne provasını yetiştiremeyeceğimizi düşünüp kaygılanıyorum.\"",
+          "a) Davranış yerine kişiyi peşinen yargıladığı için sen dilidir; Alper'nin kendini savunmaya kapatmasına sebep olur. b) \"Provalar geciktiğinde planlanan zamanda bitiremeyeceğim için huzursuz oluyorum.\""
+        ],
+        "rubric": [
+          {
+            "item": "Sen dilinin savunma doğurucu etkisinin analizi",
+            "pts": 8
+          },
+          {
+            "item": "Duygu belirten kuralına uygun Ben Dili cümlesinin kurulması",
+            "pts": 7
+          }
+        ]
+      },
+      {
+        "number": 3,
+        "outcome": "SB.7.1.2",
+        "outcomeTitle": "Özel gereksinimli bireyler için fırsat eşitliğini sürdürmeye yönelik fikir üretebilme",
+        "difficulty": "Orta",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 14,
+        "stimulus": "Doğuştan iki kolu olmayan veya omurilik felci geçiren millî paralimpik sporcularımız, yüzme ve okçuluk branşlarında dünya ve olimpiyat şampiyonlukları kazanarak İstiklal Marşımızı dünyaya dinletmişlerdir. (Ders Kitabı 1. Kitap, Sayfa 32)",
+        "question": "Paralimpik şampiyonlarımızın bu başarısı, özel gereksinimli bireylere fırsat eşitliği sağlandığında toplumda nelerin değişebileceğini nasıl kanıtlar? İki gerekçeyle açıklayınız.",
+        "answer": "1. Azim ve Fırsat Eşitliği: Özel gereksinimli bireylerin acınmaya değil, sadece eşit imkân, donanımlı tesis ve desteğe ihtiyaç duyduklarını; fırsat verildiğinde her türlü engeli aşabileceklerini kanıtlar.\n2. Toplumsal Ön Yargıların Kırılması: 'Engelliler üretemez veya başaramaz' şeklindeki yanlış kalıp yargıları yıkarak toplumda saygı ve eşit yurttaşlık bilincini güçlendirir.",
+        "alternativeAnswers": [
+          "1) Engelin bedende değil imkânsızlıklarda olduğunu, eşit fırsat sunulduğunda uluslararası zirveye ulaşılabileceğini gösterir. 2) Toplumdaki acıma duygusunu hayranlık ve eşitlik anlayışına dönüştürür.",
+          "1) Uygun spor ve eğitim olanakları tanındığında özel gereksinimli bireylerin ülkenin en büyük gurur kaynağı olabileceğini ispatlar. 2) Diğer engelli gençlere ilham kaynağı olarak sosyal yaşama cesaretle katılmalarını sağlar."
+        ],
+        "rubric": [
+          {
+            "item": "Eşit imkân sunulduğunda engellerin aşılacağı vurgusunun yapılması",
+            "pts": 7
+          },
+          {
+            "item": "Toplumsal ön yargıların kırılması ve ilham kaynağı olma etkisinin açıklanması",
+            "pts": 7
+          }
+        ]
+      },
+      {
+        "number": 4,
+        "outcome": "SB.7.1.3",
+        "outcomeTitle": "Türk toplumunun millî meseleler karşısında gösterdiği tutum ve davranışlara ilişkin çıkarım yapabilme",
+        "difficulty": "Orta",
+        "level": "Karmaşık Bilişsel Süreçler",
+        "templateType": "Metin İçi Delillendirme & Örtük Anlam",
+        "points": 14,
+        "stimulus": "Ressam Arif Bedii'nin 'Atatürk ve Millî Mücadele' tablosunda kağnısıyla cephane taşıyan köylü kadınlar, cephede süngü takmış Mehmetçikler ve arkalarında dualar eden aksakallı dedeler bir arada tasvir edilmiştir. (Ders Kitabı 1. Kitap, Sayfa 42)",
+        "question": "Arif Bedii'nin bu tablosunda vurgulanan ana düşünceyi Türk milletinin millî birlik ve 'topyekûn seferberlik' anlayışıyla ilişkilendirerek açıklayınız.",
+        "answer": "Tablonun ana düşüncesi, Türk milletinin vatan tehlikeye düştüğünde kadını, erkeği, yaşlısı ve genciyle bütün fertlerinin tek vücut olarak cepheye ve cephe gerisine koştuğudur. Millî Mücadele'nin sadece bir ordu savaşı değil, tüm bir milletin ortak iman, vatan sevgisi ve fedakârlıkla kazandığı topyekûn bir bağımsızlık destanı olduğunu simgeler.",
+        "alternativeAnswers": [
+          "Vatan savunmasının kadın-erkek, genç-yaşlı tüm millet fertlerinin el ele vermesiyle başarıldığını ve milletimizin kenetlenme gücünü anlatmaktadır.",
+          "Kurtuluş Savaşı'nın cephedeki asker ile cephe gerisindeki halkın ortak dayanışması ve fedakârlığı sayesinde kazanılan bir halk seferberliği olduğunu gösterir."
+        ],
+        "rubric": [
+          {
+            "item": "Kadın, erkek, yaşlı ve askerin tek vücut olduğu topyekûn seferberliğin açıklanması",
+            "pts": 7
+          },
+          {
+            "item": "Millî birlik ve bağımsızlık ruhunun gerekçelendirilmesi",
+            "pts": 7
+          }
+        ]
+      },
+      {
+        "number": 5,
+        "outcome": "SB.7.1.3",
+        "outcomeTitle": "Türk toplumunun millî meseleler karşısında gösterdiği tutum ve davranışlara ilişkin çıkarım yapabilme",
+        "difficulty": "Zor",
+        "level": "Karmaşık Bilişsel Süreçler",
+        "templateType": "Metin İçi Delillendirme & Örtük Anlam",
+        "points": 14,
+        "stimulus": "1915 yılında Çanakkale Cephesi'nde vatan tehlikeye düştüğünde Galatasaray Lisesi, Konya Lisesi ve Kastamonu Lisesi'nin 15-16 yaşındaki son sınıf öğrencileri gönüllü olarak askere yazılmış, o yıl pek çok okul mezun verememiştir.",
+        "question": "Genç yaştaki lise öğrencilerinin eğitimi bırakıp cepheye koşması, Türk milletinin millî bağımsızlık anlayışı hakkında ne gösterir? Açıklayınız.",
+        "answer": "Bu durum, Türk milletinde 'vatan mevzubahis olduğunda her şeyin teferruat olduğu' inancının en somut kanıtıdır. Geleceğin aydınları olan lise gençliği dahi kişisel istikballerini ve rahat hayatlarını bir kenara bırakarak bağımsız yaşama uğruna canlarını feda etmeyi şeref saymıştır.",
+        "alternativeAnswers": [
+          "Türk milletinde bağımsızlığın ve vatan toprağının can ve gelecek dahil her şeyden önce geldiğini, hürriyet uğruna hiçbir fedakârlıktan kaçınılmayacağını gösterir.",
+          "Milletimizin bağımsızlık bilincinin genç yaşta bir vatan borcu olarak içselleştirildiğini ve tehlike anında topyekûn bir vatan savunması refleksi gösterildiğini kanıtlar."
+        ],
+        "rubric": [
+          {
+            "item": "Vatan sevgisinin ve bağımsızlığın önceliğinin vurgulanması",
+            "pts": 7
+          },
+          {
+            "item": "Gençlerin fedakârlığının millî şuur boyutuyla gerekçelendirilmesi",
+            "pts": 7
+          }
+        ]
+      },
+      {
+        "number": 6,
+        "outcome": "SB.7.2.1",
+        "outcomeTitle": "Küreselleşmenin insan ve toplum hayatı üzerindeki etkilerini analiz edebilme",
+        "difficulty": "Orta",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "points": 14,
+        "stimulus": "Küreselleşmeyle birlikte tüm dünyada tek tip giyim markaları, aynı yabancı şarkılar ve aynı fast-food restoran zincirleri yaygınlaşmaktadır. Bu durum karşısında bazı ülkeler geleneksel mutfaklarını, yerel zanaatlarını ve ana dillerini korumak için özel festivaller düzenlemektedir. (Ders Kitabı 1. Kitap, Sayfa 65)",
+        "question": "a) Küreselleşmenin yerel kültürler üzerinde yarattığı 'kültürel tek tipleşme' tehlikesini açıklayınız.\nb) Kendi öz kültürümüzü korumak için günlük hayatımızda alabileceğimiz 1 somut önlem yazınız.",
+        "answer": "a) Kültürel Tek Tipleşme: Popüler kültürün küresel pazarlama yoluyla tüm dünyayı etkisi altına alarak yerel gelenekleri, halk oyunlarını, yöresel tatları ve dilleri unutturması ve herkesi tek bir tüketim kalıbına sokması riskidir.\nb) Somut Önlem: Fast-food yerine geleneksel Türk mutfağını ve yöresel ev yemeklerini tercih etmek; ana dilimizde yabancı sözcükler yerine Türkçe kelimeleri kullanmaya özen göstermek.",
+        "alternativeAnswers": [
+          "a) Güçlü küresel kültürlerin yerel kimlikleri yok ederek dünya genelinde tekdüze bir yaşam ve tüketim tarzı oluşturmasıdır. b) Geleneksel el sanatlarımızı öğrenmek, yerli üreticileri desteklemek ve millî bayramlarımızı coşkuyla kutlamaktır.",
+          "a) Özgün millî kültürlerin popüler kültür baskısı altında asimile olması ve çeşitliliğin kaybolmasıdır. b) Türkçemizi yabancı kelimelerden korumak ve halk müziği gibi öz kültür miraslarımıza sahip çıkmaktır."
+        ],
+        "rubric": [
+          {
+            "item": "Kültürel tek tipleşme ve yerel zenginliğin kaybolması tehlikesinin açıklanması",
+            "pts": 7
+          },
+          {
+            "item": "Öz kültürü korumaya yönelik gerçekçi ve somut bir bireysel önlemin yazılması",
+            "pts": 7
+          }
+        ]
+      },
+      {
+        "number": 7,
+        "outcome": "SB.7.2.1",
+        "outcomeTitle": "Küreselleşmenin insan ve toplum hayatı üzerindeki etkilerini analiz edebilme",
+        "difficulty": "Orta",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Kurgusal Tarihi Vaka & Karar",
+        "points": 14,
+        "stimulus": "Etiyopya'da keşfedilen kahve, Yemen üzerinden 16. yüzyılda Osmanlı'ya gelmiş; Türkler tarafından pişirme yöntemi geliştirilerek 'Türk kahvesi' adıyla Avrupa'ya ve tüm dünyaya yayılmıştır. Bugün dünyanın her ülkesinde kahve kültürü yaşamaktadır.",
+        "question": "Kahvenin bu tarihsel yolculuğundan hareketle, küreselleşmenin toplumlar arası kültürel etkileşime ve kültürümüzün dünyaya tanıtılmasına 2 katkısını yazınız.",
+        "answer": "1. Kültürel Etkileşim ve Zenginleşme: Bir coğrafyada ortaya çıkan bir değerin farklı medeniyetlerin katkısıyla harmanlanıp evrensel bir kültüre dönüşmesini sağlar.\n2. Millî Değerlerimizin Evrensel Tanıtımı: Türk kahvesi pişirme ve sunum geleneği sayesinde kültürümüzün dünyaya tanıtılmasını ve UNESCO kültürel mirası olarak tescillenmesini sağlamıştır.",
+        "alternativeAnswers": [
+          "1) Farklı toplumların geleneklerini birleştirerek ortak bir küresel yaşam kültürü oluşturur. 2) Millî kültürümüzün özgün lezzetlerinin dünyaca benimsenip Türkiye'nin tanıtımına güç katmasını sağlar.",
+          "1) Ticaret ve iletişim yoluyla kültürler arası diyaloğu ve hoşgörüyü pekiştirir. 2) Somut olmayan kültürel mirasımızın küresel ölçekte saygınlık kazanmasına zemin hazırlar."
+        ],
+        "rubric": [
+          {
+            "item": "Kültürel etkileşim ve küresel harmanlanma boyutunun açıklanması",
+            "pts": 7
+          },
+          {
+            "item": "Millî kültürün dünyaca tanınması ve saygınlık boyutunun belirtilmesi",
+            "pts": 7
+          }
+        ]
+      }
+    ]
+  },
+  "sosyal_bilgiler_setB": {
+    "title": "7. Sınıf Senaryo 1 (7 Soru) (Özgün Sınav Seti - 7 Soru)",
+    "model": "MEBİ Kural Tabanlı Standart Motor",
+    "isFallback": true,
+    "questionsCount": 7,
+    "questions": [
+      {
+        "number": 1,
+        "outcome": "SB.7.1.1",
+        "outcomeTitle": "Dâhil olduğu gruplarda ve sosyal hayatta etkili iletişimin önemini sorgulayabilme",
+        "difficulty": "Kolay",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "points": 15,
+        "stimulus": "Grup ödevi toplantısında Kerem, arkadaşı Zehra fikrini açıklamaya çalışırken sürekli onun sözünü kesmiş ve 'Sen anlamazsın, benim dediğim planı yapmalıyız' demiştir.",
+        "question": "Kerem'in bu davranışı grup çalışmalarında hangi iki temel soruna yol açar? Açıklayınız.",
+        "answer": "1. Takım Ruhunun ve Güvenin Yok Olması: Arkadaşının fikrine saygı duyulmadığı için Zehra kendisini değersiz hisseder ve çalışmaya katkı sunmaktan vazgeçer.\n2. Ortak Aklın Engellenmesi: Farklı fikirlerin dinlenmemesi projenin zenginleşmesini engeller ve grubun başarı seviyesini düşürür.",
+        "alternativeAnswers": [
+          "1) Grup üyelerinin motivasyonunu kırarak iş birliğini ve çalışma isteğini bitirir. 2) Farklı ve yaratıcı bakış açılarının tartışılmasını engelleyerek ödevin kalitesini düşürür.",
+          "1) Grupta dışlanma ve iletişim çatışması yaratarak huzursuzluk doğurur. 2) Tek kişinin dayatması yüzünden ortak akıl ve dayanışma kültürünü yok eder."
+        ],
+        "rubric": [
+          {
+            "item": "Takım ruhu ve güven ortamının zedelenmesinin açıklanması",
+            "pts": 8
+          },
+          {
+            "item": "Farklı fikirlerin engellenip ortak aklın kaybolmasının belirtilmesi",
+            "pts": 7
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "outcome": "SB.7.1.1",
+        "outcomeTitle": "Dâhil olduğu gruplarda ve sosyal hayatta etkili iletişimin önemini sorgulayabilme",
+        "difficulty": "Kolay",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 15,
+        "stimulus": "Ali Bey, iş yerindeki çırağına hızlıca karmaşık bir iş tarif etmiş, çırağın anlayıp anlamadığını kontrol etmeden dükkândan ayrılmıştır. Akşam geldiğinde işin tamamen yanlış yapıldığını görmüştür.",
+        "question": "İletişim sürecinde 'geri bildirim (dönüt)' kavramını tanımlayarak, Ali Bey'in hatasını ve bu durumun nasıl engellenebileceğini açıklayınız.",
+        "answer": "• Dönüt: Alıcının, kaynağın gönderdiği mesajı doğru anlayıp anlamadığını göstermek için verdiği sözel veya davranışsal cevaptır.\n• Ali Bey'in Hatası ve Çözüm: Ali Bey mesajı iletmiş ancak geri bildirim almamıştır. 'Anlattıklarımı anladın mı, nasıl yapacağını bana bir tekrar eder misin?' diyerek çırağından dönüt alsaydı hata baştan önlenirdi.",
+        "alternativeAnswers": [
+          "Dönüt: İletilen mesajın hedefe ulaşıp doğru anlaşılıp anlaşılmadığını gösteren karşılıktır. Hata ve Çözüm: Ali Bey tek taraflı konuşmuş, çırağın kavradığını teyit etmemiştir; 'Bunu sırasıyla nasıl yapacağını özetler misin?' diyerek dönüt istemeliydi.",
+          "Dönüt: Alıcının gelen mesaja verdiği tepki ve geri yansıtmadır. Ali Bey çırağa soru sorma veya anladığını kontrol etme fırsatı vermemiştir; işe başlamadan önce kısa bir kontrol sorusuyla dönüt alması gerekirdi."
+        ],
+        "rubric": [
+          {
+            "item": "Geri bildirim (dönüt) kavramının doğru tanımlanması",
+            "pts": 8
+          },
+          {
+            "item": "Ali Bey'in iletişim hatasının ve teyit çözümünün açıklanması",
+            "pts": 7
+          }
+        ]
+      },
+      {
+        "number": 3,
+        "outcome": "SB.7.1.2",
+        "outcomeTitle": "Özel gereksinimli bireyler için fırsat eşitliğini sürdürmeye yönelik fikir üretebilme",
+        "difficulty": "Orta",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 14,
+        "stimulus": "Öğrenme güçlüğü (disleksi) çeken bir öğrencinin sınavlara diğer öğrencilerle tıpatıp aynı sürede ve aynı formatta girmesi onu zorlamaktadır.",
+        "question": "Bu öğrenci için MEB sınavlarında sağlanan 2 adil destek uygulamasını (fırsat eşitliği tedbirini) yazınız.",
+        "answer": "1. Disleksili öğrenciye sınav esnasında soruları tane tane seslendirecek özel bir 'okuyucu öğretmen' ve cevapları işaretleyecek 'kodlayıcı' görevlendirilmesi.\n2. Okuma hızındaki zorluğu dengelemek adına öğrenciye resmi ek sınav süresi (örneğin +15-20 dakika) tanımlanması.",
+        "alternativeAnswers": [
+          "1) Sınav sorularını sesli okuyacak okuyucu ve cevap kâğıdını dolduracak kodlayıcı temin edilmesi. 2) Okuma güçlüğünü telafi etmek amacıyla öğrenciye ek sınav süresi verilmesi.",
+          "1) Dikkat dağıtıcı unsurlardan arındırılmış tek kişilik özel sınav salonu tahsis edilmesi. 2) Yazı puntosu büyütülmüş ve sadeleştirilmiş soru kitapçığı ile süre desteği sunulması."
+        ],
+        "rubric": [
+          {
+            "item": "Okuyucu/kodlayıcı desteğinin belirtilmesi",
+            "pts": 8
+          },
+          {
+            "item": "Ek süre tanımlamasının belirtilmesi",
+            "pts": 6
+          }
+        ]
+      },
+      {
+        "number": 4,
+        "outcome": "SB.7.1.3",
+        "outcomeTitle": "Türk toplumunun millî meseleler karşısında gösterdiği tutum ve davranışlara ilişkin çıkarım yapabilme",
+        "difficulty": "Orta",
+        "level": "Karmaşık Bilişsel Süreçler",
+        "templateType": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 14,
+        "stimulus": "A Millî Kadın Voleybol Takımımız (Filenin Sultanları) veya Ampute Futbol Millî Takımımız dünya şampiyonu olduğunda 85 milyon vatandaşımız sokaklarda Türk bayraklarıyla sevinç gözyaşları dökmüştür.",
+        "question": "Sporcularımızın kazandığı uluslararası zaferlerin milletimiz üzerinde oluşturduğu birleştirici etkiyi 2 cümleyle açıklayınız.",
+        "answer": "Bu başarılar, tüm fertleri ortak bir gurur ve sevinç paydasında birleştirerek millî birlik ve aidiyet duygumuzu güçlendirir. Farklı görüş ve yaşam tarzına sahip tüm vatandaşların aynı bayrak altında tek yürek atmasını sağlar.",
+        "alternativeAnswers": [
+          "Uluslararası başarılar tüm toplumu ortak bir sevinçte buluşturarak millî kimlik ve öz güven duygumuzu pekiştirir. Bayrağımızın dalgalanması fertler arasındaki bağları kuvvetlendirir.",
+          "Kazanılan zaferler milletimizin ortak değerler etrafında kenetlenmesini sağlar ve toplumsal kaynaşmayı artırır. Başarı hissi ortak bir geleceğe inanma motivasyonu sunar."
+        ],
+        "rubric": [
+          {
+            "item": "Ortak gurur, sevinç ve millî aidiyet hissinin açıklanması",
+            "pts": 7
+          },
+          {
+            "item": "Toplumsal farklılıkları aşarak aynı bayrak altında kenetlenme etkisinin belirtilmesi",
+            "pts": 7
+          }
+        ]
+      },
+      {
+        "number": 5,
+        "outcome": "SB.7.1.3",
+        "outcomeTitle": "Türk toplumunun millî meseleler karşısında gösterdiği tutum ve davranışlara ilişkin çıkarım yapabilme",
+        "difficulty": "Zor",
+        "level": "Karmaşık Bilişsel Süreçler",
+        "templateType": "Metin İçi Delillendirme & Örtük Anlam",
+        "points": 14,
+        "stimulus": "Mondros Ateşkes Antlaşması sonrası vatan toprakları işgal edildiğinde, düzenli ordu henüz kurulmamışken halk kendi köylerinde ve kasabalarında Kuvâ-yı Millîye birlikleri kurarak düşmana karşı direnişe geçmiştir.",
+        "question": "Halkın kendi imkânlarıyla Kuvâ-yı Millîye'yi kurması, Türk milletinin esarete karşı tavrını nasıl ortaya koyar? Yazınız.",
+        "answer": "Bu durum, Türk milletinin bin yıllık tarihinde asla esarete boyun eğmediğini, ordusuz ve silahsız kalsa bile kendi iradesiyle vatanını savunacak bağımsızlık tutkusuna (hürriyet aşkına) sahip olduğunu gösterir.",
+        "alternativeAnswers": [
+          "Milletimizin hiçbir baskı ve işgale teslim olmayacağını, vatan savunmasını resmî güçler olmasa dahi kendi canıyla üstlenecek bağımsızlık tutkusunu ortaya koyar.",
+          "Türk milletinin bağımsızlığından asla taviz vermeyeceğini ve hür yaşama iradesinin her türlü zorluğu aşabilecek güçte olduğunu kanıtlar."
+        ],
+        "rubric": [
+          {
+            "item": "Türk milletinin hiçbir şartta esareti kabul etmeme karakterinin vurgulanması",
+            "pts": 7
+          },
+          {
+            "item": "Hürriyet aşkı ve topyekûn meşru savunma iradesinin gerekçeli açıklanması",
+            "pts": 7
+          }
+        ]
+      },
+      {
+        "number": 6,
+        "outcome": "SB.7.2.1",
+        "outcomeTitle": "Küreselleşmenin insan ve toplum hayatı üzerindeki etkilerini analiz edebilme",
+        "difficulty": "Orta",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 14,
+        "stimulus": "Dünya genelinde ortaya çıkan koronavirüs (COVID-19) gibi salgın hastalıklarda Türkiye, kendi ihtiyacını karşılamanın yanı sıra 150'den fazla ülkeye tıbbi yardım uçağı göndermiştir.",
+        "question": "Türkiye'nin bu insani yardımları, küreselleşen dünyada ülkemizin 'insani diplomasi ve dünya barışı' vizyonuna nasıl katkı sağlar? Açıklayınız.",
+        "answer": "Türkiye'nin din, dil ve ırk ayrımı gözetmeksizin dünyanın dört bir yanına şefkat eli uzatması, ülkemizin küresel vicdanın sesi olduğunu kanıtlar. Uluslararası arenada Türkiye'nin güvenilir, saygın ve 'dünya beşten büyüktür' anlayışıyla mazlumların yanında duran barışçıl liderliğini pekiştirir.",
+        "alternativeAnswers": [
+          "Zor durumda olan tüm ülkelere ayrım gözetmeksizin yardım eli uzatılması, Türkiye'nin küresel ölçekte vicdanlı ve güvenilir bir barış aktörü olduğunu pekiştirir.",
+          "Küresel krizlerde sergilenen bu dayanışma, ülkemizin uluslararası prestijini yükseltir ve insani diplomaside örnek bir dünya lideri konumuna taşır."
+        ],
+        "rubric": [
+          {
+            "item": "İnsani diplomasi ve küresel vicdan vizyonunun açıklanması",
+            "pts": 7
+          },
+          {
+            "item": "Türkiye'nin uluslararası saygınlığına ve barışa katkısının belirtilmesi",
+            "pts": 7
+          }
+        ]
+      },
+      {
+        "number": 7,
+        "outcome": "SB.7.2.1",
+        "outcomeTitle": "Küreselleşmenin insan ve toplum hayatı üzerindeki etkilerini analiz edebilme",
+        "difficulty": "Orta",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Görsel / Deney / Günlük Hayat Durumu",
+        "points": 14,
+        "stimulus": "Dünyanın bir bölgesinde atmosfere salınan sera gazları, binlerce kilometre ötedeki kutup buzullarının erimesine ve küresel iklim krizine neden olmaktadır. Bu durum karşısında tüm dünya devletleri ortak zirveler düzenlemektedir.",
+        "question": "Bu durumdan hareketle, çevre felaketlerinin çözülmesinde küresel iş birliğinin neden zorunlu olduğunu tek bir cümleyle gerekçelendiriniz.",
+        "answer": "Hava, su ve atmosfer sınır tanımaz; çevre krizleri tüm insanlığın ortak meselesi olduğundan, tek bir devletin tek başına başarabileceği bir süreç değil, bütün dünya milletlerinin ortak ve kararlı iş birliğini gerektiren küresel bir sorumluluktur.",
+        "alternativeAnswers": [
+          "Doğanın ve iklimin siyasi sınırları olmadığından, bir yerdeki kirlilik tüm gezegeni tehdit eder ve ancak ortak küresel eylem planlarıyla durdurulabilir.",
+          "İklim değişikliği ve çevre tahribatı sınır tanımayan evrensel bir sorun olduğu için tek taraflı çabalar yetersiz kalır ve tüm devletlerin ortak taahhüdünü gerektirir."
+        ],
+        "rubric": [
+          {
+            "item": "Çevre sorunlarının sınır tanımayan ortak niteliğinin açıklanması",
+            "pts": 7
+          },
+          {
+            "item": "Küresel ortak sorumluluk ve eylem zorunluluğunun vurgulanması",
+            "pts": 7
+          }
+        ]
+      }
+    ]
+  },
+  "din_kulturu_setA": {
+    "title": "7. Sınıf Senaryo 1 (8 Soru) (Özgün Sınav Seti - 8 Soru)",
+    "model": "MEBİ Kural Tabanlı Standart Motor",
+    "isFallback": true,
+    "questionsCount": 8,
+    "questions": [
+      {
+        "number": 1,
+        "outcome": "DKAB.7.1.1",
+        "outcomeTitle": "Melekleri sınıflandırabilme",
+        "difficulty": "Kolay",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 13,
+        "stimulus": "Dört büyük melekten ikisi evrendeki doğa olaylarını ve ahiretin başlangıç vaktini idare etmekle vazifelendirilmiştir. (Ders Kitabı 1. Kitap, Sayfa 19-20)",
+        "question": "Mikail (a.s.) ve İsrafil (a.s.)'ın yüce Allah tarafından verilen görevlerini birer cümleyle açıklayınız.",
+        "answer": "• Mikail (a.s.): Yağmur, rüzgâr, bitkilerin yeşermesi gibi tabiat olaylarını ve canlıların rızıklarını Allah'ın izniyle düzenlemekle görevli melektir.\n• İsrafil (a.s.): Kıyametin kopması (1. üfleniş) ve insanların yeniden diriltilmesi (2. üfleniş) için Sûr borusuna üflemekle görevlendirilmiş melektir.",
+        "alternativeAnswers": [
+          "Mikail doğa olaylarını ve rızıkları yönetir; İsrafil ise kıyametin kopması ve yeniden diriliş için Sûr'a üfler.",
+          "Mikail tabiat dengesini ve canlıların rızıklarını idare eder; İsrafil kıyamet ve ba's vaktinde Sûr borusuna üflemekle görevlidir."
+        ],
+        "rubric": [
+          {
+            "item": "Mikail'in tabiat olayları ve rızık görevinin doğru yazılması",
+            "pts": 7
+          },
+          {
+            "item": "İsrafil'in Sûr'a üfleme görevinin doğru yazılması",
+            "pts": 6
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "outcome": "DKAB.7.1.2",
+        "outcomeTitle": "Ahiret hayatının aşamalarını çözümleyebilme",
+        "difficulty": "Kolay",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Metin İçi Delillendirme & Örtük Anlam",
+        "points": 13,
+        "stimulus": "'Ölü toprağa can veren Allah, işte ölüleri de böyle diriltecektir...' Kur'an-ı Kerim'de kışın kuruyan ve ölen tabiatın ilkbaharda yemyeşil canlanması yeniden dirilişe delil gösterilir. (Ders Kitabı 1. Kitap, Sayfa 24)",
+        "question": "Tabiatın ilkbaharda yeniden dirilmesi ile ahiretteki 'Ba's' inancı arasındaki mantıksal bağı açıklayınız.",
+        "answer": "Kış mevsiminde kurumuş, ölmüş gibi duran ağaçlara ve toprağa baharda yeniden can veren sonsuz kudret sahibi Allah için, ölüp toprağa karışan insanları ikinci bir sûr üflenişiyle yeniden diriltmek (Ba's) son derece kolaydır. Tabiat her bahar gözlerimizin önünde Ba's gerçeğini sergilemektedir.",
+        "alternativeAnswers": [
+          "Kışın kurumuş toprağa ve ağaçlara baharda hayat veren Allah'ın, ölen insanları da kolaylıkla kabirlerinden diriltebileceğini gösterir.",
+          "Tabiatın her ilkbaharda canlanması Allah'ın yaratma kudretinin bir delilidir; insanları da aynı güçle yeniden diriltecektir."
+        ],
+        "rubric": [
+          {
+            "item": "Baharın dirilişi ile Ba's arasındaki analojinin açıklanması",
+            "pts": 7
+          },
+          {
+            "item": "Allah'ın sonsuz yaratma kudretiyle bağ kurulması",
+            "pts": 6
+          }
+        ]
+      },
+      {
+        "number": 3,
+        "outcome": "DKAB.7.1.2",
+        "outcomeTitle": "Ahiret hayatının aşamalarını çözümleyebilme",
+        "difficulty": "Orta",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 13,
+        "stimulus": "Mahşer meydanında toplanan insanlara dünyada yaptıkları bütün iyilik ve kötülüklerin yazılı olduğu amel defterleri verilecektir. (Ders Kitabı 1. Kitap, Sayfa 28)",
+        "question": "Amel defterinin sağından verilmesi ile solundan verilmesinin ahiretteki akıbet (sonuç) açısından anlamını açıklayınız.",
+        "answer": "• Defteri Sağdan Verilenler: Dünyada iman edip salih amel işleyen bahtiyar kullardır; hesapları kolay geçecek ve mükâfat olarak Cennet'e gideceklerdir.\n• Defteri Soldan Verilenler: Dünyada inkâr ve kötülük içinde yaşayanlardır; büyük bir pişmanlık ve hüsrana uğrayarak Cehennem azabına gideceklerdir.",
+        "alternativeAnswers": [
+          "Defteri sağdan verilenler imtihanı kazanıp cennete girecektir; soldan verilenler ise hüsrana uğrayıp cehennem azabıyla karşılaşacaktır.",
+          "Defterin sağdan verilmesi hesabı kolay geçip cennet mükâfatına kavuşmayı, soldan verilmesi ise mahcubiyet ve cehennem cezasını ifade eder."
+        ],
+        "rubric": [
+          {
+            "item": "Defteri sağdan verilenlerin durumu ve cennet akıbetinin yazılması",
+            "pts": 7
+          },
+          {
+            "item": "Defteri soldan verilenlerin hüsranı ve cehennem sonucunun açıklanması",
+            "pts": 6
+          }
+        ]
+      },
+      {
+        "number": 4,
+        "outcome": "DKAB.7.1.3",
+        "outcomeTitle": "Melek ve ahiret inancının insana kazandırdıkları konusunda analitik düşünebilme",
+        "difficulty": "Orta",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 13,
+        "stimulus": "'Kim zerre miktarı hayır işlemişse onu görür. Kim de zerre miktarı şer işlemişse onu görür.' (Zilzâl Suresi, 7-8. ayetler - Ders Kitabı 1. Kitap, Sayfa 30 (Dipnot 60))",
+        "question": "Bu ayetleri ilke edinen bir esnafın tartı ve ölçü yaparken hile yapmaktan neden şiddetle kaçınacağını ahiret sorumluluğu açısından açıklayınız.",
+        "answer": "Bu ayetleri kalbine yerleştiren bir esnaf bilir ki kimsenin görmediği bir gramlık eksik tartı dahi zayi olmayacak, Mizan terazisinde önüne çıkacaktır. Kul hakkının hesabını verememe korkusu ve ilahi adalete olan sarsılmaz inancı onu her türlü hile ve haksızlıktan kesin olarak alıkoyar.",
+        "alternativeAnswers": [
+          "Zerre kadar haksızlığın bile Mizan terazisinde hesaba çekileceğini bilen esnaf, kul hakkından korktuğu için hile yapamaz.",
+          "En küçük bir eksik tartının dahi amel defterine yazılacağını ve hesabının verileceğini bildiği için ölçüde adalete tam riayet eder."
+        ],
+        "rubric": [
+          {
+            "item": "Zerre kadar hakkın hesabının verileceği bilincinin açıklanması",
+            "pts": 7
+          },
+          {
+            "item": "Kul hakkı ve Mizan terazisi korkusunun dürüstlüğe etkisinin yazılması",
+            "pts": 6
+          }
+        ]
+      },
+      {
+        "number": 5,
+        "outcome": "DKAB.7.1.3",
+        "outcomeTitle": "Melek ve ahiret inancının insana kazandırdıkları konusunda analitik düşünebilme",
+        "difficulty": "Orta",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Dilemma (İkilem) & Çözüm Değerlendirme",
+        "points": 12,
+        "stimulus": "Geceleri karanlıktan korkan veya yalnız kaldığında endişelenen bir çocuğa annesi koruyucu meleklerin (Hafaza melekleri) varlığından bahsetmiştir. (Ders Kitabı 1. Kitap, Sayfa 21 ve 34)",
+        "question": "Hafaza meleklerine inanmanın insan psikolojisine kazandırdığı manevi huzur ve güven hissini açıklayınız.",
+        "answer": "Hafaza meleklerine inanan insan, kâinatta yapayalnız, kimsesiz ve sahipsiz olmadığını idrak eder. Yüce Yaratıcının kendisini görünmeyen koruyucu güçlerle muhafaza ettiğini bilmek insana derin bir iç huzuru, güven ve manevi cesaret verir; kaygı ve yalnızlık hissini yok eder.",
+        "alternativeAnswers": [
+          "Kişinin dünyada sahipsiz ve savunmasız olmadığını, Yüce Allah'ın koruyucu meleklerle kendisini gözettiğini bilmesi manevi güven ve cesaret verir.",
+          "Hafaza melekleri inancı insanı yalnızlık ve sahipsizlik korkusundan kurtararak kalbine iç huzuru, güven ve ferahlık aşılar."
+        ],
+        "rubric": [
+          {
+            "item": "Yalnız ve sahipsiz olunmadığı bilincinin vurgulanması",
+            "pts": 6
+          },
+          {
+            "item": "Manevi güven, cesaret ve kaygıların giderilmesinin açıklanması",
+            "pts": 6
+          }
+        ]
+      },
+      {
+        "number": 6,
+        "outcome": "DKAB.7.1.3",
+        "outcomeTitle": "Melek ve ahiret inancının insana kazandırdıkları konusunda analitik düşünebilme",
+        "difficulty": "Orta",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 12,
+        "stimulus": "Ecdadımız Osmanlı'da kışın dağlardaki kurtlar ve kuşlar aç kalmasın diye vakıflar kurulmuş, cami ve medrese duvarlarına zarif kuş sarayları inşa edilmiştir. (Ders Kitabı 1. Kitap, Sayfa 35)",
+        "question": "Canlılara gösterilen bu derin merhametin arkasındaki melek ve ahiret hesabı bilincini açıklayınız.",
+        "answer": "İslam inancına göre kıyamet gününde dilsiz hayvanların hakkı dahi mahşerde sorulacaktır. Hayvanlara yapılan bir yudum su iyiliğinin amel defterine sevap yazılacağı inancı, ecdadımızı kuşlara dahi saray yapan eşsiz bir merhamet medeniyeti inşa etmeye sevk etmiştir.",
+        "alternativeAnswers": [
+          "Hayvanlara yapılan merhametin amel defterine yazılacağını ve hayvan haklarının dahi ahirette sorulacağını bilmenin doğurduğu şuurudur.",
+          "Dilsiz canlıların hakkının dahi mahşerde aranacağı ve her iyiliğin mükâfatlandırılacağı inancının oluşturduğu merhamet ahlakıdır."
+        ],
+        "rubric": [
+          {
+            "item": "Hayvan haklarının ahirette sorulacağı inancının yazılması",
+            "pts": 6
+          },
+          {
+            "item": "Merhamet ve amel defteri bilinciyle bağ kurulması",
+            "pts": 6
+          }
+        ]
+      },
+      {
+        "number": 7,
+        "outcome": "DKAB.7.1.4",
+        "outcomeTitle": "Nâs suresini ve bu surenin anlamını okuyarak yorumlayabilme",
+        "difficulty": "Zor",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "points": 12,
+        "stimulus": "Kerem: 'Nâs suresinde sadece dışımızdaki düşmanlardan bahsedilir' demiştir. Alper ise surenin asıl insanın iç dünyasına fitne sokan sinsi vesveselere dikkat çektiğini belirtmiştir. (Ders Kitabı 1. Kitap, Sayfa 38-39)",
+        "question": "Nâs suresindeki 'vesvese' kavramını açıklayınız. İnsan aklına gelen vesveselere karşı surenin önerdiği temel koruma yöntemi nedir?",
+        "answer": "• Vesvese: İnsanın kalbine ve zihnine gizlice fısıldanan, onu hayırdan alıkoyup kötülüğe, şüpheye ve ümitsizliğe sevk eden sinsi telkinlerdir.\n• Korunma Yöntemi: Bu fısıltılara kapılmayıp doğrudan insanların yegane Rabbi, Meliki ve İlahı olan Yüce Allah'a sığınmak ve O'ndan yardım dilemektir.",
+        "alternativeAnswers": [
+          "Vesvese, kalbe gizlice fısıldanan kötü ve şüpheci düşüncelerdir; korunma yolu insanların Rabbi olan Allah'a sığınmak ve dua etmektir.",
+          "Vesvese insanın aklını çelmeye çalışan sinsi şüphelerdir; çaresi ise doğrudan Yüce Allah'a (Rab, Melik, İlah) sığınmaktır."
+        ],
+        "rubric": [
+          {
+            "item": "Vesvese kavramının doğru tanımlanması",
+            "pts": 6
+          },
+          {
+            "item": "Doğrudan Allah'a sığınma çözümünün açıklanması",
+            "pts": 6
+          }
+        ]
+      },
+      {
+        "number": 8,
+        "outcome": "DKAB.7.2.1",
+        "outcomeTitle": "Hac ve umre ibadetlerini çözümleyebilme",
+        "difficulty": "Zor",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 12,
+        "stimulus": "Hac ibadetinin geçerli olabilmesi için yerine getirilmesi zorunlu olan 3 temel farz (rükn) bulunmaktadır. Bu farzlardan biri eksik olduğunda hac geçerli olmaz. Hacı adayları ayrıca ihrama girmeden geçemeyecekleri belirlenmiş sınır noktalarına riayet ederler. (Ders Kitabı 1. Kitap, Sayfa 52-56)",
+        "question": "a) Haccın yerine getirilmesi zorunlu olan 3 temel farzını (rüknünü) yazınız.\nb) Hacı adaylarının ihrama girmeden geçmelerinin yasak olduğu coğrafi sınırlara verilen isim nedir?",
+        "answer": "a) Haccın 3 Temel Farzı: 1. İhrama girmek, 2. Arafat'ta vakfe yapmak, 3. Kâbe'yi tavaf etmek (Ziyaret tavafı).\nb) İhrama girme sınırı olan bu noktalara 'Mîkât' denir.",
+        "alternativeAnswers": [
+          "a) 1. İhram, 2. Arafat vakfesi, 3. Kâbe'yi tavaf etmek (ziyaret tavafı). b) Mîkât sınırları.",
+          "a) İhrama girmek, Arafat vakfesi ve farz olan ziyaret tavafı. b) Mîkât mahalleri/noktaları."
+        ],
+        "rubric": [
+          {
+            "item": "Haccın 3 temel farzının (ihram, Arafat vakfesi, tavaf) eksiksiz yazılması",
+            "pts": 7
+          },
+          {
+            "item": "Mîkât sınır kavramının doğru tanımlanması",
+            "pts": 5
+          }
+        ]
+      }
+    ]
+  },
+  "din_kulturu_setB": {
+    "title": "7. Sınıf Senaryo 1 (8 Soru) (Özgün Sınav Seti - 8 Soru)",
+    "model": "MEBİ Kural Tabanlı Standart Motor",
+    "isFallback": true,
+    "questionsCount": 8,
+    "questions": [
+      {
+        "number": 1,
+        "outcome": "DKAB.7.1.1",
+        "outcomeTitle": "Melekleri sınıflandırabilme",
+        "difficulty": "Kolay",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 13,
+        "stimulus": "Melekler gözle görülmeyen nurani varlıklardır. İnsanlardan ve cinlerden çok farklı yaratılış özelliklerine sahiptirler.",
+        "question": "Meleklerin insanlardan ayrılan 2 temel yaratılış ve ahlaki özelliğini (yeme-içme, cinsiyet, günah işleme durumları bakımından) yazınız.",
+        "answer": "1. Yeme, içme, uyuma, evlenme ve cinsiyet gibi biyolojik ve beşeri ihtiyaçları yoktur.\n2. İradeleri yalnızca iyiliğe programlanmıştır; günah işlemezler, kötülük yapamazlar ve Allah'ın emirlerine eksiksiz ve koşulsuz itaat ederler.",
+        "alternativeAnswers": [
+          "Yeme, içme, uyuma ve cinsiyet gibi bedensel ihtiyaçları yoktur; günah işlemezler ve Allah'ın emirlerine daima itaat ederler.",
+          "Nurdan yaratıldıkları için insani biyolojik ihtiyaçları bulunmaz; iradeleri sadece hayra yönelik olup asla günah işlemezler."
+        ],
+        "rubric": [
+          {
+            "item": "Biyolojik ihtiyaçların (yeme-içme/cinsiyet) olmamasının yazılması",
+            "pts": 7
+          },
+          {
+            "item": "Günahsızlık ve tam itaat özelliğinin yazılması",
+            "pts": 6
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "outcome": "DKAB.7.1.2",
+        "outcomeTitle": "Ahiret hayatının aşamalarını çözümleyebilme",
+        "difficulty": "Kolay",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Metin İçi Delillendirme & Örtük Anlam",
+        "points": 13,
+        "stimulus": "'Güneş dürüldüğü zaman, yıldızlar döküldüğü zaman, dağlar yürütüldüğü zaman...' (Tekvîr Suresi, 1-3. ayetler)",
+        "question": "Tekvîr suresinde tasvir edilen bu kozmik olay ahiret hayatının hangi ilk durağını anlatmaktadır? Bu olayın ardından yaşanacak aşamayı yazınız.",
+        "answer": "• Tasvir Edilen Aşama: Kıyamet (Evrenin düzeninin bozulup dünya hayatının bütünüyle sona ermesi).\n• Sonrasındaki Aşama: İkinci sûr üflenişiyle birlikte insanların mezarlarından yeniden diriltilmesi (Ba's) ve Mahşer meydanına toplanmasıdır.",
+        "alternativeAnswers": [
+          "Anlatılan aşama kıyamettir; ardından ikinci sûr üflenişiyle insanların kabirlerinden yeniden dirilmesi (Ba's) aşaması gelecektir.",
+          "Kozmik düzenin yıkıldığı kıyamet aşamasıdır; sonrasında yeniden dirilme (Ba's) ve mahşerde toplanma (haşir) gerçekleşecektir."
+        ],
+        "rubric": [
+          {
+            "item": "Kıyamet olayının doğru tespiti",
+            "pts": 7
+          },
+          {
+            "item": "Kıyamet sonrası diriliş (Ba's) aşamasının açıklanması",
+            "pts": 6
+          }
+        ]
+      },
+      {
+        "number": 3,
+        "outcome": "DKAB.7.1.2",
+        "outcomeTitle": "Ahiret hayatının aşamalarını çözümleyebilme",
+        "difficulty": "Orta",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 13,
+        "stimulus": "Ahiret hayatı insanın ölümüyle başlayıp ebediyete kadar süren basamaklardan oluşur: Kıyamet, Berzah, Ba's, Haşir-Mahşer, Hesap-Mizan, Cennet-Cehennem.",
+        "question": "Ölüm ile başlayan bu zincirde: a) Kıyamet ile yeniden diriliş arasındaki ara bekleme dönemine ne ad verilir? b) Amellerin tartıldığı hassas ilahi teraziye ne ad verilir?",
+        "answer": "a) Kıyamet ile diriliş arasındaki ara kabir hayatına: Berzah denir.\nb) Amellerin en ince ayrıntısına kadar tartıldığı ilahi adalet terazisine: Mizan denir.",
+        "alternativeAnswers": [
+          "a) Kabir hayatına Berzah denir. b) Amellerin tartıldığı hassas teraziye Mizan denir.",
+          "a) Berzah âlemi, b) Mizan (ilahi adalet terazisi)."
+        ],
+        "rubric": [
+          {
+            "item": "Berzah kavramının doğru yazılması",
+            "pts": 7
+          },
+          {
+            "item": "Mizan kavramının doğru yazılması",
+            "pts": 6
+          }
+        ]
+      },
+      {
+        "number": 4,
+        "outcome": "DKAB.7.1.3",
+        "outcomeTitle": "Melek ve ahiret inancının insana kazandırdıkları konusunda analitik düşünebilme",
+        "difficulty": "Orta",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "points": 13,
+        "stimulus": "Peygamber Efendimiz (s.a.v.) bir hadisinde ahirette iflas eden kişiyi (müflis) tarif ederken: 'Namazı, orucu vardır fakat birine sövmüş, birine iftira atmış, birinin hakkını yemiştir; iyilikleri hak sahiplerine dağıtılır...' buyurmuştur.",
+        "question": "Bu hadisten hareketle, ahirete inanan bir gencin arkadaşları arkasından konuşmaktan (gıybetten) neden titizlikle sakınması gerektiğini açıklayınız.",
+        "answer": "Gıybet ve iftira en ağır kul haklarındandır. Ahirete inanan mümin bilir ki binbir emekle kıldığı namazların ve tuttuğu oruçların sevapları, arkasından konuştuğu insanlara hak olarak aktarılacaktır; sevapları tükenince de onların günahlarını yüklenecektir. Bu korku insanı dilini korumaya ve kul hakkından titizlikle sakınmaya sevk eder.",
+        "alternativeAnswers": [
+          "Gıybet ağır bir kul hakkıdır; dedikodu yapan kişinin ibadet sevapları hak sahibine verilir, bu da ahirette iflas etmesine yol açar.",
+          "Başkalarının arkasından konuşmak kul hakkı doğurur ve sevapların silinip başkasına devredilmesine neden olur; bu korku kişiyi dilini tutmaya sevk eder."
+        ],
+        "rubric": [
+          {
+            "item": "Gıybetin kul hakkı niteliğinin ve müflis hadisiyle bağının açıklanması",
+            "pts": 7
+          },
+          {
+            "item": "Sevapların devredilmesi tehlikesi karşısında dilin korunmasının vurgulanması",
+            "pts": 6
+          }
+        ]
+      },
+      {
+        "number": 5,
+        "outcome": "DKAB.7.1.3",
+        "outcomeTitle": "Melek ve ahiret inancının insana kazandırdıkları konusunda analitik düşünebilme",
+        "difficulty": "Orta",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 12,
+        "stimulus": "Kuran-ı Kerim'de meleklerin müminler için bağışlanma diledikleri ve 'Rabbimiz! Onları bağışla ve onları cehennem azabından koru' diye dua ettikleri bildirilmektedir.",
+        "question": "Görünmeyen nurani meleklerin kendisi için hayır dua ettiğini bilmek bir mümine nasıl bir manevi destek ve moral sağlar? Açıklayınız.",
+        "answer": "Günahsız ve temiz varlıklar olan meleklerin kendisi için Allah'a dua ve istiğfar ettiğini bilmek, müminin kalbine tarifsiz bir manevi ferahlık ve ümit aşılar. İyilik yolunda yürürken arkasında gök ehlinin duasını hissetmek kişiyi ibadet ve ahlakta daha gayretli olmaya motive eder.",
+        "alternativeAnswers": [
+          "Günahsız nurani meleklerin kendisi için istiğfar ettiğini bilmek mümine manevi güç verir ve iyilik yolunda moralini yükseltir.",
+          "İnsana kalbi ferahlık aşılar, yalnız olmadığını hissettirir ve ibadet ile ahlakta daha samimi olmaya teşvik eder."
+        ],
+        "rubric": [
+          {
+            "item": "Manevi ferahlık ve ümit aşılama etkisinin yazılması",
+            "pts": 6
+          },
+          {
+            "item": "İyilik ve ahlakta moral/motivasyon boyutunun açıklanması",
+            "pts": 6
+          }
+        ]
+      },
+      {
+        "number": 6,
+        "outcome": "DKAB.7.1.3",
+        "outcomeTitle": "Melek ve ahiret inancının insana kazandırdıkları konusunda analitik düşünebilme",
+        "difficulty": "Orta",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Öğrenci Diyaloğu & Kavram Yanılgısı",
+        "points": 12,
+        "stimulus": "Bir tüccara arkadaşı 'Vergi kaçırıp sahte fatura düzenlersen çok daha zengin olursun, kimse de yakalayamaz' demiştir. Tüccar ise 'Maliye görmese de Allah görüyor, Kiramen Katibin yazıyor' diyerek reddetmiştir.",
+        "question": "Tüccarın bu tavrı toplumda haksız kazanç ve yolsuzlukları önlemede kanunlardan önce hangi manevi gücün etkili olduğunu gösterir? Açıklayınız.",
+        "answer": "Bu durum, suç ve haksızlıkları önlemede yalnızca polis ve kanun gibi dış denetimlerin yetmeyeceğini; asıl caydırıcı gücün insanın kalbindeki 'Allah'ın her şeyi bildiği, meleklerin kaydettiği ve ahirette zerresine kadar hesap verileceği' inancından doğan iç denetim (takva ve vicdan) olduğunu gösterir.",
+        "alternativeAnswers": [
+          "Suçları önlemede kanunlardan önce meleklerin amelleri yazdığı ve Allah'ın her şeyi bildiği inancından doğan iç denetimin (vicdan) etkili olduğunu gösterir.",
+          "Asıl caydırıcı gücün dış polis denetimi değil, ahirette hesap verme inancından kaynaklanan otokontrol ve takva duygusu olduğunu kanıtlar."
+        ],
+        "rubric": [
+          {
+            "item": "İç denetim ve takva/vicdan şuurunun vurgulanması",
+            "pts": 6
+          },
+          {
+            "item": "Meleklerin kaydı ve ahiret hesabı bilincinin açıklanması",
+            "pts": 6
+          }
+        ]
+      },
+      {
+        "number": 7,
+        "outcome": "DKAB.7.1.4",
+        "outcomeTitle": "Nâs suresini ve bu surenin anlamını okuyarak yorumlayabilme",
+        "difficulty": "Zor",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Metin İçi Delillendirme & Örtük Anlam",
+        "points": 12,
+        "stimulus": "Peygamber Efendimiz (s.a.v.) Felak ve Nâs surelerine 'koruyucu iki sure' anlamında 'Muavvizeteyn' adını vermiş ve her sabah-akşam bu iki sureyi okuyarak Allah'a sığınmıştır.",
+        "question": "Nâs suresini okuyan bir müminin günlük hayatında nazar, büyü, vesvese veya karanlık korkular karşısında nasıl bir manevi sığınak bulduğunu açıklayınız.",
+        "answer": "Nâs suresini şuurlu şekilde okuyan mümin, batıl inançlara, muskacılara, kuruntulara ve karanlık vesveselere prim vermez. İnsanların tek sahibine ve koruyucusuna sığındığını bilerek tüm korkularından sıyrılır, kalbi tevhid inancının huzur ve emniyetiyle dolar.",
+        "alternativeAnswers": [
+          "Batıl inanç ve kuruntulara kapılmadan tüm varlıkların sahibi olan Allah'a sığınarak kalbi bir emniyet ve huzur bulmasını sağlar.",
+          "Tevhid bilinciyle karanlık korkulardan ve vesveselerden arınır; en büyük sığınağın ve koruyucunun Yüce Allah olduğunu bilerek rahatlar."
+        ],
+        "rubric": [
+          {
+            "item": "Batıl inanç ve kuruntulardan uzaklaşma etkisinin yazılması",
+            "pts": 6
+          },
+          {
+            "item": "Tevhid inancıyla emniyet ve huzur bulma boyutunun açıklanması",
+            "pts": 6
+          }
+        ]
+      },
+      {
+        "number": 8,
+        "outcome": "DKAB.7.2.1",
+        "outcomeTitle": "Hac ve umre ibadetlerini çözümleyebilme",
+        "difficulty": "Zor",
+        "level": "Basit Bilişsel Süreçler",
+        "templateType": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 12,
+        "stimulus": "Emre Bey ailesiyle birlikte Mekke'ye gitmiş; Kabe'yi tavaf etmiş, Safa ile Merve arasında sa'y yapmış ve tıraş olup ihramdan çıkmıştır. Ancak Arafat'a çıkmamış ve kurban kesmemiştir.",
+        "question": "a) Emre Bey'in yaptığı bu ibadet hac mıdır umre midir?\nb) Hac ile umre arasındaki 2 temel farkı yazınız.",
+        "answer": "a) Emre Bey'in yaptığı ibadet Umre'dir.\nb) Hac ile Umre Arasındaki 2 Temel Fark:\n1. Hac farz bir ibadettir ve sadece Kurban Bayramı günlerinde (Zilhicce ayı) yapılır; Umre ise sünnettir ve hac günleri dışındaki yılın her vaktinde yapılabilir.\n2. Hacda Arafat vakfesi, Müzdelife vakfesi ve kurban kesme şartı vardır; Umrede ise vakfe ve kurban yoktur.",
+        "alternativeAnswers": [
+          "a) Umre yapmıştır. b) Hac farzdır ve sadece belirli günlerde yapılır, umre sünnettir ve her zaman yapılabilir; hacda Arafat vakfesi ve kurban vardır, umrede yoktur.",
+          "a) Umre ibadetidir. b) 1) Hac farz olup Zilhicce ayında yapılır, umre ise sünnet olup yıl boyu yapılabilir. 2) Hacda Arafat vakfesi farzdır, umrede vakfe bulunmaz."
+        ],
+        "rubric": [
+          {
+            "item": "Umre ibadetinin doğru teşhis edilmesi",
+            "pts": 3
+          },
+          {
+            "item": "Hüküm/zaman ve vakfe/kurban farklarının doğru yazılması",
+            "pts": 9
+          }
+        ]
+      }
+    ]
+  }
+}
