@@ -68,6 +68,13 @@ export const OFFICIAL_OUTCOMES: Record<string, OfficialOutcomeMeta> = {
     canonicalTitle: "İslam’ın paylaşma ve yardımlaşmaya verdiği önemi ayet ve hadisler ışığında yorumlar.",
     cognitiveLevel: "Karmaşık Bilişsel Süreçler"
   },
+  "DKAB.5.1.1": {
+    code: "DKAB.5.1.1",
+    unit: "ALLAH İNANCI",
+    topic: "Evrendeki Mükemmel Düzen",
+    canonicalTitle: "Evrendeki mükemmel düzene ilişkin akıl yürütebilme",
+    cognitiveLevel: "Basit Bilişsel Süreçler"
+  },
   "DKAB.5.1.2": {
     code: "DKAB.5.1.2",
     unit: "Allah’ın Varlığı ve Birliği",
@@ -684,6 +691,13 @@ export const OFFICIAL_OUTCOMES: Record<string, OfficialOutcomeMeta> = {
     canonicalTitle: "Toplumsal birliği sürdürmeye yönelik yardımlaşma ve dayanışma faaliyetlerine katkı sağlayabilme",
     cognitiveLevel: "Basit Bilişsel Süreçler"
   },
+  "SB.5.2.1": {
+    code: "SB.5.2.1",
+    unit: "EVİMİZ DÜNYA",
+    topic: "Yaşadığı İlin Göreceli Konumu",
+    canonicalTitle: "Yaşadığı ilin göreceli konum özelliklerini algılayabilme",
+    cognitiveLevel: "Basit Bilişsel Süreçler"
+  },
   "SB.6.1.1": {
     code: "SB.6.1.1",
     unit: "BİRLİKTE YAŞAMAK",
@@ -703,6 +717,13 @@ export const OFFICIAL_OUTCOMES: Record<string, OfficialOutcomeMeta> = {
     unit: "Toplumsal Sorunlar ve Çözümler Önerileri",
     topic: "Toplumsal Sorunlar ve Çözümler Önerileri",
     canonicalTitle: "Toplumsal hayatta karşılaşılan sorunlara yönelik çözüm önerilerini müzakere edebilme",
+    cognitiveLevel: "Basit Bilişsel Süreçler"
+  },
+  "SB.6.2.1": {
+    code: "SB.6.2.1",
+    unit: "EVİMİZ DÜNYA",
+    topic: "Ülkemizin, Kıtaların ve Okyanusların Konum Özellikleri",
+    canonicalTitle: "Ülkemizin, kıtaların ve okyanusların konum özelliklerini algılayabilme",
     cognitiveLevel: "Basit Bilişsel Süreçler"
   },
   "SB.7.1.1": {
@@ -1316,7 +1337,7 @@ export const MIDDLE_SCHOOL_OFFICIAL_SCENARIOS: Record<number, Partial<Record<Sub
         { outcomeCode: "SB.5.1.1", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Gruplar ve Roller" },
         { outcomeCode: "SB.5.1.2", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Kültürel Özelliklere Saygı ve Birlikte Yaşama Kültürü" },
         { outcomeCode: "SB.5.1.3", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Yardımlaşma ve Dayanışma Faaliyetlerinin Toplumsal Birliğe Etkisi" },
-        { outcomeCode: "SB.5.2.1", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Küreselleşmenin İnsan ve Toplum Hayatına Etkisi" },
+        { outcomeCode: "SB.5.2.1", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Yaşadığı İlin Göreceli Konumu" },
         ]
       },
       {
@@ -1339,7 +1360,7 @@ export const MIDDLE_SCHOOL_OFFICIAL_SCENARIOS: Record<number, Partial<Record<Sub
         { outcomeCode: "SB.5.1.1", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Gruplar ve Roller" },
         { outcomeCode: "SB.5.1.2", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Kültürel Özelliklere Saygı ve Birlikte Yaşama Kültürü" },
         { outcomeCode: "SB.5.1.3", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Yardımlaşma ve Dayanışma Faaliyetlerinin Toplumsal Birliğe Etkisi" },
-        { outcomeCode: "SB.5.2.1", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Küreselleşmenin İnsan ve Toplum Hayatına Etkisi" },
+        { outcomeCode: "SB.5.2.1", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Yaşadığı İlin Göreceli Konumu" },
         ]
       },
       {
@@ -1362,7 +1383,7 @@ export const MIDDLE_SCHOOL_OFFICIAL_SCENARIOS: Record<number, Partial<Record<Sub
         { outcomeCode: "SB.5.1.1", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Gruplar ve Roller" },
         { outcomeCode: "SB.5.1.2", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Kültürel Özelliklere Saygı ve Birlikte Yaşama Kültürü" },
         { outcomeCode: "SB.5.1.3", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Yardımlaşma ve Dayanışma Faaliyetlerinin Toplumsal Birliğe Etkisi" },
-        { outcomeCode: "SB.5.2.1", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Küreselleşmenin İnsan ve Toplum Hayatına Etkisi" },
+        { outcomeCode: "SB.5.2.1", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Yaşadığı İlin Göreceli Konumu" },
         ]
       },
     ],
@@ -1373,7 +1394,7 @@ export const MIDDLE_SCHOOL_OFFICIAL_SCENARIOS: Record<number, Partial<Record<Sub
         description: "MEB ÖDSGM 2026-2027 1. Dönem 1. Yazılı Konu Soru Dağılım Tablosu resmi Senaryo 1 (8 Soru) formatı (Toplam 100 Puan).",
         totalQuestions: 8,
         distributions: [
-        { outcomeCode: "Evrendeki", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Evrendeki Mükemmel Düzen" },
+        { outcomeCode: "DKAB.5.1.1", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Evrendeki Mükemmel Düzen" },
         { outcomeCode: "DKAB.5.1.2", questionCount: 3, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Allah’ın Varlığı ve Birliği" },
         { outcomeCode: "DKAB.5.1.3", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Allah’ın Güzel İsimleri" },
         { outcomeCode: "DKAB.5.1.4", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Bir Sure Öğreniyorum: İhlas Suresi" },
@@ -1386,7 +1407,7 @@ export const MIDDLE_SCHOOL_OFFICIAL_SCENARIOS: Record<number, Partial<Record<Sub
         description: "MEB ÖDSGM 2026-2027 1. Dönem 1. Yazılı Konu Soru Dağılım Tablosu resmi Senaryo 2 (7 Soru) formatı (Toplam 100 Puan).",
         totalQuestions: 7,
         distributions: [
-        { outcomeCode: "Evrendeki", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Evrendeki Mükemmel Düzen" },
+        { outcomeCode: "DKAB.5.1.1", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Evrendeki Mükemmel Düzen" },
         { outcomeCode: "DKAB.5.1.2", questionCount: 3, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Allah’ın Varlığı ve Birliği" },
         { outcomeCode: "DKAB.5.1.3", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Allah’ın Güzel İsimleri" },
         { outcomeCode: "DKAB.5.1.4", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Bir Sure Öğreniyorum: İhlas Suresi" },
@@ -1410,7 +1431,7 @@ export const MIDDLE_SCHOOL_OFFICIAL_SCENARIOS: Record<number, Partial<Record<Sub
         description: "MEB ÖDSGM 2026-2027 1. Dönem 1. Yazılı Konu Soru Dağılım Tablosu resmi Senaryo 4 (6 Soru) formatı (Toplam 100 Puan).",
         totalQuestions: 6,
         distributions: [
-        { outcomeCode: "Evrendeki", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Evrendeki Mükemmel Düzen" },
+        { outcomeCode: "DKAB.5.1.1", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Evrendeki Mükemmel Düzen" },
         { outcomeCode: "DKAB.5.1.2", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Allah’ın Varlığı ve Birliği" },
         { outcomeCode: "DKAB.5.1.3", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Allah’ın Güzel İsimleri" },
         { outcomeCode: "DKAB.5.1.4", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Bir Sure Öğreniyorum: İhlas Suresi" },
@@ -1694,7 +1715,7 @@ export const MIDDLE_SCHOOL_OFFICIAL_SCENARIOS: Record<number, Partial<Record<Sub
         { outcomeCode: "SB.6.1.1", questionCount: 2, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "Zaman İçinde Değişen Gruplar ve Roller" },
         { outcomeCode: "SB.6.1.2", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Kültürel Bağlarımızın ve Millî Değerlerimizin Toplumsal Birlikteliğe Etkisi" },
         { outcomeCode: "SB.6.1.3", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Toplumsal Sorunlar ve Çözümler Önerileri" },
-        { outcomeCode: "SB.6.2.1", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Küreselleşmenin İnsan ve Toplum Hayatına Etkisi" },
+        { outcomeCode: "SB.6.2.1", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Ülkemizin, Kıtaların ve Okyanusların Konum Özellikleri" },
         ]
       },
       {
@@ -1706,7 +1727,7 @@ export const MIDDLE_SCHOOL_OFFICIAL_SCENARIOS: Record<number, Partial<Record<Sub
         { outcomeCode: "SB.6.1.1", questionCount: 2, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "Zaman İçinde Değişen Gruplar ve Roller" },
         { outcomeCode: "SB.6.1.2", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Kültürel Bağlarımızın ve Millî Değerlerimizin Toplumsal Birlikteliğe Etkisi" },
         { outcomeCode: "SB.6.1.3", questionCount: 3, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Toplumsal Sorunlar ve Çözümler Önerileri" },
-        { outcomeCode: "SB.6.2.1", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Küreselleşmenin İnsan ve Toplum Hayatına Etkisi" },
+        { outcomeCode: "SB.6.2.1", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Ülkemizin, Kıtaların ve Okyanusların Konum Özellikleri" },
         ]
       },
       {
@@ -1718,7 +1739,7 @@ export const MIDDLE_SCHOOL_OFFICIAL_SCENARIOS: Record<number, Partial<Record<Sub
         { outcomeCode: "SB.6.1.1", questionCount: 2, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "Zaman İçinde Değişen Gruplar ve Roller" },
         { outcomeCode: "SB.6.1.2", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Kültürel Bağlarımızın ve Millî Değerlerimizin Toplumsal Birlikteliğe Etkisi" },
         { outcomeCode: "SB.6.1.3", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Toplumsal Sorunlar ve Çözümler Önerileri" },
-        { outcomeCode: "SB.6.2.1", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Küreselleşmenin İnsan ve Toplum Hayatına Etkisi" },
+        { outcomeCode: "SB.6.2.1", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Ülkemizin, Kıtaların ve Okyanusların Konum Özellikleri" },
         ]
       },
       {
@@ -1730,7 +1751,7 @@ export const MIDDLE_SCHOOL_OFFICIAL_SCENARIOS: Record<number, Partial<Record<Sub
         { outcomeCode: "SB.6.1.1", questionCount: 1, cognitiveLevel: "Karmaşık Bilişsel Süreçler", notes: "Zaman İçinde Değişen Gruplar ve Roller" },
         { outcomeCode: "SB.6.1.2", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Kültürel Bağlarımızın ve Millî Değerlerimizin Toplumsal Birlikteliğe Etkisi" },
         { outcomeCode: "SB.6.1.3", questionCount: 2, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Toplumsal Sorunlar ve Çözümler Önerileri" },
-        { outcomeCode: "SB.6.2.1", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Küreselleşmenin İnsan ve Toplum Hayatına Etkisi" },
+        { outcomeCode: "SB.6.2.1", questionCount: 1, cognitiveLevel: "Basit Bilişsel Süreçler", notes: "Ülkemizin, Kıtaların ve Okyanusların Konum Özellikleri" },
         ]
       },
       {
