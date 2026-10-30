@@ -8,6 +8,7 @@ import {
   checkStimulusQuality, 
   validateAndEnrichExamQuestions 
 } from './sourceMaterialValidator';
+import { parseExamJsonSafely } from './jsonParser';
 
 const POOL_NAMES_A = [
   'Selin', 'Kerem', 'Zehra', 'Burak', 'Aslı', 'Emre', 'Derya', 'Tarık', 
@@ -89,25 +90,85 @@ export function calculateQuestionSimilarity(textA: string, textB: string): numbe
   return union > 0 ? intersection / union : 0;
 }
 
+export interface AvoidItem {
+  questionText: string;
+  stimulus?: string;
+}
+
+export function extractNumbersFromText(text: string): string[] {
+  if (!text) return [];
+  const matches = text.match(/\b\d+(?:[.,]\d+)?\b/g);
+  return matches ? Array.from(new Set(matches)) : [];
+}
+
 export function isDuplicateOrTooSimilar(
   candidateQuestionText: string,
   candidateStimulus: string | undefined,
-  avoidQuestionTexts: string[],
+  avoidQuestionTextsOrItems: (string | AvoidItem)[],
   avoidStimuli: string[] = [],
   threshold = 0.38
 ): boolean {
-  for (const avoidQ of avoidQuestionTexts) {
-    if (calculateQuestionSimilarity(candidateQuestionText, avoidQ) >= threshold) {
+  const cQ = (candidateQuestionText || '').trim();
+  const cS = (candidateStimulus || '').trim();
+  const cFull = (cS ? cS + ' ' : '') + cQ;
+  const cNums = extractNumbersFromText(cFull);
+
+  for (let i = 0; i < avoidQuestionTextsOrItems.length; i++) {
+    const raw = avoidQuestionTextsOrItems[i];
+    let aQ = '';
+    let aS = '';
+
+    if (typeof raw === 'object' && raw !== null && 'questionText' in raw) {
+      aQ = (raw.questionText || '').trim();
+      aS = (raw.stimulus || '').trim();
+    } else if (typeof raw === 'string') {
+      aQ = raw.trim();
+      aS = (avoidStimuli[i] || '').trim();
+    }
+
+    if (!aQ && !aS) continue;
+
+    const aFull = (aS ? aS + ' ' : '') + aQ;
+    if (cFull === aFull || (cQ && cQ === aQ)) return true;
+
+    const fullSim = calculateQuestionSimilarity(cFull, aFull);
+    const qSim = calculateQuestionSimilarity(cQ, aQ);
+
+    // Senaryolu / Zengin Uyarıcılı Sorular (Her ikisinin de uyarıcısı zenginse)
+    if (cS.length > 25 && aS.length > 25) {
+      const stimSim = calculateQuestionSimilarity(cS, aS);
+      if (stimSim >= 0.50) {
+        if (qSim >= 0.40 || fullSim >= 0.55) return true;
+      }
+      if (stimSim < 0.35) {
+        // Kurgular ve bağlamlar tamamen farklı; salt yönerge/komut benzerliğinden ötürü mükerrer sayma
+        if (fullSim >= 0.65) return true;
+        continue;
+      }
+      if (fullSim >= 0.58) return true;
+      continue;
+    }
+
+    // Matematik / Fen Sorularında Sayısal / Parametrik Kontrol
+    const aNums = extractNumbersFromText(aFull);
+    if (cNums.length > 0 && aNums.length > 0) {
+      const commonNums = cNums.filter(n => aNums.includes(n));
+      // Tamamen farklı sayılar/parametreler içeriyorsa (örn. 542A & 4 ile 7832B & 9, ya da 72 ile 90)
+      if (commonNums.length === 0) {
+        if (fullSim >= 0.85) return true;
+        continue;
+      }
+      // Sayısal kesişim varsa benzerlik eşiği
+      if (fullSim >= 0.60 || qSim >= 0.60) return true;
+      continue;
+    }
+
+    // Düz Metin / Türkçe Anlama ve Dilbilgisi Soruları
+    if (fullSim >= threshold || qSim >= threshold) {
       return true;
     }
   }
-  if (candidateStimulus && candidateStimulus.length > 25) {
-    for (const avoidS of avoidStimuli) {
-      if (avoidS && avoidS.length > 25 && calculateQuestionSimilarity(candidateStimulus, avoidS) >= threshold) {
-        return true;
-      }
-    }
-  }
+
   return false;
 }
 
@@ -151,6 +212,7 @@ export async function generateMEBIQuestions(
   const difficultyPlanText = formatDifficultyPlanText(targetCount);
   const isGrade7Turkish = grade === 7 && subjectId === 'turkce';
   const isGrade7Math = grade === 7 && subjectId === 'matematik';
+  const isGrade7Science = grade === 7 && subjectId === 'fen_bilimleri';
 
   // Mevcut senaryoya ait hazır sınav sorularını tespit et ve kaçınılacaklar listesine ekle
   const baseExam = SAMPLE_EXAMS.find(e =>
@@ -159,18 +221,24 @@ export async function generateMEBIQuestions(
     (e.scenarioId === scenario.id || e.id.endsWith(scenario.id) || e.id.includes(scenario.id))
   );
 
-  const baseQuestionTexts = baseExam ? baseExam.questions.map(q => q.questionText) : [];
-  const baseStimuli = baseExam ? baseExam.questions.map(q => q.stimulus || '') : [];
+  const baseAvoidItems: AvoidItem[] = baseExam
+    ? baseExam.questions.map(q => ({ questionText: q.questionText, stimulus: q.stimulus || '' }))
+    : [];
 
-  const allAvoidTexts = Array.from(new Set([
-    ...baseQuestionTexts,
-    ...(options?.avoidQuestionTexts || [])
-  ])).filter(t => typeof t === 'string' && t.trim().length > 0);
+  const optQuestions = options?.avoidQuestionTexts || [];
+  const optStimuli = options?.avoidStimuli || [];
+  const optionAvoidItems: AvoidItem[] = optQuestions.map((q, idx) => ({
+    questionText: q,
+    stimulus: optStimuli[idx] || ''
+  }));
 
-  const allAvoidStimuli = Array.from(new Set([
-    ...baseStimuli,
-    ...(options?.avoidStimuli || [])
-  ])).filter(s => typeof s === 'string' && s.trim().length > 0);
+  const allAvoidItems: AvoidItem[] = [...baseAvoidItems, ...optionAvoidItems];
+  const allAvoidTexts = Array.from(new Set(allAvoidItems.map(item => item.questionText))).filter(
+    t => typeof t === 'string' && t.trim().length > 0
+  );
+  const allAvoidStimuli = Array.from(new Set(allAvoidItems.map(item => item.stimulus || ''))).filter(
+    s => typeof s === 'string' && s.trim().length > 0
+  );
 
   const variationToken = `${variationIndex + 1}_${Date.now().toString(36)}`;
 
@@ -179,7 +247,7 @@ export async function generateMEBIQuestions(
 - Bu sınav ${variationIndex + 1}. FARKLI varyasyon setidir (Varyasyon Belirteci: ${variationToken}).
 - Mevcut sınav kâğıdında bulunan aşağıdaki soru konularını, olay örgülerini, metinleri, karakterleri ve durumları KESİNLİKLE TEKRARLAMA:
 ${allAvoidTexts.slice(0, 7).map((t, i) => `  * Yasaklı/Mevcut Soru ${i + 1}: "${t.slice(0, 95)}..."`).join('\n')}
-- Yukarıdaki metin ve olaylardan TAMAMEN FARKLI, YEPYENİ bir kurgu, yeni karakterler ve taze bir hayat durumu inşa et!
+${allAvoidStimuli.length > 0 ? `- Mevcut kurgu ve uyarım metinlerini (${allAvoidStimuli.slice(0, 3).map(s => `"${s.slice(0, 50)}..."`).join(', ')}) kesinlikle tekrarlama.\n` : ''}- Yukarıdaki metin ve olaylardan TAMAMEN FARKLI, YEPYENİ bir kurgu, yeni karakterler ve taze bir hayat durumu inşa et!
 ` : `
 VARYASYON PLANI: Bu ${variationIndex + 1}. sınav varyasyonudur (Varyasyon Belirteci: ${variationToken}). Standart ve klişe kurguların dışında özgün senaryo oluşturunuz.
 `;
@@ -208,10 +276,30 @@ MEBİ 7. SINIF MATEMATİK DERS KİTABI VE ÖLÇME YÖNERGESİ (1. KİTAP 1. TEMA
    - MAT.7.1.4: Rasyonel sayılar ve işlemler içeren gerçek yaşam problemlerini çözebilme (Ders Kitabı 1. Kitap, Sayfa 62-113: Denizaltının mikroplastik araştırmasında dikey hareketi, Gençtürk ailesi enerji giderleri aylık değişimi, çok adımlı işlemlerde işlem önceliği).
 2. MATEMATİKSEL GÖSTERİM VE KaTeX DESTEĞİ:
    - Kesirler, denklemler ve matematiksel semboller için standart KaTeX $...$ formatını kullanınız (Örn: $\\frac{3}{4}$, $\\left(-\\frac{3}{4}\\right) + \\left(+\\frac{1}{8}\\right) = -\\frac{5}{8}$, $|+10| = 10$, $-38\\text{ °C}$).
+   - JSON UYUMLULUK KURALI (RFC 8259): JSON dizgileri içinde KaTeX formüllerindeki ters eğik çizgileri (\\frac, \\left, \\right, \\cdot, \\Delta, \\sqrt, \\text vb.) standart JSON kaçışıyla çift ters eğik çizgi (\\\\) olarak yazınız (örneğin: "\\\\frac{3}{4}", "\\\\left(-\\\\frac{3}{4}\\\\right)").
 3. KABUL EDİLEBİLİR DENK ALTERNATİF CEVAPLAR (alternativeAnswers):
    - Matematiksel olarak birbirine denk olan doğru ifade biçimlerini (Örn: $-\\frac{5}{8}\\text{ km}$ ile $-0,625\\text{ km}$; $\\frac{26}{11}$ ile $2\\frac{4}{11}$; $+15\\text{ °C}$ ile $15$) "alternativeAnswers" dizisine ekleyiniz.
 4. ANALİTİK VE ADIMLI RUBRİK:
    - Puanlama rubriğinde işlem/modelleme basamakları ve nihai doğru sonuç için ayrı puan kriterleri tanımlayınız.
+` : '';
+
+  const science7thDirectives = isGrade7Science ? `
+MEBİ 7. SINIF FEN BİLİMLERİ DERS KİTABI VE ÖLÇME YÖNERGESİ (1. KİTAP 1. VE 2. ÜNİTE UYUMLU):
+1. KAZANIM EŞLEŞTİRMESİ VE DERS KİTABI BAĞLAMLARI:
+   - FB.7.1.1: Uzay araştırmaları için geliştirilen teknolojileri karşılaştırabilme (Ders Kitabı 1. Kitap, Sayfa 12-30: Erzurum Palandöken Dağı DAG gözlemevi yer seçimi kriterleri - 3.170 m yüksek rakım, hava kirliliğinin ve yapay ışık kirliliğinin azlığı, nemsiz açık gece sayısı fazlalığı; James Webb Uzay Teleskobu - origami katlanır ayna teknolojisi, atmosferin kırıcı ve soğurucu etkisinden arınmış derin uzay gözlemi; Türkiye'nin uzay filosu - ilk yerli millî haberleşme uydumuz Türksat 6A, yüksek çözünürlüklü ilk yerli gözlem uydumuz İMECE; Alper Gezeravcı'nın ISS'te gerçekleştirdiği 13 bilimsel deney).
+   - FB.7.1.3: Türkiye'nin aktif yapay uyduları ve uzay kirliliği çözüm teknolojileri (Ders Kitabı 1. Kitap, Sayfa 22-35: Türksat 6A ile İMECE görev farkları, saatte 28.000 km hızla dönen atıklar, Kessler sendromu, atmosferde kontrollü yakma).
+   - FB.7.1.4: Yıldızların yaşam döngüsünü açıklayarak yapılandırabilme (Ders Kitabı 1. Kitap, Sayfa 36-45: Bulutsu / Nebula türleri - Orion, Atbaşı, Tarantula; Küçük kütleli yıldız döngüsü: Bulutsu -> Küçük Kütleli Yıldız / Güneş -> Kırmızı Dev -> Gezegenimsi Bulutsu -> Beyaz Cüce -> Siyah Cüce; Büyük kütleli yıldız döngüsü: Bulutsu -> Büyük Yıldız -> Kırmızı Süperdev -> Süpernova Patlaması -> Nötron Yıldızı / Pulsar veya Kara Delik; Güneş'in kütlesi yetersiz olduğu için süpernova patlaması geçirip kara deliğe dönüşemeyeceği vurgulanmalıdır).
+   - FB.7.1.5: Yıldız, galaksi ve evren kavramlarını açıklayarak yapılandırabilme (Ders Kitabı 1. Kitap, Sayfa 46-55: Samanyolu ve komşu Andromeda Sarmal / spiral galaksi türündedir; Güneş Sistemi Samanyolu'nun Avcı / Orion kolundadır; Işık yılı zaman değil mesafe/uzaklık birimidir - Proxima Centauri 4,24 ışık yılı; Evren = Uzay + Dünya ayrımı).
+   - FB.7.2.1: Fiziksel anlamda yapılan işin bağlı olduğu faktörlere ilişkin bilimsel çıkarım yapabilme (Ders Kitabı 1. Kitap, Sayfa 56-66: İşin şartları: 1) Cisme kuvvet uygulanmalı, 2) Cisim uygulanan kuvvet doğrultusunda yer değiştirmelidir; W = F · Δx; Sırtında çantayla yatay yolda sabit hızla yürüyen öğrenci yer çekimi kuvvetine karşı iş YAPMAZ çünkü kaldırma kuvveti düşey, hareket yataydır; Aynı çantayı merdivenden yukarı kata çıkaran öğrenci yer çekimine karşı iş YAPAR; Ağır dolabı iten ancak hareket ettiremeyen öğrencinin işi Δx = 0 olduğu için SIFIRDIR; Alınan yol eşitken uygulanan kuvvet arttıkça yapılan iş doğru orantılı artar).
+   - FB.7.2.2: Enerji çeşitlerinden kinetik ve potansiyel enerjiyi karşılaştırabilme (Ders Kitabı 1. Kitap, Sayfa 67-86: Kinetik enerji kütle ve sürate bağlıdır - 60 km/h hızdaki kamyonun kinetik enerjisi küçük otomobilden büyüktür; Çekim potansiyel enerjisi kütle ve yüksekliğe bağlıdır - kum havuzunda 2 metre yükseklikten bırakılan bilye 1 metreden bırakılandan daha derin çukur oluşturur; Ep = m · g · h; Sürtünmesiz kaykay pistinde tepe noktasında Ep maksimum, dipte Ek maksimumdur; Mekanik enerji korunur; Sürtünmeli yüzeyde mekanik enerji ısı ve ses enerjisine dönüşür, toplam enerji korunur).
+2. DENEY DÜZENEKLERİ VE DEĞİŞKEN ANALİZİ:
+   - Bilimsel deney sorularında bağımsız değişken, bağımlı değişken ve kontrol edilen (sabit) değişkenler açıkça sorgulanmalıdır.
+3. BİLİMSEL VE MATEMATİKSEL GÖSTERİM (KaTeX):
+   - İş birimi Joule ($150\\text{ J}$), kuvvet ($30\\text{ N}$), yol ($10\\text{ m}$), sürat ($60\\text{ km/h}$), kütle ($m$, $2m$), yükseklik ($h$, $2h$) ve formüllerde standart KaTeX formatı ($W = F \\cdot \\Delta x$, $E_p = m \\cdot g \\cdot h$) kullanılmalıdır.
+4. KABUL EDİLEBİLİR ALTERNATİF CEVAPLAR (alternativeAnswers):
+   - Her soru için kavramsal olarak denk en az 2 alternatif kabul edilebilir yanıt "alternativeAnswers" dizisine eklenmelidir.
+5. ANALİTİK VE PARÇALI RUBRİK:
+   - İki şıklı (a, b) sorularda puanlama parçalı (örn. 6p tespit + 5p bilimsel gerekçe) dağıtılmalıdır.
 ` : '';
 
   const livePrompt = `SEN MEB TEMEL EĞİTİM GENEL MÜDÜRLÜĞÜ VE ÖDSGM ORTAK SINAVLAR BAŞUZMANISIN.
@@ -273,6 +361,7 @@ HER SORU İÇİN ZORUNLU BAĞLAM ÇEŞİTLİLİĞİ KURALI (EN KRİTİK KURAL):
    - Öğrenci kaynak metni/veriyi görmeden ASLA soruyu cevaplayamaz!
 ${turkishMebiDirectives}
 ${math7thDirectives}
+${science7thDirectives}
 ÇIKTI FORMATI:
 SADECE geçerli bir JSON çıktısı ver. JSON şeması:
 {
@@ -288,7 +377,7 @@ SADECE geçerli bir JSON çıktısı ver. JSON şeması:
       "stimulus": "Diyalog veya vaka metni...",
       "question": "Açık uçlu soru...",
       "answer": "MEBİ model cevabı...",
-      ${isGrade7Turkish ? `"alternativeAnswers": [
+      ${(isGrade7Turkish || isGrade7Math || isGrade7Science) ? `"alternativeAnswers": [
         "Kabul edilebilir alternatif örnek ifade 1",
         "Kabul edilebilir alternatif örnek ifade 2"
       ],` : ''}
@@ -388,16 +477,16 @@ SADECE geçerli bir JSON çıktısı ver. JSON şeması:
 
     if (proxyRes.ok) {
       const data = await proxyRes.json();
-      const rawText = data?.candidates?.[0]?.content?.parts?.[0]?.text || '';
-      const cleanJson = rawText.replace(/```(?:json)?/gi, '').trim();
       let questionsList = data?.questions;
 
-      if (!questionsList && cleanJson) {
-        try {
-          const parsed = JSON.parse(cleanJson);
-          questionsList = parsed?.questions;
-        } catch {
-          // ignore
+      // İstemci tarafı KaTeX güvenli ayrıştırma (sunucu rawText döndürdüyse veya questions doğrudan parse edilemediyse)
+      if (!questionsList || !Array.isArray(questionsList) || questionsList.length === 0) {
+        const rawCandidateText = data?.rawText || data?.candidates?.[0]?.content?.parts?.[0]?.text || '';
+        if (rawCandidateText) {
+          const parsedFallback = parseExamJsonSafely(rawCandidateText);
+          if (parsedFallback.success && parsedFallback.data?.questions) {
+            questionsList = parsedFallback.data.questions;
+          }
         }
       }
 
@@ -406,7 +495,7 @@ SADECE geçerli bir JSON çıktısı ver. JSON şeması:
 
         // Anti-duplication sanity check: Canlı Gemini çıktısının mevcut sınav sorularını birebir tekrarlamadığından emin ol
         const hasDirectDuplicate = normalized.some(nq =>
-          isDuplicateOrTooSimilar(nq.question, nq.stimulus, allAvoidTexts, allAvoidStimuli, 0.45)
+          isDuplicateOrTooSimilar(nq.question, nq.stimulus, allAvoidItems, undefined, 0.45)
         );
 
         if (!hasDirectDuplicate) {
@@ -430,6 +519,9 @@ SADECE geçerli bir JSON çıktısı ver. JSON şeması:
           console.warn('Canlı model çıktısında mevcut sınavla çakışan soru tespit edildi; yerel MEBİ özgünleştirme motoruna aktarılıyor.');
           fallbackReason = 'Canlı yapay zekâ çıktısı mevcut sınavla benzerlik gösterdiğinden yerel MEBİ özgünleştirme motoru devreye alındı.';
         }
+      } else {
+        console.warn('Canlı model geçerli soru listesi sağlamadı:', data);
+        fallbackReason = data?.error || 'Model çıktısı geçerli bir sınav formatına (questions dizisi) uymadığı için yerel motor devreye alındı.';
       }
     } else {
       let errJson: any = null;
@@ -439,8 +531,10 @@ SADECE geçerli bir JSON çıktısı ver. JSON şeması:
 
       if (proxyRes.status === 429) {
         fallbackReason = 'Yapay zekâ servisi kota sınırında (429 - Çok sık istek). Lütfen bir dakika sonra tekrar deneyiniz.';
+      } else if (proxyRes.status === 422) {
+        fallbackReason = errJson?.error || 'Üretilen sınav yanıtı biçimsel şemaya uymadığı için yerel motor devreye alındı.';
       } else if (proxyRes.status === 502 || proxyRes.status === 503) {
-        fallbackReason = 'Yapay zekâ servisi şu anda meşgul veya geçici olarak yanıt veremiyor (503).';
+        fallbackReason = errJson?.error || 'Yapay zekâ servisi şu anda meşgul veya geçici olarak yanıt veremiyor (HTTP 502/503).';
       } else {
         fallbackReason = errJson?.error || `Yapay zekâ servisi yanıt veremedi (HTTP ${proxyRes.status}).`;
       }
@@ -466,22 +560,25 @@ SADECE geçerli bir JSON çıktısı ver. JSON şeması:
       difficulty: 'Kolay',
       level: 'Basit Bilişsel Süreçler',
       templateType: 'Durum & Özellik Matrisi (VAR/YOK Tablosu)',
-      points: pointAllocations[0] || 15,
+      points: pointAllocations[0] || 12,
       stimulus: `Doğu Anadolu Gözlemevi (DAG) projesinde üç farklı bölge araştırılmıştır:
 Bölge 1: Erzurum Palandöken Zirvesi (3.170 m yükseklik)
 Bölge 2: İstanbul Çamlıca Tepesi (268 m yükseklik)
 Bölge 3: Antalya Bakırlıtepe (2.500 m TÜBİTAK Gözlemevi)`,
-      question: `Aşağıdaki özelliklerin hangi bölgelerde sağlandığını "VAR" veya "YOK" yazarak doldurunuz:
-a) Işık kirliliğinden ve şehir aydınlatmalarından tamamen uzak olma:
-   • Bölge 1: ............ | Bölge 2: ............ | Bölge 3: ............
-b) Neden büyük rasathaneler deniz seviyesindeki ovalara değil de yüksek dağ zirvelerine kurulur? Atmosfer kalınlığı ve hava kirliliği bakımından açıklayınız.`,
+      question: `a) Aşağıdaki özelliklerin hangi bölgelerde sağlandığını "VAR" veya "YOK" yazarak doldurunuz:
+• Işık kirliliğinden ve şehir aydınlatmalarından tamamen uzak olma:
+  - Bölge 1 (Palandöken): ............ | Bölge 2 (Çamlıca): ............ | Bölge 3 (Bakırlıtepe): ............
+b) Neden büyük gözlemevleri deniz seviyesindeki ovalara değil de yüksek dağ zirvelerine kurulur? Atmosfer kalınlığı ve nem oranı bakımından açıklayınız.`,
       answer: `a) Işık Kirliliğinden Uzak Olma:
 • Bölge 1 (Palandöken): VAR | Bölge 2 (Çamlıca): YOK | Bölge 3 (Bakırlıtepe): VAR
-b) Bilimsel Gerekçe: Yüksek dağ zirvelerinde atmosfer tabakası daha incedir, hava yoğunluğu ve nem düşüktür; ayrıca şehirlerin ışık, toz ve hava kirliliğinden uzaktır. Böylece uzaydan gelen ışık atmosferde daha az kırılır ve teleskoplar çok daha berrak görüntü çeker.`,
+b) Bilimsel Gerekçe: Yüksek dağ zirvelerinde atmosfer tabakası daha incedir, hava yoğunluğu ve nem oranı düşüktür; ayrıca şehirlerin yapay ışık ve hava kirliliğinden uzaktır. Böylece uzaydan gelen ışık atmosferde daha az kırılır ve teleskoplar çok daha berrak ve net görüntü elde eder.`,
+      alternativeAnswers: [
+        'a) Palandöken: VAR, Çamlıca: YOK, Bakırlıtepe: VAR. b) Yüksek rakımlarda atmosfer tabakasının incelmesi, nemin ve hava kirliliğinin az olması sayesinde ışık kırılması en aza iner ve berrak görüntü sağlanır.',
+        'a) Bölge 1 VAR, Bölge 2 YOK, Bölge 3 VAR. b) Şehir ışıklarından uzak olması, havanın nemsiz ve açık olması, atmosferin ince olması sebebiyle teleskoplar daha net çeker.'
+      ],
       rubric: [
-        { item: 'Bölgelerin ışık kirliliği eşleştirmesinin doğru yapılması (VAR - YOK - VAR)', pts: Math.round((pointAllocations[0] || 15) * 0.4) },
-        { item: 'Yüksek irtifada atmosferin inceliği ve nemin azlığının açıklanması', pts: Math.round((pointAllocations[0] || 15) * 0.3) },
-        { item: 'Şehir ışık ve toz kirliliğinin engellenmesi gerekçesi', pts: Math.round((pointAllocations[0] || 15) * 0.3) }
+        { item: 'Bölgelerin ışık kirliliği eşleştirmesinin doğru yapılması (VAR - YOK - VAR)', pts: 6 },
+        { item: 'Yüksek irtifada atmosferin inceliği ve nemin azlığının bilimsel olarak açıklanması', pts: 6 }
       ]
     },
     {
@@ -491,109 +588,201 @@ b) Bilimsel Gerekçe: Yüksek dağ zirvelerinde atmosfer tabakası daha incedir,
       difficulty: 'Orta',
       level: 'Karmaşık Bilişsel Süreçler',
       templateType: 'Öğrenci Diyaloğu & Kavram Yanılgısı',
-      points: pointAllocations[1] || 15,
+      points: pointAllocations[1] || 11,
       stimulus: `Astronomi panosu hazırlayan ${name1} ve ${name2} uzay teleskopları hakkında tartışmaktadır:
-${name1}: "Hubble ve James Webb gibi uzay teleskopları, yeryüzündeki dev gözlemevi teleskoplarından bile çok daha net ve kaliteli fotoğraflar çeker."
-${name2}: "Bence uzayda olmasının bir farkı yoktur; yeryüzündeki teleskopların aynası biraz daha büyük yapılırsa uzaydakilerden her zaman daha net çeker."`,
+${name1}: "James Webb gibi uzay teleskopları, yeryüzündeki dev gözlemevi teleskoplarından bile çok daha net ve kaliteli fotoğraflar çeker."
+${name2}: "Bence uzayda olmasının bir farkı yoktur; yeryüzündeki teleskopların aynasını biraz daha büyük yaparsak uzaydakilerden her zaman daha net çeker."`,
       question: `${name1} ve ${name2}'nin açıklamalarını değerlendiriniz. Hangi öğrenci haklıdır? Uzay teleskoplarının Dünya atmosferinin olumsuz etkilerinden (ışık kırılması, hava kirliliği, bulutlar) neden etkilenmediğini açıklayınız.`,
-      answer: `${name1} haklıdır. Çünkü Dünya atmosferindeki hava hareketleri, tozlar ve bulutlar uzaydan gelen ışığı kırıp dalgalandırarak görüntünün bulanıklaşmasına yol açar. Uzay teleskopları ise atmosferin dışında, uzay boşluğunda görev yaptığı için ışık hiçbir engelle karşılaşmadan doğrudan ve net olarak teleskoba ulaşır.`,
+      answer: `${name1} haklıdır. Çünkü Dünya atmosferindeki gaz hareketleri, tozlar ve bulutlar uzaydan gelen ışığı kırıp dalgalandırarak görüntünün bulanıklaşmasına yol açar. Uzay teleskopları ise atmosferin dışında, uzay boşluğunda görev yaptığı için ışık hiçbir engelle karşılaşmadan doğrudan ve net olarak teleskoba ulaşır.`,
+      alternativeAnswers: [
+        `${name1} haklıdır. Uzay teleskopları Dünya atmosferinin dışında yer aldığı için gaz tabakası, ışık kırılması, bulut ve şehir ışık kirliliği gibi engelleyici etkenlerden etkilenmez.`,
+        `${name1}'in açıklaması doğrudur. Atmosfer olmadığı için uzay boşluğunda ışık saçılmaz ve bozulmaz; aynayı büyütmek atmosferik bulanıklığı yok edemez.`
+      ],
       rubric: [
-        { item: `${name1}'in haklı olduğunun ve ${name2}'nin yanılgısının açıklanması`, pts: Math.round((pointAllocations[1] || 15) * 0.4) },
-        { item: 'Dünya atmosferinin ışığı kırma ve görüntüyü bozma etkisinin belirtilmesi', pts: Math.round((pointAllocations[1] || 15) * 0.35) },
-        { item: 'Uzay teleskoplarının atmosfer dışındaki avantajının açıklanması', pts: Math.round((pointAllocations[1] || 15) * 0.25) }
+        { item: `${name1}'in haklı olduğunun ve ${name2}'nin yanılgısının doğru açıklanması`, pts: 5 },
+        { item: 'Dünya atmosferinin ışığı kırma ve görüntüyü bozma etkisinin açıklanması', pts: 6 }
       ]
     },
     {
       number: 3,
       outcome: 'FB.7.1.3',
-      outcomeTitle: 'Uzay araştırmalarının yol açabileceği problemleri çözebilme',
-      difficulty: 'Zor',
-      level: 'Karmaşık Bilişsel Süreçler',
-      templateType: 'Kurgusal Senaryo & Çözüm Üretme',
-      points: pointAllocations[2] || 15,
-      stimulus: `Dünya'nın yörüngesinde görevini tamamlamış eski uydular, roket parçaları ve fırlatmalardan kalan binlerce metal atık saatte 28.000 kilometre gibi büyük bir hızla başıboş dolanmaktadır. Bu duruma 'Uzay Kirliliği' adı verilir.`,
-      question: `a) Yörüngedeki bu uzay atıklarının halen görev yapmakta olan aktif uydular ve Uluslararası Uzay İstasyonu için oluşturduğu en büyük tehlikeyi açıklayınız.
-b) Uzay kirliliğini azaltmak veya önlemek için bilim insanlarının uygulayabileceği bir çözüm önerisi yazınız.`,
-      answer: `a) Tehlike: Uzay atıkları mermiden katbekat daha hızlı hareket ettiği için küçücük bir metal cıvata bile aktif bir uyduya çarptığında onu parçalayabilir ve kullanılmaz hale getirebilir.
-b) Çözüm Önerisi: Görev süresi tükenen uydular kontrollü şekilde Dünya atmosferine yönlendirilerek sürtünmeyle yakılıp yok edilmeli veya robotik uzay araçlarıyla toplanarak temizlenmelidir.`,
+      outcomeTitle: 'Türkiye\'nin aktif haberleşme ve gözlem uydularının görevlerini karşılaştırabilme',
+      difficulty: 'Orta',
+      level: 'Basit Bilişsel Süreçler',
+      templateType: 'Durum & Özellik Matrisi (Tik Tablosu)',
+      points: pointAllocations[2] || 11,
+      stimulus: `Türkiye'nin uzay filosunda görev yapan uydulardan:
+• Türksat 6A: 2024 yılında fırlatılan ilk yerli ve millî haberleşme uydumuzdur (36.000 km yer sabit yörüngede bulunur).
+• İMECE: Metre altı yüksek çözünürlüklü ilk yerli gözlem ve istihbarat uydumuzdur (yaklaşık 700 km alçak Dünya yörüngesinde bulunur).`,
+      question: `a) Türksat 6A ve İMECE uydularının temel görev alanlarını (haberleşme / yer gözlem) belirtiniz.
+b) İMECE gözlem uydusunun neden 36.000 km yerine 700 km gibi alçak bir yörüngeye yerleştirildiğini fotoğraf çözünürlüğü ve detay yakalama bakımından açıklayınız.`,
+      answer: `a) Görev Dağılımı: Türksat 6A haberleşme, televizyon yayını ve internet iletişimi sağlar; İMECE ise tarım, haritacılık, çevre takibi ve savunma amaçlı yer gözlem uydusudur.
+b) Yörünge Gerekçesi: Yeryüzüne ne kadar yakın olunursa kameraların yeryüzünü yüksek çözünürlükle detaylı görüntülemesi o kadar kolaylaşır. 36.000 km gibi uzak bir mesafeden metre altı netlikte arazi detayı çekmek optik olarak çok zordur.`,
+      alternativeAnswers: [
+        'a) Türksat 6A haberleşme ve TV yayını, İMECE harita ve yer gözlem uydusudur. b) Yeryüzüne yakın (700 km) olduğunda yüksek çözünürlüklü ve detaylı fotoğraf çekmek mümkündür.',
+        'a) Türksat 6A: İletişim / haberleşme; İMECE: Gözlem / haritacılık. b) Alçak yörüngede kameralar yeryüzünü daha yakından ve net çekerek yüksek çözünürlük sağlar.'
+      ],
       rubric: [
-        { item: 'Yüksek hızdaki uzay atıklarının aktif uyduları parçalama tehlikesinin açıklanması', pts: Math.round((pointAllocations[2] || 15) * 0.5) },
-        { item: 'Ömrü biten uyduları atmosferde kontrollü yakma veya temizleme çözüm önerisi', pts: Math.round((pointAllocations[2] || 15) * 0.5) }
+        { item: 'Uyduların görev alanlarının (haberleşme vs gözlem) doğru yazılması', pts: 5 },
+        { item: 'Alçak yörüngenin yüksek fotoğraf çözünürlüğü ve detay yakalama gerekçesinin sunulması', pts: 6 }
       ]
     },
     {
       number: 4,
       outcome: 'FB.7.1.4',
-      outcomeTitle: 'Yıldızların yaşam döngüsünü açıklayarak yapılandırabilme',
-      difficulty: 'Orta',
-      level: 'Karmaşık Bilişsel Süreçler',
+      outcomeTitle: 'Küçük kütleli yıldızların yaşam döngüsünü açıklayabilme',
+      difficulty: 'Kolay',
+      level: 'Basit Bilişsel Süreçler',
       templateType: 'Kurgusal Senaryo & Bilimsel Çıkarım',
-      points: pointAllocations[3] || 15,
-      stimulus: `Yıldızlar uzaydaki gaz ve toz bulutlarının (bulutsu/nebula) bir araya gelip sıkışmasıyla doğar. Yıldızların ömrünün nasıl sonlanacağı ise başlangıç kütlelerinin büyüklüğüne bağlıdır.`,
-      question: `a) Güneş'imiz küçük kütleli bir yıldız olduğuna göre, yakıtını tükettiğinde hangi aşamalardan geçerek neye dönüşecektir?
-b) Başlangıç kütlesi Güneş'ten çok daha büyük olan dev yıldızların ömrünün sonunda geçirdiği şiddetli patlamaya ve geride bırakabileceği yapılara ne ad verilir?`,
-      answer: `a) Güneş gibi küçük kütleli yıldızlar önce genişleyerek kırmızı dev aşamasına geçer, ardından dış katmanlarını uzaya salarak merkezinde beyaz cüce kalır.
-b) Büyük kütleli yıldızlar ise süpernova patlaması geçirir ve geride nötron yıldızı veya kara delik bırakır.`,
+      points: pointAllocations[3] || 11,
+      stimulus: `Yıldızlar uzaydaki gaz ve toz bulutlarının (Bulutsu / Nebula) kütleçekim etkisiyle sıkışmasıyla doğar. Yıldızların ömürlerini nasıl tamamlayacağını ise başlangıç kütleleri belirler.
+• Küçük kütleli yıldızlar: Güneş gibi yıldızlardır.
+• Büyük kütleli yıldızlar: Güneş'ten katbekat büyük dev yıldızlardır.`,
+      question: `a) Güneş büyüklüğündeki küçük kütleli bir yıldızın yaşam döngüsü basamaklarını (Bulutsudan son aşamaya kadar) sırasıyla yazınız.
+b) Güneş bir gün süpernova patlaması geçirerek kara deliğe dönüşebilir mi? Nedenini açıklayınız.`,
+      answer: `a) Küçük Kütleli Yıldızın Yaşam Evreleri: Bulutsu (Nebula) → Küçük Kütleli Yıldız (Güneş) → Kırmızı Dev → Gezegenimsi Bulutsu → Beyaz Cüce (ve Siyah Cüce).
+b) Hayır, Güneş kara deliğe dönüşemez. Çünkü süpernova patlaması geçirip kara delik veya nötron yıldızı oluşturabilmek için başlangıç kütlesinin devasa (büyük kütleli yıldız) olması gerekir. Güneş küçük kütleli olduğu için ömrünü Beyaz Cüce olarak tamamlayacaktır.`,
+      alternativeAnswers: [
+        'a) Bulutsu → Küçük Yıldız → Kırmızı Dev → Gezegenimsi Bulutsu → Beyaz Cüce. b) Güneş kara delik olamaz; çünkü başlangıç kütlesi yetersizdir, süpernova patlamasını sadece büyük kütleli dev yıldızlar geçirir.',
+        'a) Nebula → Güneş → Kırmızı Dev → Gezegenimsi Bulutsu → Beyaz Cüce. b) Kara delik olamaz, kütlesi küçük olduğu için beyaz cüce olarak ömrünü tamamlar.'
+      ],
       rubric: [
-        { item: 'Küçük kütleli yıldızların kırmızı dev ve beyaz cüceye dönüşümünün doğru yazılması', pts: Math.round((pointAllocations[3] || 15) * 0.5) },
-        { item: 'Büyük kütleli yıldızların süpernova patlaması ve nötron yıldızı/kara delik oluşturmasının belirtilmesi', pts: Math.round((pointAllocations[3] || 15) * 0.5) }
+        { item: 'Küçük kütleli yıldız yaşam evrelerinin doğru sıralanması', pts: 6 },
+        { item: 'Güneş\'in kütle yetersizliği nedeniyle kara delik olamayacağının açıklanması', pts: 5 }
       ]
     },
     {
       number: 5,
       outcome: 'FB.7.1.5',
-      outcomeTitle: 'Yıldız, galaksi ve evren kavramlarını açıklayarak yapılandırabilme',
-      difficulty: 'Kolay',
+      outcomeTitle: 'Galaksi türlerini ve Samanyolu Galaksisi\'nin yapısını açıklayabilme',
+      difficulty: 'Orta',
       level: 'Basit Bilişsel Süreçler',
-      templateType: 'Kurgusal Vaka & Senaryo İncelemesi',
-      points: pointAllocations[4] || 14,
-      stimulus: `Galaksiler (gök adalar) milyarlarca yıldız, gaz ve toz bulutunun kütleçekimiyle bir arada tutulduğu devasa sistemlerdir. Şekillerine göre sarmal, eliptik ve düzensiz galaksi olmak üzere sınıflandırılırlar.`,
-      question: `a) İçinde Dünya'mızın ve Güneş Sistemi'mizin de bulunduğu galaksinin adı ve şekil türü nedir?
-b) Galaksimize en yakın olan büyük komşu sarmal galaksinin adı nedir?`,
-      answer: `a) Galaksimizin adı 'Samanyolu Galaksisi'dir ve şekil olarak 'Sarmal Galaksi' türündedir.
-b) Samanyolu'na en yakın büyük komşu galaksinin adı 'Andromeda Galaksisi'dir.`,
+      templateType: 'Hata Tespiti & Adım Analizi',
+      points: pointAllocations[4] || 11,
+      stimulus: `Gök adalar (galaksiler) şekillerine ve yapılarına göre sarmal (spiral), eliptik ve düzensiz olmak üzere üçe ayrılır. Güneş Sistemi'mizin içinde bulunduğu Samanyolu Galaksisi ile komşumuz Andromeda Galaksisi bu türlerden birine örnektir.`,
+      question: `a) Samanyolu Galaksisi ve komşusu Andromeda Galaksisi şekillerine göre hangi galaksi türüne girer?
+b) Güneş Sistemi'miz Samanyolu Galaksisi'nin merkezden dışa uzanan sarmal kollarından hangisinde yer almaktadır? Belirtiniz.`,
+      answer: `a) Samanyolu ve Andromeda galaksileri şekillerine göre 'Sarmal (Spiral) Galaksi' türündedir.
+b) Güneş Sistemi'miz, Samanyolu Galaksisi'nin 'Avcı (Orion)' sarmal kolu üzerinde yer almaktadır.`,
+      alternativeAnswers: [
+        'a) Sarmal (Spiral) galaksidir. b) Samanyolu\'nun Avcı (Orion) kolundadır.',
+        'a) Her ikisi de sarmal tiptedir. b) Avcı (Orion) kolu üzerinde bulunur.'
+      ],
       rubric: [
-        { item: 'Samanyolu Galaksisi ve Sarmal Galaksi türünün doğru yazılması', pts: Math.round((pointAllocations[4] || 14) * 0.5) },
-        { item: 'Andromeda Galaksisi adının doğru belirtilmesi', pts: Math.round((pointAllocations[4] || 14) * 0.5) }
+        { item: 'Sarmal (spiral) galaksi türünün doğru belirtilmesi', pts: 6 },
+        { item: 'Güneş Sistemi\'nin Avcı (Orion) kolunda yer aldığının yazılması', pts: 5 }
       ]
     },
     {
       number: 6,
       outcome: 'FB.7.2.1',
-      outcomeTitle: 'Fiziksel anlamda yapılan işin bağlı olduğu faktörlere ilişkin bilimsel çıkarım yapabilme',
-      difficulty: 'Zor',
+      outcomeTitle: 'Fiziksel anlamda iş yapma şartlarını doğrultu ve kuvvet ilişkisiyle analiz edebilme',
+      difficulty: 'Orta',
       level: 'Karmaşık Bilişsel Süreçler',
       templateType: 'Kurgusal Senaryo & Vaka İncelemesi',
-      points: pointAllocations[5] || 14,
-      stimulus: `${name1}, okul binasında iki farklı durum gerçekleştirmiştir:
-1. Durum: 10 kg ağırlığındaki okul çantasını sırtında taşıyarak düz yatay koridorda 20 metre yürümüştür.
-2. Durum: Aynı çantayı kucağına alarak okul merdivenlerinden 2. kata (yukarıya) çıkarmıştır.`,
-      question: `a) 1. ve 2. durumdan hangisinde YER ÇEKİMİ KUVVETİNE KARŞI fiziksel anlamda iş yapılmıştır? Nedenini yazınız.
-b) 1. durumda yatay yolda yürürken neden yer çekimine karşı iş yapılmadığını kuvvet doğrultusu ile hareket yönü ilişkisiyle açıklayınız.`,
-      answer: `a) Yalnızca 2. durumda yer çekimine karşı iş yapılmıştır. Çünkü çanta yukarı kaldırılırken yer çekimine zıt yönde yukarı doğru kuvvet uygulanmış ve çanta kuvvet doğrultusunda yukarı taşınmıştır.
-b) 1. durumda ise çanta taşınırken uygulanan kuvvet yukarı yönlü, hareket ise yataydır. Kuvvet ile hareket doğrultusu birbirine dik olduğu için yer çekimi kuvveti doğrultusunda yol alınmamıştır ve iş yapılmaz.`,
+      points: pointAllocations[5] || 11,
+      stimulus: `Fen bilimleri dersinde fiziksel anlamda iş yapılmış sayılması için cisme net bir kuvvet uygulanmalı ve cisim uygulanan kuvvet doğrultusunda yer değiştirmelidir ($W = F \\cdot \\Delta x$).
+1. Durum: ${name1}, 8 kg'lık okul çantasını sırtında taşıyarak düz yatay koridorda sabit süratle 20 metre yürüyor.
+2. Durum: ${name1}, aynı çantayı kucağına alıp merdivenlerden 2. kata (düşey yukarı) çıkarıyor.`,
+      question: `a) 1. ve 2. durumdan hangisinde YER ÇEKİMİ KUVVETİNE KARŞI fiziksel anlamda iş yapılmıştır? Nedenini açıklayınız.
+b) 1. durumda yatay yolda yürürken neden yer çekimine karşı iş yapılmadığını kuvvet doğrultusu ile hareket yönü ilişkisiyle yazınız.`,
+      answer: `a) Yalnızca 2. durumda yer çekimine karşı iş yapılmıştır. Çünkü çanta yukarı kaldırılırken yer çekimine zıt yönde yukarı doğru kuvvet uygulanmış ve çanta kuvvet doğrultusunda düşey yukarı hareket etmiştir.
+b) 1. durumda ise çanta taşınırken uygulanan kaldırma kuvveti düşey yukarı, hareket ise yataydır. Kuvvet ile hareket doğrultusu birbirine dik ($90^\\circ$) olduğu için kuvvet doğrultusunda yol alınmamıştır ve yer çekimine karşı iş yapılmaz.`,
+      alternativeAnswers: [
+        'a) 2. durumda yer çekimine karşı iş yapılmıştır çünkü kuvvet yukarı, hareket de yukarı yöndedir. b) 1. durumda kaldırma kuvveti düşey, hareket yataydır; kuvvet ile hareket birbirine dik olduğu için iş yapılmaz ($W = 0$).',
+        'a) 2. durum (kuvvet doğrultusunda yukarı hareket vardır). b) 1. durumda kuvvet ve hareket doğrultuları birbirine diktir, bu nedenle iş sıfırdır.'
+      ],
       rubric: [
-        { item: '2. durumda yer çekimine karşı iş yapıldığının doğru teşhisi', pts: Math.round((pointAllocations[5] || 14) * 0.4) },
-        { item: '1. durumda kuvvet ile hareket doğrultusunun birbirine dik olması kuralının açıklanması', pts: Math.round((pointAllocations[5] || 14) * 0.6) }
+        { item: '2. durumda yer çekimine karşı iş yapıldığının doğru teşhisi ve gerekçesi', pts: 6 },
+        { item: '1. durumda kuvvet ile hareketin birbirine dik olması sebebiyle iş yapılmadığının açıklanması', pts: 5 }
       ]
     },
     {
       number: 7,
+      outcome: 'FB.7.2.1',
+      outcomeTitle: 'Kuvvet uygulanmasına rağmen hareket etmeyen cisimlerde iş kavramını analiz edebilme',
+      difficulty: 'Orta',
+      level: 'Karmaşık Bilişsel Süreçler',
+      templateType: 'Hata Tespiti & Adım Analizi',
+      points: pointAllocations[6] || 11,
+      stimulus: `${name2}, odasındaki ağır kütüphane dolabını yerinden oynatmak için $120\\text{ N}$ kuvvet uygulayarak 5 dakika boyunca itmiş, terlemiş ve çok yorulmuştur. Ancak dolap duvara sabitlendiği için milimetre bile hareket etmemiştir.`,
+      question: `${name2} çok yorulmasına ve $120\\text{ N}$ kuvvet uygulamasına rağmen fen bilimleri kurallarına göre neden fiziksel anlamda iş yapmamış sayılır? İş formülü ($W = F \\cdot \\Delta x$) ve yer değiştirme şartı bakımından açıklayınız.`,
+      answer: `Fiziksel anlamda iş yapılabilmesi için cismin uygulanan kuvvet doğrultusunda mutlaka yol alması (yer değiştirmesi) gerekir. Dolap hareket etmediği için alınan yol sıfırdır ($\\Delta x = 0$). İş formülüne göre $W = F \\cdot \\Delta x = 120\\text{ N} \\cdot 0\\text{ m} = 0\\text{ J}$ olur. Bu nedenle ne kadar yorulursa yorulsun fiziksel anlamda yapılan iş sıfırdır.`,
+      alternativeAnswers: [
+        'Fiziksel anlamda iş yapılabilmesi için cismin kuvvet doğrultusunda yer değiştirmesi gerekir ($W = F \\cdot \\Delta x$). Dolap hareket etmediği (alınan yol $\\Delta x = 0$) için yapılan fiziksel iş sıfırdır.',
+        'Dolap yer değiştirmediği için (alınan yol = 0) uygulanan kuvvet ne kadar büyük olursa olsun fiziksel anlamda iş yapılmamıştır ($W = 0$).'
+      ],
+      rubric: [
+        { item: 'Fiziksel iş için cisme kuvvet doğrultusunda yer değiştirme kazandırılması şartının belirtilmesi', pts: 6 },
+        { item: 'Dolabın hareket etmemesi (yol = 0) sebebiyle işin sıfır (0 J) olduğunun formülle gerekçelendirilmesi', pts: 5 }
+      ]
+    },
+    {
+      number: 8,
+      outcome: 'FB.7.2.1',
+      outcomeTitle: 'Kuvvetin büyüklüğü ile yapılan iş miktarı arasındaki doğru orantıyı deney düzeneğiyle açıklayabilme',
+      difficulty: 'Orta',
+      level: 'Karmaşık Bilişsel Süreçler',
+      templateType: 'Dilemma (İkilem) & Çözüm Değerlendirme',
+      points: pointAllocations[7] || 11,
+      stimulus: `Sürtünmesiz yatay bir deney zemininde özdeş iki oyuncak arabadan:
+• 1. Arabayı ${name1}, F_1 = 15\\text{ N}$ kuvvet uygulayarak $\\Delta x = 10\\text{ m}$ itmiştir.
+• 2. Arabayı ${name2}, F_2 = 30\\text{ N}$ kuvvet uygulayarak $\\Delta x = 10\\text{ m}$ itmiştir.`,
+      question: `a) ${name1} ve ${name2}'nin yaptıkları işleri Joule (J) cinsinden hesaplayarak karşılaştırınız. Hangi öğrenci daha fazla iş yapmıştır?
+b) Bu deneyde kontrol edilen (sabit tutulan), bağımsız ve bağımlı değişkenleri yazınız.`,
+      answer: `a) İş Hesapları: $W_1 = 15\\text{ N} \\cdot 10\\text{ m} = 150\\text{ J}$, $W_2 = 30\\text{ N} \\cdot 10\\text{ m} = 300\\text{ J}$. ${name2}'nin yaptığı iş daha fazladır (2 katıdır).
+b) Değişkenler: Kontrol Edilen Değişken: Alınan yol (10 m) ve araba kütlesi. Bağımsız Değişken: Uygulanan kuvvet (15 N vs 30 N). Bağımlı Değişken: Yapılan fiziksel iş miktarı (Joule).`,
+      alternativeAnswers: [
+        'a) ${name2} daha fazla iş yapmıştır ($W_2 = 300\\text{ J}$, $W_1 = 150\\text{ J}$). b) Bağımsız değişken: Uygulanan kuvvet, Bağımlı değişken: Yapılan iş, Sabit tutulan: Alınan yol.',
+        'a) ${name2}\'nin yaptığı iş (300 J), ${name1}\'in yaptığı işten (150 J) büyüktür. b) Kontrol edilen: Yol (10 m), Bağımsız: Kuvvet, Bağımlı: Yapılan iş.'
+      ],
+      rubric: [
+        { item: 'İşlerin formülle hesaplanması (150 J ve 300 J) ve 2. durumun büyük olduğunun tespiti', pts: 6 },
+        { item: 'Bağımsız (kuvvet), bağımlı (yapılan iş) ve sabit değişkenlerin doğru adlandırılması', pts: 5 }
+      ]
+    },
+    {
+      number: 9,
       outcome: 'FB.7.2.2',
-      outcomeTitle: 'Kinetik ve potansiyel enerjiyi karşılaştırarak enerji dönüşümünü açıklayabilme',
+      outcomeTitle: 'Kinetik enerjinin kütle ve sürat değişkenlerine bağlılığını karşılaştırabilme',
+      difficulty: 'Zor',
+      level: 'Karmaşık Bilişsel Süreçler',
+      templateType: 'Kurgusal Senaryo & Vaka İncelemesi',
+      points: pointAllocations[8] || 11,
+      stimulus: `Düz bir karayolunda aynı $60\\text{ km/h}$ sabit süratle ilerleyen boş bir yük kamyonu ($m_1 = 8000\\text{ kg}$) ile küçük bir binek otomobil ($m_2 = 1200\\text{ kg}$) fren yaparak kaçış rampasına girmektedir.`,
+      question: `a) Kamyon ve otomobilin kinetik (hareket) enerjilerini gerekçesiyle karşılaştırınız. Hangisinin kinetik enerjisi daha büyüktür?
+b) Otomobilin kamyonla aynı kinetik enerjiye ulaşabilmesi için sürati nasıl değiştirilmelidir? Açıklayınız.`,
+      answer: `a) Kamyonun kinetik enerjisi daha büyüktür. Çünkü hareket halindeki cisimlerin süratleri eşit olduğunda kütlesi daha büyük olan cismin kinetik enerjisi daha fazla olur.
+b) Kütlesi küçük olan otomobilin kamyonla aynı kinetik enerjiye ulaşabilmesi için süratinin artırılması gerekir.`,
+      alternativeAnswers: [
+        'a) Kamyonun kinetik enerjisi büyüktür; süratler eşitken kütlesi büyük olanın kinetik enerjisi daha fazladır. b) Otomobilin sürati artırılmalıdır.',
+        'a) Kamyonunki fazladır (kütlesi büyük olduğu için). b) Kütlesi az olan otomobil daha hızlı gitmelidir.'
+      ],
+      rubric: [
+        { item: 'Kamyonun kinetik enerjisinin büyük olduğunun ve kütle gerekçesinin yazılması', pts: 6 },
+        { item: 'Otomobilin kinetik enerjisinin eşitlenmesi için süratinin artırılması gerektiğinin belirtilmesi', pts: 5 }
+      ]
+    },
+    {
+      number: 10,
+      outcome: 'FB.7.2.2',
+      outcomeTitle: 'Çekim potansiyel enerjisinde yükseklik değişkeninin etkisini kum havuzu deneyiyle modelleyebilme',
       difficulty: 'Orta',
       level: 'Karmaşık Bilişsel Süreçler',
       templateType: 'Öğrenci Diyaloğu & Kavram Yanılgısı',
-      points: pointAllocations[6] || 13,
-      stimulus: `Parkta kaykay pistinde kayan ${name1}, pistin en üst noktasından (3 metre yükseklikten) harekete başlamış, en alt çukurdan hızla geçerek karşıdaki tepeye doğru çıkmıştır.`,
-      question: `a) ${name1}'in çekim potansiyel enerjisinin en fazla olduğu ve kinetik enerjisinin en fazla olduğu noktaları belirleyiniz.
-b) Pistin en üst noktasından en alt çukuruna doğru inerken enerjisinde gerçekleşen dönüşümü (hangi enerjinin hangi enerjiye dönüştüğünü) açıklayınız.`,
-      answer: `a) Çekim Potansiyel Enerjisi: En üst tepe noktada en fazladır (çünkü yükseklik maksimumdur).
-Kinetik Enerji: En alt çukurdan geçerken en fazladır (çünkü sürat maksimumdur).
-b) Enerji Dönüşümü: Yukarıdan aşağıya inerken yükseklik azaldığı için çekim potansiyel enerjisi kinetik (hareket) enerjisine dönüşür.`,
+      points: pointAllocations[8] || 11,
+      stimulus: `Fen laboratuvarında özdeş iki demir bilyeden biri $h_1 = 1\\text{ m}$ yüksekliğindeki masadan, diğeri $h_2 = 2\\text{ m}$ yüksekliğindeki dolabın üzerinden serbest bırakılarak kum havuzuna düşürülmüştür.
+Öğrencilerden ${name1}: "2 metre yükseklikten bırakılan bilye kum havuzunda daha derin bir iz bırakır."
+${name2}: "Bilyeler özdeş olduğu için kumda bıraktıkları çukurların derinliği aynı olur."`,
+      question: `Hangi öğrencinin açıklaması doğrudur? Yerden yükseklik ile çekim potansiyel enerjisi ($E_p = m \\cdot g \\cdot h$) arasındaki ilişkiyi ve kuma aktarılan enerjiyi açıklayınız.`,
+      answer: `${name1} haklıdır. Çünkü kütleleri eşit cisimlerden yerden yüksekliği daha fazla olan cismin çekim potansiyel enerjisi ($E_p = m \\cdot g \\cdot h$) daha büyüktür. 2 metredeki bilye daha fazla potansiyel enerjiye sahip olduğu için kum zemine çarptığında kuma daha fazla enerji aktarır ve kumda daha derin bir çukur izi oluşturur.`,
+      alternativeAnswers: [
+        `${name1} haklıdır. Kütleleri eşit cisimlerden yüksekliği fazla olanın çekim potansiyel enerjisi daha büyüktür ($E_p = m \\cdot g \\cdot h$); bu nedenle 2 m'deki bilye kumda daha derin çukur oluşturur.`,
+        `${name1}'in tespiti doğrudur. Yükseklik arttıkça çekim potansiyel enerjisi artar ve kum havuzunda daha derin iz bırakır.`
+      ],
       rubric: [
-        { item: 'Potansiyel enerjinin tepede, kinetik enerjinin çukurda en fazla olduğunun tespiti', pts: Math.round((pointAllocations[6] || 13) * 0.5) },
-        { item: 'Aşağı inişte çekim potansiyel enerjisinin kinetik enerjiye dönüştüğünün açıklanması', pts: Math.round((pointAllocations[6] || 13) * 0.5) }
+        { item: `${name1}'in haklı olduğunun doğru tespiti`, pts: 5 },
+        { item: 'Yükseklik arttıkça çekim potansiyel enerjisinin artacağının ve kuma aktarılan derinlik ilişkisinin açıklanması', pts: 6 }
       ]
     }
   ];
@@ -602,146 +791,232 @@ b) Enerji Dönüşümü: Yukarıdan aşağıya inerken yükseklik azaldığı i�
     {
       number: 1,
       outcome: 'FB.7.1.1',
-      outcomeTitle: 'Yapay uyduların görevlerini ve uzay araştırmalarındaki önemini açıklayabilme',
+      outcomeTitle: 'Gözlem uyduları ile haberleşme uydularının yörünge irtifalarını ve işlevlerini karşılaştırabilme',
       difficulty: 'Kolay',
       level: 'Basit Bilişsel Süreçler',
       templateType: 'Durum & Özellik Matrisi (Tik Tablosu)',
-      points: pointAllocations[0] || 15,
-      stimulus: `Türkiye'nin uzay filosunda yer alan uydular iki ana sınıfa ayrılır:
-1. Haberleşme Uyduları (Türksat 5A, Türksat 5B) -> Yer sabit yörüngede (36.000 km) bulunur.
-2. Gözlem ve Keşif Uyduları (Göktürk-1, İMECE) -> Alçak Dünya yörüngesinde (yaklaşık 700 km) bulunur.`,
-      question: `a) İMECE gözlem uydusunun neden 36.000 km'ye değil de 700 km gibi alçak bir yörüngeye yerleştirildiğini fotoğraf çözünürlüğü ve detay yakalama bakımından açıklayınız.
-b) Görevini tamamlayan ve uzayda kontrolsüz sürüklenen uyduların gelecekteki görevler için oluşturduğu tehlikeye ne ad verilir? Bir önlem öneriniz.`,
-      answer: `a) Alçak İrtifa Gerekçesi: Yeryüzüne ne kadar yakın olunursa kameraların yeryüzünü santimetre hassasiyetinde yüksek çözünürlükle görüntülemesi o kadar kolaylaşır. 36.000 km'den detaylı arazi/tarım haritası çekmek optik olarak çok zordur.
-b) Uzay Kirliliği: Bu cisimler uzay kirliliğine yol açar ve saatte binlerce km hızla dönerek aktif uydulara ya da uzay istasyonuna çarpabilir. Önlem: Ömrü biten uyduları kontrollü olarak Dünya atmosferine çekip yakmak veya mezarlık yörüngesine itmek.`,
+      points: pointAllocations[0] || 12,
+      stimulus: `Türkiye'nin uzay filosunda görev yapan uyduların yörünge özellikleri incelenmiştir:
+• Haberleşme Uyduları (Türksat 5B, Türksat 6A): Dünya'dan yaklaşık $36.000\\text{ km}$ uzakta yer-sabit yörüngede bulunur.
+• Gözlem ve İstihbarat Uyduları (Göktürk-2, İMECE): Dünya'dan yaklaşık $700\\text{ km}$ uzakta alçak Dünya yörüngesinde bulunur.`,
+      question: `a) Türksat haberleşme uydularının neden tek bir bölgeyi kesintisiz kapsayacak şekilde $36.000\\text{ km}$ yer-sabit yörüngeye yerleştirildiğini açıklayınız.
+b) İMECE gibi yüksek çözünürlüklü gözlem uydularının neden $36.000\\text{ km}$ yerine $700\\text{ km}$ alçak yörüngede döndüğünü optik netlik ve fotoğraf kalitesi bakımından gerekçelendiriniz.`,
+      answer: `a) Yer-sabit yörüngede uydunun dönüş hızı Dünya'nın kendi etrafındaki dönüş hızına eşittir. Böylece uydu Dünya'dan bakan birine göre hep aynı noktada sabit durur; çanak antenlerin yön değiştirmeden kesintisiz TV ve internet sinyali alması sağlanır.
+b) Yeryüzüne yakın olmak kameraların metre altı çözünürlükle detaylı fotoğraf çekmesini sağlar. 36.000 km mesafeden santimetre hassasiyetinde yeryüzü detayı yakalamak optik olarak çok zordur.`,
+      alternativeAnswers: [
+        'a) Yer-sabit yörüngede uydu Dünya ile aynı hızda döner ve çanak antenler yön değiştirmeden kesintisiz haberleşme sağlar. b) Alçak yörüngede yeryüzüne yakın olduğu için yüksek çözünürlüklü ve detaylı fotoğraflar çekebilir.',
+        'a) Çanak antenlerin sabit kalıp sürekli yayın alabilmesi için yer-sabit yörüngededir. b) 700 km gibi yakın mesafeden çok daha net ve yüksek çözünürlüklü harita/gözlem fotoğrafları elde edilir.'
+      ],
       rubric: [
-        { item: 'İMECE\'nin alçak yörünge seçimi ve çözünürlük ilişkisinin açıklanması', pts: Math.round((pointAllocations[0] || 15) * 0.5) },
-        { item: 'Uzay kirliliği kavramı ve atmosferde yakma/itme çözüm önerisi', pts: Math.round((pointAllocations[0] || 15) * 0.5) }
+        { item: 'Yer-sabit yörüngenin kesintisiz iletişim ve çanak anten sabitliği işlevinin açıklanması', pts: 6 },
+        { item: 'Alçak yörüngenin metre altı netlik ve optik fotoğraf kalitesi gerekçesinin sunulması', pts: 6 }
       ]
     },
     {
       number: 2,
-      outcome: 'FB.7.1.2',
-      outcomeTitle: 'Çok kademeli roket teknolojisinin çalışma prensibini kütle ve itme kuvvetiyle modelleyebilme',
+      outcome: 'FB.7.1.1',
+      outcomeTitle: 'Astronotların uzay araştırmalarındaki rolü ve mikroyerçekimi deneylerinin önemini açıklayabilme',
       difficulty: 'Orta',
       level: 'Karmaşık Bilişsel Süreçler',
-      templateType: 'Öğrenci Diyaloğu & Kavram Yanılgısı',
-      points: pointAllocations[1] || 15,
-      stimulus: `Uzay roketlerinin fırlatma anını izleyen ${name1} ve ${name2} roket kademelerini tartışmaktadır:
-${name1}: "Roketlerin yükseldikçe parçalanıp yakıt depolarını denize bırakması büyük bir israftır. Tek parça devasa bir yakıt tankı yapılsaydı roket uzaya kadar hiç bölünmeden tek parça gidebilirdi."
-${name2}: "Yanılıyorsun; boşalan dev metal depoları yukarı taşımak gereksiz ağırlık demektir. Boşalan kademeleri bırakmak roketin hafiflemesini ve kalan yakıtla çok daha yüksek ivmeye ulaşmasını sağlar."`,
-      question: `${name1} ve ${name2}'nin açıklamalarını Newton'un hareket kanunları ve kütle-ivme ilişkisi bakımından değerlendiriniz. Hangi öğrenci haklıdır?`,
-      answer: `${name2} haklıdır.
-Fiziksel İlke: İvme = Kuvvet / Kütle (F = m · a). Roket yakıtını tükettiğinde boş metal tankların kütlesi rokete yük olur. Kademeler ayrılarak gereksiz kütle atıldığında geriye kalan roket çok hafifler; böylece roket motorlarının uyguladığı aynı itki kuvveti, hafifleyen kütleye çok daha büyük ivme kazandırarak yerçekiminden kaçış hızına ulaşılmasını sağlar.`,
+      templateType: 'Kurgusal Senaryo & Bilimsel Çıkarım',
+      points: pointAllocations[1] || 11,
+      stimulus: `Türkiye'nin ilk astronotu Alper Gezeravcı, Uluslararası Uzay İstasyonu'nda (ISS) geçirdiği süre boyunca Türk bilim insanları tarafından hazırlanan 13 farklı bilimsel deneyi başarıyla gerçekleştirmiştir. Bu deneyler tıp, genetik, malzeme bilimi ve uzayda bitki yetiştirme alanlarını kapsamaktadır.`,
+      question: `a) Alper Gezeravcı'nın bu deneyleri Dünya yüzeyindeki laboratuvarlar yerine Uluslararası Uzay İstasyonu'nda gerçekleştirmesinin en temel bilimsel sebebi nedir?
+b) Uzayda gerçekleştirilen araştırmaların günlük yaşantımızda kullanılan teknolojilere sağladığı faydalara bir örnek veriniz.`,
+      answer: `a) Temel Sebep: Uzay istasyonunda yer çekiminin neredeyse hissedilmediği 'mikroyerçekimi (ağırlıksızlık)' ortamının bulunmasıdır. Dünya'da yer çekimi sebebiyle maskelenen veya gözlenemeyen biyolojik süreçler, hücre davranışları ve alaşım kristalleri uzayda saf halde incelenebilir.
+b) Örnek: Uzay araştırmaları için geliştirilen çizilmez gözlük camları, duman detektörleri, hafızalı köpük yataklar, kablosuz şarj aletleri veya su arıtma filtreleri günümüzde günlük hayatta yaygın olarak kullanılmaktadır.`,
+      alternativeAnswers: [
+        'a) Uzay istasyonundaki mikroyerçekimi (ağırlıksızlık) ortamında deney yapabilmek için. b) Çizilmez camlar, duman detektörleri, su arıtma sistemleri veya hafızalı süngerler uzay teknolojisinin günlük hayata yansımasıdır.',
+        'a) Dünya\'daki yer çekiminin olmadığı ortamda hücre ve malzeme davranışlarını incelemek. b) Su filtreleri, duman alarmları ve termal battaniyeler uzay araştırmaları sayesinde üretilmiştir.'
+      ],
       rubric: [
-        { item: `${name2}'nin haklılığının gerekçesiyle tespiti`, pts: Math.round((pointAllocations[1] || 15) * 0.4) },
-        { item: 'Kütlenin azalmasının ivmeyi artırdığı (F=m·a) ilkesinin açıklanması', pts: Math.round((pointAllocations[1] || 15) * 0.6) }
+        { item: 'Mikroyerçekimi (ağırlıksızlık) ortamının bilimsel deneylerdeki avantajının açıklanması', pts: 6 },
+        { item: 'Uzay araştırmalarından günlük hayata aktarılan geçerli bir teknolojik örneğin sunulması', pts: 5 }
       ]
     },
     {
       number: 3,
       outcome: 'FB.7.1.3',
-      outcomeTitle: 'Gelecekteki Ay üssü yerleşim planını uzay tehlikeleri bakımından analiz edebilme',
+      outcomeTitle: 'Uzay kirliliğinin tehlikelerini ve Kessler sendromunu çözüm teknolojileriyle modelleyebilme',
       difficulty: 'Zor',
       level: 'Karmaşık Bilişsel Süreçler',
-      templateType: 'Dilemma (İkilem) & Çözüm Değerlendirme',
-      points: pointAllocations[2] || 15,
-      stimulus: `Ay yüzeyinde kurulacak ilk kalıcı insan kolonisi için iki yerleşke modeli tartışılmaktadır:
-Model 1 (Açık Krater Tabanı): Ay yüzeyindeki düz bir kraterin ortasına cam kubbeli modüller kurmak (Güneş panelleriyle kesintisiz elektrik üretimi avantajı).
-Model 2 (Lav Tüpü Mağarası): Ay'ın yüzeyinin metrelerce altındaki antik volkanik lav tüpü yeraltı mağaralarının içine yerleşmek.`,
-      question: `Model 1 ve Model 2'yi Ay'da atmosfer bulunmaması nedeniyle oluşan "zararlı kozmik radyasyon", "aşırı sıcaklık farkı (-170°C ile +120°C)" ve "mikrogöktaşı çarpmaları" açısından karşılaştırınız. İnsan yaşamı için hangi model daha güvenlidir?`,
-      answer: `Model 2 (Lav Tüpü Mağarası) insan biyolojisi için açık ara daha güvenlidir.
-Bilimsel Gerekçeler:
-1. Ay'da kalın bir atmosfer ve koruyucu manyetik alan olmadığından yüzey kesintisiz ölümcül kozmik radyasyona ve Güneş fırtınalarına maruz kalır. Metrelerce kalınlıktaki bazalt kaya tavanı doğal bir radyasyon zırhı sağlar.
-2. Gece-gündüz arasındaki 300 derecelik ölümcül sıcaklık dalgalanması yeraltında sabit (-20°C civarında) dengeli bir iklim oluşturur.
-3. Atmosferde yanmadan Ay'a çarpan mikrogöktaşlarına karşı lav tüpleri sığınak görevi görür.`,
+      templateType: 'Kurgusal Senaryo & Çözüm Üretme',
+      points: pointAllocations[2] || 11,
+      stimulus: `Dünya yörüngesinde işlevini tamamlamış roket kademeleri, ömrü bitmiş uydular ve patlama artıklarından oluşan 30.000'den fazla metal enkaz saatte yaklaşık $28.000\\text{ km}$ hızla dönmektedir (Uzay Kirliliği).`,
+      question: `a) Saatte $28.000\\text{ km}$ hızla dönen bir santimetrelik küçük bir metal vidanın bile aktif uydular ve uzay istasyonu için neden ölümcül bir tehlike oluşturduğunu açıklayınız.
+b) Bilim insanlarının uzay kirliliğini azaltmak veya önlemek için önerdiği 2 somut teknolojik çözümü yazınız.`,
+      answer: `a) Tehlike: Saatte 28.000 km gibi aşırı yüksek süratlerde cisimlerin kinetik enerjisi muazzam boyutlara ulaşır. Bu süratteki küçücük bir metal vida mermiden katbekat daha yıkıcı bir etkiyle uydunun zırhını delebilir ve 'Kessler Sendromu' denilen zincirleme çarpışmalarla yörüngeyi tamamen kilitlenebilir hale getirebilir.
+b) Çözümler: 1) Görev süresi biten uyduların son yakıtlarıyla Dünya atmosferine yönlendirilerek sürtünmeyle yanıp yok edilmesini sağlamak. 2) Robotik kollar, lazer sistemleri veya dev temizleme ağları kullanan uzay temizlik araçlarıyla enkazları toplamak.`,
+      alternativeAnswers: [
+        'a) Saatte 28.000 km hızdaki atıkların kinetik enerjisi çok yüksektir; aktif uyduları delip parçalayabilir ve zincirleme kazalara yol açabilir. b) Ömrü biten uyduları atmosfere sokup yakmak ve temizlik robotlarıyla enkazları toplamak.',
+        'a) Çok yüksek hızla hareket ettikleri için aktif uydulara çarparak onları yok edebilir. b) Uyduların atmosferde kontrollü yakılması ve uzay çöpü toplama ağları/robotları.'
+      ],
       rubric: [
-        { item: 'Model 2\'nin radyasyon zırhı gerekçesinin doğru açıklanması', pts: Math.round((pointAllocations[2] || 15) * 0.4) },
-        { item: 'Sıcaklık dengesi ve mikrometeorit korumasının belirtilmesi', pts: Math.round((pointAllocations[2] || 15) * 0.35) },
-        { item: 'Model 1\'in risklerinin (atmosfersizlik tehlikeleri) temellendirilmesi', pts: Math.round((pointAllocations[2] || 15) * 0.25) }
+        { item: 'Yüksek çarpışma hızı ve kinetik enerji tehlikesinin bilimsel açıklanması', pts: 6 },
+        { item: 'İki gerçekçi uzay çöpü temizleme / önleme çözümünün belirtilmesi', pts: 5 }
       ]
     },
     {
       number: 4,
       outcome: 'FB.7.1.4',
-      outcomeTitle: 'Kara deliklerin yapısını kütleçekim kuvveti ve ışığın yakalanmasıyla açıklayabilme',
+      outcomeTitle: 'Büyük kütleli yıldızların yaşam döngüsünü ve kara delik oluşumunu açıklayabilme',
       difficulty: 'Orta',
       level: 'Karmaşık Bilişsel Süreçler',
       templateType: 'Kurgusal Tarihi Vaka & Bilimsel Çıkarım',
-      points: pointAllocations[3] || 15,
-      stimulus: `2019 yılında Olay Ufku Teleskobu (EHT), Dünya'dan 55 milyon ışık yılı uzaklıktaki M87 galaksisinin merkezindeki dev kara deliğin ilk fotoğrafını çekmiştir. Fotoğrafta merkezde kapkaranlık bir dairesel gölge ve etrafında parıldayan dönen bir gaz halkası görülmektedir.`,
-      question: `a) Kara deliklerin merkezinin neden tamamen simsiyah göründüğünü ve hiçbir ışığın oradan kaçamadığını kütleçekim kuvvetiyle açıklayınız.
-b) Etrafındaki halkanın neden çok parlak olduğunu maddenin çekim alanına kapılıp dönmesi (sürtünme ve enerji) ilkesiyle açıklayınız.`,
-      answer: `a) Merkezdeki Karanlık: Kara delikler devasa bir kütlenin sonsuz yoğunlukta küçücük bir noktaya sıkışmasıyla oluşur. Kütleçekimi o kadar akılalmaz güçtedir ki saniyede 300.000 km hızla giden ışık dahi bu çekimden kurtulamaz. Geri yansıyan veya kaçan foton olmadığı için merkez simsiyah bir gölge olarak kalır.
-b) Parlak Halka: Kara deliğin içine çekilmekte olan gaz ve toz bulutları olay ufku etrafında ışık hızına yakın süratle dönerken birbirine şiddetle sürtünür. Bu aşırı sürtünme milyonlarca derecelik ısı ve devasa X-ışını/görünür ışık enerjisi yayarak parlak bir akresyon diski oluşturur.`,
+      points: pointAllocations[3] || 11,
+      stimulus: `Başlangıç kütlesi Güneş'ten katbekat büyük olan dev yıldızlar, yakıtlarını tükettiklerinde yaşamlarını küçük kütleli yıldızlardan çok farklı bir şekilde sonlandırırlar.`,
+      question: `a) Büyük kütleli bir yıldızın yaşam döngüsü basamaklarını Bulutsudan başlayarak sırasıyla yazınız.
+b) Büyük kütleli yıldızların ömrünün sonunda geçirdiği şiddetli patlamaya ne ad verilir? Bu patlama sonrasında hangi gök cisimleri oluşabilir?`,
+      answer: `a) Büyük Kütleli Yıldız Yaşam Döngüsü: Bulutsu (Nebula) → Büyük Kütleli Yıldız → Kırmızı Süperdev → Süpernova Patlaması → Nötron Yıldızı (Pulsar) veya Kara Delik.
+b) Bu şiddetli patlamaya 'Süpernova Patlaması' adı verilir. Patlama sonrasında yıldızın kütlesine göre geride Nötron Yıldızı (Pulsar) veya ışığın dahi kaçamayacağı güçte bir Kara Delik oluşur.`,
+      alternativeAnswers: [
+        'a) Bulutsu → Büyük Yıldız → Kırmızı Süperdev → Süpernova → Nötron Yıldızı veya Kara Delik. b) Süpernova patlaması denir; geride nötron yıldızı veya kara delik kalır.',
+        'a) Nebula → Büyük Kütleli Yıldız → Kırmızı Süperdev → Süpernova Patlaması → Kara Delik / Nötron Yıldızı. b) Süpernova patlamasıdır; nötron yıldızı veya kara delik oluşur.'
+      ],
       rubric: [
-        { item: 'Işığın kaçamaması ve kaçış hızının ışık hızını aşması açıklaması', pts: Math.round((pointAllocations[3] || 15) * 0.5) },
-        { item: 'Dönen gazların sürtünmesi ve enerji yayımının modellenmesi', pts: Math.round((pointAllocations[3] || 15) * 0.5) }
+        { item: 'Büyük kütleli yıldız evrelerinin doğru sıralanması', pts: 6 },
+        { item: 'Süpernova patlamasının ve nötron yıldızı/kara delik çıktılarının doğru belirtilmesi', pts: 5 }
       ]
     },
     {
       number: 5,
       outcome: 'FB.7.1.5',
-      outcomeTitle: 'Işık yılı kavramını mesafe ölçümü ve evrenin geçmişine bakma ilkesiyle çözümleyebilme',
+      outcomeTitle: 'Işık yılı kavramını ve astronomik mesafe ölçümünü açıklayabilme',
       difficulty: 'Kolay',
       level: 'Basit Bilişsel Süreçler',
       templateType: 'Kurgusal Senaryo & Vaka İncelemesi',
-      points: pointAllocations[4] || 14,
-      stimulus: `${name1}, bilim dergisinde "Güneş Sistemimize en yakın yıldız olan Proxima Centauri bize 4,2 ışık yılı uzaklıktadır." cümlesini okumuştur.
-${name1}: "Demek ki Proxima Centauri yıldızı 4,2 yıl sonra sönecek, ışık yılı bir zaman birimidir." çıkarımını yapmıştır.`,
-      question: `a) ${name1}'in kavram yanılgısını düzeltiniz. "Işık yılı" ne birimidir? Tanımını yazınız.
-b) Bu yıldıza bugün teleskopla bakan bir astronomun aslında yıldızın hangi andaki durumunu gördüğünü zaman-mesafe ilişkisiyle açıklayınız.`,
-      answer: `a) Işık yılı zaman birimi değil, astronomik bir UZAKLIK (MESAFE) birimidir. Tanımı: Işığın boşlukta 1 Dünya yılında (yaklaşık 9,46 trilyon kilometre) katettiği mesafedir.
-b) Kozmik Zaman İlişkisi: Yıldızdan çıkan ışık ışınlarının Dünya'ya ulaşması tam 4,2 yıl sürer. Dolayısıyla teleskopla baktığımızda yıldızın bugünkü halini değil, tam 4,2 yıl önceki geçmiş durumunu görürüz.`,
+      points: pointAllocations[4] || 11,
+      stimulus: `${name1}, bir astronomi dergisinde "Güneş Sistemimize en yakın yıldız olan Proxima Centauri bize $4,24$ ışık yılı uzaklıktadır." cümlesini okumuştur.
+${name1}: "Demek ki Proxima Centauri yıldızı 4,24 yıl sonra ömrünü tamamlayacak, ışık yılı bir zaman birimidir." yorumunu yapmıştır.`,
+      question: `a) ${name1}'in kavram yanılgısını düzeltiniz. "Işık yılı" ne birimidir? Tanımını yapınız.
+b) Proxima Centauri yıldızına bugün dev bir teleskopla bakan bir gökbilimci, yıldızın hangi andaki görüntüsünü görmektedir? Zaman-ışık hızı ilişkisiyle açıklayınız.`,
+      answer: `a) Işık yılı zaman birimi değil, astronomik bir UZAKLIK (MESAFE) birimidir. Tanımı: Işığın boşlukta 1 Dünya yılında aldığı devasa mesafedir (yaklaşık 9,46 trilyon kilometre).
+b) Yıldızdan çıkan ışığın Dünya'ya ulaşması tam 4,24 yıl sürer. Dolayısıyla bugün teleskopla bakan gökbilimci yıldızın bugünkü durumunu değil, tam 4,24 yıl önceki geçmiş halini görmektedir.`,
+      alternativeAnswers: [
+        'a) Işık yılı zaman değil, mesafe (uzaklık) birimidir. Işığın 1 yılda aldığı yoldur. b) Yıldızın 4,24 yıl önceki geçmiş halini görür çünkü ışık Dünya\'ya 4,24 yılda ulaşır.',
+        'a) Mesafe/uzaklık birimidir (ışığın boşlukta bir yılda katettiği mesafe). b) 4,24 yıl önceki durumunu görür; ışığın bize ulaşması 4,24 yıl sürer.'
+      ],
       rubric: [
-        { item: 'Işık yılının mesafe birimi olduğunun ve tanımının doğru yapılması', pts: Math.round((pointAllocations[4] || 14) * 0.5) },
-        { item: 'Yıldızın 4,2 yıl önceki geçmiş halinin görüldüğü ilkesinin sunulması', pts: Math.round((pointAllocations[4] || 14) * 0.5) }
+        { item: 'Işık yılının mesafe/uzaklık birimi olduğunun ve tanımının doğru yapılması', pts: 6 },
+        { item: 'Işığın yol alma süresi sebebiyle yıldızın 4,24 yıl önceki geçmiş halinin görüldüğünün açıklanması', pts: 5 }
       ]
     },
     {
       number: 6,
       outcome: 'FB.7.2.1',
-      outcomeTitle: 'Kuvvet, yol ve yerçekimine karşı yapılan işi hesaplayıp karşılaştırabilme',
-      difficulty: 'Zor',
+      outcomeTitle: 'Alınan yolun yapılan fiziksel iş miktarına etkisini deney düzeneğiyle modelleyebilme',
+      difficulty: 'Orta',
       level: 'Karmaşık Bilişsel Süreçler',
       templateType: 'Kurgusal Senaryo & Vaka İncelemesi',
-      points: pointAllocations[5] || 14,
-      stimulus: `Bir inşaat şantiyesinde 200 N ağırlığındaki harç torbası zemin kattan 3. kata (dikey 12 metre yukarı) iki farklı yöntemle taşınmıştır:
-Yöntem 1: Elektrikli vinç torbayı sabit süratle doğrudan 12 metre yukarı çekmiştir.
-Yöntem 2: Bir işçi torbayı sırtına alıp 20 metre uzunluğundaki eğik rampadan yürüyerek aynı 3. kata çıkarmıştır.`,
-      question: `a) Yöntem 1'de vincin yerçekimine karşı yaptığı fiziksel iş kaç Joule'dür? Formülü yazıp hesaplayınız.
-b) Sürtünmeler önemsenmediğinde işçinin rampa boyunca yerçekimine karşı yaptığı iş miktarı vincin yaptığı işten farklı mıdır? Nedenini potansiyel enerji değişimiyle açıklayınız.`,
-      answer: `a) İş Formülü: İş (W) = Kuvvet (F) × Yol (Δx)
-W = 200 N × 12 m = 2.400 Joule iş yapılmıştır.
-b) İşler Eşittir (2.400 Joule).
-Gerekçe: Yerçekimine karşı yapılan iş yalnızca cismin kazandığı düşey yükseklik farkına ve kütlesine (çekim potansiyel enerjisine: Ep = m·g·h) bağlıdır. Rampa yolu uzatsa ve gereken kuvveti azaltsa bile dikey kazanılan irtifa aynı (12 m) kaldığından yapılan toplam iş değişmez.`,
+      points: pointAllocations[5] || 11,
+      stimulus: `Sürtünmesiz yatay düzlemde duran özdeş iki koliye eşit büyüklükte $F = 20\\text{ N}$ yatay kuvvet uygulanmıştır:
+• 1. Koli: Kuvvet doğrultusunda $\\Delta x_1 = 5\\text{ m}$ çekilmiştir.
+• 2. Koli: Kuvvet doğrultusunda $\\Delta x_2 = 15\\text{ m}$ çekilmiştir.`,
+      question: `a) Her iki durumda yapılan fiziksel işleri ($W_1$ ve $W_2$) Joule (J) cinsinden hesaplayınız.
+b) Cisme uygulanan kuvvet sabit tutulduğunda alınan yol ile yapılan fiziksel iş arasındaki ilişkiyi açıklayınız.`,
+      answer: `a) İş Hesapları: $W_1 = F \\cdot \\Delta x_1 = 20\\text{ N} \\cdot 5\\text{ m} = 100\\text{ J}$, $W_2 = F \\cdot \\Delta x_2 = 20\\text{ N} \\cdot 15\\text{ m} = 300\\text{ J}$.
+b) Bilimsel İlişki: Cisme uygulanan kuvvet sabit kaldığında cismin aldığı yol arttıkça yapılan fiziksel iş miktarı da doğru orantılı olarak artar (Yol 3 katına çıktığında yapılan iş de 3 katına çıkmıştır).`,
+      alternativeAnswers: [
+        'a) $W_1 = 100\\text{ J}$, $W_2 = 300\\text{ J}$. b) Kuvvet sabitken cismin aldığı yol arttıkça yapılan fiziksel iş de doğru orantılı olarak artar.',
+        'a) 1. koli: 100 J, 2. koli: 300 J. b) Uygulanan kuvvet eşitken alınan yol ile yapılan iş doğru orantılıdır.'
+      ],
       rubric: [
-        { item: 'Vincin yaptığı işin (2.400 J) formülle hatasız hesaplanması', pts: Math.round((pointAllocations[5] || 14) * 0.5) },
-        { item: 'Rampa ile vincin yaptığı net yerçekimi işinin eşit olduğunun gerekçelendirilmesi', pts: Math.round((pointAllocations[5] || 14) * 0.5) }
+        { item: 'Her iki durumdaki işin (100 J ve 300 J) formülle doğru hesaplanması', pts: 6 },
+        { item: 'Kuvvet sabitken yol ile yapılan işin doğru orantılı olduğunun açıklanması', pts: 5 }
       ]
     },
     {
       number: 7,
-      outcome: 'FB.7.2.2',
-      outcomeTitle: 'Hidroelektrik santrallerinde mekanik enerjinin elektrik enerjisine dönüşüm zincirini modelleyebilme',
+      outcome: 'FB.7.2.1',
+      outcomeTitle: 'Günlük hayat etkinliklerinde fiziksel anlamda iş yapılıp yapılmadığını ayırt edebilme',
       difficulty: 'Orta',
       level: 'Karmaşık Bilişsel Süreçler',
       templateType: 'Öğrenci Diyaloğu & Kavram Yanılgısı',
-      points: pointAllocations[6] || 13,
-      stimulus: `Baraj gölünde tutulan suyun elektrik enerjisine dönüşüm aşamalarını şematize eden ${name1} ve ${name2} şu adımları yazmıştır:
-Adım 1: Baraj gölünde yüksekte duran durgun su.
-Adım 2: Kapaklar açıldığında borulardan aşağı büyük hızla çağlayan su.
-Adım 3: Hızla akan suyun çarparak döndürdüğü dev türbin çarkları.
-Adım 4: Türbine bağlı jeneratörün ürettiği elektrik akımı.`,
-      question: `Her bir adımda (Adım 1 -> Adım 2 -> Adım 3 -> Adım 4) gerçekleşen enerji türlerini ve dönüşüm zincirini sırasıyla yazınız.`,
-      answer: `Enerji Dönüşüm Zinciri:
-• Adım 1: Çekim Potansiyel Enerjisi (Yüksekte depolanan suyun enerjisi)
-• Adım 2: Kinetik Enerji (Aşağı akarken potansiyel enerji kinetik/hareket enerjisine dönüşür)
-• Adım 3: Mekanik / Kinetik Enerji (Su kinetik enerjisini türbin çarklarının dönme hareketine aktarır)
-• Adım 4: Elektrik Enerjisi (Jeneratör mıknatısları dönme mekanik enerjisini elektrik enerjisine çevirir).`,
+      points: pointAllocations[6] || 11,
+      stimulus: `Günlük hayatta gözlenen iki farklı durum şöyledir:
+1. Durum: Sibel Hanım, süpermarkette alışveriş arabasını yatay zeminde $40\\text{ N}$ yatay kuvvet uygulayarak $5\\text{ m}$ ileri itmiştir.
+2. Durum: ${name1}, elinde tuttuğu $50\\text{ N}$ ağırlığındaki bavulu yerden kaldırmadan sabit yükseklikte tutarak yatay kaldırımda $10\\text{ m}$ düz yürümüştür.`,
+      question: `a) 1. ve 2. durumdan hangisinde fiziksel anlamda İŞ YAPILMIŞTIR? Yapılan iş miktarını Joule (J) olarak hesaplayınız.
+b) Diğer durumda neden fiziksel anlamda iş yapılmadığını kuvvet doğrultusu ile hareket yönü ilişkisiyle gerekçelendiriniz.`,
+      answer: `a) Yalnızca 1. durumda fiziksel anlamda iş yapılmıştır. Yapılan İş: $W = F \\cdot \\Delta x = 40\\text{ N} \\cdot 5\\text{ m} = 200\\text{ J}$.
+b) 2. durumda bavulu taşımak için uygulanan kaldırma kuvveti düşey yukarı doğrultudadır; bavulun hareketi ise yatay doğrultudadır. Kuvvet ile hareket birbirine dik ($90^\\circ$) olduğu için yer çekimine karşı fiziksel iş yapılmamıştır ($W = 0$).`,
+      alternativeAnswers: [
+        'a) 1. durumda iş yapılmıştır: $W = 40\\text{ N} \\times 5\\text{ m} = 200\\text{ J}$. b) 2. durumda kaldırma kuvveti düşey iken hareket yataydır; kuvvet ve hareket birbirine dik olduğu için iş yapılmaz.',
+        'a) 1. durum, yapılan iş 200 Joule\'dür. b) 2. durumda kuvvet yukarı doğru, hareket ise yataydır (birbirine diktir, $W = 0$).'
+      ],
       rubric: [
-        { item: 'Adım 1 ve 2\'deki potansiyel -> kinetik dönüşümünün doğru yazılması', pts: Math.round((pointAllocations[6] || 13) * 0.5) },
-        { item: 'Adım 3 ve 4\'teki kinetik/mekanik -> elektrik dönüşümünün hatasız belirtilmesi', pts: Math.round((pointAllocations[6] || 13) * 0.5) }
+        { item: '1. durumda iş yapıldığının tespiti ve 200 J değerinin doğru hesaplanması', pts: 6 },
+        { item: '2. durumda kaldırma kuvveti ile yatay hareketin birbirine dik olması sebebiyle iş yapılmadığının açıklanması', pts: 5 }
+      ]
+    },
+    {
+      number: 8,
+      outcome: 'FB.7.2.1',
+      outcomeTitle: 'Yer çekimine karşı yapılan işi vinç ve taşıma durumlarında modelleyebilme',
+      difficulty: 'Zor',
+      level: 'Karmaşık Bilişsel Süreçler',
+      templateType: 'Kurgusal Senaryo & Vaka İncelemesi',
+      points: pointAllocations[7] || 11,
+      stimulus: `Bir inşaatta $200\\text{ N}$ ağırlığındaki çimento torbası için iki farklı eylem planlanmıştır:
+• Eylem 1: Elektrikli vinç torbayı doğrudan düşey yukarı doğru $6\\text{ m}$ çekmiştir.
+• Eylem 2: Bir işçi torbayı kucağında tutarak zemin katta düz yatay yolda $6\\text{ m}$ yürümüştür.`,
+      question: `a) Eylem 1'de vincin yer çekimine karşı yaptığı fiziksel işi Joule (J) cinsinden hesaplayınız.
+b) Eylem 2'de işçinin yer çekimine karşı fiziksel iş yapıp yapmadığını kuvvet doğrultusu bakımından açıklayınız.`,
+      answer: `a) Vincin Yaptığı İş: $W = F \\cdot \\Delta x = 200\\text{ N} \\cdot 6\\text{ m} = 1200\\text{ J}$ iş yapılmıştır.
+b) Eylem 2'de işçi yer çekimine karşı fiziksel iş yapmamıştır. Çünkü işçinin torbayı tutmak için uyguladığı kuvvet düşey yukarı yönlüdür; hareket ise yataydır. Kuvvet ile hareket doğrultusu birbirine dik olduğu için yer çekimine karşı iş sıfırdır.`,
+      alternativeAnswers: [
+        'a) $W = 200\\text{ N} \\times 6\\text{ m} = 1200\\text{ J}$. b) Yer çekimine karşı iş yapılmamıştır çünkü kaldırma kuvveti düşey iken hareket yataydır (birbirine diktir).',
+        'a) 1200 Joule iş yapılmıştır. b) İş yapılmamıştır; kuvvet yukarı doğru, hareket yatay yönde olduğundan yer çekimine karşı iş sıfırdır.'
+      ],
+      rubric: [
+        { item: 'Vincin yaptığı işin (1200 J) formülle hatasız hesaplanması', pts: 6 },
+        { item: 'Yatay yürüme durumunda kuvvet ile hareketin dikliği sebebiyle yer çekimi işinin sıfır olduğunun açıklanması', pts: 5 }
+      ]
+    },
+    {
+      number: 9,
+      outcome: 'FB.7.2.2',
+      outcomeTitle: 'Sürtünmesiz kaykay pistinde mekanik enerji korunumunu ve potansiyel-kinetik enerji dönüşümünü açıklayabilme',
+      difficulty: 'Orta',
+      level: 'Karmaşık Bilişsel Süreçler',
+      templateType: 'Öğrenci Diyaloğu & Kavram Yanılgısı',
+      points: pointAllocations[8] || 11,
+      stimulus: `U şeklindeki sürtünmesiz bir kaykay pistinin en üst tepe noktasından (K noktası, $3\\text{ m}$ yükseklik) serbest bırakılan kaykaycı Anıl, pistin en dip çukur noktasından (L noktası, zemin seviyesi) geçerek karşıdaki tepeye (M noktası) doğru tırmanmaktadır.`,
+      question: `a) Anıl'ın K noktasında ve L noktasında sahip olduğu enerji türlerini (çekim potansiyel / kinetik enerji) belirtiniz.
+b) L noktasında Anıl'ın süratinin en büyük olmasının sebebini enerjinin korunumu ve dönüşümü ilkesine göre açıklayınız.`,
+      answer: `a) Enerji Türleri: K noktasında (en tepe) yükseklik maksimum olduğu için Çekim Potansiyel Enerjisi maksimum, sürat sıfır olduğu için Kinetik Enerji sıfırdır. L noktasında (en dip zemin) yükseklik sıfıra indiği için potansiyel enerjinin tamamı Kinetik Enerjiye dönüşmüştür (Kinetik Enerji maksimumdur).
+b) Sürtünmesiz ortamlarda toplam mekanik enerji korunur ($E_p + E_k = \\text{sabit}$). K noktasındaki potansiyel enerjinin tamamı L noktasında kinetik enerjiye (hareket enerjisine) dönüşmüştür. Kinetik enerji sürate bağlı olduğu için kinetik enerjinin en yüksek olduğu taban noktasında sürat de en büyük değerine ulaşır.`,
+      alternativeAnswers: [
+        'a) K noktasında çekim potansiyel enerjisi en fazladır (kinetik sıfırdır). L noktasında kinetik enerji en fazladır (potansiyel sıfırdır). b) Potansiyel enerjinin tamamı sürtünmesiz ortamda kinetik enerjiye dönüştüğü için tabanda sürat maksimum olur.',
+        'a) K\'de potansiyel enerji, L\'de kinetik enerji maksimumdur. b) Enerji dönüşümü gereği tepedeki potansiyel enerji dipte kinetik enerjiye dönüştüğünden sürat en büyüktür.'
+      ],
+      rubric: [
+        { item: 'K ve L noktalarındaki potansiyel ve kinetik enerjilerin doğru teşhisi', pts: 6 },
+        { item: 'Sürtünmesiz ortamda potansiyelin kinetiğe dönüşmesi ve süratin maksimum olmasının açıklanması', pts: 5 }
+      ]
+    },
+    {
+      number: 10,
+      outcome: 'FB.7.2.2',
+      outcomeTitle: 'Çekim potansiyel enerjisinde kütle değişkeninin etkisini kum havuzu deneyiyle modelleyebilme',
+      difficulty: 'Orta',
+      level: 'Karmaşık Bilişsel Süreçler',
+      templateType: 'Kurgusal Senaryo & Vaka İncelemesi',
+      points: pointAllocations[8] || 11,
+      stimulus: `Laboratuvarda aynı $h = 1,5\\text{ m}$ yüksekliğindeki masanın kenarından iki farklı çelik bilye aynı anda kum havuzuna serbest bırakılmıştır:
+• 1. Bilye: Kütlesi $m = 100\\text{ g}$
+• 2. Bilye: Kütlesi $2m = 200\\text{ g}$`,
+      question: `a) 1. ve 2. bilyenin masadayken sahip oldukları çekim potansiyel enerjilerini karşılaştırınız. Hangisinin potansiyel enerjisi daha büyüktür?
+b) Kum havuzunda hangi bilyenin daha derin bir çukur izi oluşturacağını çekim potansiyel enerjisinin kütleye bağlılığı ilkesiyle açıklayınız.`,
+      answer: `a) 2. bilyenin ($2m$) çekim potansiyel enerjisi daha büyüktür (1. bilyenin 2 katıdır). Çünkü yerden yükseklikleri eşit olan cisimlerden kütlesi daha büyük olanın çekim potansiyel enerjisi daha fazladır ($E_p = m \\cdot g \\cdot h$).
+b) 2. bilye kumda daha derin bir çukur oluşturur. Çünkü sahip olduğu çekim potansiyel enerjisi daha fazladır ve kum zemine çarptığında kuma daha fazla enerji aktararak kumu daha derine iter.`,
+      alternativeAnswers: [
+        'a) 2. bilyenin ($2m$) potansiyel enerjisi daha büyüktür çünkü yükseklikler eşitken kütlesi büyük olanın enerjisi fazladır. b) 2. bilye kuma daha fazla enerji aktardığı için kumda daha derin çukur oluşturur.',
+        'a) Kütlesi 200 g olan 2. bilyenin potansiyel enerjisi büyüktür. b) Kütlesi büyük olan bilyenin çekim potansiyel enerjisi fazla olduğundan kumda daha derin iz bırakır.'
+      ],
+      rubric: [
+        { item: '2. bilyenin potansiyel enerjisinin büyük olduğunun kütle gerekçesiyle açıklanması', pts: 6 },
+        { item: 'Kuma aktarılan enerjinin fazlalığı sebebiyle 2. bilyenin daha derin çukur oluşturacağının belirtilmesi', pts: 5 }
       ]
     }
   ];
@@ -1318,7 +1593,7 @@ b) Örnek cümleler: 'Buzlu yollarda ihtiyatlı adım atmak gerekir.' / 'Gemi en
       points: pointAllocations[4] || 14,
       templateType: 'Hata Tespiti & Düzeltme',
       stimulus: `Hasan dede, 15 temmuz akşamı karadeniz'in serin sularına bakarak torununa şöyle dedi; Deniz insanı terbiye eder oğlum.`,
-      question: `Yukarıdaki cümlede yer alan büyük harflerin yazımı ve noktalama işaretleriyle ilgili yapılan 3 hatayı belirleyip cümlenin doğru halini yeniden yazınız.`,
+      question: `Verilen cümledeki yazım ve noktalama yanlışlarını tespit ederek ifadeyi kurallara uygun biçimde düzeltiniz.`,
       answer: `Hatalar:
 1. 'Hasan dede' ifadesindeki 'Dede' lakap/saygı sözü olduğu için 'Dede' şeklinde büyük harfle yazılmalıdır.
 2. '15 temmuz' belirli bir tarih bildirdiği için ay adı 'Temmuz' şeklinde büyük harfle yazılmalıdır.
@@ -2265,7 +2540,7 @@ b) Mark NEVER plays tennis.`,
 
     // Anti-duplication filtreleme: Mevcut sınav soruları veya daha önce üretilen sorularla eşleşenleri ayıkla
     const filteredPool = availablePool.filter((cand) => {
-      return !isDuplicateOrTooSimilar(cand.question, cand.stimulus, allAvoidTexts, allAvoidStimuli, 0.38);
+      return !isDuplicateOrTooSimilar(cand.question, cand.stimulus, allAvoidItems, undefined, 0.38);
     });
 
     if (filteredPool.length > 0) {

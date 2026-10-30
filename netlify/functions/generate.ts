@@ -1,3 +1,5 @@
+import { parseExamJsonSafely } from '../../src/utils/jsonParser';
+
 // In-memory rate limiting map for basic per-instance sliding window protection
 const ipRateLimitMap = new Map<string, { count: number; resetAt: number }>();
 const RATE_LIMIT_WINDOW_MS = 60 * 1000; // 1 minute
@@ -217,21 +219,64 @@ export default async (req: Request) => {
   try {
     const data = await geminiResponse.json();
     const rawText = data?.candidates?.[0]?.content?.parts?.[0]?.text || '';
-    const cleanJson = rawText.replace(/```(?:json)?/gi, '').trim();
     
-    let parsedData;
-    try {
-      parsedData = JSON.parse(cleanJson);
-    } catch {
-      parsedData = data;
+    if (!rawText || !rawText.trim()) {
+      return new Response(
+        JSON.stringify({
+          error: 'Model boş yanıt döndürdü veya içerik üretilmedi.',
+          code: 'EMPTY_MODEL_OUTPUT'
+        }),
+        {
+          status: 502,
+          headers: corsHeaders
+        }
+      );
     }
 
-    return new Response(JSON.stringify({ ...parsedData, activeModel: usedModel }), {
-      status: 200,
-      headers: corsHeaders
-    });
+    const parseResult = parseExamJsonSafely(rawText);
+    if (!parseResult.success || !parseResult.data) {
+      console.error('Model JSON parse error in generate function:', parseResult.error);
+      return new Response(
+        JSON.stringify({
+          error: parseResult.error || 'Model çıktısı geçerli JSON formatına dönüştürülemedi.',
+          code: 'INVALID_JSON_OUTPUT',
+          rawText: rawText.slice(0, 500)
+        }),
+        {
+          status: 422,
+          headers: corsHeaders
+        }
+      );
+    }
+
+    const parsedData: any = parseResult.data;
+    if (!parsedData.questions || !Array.isArray(parsedData.questions) || parsedData.questions.length === 0) {
+      console.error('Model output missing questions array:', Object.keys(parsedData));
+      return new Response(
+        JSON.stringify({
+          error: 'Üretilen yanıt geçerli bir soru şeması (questions dizisi) içermiyor.',
+          code: 'INVALID_EXAM_SCHEMA',
+          parsedKeys: Object.keys(parsedData)
+        }),
+        {
+          status: 422,
+          headers: corsHeaders
+        }
+      );
+    }
+
+    return new Response(
+      JSON.stringify({
+        ...parsedData,
+        activeModel: usedModel
+      }),
+      {
+        status: 200,
+        headers: corsHeaders
+      }
+    );
   } catch (err: any) {
-    console.error('Response parsing error in generate function:', err);
+    console.error('Response processing error in generate function:', err);
     return new Response(
       JSON.stringify({ error: 'Üretilen sınav yanıtı işlenirken bir sorun oluştu.' }), 
       {

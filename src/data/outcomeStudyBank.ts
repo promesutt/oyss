@@ -1707,14 +1707,24 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "FB.7.1.1": {
     "outcomeCode": "FB.7.1.1",
-    "topicTitle": "Uzay Araştırmaları ve Teleskoplar",
+    "topicTitle": "Uzay Araştırmaları, Teleskoplar ve Türkiye'nin Uzay Filosu (Ders Kitabı 1. Kitap, Sayfa 12-30)",
+    "textbookUnit": "1. Kitap, 1. Ünite: Uzay Çağı",
+    "textbookPageRange": "Sayfa 12-30",
+    "textbookExamples": [
+      "Erzurum Palandöken Dağı DAG Gözlemevi: 3.170 m yüksek rakım, sıfır ışık kirliliği, nemsiz açık hava şartları (Sayfa 21)",
+      "James Webb Uzay Teleskobu: Origami katlanır ayna teknolojisi, Dünya atmosferinin ışığı kırma ve soğurma etkilerinden arınmış derin uzay gözlemi (Sayfa 16)",
+      "İlk yerli ve millî haberleşme uydumuz Türksat 6A (2024 fırlatılışı) ve metre altı yüksek çözünürlüklü ilk yerli gözlem uydumuz İMECE (Sayfa 24-25)",
+      "Alper Gezeravcı'nın Uluslararası Uzay İstasyonu'nda (ISS) gerçekleştirdiği 13 bilimsel deney (Sayfa 28)"
+    ],
     "quickNotes": [
-      "Teleskop: Gök cisimlerinden gelen ışığı toplayıp odaklayarak büyüten araçtır (Optik, Radyo, X-ışını, Aynalı/Mercekli).",
-      "İlk Teleskop: Hans Lippershey icat etmiş, astronomide ilk kez Galileo Galilei kullanmıştır.",
-      "Rasathane (Gözlemevi) Şartları: Şehir ışıklarından uzak, yüksek, az bulutlu ve hava kirliliği olmayan yerlere kurulur."
+      "Teleskop Türleri: Gök cisimlerinden gelen ışığı toplayıp odaklayarak büyüten araçlardır (Optik, Radyo, X-ışını, Aynalı ve Mercekli). Hans Lippershey icat etmiş, astronomide ilk kez Galileo Galilei kullanmıştır.",
+      "Rasathane (Gözlemevi) Yer Seçimi: Şehir ışık kirliliğinden ve hava kirliliğinden uzak, yüksek rakımlı, nemsiz ve açık gece sayısı yüksek dağ zirvelerine kurulur (Örn: Erzurum Palandöken DAG).",
+      "Uzay Teleskopları (Hubble, James Webb): Atmosfer tabakasının dışında oldukları için hava olaylarından, ışık kırılmasından ve şehir ışıklarından etkilenmez; derin uzayın en net görüntülerini yakalar.",
+      "Türkiye'nin Uzay Filosu: Haberleşme uyduları (Türksat 3A, 4A, 4B, 5A, 5B ve ilk yerli millî Türksat 6A); Gözlem uyduları (Göktürk-1, Göktürk-2, İMECE); Ömrünü tamamlayanlar (Türksat 1B, 1C, 2A, Bilsat, Rasat)."
     ],
     "examTraps": [
-      "Uzay teleskopları (Hubble, James Webb) atmosferin olumsuz etkilerinden (ışık kırılması, bulut) etkilenmemek için uzaya yerleştirilmiştir."
+      "Uzay teleskoplarının yeryüzü teleskoplarından daha net görüntü vermesinin asıl nedeni hedefe daha yakın olmaları değil, Dünya atmosferinin kırıcı, emici ve bozucu etkilerinden tamamen arınmış olmalarıdır.",
+      "Türksat uyduları televizyon/haberleşme (36.000 km yer sabit), Göktürk ve İMECE ise keşif ve gözlem (yaklaşık 700 km alçak yörünge) uydularıdır."
     ],
     "solvedExample": {
       "question": "Gökbilimciler uzayı incelemek için hem Dünya yüzeyindeki yüksek dağların zirvelerine dev gözlemevleri (rasathaneler) kurmakta hem de James Webb gibi teleskopları uzay boşluğuna yerleştirmektedir.\n\na) Uzay teleskoplarının, yeryüzündeki en gelişmiş gözlemevlerinden bile daha net ve kaliteli görüntü elde etmesinin 2 temel bilimsel nedenini açıklayınız.\nb) Rasathanelerin (gözlemevlerinin) kurulacağı yer seçiminde dikkat edilen 2 coğrafi/çevresel kriteri yazınız.",
@@ -1722,25 +1732,32 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
       "solution": "a) 1. Neden: Dünya atmosferindeki gaz tabakası, tozlar ve bulutlar ışığı kırarak dağıtır ve görüntüyü bozar. Uzay boşluğunda atmosfer olmadığı için ışık bozulmadan teleskoba ulaşır.\n2. Neden: Yeryüzündeki yapay ışık kirliliği ve hava olayları (sis, yağmur, bulut) uzay teleskoplarını etkilemez.\nb) Rasathane yer seçim kriterleri: 1) Şehir ışıklarından uzak, ışık kirliliğinin en az olduğu yerler olmalıdır. 2) Havadaki nem ve bulutluluk oranının düşük, açık gece sayısının fazla olduğu yüksek rakımlı dağ zirveleri seçilmelidir."
     },
     "practiceQuestion": {
-      "question": "Neden büyük gözlemevleri şehir merkezlerine değil de yüksek dağ zirvelerine kurulur?",
-      "hint": "Işık kirliliğinden, hava kirliliğinden ve atmosferik türbülanstan kaçınmak için."
+      "question": "Neden büyük gözlemevleri şehir merkezlerindeki düzlüklere değil de yüksek dağ zirvelerine kurulur?",
+      "hint": "Işık kirliliğinden, hava kirliliğinden, yüksek nemden ve atmosferik ışık kırılmasından kaçınmak için."
     }
   },
   "FB.7.1.3": {
     "outcomeCode": "FB.7.1.3",
-    "topicTitle": "Türkiye'nin Aktif Yapay Uyduları ve Görevleri",
+    "topicTitle": "Türkiye'nin Aktif Uyduları ve Uzay Çalışmaları (Ders Kitabı 1. Kitap, Sayfa 22-30)",
+    "textbookUnit": "1. Kitap, 1. Ünite: Uzay Çağı",
+    "textbookPageRange": "Sayfa 22-30",
+    "textbookExamples": [
+      "Türksat 6A: Türkiye'nin ilk yerli ve millî haberleşme uydusu (Sayfa 24)",
+      "İMECE: Metre altı yüksek çözünürlüklü ilk yerli gözlem uydumuz (Sayfa 25)",
+      "Alper Gezeravcı'nın ISS'te gerçekleştirdiği biyoloji, tıp ve malzeme alanındaki 13 deney (Sayfa 28)"
+    ],
     "quickNotes": [
-      "Haberleşme (İletişim) Uydularımız: Türksat 3A, Türksat 4A, Türksat 4B, Türksat 5A, Türksat 5B, Türksat 6A (İlk yerli haberleşme uydumuz).",
-      "Gözlem ve İstihbarat Uydularımız: Göktürk-1, Göktürk-2, İMECE (Yüksek çözünürlüklü ilk yerli gözlem uydumuz).",
-      "Ömrünü Tamamlayanlar: Türksat 1B, 1C, 2A; BİLSAT ve RASAT uzay çöpü haline gelmiştir."
+      "Haberleşme Uydularımız: Türksat 3A, 4A, 4B, 5A, 5B ve 2024 yılında fırlatılan ilk yerli millî haberleşme uydumuz Türksat 6A'dır.",
+      "Gözlem ve Keşif Uydularımız: Göktürk-1, Göktürk-2 ve yüksek çözünürlüklü ilk yerli gözlem uydumuz İMECE'dir.",
+      "Ömrünü Tamamlayanlar: Türksat 1B, 1C, 2A; Bilsat ve Rasat görev sürelerini tamamlamış uzay atığı durumundadır."
     ],
     "examTraps": [
-      "Türksat serisi TV/İletişim uydusudur; Göktürk ve İMECE ise askeri/harita/tarım gözlem uydusudur."
+      "Türksat serisi TV ve iletişim içindir; Göktürk ve İMECE ise tarım, haritacılık, çevre ve savunma amaçlı yer gözlem uydularıdır."
     ],
     "solvedExample": {
-      "question": "Dünya yörüngesinde işlevini yitirmiş yaklaşık 30.000'den fazla roket parçası, patlama artığı ve ömrü tükenmiş uydu başıboş halde saatte on binlerce kilometre hızla dönmektedir (Uzay Kirliliği).\n\na) Uzay kirliliğinin günümüzde aktif olarak görev yapan uzay istasyonları ve haberleşme uyduları için oluşturduğu en büyük tehlikeyi açıklayınız.\nb) Uzay kirliliğini azaltmak veya önlemek amacıyla bilim insanlarının geliştirebileceği 2 somut çözüm önerisi yazınız.",
-      "analysis": "Yüksek hızda çarpışma zincirleme reaksiyon (Kessler sendromu) yaratır. Çözümler: Kendi kendini imha/atmosfere sokma, lazer veya manyetik ağ ile toplama.",
-      "solution": "a) Yörüngedeki çöpler saatte 28.000 km gibi çok yüksek hızlarla hareket eder. Bu hızdaki küçücük bir cıvata bile aktif bir uyduya veya Uluslararası Uzay İstasyonu'na çarptığında zırhı delebilir, uyduları parçalayabilir ve 'Kessler Sendromu' denilen zincirleme çarpışmalarla yörüngeyi tamamen kullanılamaz hale getirebilir.\nb) Çözüm önerileri:\n1) Görev süresi biten uyduların motorlarını son bir kez ateşleyerek Dünya atmosferine yönlendirilmesi ve sürtünmeyle yanarak yok olmasının sağlanması.\n2) Uzay çöpü toplayıcı robot kollar, dev lazerler veya manyetik çekicilerle enkazların toplanıp kontrollü şekilde düşürülmesi."
+      "question": "Türkiye'nin uzay filosunda yer alan Türksat 6A ve İMECE uydularının görev alanlarını ve yörünge özelliklerini karşılaştırınız.\n\na) Türksat 6A ve İMECE'nin temel görev amaçlarını yazınız.\nb) İMECE gözlem uydusunun neden 36.000 km yerine yaklaşık 700 km alçak Dünya yörüngesine yerleştirildiğini açıklayınız.",
+      "analysis": "Türksat 6A haberleşme, İMECE gözlemdir. İMECE net ve yüksek çözünürlüklü fotoğraf çekebilmek için alçak yörüngeye konulmuştur.",
+      "solution": "a) Türksat 6A: Televizyon yayını, internet ve veri haberleşmesi amacıyla görev yapar (İlk yerli haberleşme uydumuzdur). İMECE: Yüksek çözünürlüklü uydu fotoğrafları çekerek tarım, haritacılık, çevre takibi ve savunma alanında gözlem yapar (İlk yerli yüksek çözünürlüklü gözlem uydumuzdur).\nb) Yeryüzüne ne kadar yakın olursa kameraların metre altı çözünürlükle detaylı görüntü yakalaması o kadar kolaylaşır. 36.000 km gibi çok uzak bir mesafeden santimetre hassasiyetinde yeryüzü detayı yakalamak optik olarak çok zordur."
     },
     "practiceQuestion": {
       "question": "Türkiye'nin uzaydaki aktif gözlem uydularından ikisini yazınız.",
@@ -1749,13 +1766,26 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "FB.7.1.4": {
     "outcomeCode": "FB.7.1.4",
-    "topicTitle": "Uzay Kirliliği ve Kessler Sendromu",
+    "topicTitle": "Uzay Kirliliği, Yıldızların Doğumu ve Yaşam Döngüsü (Ders Kitabı 1. Kitap, Sayfa 31-45)",
+    "textbookUnit": "1. Kitap, 1. Ünite: Uzay Çağı",
+    "textbookPageRange": "Sayfa 31-45",
+    "textbookExamples": [
+      "Yörüngede saatte 28.000 km hızla dönen 30.000'den fazla roket parçası ve enkaz (Sayfa 32)",
+      "Kessler Sendromu: Zincirleme çarpışmalarla yörüngenin kilitlenmesi riski (Sayfa 33)",
+      "Bulutsu (Nebula) çeşitleri: Orion, Atbaşı ve Tarantula bulutsusu (Sayfa 38)",
+      "Küçük kütleli yıldız döngüsü: Bulutsu → Küçük Yıldız (Güneş) → Kırmızı Dev → Gezegenimsi Bulutsu → Beyaz Cüce (Sayfa 42)",
+      "Büyük kütleli yıldız döngüsü: Bulutsu → Büyük Yıldız → Kırmızı Süperdev → Süpernova Patlaması → Nötron Yıldızı veya Kara Delik (Sayfa 43)"
+    ],
     "quickNotes": [
-      "Uzay Kirliliği: Dünya yörüngesinde dönen işlevini yitirmiş uydular, roket parçaları ve yakıt tanklarının oluşturduğu tehlikeli atık yığınıdır.",
-      "Kessler Sendromu: Yörüngedeki atıkların birbirine çarparak zincirleme patlamalara ve yeni çarpışmalara yol açması felaketidir."
+      "Uzay Kirliliği: Yörüngede başıboş dönen insan yapımı roket parçaları, yakıt tankları ve ömrü tükenmiş uydulardır. Doğal gök taşları uzay kirliliği SAYILMAZ.",
+      "Kessler Sendromu: Saatte 28.000 km hızla dönen atıkların aktif uydulara çarparak zincirleme patlamalara yol açmasıdır. Çözüm: Uyduları kontrollü şekilde atmosfere çekip sürtünmeyle yakmak.",
+      "Yıldızların Doğumu: Bulutsularda (Nebula) gaz ve toz bulutlarının kütleçekim etkisiyle sıkışmasıyla yıldızlar doğar.",
+      "Küçük Kütleli Yıldız: Bulutsu → Küçük Yıldız → Kırmızı Dev → Gezegenimsi Bulutsu → Beyaz Cüce olarak son bulur (Güneş böyledir).",
+      "Büyük Kütleli Yıldız: Bulutsu → Büyük Yıldız → Kırmızı Süperdev → Süpernova Patlaması → Nötron Yıldızı veya Kara Delik olur."
     ],
     "examTraps": [
-      "Gök taşları (meteorlar) uzay kirliliği DEĞİLDİR; uzay kirliliği yalnızca insan yapımı atıklardır."
+      "Meteorlar (gök taşları) DOĞAL gök cismidir, uzay kirliliği DEĞİLDİR; uzay kirliliği yalnızca insan yapımı metal atıklardır.",
+      "Güneş süpernova patlaması GEÇİREMEZ ve kara deliğe DÖNÜŞEMEZ! Başlangıç kütlesi küçük olduğu için ömrünü Beyaz Cüce olarak tamamlar."
     ],
     "solvedExample": {
       "question": "Yıldızlar uzaydaki gaz ve toz bulutlarının (Bulutsu / Nebula) sıkışmasıyla doğar. Ancak bir yıldızın ömrünü nasıl tamamlayacağını onun başlangıç kütlesi belirler.\n• Küçük Kütleli Yıldızlar: Güneş gibi yıldızlar.\n• Büyük Kütleli Yıldızlar: Güneş'ten katbekat büyük dev yıldızlar.\n\na) Güneş büyüklüğündeki küçük kütleli bir yıldızın yaşam döngüsü basamaklarını (Bulutsu'dan son aşamaya kadar) sırasıyla yazınız.\nb) Güneş bir gün süpernova patlaması geçirerek kara deliğe dönüşebilir mi? Nedenini açıklayınız.",
@@ -1763,40 +1793,65 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
       "solution": "a) Küçük kütleli yıldızın yaşam evreleri:\nBulutsu (Nebula) → Küçük Kütleli Yıldız (Güneş) → Kırmızı Dev → Gezegenimsi Bulutsu → Beyaz Cüce (ve en son Siyah Cüce).\nb) Hayır, Güneş kara deliğe DÖNÜŞEMEZ. Çünkü bir yıldızın süpernova patlaması geçirip kara delik veya nötron yıldızı olabilmesi için başlangıç kütlesinin Güneş kütlesinden çok daha büyük (büyük kütleli yıldız) olması gerekir. Güneş küçük kütleli olduğu için ömrünü Beyaz Cüce olarak tamamlayacaktır."
     },
     "practiceQuestion": {
-      "question": "Uzay kirliliğini azaltmak için mühendislerin geliştirdiği bir çözüm önerisi yazınız.",
-      "hint": "Ömrü biten uyduların kontrollü olarak atmosfere sokulup yakılması veya lazerle yörüngeden düşürülmesi."
+      "question": "Uzay kirliliğini azaltmak veya önlemek için bilim insanlarının geliştirdiği bir çözüm önerisi yazınız.",
+      "hint": "Ömrü tükenen uyduların kontrollü olarak Dünya atmosferine sokulup sürtünmeyle yakılması veya temizlik robotları."
     }
   },
   "FB.7.2.1": {
     "outcomeCode": "FB.7.2.1",
-    "topicTitle": "Mitoz Bölünme: Aşamaları ve Önemi",
+    "topicTitle": "Fiziksel Anlamda İş, Kuvvet ve Doğrultu İlişkisi (Ders Kitabı 1. Kitap, Sayfa 56-66)",
+    "textbookUnit": "1. Kitap, 2. Ünite: Kuvvet ve Enerji",
+    "textbookPageRange": "Sayfa 56-66",
+    "textbookExamples": [
+      "Market arabası iten Sibel Hanım: Yatay kuvvet ve yatay hareket → Fiziksel iş yapılır (Sayfa 58)",
+      "Sırtında çantayla düz yatay koridorda sabit hızla yürüyen öğrenci: Kaldırma kuvveti düşey, hareket yatay → Birbirine dik olduğu için yer çekimine karşı iş YAPILMAZ (Sayfa 60)",
+      "Aynı çantayı merdivenlerden yukarı kata çıkaran öğrenci: Yer çekimine zıt yönde yukarı kuvvet ve yukarı hareket → Yer çekimine karşı iş YAPILIR (Sayfa 61)",
+      "Ağır dolabı 100 N kuvvetle iten ancak hareket ettiremeyen öğrenci: Δx = 0 olduğu için iş SIFIRDIR (Sayfa 62)",
+      "İş deneyi: Yol eşitken (10 m) 15 N kuvvet 150 J, 30 N kuvvet 300 J iş yapar; kuvvet ile iş doğru orantılıdır (W = F · Δx) (Sayfa 64)"
+    ],
     "quickNotes": [
-      "Mitoz Bölünmenin Amacı: Tek hücrelilerde üreme (çoğalma); çok hücrelilerde büyüme, gelişme ve yaraların onarımıdır.",
-      "Temel Özellikleri:\n• Vücut hücrelerinde görülür.\n• 1 hücreden 2 özdeş hücre oluşur.\n• Kromozom sayısı SABİT kalır (2n -> 2n).\n• Kalıtsal çeşitlilik sağlamaz (Klon kopya)."
+      "Fiziksel İşin Şartları: 1) Cisme bir kuvvet uygulanmalı, 2) Cisim uygulanan kuvvet doğrultusunda mutlaka yol almalıdır (yer değiştirmelidir).",
+      "Kuvvet Doğrultusu Kuralı: Kuvvet ile hareket doğrultusu aynı olmalıdır. Kuvvet ile hareket doğrultusu birbirine dikse (90°) o kuvvet iş yapmaz!",
+      "Sırtında yükle yatay yolda sabit hızla yürüyen kişi çantaya düşey kuvvet uygular, hareket yataydır → Yer çekimi kuvvetine karşı iş yapılmaz.",
+      "Yükü yerden kaldırıp merdivenden yukarı çıkaran kişi düşey kuvvet doğrultusunda düşey yol aldırdığı için yer çekimine karşı iş yapar!",
+      "Hareketsizlik Hali: Cisim yer değiştirmiyorsa (Δx = 0), uygulanan kuvvet ne kadar büyük olursa olsun ve insan ne kadar yorulursa yorulsun fiziksel iş SIFIRDIR.",
+      "İş Formülü ve Birimi: W = F · Δx. Kuvvet (N), Yol (m), İş (Joule - J)."
     ],
     "examTraps": [
-      "Mitozda parça değişimi (krossing-over) ASLA görülmez; oluşan hücreler ana hücrenin genetik ikizidir."
+      "Günlük hayattaki zihinsel yorulma veya sırtında yükle yatay yolda yürümek fen anlamında iş DEĞİLDİR! Yer çekimine karşı iş için düşey hareket şarttır.",
+      "Cisim hareket etmiyorsa kuvvet ne kadar büyük olursa olsun yapılan iş sıfırdır (W = 0)."
     ],
     "solvedExample": {
-      "question": "Bir fen deneyinde üç farklı öğrencinin eylemleri gözlenmiştir:\n1. Durum: Can, sırtındaki 5 kg'lık okul çantasıyla düz bir koridorda sabit hızla 20 metre yürümüştür.\n2. Durum: Elif, yerde duran 10 kg'lık koliyi 50 N'luk yatay kuvvet uygulayarak yatay zeminde 4 metre ileri itmiştir.\n3. Durum: Burak, duvara 100 N'luk kuvvetle 10 dakika boyunca bastırmış ancak duvar hareket etmemiştir.\n\na) Bu durumlardan hangisinde/hangilerinde fiziksel anlamda İŞ YAPILMIŞTIR? Nedenini işin fiziksel formülü ve doğrultu kuralına göre açıklayınız.\nb) Fiziksel anlamda iş yapılan durumdaki iş miktarını Joule (J) cinsinden hesaplayınız.",
-      "analysis": "İş = Kuvvet * Yol. Kuvvet ile hareket doğrultusu aynı olmalıdır. 1. durumda kuvvet yukarı yol yatay (iş yok). 3. durumda yol sıfır (iş yok). 2. durumda iş = 50 N * 4 m = 200 J.",
-      "solution": "a) Yalnızca 2. DURUMDA (Elif'in durumunda) fiziksel anlamda iş yapılmıştır.\nGerekçeler:\n• 1. Durumda: Çantaya uygulanan kaldırma kuvveti DİKEY doğrultuda iken, hareket YATAY doğrultudadır. Kuvvet ile hareket doğrultusu dik olduğu için fiziksel iş yapılmaz.\n• 2. Durumda: Uygulanan kuvvet de hareket de YATAY doğrultudadır ve cisim yol almıştır. Bu nedenle iş yapılmıştır.\n• 3. Durumda: Duvar hareket etmediği için (alınan yol = 0), kuvvet ne kadar büyük olursa olsun iş yapılmamıştır.\nb) Yapılan İş Hesabı: İş = Kuvvet × Alınan Yol = 50 N × 4 m = 200 Joule (J) bulunur."
+      "question": "Fen bilimleri dersinde fiziksel anlamda iş yapılmış sayılması için cisme bir kuvvet uygulanmalı ve cisim uygulanan kuvvet doğrultusunda yer değiştirmelidir.\n1. Durum: Ahmet, 10 kg'lık okul çantasını sırtında taşıyarak düz yatay koridorda 20 metre yürüyor.\n2. Durum: Ahmet, aynı çantayı yerden kaldırıp merdivenlerden 2. kata (yukarıya) çıkarıyor.\n\na) 1. ve 2. durumdan hangisinde YER ÇEKİMİ KUVVETİNE KARŞI fiziksel anlamda iş yapılmıştır? Nedenini açıklayınız.\nb) 1. durumda yatay yolda yürürken neden yer çekimine karşı iş yapılmamıştır?",
+      "analysis": "Kuvvet ile hareket aynı doğrultuda olmalıdır. Yukarı çıkarken iş yapılır, yatayda yürürken kuvvet ve hareket birbirine diktir.",
+      "solution": "a) 2. durumda yer çekimine karşı iş yapılmıştır. Çünkü çanta yukarı kaldırılırken yer çekimine zıt yönde yukarı doğru kuvvet uygulanmış ve çanta kuvvet doğrultusunda yukarı doğru hareket etmiştir.\nb) 1. durumda ise çanta yatayda hareket etmektedir; yer çekimi kuvveti ise düşeydir. Kuvvet ve hareket doğrultusu birbirine dik olduğu için yer çekimine karşı iş yapılmaz."
     },
     "practiceQuestion": {
-      "question": "2n = 46 kromozomlu bir epitel hücresi art arda 3 kez mitoz bölünme geçirirse oluşan hücre sayısı ve kromozom sayısı ne olur?",
-      "hint": "Hücre sayısı: 2^3 = 8 hücre. Kromozom sayısı değişmez: 46 kalır."
+      "question": "Duvara 150 N kuvvet uygulayarak 10 dakika boyunca bastıran bir sporcunun fen bilimleri kurallarına göre neden fiziksel anlamda iş yapmadığını açıklayınız.",
+      "hint": "Fiziksel anlamda iş için cisme kuvvet doğrultusunda yol aldırmak gerekir; duvar hareket etmediği için (alınan yol sıfır) yapılan iş sıfırdır (W = 0)."
     }
   },
   "FB.7.1.5": {
     "outcomeCode": "FB.7.1.5",
-    "topicTitle": "Yıldızların Yaşam Döngüsü ve Bulutsular (Nebula)",
+    "topicTitle": "Yıldız, Galaksi, Işık Yılı ve Evren Kavramları (Ders Kitabı 1. Kitap, Sayfa 46-55)",
+    "textbookUnit": "1. Kitap, 1. Ünite: Uzay Çağı",
+    "textbookPageRange": "Sayfa 46-55",
+    "textbookExamples": [
+      "Işık Yılı ve Mesafe: Güneş'e en yakın yıldız Proxima Centauri 4,24 ışık yılı uzaklıktadır (Sayfa 48)",
+      "Samanyolu Galaksisi (Sarmal galaksi türü, Avcı/Orion kolu) (Sayfa 50)",
+      "Komşu Andromeda Galaksisi (Dev sarmal galaksi) (Sayfa 51)",
+      "Evren ve Uzay ayrımı: Evren = Dünya + Uzay (Sayfa 53)"
+    ],
     "quickNotes": [
-      "Yıldızların Doğumu: Bulutsu (Nebula) adı verilen dev gaz ve toz bulutlarının kütleçekimle sıkışmasıyla yıldızlar doğar (Örn: Orion, Kartal bulutsusu).",
-      "Küçük Kütleli Yıldız: Bulutsu -> Küçük Yıldız -> Kırmızı Dev -> Gezegenimsi Bulutsu -> BEYAZ CÜCE olarak son bulur (Güneşimiz böyledir).",
-      "Büyük Kütleli Yıldız: Bulutsu -> Büyük Yıldız -> Kırmızı Süperdev -> Süpernova Patlaması -> NÖTRON YILDIZI veya KARA DELİK olur."
+      "Işık Yılı: Bir zaman birimi DEĞİL, ışığın boşlukta 1 Dünya yılında aldığı devasa UZAKLIK (MESAFE) birimidir (yaklaşık 9,46 trilyon km).",
+      "Kozmik Zaman İlişkisi: 4,24 ışık yılı uzaktaki yıldıza baktığımızda onun şimdiki halini değil, 4,24 yıl önceki geçmiş halini görürüz.",
+      "Galaksi (Gök Ada) Türleri: Sarmal (spiral), eliptik ve düzensiz galaksiler.",
+      "Samanyolu Galaksisi: Sarmal galaksi türündedir. Güneş Sistemimiz Samanyolu'nun 'Avcı (Orion)' sarmal kolunda yer alır.",
+      "Evren ve Uzay: Evren, aralarındaki boşluklarla birlikte tüm gök cisimlerini ve Dünya'yı kapsayan bütündür. Uzay ise evrenin Dünya atmosferi dışında kalan kısmıdır."
     ],
     "examTraps": [
-      "Güneş bir kara deliğe dönüşmeyecektir; küçük kütleli olduğu için ömrünün sonunda Beyaz Cüce olacaktır."
+      "Işık yılı zaman birimi DEĞİLDİR, mesafe/uzaklık birimidir!",
+      "Dünya evrenin içindedir ancak uzayın içinde DEĞİLDİR (Uzay = Evren - Dünya)."
     ],
     "solvedExample": {
       "question": "Galaksiler (Gök adalar) şekillerine göre üçe ayrılır:\n1) Sarmal Galaksiler, 2) Eliptik Galaksiler, 3) Düzensiz Galaksiler.\n\na) Güneş sistemimizin içinde yer aldığı 'Samanyolu Galaksisi' bu türlerden hangisine girmektedir?\nb) Evren ile Uzay kavramları arasındaki temel farkı açıklayınız.",
@@ -1804,19 +1859,32 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
       "solution": "a) Samanyolu Galaksisi 'SARMAL GALAKSİ' türündedir (Güneş sistemi bu sarmal kollardan Avcı/Orion kolu üzerinde bulunur).\nb) Evren ve Uzay Farkı: 'Evren', aradaki boşluklar ve tüm gök cisimleriyle birlikte var olan her şeyin tamamıdır (Dünya + Uzay). 'Uzay' ise evrenin Dünya atmosferi dışında kalan sonsuz kabul edilen kısmıdır. Yani Evren = Dünya + Uzay şeklindedir."
     },
     "practiceQuestion": {
-      "question": "Süpernova patlaması hangi kütledeki yıldızların yaşam döngüsünde gerçekleşir ve patlama sonrası neler oluşabilir?",
-      "hint": "Büyük kütleli yıldızlarda gerçekleşir; nötron yıldızı (pulsar) veya kara delik oluşur."
+      "question": "Bir gökbilimci 100 ışık yılı uzaklıktaki bir yıldızı teleskopla gözlemlemektedir. Gökbilimcinin gördüğü görüntü yıldızın hangi andaki durumunu yansıtır?",
+      "hint": "Yıldızdan çıkan ışık Dünya'ya 100 yılda ulaştığı için tam 100 yıl önceki geçmiş halini yansıtır."
     }
   },
   "FB.7.2.2": {
     "outcomeCode": "FB.7.2.2",
-    "topicTitle": "Mayoz Bölünme: Parça Değişimi ve Kalıtsal Çeşitlilik",
+    "topicTitle": "Kinetik Enerji, Potansiyel Enerji ve Enerji Dönüşümleri (Ders Kitabı 1. Kitap, Sayfa 67-86)",
+    "textbookUnit": "1. Kitap, 2. Ünite: Kuvvet ve Enerji",
+    "textbookPageRange": "Sayfa 67-86",
+    "textbookExamples": [
+      "Kamyon ve binek otomobil kaçış rampası deneyi: Eşit süratte (60 km/h) kütlesi büyük kamyonun kinetik enerjisi daha büyüktür (Sayfa 69)",
+      "Kum havuzu bilye deneyleri: Eşit kütleli bilyelerden 2h yükseklikten bırakılan bilye h yüksekliktekinden kumda daha derin iz bırakır (Ep = m · g · h) (Sayfa 74)",
+      "Aynı h yüksekliğinden bırakılan m ve 2m kütleli bilyelerden 2m kütleli olan kumda daha derin iz bırakır (Sayfa 75)",
+      "Sürtünmesiz kaykay pistinde (Anıl) K (tepe) → L (taban) → M (tepe) enerji dönüşümü: Tepede potansiyel maksimum kinetik sıfır; dipte potansiyel sıfır kinetik maksimumdur (Sayfa 78)",
+      "Sürtünmeli yüzeyde mekanik enerjinin ısı ve ses enerjisine dönüşmesi, toplam enerjinin korunumu (Sayfa 82)"
+    ],
     "quickNotes": [
-      "Mayozun Amacı: Eşeyli üreyen canlılarda sperm ve yumurta gibi \"üreme hücrelerini (gametleri)\" oluşturmaktır.",
-      "Temel Özellikleri:\n• 2n kromozomlu üreme ana hücrelerinde görülür.\n• 1 hücreden 4 yeni hücre oluşur.\n• Kromozom sayısı YARIYA iner (2n -> n).\n• Mayoz-1'de homolog kromozomlar arasında Parça Değişimi (Krossing-over) gerçekleşir."
+      "Kinetik Enerji (Ek): Hareket halindeki cisimlerin sahip olduğu enerjidir. Cismin kütlesine ve süratine bağlıdır. Süratler eşitken kütlesi büyük olanın kinetik enerjisi daha büyüktür.",
+      "Çekim Potansiyel Enerjisi (Ep): Cismin bulunduğu yükseklikten dolayı sahip olduğu enerjidir. Cismin kütlesine ve yerden yüksekliğine bağlıdır (Ep = m · g · h).",
+      "Esneklik Potansiyel Enerjisi: Yay, paket lastiği veya sapan gerildiğinde/sıkıştırıldığında depolanan enerjidir.",
+      "Mekanik Enerji Korunumu: Sürtünmesiz ortamlarda toplam mekanik enerji (E_mekanik = Ep + Ek) daima sabittir. Potansiyel kinetiğe, kinetik potansiyele dönüşür.",
+      "Sürtünme ve Enerji Korunumu: Sürtünmeli ortamlarda mekanik enerjinin bir kısmı ısı ve ses enerjisine dönüşür; enerji kaybolmaz, toplam enerji daima korunur."
     ],
     "examTraps": [
-      "Kromozom sayısının tür içinde nesiller boyu sabit kalmasını sağlayan olay MAYOZ ve DÖLLENME birlikteliğidir."
+      "Sürtünmeli ortamlarda 'enerji yok olur' demek vahim bir kavram yanılgısıdır; kinetik enerji ısı ve ses enerjisine DÖNÜŞÜR. Toplam enerji daima korunur!",
+      "Yalnızca kütleye veya yalnızca yüksekliğe bakarak potansiyel enerji karşılaştırılamaz; hem kütle hem yükseklik birlikte değerlendirilmelidir (Ep = m · g · h)."
     ],
     "solvedExample": {
       "question": "U şeklindeki sürtünmesiz bir kaykay pistinin en üst tepe noktasından (K noktası) harekete başlayan bir kaykaycı, en dipteki taban noktasından (L noktası) geçerek karşı tepeye (M noktası) doğru tırmanmaktadır.\n\na) K noktasında, L noktasında ve M noktasında kaykaycının sahip olduğu enerji türlerini (Çekim Potansiyel Enerjisi / Kinetik Enerji) yazınız.\nb) L noktasında kaykaycının hızının en yüksek olmasının bilimsel nedenini enerji dönüşümü ilkesine göre açıklayınız.",
@@ -1824,8 +1892,8 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
       "solution": "a) Enerji Türleri:\n• K Noktasında (En Üst Tepe): Yükseklik maksimum olduğu için Çekim Potansiyel Enerjisi maksimumdur; hız sıfır olduğu için Kinetik Enerji sıfırdır.\n• L Noktasında (En Dip Taban): Yükseklik sıfıra indiği için Potansiyel Enerji kinetik enerjiye dönüşmüştür; Kinetik Enerji maksimumdur.\n• M Noktasında (Karşı Tepe): Kinetik enerji tekrar Çekim Potansiyel Enerjisine dönüşmüştür.\nb) L noktasında hızın en yüksek olma nedeni: K noktasındaki potansiyel enerjinin tamamının sürtünmesiz ortamda kinetik enerjiye (hareket enerjisine) dönüşmüş olmasıdır. Kinetik enerji hıza bağlı olduğundan, kinetik enerjinin maksimum olduğu taban noktasında hız da en yüksek değerine ulaşır."
     },
     "practiceQuestion": {
-      "question": "Aynı anne ve babadan doğan kardeşlerin birbirine tıpatıp benzememesinin mayozdaki temel nedeni nedir?",
-      "hint": "Mayoz 1'deki homolog kromozomlar arası parça değişimi (krossing-over) ve rastgele dizilimdir."
+      "question": "Aynı 70 km/h sabit süratle ilerleyen 1500 kg'lık bir otomobil ile 8000 kg'lık bir kamyonun kinetik enerjilerini gerekçelendirerek karşılaştırınız.",
+      "hint": "Süratler eşit olduğunda kinetik enerji kütle ile doğru orantılıdır; kamyonun kütlesi daha büyük olduğu için kinetik enerjisi otomobilden daha büyüktür."
     }
   },
   "SB.7.1.1": {

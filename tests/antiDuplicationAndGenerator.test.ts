@@ -172,6 +172,130 @@ try {
 }
 
 // -----------------------------------------------------------------------------
+// TEST 06: 6. Sınıf Matematik MEBİ Yönerge ve Sayısal Parametre Ayrımı
+// -----------------------------------------------------------------------------
+try {
+  const baseItems = [
+    {
+      questionText: '72 sayısını bölen listesi (algoritma) yöntemiyle asal çarpanlarına ayırınız ve üslü ifadelerin çarpımı şeklinde yazınız.',
+      stimulus: '72 kişilik bir turist kafilesi bir otele yerleştirilecektir.'
+    },
+    {
+      questionText: 'Dört basamaklı 542A sayısı 4 ile kalansız bölünebilmektedir. Buna göre A yerine yazılabilecek rakamları bulunuz.',
+      stimulus: ''
+    }
+  ];
+
+  // Özgün yeni sorular (Farklı kurgu, farklı sayılar, farklı kurallar)
+  const candMath1 = {
+    questionText: '90 sayısını bölen listesi (algoritma) yöntemiyle asal çarpanlarına ayırınız ve üslü ifadelerin çarpımı şeklinde yazınız.',
+    stimulus: 'Hasan Bey bahçesinden topladığı 90 kg balı kavanozlara paylaştıracaktır.'
+  };
+  const candMath2 = {
+    questionText: 'Beş basamaklı 7832B sayısı 9 ile kalansız bölünebilmektedir. Buna göre B yerine yazılabilecek rakamları bulunuz.',
+    stimulus: ''
+  };
+
+  // Gerçek kopyalar (Aynı sayılar, aynı kurgunun yalnızca 1-2 sözcüğü değiştirilmiş hali)
+  const realDup1 = {
+    questionText: '72 sayısını bölen listesi (algoritma) yöntemiyle asal çarpanlarına ayırınız ve üslü ifadelerin çarpımı şeklinde yazınız.',
+    stimulus: '72 kişilik bir öğrenci kafilesi bir otele yerleştirilecektir.'
+  };
+  const realDup2 = {
+    questionText: 'Dört basamaklı 542A sayısı 4 ile kalansız bölünebildiğine göre A yerine yazılabilecek tüm rakamları bulunuz.',
+    stimulus: ''
+  };
+
+  const isDupCand1 = isDuplicateOrTooSimilar(candMath1.questionText, candMath1.stimulus, baseItems, undefined, 0.45);
+  const isDupCand2 = isDuplicateOrTooSimilar(candMath2.questionText, candMath2.stimulus, baseItems, undefined, 0.45);
+  const isDupReal1 = isDuplicateOrTooSimilar(realDup1.questionText, realDup1.stimulus, baseItems, undefined, 0.45);
+  const isDupReal2 = isDuplicateOrTooSimilar(realDup2.questionText, realDup2.stimulus, baseItems, undefined, 0.45);
+
+  const passed = isDupCand1 === false && isDupCand2 === false && isDupReal1 === true && isDupReal2 === true;
+
+  reportTest(
+    '06',
+    '6. Sınıf Matematik: Standart MEBİ yönergesi içeren farklı sorular reddedilmez, gerçek kopyalar yakalanır',
+    passed,
+    `Hasan Bey 90 kg bal (reddedilmedi): ${!isDupCand1}, 7832B/9 bölünebilme (reddedilmedi): ${!isDupCand2}, Öğrenci oteli kopyası (yakalandı): ${isDupReal1}, 542A/4 kopyası (yakalandı): ${isDupReal2}`
+  );
+} catch (err: any) {
+  reportTest('06', '6. sınıf matematik anti-duplikasyon testi', false, err.message);
+}
+
+// -----------------------------------------------------------------------------
+// TEST 07: 7. Sınıf Matematik: Hazır Sınavla Çakışmama ve KaTeX Bütünlüğü
+// -----------------------------------------------------------------------------
+try {
+  const scenario = MIDDLE_SCHOOL_OFFICIAL_SCENARIOS[7]?.matematik?.[0];
+  assert.ok(scenario, '7. Sınıf Matematik Senaryo 1 bulunamadı');
+
+  const baseExam = SAMPLE_EXAMS.find(e => e.id === 'exam_7_matematik_1_1_senaryo_1');
+  assert.ok(baseExam, 'Hazır sınav bulunamadı');
+
+  const res = await generateMEBIQuestions('matematik', 7, scenario, 0);
+
+  let duplicateCount = 0;
+  baseExam.questions.forEach((bq) => {
+    res.generatedQuestions.forEach((gq) => {
+      if (isDuplicateOrTooSimilar(gq.question, gq.stimulus, [{ questionText: bq.questionText, stimulus: bq.stimulus }], undefined, 0.45)) {
+        duplicateCount++;
+      }
+    });
+  });
+
+  const hasKaTeX = res.generatedQuestions.some(q => q.question.includes('$') || (q.stimulus && q.stimulus.includes('$')));
+  const hasAltAnswers = res.generatedQuestions.every(q => Array.isArray(q.alternativeAnswers) && q.alternativeAnswers.length >= 2);
+
+  const passed = duplicateCount === 0 && res.generatedQuestions.length === 7 && hasKaTeX && hasAltAnswers;
+
+  reportTest(
+    '07',
+    '7. Sınıf Matematik: Üretim hazır sınavı tekrarlamaz, KaTeX ve alternatif cevapları eksiksiz sunar',
+    passed,
+    `Soru Sayısı: ${res.generatedQuestions.length}, Çakışma: ${duplicateCount}, KaTeX Desteği: ${hasKaTeX}, Alternatif Cevaplar: ${hasAltAnswers}`
+  );
+} catch (err: any) {
+  reportTest('07', '7. sınıf matematik entegrasyon testi', false, err.message);
+}
+
+// -----------------------------------------------------------------------------
+// TEST 08: 7. Sınıf Fen Bilimleri: Hazır Sınavla Çakışmama ve Ders Kitabı Entegrasyonu
+// -----------------------------------------------------------------------------
+try {
+  const scenario = MIDDLE_SCHOOL_OFFICIAL_SCENARIOS[7]?.fen_bilimleri?.[0];
+  assert.ok(scenario, '7. Sınıf Fen Bilimleri Senaryo 1 bulunamadı');
+
+  const baseExam = SAMPLE_EXAMS.find(e => e.id === 'exam_7_fen_bilimleri_1_1_senaryo_1');
+  assert.ok(baseExam, 'Hazır sınav bulunamadı');
+
+  const res = await generateMEBIQuestions('fen_bilimleri', 7, scenario, 0);
+
+  let duplicateCount = 0;
+  baseExam.questions.forEach((bq) => {
+    res.generatedQuestions.forEach((gq) => {
+      if (isDuplicateOrTooSimilar(gq.question, gq.stimulus, [{ questionText: bq.questionText, stimulus: bq.stimulus }], undefined, 0.45)) {
+        duplicateCount++;
+      }
+    });
+  });
+
+  const hasAltAnswers = res.generatedQuestions.every(q => Array.isArray(q.alternativeAnswers) && q.alternativeAnswers.length >= 2);
+  const totalPoints = res.generatedQuestions.reduce((s, q) => s + q.points, 0);
+
+  const passed = duplicateCount === 0 && res.generatedQuestions.length === 9 && hasAltAnswers && totalPoints === 100;
+
+  reportTest(
+    '08',
+    '7. Sınıf Fen Bilimleri: Üretim hazır sınavı tekrarlamaz, 9 soru, 100 puan ve alternatif cevapları korur',
+    passed,
+    `Soru Sayısı: ${res.generatedQuestions.length}, Toplam Puan: ${totalPoints}, Çakışma: ${duplicateCount}, Alternatif Cevaplar: ${hasAltAnswers}`
+  );
+} catch (err: any) {
+  reportTest('08', '7. sınıf fen bilimleri entegrasyon testi', false, err.message);
+}
+
+// -----------------------------------------------------------------------------
 // ÖZET
 // -----------------------------------------------------------------------------
 console.log('=== TEST ÖZETİ ===');

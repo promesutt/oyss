@@ -11960,6 +11960,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "a) Uzay teleskoplarının, yeryüzündeki en gelişmiş gözlemevlerinden bile daha net ve kaliteli görüntü elde etmesinin 2 temel bilimsel nedenini açıklayınız.\nb) Rasathanelerin (gözlemevlerinin) kurulacağı yer seçiminde dikkat edilen 2 coğrafi/çevresel kriteri yazınız.",
         "solutionExplanation": "Atmosfer ışığı saçar, soğurur ve hava olayları gözlemi engeller. Uzayda atmosfer yoktur. Rasathaneler ışık kirliliğinden uzak ve yüksek yerlere kurulur.",
         "modelAnswer": "a) 1. Neden: Dünya atmosferindeki gaz tabakası, tozlar ve bulutlar ışığı kırarak dağıtır ve görüntüyü bozar. Uzay boşluğunda atmosfer olmadığı için ışık bozulmadan teleskoba ulaşır.\n2. Neden: Yeryüzündeki yapay ışık kirliliği ve hava olayları (sis, yağmur, bulut) uzay teleskoplarını etkilemez.\nb) Rasathane yer seçim kriterleri: 1) Şehir ışıklarından uzak, ışık kirliliğinin en az olduğu yerler olmalıdır. 2) Havadaki nem ve bulutluluk oranının düşük, açık gece sayısının fazla olduğu yüksek rakımlı dağ zirveleri seçilmelidir.",
+        "alternativeAnswers": [
+          "a) 1. Uzayda atmosfer olmadığı için ışık kırılması veya bulanıklaşma yaşanmaz. 2. Şehir ışık kirliliğinden ve bulut/sis gibi hava olaylarından etkilenmez. b) Şehir ışıklarından uzak olması ve yüksek rakımlı, nemsiz açık dağ zirveleri olması.",
+          "a) Atmosfer tabakasının bulunmaması ve yapay ışık kirliliğinden uzak olması. b) Işık kirliliğinin azlığı ve açık gece sayısının fazlalığı (yüksek rakım)."
+        ],
         "rubric": [
           {
             "criterion": "Uzay teleskoplarının atmosferik avantajının doğru açıklanması",
@@ -11984,6 +11988,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "a) Uzay kirliliğinin günümüzde aktif olarak görev yapan uzay istasyonları ve haberleşme uyduları için oluşturduğu en büyük tehlikeyi açıklayınız.\nb) Uzay kirliliğini azaltmak veya önlemek amacıyla bilim insanlarının geliştirebileceği 2 somut çözüm önerisi yazınız.",
         "solutionExplanation": "Yüksek hızda çarpışma zincirleme reaksiyon (Kessler sendromu) yaratır. Çözümler: Kendi kendini imha/atmosfere sokma, lazer veya manyetik ağ ile toplama.",
         "modelAnswer": "a) Yörüngedeki çöpler saatte 28.000 km gibi çok yüksek hızlarla hareket eder. Bu hızdaki küçücük bir cıvata bile aktif bir uyduya veya Uluslararası Uzay İstasyonu'na çarptığında zırhı delebilir, uyduları parçalayabilir ve 'Kessler Sendromu' denilen zincirleme çarpışmalarla yörüngeyi tamamen kullanılamaz hale getirebilir.\nb) Çözüm önerileri:\n1) Görev süresi biten uyduların motorlarını son bir kez ateşleyerek Dünya atmosferine yönlendirilmesi ve sürtünmeyle yanarak yok olmasının sağlanması.\n2) Uzay çöpü toplayıcı robot kollar, dev lazerler veya manyetik çekicilerle enkazların toplanıp kontrollü şekilde düşürülmesi.",
+        "alternativeAnswers": [
+          "a) Saatte 28.000 km gibi aşırı yüksek hızla dönen atıklar aktif uyduları ve uzay istasyonunu parçalayabilir; zincirleme kaza (Kessler sendromu) riski doğurur. b) Ömrü biten uyduları kontrollü atmosfere çekip sürtünmeyle yakmak; robot kollar veya ağ/lazer sistemleriyle çöpleri toplamak.",
+          "a) Yüksek hızlı çarpışmalar aktif uyduları yok edebilir ve astronotların can güvenliğini tehlikeye sokabilir. b) Atmosferde yakma ve roket parçalarını geri dönüştürme/toplama teknolojileri."
+        ],
         "rubric": [
           {
             "criterion": "Yüksek hız ve çarpışma riskinin bilimsel olarak açıklanması",
@@ -12008,6 +12016,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "a) Güneş büyüklüğündeki küçük kütleli bir yıldızın yaşam döngüsü basamaklarını (Bulutsu'dan son aşamaya kadar) sırasıyla yazınız.\nb) Güneş bir gün süpernova patlaması geçirerek kara deliğe dönüşebilir mi? Nedenini açıklayınız.",
         "solutionExplanation": "Küçük kütle: Bulutsu -> Küçük kütleli yıldız -> Kırmızı Dev -> Gezegenimsi Bulutsu -> Beyaz Cüce. Güneş kara delik olamaz çünkü kütlesi yetersizdir.",
         "modelAnswer": "a) Küçük kütleli yıldızın yaşam evreleri:\nBulutsu (Nebula) → Küçük Kütleli Yıldız (Güneş) → Kırmızı Dev → Gezegenimsi Bulutsu → Beyaz Cüce (ve en son Siyah Cüce).\nb) Hayır, Güneş kara deliğe DÖNÜŞEMEZ. Çünkü bir yıldızın süpernova patlaması geçirip kara delik veya nötron yıldızı olabilmesi için başlangıç kütlesinin Güneş kütlesinden çok daha büyük (büyük kütleli yıldız) olması gerekir. Güneş küçük kütleli olduğu için ömrünü Beyaz Cüce olarak tamamlayacaktır.",
+        "alternativeAnswers": [
+          "a) Bulutsu $\\to$ Küçük Kütleli Yıldız $\\to$ Kırmızı Dev $\\to$ Gezegenimsi Bulutsu $\\to$ Beyaz Cüce. b) Güneş kara delik olamaz; çünkü başlangıç kütlesi küçüktür (yalnızca süpernova patlaması geçiren dev büyük kütleli yıldızlar kara deliğe dönüşür).",
+          "a) Bulutsu $\\to$ Güneş $\\to$ Kırmızı Dev $\\to$ Gezegenimsi Bulutsu $\\to$ Beyaz Cüce. b) Kara delik olamaz, kütlesi yetersiz olduğu için beyaz cüceye dönüşecektir."
+        ],
         "rubric": [
           {
             "criterion": "Yaşam evrelerinin (Bulutsu -> Kırmızı Dev -> Gezegenimsi Bulutsu -> Beyaz Cüce) doğru sıralanması",
@@ -12032,6 +12044,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "a) İçinde bulunduğumuz Samanyolu Galaksisi ve komşusu Andromeda Galaksisi şekillerine göre hangi galaksi türüne girer?\nb) Samanyolu Galaksisi'nin merkezinden dışa doğru uzanan sarmal kollarından hangisinde Güneş Sistemi'miz yer almaktadır? Belirtiniz.",
         "solutionExplanation": "Samanyolu ve Andromeda sarmal galaksilerdir. Güneş Sistemi Avcı (Orion) kolunda yer alır.",
         "modelAnswer": "a) Samanyolu Galaksisi ve komşusu Andromeda Galaksisi şekillerine göre SARMAL (Spiral) Galaksi türüne girer.\nb) Güneş Sistemi'miz, Samanyolu Galaksisi'nin \"Avcı (Orion)\" kolu üzerinde yer almaktadır.",
+        "alternativeAnswers": [
+          "a) Sarmal (Spiral) galaksidir. b) Avcı (Orion) kolundadır.",
+          "a) İkisi de sarmal tiptedir. b) Samanyolu'nun Avcı (Orion) sarmal kolunda yer alır."
+        ],
         "rubric": [
           {
             "criterion": "Sarmal (spiral) galaksi türünün doğru yazılması",
@@ -12056,6 +12072,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "a) 1. ve 2. durumdan hangisinde YER ÇEKİMİ KUVVETİNE KARŞI fiziksel anlamda iş yapılmıştır? Nedenini açıklayınız.\nb) 1. durumda yatay yolda yürürken neden yer çekimine karşı iş yapılmamıştır?",
         "solutionExplanation": "Kuvvet ile hareket aynı doğrultuda olmalıdır. Yukarı çıkarken iş yapılır, yatayda yürürken kuvvet ve hareket birbirine diktir.",
         "modelAnswer": "a) 2. durumda yer çekimine karşı iş yapılmıştır. Çünkü çanta yukarı kaldırılırken yer çekimine zıt yönde yukarı doğru kuvvet uygulanmış ve çanta kuvvet doğrultusunda yukarı doğru hareket etmiştir.\nb) 1. durumda ise çanta yatayda hareket etmektedir; yer çekimi kuvveti ise düşeydir. Kuvvet ve hareket doğrultusu birbirine dik olduğu için yer çekimine karşı iş yapılmaz.",
+        "alternativeAnswers": [
+          "a) 2. durumda iş yapılmıştır; kuvvet yukarı, hareket de yukarı yöndedir. b) 1. durumda kaldırma kuvveti düşey iken hareket yataydır (kuvvet ile hareket birbirine dik olduğu için iş yapılmaz).",
+          "a) 2. durum (kuvvet doğrultusunda düşey hareket vardır). b) 1. durumda kuvvet ve hareket doğrultuları birbirine diktir ($W = 0$)."
+        ],
         "rubric": [
           {
             "criterion": "a şıkkında 2. durumun ve kuvvet doğrultusunda yukarı hareket gerekçesinin yazılması",
@@ -12080,6 +12100,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Zeynep çok yorulmasına ve 100 N kuvvet uygulamasına rağmen fen bilimleri kurallarına göre neden fiziksel anlamda iş yapmamış sayılır? Gerekçesini yazınız.",
         "solutionExplanation": "Yol alınmadığı için iş sıfırdır.",
         "modelAnswer": "Fiziksel anlamda iş yapılabilmesi için cismin kuvvet doğrultusunda mutlaka yol alması (hareket etmesi) gerekir. Kitaplık hareket etmediği (alınan yol sıfır olduğu) için fiziksel anlamda yapılan iş sıfırdır.",
+        "alternativeAnswers": [
+          "Fiziksel anlamda iş yapılabilmesi için cismin uygulanan kuvvet doğrultusunda yer değiştirmesi gerekir ($W = F \\cdot \\Delta x$). Kitaplık hareket etmediği (alınan yol $\\Delta x = 0$) için yapılan iş sıfırdır.",
+          "Kitaplık yer değiştirmediği (hareket etmediği) için kuvvet uygulanmış olsa bile fiziksel iş yapılmamıştır ($W = 0$)."
+        ],
         "rubric": [
           {
             "criterion": "Fiziksel iş için kuvvet doğrultusunda hareket/yol alma şartının belirtilmesi",
@@ -12104,6 +12128,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "a) Kerem ve Selim'in yaptıkları fiziksel iş miktarlarını karşılaştırınız. Hangi öğrenci daha fazla iş yapmıştır?\nb) Alınan yollar eşit olduğuna göre kuvvetin büyüklüğü ile yapılan iş arasındaki ilişkiyi açıklayınız.",
         "solutionExplanation": "Yollar eşitken kuvvet büyük olan daha çok iş yapar.",
         "modelAnswer": "a) Selim'in yaptığı iş daha fazladır (2 katıdır).\nb) Alınan yollar eşit olduğunda cisme uygulanan kuvvetin büyüklüğü arttıkça yapılan fiziksel iş miktarı da doğru orantılı olarak artar.",
+        "alternativeAnswers": [
+          "a) Selim daha fazla iş yapmıştır ($W_{\\text{Selim}} = 30\\text{ N} \\times 10\\text{ m} = 300\\text{ J}$, $W_{\\text{Kerem}} = 15\\text{ N} \\times 10\\text{ m} = 150\\text{ J}$; 2 katıdır). b) Yol sabitken kuvvet arttıkça yapılan iş de doğru orantılı olarak artar.",
+          "a) Selim daha fazla iş yapmıştır ($300\\text{ J} > 150\\text{ J}$). b) Alınan yol eşitken uygulanan kuvvet ile yapılan iş doğru orantılıdır."
+        ],
         "rubric": [
           {
             "criterion": "a şıkkında Selim'in daha çok iş yaptığının tespiti",
@@ -12128,6 +12156,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "a) Kamyon ve otomobilin kinetik (hareket) enerjilerini karşılaştırınız. Hangisinin kinetik enerjisi daha büyüktür? Neden?\nb) Otomobilin kamyonla aynı kinetik enerjiye ulaşması için sürati nasıl değiştirilmelidir?",
         "solutionExplanation": "Süratler eşitken kütlesi büyük olan kamyonun kinetik enerjisi fazladır. Otomobilin sürati artırılmalıdır.",
         "modelAnswer": "a) Kamyonun kinetik enerjisi daha büyüktür. Çünkü hareket halindeki cisimlerin süratleri eşit olduğunda kütlesi daha büyük olan cismin kinetik enerjisi daha fazla olur.\nb) Kütlesi küçük olan otomobilin kamyonla aynı enerjiye ulaşabilmesi için süratinin artırılması gerekir.",
+        "alternativeAnswers": [
+          "a) Kamyonun kinetik enerjisi daha büyüktür çünkü süratler eşitken kütlesi büyük olan cismin kinetik enerjisi daha fazladır. b) Otomobilin sürati artırılmalıdır.",
+          "a) Kamyonun fazladır (kütlesi büyük olduğu için). b) Otomobil daha süratli gitmelidir."
+        ],
         "rubric": [
           {
             "criterion": "a şıkkında kamyonun kinetik enerjisinin büyük olduğunun ve kütle gerekçesinin yazılması",
@@ -12152,6 +12184,10 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Hangi öğrencinin açıklaması doğrudur? Yerden yükseklik ile çekim potansiyel enerjisi arasındaki ilişkiyi açıklayınız.",
         "solutionExplanation": "Can haklıdır. Yükseklik arttıkça çekim potansiyel enerjisi artar.",
         "modelAnswer": "Can haklıdır. Çünkü kütleleri eşit olan cisimlerden yerden yüksekliği daha fazla olan cismin çekim potansiyel enerjisi daha büyüktür. Dolayısıyla 2 metredeki bilye kum zeminle temas ettiğinde kuma daha fazla enerji aktarır ve daha derin iz bırakır.",
+        "alternativeAnswers": [
+          "Can haklıdır. Kütleleri eşit cisimlerden yerden yüksekliği fazla olanın çekim potansiyel enerjisi daha büyüktür ($E_p = m \\cdot g \\cdot h$); bu nedenle 2 m yükseklikteki bilye kumda daha derin çukur oluşturur.",
+          "Can'ın açıklaması doğrudur; yükseklik arttıkça çekim potansiyel enerjisi artar ve kumda daha derin iz bırakır."
+        ],
         "rubric": [
           {
             "criterion": "Can'ın haklı olduğunun doğru tespiti",
