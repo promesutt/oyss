@@ -2088,13 +2088,25 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "DKAB.7.1.1": {
     "outcomeCode": "DKAB.7.1.1",
-    "topicTitle": "Varlıklar Âlemi: Görünen ve Görünmeyen Varlıklar",
+    "topicTitle": "Melekleri Sınıflandırabilme (Ders Kitabı 1. Kitap, Sayfa 14-21)",
+    "textbookUnit": "1. Kitap, 1. Ünite: Melek ve Ahiret İnancı",
+    "textbookPageRange": "Sayfa 14-21",
+    "textbookExamples": [
+      "Varlıklar Âlemi Sınıflandırması (1. Kitap s. 14-15: Duyu organlarıyla ve teknolojik araçlarla algılanan varlıklar vs. akıl/sevgi gibi soyut kavramlar ve gayb âlemi)",
+      "Bilgi Görseli 1.1: Meleklerin Özellikleri (1. Kitap s. 19: Nurdan yaratılmış olma, yememe-içmeme, uyumama, cinsiyetsizlik, günahsızlık, daima itaat, hızlı hareket)",
+      "Bilgi Görseli 1.2: Dört Büyük Melek ve Görevleri (1. Kitap s. 19-20: Cebrail - vahiy; Mikail - tabiat olayları ve rızık; İsrafil - Sûr borusu; Azrail - ecel ve ölüm)",
+      "Kirâmen Kâtibîn Melekleri (1. Kitap s. 21: İnsanın sağ ve solundaki iyi ve kötü amelleri kaydeden yazıcı melekler - Kaf Suresi 17-18)",
+      "Münker ve Nekir ile Hafaza Melekleri (1. Kitap s. 21: Kabirde insanı sorgulayan melekler ve insanı koruyan melekler - Ra'd Suresi 11)"
+    ],
     "quickNotes": [
-      "Görünen Âlem: Duyu organlarımızla veya bilimsel araçlarla algılayabildiğimiz fiziksel evrendir.",
-      "Görünmeyen (Gayb) Âlemi: Duyu organlarıyla algılanamayan, varlığı ancak vahiy yoluyla bilinen melek, cin, şeytan ve ahiret boyutudur."
+      "Görünen Âlem: Duyu organlarımızla veya bilimsel-teknolojik araçlarla (mikroskop, teleskop) algılayabildiğimiz fiziksel evrendir.",
+      "Görünmeyen (Gayb) Âlemi: Duyu organlarıyla algılanamayan, varlığı ancak vahiy yoluyla bilinen melek, cin, şeytan ve ahiret boyutudur.",
+      "Meleklerin Özellikleri: Nurdan yaratılmışlardır; yeme, içme, cinsiyet, yorulma ve günah işleme gibi insani zaafları yoktur; sürekli Allah'a ibadet ve itaat ederler.",
+      "Dört Büyük Melek:\n• Cebrail (a.s.): Vahiyleri peygamberlere ulaştırmakla görevlidir.\n• Mikail (a.s.): Tabiat olaylarını ve rızıkları idare etmekle görevlidir.\n• İsrafil (a.s.): Kıyamet ve yeniden diriliş için Sûr borusuna üflemekle görevlidir.\n• Azrail (a.s.): Eceli gelen canlıların ruhunu teslim almakla görevlidir.",
+      "Diğer Melekler:\n• Kirâmen Kâtibîn: İnsanın sağında (sevap) ve solunda (günah) amellerini kaydeder.\n• Münker ve Nekir: Kabirde insanı ilk hesaba çeken sorgu melekleridir.\n• Hafaza: İnsanları kaza ve belalardan koruyan koruyucu meleklerdir."
     ],
     "examTraps": [
-      "Bir şeyin duyu organlarımızla algılanamaması onun yok olduğunu göstermez (Örn: akıl, elektrik akımı, yerçekimi)."
+      "MEB SINAV TUZAĞI: Duyu organlarımızla algılayamadığımız şeylerin yok olduğunu iddia etmek bilimsel ve mantıksal bir hatadır (Örn: akıl, elektrik akımı, yer çekimi, sevgi, merhamet). Melekler nurdan yaratılmıştır; cin ve şeytan ise ateşten yaratılmıştır. Meleklerin iradesi yalnızca hayra ve itaate yöneliktir, günah işlemezler."
     ],
     "solvedExample": {
       "question": "İslam inancında dört büyük melek yaratılmış olup her birine evrenin işleyişi ve vahiy ile ilgili yüce vazifeler verilmiştir.\n\nCebrail (a.s.) ve Azrail (a.s.)'ın yüce Allah tarafından görevlendirildikleri temel vazifeleri birer cümleyle yazınız.",
@@ -2108,13 +2120,21 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   },
   "DKAB.7.1.2": {
     "outcomeCode": "DKAB.7.1.2",
-    "topicTitle": "Dört Büyük Melek ve Görevleri",
+    "topicTitle": "Ahiret Hayatının Aşamalarını Çözümleyebilme (Ders Kitabı 1. Kitap, Sayfa 22-31)",
+    "textbookUnit": "1. Kitap, 1. Ünite: Melek ve Ahiret İnancı",
+    "textbookPageRange": "Sayfa 22-31",
+    "textbookExamples": [
+      "Dünya ve Ahiret Hayatı Karşılaştırması (1. Kitap s. 22-24: Dünyanın geçiciliği, ahiretin ebedîliği ve amellerin karşılık yurdu olması)",
+      "Bilgi Görseli 1.5: Ahiret Hayatının Aşamaları (1. Kitap s. 29: Ölüm -> Berzah -> Kıyamet -> Ba's -> Haşir ve Mahşer -> Hesap ve Amel Defteri -> Mizan -> Sırat -> Cennet/Cehennem)",
+      "Sûr'a Üfleniş ve Kozmik Düzenin Bozulması (1. Kitap s. 26: Zümer Suresi 68. ayet, Yâsîn Suresi 51. ayet)",
+      "İlahi Adalet Terazisi: Mizan (1. Kitap s. 27: Enbiyâ Suresi 47. ayet - hardal tanesi kadar da olsa amellerin tartılması)",
+      "Bilgi Görseli 1.4: Cennet'in Kur'an'daki İsimleri (1. Kitap s. 28: Firdevs, Naim, Adn, Dârüsselâm, Dârülmukâme, Me'vâ)"
+    ],
     "quickNotes": [
-      "Meleklerin Özellikleri: Nurdan yaratılmışlardır, günah işlemezler, cinsiyetleri yoktur, yemezler içmezler, daima Allah'a ibadet ederler.",
-      "Dört Büyük Melek:\n• Cebrail: Vahiy getirmekle görevlidir.\n• Mikail: Tabiat olaylarını ve rızıkları idare eder.\n• İsrafil: Kıyamet günü ve yeniden dirilişte Sûr borusuna üfler.\n• Azrail: Eceli gelenlerin canını almakla (ölüm meleği) görevlidir."
+      "Ahiret Yolculuğunun Kronolojik Sıralaması:\n1. Ölüm ve Berzah (Kabir) Âlemi: Dünya hayatının bitişi ile kıyamet arasındaki ara bekleme dönemi.\n2. Kıyamet: İsrafil'in Sûr'a ilk üflemesiyle evrendeki kozmik nizamın yıkılması ve canlıların ölmesi.\n3. Ba's (Yeniden Diriliş): İsrafil'in Sûr'a ikinci kez üflemesiyle ölen tüm insanların kabirlerinden diriltilmesi.\n4. Haşir ve Mahşer: Dirilen insanların hesap için toplanması (haşir) ve toplandıkları büyük alan (mahşer).\n5. Hesap ve Amel Defteri: Kirâmen Kâtibîn meleklerinin tuttuğu defterlerin açılması, organların şahitliği.\n6. Mizan: Sevap ve günahların tartıldığı ilahi adalet terazisi.\n7. Sırat ve Ebedî Yurt: Cehennem üzerindeki köprü ve amellerin ebedî karşılığı olan Cennet veya Cehennem."
     ],
     "examTraps": [
-      "Kirâmen Kâtibîn melekleri insanların sağ ve solunda durarak iyi ve kötü amellerini kaydeder."
+      "MEB SINAV TUZAĞI: Haşir bir fiildir (insanların hesap için toplanması olayı); Mahşer ise bu toplanmanın gerçekleştiği büyük meydanın adıdır. Birinci Sûr üflenişi Kıyamet'i (canlıların vefatını); ikinci Sûr üflenişi ise Ba's'ı (yeniden dirilişi) başlatır. Kronolojik sırayı karıştırmayınız."
     ],
     "solvedExample": {
       "question": "'Sûr'a üflenir; göklerde ve yerde olanlar, Allah'ın diledikleri müstesna, baygın düşer (ölür). Sonra ona bir daha üflenir; bir de bakarsın ki onlar ayağa kalkmış bakıyorlar.' (Zümer Suresi, 68. ayet)\n\nAyet metninde Sûr'a birinci ve ikinci üflenişle gerçekleşeceği bildirilen iki ahiret aşamasının adını (kavramları) sırasıyla yazınız.",
@@ -2122,18 +2142,29 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
       "solution": "1. Birinci Üfleniş: Kıyamet (Dünya hayatının son bulması, evrendeki kozmik düzenin yıkılması ve canlıların ölmesi).\n2. İkinci Üfleniş: Ba's (Ölen bütün insanların hesaba çekilmek üzere kabirlerinden yeniden diriltilmesi)."
     },
     "practiceQuestion": {
-      "question": "Tabiat olaylarını idare etmekle ve canlıların rızkını düzenlemekle görevli büyük meleğin adını yazınız.",
-      "hint": "Mikail (a.s.)."
+      "question": "Ahirette amellerin tartıldığı ilahi adalet terazisinin adı nedir?",
+      "hint": "Mizan terazisi."
     }
   },
   "DKAB.7.1.3": {
     "outcomeCode": "DKAB.7.1.3",
-    "topicTitle": "Ahiret Hayatının Aşamaları",
+    "topicTitle": "Melek ve Ahiret İnancının İnsana Kazandırdıkları (Ders Kitabı 1. Kitap, Sayfa 32-36)",
+    "textbookUnit": "1. Kitap, 1. Ünite: Melek ve Ahiret İnancı",
+    "textbookPageRange": "Sayfa 32-36",
+    "textbookExamples": [
+      "Öz Denetim (Otokontrol) Bilinci (1. Kitap s. 32-33: Dışarıdan kamera veya polis görmese bile Kirâmen Kâtibîn meleklerinin kaydettiğini bilerek yalnızken dürüst kalabilme)",
+      "Adalet Duygusu ve Mazlumun Tesellisi (1. Kitap s. 34: Dünyada haksızlığa uğrayan kişinin Mahkeme-i Kübra ve Mizan adaletiyle teselli bulması, intikam yerine sabrı seçmesi)",
+      "Ölüm Korkusunu Yenme ve Hayata Anlam Katma (1. Kitap s. 35: Ölümün bir yok oluş değil, ebedi mutluluk başlangıcı olması; varoluşsal boşluktan kurtulma)",
+      "Kul Hakkına Riayet ve Sorumluluk Bilinci (1. Kitap s. 36: Ticarette tartıda hile yapmama, yetimi gözetme, emaneti koruma)"
+    ],
     "quickNotes": [
-      "Ahiret Yolculuğunun Sıralaması:\n1. Kıyamet: İsrafil'in Sûr'a ilk üflemesiyle evrendeki nizamın son bulması.\n2. Ba's: İkinci üflemeyle insanların yeniden diriltilmesi.\n3. Haşir & Mahşer: Dirilen insanların hesap için toplanması ve toplanma meydanı.\n4. Mizan: Sevap ve günahların tartıldığı ilahi adalet terazisi.\n5. Cennet / Cehennem: Amellerin ebedi karşılığı."
+      "Öz Denetim (Otokontrol): İnsanın hiç kimse görmediğinde dahi meleklerin kaydettiği ve Allah'ın her şeyi bildiği şuuruyla kötülükten sakınmasıdır.",
+      "Adalet Tesellisi: Dünyada karşılıksız kalan iyiliklerin mükâfatının, gizli kalan haksızlıkların cezasının ahiretteki ilahi adalette (Mizan) tastamam verileceği inancı insana iç huzuru ve sabır sağlar.",
+      "Hayata Anlam Katma: Ölüm bir yok oluş veya karanlık bir son değil, ebedî hayatın başlangıcıdır. Bu inanç insanı ümitsizlikten ve ölüm korkusundan kurtarır.",
+      "Kul Hakkı Hassasiyeti: Ahirette hesap verileceği inancı insanı dürüst ticarete, emanete riayete ve canlılara merhamet göstermeye yönlendirir."
     ],
     "examTraps": [
-      "Haşir toplanma olayıdır; Mahşer ise toplanılan yerin (meydanın) adıdır."
+      "MEB SINAV TUZAĞI: Ahiret inancı insanı dünyadan, bilimden veya çalışmaktan koparmaz. Aksine 'Dünya ahiretin tarlasıdır' ilkesi gereği dünyayı daha yaşanabilir, adil ve bereketli kılmak için sorumlulukla çalışmayı teşvik eder."
     ],
     "solvedExample": {
       "question": "Ahmet, odasında tek başınayken ve hiç kimse kendisini görmüyorken bile internette ahlaka aykırı sitelere girmemekte, haksız bir kazanç teklifini tereddütsüz reddetmektedir.\n\nAhmet'in hiç kimsenin görmediği yerlerde dahi dürüst davranması, Kiramen Kâtibin meleklerine inanmanın insana kazandırdığı hangi ahlaki bilinçle açıklanır? Yazınız.",
@@ -2141,19 +2172,30 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
       "solution": "Bu durum, insanın sağında ve solunda bulunan 'Kiramen Kâtibin (yazıcı melekler)' meleklerinin yapılan her iyi ve kötü ameli kaydettiği bilincinden kaynaklanan 'öz denetim (otokontrol)' duygusudur. Kişi yalnız kalsa bile asla başıboş olmadığını ve Allah'ın huzurunda hesap vereceğini bilir."
     },
     "practiceQuestion": {
-      "question": "Ahirette insanların amellerinin tartıldığı ilahi terazinin adı nedir?",
-      "hint": "Mizan terazisi."
+      "question": "Ahirete inanan bir esnafın ticari hayatındaki davranışları nasıl olmalıdır?",
+      "hint": "Hile yapmaz, tartıda dürüst olur, eksik mal satmaz çünkü hesabını vereceğini bilir."
     }
   },
   "DKAB.7.1.4": {
     "outcomeCode": "DKAB.7.1.4",
-    "topicTitle": "Ahiret İnancının Birey ve Toplum Hayatına Etkisi",
+    "topicTitle": "Bir Sure Öğreniyorum: Nâs Suresi (Ders Kitabı 1. Kitap, Sayfa 37-41)",
+    "textbookUnit": "1. Kitap, 1. Ünite: Melek ve Ahiret İnancı",
+    "textbookPageRange": "Sayfa 37-41",
+    "textbookExamples": [
+      "Nâs Suresi Metni, Okunuşu ve Meali (1. Kitap s. 37-38: 'De ki: Sığınırım insanların Rabbine, insanların Melikine, insanların İlahına...')",
+      "Vesvese ve Sinsi Vesveseci (Hannâs) Kavramı (1. Kitap s. 38-39: Kalbe kötü, zararlı ve şüpheci düşünceler fısıldanması)",
+      "Şerrin Kaynakları: Cin ve İnsan Şeytanları (1. Kitap s. 39: Kötülüğün hem görünmeyen varlıklardan hem de kötü niyetli insanlardan gelebileceği)",
+      "Tevhid ve Sığınma Bilinci (1. Kitap s. 40: Korku, vesvese ve tehlikeler karşısında yalnızca her şeyin sahibi olan Allah'a sığınma)"
+    ],
     "quickNotes": [
-      "Bireye Etkisi: İnsana sorumluluk bilinci kazandırır. Yalnızken bile kötülük yapmaktan alıkoyar; haksızlığa uğradığında adalet tesellisi verir.",
-      "Topluma Etkisi: Suç oranlarını azaltır, kul hakkına riayeti artırır, yetimlerin ve zayıfların korunmasını sağlar."
+      "Nâs Suresi Meali: 'De ki: Sığınırım insanların Rabbine, insanların Melikine (mutlak hükümdarına), insanların İlahına; o sinsi vesvesecinin (hannâs) şerrinden! Ki o, insanların göğüslerine (kalplerine) vesvese verir. Gerek cinlerden, gerek insanlardan!'",
+      "Vesvese Nedir? İnsanın kalbine ve zihnine şüphe, korku, günah ve karamsarlık aşılayan gizli fısıltılardır.",
+      "Hannâs Nedir? Sinsi, gizlenen, fırsatını bulduğunda insanın aklını çelmeye çalışan vesvesecidir.",
+      "Kime Sığınılır? Surede Yüce Allah'ın 3 yüce sıfatı zikredilir: 1. Rab (yaratan, yaşatan, terbiye eden), 2. Melik (kâinatın tek mâliki ve hükümdarı), 3. İlah (yalnızca kendisine ibadet edilen tek mabud).",
+      "Korumacı Nitelik: Nâs suresi Felak suresiyle birlikte 'Muavvizeteyn' (sığındırıcı iki sure) olarak anılır."
     ],
     "examTraps": [
-      "Ahiret inancı insanı dünyadan koparmaz; aksine dünyayı ahiretin tarlası olarak görüp daha adil çalışmasını sağlar."
+      "MEB SINAV TUZAĞI: Nâs suresinde insanın sığındığı merci yalnızca Yüce Allah'tır; sığınılan tehlike ise kalbe kötü şüpheler sokan sinsi vesvesecinin (hannâs) şerridir. Surede kötülüğün hem görünmeyen cinlerden hem de kötülüğü fısıldayan insanlardan gelebileceği vurgulanır."
     ],
     "solvedExample": {
       "question": "'De ki: İnsanların kalplerine vesvese sokan sinsi vesvesecinin şerrinden insanların Rabbine, insanların Melikine (hükümranına), insanların İlahına sığınırım! O vesvese cinlerden de olur insanlardan da.' (Nâs Suresi)\n\nNâs suresinde insanın ne tür tehlikelerden ve kime sığınması emredilmektedir? İki unsur halinde açıklayınız.",
@@ -2161,20 +2203,31 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
       "solution": "1. Kime Sığınılır: İnsanların tek Rabbi, mutlak hükümdarı (Melik) ve gerçek mabudu olan Yüce Allah'a sığınılır.\n2. Neyin Şerrinden Sığınılır: İnsanın kalbine kötü düşünceler, şüphe ve günah fısıldayan (vesvese veren) cin ve insan şeytanlarının sinsi tuzaklarından sığınılır."
     },
     "practiceQuestion": {
-      "question": "Ahirete inanan bir esnafın ticari hayatındaki davranışları nasıl olmalıdır?",
-      "hint": "Hile yapmaz, tartıda dürüst olur, eksik mal satmaz çünkü hesabını vereceğini bilir."
+      "question": "Nâs suresinde Allah'ın hangi üç sıfatı zikredilerek O'na sığınılması emredilmiştir?",
+      "hint": "Rab, Melik ve İlah sıfatları."
     }
   },
   "DKAB.7.2.1": {
     "outcomeCode": "DKAB.7.2.1",
-    "topicTitle": "Hac ve Umre İbadetleri",
+    "topicTitle": "Hac ve Umre İbadetlerini Çözümleyebilme (Ders Kitabı 1. Kitap, Sayfa 50-60)",
+    "textbookUnit": "1. Kitap, 2. Ünite: Hac, Umre ve Kurban",
+    "textbookPageRange": "Sayfa 50-60",
+    "textbookExamples": [
+      "Bilgi Görseli 2.1: Haccın Şartları (1. Kitap s. 51: Akıl sağlığı, ergenlik, maddi güç, beden sağlığı, yol güvenliği, hürriyet)",
+      "Bilgi Görseli 2.2: Hacla İlgili Kavramlar (1. Kitap s. 52: İhram, Mîkât, Telbiye, Tavaf, Şavt, Sa'y, Vakfe)",
+      "Bilgi Görseli 2.3: Hacla İlgili Mekânlar (1. Kitap s. 53: Kâbe, Safa ve Merve tepeleri, Arafat, Müzdelife, Mina)",
+      "Bilgi Görseli 2.5: Haccın Farzları (1. Kitap s. 56: 1. İhrama girmek, 2. Arafat vakfesi yapmak, 3. Kâbe'yi tavaf etmek)",
+      "Hac ile Umre Arasındaki Farklar (1. Kitap s. 58-60: Hac farzdır/yılda bir kez/Arafat vakfesi var; Umre sünnettir/her zaman yapılabilir/Arafat vakfesi ve kurban yok)",
+      "İhramın Sembolik Anlamı (1. Kitap s. 52: Makam, zenginlik ve unvanların silinmesi, mahşerdeki eşitlik ve kefeni hatırlatma)"
+    ],
     "quickNotes": [
-      "Hac: Belirli bir zamanda (Zilhicce ayı) Kâbe, Arafat ve kutsal yerleri ibadet amacıyla ziyaret etmektir (Farzdır).",
-      "Umre: Hac mevsimi dışında yılın herhangi bir vaktinde ihrama girilerek Kâbe'yi tavaf ve Sa'y yapmaktır (Sünnettir; Arafat vakfesi yoktur).",
-      "Haccın Farzları: 1. İhrama girmek, 2. Arafat vakfesi yapmak, 3. Kâbe'yi tavaf etmek."
+      "Haccın Farzları: 1. İhrama girmek, 2. Arafat vakfesi yapmak (Arefe günü), 3. Kâbe'yi tavaf etmek (Ziyaret tavafı).",
+      "Haccın Vacipleri: Sa'y yapmak (Safa ile Merve arasında 7 şavt), Müzdelife vakfesi, Mina'da şeytan taşlamak, kurban kesmek, saçları tıraş edip ihramdan çıkmak.",
+      "Hac ile Umre Arasındaki Temel Farklar:\n• Hac farzdır (yılda bir kez Zilhicce ayında yapılır); Umre sünnettir (yılın her vaktinde yapılabilir).\n• Umrede Arafat vakfesi, Müzdelife vakfesi ve kurban kesme ZORUNLULUĞU YOKTUR; yalnızca ihram, Kâbe tavafı, Sa'y ve tıraş olup ihramdan çıkma vardır.",
+      "İhramın Sembolik ve Manevi Anlamı: Zengin-fakir, makam-unvan ayrımını silerek mahşerdeki mutlak eşitliği simgeler; kefeni andırarak dünyevilikten arınmayı öğretir."
     ],
     "examTraps": [
-      "Umrede Arafat vakfesi ve kurban kesme zorunluluğu YOKTUR; sadece Kâbe tavafı ve Sa'y yapılır."
+      "MEB SINAV TUZAĞI: Umrede Arafat vakfesi ve kurban kesme zorunluluğu YOKTUR; sadece Kâbe tavafı ve Sa'y yapılır. Haccın farzlarından biri (İhram, Arafat Vakfesi, Tavaf) terk edilirse hac geçerli olmaz."
     ],
     "solvedExample": {
       "question": "Hac ibadeti için Mekke'ye giden milyonlarca Müslüman zengin-fakir, cumhurbaşkanı-işçi ayrımı olmaksızın tüm dünyalık elbiselerini çıkararak beyaz iki parça kumaştan oluşan 'ihram' giymektedir.\n\nHacdaki bu ihram uygulamasının sembolize ettiği 2 temel manevi/toplumsal anlamı yazınız.",
