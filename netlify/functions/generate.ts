@@ -131,8 +131,8 @@ export default async (req: Request) => {
     });
   }
 
-  if (prompt.length > 15000) {
-    return new Response(JSON.stringify({ error: 'Prompt metni izin verilen karakter sınırını (15.000) aşıyor.' }), {
+  if (prompt.length > 20000) {
+    return new Response(JSON.stringify({ error: 'Prompt metni izin verilen karakter sınırını (20.000) aşıyor.' }), {
       status: 400,
       headers: corsHeaders
     });

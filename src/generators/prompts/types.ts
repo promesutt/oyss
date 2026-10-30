@@ -19,3 +19,12 @@ export interface LiveExamPromptParams {
   variationToken?: string;
   variationIndex?: number;
 }
+
+export interface AvoidDirectivesParams {
+  baseAvoidTexts?: string[];
+  baseAvoidStimuli?: string[];
+  setAAvoidTexts?: string[];
+  setAAvoidStimuli?: string[];
+  variationIndex: number;
+  variationToken: string;
+}

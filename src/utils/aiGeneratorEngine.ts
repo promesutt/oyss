@@ -213,16 +213,33 @@ export async function generateMEBIQuestions(
     stimulus: optStimuli[idx] || ''
   }));
 
+  // Tam birleştirilmiş liste: Post-processing filtresi için eksiksiz korunur
   const allAvoidItems: AvoidItem[] = [...baseAvoidItems, ...optionAvoidItems];
-  const allAvoidTexts = Array.from(new Set(allAvoidItems.map(item => item.questionText))).filter(
+
+  // B+ Mimarisi: Kaçınma verilerini kaynak bazında ayrı diziler olarak yönet
+  const baseAvoidTexts = Array.from(new Set(baseAvoidItems.map(item => item.questionText))).filter(
     t => typeof t === 'string' && t.trim().length > 0
   );
-  const allAvoidStimuli = Array.from(new Set(allAvoidItems.map(item => item.stimulus || ''))).filter(
+  const baseAvoidStimuli = Array.from(new Set(baseAvoidItems.map(item => item.stimulus || ''))).filter(
+    s => typeof s === 'string' && s.trim().length > 0
+  );
+
+  const setAAvoidTexts = Array.from(new Set(optionAvoidItems.map(item => item.questionText))).filter(
+    t => typeof t === 'string' && t.trim().length > 0
+  );
+  const setAAvoidStimuli = Array.from(new Set(optionAvoidItems.map(item => item.stimulus || ''))).filter(
     s => typeof s === 'string' && s.trim().length > 0
   );
 
   const variationToken = `${variationIndex + 1}_${Date.now().toString(36)}`;
-  const avoidDirectives = buildAvoidDirectives(allAvoidTexts, allAvoidStimuli, variationIndex, variationToken);
+  const avoidDirectives = buildAvoidDirectives({
+    baseAvoidTexts,
+    baseAvoidStimuli,
+    setAAvoidTexts,
+    setAAvoidStimuli,
+    variationIndex,
+    variationToken
+  });
 
   let fallbackReason: string | undefined;
   let livePrompt: string | undefined;
