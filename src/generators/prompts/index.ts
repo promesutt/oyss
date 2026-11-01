@@ -4,7 +4,10 @@ import {
   getOutcomeAlignmentRule,
   getDifficultyPlanRule,
   CONTEXT_DIVERSITY_RULE,
-  getMebiPedagogicalRules
+  getMebiPedagogicalRules,
+  getQualityPedagogicalRules,
+  QUESTION_DIRECTIVE_CLARITY_RULE,
+  RUBRIC_DESIGN_RULE
 } from './coreRules';
 import { getGradeAgeDirectives } from './gradeRules';
 import { getJsonOutputSchema } from './outputSchema';
@@ -154,15 +157,28 @@ ${setAQuestionsBlock}${baseQuestionsBlock}${setAStimuliBlock}${baseStimuliBlock}
 export function buildLiveExamPrompt(params: LiveExamPromptParams): string {
   const { grade, subjectId, targetCount, distributionsText, avoidDirectives, difficultyPlanText } = params;
 
+  // Kalite standartları aktiflik kararı (FAZ 3.3.2):
+  // enableQualityStandards açıkça boolean verilmişse doğrudan onu kullanır.
+  // Tanımlı değilse; outcomeCodes parametresi verilmişse (canlı üretim akışı) kalite kuralları aktiftir;
+  // outcomeCodes verilmemişse (legacy parity testleri) %100 eski karakter eşitliğini korur.
+  const isQualityActive = params.enableQualityStandards !== undefined
+    ? params.enableQualityStandards
+    : Boolean(params.outcomeCodes && params.outcomeCodes.length > 0);
+
   // Registry üzerinden ilgili branş kaydını al (Kayıtsız branşta fail-fast PromptRegistryError fırlatır)
   const registered = getRegisteredPrompt(grade, subjectId);
 
   const header = getExamHeader(grade, subjectId, targetCount, distributionsText, avoidDirectives);
   const outcomeRule = getOutcomeAlignmentRule(targetCount);
-  const gradeRule = getGradeAgeDirectives(grade);
+  const gradeRule = getGradeAgeDirectives(grade, isQualityActive);
   const diffRule = getDifficultyPlanRule(targetCount, difficultyPlanText);
-  const pedaRule = getMebiPedagogicalRules(targetCount);
-  const schema = getJsonOutputSchema(registered.supportsAlternativeAnswers);
+  const pedaRule = isQualityActive ? getQualityPedagogicalRules(targetCount) : getMebiPedagogicalRules(targetCount);
+  const directiveClarityBlock = isQualityActive ? `\n\n${QUESTION_DIRECTIVE_CLARITY_RULE}` : '';
+  const rubricDesignBlock = isQualityActive ? `\n${RUBRIC_DESIGN_RULE}\n` : '';
+
+  // Kalite standartlarında tüm sınıflar için esnek/koşullu alternatif cevap desteği aktiftir
+  const hasAltAnswers = isQualityActive ? true : registered.supportsAlternativeAnswers;
+  const schema = getJsonOutputSchema(hasAltAnswers, isQualityActive);
 
   const turkishMebiDirectives = (grade === 7 && subjectId === 'turkce') ? registered.directives : '';
   const math7thDirectives = (grade === 7 && subjectId === 'matematik') ? registered.directives : '';
@@ -191,10 +207,10 @@ ${gradeRule}
 
 ${diffRule}
 
-${CONTEXT_DIVERSITY_RULE}
+${CONTEXT_DIVERSITY_RULE}${directiveClarityBlock}
 
 ${pedaRule}
-${turkishMebiDirectives}
+${rubricDesignBlock}${turkishMebiDirectives}
 ${math7thDirectives}
 ${science7thDirectives}
 ${socialMebiDirectives}
@@ -212,7 +228,10 @@ export {
   VALID_MIDDLE_SCHOOL_SUBJECTS,
   isValidMiddleSchoolCombination,
   createGenericPromptEntry,
-  buildGrade56TextbookDirectives
+  buildGrade56TextbookDirectives,
+  getQualityPedagogicalRules,
+  QUESTION_DIRECTIVE_CLARITY_RULE,
+  RUBRIC_DESIGN_RULE
 };
 
 export type { LiveExamPromptParams, PromptRegistryEntry, AvoidDirectivesParams } from './types';

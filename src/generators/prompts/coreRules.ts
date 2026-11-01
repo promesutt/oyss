@@ -68,3 +68,52 @@ export function getMebiPedagogicalRules(targetCount: number): string {
    - Diyalog sorularında konuşan karakterlerin replikleri (Örn: Elif: "...", Kerem: "...") mutlaka "stimulus" içinde yer almalıdır.
    - Öğrenci kaynak metni/veriyi görmeden ASLA soruyu cevaplayamaz!`;
 }
+
+/**
+ * FAZ 3.3.2 - OYSS Gelişmiş Pedagojik ve Kalite Kuralları
+ * Kavramsal anlama, yönerge açıklığı ve analitik rubrik teşvikini dengeler.
+ */
+export function getQualityPedagogicalRules(targetCount: number): string {
+  return `ÖNEMLİ MEBİ VE OYSS KALİTE PEDAGOJİK KURALLARI:
+1. KAVRAMSAL ANLAMA VE DÜŞÜNME BECERİSİ ÖLÇÜMÜ (EZBER SÖZLÜK TANIMI YERİNE):
+   - Bağlamdan kopuk, salt ezbere dayalı sözlük tanımları veya mekanik bilgi aktarımı ("... kim bulmuştur?", "... yılı nedir?" gibi) sorulamaz.
+   - Ancak ilgili kazanım bir kavramın temel özelliklerini açıklamayı, bir durumu kavramsal olarak tanımlamayı veya terimin bağlam içindeki işlevini belirlemeyi gerektiriyorsa kavramsal sorular ve yönergeler meşrudur.
+   - Sorunun salt ezber mi yoksa kavramsal anlama, uygulama veya analiz mi ölçtüğü daima gözetilmelidir.
+2. Her soru mutlaka MEBİ'nin şu 7 şablonundan birine dayanmalıdır:
+   - Durum & Özellik Matrisi (VAR/YOK tablosu)
+   - Kurgusal Senaryo & Vaka İncelemesi
+   - Öğrenci Tartışması & Yanılgı Tespiti
+   - Hata Tespiti & Adım Analizi (İlk hata hangi adımda yapılmıştır?)
+   - Dilemma (İkilem) ve Çözüm Değerlendirmesi
+   - Empati & Cümle Dönüştürme
+   - Metin İçi Delillendirme & Örtük Anlam
+3. Toplam ${targetCount} sorunun puanları toplamı 100 olacak şekilde paylaştırılmalıdır.
+4. ZORUNLU KAYNAK MATERYAL KURALI (EN KRİTİK KURAL - ASLA İHMAL EDİLEMEZ):
+   - Eğer bir soru "metne göre", "metinden hareketle", "parçaya göre", "şiire göre", "tabloya göre", "grafiğe göre", "diyaloğa göre" veya "verilen duruma göre" kurgulanmışsa; O METNİN, TABLONUN VEYA DİYALOĞUN TAMAMI MUTLAKA "stimulus" ALANINA EKSİKSİZ VE DETAYLI YAZILMALIDIR!
+   - ASLA "Metinde bir olay anlatılmaktadır", "Metinde zeytinyağı aşamaları anlatılmıştır" gibi 1 cümlelik soyut özetler YAZILAMAZ! Metin, öğrencinin soruda sorulan aşamaları, ana fikri, neden-sonuç ilişkisini bizzat metni okuyarak bulabileceği zenginlikte ve somutlukta (en az 2-4 cümlelik somut hikâye/olay örgüsü) yazılmalıdır.
+   - Tablo sorularında veriler (satır ve sütunlar) mutlaka "stimulus" içinde verilmelidir.
+   - Diyalog sorularında konuşan karakterlerin replikleri (Örn: Elif: "...", Kerem: "...") mutlaka "stimulus" içinde yer almalıdır.
+   - Öğrenci kaynak metni/veriyi görmeden ASLA soruyu cevaplayamaz!`;
+}
+
+/**
+ * FAZ 3.3.2 - Yönerge Açıklığı ve Görev Bütünlüğü Kuralı
+ */
+export const QUESTION_DIRECTIVE_CLARITY_RULE = `YÖNERGE AÇIKLIĞI VE BİLİŞSEL DÜZEY KORUNUMU KURALI (EN KRİTİK KURAL):
+- Soru kökünde öğrenciden tam olarak ne yapması istendiği açık, net ve şüphesiz ifade edilmelidir.
+- Tekil / Çoğul beklentisi açıkça belirtilmelidir:
+  * Tek bir cevap bekleniyorsa bu durum belirtilmeli ("adını yazınız", "tek bir cümleyle açıklayınız" vb.).
+  * Birden fazla cevap veya örnek isteniyorsa sayı açıkça verilmelidir ("2 farklı örnek veriniz", "3 temel nedenini yazınız" vb.).
+- Karşılaştırma, gerekçelendirme, tahmin veya açıklama işlemlerinin kapsamı net olmalıdır ("...nedenini bilimsel gerekçesiyle açıklayınız", "...farklarını belirterek karşılaştırınız").
+- Görev Bütünlüğü: Birbirinden bağımsız iki farklı görev tek bir soru cümlesinde iç içe geçirilmemeli, alt maddeler (a, b) halinde ayrılmalıdır. Ancak birbiriyle doğrudan ilişkili ve bütünleşik bir beceriyi ölçen aşamalı görevler (örneğin: "hatayı tespit ediniz ve doğrusunu yazınız", "işlemi yapınız ve sonucunu en sade haliyle yazınız") korunabilir; sırf "ve" bağlacı var diye yapay olarak bölünmemelidir.
+- Dili sadeleştirirken sorunun kazanımı, bilişsel düzeyi ve düşünme derinliği KESİNLİKLE düşürülmemeli veya yapay olarak kolaylaştırılmamalıdır. Düşünme düzeyi yüksek, dil yükü gereksiz karmaşıklıktan arındırılmış sorular esastır.`;
+
+/**
+ * FAZ 3.3.2 - Rubrik ve Dereceli Puanlama Anahtarı Tasarım Kuralı
+ */
+export const RUBRIC_DESIGN_RULE = `ANALİTİK DERECELİ PUANLAMA ANAHTARI (RUBRİK) TEŞVİK KURALI:
+- Sorunun çözüm süreci birden fazla basamak, kavram teşhisi ve analitik gerekçelendirme gerektiriyorsa rubrik KESİNLİKLE analitik kriter basamaklarına ayrılmalıdır:
+  * Örnek Kriter 1: Doğru kavramsal / olgusal teşhis ve tespit (Örn: 8 puan)
+  * Örnek Kriter 2: Bilimsel gerekçelendirme, metin kanıtı veya işlem basamakları (Örn: 7 puan)
+- Soru doğrudan tek bir olguyu, tek bir kavramı veya tekil bir sonucu ölçüyorsa tek kriterli rubrik kullanılabilir (zorla bölünmez).
+- Her sorunun rubrik kriter puanlarının toplamı, o sorunun 'points' değerine TAM EŞİT olmak zorundadır.`;

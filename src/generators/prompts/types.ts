@@ -20,6 +20,7 @@ export interface LiveExamPromptParams {
   variationIndex?: number;
   outcomeCodes?: string[];
   textbookDirectives?: string;
+  enableQualityStandards?: boolean;
 }
 
 export interface AvoidDirectivesParams {
