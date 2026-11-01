@@ -18,6 +18,7 @@ import {
   savePracticeSession, 
   clearPracticeSession 
 } from '../utils/practiceStorage';
+import { TextbookSourceCard } from './TextbookSourceCard';
 import { 
   ArrowLeft,
   ArrowRight,
@@ -999,6 +1000,13 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
                             </div>
                           )}
                         </div>
+
+                        {/* Ders Kitabı Kaynak Kartı (FAZ 3.2.3) */}
+                        <TextbookSourceCard
+                          outcomeCode={q.outcomeCode}
+                          grade={examPaper.grade}
+                          onOpenStudySheet={onOpenStudySheet}
+                        />
                       </>
                     )}
                   </div>
@@ -1329,6 +1337,13 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
                           })}
                         </div>
                       </div>
+
+                      {/* Ders Kitabı Kaynak Kartı (FAZ 3.2.3) */}
+                      <TextbookSourceCard
+                        outcomeCode={currentQ.outcomeCode}
+                        grade={examPaper.grade}
+                        onOpenStudySheet={onOpenStudySheet}
+                      />
                     </div>
                   )}
                 </div>
