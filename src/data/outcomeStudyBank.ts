@@ -4,6 +4,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "T.O.5.6": {
     "outcomeCode": "T.O.5.6",
     "topicTitle": "Metnin Yüzey Anlamı ve Olay Örgüsü",
+    "textbookUnit": "1. Kitap, 1. Tema: OYUN DÜNYASI",
+    "textbookPageRange": "s. 12-30 (PDF: 12-30)",
+    "textbookExamples": [
+      "Geleneksel Çocuk Oyunları ve Ahşap Oyuncaklar Metni (1. Kitap s. 12-18: 5N1K ve olay örgüsü analizi)",
+      "Topaç Çevirme ve Sokak Oyunları Kültürü (1. Kitap s. 22-26: Doğrudan yüzey anlam tespiti)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_TURKCE_1.pdf",
+        "unitTitle": "1. Tema: OYUN DÜNYASI",
+        "printedPageRange": "12-30",
+        "pdfPageRange": "12-30",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Yüzey Anlam: Metinde doğrudan doğruya açıkça söylenen, gizli olmayan ve satır aralarında aranmayan apaçık bilgidir.",
       "5N1K Kuralı: Metindeki olay örgüsünü kavramak için \"Kim, Ne, Nerede, Ne zaman, Nasıl, Neden\" soruları metne yöneltilir.",
@@ -25,6 +42,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "T.O.5.7": {
     "outcomeCode": "T.O.5.7",
     "topicTitle": "Metnin Derin Anlamı ve Çıkarım Yapma",
+    "textbookUnit": "1. Kitap, 1. Tema: OYUN DÜNYASI",
+    "textbookPageRange": "s. 20-35 (PDF: 20-35)",
+    "textbookExamples": [
+      "Ahşap Oyuncak vs Plastik Seri Üretim Karşılaştırması (1. Kitap s. 20-25: Çocuk gelişimi ve çevre açısından örtük anlam)",
+      "Dedenin Öğütleri ve Emek Kavramı (1. Kitap s. 28-35: Metin içi ipuçlarından manevi değer çıkarımı)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_TURKCE_1.pdf",
+        "unitTitle": "1. Tema: OYUN DÜNYASI",
+        "printedPageRange": "20-35",
+        "pdfPageRange": "20-35",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Örtük Anlam: Metinde doğrudan söylenmeyen ancak ipuçlarından hareketle okuyucunun akıl yürüterek ulaştığı gizli anlamdır.",
       "Duygu ve Durum Çıkarımı: Kahramanın jest, mimik ve konuşma tarzı onun iç dünyasını (üzüntü, pişmanlık, heyecan) ele verir.",
@@ -46,6 +80,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "T.O.5.20": {
     "outcomeCode": "T.O.5.20",
     "topicTitle": "Söz Sanatları: Kişileştirme ve Benzetme",
+    "textbookUnit": "1. Kitap, 1. Tema: OYUN DÜNYASI",
+    "textbookPageRange": "s. 15-40 (PDF: 15-40)",
+    "textbookExamples": [
+      "Yadigâr ve Paha Biçilemez Kelime Analizi (1. Kitap s. 15-22: Söz sanatları ve bağlamsal söz varlığı)",
+      "Kişileştirme ve Benzetme Etkinlikleri (1. Kitap s. 32-40: Doğadaki unsurların konuşturulması ve teşbih)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_TURKCE_1.pdf",
+        "unitTitle": "1. Tema: OYUN DÜNYASI",
+        "printedPageRange": "15-40",
+        "pdfPageRange": "15-40",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Benzetme (Teşbih): Aralarında ortak özellik bulunan iki varlıktan zayıf olanın güçlü olana benzetilmesidir (Benzeyen, Benzetilen, Benzetme Edatı, Benzetme Yönü).",
       "Kişileştirme (Teşhis): İnsana ait düşünme, ağlama, sevinme, konuşma gibi özelliklerin insan dışındaki canlı veya cansız varlıklara aktarılmasıdır."
@@ -66,6 +117,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "T.Y.5.13": {
     "outcomeCode": "T.Y.5.13",
     "topicTitle": "Noktalama İşaretleri: Virgül, Noktalı Virgül ve İki Nokta",
+    "textbookUnit": "1. Kitap, 1. Tema: OYUN DÜNYASI",
+    "textbookPageRange": "s. 35-50 (PDF: 35-50)",
+    "textbookExamples": [
+      "Gözü Gibi Bakmak ve Can Kulağıyla Dinlemek Deyimleri (1. Kitap s. 35-42: Deyimlerin bağlam içi kullanımı)",
+      "Atasözü ve Deyimler Sözlüğü Atölyesi (1. Kitap s. 44-50: Cümle içi anlam pekiştirme)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_TURKCE_1.pdf",
+        "unitTitle": "1. Tema: OYUN DÜNYASI",
+        "printedPageRange": "35-50",
+        "pdfPageRange": "35-50",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Virgül (,): Eş görevli sözcükleri ayırır, sıralı cümleleri bağlar, hitap sözlerinden sonra konur.",
       "Noktalı Virgül (;): İçinde virgül bulunan tür ve takımları ayırmak veya virgülle ayrılmış sıralı cümleleri bağlamak için kullanılır.",
@@ -87,6 +155,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "T.Y.5.16": {
     "outcomeCode": "T.Y.5.16",
     "topicTitle": "Düşünceyi Geliştirme Yolları: Tanımlama ve Örnekleme",
+    "textbookUnit": "1. Kitap, 1. Tema: OYUN DÜNYASI",
+    "textbookPageRange": "s. 55-64 (PDF: 55-64)",
+    "textbookExamples": [
+      "Büyük Harflerin ve Noktalama İşaretlerinin Kullanımı (1. Kitap s. 55-60: Özel isimler, hitaplar ve nokta/virgül kuralları)",
+      "Yazım Hatalarını Bulma ve Düzeltme Çalışması (1. Kitap s. 61-64: Paragraftaki imla yanlışlarını tespit etme)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_TURKCE_1.pdf",
+        "unitTitle": "1. Tema: OYUN DÜNYASI",
+        "printedPageRange": "55-64",
+        "pdfPageRange": "55-64",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Tanımlama: \"Bu nedir?\" sorusunun yanıtıdır. Kavramın temel niteliklerini açıklar (Örn: \"Şiir, duyguların ahenkli sözcüklerle aktarılması sanatıdır\").",
       "Örnekleme: Soyut bir düşünceyi somutlaştırmak ve anlaşılır kılmak için bilinen kişi, eser veya durumlardan örnekler vermektir."
@@ -107,6 +192,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "T.O.5.5": {
     "outcomeCode": "T.O.5.5",
     "topicTitle": "Kelimenin Gerçek ve Mecaz Anlamını Ayırt Etme",
+    "textbookUnit": "1. Kitap, 1. Tema: OYUN DÜNYASI",
+    "textbookPageRange": "s. 12-25 (PDF: 12-25)",
+    "textbookExamples": [
+      "Oyun Dünyası Metinlerinde Ana Fikir Bulma (1. Kitap s. 12-19: Yazarın iletmek istediği temel mesaj)",
+      "Paragrafın Konusu ve Başlık İlişkisi (1. Kitap s. 20-25: Metne en uygun başlığı belirleme)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_TURKCE_1.pdf",
+        "unitTitle": "1. Tema: OYUN DÜNYASI",
+        "printedPageRange": "12-25",
+        "pdfPageRange": "12-25",
+        "evidenceLevel": "B"
+      }
+    ],
+    "evidenceLevel": "B",
     "quickNotes": [
       "Gerçek (Temel) Anlam: Sözcüğün akla gelen ilk, somut ve herkesçe bilinen temel anlamıdır (Örn: \"Çocuk soğuktan dondu\").",
       "Mecaz Anlam: Sözcüğün gerçek anlamından bütünüyle sıyrılarak kazandığı yeni, soyut ve duygusal anlamdır (Örn: \"Bize çok soğuk davrandı\").",
@@ -128,6 +230,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "T.O.5.15": {
     "outcomeCode": "T.O.5.15",
     "topicTitle": "Metnin Konusu ve Ana Fikrini Belirleme",
+    "textbookUnit": "1. Kitap, 1. Tema: OYUN DÜNYASI & 2. Tema: ATATÜRK",
+    "textbookPageRange": "s. 30-75 (PDF: 30-75)",
+    "textbookExamples": [
+      "Metinler Arası Karşılaştırma Atölyesi (1. Kitap s. 30-45: İki farklı anlatı metninin olay örgüsünü kıyaslama)",
+      "Geleneksel vs Modern Yaşam Temalı Metinler (1. Kitap s. 60-75: Benzer temalardaki kahraman ve bakış açısı farkları)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_TURKCE_1.pdf",
+        "unitTitle": "1. Tema: OYUN DÜNYASI & 2. Tema: ATATÜRK",
+        "printedPageRange": "30-75",
+        "pdfPageRange": "30-75",
+        "evidenceLevel": "B"
+      }
+    ],
+    "evidenceLevel": "B",
     "quickNotes": [
       "Metnin Konusu: \"Yazar bu metinde neden bahsediyor / ne anlatıyor?\" sorusunun yanıtıdır (genelde 2-4 kelimelik ifadedir).",
       "Ana Fikir: \"Yazarın okuyucuya vermek istediği temel ders, öğüt veya sonuç nedir?\" sorusunun tam bir cümlelik cevabıdır.",
@@ -149,6 +268,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "T.Y.5.3": {
     "outcomeCode": "T.Y.5.3",
     "topicTitle": "Yazım Kuralları ve Büyük Harflerin Kullanımı",
+    "textbookUnit": "1. Kitap, 1. Tema: OYUN DÜNYASI",
+    "textbookPageRange": "s. 45-60 (PDF: 45-60)",
+    "textbookExamples": [
+      "Oyun Kuralları ve Yönerge Hazırlama (1. Kitap s. 45-52: Adım adım oyun oynama kurallarını yazma)",
+      "Rehberli Yönerge Metni Oluşturma (1. Kitap s. 53-60: Mantıksal sıralama ile uygulama kılavuzu yazımı)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_TURKCE_1.pdf",
+        "unitTitle": "1. Tema: OYUN DÜNYASI",
+        "printedPageRange": "45-60",
+        "pdfPageRange": "45-60",
+        "evidenceLevel": "C"
+      }
+    ],
+    "evidenceLevel": "C",
     "quickNotes": [
       "Özel İsimler: Kişi adları, soyadları, ülke, şehir, kurum ve kuruluş adları daima büyük harfle başlar.",
       "Kurum ve Kuruluş Ekleri: Kurum, kuruluş ve kurul adlarına gelen ekler kesme işaretiyle AYRILMAZ (Örn: \"Türkiye Büyük Millet Meclisine\", \"Milli Eğitim Bakanlığında\").",
@@ -170,6 +306,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "MAT.5.3.1": {
     "outcomeCode": "MAT.5.3.1",
     "topicTitle": "Doğru, Doğru Parçası ve Işın",
+    "textbookUnit": "1. Kitap, 1. Tema: GEOMETRİK ŞEKİLLER",
+    "textbookPageRange": "s. 14-25 (PDF: 14-25)",
+    "textbookExamples": [
+      "Doğru, Doğru Parçası ve Işın Gösterimi (1. Kitap s. 14-19: Sembolik gösterim ve uzantı analizi)",
+      "Günlük Hayattaki Doğru Modelleri (1. Kitap s. 20-25: Cetvel, lazer ışını ve tren rayları modelleri)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_MATEMATIK_1.pdf",
+        "unitTitle": "1. Tema: GEOMETRİK ŞEKİLLER",
+        "printedPageRange": "14-25",
+        "pdfPageRange": "14-25",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Doğru: Her iki yönden sonsuza kadar uzanan noktalar kümesidir. Başlangıcı ve bitişi olmadığı için boyu cetvelle ölçülemez (Örn: İki ucunda ok olan d doğrusu veya AB doğrusu).",
       "Işın: Başlangıç noktası sabit olup diğer yönden sonsuza uzanır. Boyu ölçülemez (Örn: [AB ışını. Güneş ışınları veya fener ışığı birer ışın modelidir).",
@@ -193,6 +346,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "MAT.5.3.2": {
     "outcomeCode": "MAT.5.3.2",
     "topicTitle": "Doğruya Dikme Çizme ve Eşit Uzunlukta Doğru Parçaları",
+    "textbookUnit": "1. Kitap, 1. Tema: GEOMETRİK ŞEKİLLER",
+    "textbookPageRange": "s. 20-25 (PDF: 20-25)",
+    "textbookExamples": [
+      "Kareli Zeminde Eş Uzunlukta Doğru Parçası Çizimi (1. Kitap s. 20-23: Yatay ve düşey birim öteleme yöntemi)",
+      "Noktaların Birbirine Göre Konumundan Uzunluk Bulma (1. Kitap s. 24-25: Pisagor öncesi birim kare sayma)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_MATEMATIK_1.pdf",
+        "unitTitle": "1. Tema: GEOMETRİK ŞEKİLLER",
+        "printedPageRange": "20-25",
+        "pdfPageRange": "20-25",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Dik Doğru (Dikme): Bir doğruya üzerindeki veya dışındaki bir noktadan 90°'lik dik açıyla çizilen doğrudur (sembolü: ⟂).",
       "Dikme Çizim Aletleri: Dikme çizmek için üzerinde 90°'lik dik açı bulunan gönye veya açıölçer (iletki) kullanılır.",
@@ -214,6 +384,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "MAT.5.3.3": {
     "outcomeCode": "MAT.5.3.3",
     "topicTitle": "Açı Çeşitleri ve Açı Ölçme",
+    "textbookUnit": "1. Kitap, 1. Tema: GEOMETRİK ŞEKİLLER",
+    "textbookPageRange": "s. 41-55 (PDF: 41-55)",
+    "textbookExamples": [
+      "Açıölçer (İletki) ile Açı Ölçme ve Çizme (1. Kitap s. 41-48: Derece cinsinden açı değeri belirleme)",
+      "Dar, Dik, Geniş ve Doğru Açı Sınıflandırması (1. Kitap s. 49-55: 90 ve 180 derece referanslı karşılaştırma)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_MATEMATIK_1.pdf",
+        "unitTitle": "1. Tema: GEOMETRİK ŞEKİLLER",
+        "printedPageRange": "41-55",
+        "pdfPageRange": "41-55",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Dar Açı: Ölçüsü 0° ile 90° arasında olan açılardır (Örn: 25°, 60°, 89°).",
       "Dik Açı: Ölçüsü tam olarak 90° olan açıdır (∟ sembolü ile gösterilir, gönye köşesi gibidir).",
@@ -238,6 +425,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "MAT.5.3.4": {
     "outcomeCode": "MAT.5.3.4",
     "topicTitle": "Doğruların Birbirine Göre Durumları",
+    "textbookUnit": "1. Kitap, 1. Tema: GEOMETRİK ŞEKİLLER",
+    "textbookPageRange": "s. 31-40 (PDF: 31-40)",
+    "textbookExamples": [
+      "Paralel ve Kesişen Doğru Modelleri (1. Kitap s. 31-36: Dik kesişen doğrular ve gönye kullanımı)",
+      "Doğruların Birbirine Göre Durumları (1. Kitap s. 37-40: Çakışık, paralel ve tek noktada kesişen doğrular)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_MATEMATIK_1.pdf",
+        "unitTitle": "1. Tema: GEOMETRİK ŞEKİLLER",
+        "printedPageRange": "31-40",
+        "pdfPageRange": "31-40",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Paralel Doğrular: Aynı düzlemde olan, aralarındaki uzaklık daima eşit kalan ve sonsuza kadar uzatılsalar bile asla kesişmeyen doğrulardır (sembolü: //). Tren rayları veya defter çizgileri örnektir.",
       "Kesişen Doğrular: Düzlemde tek bir ortak noktası bulunan doğrulardır (Örn: Makas kolları, \"X\" harfi).",
@@ -260,6 +464,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "MAT.5.3.5": {
     "outcomeCode": "MAT.5.3.5",
     "topicTitle": "Çokgenlerin Tanımı ve Temel Özellikleri",
+    "textbookUnit": "1. Kitap, 1. Tema: GEOMETRİK ŞEKİLLER",
+    "textbookPageRange": "s. 56-65 (PDF: 56-65)",
+    "textbookExamples": [
+      "Çokgen Tanımı ve Temel Elemanları (1. Kitap s. 56-60: Kenar, köşe, iç açı ve kapalı eğri kuralı)",
+      "Üçgen, Dörtgen, Beşgen ve Altıgen Sınıflandırması (1. Kitap s. 61-65: Kenar sayısına göre adlandırma)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_MATEMATIK_1.pdf",
+        "unitTitle": "1. Tema: GEOMETRİK ŞEKİLLER",
+        "printedPageRange": "56-65",
+        "pdfPageRange": "56-65",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Çokgen Olma Şartları: 1) En az 3 doğru parçasından oluşmalıdır. 2) Uç uca eklenerek tamamen kapalı bir şekil oluşturmalıdır. 3) Kenarları doğru parçası olmalıdır.",
       "Çokgen İsimlendirme: Çokgenler kenar veya köşe sayılarına göre adlandırılır: 3 kenarlı ise Üçgen, 4 kenarlı ise Dörtgen, 5 kenarlı ise Beşgen, 6 kenarlı ise Altıgen.",
@@ -282,6 +503,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "MAT.5.3.6": {
     "outcomeCode": "MAT.5.3.6",
     "topicTitle": "Çokgenlerde Kenar, Köşe ve Köşegen İlişkisi",
+    "textbookUnit": "1. Kitap, 1. Tema: GEOMETRİK ŞEKİLLER",
+    "textbookPageRange": "s. 62-75 (PDF: 62-75)",
+    "textbookExamples": [
+      "Çokgenlerin Köşegenleri ve Çizimi (1. Kitap s. 62-68: Komşu olmayan iki köşeyi birleştiren doğru parçası)",
+      "Üçgende Neden Köşegen Olmadığının İspatı (1. Kitap s. 69-75: Dörtgen ve beşgende köşegen sayısı tespiti)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_MATEMATIK_1.pdf",
+        "unitTitle": "1. Tema: GEOMETRİK ŞEKİLLER",
+        "printedPageRange": "62-75",
+        "pdfPageRange": "62-75",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Temel Kural: Tüm çokgenlerde Kenar Sayısı = Köşe Sayısı = İç Açı Sayısıdır. (Örn: Beşgende 5 kenar, 5 köşe, 5 iç açı vardır).",
       "Köşegen Tanımı: Bir çokgende komşu olmayan iki köşeyi birleştiren doğru parçasına \"köşegen\" denir.",
@@ -304,6 +542,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "MAT.5.3.7": {
     "outcomeCode": "MAT.5.3.7",
     "topicTitle": "Üçgen Çeşitleri (Kenarlarına ve Açılarına Göre)",
+    "textbookUnit": "1. Kitap, 1. Tema: GEOMETRİK ŞEKİLLER",
+    "textbookPageRange": "s. 26-30 (PDF: 26-30)",
+    "textbookExamples": [
+      "Pergel ve Cetvel ile Eşkenar Üçgen İnşası (1. Kitap s. 26-28: Çember yaylarının kesişimiyle kenar eşitleme)",
+      "Geometrik Çizim Adımları ve Doğrulama (1. Kitap s. 29-30: Pergel açıklığını bozmadan üçgen oluşturma)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_MATEMATIK_1.pdf",
+        "unitTitle": "1. Tema: GEOMETRİK ŞEKİLLER",
+        "printedPageRange": "26-30",
+        "pdfPageRange": "26-30",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Açılarına Göre Üçgenler: 1) Dar Açılı Üçgen (tüm iç açıları 90°'den küçüktür), 2) Dik Açılı Üçgen (bir açısı tam 90°'dir), 3) Geniş Açılı Üçgen (bir açısı 90°'den büyüktür).",
       "Kenarlarına Göre Üçgenler: 1) Eşkenar Üçgen (tüm kenarları eşit ve her iç açısı 60°'dir), 2) İkizkenar Üçgen (iki kenarı eşit ve bu kenarları gören taban açıları eşittir), 3) Çeşitkenar Üçgen (üç kenar uzunluğu da birbirinden farklıdır).",
@@ -326,6 +581,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "FB.5.1.2": {
     "outcomeCode": "FB.5.1.2",
     "topicTitle": "Ay'ın Özellikleri ve Hareketleri",
+    "textbookUnit": "1. Ünite: GÜNEŞ, DÜNYA VE AY",
+    "textbookPageRange": "s. 26-34 (PDF: 28-36)",
+    "textbookExamples": [
+      "Ay'ın Yüzey Yapısı ve Kraterler Deneyi (1. Kitap s. 26-30: Un ve bilye deneyi ile gök taşı çarpması)",
+      "Ay'ın İnce Atmosferi ve Gece-Gündüz Sıcaklık Farkı (1. Kitap s. 31-34: Canlı yaşamına elverişli olmama gerekçeleri)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_FEN_BILIMLERI_1.pdf",
+        "unitTitle": "1. Ünite: GÜNEŞ, DÜNYA VE AY",
+        "printedPageRange": "26-34",
+        "pdfPageRange": "28-36",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Ay, Dünya'mızın tek doğal uydusudur ve geometrik şekli küreye benzer. Hacimce Güneş ve Dünya'dan çok daha küçüktür (Güneş karpuz ise Dünya ceviz, Ay karabiber tanesidir).",
       "Ay'da yok denecek kadar ince bir atmosfer vardır. Bu nedenle rüzgâr, yağmur, kar gibi hava olayları gerçekleşmez; gece ile gündüz arasındaki sıcaklık farkı 200°C'yi aşar.",
@@ -351,6 +623,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "FB.5.1.3": {
     "outcomeCode": "FB.5.1.3",
     "topicTitle": "Ay'ın Evreleri ve Periyotları",
+    "textbookUnit": "1. Ünite: GÜNEŞ, DÜNYA VE AY",
+    "textbookPageRange": "s. 35-43 (PDF: 37-45)",
+    "textbookExamples": [
+      "Ay'ın Ana ve Ara Evreleri Şeması (1. Kitap s. 35-39: Yeni ay, ilk dördün, dolunay, son dördün döngüsü)",
+      "Ay'ın Evrelerinin Oluşum Nedeni Modeli (1. Kitap s. 40-43: Işık kaynağı ve pinpon topu ile aydınlanma açısı)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_FEN_BILIMLERI_1.pdf",
+        "unitTitle": "1. Ünite: GÜNEŞ, DÜNYA VE AY",
+        "printedPageRange": "35-43",
+        "pdfPageRange": "37-45",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Ay'ın 4 Ana Evresi sırasıyla: 1) Yeni Ay → 2) İlk Dördün → 3) Dolunay → 4) Son Dördün.",
       "Art arda gelen iki ana evre arasında yaklaşık 1 hafta (7 gün) geçer. Tüm evrelerin tamamlanması yaklaşık 29,5 gün (1 ay) sürer.",
@@ -377,6 +666,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "FB.5.1.4": {
     "outcomeCode": "FB.5.1.4",
     "topicTitle": "Güneş, Dünya ve Ay'ın Büyüklük ve Hareket Modeli",
+    "textbookUnit": "1. Ünite: GÜNEŞ, DÜNYA VE AY",
+    "textbookPageRange": "s. 44-55 (PDF: 46-57)",
+    "textbookExamples": [
+      "Güneş, Dünya ve Ay'ın Dönme ve Dolanma Hareketleri (1. Kitap s. 44-49: Saat yönünün tersi / batıdan doğuya dönme)",
+      "Güneş, Dünya ve Ay Boyut Karşılaştırma Modeli (1. Kitap s. 50-55: Basketbol topu, nohut ve mercimek analojisi)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_FEN_BILIMLERI_1.pdf",
+        "unitTitle": "1. Ünite: GÜNEŞ, DÜNYA VE AY",
+        "printedPageRange": "44-55",
+        "pdfPageRange": "46-57",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Büyüklük Karşılaştırması: Güneş > Dünya > Ay. Güneş içine yaklaşık 1 milyon 300 bin Dünya sığabilir. Dünya içine ise yaklaşık 64 Ay sığabilir.",
       "Model Eşleştirmesi: Güneş = Karpuz veya Basketbol topu, Dünya = Ceviz veya Nohut tanesi, Ay = Karabiber tanesi veya Mercimek tanesi.",
@@ -399,6 +705,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "FB.5.2.1": {
     "outcomeCode": "FB.5.2.1",
     "topicTitle": "Kuvvetin Ölçülmesi ve Dinamometre",
+    "textbookUnit": "2. Ünite: KUVVETİN ÖLÇÜLMESİ VE SÜRTÜNME",
+    "textbookPageRange": "s. 58-68 (PDF: 60-70)",
+    "textbookExamples": [
+      "Dinamometre ve Yay Uzama Miktarı Tablosu (1. Kitap s. 58-63: Kuvvetin büyüklüğü ile yayın esneme oranı)",
+      "Farklı Kalınlıktaki Yaylarla Kuvvet Ölçümü (1. Kitap s. 64-68: İnce yay vs kalın yay hassasiyet testi)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_FEN_BILIMLERI_1.pdf",
+        "unitTitle": "2. Ünite: KUVVETİN ÖLÇÜLMESİ VE SÜRTÜNME",
+        "printedPageRange": "58-68",
+        "pdfPageRange": "60-70",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Kuvvet Tanımı ve Birimi: Duran bir cismi hareket ettiren, hareket eden cismi durduran veya şeklini değiştiren etkidir. Birimi \"Newton\"dur ve \"N\" harfi ile gösterilir.",
       "Dinamometre: Kuvvetin büyüklüğünü ölçen alettir. İçerisinde sarmal esnek çelik yay bulunur.",
@@ -423,6 +746,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "SB.5.1.1": {
     "outcomeCode": "SB.5.1.1",
     "topicTitle": "Gruplar, Roller, Hak ve Sorumluluklar",
+    "textbookUnit": "1. Öğrenme Alanı: BİRLİKTE YAŞAMAK",
+    "textbookPageRange": "s. 11-19 (PDF: 11-19)",
+    "textbookExamples": [
+      "Taylan'ın Günlüğü ve Grup Rolleri (1. Kitap s. 11-15: Ailede evlat, okulda öğrenci, kulüpte solist olma)",
+      "Hak ve Sorumluluk İlişkisi (1. Kitap s. 16-19: Rollerin getirdiği sorumlulukların yerine getirilmesi)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_SOSYAL_BILGILER_1.pdf",
+        "unitTitle": "1. Öğrenme Alanı: BİRLİKTE YAŞAMAK",
+        "printedPageRange": "11-19",
+        "pdfPageRange": "11-19",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Grup: Ortak bir amaç için bir araya gelen, aralarında iş birliği olan en az iki kişiden oluşan topluluktur (Aile, okul korosu, futbol takımı).",
       "Rol: Bir grupta üstlendiğimiz görevlerdir. Bir birey aynı anda birden fazla grupta farklı rollere sahip olabilir (Evde evlat, okulda öğrenci, takımda kaleci).",
@@ -446,6 +786,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "SB.5.1.2": {
     "outcomeCode": "SB.5.1.2",
     "topicTitle": "Kültürel Zenginliğimiz ve Birlikte Yaşama",
+    "textbookUnit": "1. Öğrenme Alanı: BİRLİKTE YAŞAMAK",
+    "textbookPageRange": "s. 20-33 (PDF: 20-33)",
+    "textbookExamples": [
+      "Türk Kültür Ögeleri Mozaiği (1. Kitap s. 20-27: Ebru sanatı, halı dokuma, zeybek ve horon)",
+      "Kültürel Farklılıklara Saygı ve Empati (1. Kitap s. 28-33: Nouri ailesi vaka incelemesi ve komşuluk bağları)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_SOSYAL_BILGILER_1.pdf",
+        "unitTitle": "1. Öğrenme Alanı: BİRLİKTE YAŞAMAK",
+        "printedPageRange": "20-33",
+        "pdfPageRange": "20-33",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Maddi Kültür Mirası: Somut, gözle görülen eserlerdir (Tarihi köprüler, camiler, yöresel kıyafetler, yemekler, el sanatları).",
       "Manevi Kültür Mirası: İnançlar, gelenek ve görenekler, bayramlaşma, misafirperverlik, türküler, masallar, atasözleri.",
@@ -468,6 +825,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "SB.5.1.3": {
     "outcomeCode": "SB.5.1.3",
     "topicTitle": "Toplumsal Yardımlaşma ve Dayanışma",
+    "textbookUnit": "1. Öğrenme Alanı: BİRLİKTE YAŞAMAK",
+    "textbookPageRange": "s. 34-48 (PDF: 34-48)",
+    "textbookExamples": [
+      "Sadaka Taşları ve Vakıf Medeniyeti (1. Kitap s. 34-39: İhtiyaç sahibini rencide etmeden yardımlaşma)",
+      "Kızılay, AFAD ve İmece Geleneği (1. Kitap s. 40-48: Doğal afetlerde dayanışma ve ortak imece işleri)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_SOSYAL_BILGILER_1.pdf",
+        "unitTitle": "1. Öğrenme Alanı: BİRLİKTE YAŞAMAK",
+        "printedPageRange": "34-48",
+        "pdfPageRange": "34-48",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "İmece Geleneği: Köylerde ve mahallelerde zor işlerin köylüler tarafından el birliğiyle, sırayla ve karşılıksız yapılmasıdır (Ekin biçme, kışlık odun hazırlama, yol yapma).",
       "Sadaka Taşı: Osmanlı'da cami ve çeşme kenarlarına konulan; zenginlerin gizlice para bıraktığı, fakirlerin ise sadece ihtiyacı kadar aldığı zarif yardımlaşma geleneğidir. Veren el alan eli görmez, kimse rencide olmaz.",
@@ -487,51 +861,102 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
       "hint": "Örnek sorudaki işlem basamaklarını ve model çözümü referans alınız."
     }
   },
-  "EVİMİZ": {
-    "outcomeCode": "EVİMİZ",
-    "topicTitle": "Evimiz Dünya: Küreselleşen Dünyada İletişim, Çevre ve Dayanışma",
+  "SB.5.2.1": {
+    "outcomeCode": "SB.5.2.1",
+    "topicTitle": "Yaşadığı İlin Göreceli Konumu",
+    "textbookUnit": "2. Öğrenme Alanı: EVİMİZ DÜNYA",
+    "textbookPageRange": "s. 49-60 (PDF: 49-60)",
+    "textbookExamples": [
+      "Şehir Bulmaca Oyunu ve Göreceli Konum (1. Kitap s. 49-54: Komşu iller, denizler ve yer şekillerine göre konum tarifi)",
+      "İlimizin Harita Analizi ve Ulaşım Yolları (1. Kitap s. 55-60: Hastane, okul ve il merkezinin göreceli konumu)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_SOSYAL_BILGILER_1.pdf",
+        "unitTitle": "2. Öğrenme Alanı: EVİMİZ DÜNYA",
+        "printedPageRange": "49-60",
+        "pdfPageRange": "49-60",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
-      "Küreselleşme ve Toplum: Teknolojik gelişmeler toplumlar arası mesafeleri kısaltmış, kültürel etkileşimi ve ekonomik bağımlılığı artırmıştır.",
-      "Küresel Sorunlar: İklim krizi, çevre kirliliği, doğal afetler ve salgın hastalıklar yalnızca tek bir ülkeyi değil tüm insanlığı etkiler; uluslararası dayanışma gerektirir.",
-      "Sosyal Sorumluluk: Bireyler yerel sorunların yanında küresel çevre ve insan hakları meselelerine de duyarlı olmalıdır."
-    ],
+      "Göreceli Konum: Bir yerin Dünya üzerindeki denizlere, göllere, dağlara, komşu şehirlere, ana karayollarına ve demiryolu hatlarına göre belirlenen yeridir.",
+      "İlin Göreceli Konum Unsurları: İlin denize kıyısının olup olmaması, yükseltisi, sanayi ve ticaret merkezlerine yakınlığı, komşu illeri ve önemli ulaşım kavşaklarında bulunması ilin gelişimini doğrudan etkiler.",
+      "Yerleşim Yerini Tarif Etme: Günlük hayatta bir yapının (okul, hastane, park vb.) konumunu çevresindeki diğer bilinen noktalara göre tarif etmek de göreceli konum uygulamasıdır."
+],
     "examTraps": [
-      "PÜF NOKTA: Küresel bir sorun (örneğin hava kirliliği veya kuraklık) bireysel çabalarla tek başına çözülemez; hem bireysel bilinç hem de uluslararası ortak politikalar zorunludur."
-    ],
+      "PÜF NOKTA: 'İlimiz deniz seviyesindedir ve işlek bir limanı vardır' ifadesi göreceli konumdur. Şehrin enlem ve boylam derecesi verilirse bu mutlak (matematik) konum olur."
+],
     "solvedExample": {
-      "question": "Küresel iklim değişikliği karşısında bir bireyin alabileceği önlem ile devletler arası düzeyde yapılması gereken ortak iş birliğine birer örnek veriniz.",
-      "analysis": "Bireysel ve küresel düzeydeki sorumlulukları ayırt etme.",
-      "solution": "Bireysel Düzey: Enerji ve su tasarrufu yapmak, toplu taşımayı tercih etmek ve geri dönüşüm alışkanlığı kazanmak.\nDevletler Arası Düzey: Karbon salınımını sınırlandıran uluslararası iklim antlaşmalarına (Paris İklim Anlaşması) uymak ve yenilenebilir enerji yatırımlarını desteklemek."
-    },
+      "question": "İç Anadolu Bölgesi'nde yer alan bir şehrimizin etrafı yüksek dağlarla çevrilidir ve denize kıyısı yoktur. Buna karşılık Marmara Denizi kıyısında bulunan bir şehrimizin doğal limanı ve işlek ticaret yolları vardır.\n\nBu iki şehrin göreceli konum farklılıklarının ekonomik faaliyetlerine ve iklimine olan 2 etkisini yazınız.",
+      "analysis": "Deniz kıyısında olmak ılıman iklim ve liman ticareti sağlar; karasal konum ve dağlık yapı ise tarım, hayvancılık ve sert iklim getirir.",
+      "solution": "1. İklim Açısından: Denize kıyısı olan şehirde denizellik etkisiyle kışlar daha ılık ve nemli geçerken, etrafı dağlarla çevrili karasal şehirde kışlar çok sert ve kar yağışlı geçer.\n2. Ekonomik Faaliyetler Açısından: Deniz kıyısındaki şehir deniz ticareti, limancılık ve sanayi alanında öne çıkarken; iç kesimdeki dağlık şehirde tarım, büyükbaş/küçükbaş hayvancılık ve madencilik ön plandadır."
+},
     "practiceQuestion": {
-      "question": "Kızılay ve AFAD gibi kurumların başka ülkelerdeki afetzedelere yardım ulaştırması hangi evrensel değerin göstergesidir? Yazınız.",
-      "hint": "İnsani yardım, dayanışma ve kardeşlik duygularını düşününüz."
-    }
+      "question": "Yaşadığınız ilin göreceli konumunu komşu illere, denizlere ve ana ulaşım hatlarına göre 2 cümleyle açıklayınız.",
+      "hint": "Şehrinizin komşularını ve bölgedeki coğrafi özelliklerini düşününüz."
+}
   },
-  "Evrendeki": {
-    "outcomeCode": "Evrendeki",
-    "topicTitle": "Evrendeki Mükemmel Düzen ve Ölçü",
+  "DKAB.5.1.1": {
+    "outcomeCode": "DKAB.5.1.1",
+    "topicTitle": "Evrendeki Mükemmel Düzen ve İlahi Ölçü",
+    "textbookUnit": "1. Ünite: ALLAH İNANCI",
+    "textbookPageRange": "s. 14-19 (PDF: 14-19)",
+    "textbookExamples": [
+      "Evrendeki Mükemmel Düzen Örnekleri (Ders Kitabı s. 14-17: Gece-gündüz, mevsimler, su döngüsü ve gezegen yörüngeleri)",
+      "Mülk Suresi 3-4. Ayetler ve İlahi Ölçü (Ders Kitabı s. 18-19: Evrende hiçbir uyumsuzluk olmamasının hikmeti)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı",
+        "bookFileName": "DERS_KITABI_DKAB.pdf",
+        "unitTitle": "1. Ünite: ALLAH İNANCI",
+        "printedPageRange": "14-19",
+        "pdfPageRange": "14-19",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Mükemmel Düzen: Gece ve gündüzün birbirini izlemesi, mevsimlerin oluşumu, su döngüsü, yer çekimi kanunu ve Güneş Sistemi'nin kusursuz işlemesi evrende hiçbir şeyin tesadüf eseri olmadığını gösterir.",
       "Ölçü ve Denge: Canlıların nefes alması için gereken oksijen oranı, atmosfer tabakasının Dünya'yı zararlı ışınlardan koruması gibi dengeler Yüce Allah'ın sonsuz ilminin ve kudretinin kanıtıdır.",
       "Ayet Meali: \"O, yedi göğü tabaka tabaka yaratandır. Rahmân'ın yaratışında hiçbir uyumsuzluk göremezsin...\" (Mülk suresi, 3. ayet)."
-    ],
+],
     "examTraps": [
-      "PÜF NOKTA: Evrendeki ölçü ve düzen sorularında anahtar kavramlar: \"Ahenk, denge, ölçü, nizam, tesadüf olmaması\"dır."
-    ],
+      "PÜF NOKTA: Evrendeki ölçü ve düzen sorularında anahtar kavramlar: 'Ahenk, denge, ölçü, nizam, tesadüf olmaması'dır. Düzenin varlığı doğrudan bir Yaratıcı'nın varlığına delildir."
+],
     "solvedExample": {
-      "question": "'Gökleri ve yeri yaratan, gece ile gündüzü birbiri ardınca getiren Allah'tır...' (Âl-i İmrân Suresi, 190. ayet)\n\nAyetten hareketle evrendeki kusursuz düzene ve ölçüye günlük hayattan 2 somut tabiat olayı örneği veriniz.",
-      "analysis": "Mevsimlerin şaşmadan dönmesi, Dünya'nın Güneş'e olan yaşam mesafesi, su döngüsü.",
-      "solution": "1. Örnek: Gece ile gündüzün ve dört mevsimin (ilkbahar, yaz, sonbahar, kış) milyonlarca yıldır milimetrik bir düzenle birbirini izlemesi.\n2. Örnek: Dünya'nın Güneş'e olan ideal mesafesi (ne donacak kadar uzak ne de kavrulacak kadar yakın olması)."
-    },
+      "question": "Kış mevsiminde kar yağar ve toprak dinlenir; ilkbaharda havalar ısınır, tohumlar yeşerir ve doğa canlanır; yazın meyveler olgunlaşır; sonbaharda ise yapraklar dökülür ve tabiat kışa hazırlanır. Milyonlarca yıldır bu mevsim döngüsü şaşmadan tekrarlanmaktadır.\n\nMevsimlerin bu kusursuz döngüsünden hareketle evrendeki düzen ve ilahi ölçü hakkında 2 çıkarım yazınız.",
+      "analysis": "Düzenin tesadüfle açıklanamayacağı ve ilahi bir planın eseri olduğu çıkarımı yapılır.",
+      "solution": "1. Evrendeki hiçbir olay başıboş ve rastlantısal değildir; mevsimlerin milimetrik bir periyotla birbirini izlemesi sonsuz ilim ve kudret sahibi bir Yaratıcı'nın (Allah) varlığını kanıtlar.\n2. Bu döngü canlıların beslenmesi, tohumların yeşermesi ve hayatın sürekliliği için en ideal ölçü ve dengede (ilahi nizam) yaratılmıştır."
+},
     "practiceQuestion": {
-      "question": "Mükemmel Düzen konusunda benzer bir açık uçlu problemi kendi cümlelerinizle kurup çözünüz.",
-      "hint": "Örnek sorudaki işlem basamaklarını ve model çözümü referans alınız."
-    }
+      "question": "Su döngüsünün (denizlerden buharlaşma, bulut oluşumu ve tatlı su olarak yağmur yağması) tesadüfle açıklanamayacak bir düzen olduğunu 2 gerekçeyle açıklayınız.",
+      "hint": "Tuzlu suyun buharlaşırken arınması ve ölçülü yağmasını düşününüz."
+}
   },
   "DKAB.5.1.2": {
     "outcomeCode": "DKAB.5.1.2",
     "topicTitle": "Allah'ın Varlığı ve Birliği (Tevhit)",
+    "textbookUnit": "1. Ünite: ALLAH İNANCI",
+    "textbookPageRange": "s. 20-28 (PDF: 20-28)",
+    "textbookExamples": [
+      "Tevhid İnancı ve Ressam-Resim Analojisi (Ders Kitabı s. 20-24: Her eserin bir ustayı göstermesi mantığı)",
+      "Enbiyâ Suresi 22. Ayet Tahlili (Ders Kitabı s. 25-28: 'Yerde ve gökte birden fazla ilah olsaydı düzen bozulurdu')"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı",
+        "bookFileName": "DERS_KITABI_DKAB.pdf",
+        "unitTitle": "1. Ünite: ALLAH İNANCI",
+        "printedPageRange": "20-28",
+        "pdfPageRange": "20-28",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Tevhit İnancı: Yüce Allah'ın tek olduğuna, eşi, benzeri ve ortağının bulunmadığına inanmaktır. İslam dininin en temel inanç esasıdır.",
       "Şirk: Allah'a ortak koşmak, başka varlıklara ilahlık yakıştırmaktır. Tevhit inancının zıddıdır ve en büyük günahtır.",
@@ -553,6 +978,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "DKAB.5.1.3": {
     "outcomeCode": "DKAB.5.1.3",
     "topicTitle": "Allah'ın Güzel İsimleri (Esmâ-i Hüsnâ)",
+    "textbookUnit": "1. Ünite: ALLAH İNANCI",
+    "textbookPageRange": "s. 29-35 (PDF: 29-35)",
+    "textbookExamples": [
+      "Esmâ-i Hüsnâ Tablosu (Ders Kitabı s. 29-33: Rahmân, Rahîm, Alîm, Semî', Basîr ve Kadîr isimleri)",
+      "İlahi İsimlerin Günlük Hayattaki Yansımaları (Ders Kitabı s. 34-35: İhlaslı dua ve güzel ahlak bağı)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı",
+        "bookFileName": "DERS_KITABI_DKAB.pdf",
+        "unitTitle": "1. Ünite: ALLAH İNANCI",
+        "printedPageRange": "29-35",
+        "pdfPageRange": "29-35",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Er-Rahmân: Dünyada inanan veya inanmayan ayrımı yapmaksızın bütün yaratılmışlara merhamet eden, rızık veren.",
       "Er-Rahîm: Ahirette yalnızca iman edip güzel davranışlarda bulunan mümin kullarına sonsuz merhamet gösteren.",
@@ -577,6 +1019,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "DKAB.5.1.4": {
     "outcomeCode": "DKAB.5.1.4",
     "topicTitle": "İhlas Suresi ve Anlamı",
+    "textbookUnit": "1. Ünite: ALLAH İNANCI",
+    "textbookPageRange": "s. 36-42 (PDF: 36-42)",
+    "textbookExamples": [
+      "İhlas Suresi ve Anlamı (Ders Kitabı s. 36-39: Tevhidin özeti, Arapça okunuş ve meal)",
+      "Samed Kavramının Derin Analizi (Ders Kitabı s. 40-42: Her şeyin O'na muhtaç olması, O'nun hiçbir şeye muhtaç olmaması)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı",
+        "bookFileName": "DERS_KITABI_DKAB.pdf",
+        "unitTitle": "1. Ünite: ALLAH İNANCI",
+        "printedPageRange": "36-42",
+        "pdfPageRange": "36-42",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Sure Özeti: 4 ayetten oluşur. İslam'ın özü olan \"Tevhit\" inancını en berrak şekilde özetleyen suredir.",
       "1. Ayet: \"De ki: O, Allah birdir.\" → Tevhit ilkesi vurgulanır.",
@@ -600,6 +1059,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "DKAB.5.2.1": {
     "outcomeCode": "DKAB.5.2.1",
     "topicTitle": "Namaz İbadeti ve Önemi",
+    "textbookUnit": "2. Ünite: NAMAZ & RAMAZAN",
+    "textbookPageRange": "s. 56-60 (PDF: 56-60)",
+    "textbookExamples": [
+      "Namaz İbadetinin Anlamı ve Önemi (Ders Kitabı s. 56-58: Kulun Allah'a yönelişi ve şükür ifadesi)",
+      "Farz, Vacip ve Nafile Namazlar Tablosu (Ders Kitabı s. 59-60: Namaz çeşitleri ve vakitleri)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı",
+        "bookFileName": "DERS_KITABI_DKAB.pdf",
+        "unitTitle": "2. Ünite: NAMAZ & RAMAZAN",
+        "printedPageRange": "56-60",
+        "pdfPageRange": "56-60",
+        "evidenceLevel": "B"
+      }
+    ],
+    "evidenceLevel": "B",
     "quickNotes": [
       "Namazın Anlamı: Sözlükte dua etmek, tazim göstermek anlamına gelir. Dinin direği ve müminin miracıdır.",
       "Günde 5 Vakit: Sabah (2 sünnet, 2 farz), Öğle (4 sünnet, 4 farz, 2 son sünnet), İkindi (4 sünnet, 4 farz), Akşam (3 farz, 2 sünnet), Yatsı (4 sünnet, 4 farz, 2 son sünnet, 3 vitir).",
@@ -622,6 +1098,39 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "ENG.5.1.R2": {
     "outcomeCode": "ENG.5.1.R2",
     "topicTitle": "School Subjects and Daily Schedule",
+    "textbookUnit": "Theme 1: School Life",
+    "textbookPageRange": "SB: s. 28-31 (PDF: 29-32) | WB: s. 9-10 (PDF: 10-11)",
+    "textbookExamples": [
+      "Matching Flags with Countries and School Places (SB s. 28-31: Canteen, gym, library, classroom)",
+      "People at School and Roles Activity (WB s. 9-10: Student, teacher, librarian identification)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Student Book",
+        "bookFileName": "DERS_KITABI_INGILIZCE_DERS_KITABI.pdf",
+        "unitTitle": "Theme 1: School Life",
+        "printedPageRange": "28-31",
+        "pdfPageRange": "29-32",
+        "evidenceLevel": "D"
+      },
+      {
+        "bookType": "Workbook",
+        "bookFileName": "DERS_KITABI_INGILIZCE_CALISMA_KITABI.pdf",
+        "unitTitle": "Theme 1: School Life",
+        "printedPageRange": "9-10",
+        "pdfPageRange": "10-11",
+        "evidenceLevel": "D"
+      },
+      {
+        "bookType": "Teacher Guide",
+        "bookFileName": "DERS_KITABI_INGILIZCE_OGRETMEN_KILAVUZ_KITABI.pdf",
+        "unitTitle": "Theme 1: School Life",
+        "printedPageRange": "21-23",
+        "pdfPageRange": "22-24",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "School Subjects: Science (Fen), Maths (Matematik), Social Studies (Sosyal), Art (Görsel Sanatlar), Music (Müzik), PE / Physical Education (Beden Eğitimi), English (İngilizce), Information Technology (Bilişim).",
       "Expressing Likes/Dislikes: \"I like Science because it is fun.\" / \"I dislike Maths because it is difficult.\" / \"My favourite class is Art.\"",
@@ -643,6 +1152,39 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "ENG.5.1.R3": {
     "outcomeCode": "ENG.5.1.R3",
     "topicTitle": "School Rules and Obligations",
+    "textbookUnit": "Theme 1: School Life",
+    "textbookPageRange": "SB: s. 34-37 (PDF: 35-38) | WB: s. 11-12 (PDF: 12-13)",
+    "textbookExamples": [
+      "Linda's School Blog and Timetable Reading (SB s. 34-37: Detailed reading and True/False comprehension)",
+      "School Rules and Weekly Schedule Comprehension (WB s. 11-12: Open-ended WH- questions)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Student Book",
+        "bookFileName": "DERS_KITABI_INGILIZCE_DERS_KITABI.pdf",
+        "unitTitle": "Theme 1: School Life",
+        "printedPageRange": "34-37",
+        "pdfPageRange": "35-38",
+        "evidenceLevel": "D"
+      },
+      {
+        "bookType": "Workbook",
+        "bookFileName": "DERS_KITABI_INGILIZCE_CALISMA_KITABI.pdf",
+        "unitTitle": "Theme 1: School Life",
+        "printedPageRange": "11-12",
+        "pdfPageRange": "12-13",
+        "evidenceLevel": "D"
+      },
+      {
+        "bookType": "Teacher Guide",
+        "bookFileName": "DERS_KITABI_INGILIZCE_OGRETMEN_KILAVUZ_KITABI.pdf",
+        "unitTitle": "Theme 1: School Life",
+        "printedPageRange": "24-26",
+        "pdfPageRange": "25-27",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Imperatives (Emir Cümleleri): Kuralları belirtirken fiilin yalın hali kullanılır: \"Listen to your teacher.\" (Öğretmenini dinle). \"Raise your hand to speak.\" (Konuşmak için parmak kaldır).",
       "Negative Rules (Yasaklar): \"Don't\" ile başlar: \"Don't run in the corridors.\" (Koridorda koşma). \"Don't shout in the class.\" (Sınıfta bağırma). \"Don't eat during the lesson.\" (Derste bir şey yeme)."
@@ -663,6 +1205,39 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "ENG.5.1.V1": {
     "outcomeCode": "ENG.5.1.V1",
     "topicTitle": "School Vocabulary and National Celebrations",
+    "textbookUnit": "Theme 1: School Life",
+    "textbookPageRange": "SB: s. 30-33 (PDF: 31-34) | WB: s. 10-11 (PDF: 11-12)",
+    "textbookExamples": [
+      "Target Vocabulary: School Clubs and Places (SB s. 30-33: Chess Club, Art Club, Science Lab)",
+      "Word Puzzle and Picture-Word Association (WB s. 10-11: Country flags, nationalities, and equipment)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Student Book",
+        "bookFileName": "DERS_KITABI_INGILIZCE_DERS_KITABI.pdf",
+        "unitTitle": "Theme 1: School Life",
+        "printedPageRange": "30-33",
+        "pdfPageRange": "31-34",
+        "evidenceLevel": "D"
+      },
+      {
+        "bookType": "Workbook",
+        "bookFileName": "DERS_KITABI_INGILIZCE_CALISMA_KITABI.pdf",
+        "unitTitle": "Theme 1: School Life",
+        "printedPageRange": "10-11",
+        "pdfPageRange": "11-12",
+        "evidenceLevel": "D"
+      },
+      {
+        "bookType": "Teacher Guide",
+        "bookFileName": "DERS_KITABI_INGILIZCE_OGRETMEN_KILAVUZ_KITABI.pdf",
+        "unitTitle": "Theme 1: School Life",
+        "printedPageRange": "22-25",
+        "pdfPageRange": "23-26",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Key Vocabulary: timetable (ders programı), classroom (derslik), library (kütüphane), canteen (kantin), gym (spor salonu), club (öğrenci kulübü).",
       "National Celebrations: Republic Day (29 Ekim Cumhuriyet Bayramı), Children's Day (23 Nisan Ulusal Egemenlik ve Çocuk Bayramı), Youth and Sports Day (19 Mayıs Gençlik ve Spor Bayramı), Victory Day (30 Ağustos Zafer Bayramı)."
@@ -683,6 +1258,39 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "ENG.5.1.G1": {
     "outcomeCode": "ENG.5.1.G1",
     "topicTitle": "Simple Present Tense & Prepositions of Time",
+    "textbookUnit": "Theme 1: School Life",
+    "textbookPageRange": "SB: s. 34-36 (PDF: 35-37) | WB: s. 12-14 (PDF: 13-15)",
+    "textbookExamples": [
+      "Present Simple Question and Answer Patterns (SB s. 34-36: 'Which club are you in?', 'Where is she from?')",
+      "Unscramble Sentences and Verb Form Exercises (WB s. 12-14: Third person -s rule and word order)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Student Book",
+        "bookFileName": "DERS_KITABI_INGILIZCE_DERS_KITABI.pdf",
+        "unitTitle": "Theme 1: School Life",
+        "printedPageRange": "34-36",
+        "pdfPageRange": "35-37",
+        "evidenceLevel": "D"
+      },
+      {
+        "bookType": "Workbook",
+        "bookFileName": "DERS_KITABI_INGILIZCE_CALISMA_KITABI.pdf",
+        "unitTitle": "Theme 1: School Life",
+        "printedPageRange": "12-14",
+        "pdfPageRange": "13-15",
+        "evidenceLevel": "D"
+      },
+      {
+        "bookType": "Teacher Guide",
+        "bookFileName": "DERS_KITABI_INGILIZCE_OGRETMEN_KILAVUZ_KITABI.pdf",
+        "unitTitle": "Theme 1: School Life",
+        "printedPageRange": "25-28",
+        "pdfPageRange": "26-29",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Prepositions of Time Kuralı: \n• AT: Saatler için kullanılır (at 8:30, at noon).\n• ON: Günler ve tarihler için kullanılır (on Monday, on 29th October).\n• IN: Günün bölümleri, aylar ve mevsimler için kullanılır (in the morning, in May, in summer).",
       "Simple Present Tense (He/She/It): Olumlu cümlede fiile -s, -es veya -ies eklenir: \"She likes Science.\", \"He watches TV.\""
@@ -703,6 +1311,31 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "ENG.5.1.W3": {
     "outcomeCode": "ENG.5.1.W3",
     "topicTitle": "Writing About Daily School Life",
+    "textbookUnit": "Theme 1: School Life",
+    "textbookPageRange": "SB: s. 37-38 (PDF: 38-39) | WB: s. 14 (PDF: 15)",
+    "textbookExamples": [
+      "Model-Based Timetable and Club Writing (SB s. 37-38: Drafting personal schedule based on sample card)",
+      "Guided Paragraph Completion (WB s. 14: Filling template with personal school routines)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Student Book",
+        "bookFileName": "DERS_KITABI_INGILIZCE_DERS_KITABI.pdf",
+        "unitTitle": "Theme 1: School Life",
+        "printedPageRange": "37-38",
+        "pdfPageRange": "38-39",
+        "evidenceLevel": "D"
+      },
+      {
+        "bookType": "Workbook",
+        "bookFileName": "DERS_KITABI_INGILIZCE_CALISMA_KITABI.pdf",
+        "unitTitle": "Theme 1: School Life",
+        "printedPageRange": "14",
+        "pdfPageRange": "15",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Paragraf Kalıbı: \"My name is Can. I am a 5th grade student. My favourite school subjects are Science and English. We have Science on Monday and Wednesday at 09:00. I also obey the school rules: I keep my desk clean and listen to my teachers.\"",
       "Bağlaçlar: \"and\" (ve), \"but\" (ama/fakat), \"because\" (çünkü)."
@@ -723,6 +1356,31 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "ENG.5.1.W4": {
     "outcomeCode": "ENG.5.1.W4",
     "topicTitle": "Writing a Profile of a School Club",
+    "textbookUnit": "Theme 1: School Life",
+    "textbookPageRange": "SB: s. 39-40 (PDF: 40-41) | WB: s. 15 (PDF: 16)",
+    "textbookExamples": [
+      "Independent Paragraph Writing on School Rules (SB s. 39-40: 5-sentence composition on classroom behavior)",
+      "Free Composition: 'My School Life' (WB s. 15: Self-assessment rubric and autonomous writing task)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Student Book",
+        "bookFileName": "DERS_KITABI_INGILIZCE_DERS_KITABI.pdf",
+        "unitTitle": "Theme 1: School Life",
+        "printedPageRange": "39-40",
+        "pdfPageRange": "40-41",
+        "evidenceLevel": "D"
+      },
+      {
+        "bookType": "Workbook",
+        "bookFileName": "DERS_KITABI_INGILIZCE_CALISMA_KITABI.pdf",
+        "unitTitle": "Theme 1: School Life",
+        "printedPageRange": "15",
+        "pdfPageRange": "16",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Kulüp Tanıtımı: \"I am a member of the Chess Club. We meet on Friday afternoons in the library. We play chess matches and learn new tactics. It is very exciting.\"",
       "Temel Sorular: What is the club? (Kulüp ne?), When do you meet? (Ne zaman toplanıyorsunuz?), Where do you meet? (Nerede toplanıyorsunuz?)."
@@ -743,6 +1401,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "T.O.6.5": {
     "outcomeCode": "T.O.6.5",
     "topicTitle": "Sözcükte Anlam: Gerçek, Mecaz ve Terim Anlam",
+    "textbookUnit": "1. Kitap, 1. Tema: DİLİMİZİN ZENGİNLİĞİ",
+    "textbookPageRange": "s. 10-25 (PDF: 10-25)",
+    "textbookExamples": [
+      "Metnin Konusu ve Ana Fikrini Belirleme (1. Kitap s. 10-18: Metinde anlatılan temel düşünce)",
+      "Başlık ve İçerik Uyumu Değerlendirmesi (1. Kitap s. 19-25: Metnin sınırlarını ve kapsamını çizme)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_TURKCE_1.pdf",
+        "unitTitle": "1. Tema: DİLİMİZİN ZENGİNLİĞİ",
+        "printedPageRange": "10-25",
+        "pdfPageRange": "10-25",
+        "evidenceLevel": "B"
+      }
+    ],
+    "evidenceLevel": "B",
     "quickNotes": [
       "Gerçek (Temel) Anlam: Bir sözcüğün akla gelen ilk, somut ve sözlükteki birinci anlamıdır. Örneğin: \"Ateş elini yaktı.\", \"Kutunun kapağını açtı.\"",
       "Mecaz Anlam: Sözcüğün gerçek anlamından tamamen uzaklaşarak kazandığı yeni ve soyut anlamdır. Genellikle ilgi veya benzetme yoluyla oluşur. Örneğin: \"Bu sınav beni yaktı.\", \"Sözleriyle kalbimi kırdı.\"",
@@ -765,6 +1440,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "T.O.6.6": {
     "outcomeCode": "T.O.6.6",
     "topicTitle": "Metnin Yüzey Anlamı ve 5N1K Çözümlemesi",
+    "textbookUnit": "1. Kitap, 1. Tema: DİLİMİZİN ZENGİNLİĞİ",
+    "textbookPageRange": "s. 10-30 (PDF: 10-30)",
+    "textbookExamples": [
+      "Metnin Yüzey Anlamı ve Açık İfadeler (1. Kitap s. 10-20: Olay, yer, zaman ve şahıs kadrosu analizi)",
+      "5N1K ve Metin İçi Doğrudan Bilgiye Ulaşma (1. Kitap s. 21-30: Açık uçlu anlama sorularını yanıtlama)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_TURKCE_1.pdf",
+        "unitTitle": "1. Tema: DİLİMİZİN ZENGİNLİĞİ",
+        "printedPageRange": "10-30",
+        "pdfPageRange": "10-30",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Yüzey Anlam: Metinde yazarın doğrudan, açıkça ifade ettiği, yoruma veya gizli anlama gerek kalmadan metinden hemen bulunabilen somut bilgilerdir.",
       "5N1K Formülü: Metnin yüzey anlamını eksiksiz kavramak için 6 temel soru metne yöneltilir:\n• Kim? (Olayı yaşayan kişi/kahraman)\n• Ne? (Yaşanan olay veya durum)\n• Nerede? (Olayın geçtiği mekân)\n• Ne zaman? (Olayın gerçekleştiği vakit veya dönem)\n• Nasıl? (Olayın gerçekleşme biçimi, durumu)\n• Neden/Niçin? (Olayın gerekçesi ve sebebi).",
@@ -786,6 +1478,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "T.O.6.21": {
     "outcomeCode": "T.O.6.21",
     "topicTitle": "Söz Varlığı: Eş ve Zıt Anlam, Deyimler ve Atasözleri",
+    "textbookUnit": "1. Kitap, 1. Tema: DİLİMİZİN ZENGİNLİĞİ",
+    "textbookPageRange": "s. 15-40 (PDF: 15-40)",
+    "textbookExamples": [
+      "Kelimelerin Mecaz ve Terim Anlamları (1. Kitap s. 15-28: Gerçek anlamdan uzaklaşan söz varlığı)",
+      "Atasözleri ve Deyimlerin Cümleye Kattığı Anlam (1. Kitap s. 29-40: Kalıplaşmış söz öbeklerini açıklama)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_TURKCE_1.pdf",
+        "unitTitle": "1. Tema: DİLİMİZİN ZENGİNLİĞİ",
+        "printedPageRange": "15-40",
+        "pdfPageRange": "15-40",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Eş Anlamlı (Anlamdaş) Sözcükler: Yazılışları ve okunuşları farklı, ancak anlamları aynı olan sözcüklerdir (cevap - yanıt, mektep - okul, yurt - vatan, ak - beyaz).",
       "Zıt (Karşıt) Anlamlı Sözcükler: Anlamca birbirinin tam tersi kavramları karşılayan sözcüklerdir (tatlı - acı, yüksek - alçak, dar - geniş).",
@@ -808,6 +1517,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "T.Y.6.18": {
     "outcomeCode": "T.Y.6.18",
     "topicTitle": "Yazıda Söz Varlığını Zenginleştirme Teknikleri",
+    "textbookUnit": "1. Kitap, 1. Tema: DİLİMİZİN ZENGİNLİĞİ",
+    "textbookPageRange": "s. 35-50 (PDF: 35-50)",
+    "textbookExamples": [
+      "Düşünceyi Geliştirme Yolları: Tanımlama ve Örneklendirme (1. Kitap s. 35-42: Kavramı açıklama ve somut örnekler verme)",
+      "Karşılaştırma ve Benzetme Yöntemleri (1. Kitap s. 43-50: Varlıklar arasındaki benzerlik ve farkları vurgulama)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_TURKCE_1.pdf",
+        "unitTitle": "1. Tema: DİLİMİZİN ZENGİNLİĞİ",
+        "printedPageRange": "35-50",
+        "pdfPageRange": "35-50",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Tekrardan Kaçınma: Aynı kelimeyi ardı ardına sıralamak yerine zamirler (o, bu, kendisi) veya eş anlamlı kelimeler kullanarak akıcılık sağlanır.",
       "Deyim ve Atasözü ile Güçlendirme: Düşünceyi daha etkileyici ve inandırıcı kılmak için anlatılan duruma tam uygun bir deyim ya da atasözü yerleştirilir.",
@@ -829,6 +1555,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "T.Y.6.21": {
     "outcomeCode": "T.Y.6.21",
     "topicTitle": "Yazım Kuralları ve Noktalama İşaretleri",
+    "textbookUnit": "1. Kitap, 1. Tema: DİLİMİZİN ZENGİNLİĞİ",
+    "textbookPageRange": "s. 55-65 (PDF: 55-65)",
+    "textbookExamples": [
+      "Yazım Kuralları: 'de' ve 'ki' Bağlaçlarının Yazımı (1. Kitap s. 55-60: Ek olan '-de/-ki' ile bağlaç ayrımı)",
+      "Noktalama İşaretleri: Noktalı Virgül ve İki Nokta (1. Kitap s. 61-65: Sıralı cümleler ve açıklama bildiren ifadeler)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_TURKCE_1.pdf",
+        "unitTitle": "1. Tema: DİLİMİZİN ZENGİNLİĞİ",
+        "printedPageRange": "55-65",
+        "pdfPageRange": "55-65",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "\"-de / -da\" Yazımı:\n• Bağlaç olan \"de/da\": Ayrı yazılır. Cümleden çıkarıldığında cümlenin anlamı bozulmaz (hafif daralabilir). Örneğin: \"Sen de bizimle gel.\" -> \"Sen bizimle gel.\" (Anlam bozulmadı, ayrı yazılır).\n• Bulunma durum eki \"-de/-da\": Bitişik yazılır. \"Nerede, kimde?\" sorularına cevap verir, cümleden çıkarsa anlam bozulur. Örneğin: \"Kitabım evde kaldı.\"",
       "\"-ki\" Yazımı:\n• Pratik Kural: \"-ki\"den sonra \"-ler\" çoğul ekini getirin; anlamlı oluyorsa bitişik (evdeki-ler -> evdeki, masadaki-ler -> masadaki), anlamsız oluyorsa ayrı bağlaçtır (duydum ki-ler -> anlamsız, ayrı yazılır: \"duydum ki\").",
@@ -851,6 +1594,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "T.O.6.16": {
     "outcomeCode": "T.O.6.16",
     "topicTitle": "Bilgilendirici Metinlerde Anahtar Kelimeler",
+    "textbookUnit": "1. Kitap, 1. Tema: DİLİMİZİN ZENGİNLİĞİ",
+    "textbookPageRange": "s. 25-45 (PDF: 25-45)",
+    "textbookExamples": [
+      "Neden-Sonuç ve Amaç-Sonuç Cümleleri (1. Kitap s. 25-34: Gerekçeli anlatım ve yargı bağı)",
+      "Koşul-Sonuç Cümleleri ve Anlam İlişkileri (1. Kitap s. 35-45: Cümleler arası mantıksal bağlantılar)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_TURKCE_1.pdf",
+        "unitTitle": "1. Tema: DİLİMİZİN ZENGİNLİĞİ",
+        "printedPageRange": "25-45",
+        "pdfPageRange": "25-45",
+        "evidenceLevel": "B"
+      }
+    ],
+    "evidenceLevel": "B",
     "quickNotes": [
       "Anahtar Kelime: Bir metnin konusunu ve özünü en iyi yansıtan, metnin omurgasını kuran, metin çıkarıldığında eksikliği derhal hissedilen kilit kelimelerdir.",
       "Anahtar Kelimeleri Tespit Etme Yolları:\n1. Metnin başlığına ve ilk/son paragraflarına dikkat edilir.\n2. Metin boyunca en sık tekrarlanan ve yazarın üzerinde ısrarla durduğu temel kavramlar belirlenir.\n3. \"Bu metin ne hakkındadır?\" sorusuna verilen en temel yanıtlar anahtar kelimeleri verir."
@@ -871,6 +1631,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "T.Y.6.3": {
     "outcomeCode": "T.Y.6.3",
     "topicTitle": "Yazı Planı ve Paragraf Yapısı (Giriş, Gelişme, Sonuç)",
+    "textbookUnit": "1. Kitap, 1. Tema: DİLİMİZİN ZENGİNLİĞİ",
+    "textbookPageRange": "s. 45-60 (PDF: 45-60)",
+    "textbookExamples": [
+      "Bilgilendirici Metin Yazma Kuralları (1. Kitap s. 45-52: Giriş, gelişme ve sonuç paragrafları planlama)",
+      "Düşünceyi Mantıksal Bütünlükle İfade Etme (1. Kitap s. 53-60: Başlık seçimi ve ana düşünce etrafında yazma)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_TURKCE_1.pdf",
+        "unitTitle": "1. Tema: DİLİMİZİN ZENGİNLİĞİ",
+        "printedPageRange": "45-60",
+        "pdfPageRange": "45-60",
+        "evidenceLevel": "C"
+      }
+    ],
+    "evidenceLevel": "C",
     "quickNotes": [
       "Giriş Bölümü: Konunun takdim edildiği, okuyucunun ilgisini çeken ilk bölümdür. Genellikle 1-2 cümledir. Giriş cümlesinde \"bununla birlikte, çünkü, bundan dolayı, bu nedenle\" gibi bağlayıcı ögeler yer almaz.",
       "Gelişme Bölümü: Ana düşüncenin örneklerle, benzetmelerle, karşılaştırmalarla ve açıklamalarla açıldığı, düşüncelerin derinleştiği en uzun bölümdür.",
@@ -892,6 +1669,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "MAT.6.1.1": {
     "outcomeCode": "MAT.6.1.1",
     "topicTitle": "Üslü İfadeler ve İşlem Önceliği",
+    "textbookUnit": "1. Kitap, 1. Tema: SAYILAR VE NİCELİKLER",
+    "textbookPageRange": "s. 14-26 (PDF: 14-26)",
+    "textbookExamples": [
+      "Doğal Sayıların Çarpanları ve Katları (1. Kitap s. 14-20: Dikdörtgensel alan modellemesi ile çarpan bulma)",
+      "Bir Sayının Pozitif Tam Sayı Çarpanlarını Listeleme (1. Kitap s. 21-26: Gökkuşağı yöntemi ile eşleştirme)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_MATEMATIK_1.pdf",
+        "unitTitle": "1. Tema: SAYILAR VE NİCELİKLER",
+        "printedPageRange": "14-26",
+        "pdfPageRange": "14-26",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Üslü İfade: aⁿ ifadesinde \"a\" taban, \"n\" üs (kuvvet)tir. Tabanın n defa kendisiyle çarpımıdır (Örn: 2³ = 2 × 2 × 2 = 8; 5² = 5 × 5 = 25).",
       "Özel Kurallar: 1'in tüm kuvvetleri 1'dir (1¹⁰ = 1). Her sayının 1. kuvveti kendisine eşittir (7¹ = 7). Sıfır hariç her sayının 0. kuvveti 1'dir (8⁰ = 1). 0'ın pozitif kuvvetleri 0'dır (0⁵ = 0).",
@@ -913,6 +1707,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "MAT.6.1.2": {
     "outcomeCode": "MAT.6.1.2",
     "topicTitle": "Dağılma Özelliği ve Ortak Çarpan Parantezi",
+    "textbookUnit": "1. Kitap, 1. Tema: SAYILAR VE NİCELİKLER",
+    "textbookPageRange": "s. 27-37 (PDF: 27-37)",
+    "textbookExamples": [
+      "2, 3, 5 ve 10 ile Bölünebilme Kuralları (1. Kitap s. 27-32: Son basamak ve basamak değerleri toplamı kuralı)",
+      "4, 6 ve 9 ile Bölünebilme Kuralları (1. Kitap s. 33-37: Son iki basamak ve çarpanlara ayrılabilirlik)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_MATEMATIK_1.pdf",
+        "unitTitle": "1. Tema: SAYILAR VE NİCELİKLER",
+        "printedPageRange": "27-37",
+        "pdfPageRange": "27-37",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Çarpmanın Toplama Üzerine Dağılması: a × (b + c) = (a × b) + (a × c). Dıştaki sayı parantezin içindeki her iki sayıyla ayrı ayrı çarpılır.",
       "Çarpmanın Çıkarma Üzerine Dağılması: a × (b - c) = (a × b) - (a × c).",
@@ -935,6 +1746,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "MAT.6.1.3": {
     "outcomeCode": "MAT.6.1.3",
     "topicTitle": "Bölünebilme Kuralları (2, 3, 4, 5, 6, 9, 10)",
+    "textbookUnit": "1. Kitap, 1. Tema: SAYILAR VE NİCELİKLER",
+    "textbookPageRange": "s. 38-48 (PDF: 38-48)",
+    "textbookExamples": [
+      "Asal Sayıların Tanımı ve Eratosthenes Kalburu (1. Kitap s. 38-42: 1 ve kendisinden başka böleni olmayan sayılar)",
+      "Doğal Sayıları Asal Çarpanlarına Ayırma (1. Kitap s. 43-48: Çarpan ağacı ve bölen listesi/algoritması)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_MATEMATIK_1.pdf",
+        "unitTitle": "1. Tema: SAYILAR VE NİCELİKLER",
+        "printedPageRange": "38-48",
+        "pdfPageRange": "38-48",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "2 ile Bölünebilme: Birler basamağı çift sayı (0, 2, 4, 6, 8) olan sayılar kalansız bölünür.",
       "3 ile Bölünebilme: Rakamları toplamı 3 veya 3'ün katı olan sayılar kalansız bölünür.",
@@ -961,6 +1789,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "MAT.6.1.4": {
     "outcomeCode": "MAT.6.1.4",
     "topicTitle": "Asal Sayılar ve Asal Çarpanlara Ayırma",
+    "textbookUnit": "1. Kitap, 1. Tema: SAYILAR VE NİCELİKLER",
+    "textbookPageRange": "s. 49-62 (PDF: 49-62)",
+    "textbookExamples": [
+      "İki Doğal Sayının Ortak Bölenleri (EBOB Mantığı) (1. Kitap s. 49-55: Ortak çarpanları listeleme ve en büyüğünü seçme)",
+      "İki Doğal Sayının Ortak Katları (EKOK Mantığı) (1. Kitap s. 56-62: Katları sıralayarak ilk buluşma noktasını bulma)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_MATEMATIK_1.pdf",
+        "unitTitle": "1. Tema: SAYILAR VE NİCELİKLER",
+        "printedPageRange": "49-62",
+        "pdfPageRange": "49-62",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Asal Sayı Tanımı: Yalnızca 1'e ve kendisine tam bölünebilen 1'den büyük doğal sayılardır.",
       "İlk Asal Sayılar: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47...",
@@ -985,6 +1830,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "FB.6.1.1": {
     "outcomeCode": "FB.6.1.1",
     "topicTitle": "Güneş Sistemi ve Gezegenler",
+    "textbookUnit": "1. Ünite: GÜNEŞ SİSTEMİ VE TUTULMALAR",
+    "textbookPageRange": "s. 18-29 (PDF: 18-29)",
+    "textbookExamples": [
+      "Güneş Sistemi'ndeki Gezegenlerin Sıralanışı ve Büyüklükleri (1. Kitap s. 18-24: Güneş'e yakınlıklarına göre dizilim)",
+      "Karasal (İç) ve Gazsal (Dış) Gezegenler Sınıflandırması (1. Kitap s. 25-29: Asteroit kuşağı ve yapısal farklar)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_FEN_BILIMLERI_1.pdf",
+        "unitTitle": "1. Ünite: GÜNEŞ SİSTEMİ VE TUTULMALAR",
+        "printedPageRange": "18-29",
+        "pdfPageRange": "18-29",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Güneş'e Yakınlık Sıralaması: Merkür → Venüs → Dünya → Mars → Jüpiter → Satürn → Uranüs → Neptün (Kodlama: Mavi Valiz Dünyadan Marsa, Jilet Satıp Ucuzladı Neptün).",
       "Karasal (İç) Gezegenler: Merkür, Venüs, Dünya, Mars. Taş ve kayalardan oluşur, halkaları yoktur.",
@@ -1009,6 +1871,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "FB.6.1.3": {
     "outcomeCode": "FB.6.1.3",
     "topicTitle": "Güneş ve Ay Tutulmaları",
+    "textbookUnit": "1. Ünite: GÜNEŞ SİSTEMİ VE TUTULMALAR",
+    "textbookPageRange": "s. 30-44 (PDF: 30-44)",
+    "textbookExamples": [
+      "Güneş Tutulması Modeli ve Oluşum Şartları (1. Kitap s. 30-36: Ay'ın Güneş ile Dünya arasına girmesi ve yeni ay evresi)",
+      "Ay Tutulması Modeli ve Oluşum Şartları (1. Kitap s. 37-44: Dünya'nın gölgesinde kalması ve dolunay evresi)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_FEN_BILIMLERI_1.pdf",
+        "unitTitle": "1. Ünite: GÜNEŞ SİSTEMİ VE TUTULMALAR",
+        "printedPageRange": "30-44",
+        "pdfPageRange": "30-44",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Güneş Tutulması: Ay, Güneş ile Dünya arasına girer (Sıralama: Güneş - Ay - Dünya). Ay'ın gölgesi Dünya'nın bir kısmına düşer. Gündüz vakti yaşanır ve Ay YENİ AY evresindedir.",
       "Ay Tutulması: Dünya, Güneş ile Ay arasına girer (Sıralama: Güneş - Dünya - Ay). Dünya'nın gölgesi Ay'ın üzerine düşer. Gece vakti yaşanır ve Ay DOLUNAY evresindedir.",
@@ -1031,6 +1910,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "FB.6.2.1": {
     "outcomeCode": "FB.6.2.1",
     "topicTitle": "Destek ve Hareket Sistemi",
+    "textbookUnit": "2. Ünite: KUVVET VE HAREKET",
+    "textbookPageRange": "s. 46-56 (PDF: 46-56)",
+    "textbookExamples": [
+      "Bileşke Kuvvet (Net Kuvvet) Hesabı (1. Kitap s. 46-51: Aynı doğrultulu ve aynı yönlü kuvvetlerin toplanması)",
+      "Zıt Yönlü Kuvvetlerin Bileşkesi (1. Kitap s. 52-56: Büyük kuvvetten küçük kuvvetin çıkarılması ve yön tayini)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_FEN_BILIMLERI_1.pdf",
+        "unitTitle": "2. Ünite: KUVVET VE HAREKET",
+        "printedPageRange": "46-56",
+        "pdfPageRange": "46-56",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Kemik Çeşitleri: \n• Uzun Kemikler: Boyu eninden fazla olan kemikler (Kol ve bacak kemikleri: uyluk, kaval, pazu).\n• Kısa Kemikler: Eni ve boyu birbirine yakın kemikler (El ve ayak bilek kemikleri).\n• Yassı Kemikler: Yassılaşmış, plakamsı kemikler (Kafatası, göğüs kafesi, leğen, kürek kemiği).",
       "Eklem Çeşitleri: Oynar Eklem (Kol, bacak; hareket yeteneği çok yüksek, eklem sıvısı var), Yarı Oynar Eklem (Omurga; hareket sınırlı, kıkırdak diskler var), Oynamaz Eklem (Kafatası, leğen; kemikler testere dişi gibi birbirine kilitlidir).",
@@ -1052,6 +1948,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "FB.6.2.2": {
     "outcomeCode": "FB.6.2.2",
     "topicTitle": "Sindirim Sistemi (Mekanik ve Kimyasal)",
+    "textbookUnit": "2. Ünite: KUVVET VE HAREKET",
+    "textbookPageRange": "s. 57-62 (PDF: 57-62)",
+    "textbookExamples": [
+      "Dengelenmiş Kuvvetler ve Cisimlerin Hareketi (1. Kitap s. 57-59: Net kuvvet sıfır olduğunda durma veya sabit sürat)",
+      "Dengelenmemiş Kuvvetlerin Cisme Etkisi (1. Kitap s. 60-62: Hızlanma, yavaşlama veya yön değiştirme hareketleri)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_FEN_BILIMLERI_1.pdf",
+        "unitTitle": "2. Ünite: KUVVET VE HAREKET",
+        "printedPageRange": "57-62",
+        "pdfPageRange": "57-62",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Mekanik (Fiziksel) Sindirim: Besinlerin enzim kullanılmadan dişler, kas hareketleri ve safra ile küçük parçalara ayrılmasıdır (Amaç: Enzimlerin etki edeceği yüzeyi genişletmek).",
       "Kimyasal Sindirim: Besinlerin enzim ve su yardımıyla yapı taşlarına (kana geçebilecek boyuta) parçalanmasıdır.",
@@ -1075,6 +1988,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "FB.6.2.3": {
     "outcomeCode": "FB.6.2.3",
     "topicTitle": "Dolaşım Sistemi (Kalp, Damarlar ve Kan)",
+    "textbookUnit": "2. Ünite: KUVVET VE HAREKET",
+    "textbookPageRange": "s. 63-79 (PDF: 63-79)",
+    "textbookExamples": [
+      "Sabit Süratli Hareket ve Sürat Formülü (1. Kitap s. 63-70: Sürat = Alınan Yol / Geçen Zaman hesabı)",
+      "Yol-Zaman ve Sürat-Zaman Grafikleri Çizimi (1. Kitap s. 71-79: Veri tablosundan grafik oluşturma ve yorumlama)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_FEN_BILIMLERI_1.pdf",
+        "unitTitle": "2. Ünite: KUVVET VE HAREKET",
+        "printedPageRange": "63-79",
+        "pdfPageRange": "63-79",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Kalbin Yapısı: 4 odacıktan oluşur: Üstte 2 kulakçık, altta 2 karıncık. Kalbin SAĞ tarafında daima Kirli Kan (karbondioksitçe zengin), SOL tarafında ise daima Temiz Kan (oksijence zengin) bulunur.",
       "Damar Çeşitleri:\n• Atardamar: Kanı kalpten organlara taşır. Genellikle temiz kan taşır (İstisna: Akciğer atardamarı kirli kan taşır). Kan basıncı ve akış hızı en yüksek damardır.\n• Toplardamar: Kanı organlardan kalbe getirir. Genellikle kirli kan taşır (İstisna: Akciğer toplardamarı temiz kan taşır).\n• Kılcal Damar: Kıl gibi ince olup doku hücreleri ile kan arasında madde ve gaz alışverişini sağlar.",
@@ -1097,6 +2027,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "FB.6.3.1": {
     "outcomeCode": "FB.6.3.1",
     "topicTitle": "Kan Hücreleri, Kan Grupları ve Kan Bağışı",
+    "textbookUnit": "3. Ünite: CANLILARDA ÜREME",
+    "textbookPageRange": "s. 80-100 (PDF: 80-100)",
+    "textbookExamples": [
+      "Bitki ve Hayvanlarda Üreme Çeşitleri (1. Kitap s. 80-90: Eşeyli ve eşeysiz üreme özellikleri)",
+      "Canlıların Büyüme ve Gelişme Evreleri (1. Kitap s. 91-100: Başkalaşım geçiren canlılar ve çimlenme deneyleri)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_FEN_BILIMLERI_1.pdf",
+        "unitTitle": "3. Ünite: CANLILARDA ÜREME",
+        "printedPageRange": "80-100",
+        "pdfPageRange": "80-100",
+        "evidenceLevel": "B"
+      }
+    ],
+    "evidenceLevel": "B",
     "quickNotes": [
       "Kan Hücreleri:\n• Alyuvarlar: Kırmızı renklidir (hemoglobin içerir). Oksijen ve karbondioksit gazlarını taşır. Çekirdeksizdirler.\n• Akyuvarlar: Beyaz renklidir. Vücudu mikroplara karşı korur (bağışıklık askerleridir), enfeksiyon anında sayıları hızla artar.\n• Kan Pulcukları (Trombositler): Kanın pıhtılaşmasını sağlayarak yaralanmalarda kan kaybını önler.",
       "Kan Grupları: A, B, AB ve 0 olmak üzere 4 ana grup vardır. Kanda Rh proteini varsa Rh(+), yoksa Rh(-) denir.",
@@ -1119,6 +2066,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "SB.6.1.1": {
     "outcomeCode": "SB.6.1.1",
     "topicTitle": "Gruplar ve Zaman İçinde Değişen Rollerimiz",
+    "textbookUnit": "1. Öğrenme Alanı: BİRLİKTE YAŞAMAK",
+    "textbookPageRange": "s. 12-23 (PDF: 12-23)",
+    "textbookExamples": [
+      "Doğuştan ve Sonradan Kazanılan Roller (1. Kitap s. 12-17: Evlat, kardeş vs öğrenci, kulüp başkanı, meslek)",
+      "Rollerin Zaman İçindeki Değişimi (1. Kitap s. 18-23: Yaş ve sosyal çevre değiştikçe yeni sorumluluklar alma)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_SOSYAL_BILGILER_1.pdf",
+        "unitTitle": "1. Öğrenme Alanı: BİRLİKTE YAŞAMAK",
+        "printedPageRange": "12-23",
+        "pdfPageRange": "12-23",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Rol Kavramı: Bireyin içinde bulunduğu grup veya kurumlarda üstlendiği görev ve sorumlulukların bütünüdür.",
       "Doğuştan Kazanılan Roller: Bireyin kendi iradesi ve seçimi olmadan, doğumuyla birlikte kazandığı rollerdir. Örnek: Evlat, kardeş, torun, yeğen.",
@@ -1141,6 +2105,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "SB.6.1.2": {
     "outcomeCode": "SB.6.1.2",
     "topicTitle": "Kültürel Bağlarımız ve Millî Değerlerimiz",
+    "textbookUnit": "1. Öğrenme Alanı: BİRLİKTE YAŞAMAK",
+    "textbookPageRange": "s. 24-37 (PDF: 24-37)",
+    "textbookExamples": [
+      "Millî Kültür ve Değerlerimizin Toplumsal Birlikteliğe Etkisi (1. Kitap s. 24-30: Dil, din, tarih, gelenekler ve bayramlar)",
+      "Türkiye Kültür Yolu Festivalleri ve Ortak Miras (1. Kitap s. 31-37: Birlik ve beraberliği pekiştiren kültürel bağlar)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_SOSYAL_BILGILER_1.pdf",
+        "unitTitle": "1. Öğrenme Alanı: BİRLİKTE YAŞAMAK",
+        "printedPageRange": "24-37",
+        "pdfPageRange": "24-37",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Kültürü Oluşturan Unsurlar: Tarih birliği, ortak Türkçe dili, din ve inançlar, örf-âdet ve gelenekler, millî ve dinî bayramlar, mimari eserler, halk oyunları ve mutfak kültürü.",
       "Toplumsal Birliktelik: Ortak kültürel değerler insanları birbirine bağlar, birlik ve beraberlik ruhunu (biz bilincini) güçlendirir.",
@@ -1163,6 +2144,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "SB.6.1.3": {
     "outcomeCode": "SB.6.1.3",
     "topicTitle": "Toplumsal Sorunlar, Ön Yargılar ve Çözüm Yolları",
+    "textbookUnit": "1. Öğrenme Alanı: BİRLİKTE YAŞAMAK",
+    "textbookPageRange": "s. 38-52 (PDF: 38-52)",
+    "textbookExamples": [
+      "Toplumsal Sorunların Çözümünde Hak, Sorumluluk ve Özgürlük (1. Kitap s. 38-45: Şikayet hakkı ve dilekçe yazımı)",
+      "Müzakere, Uzlaşma ve Empati Kültürü (1. Kitap s. 46-52: Birlikte yaşama ahlakı ve çatışma çözümü)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_SOSYAL_BILGILER_1.pdf",
+        "unitTitle": "1. Öğrenme Alanı: BİRLİKTE YAŞAMAK",
+        "printedPageRange": "38-52",
+        "pdfPageRange": "38-52",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Ön Yargı: Bir kimse veya bir durum hakkında yeterli bilgi sahibi olmadan, peşin hükümle varılan olumlu ya da olumsuz kanaattir.",
       "Kalıp Yargı: Bir grubun tüm üyelerine genelleştirilen, basmakalıp ve değişmesi zor inançlardır (örneğin: \"Gözlüklü olan herkes çok kitap okur\").",
@@ -1183,9 +2181,65 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
       "hint": "Örnek sorudaki işlem basamaklarını ve model çözümü referans alınız."
     }
   },
+  "SB.6.2.1": {
+    "outcomeCode": "SB.6.2.1",
+    "topicTitle": "Ülkemizin, Kıtaların ve Okyanusların Konum Özellikleri",
+    "textbookUnit": "2. Öğrenme Alanı: EVİMİZ DÜNYA",
+    "textbookPageRange": "s. 54-65 (PDF: 54-65)",
+    "textbookExamples": [
+      "Dünya Haritası Üzerinde Kıtalar ve Okyanuslar (1. Kitap s. 54-59: Asya, Avrupa, Afrika, Pasifik, Atlantik, Hint Okyanusu)",
+      "Türkiye'nin Göreceli Konumu ve Jeopolitik Önemi (1. Kitap s. 60-65: Boğazlar, enerji köprüsü, üç tarafı denizlerle çevrili olma)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı (1. Kitap)",
+        "bookFileName": "DERS_KITABI_SOSYAL_BILGILER_1.pdf",
+        "unitTitle": "2. Öğrenme Alanı: EVİMİZ DÜNYA",
+        "printedPageRange": "54-65",
+        "pdfPageRange": "54-65",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
+    "quickNotes": [
+      "Kıtalar: Yeryüzündeki büyük kara parçalarıdır (Asya, Avrupa, Afrika, Kuzey Amerika, Güney Amerika, Antarktika, Okyanusya/Avustralya). Türkiye; Asya ile Avrupa arasında stratejik bir köprü konumundadır.",
+      "Okyanuslar: Kıtaları birbirinden ayıran dev su kütleleridir (Büyük Okyanus/Pasifik, Atlas Okyanusu/Atlantik, Hint Okyanusu).",
+      "Türkiye'nin Göreceli Konumu: Üç tarafının denizlerle (Karadeniz, Ege, Akdeniz) çevrili olması, İstanbul ve Çanakkale boğazlarına sahip olması, Asya ile Avrupa arasında ticaret ve enerji köprüsü oluşturması ülkemizin jeopolitik önemini artırır.",
+      "Göreceli Konum: Bir yerin kıtalara, denizlere, ticaret yollarına, yer şekillerine ve komşu ülkelere göre belirlenen kendine has konumudur."
+],
+    "examTraps": [
+      "TUZAK: Göreceli konum ile matematik (mutlak) konumu karıştırmayınız. Paralel ve meridyen dereceleri mutlak konumken; boğazlar, denizler, petrol ve doğalgaz boru hatlarına yakınlık göreceli konumdur."
+],
+    "solvedExample": {
+      "question": "Türkiye'nin Asya ve Avrupa kıtaları arasında bir köprü konumunda bulunması ve İstanbul ile Çanakkale boğazlarına sahip olmasının ülkemize ekonomik ve ticari alanda sağladığı 2 büyük avantajı açıklayınız.",
+      "analysis": "Türkiye'nin kıtalar arası köprü konumu ve boğazlar transit ticaret, enerji koridoru ve liman gelirleri sağlar.",
+      "solution": "1. Transit Ticaret ve Ulaşım Avantajı: Doğu ile Batı arasındaki kara ve deniz ticaret yollarının kesişim noktasında yer alması sayesinde uluslararası transit taşımacılıktan ve boğaz geçişlerinden stratejik ve ekonomik gelir elde edilir.\n2. Enerji Koridoru Olma: Hazar havzası ve Orta Doğu petrol ve doğalgazının Avrupa pazarlarına aktarılmasında boru hatları için en güvenli ve ekonomik köprü işlevi görür."
+},
+    "practiceQuestion": {
+      "question": "Ülkemizin üç tarafının denizlerle çevrili olmasının turizm, iklim ve deniz ticareti açısından sağladığı yararları gerekçelendirerek yazınız.",
+      "hint": "Akdeniz iklimi, deniz ulaşımı ve kıyı turizmi olanaklarını değerlendiriniz."
+}
+  },
   "DKAB.6.1.2": {
     "outcomeCode": "DKAB.6.1.2",
     "topicTitle": "Peygamberlerin Sıfatları ve Vahiy Kavramı",
+    "textbookUnit": "1. Ünite: PEYGAMBER VE İLAHİ KİTAP İNANCI",
+    "textbookPageRange": "s. 24-28 (PDF: 24-28)",
+    "textbookExamples": [
+      "Peygamberlerin Gönderiliş Amacı ve Sıfatları (Ders Kitabı s. 24-26: Sıdk, emanet, fetanet, ismet, tebliğ)",
+      "İlahi Vahyin İnsan Hayatındaki Yeri (Ders Kitabı s. 27-28: Doğru yolu gösterme, adalet ve güzel ahlak rehberi)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı",
+        "bookFileName": "DERS_KITABI_DKAB.pdf",
+        "unitTitle": "1. Ünite: PEYGAMBER VE İLAHİ KİTAP İNANCI",
+        "printedPageRange": "24-28",
+        "pdfPageRange": "24-28",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Peygamberlerin 5 Temel Sıfatı:\n1. Sıdk: Doğru ve dürüst olmak; peygamberler asla yalan söylemezler.\n2. Emanet: Son derece güvenilir olmak (Peygamberimize peygamberlik öncesinde verilen \"Muhammedü'l-Emîn\" unvanı).\n3. İsmet: Günah işlemekten korunmuş, temiz ve lekesiz bir fıtrata sahip olmak.\n4. Fetanet: Üstün akıl, kavrayış, mantık ve yüksek zekâ sahibi olmak.\n5. Tebliğ: Allah'tan aldıkları ilahi mesajları insanlara eksiksiz, artırmadan veya eksiltmeden doğrudan ulaştırmak.",
       "Vahiy: Allah'ın insanlara iletmek istediği emir, yasak ve ilkeleri peygamberlerine bildirmesidir.",
@@ -1207,6 +2261,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "DKAB.6.1.3": {
     "outcomeCode": "DKAB.6.1.3",
     "topicTitle": "Dört Büyük İlahi Kitap ve Sahifeler (Suhuf)",
+    "textbookUnit": "1. Ünite: PEYGAMBER VE İLAHİ KİTAP İNANCI",
+    "textbookPageRange": "s. 29-32 (PDF: 29-32)",
+    "textbookExamples": [
+      "Dört Büyük İlahi Kitap ve Gönderildiği Peygamberler (Ders Kitabı s. 29-30: Tevrat, Zebur, İncil, Kur'an-ı Kerim)",
+      "Suhuf Verilen Peygamberler Tablosu (Ders Kitabı s. 31-32: Hz. Âdem, Hz. Şit, Hz. İdris, Hz. İbrahim sayfaları)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı",
+        "bookFileName": "DERS_KITABI_DKAB.pdf",
+        "unitTitle": "1. Ünite: PEYGAMBER VE İLAHİ KİTAP İNANCI",
+        "printedPageRange": "29-32",
+        "pdfPageRange": "29-32",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "4 Büyük İlahi Kitap ve Gönderildiği Peygamberler:\n1. Tevrat -> Hz. Musa (İsrailoğullarına gönderilmiştir)\n2. Zebur -> Hz. Davud\n3. İncil -> Hz. İsa\n4. Kur'an-ı Kerim -> Hz. Muhammed (Son ilahi kitaptır, evrenseldir ve lafzı kıyamete kadar korunmuştur).",
       "Sahifeler (Suhuf): Dört büyük kitap dışında bazı peygamberlere gönderilen küçük risalelerdir (Toplam 100 sahife):\n• Hz. Âdem: 10 sahife\n• Hz. Şit: 50 sahife\n• Hz. İdris: 30 sahife\n• Hz. İbrahim: 10 sahife."
@@ -1227,6 +2298,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "DKAB.6.1.4": {
     "outcomeCode": "DKAB.6.1.4",
     "topicTitle": "Bir Sure Öğreniyorum: Felak Suresi ve Anlamı",
+    "textbookUnit": "1. Ünite: PEYGAMBER VE İLAHİ KİTAP İNANCI",
+    "textbookPageRange": "s. 33-36 (PDF: 33-36)",
+    "textbookExamples": [
+      "Felak Suresi ve Anlamı (Ders Kitabı s. 33-34: Yaratılanların şerrinden Allah'a sığınma, Arapça okunuş ve meal)",
+      "Kıskançlık (Haset) ve Kötülüklerden Korunma Bilinci (Ders Kitabı s. 35-36: Felak suresinin ana mesajı ve tefsiri)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı",
+        "bookFileName": "DERS_KITABI_DKAB.pdf",
+        "unitTitle": "1. Ünite: PEYGAMBER VE İLAHİ KİTAP İNANCI",
+        "printedPageRange": "33-36",
+        "pdfPageRange": "33-36",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Sure Bilgisi: Kur'an-ı Kerim'in 113. suresidir ve 5 ayetten oluşur. Nâs suresi ile birlikte iki sığınma suresi anlamına gelen \"Muavvizeteyn\" olarak adlandırılır.",
       "Temel Mesaj: İnsanın karşılaşabileceği görünen ve görünmeyen tüm kötülüklerden yalnızca her şeyin yaratıcısı ve sabahın aydınlığının Rabbi olan Allah'a sığınması emredilir.",
@@ -1248,6 +2336,23 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "DKAB.6.2.1": {
     "outcomeCode": "DKAB.6.2.1",
     "topicTitle": "Ramazan Ayı ve Oruç İbadeti",
+    "textbookUnit": "2. Ünite: NAMAZ",
+    "textbookPageRange": "s. 46-50 (PDF: 46-50)",
+    "textbookExamples": [
+      "Namazın Şartları: Dışındaki ve İçindeki Farzlar (Ders Kitabı s. 46-48: Hadesten/necasetten taharet, setr-i avret, istikbal-i kıble)",
+      "Namaza Hazırlık ve Kılınış Basamakları (Ders Kitabı s. 49-50: İftitah tekbiri, kıyam, kıraat, rükû, secde, kade-i ahîre)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Ders Kitabı",
+        "bookFileName": "DERS_KITABI_DKAB.pdf",
+        "unitTitle": "2. Ünite: NAMAZ",
+        "printedPageRange": "46-50",
+        "pdfPageRange": "46-50",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Oruç (Savm): Akıllı ve ergenlik çağına girmiş sağlıklı her Müslümana farz bir ibadettir. Niyet ederek tan yerinin ağarmasından (imsak) akşam güneş batıncaya (iftar) kadar yeme, içme ve nefsi arzulardan uzak durmaktır.",
       "Temel Kavramlar:\n• Sahur: Oruç tutmak için gece imsak vaktinden önce kalkılıp bereket niyetine yenen yemektir.\n• İmsak: Orucun başlama vaktidir (sabah ezanı vakti).\n• İftar: Akşam ezanıyla birlikte orucun açıldığı vakittir.\n• Teravih: Ramazan gecelerinde yatsı namazından sonra cemaatle veya tek başına kılınan 20 rekatlık sünnet namazdır.\n• Mukabele: Bir kişinin Kur'an okuması, dinleyenlerin ise Kur'an'dan takip etmesi geleneğidir.\n• Fitre (Sadaka-i Fıtır): Ramazan ayında zengin olan Müslümanların bayramdan önce fakirlere vermekle yükümlü olduğu vacip sadakadır."
@@ -1268,6 +2373,39 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "ENG.6.1.R2": {
     "outcomeCode": "ENG.6.1.R2",
     "topicTitle": "School Life & Telling the Time",
+    "textbookUnit": "Theme 1: School Life",
+    "textbookPageRange": "SB: s. 30-32 (PDF: 30-32) | WB: s. 9-10 (PDF: 9-10)",
+    "textbookExamples": [
+      "Skimming National Day Celebrations and Posters (SB s. 30-32: Republic Day assembly picture and roles)",
+      "Roles and Responsibilities at School Activity (WB s. 9-10: Class president, flag bearer, librarian matching)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Student Book",
+        "bookFileName": "DERS_KITABI_INGILIZCE_DERS_KITABI.pdf",
+        "unitTitle": "Theme 1: School Life",
+        "printedPageRange": "30-32",
+        "pdfPageRange": "30-32",
+        "evidenceLevel": "D"
+      },
+      {
+        "bookType": "Workbook",
+        "bookFileName": "DERS_KITABI_INGILIZCE_CALISMA_KITABI.pdf",
+        "unitTitle": "Theme 1: School Life",
+        "printedPageRange": "9-10",
+        "pdfPageRange": "9-10",
+        "evidenceLevel": "D"
+      },
+      {
+        "bookType": "Teacher Guide",
+        "bookFileName": "DERS_KITABI_INGILIZCE_OGRETMEN_KILAVUZ_KITABI.pdf",
+        "unitTitle": "Theme 1: School Life",
+        "printedPageRange": "27-29",
+        "pdfPageRange": "27-29",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Telling the Time (Saatleri Söyleme):\n• Tam saatler: \"It is eight o'clock.\" (Saat sekiz)\n• Buçuk saatler (half past): \"It is half past eight.\" (Saat sekiz buçuk - 08:30)\n• Çeyrek geçe (quarter past): \"It is quarter past eight.\" (08:15)\n• Çeyrek kala (quarter to): \"It is quarter to nine.\" (08:45)\n• Dakikalar: \"It is ten past seven.\" (07:10) / \"It is twenty to eight.\" (07:40).",
       "Time Prepositions:\n• \"at\" -> Saatlerle kullanılır (at 08:30, at noon, at night).\n• \"on\" -> Günlerle kullanılır (on Monday, on weekdays).\n• \"in\" -> Günün bölümleri ve aylarla kullanılır (in the morning, in June)."
@@ -1288,6 +2426,39 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "ENG.6.1.R3": {
     "outcomeCode": "ENG.6.1.R3",
     "topicTitle": "Reading: School Routines & National Celebrations",
+    "textbookUnit": "Theme 1: School Life",
+    "textbookPageRange": "SB: s. 32-35 (PDF: 33-36) | WB: s. 11-13 (PDF: 11-13)",
+    "textbookExamples": [
+      "Detailed Reading: 'A Special Day at School' Dialogue (SB s. 32-35: 29th October Republic Day ceremony schedule)",
+      "Reading Comprehension on Daily School Routine (WB s. 11-13: Open-ended WH- questions about Hasan's routine)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Student Book",
+        "bookFileName": "DERS_KITABI_INGILIZCE_DERS_KITABI.pdf",
+        "unitTitle": "Theme 1: School Life",
+        "printedPageRange": "32-35",
+        "pdfPageRange": "33-36",
+        "evidenceLevel": "D"
+      },
+      {
+        "bookType": "Workbook",
+        "bookFileName": "DERS_KITABI_INGILIZCE_CALISMA_KITABI.pdf",
+        "unitTitle": "Theme 1: School Life",
+        "printedPageRange": "11-13",
+        "pdfPageRange": "11-13",
+        "evidenceLevel": "D"
+      },
+      {
+        "bookType": "Teacher Guide",
+        "bookFileName": "DERS_KITABI_INGILIZCE_OGRETMEN_KILAVUZ_KITABI.pdf",
+        "unitTitle": "Theme 1: School Life",
+        "printedPageRange": "29-32",
+        "pdfPageRange": "29-32",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "National Holidays in Turkey:\n• 29th October: Republic Day (Cumhuriyet Bayramı)\n• 23rd April: National Sovereignty and Children's Day (Ulusal Egemenlik ve Çocuk Bayramı)\n• 19th May: Commemoration of Atatürk, Youth and Sports Day (Gençlik ve Spor Bayramı)\n• 30th August: Victory Day (Zafer Bayramı).",
       "Celebration Activities: decorate the classroom (sınıfı süslemek), recite poems (şiirler okumak), perform traditional folk dances (halk oyunları oynamak), sing the national anthem (istiklal marşını okumak), carry Turkish flags (bayrak taşımak)."
@@ -1308,6 +2479,39 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "ENG.6.1.V1": {
     "outcomeCode": "ENG.6.1.V1",
     "topicTitle": "Target Vocabulary: School Life & Responsibilities",
+    "textbookUnit": "Theme 1: School Life",
+    "textbookPageRange": "SB: s. 29-32 (PDF: 30-33) | WB: s. 10-11 (PDF: 10-11)",
+    "textbookExamples": [
+      "Vocabulary on Celebrations: Parade, Ceremony, Flag, Speech (SB s. 29-32: Target words in national celebrations)",
+      "Crossword Puzzle and Word Identification (WB s. 10-11: Writing words under pictures and solving puzzle)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Student Book",
+        "bookFileName": "DERS_KITABI_INGILIZCE_DERS_KITABI.pdf",
+        "unitTitle": "Theme 1: School Life",
+        "printedPageRange": "29-32",
+        "pdfPageRange": "30-33",
+        "evidenceLevel": "D"
+      },
+      {
+        "bookType": "Workbook",
+        "bookFileName": "DERS_KITABI_INGILIZCE_CALISMA_KITABI.pdf",
+        "unitTitle": "Theme 1: School Life",
+        "printedPageRange": "10-11",
+        "pdfPageRange": "10-11",
+        "evidenceLevel": "D"
+      },
+      {
+        "bookType": "Teacher Guide",
+        "bookFileName": "DERS_KITABI_INGILIZCE_OGRETMEN_KILAVUZ_KITABI.pdf",
+        "unitTitle": "Theme 1: School Life",
+        "printedPageRange": "28-31",
+        "pdfPageRange": "28-31",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Daily Routines Vocabulary:\n• wake up / get up: uyanmak / yataktan kalkmak\n• have breakfast: kahvaltı yapmak\n• brush teeth / wash hands: diş fırçalamak / el yıkamak\n• attend classes / courses: derslere / kurslara katılmak\n• run errands: evin getir-götür / ufak tefek alışveriş işlerini yapmak\n• take care of the pet: evcil hayvana bakmak / beslemek\n• rest / take a nap: dinlenmek / şekerleme yapmak\n• do homework: ödev yapmak.",
       "School Subjects: Science (Fen), Maths (Matematik), Social Studies (Sosyal Bilgiler), P.E. (Beden Eğitimi), Art (Görsel Sanatlar), Music."
@@ -1328,6 +2532,39 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "ENG.6.1.G1": {
     "outcomeCode": "ENG.6.1.G1",
     "topicTitle": "Grammar: Simple Present Tense & Frequency Adverbs",
+    "textbookUnit": "Theme 1: School Life",
+    "textbookPageRange": "SB: s. 33-35 (PDF: 34-36) | WB: s. 12-14 (PDF: 12-14)",
+    "textbookExamples": [
+      "Present Simple Tense and Adverbs of Frequency (SB s. 33-35: always, usually, often, sometimes, never)",
+      "Object Pronouns and Question Formation (WB s. 12-14: me, him, her, them exercises and scrambled sentences)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Student Book",
+        "bookFileName": "DERS_KITABI_INGILIZCE_DERS_KITABI.pdf",
+        "unitTitle": "Theme 1: School Life",
+        "printedPageRange": "33-35",
+        "pdfPageRange": "34-36",
+        "evidenceLevel": "D"
+      },
+      {
+        "bookType": "Workbook",
+        "bookFileName": "DERS_KITABI_INGILIZCE_CALISMA_KITABI.pdf",
+        "unitTitle": "Theme 1: School Life",
+        "printedPageRange": "12-14",
+        "pdfPageRange": "12-14",
+        "evidenceLevel": "D"
+      },
+      {
+        "bookType": "Teacher Guide",
+        "bookFileName": "DERS_KITABI_INGILIZCE_OGRETMEN_KILAVUZ_KITABI.pdf",
+        "unitTitle": "Theme 1: School Life",
+        "printedPageRange": "31-35",
+        "pdfPageRange": "31-35",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Simple Present Tense (Geniş Zaman):\n• Olumlu: He / She / It öznelerinde fiile \"-s, -es, -ies\" takısı gelir (He plays, She watches, It flies). I / You / We / They öznelerinde fiil yalındır (I play, We study).\n• Olumsuz: He/She/It doesn't play. / I/You/We/They don't play.\n• Soru: Does he play? / Do you play?",
       "Adverbs of Frequency (Sıklık Zarfları):\n• always (%100 - her zaman) > usually (%80 - genellikle) > often (%60 - sık sık) > sometimes (%40 - bazen) > rarely/seldom (%10 - nadiren) > never (%0 - hiçbir zaman).\n• Cümledeki Yeri: Özneden hemen sonra, esas fiilden hemen önce gelir: \"Selin ALWAYS brushes her teeth before bed.\""
@@ -1348,6 +2585,31 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "ENG.6.1.W3": {
     "outcomeCode": "ENG.6.1.W3",
     "topicTitle": "Organizing Writing: Connectors of Sequence",
+    "textbookUnit": "Theme 1: School Life",
+    "textbookPageRange": "SB: s. 36-38 (PDF: 37-39) | WB: s. 14-15 (PDF: 14-15)",
+    "textbookExamples": [
+      "Organizing Writing with Connectors of Sequence (SB s. 36-38: First, Then, Next, After that, Finally)",
+      "Drafting a Daily Routine Paragraph from Model (WB s. 14-15: Structured sentences about school morning)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Student Book",
+        "bookFileName": "DERS_KITABI_INGILIZCE_DERS_KITABI.pdf",
+        "unitTitle": "Theme 1: School Life",
+        "printedPageRange": "36-38",
+        "pdfPageRange": "37-39",
+        "evidenceLevel": "D"
+      },
+      {
+        "bookType": "Workbook",
+        "bookFileName": "DERS_KITABI_INGILIZCE_CALISMA_KITABI.pdf",
+        "unitTitle": "Theme 1: School Life",
+        "printedPageRange": "14-15",
+        "pdfPageRange": "14-15",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Sequencing Words (Sıralama Bağlaçları):\n1. First (İlk olarak): \"First, I get up at 7 o'clock and wash my face.\"\n2. Then (Sonra / Daha sonra): \"Then, I have a healthy breakfast with milk and eggs.\"\n3. Next (Ardından): \"Next, I put on my school uniform and take the bus.\"\n4. After school (Okuldan sonra): \"After school, I attend the basketball club.\"\n5. Finally (Son olarak): \"Finally, I read a book and go to sleep at 10 pm.\""
     ],
@@ -1367,6 +2629,31 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
   "ENG.6.1.W4": {
     "outcomeCode": "ENG.6.1.W4",
     "topicTitle": "Writing a Cohesive Paragraph on Daily Routine",
+    "textbookUnit": "Theme 1: School Life",
+    "textbookPageRange": "SB: s. 39-40 (PDF: 40-41) | WB: s. 16 (PDF: 16)",
+    "textbookExamples": [
+      "Writing a Cohesive Paragraph on National Celebrations (SB s. 39-40: 3 sentences on school celebration activities)",
+      "Free Writing Task: 'School Duties and Celebrations' (WB s. 16: Independent composition and self-checklist)"
+    ],
+    "textbookReferences": [
+      {
+        "bookType": "Student Book",
+        "bookFileName": "DERS_KITABI_INGILIZCE_DERS_KITABI.pdf",
+        "unitTitle": "Theme 1: School Life",
+        "printedPageRange": "39-40",
+        "pdfPageRange": "40-41",
+        "evidenceLevel": "D"
+      },
+      {
+        "bookType": "Workbook",
+        "bookFileName": "DERS_KITABI_INGILIZCE_CALISMA_KITABI.pdf",
+        "unitTitle": "Theme 1: School Life",
+        "printedPageRange": "16",
+        "pdfPageRange": "16",
+        "evidenceLevel": "D"
+      }
+    ],
+    "evidenceLevel": "D",
     "quickNotes": [
       "Checklist for Daily Routine Writing:\n• Başlık: \"My Daily Routine\" veya \"A Day in My School Life\"\n• Zaman uyumu: Tüm cümleler Simple Present Tense olmalıdır.\n• Özne uyumu: Kendi gününüzü anlatıyorsanız \"I\", bir arkadaşınızı anlatıyorsanız fiillere \"-s\" ekleyerek \"He / She\" kullanın.\n• Çeşitlilik: Sadece okul değil, sabah hazırlığı, ders araları ve akşam dinlenmesi de dahil edilmelidir."
     ],
@@ -3489,3 +4776,7 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     }
   }
 };
+
+// Geriye dönük uyumluluk takma adları (Backward Compatibility Aliases)
+OUTCOME_STUDY_BANK["Evrendeki"] = OUTCOME_STUDY_BANK["DKAB.5.1.1"];
+OUTCOME_STUDY_BANK["EVİMİZ"] = OUTCOME_STUDY_BANK["SB.5.2.1"];

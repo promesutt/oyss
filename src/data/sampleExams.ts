@@ -3495,8 +3495,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
     "questions": [
       {
         "questionNumber": 1,
-        "outcomeCode": "DKAB.5.1.2",
-        "outcomeTitle": "DKAB.5.1.2. Evrendeki mükemmel düzenden hareketle Allah’ın (cc) varlığı ve birliğini müşahede edebilme",
+        "outcomeCode": "DKAB.5.1.1",
+        "outcomeTitle": "DKAB.5.1.1. Evrendeki mükemmel düzene ilişkin akıl yürütebilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
@@ -3705,8 +3705,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
     "questions": [
       {
         "questionNumber": 1,
-        "outcomeCode": "DKAB.5.1.2",
-        "outcomeTitle": "DKAB.5.1.2. Evrendeki mükemmel düzenden hareketle Allah’ın (cc) varlığı ve birliğini müşahede edebilme",
+        "outcomeCode": "DKAB.5.1.1",
+        "outcomeTitle": "DKAB.5.1.1. Evrendeki mükemmel düzene ilişkin akıl yürütebilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
@@ -4053,8 +4053,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
     "questions": [
       {
         "questionNumber": 1,
-        "outcomeCode": "DKAB.5.1.2",
-        "outcomeTitle": "DKAB.5.1.2. Evrendeki mükemmel düzenden hareketle Allah’ın (cc) varlığı ve birliğini müşahede edebilme",
+        "outcomeCode": "DKAB.5.1.1",
+        "outcomeTitle": "DKAB.5.1.1. Evrendeki mükemmel düzene ilişkin akıl yürütebilme",
         "difficulty": "Kolay",
         "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",

@@ -96,12 +96,26 @@ export interface ExamPaper {
   questions: ExamQuestion[];
 }
 
+export type EvidenceLevel = 'A' | 'B' | 'C' | 'D';
+
+export interface TextbookReference {
+  bookType: 'Student Book' | 'Workbook' | 'Teacher Guide' | 'Ders Kitabı' | 'Ders Kitabı (1. Kitap)' | 'Ders Kitabı (2. Kitap)' | string;
+  bookFileName: string;
+  unitTitle: string;
+  printedPageRange: string;
+  pdfPageRange: string;
+  evidenceLevel?: EvidenceLevel;
+  notes?: string;
+}
+
 export interface StudySheetSection {
   outcomeCode: string;
   topicTitle: string;
   textbookUnit?: string;
   textbookPageRange?: string;
   textbookExamples?: string[];
+  textbookReferences?: TextbookReference[];
+  evidenceLevel?: EvidenceLevel;
   quickNotes: string[]; // Hap Bilgiler
   examTraps: string[];  // Sınav Tuzakları & Püf Noktalar
   solvedExample: {

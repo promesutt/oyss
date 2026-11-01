@@ -534,7 +534,7 @@ console.log('=== OYSS AŞAMA 1: ENTEGRASYON VE DOĞRULAMA TESTLERİ BAŞLIYOR ==
 // TEST 17: Eksik veya Güvenilmez Öğrenme Çıktısı İçin Kesin Kazanım Yargısı Verilmemesi
 // --------------------------------------------------------------------------
 {
-  const unmappedCode = 'SB.5.2.1';
+  const unmappedCode = 'SB.5.9.9_TANIMSIZ';
   const studyItem = (OUTCOME_STUDY_BANK as any)[unmappedCode];
   const diagnostic = {
     outcomeCode: unmappedCode,
