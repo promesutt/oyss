@@ -244,6 +244,7 @@ export async function generateMEBIQuestions(
   let fallbackReason: string | undefined;
   let livePrompt: string | undefined;
   try {
+    const outcomeCodes = questionDistributions.map(d => d.outcomeCode);
     livePrompt = buildLiveExamPrompt({
       grade,
       subjectId,
@@ -252,7 +253,8 @@ export async function generateMEBIQuestions(
       avoidDirectives,
       difficultyPlanText,
       variationIndex,
-      variationToken
+      variationToken,
+      outcomeCodes
     });
   } catch (err: any) {
     fallbackReason = err?.message || "Prompt oluşturulamadığı için yerel MEBİ özgünleştirme motoruna aktarılıyor.";

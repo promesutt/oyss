@@ -21,6 +21,7 @@ import {
   isValidMiddleSchoolCombination,
   createGenericPromptEntry
 } from './genericPrompt';
+import { buildGrade56TextbookDirectives } from './grade56TextbookPrompt';
 
 /**
  * Metinleri anlamsız hece kesilmelerini önleyecek ve ayırt edici kısımları
@@ -169,6 +170,19 @@ export function buildLiveExamPrompt(params: LiveExamPromptParams): string {
   const socialMebiDirectives = (grade === 7 && subjectId === 'sosyal_bilgiler') ? registered.directives : '';
   const dinMebiDirectives = (grade === 7 && subjectId === 'din_kulturu') ? registered.directives : '';
 
+  // 5. ve 6. Sınıf Ders Kitabı Entegrasyonu (FAZ 3.2.2)
+  let grade56Directives = '';
+  if (grade === 5 || grade === 6) {
+    if (params.textbookDirectives) {
+      grade56Directives = `\n${params.textbookDirectives}\n`;
+    } else if (params.outcomeCodes && params.outcomeCodes.length > 0) {
+      const generated = buildGrade56TextbookDirectives(grade, subjectId, params.outcomeCodes);
+      if (generated) {
+        grade56Directives = `\n${generated}\n`;
+      }
+    }
+  }
+
   return `${header}
 
 ${outcomeRule}
@@ -184,7 +198,7 @@ ${turkishMebiDirectives}
 ${math7thDirectives}
 ${science7thDirectives}
 ${socialMebiDirectives}
-${dinMebiDirectives}
+${dinMebiDirectives}${grade56Directives}
 ${schema}`;
 }
 
@@ -197,7 +211,8 @@ export {
   VALID_MIDDLE_SCHOOL_GRADES,
   VALID_MIDDLE_SCHOOL_SUBJECTS,
   isValidMiddleSchoolCombination,
-  createGenericPromptEntry
+  createGenericPromptEntry,
+  buildGrade56TextbookDirectives
 };
 
 export type { LiveExamPromptParams, PromptRegistryEntry, AvoidDirectivesParams } from './types';

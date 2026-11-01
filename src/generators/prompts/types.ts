@@ -18,6 +18,8 @@ export interface LiveExamPromptParams {
   difficultyPlanText: string;
   variationToken?: string;
   variationIndex?: number;
+  outcomeCodes?: string[];
+  textbookDirectives?: string;
 }
 
 export interface AvoidDirectivesParams {
