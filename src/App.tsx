@@ -394,6 +394,7 @@ export const App: React.FC = () => {
         {selectedMaterial === 'interactive_exam' && (
           activeExamPaper ? (
             <InteractivePracticeView 
+              key={activeExamPaper.id}
               examPaper={activeExamPaper}
               isCustomAIExam={Boolean(customExamPaper && activeExamPaper.id === customExamPaper.id)}
               onBackToPaperView={() => setSelectedMaterial('exam_paper')}

@@ -33,7 +33,9 @@ import {
   CheckSquare,
   Square,
   BarChart3,
-  AlertTriangle
+  AlertTriangle,
+  FileText,
+  X
 } from 'lucide-react';
 
 const GENERAL_SELF_EVAL_OPTIONS: {
@@ -109,9 +111,88 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
   const [isSavedIndicator, setIsSavedIndicator] = useState<boolean>(false);
   // Her soru için model cevap ve rubrik alanının açılıp açılmadığı (varsayılan: tüm sorular için kapalı)
   const [revealedQuestions, setRevealedQuestions] = useState<Record<number, boolean>>({});
+  // Çalışma föyüne geçiş onay penceresi durumu (FAZ 3.2.4)
+  const [isStudySheetConfirmModalOpen, setIsStudySheetConfirmModalOpen] = useState<boolean>(false);
 
-  // Auto-save session on change
+  // Çalışma föyüne geçiş talebi işleyicisi
+  const handleRequestOpenStudySheet = () => {
+    if (!onOpenStudySheet) return;
+    setIsStudySheetConfirmModalOpen(true);
+  };
+
+  // Çalışma föyüne geçiş onayı verildiğinde
+  const handleConfirmOpenStudySheet = () => {
+    // Sınav ekranından ayrılmadan önce son oturum durumunu garantiye al (yalnızca mevcut sınava aitse)
+    if (session.examId === examPaper.id) {
+      savePracticeSession({
+        ...session,
+        currentQuestionIndex: activeQuestionIndex,
+        updatedAt: Date.now()
+      });
+    }
+    setIsStudySheetConfirmModalOpen(false);
+    if (onOpenStudySheet) {
+      onOpenStudySheet();
+    }
+  };
+
+  // Çalışma föyüne geçiş iptal edildiğinde (sınavda kal)
+  const handleCancelOpenStudySheet = () => {
+    setIsStudySheetConfirmModalOpen(false);
+  };
+
+  // Modal açıkken ESC tuşu ile kapatma desteği
   useEffect(() => {
+    if (!isStudySheetConfirmModalOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsStudySheetConfirmModalOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isStudySheetConfirmModalOpen]);
+
+  // Sınav değiştiğinde (examPaper.id değiştiğinde) oturumu ve state'i senkronize et
+  useEffect(() => {
+    // Mevcut oturum zaten bu sınava aitse yeniden yükleme yapma
+    if (session.examId === examPaper.id) {
+      return;
+    }
+
+    const loaded = loadPracticeSession(examPaper.id);
+    if (loaded && loaded.answers && loaded.examId === examPaper.id) {
+      setSession(loaded);
+      setActiveQuestionIndex(
+        Math.min(Math.max(0, loaded.currentQuestionIndex || 0), Math.max(0, questions.length - 1))
+      );
+    } else {
+      setSession({
+        examId: examPaper.id,
+        examSource: isCustomAIExam ? 'ai_generated' : 'curated_archive',
+        examTitle: examPaper.title,
+        grade: examPaper.grade,
+        subjectId: examPaper.subjectId,
+        scenarioId: examPaper.scenarioId,
+        feedbackMode: 'end_of_exam',
+        currentQuestionIndex: 0,
+        isCompleted: false,
+        createdAt: Date.now(),
+        updatedAt: Date.now(),
+        answers: {},
+        customExamSnapshot: isCustomAIExam ? examPaper : undefined
+      });
+      setActiveQuestionIndex(0);
+    }
+    setRevealedQuestions({});
+    setIsStudySheetConfirmModalOpen(false);
+  }, [examPaper.id, isCustomAIExam, examPaper.title, examPaper.grade, examPaper.subjectId, examPaper.scenarioId, questions.length]);
+
+  // Auto-save session on change (yalnızca mevcut examPaper.id ile eşleştiğinde kaydet)
+  useEffect(() => {
+    if (!session || session.examId !== examPaper.id) {
+      return;
+    }
     const success = savePracticeSession({
       ...session,
       currentQuestionIndex: activeQuestionIndex,
@@ -122,11 +203,11 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
       const timer = setTimeout(() => setIsSavedIndicator(false), 1400);
       return () => clearTimeout(timer);
     }
-  }, [session, activeQuestionIndex]);
+  }, [session, activeQuestionIndex, examPaper.id]);
 
   const currentQ = questions[activeQuestionIndex];
   const qNum = currentQ?.questionNumber || (activeQuestionIndex + 1);
-  const currentAnswerData: QuestionSessionData = session.answers[qNum] || {
+  const currentAnswerData: QuestionSessionData = (session.examId === examPaper.id ? session.answers[qNum] : undefined) || {
     questionNumber: qNum,
     studentAnswer: '',
     isAnswered: false,
@@ -716,7 +797,7 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
 
                       {onOpenStudySheet && (
                         <button
-                          onClick={onOpenStudySheet}
+                          onClick={handleRequestOpenStudySheet}
                           className="inline-flex items-center px-3 py-1 rounded-lg bg-white border border-slate-300 hover:border-indigo-400 text-indigo-700 font-bold shadow-2xs hover:shadow-xs transition-all cursor-pointer"
                         >
                           <BookOpen className="w-3.5 h-3.5 mr-1" />
@@ -764,7 +845,7 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
             <div className="space-y-4">
               {questions.map((q, idx) => {
                 const num = q.questionNumber || (idx + 1);
-                const ans = session.answers[num];
+                const ans = session.examId === examPaper.id ? session.answers[num] : undefined;
                 const checked = ans?.checkedCriteriaIndices || [];
                 const rawAnswer = ans?.studentAnswer || '';
                 const trimmedAnswer = rawAnswer.trim();
@@ -772,36 +853,40 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
                 const hasValidAnswer = isValidStudentAnswer(rawAnswer);
 
                 return (
-                  <div key={num} className="border border-slate-200 rounded-xl p-4 bg-slate-50/50 space-y-3">
-                    <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 pb-2">
-                      <div className="flex items-center space-x-2">
-                        <span className="w-6 h-6 rounded-lg bg-slate-900 text-white font-extrabold text-xs flex items-center justify-center">
+                  <div key={num} className="border border-slate-200 rounded-2xl p-4 sm:p-5 bg-slate-50/50 space-y-4 shadow-2xs">
+                    {/* 1. Soru Numarası, Kazanım ve Puan Başlığı */}
+                    <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 pb-3">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <span className="w-7 h-7 rounded-lg bg-slate-900 text-white font-black text-xs flex items-center justify-center shrink-0 shadow-2xs">
                           {num}
                         </span>
-                        <span className="text-xs font-bold text-slate-800">
+                        <span className="text-xs font-bold text-indigo-900 bg-indigo-50 border border-indigo-200 px-2 py-0.5 rounded-md">
                           [{q.outcomeCode}]
                         </span>
-                        <span className="text-xs text-slate-600 truncate max-w-sm">
-                          {q.questionText}
-                        </span>
+                        {q.outcomeTitle && (
+                          <span className="text-xs text-slate-600 font-medium hidden sm:inline max-w-md truncate">
+                            {formatOutcomeBadgeTitle(q.outcomeTitle, q.outcomeCode) || q.outcomeTitle}
+                          </span>
+                        )}
                       </div>
                       <div className="flex items-center space-x-2">
                         {q.hasMissingSourceError ? (
                           <span className="text-xs font-bold text-amber-800 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded flex items-center gap-1">
-                            <AlertTriangle className="w-3 h-3 text-amber-600 shrink-0" />
+                            <AlertTriangle className="w-3.5 h-3.5 text-amber-600 shrink-0" />
                             Kaynak Eksik
                           </span>
                         ) : (
-                          <span className="text-xs font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded">
+                          <span className="text-xs font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-md">
                             {ans?.isEvaluated ? `Öz Değerlendirme: ${ans.earnedPoints} / ${q.points} p` : `Değerlendirilmedi (${q.points} p)`}
                           </span>
                         )}
                         <button
+                          type="button"
                           onClick={() => {
                             setActiveQuestionIndex(idx);
                             setSession(prev => ({ ...prev, isCompleted: false }));
                           }}
-                          className="text-xs text-indigo-600 hover:text-indigo-800 font-bold underline cursor-pointer"
+                          className="text-xs text-indigo-600 hover:text-indigo-800 font-bold underline cursor-pointer ml-1"
                         >
                           Soruyu Düzenle / İncele
                         </button>
@@ -820,15 +905,64 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
                       </div>
                     ) : (
                       <>
-                        {/* Student text preview */}
-                        <div className="text-xs text-slate-700 bg-white p-3 rounded-lg border border-slate-200">
-                          <strong className="block text-slate-500 text-[11px] mb-1">Öğrenci Yanıtı:</strong>
+                        {/* 2 & 3 & 4. SORU: Sınav Sırasında Öğrenciye Gösterilen Orijinal Soru Metni ve Materyalleri */}
+                        <div className="bg-white p-4 rounded-xl border border-slate-200 space-y-3 shadow-2xs">
+                          <div className="flex items-center justify-between text-xs text-slate-500 font-bold uppercase tracking-wider border-b border-slate-100 pb-1.5">
+                            <span className="flex items-center gap-1.5 text-slate-800">
+                              <FileText className="w-3.5 h-3.5 text-indigo-600 shrink-0" />
+                              <span>Sınav Sorusu:</span>
+                            </span>
+                            <span className="text-[11px] font-semibold text-slate-400">
+                              Soru Değeri: {q.points} Puan
+                            </span>
+                          </div>
+
+                          {/* Özel Durum Senaryosu / Diyalog / Tablo / Deney düzeneği (Stimulus) */}
+                          {q.stimulus && (
+                            <div className="bg-amber-50/70 border border-amber-200 rounded-lg p-3 text-xs sm:text-[13px] text-slate-800 whitespace-pre-line leading-relaxed">
+                              <div className="text-[10px] font-bold text-amber-900 uppercase tracking-wider mb-1 flex items-center gap-1">
+                                <Layers className="w-3 h-3 text-amber-700 shrink-0" />
+                                <span>{q.commonStimulus ? 'Ortak Kaynak Metin / Durum Senaryosu:' : 'Durum Senaryosu / Metin:'}</span>
+                              </div>
+                              <div className="font-medium pl-1 border-l-2 border-amber-300">
+                                <MathRenderer content={q.stimulus} />
+                              </div>
+                            </div>
+                          )}
+
+                          {/* Context Metni varsa */}
+                          {q.contextText && (
+                            <div className="text-xs sm:text-[12.5px] text-slate-600 italic bg-slate-50 p-2.5 rounded-lg border-l-3 border-slate-300">
+                              <MathRenderer content={q.contextText} />
+                            </div>
+                          )}
+
+                          {/* Ana Soru Metni */}
+                          <div className="text-xs sm:text-sm font-bold text-slate-900 leading-relaxed pt-0.5 pl-0.5">
+                            <MathRenderer content={q.questionText} />
+                          </div>
+                        </div>
+
+                        {/* 5. BENİM CEVABIM: Öğrencinin Verdiği Yanıt */}
+                        <div className="text-xs text-slate-700 bg-white p-3.5 rounded-xl border border-slate-200 space-y-1.5 shadow-2xs">
+                          <div className="flex items-center justify-between">
+                            <strong className="block text-slate-800 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
+                              <span className="text-indigo-600">✍️</span> Benim Cevabım:
+                            </strong>
+                            {hasValidAnswer && (
+                              <span className="text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                                Yanıtlandı
+                              </span>
+                            )}
+                          </div>
                           {hasValidAnswer ? (
-                            <div className="whitespace-pre-line font-medium text-slate-800 leading-relaxed">
-                              <MathRenderer content={ans.studentAnswer} />
+                            <div className="whitespace-pre-line font-medium text-slate-800 leading-relaxed bg-slate-50 p-3 rounded-lg border border-slate-200/80">
+                              <MathRenderer content={rawAnswer} />
                             </div>
                           ) : isCompletelyEmpty ? (
-                            <p className="italic text-slate-400">Bu soru için yanıt yazılmadı (Boş bırakıldı).</p>
+                            <div className="p-3 rounded-lg bg-slate-50 border border-slate-200 italic text-slate-400">
+                              Bu soru için yanıt yazılmadı (Boş bırakıldı).
+                            </div>
                           ) : (
                             <div className="space-y-1.5">
                               <div className="whitespace-pre-line font-medium text-slate-600 bg-amber-50/60 p-2.5 rounded-lg border border-amber-200">
@@ -841,42 +975,44 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
                           )}
                         </div>
 
-                        {/* Model Answer Preview */}
-                        <div className="text-xs text-emerald-950 bg-emerald-50/60 p-3 rounded-lg border border-emerald-200">
-                          <strong className="block text-emerald-800 text-[11px] mb-1">MEBİ Model Cevap & Gerekçe:</strong>
-                          <div className="whitespace-pre-line font-medium text-slate-800">
+                        {/* 6. MODEL CEVAP: MEBİ Model Çözüm & Gerekçe */}
+                        <div className="text-xs text-emerald-950 bg-emerald-50/60 p-3.5 rounded-xl border border-emerald-200 space-y-2">
+                          <strong className="block text-emerald-900 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
+                            <span className="text-emerald-700">🎯</span> MEBİ Model Cevap & Gerekçe:
+                          </strong>
+                          <div className="whitespace-pre-line font-medium text-slate-800 bg-white p-3 rounded-lg border border-emerald-100 leading-relaxed">
                             <MathRenderer content={q.modelAnswer} />
                           </div>
+
+                          {/* Alternatif Cevaplar */}
+                          {q.alternativeAnswers && q.alternativeAnswers.length > 0 && (
+                            <div className="text-xs text-slate-700 bg-emerald-50/40 p-2.5 rounded-lg border border-emerald-200/80 space-y-1">
+                              <strong className="block text-emerald-900 text-[11px] font-bold">
+                                Kabul Edilebilir Diğer Örnek Yanıtlar:
+                              </strong>
+                              <ul className="list-disc list-inside space-y-1 text-slate-700 pl-1 text-[11.5px]">
+                                {q.alternativeAnswers.map((alt, aIdx) => (
+                                  <li key={aIdx} className="leading-relaxed">
+                                    <MathRenderer content={alt} />
+                                  </li>
+                                ))}
+                              </ul>
+                              <p className="text-[10px] text-slate-500 italic pt-0.5">
+                                * Kendi cevabınız yukarıdaki örneklerle aynı anlama veya kavrama ulaşıyorsa doğru kabul edebilirsiniz.
+                              </p>
+                            </div>
+                          )}
+
+                          {/* Çözüm Adımları Açıklaması */}
+                          {q.solutionExplanation && (
+                            <div className="bg-white/90 p-2.5 rounded-lg border border-emerald-100 text-slate-700 text-xs">
+                              <strong className="block text-indigo-900 mb-0.5 font-bold">Çözüm Adımları Açıklaması:</strong>
+                              <p className="whitespace-pre-line leading-relaxed">{q.solutionExplanation}</p>
+                            </div>
+                          )}
                         </div>
 
-                        {/* Alternative Answers Preview */}
-                        {q.alternativeAnswers && q.alternativeAnswers.length > 0 && (
-                          <div className="text-xs text-slate-700 bg-emerald-50/40 p-3 rounded-lg border border-emerald-200/80 space-y-1">
-                            <strong className="block text-emerald-900 text-[11px] font-bold">
-                              Kabul Edilebilir Diğer Örnek Yanıtlar:
-                            </strong>
-                            <ul className="list-disc list-inside space-y-1 text-slate-700 pl-1 text-[11.5px]">
-                              {q.alternativeAnswers.map((alt, aIdx) => (
-                                <li key={aIdx} className="leading-relaxed">
-                                  <MathRenderer content={alt} />
-                                </li>
-                              ))}
-                            </ul>
-                            <p className="text-[10px] text-slate-500 italic pt-0.5">
-                              * Kendi cevabınız yukarıdaki örneklerle aynı anlama veya kavrama ulaşıyorsa doğru kabul edebilirsiniz.
-                            </p>
-                          </div>
-                        )}
-
-                        {/* Solution Explanation if present */}
-                        {q.solutionExplanation && (
-                          <div className="bg-white/90 p-3 rounded-lg border border-slate-200 text-slate-700 text-xs">
-                            <strong className="block text-indigo-900 mb-0.5 font-bold">Çözüm Adımları Açıklaması:</strong>
-                            <p className="whitespace-pre-line leading-relaxed">{q.solutionExplanation}</p>
-                          </div>
-                        )}
-
-                        {/* 1. Genel Öz Değerlendirme Kanaati */}
+                        {/* 7. ÖZ DEĞERLENDİRME: Genel Kanaat & Analitik Rubrik Ölçütleri */}
                         {hasValidAnswer ? (
                           <div className="bg-slate-50 border border-slate-200 rounded-xl p-3.5 space-y-2">
                             <div className="flex flex-wrap items-center justify-between gap-1.5">
@@ -923,7 +1059,7 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
                           </div>
                         )}
 
-                        {/* 2. Rubrik Bazlı Ayrıntılı Öz Değerlendirme */}
+                        {/* Rubrik Bazlı Ayrıntılı Öz Değerlendirme */}
                         <div className="text-xs space-y-2 pt-1">
                           <div className="flex flex-wrap items-center justify-between gap-1.5">
                             <strong className="text-slate-800 text-xs font-bold flex items-center">
@@ -1001,11 +1137,11 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
                           )}
                         </div>
 
-                        {/* Ders Kitabı Kaynak Kartı (FAZ 3.2.3) */}
+                        {/* 8. NEREDEN ÇALIŞMALIYIM? (Ders Kitabı Kaynak Kartı) */}
                         <TextbookSourceCard
                           outcomeCode={q.outcomeCode}
                           grade={examPaper.grade}
-                          onOpenStudySheet={onOpenStudySheet}
+                          onOpenStudySheet={onOpenStudySheet ? handleRequestOpenStudySheet : undefined}
                         />
                       </>
                     )}
@@ -1342,7 +1478,7 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
                       <TextbookSourceCard
                         outcomeCode={currentQ.outcomeCode}
                         grade={examPaper.grade}
-                        onOpenStudySheet={onOpenStudySheet}
+                        onOpenStudySheet={onOpenStudySheet ? handleRequestOpenStudySheet : undefined}
                       />
                     </div>
                   )}
@@ -1401,6 +1537,75 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
             </div>
           </div>
         )
+      )}
+
+      {/* Çalışma Föyüne Geçiş Onay Penceresi (FAZ 3.2.4) */}
+      {isStudySheetConfirmModalOpen && (
+        <div 
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="study-sheet-confirm-title"
+          className="fixed inset-0 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 z-50 animate-in fade-in duration-200"
+          onClick={handleCancelOpenStudySheet}
+        >
+          <div 
+            className="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-slate-200 space-y-4 animate-in zoom-in-95 duration-150"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-start justify-between gap-3">
+              <div className="w-10 h-10 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600 shrink-0">
+                <BookOpen className="w-5 h-5" />
+              </div>
+              <button
+                type="button"
+                onClick={handleCancelOpenStudySheet}
+                className="text-slate-400 hover:text-slate-600 p-1 rounded-lg hover:bg-slate-100 transition-colors cursor-pointer"
+                aria-label="Kapat"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            <div className="space-y-2">
+              <h3 id="study-sheet-confirm-title" className="text-base font-bold text-slate-900">
+                Çalışma Föyüne Geçiş Onayı
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+                Çalışma föyünü açmak üzeresiniz. Bu işlemden sonra sınav ekranından ayrılacaksınız. Devam etmek istiyor musunuz?
+              </p>
+            </div>
+
+            <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-500 space-y-1">
+              <div className="flex items-center gap-1.5 font-bold text-slate-700">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                <span>Veri Güvenliği:</span>
+              </div>
+              <p className="text-[11.5px] leading-relaxed">
+                {session.isCompleted 
+                  ? 'Sınav ve öz değerlendirme sonuçlarınız tarayıcınıza kaydedilmiştir. Dilediğiniz zaman bu ekrana geri dönebilirsiniz.'
+                  : 'Sınav cevaplarınız tarayıcınıza otomatik kaydedilmektedir. Sınav kâğıdına veya etkileşimli çözüme döndüğünüzde kaldığınız yerden devam edebilirsiniz.'}
+              </p>
+            </div>
+
+            <div className="flex flex-col-reverse sm:flex-row items-center justify-end gap-2 pt-2">
+              <button
+                type="button"
+                onClick={handleCancelOpenStudySheet}
+                className="w-full sm:w-auto px-4 py-2.5 rounded-xl border border-slate-300 hover:bg-slate-100 text-slate-700 font-bold text-xs transition-colors cursor-pointer text-center"
+              >
+                Sınavda Kal
+              </button>
+              <button
+                type="button"
+                onClick={handleConfirmOpenStudySheet}
+                className="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-md transition-colors cursor-pointer inline-flex items-center justify-center gap-1.5"
+              >
+                <BookOpen className="w-3.5 h-3.5" />
+                <span>Sınavdan Ayrıl ve Çalışma Föyünü Aç</span>
+              </button>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );
