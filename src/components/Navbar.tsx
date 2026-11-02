@@ -29,7 +29,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   OYSS <span className="text-red-600">Portal</span>
                 </span>
                 <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-red-50 text-red-700 border border-red-200">
-                  TYMM Uyumlu
+                  TYMM Esaslı
                 </span>
                 <span className="hidden sm:inline-flex items-center text-xs text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
                   <ShieldCheck className="w-3.5 h-3.5 mr-1" />
@@ -37,7 +37,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 </span>
               </div>
               <p className="text-xs text-slate-500 font-medium">
-                Türkiye Yüzyılı Maarif Modeli Ortak Yazılı Sınav Hazırlık ve Materyal Üretim Sistemi
+                Türkiye Yüzyılı Maarif Modeli • Ortak Yazılı Sınavlara Öğrenci Hazırlık Portalı
               </p>
             </div>
           </div>
@@ -47,17 +47,17 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button
               onClick={onOpenAIModal}
               className="inline-flex items-center px-3 py-1.5 sm:px-3.5 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 shadow-sm transition-all hover:shadow active:scale-95 cursor-pointer"
-              title="Seçtiğin senaryoya uygun özgün açık uçlu soru ve çalışma kâğıdı üret"
+              title="Seçili senaryoya uygun yapay zekâ destekli özgün soru ve alıştırma seti hazırla"
             >
               <Sparkles className="w-4 h-4 mr-1.5 text-amber-300" />
-              <span>Özgün Soru Üret</span>
+              <span>Yapay Zekâ ile Soru Üret</span>
             </button>
 
             {onOpenFeedbackModal && (
               <button
                 onClick={onOpenFeedbackModal}
                 className="inline-flex items-center px-2.5 py-1.5 sm:px-3 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-amber-900 bg-amber-50 hover:bg-amber-100 border border-amber-300 transition-colors shadow-2xs cursor-pointer"
-                title="Görüş, öneri veya hata bildir"
+                title="Görüş, öneri veya eksiklik bildir"
               >
                 <MessageSquarePlus className="w-4 h-4 mr-1 sm:mr-1.5 text-amber-700" />
                 <span className="hidden sm:inline">Görüş /</span> Bildir
@@ -67,16 +67,16 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button
               onClick={onOpenSourcesModal}
               className="inline-flex items-center px-2.5 py-1.5 sm:px-3 sm:py-2 text-xs sm:text-sm font-semibold rounded-lg text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 transition-colors shadow-2xs"
-              title="Bakanlığın resmi sitelerinden çekilen müfredat ve senaryoların eşzamanlama durumu"
+              title="Bakanlığın resmî sitelerinden derlenen öğretim programları ve senaryoların eşzamanlama durumu"
             >
               <Globe className="w-4 h-4 mr-1 sm:mr-1.5 text-emerald-600" />
-              <span className="hidden sm:inline">Resmi MEB</span> Kaynakları
+              <span className="hidden sm:inline">MEB Resmî</span> Kaynakları
             </button>
 
             <button
               onClick={onPrint}
               className="inline-flex items-center px-2.5 py-1.5 sm:px-3 sm:py-2 text-xs sm:text-sm font-medium rounded-lg text-slate-700 bg-white hover:bg-slate-50 border border-slate-300 shadow-sm transition-colors cursor-pointer"
-              title="A4 formatında yazdır veya PDF olarak kaydet"
+              title="Ortak yazılı hazırlık kâğıdını A4 formatında yazdır veya PDF olarak kaydet"
             >
               <Printer className="w-4 h-4 mr-1 text-slate-600" />
               <span className="hidden sm:inline">Yazdır /</span> PDF

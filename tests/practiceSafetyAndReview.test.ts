@@ -183,13 +183,13 @@ async function runTests() {
   );
 
   // =========================================================================
-  // TEST 04: MEBİ Model Cevap, Rubrik ve TextbookSourceCard Sıralamasının Korunması
+  // TEST 04: MEB ÖDSGM Model Cevap, Rubrik ve TextbookSourceCard Sıralamasının Korunması
   // =========================================================================
   const hasModelAnswerQ1 = postExamHtml.includes('Bu şekil [AB ışınıdır');
   const hasRubricCriteriaQ1 = postExamHtml.includes('Şeklin ışın olduğunun belirtilmesi');
   const hasSourceCard = postExamHtml.includes('Bu soruyu nereden çalışmalıyım?');
   const hasLabelBenimCevabim = postExamHtml.includes('Benim Cevabım:');
-  const hasLabelModelCevap = postExamHtml.includes('MEBİ Model Cevap');
+  const hasLabelModelCevap = postExamHtml.includes('MEB ÖDSGM Model Cevap') || postExamHtml.includes('MEBİ Model Cevap');
 
   assert(
     hasModelAnswerQ1 && hasRubricCriteriaQ1 && hasSourceCard && hasLabelBenimCevabim && hasLabelModelCevap,

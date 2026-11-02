@@ -683,7 +683,7 @@ export const SAMPLE_INFOGRAPHICS: InfographicItem[] = [
     subjectId: 'turkce',
     examTerm: '1_donem_1_yazili',
     title: 'Örtük Anlam, Metin Yapıları ve Noktalama Şifreleri',
-    subtitle: '7. Sınıf Türkçe MEBİ Açık Uçlu Sınav Şeması',
+    subtitle: '7. Sınıf Türkçe Açık Uçlu Soru ve Yazılı Şeması',
     category: 'Okuma, Anlama ve Dil Bilgisi',
     memoryHook: 'Hatırla: İkilemeler asla birleşmez ve kısa çizgi almaz! Örtük anlam metindeki somut ipucundan çıkarılır.',
     summaryCards: [
@@ -727,7 +727,7 @@ export const SAMPLE_INFOGRAPHICS: InfographicItem[] = [
     subjectId: 'sosyal_bilgiler',
     examTerm: '1_donem_1_yazili',
     title: 'Sen Dili vs. Ben Dili & İletişim Becerileri',
-    subtitle: '7. Sınıf Sosyal Bilgiler 1. Yazılı MEBİ İletişim ve Tarih Matrisi',
+    subtitle: '7. Sınıf Sosyal Bilgiler 1. Yazılı İletişim ve Tarih Matrisi',
     category: 'Birey ve Toplum & Tarih',
     memoryHook: 'Sen dili suçlar ve kapıyı kapatır; Ben dili duyguyu anlatır ve empati köprüsü kurar!',
     summaryCards: [
@@ -773,7 +773,7 @@ export const SAMPLE_INFOGRAPHICS: InfographicItem[] = [
     subjectId: 'din_kulturu',
     examTerm: '1_donem_1_yazili',
     title: 'Ahiret Hayatının 6 İstasyonu & Meleklerin Görevleri',
-    subtitle: '7. Sınıf Din Kültürü MEBİ Açık Uçlu Sınav Şeması',
+    subtitle: '7. Sınıf Din Kültürü Açık Uçlu Soru ve Yazılı Şeması',
     category: 'Melek ve Ahiret İnancı',
     memoryHook: 'Sıralamayı unutma: Kıyamet kopar -> Baas ile dirilinir -> Mahşerde toplanılır -> Mizanda tartılır!',
     summaryCards: [

@@ -2780,7 +2780,7 @@ export function getScenarios(subjectId: SubjectId, grade: GradeLevel, _examTerm?
   return [
     {
       id: 'senaryo_1',
-      name: '1. Senaryo (Temel MEBİ Formatı)',
+      name: '1. Senaryo (Temel MEB ÖDSGM Formatı)',
       description: 'MEB ÖDSGM standartlarına uygun temel senaryo.',
       totalQuestions: 6,
       distributions: [

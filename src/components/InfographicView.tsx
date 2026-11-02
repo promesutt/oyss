@@ -1,6 +1,7 @@
 import React from 'react';
-import { InfographicItem } from '../types';
+import { InfographicItem, GradeLevel, SubjectId, ExamTerm } from '../types';
 import { MathRenderer } from './MathRenderer';
+import { triggerPdfPrint } from '../utils/materialFileNameGenerator';
 import { 
   Sparkles, 
   Lightbulb, 
@@ -13,11 +14,31 @@ import {
 
 interface InfographicViewProps {
   infographics: InfographicItem[];
+  selectedGrade?: GradeLevel;
+  selectedSubject?: SubjectId;
+  selectedTerm?: ExamTerm;
+  selectedScenarioId?: string;
 }
 
-export const InfographicView: React.FC<InfographicViewProps> = ({ infographics }) => {
+export const InfographicView: React.FC<InfographicViewProps> = ({ 
+  infographics,
+  selectedGrade,
+  selectedSubject,
+  selectedTerm,
+  selectedScenarioId
+}) => {
   const handlePrint = () => {
-    window.print();
+    const targetGrade = selectedGrade || infographics[0]?.grade;
+    const targetSubject = selectedSubject || infographics[0]?.subjectId;
+    const targetTerm = selectedTerm || infographics[0]?.examTerm;
+
+    triggerPdfPrint({
+      grade: targetGrade,
+      subjectId: targetSubject,
+      examTerm: targetTerm,
+      scenarioId: selectedScenarioId,
+      materialKind: 'infographic'
+    });
   };
 
   if (infographics.length === 0) {

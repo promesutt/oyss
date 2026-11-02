@@ -7,7 +7,7 @@ export const SAMPLE_STUDY_SHEETS: StudySheet[] = [
     "subjectId": "turkce",
     "examTerm": "1_donem_1_yazili",
     "scenarioId": "senaryo_1",
-    "title": "5. Sınıf Türkçe 1. Yazılı MEBİ Hap Bilgili Çalışma Kağıdı",
+    "title": "5. Sınıf Türkçe 1. Yazılı Hap Bilgi & Çalışma Kâğıdı",
     "sections": [
       {
         "outcomeCode": "T.5.1.1",
@@ -59,7 +59,7 @@ export const SAMPLE_STUDY_SHEETS: StudySheet[] = [
     "subjectId": "matematik",
     "examTerm": "1_donem_1_yazili",
     "scenarioId": "senaryo_1",
-    "title": "5. Sınıf Matematik 1. Yazılı MEBİ Hap Bilgili Çalışma Kağıdı",
+    "title": "5. Sınıf Matematik 1. Yazılı Hap Bilgi & Çalışma Kâğıdı",
     "sections": [
       {
         "outcomeCode": "MAT.5.3.1",
@@ -113,7 +113,7 @@ export const SAMPLE_STUDY_SHEETS: StudySheet[] = [
     "subjectId": "fen_bilimleri",
     "examTerm": "1_donem_1_yazili",
     "scenarioId": "senaryo_1",
-    "title": "5. Sınıf Fen Bilimleri 1. Yazılı MEBİ Hap Bilgili Çalışma Kağıdı",
+    "title": "5. Sınıf Fen Bilimleri 1. Yazılı Hap Bilgi & Çalışma Kâğıdı",
     "sections": [
       {
         "outcomeCode": "FB.5.1.1",
@@ -166,7 +166,7 @@ export const SAMPLE_STUDY_SHEETS: StudySheet[] = [
     "subjectId": "sosyal_bilgiler",
     "examTerm": "1_donem_1_yazili",
     "scenarioId": "senaryo_1",
-    "title": "5. Sınıf Sosyal Bilgiler 1. Yazılı MEBİ Hap Bilgili Çalışma Kağıdı",
+    "title": "5. Sınıf Sosyal Bilgiler 1. Yazılı Hap Bilgi & Çalışma Kâğıdı",
     "sections": [
       {
         "outcomeCode": "SB.5.1.1",
@@ -219,7 +219,7 @@ export const SAMPLE_STUDY_SHEETS: StudySheet[] = [
     "subjectId": "din_kulturu",
     "examTerm": "1_donem_1_yazili",
     "scenarioId": "senaryo_1",
-    "title": "5. Sınıf Din Kültürü ve Ahlak Bilgisi 1. Yazılı MEBİ Hap Bilgili Çalışma Kağıdı",
+    "title": "5. Sınıf Din Kültürü ve Ahlak Bilgisi 1. Yazılı Hap Bilgi & Çalışma Kâğıdı",
     "sections": [
       {
         "outcomeCode": "DKAB.5.1.1",
@@ -273,7 +273,7 @@ export const SAMPLE_STUDY_SHEETS: StudySheet[] = [
     "subjectId": "ingilizce",
     "examTerm": "1_donem_1_yazili",
     "scenarioId": "senaryo_1",
-    "title": "5. Sınıf İngilizce 1. Yazılı MEBİ Hap Bilgili Çalışma Kağıdı",
+    "title": "5. Sınıf İngilizce 1. Yazılı Hap Bilgi & Çalışma Kâğıdı",
     "sections": [
       {
         "outcomeCode": "E5.1.L1",
@@ -329,7 +329,7 @@ export const SAMPLE_STUDY_SHEETS: StudySheet[] = [
     "subjectId": "turkce",
     "examTerm": "1_donem_1_yazili",
     "scenarioId": "senaryo_1",
-    "title": "6. Sınıf Türkçe 1. Yazılı MEBİ Hap Bilgili Çalışma Kağıdı",
+    "title": "6. Sınıf Türkçe 1. Yazılı Hap Bilgi & Çalışma Kâğıdı",
     "sections": [
       {
         "outcomeCode": "T.6.1.1",
@@ -381,7 +381,7 @@ export const SAMPLE_STUDY_SHEETS: StudySheet[] = [
     "subjectId": "matematik",
     "examTerm": "1_donem_1_yazili",
     "scenarioId": "senaryo_1",
-    "title": "6. Sınıf Matematik 1. Yazılı MEBİ Hap Bilgili Çalışma Kağıdı",
+    "title": "6. Sınıf Matematik 1. Yazılı Hap Bilgi & Çalışma Kâğıdı",
     "sections": [
       {
         "outcomeCode": "MAT.6.1.1",
@@ -438,7 +438,7 @@ export const SAMPLE_STUDY_SHEETS: StudySheet[] = [
     "subjectId": "fen_bilimleri",
     "examTerm": "1_donem_1_yazili",
     "scenarioId": "senaryo_1",
-    "title": "6. Sınıf Fen Bilimleri 1. Yazılı MEBİ Hap Bilgili Çalışma Kağıdı",
+    "title": "6. Sınıf Fen Bilimleri 1. Yazılı Hap Bilgi & Çalışma Kâğıdı",
     "sections": [
       {
         "outcomeCode": "FB.6.1.1",
@@ -492,7 +492,7 @@ export const SAMPLE_STUDY_SHEETS: StudySheet[] = [
     "subjectId": "sosyal_bilgiler",
     "examTerm": "1_donem_1_yazili",
     "scenarioId": "senaryo_1",
-    "title": "6. Sınıf Sosyal Bilgiler 1. Yazılı MEBİ Hap Bilgili Çalışma Kağıdı",
+    "title": "6. Sınıf Sosyal Bilgiler 1. Yazılı Hap Bilgi & Çalışma Kâğıdı",
     "sections": [
       {
         "outcomeCode": "SB.6.1.1",
@@ -545,7 +545,7 @@ export const SAMPLE_STUDY_SHEETS: StudySheet[] = [
     "subjectId": "din_kulturu",
     "examTerm": "1_donem_1_yazili",
     "scenarioId": "senaryo_1",
-    "title": "6. Sınıf Din Kültürü ve Ahlak Bilgisi 1. Yazılı MEBİ Hap Bilgili Çalışma Kağıdı",
+    "title": "6. Sınıf Din Kültürü ve Ahlak Bilgisi 1. Yazılı Hap Bilgi & Çalışma Kâğıdı",
     "sections": [
       {
         "outcomeCode": "DKAB.6.1.1",
@@ -600,7 +600,7 @@ export const SAMPLE_STUDY_SHEETS: StudySheet[] = [
     "subjectId": "ingilizce",
     "examTerm": "1_donem_1_yazili",
     "scenarioId": "senaryo_1",
-    "title": "6. Sınıf İngilizce 1. Yazılı MEBİ Hap Bilgili Çalışma Kağıdı",
+    "title": "6. Sınıf İngilizce 1. Yazılı Hap Bilgi & Çalışma Kâğıdı",
     "sections": [
       {
         "outcomeCode": "E6.1.R1",
@@ -1149,7 +1149,7 @@ export const SAMPLE_STUDY_SHEETS: StudySheet[] = [
     subjectId: 'turkce',
     examTerm: '1_donem_1_yazili',
     scenarioId: 'senaryo_1',
-    title: '7. Sınıf Türkçe 1. Yazılı MEBİ Hap Bilgili Çalışma Kağıdı',
+    title: '7. Sınıf Türkçe 1. Yazılı Hap Bilgi & Çalışma Kâğıdı',
     sections: [
       {
         outcomeCode: 'T.O.7.7',
@@ -1207,7 +1207,7 @@ export const SAMPLE_STUDY_SHEETS: StudySheet[] = [
     subjectId: 'sosyal_bilgiler',
     examTerm: '1_donem_1_yazili',
     scenarioId: 'senaryo_1',
-    title: '7. Sınıf Sosyal Bilgiler 1. Yazılı MEBİ Hap Bilgili Çalışma Kağıdı',
+    title: '7. Sınıf Sosyal Bilgiler 1. Yazılı Hap Bilgi & Çalışma Kâğıdı',
     sections: [
       {
         outcomeCode: 'SB.7.1.1',
@@ -1262,7 +1262,7 @@ export const SAMPLE_STUDY_SHEETS: StudySheet[] = [
     subjectId: 'din_kulturu',
     examTerm: '1_donem_1_yazili',
     scenarioId: 'senaryo_1',
-    title: '7. Sınıf Din Kültürü ve Ahlak Bilgisi 1. Yazılı MEBİ Hap Bilgili Çalışma Kağıdı',
+    title: '7. Sınıf Din Kültürü ve Ahlak Bilgisi 1. Yazılı Hap Bilgi & Çalışma Kâğıdı',
     sections: [
       {
         outcomeCode: 'DKAB.7.1.1',

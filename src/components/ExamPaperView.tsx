@@ -1,7 +1,13 @@
-import React, { useState } from 'react';
-import { ExamPaper } from '../types';
+import React, { useState, useMemo } from 'react';
+import { 
+  ExamPaper,
+  classifyExamQuestions,
+  getExamClassificationDetails,
+  getQuestionSourceBadge
+} from '../types';
 import { MathRenderer } from './MathRenderer';
 import { formatOutcomeBadgeTitle } from '../data/curriculumData';
+import { triggerPdfPrint } from '../utils/materialFileNameGenerator';
 import { 
   CheckCircle2, 
   Eye, 
@@ -31,6 +37,15 @@ export const ExamPaperView: React.FC<ExamPaperViewProps> = ({
   const [answerLineCount, setAnswerLineCount] = useState<number>(3);
   const [showOutcomeTitleInPrint, setShowOutcomeTitleInPrint] = useState<boolean>(false);
 
+  const classification = useMemo(() => {
+    if (!isCustomAIExam) return 'official_base' as const;
+    return examPaper.examClassification || classifyExamQuestions(examPaper.questions);
+  }, [isCustomAIExam, examPaper.examClassification, examPaper.questions]);
+
+  const classDetails = useMemo(() => {
+    return getExamClassificationDetails(classification);
+  }, [classification]);
+
   return (
     <div className="max-w-4xl mx-auto py-6 px-4 sm:px-6 print:max-w-none print:w-full print:p-0 print:m-0">
       {/* Custom AI Exam Active Banner */}
@@ -41,9 +56,9 @@ export const ExamPaperView: React.FC<ExamPaperViewProps> = ({
               <Sparkles className="w-4 h-4 text-amber-300" />
             </span>
             <div>
-              <span>Özgün Çalışma ve Alıştırma Seti (Taslak)</span>
+              <span>{classDetails.titleSuffix}</span>
               <p className="text-[11px] font-normal text-indigo-700">
-                Aşağıdaki A4 kâğıdında senaryonun öğrenme çıktılarına göre hazırlanan taslak alıştırma soruları yer almaktadır. Resmî MEB sınavı yerine geçmez.
+                {classDetails.disclaimer}
               </p>
             </div>
           </div>
@@ -64,7 +79,7 @@ export const ExamPaperView: React.FC<ExamPaperViewProps> = ({
           <div className="flex items-center space-x-2">
             <Award className="w-5 h-5 text-red-600 shrink-0" />
             <span className="text-xs sm:text-sm text-slate-700 font-medium">
-              <strong>MEB ÖDSGM Uyumlu:</strong> Resmi konu-soru dağılımı ve bilişsel süreç düzeylerine göre hazırlanmış örnek ortak yazılı kâğıdı.
+              <strong>MEB ÖDSGM Esaslı:</strong> Resmî konu-soru dağılım tabloları ve bilişsel süreç basamakları referans alınarak hazırlanmış ortak yazılı hazırlık kâğıdı.
             </span>
           </div>
           <div className="flex items-center space-x-1.5 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-lg font-semibold shrink-0">
@@ -133,10 +148,10 @@ export const ExamPaperView: React.FC<ExamPaperViewProps> = ({
               <button
                 onClick={onOpenInteractivePractice}
                 className="inline-flex items-center px-3.5 py-1.5 rounded-lg text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white shadow-xs transition-colors cursor-pointer active:scale-95"
-                title="Sınavı ekran üzerinde açık uçlu olarak çöz ve rubrikle öz değerlendirme yap"
+                title="Sınavı ekran üzerinde açık uçlu olarak yanıtla, model cevap ve rubrikle kendini değerlendir"
               >
                 <PenTool className="w-3.5 h-3.5 mr-1.5 text-amber-300" />
-                Etkileşimli Çöz
+                Etkileşimli Uygulama
               </button>
             )}
 
@@ -166,11 +181,22 @@ export const ExamPaperView: React.FC<ExamPaperViewProps> = ({
               className="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100 transition-colors cursor-pointer shadow-2xs"
             >
               <Sparkles className="w-3.5 h-3.5 mr-1 text-indigo-600" />
-              Yeni Sınav Oluştur
+              Yapay Zekâ ile Soru Üret
             </button>
 
             <button
-              onClick={() => window.print()}
+              onClick={() => {
+                triggerPdfPrint({
+                  grade: examPaper.grade,
+                  subjectId: examPaper.subjectId,
+                  examTerm: examPaper.examTerm,
+                  scenarioId: examPaper.scenarioId,
+                  materialKind: 'exam_paper',
+                  isCustomExam: isCustomAIExam,
+                  isAnswerKey: showRubric,
+                  examClassification: classification
+                });
+              }}
               className="inline-flex items-center px-3.5 py-1.5 rounded-lg text-xs font-bold bg-slate-900 hover:bg-slate-800 text-white shadow-xs transition-colors cursor-pointer active:scale-95"
             >
               <Printer className="w-3.5 h-3.5 mr-1.5 text-amber-300" />
@@ -198,7 +224,7 @@ export const ExamPaperView: React.FC<ExamPaperViewProps> = ({
               )}
             </h1>
             <p className="text-xs font-semibold text-slate-600 mt-1 print:text-[9px] print:mt-0.5">
-              Türkiye Yüzyılı Maarif Modeli Açık Uçlu Ortak Değerlendirme Kağıdı
+              Türkiye Yüzyılı Maarif Modeli Açık Uçlu Ortak Yazılı Sınav Hazırlık Kâğıdı
             </p>
           </div>
 
@@ -280,11 +306,26 @@ export const ExamPaperView: React.FC<ExamPaperViewProps> = ({
                     Zorluk: {q.difficulty || 'Orta'}
                   </span>
 
-                  {/* MEBİ Pedagojik Şablonu (Öğrenci sınavında yer almaz, baskıda gizlenir) */}
+                  {/* Pedagojik Soru Şablonu (Öğrenci sınavında yer almaz, baskıda gizlenir) */}
                   {q.archetype && (
                     <span className="text-[10px] font-bold text-amber-900 bg-amber-100 border border-amber-200 px-2 py-0.5 rounded-full print:hidden">
                       ★ {q.archetype}
                     </span>
+                  )}
+
+                  {/* Soru Kaynak Kökeni Rozeti (Öğrenci sınavında yer almaz, baskıda gizlenir) */}
+                  {isCustomAIExam && (
+                    (() => {
+                      const sBadge = getQuestionSourceBadge(q.sourceOrigin, q.originExamTitle, q.originQuestionNumber);
+                      return (
+                        <span 
+                          className={`text-[10px] font-bold px-2 py-0.5 rounded-md border print:hidden ${sBadge.badgeClass}`}
+                          title={sBadge.tooltip}
+                        >
+                          {sBadge.label}
+                        </span>
+                      );
+                    })()
                   )}
                 </div>
 
@@ -350,7 +391,7 @@ export const ExamPaperView: React.FC<ExamPaperViewProps> = ({
                   <div className="flex flex-wrap items-center justify-between gap-1 text-emerald-900 font-bold border-b border-emerald-200 pb-2 print:pb-1 print:border-emerald-300">
                     <span className="flex items-center print:text-[10.5px]">
                       <CheckCircle2 className="w-4 h-4 mr-1.5 text-emerald-700 print:w-3.5 print:h-3.5" />
-                      MEB Model Cevap ve Çözüm Adımları
+                      Model Cevap ve Çözüm Adımları (Rubrik Referanslı)
                     </span>
                     <span className="text-[11px] font-medium text-emerald-900 bg-emerald-100 px-2.5 py-0.5 rounded border border-emerald-300 print:text-[9px] print:px-1.5 print:py-0">
                       ÖDSGM Bilişsel Düzey (Öğretmen Kaydı): <strong>{q.cognitiveLevel}</strong>
@@ -409,10 +450,15 @@ export const ExamPaperView: React.FC<ExamPaperViewProps> = ({
 
         {/* Footer */}
         <div className="mt-8 pt-4 border-t-2 border-slate-800 flex items-center justify-between text-[11px] text-slate-500 print:mt-3 print:pt-2 print:border-t print:border-slate-400 print:text-[10px]">
-          <span>T.C. MEB Türkiye Yüzyılı Maarif Modeli</span>
-          <span>Sınavınız bitmiştir, lütfen cevaplarınızı kontrol ediniz.</span>
+          <span>{isCustomAIExam ? classDetails.titleSuffix : 'T.C. MEB Türkiye Yüzyılı Maarif Modeli'}</span>
+          <span>Çalışmanız tamamlanmıştır, lütfen cevaplarınızı ve gerekçelerinizi kontrol ediniz.</span>
           <span className="print:hidden">Sayfa 1 / 1</span>
         </div>
+        {isCustomAIExam && (
+          <div className="mt-2 text-center text-[10px] text-slate-400 italic">
+            {classDetails.disclaimer}
+          </div>
+        )}
       </div>
     </div>
   );

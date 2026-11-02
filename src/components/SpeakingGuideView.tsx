@@ -1,11 +1,12 @@
 import React from 'react';
 import { SpeakingGuide } from '../types';
+import { triggerPdfPrint } from '../utils/materialFileNameGenerator';
 import { 
   Mic, 
   Headphones, 
   CheckSquare, 
   Clock, 
-  FileCheck2,
+  FileCheck2, 
   Info,
   Printer,
   FileDown
@@ -17,7 +18,12 @@ interface SpeakingGuideViewProps {
 
 export const SpeakingGuideView: React.FC<SpeakingGuideViewProps> = ({ guide }) => {
   const handlePrint = () => {
-    window.print();
+    triggerPdfPrint({
+      grade: guide.grade,
+      subjectId: guide.subjectId,
+      examTerm: guide.examTerm,
+      materialKind: 'speaking_guide'
+    });
   };
 
   return (
@@ -70,7 +76,7 @@ export const SpeakingGuideView: React.FC<SpeakingGuideViewProps> = ({ guide }) =
         <div className="flex items-center space-x-2 border-b border-slate-200 pb-3">
           <Mic className="w-5 h-5 text-amber-600" />
           <h2 className="text-base sm:text-lg font-extrabold text-slate-900">
-            Konuşma Sınavı Konu Kartları & Yönergeleri
+            Konuşma ve Dinleme Uygulaması Konu Kartları & Yönergeleri
           </h2>
         </div>
 
@@ -111,7 +117,7 @@ export const SpeakingGuideView: React.FC<SpeakingGuideViewProps> = ({ guide }) =
               </div>
 
               <div className="mt-4 pt-3 border-t border-amber-200/80 text-[11px] text-amber-900 font-medium italic">
-                Öğretmen Notu: Öğrencinin ezberden ziyade kendi cümleleriyle düşüncesini aktarması teşvik edilir.
+                Öğrenci İpucu: Ezberden ziyade kendi cümlelerinle, neden-sonuç bağları kurarak düşüncelerini ifade etmen beklenir.
               </div>
             </div>
           ))}
@@ -163,7 +169,7 @@ export const SpeakingGuideView: React.FC<SpeakingGuideViewProps> = ({ guide }) =
         <div className="flex items-center space-x-2 border-b border-slate-200 pb-3">
           <FileCheck2 className="w-5 h-5 text-emerald-600" />
           <h2 className="text-base sm:text-lg font-extrabold text-slate-900">
-            MEB Uyumlu Analitik Dereceli Puanlama Ölçeği (Rubrik)
+            MEB Ölçütleri Referanslı Analitik Dereceli Puanlama Ölçeği (Rubrik)
           </h2>
         </div>
 

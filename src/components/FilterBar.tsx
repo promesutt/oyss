@@ -285,7 +285,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
             <div className="flex items-center space-x-1.5 shrink-0">
               <Layers className="w-4 h-4 text-indigo-600" />
               <span className="text-xs font-bold text-slate-700">
-                MEBİ & ÖDSGM Senaryo Tipi:
+                ÖDSGM Senaryo Dağılımı:
               </span>
             </div>
 
@@ -363,7 +363,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
               }`}
             >
               <FileText className="w-4 h-4 mr-1.5" />
-              Örnek Sınav Kağıdı (MEBİ Şablonlu)
+              Ortak Yazılı Sınav Kâğıdı
             </button>
 
             <button
@@ -375,7 +375,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
               }`}
             >
               <PenTool className="w-4 h-4 mr-1.5" />
-              Etkileşimli Sınav Çöz & Öz Değerlendir
+              Etkileşimli Sınav Uygulaması & Kendini Değerlendir
               <span className="ml-1.5 text-[10px] bg-emerald-100 text-emerald-800 px-1.5 py-0.2 rounded-full font-bold">
                 Yeni
               </span>
@@ -390,7 +390,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
               }`}
             >
               <Lightbulb className="w-4 h-4 mr-1.5" />
-              Hap Bilgili Çalışma Kağıdı
+              Hap Bilgi & Çalışma Kâğıdı
             </button>
 
             <button
@@ -415,7 +415,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
                 }`}
               >
                 <Mic2 className="w-4 h-4 mr-1.5" />
-                Dinleme & Konuşma Rehberi
+                Dinleme & Konuşma Kılavuzu
                 <span className="ml-1 text-[10px] bg-amber-100 text-amber-800 px-1 rounded">
                   Zümre Uygulama
                 </span>

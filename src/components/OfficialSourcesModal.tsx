@@ -57,12 +57,12 @@ export const OfficialSourcesModal: React.FC<OfficialSourcesModalProps> = ({
       bgColor: 'bg-emerald-50'
     },
     {
-      title: 'MEBİ Soru Pedagojisi ve Şablon Motoru',
-      domain: 'Sistem Çekirdeği (MEBİ İnceleme Modülü)',
+      title: 'MEB ÖDSGM ve MEBİ Ölçme Yaklaşımı Referansı',
+      domain: 'Sistem Çekirdeği (Ölçme Yaklaşımı Modülü)',
       url: 'https://mebi.eba.gov.tr',
       badge: '7 Temel Soru Kalıbı',
       status: 'Entegre Edildi',
-      description: 'MEBİ açık uçlu soru fasiküllerinden çıkarılan pedagojik DNA (Kurgusal Vaka, Öğrenci Tartışması, Hata Tespiti, VAR/YOK Tablosu, İkilem/Dilemma, Empati/Ben Dili) soru üretim motorumuza kalıcı olarak öğretilmiştir. Harici soru yükleme gerektirmez.',
+      description: 'MEB ÖDSGM örnek soruları ve MEBİ açık uçlu soru fasiküllerinden incelenen pedagojik ölçme kalıpları (Kurgusal Vaka, Öğrenci Tartışması, Hata Tespiti, Tablo/Grafik Yorumlama, İkilem/Gerekçelendirme, Empati/Ben Dili) soru üretim motorumuza kılavuzluk eder.',
       icon: Sparkles,
       iconColor: 'text-amber-600',
       bgColor: 'bg-amber-50'
@@ -81,13 +81,13 @@ export const OfficialSourcesModal: React.FC<OfficialSourcesModalProps> = ({
             </div>
             <div>
               <h2 className="text-base sm:text-lg font-bold flex items-center">
-                Resmi MEB Kaynakları & Veri Standartları
+                Resmî MEB Kaynakları & Veri Standartları
                 <span className="ml-2 text-[10px] bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 px-2 py-0.5 rounded-full font-normal">
                   Sıfır Dosya Yükü
                 </span>
               </h2>
               <p className="text-xs text-slate-300">
-                Sistemimiz kullanıcıdan dosya yüklemesi istemez; doğrudan Bakanlığın açık resmi kaynaklarıyla uyumlu çalışır.
+                Sistemimiz kullanıcıdan dosya yüklemesi istemez; doğrudan Bakanlığın açık resmî kaynaklarını referans alır.
               </p>
             </div>
           </div>
@@ -174,8 +174,8 @@ export const OfficialSourcesModal: React.FC<OfficialSourcesModalProps> = ({
               <span className="font-black text-slate-900 text-sm sm:text-base text-emerald-600">0 MB (Gerek Yok)</span>
             </div>
             <div className="bg-slate-50 p-3 rounded-xl border border-slate-200">
-              <span className="block text-slate-500 text-[11px] font-medium">Pedagojik Uyum</span>
-              <span className="font-black text-slate-900 text-sm sm:text-base text-indigo-600">%100 MEBİ Standart</span>
+              <span className="block text-slate-500 text-[11px] font-medium">Pedagojik Yaklaşım</span>
+              <span className="font-black text-slate-900 text-sm sm:text-base text-indigo-600">TYMM ve ÖDSGM Esaslı</span>
             </div>
             <div className="bg-slate-50 p-3 rounded-xl border border-slate-200">
               <span className="block text-slate-500 text-[11px] font-medium">Senaryo Güncelliği</span>
@@ -186,7 +186,7 @@ export const OfficialSourcesModal: React.FC<OfficialSourcesModalProps> = ({
 
         {/* Footer */}
         <div className="bg-slate-50 p-4 border-t border-slate-200 flex justify-between items-center text-xs text-slate-500">
-          <span>T.C. Millî Eğitim Bakanlığı Mevzuat Standartlarına Tam Uyumludur.</span>
+          <span>T.C. Millî Eğitim Bakanlığı mevzuat ve ölçme standartları referans alınmıştır.</span>
           <button
             onClick={onClose}
             className="px-4 py-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold"

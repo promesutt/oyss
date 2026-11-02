@@ -16,6 +16,9 @@ export interface GeneratedQuestionItem {
   commonStimulus?: string;
   hasMissingSourceError?: boolean;
   sourceValidationError?: string;
+  sourceOrigin?: 'meb_official' | 'oyss_curated' | 'oyss_synthetic' | 'gemini_ai';
+  originExamTitle?: string;
+  originQuestionNumber?: number;
 }
 
 export interface FallbackPoolContext {

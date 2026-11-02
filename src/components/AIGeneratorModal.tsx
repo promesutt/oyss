@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { 
   GradeLevel, 
   SubjectId, 
   ExamTerm, 
-  ExamScenario
+  ExamScenario,
+  classifyExamQuestions,
+  getExamClassificationDetails,
+  getQuestionSourceBadge
 } from '../types';
 import { ALL_SUBJECTS, getOfficialOutcomeTitle, formatOutcomeBadgeTitle } from '../data/curriculumData';
 import { calibrateQuestionDifficulties } from '../utils/difficultyCalibrator';
@@ -15,7 +18,8 @@ import {
   MessageSquareQuote,
   FileCheck2,
   RotateCw,
-  AlertTriangle
+  AlertTriangle,
+  Info
 } from 'lucide-react';
 import { MathRenderer } from './MathRenderer';
 import { generateMEBIQuestions, GenerationResult } from '../utils/aiGeneratorEngine';
@@ -54,6 +58,15 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
   // 2. Different context shows clean empty state and never shows another subject's questions
   const [resultsByContext, setResultsByContext] = useState<Record<string, GenerationResult>>({});
   const generatedResult = resultsByContext[currentContextKey] || null;
+
+  const classification = useMemo(() => {
+    if (!generatedResult) return 'oyss_pure_custom' as const;
+    return generatedResult.examClassification || classifyExamQuestions(generatedResult.generatedQuestions);
+  }, [generatedResult]);
+
+  const classDetails = useMemo(() => {
+    return getExamClassificationDetails(classification);
+  }, [classification]);
 
   // Active generating context tracker to prevent race conditions when user switches subject while generating
   const generatingContextRef = React.useRef<string | null>(null);
@@ -129,9 +142,9 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
             </div>
             <div>
               <h2 className="text-base sm:text-lg font-bold flex items-center">
-                TYMM Soru & Materyal Üretim Motoru
+                Yapay Zekâ Destekli Soru & Materyal Hazırlama
                 <span className="ml-2 text-[10px] bg-indigo-500/30 text-indigo-200 border border-indigo-400/30 px-2 py-0.5 rounded-full font-normal">
-                  Özgün Sınav & MEBİ Standartlı
+                  OYSS Özgün Sınavı (MEB Ölçme Standartlı)
                 </span>
               </h2>
               <p className="text-xs text-indigo-200">
@@ -161,9 +174,9 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
                 onChange={(e) => setOutputType(e.target.value as any)}
                 className="w-full bg-white border border-slate-300 rounded-lg p-2 text-xs font-semibold text-slate-800 focus:ring-2 focus:ring-indigo-500"
               >
-                <option value="exam">Özgün Sınav Kağıdı (MEBİ Standartlı)</option>
-                <option value="study_sheet">Hap Bilgili Çalışma Kağıdı & Tuzaklar</option>
-                <option value="practice_question">Kazanım Odaklı Soru Seti</option>
+                <option value="exam">OYSS Özgün Sınav Kâğıdı (MEB Ölçme Standartlı)</option>
+                <option value="study_sheet">Hap Bilgi & Çalışma Kâğıdı</option>
+                <option value="practice_question">Öğrenme Çıktısı Odaklı Soru Seti</option>
               </select>
             </div>
 
@@ -181,7 +194,7 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
                 </option>
                 <option value={5}>5 Soru (Standart Yazılı)</option>
                 <option value={6}>6 Soru (Geniş Yazılı)</option>
-                <option value={7}>7 Soru (Kapsamlı MEBİ Seti)</option>
+                <option value={7}>7 Soru (Kapsamlı Soru Seti)</option>
                 <option value={3}>3 Soru (Hızlı Alıştırma Seti)</option>
               </select>
             </div>
@@ -205,7 +218,7 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
           {/* Action Button: Generate */}
           <div className="flex flex-wrap items-center justify-between gap-3 pt-1 border-b border-slate-200 pb-3">
             <div className="text-xs font-semibold text-slate-600">
-              MEB ÖDSGM Senaryo Esaslı Açık Uçlu Soru Seti Hazırlama
+              MEB ÖDSGM Senaryo Esaslı Yapay Zekâ Destekli Soru Hazırlama
             </div>
 
             <button
@@ -226,7 +239,7 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
               ) : (
                 <>
                   <Sparkles className="w-4 h-4 mr-2 text-amber-300" />
-                  Özgün Soru Üret
+                  Yapay Zekâ ile Soru Üret
                 </>
               )}
             </button>
@@ -261,10 +274,10 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
                       <AlertTriangle className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
                       <div>
                         <span className="font-bold block text-amber-950">
-                          Yerel MEBİ Standart Motoru Devreye Girdi (Soru Seti #{generatedResult.variationNumber}):
+                          Yerel OYSS Standart Soru Üretim Motoru Devreye Girdi (Soru Seti #{generatedResult.variationNumber}):
                         </span>
                         <span className="text-[11px] text-amber-800 font-normal">
-                          {generatedResult.fallbackReason || 'Yapay zekâ servisi meşgul olduğundan sorular yerel MEBİ kural tabanlı motoruyla özgün olarak hazırlandı.'}
+                          {generatedResult.fallbackReason || 'Yapay zekâ servisi meşgul olduğundan sorular yerel OYSS kural tabanlı motoruyla özgün olarak hazırlandı.'}
                         </span>
                       </div>
                     </div>
@@ -276,13 +289,21 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
                   <div className="flex flex-wrap items-center justify-between bg-emerald-50 border border-emerald-200 p-3 rounded-xl text-xs text-emerald-900 font-semibold gap-2">
                     <span className="flex items-center">
                       <CheckCircle2 className="w-4 h-4 mr-1.5 text-emerald-600 shrink-0" />
-                      Başarıyla hazırlandı: Soru Seti #{generatedResult.variationNumber} ({generatedResult.questionsCount} açık uçlu soru ve MEB puanlama rubriği).
+                      Başarıyla hazırlandı: {classDetails.badgeLabel} #{generatedResult.variationNumber} ({generatedResult.questionsCount} açık uçlu soru ve MEB puanlama rubriği).
                     </span>
                     <span className="text-[11px] text-emerald-800 bg-emerald-100 border border-emerald-300 px-2 py-0.5 rounded-md font-bold">
                       {generatedResult.model} • {generatedResult.generationTime}
                     </span>
                   </div>
                 )}
+
+                {/* Kaynak Ayrımı ve Yasal Bilgilendirme Notu */}
+                <div className="bg-blue-50/80 border border-blue-200 p-3 rounded-xl text-xs text-blue-900 flex items-start space-x-2">
+                  <Info className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
+                  <p className="leading-relaxed text-[11px]">
+                    <strong>Bilgilendirme:</strong> {classDetails.disclaimer}
+                  </p>
+                </div>
 
                 {/* Kaynak Doğrulama Uyarı Bandı */}
                 {generatedResult.generatedQuestions.some(q => q.hasMissingSourceError) && (
@@ -323,6 +344,18 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
                                 ★ {gq.templateType}
                               </span>
                             )}
+                            {/* Soru Kaynak Kökeni Rozeti */}
+                            {(() => {
+                              const sBadge = getQuestionSourceBadge(gq.sourceOrigin, gq.originExamTitle, gq.originQuestionNumber);
+                              return (
+                                <span 
+                                  className={`text-[10px] font-bold px-2 py-0.5 rounded-md border ${sBadge.badgeClass}`}
+                                  title={sBadge.tooltip}
+                                >
+                                  {sBadge.label}
+                                </span>
+                              );
+                            })()}
                           </div>
                         </div>
 
@@ -364,7 +397,9 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
 
                         {/* Model Cevap */}
                         <div className="bg-slate-50 p-3 rounded-lg border border-slate-200 text-xs text-slate-700 mb-2">
-                          <strong className="text-emerald-800 block mb-1">MEBİ Model Cevap & Gerekçe:</strong>
+                          <strong className="text-emerald-800 block mb-1">
+                            {gq.sourceOrigin === 'meb_official' ? 'MEB ÖDSGM Model Cevap & Gerekçe:' : 'OYSS Model Cevap & Gerekçe:'}
+                          </strong>
                           <div className="whitespace-pre-line font-medium text-slate-700">
                             <MathRenderer content={gq.answer} />
                           </div>
@@ -402,7 +437,7 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
                     {onApplyGeneratedExam && (
                       <div className="p-3 bg-indigo-50/70 border border-indigo-200 rounded-xl flex flex-wrap items-center justify-between gap-3">
                         <span className="text-xs text-indigo-950 font-medium">
-                          Bu üretilen MEBİ sorularını ana sınav kağıdı ekranına aktarıp A4 olarak yazdırmak ister misiniz?
+                          Bu üretilen {classDetails.titleSuffix.toLowerCase()} sorularını ana sınav kâğıdı ekranına aktarıp A4 olarak yazdırmak ister misiniz?
                         </span>
                         <button
                           onClick={() => {
@@ -415,11 +450,12 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
                               subjectId: subjectId,
                               examTerm: examTerm,
                               scenarioId: scenario.id,
-                              title: `${grade}. Sınıf ${subjectMeta?.name} (${scenario.name}) - Özgün Çalışma ve Alıştırma Seti (#${generatedResult.variationNumber})`,
+                              title: `${grade}. Sınıf ${subjectMeta?.name} (${scenario.name}) - ${classDetails.titleSuffix} (#${generatedResult.variationNumber})`,
                               durationMinutes: 40,
                               totalPoints: 100,
+                              examClassification: classification,
                               instructions: [
-                                'Bu sınav kağıdı, ilgili MEB senaryosunun öğrenme çıktıları esas alınarak hazırlanan bir ÖZGÜN ÇALIŞMA VE ALIŞTIRMA TASLAĞIDIR.',
+                                'Bu sınav kağıdı, ilgili MEB senaryosunun öğrenme çıktıları esas alınarak hazırlanan bir ÇALIŞMA VE ALIŞTIRMA TASLAĞIDIR.',
                                 'Soruları analitik düşünme adımlarını ve gerekçelerinizi belirterek açık uçlu cevaplayınız.',
                                 'Puanlamada MEB Analitik Dereceli Puanlama Anahtarı (Rubrik) basamakları esas alınacaktır.'
                               ],
@@ -434,13 +470,13 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
                                 const officialTitle = getOfficialOutcomeTitle(q.outcome);
                                 const resolvedOutcomeTitle = (officialTitle && officialTitle !== q.outcome)
                                   ? officialTitle
-                                  : formatOutcomeBadgeTitle(q.outcomeTitle, q.outcome) || 'MEBİ Öğrenme Çıktısı';
+                                  : formatOutcomeBadgeTitle(q.outcomeTitle, q.outcome) || 'Öğrenme Çıktısı';
 
                                 const specificExplanation = q.solutionExplanation
                                   ? q.solutionExplanation
                                   : q.answer
-                                  ? `MEBİ analitik çözüm adımları ve gerekçeli dereceli puanlama: ${q.answer}`
-                                  : 'Bu soru için MEBİ dereceli puanlama anahtarı basamakları esas alınmıştır.';
+                                  ? `Örnek çözüm adımları ve gerekçeli dereceli puanlama: ${q.answer}`
+                                  : 'Bu soru için MEB analitik dereceli puanlama anahtarı basamakları esas alınmıştır.';
 
                                 return {
                                   questionNumber: q.number || (idx + 1),
@@ -459,7 +495,10 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
                                   modelAnswer: q.answer,
                                   alternativeAnswers: q.alternativeAnswers,
                                   solutionExplanation: specificExplanation,
-                                  rubric: rubricList
+                                  rubric: rubricList,
+                                  sourceOrigin: q.sourceOrigin,
+                                  originExamTitle: q.originExamTitle,
+                                  originQuestionNumber: q.originQuestionNumber
                                 };
                               })
                             };
@@ -489,7 +528,7 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
                     Henüz yeni sorular oluşturulmadı.
                   </p>
                   <p className="text-xs text-slate-400 max-w-sm mx-auto">
-                    Yukarıdaki <strong>"Özgün Soru Üret"</strong> butonuna basarak her seferinde farklı öğrenci isimleri ve taze vaka kurgularıyla yeni sorular hazırlayabilirsiniz.
+                    Yukarıdaki <strong>"Yapay Zekâ ile Soru Üret"</strong> butonuna tıklayarak her seferinde farklı vaka kurguları ve açık uçlu senaryolarla yeni çalışma soruları hazırlayabilirsiniz.
                   </p>
                 </div>
               )}
@@ -498,7 +537,7 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
 
         {/* Modal Footer */}
         <div className="bg-slate-50 p-4 border-t border-slate-200 flex items-center justify-between text-xs text-slate-500">
-          <span>MEB Maarif Modeli Açık Uçlu Soru Standartlarına Göre Denetlenmiştir.</span>
+          <span>Türkiye Yüzyılı Maarif Modeli ve MEB ÖDSGM Ölçme Standartları Referans Alınmıştır.</span>
           <button
             onClick={onClose}
             className="px-4 py-1.5 rounded-lg border border-slate-300 bg-white hover:bg-slate-100 text-slate-700 font-semibold"

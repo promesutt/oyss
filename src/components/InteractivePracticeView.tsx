@@ -1,5 +1,10 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { ExamPaper } from '../types';
+import { 
+  ExamPaper, 
+  classifyExamQuestions, 
+  getExamClassificationDetails, 
+  getQuestionSourceBadge 
+} from '../types';
 import { 
   PracticeFeedbackMode, 
   StudentExamSession, 
@@ -19,6 +24,7 @@ import {
   clearPracticeSession 
 } from '../utils/practiceStorage';
 import { TextbookSourceCard } from './TextbookSourceCard';
+import { triggerPdfPrint } from '../utils/materialFileNameGenerator';
 import { 
   ArrowLeft,
   ArrowRight,
@@ -35,7 +41,9 @@ import {
   BarChart3,
   AlertTriangle,
   FileText,
-  X
+  Printer,
+  X,
+  Info
 } from 'lucide-react';
 
 const GENERAL_SELF_EVAL_OPTIONS: {
@@ -80,6 +88,24 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
 }) => {
   const questions = examPaper.questions || [];
   const totalQuestions = questions.length;
+
+  const classification = useMemo(() => {
+    if (!isCustomAIExam) return 'official_base' as const;
+    return examPaper.examClassification || classifyExamQuestions(examPaper.questions);
+  }, [isCustomAIExam, examPaper.examClassification, examPaper.questions]);
+
+  const classDetails = useMemo(() => {
+    return getExamClassificationDetails(classification);
+  }, [classification]);
+
+  // Soru bazında MEB ÖDSGM vs. OYSS kaynak tespiti (sınav genel bayrağı yerine soru kökenini esas alır)
+  const isQuestionFromMeb = (qItem?: any): boolean => {
+    if (!qItem) return false;
+    if (qItem.sourceOrigin) {
+      return qItem.sourceOrigin === 'meb_official';
+    }
+    return !isCustomAIExam;
+  };
 
   // Initialize or load session from localStorage
   const [session, setSession] = useState<StudentExamSession>(() => {
@@ -520,11 +546,24 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
     return { label: 'Cevaplandı (Taslak)', bg: 'bg-indigo-100 text-indigo-900 border-indigo-200' };
   };
 
+  const handlePrint = () => {
+    triggerPdfPrint({
+      grade: examPaper.grade,
+      subjectId: examPaper.subjectId,
+      examTerm: examPaper.examTerm,
+      scenarioId: examPaper.scenarioId,
+      materialKind: 'interactive_exam',
+      isCustomExam: isCustomAIExam,
+      isCompletedPractice: session.isCompleted,
+      examClassification: classification
+    });
+  };
+
   return (
     <div className="max-w-4xl mx-auto py-6 px-4 sm:px-6">
       
       {/* Top Header / Mode Switcher Bar */}
-      <div className="mb-6 bg-white rounded-2xl border border-slate-200 shadow-sm p-4 sm:p-5">
+      <div className="mb-6 bg-white rounded-2xl border border-slate-200 shadow-sm p-4 sm:p-5 print:hidden">
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-150 pb-3.5 mb-3.5">
           <div className="flex items-center space-x-3">
             <button
@@ -537,10 +576,10 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
             <div className="flex items-center space-x-2">
               <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold border ${
                 isCustomAIExam 
-                  ? 'bg-purple-100 text-purple-900 border-purple-200'
+                  ? classDetails.badgeColor
                   : 'bg-blue-100 text-blue-900 border-blue-200'
               }`}>
-                {isCustomAIExam ? '★ Özgün Soru Seti' : 'ÖDSGM Örnek Sınavı'}
+                {isCustomAIExam ? `★ ${classDetails.badgeLabel}` : 'MEB ÖDSGM Örnek Sınavı'}
               </span>
               <span className="text-xs text-slate-500 hidden sm:inline">•</span>
               <span className="text-xs font-semibold text-slate-700 truncate max-w-xs sm:max-w-md">
@@ -558,10 +597,18 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
             )}
             <button
               onClick={handleResetSession}
-              className="p-1.5 rounded-lg text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition-colors"
+              className="p-1.5 rounded-lg text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition-colors cursor-pointer"
               title="Cevapları Sıfırla"
             >
               <RotateCcw className="w-4 h-4" />
+            </button>
+            <button
+              onClick={handlePrint}
+              className="inline-flex items-center px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-800 hover:bg-slate-900 text-white transition-colors cursor-pointer print:hidden shadow-xs"
+              title="Sınavı / Sonuç Raporunu Yazdır veya PDF İndir"
+            >
+              <Printer className="w-3.5 h-3.5 mr-1 text-amber-300" />
+              <span>Yazdır / PDF</span>
             </button>
           </div>
         </div>
@@ -613,7 +660,7 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
                 className="px-3 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs transition-colors cursor-pointer inline-flex items-center"
               >
                 <CheckCircle2 className="w-3.5 h-3.5 mr-1" />
-                Sınavı Bitir & Sonuçları Gör
+                Uygulamayı Tamamla & Öz Değerlendirmeyi Gör
               </button>
             )}
           </div>
@@ -664,24 +711,34 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
                   Öz Değerlendirme Tamamlandı
                 </span>
                 <h2 className="text-xl sm:text-2xl font-black">
-                  Sınav Performans & Öz Değerlendirme Raporu
+                  Etkileşimli Sınav & Öz Değerlendirme Raporu
                 </h2>
                 <p className="text-xs sm:text-sm text-indigo-200 mt-1">
                   {examPaper.title}
                 </p>
               </div>
 
-              {/* Big Score Box */}
-              <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-4 text-center min-w-[160px]">
-                <span className="text-[11px] uppercase tracking-wider text-indigo-200 font-semibold block">
-                  Tahmini Öz Değerlendirme
-                </span>
-                <div className="text-3xl sm:text-4xl font-black text-amber-300 mt-0.5">
-                  {summary.totalEarnedPoints} <span className="text-lg text-white font-normal">/ {summary.totalExamPoints}</span>
+              {/* Big Score Box & Print Button */}
+              <div className="flex flex-col items-center gap-2">
+                <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-4 text-center min-w-[160px]">
+                  <span className="text-[11px] uppercase tracking-wider text-indigo-200 font-semibold block">
+                    Tahmini Öz Değerlendirme
+                  </span>
+                  <div className="text-3xl sm:text-4xl font-black text-amber-300 mt-0.5">
+                    {summary.totalEarnedPoints} <span className="text-lg text-white font-normal">/ {summary.totalExamPoints}</span>
+                  </div>
+                  <div className="text-xs text-indigo-200 font-bold mt-1">
+                    Öğrenme & Değerlendirme Puanı: %{summary.percentageScore}
+                  </div>
                 </div>
-                <div className="text-xs text-indigo-200 font-bold mt-1">
-                  Başarı Oranı: %{summary.percentageScore}
-                </div>
+                <button
+                  type="button"
+                  onClick={handlePrint}
+                  className="w-full inline-flex items-center justify-center px-3 py-1.5 rounded-xl text-xs font-bold bg-white/20 hover:bg-white/30 text-white border border-white/30 transition-all cursor-pointer print:hidden shadow-xs"
+                >
+                  <Printer className="w-3.5 h-3.5 mr-1.5 text-amber-300" />
+                  Raporu Yazdır / PDF
+                </button>
               </div>
             </div>
 
@@ -692,6 +749,16 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
                 <strong>Önemli Pedagojik Hatırlatma:</strong> Bu puan, öğrencinin MEB Analitik Dereceli Puanlama Anahtarı (Rubrik) ölçütlerine göre kendi yanıtını değerlendirerek verdiği <em>tahmini öz değerlendirme puanıdır</em>. Resmî okul notu veya öğretmen değerlendirmesi yerine geçmez.
               </div>
             </div>
+
+            {/* Sınav Kaynak Ayrımı Bilgilendirme Notu */}
+            {isCustomAIExam && (
+              <div className="bg-blue-950/70 border border-blue-700/50 rounded-xl p-3 text-xs text-blue-100 flex items-start space-x-2.5">
+                <Info className="w-4 h-4 text-blue-300 shrink-0 mt-0.5" />
+                <p className="text-[11px] leading-relaxed">
+                  <strong>Kaynak Bilgilendirmesi:</strong> {classDetails.disclaimer}
+                </p>
+              </div>
+            )}
 
             {/* Quick Stats Grid */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6 text-center text-xs">
@@ -773,8 +840,8 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
                             ? 'bg-rose-200 text-rose-900'
                             : 'bg-slate-200 text-slate-700'
                         }`}>
-                          {isSuccess && 'Tam Başarı'}
-                          {isPartial && 'Kısmi Başarı'}
+                          {isSuccess && 'Kazanım Sağlandı'}
+                          {isPartial && 'Kısmen Sağlandı'}
                           {isWeak && 'Pekiştirilmeli'}
                           {diag.status === 'degerlendirilmedi' && 'Değerlendirilmedi'}
                         </span>
@@ -867,6 +934,19 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
                           <span className="text-xs text-slate-600 font-medium hidden sm:inline max-w-md truncate">
                             {formatOutcomeBadgeTitle(q.outcomeTitle, q.outcomeCode) || q.outcomeTitle}
                           </span>
+                        )}
+                        {isCustomAIExam && (
+                          (() => {
+                            const sBadge = getQuestionSourceBadge(q.sourceOrigin, q.originExamTitle, q.originQuestionNumber);
+                            return (
+                              <span 
+                                className={`text-[10px] font-bold px-2 py-0.5 rounded-md border ${sBadge.badgeClass}`}
+                                title={sBadge.tooltip}
+                              >
+                                {sBadge.label}
+                              </span>
+                            );
+                          })()
                         )}
                       </div>
                       <div className="flex items-center space-x-2">
@@ -975,10 +1055,10 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
                           )}
                         </div>
 
-                        {/* 6. MODEL CEVAP: MEBİ Model Çözüm & Gerekçe */}
+                        {/* 6. MODEL CEVAP: Model Çözüm & Gerekçe */}
                         <div className="text-xs text-emerald-950 bg-emerald-50/60 p-3.5 rounded-xl border border-emerald-200 space-y-2">
                           <strong className="block text-emerald-900 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
-                            <span className="text-emerald-700">🎯</span> MEBİ Model Cevap & Gerekçe:
+                            <span className="text-emerald-700">🎯</span> {isQuestionFromMeb(q) ? 'MEB ÖDSGM Model Cevap & Gerekçe:' : 'OYSS Model Cevap & Gerekçe:'}
                           </strong>
                           <div className="whitespace-pre-line font-medium text-slate-800 bg-white p-3 rounded-lg border border-emerald-100 leading-relaxed">
                             <MathRenderer content={q.modelAnswer} />
@@ -1207,6 +1287,21 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
                       ★ {currentQ.archetype}
                     </span>
                   )}
+
+                  {/* Soru Kaynak Kökeni Rozeti */}
+                  {isCustomAIExam && (
+                    (() => {
+                      const sBadge = getQuestionSourceBadge(currentQ.sourceOrigin, currentQ.originExamTitle, currentQ.originQuestionNumber);
+                      return (
+                        <span 
+                          className={`text-[10px] font-bold px-2 py-0.5 rounded-md border ${sBadge.badgeClass}`}
+                          title={sBadge.tooltip}
+                        >
+                          {sBadge.label}
+                        </span>
+                      );
+                    })()
+                  )}
                 </div>
 
                 <div className="text-xs font-bold text-slate-800 bg-slate-100 border border-slate-200 px-3 py-1 rounded-lg">
@@ -1355,10 +1450,10 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
                         </div>
                       </div>
 
-                      {/* Official Model Answer */}
+                      {/* Official / Generated Model Answer */}
                       <div className="bg-white p-3.5 rounded-xl border border-emerald-100 space-y-1">
                         <span className="font-bold text-emerald-900 block text-xs">
-                          MEBİ Model Cevap & Gerekçe:
+                          {isQuestionFromMeb(currentQ) ? 'MEB ÖDSGM Model Cevap & Gerekçe:' : 'OYSS Model Cevap & Gerekçe:'}
                         </span>
                         <div className="whitespace-pre-line font-medium text-slate-800 leading-relaxed">
                           <MathRenderer content={currentQ.modelAnswer} />

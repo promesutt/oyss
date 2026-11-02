@@ -36,6 +36,7 @@ import { InteractivePracticeView } from './components/InteractivePracticeView';
 import { QuickStartGuide } from './components/QuickStartGuide';
 import { loadCustomExamPaper, clearCustomExamPaper } from './utils/practiceStorage';
 import { validateAndEnrichExamQuestions } from './utils/sourceMaterialValidator';
+import { triggerPdfPrint, generateMaterialPdfFileName } from './utils/materialFileNameGenerator';
 import { 
   BookOpen, 
   Mic, 
@@ -269,6 +270,34 @@ export const App: React.FC = () => {
     );
   }, [selectedGrade, selectedSubject]);
 
+  // Dynamic document.title synchronization for print-to-PDF standard
+  useEffect(() => {
+    const isCustomExam = Boolean(customExamPaper && activeExamPaper?.id === customExamPaper.id);
+    const title = generateMaterialPdfFileName({
+      grade: selectedGrade,
+      subjectId: selectedSubject,
+      examTerm: selectedTerm,
+      scenarioId: (selectedMaterial === 'speaking_guide') ? undefined : currentScenario.id,
+      materialKind: selectedMaterial,
+      isCustomExam
+    });
+    if (title && typeof document !== 'undefined') {
+      document.title = title;
+    }
+  }, [selectedGrade, selectedSubject, selectedTerm, currentScenario, selectedMaterial, customExamPaper, activeExamPaper]);
+
+  const handleGlobalPrint = () => {
+    const isCustomExam = Boolean(customExamPaper && activeExamPaper?.id === customExamPaper.id);
+    triggerPdfPrint({
+      grade: selectedGrade,
+      subjectId: selectedSubject,
+      examTerm: selectedTerm,
+      scenarioId: (selectedMaterial === 'speaking_guide') ? undefined : currentScenario.id,
+      materialKind: selectedMaterial,
+      isCustomExam
+    });
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-slate-50">
       {/* Top Navigation */}
@@ -276,7 +305,7 @@ export const App: React.FC = () => {
         onOpenAIModal={() => setIsAIModalOpen(true)}
         onOpenSourcesModal={() => setIsSourcesModalOpen(true)}
         onOpenFeedbackModal={() => setIsFeedbackModalOpen(true)}
-        onPrint={() => window.print()}
+        onPrint={handleGlobalPrint}
       />
 
       {/* İlk Kullanım ve Yönlendirme Rehberi */}
@@ -320,13 +349,13 @@ export const App: React.FC = () => {
                   <AlertCircle className="w-7 h-7" />
                 </div>
                 <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-xs font-semibold mb-3">
-                  ÖDSGM Senaryo Uyumlu Örnek Sınav Hazırlanıyor
+                  ÖDSGM Senaryo Esaslı Örnek Sınav Hazırlanıyor
                 </div>
                 <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2">
                   {selectedGrade}. Sınıf {currentSubjectMeta?.name || 'Ders'} ({currentScenario?.name || 'Senaryo'}) İçin Hazır Örnek Sınav Bulunamadı
                 </h3>
                 <p className="text-sm text-slate-600 max-w-xl mx-auto mb-6 leading-relaxed">
-                  Bu dönem ve senaryoya ait ÖDSGM senaryo uyumlu örnek sınav kâğıdı henüz sisteme eklenmemiştir. Öğrencileri yanıltmamak adına 
+                  Bu dönem ve senaryoya ait ÖDSGM senaryo esaslı örnek sınav kâğıdı henüz sisteme eklenmemiştir. Öğrencileri yanıltmamak adına 
                   başka senaryolardan izinsiz soru ödünç alma veya genel şablonları senaryoya ait gibi gösterme uygulaması kaldırılmıştır.
                 </p>
 
@@ -353,16 +382,16 @@ export const App: React.FC = () => {
                   <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
                     <p className="text-xs font-bold text-slate-800 flex items-center gap-1.5 mb-1">
                       <Sparkles className="w-4 h-4 text-purple-600" />
-                      Özgün Alıştırma Seti
+                      Yapay Zekâ Destekli Soru Seti
                     </p>
                     <p className="text-xs text-slate-500 mb-3">
-                      Bu senaryonun öğrenme çıktılarına uygun taslak bir çalışma ve alıştırma seti oluşturun.
+                      Bu senaryonun öğrenme çıktılarına uygun yapay zekâ destekli bir alıştırma ve çalışma seti hazırlayın.
                     </p>
                     <button
                       onClick={() => setIsAIModalOpen(true)}
                       className="text-xs font-bold text-purple-600 hover:text-purple-700 inline-flex items-center gap-1 cursor-pointer"
                     >
-                      Alıştırma Seti Oluştur <ArrowRight className="w-3.5 h-3.5" />
+                      Soru Seti Hazırla <ArrowRight className="w-3.5 h-3.5" />
                     </button>
                   </div>
                 </div>
@@ -373,7 +402,7 @@ export const App: React.FC = () => {
                     className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-xs font-bold shadow-xs transition-colors cursor-pointer inline-flex items-center gap-1.5"
                   >
                     <FileText className="w-4 h-4" />
-                    Senaryonun Çalışma Föyünü İncele
+                    Senaryonun Çalışma Kâğıdını İncele
                   </button>
                   <button
                     onClick={() => {
@@ -407,16 +436,16 @@ export const App: React.FC = () => {
                   <AlertCircle className="w-7 h-7" />
                 </div>
                 <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2">
-                  Etkileşimli Çözüm İçin Sınav Bulunamadı
+                  Etkileşimli Uygulama İçin Sınav Bulunamadı
                 </h3>
                 <p className="text-sm text-slate-600 max-w-xl mx-auto mb-6">
-                  Bu sınıf ve senaryo için hazır sınav bulunmamaktadır. Aşağıdaki butona tıklayarak yapay zekâ ile özgün bir sınav üretebilir ve hemen etkileşimli olarak çözebilirsiniz.
+                  Bu sınıf ve senaryo için hazır sınav bulunmamaktadır. Aşağıdaki butona tıklayarak yapay zekâ destekli özgün bir sınav hazırlayabilir ve hemen etkileşimli olarak çözebilirsiniz.
                 </p>
                 <button
                   onClick={() => setIsAIModalOpen(true)}
                   className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-xs font-bold shadow-xs transition-colors cursor-pointer"
                 >
-                  Yapay Zekâ ile Özgün Sınav Üret
+                  Yapay Zekâ ile Soru Üret
                 </button>
               </div>
             </div>
@@ -433,6 +462,10 @@ export const App: React.FC = () => {
         {selectedMaterial === 'infographic' && (
           <InfographicView 
             infographics={activeInfographics}
+            selectedGrade={selectedGrade}
+            selectedSubject={selectedSubject}
+            selectedTerm={selectedTerm}
+            selectedScenarioId={currentScenario.id}
           />
         )}
 
