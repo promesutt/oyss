@@ -71,10 +71,10 @@ export const QuickStartGuide: React.FC<QuickStartGuideProps> = ({ onOpenAIModal 
           <button
             onClick={handleReopen}
             className="inline-flex items-center space-x-1 text-[11px] font-bold text-indigo-600 hover:text-indigo-800 hover:bg-indigo-50/80 px-2 py-0.5 rounded-md transition-colors cursor-pointer ml-auto"
-            title="OYSS tanıtım ve kullanım rehberini görüntüle"
+            title="OYSS Rehberi tanıtım ve kullanım kılavuzunu görüntüle"
           >
             <HelpCircle className="w-3.5 h-3.5 text-indigo-600 shrink-0" />
-            <span>Nasıl kullanılır? / Portalı Tanı</span>
+            <span>Nasıl kullanılır? / Rehberi Tanı</span>
           </button>
         </div>
       </aside>
@@ -84,7 +84,7 @@ export const QuickStartGuide: React.FC<QuickStartGuideProps> = ({ onOpenAIModal 
   // Rehber açıkken gösterilen sade, kompakt 3 adımlı rehber
   return (
     <section 
-      aria-label="OYSS Kullanım Rehberi"
+      aria-label="OYSS Rehberi Kullanım Kılavuzu"
       className="bg-gradient-to-r from-slate-50 via-indigo-50/30 to-blue-50/20 border-b border-slate-200 py-3 sm:py-4 px-4 sm:px-6 lg:px-8 print:hidden transition-all"
     >
       <div className="max-w-7xl mx-auto space-y-3">
@@ -93,7 +93,7 @@ export const QuickStartGuide: React.FC<QuickStartGuideProps> = ({ onOpenAIModal 
           <div className="space-y-1 max-w-4xl">
             <div className="flex flex-wrap items-center gap-2">
               <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-indigo-100 text-indigo-800 border border-indigo-200">
-                OYSS • Ortak Yazılı Sınavlara Öğrenci Hazırlık Portalı
+                OYSS Rehberi • Ortak Yazılı Sınavlara Öğrenci Hazırlık
               </span>
               <span className="text-xs text-slate-400 hidden sm:inline">•</span>
               <span className="text-xs font-semibold text-slate-500 hidden sm:inline">Türkiye Yüzyılı Maarif Modeli</span>
@@ -102,7 +102,7 @@ export const QuickStartGuide: React.FC<QuickStartGuideProps> = ({ onOpenAIModal 
               Ortak Yazılılara Bilinçli Hazırlık, Etkileşimli Öğrenme
             </h2>
             <p className="text-xs text-slate-600 leading-relaxed font-normal">
-              OYSS, öğrencilerin ortak yazılı sınavların soru biçimlerini tanımalarına, bilgilerini pekiştirmelerine ve yeni ölçme yaklaşımına uygun sorularla çalışmalarına yardımcı olan dijital bir öğrenme platformudur. Etkileşimli sınavlar, konu özetleri, hap bilgiler ve yapay zekâ destekli çalışma materyalleriyle öğrenme sürecini destekler.
+              OYSS Rehberi, öğrencilerin ortak yazılı sınavların soru biçimlerini tanımalarına, bilgilerini pekiştirmelerine ve yeni ölçme yaklaşımına uygun sorularla çalışmalarına yardımcı olan dijital bir öğrenme platformudur. Etkileşimli sınavlar, konu özetleri, hap bilgiler ve yapay zekâ destekli çalışma materyalleriyle öğrenme sürecini destekler.
             </p>
           </div>
 

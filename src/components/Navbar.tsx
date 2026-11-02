@@ -26,7 +26,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <div>
               <div className="flex items-center space-x-2">
                 <span className="font-extrabold text-lg text-slate-900 tracking-tight">
-                  OYSS <span className="text-red-600">Portal</span>
+                  OYSS <span className="text-red-600">Rehberi</span>
                 </span>
                 <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-red-50 text-red-700 border border-red-200">
                   TYMM Esaslı
@@ -37,7 +37,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 </span>
               </div>
               <p className="text-xs text-slate-500 font-medium">
-                Türkiye Yüzyılı Maarif Modeli • Ortak Yazılı Sınavlara Öğrenci Hazırlık Portalı
+                Türkiye Yüzyılı Maarif Modeli • Ortak Yazılı Sınavlara Öğrenci Hazırlık Rehberi
               </p>
             </div>
           </div>

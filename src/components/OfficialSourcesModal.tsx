@@ -109,7 +109,7 @@ export const OfficialSourcesModal: React.FC<OfficialSourcesModalProps> = ({
               Doğrudan Bakanlık Siteleri Esas Alınır (Single Source of Truth)
             </div>
             <p className="leading-relaxed text-emerald-800">
-              Bu web portalında öğrenciler ve öğretmenler hiçbir dosya yüklemek veya üyelikle uğraşmak zorunda değildir. 
+              OYSS Rehberi'nde öğrenciler ve öğretmenler hiçbir dosya yüklemek veya üyelikle uğraşmak zorunda değildir. 
               MEB'in herkese açık resmi sayfalarında yayımlanan <strong>TYMM öğretim programları, yıllık çerçeve planlar ve ÖDSGM senaryo tabloları</strong> sistemimizin temel veri tabanını oluşturur.
             </p>
           </div>
