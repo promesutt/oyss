@@ -169,9 +169,18 @@ export default async (req: Request) => {
     ...verifiedModels
   ])).filter(Boolean);
 
+  interface ModelAttemptTelemetry {
+    model: string;
+    status: number;
+    durationMs: number;
+    errorType: 'HTTP_ERROR' | 'TIMEOUT' | 'NETWORK_ERROR';
+    errorCode?: string;
+    errorMessage: string;
+  }
+
   let geminiResponse: Response | null = null;
   let usedModel = configuredModel;
-  const modelErrors: Array<{ model: string; status?: number; error: string }> = [];
+  const modelErrors: ModelAttemptTelemetry[] = [];
 
   const FUNCTION_TOTAL_BUDGET_MS = 22000; // Hard 22s limit to strictly prevent Netlify 26s gateway abort
   const functionStartTime = Date.now();
@@ -195,10 +204,10 @@ export default async (req: Request) => {
 
     const abortController = new AbortController();
     const timeoutId = setTimeout(() => abortController.abort(), attemptTimeoutMs);
+    const attemptStart = Date.now();
 
     try {
       const isGemini25 = modelName.includes('2.5');
-      const isGemini3 = modelName.includes('3.') || modelName.includes('3-') || modelName.includes('3_');
 
       const generationConfig: Record<string, any> = {
         temperature: 0.75,
@@ -208,12 +217,9 @@ export default async (req: Request) => {
 
       // Model ailesine göre düşünme parametresi ayrımı:
       // - Gemini 2.5 modelleri thinkingBudget destekler
-      // - Gemini 3.x modelleri thinkingLevel destekler
-      // - Gemini 1.5/2.0 modellerine thinkingConfig eklenmez
+      // - Gemini 3.5 Flash-Lite ve diğer modeller parametresiz (varsayılan) çalıştırılır
       if (isGemini25) {
         generationConfig.thinkingConfig = { thinkingBudget: 0 };
-      } else if (isGemini3) {
-        generationConfig.thinkingConfig = { thinkingLevel: 'minimal' };
       }
 
       const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
@@ -250,48 +256,113 @@ export default async (req: Request) => {
       }
 
       clearTimeout(timeoutId);
+      const attemptDurationMs = Date.now() - attemptStart;
 
       if (res.ok) {
         geminiResponse = res;
         usedModel = modelName;
         break;
       } else {
-        const errorText = await res.text();
-        const shortError = errorText.slice(0, 300);
-        console.error(`Gemini model ${modelName} returned status ${res.status}:`, shortError);
+        let parsedGoogleError: any = null;
+        let rawErrorText = '';
+        try {
+          rawErrorText = await res.text();
+          parsedGoogleError = JSON.parse(rawErrorText);
+        } catch {}
+
+        const googleStatus = parsedGoogleError?.error?.status || `HTTP_${res.status}`;
+        const googleCode = parsedGoogleError?.error?.code || res.status;
+        const rawMsg = parsedGoogleError?.error?.message || rawErrorText;
+        const sanitizedMsg = typeof rawMsg === 'string'
+          ? rawMsg.replace(/key=[A-Za-z0-9_-]+/gi, 'key=REDACTED').slice(0, 250).trim()
+          : `HTTP ${res.status}`;
+
+        console.error(`Gemini model ${modelName} returned status ${res.status} [${googleStatus}]:`, sanitizedMsg);
+
         modelErrors.push({
           model: modelName,
           status: res.status,
-          error: shortError || `HTTP ${res.status}`
+          durationMs: attemptDurationMs,
+          errorType: 'HTTP_ERROR',
+          errorCode: String(googleStatus || googleCode),
+          errorMessage: sanitizedMsg || `HTTP ${res.status}`
         });
+
+        // HTTP 429: Rate Limit / Quota Exceeded (RESOURCE_EXHAUSTED)
+        // Tüm modeller aynı API anahtarını paylaştığından peş peşe 5 modeli tüketmek yerine anında durdur
+        if (res.status === 429) {
+          const retryAfter = res.headers.get('retry-after') || undefined;
+          const totalElapsed = Date.now() - functionStartTime;
+          return new Response(
+            JSON.stringify({
+              error: 'Yapay zekâ servis kotası geçici olarak doldu (429 - Çok sık istek). Lütfen bir dakika bekledikten sonra tekrar deneyiniz.',
+              code: 'RATE_LIMIT_EXCEEDED',
+              retryAfter,
+              attemptedModel: modelName,
+              details: modelErrors,
+              elapsedMs: totalElapsed
+            }),
+            {
+              status: 429,
+              headers: {
+                ...corsHeaders,
+                ...(retryAfter ? { 'Retry-After': retryAfter } : {})
+              }
+            }
+          );
+        }
       }
     } catch (fetchErr: any) {
       clearTimeout(timeoutId);
+      const attemptDurationMs = Date.now() - attemptStart;
       const isTimeout = fetchErr?.name === 'AbortError' || abortController.signal.aborted;
+      const errorType: 'TIMEOUT' | 'NETWORK_ERROR' = isTimeout ? 'TIMEOUT' : 'NETWORK_ERROR';
       const errorMsg = isTimeout
         ? `Model isteği zaman aşımına uğradı (${attemptTimeoutMs}ms)`
-        : (fetchErr?.message || String(fetchErr));
-      console.error(`Request to model ${modelName} failed or timed out:`, errorMsg);
+        : (fetchErr?.message || String(fetchErr)).replace(/key=[A-Za-z0-9_-]+/gi, 'key=REDACTED');
+
+      console.error(`Request to model ${modelName} failed [${errorType}]:`, errorMsg);
       modelErrors.push({
         model: modelName,
         status: isTimeout ? 504 : 0,
-        error: errorMsg
+        durationMs: attemptDurationMs,
+        errorType,
+        errorCode: isTimeout ? 'TIMEOUT_504' : 'FETCH_FAILED',
+        errorMessage: errorMsg
       });
     }
   }
 
   if (!geminiResponse) {
     const totalElapsed = Date.now() - functionStartTime;
+    let clientStatus = 502;
+    let clientCode = 'AI_GATEWAY_UNAVAILABLE';
+    let clientErrorMsg = 'Soru üretim servisi şu anda meşgul veya geçici olarak yanıt veremiyor. Lütfen az sonra tekrar deneyiniz.';
+
+    if (modelErrors.every(e => e.status === 404)) {
+      clientStatus = 502;
+      clientCode = 'MODELS_NOT_FOUND';
+      clientErrorMsg = 'Yapılandırılan yapay zekâ modelleri API üzerinde bulunamadı.';
+    } else if (modelErrors.some(e => e.status === 403)) {
+      clientStatus = 403;
+      clientCode = 'API_KEY_FORBIDDEN';
+      clientErrorMsg = 'Yapay zekâ API anahtarının bu işlem için yetkisi bulunmuyor (403 Erişim Reddedildi).';
+    } else if (modelErrors.some(e => e.status === 400 && !e.errorMessage.includes('thinking'))) {
+      clientStatus = 400;
+      clientCode = 'BAD_REQUEST_PAYLOAD';
+      clientErrorMsg = 'Yapay zekâ servisine iletilen istek parametreleri geçersiz (400 Hatalı İstek).';
+    }
+
     return new Response(
       JSON.stringify({
-        error: 'Soru üretim servisi şu anda meşgul veya geçici olarak yanıt veremiyor. Lütfen az sonra tekrar deneyiniz.',
-        code: 'AI_GATEWAY_UNAVAILABLE',
+        error: clientErrorMsg,
+        code: clientCode,
         attemptedModels: targetModels.slice(0, modelErrors.length),
         details: modelErrors,
         elapsedMs: totalElapsed
       }),
       {
-        status: 502,
+        status: clientStatus,
         headers: corsHeaders
       }
     );
