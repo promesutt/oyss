@@ -104,10 +104,12 @@ export const QUESTION_DIRECTIVE_CLARITY_RULE = `YÖNERGE AÇIKLIĞI VE BİLİŞS
 - Tekil / Çoğul beklentisi açıkça belirtilmelidir:
   * Tek bir cevap bekleniyorsa bu durum belirtilmeli ("tek bir cümleyle açıklayınız", "ana düşünceyi belirleyiniz" vb.).
   * Birden fazla cevap veya örnek isteniyorsa sayı açıkça verilmelidir ("2 farklı örnek veriniz", "3 temel nedenini yazınız" vb.).
-- Karşılaştırma, gerekçelendirme, tahmin veya açıklama işlemlerinin kapsamı net olmalıdır ("...nedenini bilimsel gerekçesiyle açıklayınız", "...farklarını belirterek karşılaştırınız").
+- Karşılaştırma, gerekçelendirme veya açıklama işlemlerinin kapsamı net olmalıdır ("...nedenini gerekçesiyle açıklayınız", "...farklarını belirterek karşılaştırınız").
 - Görev Bütünlüğü: Birbirinden bağımsız iki farklı görev tek bir soru cümlesinde iç içe geçirilmemeli, alt maddeler (a, b) halinde ayrılmalıdır. Ancak birbiriyle doğrudan ilişkili ve bütünleşik bir beceriyi ölçen aşamalı görevler (örneğin: "hatayı tespit ediniz ve doğrusunu yazınız", "işlemi yapınız ve sonucunu en sade haliyle yazınız") korunabilir; sırf "ve" bağlacı var diye yapay olarak bölünmemelidir.
 - Sınıf Düzeyine Uygunluk ve Pedagojik Derinlik (Yüzeysellik Yasağı):
-  * Uzun bir uyaran/metin verip ardından yalnızca metinde doğrudan yazan tek bir nesne, varlık veya kişi adını buldurmaya dayalı ("Ahmet nereye gitti? -> Okula" gibi) okul öncesi/başlangıç düzeyindeki basit kelime bulma soruları KESİNLİKLE ÜRETİLEMEZ.
+  * Uzun bir metinden açıkça geçen tek bir meyve, nesne veya kişi adını buldurmaya dayalı ("Hangi meyve alınmıştır? -> Çilek" gibi) mekanik kelime avcılığı KESİNLİKLE ÜRETİLEMEZ.
+  * "Metnin yüzey anlamı" (T.O.5.6) soruları tek kelime avcılığı değil; olayın gelişimini, karakterin amacını veya iki açık bilginin ilişkisini bütüncül açıklamayı gerektirir. Tek kelimelik yanıtlara asla 12 puandan fazla verilemez; 15-20 puanlık sorular iki boyutlu açıklama gerektirir.
+  * Temsil Uyumu: Gerçek görsel yoksa afiş/resim metinle anlatılamaz. Yazım-noktalama soruları "Zor" değil "Kolay/Orta" etiketlenmelidir.
   * Soru; hedef sınıf düzeyindeki (5-8. sınıf) öğrencinin kazanımda hedeflenen bilgi veya beceriyi gerçekten ölçmelidir: Öğrenciden metindeki bir davranışı açıklaması, olaylar arasında neden-sonuç ilişkisi kurması, karakterin tutumunu yorumlaması, işlem basamaklarını yürütmesi veya çıkarım yapması istenmelidir.
   * Ancak her soruda zorlama üst düzey çıkarım veya felsefi gerekçe aranmaz; kazanım doğrudan bilgi veya anlama ölçüyorsa soru bu sınırda kalmalı, yapay olarak zorlaştırılmamalı veya aşırı basitleştirilmemelidir.
 - Dili sadeleştirirken sorunun kazanımı, bilişsel düzeyi ve düşünme derinliği KESİNLİKLE düşürülmemeli veya yapay olarak kolaylaştırılmamalıdır. Düşünme düzeyi yüksek, dil yükü gereksiz karmaşıklıktan arındırılmış sorular esastır.`;

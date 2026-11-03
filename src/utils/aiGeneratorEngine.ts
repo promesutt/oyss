@@ -395,10 +395,47 @@ export async function generateMEBIQuestions(
 
       const rawStem = typeof q.question === 'string' ? q.question.trim() : '';
       const isStemValid = rawStem.length >= 3;
+      const rawAns = typeof q.answer === 'string' ? q.answer.trim() : '';
+      const rawStim = typeof q.stimulus === 'string' ? q.stimulus.trim() : '';
 
-      // Soru kökü eksik veya boşsa: Yalnızca bu soruyu MEB onaylı referans havuzundan ikame et (asla stimulus'tan regex ile uydurma yapılmaz)
+      // Pedagojik Kalite Denetimi (Yüzeysel Tek Kelime Avcılığı & Sahte Görsel Kontrolü)
+      let isPedagogicallyDeficient = false;
+      let deficiencyReason = '';
+
+      const cleanAns = rawAns.replace(/[.,!?;:"'«»()]+$/g, '').trim().toLowerCase();
+      const cleanStim = rawStim.toLowerCase();
+
       if (!isStemValid) {
-        console.warn(`[QualitySafety] ${idx + 1}. sorunun kökü eksik veya boş; MEB onaylı referans havuzundan güvenle ikame ediliyor.`);
+        isPedagogicallyDeficient = true;
+        deficiencyReason = 'Soru kökü eksik veya boş (< 3 karakter)';
+      } else if (
+        (subjectId === 'turkce' || subjectId === 'sosyal_bilgiler' || subjectId === 'din_kulturu') &&
+        targetPts >= 14
+      ) {
+        // Sözel derslerde yüksek puanlı mekanik kelime avcılığı kontrolü:
+        // Model cevap 2 veya daha az kelime, stimulus içinde doğrudan yer alıyor ve soru kökü açıkça tek nesne/renk/meyve/kişi soruyor
+        const ansWordCount = cleanAns.split(/\s+/).filter(Boolean).length;
+        const isSubstring = cleanAns.length > 0 && cleanStim.includes(cleanAns);
+        const isTrivialQuery = /(hangi\s+(meyve|sebze|renk|şehir|araç|hayvan|nesne|eşya)|kimdir|kaç\s+(liradır|kestane|elma))/i.test(rawStem);
+
+        if (ansWordCount > 0 && ansWordCount <= 2 && isSubstring && isTrivialQuery) {
+          isPedagogicallyDeficient = true;
+          deficiencyReason = `Yüksek puanlı (${targetPts} puan) tek kelimelik mekanik bilgi avcılığı ("${rawAns}")`;
+        }
+      }
+
+      // Sahte görsel sorusu denetimi: Kazanım görsel okuma gerektiriyor fakat görsel yok ve stimulus metinsel tasvir
+      if (!isPedagogicallyDeficient && (requiredOutcome.includes('.7') || officialTitle.toLowerCase().includes('görsel'))) {
+        const hasFakeVisualText = /(bu\s+görselde|afişte\s+görüldüğü\s+gibi|resimde\s+bir|yandaki\s+afişte|afişte\s+verilmek)/i.test(rawStem + ' ' + rawStim);
+        if (!q.visual && hasFakeVisualText && rawStim.length < 150) {
+          isPedagogicallyDeficient = true;
+          deficiencyReason = 'Gerçek görsel olmadan metinsel afiş tasvirine dayalı sahte görsel sorusu';
+        }
+      }
+
+      // Soru pedagojik olarak kusurlu veya eksikse: Yalnızca bu soruyu MEB onaylı referans havuzundan cerrahi olarak ikame et
+      if (isPedagogicallyDeficient) {
+        console.warn(`[PedagogicalQuality] ${idx + 1}. soruda pedagojik kusur (${deficiencyReason}) tespit edildi; MEB onaylı referans havuzundan güvenle ikame ediliyor.`);
         const fallbackMatch = internalAllQuestions.find(fq => fq.outcome === requiredOutcome);
 
         if (fallbackMatch) {
@@ -430,6 +467,15 @@ export async function generateMEBIQuestions(
         }
       }
 
+      let calibratedDifficulty = q.difficulty || 'Orta';
+      // Doğrudan kural uygulaması (yazım-noktalama) sorularında "Zor" etiketini pedagojik olarak "Orta" düzeyine kalibre et
+      if (
+        (requiredOutcome.includes('16') || officialTitle.toLowerCase().includes('yazım')) &&
+        calibratedDifficulty === 'Zor'
+      ) {
+        calibratedDifficulty = 'Orta';
+      }
+
       const rawRubric = (q.rubric || []).map((r: any) => ({
         criterion: r.item || r.criterion || 'Değerlendirme Ölçütü',
         points: r.pts ?? r.points
@@ -454,6 +500,7 @@ export async function generateMEBIQuestions(
         outcome: requiredOutcome,
         outcomeTitle: officialTitle,
         cognitiveLevel: distItem.cognitiveLevel || q.level || 'Karmaşık Bilişsel Süreçler',
+        difficulty: calibratedDifficulty,
         points: targetPts,
         question: rawStem,
         answer: validAnswer,

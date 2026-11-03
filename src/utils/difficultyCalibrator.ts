@@ -63,7 +63,21 @@ export function calibrateQuestionDifficulties<T extends { difficulty?: 'Kolay' |
     }
   }
   if (zorNeeded > 0) {
-    const remaining = items.filter(it => it.assigned === null).sort((a, b) => b.idx - a.idx);
+    const isPunctuationRule = (it: (typeof items)[0]) => {
+      const orig = it.original as any;
+      const oc = (orig.outcomeCode || orig.outcome || '');
+      const ot = (orig.outcomeTitle || '').toLowerCase();
+      return oc.includes('16') || ot.includes('yazım') || ot.includes('noktalama');
+    };
+
+    const remaining = items.filter(it => it.assigned === null).sort((a, b) => {
+      const aIsRule = isPunctuationRule(a);
+      const bIsRule = isPunctuationRule(b);
+      if (aIsRule !== bIsRule) {
+        return aIsRule ? 1 : -1; // Doğrudan kural uygulamalarını "Zor" sıralamasında geriye al
+      }
+      return b.idx - a.idx;
+    });
     for (const c of remaining) {
       if (zorNeeded > 0) {
         c.assigned = 'Zor';

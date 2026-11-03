@@ -103,7 +103,7 @@ export default async (req: Request) => {
     return new Response(
       JSON.stringify({ 
         error: 'Soru üretim servisi yapılandırılmamış (GEMINI_API_KEY eksik). Lütfen Netlify yönetim panelinden ortam değişkenini tanımlayınız.' 
-      }), 
+      }),
       {
         status: 503,
         headers: corsHeaders
@@ -154,41 +154,100 @@ export default async (req: Request) => {
     });
   }
 
-  // 4. Model Selection and Execution with Timeout
-  const targetModels = Array.from(new Set([
-    configuredModel,
+  // 4. Model Selection and Execution with Bounded Timeout Budget
+  const verifiedModels = [
     'gemini-3.5-flash-lite',
-    'gemini-3.5-flash',
     'gemini-2.5-flash',
+    'gemini-2.5-flash-lite',
     'gemini-2.0-flash',
     'gemini-1.5-flash'
-  ]));
+  ];
+
+  // If user configured a specific model, place it first in line, followed by verified fallbacks
+  const targetModels = Array.from(new Set([
+    configuredModel,
+    ...verifiedModels
+  ])).filter(Boolean);
 
   let geminiResponse: Response | null = null;
   let usedModel = configuredModel;
+  const modelErrors: Array<{ model: string; status?: number; error: string }> = [];
 
-  for (const modelName of targetModels) {
-    const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
-    
+  const FUNCTION_TOTAL_BUDGET_MS = 22000; // Hard 22s limit to strictly prevent Netlify 26s gateway abort
+  const functionStartTime = Date.now();
+
+  for (let i = 0; i < targetModels.length; i++) {
+    const modelName = targetModels[i];
+    const elapsedSoFar = Date.now() - functionStartTime;
+    const remainingBudget = FUNCTION_TOTAL_BUDGET_MS - elapsedSoFar;
+
+    // Abort loop gracefully before hitting Netlify container kill if budget is depleted (<3s)
+    if (remainingBudget < 3000) {
+      console.warn(`[Generate] Insufficient time budget (${remainingBudget}ms) for model ${modelName}. Aborting fallback chain.`);
+      break;
+    }
+
+    // Allocate timeout for current attempt:
+    // First attempt gets up to 11s; subsequent fallbacks get up to 8s (or remaining budget - 1.5s margin)
+    const attemptTimeoutMs = i === 0
+      ? Math.min(11000, remainingBudget - 1500)
+      : Math.min(8000, remainingBudget - 1500);
+
     const abortController = new AbortController();
-    const timeoutId = setTimeout(() => abortController.abort(), 22000); // 22 second timeout
+    const timeoutId = setTimeout(() => abortController.abort(), attemptTimeoutMs);
 
     try {
-      const res = await fetch(geminiUrl, {
+      const isGemini25 = modelName.includes('2.5');
+      const isGemini3 = modelName.includes('3.') || modelName.includes('3-') || modelName.includes('3_');
+
+      const generationConfig: Record<string, any> = {
+        temperature: 0.75,
+        maxOutputTokens: 6000,
+        responseMimeType: 'application/json'
+      };
+
+      // Model ailesine göre düşünme parametresi ayrımı:
+      // - Gemini 2.5 modelleri thinkingBudget destekler
+      // - Gemini 3.x modelleri thinkingLevel destekler
+      // - Gemini 1.5/2.0 modellerine thinkingConfig eklenmez
+      if (isGemini25) {
+        generationConfig.thinkingConfig = { thinkingBudget: 0 };
+      } else if (isGemini3) {
+        generationConfig.thinkingConfig = { thinkingLevel: 'minimal' };
+      }
+
+      const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
+
+      let res = await fetch(geminiUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
           contents: [{ parts: [{ text: prompt }] }],
-          generationConfig: {
-            temperature: 0.75,
-            maxOutputTokens: 6000,
-            responseMimeType: 'application/json'
-          }
+          generationConfig
         }),
         signal: abortController.signal
       });
+
+      // Eğer thinkingConfig nedeniyle 400 (Invalid argument/Unknown field) döndüyse, aynı modele parametresiz hemen yeniden dene
+      if (!res.ok && res.status === 400 && generationConfig.thinkingConfig) {
+        res = await fetch(geminiUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            contents: [{ parts: [{ text: prompt }] }],
+            generationConfig: {
+              temperature: 0.75,
+              maxOutputTokens: 6000,
+              responseMimeType: 'application/json'
+            }
+          }),
+          signal: abortController.signal
+        });
+      }
 
       clearTimeout(timeoutId);
 
@@ -198,17 +257,39 @@ export default async (req: Request) => {
         break;
       } else {
         const errorText = await res.text();
-        console.error(`Gemini model ${modelName} returned status ${res.status}:`, errorText.slice(0, 300));
+        const shortError = errorText.slice(0, 300);
+        console.error(`Gemini model ${modelName} returned status ${res.status}:`, shortError);
+        modelErrors.push({
+          model: modelName,
+          status: res.status,
+          error: shortError || `HTTP ${res.status}`
+        });
       }
     } catch (fetchErr: any) {
       clearTimeout(timeoutId);
-      console.error(`Request to model ${modelName} failed or timed out:`, fetchErr?.name || fetchErr);
+      const isTimeout = fetchErr?.name === 'AbortError' || abortController.signal.aborted;
+      const errorMsg = isTimeout
+        ? `Model isteği zaman aşımına uğradı (${attemptTimeoutMs}ms)`
+        : (fetchErr?.message || String(fetchErr));
+      console.error(`Request to model ${modelName} failed or timed out:`, errorMsg);
+      modelErrors.push({
+        model: modelName,
+        status: isTimeout ? 504 : 0,
+        error: errorMsg
+      });
     }
   }
 
   if (!geminiResponse) {
+    const totalElapsed = Date.now() - functionStartTime;
     return new Response(
-      JSON.stringify({ error: 'Soru üretim servisi şu anda meşgul veya geçici olarak yanıt veremiyor. Lütfen az sonra tekrar deneyiniz.' }), 
+      JSON.stringify({
+        error: 'Soru üretim servisi şu anda meşgul veya geçici olarak yanıt veremiyor. Lütfen az sonra tekrar deneyiniz.',
+        code: 'AI_GATEWAY_UNAVAILABLE',
+        attemptedModels: targetModels.slice(0, modelErrors.length),
+        details: modelErrors,
+        elapsedMs: totalElapsed
+      }),
       {
         status: 502,
         headers: corsHeaders
