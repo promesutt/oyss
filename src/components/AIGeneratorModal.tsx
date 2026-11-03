@@ -22,6 +22,7 @@ import {
   Info
 } from 'lucide-react';
 import { MathRenderer } from './MathRenderer';
+import { QuestionVisualView } from './QuestionVisualView';
 import { generateMEBIQuestions, GenerationResult } from '../utils/aiGeneratorEngine';
 import { distributeExamPoints, reconcileRubricPoints } from '../utils/examScoring';
 import { saveCustomExamPaper } from '../utils/practiceStorage';
@@ -389,6 +390,23 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
                           </div>
                         )}
 
+                        {/* Missing Question Stem Warning if any */}
+                        {gq.hasMissingStemError && (
+                          <div className="p-3 mb-3 bg-rose-50 border border-rose-300 rounded-xl text-xs text-rose-900 font-semibold flex items-start space-x-2">
+                            <AlertTriangle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
+                            <div>
+                              <strong>Soru Kökü Eksik:</strong> {gq.stemValidationError || 'Bu sorunun öğrenci tarafından cevaplanması gereken soru kökü üretilememiştir.'}
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Görsel / Şema */}
+                        {gq.visual && (
+                          <div className="mb-3">
+                            <QuestionVisualView visual={gq.visual} />
+                          </div>
+                        )}
+
                         {/* Soru Kökü */}
                         <div className="text-xs sm:text-sm font-bold text-slate-900 mb-3 pl-1">
                           <span className="text-indigo-600 mr-1.5">Soru:</span>
@@ -498,7 +516,8 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
                                   rubric: rubricList,
                                   sourceOrigin: q.sourceOrigin,
                                   originExamTitle: q.originExamTitle,
-                                  originQuestionNumber: q.originQuestionNumber
+                                  originQuestionNumber: q.originQuestionNumber,
+                                  visual: q.visual
                                 };
                               })
                             };

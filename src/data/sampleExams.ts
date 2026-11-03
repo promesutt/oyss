@@ -2116,7 +2116,51 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 10
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "visual": {
+          "type": "fraction_model",
+          "sourceOrigin": "oyss_svg",
+          "caption": "Ayşe (1/2), Burak (1/4) ve Can'ın (1/8) birim pasta dilimlerinin büyüklük modelleri",
+          "params": {
+            "modelKind": "fraction_bar",
+            "showEquivalenceGuide": false,
+            "bars": [
+              {
+                "id": "bar-ayse",
+                "label": "Ayşe (1/2)",
+                "fraction": {
+                  "numerator": 1,
+                  "denominator": 2
+                },
+                "pattern": "hatch_diagonal_right",
+                "fillColor": "#3b82f6",
+                "showUnitFractionLabels": true
+              },
+              {
+                "id": "bar-burak",
+                "label": "Burak (1/4)",
+                "fraction": {
+                  "numerator": 1,
+                  "denominator": 4
+                },
+                "pattern": "dots",
+                "fillColor": "#10b981",
+                "showUnitFractionLabels": true
+              },
+              {
+                "id": "bar-can",
+                "label": "Can (1/8)",
+                "fraction": {
+                  "numerator": 1,
+                  "denominator": 8
+                },
+                "pattern": "crosshatch",
+                "fillColor": "#f59e0b",
+                "showUnitFractionLabels": true
+              }
+            ]
+          }
+        }
       },
       {
         "questionNumber": 3,
@@ -2203,7 +2247,51 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 10
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "visual": {
+          "type": "fraction_model",
+          "sourceOrigin": "oyss_svg",
+          "caption": "Derya (7/10), Elif (5/10) ve Kerem'in (3/10) kitap okuma miktarlarının şerit modelleri",
+          "params": {
+            "modelKind": "fraction_bar",
+            "showEquivalenceGuide": false,
+            "bars": [
+              {
+                "id": "bar-derya",
+                "label": "Derya (7/10)",
+                "fraction": {
+                  "numerator": 7,
+                  "denominator": 10
+                },
+                "pattern": "solid",
+                "fillColor": "#8b5cf6",
+                "showUnitFractionLabels": true
+              },
+              {
+                "id": "bar-elif",
+                "label": "Elif (5/10)",
+                "fraction": {
+                  "numerator": 5,
+                  "denominator": 10
+                },
+                "pattern": "hatch_diagonal_left",
+                "fillColor": "#06b6d4",
+                "showUnitFractionLabels": true
+              },
+              {
+                "id": "bar-kerem",
+                "label": "Kerem (3/10)",
+                "fraction": {
+                  "numerator": 3,
+                  "denominator": 10
+                },
+                "pattern": "dots",
+                "fillColor": "#ec4899",
+                "showUnitFractionLabels": true
+              }
+            ]
+          }
+        }
       }
     ]
   },

@@ -43,7 +43,13 @@ export interface GenerationResult {
   sourceValidationSummary?: {
     isFullyValid: boolean;
     missingSourceCount: number;
+    missingStemCount?: number;
     recoveredCount: number;
+  };
+  promptMetrics?: {
+    promptLength: number;
+    budgetCeiling: number;
+    compressionApplied: 'none' | 'light' | 'compact';
   };
   examClassification?: ExamSourceClassification;
 }
@@ -239,8 +245,15 @@ export async function generateMEBIQuestions(
     s => typeof s === 'string' && s.trim().length > 0
   );
 
-  const variationToken = `${variationIndex + 1}_${Date.now().toString(36)}`;
-  const avoidDirectives = buildAvoidDirectives({
+  const internalAllQuestions: GeneratedQuestionItem[] = getAllFallbackQuestions({
+    name1,
+    name2,
+    pointAllocations
+  });
+
+  // Deterministik varyasyon belirteci (zaman damgası yerine indeks tabanlı determinizm)
+  const variationToken = `v${variationIndex + 1}_tok`;
+  let avoidDirectives = buildAvoidDirectives({
     baseAvoidTexts,
     baseAvoidStimuli,
     setAAvoidTexts,
@@ -249,10 +262,15 @@ export async function generateMEBIQuestions(
     variationToken
   });
 
+  const BUDGET_CEILING = 16500;
+  const HARD_LIMIT = 19500;
+  let compressionLevel: 'none' | 'light' | 'compact' = 'none';
+
   let fallbackReason: string | undefined;
   let livePrompt: string | undefined;
+  const outcomeCodes = questionDistributions.map(d => d.outcomeCode);
+
   try {
-    const outcomeCodes = questionDistributions.map(d => d.outcomeCode);
     livePrompt = buildLiveExamPrompt({
       grade,
       subjectId,
@@ -264,6 +282,74 @@ export async function generateMEBIQuestions(
       variationToken,
       outcomeCodes
     });
+
+    // 16.500 karakter tavan bütçe denetimi ve kademeli sıkıştırma (Prompt Budgeting)
+    if (livePrompt && livePrompt.length > BUDGET_CEILING) {
+      compressionLevel = 'light';
+      avoidDirectives = buildAvoidDirectives({
+        baseAvoidTexts: baseAvoidTexts.slice(0, 2),
+        baseAvoidStimuli: baseAvoidStimuli.slice(0, 1),
+        setAAvoidTexts: setAAvoidTexts.slice(0, 6),
+        setAAvoidStimuli: setAAvoidStimuli.slice(0, 1),
+        variationIndex,
+        variationToken
+      });
+
+      let rePrompt = buildLiveExamPrompt({
+        grade,
+        subjectId,
+        targetCount,
+        distributionsText,
+        avoidDirectives,
+        difficultyPlanText,
+        variationIndex,
+        variationToken,
+        outcomeCodes
+      });
+
+      if (rePrompt.length <= BUDGET_CEILING) {
+        livePrompt = rePrompt;
+      } else {
+        compressionLevel = 'compact';
+        avoidDirectives = buildAvoidDirectives({
+          baseAvoidTexts: baseAvoidTexts.slice(0, 1),
+          baseAvoidStimuli: [],
+          setAAvoidTexts: setAAvoidTexts.slice(0, 3),
+          setAAvoidStimuli: [],
+          variationIndex,
+          variationToken
+        });
+
+        rePrompt = buildLiveExamPrompt({
+          grade,
+          subjectId,
+          targetCount,
+          distributionsText,
+          avoidDirectives,
+          difficultyPlanText,
+          variationIndex,
+          variationToken,
+          outcomeCodes
+        });
+
+        if (rePrompt.length <= BUDGET_CEILING) {
+          livePrompt = rePrompt;
+        } else {
+          avoidDirectives = `ÖZGÜNLÜK VE MEVCUT SORULARI TEKRARLAMAMA KURALI:\n- Bu sınav ${variationIndex + 1}. varyasyon setidir (${variationToken}). Önceki set kurgularını ve metinlerini tekrarlamayınız.`;
+          livePrompt = buildLiveExamPrompt({
+            grade,
+            subjectId,
+            targetCount,
+            distributionsText,
+            avoidDirectives,
+            difficultyPlanText,
+            variationIndex,
+            variationToken,
+            outcomeCodes
+          });
+        }
+      }
+    }
   } catch (err: any) {
     fallbackReason = err?.message || "Prompt oluşturulamadığı için yerel OYSS kural tabanlı standart motoruna aktarılıyor.";
   }
@@ -307,6 +393,43 @@ export async function generateMEBIQuestions(
       const officialTitle = getOfficialOutcomeTitle(requiredOutcome) || distItem.notes || q.outcomeTitle || 'Öğrenme Çıktısı';
       const targetPts = pointAllocations[idx] || q.points || 15;
 
+      const rawStem = typeof q.question === 'string' ? q.question.trim() : '';
+      const isStemValid = rawStem.length >= 3;
+
+      // Soru kökü eksik veya boşsa: Yalnızca bu soruyu MEB onaylı referans havuzundan ikame et (asla stimulus'tan regex ile uydurma yapılmaz)
+      if (!isStemValid) {
+        console.warn(`[QualitySafety] ${idx + 1}. sorunun kökü eksik veya boş; MEB onaylı referans havuzundan güvenle ikame ediliyor.`);
+        const fallbackMatch = internalAllQuestions.find(fq => fq.outcome === requiredOutcome);
+
+        if (fallbackMatch) {
+          const rawRubric = (fallbackMatch.rubric || []).map((r: any) => ({
+            criterion: r.item || r.criterion || 'Değerlendirme Ölçütü',
+            points: r.pts ?? r.points
+          }));
+          const reconciled = reconcileRubricPoints(rawRubric, targetPts);
+
+          return {
+            number: idx + 1,
+            outcome: requiredOutcome,
+            outcomeTitle: officialTitle,
+            cognitiveLevel: distItem.cognitiveLevel || fallbackMatch.level || 'Karmaşık Bilişsel Süreçler',
+            difficulty: fallbackMatch.difficulty || 'Orta',
+            templateType: fallbackMatch.templateType || 'Kurgusal Senaryo & Vaka İncelemesi',
+            points: targetPts,
+            stimulus: fallbackMatch.stimulus || q.stimulus || '',
+            question: fallbackMatch.question || `${officialTitle} ile ilgili durumu açıklayınız.`,
+            answer: fallbackMatch.answer || 'Kavramsal ilkelerin doğru gerekçelendirilmesi beklenir.',
+            alternativeAnswers: fallbackMatch.alternativeAnswers,
+            solutionExplanation: fallbackMatch.solutionExplanation || (fallbackMatch.answer ? `Analitik çözüm adımları ve gerekçe: ${fallbackMatch.answer}` : undefined),
+            rubric: reconciled.map(r => ({ item: r.criterion, pts: r.points })),
+            sourceOrigin: 'oyss_curated' as const,
+            originExamTitle: fallbackMatch.originExamTitle || 'OYSS MEBİ Referans Havuzu',
+            originQuestionNumber: fallbackMatch.originQuestionNumber,
+            visual: fallbackMatch.visual
+          };
+        }
+      }
+
       const rawRubric = (q.rubric || []).map((r: any) => ({
         criterion: r.item || r.criterion || 'Değerlendirme Ölçütü',
         points: r.pts ?? r.points
@@ -320,6 +443,11 @@ export async function generateMEBIQuestions(
             .map((a: string) => a.trim())
         : undefined;
 
+      // Model cevap kontrolü: Geçerli kısa cevapları ("42", "Fotosentez" vb.) koru
+      const validAnswer = typeof q.answer === 'string' && q.answer.trim().length > 0
+        ? q.answer.trim()
+        : 'Öğrencinin kavramsal ilkeleri doğru tespit etmesi ve gerekçelendirmesi beklenir.';
+
       return {
         ...q,
         number: idx + 1,
@@ -327,9 +455,13 @@ export async function generateMEBIQuestions(
         outcomeTitle: officialTitle,
         cognitiveLevel: distItem.cognitiveLevel || q.level || 'Karmaşık Bilişsel Süreçler',
         points: targetPts,
+        question: rawStem,
+        answer: validAnswer,
         alternativeAnswers: altAnswers && altAnswers.length > 0 ? altAnswers : undefined,
-        solutionExplanation: q.solutionExplanation || q.explanation || (q.answer ? `Analitik çözüm adımları ve gerekçe: ${q.answer}` : undefined),
-        rubric: reconciled.map(r => ({ item: r.criterion, pts: r.points }))
+        solutionExplanation: q.solutionExplanation || q.explanation || `Analitik çözüm adımları ve gerekçe: ${validAnswer}`,
+        rubric: reconciled.map(r => ({ item: r.criterion, pts: r.points })),
+        sourceOrigin: q.sourceOrigin || 'gemini_ai',
+        visual: q.visual
       };
     });
     const calibrated = calibrateQuestionDifficulties(withTitles);
@@ -339,7 +471,7 @@ export async function generateMEBIQuestions(
 
   // 1. TIER 1: Güvenli Sunucu Fonksiyonu Proxy (/api/generate)
   // Tüm yapay zekâ istekleri istemciden gizlenmiş sunucu tarafı Netlify Function üzerinden yürütülür.
-  if (livePrompt) {
+  if (livePrompt && livePrompt.length <= HARD_LIMIT) {
   try {
     const proxyRes = await fetch('/api/generate', {
       method: 'POST',
@@ -397,9 +529,15 @@ export async function generateMEBIQuestions(
             questionsCount: normalized.length,
             generatedQuestions: normalized,
             sourceValidationSummary: {
-              isFullyValid: !normalized.some(q => q.hasMissingSourceError),
+              isFullyValid: !normalized.some(q => q.hasMissingSourceError || q.hasMissingStemError),
               missingSourceCount: normalized.filter(q => q.hasMissingSourceError).length,
+              missingStemCount: normalized.filter(q => q.hasMissingStemError).length,
               recoveredCount: normalized.filter(q => q.commonStimulus || q.sharedSourceId).length
+            },
+            promptMetrics: {
+              promptLength: livePrompt.length,
+              budgetCeiling: BUDGET_CEILING,
+              compressionApplied: compressionLevel
             },
             examClassification
           };
@@ -420,6 +558,47 @@ export async function generateMEBIQuestions(
       if (proxyRes.status === 429) {
         fallbackReason = 'Yapay zekâ servisi kota sınırında (429 - Çok sık istek). Lütfen bir dakika sonra tekrar deneyiniz.';
       } else if (proxyRes.status === 422) {
+        // Kontrollü Kurtarma: Eğer HTTP 422 soru kökü eksikliği nedeniyle döndüyse ve eldeki sorular varsa,
+        // yalnızca eksik soru kökünü yerel onaylı soruyla ikame ederek geçerli soruları kurtar
+        if (errJson?.code === 'EMPTY_QUESTION_STEM' && Array.isArray(errJson?.questions) && errJson.questions.length > 0) {
+          const geminiTagged = errJson.questions.map((gq: any) => ({
+            ...gq,
+            sourceOrigin: gq.sourceOrigin || 'gemini_ai'
+          }));
+          const normalized = normalizeAndCalibrateQuestions(geminiTagged);
+          const hasDirectDuplicate = normalized.some(nq =>
+            isDuplicateOrTooSimilar(nq.question, nq.stimulus, allAvoidItems, undefined, 0.45)
+          );
+
+          if (!hasDirectDuplicate) {
+            const activeModelName = errJson?.activeModel || 'Gemini Akıllı Soru Motoru (Kısmi İkame)';
+            const elapsedSec = Math.max(0.7, (Date.now() - startTime) / 1000).toFixed(1) + ' saniye';
+            const examClassification = classifyExamQuestions(normalized);
+            const classDetails = getExamClassificationDetails(examClassification);
+
+            return {
+              title: `${grade}. Sınıf ${scenario.name} (${classDetails.titleSuffix} - ${normalized.length} Soru)`,
+              variationNumber: variationIndex + 1,
+              generationTime: elapsedSec,
+              model: `${activeModelName}`,
+              isFallback: false,
+              questionsCount: normalized.length,
+              generatedQuestions: normalized,
+              sourceValidationSummary: {
+                isFullyValid: !normalized.some(q => q.hasMissingSourceError || q.hasMissingStemError),
+                missingSourceCount: normalized.filter(q => q.hasMissingSourceError).length,
+                missingStemCount: normalized.filter(q => q.hasMissingStemError).length,
+                recoveredCount: normalized.filter(q => q.commonStimulus || q.sharedSourceId).length
+              },
+              promptMetrics: {
+                promptLength: livePrompt.length,
+                budgetCeiling: BUDGET_CEILING,
+                compressionApplied: compressionLevel
+              },
+              examClassification
+            };
+          }
+        }
         fallbackReason = errJson?.error || 'Üretilen sınav yanıtı biçimsel şemaya uymadığı için yerel motor devreye alındı.';
       } else if (proxyRes.status === 502 || proxyRes.status === 503) {
         fallbackReason = errJson?.error || 'Yapay zekâ servisi şu anda meşgul veya geçici olarak yanıt veremiyor (HTTP 502/503).';
@@ -431,6 +610,9 @@ export async function generateMEBIQuestions(
     console.warn('Sunucu proxy çağrısı başarısız, yerel yedek motora geçiliyor:', proxyErr?.message || proxyErr);
     fallbackReason = 'Canlı yapay zekâ servisiyle bağlantı kurulamadı (Ağ/Çevrimdışı); sorular OYSS kural tabanlı standart motoruyla hazırlandı.';
   }
+  } else if (livePrompt && livePrompt.length > HARD_LIMIT) {
+    console.warn(`Prompt boyutu güvenlik sınırını aştı (${livePrompt.length} > ${HARD_LIMIT}); güvenli yerel motora aktarılıyor.`);
+    fallbackReason = `Prompt metni izin verilen karakter sınırını (${HARD_LIMIT}) aştığı için sorular yerel OYSS standart motoruyla güvenle hazırlandı.`;
   }
 
   // 2. TIER 2: Prosedürel OYSS Kural Tabanlı Motor (MEBİ Ölçme Referanslı Yedek)
@@ -444,12 +626,6 @@ export async function generateMEBIQuestions(
   // Her ders ve her senaryo için soru seçimi; soru numarasına veya sıralı döngüye göre DEĞİL,
   // Soru i için belirlenen resmi "d.outcomeCode" kazanımına göre TAM EŞLEŞME ile yapılır.
   const occurrenceCount: Record<string, number> = {};
-
-  const internalAllQuestions: GeneratedQuestionItem[] = getAllFallbackQuestions({
-    name1,
-    name2,
-    pointAllocations
-  });
 
   const isCurrentExam = (e: any) => e.scenarioId === scenario.id || e.id.endsWith(scenario.id) || e.id.includes(scenario.id);
 
@@ -505,7 +681,8 @@ export async function generateMEBIQuestions(
         answer: q.answer,
         alternativeAnswers: q.alternativeAnswers,
         rubric: q.rubric,
-        sourceOrigin: 'oyss_curated' as const
+        sourceOrigin: 'oyss_curated' as const,
+        visual: q.visual
       })),
       ...matchingSampleQuestionsWithExam.map(({ q, parentExam }) => {
         let stim = q.stimulus || '';
@@ -535,7 +712,8 @@ export async function generateMEBIQuestions(
           rubric: (q.rubric || []).map((r: any) => ({ item: r.criterion, pts: r.points })),
           sourceOrigin: 'oyss_curated' as const,
           originExamTitle: parentExam.title || `${parentExam.grade}. Sınıf ${parentExam.scenarioId || 'Örnek Sınav'}`,
-          originQuestionNumber: q.questionNumber
+          originQuestionNumber: q.questionNumber,
+          visual: q.visual
         };
       }),
       ...crossGradeSampleQuestionsWithExam.map(({ q, parentExam }) => {
@@ -565,7 +743,8 @@ export async function generateMEBIQuestions(
           rubric: (q.rubric || []).map((r: any) => ({ item: r.criterion, pts: r.points })),
           sourceOrigin: 'oyss_curated' as const,
           originExamTitle: parentExam.title || `${parentExam.grade}. Sınıf ${parentExam.scenarioId || 'Örnek Sınav'}`,
-          originQuestionNumber: q.questionNumber
+          originQuestionNumber: q.questionNumber,
+          visual: q.visual
         };
       })
     ];
@@ -596,7 +775,8 @@ export async function generateMEBIQuestions(
         ],
         sourceOrigin: (q as any).sourceOrigin || 'oyss_curated',
         originExamTitle: (q as any).originExamTitle,
-        originQuestionNumber: (q as any).originQuestionNumber
+        originQuestionNumber: (q as any).originQuestionNumber,
+        visual: q.visual
       };
     }
 

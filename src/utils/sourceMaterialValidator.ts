@@ -261,6 +261,8 @@ export function validateAndEnrichExamQuestions<T extends ExamQuestion | {
   commonStimulus?: string;
   hasMissingSourceError?: boolean;
   sourceValidationError?: string;
+  hasMissingStemError?: boolean;
+  stemValidationError?: string;
 }>(
   questions: T[],
   sourceKnowledgePool?: Record<string, string> // Bilinen kazanım veya soru metinleri havuzu
@@ -290,10 +292,21 @@ export function validateAndEnrichExamQuestions<T extends ExamQuestion | {
   // 2. ADIM: Her soruyu doğrula ve gerekirse onar / zenginleştir
   const enrichedQuestions = safeList.map((q, idx) => {
     const qNum = (q as any).questionNumber || (q as any).number || (idx + 1);
-    const qText = (q as any).questionText || (q as any).question || '';
+    const rawStem = (q as any).questionText || (q as any).question || '';
+    const stemTrimmed = typeof rawStem === 'string' ? rawStem.trim() : '';
+    const hasMissingStem = stemTrimmed.length === 0;
+    const qText = stemTrimmed;
     const stim = q.stimulus || '';
     const ctx = q.contextText || '';
     const arch = (q as any).archetype || (q as any).templateType || '';
+
+    const stemErrorProps = hasMissingStem ? {
+      hasMissingStemError: true,
+      stemValidationError: 'Bu sorunun öğrenci tarafından cevaplanması gereken soru kökü eksik veya boş.'
+    } : {
+      hasMissingStemError: false,
+      stemValidationError: undefined
+    };
 
     const req = detectSourceRequirement(qText, arch, ctx, stim);
 
@@ -308,6 +321,7 @@ export function validateAndEnrichExamQuestions<T extends ExamQuestion | {
       };
       return {
         ...q,
+        ...stemErrorProps,
         hasMissingSourceError: false,
         sourceValidationError: undefined
       };
@@ -327,6 +341,7 @@ export function validateAndEnrichExamQuestions<T extends ExamQuestion | {
       };
       return {
         ...q,
+        ...stemErrorProps,
         hasMissingSourceError: false,
         sourceValidationError: undefined
       };
@@ -390,6 +405,7 @@ export function validateAndEnrichExamQuestions<T extends ExamQuestion | {
 
       return {
         ...q,
+        ...stemErrorProps,
         stimulus: recoveredText,
         commonStimulus: 'Bu soru ortak kaynak metnine dayanmaktadır.',
         sharedSourceId: groupId,
@@ -416,6 +432,7 @@ export function validateAndEnrichExamQuestions<T extends ExamQuestion | {
 
     return {
       ...q,
+      ...stemErrorProps,
       hasMissingSourceError: true,
       sourceValidationError: errMsg
     };

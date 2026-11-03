@@ -106,39 +106,39 @@ ${baseAvoidStimuli.length > 0 ? `- Mevcut kurgu ve uyarım metinlerini (${baseAv
   }
 
   // Set B / Set C vb. (Set A soruları mevcut): B+ MİMARİSİ
-  // Düzeltme 1: Set A sorularının tamamını dahil et (güvenli tavan: 25 soru)
-  const maxSetAQuestions = 25;
+  // Düzeltme 1: Set A sorularını dahil et (güvenli tavan: 15 soru)
+  const maxSetAQuestions = 15;
   const effectiveSetAQuestions = setAAvoidTexts.slice(0, maxSetAQuestions);
   if (setAAvoidTexts.length > maxSetAQuestions) {
     console.warn(`[AvoidanceB+] Set A soru sayısı bütçe tavanını (${maxSetAQuestions}) aştı. İlk ${maxSetAQuestions} soru dahil edildi.`);
   }
 
-  // Düzeltme 2: Örnek sınav soruları ikincil kota (en fazla 6 soru, Set A'yı asla dışarı itmez)
-  const effectiveBaseQuestions = baseAvoidTexts.slice(0, 6);
+  // Düzeltme 2: Örnek sınav soruları ikincil kota (en fazla 3 soru, Set A'yı asla dışarı itmez)
+  const effectiveBaseQuestions = baseAvoidTexts.slice(0, 3);
 
   // Düzeltme 2: Uyaranları kaynak bazında ayır
-  // Set A uyaranları öncelikli (en fazla 6 uyaran)
-  const effectiveSetAStimuli = setAAvoidStimuli.slice(0, 6);
-  // Örnek sınav uyaranları ikincil (en fazla 3 uyaran)
-  const effectiveBaseStimuli = baseAvoidStimuli.slice(0, 3);
+  // Set A uyaranları öncelikli (en fazla 4 uyaran)
+  const effectiveSetAStimuli = setAAvoidStimuli.slice(0, 4);
+  // Örnek sınav uyaranları ikincil (en fazla 2 uyaran)
+  const effectiveBaseStimuli = baseAvoidStimuli.slice(0, 2);
 
-  // Düzeltme 3: Metin kısaltmalarında ayırt edici içeriği koru (Soru: 180 kr, Uyaran: 120 kr)
+  // Düzeltme 3: Metin kısaltmalarında ayırt edici kurgu imzasını koru (Soru: 85 kr, Uyaran: 70 kr)
   const setAQuestionsBlock = effectiveSetAQuestions.map((t, i) =>
-    `  * Set A Soru ${i + 1}: "${smartTruncate(t, 180)}"`
+    `  * Set A Soru ${i + 1}: "${smartTruncate(t, 85)}"`
   ).join('\n');
 
   const baseQuestionsBlock = effectiveBaseQuestions.length > 0 ? `
 - [KATEGORİ 2 - İKİNCİL YASAK: HAZIR SINAV TASLAK SORULARI]:
   Aşağıdaki hazır sınav taslak sorularını da kurgusal olarak tekrarlama:
-${effectiveBaseQuestions.map((t, i) => `  * Taslak Soru ${i + 1}: "${smartTruncate(t, 180)}"`).join('\n')}` : '';
+${effectiveBaseQuestions.map((t, i) => `  * Taslak Soru ${i + 1}: "${smartTruncate(t, 75)}"`).join('\n')}` : '';
 
   const setAStimuliBlock = effectiveSetAStimuli.length > 0 ? `
 - [UYARAN YASAĞI - SET A KURGU VE METİNLERİ (ÖNCELİKLİ)]:
-  Set A sınavında kullanılan şu kurgu, metin ve uyaranları (${effectiveSetAStimuli.map(s => `"${smartTruncate(s, 120)}"`).join(', ')}) kesinlikle tekrarlama.` : '';
+  Set A sınavında kullanılan şu kurgu, metin ve uyaranları (${effectiveSetAStimuli.map(s => `"${smartTruncate(s, 70)}"`).join(', ')}) kesinlikle tekrarlama.` : '';
 
   const baseStimuliBlock = effectiveBaseStimuli.length > 0 ? `
 - [UYARAN YASAĞI - HAZIR SINAV TASLAK METİNLERİ (İKİNCİL)]:
-  Hazır sınavda yer alan şu taslak bağlam ve metinleri (${effectiveBaseStimuli.map(s => `"${smartTruncate(s, 120)}"`).join(', ')}) tekrarlama.` : '';
+  Hazır sınavda yer alan şu taslak bağlam ve metinleri (${effectiveBaseStimuli.map(s => `"${smartTruncate(s, 60)}"`).join(', ')}) tekrarlama.` : '';
 
   return `
 ÖZGÜNLÜK VE MEVCUT SORULARI TEKRARLAMAMA KURALI (EN KATI VE ZORUNLU KURAL):

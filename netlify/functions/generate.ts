@@ -265,6 +265,34 @@ export default async (req: Request) => {
       );
     }
 
+    // Her sorunun soru kökünün varlığını ve asgari anlamlılığını kontrol et (boş veya whitespace kökleri engelle)
+    const invalidStemIndices: number[] = [];
+    for (let i = 0; i < parsedData.questions.length; i++) {
+      const q = parsedData.questions[i];
+      const stem = typeof q?.question === 'string' ? q.question.trim() : '';
+      // Geçerli kısa soru köklerini ("x kaçtır?", "Ana fikir nedir?") reddetme; boşluk ve anlamsız boşlukları yakala
+      if (!stem || stem.length < 3) {
+        invalidStemIndices.push(q?.number || (i + 1));
+      }
+    }
+
+    if (invalidStemIndices.length > 0) {
+      console.warn('Model output contained questions with missing stems:', invalidStemIndices);
+      return new Response(
+        JSON.stringify({
+          error: `Üretilen sorulardan ${invalidStemIndices.join(', ')}. sorunun kökü eksik veya boş.`,
+          code: 'EMPTY_QUESTION_STEM',
+          invalidQuestions: invalidStemIndices,
+          questions: parsedData.questions,
+          activeModel: usedModel
+        }),
+        {
+          status: 422,
+          headers: corsHeaders
+        }
+      );
+    }
+
     return new Response(
       JSON.stringify({
         ...parsedData,

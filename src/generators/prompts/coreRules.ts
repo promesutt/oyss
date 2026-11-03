@@ -97,15 +97,19 @@ export function getQualityPedagogicalRules(targetCount: number): string {
 }
 
 /**
- * FAZ 3.3.2 - Yönerge Açıklığı ve Görev Bütünlüğü Kuralı
+ * FAZ 3.3.2 - Yönerge Açıklığı, Bilişsel Düzey ve Pedagojik Kalite Kuralı
  */
 export const QUESTION_DIRECTIVE_CLARITY_RULE = `YÖNERGE AÇIKLIĞI VE BİLİŞSEL DÜZEY KORUNUMU KURALI (EN KRİTİK KURAL):
 - Soru kökünde öğrenciden tam olarak ne yapması istendiği açık, net ve şüphesiz ifade edilmelidir.
 - Tekil / Çoğul beklentisi açıkça belirtilmelidir:
-  * Tek bir cevap bekleniyorsa bu durum belirtilmeli ("adını yazınız", "tek bir cümleyle açıklayınız" vb.).
+  * Tek bir cevap bekleniyorsa bu durum belirtilmeli ("tek bir cümleyle açıklayınız", "ana düşünceyi belirleyiniz" vb.).
   * Birden fazla cevap veya örnek isteniyorsa sayı açıkça verilmelidir ("2 farklı örnek veriniz", "3 temel nedenini yazınız" vb.).
 - Karşılaştırma, gerekçelendirme, tahmin veya açıklama işlemlerinin kapsamı net olmalıdır ("...nedenini bilimsel gerekçesiyle açıklayınız", "...farklarını belirterek karşılaştırınız").
 - Görev Bütünlüğü: Birbirinden bağımsız iki farklı görev tek bir soru cümlesinde iç içe geçirilmemeli, alt maddeler (a, b) halinde ayrılmalıdır. Ancak birbiriyle doğrudan ilişkili ve bütünleşik bir beceriyi ölçen aşamalı görevler (örneğin: "hatayı tespit ediniz ve doğrusunu yazınız", "işlemi yapınız ve sonucunu en sade haliyle yazınız") korunabilir; sırf "ve" bağlacı var diye yapay olarak bölünmemelidir.
+- Sınıf Düzeyine Uygunluk ve Pedagojik Derinlik (Yüzeysellik Yasağı):
+  * Uzun bir uyaran/metin verip ardından yalnızca metinde doğrudan yazan tek bir nesne, varlık veya kişi adını buldurmaya dayalı ("Ahmet nereye gitti? -> Okula" gibi) okul öncesi/başlangıç düzeyindeki basit kelime bulma soruları KESİNLİKLE ÜRETİLEMEZ.
+  * Soru; hedef sınıf düzeyindeki (5-8. sınıf) öğrencinin kazanımda hedeflenen bilgi veya beceriyi gerçekten ölçmelidir: Öğrenciden metindeki bir davranışı açıklaması, olaylar arasında neden-sonuç ilişkisi kurması, karakterin tutumunu yorumlaması, işlem basamaklarını yürütmesi veya çıkarım yapması istenmelidir.
+  * Ancak her soruda zorlama üst düzey çıkarım veya felsefi gerekçe aranmaz; kazanım doğrudan bilgi veya anlama ölçüyorsa soru bu sınırda kalmalı, yapay olarak zorlaştırılmamalı veya aşırı basitleştirilmemelidir.
 - Dili sadeleştirirken sorunun kazanımı, bilişsel düzeyi ve düşünme derinliği KESİNLİKLE düşürülmemeli veya yapay olarak kolaylaştırılmamalıdır. Düşünme düzeyi yüksek, dil yükü gereksiz karmaşıklıktan arındırılmış sorular esastır.`;
 
 /**

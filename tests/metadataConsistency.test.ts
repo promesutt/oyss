@@ -151,7 +151,7 @@ async function runTests() {
   // 8. Pilot Görsel Soru: visual.sourceOrigin === 'oyss_svg' Bağımsızlığı
   // ---------------------------------------------------------------------------
   const visualQuestions = allSampleQuestions.filter(q => Boolean(q.visual));
-  const visualPreserved = visualQuestions.length === 2 && visualQuestions.every(q => 
+  const visualPreserved = visualQuestions.length >= 2 && visualQuestions.every(q =>
     q.sourceOrigin === 'oyss_curated' && 
     q.visual?.sourceOrigin === 'oyss_svg'
   );
@@ -160,7 +160,7 @@ async function runTests() {
     '08',
     'Görsel Soru visual.sourceOrigin Bağımsızlık Kontrolü',
     visualPreserved,
-    `2 görsel soru bulundu (${visualQuestions.map(q => q.visual?.type).join(', ')}). Her ikisinde de soru sourceOrigin='oyss_curated' ve visual.sourceOrigin='oyss_svg' olarak korundu.`
+    `${visualQuestions.length} görsel soru bulundu (${visualQuestions.map(q => q.visual?.type).join(', ')}). Tümünde soru sourceOrigin='oyss_curated' ve visual.sourceOrigin='oyss_svg' olarak korundu.`
   );
 
   // ---------------------------------------------------------------------------

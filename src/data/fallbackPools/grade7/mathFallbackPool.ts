@@ -55,7 +55,26 @@ Sıcaklık Farkı = $(+12) - (-9) = (+12) + (+9) = 21\\text{ °C}$'dir.`,
       rubric: [
         { item: 'Doğal sayı olan ve olmayan sıcaklıkların eksiksiz sınıflandırılması', pts: Math.round((pointAllocations[1] || 15) * 0.5) },
         { item: 'Sıcaklık farkının [(+12) - (-9) = 21 °C] hatasız hesaplanması', pts: (pointAllocations[1] || 15) - Math.round((pointAllocations[1] || 15) * 0.5) }
-      ]
+      ],
+      visual: {
+        type: 'number_line',
+        sourceOrigin: 'oyss_svg',
+        caption: 'İllerin hava sıcaklıklarının tam sayı doğrusu üzerindeki konumları',
+        params: {
+          min: -10,
+          max: 15,
+          step: 5,
+          points: [
+            { id: 'hakkari', numerator: -9, denominator: 1, label: 'Hakkâri (-9)', color: 'rose-600' },
+            { id: 'kars', numerator: -4, denominator: 1, label: 'Kars (-4)', color: 'rose-500' },
+            { id: 'ankara', numerator: -1, denominator: 1, label: 'Ankara (-1)', color: 'amber-600' },
+            { id: 'afyon', numerator: 0, denominator: 1, label: 'Afyon (0)', color: 'slate-600' },
+            { id: 'istanbul', numerator: 4, denominator: 1, label: 'İstanbul (+4)', color: 'emerald-600' },
+            { id: 'samsun', numerator: 7, denominator: 1, label: 'Samsun (+7)', color: 'emerald-600' },
+            { id: 'antalya', numerator: 12, denominator: 1, label: 'Antalya (+12)', color: 'blue-600' }
+          ]
+        }
+      }
     },
     {
       number: 3,
@@ -138,7 +157,21 @@ b) Matematiksel Gerekçe: Negatif rasyonel sayılarda sayı doğrusunda sıfıra
       rubric: [
         { item: 'Mars ve Neptün sıcaklıklarının doğru karşılaştırılarak Marsın daha sıcak olduğunun belirlenmesi', pts: Math.round((pointAllocations[4] || 14) * 0.5) },
         { item: 'Negatif rasyonel sayılarda sıfıra yakınlık kuralının sayı doğrusuyla gerekçelendirilmesi', pts: (pointAllocations[4] || 14) - Math.round((pointAllocations[4] || 14) * 0.5) }
-      ]
+      ],
+      visual: {
+        type: 'number_line',
+        sourceOrigin: 'oyss_svg',
+        caption: 'Mars ve Neptün ortalama yüzey sıcaklıklarının sayı doğrusu üzerindeki konumları',
+        params: {
+          min: -220,
+          max: 0,
+          step: 50,
+          points: [
+            { id: 'neptun', numerator: -401, denominator: 2, label: 'Neptün (-200.5 °C)', color: 'indigo-600' },
+            { id: 'mars', numerator: -125, denominator: 2, label: 'Mars (-62.5 °C)', color: 'rose-600' }
+          ]
+        }
+      }
     },
     {
       number: 6,
@@ -302,7 +335,34 @@ Açıklama: Her iki kesrin de en sade hali $\\frac{1}{2}$ ve ondalık değeri $0
       rubric: [
         { item: '3/6 ve 4/8 kesirlerinin sadeleştirilerek 1/2 olarak bulunması', pts: Math.round((pointAllocations[2] || 15) * 0.5) },
         { item: '0,5 ondalık değerinin ve denk kesir olduklarının doğru açıklanması', pts: (pointAllocations[2] || 15) - Math.round((pointAllocations[2] || 15) * 0.5) }
-      ]
+      ],
+      visual: {
+        type: 'fraction_model',
+        sourceOrigin: 'oyss_svg',
+        caption: "Beyza (3/6) ve Yağmur'un (4/8) su sayaçları doluluk oranlarının denk kesir modelleri",
+        params: {
+          modelKind: 'fraction_bar',
+          showEquivalenceGuide: true,
+          bars: [
+            {
+              id: 'bar-beyza',
+              label: 'Beyza (3/6)',
+              fraction: { numerator: 3, denominator: 6 },
+              pattern: 'hatch_diagonal_right',
+              fillColor: '#0284c7',
+              showUnitFractionLabels: true
+            },
+            {
+              id: 'bar-yagmur',
+              label: 'Yağmur (4/8)',
+              fraction: { numerator: 4, denominator: 8 },
+              pattern: 'dots',
+              fillColor: '#06b6d4',
+              showUnitFractionLabels: true
+            }
+          ]
+        }
+      }
     },
     {
       number: 4,
@@ -354,7 +414,23 @@ b) Gerekçe: Sayı doğrusunda sıfırın solunda kalan negatif sayılarda sıf�
       rubric: [
         { item: 'Averaj sıralamasının (-7 < -3 < 0 < +2) doğru yapılması', pts: Math.round((pointAllocations[4] || 14) * 0.5) },
         { item: 'Sayı doğrusunda sola gidildikçe negatif sayıların küçüleceğinin açıklanması', pts: (pointAllocations[4] || 14) - Math.round((pointAllocations[4] || 14) * 0.5) }
-      ]
+      ],
+      visual: {
+        type: 'number_line',
+        sourceOrigin: 'oyss_svg',
+        caption: 'Okul takımlarının averaj değerlerinin sayı doğrusu üzerindeki gösterimi',
+        params: {
+          min: -8,
+          max: 4,
+          step: 2,
+          points: [
+            { id: 'takim_c', numerator: -7, denominator: 1, label: 'C (-7)', color: 'rose-600' },
+            { id: 'takim_a', numerator: -3, denominator: 1, label: 'A (-3)', color: 'amber-600' },
+            { id: 'takim_d', numerator: 0, denominator: 1, label: 'D (0)', color: 'slate-600' },
+            { id: 'takim_b', numerator: 2, denominator: 1, label: 'B (+2)', color: 'emerald-600' }
+          ]
+        }
+      }
     },
     {
       number: 6,
@@ -380,7 +456,23 @@ Orijinal halleriyle: $-\\frac{5}{6} < -\\frac{2}{3} < -\\frac{7}{12}$.`,
       rubric: [
         { item: "Öğrenci 2'nin haklı olduğunun tespiti ve gerekçelendirilmesi", pts: Math.round((pointAllocations[4] || 14) * 0.5) },
         { item: 'Doğru sıralamanın (-5/6 < -2/3 < -7/12) eksiksiz yazılması', pts: (pointAllocations[4] || 14) - Math.round((pointAllocations[4] || 14) * 0.5) }
-      ]
+      ],
+      visual: {
+        type: 'number_line',
+        sourceOrigin: 'oyss_svg',
+        caption: '-5/6, -2/3 ve -7/12 rasyonel sayılarının sayı doğrusu üzerindeki sıralanışı',
+        params: {
+          min: -1,
+          max: 0,
+          step: 1,
+          subdivisions: 12,
+          points: [
+            { id: 'p_5_6', numerator: -5, denominator: 6, label: '-5/6 (-10/12)', color: 'rose-600' },
+            { id: 'p_2_3', numerator: -2, denominator: 3, label: '-2/3 (-8/12)', color: 'amber-600' },
+            { id: 'p_7_12', numerator: -7, denominator: 12, label: '-7/12', color: 'indigo-600' }
+          ]
+        }
+      }
     },
     {
       number: 7,

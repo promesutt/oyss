@@ -1,3 +1,5 @@
+import { QuestionVisual } from '../../types';
+
 export interface GeneratedQuestionItem {
   number: number;
   outcome: string;
@@ -16,9 +18,12 @@ export interface GeneratedQuestionItem {
   commonStimulus?: string;
   hasMissingSourceError?: boolean;
   sourceValidationError?: string;
+  hasMissingStemError?: boolean;
+  stemValidationError?: string;
   sourceOrigin?: 'meb_official' | 'oyss_curated' | 'oyss_synthetic' | 'gemini_ai' | 'unknown';
   originExamTitle?: string;
   originQuestionNumber?: number;
+  visual?: QuestionVisual;
 }
 
 export interface FallbackPoolContext {
