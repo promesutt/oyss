@@ -54,7 +54,7 @@ async function runTests() {
     geminiClass === 'oyss_pure_custom' &&
     geminiDetails.titleSuffix === 'OYSS Özgün Sınavı' &&
     geminiPdf === '5_Sinif_Matematik_1_Donem_1_Yazili_Senaryo_4_OYSS_Ozgun_Sinav.pdf' &&
-    geminiBadge.label === 'OYSS Özgün',
+    geminiBadge.label === 'OYSS Özgün (AI)',
     `Sınıf: ${geminiClass}, Dosya: ${geminiPdf}, Rozet: ${geminiBadge.label}`
   );
 
@@ -83,9 +83,9 @@ async function runTests() {
     '02',
     'Yalnızca fallbackPools sorularından oluşan sınav "oyss_curated_set" olarak sınıflandırılır ve _OYSS_Standart_Soru_Seti.pdf üretir',
     curatedClass === 'oyss_curated_set' &&
-    curatedDetails.titleSuffix === 'OYSS Standart Soru Seti' &&
+    curatedDetails.titleSuffix === 'OYSS Hazırlık Sınavı (MEB Müfredatı Esaslı)' &&
     curatedPdf === '7_Sinif_Turkce_1_Donem_1_Yazili_Senaryo_1_OYSS_Standart_Soru_Seti.pdf' &&
-    curatedBadge.label === 'OYSS Uyarlamalı',
+    curatedBadge.label === 'OYSS Hazırlık Sorusu',
     `Sınıf: ${curatedClass}, Dosya: ${curatedPdf}, Rozet: ${curatedBadge.label}`
   );
 
@@ -116,7 +116,7 @@ async function runTests() {
     syntheticClass === 'oyss_pure_custom' &&
     syntheticDetails.titleSuffix === 'OYSS Özgün Sınavı' &&
     syntheticPdf === '6_Sinif_Fen_Bilimleri_1_Donem_1_Yazili_Senaryo_2_OYSS_Ozgun_Sinav.pdf' &&
-    syntheticBadge.label === 'OYSS Özgün',
+    syntheticBadge.label === 'OYSS Dinamik Sentez',
     `Sınıf: ${syntheticClass}, Dosya: ${syntheticPdf}, Rozet: ${syntheticBadge.label}`
   );
 
@@ -196,7 +196,7 @@ async function runTests() {
     '05',
     'Bakanlık ve OYSS sorularının karışık olduğu sınav "oyss_mixed_meb" olarak sınıflandırılır ve _OYSS_Karma_Sinav_MEB_Kaynakli.pdf üretir',
     mixedClass === 'oyss_mixed_meb' &&
-    mixedDetails.titleSuffix === 'OYSS Karma Sınavı (MEB ÖDSGM Kaynaklı)' &&
+    mixedDetails.titleSuffix === 'OYSS Karma Sınavı (MEB Kaynaklı & OYSS)' &&
     mixedPdf === '6_Sinif_Fen_Bilimleri_1_Donem_1_Yazili_Senaryo_1_OYSS_Karma_Sinav_MEB_Kaynakli.pdf' &&
     mixedAnswerKeyPdf === '6_Sinif_Fen_Bilimleri_1_Donem_1_Yazili_Senaryo_1_OYSS_Karma_Sinav_MEB_Kaynakli_Cevap_Anahtari.pdf',
     `Sınıf: ${mixedClass}, Soru Kağıdı: ${mixedPdf}, Cevap Anahtarı: ${mixedAnswerKeyPdf}`
@@ -223,10 +223,10 @@ async function runTests() {
 
   report(
     '06',
-    'Eski/tanımsız sınav kayıtlarında kaynak alanı olmadığında geriye dönük uyumlu biçimde "oyss_pure_custom" varsayılır',
-    legacyClass === 'oyss_pure_custom' &&
+    'Eski/tanımsız sınav kayıtlarında kaynak alanı olmadığında otomatik OYSS kabul edilmez, "unclassified" sınıflandırılır',
+    legacyClass === 'unclassified' &&
     legacyPdf === '5_Sinif_Turkce_1_Donem_1_Yazili_Senaryo_2_OYSS_Ozgun_Sinav.pdf' &&
-    legacyBadge.label === 'OYSS Özgün',
+    legacyBadge.label === 'Doğrulanmamış Kaynak',
     `Sınıf: ${legacyClass}, Dosya: ${legacyPdf}, Varsayılan Rozet: ${legacyBadge.label}`
   );
 

@@ -533,7 +533,7 @@ export async function generateMEBIQuestions(
           answer: q.modelAnswer,
           alternativeAnswers: q.alternativeAnswers,
           rubric: (q.rubric || []).map((r: any) => ({ item: r.criterion, pts: r.points })),
-          sourceOrigin: 'meb_official' as const,
+          sourceOrigin: 'oyss_curated' as const,
           originExamTitle: parentExam.title || `${parentExam.grade}. Sınıf ${parentExam.scenarioId || 'Örnek Sınav'}`,
           originQuestionNumber: q.questionNumber
         };
@@ -563,7 +563,7 @@ export async function generateMEBIQuestions(
           answer: q.modelAnswer,
           alternativeAnswers: q.alternativeAnswers,
           rubric: (q.rubric || []).map((r: any) => ({ item: r.criterion, pts: r.points })),
-          sourceOrigin: 'meb_official' as const,
+          sourceOrigin: 'oyss_curated' as const,
           originExamTitle: parentExam.title || `${parentExam.grade}. Sınıf ${parentExam.scenarioId || 'Örnek Sınav'}`,
           originQuestionNumber: q.questionNumber
         };

@@ -35,7 +35,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Metnin konusunun eksiksiz ve tek cümleyle yazılması",
             "points": 17
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -55,7 +56,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Emek ve manevi değer ilişkisinin doğru açıklanması",
             "points": 17
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -79,7 +81,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Çevre ve sağlık gerekçesinin doğru açıklanması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -103,7 +106,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Paha biçilemez deyiminin anlamının doğru açıklanması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -127,7 +131,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Cümlelerin anlam bütünlüğü ve akıcılığı",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -147,7 +152,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Ali, Kastamonu ve İnebolu büyük harf hatalarının düzeltilmesi",
             "points": 16
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -189,7 +195,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Yılmamak fiilinin azim/pes etmeme anlamıyla açıklanması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -213,7 +220,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Buğdayın diğer karıncaların yardımıyla yuvaya ulaştırıldığının belirtilmesi",
             "points": 9
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -237,7 +245,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Fedakârlık ve ortak amaç bilincinin açıklanması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -261,7 +270,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Mesajı destekleyen geçerli bir atasözünün yazılması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -281,7 +291,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Metni temsil eden 3 anahtar kelimenin doğru yazılması",
             "points": 16
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -305,7 +316,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "2. cümleye ünlem işaretinin getirilmesi ve gerekçesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -347,7 +359,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Korunaklı kelimesinin doğru açıklanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -367,7 +380,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Metnin konusunun eksiksiz ve tek cümleyle yazılması",
             "points": 15
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -387,7 +401,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Naylon kaplama ve kazak serme amacının mantıksal açıklaması",
             "points": 14
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -407,7 +422,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Emanet bilinci ve vicdani sorumluluk analizinin doğru yapılması",
             "points": 14
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -427,7 +443,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "3 anahtar kelimenin doğru yazılması",
             "points": 14
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -451,7 +468,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Anlatımın duygusal yoğunluğu ve dil kurallarına uygunluğu",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -479,7 +497,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Üleştirme sayısının yazıyla (üçer) yazılması kuralı",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -517,7 +536,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kütüphane kurulumu ve kitap sevgisini kapsayan doğru konu cümlesi yazımı",
             "points": 15
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -541,7 +561,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kitap bağışları desteğinin belirtilmesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -565,7 +586,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Çiçekli vadinin içsel zenginlik ve güzellik anlamının açıklanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -589,7 +611,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Görsel kanıtla tutarlı açıklama yapılması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -613,7 +636,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Aydınlık sözcüğünün mecaz/anlamlı bağlamda doğru kullanımı",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -637,7 +661,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Paragrafın anlam bütünlüğü ve anlatım akıcılığı",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -661,7 +686,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Konuşma çizgisinin kuralının doğru açıklanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -703,7 +729,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Alp sözcüğünün yiğit/kahraman bağlamında doğru tahmini",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -727,7 +754,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Dirse Han'ın oğlunun kaçmayıp boğayı yumruğuyla dize getirdiğinin açıklanması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -747,7 +775,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Boğayı dize getirme/alt etme neden-sonuç bağının doğru yazılması",
             "points": 14
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -771,7 +800,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Aksakallı bilgelik ve akıl hocalığı rolünün belirtilmesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -791,7 +821,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Üç eş anlamlı sözcüğün eksiksiz yazılması (her biri ~4.6 puan)",
             "points": 14
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -815,7 +846,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Mekân ve çözüm bölümünün doğru tespiti",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -839,7 +871,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "'Nam salmak' deyiminin doğru kullanımı",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -881,7 +914,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Ayaz sözcüğünün doğru tahmini",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -901,7 +935,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Zeytin hasadı ve emeği kapsayan doğru konu cümlesi",
             "points": 13
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -921,7 +956,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Üç aşamanın doğru kronolojik sırayla yazılması",
             "points": 13
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -941,7 +977,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Barış ve dostluk kavramının doğru tespiti",
             "points": 13
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -961,7 +998,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Üç isabetli anahtar kelimenin yazılması (her biri 4 puan)",
             "points": 12
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -981,7 +1019,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Üç zıt anlamlı sözcüğün doğru yazılması (her biri 4 puan)",
             "points": 12
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -1001,7 +1040,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İki özgün ve içerikle tam uyumlu başlık önerisi yazılması",
             "points": 12
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 8,
@@ -1025,7 +1065,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kuralın gerekçesiyle birlikte doğru halinin ('bahçelerdeki') yazılması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -1067,7 +1108,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Her kavramın gerekçesinin yazılması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -1091,7 +1133,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "90 derecelik diklik uygulamasının açıklanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -1115,7 +1158,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Açı aralıklarının doğrulanması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -1139,7 +1183,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Dik kesişen doğrular ilişkisinin yazılması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -1163,7 +1208,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kapalı olma ve doğru parçalarından oluşma şartları",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -1187,7 +1233,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b şıkkında komşu olmayan köşe bulunmaması gerekçesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -1211,7 +1258,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Yönlerin (sağ ve yukarı) doğru ifade edilmesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -1253,7 +1301,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b şıkkında [KL] doğru parçası sembolünün doğru yazımı",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -1277,7 +1326,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Eşit uzunluk şartının açıklanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -1301,7 +1351,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "04.00 için 120° ve geniş açı tespiti",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -1325,7 +1376,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kesişen doğrular durumunun yazılması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -1349,7 +1401,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Üçgen ve sekizgen isimlerinin doğru yazılması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -1373,7 +1426,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İşlemle 60° sonucunun bulunması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -1397,7 +1451,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İşlemle 75° sonucunun bulunması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -1439,7 +1494,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Doğrunun sonsuza uzaması sebebiyle boyunun ölçülemeyeceği gerekçesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -1463,7 +1519,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "130° için geniş açı tespiti",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -1487,7 +1544,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Dar açı türünün doğru yazılması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -1507,7 +1565,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Çakışık doğrular kavramının doğru yazılması",
             "points": 14
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -1527,7 +1586,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Üçgen cevabının doğru verilmesi",
             "points": 14
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -1551,7 +1611,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kenar sayısı = köşe sayısı kuralının belirtilmesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -1575,7 +1636,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "58° sonucunun doğru bulunması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -1617,7 +1679,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Lazerin ışın olarak tespiti",
             "points": 9
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -1641,7 +1704,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Pergelin açıklığı koruma işlevinin açıklanması",
             "points": 9
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -1665,7 +1729,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Sıfır çizgisinin açının koluna hizalanması adımı",
             "points": 9
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -1689,7 +1754,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Dar açı sınıflandırması",
             "points": 9
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -1713,7 +1779,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Yataylarla 90 derecelik dik kesişme durumunun yazılması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -1737,7 +1804,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kapalı alan oluşturma gerekçesinin açıklanması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -1779,7 +1847,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Sembolik köşeli parantez gösteriminin yazılması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -1803,7 +1872,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Hiçbir noktada kesişmeme özelliğinin yazılması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -1827,7 +1897,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "180° için doğru açı tespiti",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -1851,7 +1922,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b şıkkında 91° cevabının yazılması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -1871,7 +1943,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Noktadaş doğrular tanımının doğru yazılması",
             "points": 14
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -1895,7 +1968,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Her paralel doğru için birer kesişim gerekçesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -1919,7 +1993,217 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Toplama işlemiyle 11 sonucunun yazılması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
+      }
+    ]
+  },
+  {
+    "id": "exam_5_matematik_1_2_senaryo_1",
+    "grade": 5,
+    "subjectId": "matematik",
+    "examTerm": "1_donem_2_yazili",
+    "scenarioId": "senaryo_1",
+    "title": "5. Sınıf Matematik 1. Dönem 2. Yazılı (Senaryo 1 - Denk Kesirler Pilot Sınavı)",
+    "durationMinutes": 40,
+    "totalPoints": 100,
+    "instructions": [
+      "Bu sınav MEB Temel Eğitim Genel Müdürlüğü 5. Sınıf Matematik öğretim programı 'Kesirler' konusu esas alınarak hazırlanmıştır.",
+      "Sınav süresi 40 dakikadır. Sınav toplam 100 puan üzerinden değerlendirilir.",
+      "Sorularda verilen kesir şeritlerini ve modellerini dikkatlice inceleyerek gerekçeli açık uçlu cevaplarınızı yazınız.",
+      "Puanlamada MEB Analitik Dereceli Puanlama Anahtarı (Rubrik) basamakları esas alınacaktır."
+    ],
+    "questions": [
+      {
+        "questionNumber": 1,
+        "outcomeCode": "M.5.1.3.4",
+        "outcomeTitle": "M.5.1.3.4. Sadeleştirme ve genişletmenin kesrin değerini değiştirmeyeceğini anlar ve bir kesre denk olan kesirler oluşturur.",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Görsel / Deney / Günlük Hayat Durumu",
+        "points": 20,
+        "contextText": "Eşit uzunluktaki şeritlerin farklı parça sayılarına bölünerek aynı büyüklüğün modellenmesi.",
+        "stimulus": "Aşağıdaki modelde eş büyüklükteki üç kesir şeridi verilmiştir. Şeritlerin her biri farklı sayıda eş parçaya bölünmüş ve belirli kısımları taranarak boyanmıştır.",
+        "questionText": "a) Şeritlerde taranarak gösterilen kesirlerin değerlerini (boyalı parça sayısı / toplam parça sayısı) sırasıyla yazınız.\nb) Bu üç kesrin birbirine denk olduğunu, şerit modellerindeki boyalı alanların büyüklüklerini ve kesirlerin genişletme/sadeleştirme ilişkisini kullanarak gerekçeleriyle açıklayınız.",
+        "solutionExplanation": "1. şerit 1/2, 2. şerit 2/4, 3. şerit 4/8'dir. Şeritlerin boyalı kısımlarının uzunlukları birbirine eşittir (bütünün yarısıdır). 1/2 kesrinin pay ve paydası 2 ile genişletilirse 2/4, 4 ile genişletilirse 4/8 elde edilir. Dolayısıyla 1/2 = 2/4 = 4/8 denk kesirlerdir.",
+        "modelAnswer": "a) Şeritlerde modellenen kesirler:\n• 1. Şerit: 1/2\n• 2. Şerit: 2/4\n• 3. Şerit: 4/8\n\nb) Gerekçelendirme:\n1. Model Analizi: Her üç kesir şeridi de aynı uzunluktadır. Taranmış boyalı bölgelerin bittiği düşey çizgi aynı hizadadır ve bütünün tam yarısını temsil eder.\n2. Matematiksel Denk Kesir Kuralı: 1/2 kesri 2 ile genişletilirse (1×2)/(2×2) = 2/4, 4 ile genişletilirse (1×4)/(2×4) = 4/8 kesri elde edilir. Sadeleştirme veya genişletme kesrin değerini değiştirmez.\nSonuç: 1/2 = 2/4 = 4/8 kesirleri birbirine denktir.",
+        "alternativeAnswers": [
+          "a) $\\frac{1}{2}$, $\\frac{2}{4}$, $\\frac{4}{8}$. b) Boyalı bölgeler aynı büyüklüktedir (bütünün yarısıdır). $\\frac{1}{2} = \\frac{1 \\times 2}{2 \\times 2} = \\frac{2}{4} = \\frac{1 \\times 4}{2 \\times 4} = \\frac{4}{8}$ olduğundan denk kesirlerdir.",
+          "a) 1/2, 2/4, 4/8. b) Sadeleştirildiğinde her üçü de 1/2 kesrine eşittir; şeritlerdeki boyalı kısımlar aynı miktarı gösterir."
+        ],
+        "rubric": [
+          {
+            "criterion": "Her üç şeritte modellenen kesir değerlerinin (1/2, 2/4, 4/8) doğru yazılması",
+            "points": 10
+          },
+          {
+            "criterion": "Şerit modellerindeki boyalı alanların eşitliğinin ve kesirlerin genişletme/sadeleştirme kurallarıyla denk olduğunun bilimsel olarak açıklanması",
+            "points": 10
+          }
+        ],
+        "sourceOrigin": "oyss_curated",
+        "originExamTitle": "5. Sınıf Matematik Kesirler Modelleme Çalışması",
+        "originQuestionNumber": 1,
+        "visual": {
+          "type": "fraction_model",
+          "sourceOrigin": "oyss_svg",
+          "caption": "1/2, 2/4 ve 4/8 kesirlerinin şerit modelleri üzerindeki denkliği",
+          "params": {
+            "modelKind": "fraction_bar",
+            "showEquivalenceGuide": true,
+            "bars": [
+              {
+                "id": "bar-1",
+                "label": "1/2",
+                "fraction": {
+                  "numerator": 1,
+                  "denominator": 2
+                },
+                "pattern": "hatch_diagonal_right",
+                "fillColor": "#3b82f6",
+                "showUnitFractionLabels": true
+              },
+              {
+                "id": "bar-2",
+                "label": "2/4",
+                "fraction": {
+                  "numerator": 2,
+                  "denominator": 4
+                },
+                "pattern": "hatch_diagonal_left",
+                "fillColor": "#60a5fa",
+                "showUnitFractionLabels": true
+              },
+              {
+                "id": "bar-3",
+                "label": "4/8",
+                "fraction": {
+                  "numerator": 4,
+                  "denominator": 8
+                },
+                "pattern": "crosshatch",
+                "fillColor": "#93c5fd",
+                "showUnitFractionLabels": true
+              }
+            ]
+          }
+        }
+      },
+      {
+        "questionNumber": 2,
+        "outcomeCode": "M.5.1.3.1",
+        "outcomeTitle": "M.5.1.3.1. Birim kesirleri sıralar.",
+        "difficulty": "Kolay",
+        "cognitiveLevel": "Basit Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 20,
+        "contextText": "Eşit büyüklükteki pastaların farklı sayıda dilimlere ayrılması.",
+        "stimulus": "Ayşe bir pastayı 2 eş dilime, Burak aynı büyüklükteki pastayı 4 eş dilime, Can ise 8 eş dilime ayırmıştır.",
+        "questionText": "Ayşe, Burak ve Can'ın pastalarından birer dilimin büyüklüklerini birim kesir olarak yazınız ve bu birim kesirleri küçükten büyüğe doğru sıralayınız.",
+        "solutionExplanation": "Birim kesirler 1/2, 1/4 ve 1/8'dir. Payları eşit olan birim kesirlerde paydası büyük olan daha küçüktür: 1/8 < 1/4 < 1/2.",
+        "modelAnswer": "Birim Kesirler: Ayşe = 1/2, Burak = 1/4, Can = 1/8.\nSıralama: Bir bütün ne kadar çok parçaya bölünürse her bir parçanın büyüklüğü o kadar küçülür. Bu nedenle 1/8 < 1/4 < 1/2 sıralaması elde edilir.",
+        "alternativeAnswers": [
+          "$\\frac{1}{8} < \\frac{1}{4} < \\frac{1}{2}$",
+          "1/8 < 1/4 < 1/2"
+        ],
+        "rubric": [
+          {
+            "criterion": "Birim kesirlerin (1/2, 1/4, 1/8) doğru yazılması",
+            "points": 10
+          },
+          {
+            "criterion": "Küçükten büyüğe sıralamanın ve payda büyüdükçe parçanın küçüleceği gerekçesinin yazılması",
+            "points": 10
+          }
+        ],
+        "sourceOrigin": "oyss_curated"
+      },
+      {
+        "questionNumber": 3,
+        "outcomeCode": "M.5.1.3.4",
+        "outcomeTitle": "M.5.1.3.4. Sadeleştirme ve genişletmenin kesrin değerini değiştirmeyeceğini anlar ve bir kesre denk olan kesirler oluşturur.",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Hata Tespiti & Adım Analizi",
+        "points": 20,
+        "contextText": "Bir kesri genişleterek ve sadeleştirerek denk kesirler bulma.",
+        "stimulus": "Verilen kesir: 3/5",
+        "questionText": "a) 3/5 kesrini 4 ile genişleterek elde edilen denk kesri yazınız.\nb) 12/20 kesrinin pay ve paydasını 4'e bölerek sadeleştiriniz ve sonucun 3/5'e denk olduğunu gösteriniz.",
+        "solutionExplanation": "(3*4)/(5*4) = 12/20. (12:4)/(20:4) = 3/5. Genişletme ve sadeleştirme kesrin değerini değiştirmez.",
+        "modelAnswer": "a) Genişletme: (3 × 4) / (5 × 4) = 12/20 bulunur.\nb) Sadeleştirme: (12 ÷ 4) / (20 ÷ 4) = 3/5 bulunur.\nSonuç olarak 3/5 ile 12/20 birbirine denk kesirlerdir.",
+        "alternativeAnswers": [
+          "a) $\\frac{12}{20}$ b) $\\frac{12 \\div 4}{20 \\div 4} = \\frac{3}{5}$",
+          "a) 12/20 b) 3/5 (denktir)"
+        ],
+        "rubric": [
+          {
+            "criterion": "Genişletme işleminin ve 12/20 sonucunun doğruluğu",
+            "points": 10
+          },
+          {
+            "criterion": "Sadeleştirme işleminin ve 3/5 sonucunun doğruluğu",
+            "points": 10
+          }
+        ],
+        "sourceOrigin": "oyss_curated"
+      },
+      {
+        "questionNumber": 4,
+        "outcomeCode": "M.5.1.3.2",
+        "outcomeTitle": "M.5.1.3.2. Tam sayılı kesrin, bir doğal sayı ile bir basit kesrin toplamı olduğunu anlar ve tam sayılı kesri bileşik kesre dönüştürür.",
+        "difficulty": "Kolay",
+        "cognitiveLevel": "Basit Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 20,
+        "contextText": "Tam sayılı kesirleri bileşik kesre dönüştürme modeli.",
+        "stimulus": "Zeynep 2 tam ve bir bütünün 1/4'ü kadar elma yemiştir.",
+        "questionText": "Zeynep'in yediği elma miktarını tam sayılı kesir olarak yazınız ve bu kesri işlem basamaklarını göstererek bileşik kesre çeviriniz.",
+        "solutionExplanation": "2 tam 1/4 = (2 * 4 + 1) / 4 = 9/4.",
+        "modelAnswer": "Tam Sayılı Kesir: 2 tam 1/4 (2 1/4)\nBileşik Kesre Çevirme: Tam kısım ile payda çarpılır, pay eklenir: (2 × 4) + 1 = 9.\nBileşik Kesir: 9/4'tür.",
+        "alternativeAnswers": [
+          "$2\\frac{1}{4} = \\frac{(2 \\times 4) + 1}{4} = \\frac{9}{4}$",
+          "2 tam 1/4 = 9/4"
+        ],
+        "rubric": [
+          {
+            "criterion": "2 tam 1/4 tam sayılı kesrinin doğru yazılması",
+            "points": 10
+          },
+          {
+            "criterion": "Dönüşüm basamağının ve 9/4 sonucunun doğru bulunması",
+            "points": 10
+          }
+        ],
+        "sourceOrigin": "oyss_curated"
+      },
+      {
+        "questionNumber": 5,
+        "outcomeCode": "M.5.1.3.5",
+        "outcomeTitle": "M.5.1.3.5. Payları veya paydaları eşit olan kesirleri sıralar.",
+        "difficulty": "Orta",
+        "cognitiveLevel": "Karmaşık Bilişsel Süreçler",
+        "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
+        "points": 20,
+        "contextText": "Aynı boyuttaki bir kitabın farklı bölümlerini okuyan üç arkadaş.",
+        "stimulus": "Kerem bir kitabın 3/10'unu, Derya 7/10'unu, Elif ise 5/10'unu okumuştur.",
+        "questionText": "Üç arkadaşın okudukları kitap miktarlarını büyükten küçüğe doğru sıralayınız ve en fazla okuyan kişinin kim olduğunu belirtiniz.",
+        "solutionExplanation": "Paydaları eşit kesirlerde payı büyük olan daha büyüktür: 7/10 > 5/10 > 3/10. Derya en fazla okumuştur.",
+        "modelAnswer": "Sıralama: Paydalar eşit (10) olduğundan payı büyük olan kesir daha büyüktür.\n7/10 > 5/10 > 3/10 (Derya > Elif > Kerem).\nEn fazla okuyan kişi: Derya'dır.",
+        "alternativeAnswers": [
+          "$\\frac{7}{10} > \\frac{5}{10} > \\frac{3}{10}$, En fazla Derya okumuştur.",
+          "7/10 > 5/10 > 3/10 (Derya en çok)"
+        ],
+        "rubric": [
+          {
+            "criterion": "7/10 > 5/10 > 3/10 sıralamasının doğru yapılması",
+            "points": 10
+          },
+          {
+            "criterion": "En fazla okuyanın Derya olduğunun ve pay kuralının açıklanması",
+            "points": 10
+          }
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -1961,7 +2245,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Eşzamanlılık sebebiyle hep aynı yüzün görüldüğünün gerekçelendirilmesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -1985,7 +2270,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Ay'da ince atmosfer sebebiyle hava olaylarının (rüzgâr, yağış) gerçekleşmediğinin açıklanması",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -2009,7 +2295,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Ana evreler arası sürenin (1 hafta / 7 gün) belirtilmesi",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -2033,7 +2320,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Sağ tarafının aydınlık olduğunun ve düz D şeklinin yazılması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -2057,7 +2345,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Dünya - ceviz ve Ay - karabiber eşleştirmeleri",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -2081,7 +2370,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Batıdan doğuya dönme yönü gerekçesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -2105,7 +2395,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b şıkkında Newton birimi ve 'N' sembolünün yazılması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -2147,7 +2438,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Dünya atmosferinin dengeleyici battaniye rolünün yazılması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -2171,7 +2463,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Rüzgar ve yağış gibi silici hava olaylarının yaşanmaması gerekçesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -2195,7 +2488,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Güneş ile Dünya arasında bulunma konumunun yazılması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -2219,7 +2513,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Dünya'nın Güneş ile Ay arasında bulunma konumunun açıklanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -2243,7 +2538,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Ters D harfi benzerliğinin belirtilmesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -2267,7 +2563,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "1 yıl takvim biriminin belirtilmesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -2291,7 +2588,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Güneş'in Ay'a göre Dünya'ya çok daha uzak olduğunun belirtilmesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -2333,7 +2631,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Işık kaynağı olmadığı ve Güneş ışığını yansıttığı bilgisinin açıklanması",
             "points": 9
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -2357,7 +2656,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Aşırı sıcaklık farkları ve radyasyon tehlikesinin belirtilmesi",
             "points": 9
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -2381,7 +2681,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İnce yay / C harfi şeklindeki görünümün açıklanması",
             "points": 9
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -2405,7 +2706,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "24 saat süresinin ve gece-gündüz sonucunun belirtilmesi",
             "points": 9
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -2429,7 +2731,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "6 cm sonucunun işlem basamaklarıyla bulunması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -2453,7 +2756,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kalıcı deformasyon sebebiyle doğru ölçüm yapamayacağı gerekçesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -2495,7 +2799,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Zıplayarak/hafifleyerek hareket etme sonucunun açıklanması",
             "points": 9
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -2519,7 +2824,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Telsiz / radyo dalgalarıyla iletişim çözümünün belirtilmesi",
             "points": 9
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -2543,7 +2849,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Güneş'in kendi ekseni etrafında döndüğü bilgisinin doğrulanması",
             "points": 9
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -2567,7 +2874,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Lekelerin düzenli kaymasının bu dönüşü gösterdiğinin açıklanması",
             "points": 9
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -2591,7 +2899,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "X dinamometresinin küçük kuvvet hassasiyetinin açıklanması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -2615,7 +2924,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b şıkkında 40 N cisim ağırlığının bulunması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -2657,7 +2967,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Roller değiştikçe sorumlulukların farklılaşmasının açıklanması",
             "points": 9
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -2681,7 +2992,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kaynaşma ve millî birlik katkısının açıklanması",
             "points": 9
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -2705,7 +3017,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kültürel yakınlaşma ve kaynaşma gerekçesi",
             "points": 9
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -2729,7 +3042,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Komşuluk ve birlik bağlarının güçlenmesi faydası",
             "points": 9
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -2753,7 +3067,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İnsan onurunu koruma ve mahcubiyeti önleme gerekçesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -2777,7 +3092,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İki tarihî mekânın doğru tespiti",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -2819,7 +3135,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Çevreyi temiz tutma ve çöp atmama sorumluluğu",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -2843,7 +3160,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Proje kalitesi ve takım ruhu faydası",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -2867,7 +3185,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Büyüklere hürmet ve nesiller arası vefa etkisi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -2891,7 +3210,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Millî kimlik ve kültürel süreklilik koruması gerekçesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -2915,7 +3235,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Tek yürek olma ve kardeşlik dayanışması gerekçesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -2939,7 +3260,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Sorumluluk ve toplumsal fayda özgüveninin açıklanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -2963,7 +3285,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Toplumsal huzur ve şefkat köprüsü kurma gerekçesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -3005,7 +3328,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Eşit eğitim ve sağlıklı gelişim hakkının vurgulanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -3029,7 +3353,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Evde üstlenilebilecek 2 somut sorumluluğun yazılması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -3053,7 +3378,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Hoşgörü ve gönül zenginliği erdeminin açıklanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -3077,7 +3403,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Gönül köprüsü kurarak millî duygudaşlığı artırma gerekçesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -3101,7 +3428,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Toplumsal barış ve kin/kıskançlığı bitirme gerekçesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -3125,7 +3453,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Fiziksel engelleyici duba ve empati çözümlerinin yazılması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -3149,7 +3478,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Tarihî miras bilinci ve vatandaşlık sorumluluğu vurgusu",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -3191,7 +3521,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Gelecekteki mesleki başarıyla bugünkü disiplinin bağının kurulması",
             "points": 9
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -3215,7 +3546,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Karşılıklı saygı ve hoşgörü şartının açıklanması",
             "points": 9
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -3239,7 +3571,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Millî aidiyet ve tek yürek olma katkısı",
             "points": 9
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -3263,7 +3596,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Sağ elin verdiğini sol el görmez inceliğinin vurgulanması",
             "points": 9
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -3287,7 +3621,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Toplumsal şefkat ve vicdani koruma gerekçesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -3311,7 +3646,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Toplumdaki karşılıklı güven duygusunu pekiştirme gerekçesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -3353,7 +3689,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Katılımcı demokrasi ve temsil bilincinin açıklanması",
             "points": 9
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -3377,7 +3714,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Parmak kaldırma kuralının hakka saygı niteliğinin açıklanması",
             "points": 9
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -3401,7 +3739,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Paylaşma, kurallara uyma ve empati üstünlüğü",
             "points": 9
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -3425,7 +3764,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Erozyonla mücadele ve yeşil vatan bilinci gerekçesi",
             "points": 9
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -3449,7 +3789,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kardeşlik ve paylaşma köprüsü kurulması gerekçesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -3473,7 +3814,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Gelecek nesillere bozulmadan aktarma gerekçesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -3515,7 +3857,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İkinci doğru tabiat olayı örneği",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -3539,7 +3882,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Birden fazla ilah olması durumundaki çatışma gerekçesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -3563,7 +3907,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Tesadüfün reddi ve ilahi sanatkâr tespiti",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -3587,7 +3932,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kâinattaki eserlerden hareketle akılla inanma gerekçesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -3611,7 +3957,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Rahim isminin ahiretteki müminlere özel merhamet anlamı",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -3635,7 +3982,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kötülükten sakınma ve dürüst yaşama ahlakının açıklanması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -3659,7 +4007,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kendisinin hiçbir şeye muhtaç olmadığı tanımı",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 8,
@@ -3683,7 +4032,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İçindeki rükünlerden 2 doğru kavram",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -3725,7 +4075,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Yağmurun ölçülü ve hayat verici şekilde inmesi delili",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -3749,7 +4100,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Canlıların rızıklandırılmasındaki ilahi şefkatin açıklanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -3773,7 +4125,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İlahi hikmet ve tasarım kudretinin gerekçelendirilmesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -3797,7 +4150,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Aziz ve Alim sıfatlarıyla bağ kurulması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -3821,7 +4175,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Tasarım (ilim) ve yaratma (kudret) rolünün açıklanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -3845,7 +4200,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Mümit (ölümü yaratan) ve imtihan gerekçesinin açıklanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -3869,7 +4225,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Doğurmamış olmanın eşsizlik ve çocuk isnadını reddetme boyutu",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -3911,7 +4268,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İlahi ilim ve nizamla bağ kurulması",
             "points": 9
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -3935,7 +4293,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İlahi ilham (vahiy) ve yaratıcı kanıtının açıklanması",
             "points": 9
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -3959,7 +4318,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Meteorları yakarak koruyucu tavan olma gerekçesi",
             "points": 9
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -3983,7 +4343,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Şâfi olan Allah'tan şifa dileme ve tevekkül bilinci",
             "points": 9
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -4007,7 +4368,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Eşi, benzeri ve dengi olmama boyutu",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -4031,7 +4393,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Başı meshetme ve ayakları yıkama farzlarının yazılması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -4073,7 +4436,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Hassas yaşam dengesinin ilahi takdir olduğu gerekçesi",
             "points": 9
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -4097,7 +4461,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Musavvir ve Hâlık sıfatlarıyla bağ kurulması",
             "points": 9
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -4121,7 +4486,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Tek bir planlayıcı ve ilahi denge kanıtının yazılması",
             "points": 9
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -4145,7 +4511,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Beden ve çevre temizliği sorumluluğuyla bağ kurulması",
             "points": 9
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -4169,7 +4536,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Arkadaşlıkta adalet ve dürüstlük bilinci gerekçesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -4193,7 +4561,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kur'an'ın inanç ve tevhid mesajının özeti olması boyutu",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -4235,7 +4604,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b şıkkında dillerin doğru yazılması",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -4259,7 +4629,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b şıkkında sevilen ders ve deney gerekçesi",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -4279,7 +4650,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Üç yer adının doğru yazılması",
             "points": 20
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -4303,7 +4675,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b şıkkında 'opposite' edatının doğru yazımı",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -4327,7 +4700,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "2. cümlenin olumsuz tercihle doğru yazımı",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -4369,7 +4743,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Şehir adının doğru yazımı",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -4393,7 +4768,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "2 için Music yazımı",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -4417,7 +4793,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b için Post office yazımı",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -4441,7 +4818,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "2 için doğru Türkçe çeviri",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -4469,7 +4847,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Favori ders cümlesi",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -4511,7 +4890,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b şıkkında German and English yazımı",
             "points": 9
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -4535,7 +4915,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Italian yazımı",
             "points": 9
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -4559,7 +4940,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b için Science and P.E. tespiti",
             "points": 9
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -4583,7 +4965,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Stationery yazımı",
             "points": 9
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -4607,7 +4990,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b için 'behind' yazımı",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -4631,7 +5015,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Beğeni/like cümlesinin doğru yazımı",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -4673,7 +5058,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b şıkkında Drama yazımı",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -4697,7 +5083,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Matematik malzemelerinin yazımı",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -4721,7 +5108,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b için Art tespiti",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -4745,7 +5133,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Pharmacy yazımı",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -4769,7 +5158,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Cafe yazımı",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -4793,7 +5183,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Karşıya geç çevirisi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -4821,7 +5212,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Diller cümlesi",
             "points": 4
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -4863,7 +5255,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "5. sınıf ifadesinin yazımı",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -4887,7 +5280,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "American yazımı",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -4911,7 +5305,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İkinci gerekçenin yazımı",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -4935,7 +5330,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Museum yazımı",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -4959,7 +5355,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Mosque yazımı",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -4979,7 +5376,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "'next to' edatının doğru kullanımı",
             "points": 12
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -4999,7 +5397,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "'between' edatının doğru kullanımı",
             "points": 12
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 8,
@@ -5023,7 +5422,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "2. cümlenin doğru kurulması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -5065,7 +5465,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Nakşetmek sözcüğünün doğru tahmini",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -5085,7 +5486,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Göbeklitepe ve tarihî önemini kapsayan konu cümlesi",
             "points": 17
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -5109,7 +5511,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Tarih tezlerini kökünden değiştirme gerekçesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -5133,7 +5536,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b şıkkında çağdaş/modern yazımı",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -5157,7 +5561,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Cümlenin dil bilgisi ve bağlam uyumu",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -5181,7 +5586,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Göbeklitepe Ören Yeri büyük harf ve kesme işareti düzeltmesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -5219,7 +5625,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Fıkranın konusunun eksiksiz ve tek cümleyle ifade edilmesi",
             "points": 17
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -5243,7 +5650,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Komşunun kazanın ölümüne öfkeyle itiraz ettiğinin metinden hareketle yazılması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -5263,7 +5671,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Üç anahtar kelimenin doğru yazılması",
             "points": 17
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -5287,7 +5696,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Hoca'nın komşuyu susturmasıyla bağ kurulması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -5307,7 +5717,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İki özgün ve içerikle tam uyumlu başlık önerisi",
             "points": 16
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -5331,7 +5742,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İkinci paranteze soru işareti konulması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -5373,7 +5785,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Frekans sözcüğünün doğru tahmini",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -5393,7 +5806,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Mavi balinaların sesleri ve iletişimini kapsayan konu cümlesi",
             "points": 17
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -5413,7 +5827,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Üç anahtar kelimenin doğru yazılması",
             "points": 17
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -5437,7 +5852,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Cümle içinde kurallı ve anlamına uygun kullanımı",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -5457,7 +5873,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Çaresizlik ve tehlikeli çareye başvurma anlamının açıklanması",
             "points": 16
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -5481,7 +5898,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Doğru yazımın ('180 kg'a') kuralıyla gösterilmesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -5519,7 +5937,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Metnin konusunun eksiksiz ve tek cümleyle yazılması",
             "points": 17
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -5543,7 +5962,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Yırtıcı hayvanlardan koruma yüksekliği gerekçesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -5567,7 +5987,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Zarif eş anlamlısı",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -5591,7 +6012,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Yüksek zıt anlamlısı",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -5615,7 +6037,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Metinden somut örneklerle desteklenmesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -5635,7 +6058,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Ögeleri arasında virgül bulunan sıralı cümleleri ayırma kuralının yazılması",
             "points": 16
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -5673,7 +6097,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kaşgarlı Mahmud ve Divânu Lugâti't-Türk'ü kapsayan doğru konu cümlesi",
             "points": 15
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -5697,7 +6122,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Türkçeyi öğretme ve kültürü tanıtma hedefi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -5717,7 +6143,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Üç anahtar kelimenin doğru yazılması",
             "points": 14
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -5741,7 +6168,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kaşgarlı Mahmud'un dil sevgisiyle örtüşmesinin açıklanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -5765,7 +6193,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Amaç eş anlamlısı",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -5785,7 +6214,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İki özgün ve içerikle uyumlu başlık önerisi",
             "points": 14
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -5809,7 +6239,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Eser adının büyük harf ve tırnak içinde yazımı",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -5851,7 +6282,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Etkileşim sözcüğünün doğru tahmini",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -5871,7 +6303,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kutup Işıkları oluşumu ve görsel özelliklerini kapsayan konu cümlesi",
             "points": 15
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -5895,7 +6328,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Sonuç unsurunun (gökyüzünde renkli ışık oluşumu) açıklanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -5915,7 +6349,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Üç anahtar kelimenin doğru yazılması",
             "points": 14
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -5939,7 +6374,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Benzetilenin doğru tespiti",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -5963,7 +6399,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Cümlenin akıcılığı ve dil bilgisi uyumu",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -5987,7 +6424,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Tromso şehir adının büyük harfle düzeltilmesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -6029,7 +6467,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Oda kontenjan seçeneklerinin belirtilmesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -6053,7 +6492,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "3'e bölünebilme kuralı ve rakam toplamı kontrolü",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -6077,7 +6517,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "A = 5 sonucunun işlemle bulunması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -6101,7 +6542,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "2³ · 3² üslü ifadesinin ve asal çarpanların yazılması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -6125,7 +6567,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Toplam kasa sayısının (7 kasa) bulunması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -6149,7 +6592,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Saat 08.36 sonucunun doğru yazılması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -6191,7 +6635,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Çarpan çifti mantığının açıklanması",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -6215,7 +6660,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "A = 0, 3, 6, 9 rakamlarının eksiksiz bulunması",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -6239,7 +6685,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b şıkkında 10 asal sayının eksiksiz yazılması",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -6263,7 +6710,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Toplam 7 parça sonucunun bulunması",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -6287,7 +6735,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Saat 11.00 sonucunun doğru yazılması",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -6325,7 +6774,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "12 çarpanın eksiksiz ve sıralı yazılması",
             "points": 15
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -6345,7 +6795,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "6 katın eksiksiz yazılması",
             "points": 15
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -6369,7 +6820,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b şıkkında 15 toplamı ve 3'e bölünebilme kanıtı",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -6393,7 +6845,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kalanın 1 olarak doğru bulunması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -6417,7 +6870,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "2³ · 3 · 5 gösterimi ve asal çarpanların (2, 3, 5) yazımı",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -6441,7 +6895,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Çevre hesabı ve 24 fidan sonucunun bulunması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -6465,7 +6920,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kalan 3 eklenerek 63 bilye sonucunun bulunması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -6507,7 +6963,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Dış gezegenlerin 4'ünün doğru yazılması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -6531,7 +6988,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b şıkkında Merkür ve Venüs tespiti",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -6555,7 +7013,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Yeni Ay evresinin belirtilmesi",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -6579,7 +7038,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Doğu yönünün doğru belirlenmesi",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -6603,7 +7063,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kuzey yönünün doğru tespiti",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -6627,7 +7088,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Sabit süratle hareket durumunun yazılması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -6651,7 +7113,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b şıkkında m/s ve km/h birimlerinin yazılması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 8,
@@ -6675,7 +7138,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Genetik çeşitlilik (varyasyon) farkının açıklanması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -6717,7 +7181,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "En küçük gezegen Merkür tespiti",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -6741,7 +7206,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Sera etkisiyle ısının hapsedilmesi gerekçesi",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -6765,7 +7231,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Dolunay evresinin doğru belirtilmesi",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -6789,7 +7256,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Her ay tam aynı doğrultuya gelememe gerekçesi",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -6813,7 +7281,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Doğu yönü ve B takımı hareketinin tespiti",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -6837,7 +7306,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "8 m/s sonucunun birimiyle bulunması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -6861,7 +7331,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "90 km/h sonucunun doğru yazılması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 8,
@@ -6889,7 +7360,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Rejenerasyonla üreme tespiti",
             "points": 4
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -6931,7 +7403,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b şıkkında iç gezegen tespiti",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -6951,7 +7424,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Mars ve Jüpiter gezegenlerinin doğru yazılması",
             "points": 15
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -6975,7 +7449,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Ay tutulmasının gece olan tüm yarım kürede izlenmesi tespiti",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -6999,7 +7474,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Çıkarma ile 5 N Doğu bileşkesinin bulunması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -7023,7 +7499,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Yön ve büyüklük özelliklerinin yazılması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -7047,7 +7524,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "6 m/s sürat değerinin hesaplanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -7071,7 +7549,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Ali'nin daha süratli olduğunun belirlenmesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -7113,7 +7592,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Aşırı uzun kutup geceleri ve gündüzleri etkisi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -7137,7 +7617,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Ay'ın zayıf yansıtıcı olması ve çıplak gözle izlenebilme sebebi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -7161,7 +7642,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Yön tanımı ve tek taraflı ok işareti farkı",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -7185,7 +7667,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Sürat değişimi (hızlanma) gerekçesinin açıklanması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -7209,7 +7692,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "160 metre sonucunun bulunması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -7233,7 +7717,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "150 metre yol hesabının gösterilmesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -7275,7 +7760,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Yoğunluk karşılaştırmasının doğruluğu",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -7299,7 +7785,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Parçalı tutulma tespiti",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -7323,7 +7810,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Opak cismin gölge oluşturması gerekçesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -7347,7 +7835,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Doğu/sağ yönünün tespiti",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -7371,7 +7860,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "30 N eşit büyüklük tespiti",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -7395,7 +7885,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Durum 2'nin dengelenmemiş olarak seçilmesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -7419,7 +7910,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Aşağı yönlü net kuvvet sebebiyle hızlanma gerekçesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -7461,7 +7953,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b şıkkında metan gazı tespiti",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -7485,7 +7978,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Meteorit kavramının doğru yazılması",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -7509,7 +8003,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kırmızı dalga boyunun Ay yüzeyine yansıması gerekçesi",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -7533,7 +8028,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Dünya'nın gölgesinin çok geniş olması sebebiyle uzun sürmesi gerekçesi",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -7557,7 +8053,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Sürtünmenin zıt yönde olduğunun belirtilmesi",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -7581,7 +8078,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "En küçük 2 N hesabı",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -7605,7 +8103,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Durmaya devam edeceği sonucunun yazılması",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 8,
@@ -7629,7 +8128,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Yönün değişmesi sebebiyle net kuvvet oluştuğu gerekçesi",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 9,
@@ -7653,7 +8153,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Selim'in başladığı noktaya döndüğü için yer değiştirmesinin 0 olması ve hızın 0 çıkması gerekçesi",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -7695,7 +8196,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Eğitim ve sosyal çevrenin genişlemesi sebebi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -7719,7 +8221,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Zaman yönetimi ve planlama çözümünün yazılması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -7743,7 +8246,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Millî vefa ve ortak varlık gerekçesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -7767,7 +8271,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Matara/bez çanta teşvik kampanyası projesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -7791,7 +8296,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kaçak tamiri ve gri suyun çiçeklerde kullanımı tedbiri",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -7815,7 +8321,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Büyük Okyanus (Pasifik) tespiti",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -7857,7 +8364,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Sonradan kazanılan iki rolün doğru tespiti",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -7881,7 +8389,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kütüphane düzenini sağlama sorumluluğu gerekçesi",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -7905,7 +8414,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Özgüven kazanma ve geleceği inşa etme gerekçesi",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -7929,7 +8439,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Biz bilinci ve tek millet aidiyeti maddesi",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -7953,7 +8464,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Empati ve içselleşmiş trafik kültürünün kalıcılığı gerekçesi",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -7977,7 +8489,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Mağdura destek olma ve rehberliğe bildirme davranışı",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -8001,7 +8514,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Bayat ekmekleri değerlendirme ve barınaklara ulaştırma yöntemi",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 8,
@@ -8025,7 +8539,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kubbe şeklinin fırtına rüzgârlarını kaydırma gerekçesi",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -8067,7 +8582,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kişilik yapısı ve çalışma şartları uyumu kriteri",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -8091,7 +8607,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Toplumsal güven ve düzenin sağlanması gerekçesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -8115,7 +8632,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Cesaret ve disiplin ahlakının belirtilmesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -8139,7 +8657,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kul hakkı ve medeni birlikte yaşam saygısı gerekçesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -8163,7 +8682,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kazıklar üzerinde ve dik çatı mimarisinin sel/yağış gerekçesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -8187,7 +8707,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Uzun kirpiklerin kum fırtınasından koruma fonksiyonu",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -8229,7 +8750,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Adalet ve haklara saygı erdeminin yazılması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -8253,7 +8775,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Ana dili korumanın vatanı korumakla eşdeğer olduğu gerekçesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -8277,7 +8800,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Ailelerine sahip çıkma ve vefa borcu gerekçesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -8301,7 +8825,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kışlık korunaklı barınak hazırlama çözümü",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -8325,7 +8850,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "LED ampul ve fişten çekme tedbiri",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -8349,7 +8875,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Mumsu/tüylü yaprağın su kaybını önleme adaptasyonu gerekçesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -8391,7 +8918,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Geleneklerin ve terbiyenin aktarılması gerekçesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -8415,7 +8943,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Yurttaşlık sorumluluğu ve ortak karara saygı gerekçesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -8439,7 +8968,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Ortak ahlak pusulası rolünün açıklanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -8463,7 +8993,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Millî kimlik ve vatana sahip çıkma gerekçesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -8487,7 +9018,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Asil empati ve toplumsal saygı kuralı gerekçesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -8511,7 +9043,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Spor ve sanat faaliyetleriyle sosyalleşme önerisi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -8535,7 +9068,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Tüketici Hakem Heyetine başvuru yolunun belirtilmesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -8577,7 +9111,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Anlaşmazlıkları adaletle giderme amacının açıklanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -8601,7 +9136,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Aydınlık ifadesinin Tevhid/adalet anlamıyla açıklanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -8625,7 +9161,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Ahiret gibi gayb alanlarının yalnızca vahiyle bilinebileceğinin açıklanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -8645,7 +9182,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Dört ilahi kitabın ve peygamberlerinin hatasız eşleştirilmesi",
             "points": 14
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -8669,7 +9207,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Yazı ve hafızlık geleneğiyle korunma boyutunun açıklanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -8693,7 +9232,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Korku ve kötülükler karşısında tevekkül bilincinin açıklanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -8717,7 +9257,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Mukabele geleneğinin tanımı ve anlamı",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -8759,7 +9300,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Ölüm ve ahiret inancıyla hayata katılan anlamın açıklanması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -8783,7 +9325,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Dini hükümleri açıklama ve ortak anlayış sağlama gerekçesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -8807,7 +9350,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İkinci ahlaki ilke ve toplumsal boyutunun açıklanması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -8831,7 +9375,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Ahiret veya adalet ortak paydasının açıklanması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -8855,7 +9400,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Sayfa sayılarının doğru belirtilmesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -8879,7 +9425,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İnsan ilişkilerini bozan fitne ve hilelerden Allah'a sığınma vurgusu",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -8921,7 +9468,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Rahmet kavramının ilahi lütuf ve esirgeme boyutuyla açıklanması",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -8945,7 +9493,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kabilecilik yerine eşitlik ve takva ilkesi",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -8969,7 +9518,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Aşama aşama uygulama ve hayata geçirme faydası",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -8993,7 +9543,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Hz. Osman döneminin doğru yazılması",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -9017,7 +9568,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Bireysel ve toplumsal zararlarının açıklanması",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -9059,7 +9611,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İbadetlerin ahlaki ve manevi olgunlaşma fonksiyonunun açıklanması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -9083,7 +9636,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Ekonomik/ticari hayata yönelik dürüstlük ilkesinin çıkarılması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -9107,7 +9661,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Körü körüne taklidin reddedilip bilinçli imanın vurgulanması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -9131,7 +9686,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kur'an'ın tüm insanlığı kapsayan evrensel niteliğinin açıklanması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -9155,7 +9711,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Yazılanların kontrol edilerek güvenliğin sağlanması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -9179,7 +9736,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Empati ve toplumsal dayanışma boyutunun açıklanması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -9221,7 +9779,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Ahlaki arınmanın dünya ve ahiret kurtuluşuna etkisi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -9245,7 +9804,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Hz. Peygamber'in hayatından somut bir model davranış örneği",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -9269,7 +9829,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Toplumsal barış ve adalet katkısı",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -9293,7 +9854,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Tebliğin ilk aşamasında dil birliğinin önemi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -9317,7 +9879,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Sayısal verilerin (6236 ayet, 114 sure, 30 cüz) doğru belirtilmesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -9341,7 +9904,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Geçmiş kitapların ve peygamberlerin bütününe inanma ilkesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -9383,7 +9947,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "15:30 time identified correctly",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -9407,7 +9972,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Two actions in the library described correctly",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -9427,7 +9993,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Three vocabulary blanks filled accurately",
             "points": 20
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -9451,7 +10018,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Negative form (does not take) correct",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -9475,7 +10043,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Relevance to morning school routine",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -9517,7 +10086,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Defne identified accurately",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -9541,7 +10111,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Parents attending identified correctly",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -9561,7 +10132,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "All three words correctly completed",
             "points": 20
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -9585,7 +10157,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Adverb placed after the verb 'to be' in (b)",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -9609,7 +10182,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Accurate national celebration context",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -9651,7 +10225,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Seda identified correctly",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -9675,7 +10250,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Corridors location identified correctly",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -9699,7 +10275,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Buying seedlings for school garden explained",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -9719,7 +10296,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "All four collocations correctly matched",
             "points": 17
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -9743,7 +10321,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Question (b) with does and base verb",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -9767,7 +10346,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Grammar and vocabulary accuracy",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -9809,7 +10389,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Tuesday and Thursday identified accurately",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -9833,7 +10414,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Homework activity stated correctly",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -9857,7 +10439,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Swimming club activity mentioned",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -9877,7 +10460,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Three daily activity phrases matched correctly",
             "points": 14
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -9897,7 +10481,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Three school subjects named correctly",
             "points": 14
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -9921,7 +10506,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Short negative answer correct",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -9945,7 +10531,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Accurate use of time and routine vocabulary",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -9987,7 +10574,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "History identified as favourite subject",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -10011,7 +10599,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Daily lunch break timing noted",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -10035,7 +10624,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Two forbidden actions identified",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -10055,7 +10645,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "All school words identified accurately",
             "points": 13
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -10075,7 +10666,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Two time expressions filled appropriately",
             "points": 12
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -10099,7 +10691,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Plural verb and adverb position correct in (b)",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -10119,7 +10712,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Three question words chosen correctly",
             "points": 12
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 8,
@@ -10143,7 +10737,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Grammatical accuracy and friendly tone",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -10198,7 +10793,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "'Vatan yetim kalamaz' çıkarımının metindeki eylemlerle (çocuğunun örtüsünü vermesi) delillendirilmesi",
             "points": 3
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -10223,7 +10819,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Metnin konusunu eksiksiz, tek bir yargı bildiren cümleyle ifade etme",
             "points": 15
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -10252,7 +10849,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Metindeki 'Benim çocuğum yetim kalabilir ama vatan yetim kalamaz' sözü veya mermileri koruma eylemiyle delillendirilmesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -10281,7 +10879,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "'Yankılanmak' kelimesinin açık ve doğru bir mecaz anlamda cümlede kullanılması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -10313,7 +10912,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Sonuç bölümünün toparlayıcı ve mesaj verici kurgulanması",
             "points": 4
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -10341,7 +10941,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Cümlelerin akıcı, duygusal yoğunluğu yüksek ve kurallı olması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -10369,7 +10970,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "-ki ekinin ve bağlacının kurallarına uygun doğru yazımı",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -10412,7 +11014,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Metnin konusunu eksiksiz ve net biçimde tek cümleyle özetleme",
             "points": 17
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -10441,7 +11044,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Ürün kalitesine olan doğrudan yansımanın belirtilmesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -10469,7 +11073,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Sonuç bölümündeki ana mesajın doğru çözümlenmesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -10497,7 +11102,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Seçim gerekçelerinin metin içeriğiyle tutarlı açıklanması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -10525,7 +11131,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Gelişme bölümü için iki ikna edici argümanın oluşturulması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -10553,7 +11160,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Açıklama/alıntı öncesi iki nokta (:) kuralının doğru uygulanması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -10599,7 +11207,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "'Nüfuz etmek' sözcüğünün doğru tahmin edilmesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -10623,7 +11232,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Metnin konusunu eksiksiz biçimde tek bir cümleyle yazma",
             "points": 15
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -10647,7 +11257,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Candan dostlarını zamanla uzaklaştırdıklarının metne uygun yazılması",
             "points": 14
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -10675,7 +11286,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Metindeki düşüncelerle tutarlı gerekçelendirme",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -10703,7 +11315,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Atasözü ve deyimlerin anlamlarının doğru açıklanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -10731,7 +11344,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Bu hatalara yönelik gerçekçi çözümlerin sunulması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -10759,7 +11373,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Alıntı cümlesi ve soru işaretinin eksiksiz yerleştirilmesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -10805,7 +11420,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Söz öbeğindeki mecaz ve derin anlamın çözümlenmesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -10829,7 +11445,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Metnin konusunun eksiksiz ve tek cümleyle yazılması",
             "points": 15
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -10857,7 +11474,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Geçmişin hatıralarını yâd etme durumunun doğru yazılması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -10881,7 +11499,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Tarihî süreklilik ve tanıklık gerekçesinin açıklanması",
             "points": 14
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -10909,7 +11528,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Eş anlamın/açıklamanın doğruluğu",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -10937,7 +11557,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kişileştirme ve edebi dilin akıcı uygulanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -10965,7 +11586,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Bağlaç olan 'de'nin ayrı yazılması ve noktalama düzeltmesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -11011,7 +11633,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "'Bilgi birikimi' kavramının bağlama uygun tanımlanması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -11035,7 +11658,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Metnin konusunu net ve eksiksiz bir cümleyle özetleme",
             "points": 17
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -11063,7 +11687,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Gutenberg'in matbaa ve basılı kitap aşamasının doğru yazılması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -11091,7 +11716,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İlgili alanların doğru ilişkilendirilmesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -11119,7 +11745,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İki tutarlı ve ikna edici kanıtın sunulması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -11147,7 +11774,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Üleştirme sayısının yazıyla yazılması kuralının uygulanması (üçer üçer)",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -11193,7 +11821,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "'Veciz' kelimesinin sözlük ve bağlam anlamının yazılması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -11217,7 +11846,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Metnin konusunun eksiksiz tek cümleyle sunulması",
             "points": 17
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -11245,7 +11875,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Tavsiyenin gerekçesinin metinden hareketle doğru açıklanması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -11273,7 +11904,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Deyimlerin anlamlarının doğru açıklanması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -11301,7 +11933,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Düşüncelerin akıcı ve edebi bir dille ifade edilmesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -11329,7 +11962,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Cümle içi virgül ve bitiş noktasının kurallara uygun kullanılması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -11374,7 +12008,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b şıkkında tam sayılarda çıkarma işleminin ve farkın (15 °C) doğru bulunması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -11402,7 +12037,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "9 ile sadeleştirilerek 26 / 11 en sade kesrinin elde edilmesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -11430,7 +12066,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "0,875 sonucunun ve sonlu olduğunun doğru yazılması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -11458,7 +12095,53 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Sayı doğrusundaki sol-sağ kuralı ve payda eşitleme ile bilimsel gerekçelendirme",
             "points": 9
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated",
+        "originExamTitle": "7. Sınıf Matematik 1. Dönem 1. Ortak Yazılı Sınavı (Senaryo 1)",
+        "originQuestionNumber": 4,
+        "visual": {
+          "type": "number_line",
+          "sourceOrigin": "oyss_svg",
+          "caption": "Mert ve Ece'nin seçtiği sayıların sayı doğrusu üzerindeki konumları",
+          "anchor": {
+            "expectedPoints": [
+              {
+                "id": "ece_val",
+                "numerator": -5,
+                "denominator": 6
+              },
+              {
+                "id": "mert_val",
+                "numerator": -3,
+                "denominator": 4
+              }
+            ],
+            "allowExtraPoints": false
+          },
+          "params": {
+            "min": -1,
+            "max": 0,
+            "step": 1,
+            "subdivisions": 12,
+            "showArrows": true,
+            "points": [
+              {
+                "id": "ece_val",
+                "numerator": -5,
+                "denominator": 6,
+                "label": "Ece (-5/6)",
+                "color": "rose-600"
+              },
+              {
+                "id": "mert_val",
+                "numerator": -3,
+                "denominator": 4,
+                "label": "Mert (-3/4)",
+                "color": "indigo-600"
+              }
+            ]
+          }
+        }
       },
       {
         "questionNumber": 5,
@@ -11486,7 +12169,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "A < C < B sıralamasının hatasız yapılması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -11514,7 +12198,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b şıkkında kesim sayısının 23 olarak alınıp 345 saniyenin hesaplanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -11542,7 +12227,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Toplam maaşın (40.000 TL) doğru bulunması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -11583,7 +12269,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b şıkkında orta noktanın (-82,5 m) doğru hesaplanması",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -11607,7 +12294,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "16 / 11 en sade kesrinin ve 27 toplamının bulunması",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -11631,7 +12319,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "En az sürenin birinci olacağı mantığıyla Kerem'in kazandığının açıklanması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -11655,7 +12344,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Toplam gelirin (720 TL) doğru hesaplanması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -11679,7 +12369,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Eklenmesi gereken suyun (330 L) doğru hesaplanması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -11719,7 +12410,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b şıkkında tam sayılarda çıkarma ile 70.000 TL farkın bulunması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -11743,7 +12435,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "L noktasının (1 tam 2/3 veya 5/3) doğru bulunması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -11767,7 +12460,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "8 / 11 en sade kesrinin bulunması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -11791,7 +12485,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Payda kuralının (bir 9, bir 0) doğru açıklanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -11815,7 +12510,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "y < x < z negatif sıralamasının doğru yapılması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -11839,7 +12535,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Parantez içi toplama ve bölme işlemleriyle +1/5 sonucunun bulunması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -11863,7 +12560,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b şıkkında 540 adım sayısının bulunması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -11903,7 +12601,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b şıkkında 4.800 metre yükseklik farkının hesaplanması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -11927,7 +12626,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "+3. kat sonucunun doğru bulunması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -11951,7 +12651,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "15 ile sadeleştirilerek 5 / 6 kesrinin elde edilmesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -11975,7 +12676,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "35/8 en sade bileşik kesrinin yazılması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -11999,7 +12701,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "M > K > L sıralamasının doğru yapılması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -12023,7 +12726,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b şıkkında rasyonel bölme ile 4/9 sonucunun bulunması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -12068,7 +12772,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         ],
         "questionNumber": 1,
         "points": 12,
-        "difficulty": "Kolay"
+        "difficulty": "Kolay",
+        "sourceOrigin": "oyss_curated"
       },
       {
         "outcomeCode": "FB.7.1.1",
@@ -12096,7 +12801,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         ],
         "questionNumber": 2,
         "points": 11,
-        "difficulty": "Orta"
+        "difficulty": "Orta",
+        "sourceOrigin": "oyss_curated"
       },
       {
         "outcomeCode": "FB.7.1.4",
@@ -12124,7 +12830,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         ],
         "questionNumber": 3,
         "points": 11,
-        "difficulty": "Kolay"
+        "difficulty": "Kolay",
+        "sourceOrigin": "oyss_curated"
       },
       {
         "outcomeCode": "FB.7.1.5",
@@ -12152,7 +12859,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         ],
         "questionNumber": 4,
         "points": 11,
-        "difficulty": "Orta"
+        "difficulty": "Orta",
+        "sourceOrigin": "oyss_curated"
       },
       {
         "outcomeCode": "FB.7.2.1",
@@ -12180,7 +12888,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         ],
         "questionNumber": 5,
         "points": 11,
-        "difficulty": "Orta"
+        "difficulty": "Orta",
+        "sourceOrigin": "oyss_curated"
       },
       {
         "outcomeCode": "FB.7.2.1",
@@ -12208,7 +12917,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         ],
         "questionNumber": 6,
         "points": 11,
-        "difficulty": "Orta"
+        "difficulty": "Orta",
+        "sourceOrigin": "oyss_curated"
       },
       {
         "outcomeCode": "FB.7.2.1",
@@ -12236,7 +12946,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         ],
         "questionNumber": 7,
         "points": 11,
-        "difficulty": "Orta"
+        "difficulty": "Orta",
+        "sourceOrigin": "oyss_curated"
       },
       {
         "outcomeCode": "FB.7.2.2",
@@ -12264,7 +12975,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         ],
         "questionNumber": 8,
         "points": 11,
-        "difficulty": "Zor"
+        "difficulty": "Zor",
+        "sourceOrigin": "oyss_curated"
       },
       {
         "outcomeCode": "FB.7.2.2",
@@ -12292,7 +13004,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         ],
         "questionNumber": 9,
         "points": 11,
-        "difficulty": "Zor"
+        "difficulty": "Zor",
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -12332,7 +13045,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Seçilen bir ürünün kullanım alanının ve faydasının gerekçelendirilmesi",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -12360,7 +13074,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Haberleşme ile gözlem uydularının görev farklarının belirtilmesi",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -12384,7 +13099,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Gerçekçi ve uygulanabilir bir çözüm önerisinin açıklanması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -12408,7 +13124,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Evren ile Uzay farkının Dünya referansıyla doğru tanımlanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -12432,7 +13149,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "1. Durumda kuvvet ve hareket doğrultusunun dik olduğunun gerekçelendirilmesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -12456,7 +13174,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b şıkkında işlerin eşitliği ve bağlı olduğu iki değişkenin (kuvvet ve yol) açıklanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -12484,7 +13203,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "3. Aşamada kuvvet ve hareket doğrultusunun dik olması gerekçesi",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -12524,7 +13244,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Siperlikli/aşağı yönlü aydınlatma tasarım önleminin açıklanması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -12548,7 +13269,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Radyo dalgalarının bulut ve tozlardan etkilenmeden geçebilmesinin açıklanması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "outcomeCode": "FB.7.1.3",
@@ -12572,7 +13294,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         ],
         "questionNumber": 3,
         "points": 13,
-        "difficulty": "Orta"
+        "difficulty": "Orta",
+        "sourceOrigin": "oyss_curated"
       },
       {
         "outcomeCode": "FB.7.1.4",
@@ -12596,7 +13319,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         ],
         "questionNumber": 4,
         "points": 13,
-        "difficulty": "Orta"
+        "difficulty": "Orta",
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -12620,7 +13344,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Net kuvvetin (30 N) ve net işin (150 J) doğru hesaplanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "outcomeCode": "FB.7.2.1",
@@ -12644,7 +13369,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         ],
         "questionNumber": 6,
         "points": 12,
-        "difficulty": "Orta"
+        "difficulty": "Orta",
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -12668,7 +13394,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kinetik enerjinin süratin karesiyle arttığının gerekçelendirilmesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 8,
@@ -12692,7 +13419,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Gerilme miktarı arttıkça depolanan enerjinin ve okun süratinin arttığının açıklanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -12732,7 +13460,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Atmosferik sürtünmeyle yanarak yok olma mekanizmasının belirtilmesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -12756,7 +13485,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Mavi > Sarı > Kırmızı sıcaklık sıralaması ve Güneş'in sarı olduğunun belirtilmesi",
             "points": 9
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "outcomeCode": "FB.7.1.5",
@@ -12780,7 +13510,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         ],
         "questionNumber": 3,
         "points": 17,
-        "difficulty": "Kolay"
+        "difficulty": "Kolay",
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -12804,7 +13535,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kuvvet uygulanmadığı (F = 0) için iş şartının sağlanmadığının gerekçelendirilmesi",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -12828,7 +13560,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b şıkkında yer değiştirme sıfır olduğu için iş yapılmadığının belirtilmesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -12852,7 +13585,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Mekanik enerjinin korunduğunun bilimsel gerekçeyle açıklanması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -12898,7 +13632,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Ben diline duygu belirten doğru dönüşümün yapılması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -12926,7 +13661,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Empatik yaklaşımın ve destekleyici konuşmanın doğru kurgulanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -12954,7 +13690,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İç mekan koridor, masa ve ergonomi düzenleme önerisinin yazılması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -12982,7 +13719,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Tekâlif-i Milliye ruhunun ordu-millet bütünleşmesiyle gerekçeli açıklanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -13010,7 +13748,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Zor zamanlarda tek yürek olma ve tarihsel süreklilik boyutunun gerekçelendirilmesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -13038,7 +13777,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b şıkkında tek tipleşme veya yerel değerlerin kaybolması riskinin açıklanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -13066,7 +13806,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kültür turizmi, ziyaretçi ilgisi ve ekonomik katkı boyutu",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -13112,7 +13853,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Öğrenci motivasyonuna ve dinleme ilgisine etkisinin gerekçelendirilmesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -13140,7 +13882,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Sosyal dışlanma ve sınıf iklimine yönelik 2 zararın yazılması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -13168,7 +13911,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Sesli trafik sinyalizasyonu uygulamasının yazılması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -13196,7 +13940,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Görüntülü dijital tercüman desteğinin önerilmesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -13224,7 +13969,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Gençlerin fedakârlığının millî şuur boyutuyla gerekçelendirilmesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -13252,7 +13998,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Demokrasiye sahip çıkma refleksinin gerekçeli açıklanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -13280,7 +14027,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Küresel ortak sorumluluk ve eylem zorunluluğunun vurgulanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -13326,7 +14074,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Dijital nezaket ve ahlak kuralının yazılması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -13354,7 +14103,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Farklı fikirlerin engellenip ortak aklın kaybolmasının belirtilmesi",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -13382,7 +14132,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Ek süre tanımlamasının belirtilmesi",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -13410,7 +14161,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Türk kadınının fedakârlık ve vatan sevgisinin açıklanması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -13438,7 +14190,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Şehit/gaziye vefa ile devlet-millet bütünleşmesi bilincinin açıklanması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -13466,7 +14219,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Toplumsal farklılıkları aşarak aynı bayrak altında kenetlenme etkisinin belirtilmesi",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -13494,7 +14248,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Özgün el emeği ürünlerin küresel e-ihracat standartlarına taşınması stratejisinin açıklanması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 8,
@@ -13522,7 +14277,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kitap okuma ve dili özenli kullanma sorumluluğunun yazılması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -13568,7 +14324,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Ali Bey'in iletişim hatasının ve teyit çözümünün açıklanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -13596,7 +14353,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Özgüven kaybı ve psikolojik zararın belirtilmesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -13624,7 +14382,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Hareket özgürlüğünün engellenmesi ve toplumsal saygısızlık boyutunun açıklanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -13652,7 +14411,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Üretken yurttaş olarak topluma tam katılım ve eşit hayat standardı hedefinin açıklanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -13680,7 +14440,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Hürriyet aşkı ve topyekûn meşru savunma iradesinin gerekçeli açıklanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -13708,7 +14469,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Ortak tarih, birlik ve tek millet olma şuuru boyutunun açıklanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -13736,7 +14498,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Gelecek nesillere yeşil vatan emanet etme sorumluluğunun gerekçeli açıklanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -13782,7 +14545,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Tatlı dilin insan ilişkilerine 2 somut katkısının yazılması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -13810,7 +14574,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Açılır kapanır rampa ve emniyetli alan çözümünün yazılması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -13838,7 +14603,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Yüksek kontrast ve sesli okuma desteğinin belirtilmesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -13866,7 +14632,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Tereddütsüz direniş refleksinin gerekçelendirilmesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -13894,7 +14661,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Savunmada dışa bağımlılığı bitirme ve millî beka bilincinin belirtilmesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -13922,7 +14690,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Türkiye'nin uluslararası saygınlığına ve barışa katkısının belirtilmesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -13955,11 +14724,11 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Cebrail (a.s.) ve Azrail (a.s.)'ın yüce Allah tarafından görevlendirildikleri temel vazifeleri birer cümleyle yazınız.",
         "solutionExplanation": "Cebrail vahiy meleğidir; Azrail ise eceli gelen canlıların ruhunu teslim alan ölüm meleğidir.",
         "modelAnswer": "• Cebrail (a.s.): Yüce Allah'ın emir, yasak ve vahiylerini peygamberlere ulaştırmakla görevli vahiy meleğidir.\n• Azrail (a.s.): Eceli gelen canlıların ruhunu almakla (vefat ettirmekle) görevli ölüm meleğidir.",
-                "alternativeAnswers": [
+        "alternativeAnswers": [
           "Cebrail peygamberlere vahiy getirmekle, Azrail ise eceli dolan canlıların ruhunu teslim almakla (canını almakla) görevlidir.",
           "Cebrail ilahi emir ve vahiyleri iletmekle görevli vahiy meleğidir; Azrail ise ölüm anında canları kabzetmekle görevli ölüm meleğidir."
         ],
-"rubric": [
+        "rubric": [
           {
             "criterion": "Cebrail'in vahiy görevinin doğru yazılması",
             "points": 7
@@ -13968,7 +14737,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Azrail'in ecel/ölüm görevinin doğru yazılması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -13983,11 +14753,11 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Ayet metninde Sûr'a birinci ve ikinci üflenişle gerçekleşeceği bildirilen iki ahiret aşamasının adını (kavramları) sırasıyla yazınız.",
         "solutionExplanation": "İlk üfleniş Kıyamet'tir, ikinci üfleniş Ba's (yeniden diriliş)tir.",
         "modelAnswer": "1. Birinci Üfleniş: Kıyamet (Dünya hayatının son bulması, evrendeki kozmik düzenin yıkılması ve canlıların ölmesi).\n2. İkinci Üfleniş: Ba's (Ölen bütün insanların hesaba çekilmek üzere kabirlerinden yeniden diriltilmesi).",
-                "alternativeAnswers": [
+        "alternativeAnswers": [
           "Birinci üflenişte kıyamet koparak canlılar ölür, ikinci üflenişte ise ba's (öldükten sonra yeniden dirilme) gerçekleşir.",
           "İlk üfleme ile kıyamet ve kâinatın yok oluşu, ikinci üfleme ile kabirlerden yeniden diriliş (ba's) aşaması başlar."
         ],
-"rubric": [
+        "rubric": [
           {
             "criterion": "Kıyamet kavramının doğru tespiti ve açıklaması",
             "points": 7
@@ -13996,7 +14766,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Ba's (yeniden diriliş) kavramının doğru tespiti",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -14011,11 +14782,11 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Zeynep'in hatırlattığı; dirilen insanların toplanacağı alana verilen adı (1) ve amellerin tartıldığı ilahi adalet terazisine verilen adı (2) yazınız.",
         "solutionExplanation": "Mahşer toplanma yeridir; Mizan amellerin tartıldığı terazidir.",
         "modelAnswer": "1. Toplanma Alanı: Mahşer (Haşir meydanı).\n2. Amellerin Tartıldığı İlahi Adalet Terazisi: Mizan.",
-                "alternativeAnswers": [
+        "alternativeAnswers": [
           "1) Dirilenlerin toplanma yeri: Mahşer (haşr meydanı). 2) İyilik ve kötülüklerin tartıldığı terazi: Mizan.",
           "1) Mahşer meydanı, 2) Mizan (ilahi adalet terazisi)."
         ],
-"rubric": [
+        "rubric": [
           {
             "criterion": "Mahşer kavramının doğru yazılması",
             "points": 7
@@ -14024,7 +14795,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Mizan kavramının doğru yazılması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -14039,11 +14811,11 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Ahmet'in hiç kimsenin görmediği yerlerde dahi dürüst davranması, Kiramen Kâtibin meleklerine inanmanın insana kazandırdığı hangi ahlaki bilinçle açıklanır? Yazınız.",
         "solutionExplanation": "Otokontrol (öz denetim) ve her an melekler tarafından gözetlendiği şuuru.",
         "modelAnswer": "Bu durum, insanın sağında ve solunda bulunan 'Kiramen Kâtibin (yazıcı melekler)' meleklerinin yapılan her iyi ve kötü ameli kaydettiği bilincinden kaynaklanan 'öz denetim (otokontrol)' duygusudur. Kişi yalnız kalsa bile asla başıboş olmadığını ve Allah'ın huzurunda hesap vereceğini bilir.",
-                "alternativeAnswers": [
+        "alternativeAnswers": [
           "Kiramen Kâtibin meleklerinin iyi ve kötü her işi amel defterine yazdığı bilincinden doğan otokontrol (öz denetim) ahlakıdır.",
           "İnsanın kimse görmese de melekler ve Allah tarafından görüldüğü şuuruyla hareket etmesini sağlayan vicdani iç denetim duygusudur."
         ],
-"rubric": [
+        "rubric": [
           {
             "criterion": "Kiramen Kâtibin ve amel defteri şuurunun belirtilmesi",
             "points": 7
@@ -14052,7 +14824,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Otokontrol/özdenetim ahlakının gerekçeli açıklanması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -14067,11 +14840,11 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Elif'in bu tesellisi, ahiret inancının insan psikolojisi üzerindeki hangi koruyucu ve güçlendirici etkisini gösterir? Açıklayınız.",
         "solutionExplanation": "Yok olma korkusunu yenme, ölümün son değil ebedi hayata geçiş olduğu bilinci, sabır ve umut aşılama.",
         "modelAnswer": "Ahiret inancı, insanın içindeki 'yok olup gitme ve sonsuz ayrılık' korkusunu ortadan kaldırır. Sevdiklerinden ayrılan insana ölümün bir son değil, ebedi mutluluk yurduna açılan bir kapı olduğunu fısıldayarak sabır, metanet, huzur ve yeniden kavuşma ümidi verir.",
-                "alternativeAnswers": [
+        "alternativeAnswers": [
           "Ölümün bir yok oluş olmadığını, ebedi ahiret yurdunda sevdikleriyle yeniden buluşulacağını bilmenin verdiği sabır ve metanet etkisidir.",
           "Ahiret inancı yok olma endişesini giderir; ayrılıkların geçici olduğu inancıyla insana huzur, sabır ve yeniden kavuşma ümidi verir."
         ],
-"rubric": [
+        "rubric": [
           {
             "criterion": "Ölümün son olmadığı ve yokluk korkusunu yenme etkisinin yazılması",
             "points": 6
@@ -14080,7 +14853,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Sabır, metanet ve umut kazandırma boyutunun açıklanması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -14095,11 +14869,11 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Ahiretteki 'Mizan ve Mahkeme-i Kübra' inancı, adaletsizliğe uğrayan bir müminin adalet inancını ve iç huzurunu nasıl korur? Açıklayınız.",
         "solutionExplanation": "Mutlak adalet ahirettedir. Zalim cezasını çekecek, mazlum hakkını alacaktır.",
         "modelAnswer": "Mümin bilir ki bu dünya bir imtihan yeridir ve hakiki mutlak adalet ahiretteki Mahkeme-i Kübra'da tecelli edecektir. 'Zerre ağırlığınca hayır yapan da şer yapan da karşılığını görecektir.' Zalimin yaptığı yanına kalmayacak, mazlum hakkını kuruşu kuruşuna alacaktır; bu inanç mümine derin bir adalet huzuru sağlar.",
-                "alternativeAnswers": [
+        "alternativeAnswers": [
           "Ahirette mutlak adaletin kurulacağına, mazlumun hakkını zalimden eksiksiz alacağına ve hiçbir kötülüğün cezasız kalmayacağına inanmak insana iç huzuru sağlar.",
           "Dünyadaki haksızlıkların Mahkeme-i Kübra'da ilahi mizan terazisinde görüleceği bilinci, mümine sabır ve adalet inancı verir."
         ],
-"rubric": [
+        "rubric": [
           {
             "criterion": "Mahkeme-i Kübra ve mutlak ilahi adalet inancının vurgulanması",
             "points": 6
@@ -14108,7 +14882,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Mazlumun hakkını alacağı ve ümitsizliği önleme etkisinin yazılması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -14123,11 +14898,11 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Nâs suresinde insanın ne tür tehlikelerden ve kime sığınması emredilmektedir? İki unsur halinde açıklayınız.",
         "solutionExplanation": "Vesveseden, kötü niyetli insanların ve cinlerin fısıltılarından yalnızca her şeyin sahibi olan Allah'a sığınılır.",
         "modelAnswer": "1. Kime Sığınılır: İnsanların tek Rabbi, mutlak hükümdarı (Melik) ve gerçek mabudu olan Yüce Allah'a sığınılır.\n2. Neyin Şerrinden Sığınılır: İnsanın kalbine kötü düşünceler, şüphe ve günah fısıldayan (vesvese veren) cin ve insan şeytanlarının sinsi tuzaklarından sığınılır.",
-                "alternativeAnswers": [
+        "alternativeAnswers": [
           "İnsanların Rabbi, Meliki ve İlahı olan Allah'a sığınılır; insanların ve cinlerin kalbe kötü düşünce ve şüphe sokan sinsi vesveselerinden sakınılır.",
           "Yalnızca her şeyin sahibi Yüce Allah'a sığınmak emredilir; sinsi vesvesecilerin (hannâs) ve insan ile cin şeytanlarının kötülüklerinden sığınılır."
         ],
-"rubric": [
+        "rubric": [
           {
             "criterion": "Yalnızca Allah'a (Rab, Melik, İlah) sığınılacağının belirtilmesi",
             "points": 6
@@ -14136,7 +14911,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Sinsi vesvese ve kötülük fısıldayan odakların şerrinden sakınmanın açıklanması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 8,
@@ -14151,11 +14927,11 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Hacdaki bu ihram uygulamasının sembolize ettiği 2 temel manevi/toplumsal anlamı yazınız.",
         "solutionExplanation": "Allah katında eşitlik, kefeni hatırlatarak ölümü ve ahireti anımsatma.",
         "modelAnswer": "1. Mahşerdeki Eşitlik: Makam, servet, ırk ve unvanların Allah katında hiçbir üstünlük sağlamadığını, bütün insanların tek bir kefen benzeri örtü içinde eşit olduğunu gösterir.\n2. Dünyevilikten Arınma: İnsana ölümü, kefeni ve geçici dünya süslerini terk edip saf bir kul olarak Allah'ın huzuruna çıkmayı hatırlatır.",
-                "alternativeAnswers": [
+        "alternativeAnswers": [
           "1) Makam, ırk ve zenginlik farklarını ortadan kaldırarak tüm insanların Allah huzurunda eşit olduğunu simgeler. 2) Beyaz kefeni andırarak dünyalıktan arınmayı ve ölümü hatırlatır.",
           "1) Mahşerdeki mutlak eşitlik şuuru, 2) Geçici dünya süslerini ve makamlarını terk edip kefen misali saf bir kul olarak Allah'a yönelme."
         ],
-"rubric": [
+        "rubric": [
           {
             "criterion": "Tüm insanların Allah katında eşitliği boyutunun yazılması",
             "points": 6
@@ -14164,7 +14940,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Dünyadan arınma ve ölümü/mahşeri hatırlama boyutunun yazılması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -14197,11 +14974,11 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Mikail (a.s.) ve İsrafil (a.s.)'ın yüce Allah tarafından verilen görevlerini birer cümleyle açıklayınız.",
         "solutionExplanation": "Mikail tabiat olaylarını ve rızıkları idare eder; İsrafil kıyamet ve dirilişte Sûr'a üflemekle görevlidir.",
         "modelAnswer": "• Mikail (a.s.): Yağmur, rüzgâr, bitkilerin yeşermesi gibi tabiat olaylarını ve canlıların rızıklarını Allah'ın izniyle düzenlemekle görevli melektir.\n• İsrafil (a.s.): Kıyametin kopması ve insanların yeniden diriltilmesi için Sûr borusuna üflemekle görevlendirilmiş melektir.",
-                "alternativeAnswers": [
+        "alternativeAnswers": [
           "Mikail doğa olaylarını ve rızıkları yönetir; İsrafil ise kıyametin kopması ve yeniden diriliş için Sûr'a üfler.",
           "Mikail tabiat dengesini ve canlıların rızıklarını idare eder; İsrafil kıyamet ve ba's vaktinde Sûr borusuna üflemekle görevlidir."
         ],
-"rubric": [
+        "rubric": [
           {
             "criterion": "Mikail'in tabiat olayları ve rızık görevinin doğru yazılması",
             "points": 8
@@ -14210,7 +14987,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İsrafil'in Sûr'a üfleme görevinin doğru yazılması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -14225,11 +15003,11 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "İslam ahiret inancında 'Berzah' kavramını tanımlayarak, bu aşamada ölen kişinin sorgusunu gerçekleştiren meleklerin adını yazınız.",
         "solutionExplanation": "Berzah ölümle kıyamet arasındaki kabir hayatıdır. Sorguyu Münker ve Nekir melekleri yapar.",
         "modelAnswer": "• Berzah: İnsanın ölümüyle başlayan ve kıyametteki yeniden dirilişe (Ba's) kadar devam eden ara dönem, yani kabir hayatıdır.\n• Sorgu Melekleri: Münker ve Nekir melekleridir.",
-                "alternativeAnswers": [
+        "alternativeAnswers": [
           "Berzah, ölümle başlayıp kıyametteki dirilişe kadar süren kabir hayatıdır; sorgu melekleri ise Münker ve Nekir'dir.",
           "Ölümden yeniden dirilmeye (Ba's) kadar geçen ara döneme Berzah denir; kabirdeki sorguyu Münker ve Nekir melekleri yapar."
         ],
-"rubric": [
+        "rubric": [
           {
             "criterion": "Berzah kavramının ve zaman diliminin doğru tanımlanması",
             "points": 8
@@ -14238,7 +15016,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Münker ve Nekir meleklerinin adının doğru yazılması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -14253,11 +15032,11 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "İnsanların kabirlerinden çıkarılarak bu alana sevk edilmesine ne denir (1)? Toplandıkları bu alana verilen ad nedir (2)?",
         "solutionExplanation": "Sevk edilip toplanmaya Haşir, toplanılan alana Mahşer denir.",
         "modelAnswer": "1. İnsanların diriltilip toplanmak üzere sevk edilmesine: Haşir denir.\n2. Hesaba çekilmek üzere toplandıkları o yüce meydana: Mahşer (Mahşer yeri) denir.",
-                "alternativeAnswers": [
+        "alternativeAnswers": [
           "1) İnsanların kabirlerinden çıkarılıp toplanma alanına sevk edilmesine Haşir denir. 2) Toplandıkları meydana Mahşer denir.",
           "1) Haşir (toplanma eylemi), 2) Mahşer (toplanılan meydan)."
         ],
-"rubric": [
+        "rubric": [
           {
             "criterion": "Haşir eyleminin ve kavramının doğru açıklanması",
             "points": 7
@@ -14266,7 +15045,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Mahşer meydanı kavramının doğru yazılması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -14281,11 +15061,11 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Bu ayetleri ilke edinen bir esnafın tartı ve ölçü yaparken hile yapmaktan neden şiddetle kaçınacağını ahiret sorumluluğu açısından açıklayınız.",
         "solutionExplanation": "Zerre kadar haksızlığın bile hesabının sorulacağı bilinci esnafı dürüstlüğe sevk eder.",
         "modelAnswer": "Bu ayetleri kalbine yerleştiren bir esnaf bilir ki kimsenin görmediği bir gramlık eksik tartı dahi zayi olmayacak, Mizan terazisinde önüne çıkacaktır. Kul hakkının hesabını verememe korkusu ve ilahi adalete olan sarsılmaz inancı onu her türlü hile ve haksızlıktan kesin olarak alıkoyar.",
-                "alternativeAnswers": [
+        "alternativeAnswers": [
           "Zerre kadar haksızlığın bile Mizan terazisinde hesaba çekileceğini bilen esnaf, kul hakkından korktuğu için hile yapamaz.",
           "En küçük bir eksik tartının dahi amel defterine yazılacağını ve hesabının verileceğini bildiği için ölçüde adalete tam riayet eder."
         ],
-"rubric": [
+        "rubric": [
           {
             "criterion": "Zerre kadar hakkın hesabının verileceği bilincinin açıklanması",
             "points": 7
@@ -14294,7 +15074,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kul hakkı ve Mizan terazisi korkusunun dürüstlüğe etkisinin yazılması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -14309,11 +15090,11 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Hafaza meleklerine inanmanın insan psikolojisine kazandırdığı manevi huzur ve güven hissini açıklayınız.",
         "solutionExplanation": "İnsanın yalnız ve sahipsiz olmadığını, Allah'ın koruması altında olduğunu bilerek korku ve yalnızlıktan kurtulması.",
         "modelAnswer": "Hafaza meleklerine inanan insan, kainatta yapayalnız, kimsesiz ve sahipsiz olmadığını idrak eder. Yüce Yaratıcının kendisini görünmeyen koruyucu güçlerle muhafaza ettiğini bilmek insana derin bir iç huzuru, güven ve manevi cesaret verir; kaygı ve yalnızlık hissini yok eder.",
-                "alternativeAnswers": [
+        "alternativeAnswers": [
           "Kişinin dünyada sahipsiz ve savunmasız olmadığını, Yüce Allah'ın koruyucu meleklerle kendisini gözettiğini bilmesi manevi güven ve cesaret verir.",
           "Hafaza melekleri inancı insanı yalnızlık ve sahipsizlik korkusundan kurtararak kalbine iç huzuru, güven ve ferahlık aşılar."
         ],
-"rubric": [
+        "rubric": [
           {
             "criterion": "Yalnız ve sahipsiz olunmadığı bilincinin vurgulanması",
             "points": 7
@@ -14322,7 +15103,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Manevi güven, cesaret ve kaygıların giderilmesinin açıklanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -14337,11 +15119,11 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Nâs suresindeki 'vesvese' kavramını açıklayınız. İnsan aklına gelen vesveselere karşı surenin önerdiği temel koruma yöntemi nedir?",
         "solutionExplanation": "Vesvese şeytanın veya kötü kişilerin kalbe fısıldadığı şüphe ve kötülüktür. Korunma yolu Allah'a sığınmaktır.",
         "modelAnswer": "• Vesvese: İnsanın kalbine ve zihnine gizlice fısıldanan, onu hayırdan alıkoyup kötülüğe, şüpheye ve ümitsizliğe sevk eden sinsi telkinlerdir.\n• Korunma Yöntemi: Bu fısıltılara kapılmayıp doğrudan insanların yegane Rabbi, Meliki ve İlahı olan Yüce Allah'a sığınmak ve O'ndan yardım dilemektir.",
-                "alternativeAnswers": [
+        "alternativeAnswers": [
           "Vesvese, kalbe gizlice fısıldanan kötü ve şüpheci düşüncelerdir; korunma yolu insanların Rabbi olan Allah'a sığınmak ve dua etmektir.",
           "Vesvese insanın aklını çelmeye çalışan sinsi şüphelerdir; çaresi ise doğrudan Yüce Allah'a (Rab, Melik, İlah) sığınmaktır."
         ],
-"rubric": [
+        "rubric": [
           {
             "criterion": "Vesvese kavramının doğru tanımlanması",
             "points": 7
@@ -14350,7 +15132,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Doğrudan Allah'a sığınma çözümünün açıklanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -14365,11 +15148,11 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "a) Emre Bey'in yaptığı bu ibadet hac mıdır umre midir?\nb) Hac ile umre arasındaki 2 temel farkı yazınız.",
         "solutionExplanation": "Umre yapmıştır. Hac farzdır, belirli zamanda yapılır ve Arafat vakfesi vardır; umre sünnettir, her zaman yapılabilir ve vakfesi yoktur.",
         "modelAnswer": "a) Emre Bey'in yaptığı ibadet Umre'dir.\nb) Hac ile Umre Arasındaki 2 Temel Fark:\n1. Hac farz bir ibadettir ve sadece Kurban Bayramı günlerinde (Zilhicce ayı) yapılır; Umre ise sünnettir ve hac günleri dışındaki yılın her vaktinde yapılabilir.\n2. Hacda Arafat vakfesi, Müzdelife vakfesi ve kurban kesme şartı vardır; Umrede ise vakfe ve kurban yoktur.",
-                "alternativeAnswers": [
+        "alternativeAnswers": [
           "a) Umre yapmıştır. b) Hac farzdır ve sadece belirli günlerde yapılır, umre sünnettir ve her zaman yapılabilir; hacda Arafat vakfesi ve kurban vardır, umrede yoktur.",
           "a) Umre ibadetidir. b) 1) Hac farz olup Zilhicce ayında yapılır, umre ise sünnet olup yıl boyu yapılabilir. 2) Hacda Arafat vakfesi farzdır, umrede vakfe bulunmaz."
         ],
-"rubric": [
+        "rubric": [
           {
             "criterion": "Umre ibadetinin doğru teşhis edilmesi",
             "points": 4
@@ -14378,7 +15161,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Hüküm/zaman ve vakfe/kurban farklarının doğru yazılması",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -14411,11 +15195,11 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Meleklerin insanlardan ayrılan 2 temel yaratılış ve ahlaki özelliğini (yeme-içme, cinsiyet, günah işleme durumları bakımından) yazınız.",
         "solutionExplanation": "Nurdan yaratılmışlardır, yeme-içme ve cinsiyetleri yoktur, asla günah işlemezler ve emirlere tam itaat ederler.",
         "modelAnswer": "1. Yeme, içme, uyuma, evlenme ve cinsiyet gibi biyolojik ve beşeri ihtiyaçları yoktur.\n2. İradeleri yalnızca iyiliğe programlanmıştır; günah işlemezler, kötülük yapamazlar ve Allah'ın emirlerine eksiksiz ve koşulsuz itaat ederler.",
-                "alternativeAnswers": [
+        "alternativeAnswers": [
           "Yeme, içme, uyuma ve cinsiyet gibi bedensel ihtiyaçları yoktur; günah işlemezler ve Allah'ın emirlerine daima itaat ederler.",
           "Nurdan yaratıldıkları için insani biyolojik ihtiyaçları bulunmaz; iradeleri sadece hayra yönelik olup asla günah işlemezler."
         ],
-"rubric": [
+        "rubric": [
           {
             "criterion": "Biyolojik ihtiyaçların (yeme-içme/cinsiyet) olmamasının yazılması",
             "points": 9
@@ -14424,7 +15208,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Günahsızlık ve tam itaat özelliğinin yazılması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -14439,11 +15224,11 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Tekvîr suresinde tasvir edilen bu kozmik olay ahiret hayatının hangi ilk durağını anlatmaktadır? Bu olayın ardından yaşanacak aşamayı yazınız.",
         "solutionExplanation": "Kıyametin kopmasıdır. Ardından kabir hayatı (berzah) ve yeniden diriliş (ba's) gelir.",
         "modelAnswer": "• Tasvir Edilen Aşama: Kıyamet (Evrenin düzeninin bozulup dünya hayatının bütünüyle sona ermesi).\n• Sonrasındaki Aşama: İkinci sûr üflenişiyle birlikte insanların mezarlarından yeniden diriltilmesi (Ba's) ve Mahşer meydanına toplanmasıdır.",
-                "alternativeAnswers": [
+        "alternativeAnswers": [
           "Anlatılan aşama kıyamettir; ardından ikinci sûr üflenişiyle insanların kabirlerinden yeniden dirilmesi (Ba's) aşaması gelecektir.",
           "Kozmik düzenin yıkıldığı kıyamet aşamasıdır; sonrasında yeniden dirilme (Ba's) ve mahşerde toplanma (haşir) gerçekleşecektir."
         ],
-"rubric": [
+        "rubric": [
           {
             "criterion": "Kıyamet olayının doğru tespiti",
             "points": 9
@@ -14452,7 +15237,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kıyamet sonrası diriliş (Ba's) aşamasının açıklanması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -14467,11 +15253,11 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Amel defterinin sağından verilmesi ile solundan verilmesinin ahiretteki akıbet (sonuç) açısından anlamını açıklayınız.",
         "solutionExplanation": "Sağından alanlar kurtuluşa erip cennete gidecektir; solundan alanlar hüsrana uğrayıp cehenneme gidecektir.",
         "modelAnswer": "• Defteri Sağdan Verilenler: Dünyada iman edip salih amel işleyen, Allah'ın rızasını kazanan bahtiyar kullardır; hesapları kolay geçecek ve mükâfat olarak Cennet'e gideceklerdir.\n• Defteri Soldan Verilenler: Dünyada inkâr ve kötülük içinde yaşayan, hesap gününü unutanlardır; büyük bir pişmanlık ve hüsrana uğrayarak Cehennem azabına gideceklerdir.",
-                "alternativeAnswers": [
+        "alternativeAnswers": [
           "Defteri sağdan verilenler imtihanı kazanıp cennete girecektir; soldan verilenler ise hüsrana uğrayıp cehennem azabıyla karşılaşacaktır.",
           "Defterin sağdan verilmesi hesabı kolay geçip cennet mükâfatına kavuşmayı, soldan verilmesi ise mahcubiyet ve cehennem cezasını ifade eder."
         ],
-"rubric": [
+        "rubric": [
           {
             "criterion": "Defteri sağdan verilenlerin durumu ve cennet akıbetinin yazılması",
             "points": 9
@@ -14480,7 +15266,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Defteri soldan verilenlerin hüsranı ve cehennem sonucunun açıklanması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -14495,11 +15282,11 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Ahiret inancının dünyadaki hayatımızı anlamsızlıktan ve boşluk hissinden nasıl kurtardığını açıklayınız.",
         "solutionExplanation": "Dünyanın bir imtihan salonu olduğu ve ebedi saadet için fırsat sunduğu bilinci hayata değer katar.",
         "modelAnswer": "Ahiret inancı insana varoluşunun gayesini öğretir. İnsanın dünyaya tesadüfen gelmediğini, ömrünün her anının bir imtihan olduğunu ve burada ektiği iyilik tohumlarını ebedi cennette biçeceğini müjdeler. Böylece hayatı boş, anlamsız ve acı bir bekleyiş olmaktan çıkarıp yüce bir hedefe bağlar.",
-                "alternativeAnswers": [
+        "alternativeAnswers": [
           "Hayatın tesadüf ve yok oluş olmadığını, dünya hayatının bir imtihan olduğunu ve iyiliklerin cennette ebedi karşılık bulacağını gösterir.",
           "İnsanı varoluşsal boşluk ve anlamsızlıktan kurtarır; dünyanın ahiretin tarlası olduğu bilinciyle her anı değerli ve amaçlı kılar."
         ],
-"rubric": [
+        "rubric": [
           {
             "criterion": "Varoluş gayesi ve dünya hayatının imtihan salonu bilincinin yazılması",
             "points": 9
@@ -14508,7 +15295,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Ebedi mükâfat idealiyle hayata anlam ve değer katmasının açıklanması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -14523,11 +15311,11 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Tarık'ın ifadesinden hareketle, ahirete inanan bir Müslümanın neden 'sorumsuz ve laubali' bir hayat yaşayamayacağını gerekçelendiriniz.",
         "solutionExplanation": "Allah merhamet sahibidir ancak aynı zamanda adildir ve kul hakkını asla affetmez.",
         "modelAnswer": "Allah'ın sonsuz merhameti insanı tembellik ve sorumsuzluğa değil, daha çok şükretmeye sevk etmelidir. Ahirete inanan mümin bilir ki Allah aynı zamanda 'Adl'dir (mutlak adalet sahibidir); kul hakları, zulümler ve bilerek işlenen kötülükler hesap gününde mutlaka sorulacaktır. Bu şuur kişiyi sorumsuzluktan kurtarıp titiz bir ahlak bilincine yöneltir.",
-                "alternativeAnswers": [
+        "alternativeAnswers": [
           "Allah merhametlidir ancak mutlak adalet sahibidir; kul haklarının ve haksızlıkların hesabı mahşerde mutlaka sorulacaktır.",
           "İlahi adalet gereği zerre kadar iyilik ve kötülüğün karşılığının verileceği bilinci, insanı keyfi ve sorumsuz davranmaktan alıkoyar."
         ],
-"rubric": [
+        "rubric": [
           {
             "criterion": "Allah'ın merhameti ile mutlak adaleti arasındaki dengenin kurulması",
             "points": 8
@@ -14536,7 +15324,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kul hakkı ve hesap verme sorumluluğunun gerekçelendirilmesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -14551,11 +15340,11 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Bu üç isimden 'Rab' ve 'Melik' kavramlarının manalarını yazarak, tehlikeler karşısında neden yalnızca O'na sığınılması gerektiğini açıklayınız.",
         "solutionExplanation": "Rab terbiye eden ve koruyandır; Melik mutlak hükümdardır.",
         "modelAnswer": "• Rab: İnsanı yoktan var eden, besleyen, büyüten ve her an terbiye edip koruyan Yaratıcıdır.\n• Melik: Bütün mülkün ve kâinatın tek mutlak sahibi, kanun koyucusu ve egemen hükümdarıdır.\n• Neden O'na Sığınılır: Bütün evren ve görünmez şer odakları O'nun mutlak kudretine boyun eğdiğinden, mutlak güç sahibi olmayan hiçbir varlık insanı şerlerden koruyamaz; hakiki sığınak yalnızca Allah'tır.",
-                "alternativeAnswers": [
+        "alternativeAnswers": [
           "Rab terbiye eden ve yaşatandır, Melik her şeyin mutlak hükümdarıdır; kâinattaki tüm varlıklar O'na boyun eğdiği için sadece O koruyabilir.",
           "Rab yaratan ve eğiten, Melik mülkün gerçek sahibidir; mutlak güç sahibi yalnızca Allah olduğu için zararlardan ancak O'na sığınılarak korunulabilir."
         ],
-"rubric": [
+        "rubric": [
           {
             "criterion": "Rab ve Melik kavramlarının doğru açıklanması",
             "points": 8
@@ -14564,7 +15353,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Mutlak kudret sahibi olarak yalnızca O'na sığınma gerekçesinin yazılması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -14597,11 +15387,11 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Ölüm ile başlayan bu zincirde: a) Kıyamet ile yeniden diriliş arasındaki ara bekleme dönemine ne ad verilir? b) Amellerin tartıldığı hassas ilahi teraziye ne ad verilir?",
         "solutionExplanation": "a) Berzah (kabir hayatı), b) Mizan terazisi.",
         "modelAnswer": "a) Kıyamet ile diriliş arasındaki ara kabir hayatına: Berzah denir.\nb) Amellerin en ince ayrıntısına kadar tartıldığı ilahi adalet terazisine: Mizan denir.",
-                "alternativeAnswers": [
+        "alternativeAnswers": [
           "a) Kabir hayatına Berzah denir. b) Amellerin tartıldığı hassas teraziye Mizan denir.",
           "a) Berzah âlemi, b) Mizan (ilahi adalet terazisi)."
         ],
-"rubric": [
+        "rubric": [
           {
             "criterion": "Berzah kavramının doğru yazılması",
             "points": 9
@@ -14610,7 +15400,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Mizan kavramının doğru yazılması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -14625,11 +15416,11 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Ayetten hareketle Cennet'e kavuşmanın 2 temel şartını yazınız. Ahiret inancında Cennet ve Cehennemin ebedi (sonsuz) oluşunun insana hissettirdiği sorumluluğu açıklayınız.",
         "solutionExplanation": "Şartlar: İman ve salih amel. Ebedi olması hayatın geri dönüşü olmayan ciddiyetini kavratır.",
         "modelAnswer": "• Cennete Kavuşmanın 2 Şartı: 1) Yüce Allah'a ve ahirete samimiyetle iman etmek, 2) Salih amel (faydalı, güzel, ahlaki davranışlar ve ibadetler) işlemek.\n• Sorumluluk Hissi: Ahiretin sonsuz olması, bu fani dünyada işlenen her tercihin geri dönüşsüz ebedi bir karşılık bulacağını öğretir; insanı günahlardan titreterek uzaklaştırır.",
-                "alternativeAnswers": [
+        "alternativeAnswers": [
           "Şartlar: İman etmek ve salih amel işlemek. Ebedi oluşu insana dünyadaki tercihlerin geri dönüşsüz bir geleceği belirlediği sorumluluğunu yükler.",
           "Cennete kavuşma şartları iman ve faydalı amellerdir; sonsuz karşılık bilinci insanı günahlardan titizlikle uzak durmaya yöneltir."
         ],
-"rubric": [
+        "rubric": [
           {
             "criterion": "İman ve salih amel şartlarının doğru yazılması",
             "points": 9
@@ -14638,7 +15429,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Ebediyet bilincinin doğurduğu sorumluluğun açıklanması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -14653,11 +15445,11 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Kerem Bey'in bu tutumu, ahiret inancının mal ve servet tutkusunu nasıl terbiye ettiğini gösterir? İki maddeyle açıklayınız.",
         "solutionExplanation": "Dünya malının geçici olduğunu anlamak, infak ve sadaka bilincini artırmak.",
         "modelAnswer": "1. Mal Tutkusunu Terbiye Eder: Servetin fani ve geçici bir emanet olduğunu kavratarak insanı cimrilik ve bencillik hastalığından kurtarır.\n2. Ebedi Kazanç Şuuru: Malı yalnızca dünyada tüketmek yerine, infak ve sadakayla ahirete taşınacak tükenmez bir sevap sermayesine dönüştürür.",
-                "alternativeAnswers": [
+        "alternativeAnswers": [
           "1) Malın geçici bir emanet olduğunu kavratıp bencillik ve cimrilikten korur. 2) Kazancı infak yoluyla ahirete taşınacak ebedi bir sevaba dönüştürür.",
           "1) Dünya servetinin fani olduğunu öğreterek hırsı dizginler. 2) İhtiyaç sahiplerini gözeterek asıl zenginliğin ahirete yapılan iyilik olduğunu gösterir."
         ],
-"rubric": [
+        "rubric": [
           {
             "criterion": "Cimrilikten kurtarma ve geçicilik idrakinin açıklanması",
             "points": 9
@@ -14666,7 +15458,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İnfak ve ahirete yatırım şuurunun belirtilmesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -14681,11 +15474,11 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Bu hadisten hareketle, ahirete inanan bir gencin arkadaşları arkasından konuşmaktan (gıybetten) neden titizlikle sakınması gerektiğini açıklayınız.",
         "solutionExplanation": "Gıybet ağır bir kul hakkıdır, kişinin dünyadaki ibadet sevaplarının silinmesine ve hak sahibine verilmesine yol açar.",
         "modelAnswer": "Gıybet ve iftira en ağır kul haklarındandır. Ahirete inanan mümin bilir ki binbir emekle kıldığı namazların ve tuttuğu oruçların sevapları, arkasından konuştuğu insanlara hak olarak aktarılacaktır; sevapları tükenince de onların günahlarını yüklenecektir. Bu korku insanı dilini korumaya ve kul hakkından titizlikle sakınmaya sevk eder.",
-                "alternativeAnswers": [
+        "alternativeAnswers": [
           "Gıybet ağır bir kul hakkıdır; dedikodu yapan kişinin ibadet sevapları hak sahibine verilir, bu da ahirette iflas etmesine yol açar.",
           "Başkalarının arkasından konuşmak kul hakkı doğurur ve sevapların silinip başkasına devredilmesine neden olur; bu korku kişiyi dilini tutmaya sevk eder."
         ],
-"rubric": [
+        "rubric": [
           {
             "criterion": "Gıybetin kul hakkı niteliğinin ve müflis hadisiyle bağının açıklanması",
             "points": 9
@@ -14694,7 +15487,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Sevapların devredilmesi tehlikesi karşısında dilin korunmasının vurgulanması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -14709,11 +15503,11 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Görünmeyen nurani meleklerin kendisi için hayır dua ettiğini bilmek bir mümine nasıl bir manevi destek ve moral sağlar? Açıklayınız.",
         "solutionExplanation": "Manevi bir güç ve yalnız olmama hissi verir, iyilik yolunda motivasyonu artırır.",
         "modelAnswer": "Günahsız ve temiz varlıklar olan meleklerin kendisi için Allah'a dua ve istiğfar ettiğini bilmek, müminin kalbine tarifsiz bir manevi ferahlık ve ümit aşılar. İyilik yolunda yürürken arkasında gök ehlinin duasını hissetmek kişiyi ibadet ve ahlakta daha gayretli olmaya motive eder.",
-                "alternativeAnswers": [
+        "alternativeAnswers": [
           "Günahsız nurani meleklerin kendisi için istiğfar ettiğini bilmek mümine manevi güç verir ve iyilik yolunda moralini yükseltir.",
           "İnsana kalbi ferahlık aşılar, yalnız olmadığını hissettirir ve ibadet ile ahlakta daha samimi olmaya teşvik eder."
         ],
-"rubric": [
+        "rubric": [
           {
             "criterion": "Manevi ferahlık ve ümit aşılama etkisinin yazılması",
             "points": 8
@@ -14722,7 +15516,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İyilik ve ahlakta moral/motivasyon boyutunun açıklanması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -14737,11 +15532,11 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Nâs suresini okuyan bir müminin günlük hayatında nazar, büyü, vesvese veya karanlık korkular karşısında nasıl bir manevi sığınak bulduğunu açıklayınız.",
         "solutionExplanation": "Batıl inançlara ve korkulara kapılmadan yalnızca alemlerin Rabbine sığınarak kalbi huzur bulması.",
         "modelAnswer": "Nâs suresini şuurlu şekilde okuyan mümin, batıl inançlara, muskacılara, kuruntulara ve karanlık vesveselere prim vermez. İnsanların tek sahibine ve koruyucusuna sığındığını bilerek tüm korkularından sıyrılır, kalbi tevhid inancının huzur ve emniyetiyle dolar.",
-                "alternativeAnswers": [
+        "alternativeAnswers": [
           "Batıl inanç ve kuruntulara kapılmadan tüm varlıkların sahibi olan Allah'a sığınarak kalbi bir emniyet ve huzur bulmasını sağlar.",
           "Tevhid bilinciyle karanlık korkulardan ve vesveselerden arınır; en büyük sığınağın ve koruyucunun Yüce Allah olduğunu bilerek rahatlar."
         ],
-"rubric": [
+        "rubric": [
           {
             "criterion": "Batıl inanç ve kuruntulardan uzaklaşma etkisinin yazılması",
             "points": 8
@@ -14750,7 +15545,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Tevhid inancıyla emniyet ve huzur bulma boyutunun açıklanması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -14783,11 +15579,11 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Melekler ile şeytanı yaratılış maddesi ve Allah'ın emirlerine itaat bakımından 2 maddeyle karşılaştırınız.",
         "solutionExplanation": "Melekler nurdan yaratılmış ve daima itaatkardır; şeytan ateşten yaratılmış ve kibirlenerek isyan etmiştir.",
         "modelAnswer": "1. Yaratılış Maddesi: Melekler saf nurdan yaratılmıştır; şeytan ise dumansız yalın bir ateşten yaratılmıştır.\n2. İtaat Durumu: Melekler asla günah işlemez, kibirlenmez ve Allah'a tam itaat ederler; şeytan ise kibri yüzünden Allah'ın emrine isyan etmiş ve insanları saptırmaya ant içmiştir.",
-                "alternativeAnswers": [
+        "alternativeAnswers": [
           "1) Melekler nurdan, şeytan ise ateşten yaratılmıştır. 2) Melekler Allah'a daima itaat eder, şeytan ise kibri yüzünden isyan etmiştir.",
           "1) Yaratılış: Melek nur, şeytan ateş. 2) İtaat: Melekler günahsız ve itaatkardır, şeytan ise isyankardır ve kötülüğe çağırır."
         ],
-"rubric": [
+        "rubric": [
           {
             "criterion": "Nur ve ateş yaratılış farkının doğru yazılması",
             "points": 9
@@ -14796,7 +15592,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İtaat ve isyan/kibir ahlaki farkının doğru yazılması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -14811,11 +15608,11 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Tabiatın ilkbaharda yeniden dirilmesi ile ahiretteki 'Ba's' inancı arasındaki mantıksal bağı açıklayınız.",
         "solutionExplanation": "Kuru toprağa can veren sonsuz kudret sahibi Allah, insanları da çürümüş kemiklerinden kolayca yeniden yaratabilir.",
         "modelAnswer": "Kış mevsiminde kurumuş, ölmüş gibi duran ağaçlara ve toprağa baharda yeniden can veren, yaprak ve çiçek açtıran sonsuz kudret sahibi Allah için, ölüp toprağa karışan insanları ikinci bir üflenişle yeniden diriltmek (Ba's) son derece kolaydır. Tabiat her bahar gözlerimizin önünde Ba's mucizesini sergilemektedir.",
-                "alternativeAnswers": [
+        "alternativeAnswers": [
           "Kışın kurumuş toprağa ve ağaçlara baharda hayat veren Allah'ın, ölen insanları da kolaylıkla kabirlerinden diriltebileceğini gösterir.",
           "Tabiatın her ilkbaharda canlanması Allah'ın yaratma kudretinin bir delilidir; insanları da aynı güçle yeniden diriltecektir."
         ],
-"rubric": [
+        "rubric": [
           {
             "criterion": "Baharın dirilişi ile Ba's arasındaki analojinin açıklanması",
             "points": 9
@@ -14824,7 +15621,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Allah'ın sonsuz yaratma kudretiyle bağ kurulması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -14839,11 +15637,11 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Yâsîn suresindeki bu ayet, ahiretteki hesabın hangi tartışmasız adalet özelliğini kanıtlar? Açıklayınız.",
         "solutionExplanation": "Hiçbir inkarın ve yalanın mümkün olmayacağı, organların bile bizzat hakikati itiraf edeceği mutlak adalet.",
         "modelAnswer": "Bu ayet, ahiretteki hesabın hiçbir yalan, inkar, sahte şahit veya mazerete yer bırakmayacak mutlak ve kusursuz bir adaletle görüleceğini kanıtlar. İnsanın kendi uzuvları bizzat işledikleri fiillere şahitlik ederek suçun veya sevabın üzerini örtmeyi imkansız hale getirecektir.",
-                "alternativeAnswers": [
+        "alternativeAnswers": [
           "Ahirette hiçbir yalanın veya inkarın geçerli olamayacağını, insanın bizzat kendi organlarının gerçeği itiraf edeceği mutlak adaleti gösterir.",
           "Hesap günü hakikatin üzerinin örtülemeyeceğini, bedenin şahitliğiyle tam ve eksiksiz bir ilahi adaletin tecelli edeceğini kanıtlar."
         ],
-"rubric": [
+        "rubric": [
           {
             "criterion": "Yalan ve inkarın imkansızlığı ve mutlak adalet vurgusu",
             "points": 9
@@ -14852,7 +15650,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Organların şahitliğiyle hakikatin apaçık ortaya çıkmasının açıklanması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -14867,11 +15666,11 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Canlılara gösterilen bu derin merhametin arkasındaki melek ve ahiret hesabı bilincini açıklayınız.",
         "solutionExplanation": "Dilsiz hayvanların hakkının bile ahirette sorulacağı inancı insanları merhamete sevk eder.",
         "modelAnswer": "İslam inancına göre kıyamet gününde boynuzsuz koyun, boynuzlu koyundan hakkını alacaktır. Dilsiz hayvanların dahi ahirette hakkının sorulacağı ve onlara yapılan bir yudum su iyiliğinin amel defterine sevap yazılacağı inancı, ecdadımızı kuşlara dahi saray yapan eşsiz bir merhamet medeniyeti inşa etmeye sevk etmiştir.",
-                "alternativeAnswers": [
+        "alternativeAnswers": [
           "Hayvanlara yapılan merhametin amel defterine yazılacağını ve hayvan haklarının dahi ahirette sorulacağını bilmenin doğurduğu şuurudur.",
           "Dilsiz canlıların hakkının dahi mahşerde aranacağı ve her iyiliğin mükâfatlandırılacağı inancının oluşturduğu merhamet ahlakıdır."
         ],
-"rubric": [
+        "rubric": [
           {
             "criterion": "Hayvan haklarının ahirette sorulacağı inancının yazılması",
             "points": 9
@@ -14880,7 +15679,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Merhamet ve amel defteri bilinciyle bağ kurulması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -14895,11 +15695,11 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Tüccarın bu tavrı toplumda haksız kazanç ve yolsuzlukları önlemede kanunlardan önce hangi manevi gücün etkili olduğunu gösterir? Açıklayınız.",
         "solutionExplanation": "İçsel vicdan, meleklerin kaydettiği şuuru ve ahiret hesap bilinci.",
         "modelAnswer": "Bu durum, suç ve haksızlıkları önlemede yalnızca polis ve kanun gibi dış denetimlerin yetmeyeceğini; asıl caydırıcı gücün insanın kalbindeki 'Allah'ın her şeyi bildiği, meleklerin kaydettiği ve ahirette zerresine kadar hesap verileceği' inancından doğan iç denetim (takva ve vicdan) olduğunu gösterir.",
-                "alternativeAnswers": [
+        "alternativeAnswers": [
           "Suçları önlemede kanunlardan önce meleklerin amelleri yazdığı ve Allah'ın her şeyi bildiği inancından doğan iç denetimin (vicdan) etkili olduğunu gösterir.",
           "Asıl caydırıcı gücün dış polis denetimi değil, ahirette hesap verme inancından kaynaklanan otokontrol ve takva duygusu olduğunu kanıtlar."
         ],
-"rubric": [
+        "rubric": [
           {
             "criterion": "İç denetim ve takva/vicdan şuurunun vurgulanması",
             "points": 8
@@ -14908,7 +15708,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Meleklerin kaydı ve ahiret hesabı bilincinin açıklanması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -14923,11 +15724,11 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "questionText": "Ahiret inancının hastalık ve musibetler karşısında insana kazandırdığı 2 manevi kazanımı yazınız.",
         "solutionExplanation": "İsyanı önleme, günahlara kefaret bilinci, ebedi mükafat ümidi ile sabır gösterme.",
         "modelAnswer": "1. İsyandan Korur ve Sabır Kazandırır: Başa gelen sıkıntıların kör bir tesadüf olmadığını, bir imtihan olduğunu bilerek kadere rıza ve metanet gösterir.\n2. Ebedi Mükâfat Umudu: Hastalığa sabretmenin günahları döktüğünü ve ahirette hesapsız dereceler kazandıracağını bilerek ruhsal çöküntüye düşmekten korunur.",
-                "alternativeAnswers": [
+        "alternativeAnswers": [
           "1) Başa gelenin bir imtihan olduğunu bilerek isyandan kaçınır ve sabreder. 2) Zorlukların günahlara kefaret olacağı ve ahirette mükâfat getireceği ümidini taşır.",
           "1) Kadere rıza ve ruhsal metanet kazanır. 2) Hastalığın günahları temizlediği ve ebedi dereceler kazandırdığı inancıyla huzur bulur."
         ],
-"rubric": [
+        "rubric": [
           {
             "criterion": "İsyanı önleme ve metanet/sabır boyutunun açıklanması",
             "points": 8
@@ -14936,7 +15737,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Günahlara kefaret ve ahiretteki mükâfat umudunun yazılması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -14978,7 +15780,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b şıkkında Liam'ın kişilik özelliklerinin doğru yazılması",
             "points": 12
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -15002,7 +15805,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "2. cümlede doğru kişilik/karakter karşılaştırma kalıbı kurulması",
             "points": 12
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -15030,7 +15834,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "c şıkkında antrenman sıklığının doğru yazılması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -15058,7 +15863,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Gramer (Geniş Zaman) ve imla kurallarına tam uyum",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -15100,7 +15906,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "2. maddede Fiona'nın kişilik özelliklerinin yazılması",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -15124,7 +15931,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b şıkkında TRUE tespiti ve doğru kanıt cümlenin alıntılanması",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -15148,7 +15956,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b şıkkında cömertlik/cimrilik karşılaştırma cümlesinin doğru yazılması",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -15172,7 +15981,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b şıkkında indoor gym ve kneepads bilgisinin yazılması",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -15196,7 +16006,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İki açık alan sporunun (outdoor) doğru seçilmesi",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -15238,7 +16049,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b şıkkında Mrs. Demir'in kişilik özelliklerinin yazılması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -15262,7 +16074,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kişilik/karakter belirten 3 kelimenin doğru yazılması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -15286,7 +16099,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "2. cümlede kişilik karşılaştırmasının doğru yapılması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -15310,7 +16124,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b şıkkında sağlıklı besinlerin (eggs, fruits, fish) yazılması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -15334,7 +16149,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b şıkkında adil oyun (fair play) ve kurala saygının açıklanması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -15358,7 +16174,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "2. cümlede 'rarely / seldom' sıklık zarfının doğru kullanılması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -15400,7 +16217,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b şıkkında Murat'ın gözlük ve kıvırcık saç özelliğinin yazılması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -15424,7 +16242,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "2. tanım için 'generous' kelimesinin doğru yazılması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -15444,7 +16263,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Ağırlık/zayıflık karşılaştırmasının kurallı İngilizceyle yazılması",
             "points": 14
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -15464,7 +16284,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "'more hardworking than' kalıbının eksiksiz yazılması",
             "points": 14
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -15488,7 +16309,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b şıkkında flexibility, balance ve discipline kelimelerinin yazılması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -15512,7 +16334,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İki bireysel sporun doğru seçilmesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -15536,7 +16359,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "2. cümlede 'once a week' ve 'goes hiking' kullanımının doğruluğu",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -15578,7 +16402,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b şıkkında honest ve generous özelliklerinin yazılması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -15602,7 +16427,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b şıkkında polite, modest ve shy özelliklerinin yazılması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -15626,7 +16452,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b şıkkında 'more easy-going' kalıbının doğru yazılması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -15650,7 +16477,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "2. cümlede çalışkanlık/tembellik kıyaslamasının doğru yapılması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -15674,7 +16502,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "b şıkkında outdoor sport olduğunun yazılması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -15702,7 +16531,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "go swimming eşleştirmesinin doğruluğu",
             "points": 4
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -15722,7 +16552,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Silver medal cevabının doğru İngilizceyle yazılması",
             "points": 12
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 8,
@@ -15746,7 +16577,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "2. cümlede sıklık ifadesiyle egzersiz rutininin yazılması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -15784,7 +16616,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Deyimin 'etkisiz hale getirmek/iş göremez kılmak' anlamının yazılması",
             "points": 13
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -15808,7 +16641,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Benzetme sanatının unsurlarıyla gösterilmesi",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -15828,7 +16662,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Üç fiilimsinin ve türlerinin hatasız eşleştirilmesi",
             "points": 13
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -15852,7 +16687,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Sorumluluk ve kararlılık vurgusu",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -15872,7 +16708,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Metnin konusunun eksiksiz ve tek cümleyle ifade edilmesi",
             "points": 12
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -15896,7 +16733,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Karşılaştırmanın tespiti ve açıklanması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -15920,7 +16758,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Dize sonlarındaki ses benzerliği ve ahenk",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 8,
@@ -15944,7 +16783,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Oysaki ifadesinin karşıtlık amacıyla doğru kullanımı",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -15982,7 +16822,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Yeni bir dönem/yöntem başlatma anlamının açıklanması",
             "points": 12
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -16002,7 +16843,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Üç fiilimsinin türleriyle birlikte hatasız belirlenmesi",
             "points": 11
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -16026,7 +16868,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Bilgi verme amacının gerekçelendirilmesi",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -16046,7 +16889,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Hızlı veri tarama ve mikroskobik ayrıntıyı yakalama vurgusu",
             "points": 11
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -16066,7 +16910,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Ana fikrin açık, öz ve doğru ifade edilmesi",
             "points": 11
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -16086,7 +16931,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Teknolojinin etik ve vicdani yönlendirmeye muhtaç olduğu çıkarımı",
             "points": 11
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -16110,7 +16956,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İki nesnel kanıtın açıklanması",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 8,
@@ -16134,7 +16981,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kıyaslanan unsurların açıklanması",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 9,
@@ -16158,7 +17006,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Düşüncenin mantıksal tutarlılığı",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -16196,7 +17045,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İcra etmek kelimesinin 'uygulamak/sanatı gerçekleştirmek' anlamıyla yazılması",
             "points": 15
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -16220,7 +17070,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Benzetme sanatının gösterilmesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -16244,7 +17095,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "At kılı ve gül dalının belirtilmesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -16264,7 +17116,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Ebru sanatının konusu eksiksiz ifade edildi",
             "points": 14
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -16284,7 +17137,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Eşsizlik ve sabır boyutunu içeren ana fikir",
             "points": 14
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -16308,7 +17162,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Ahenk ve kafiye örgüsü",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -16332,7 +17187,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Nesne ve zarf tamlayıcılarının doğru tespiti",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -16370,7 +17226,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Canlıların birbirine bağımlılığı ve ekolojik bağ anlamının açıklanması",
             "points": 15
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -16394,7 +17251,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Metinden duyusal betimleme örneğinin gösterilmesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -16414,7 +17272,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Metnin konusunun eksiksiz ifade edilmesi",
             "points": 14
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -16434,7 +17293,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Gezegenin geleceği ve koruma zorunluluğunu içeren ana fikir",
             "points": 14
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -16458,7 +17318,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Örneklemenin gösterilmesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -16478,7 +17339,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Giriş, gelişme ve sonuç taslağının tutarlı oluşturulması",
             "points": 14
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -16502,7 +17364,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Buna rağmen ifadesinin karşıtlık bildirecek şekilde doğru kullanımı",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -16544,7 +17407,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kitaplara aktarıldığının açıklanması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -16564,7 +17428,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Üç fiilimsinin türlerinin doğru yazılması",
             "points": 11
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -16588,7 +17453,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Görüş çürütme ve savunma gerekçesi",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -16608,7 +17474,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Metnin anlamına uygun 2 sorunun yazılması",
             "points": 11
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -16628,7 +17495,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Empati ve sosyal ilişkilere olumlu yansıma çıkarımı",
             "points": 11
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -16652,7 +17520,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İki ayırt edici özelliğin yazılması",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -16676,7 +17545,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Görüşü inandırıcı kılma amacının açıklanması",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 8,
@@ -16700,7 +17570,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Betimleyici duyusal unsurların kullanımı",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 9,
@@ -16720,7 +17591,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Tüm ögelerin hatasız tespiti",
             "points": 11
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -16762,7 +17634,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Abartmanın gerekçesiyle tespiti",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -16786,7 +17659,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İki unsurun metinden gösterilmesi",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -16806,7 +17680,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İki katkının eksiksiz yazılması",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -16826,7 +17701,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Nitelikli, analiz gerektiren açık uçlu bir soru kurulması",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -16846,7 +17722,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Birlik ve dayanışma vurgulu ana fikir",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -16866,7 +17743,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İki uygun başlığın yazılması",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -16886,7 +17764,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Toplumsal sorumluluk ve diğerkâmlık çıkarımı",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 8,
@@ -16910,7 +17789,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kıyaslanan unsurların açıklanması",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 9,
@@ -16930,7 +17810,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Şiirin tema ve ölçü/ahenk uyumu",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 10,
@@ -16950,7 +17831,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Tüm ögelerin sorularıyla eşleştirilmesi",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -16988,7 +17870,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Üç fiilimsinin türleri ve ekleriyle doğru yazılması",
             "points": 15
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -17008,7 +17891,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kelimelerin kültürel hafıza ve ruh taşıyıcılığı vurgusu",
             "points": 15
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -17028,7 +17912,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Metnin konusunun eksiksiz ifade edilmesi",
             "points": 14
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -17048,7 +17933,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Milli kimlik ve anadile sahip çıkma bilinci çıkarımı",
             "points": 14
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -17072,7 +17958,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İkinci somut çözüm ve gerekçesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -17096,7 +17983,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Düşünce zenginliği ve akıcılık",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -17116,7 +18004,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Beş ögenin tamamının doğru yazılması",
             "points": 14
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -17158,7 +18047,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Üslü biçimde (2^3 x 3^2) doğru yazılması",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -17182,7 +18072,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Fidan sayısının 18 olarak işlem basamaklarıyla bulunması",
             "points": 4
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -17206,7 +18097,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Ortak bölenin sadece 1 olması gerekçesiyle aralarında asal denmesi",
             "points": 4
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -17234,7 +18126,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "(-5)^3 = -125 doğru",
             "points": 3
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -17258,7 +18151,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Pay ve payda işlemlerinin yapılıp 2^10 sonucunun bulunması",
             "points": 4
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -17282,7 +18176,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Ondalık kısmın (10^-1 ve 10^-3) doğru yazılması",
             "points": 4
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -17306,7 +18201,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Toplamın -9 olarak bulunması",
             "points": 4
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 8,
@@ -17330,7 +18226,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Bilimsel gösterim şartının (1 <= a < 10) sağlandığının belirtilmesi",
             "points": 4
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 9,
@@ -17354,7 +18251,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Çevrenin 56 cm olarak hesaplanması",
             "points": 4
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 10,
@@ -17378,7 +18276,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Farklar kıyaslanarak 9'a daha yakın olduğunun gösterilmesi",
             "points": 4
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 11,
@@ -17402,7 +18301,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "5√3 ifadesinin √75 olarak yazılması",
             "points": 4
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -17444,7 +18344,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Farklı asalların toplamının 10 olarak bulunması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -17468,7 +18369,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Saat 09:30'un doğru tespit edilmesi",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -17492,7 +18394,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Toplam şişe sayısının 15 olarak bulunması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -17516,7 +18419,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "8 basamaklı olduğunun doğru açıklanması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -17540,7 +18444,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Bölme işlemiyle 3^2 (9) sonucunun bulunması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -17564,7 +18469,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "11'e daha yakın olduğunun ispatlanması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -17588,7 +18494,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "En sade halinin 6√5 olarak belirlenmesi",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 8,
@@ -17612,7 +18519,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "z < x < y sıralamasının doğru yapılması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -17654,7 +18562,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Çift olan 6 çarpanın doğru belirlenmesi",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -17678,7 +18587,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "12 parça ve 10 kesim sayısının bulunması",
             "points": 4
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -17702,7 +18612,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Saat 10:20'nin bulunması",
             "points": 4
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -17726,7 +18637,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Ortak bölenin 1 olması ve aralarında asallık kuralı gerekçesi",
             "points": 4
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -17750,7 +18662,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Üslerin toplanıp 3^9 olarak bulunması",
             "points": 4
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -17774,7 +18687,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Alan = 2^17 cm² sonucunun bulunması",
             "points": 4
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -17798,7 +18712,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Ondalık kısmın 409 olarak yazılması",
             "points": 4
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 8,
@@ -17822,7 +18737,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "a - b = 2 sonucunun bulunması",
             "points": 4
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 9,
@@ -17846,7 +18762,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Bilimsel gösterim kuralının belirtilmesi",
             "points": 4
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 10,
@@ -17870,7 +18787,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Toplam telin 192 m olarak hesaplanması",
             "points": 4
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 11,
@@ -17894,7 +18812,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "6 metreye daha yakın olduğunun gösterilmesi",
             "points": 4
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -17936,7 +18855,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Toplam poşet sayısının 11 olarak bulunması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -17960,7 +18880,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "1 fazlası alınarak 43 sonucunun bulunması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -17984,7 +18905,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Sonucun 1 olarak bulunması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -18008,7 +18930,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "5^12 sonucunun bulunması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -18032,7 +18955,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Sonucun 5^12 olarak bulunması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -18056,7 +18980,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Toplamın 12 olarak bulunması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -18080,7 +19005,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "n = 4 değerinin doğru bulunması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 8,
@@ -18104,7 +19030,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Farklar kıyaslanarak 12'ye daha yakın olduğunun gösterilmesi",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -18146,7 +19073,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "En büyük çevrenin 74 cm olarak bulunması",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -18170,7 +19098,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Fayans sayısının 6 olarak bulunması",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -18194,7 +19123,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "24 gün cevabının bulunması",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -18218,7 +19148,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Diğer sayının 36 olarak bulunması",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -18242,7 +19173,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Çeyreğinin 2^28 olarak bulunması",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -18266,7 +19198,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "x = 4 sonucunun işlemle bulunması",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -18290,7 +19223,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "11 basamaklı olduğunun belirtilmesi",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 8,
@@ -18314,7 +19248,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Ondalık kısmın (10^-2 ve 10^-3) doğru yazılması",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 9,
@@ -18338,7 +19273,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "k = -7 sonucunun bulunması",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 10,
@@ -18358,7 +19294,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "3,7 x 10^13 bilimsel gösteriminin doğru yazılması",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -18400,7 +19337,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Pozitif bölen sayısının 24 olarak bulunması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -18424,7 +19362,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Toplam 5 parsel sayısının bulunması",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -18448,7 +19387,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "100'den büyük en küçük kat olan 108'in bulunması",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -18476,7 +19416,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Çarpımın 12 bulunması",
             "points": 3
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -18500,7 +19441,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Sonucun 155/8 olarak doğru hesaplanması",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -18524,7 +19466,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "c < a < b sıralamasının doğru yapılması",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -18548,7 +19491,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Sonucun 2^10 olarak doğru hesaplanması",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 8,
@@ -18572,7 +19516,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "K > L sonucunun bulunması",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 9,
@@ -18592,7 +19537,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "1,35 x 10^9 bilimsel gösteriminin doğru yazılması",
             "points": 11
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -18634,7 +19580,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Güneş ışınlarının geliş açısı ve dolanma hareketi ilişkisi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -18658,7 +19605,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Genin görev birimi olduğunun açıklanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -18682,7 +19630,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İsmini organik baza göre aldığının belirtilmesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -18706,7 +19655,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İkili ve üçlü hidrojen bağı sayılarının belirtilmesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -18734,7 +19684,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Şeker ve fosfat sayılarının 2000 bulunması",
             "points": 4
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -18758,7 +19709,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Eşleşme ve iki özdeş DNA oluşumunun sırasıyla yazılması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -18782,7 +19734,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Tek taraflı hatanın referans bazla onarılma gerekçesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -18824,7 +19777,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Güney Yarım Küre mevsim ve gece süresi",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -18848,7 +19802,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Eğik açıda geniş alan ve düşük enerji açıklanması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -18872,7 +19827,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Örneklerle gerekçelendirilmesi",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -18896,7 +19852,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Şeker ve fosfat dengesinin tam uyumunun ispatı",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -18920,7 +19877,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kalıtsal çeşitlilik bağlantısının kurulması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -18944,7 +19902,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Sitoplazmadaki serbest moleküllerin azalma gerekçesi",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -18972,7 +19931,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Fenotipin %100 sarı bulunması",
             "points": 4
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 8,
@@ -18996,7 +19956,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Beyaz çiçek ihtimalinin %25 olarak bulunması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -19038,7 +19999,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Aydınlanma çemberinin kutup noktalarından geçişi",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -19062,7 +20024,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "21 Aralık'ta en uzun gölge ve eğik açı gerekçesi",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -19086,7 +20049,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kromozomun DNA + protein yapısı olduğunu açıklama",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -19110,7 +20074,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Oranın 1 olduğunun matematiksel ispatı",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -19134,7 +20099,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Hidrojen bağı sayısının 18 olarak hesaplanması",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -19154,7 +20120,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Üç terimin harflerle eksiksiz gösterilmesi",
             "points": 11
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -19178,7 +20145,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "%50 olasılığının doğru bulunması",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 8,
@@ -19202,7 +20170,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Babadan gelen Y kromozomunun belirleyici olduğunun açıklanması",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 9,
@@ -19226,7 +20195,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Çekinik genin aktarımı mantığıyla gerekçelendirilmesi",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -19268,7 +20238,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Eksen eğikliği ve eğik geliş açısı gerekçesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -19292,7 +20263,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kuzeye gidildikçe gündüzün uzaması gerekçesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -19316,7 +20288,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kalıtsal özellikleri şifreleme fonksiyonunun açıklanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -19340,7 +20313,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Saf döl (homozigot çekinik) şartının yazılması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -19364,7 +20338,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Yarı korunumlu eşlenme ve birebir kopya oluşumu vurgusu",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -19388,7 +20363,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "1200 şeker ve 1200 fosfat sayısının açıklanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -19412,7 +20388,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Anne ve babanın melez (Kk) olduğunun kanıtlanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -19454,7 +20431,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Dik açıda kısa yol ve yüksek sıcaklık ilişkisi",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -19478,7 +20456,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Gece-gündüz eşitliğinin yıl boyu süreceğinin belirtilmesi",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -19502,7 +20481,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İkili hidrojen bağının belirtilmesi",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -19526,7 +20506,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Vücut hücresi (kalıtsal değil) ve üreme hücresi (kalıtsal) ayrımı",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -19550,7 +20531,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Modifikasyonda sadece işleyişin değiştiği ve kalıtsal olmadığının açıklanması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -19574,7 +20556,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "%25 DD, %50 Dd, %25 dd oranlarının hatasız bulunması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -19598,7 +20581,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "%50 yeşil ve %50 sarı oranının doğru bulunması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 8,
@@ -19622,7 +20606,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Çekinik hastalık genlerinin yan yana gelme riskinin artışı vurgusu",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -19664,7 +20649,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Yerli esnafın iflası ve açık pazar olma sonucunun açıklanması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -19688,7 +20674,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Batı'daki yenilikleri ve fikirleri takip etme katkısı",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -19712,7 +20699,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Hürriyet ve bağımsızlık bilinci boyutu",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -19736,7 +20724,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Vatanseverlik özelliğinin gerekçesiyle açıklanması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -19760,7 +20749,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İttifak devletlerinin 3 kurucu üyesinin yazılması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -19784,7 +20774,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İki savunma cephesinin doğru yazılması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -19826,7 +20817,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Azınlık isyanları ve toprak kayıplarının belirtilmesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -19850,7 +20842,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Gizlice sınava girip kazanma kararlılığı vurgusu",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -19874,7 +20867,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Güçler ayrılığı ve eşitlik/hukuk ilkesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -19898,7 +20892,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Yenilikleri ve anayasal düzeni savunma anlayışı",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -19922,7 +20917,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Zincirleme ittifak antlaşmalarının devreye girişi gerekçesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -19946,7 +20942,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Rus limanlarının bombalanması ve fiilen savaşa giriş",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -19970,7 +20967,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İşgallere hukuki kılıf ve dayanak hazırlama amacının açıklanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -20012,7 +21010,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Balkan isyanları nedeniyle geçerliliğini yitirmesinin açıklanması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -20036,7 +21035,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Fransızca öğrenme gayreti ve kurslarının belirtilmesi",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -20060,7 +21060,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Milli devlet ve millet egemenliği bağıntısının kurulması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -20084,7 +21085,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Zaman kazandırma ve savaşın seyrini değiştirme etkisinin açıklanması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -20108,7 +21110,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Almanya-Fransa arasındaki intikam ve savaş sebebi ilişkisi",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -20132,7 +21135,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Osmanlı ve Avusturya'nın toprak bütünlüğüne darbe vurması boyutu",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -20156,7 +21160,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Rusların Doğu Anadolu şehirlerini işgali sonucu",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 8,
@@ -20180,7 +21185,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Karışıklık bahanesiyle işgal zemini hazırlama gerekçesi",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -20222,7 +21228,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "El yazısıyla gazete çıkarma ve teşkilatlanma faaliyeti",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -20246,7 +21253,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Parlamento ve meclis sistemini inceleme katkısı",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -20270,7 +21278,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Bitlis şehrinin doğru yazılması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -20294,7 +21303,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Batı Anadolu ve On İki Ada vaadinin açıklanması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -20318,7 +21328,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Rusya'ya yardım gidememesi ve Bolşevik İhtilali ilişkisi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -20342,7 +21353,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Çöl şartları ve lojistik yetersizlik gerekçesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -20384,7 +21396,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Mali bağımsızlığın sona ermesi ve yarı sömürge olma sonucu",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -20408,7 +21421,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Akılcı ve sorgulayıcı zihniyet katkısı",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -20432,7 +21446,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Ulusal özgüven ve bağımsızlık inancı boyutu",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -20456,7 +21471,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İstibdata karşı hürriyet ve vatanı kurtarma amacının açıklanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -20480,7 +21496,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Misak-ı Milli güney sınırını çizme stratejik önemi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -20504,7 +21521,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Silahlanma ve bloklaşmayı tetikleme sonucu",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -20528,7 +21546,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Alman askeri heyeti ve Almanya ile ittifak ilişkisi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -20570,7 +21589,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Türk milli kültürü ve bağımsızlık ilkesinin açıklanması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -20594,7 +21614,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Hitabet ve arkadaş grubunu yönlendirme örneği",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -20618,7 +21639,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Laiklik ve çağdaşlaşma inkılaplarına ilham olma bağıntısı",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -20642,7 +21664,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Arazi hâkimiyeti ve kurmaylık dehası vurgusu",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -20666,7 +21689,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İngiltere'nin Hindistan sömürge yoluna tehdit oluşturması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -20690,7 +21714,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İngiliz askeri prestijinin sarsılması ve tarihi önemi",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -20714,7 +21739,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Savaş bölgesi dışındaki güvenli bölgelere geçici sevk edilme boyutu",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 8,
@@ -20738,7 +21764,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Halkın silahlı direniş göstermesini engelleme gerekçesi",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -20780,7 +21807,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kemal isminin olgunluk/mükemmellik anlamı ve yansıması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -20804,7 +21832,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Ömer Naci ve hitabet becerisi örneği",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -20828,7 +21857,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Meydan zaferinin masa başında kaybedilmemesi dersi",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -20852,7 +21882,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Farklı alanlardaki inkılaplara olan derin yansıması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -20876,7 +21907,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Çanakkale çıkarmasında doğru konuşlanma sağlaması katkısı",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -20900,7 +21932,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "1919'da Milli Mücadele'nin tartışmasız lideri olmasını sağlaması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -20924,7 +21957,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Alman ordusu ve teknolojisine duyulan güven",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 8,
@@ -20948,7 +21982,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Halifeliğin cihat gücüyle sömürgeleri ayaklandırma hedefi",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -20990,7 +22025,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Ayetle evrendeki nizam ve denge ilişkisinin kurulması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -21014,7 +22050,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Cüzi irade ve ahlaki sorumluluk ilişkisinin açıklanması",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -21038,7 +22075,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Gerekli tedbirleri aldıktan sonra Allah'a güvenme tanımı",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -21062,7 +22100,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Helal kazanç ve haksız yolların reddi vurgusu",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -21086,7 +22125,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Kadere suç atmanın sorumluluktan kaçma olduğunun açıklanması",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -21110,7 +22150,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İhmalkarlık ve kul hakkının kadere yüklenemeyeceğinin vurgulanması",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -21134,7 +22175,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Tebliğde nezaket ve sabır ahlakının vurgulanması",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 8,
@@ -21158,7 +22200,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Ayet el-Kürsi'nin tevhid ve mutlak kudret ana mesajı",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 9,
@@ -21182,7 +22225,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Zenginin cimriliğini arındırma ve toplumsal barış katkısı",
             "points": 5
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -21224,7 +22268,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Ahiret karşılığının kendi amellerinin sonucu olduğu gerekçesi",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -21248,7 +22293,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Ergenlik ve irade çağı şartının belirtilmesi",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -21272,7 +22318,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Zamanı ve hayatı bilinçli değerlendirme gerekliliği",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -21296,7 +22343,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Hadise dayalı şifa arama bilincinin açıklanması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -21320,7 +22368,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Çalışma ve sebeplere sarılma zorunluluğunun açıklanması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -21344,7 +22393,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Necm suresi ve çalışma-başarı yasası ilişkisi",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -21368,7 +22418,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Zor anlarda ümitsizliğe kapılmama dersinin vurgulanması",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 8,
@@ -21392,7 +22443,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İki somut ve kalıcı hayır örneğinin verilmesi",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -21434,7 +22486,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Asılsız bilgilerin peşine düşmeme uyarısının açıklanması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -21458,7 +22511,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İmtihan dünyasının mantığıyla bağ kurulması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -21482,7 +22536,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Karun kıssası ve şükür/tevazu bilinciyle açıklanması",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -21506,7 +22561,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Ömrü faydalı amellerle değerlendirme gerekliliği",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -21530,7 +22586,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Tohum ekmeden mahsul bekleme cehaletinin çürütülmesi",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -21554,7 +22611,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Korkulardan arınma ve ruhsal huzur kazanma boyutu",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -21600,7 +22658,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Toplumsal yasa örneğinin doğruluğu",
             "points": 4
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -21624,7 +22683,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Bireylerin ahlaki ıslahı ile toplumsal refah bağıntısı",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -21648,7 +22708,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Peygamberlerin tebliği ve cüzi irade vurgusu",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -21672,7 +22733,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Önce tüm tedbirleri alıp sonra Allah'a tevekkül etme dersi",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -21696,7 +22758,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Haramı seçmenin sorumluluğu ve günahı boyutu",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -21720,7 +22783,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Zamanı faydalı ilim ve insanlığa hizmetle geçirme gerekliliği",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -21744,7 +22808,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İslam'ın sorumluluk ve adalet ilkelerine aykırılık gerekçesi",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 8,
@@ -21768,7 +22833,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Can güvenliğini tehlikeye atmanın ve kul hakkının kadere yüklenemeyeceği",
             "points": 6
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -21810,7 +22876,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Besin zinciri ve ekolojik düzen vurgusu",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -21834,7 +22901,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Allah'ın adaleti ve cüzi irade hesabı gerekçesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -21858,7 +22926,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Başarısızlık anında ümitsizliği önleme ve iç huzur katkısı",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -21882,7 +22951,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Rızkın infak ve yardımlaşmayla değerlendirilmesi vurgusu",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -21906,7 +22976,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Tedbir almanın da kaderin bir parçası olduğu bilincinin vurgulanması",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -21930,7 +23001,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Tevhid inancını zedelemesi ve yalnız Allah'a tevekkül gerekçesi",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -21954,7 +23026,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "İnsanın bilgisinin sınırlılığı ve bağımlılığı vurgusu",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -21996,7 +23069,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Secret keeping attitude explained correctly",
             "points": 12
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -22024,7 +23098,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Clear excuse given",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -22048,7 +23123,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Dislike of classical music and opinion stated",
             "points": 12
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -22068,7 +23144,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Accurate comparison based on percentage data",
             "points": 25
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -22110,7 +23187,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Two positive character traits identified",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -22134,7 +23212,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Snacks/popcorn request identified",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -22158,7 +23237,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Asking about the movie title/genre",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -22182,7 +23262,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Defne's reason (acoustic instruments have a soul) stated",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -22206,7 +23287,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Grammatical and lexical accuracy",
             "points": 10
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -22244,7 +23326,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Lack of empathy and selfishness explained as the barrier to true friendship",
             "points": 17
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -22264,7 +23347,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "All four personality adjectives matched accurately",
             "points": 17
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -22288,7 +23372,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Family dinner/grandparents excuse stated clearly",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -22312,7 +23397,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Polite invitation phrase used",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -22336,7 +23422,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Three equipment items listed",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -22360,7 +23447,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Opinion on formal wear stated accurately",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -22402,7 +23490,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Two shared hobbies listed",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -22426,7 +23515,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Evidence from dialogue quoted and explained",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -22446,7 +23536,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Excuse stated accurately and completely",
             "points": 17
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -22470,7 +23561,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Twice a week frequency stated",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -22490,7 +23582,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Three music genres correctly completed",
             "points": 16
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -22514,7 +23607,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Grammar and vocabulary accuracy",
             "points": 8
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   },
@@ -22552,7 +23646,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Cheering up and constructive support accurately described",
             "points": 15
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 2,
@@ -22572,7 +23667,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Three positive opposite traits correctly written",
             "points": 15
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 3,
@@ -22596,7 +23692,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Friday evening deadline stated",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 4,
@@ -22620,7 +23717,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Monday alternative suggestion included",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 5,
@@ -22644,7 +23742,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Scientific balance finding accurately explained",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 6,
@@ -22668,7 +23767,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Student price stated",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       },
       {
         "questionNumber": 7,
@@ -22692,7 +23792,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "criterion": "Grammar, structure and natural phrasing",
             "points": 7
           }
-        ]
+        ],
+        "sourceOrigin": "oyss_curated"
       }
     ]
   }

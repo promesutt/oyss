@@ -6,6 +6,7 @@ import {
   getQuestionSourceBadge
 } from '../types';
 import { MathRenderer } from './MathRenderer';
+import { QuestionVisualView } from './QuestionVisualView';
 import { formatOutcomeBadgeTitle } from '../data/curriculumData';
 import { triggerPdfPrint } from '../utils/materialFileNameGenerator';
 import { 
@@ -38,9 +39,8 @@ export const ExamPaperView: React.FC<ExamPaperViewProps> = ({
   const [showOutcomeTitleInPrint, setShowOutcomeTitleInPrint] = useState<boolean>(false);
 
   const classification = useMemo(() => {
-    if (!isCustomAIExam) return 'official_base' as const;
     return examPaper.examClassification || classifyExamQuestions(examPaper.questions);
-  }, [isCustomAIExam, examPaper.examClassification, examPaper.questions]);
+  }, [examPaper.examClassification, examPaper.questions]);
 
   const classDetails = useMemo(() => {
     return getExamClassificationDetails(classification);
@@ -314,7 +314,7 @@ export const ExamPaperView: React.FC<ExamPaperViewProps> = ({
                   )}
 
                   {/* Soru Kaynak Kökeni Rozeti (Öğrenci sınavında yer almaz, baskıda gizlenir) */}
-                  {isCustomAIExam && (
+                  {q.sourceOrigin && (
                     (() => {
                       const sBadge = getQuestionSourceBadge(q.sourceOrigin, q.originExamTitle, q.originQuestionNumber);
                       return (
@@ -367,6 +367,13 @@ export const ExamPaperView: React.FC<ExamPaperViewProps> = ({
               <div className="text-sm sm:text-base font-semibold text-slate-900 mb-4 pl-1 print:text-[12px] print:font-bold print:mb-2 print:pl-0 print:leading-snug">
                 <MathRenderer content={q.questionText} />
               </div>
+
+              {/* Soru Matematiksel Görsel Modeli (FAZ 2B) */}
+              {q.visual && (
+                <div className="my-3 print:my-1.5">
+                  <QuestionVisualView visual={q.visual} />
+                </div>
+              )}
 
               {/* Student Answer Space (Blank lines or boxed area) */}
               <div className="mt-4 pt-3 border-t border-dashed border-slate-300 print:mt-1.5 print:pt-1">
@@ -450,11 +457,11 @@ export const ExamPaperView: React.FC<ExamPaperViewProps> = ({
 
         {/* Footer */}
         <div className="mt-8 pt-4 border-t-2 border-slate-800 flex items-center justify-between text-[11px] text-slate-500 print:mt-3 print:pt-2 print:border-t print:border-slate-400 print:text-[10px]">
-          <span>{isCustomAIExam ? classDetails.titleSuffix : 'T.C. MEB Türkiye Yüzyılı Maarif Modeli'}</span>
+          <span>{classDetails.titleSuffix} • MEB Müfredat Referanslı</span>
           <span>Çalışmanız tamamlanmıştır, lütfen cevaplarınızı ve gerekçelerinizi kontrol ediniz.</span>
           <span className="print:hidden">Sayfa 1 / 1</span>
         </div>
-        {isCustomAIExam && (
+        {classDetails.disclaimer && (
           <div className="mt-2 text-center text-[10px] text-slate-400 italic">
             {classDetails.disclaimer}
           </div>

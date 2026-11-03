@@ -16,7 +16,7 @@ export interface GeneratedQuestionItem {
   commonStimulus?: string;
   hasMissingSourceError?: boolean;
   sourceValidationError?: string;
-  sourceOrigin?: 'meb_official' | 'oyss_curated' | 'oyss_synthetic' | 'gemini_ai';
+  sourceOrigin?: 'meb_official' | 'oyss_curated' | 'oyss_synthetic' | 'gemini_ai' | 'unknown';
   originExamTitle?: string;
   originQuestionNumber?: number;
 }
@@ -527,7 +527,7 @@ export const ingilizceQuestions: GeneratedQuestionItem[] = getEnglishQuestions()
  * tüm soru havuzlarını bağlamsal değişkenlerle (öğrenci isimleri, puan dağılımı) döndürür.
  */
 export function getAllFallbackQuestions(context: FallbackPoolContext = {}): GeneratedQuestionItem[] {
-  return [
+  const allQuestions = [
     ...getScienceQuestionsSetA(context),
     ...getScienceQuestionsSetB(context),
     ...getMathQuestionsSetA(context),
@@ -544,4 +544,8 @@ export function getAllFallbackQuestions(context: FallbackPoolContext = {}): Gene
     ...getDinQuestionsSetA(context),
     ...getEnglishQuestions(context)
   ];
+  return allQuestions.map(q => ({
+    ...q,
+    sourceOrigin: q.sourceOrigin || ('oyss_curated' as const)
+  }));
 }

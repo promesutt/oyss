@@ -189,7 +189,10 @@ async function runTests() {
   const hasRubricCriteriaQ1 = postExamHtml.includes('Şeklin ışın olduğunun belirtilmesi');
   const hasSourceCard = postExamHtml.includes('Bu soruyu nereden çalışmalıyım?');
   const hasLabelBenimCevabim = postExamHtml.includes('Benim Cevabım:');
-  const hasLabelModelCevap = postExamHtml.includes('MEB ÖDSGM Model Cevap') || postExamHtml.includes('MEBİ Model Cevap');
+  const hasLabelModelCevap = 
+    postExamHtml.includes('OYSS Model Cevap') || 
+    postExamHtml.includes('MEB ÖDSGM Model Cevap') || 
+    postExamHtml.includes('MEBİ Model Cevap');
 
   assert(
     hasModelAnswerQ1 && hasRubricCriteriaQ1 && hasSourceCard && hasLabelBenimCevabim && hasLabelModelCevap,

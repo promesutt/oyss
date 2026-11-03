@@ -24,6 +24,7 @@ import {
   clearPracticeSession 
 } from '../utils/practiceStorage';
 import { TextbookSourceCard } from './TextbookSourceCard';
+import { QuestionVisualView } from './QuestionVisualView';
 import { triggerPdfPrint } from '../utils/materialFileNameGenerator';
 import { 
   ArrowLeft,
@@ -90,21 +91,17 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
   const totalQuestions = questions.length;
 
   const classification = useMemo(() => {
-    if (!isCustomAIExam) return 'official_base' as const;
     return examPaper.examClassification || classifyExamQuestions(examPaper.questions);
-  }, [isCustomAIExam, examPaper.examClassification, examPaper.questions]);
+  }, [examPaper.examClassification, examPaper.questions]);
 
   const classDetails = useMemo(() => {
     return getExamClassificationDetails(classification);
   }, [classification]);
 
-  // Soru bazında MEB ÖDSGM vs. OYSS kaynak tespiti (sınav genel bayrağı yerine soru kökenini esas alır)
+  // Soru bazında MEB ÖDSGM vs. OYSS kaynak tespiti (yalnızca gerçek meb_official soruları MEB sayılır)
   const isQuestionFromMeb = (qItem?: any): boolean => {
     if (!qItem) return false;
-    if (qItem.sourceOrigin) {
-      return qItem.sourceOrigin === 'meb_official';
-    }
-    return !isCustomAIExam;
+    return qItem.sourceOrigin === 'meb_official';
   };
 
   // Initialize or load session from localStorage
@@ -574,12 +571,8 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
               Sınav Kâğıdına (A4) Dön
             </button>
             <div className="flex items-center space-x-2">
-              <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold border ${
-                isCustomAIExam 
-                  ? classDetails.badgeColor
-                  : 'bg-blue-100 text-blue-900 border-blue-200'
-              }`}>
-                {isCustomAIExam ? `★ ${classDetails.badgeLabel}` : 'MEB ÖDSGM Örnek Sınavı'}
+              <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold border ${classDetails.badgeColor}`}>
+                {isCustomAIExam ? `★ ${classDetails.badgeLabel}` : classDetails.badgeLabel}
               </span>
               <span className="text-xs text-slate-500 hidden sm:inline">•</span>
               <span className="text-xs font-semibold text-slate-700 truncate max-w-xs sm:max-w-md">
@@ -935,7 +928,7 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
                             {formatOutcomeBadgeTitle(q.outcomeTitle, q.outcomeCode) || q.outcomeTitle}
                           </span>
                         )}
-                        {isCustomAIExam && (
+                        {q.sourceOrigin && (
                           (() => {
                             const sBadge = getQuestionSourceBadge(q.sourceOrigin, q.originExamTitle, q.originQuestionNumber);
                             return (
@@ -1289,7 +1282,7 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
                   )}
 
                   {/* Soru Kaynak Kökeni Rozeti */}
-                  {isCustomAIExam && (
+                  {currentQ.sourceOrigin && (
                     (() => {
                       const sBadge = getQuestionSourceBadge(currentQ.sourceOrigin, currentQ.originExamTitle, currentQ.originQuestionNumber);
                       return (
@@ -1359,6 +1352,13 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
                 <span className="text-indigo-600 mr-2">Soru {qNum}:</span>
                 <MathRenderer content={currentQ.questionText} />
               </div>
+
+              {/* Soru Matematiksel Görsel Modeli (FAZ 2B) */}
+              {currentQ.visual && (
+                <div className="my-3">
+                  <QuestionVisualView visual={currentQ.visual} />
+                </div>
+              )}
 
               {/* Student Response Editor with Math and Live Preview Support */}
               <div className="pt-2">
