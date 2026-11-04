@@ -194,19 +194,29 @@ export function checkStimulusQuality(
     };
   }
 
-  // 2. Yetersiz Soyut Meta-Özet Kontrolü (Zeytinyağı hatasının kök nedeni!)
-  // Örnek: "Metinde zeytinin toplanıp yağa dönüştürülmesine kadar belirli bir sıra anlatılmıştır."
-  // Metnin kendisi (yaygı serilmesi, sırıkla silkeleme, taş değirmen) YOK, sadece metin hakkında 1 cümlelik özet var.
+  // 2. Yetersiz Soyut Meta-Özet veya Doğrudan Soru Cümlesi Kontrolü
+  // Örnek: "Metne göre: Dede Korkut bu gence neden 'Boğaç Han' adını vermiştir?" (Soru kökünün stimulus alanına yazılması)
+  // Örnek: "Metinde zeytinin toplanıp yağa dönüştürülmesine kadar belirli bir sıra anlatılmıştır." (Meta-özet)
+  // Örnek: "Metne göre mimarlar kuş evlerini yapıların rastgele bir yerine değil..." (Tek cümlelik direktif)
   if (requirement.type === 'reading_text') {
+    // 2.a: Soru kökünün stimulus alanına yazılması veya soru cümlesi olması durumu
+    if (trimmed.endsWith('?') || /^(?:soru\s*:?|metne\s+göre\s*:?)\s*.*(?:\?|neden|niçin|nasıl)/i.test(trimmed)) {
+      return {
+        isValid: false,
+        isMetaSummary: true,
+        isCrossReference: false
+      };
+    }
+
+    // 2.b: Soyut Meta-Özet veya Direktif Cümlesi Kontrolü
     const metaSummaryPatterns = [
-      /^metinde\s+.*anlatıl(?:maktadır|mıştır)\.?$/i,
-      /^metin\s+.*etrafında\s+şekillenmiştir\.?$/i,
-      /^okuduğunuz\s+metin\s+.*işlemektedir\.?$/i,
-      /^bu\s+metinde\s+.*bahsedilmektedir\.?$/i,
-      /^metinde\s+belirli\s+bir\s+sıra\s+anlatılmıştır\.?$/i
+      /^(?:metinde|parçada|şiirde|bu\s+metinde)\s+/i,
+      /^(?:metne|parçaya|şiire|yukarıdaki\s+metne|metinden|parçadan)\s+(?:göre|hareketle|dayanarak|dayalı)/i,
+      /^metin\s+.*etrafında\s+şekillenmiştir/i,
+      /^okuduğunuz\s+metin\s+/i
     ];
 
-    const isMeta = metaSummaryPatterns.some(p => p.test(trimmed)) && trimmed.length < 130;
+    const isMeta = metaSummaryPatterns.some(p => p.test(trimmed)) && trimmed.length < 180;
     if (isMeta) {
       return {
         isValid: false,
@@ -241,6 +251,40 @@ export function checkStimulusQuality(
     isMetaSummary: false,
     isCrossReference: false
   };
+}
+
+/**
+ * Metin gerektiren fakat stimulus alanında gerçek bir okuma metni bulunmayan
+ * (veya metni kurtarılamayan) soruların soru kökünü temizler; metne atıf yapmayan,
+ * kendi başına cevaplanabilir bağımsız bir forma dönüştürür.
+ */
+export function sanitizeTextReferencesIfNoStimulus(stem: string, stimulus: string | undefined | null): string {
+  const stemTrimmed = (stem || '').trim();
+  const stimTrimmed = (stimulus || '').trim();
+  const req = detectSourceRequirement(stemTrimmed, undefined, undefined, stimTrimmed);
+  if (!req.requiresSource || req.type !== 'reading_text') {
+    return stemTrimmed;
+  }
+  const quality = checkStimulusQuality(stimTrimmed, req);
+  if (quality.isValid && stimTrimmed.length >= 80) {
+    return stemTrimmed;
+  }
+
+  // Metin yok veya yetersiz: Soru kökünü metne atıf yapmayan, kendi başına cevaplanabilir forma dönüştür
+  let cleaned = stemTrimmed
+    .replace(/^(?:yukarıdaki\s+metne|metne|parçaya|şiire|metinden|parçadan)\s+(?:göre|hareketle|dayanarak|dayalı)\s*:\s*/i, '')
+    .replace(/(?:yukarıdaki\s+metne|metne|parçaya|şiire|metinden|parçadan)\s+(?:göre|hareketle|dayanarak|dayalı)\s*,?\s*/gi, '')
+    .replace(/metindeki\s+olay\s+örgüsünden\s+hareketle\s*/gi, '')
+    .replace(/metindeki\s+/gi, 'durumdaki ')
+    .replace(/parçadaki\s+/gi, 'durumdaki ')
+    .replace(/yukarıdaki\s+metnin\s+/gi, 'bu konunun ')
+    .replace(/bu\s+metne\s+/gi, 'bu konuya ')
+    .trim();
+
+  if (cleaned.length > 0) {
+    cleaned = cleaned.charAt(0).toUpperCase() + cleaned.slice(1);
+  }
+  return cleaned;
 }
 
 /**
@@ -363,7 +407,7 @@ export function validateAndEnrichExamQuestions<T extends ExamQuestion | {
     // B.2: Birincil ortak metin uyumluysa oradan geri yükle
     if (!recoveredText && primaryCommonText) {
       // Metin içeriği ile soru kökü anahtar kelime uyumu kontrolü (Örn: "zeytin", "hasat", "ahşap", "karınca")
-      const firstWord = qText.match(/(?:zeytin|hasat|ahşap|sandık|karınca|kuş|çınar|şerife|ahilik|tebessüm|kitap|boğaç|hoca)/i)?.[0];
+      const firstWord = qText.match(/(?:zeytin|hasat|ahşap|sandık|karınca|kuş|çınar|şerife|ahilik|tebessüm|kitap|boğaç|hoca|kütüphane|elif|kutup|göbeklitepe|balina)/i)?.[0];
       if (!firstWord || primaryCommonText.toLowerCase().includes(firstWord.toLowerCase())) {
         recoveredText = primaryCommonText;
         recoverySourceLabel = `Sınavın 1. sorusundaki ortak okuma metninden geri yüklendi`;

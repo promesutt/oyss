@@ -13,7 +13,8 @@ import { distributeExamPoints, reconcileRubricPoints } from './examScoring';
 import { 
   detectSourceRequirement, 
   checkStimulusQuality, 
-  validateAndEnrichExamQuestions 
+  validateAndEnrichExamQuestions,
+  sanitizeTextReferencesIfNoStimulus
 } from './sourceMaterialValidator';
 import { parseExamJsonSafely } from './jsonParser';
 import { buildLiveExamPrompt, buildAvoidDirectives } from '../generators/prompts';
@@ -581,10 +582,72 @@ export async function generateMEBIQuestions(
         }
       }
 
+      // Metin/Kaynak gerektiren sorular için Stimulus Kalitesi Denetimi (Metinsiz soru önleme)
+      const sourceReq = detectSourceRequirement(rawStem, q.templateType, undefined, rawStim);
+      if (!isPedagogicallyDeficient && sourceReq.requiresSource && sourceReq.type === 'reading_text') {
+        const stimQuality = checkStimulusQuality(rawStim, sourceReq);
+        if (!stimQuality.isValid) {
+          isPedagogicallyDeficient = true;
+          deficiencyReason = `Metne dayalı soru kökü bulunmasına rağmen geçerli okuma metni eksik veya yetersiz ("${(rawStim || '').slice(0, 40)}...")`;
+        }
+      }
+
       // Soru pedagojik olarak kusurlu veya eksikse: Yalnızca bu soruyu MEB onaylı referans havuzundan cerrahi olarak ikame et
       if (isPedagogicallyDeficient) {
         console.warn(`[PedagogicalQuality] ${idx + 1}. soruda pedagojik kusur (${deficiencyReason}) tespit edildi; MEB onaylı referans havuzundan güvenle ikame ediliyor.`);
-        const fallbackMatch = internalAllQuestions.find(fq => fq.outcome === requiredOutcome);
+        let fallbackMatch = internalAllQuestions.find(fq => {
+          if (fq.outcome !== requiredOutcome) return false;
+          if (sourceReq.requiresSource && sourceReq.type === 'reading_text') {
+            const fqReq = detectSourceRequirement(fq.question, fq.templateType, undefined, fq.stimulus);
+            const fqQual = checkStimulusQuality(fq.stimulus, fqReq);
+            if (!fqQual.isValid || (fq.stimulus || '').length < 80) return false;
+          }
+          return !isDuplicateOrTooSimilar(fq.question, fq.stimulus, allAvoidItems, undefined, 0.38);
+        }) || internalAllQuestions.find(fq => {
+          if (fq.outcome !== requiredOutcome) return false;
+          if (sourceReq.requiresSource && sourceReq.type === 'reading_text') {
+            const fqReq = detectSourceRequirement(fq.question, fq.templateType, undefined, fq.stimulus);
+            const fqQual = checkStimulusQuality(fq.stimulus, fqReq);
+            return fqQual.isValid && (fq.stimulus || '').length >= 80;
+          }
+          return true;
+        }) || internalAllQuestions.find(fq => fq.outcome === requiredOutcome);
+
+        if (!fallbackMatch) {
+          const sampleMatch = SAMPLE_EXAMS.flatMap(e => e.questions.map(sq => ({ sq, exam: e }))).find(({ sq }) => {
+            if (sq.outcomeCode !== requiredOutcome) return false;
+            if (sourceReq.requiresSource && sourceReq.type === 'reading_text') {
+              const fqReq = detectSourceRequirement(sq.questionText, sq.archetype, sq.contextText, sq.stimulus);
+              const fqQual = checkStimulusQuality(sq.stimulus, fqReq);
+              if (!fqQual.isValid || (sq.stimulus || '').length < 80) return false;
+            }
+            return !isDuplicateOrTooSimilar(sq.questionText, sq.stimulus, allAvoidItems, undefined, 0.38);
+          }) || SAMPLE_EXAMS.flatMap(e => e.questions.map(sq => ({ sq, exam: e }))).find(({ sq }) => {
+            return sq.outcomeCode === requiredOutcome;
+          });
+
+          if (sampleMatch) {
+            const { sq, exam } = sampleMatch;
+            fallbackMatch = {
+              number: sq.questionNumber,
+              outcome: sq.outcomeCode,
+              outcomeTitle: sq.outcomeTitle || officialTitle || 'Öğrenme Çıktısı',
+              difficulty: sq.difficulty || 'Orta',
+              level: sq.cognitiveLevel || 'Karmaşık Bilişsel Süreçler',
+              templateType: sq.archetype || 'Kurgusal Senaryo & Vaka İncelemesi',
+              points: targetPts,
+              stimulus: sq.stimulus || '',
+              question: sq.questionText,
+              answer: sq.modelAnswer || '',
+              alternativeAnswers: sq.alternativeAnswers,
+              rubric: (sq.rubric || []).map((r: any) => ({ item: r.criterion, pts: r.points })),
+              sourceOrigin: 'oyss_curated' as const,
+              originExamTitle: exam.title,
+              originQuestionNumber: sq.questionNumber,
+              visual: sq.visual
+            };
+          }
+        }
 
         if (fallbackMatch) {
           const rawRubric = (fallbackMatch.rubric || []).map((r: any) => ({
@@ -592,6 +655,11 @@ export async function generateMEBIQuestions(
             points: r.pts ?? r.points
           }));
           const reconciled = reconcileRubricPoints(rawRubric, targetPts);
+
+          const finalFallbackStem = sanitizeTextReferencesIfNoStimulus(
+            fallbackMatch.question || `${officialTitle} ile ilgili durumu açıklayınız.`,
+            fallbackMatch.stimulus || q.stimulus
+          );
 
           return {
             number: idx + 1,
@@ -602,7 +670,7 @@ export async function generateMEBIQuestions(
             templateType: fallbackMatch.templateType || 'Kurgusal Senaryo & Vaka İncelemesi',
             points: targetPts,
             stimulus: fallbackMatch.stimulus || q.stimulus || '',
-            question: fallbackMatch.question || `${officialTitle} ile ilgili durumu açıklayınız.`,
+            question: finalFallbackStem,
             answer: fallbackMatch.answer || 'Kavramsal ilkelerin doğru gerekçelendirilmesi beklenir.',
             alternativeAnswers: fallbackMatch.alternativeAnswers,
             solutionExplanation: fallbackMatch.solutionExplanation || (fallbackMatch.answer ? `Analitik çözüm adımları ve gerekçe: ${fallbackMatch.answer}` : undefined),
@@ -650,7 +718,7 @@ export async function generateMEBIQuestions(
         cognitiveLevel: distItem.cognitiveLevel || q.level || 'Karmaşık Bilişsel Süreçler',
         difficulty: calibratedDifficulty,
         points: targetPts,
-        question: rawStem,
+        question: sanitizeTextReferencesIfNoStimulus(rawStem, q.stimulus),
         answer: validAnswer,
         alternativeAnswers: altAnswers && altAnswers.length > 0 ? altAnswers : undefined,
         solutionExplanation: q.solutionExplanation || q.explanation || `Analitik çözüm adımları ve gerekçe: ${validAnswer}`,
@@ -887,10 +955,12 @@ export async function generateMEBIQuestions(
         if (!quality.isValid && (quality.isCrossReference || quality.isMetaSummary)) {
           const parentSourceQ = parentExam.questions.find((pq: any) => {
             const pqStim = pq.stimulus?.trim() || '';
-            return pqStim.length >= 100 && !pqStim.startsWith('Metinde') && !pqStim.startsWith('Yukarıda');
+            const pqReq = detectSourceRequirement(pq.questionText, pq.archetype, pq.contextText, pqStim);
+            const pqQuality = checkStimulusQuality(pqStim, pqReq);
+            return pqQuality.isValid && pqStim.length >= 80;
           }) || parentExam.questions[0];
 
-          if (parentSourceQ?.stimulus && parentSourceQ.stimulus.length > 80) {
+          if (parentSourceQ?.stimulus && parentSourceQ.stimulus.length >= 80) {
             stim = parentSourceQ.stimulus;
           }
         }
@@ -918,10 +988,12 @@ export async function generateMEBIQuestions(
         if (!quality.isValid && (quality.isCrossReference || quality.isMetaSummary)) {
           const parentSourceQ = parentExam.questions.find((pq: any) => {
             const pqStim = pq.stimulus?.trim() || '';
-            return pqStim.length >= 100 && !pqStim.startsWith('Metinde') && !pqStim.startsWith('Yukarıda');
+            const pqReq = detectSourceRequirement(pq.questionText, pq.archetype, pq.contextText, pqStim);
+            const pqQuality = checkStimulusQuality(pqStim, pqReq);
+            return pqQuality.isValid && pqStim.length >= 80;
           }) || parentExam.questions[0];
 
-          if (parentSourceQ?.stimulus && parentSourceQ.stimulus.length > 80) {
+          if (parentSourceQ?.stimulus && parentSourceQ.stimulus.length >= 80) {
             stim = parentSourceQ.stimulus;
           }
         }
