@@ -47,9 +47,9 @@ SADECE geçerli bir JSON çıktısı ver. JSON şeması:
       "points": 15,
       "stimulus": "Diyalog, deney, tablo veya vaka metni...",
       "question": "Açık uçlu soru...",
-      "answer": "Resmî model cevap...",
+      "answer": "Resmî model cevap (Öğrencinin vermesi beklenen çözüm ve yanıt. KESİNLİKLE soru kökünü veya yönergeyi tekrar etmeyiniz)...",
       ${hasAlternativeAnswers ? `"alternativeAnswers": [
-        "Kabul edilebilir alternatif doğru yanıt (özellikle sözel çıkarım, eşanlamlı ifadeler veya denk matematiksel gösterim olan sorularda 1-3 alternatif yazınız; tek kesin cevabı olan sorularda boş [] bırakınız)"
+        "Kabul edilebilir alternatif doğru yanıt (soru kökünü asla tekrar etmeyiniz; model cevapla aynı temel gerçeği desteklemelidir; özellikle sözel çıkarım, eşanlamlı ifadeler veya denk matematiksel gösterim olan sorularda 1-3 alternatif yazınız; tek kesin cevabı olan sorularda boş [] bırakınız)"
       ],` : ''}
       "rubric": [
         {"item": "Kriter 1 (Kavramsal / olgusal teşhis)", "pts": 8},
@@ -57,5 +57,5 @@ SADECE geçerli bir JSON çıktısı ver. JSON şeması:
       ]
     }
   ]
-}`;
+}\nNOT: Puanı 12 ve üzeri sorularda tek ölçütlü rubrik KESİNLİKLE YASAKTIR; en az 2 analitik ölçüte bölünmelidir.`;
 }

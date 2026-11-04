@@ -320,6 +320,122 @@ export function isDuplicateOrTooSimilar(
   return false;
 }
 
+/**
+ * Model cevabın soru kökünü papağan gibi tekrar edip etmediğini tespit eder (TASK 146).
+ * Soru kökünü tekrarlayan ("Metne göre ... neden Boğaç Han adını vermiştir?" vb.)
+ * cevapları yakalar.
+ */
+export function isAnswerEchoingStem(answer: string, stem: string): boolean {
+  if (!answer || !stem) return false;
+  const aClean = cleanTurkishText(answer);
+  const sClean = cleanTurkishText(stem);
+  if (!aClean || !sClean) return false;
+
+  // 1. Bire bir veya neredeyse tam örtüşme
+  if (aClean === sClean) return true;
+
+  // 2. Soru işaretiyle bitmesi ve soru köküyle benzerlik taşıması
+  if (answer.trim().endsWith('?') && (aClean.includes(sClean) || sClean.includes(aClean) || calculateQuestionSimilarity(answer, stem) >= 0.40)) {
+    return true;
+  }
+
+  // 3. Yüksek sözcük örtüşmesi / benzerliği
+  const similarity = calculateQuestionSimilarity(answer, stem);
+  if (similarity >= 0.65) return true;
+
+  // 4. Soru kökü soru edatları veya soru yönergeleriyle örtüşmesi
+  const hasStemDirective = /\b(neden|niçin|hangisi|açıklayınız|belirtiniz|yazınız|bulunuz|gösteriniz)\b/i.test(answer);
+  if (hasStemDirective && similarity >= 0.40) {
+    return true;
+  }
+
+  return false;
+}
+
+/**
+ * Yazım ve noktalama sorularında soru kökü çoğul hata istediği hâlde
+ * stimulus veya model cevapta tek bir hata tespit edilmişse soru kökünü tekile kalibre eder (TASK 146).
+ */
+export function calibrateStemPlurality(stem: string, _stimulus?: string, answer?: string): string {
+  if (!stem) return stem;
+
+  const hasPluralDirective = /(?:yazım\s+ve\s+noktalama\s+yanlışlarını|yazım\s+yanlışlarını|noktalama\s+yanlışlarını|hatalarını|yanlışlarını)/i.test(stem);
+
+  if (!hasPluralDirective) return stem;
+
+  // Hata sayısını analiz et: Model cevapta birden fazla madde veya birden fazla düzeltme var mı?
+  const ans = (answer || '').trim();
+  const hasMultipleInAnswer = /[\n;]|\b(?:ve|ayrıca|ikinci|2\.|b\))\b/i.test(ans) && ans.split(/[\n;]/).length >= 2;
+
+  // Eğer model cevapta veya bağlamda birden fazla hata belirtilmemişse tekile kalibre et
+  if (!hasMultipleInAnswer) {
+    let calibrated = stem
+      .replace(/yazım\s+ve\s+noktalama\s+yanlışlarını\s+bularak\s+doğrularını/gi, 'yazım yanlışını bularak doğrusunu')
+      .replace(/yazım\s+yanlışlarını\s+bularak\s+doğrularını/gi, 'yazım yanlışını bularak doğrusunu')
+      .replace(/noktalama\s+yanlışlarını\s+bularak\s+doğrularını/gi, 'noktalama yanlışını bularak doğrusunu')
+      .replace(/hatalarını\s+bularak\s+doğrularını/gi, 'hatasını bularak doğrusunu')
+      .replace(/yazım\s+ve\s+noktalama\s+yanlışlarını/gi, 'yazım yanlışını')
+      .replace(/yazım\s+yanlışlarını/gi, 'yazım yanlışını')
+      .replace(/noktalama\s+yanlışlarını/gi, 'noktalama yanlışını')
+      .replace(/hatalarını/gi, 'hatasını')
+      .replace(/yanlışlarını/gi, 'yanlışını')
+      .replace(/doğrularını\s+yazınız/gi, 'doğrusunu yazınız');
+    return calibrated;
+  }
+
+  return stem;
+}
+
+/**
+ * Noktalama işaretlerinin görevlerini soran sorularda model cevap ifadesinin
+ * işaret ve işlev bazında netleştirilmesini güvenceye alır (TASK 146).
+ */
+export function alignPunctuationFunctionAnswer(stem: string, answer: string): string {
+  if (!stem || !answer) return answer;
+  const sClean = cleanTurkishText(stem);
+  const aClean = cleanTurkishText(answer);
+
+  const isPunctuationFuncQuery = (sClean.includes('noktalama') || sClean.includes('işaret')) &&
+    (sClean.includes('görev') || sClean.includes('işlev') || sClean.includes('amaç'));
+
+  if (!isPunctuationFuncQuery) return answer;
+
+  const knownMarks: { name: string; key: string }[] = [
+    { name: 'İki nokta', key: 'iki nokta' },
+    { name: 'Tırnak işareti', key: 'tırnak işaret' },
+    { name: 'Noktalı virgül', key: 'noktalı virgül' },
+    { name: 'Virgül', key: 'virgül' },
+    { name: 'Nokta', key: 'nokta' },
+    { name: 'Ünlem işareti', key: 'ünlem' },
+    { name: 'Soru işareti', key: 'soru işaret' },
+    { name: 'Kısa çizgi', key: 'kısa çizgi' },
+    { name: 'Yay ayraç', key: 'yay ayraç' }
+  ];
+
+  const mentionedMarks = knownMarks.filter(m => sClean.includes(m.key));
+  // Eğer bileşik işaret ("İki nokta", "Noktalı virgül") eşleşmişse, tekil alt parçayı ("Nokta", "Virgül")
+  // yalnızca soru kökünde ayrıca bağımsız geçiyorsa koru
+  const filteredMarks = mentionedMarks.filter(mark => {
+    if (mark.name === 'Nokta' && mentionedMarks.some(m => m.name === 'İki nokta' || m.name === 'Noktalı virgül')) {
+      const stripped = sClean.replace(/iki nokta/g, '').replace(/noktalı virgül/g, '');
+      return stripped.includes('nokta');
+    }
+    if (mark.name === 'Virgül' && mentionedMarks.some(m => m.name === 'Noktalı virgül')) {
+      const stripped = sClean.replace(/noktalı virgül/g, '');
+      return stripped.includes('virgül');
+    }
+    return true;
+  });
+
+  if (filteredMarks.length >= 2) {
+    const hasStructuredMarks = filteredMarks.every(m => aClean.includes(m.key));
+    if (!hasStructuredMarks) {
+      return `${filteredMarks.map(m => m.name).join(' ve ')} işaretlerinin metindeki görevleri: ${answer}`;
+    }
+  }
+  return answer;
+}
+
 export interface ProceduralContext {
   theme: string;
   stim: string;
@@ -389,8 +505,8 @@ export function buildProceduralSyntheticQuestion(
         ],
         solutionExplanation: `Analitik çözüm: '${ctx.vocabWords[0]}' ve '${ctx.vocabWords[1]}' kelimeleri metnin ana temasına uygun olarak tanımlanmıştır.`,
         rubric: [
-          { item: 'Kelimelerin bağlama uygun doğru anlamlandırılması', pts: Math.round(targetPts * 0.5) },
-          { item: 'Örnek cümlelerin anlam bütünlüğü ve dilbilgisi kurallarına uygunluğu', pts: Math.round(targetPts * 0.5) }
+          { item: 'Kelimelerin bağlama uygun doğru anlamlandırılması', pts: Math.ceil(targetPts / 2) },
+          { item: 'Örnek cümlelerin anlam bütünlüğü ve dilbilgisi kurallarına uygunluğu', pts: Math.floor(targetPts / 2) }
         ],
         sourceOrigin: 'oyss_synthetic',
         originExamTitle: 'OYSS Dinamik Sentez Havuzu'
@@ -413,8 +529,8 @@ export function buildProceduralSyntheticQuestion(
         ],
         solutionExplanation: `Analitik çözüm: Deyimler doğru anlamlarında ve ${ctx.theme} konusuyla uyumlu bir paragrafta kullanılmıştır.`,
         rubric: [
-          { item: 'Deyimlerin yerinde ve doğru anlamda kullanılması', pts: Math.round(targetPts * 0.5) },
-          { item: 'Paragrafın kurgusal bütünlüğü ve akıcılığı', pts: Math.round(targetPts * 0.5) }
+          { item: 'Deyimlerin yerinde ve doğru anlamda kullanılması', pts: Math.ceil(targetPts / 2) },
+          { item: 'Paragrafın kurgusal bütünlüğü ve akıcılığı', pts: Math.floor(targetPts / 2) }
         ],
         sourceOrigin: 'oyss_synthetic',
         originExamTitle: 'OYSS Dinamik Sentez Havuzu'
@@ -438,8 +554,8 @@ export function buildProceduralSyntheticQuestion(
         ],
         solutionExplanation: `Metindeki olay örgüsü ve karakterlerin sergilediği tutumlar doğrultusunda ${ctx.theme} teması gerekçelendirilmiştir.`,
         rubric: [
-          { item: 'Metnin ana konusunun ve olay örgüsünün doğru tespiti', pts: Math.round(targetPts * 0.5) },
-          { item: 'Gerekçenin metindeki somut eylemlerle delillendirilmesi', pts: Math.round(targetPts * 0.5) }
+          { item: 'Metnin ana konusunun ve olay örgüsünün doğru tespiti', pts: Math.ceil(targetPts / 2) },
+          { item: 'Gerekçenin metindeki somut eylemlerle delillendirilmesi', pts: Math.floor(targetPts / 2) }
         ],
         sourceOrigin: 'oyss_synthetic',
         originExamTitle: 'OYSS Dinamik Sentez Havuzu'
@@ -825,7 +941,7 @@ export async function generateMEBIQuestions(
             criterion: r.item || r.criterion || 'Değerlendirme Ölçütü',
             points: r.pts ?? r.points
           }));
-          const reconciled = reconcileRubricPoints(rawRubric, targetPts);
+          const reconciled = reconcileRubricPoints(rawRubric, targetPts, true);
 
           const finalFallbackStem = sanitizeTextReferencesIfNoStimulus(
             fallbackMatch.question || `${officialTitle} ile ilgili durumu açıklayınız.`,
@@ -876,25 +992,63 @@ export async function generateMEBIQuestions(
         calibratedDifficulty = 'Orta';
       }
 
-      const rawRubric = (q.rubric || []).map((r: any) => ({
-        criterion: r.item || r.criterion || 'Değerlendirme Ölçütü',
-        points: r.pts ?? r.points
-      }));
-
-      const reconciled = reconcileRubricPoints(rawRubric, targetPts);
-
+      let candidateAnswer = typeof q.answer === 'string' ? q.answer.trim() : '';
       const altAnswers = Array.isArray(q.alternativeAnswers)
         ? q.alternativeAnswers
             .filter((a: any) => typeof a === 'string' && a.trim().length > 0)
             .map((a: string) => a.trim())
         : undefined;
 
-      // Model cevap kontrolü: Geçerli kısa cevapları ("42", "Fotosentez" vb.) koru
-      const validAnswer = typeof q.answer === 'string' && q.answer.trim().length > 0
-        ? q.answer.trim()
-        : 'Öğrencinin kavramsal ilkeleri doğru tespit etmesi ve gerekçelendirmesi beklenir.';
+      let remainingAltAnswers: string[] = altAnswers ? [...altAnswers] : [];
 
-      const finalStem = sanitizeTextReferencesIfNoStimulus(rawStem, q.stimulus);
+      // TASK 146 - Sorun 1 Düzeltmesi: Model cevap soru kökünü tekrar ediyorsa alternatif cevap havuzundan kurtar
+      if (!candidateAnswer || isAnswerEchoingStem(candidateAnswer, rawStem)) {
+        const viableAltIdx = remainingAltAnswers.findIndex(
+          alt => !isAnswerEchoingStem(alt, rawStem) && alt.trim().length > 0
+        );
+
+        if (viableAltIdx !== -1) {
+          console.warn(`[AnswerRecovery] ${idx + 1}. sorunun model cevabı soru kökünü tekrar ettiği için alternatif cevap havuzundan ("${remainingAltAnswers[viableAltIdx].slice(0, 30)}...") kurtarıldı.`);
+          candidateAnswer = remainingAltAnswers[viableAltIdx];
+          remainingAltAnswers.splice(viableAltIdx, 1);
+        } else if (q.solutionExplanation && !isAnswerEchoingStem(q.solutionExplanation, rawStem)) {
+          candidateAnswer = q.solutionExplanation.replace(/^(?:analitik çözüm adımları ve gerekçe:\s*)+/i, '').trim();
+        } else {
+          candidateAnswer = `Öğrencinin ${officialTitle.toLowerCase()} kazanımı doğrultusunda ilgili kavramsal unsurları doğru tespit etmesi ve gerekçelendirmesi beklenir.`;
+        }
+      }
+
+      // TASK 146 - Sorun 3 Düzeltmesi: Noktalama işaretlerinin görevleri soruluyorsa model cevap ifadesini uyumlandır
+      candidateAnswer = alignPunctuationFunctionAnswer(rawStem, candidateAnswer);
+
+      // TASK 146: Alternatif cevapları temizle (soru kökünü tekrar edenler ve model cevabın bire bir kopyaları elenir)
+      const sanitizedAltAnswers = remainingAltAnswers.filter(alt =>
+        !isAnswerEchoingStem(alt, rawStem) &&
+        cleanTurkishText(alt) !== cleanTurkishText(candidateAnswer)
+      );
+
+      let finalStem = sanitizeTextReferencesIfNoStimulus(rawStem, q.stimulus);
+
+      // TASK 146 - Sorun 2 Düzeltmesi: Tekil/çoğul hata uyumu kontrolü (Soru 6 güvencesi)
+      finalStem = calibrateStemPlurality(finalStem, q.stimulus, candidateAnswer);
+
+      // TASK 146 - Sorun 4 Düzeltmesi: Rubrik ölçütlerini soru puanına reconcile et (>= 12 puanda tek ölçüt 2 analitik basamağa ayrılır)
+      const rawRubric = (q.rubric || []).map((r: any) => ({
+        criterion: r.item || r.criterion || 'Değerlendirme Ölçütü',
+        points: r.pts ?? r.points
+      }));
+
+      const isCurated = q.sourceOrigin === 'oyss_curated';
+      const reconciled = reconcileRubricPoints(rawRubric, targetPts, isCurated);
+
+      // Rubrik kriter metinlerinin tekil/çoğul kalibrasyonu
+      const calibratedRubric = reconciled.map(r => {
+        let crit = r.criterion;
+        if (finalStem.includes('yazım yanlışını') && crit.includes('yanlışları')) {
+          crit = crit.replace(/yanlışları/g, 'yanlışı');
+        }
+        return { item: crit, pts: r.points };
+      });
 
       // Anlamsal cevaplanabilirlik son güvencesi:
       // Eğer soru kökünden metin atfı silinse dahi soru tek başına anlamsal olarak cevaplanamaz durumdaysa
@@ -921,10 +1075,10 @@ export async function generateMEBIQuestions(
         difficulty: calibratedDifficulty,
         points: targetPts,
         question: finalStem,
-        answer: validAnswer,
-        alternativeAnswers: altAnswers && altAnswers.length > 0 ? altAnswers : undefined,
-        solutionExplanation: q.solutionExplanation || q.explanation || `Analitik çözüm adımları ve gerekçe: ${validAnswer}`,
-        rubric: reconciled.map(r => ({ item: r.criterion, pts: r.points })),
+        answer: candidateAnswer,
+        alternativeAnswers: sanitizedAltAnswers.length > 0 ? sanitizedAltAnswers : undefined,
+        solutionExplanation: q.solutionExplanation || q.explanation || `Analitik çözüm adımları ve gerekçe: ${candidateAnswer}`,
+        rubric: calibratedRubric,
         sourceOrigin: q.sourceOrigin || 'gemini_ai',
         visual: q.visual
       };

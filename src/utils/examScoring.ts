@@ -25,7 +25,8 @@ export function distributeExamPoints(count: number): number[] {
  */
 export function reconcileRubricPoints(
   rubric: { criterion: string; points?: number; pts?: number }[] | undefined | null,
-  questionPoints: number
+  questionPoints: number,
+  preserveSingleCriterion: boolean = false
 ): QuestionRubricItem[] {
   const safeTargetPoints = Math.max(1, Math.round(questionPoints || 10));
 
@@ -47,6 +48,24 @@ export function reconcileRubricPoints(
 
   // 2. Tek ölçütlü rubrik durumu
   if (rubric.length === 1) {
+    // TASK 146: Yüksek puanlı (>= 12) sorularda tek ölçüte bütün puanın verilmesi (ör. 17 puan)
+    // kısmi puanlamayı imkânsız kılar. Bu durumda tek ölçüt, pedagojik olarak 2 kısmi puanlama basamağına ayrılır.
+    // Ancak küratörlü havuz yapısının korunması gerektiğinde (preserveSingleCriterion=true) bölünmez.
+    if (!preserveSingleCriterion && safeTargetPoints >= 12) {
+      const firstPart = Math.ceil(safeTargetPoints / 2);
+      const secondPart = safeTargetPoints - firstPart;
+      const baseCriterion = rubric[0].criterion?.trim() || 'Soru gereğinin karşılanması';
+      return [
+        {
+          criterion: `${baseCriterion} - Doğru kavramsal/olgusal tespit ve temel çıkarım`,
+          points: firstPart
+        },
+        {
+          criterion: `${baseCriterion} - Analitik gerekçelendirme, metin kanıtı veya açıklama adımı`,
+          points: secondPart
+        }
+      ];
+    }
     return [
       {
         criterion: rubric[0].criterion || 'Soru gereğinin eksiksiz karşılanması',

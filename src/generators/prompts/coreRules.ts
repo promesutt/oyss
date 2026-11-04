@@ -230,25 +230,28 @@ export function getQualityPedagogicalRules(targetCount: number): string {
  */
 export const QUESTION_DIRECTIVE_CLARITY_RULE = `YÖNERGE AÇIKLIĞI VE BİLİŞSEL DÜZEY KORUNUMU KURALI (EN KRİTİK KURAL):
 - Soru kökünde öğrenciden tam olarak ne yapması istendiği açık, net ve şüphesiz ifade edilmelidir.
-- Tekil / Çoğul beklentisi açıkça belirtilmelidir:
+- Tekil / Çoğul beklentisi açıkça belirtilmelidir (kaynak metinle %100 tutarlı olmalıdır):
   * Tek bir cevap bekleniyorsa bu durum belirtilmeli ("tek bir cümleyle açıklayınız", "ana düşünceyi belirleyiniz" vb.).
   * Birden fazla cevap veya örnek isteniyorsa sayı açıkça verilmelidir ("2 farklı örnek veriniz", "3 temel nedenini yazınız" vb.).
-- Karşılaştırma, gerekçelendirme veya açıklama işlemlerinin kapsamı net olmalıdır ("...nedenini gerekçesiyle açıklayınız", "...farklarını belirterek karşılaştırınız").
-- Görev Bütünlüğü: Birbirinden bağımsız iki farklı görev tek bir soru cümlesinde iç içe geçirilmemeli, alt maddeler (a, b) halinde ayrılmalıdır. Ancak birbiriyle doğrudan ilişkili ve bütünleşik bir beceriyi ölçen aşamalı görevler (örneğin: "hatayı tespit ediniz ve doğrusunu yazınız", "işlemi yapınız ve sonucunu en sade haliyle yazınız") korunabilir; sırf "ve" bağlacı var diye yapay olarak bölünmemelidir.
-- Sınıf Düzeyine Uygunluk ve Pedagojik Derinlik (Yüzeysellik Yasağı):
-  * Uzun bir metinden açıkça geçen tek bir meyve, nesne veya kişi adını buldurmaya dayalı ("Hangi meyve alınmıştır? -> Çilek" gibi) mekanik kelime avcılığı KESİNLİKLE ÜRETİLEMEZ.
-  * "Metnin yüzey anlamı" (T.O.5.6) soruları tek kelime avcılığı değil; olayın gelişimini, karakterin amacını veya iki açık bilginin ilişkisini bütüncül açıklamayı gerektirir. Tek kelimelik yanıtlara asla 12 puandan fazla verilemez; 15-20 puanlık sorular iki boyutlu açıklama gerektirir.
-  * Temsil Uyumu: Gerçek görsel yoksa afiş/resim metinle anlatılamaz. Yazım-noktalama soruları "Zor" değil "Kolay/Orta" etiketlenmelidir.
-  * Soru; hedef sınıf düzeyindeki (5-8. sınıf) öğrencinin kazanımda hedeflenen bilgi veya beceriyi gerçekten ölçmelidir: Öğrenciden metindeki bir davranışı açıklaması, olaylar arasında neden-sonuç ilişkisi kurması, karakterin tutumunu yorumlaması, işlem basamaklarını yürütmesi veya çıkarım yapması istenmelidir.
-  * Ancak her soruda zorlama üst düzey çıkarım veya felsefi gerekçe aranmaz; kazanım doğrudan bilgi veya anlama ölçüyorsa soru bu sınırda kalmalı, yapay olarak zorlaştırılmamalı veya aşırı basitleştirilmemelidir.
-- Dili sadeleştirirken sorunun kazanımı, bilişsel düzeyi ve düşünme derinliği KESİNLİKLE düşürülmemeli veya yapay olarak kolaylaştırılmamalıdır. Düşünme düzeyi yüksek, dil yükü gereksiz karmaşıklıktan arındırılmış sorular esastır.`;
+  * Yazım-noktalama sorularında: Çoğul hata isteniyorsa metinde en az 2 somut hata yer almalıdır. Metinde tek hata varsa soru kökü KESİNLİKLE tekil olmalıdır ("yazım yanlışını bularak doğrusunu yazınız").
+- Noktalama görevi sorulan sorularda model cevap her işaretin metindeki somut görevini açıkça eşleştirmelidir (Örn: "İki nokta: Kendisinden sonra konuşma geleceğini belirtmek; Tırnak: Aktarma sözünü göstermek").
+- MODEL CEVAPTA SORU KÖKÜNÜ TEKRAR ETME YASAĞI: 'answer' alanı KESİNLİKLE soru kökünü tekrar edemez; doğrudan doğru çözümü ve yanıtı yazınız. 'alternativeAnswers' da model cevapla aynı temel gerçeği desteklemelidir.
+- Görev Bütünlüğü: Birbirinden bağımsız iki farklı görev tek bir soru cümlesinde iç içe geçirilmemeli, alt maddeler halinde ayrılmalıdır. Ancak birbiriyle doğrudan ilişkili ve bütünleşik bir beceriyi ölçen aşamalı görevler ("hatayı tespit edip doğrusunu yazınız") korunabilir; sırf "ve" bağlacı var diye yapay olarak bölünmemelidir.
+- Sınıf Düzeyi ve Pedagojik Derinlik (Yüzeysellik Yasağı):
+  * Metinden geçen tek bir kelime/nesne avcılığı ("Hangi meyve alınmıştır?") KESİNLİKLE ÜRETİLEMEZ.
+  * T.O.5.6 gibi anlama soruları tek kelime değil, olayın gelişimini veya neden-sonuç ilişkisini bütüncül açıklamayı gerektirir. Tek kelimelik yanıtlara asla 12 puandan fazla verilemez; 15-20 puanlık sorular iki boyutlu açıklama gerektirir.
+  * Temsil Uyumu: Gerçek görsel yoksa afiş/resim sorulamaz. Yazım-noktalama soruları "Zor" değil "Kolay/Orta" etiketlenmelidir.
+  * Öğrenciden davranışı açıklaması, neden-sonuç ilişkisi kurması veya çıkarım yapması istenmelidir; yapay olarak zorlaştırılmamalı veya aşırı basitleştirilmemelidir.
+- Dili sadeleştirirken sorunun kazanımı, bilişsel düzeyi ve düşünme derinliği KESİNLİKLE düşürülmemelidir.`;
 
 /**
  * FAZ 3.3.2 - Rubrik ve Dereceli Puanlama Anahtarı Tasarım Kuralı
  */
 export const RUBRIC_DESIGN_RULE = `ANALİTİK DERECELİ PUANLAMA ANAHTARI (RUBRİK) TEŞVİK KURALI:
 - Sorunun çözüm süreci birden fazla basamak, kavram teşhisi ve analitik gerekçelendirme gerektiriyorsa rubrik KESİNLİKLE analitik kriter basamaklarına ayrılmalıdır:
-  * Örnek Kriter 1: Doğru kavramsal / olgusal teşhis ve tespit (Örn: 8 puan)
-  * Örnek Kriter 2: Bilimsel gerekçelendirme, metin kanıtı veya işlem basamakları (Örn: 7 puan)
-- Soru doğrudan tek bir olguyu, tek bir kavramı veya tekil bir sonucu ölçüyorsa tek kriterli rubrik kullanılabilir (zorla bölünmez).
+  * Kriter 1: Doğru kavramsal / olgusal teşhis ve tespit (Örn: 8 puan)
+  * Kriter 2: Bilimsel gerekçelendirme, metin kanıtı veya işlem basamakları (Örn: 7 puan)
+- YÜKSEK PUANLI (>= 12 PUAN) SORULARDA TEK ÖLÇÜT KESİNLİKLE YASAKTIR:
+  * 12-20 puanlık sorularda bütün puanı tek ölçüte bağlamak kısmi puanlamayı imkânsız kılar. Bu sorular en az 2 analitik ölçüte (Örn: Kavramsal tespit 8-9 p, Gerekçelendirme 8-9 p) bölünmek zorundadır.
+- Soru doğrudan tek bir olguyu ölçüyorsa ve puanı < 12 ise tek kriterli rubrik kullanılabilir (zorla bölünmez).
 - Her sorunun rubrik kriter puanlarının toplamı, o sorunun 'points' değerine TAM EŞİT olmak zorundadır.`;

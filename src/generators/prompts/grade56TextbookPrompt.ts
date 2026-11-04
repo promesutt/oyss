@@ -57,7 +57,7 @@ export function buildGrade56TextbookDirectives(
     // 2. Ders Kitabı Gerçek Yaşam Örnekleri & Modelleri (Kazanım sayısına göre dengeli kota)
     const exampleLimit = uniqueCodes.length > 3 ? 1 : 2;
     if (card.textbookExamples && card.textbookExamples.length > 0) {
-      const exMax = uniqueCodes.length > 5 ? 75 : 115;
+      const exMax = uniqueCodes.length > 5 ? 50 : (uniqueCodes.length > 3 ? 75 : 115);
       const examples = card.textbookExamples.slice(0, exampleLimit).map(e => {
         const tr = e.trim();
         return `"${tr.length > exMax ? tr.slice(0, exMax - 3) + '...' : tr}"`;
@@ -68,7 +68,7 @@ export function buildGrade56TextbookDirectives(
     // 3. Ders Kitabı Kavram ve Kural Notları (En fazla 1 net not)
     if (card.quickNotes && card.quickNotes.length > 0) {
       const note = card.quickNotes[0].trim().replace(/\s+/g, ' ');
-      const noteLimit = uniqueCodes.length > 5 ? 85 : (uniqueCodes.length > 3 ? 110 : 140);
+      const noteLimit = uniqueCodes.length > 5 ? 60 : (uniqueCodes.length > 3 ? 90 : 140);
       const trNote = note.length > noteLimit ? note.slice(0, noteLimit - 3) + '...' : note;
       lines.push(`  * Ders Kitabı Temel Kavram ve Kural Notları: ${trNote}`);
     }
@@ -76,7 +76,7 @@ export function buildGrade56TextbookDirectives(
     // 4. Varsa Pedagojik Püf Nokta / Sınav Tuzağı (examTraps)
     if (card.examTraps && card.examTraps.length > 0) {
       const trap = card.examTraps[0].trim().replace(/\s+/g, ' ');
-      const trapLimit = uniqueCodes.length > 5 ? 85 : (uniqueCodes.length > 3 ? 110 : 140);
+      const trapLimit = uniqueCodes.length > 5 ? 60 : (uniqueCodes.length > 3 ? 90 : 140);
       const trTrap = trap.length > trapLimit ? trap.slice(0, trapLimit - 3) + '...' : trap;
       lines.push(`  * Dikkat Edilecek Pedagojik Sınır / Tuzak: ${trTrap}`);
     }
