@@ -288,6 +288,90 @@ export function sanitizeTextReferencesIfNoStimulus(stem: string, stimulus: strin
 }
 
 /**
+ * Bir sorunun (özellikle okuma metni veya kaynak gerektiren bir kurguda)
+ * metin olmaksızın kendi başına öğrenciler tarafından anlamsal olarak
+ * cevaplanabilir olup olmadığını denetler.
+ *
+ * - Eğer geçerli ve yeterli uzunlukta bir stimulus varsa soru kendi metniyle bağımsızdır (true).
+ * - Eğer stimulus eksik/geçersizse:
+ *   - Metne, olay örgüsüne, yazar/şair niyetine doğrudan atıf yapan sorular,
+ *   - "bu gence", "bu karara", "bu duruma" gibi metin dışı gönderimsel (deictic) ifadeler içeren sorular,
+ *   - Olay örgüsüne dayalı kurgusal eylemler (örn. "neden Boğaç Han adını vermiştir"),
+ *   - Okuma anlama kazanımlarına (T.O.*) ait olup bünyesinde yeterli bağlam barındırmayan sorular
+ *   ASLA kendi başına bağımsız kabul edilmez (false).
+ */
+export function isSemanticallySelfContainedQuestion(
+  questionText: string,
+  stimulus?: string | null,
+  outcomeCode?: string
+): boolean {
+  const stimTrimmed = (stimulus || '').trim();
+  const stemTrimmed = (questionText || '').trim();
+
+  if (!stemTrimmed || stemTrimmed.length < 5) {
+    return false;
+  }
+
+  // 1. Eğer geçerli bir uyarıcı metin (stimulus) varsa ve meta-özet değilse
+  if (stimTrimmed.length >= 40) {
+    const req = detectSourceRequirement(stemTrimmed, undefined, undefined, stimTrimmed);
+    const quality = checkStimulusQuality(stimTrimmed, req);
+    if (quality.isValid) {
+      // Okuma anlama kazanımlarında (T.O.*) zengin okuma metni en az 80 karakter olmalıdır.
+      // Dil bilgisi, yazma veya örnek cümle içeren sorularda (T.Y.*, T.D.* vb.) 40+ karakterlik örnek cümle tam geçerlidir.
+      const isReadingOutcome = Boolean(outcomeCode && (outcomeCode.startsWith('T.O.') || outcomeCode.includes('.O.')));
+      if (isReadingOutcome && stimTrimmed.length < 80) {
+        // Okuma anlama metni için 80 karakter altı yetersiz sayılır
+      } else {
+        return true;
+      }
+    }
+  }
+
+  // 2. Uyarıcı metin yok veya yetersiz: Soru kökünün tek başına cevaplanabilirliğini incele
+
+  // 2.a: Doğrudan metin/şiir/parça atıfları (temizlenmemiş veya kalan)
+  const explicitTextRefPattern = /(?:metn[ie]|metinden|metne|metindeki|paragraftan|paragrafta|paragrafa|parçadan|parçada|parçaya|şiirden|şiirde|şiire|dizelerden)\s+(?:[a-zA-ZçÇğĞıİöÖşŞüÜ\s]{0,20}\s+)?(?:hareketle|göre|dayanarak|dayalı|çıkarı|anlatılan|bahsedilen)/i;
+  if (explicitTextRefPattern.test(stemTrimmed)) {
+    return false;
+  }
+
+  // Metin olmaksızın cevaplanamayacak ana fikir / ana düşünce sorguları
+  const metaElementPattern = /(?:(?:metnin|paragrafın|parçanın|şiirin)\s+)?(?:konusunu|ana\s+fikrini|ana\s+fikr[ie]|ana\s+düşüncesini|ana\s+düşünce(?:yi|si|sini)?|başlığını|türünü|özetini|anahtar\s+kelimelerini)/i;
+  if (metaElementPattern.test(stemTrimmed)) {
+    return false;
+  }
+
+  // 2.b: Metin dışı gönderimsel (deictic / anaphoric) ifadeler:
+  // "bu gence", "gence", "bu ismin", "bu karara", "bu davranışa", "bu duruma", "kahramanın", "yazarın savunduğu", "bu sözlerle"
+  const deicticNarrativePattern = /\b(?:(?:bu|o)\s+(?:ismin|ismin[ie]|adın|gence|adam[a|ın]|kadın[a|ın]|çocuğ[a|un]|kişi[ye|nin]|kahraman[a|ın]|karakter[e|in]|yazar[a|ın]|olay[a|ın]|durum[a|un]|karar[a|ın]|davranış[a|ın]|tutum[a|un]|söz(?:ü|leri|lerin))|gence|kahramanın|anlatıcının)\b/i;
+  if (deicticNarrativePattern.test(stemTrimmed)) {
+    return false;
+  }
+
+  // 2.c: Olay örgüsü ve kurgusal yazar / karakter motivasyonu sorguları (metin olmaksızın bilinemez)
+  const narrativeQueryPattern = /(?:olay\s+örgüsü|anlatıcının\s+bakış|yazarın\s+(?:amacı|savunduğu|vurguladığı|anlatmak\s+istediği))/i;
+  if (narrativeQueryPattern.test(stemTrimmed)) {
+    return false;
+  }
+
+  const literaryEventPattern = /(?:neden|niçin|nasıl|hangi\s+sebeple)\s+.*(?:adını\s+ver|adını\s+al|karar\s+ver|yola\s+çık|tepki\s+göster|kurtul|yardım\s+et)/i;
+  if (literaryEventPattern.test(stemTrimmed)) {
+    // Soru kökünde olayın tam bir bağlamı yoksa (stem < 100 karakter)
+    if (stemTrimmed.length < 100) {
+      return false;
+    }
+  }
+
+  // Belirli edebî/tarihî kurgusal isimlerin metinsiz sorgusu (Boğaç Han, Dede Korkut vb.)
+  if (/(?:Boğaç\s+Han|Dede\s+Korkut|Kuş\s+Köşkleri)/i.test(stemTrimmed)) {
+    return false;
+  }
+
+  return true;
+}
+
+/**
  * Bir soru setindeki veya sınavdaki tüm soruları inceler,
  * ortak metinleri tespit eder, eksik veya çapraz referanslı soruları
  * güvenilir biçimde tamamlar ve sınav kaynak doğrulama raporu üretir.

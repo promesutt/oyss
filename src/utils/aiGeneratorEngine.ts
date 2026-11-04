@@ -14,7 +14,8 @@ import {
   detectSourceRequirement, 
   checkStimulusQuality, 
   validateAndEnrichExamQuestions,
-  sanitizeTextReferencesIfNoStimulus
+  sanitizeTextReferencesIfNoStimulus,
+  isSemanticallySelfContainedQuestion
 } from './sourceMaterialValidator';
 import { parseExamJsonSafely } from './jsonParser';
 import { buildLiveExamPrompt, buildAvoidDirectives } from '../generators/prompts';
@@ -319,6 +320,156 @@ export function isDuplicateOrTooSimilar(
   return false;
 }
 
+export interface ProceduralContext {
+  theme: string;
+  stim: string;
+  meaningQ: string;
+  meaningAns: string;
+  vocabWords: string[];
+  idioms: string[];
+  errSentence: string;
+}
+
+export const TURKISH_PROCEDURAL_CONTEXTS: ProceduralContext[] = [
+  {
+    theme: 'Köy Çeşmesi ve İmece',
+    stim: `Köyün asırlık taş çeşmesinin oluğundan akan kaynak suyu, tarladan dönen köylülerin ve yolcuların nefeslendiği ortak duraktı. Muhtar Salih Bey, kuraklık tehlikesine karşı çeşmenin arkasındaki su deposunu imece usulüyle temizletmiş; israfı önlemek için de gençlerle birlikte bir su saati düzeneği kurmuştu.`,
+    meaningQ: `Metne göre köylülerin kuraklık tehlikesine karşı suyu korumak ve paylaşmak için aldığı tedbiri açıklayınız.`,
+    meaningAns: `Muhtar Salih Bey ve köy halkı imece usulüyle su deposunu temizletmiş ve israfı önlemek amacıyla gençlerle su saati düzeneği kurarak suyu koruma altına almıştır.`,
+    vocabWords: ['imece', 'oluk'],
+    idioms: ['gönül birliği etmek', 'alın teri dökmek'],
+    errSentence: `Muhtar salih bey, 29 ekim günü çeşmenin başında toplanan köylülere şöyle dedi; Suyumuz bizim geleceğimizdir.`
+  },
+  {
+    theme: 'Tarihî Kütüphane ve Antika Saat',
+    stim: `Tarihî okul kütüphanesinin başköşesinde duran sarkaçlı pirinç saat, tam doksan yıldır her saat başında tok bir sesle çalardı. Kütüphaneci Emine Hanım, 'Bu saat sadece dakikaları değil, bu salonda sabırla okuyan binlerce gencin hayallerini de saydı.' diyerek saatin tozunu ipek bir mendille özenle alırdı.`,
+    meaningQ: `Kütüphaneci Emine Hanım'ın saatin tozunu alırken söylediği sözdeki örtük anlamı ve saate duyduğu vefa duygusunu açıklayınız.`,
+    meaningAns: `Pirinç saatin sadece zamanı gösteren bir aygıt olmadığını, o kütüphanede emek veren nesillerin ortak hatırasını ve ilim yolculuğunu simgelediğini ifade etmektedir.`,
+    vocabWords: ['sarkaç', 'başköşe'],
+    idioms: ['can kulağıyla dinlemek', 'el üstünde tutmak'],
+    errSentence: `Emine hanım, kütüphanedeki eski kitapları istanbul ve ankara'dan gelen araştırmacılara gösterdi.`
+  },
+  {
+    theme: 'Tarihî Rüzgâr Değirmeni',
+    stim: `Ege kıyılarındaki tepeye kurulu yel değirmeni, sonbahar rüzgârları başladığında dev kanatlarını döndürmeye başlardı. Değirmenci İbrahim Usta, köylülerin getirdiği buğday çuvallarını sırayla tartar, hiçbir çuvalı ayırt etmeden taşların arasında una dönüştürürdü. Değirmenin kapısında 'Hak geçmesin, un tükenmesin' levhası asılıydı.`,
+    meaningQ: `Değirmenin kapısında asılı olan 'Hak geçmesin, un tükenmesin' levhasındaki ilkeyi İbrahim Usta'nın dürüstlüğüyle ilişkilendirerek açıklayınız.`,
+    meaningAns: `İbrahim Usta köylülerin buğdaylarını ayrım yapmadan sırayla tartıp adaletle öğüterek hiç kimsenin hakkını yememiş, emeğe ve berekete duyduğu saygıyı dürüstlüğüyle somutlaştırmıştır.`,
+    vocabWords: ['öğütmek', 'ayrım'],
+    idioms: ['hak gözetmek', 'eli açık olmak'],
+    errSentence: `İbrahim usta, her sabah gün doğarken izmir'in dağlarına bakar ve fırıncı ahmet'e selam verirdi.`
+  }
+];
+
+export function buildProceduralSyntheticQuestion(
+  outcomeCode: string,
+  officialTitle: string,
+  idx: number,
+  targetPts: number,
+  subjectId: string,
+  variationIndex: number = 0,
+  cognitiveLevel: string = 'Karmaşık Bilişsel Süreçler'
+): GeneratedQuestionItem {
+  if (subjectId === 'turkce') {
+    const ctx = TURKISH_PROCEDURAL_CONTEXTS[(variationIndex + idx) % TURKISH_PROCEDURAL_CONTEXTS.length];
+    if (outcomeCode.includes('T.O.5.20') || outcomeCode.includes('T.O.7.4')) {
+      return {
+        number: idx + 1,
+        outcome: outcomeCode,
+        outcomeTitle: officialTitle,
+        difficulty: 'Orta',
+        level: cognitiveLevel || 'Basit Bilişsel Süreçler',
+        templateType: 'Kelime Anlamı & Bağlamsal Çözümleme',
+        points: targetPts,
+        stimulus: ctx.stim,
+        question: `Metinde geçen '${ctx.vocabWords[0]}' ve '${ctx.vocabWords[1]}' kelimelerinin bağlamsal anlamlarını yazınız ve birer cümlede kullanınız.`,
+        answer: `'${ctx.vocabWords[0]}' ve '${ctx.vocabWords[1]}' kelimelerinin metindeki bağlama uygun anlamı yazılmış ve kurallı cümleler kurulmuştur.`,
+        alternativeAnswers: [
+          `Kelimeler metindeki bağlama uygun olarak doğru anlamlandırılmıştır.`,
+          `Her iki sözcüğün de metnin ana temasına ve cümle yapısına uygun anlam karşılıkları yazılmıştır.`
+        ],
+        solutionExplanation: `Analitik çözüm: '${ctx.vocabWords[0]}' ve '${ctx.vocabWords[1]}' kelimeleri metnin ana temasına uygun olarak tanımlanmıştır.`,
+        rubric: [
+          { item: 'Kelimelerin bağlama uygun doğru anlamlandırılması', pts: Math.round(targetPts * 0.5) },
+          { item: 'Örnek cümlelerin anlam bütünlüğü ve dilbilgisi kurallarına uygunluğu', pts: Math.round(targetPts * 0.5) }
+        ],
+        sourceOrigin: 'oyss_synthetic',
+        originExamTitle: 'OYSS Dinamik Sentez Havuzu'
+      };
+    } else if (outcomeCode.includes('T.Y.5.13') || outcomeCode.includes('T.Y.7.13')) {
+      return {
+        number: idx + 1,
+        outcome: outcomeCode,
+        outcomeTitle: officialTitle,
+        difficulty: 'Zor',
+        level: cognitiveLevel || 'Karmaşık Bilişsel Süreçler',
+        templateType: 'Deyim ve Zengin Söz Varlığıyla Yazma',
+        points: targetPts,
+        stimulus: ctx.stim,
+        question: `İçinde '${ctx.idioms[0]}' ve '${ctx.idioms[1]}' deyimlerinin geçtiği, ${ctx.theme} konusuna uygun akıcı ve kurallı bir paragraf yazınız.`,
+        answer: `Her iki deyim anlamına uygun biçimde kullanılarak kurallı ve anlamlı bir paragraf oluşturulmuştur.`,
+        alternativeAnswers: [
+          `Deyimler yerinde ve doğru anlamda kullanılarak tutarlı bir metin kurgulanmıştır.`,
+          `Belirtilen deyimler bağlama ve tema akışına uygun seçilerek dil kurallarına uygun şekilde metne işlenmiştir.`
+        ],
+        solutionExplanation: `Analitik çözüm: Deyimler doğru anlamlarında ve ${ctx.theme} konusuyla uyumlu bir paragrafta kullanılmıştır.`,
+        rubric: [
+          { item: 'Deyimlerin yerinde ve doğru anlamda kullanılması', pts: Math.round(targetPts * 0.5) },
+          { item: 'Paragrafın kurgusal bütünlüğü ve akıcılığı', pts: Math.round(targetPts * 0.5) }
+        ],
+        sourceOrigin: 'oyss_synthetic',
+        originExamTitle: 'OYSS Dinamik Sentez Havuzu'
+      };
+    } else {
+      // Varsayılan okuma-anlama (T.O.* veya genel Türkçe)
+      return {
+        number: idx + 1,
+        outcome: outcomeCode,
+        outcomeTitle: officialTitle,
+        difficulty: 'Orta',
+        level: cognitiveLevel || 'Karmaşık Bilişsel Süreçler',
+        templateType: 'Kurgusal Senaryo & Vaka İncelemesi',
+        points: targetPts,
+        stimulus: ctx.stim,
+        question: ctx.meaningQ,
+        answer: ctx.meaningAns,
+        alternativeAnswers: [
+          `Metinde anlatılan ${ctx.theme} olayında adalet, emek ve paylaşım bilinci vurgulanmaktadır.`,
+          `Olay örgüsünde ${ctx.theme} çerçevesinde toplumsal dayanışma, dürüstlük ve ortak sorumluluk değerleri öne çıkarılmıştır.`
+        ],
+        solutionExplanation: `Metindeki olay örgüsü ve karakterlerin sergilediği tutumlar doğrultusunda ${ctx.theme} teması gerekçelendirilmiştir.`,
+        rubric: [
+          { item: 'Metnin ana konusunun ve olay örgüsünün doğru tespiti', pts: Math.round(targetPts * 0.5) },
+          { item: 'Gerekçenin metindeki somut eylemlerle delillendirilmesi', pts: Math.round(targetPts * 0.5) }
+        ],
+        sourceOrigin: 'oyss_synthetic',
+        originExamTitle: 'OYSS Dinamik Sentez Havuzu'
+      };
+    }
+  }
+
+  // Diğer dersler için genel analitik sentetik soru
+  const genericStimulus = `${officialTitle} konusunda günlük hayat uygulamaları ve bilimsel süreç basamakları ayrıntılı olarak ele alınmaktadır. Bu süreçte temel kavramlar ile neden-sonuç ilişkileri birlikte incelenir.`;
+  return {
+    number: idx + 1,
+    outcome: outcomeCode,
+    outcomeTitle: officialTitle,
+    difficulty: 'Orta',
+    level: cognitiveLevel || 'Karmaşık Bilişsel Süreçler',
+    templateType: 'Kurgusal Senaryo & Vaka İncelemesi',
+    points: targetPts,
+    stimulus: genericStimulus,
+    question: `${outcomeCode} [${officialTitle}] öğrenme çıktısı kapsamında, verilen durumdaki kavramsal ilkeleri ve neden-sonuç ilişkilerini gerekçelendirerek açıklayınız.`,
+    answer: 'Öğrencinin kavramsal ilkeleri doğru teşhis etmesi ve bilimsel ilkeler doğrultusunda mantıksal çözüm basamaklarını gerekçelendirmesi beklenir.',
+    solutionExplanation: `Analitik çözüm kuralına göre ${outcomeCode} çıktısı gerekçelendirilmelidir.`,
+    rubric: [
+      { item: 'Kavramsal teşhis ve bilimsel tespit', pts: Math.ceil(targetPts / 2) },
+      { item: 'Analitik gerekçelendirme ve çözüm adımı', pts: Math.floor(targetPts / 2) }
+    ],
+    sourceOrigin: 'oyss_synthetic',
+    originExamTitle: 'OYSS Dinamik Sentez Havuzu'
+  };
+}
+
 export async function generateMEBIQuestions(
   subjectId: SubjectId,
   grade: GradeLevel,
@@ -592,15 +743,27 @@ export async function generateMEBIQuestions(
         }
       }
 
-      // Soru pedagojik olarak kusurlu veya eksikse: Yalnızca bu soruyu MEB onaylı referans havuzundan cerrahi olarak ikame et
+      // Anlamsal Cevaplanabilirlik Güvencesi:
+      // Uyarıcı metin (stimulus) bulunmayan veya geçersiz olan bir soru, metin atfı silinse dahi tek başına cevaplanabilir değilse kusurlu kabul edilir.
+      if (!isPedagogicallyDeficient) {
+        const isSelfContained = isSemanticallySelfContainedQuestion(rawStem, rawStim, requiredOutcome);
+        if (!isSelfContained) {
+          isPedagogicallyDeficient = true;
+          deficiencyReason = `Gerekli okuma metni veya bağlam olmaksızın soru anlamsal olarak tek başına cevaplanamaz ("${rawStem.slice(0, 45)}...")`;
+        }
+      }
+
+      // Soru pedagojik olarak kusurlu veya eksikse: Yalnızca bu soruyu OYSS referans havuzundan cerrahi olarak ikame et
       if (isPedagogicallyDeficient) {
-        console.warn(`[PedagogicalQuality] ${idx + 1}. soruda pedagojik kusur (${deficiencyReason}) tespit edildi; MEB onaylı referans havuzundan güvenle ikame ediliyor.`);
+        console.warn(`[PedagogicalQuality] ${idx + 1}. soruda pedagojik kusur (${deficiencyReason}) tespit edildi; OYSS referans havuzundan güvenle ikame ediliyor.`);
         let fallbackMatch = internalAllQuestions.find(fq => {
           if (fq.outcome !== requiredOutcome) return false;
           if (sourceReq.requiresSource && sourceReq.type === 'reading_text') {
             const fqReq = detectSourceRequirement(fq.question, fq.templateType, undefined, fq.stimulus);
             const fqQual = checkStimulusQuality(fq.stimulus, fqReq);
             if (!fqQual.isValid || (fq.stimulus || '').length < 80) return false;
+          } else if (!isSemanticallySelfContainedQuestion(fq.question, fq.stimulus, fq.outcome)) {
+            return false;
           }
           return !isDuplicateOrTooSimilar(fq.question, fq.stimulus, allAvoidItems, undefined, 0.38);
         }) || internalAllQuestions.find(fq => {
@@ -610,8 +773,8 @@ export async function generateMEBIQuestions(
             const fqQual = checkStimulusQuality(fq.stimulus, fqReq);
             return fqQual.isValid && (fq.stimulus || '').length >= 80;
           }
-          return true;
-        }) || internalAllQuestions.find(fq => fq.outcome === requiredOutcome);
+          return isSemanticallySelfContainedQuestion(fq.question, fq.stimulus, fq.outcome);
+        });
 
         if (!fallbackMatch) {
           const sampleMatch = SAMPLE_EXAMS.flatMap(e => e.questions.map(sq => ({ sq, exam: e }))).find(({ sq }) => {
@@ -620,10 +783,18 @@ export async function generateMEBIQuestions(
               const fqReq = detectSourceRequirement(sq.questionText, sq.archetype, sq.contextText, sq.stimulus);
               const fqQual = checkStimulusQuality(sq.stimulus, fqReq);
               if (!fqQual.isValid || (sq.stimulus || '').length < 80) return false;
+            } else if (!isSemanticallySelfContainedQuestion(sq.questionText, sq.stimulus, sq.outcomeCode)) {
+              return false;
             }
             return !isDuplicateOrTooSimilar(sq.questionText, sq.stimulus, allAvoidItems, undefined, 0.38);
           }) || SAMPLE_EXAMS.flatMap(e => e.questions.map(sq => ({ sq, exam: e }))).find(({ sq }) => {
-            return sq.outcomeCode === requiredOutcome;
+            if (sq.outcomeCode !== requiredOutcome) return false;
+            if (sourceReq.requiresSource && sourceReq.type === 'reading_text') {
+              const fqReq = detectSourceRequirement(sq.questionText, sq.archetype, sq.contextText, sq.stimulus);
+              const fqQual = checkStimulusQuality(sq.stimulus, fqReq);
+              return fqQual.isValid && (sq.stimulus || '').length >= 80;
+            }
+            return isSemanticallySelfContainedQuestion(sq.questionText, sq.stimulus, sq.outcomeCode);
           });
 
           if (sampleMatch) {
@@ -676,10 +847,23 @@ export async function generateMEBIQuestions(
             solutionExplanation: fallbackMatch.solutionExplanation || (fallbackMatch.answer ? `Analitik çözüm adımları ve gerekçe: ${fallbackMatch.answer}` : undefined),
             rubric: reconciled.map(r => ({ item: r.criterion, pts: r.points })),
             sourceOrigin: 'oyss_curated' as const,
-            originExamTitle: fallbackMatch.originExamTitle || 'OYSS MEBİ Referans Havuzu',
+            originExamTitle: fallbackMatch.originExamTitle || 'OYSS Referans Havuzu',
             originQuestionNumber: fallbackMatch.originQuestionNumber,
             visual: fallbackMatch.visual
           };
+        } else {
+          // Uygun ikame bulunamadı: Yalnızca metin atıflarını silerek soruyu geçerli kabul ETME.
+          // Kusurlu soruyu üretim sonucundan çıkar ve dinamik OYSS sentez havuzundan tam metinli soru üret!
+          console.warn(`[SemanticAnswerability] ${idx + 1}. soru (${requiredOutcome}) için referans havuzunda geçerli ikame bulunamadı; dinamik OYSS sentez havuzundan tam metinli soru üretiliyor.`);
+          return buildProceduralSyntheticQuestion(
+            requiredOutcome,
+            officialTitle,
+            idx,
+            targetPts,
+            subjectId,
+            variationIndex,
+            distItem.cognitiveLevel
+          );
         }
       }
 
@@ -710,6 +894,24 @@ export async function generateMEBIQuestions(
         ? q.answer.trim()
         : 'Öğrencinin kavramsal ilkeleri doğru tespit etmesi ve gerekçelendirmesi beklenir.';
 
+      const finalStem = sanitizeTextReferencesIfNoStimulus(rawStem, q.stimulus);
+
+      // Anlamsal cevaplanabilirlik son güvencesi:
+      // Eğer soru kökünden metin atfı silinse dahi soru tek başına anlamsal olarak cevaplanamaz durumdaysa
+      // kusurlu soruyu üretim sonucundan çıkar ve güvenli dinamik sentez mekanizmasını kullan!
+      if (!isSemanticallySelfContainedQuestion(finalStem, q.stimulus, requiredOutcome)) {
+        console.warn(`[SemanticAnswerability] ${idx + 1}. soru ("${finalStem.slice(0, 40)}...") metinsiz cevaplanamaz; dinamik OYSS sentez havuzundan tam metinli soru üretiliyor.`);
+        return buildProceduralSyntheticQuestion(
+          requiredOutcome,
+          officialTitle,
+          idx,
+          targetPts,
+          subjectId,
+          variationIndex,
+          distItem.cognitiveLevel
+        );
+      }
+
       return {
         ...q,
         number: idx + 1,
@@ -718,7 +920,7 @@ export async function generateMEBIQuestions(
         cognitiveLevel: distItem.cognitiveLevel || q.level || 'Karmaşık Bilişsel Süreçler',
         difficulty: calibratedDifficulty,
         points: targetPts,
-        question: sanitizeTextReferencesIfNoStimulus(rawStem, q.stimulus),
+        question: finalStem,
         answer: validAnswer,
         alternativeAnswers: altAnswers && altAnswers.length > 0 ? altAnswers : undefined,
         solutionExplanation: q.solutionExplanation || q.explanation || `Analitik çözüm adımları ve gerekçe: ${validAnswer}`,
@@ -1052,35 +1254,7 @@ export async function generateMEBIQuestions(
 
     // Türkçe dersi için özel bağlamsal edebî kurgular
     if (subjectId === 'turkce') {
-      const turkishContexts = [
-        {
-          theme: 'Köy Çeşmesi ve İmece',
-          stim: `Köyün asırlık taş çeşmesinin oluğundan akan kaynak suyu, tarladan dönen köylülerin ve yolcuların nefeslendiği ortak duraktı. Muhtar Salih Bey, kuraklık tehlikesine karşı çeşmenin arkasındaki su deposunu imece usulüyle temizletmiş; israfı önlemek için de gençlerle birlikte bir su saati düzeneği kurmuştu.`,
-          meaningQ: `Metne göre köylülerin kuraklık tehlikesine karşı suyu korumak ve paylaşmak için aldığı tedbiri açıklayınız.`,
-          meaningAns: `Muhtar Salih Bey ve köy halkı imece usulüyle su deposunu temizletmiş ve israfı önlemek amacıyla gençlerle su saati düzeneği kurarak suyu koruma altına almıştır.`,
-          vocabWords: ['imece', 'oluk'],
-          idioms: ['gönül birliği etmek', 'alın teri dökmek'],
-          errSentence: `Muhtar salih bey, 29 ekim günü çeşmenin başında toplanan köylülere şöyle dedi; Suyumuz bizim geleceğimizdir.`
-        },
-        {
-          theme: 'Tarihî Kütüphane ve Antika Saat',
-          stim: `Tarihî okul kütüphanesinin başköşesinde duran sarkaçlı pirinç saat, tam doksan yıldır her saat başında tok bir sesle çalardı. Kütüphaneci Emine Hanım, 'Bu saat sadece dakikaları değil, bu salonda sabırla okuyan binlerce gencin hayallerini de saydı.' diyerek saatin tozunu ipek bir mendille özenle alırdı.`,
-          meaningQ: `Kütüphaneci Emine Hanım'ın saatin tozunu alırken söylediği sözdeki örtük anlamı ve saate duyduğu vefa duygusunu açıklayınız.`,
-          meaningAns: `Pirinç saatin sadece zamanı gösteren bir aygıt olmadığını, o kütüphanede emek veren nesillerin ortak hatırasını ve ilim yolculuğunu simgelediğini ifade etmektedir.`,
-          vocabWords: ['sarkaç', 'başköşe'],
-          idioms: ['can kulağıyla dinlemek', 'el üstünde tutmak'],
-          errSentence: `Emine hanım, kütüphanedeki eski kitapları istanbul ve ankara'dan gelen araştırmacılara gösterdi.`
-        },
-        {
-          theme: 'Tarihî Rüzgâr Değirmeni',
-          stim: `Ege kıyılarındaki tepeye kurulu yel değirmeni, sonbahar rüzgârları başladığında dev kanatlarını döndürmeye başlardı. Değirmenci İbrahim Usta, köylülerin getirdiği buğday çuvallarını sırayla tartar, hiçbir çuvalı ayırt etmeden taşların arasında una dönüştürürdü. Değirmenin kapısında 'Hak geçmesin, un tükenmesin' levhası asılıydı.`,
-          meaningQ: `Değirmenin kapısında asılı olan 'Hak geçmesin, un tükenmesin' levhasındaki ilkeyi İbrahim Usta'nın dürüstlüğüyle ilişkilendirerek açıklayınız.`,
-          meaningAns: `İbrahim Usta köylülerin buğdaylarını ayrım yapmadan sırayla tartıp adaletle öğüterek hiç kimsenin hakkını yememiş, emeğe ve berekete duyduğu saygıyı dürüstlüğüyle somutlaştırmıştır.`,
-          vocabWords: ['öğütmek', 'ayrım'],
-          idioms: ['hak gözetmek', 'eli açık olmak'],
-          errSentence: `İbrahim usta, her sabah gün doğarken izmir'in dağlarına bakar ve fırıncı ahmet'e selam verirdi.`
-        }
-      ];
+      const turkishContexts = TURKISH_PROCEDURAL_CONTEXTS;
 
       const ctx = turkishContexts[(variationIndex + idx) % turkishContexts.length];
 
