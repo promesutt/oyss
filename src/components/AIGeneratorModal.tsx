@@ -28,6 +28,51 @@ import { distributeExamPoints, reconcileRubricPoints } from '../utils/examScorin
 import { saveCustomExamPaper } from '../utils/practiceStorage';
 import { ExamPaper } from '../types';
 
+export interface AvoidSessionData {
+  variationCount: number;
+  avoidQuestionTexts: string[];
+  avoidStimuli: string[];
+}
+
+export function getAvoidSessionKey(contextKey: string): string {
+  return `oyss_avoid_${contextKey}`;
+}
+
+export function loadAvoidSession(contextKey: string): AvoidSessionData {
+  try {
+    if (typeof window === 'undefined' || !window.sessionStorage) {
+      return { variationCount: 0, avoidQuestionTexts: [], avoidStimuli: [] };
+    }
+    const raw = window.sessionStorage.getItem(getAvoidSessionKey(contextKey));
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      if (Array.isArray(parsed?.avoidQuestionTexts) && Array.isArray(parsed?.avoidStimuli)) {
+        return {
+          variationCount: typeof parsed.variationCount === 'number' ? parsed.variationCount : 0,
+          avoidQuestionTexts: parsed.avoidQuestionTexts.filter((t: any) => typeof t === 'string' && t.trim().length > 0),
+          avoidStimuli: parsed.avoidStimuli.filter((s: any) => typeof s === 'string' && s.trim().length > 0)
+        };
+      }
+    }
+  } catch (err) {
+    console.warn('[SessionStorage] loadAvoidSession failed gracefully:', err);
+  }
+  return { variationCount: 0, avoidQuestionTexts: [], avoidStimuli: [] };
+}
+
+export function saveAvoidSession(contextKey: string, data: AvoidSessionData): void {
+  try {
+    if (typeof window === 'undefined' || !window.sessionStorage) return;
+    window.sessionStorage.setItem(getAvoidSessionKey(contextKey), JSON.stringify({
+      variationCount: data.variationCount,
+      avoidQuestionTexts: data.avoidQuestionTexts.slice(-24),
+      avoidStimuli: data.avoidStimuli.slice(-24)
+    }));
+  } catch (err) {
+    console.warn('[SessionStorage] saveAvoidSession failed gracefully:', err);
+  }
+}
+
 interface AIGeneratorModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -81,7 +126,9 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
 
   const [isGenerating, setIsGenerating] = useState<boolean>(false);
   const [variationCountByContext, setVariationCountByContext] = useState<Record<string, number>>({});
-  const variationCount = variationCountByContext[currentContextKey] || 0;
+  const variationCount = variationCountByContext[currentContextKey] !== undefined
+    ? variationCountByContext[currentContextKey]
+    : loadAvoidSession(currentContextKey).variationCount;
   const [generationError, setGenerationError] = useState<string | null>(null);
 
   if (!isOpen) return null;
@@ -94,10 +141,23 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
     setIsGenerating(true);
     setGenerationError(null);
     try {
-      const nextIndex = variationCount;
+      const sessionAvoid = loadAvoidSession(targetKey);
       const prevResult = resultsByContext[targetKey];
-      const avoidQuestionTexts = prevResult?.generatedQuestions?.map(q => q.question) || [];
-      const avoidStimuli = prevResult?.generatedQuestions?.map(q => q.stimulus) || [];
+
+      const memoryQuestions = prevResult?.generatedQuestions?.map(q => q.question) || [];
+      const memoryStimuli = prevResult?.generatedQuestions?.map(q => q.stimulus) || [];
+
+      const avoidQuestionTexts = Array.from(new Set([
+        ...sessionAvoid.avoidQuestionTexts,
+        ...memoryQuestions
+      ])).filter((t): t is string => typeof t === 'string' && t.trim().length > 0);
+
+      const avoidStimuli = Array.from(new Set([
+        ...sessionAvoid.avoidStimuli,
+        ...memoryStimuli
+      ])).filter((s): s is string => typeof s === 'string' && s.trim().length > 0);
+
+      const nextIndex = Math.max(variationCount, sessionAvoid.variationCount);
 
       const res = await generateMEBIQuestions(
         subjectId,
@@ -113,6 +173,23 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
           outputType
         }
       );
+
+      const updatedAvoidQuestions = Array.from(new Set([
+        ...avoidQuestionTexts,
+        ...(res.generatedQuestions?.map(q => q.question) || [])
+      ])).filter((t): t is string => typeof t === 'string' && t.trim().length > 0);
+
+      const updatedAvoidStimuli = Array.from(new Set([
+        ...avoidStimuli,
+        ...(res.generatedQuestions?.map(q => q.stimulus) || [])
+      ])).filter((s): s is string => typeof s === 'string' && s.trim().length > 0);
+
+      saveAvoidSession(targetKey, {
+        variationCount: nextIndex + 1,
+        avoidQuestionTexts: updatedAvoidQuestions,
+        avoidStimuli: updatedAvoidStimuli
+      });
+
       setVariationCountByContext(prev => ({
         ...prev,
         [targetKey]: nextIndex + 1

@@ -49,6 +49,135 @@ export const CONTEXT_DIVERSITY_RULE = `HER SORU İÇİN ZORUNLU BAĞLAM ÇEŞİT
   * Bir soru: Şehir içi ulaşım ve trafik ışığı zamanlaması, güneş enerjisi santrali veya geri dönüşüm tesisi
 - Karakter isimleri de her soruda değişmelidir (Örn: 1. soruda Elif ve Kerem, 2. soruda Marangoz Ahmet Usta, 3. soruda Zeynep ile Can, 4. soruda Çiftçi Hasan Bey...).`;
 
+export interface DynamicContextDiversityParams {
+  grade?: number;
+  subjectId?: string;
+  targetCount?: number;
+  variationIndex?: number;
+  avoidDirectives?: string;
+}
+
+/**
+ * FAZ 3.3.3 / TASK 141 - Dinamik Bağlam Çeşitliliği ve Soru Tekrar Önleme Kuralı
+ * Sabit soru numarası-bağlam eşleşmelerini kaldırır, önceki setlerde kullanılan
+ * bağlamları dışlar ve modele derse/kazanıma uygun taze alternatifler önerir.
+ */
+export function getDynamicContextDiversityRule(params?: DynamicContextDiversityParams): string {
+  const grade = params?.grade || 5;
+  const subjectId = params?.subjectId || 'turkce';
+  const vIdx = params?.variationIndex || 0;
+  const avoid = (params?.avoidDirectives || '').toLowerCase();
+
+  // Tespit edilen önceki bağlamlar (yasaklar listesi)
+  const avoidAlerts: string[] = [];
+  if (avoid.includes('çilek') || avoid.includes('manav') || avoid.includes('pazar') || avoid.includes('meyve')) {
+    avoidAlerts.push('Manav/pazar alışverişi, meyve-sebze tartımı ve market kurguları');
+  }
+  if (avoid.includes('ahşap') || avoid.includes('topaç') || avoid.includes('sandık') || avoid.includes('fırıldak')) {
+    avoidAlerts.push('Tavan arasındaki ahşap sandık ve dede yadigârı oyuncak kurguları');
+  }
+  if (avoid.includes('kuş yuva') || avoid.includes('çınar') || avoid.includes('dal')) {
+    avoidAlerts.push('Ağaç dallarına kuş yuvası yerleştirme kurguları');
+  }
+  if (avoid.includes('denizaltı') || avoid.includes('mikroplastik')) {
+    avoidAlerts.push('Denizaltı mikroplastik araştırma kurguları');
+  }
+  if (avoid.includes('bal') && avoid.includes('kavanoz')) {
+    avoidAlerts.push('Bal hasadı ve kavanozlara paylaştırma kurguları');
+  }
+
+  // Branş ve sınıf düzeyine uygun zengin ve alternatif bağlam havuzları
+  // 6 farklı yaşam alanından seçilir, rotasyonel olarak her varyasyonda kaydırılır.
+  const contextPoolsBySubject: Record<string, string[][]> = {
+    turkce: [
+      [
+        'Doğa gözlem kulesinde kuş göç rotalarını izleyen gözlemciler',
+        'Geleneksel seramik ve çömlek atölyesinde çamurun kuruma aşamaları',
+        'Mahalle kütüphanesinde yıpranmış kitapları ciltleyen okuma kulübü',
+        'Okul bahçesindeki serada aromatik bitki bakımını üstlenen öğrenciler',
+        'Geleneksel taş fırında ekşi mayalı köy ekmeği pişiren usta',
+        'Tarihî tren garında buharlı lokomotiften hızlı trene seyahat anısı'
+      ],
+      [
+        'Arkeoloji müzesinde antik mozaik restorasyonunu belgeleyen araştırmacı',
+        'Köy meydanında imece usulü zeytin toplayıp sıkan mahalle sakinleri',
+        'Gökyüzü gözlem şenliğinde teleskopla ay kraterlerini inceleyen kulüp',
+        'Ahşap oymacılığı zanaatında geometrik desenler çizen usta ve çırak',
+        'Mahalle çocuk parkındaki koşu parkurunda centilmenlik (fair-play)',
+        'Bozulan eski bir mekanik saati tamir ustası dedesiyle onaran çocuk'
+      ],
+      [
+        'Deniz feneri bekçisinin sisli havalarda gemilere kılavuzluk hikâyesi',
+        'Okul radyosunda çevre koruma ve sıfır atık üzerine canlı röportaj',
+        'Geleneksel ebru sanatında kitreli su üzerindeki boyaların ahengi',
+        'Orman gözetleme kulesinde nöbet tutan yangın gözetleme ekibi',
+        'Köy okuluna bağışlanan enstrümanlarla ilk orkestrayı kuran çocuklar',
+        'Balkon bahçeciliğinde organik nane ve domates yetiştirme serüveni'
+      ]
+    ],
+    matematik: [
+      [
+        'Mimari maket tasarımında ölçekli ahşap bloklar ve kenar hesabı',
+        'Güneş paneli tarlasında üretilen elektriğin saatlik dağılımı',
+        'Baraj gölündeki su seviyesinin mevsimsel doluluk oranları',
+        'Kargo dağıtım merkezinde paket ağırlığı ve rota optimizasyonu',
+        'Spor kulübünün atletizm pistinde tur süreleri ve hız analizi',
+        'Okul kantininde geri dönüştürülebilir ambalaj maliyet hesabı'
+      ],
+      [
+        'Tarımsal damla sulama sisteminde debi ve su tasarrufu verileri',
+        'Halk kütüphanesinde kitap türlerine göre raf yerleşim oranları',
+        'Meteoroloji istasyonunda haftalık sıcaklık değişim tahminleri',
+        'Organik fidanlıkta yetiştirilen çam fidanlarının uzama hızları',
+        'Bisiklet turu parkurunda eğim açıları ve mola mesafeleri',
+        'Geleneksel dokuma tezgâhında ilmek sayısı ve desen simetrisi'
+      ]
+    ],
+    fen_bilimleri: [
+      [
+        'TÜBİTAK model uydu yarışmasında irtifa ve sensör ölçümleri',
+        'Rüzgâr türbininde kanat açısı ile elektrik verimi ilişkisi deneyi',
+        'Göl ekosisteminde su kirliliği ve oksijen seviyesi etkisi',
+        'Isı yalıtım malzemelerinin sıcaklık koruma süreleri testi',
+        'Tohum çimlenmesinde ışık rengi ve nemin büyüme hızına etkisi',
+        'Sürtünme kuvvetinin farklı zeminlerde dinamometreyle ölçümü'
+      ],
+      [
+        'Güneş enerjili su ısıtma sisteminde yansıtıcı yüzey verimi',
+        'Doğal gübre çeşitlerinin bitki kök gelişimine etkisi deneyi',
+        'Ses yalıtımında sünger ve köpük katmanların desibele etkisi',
+        'Mıknatısların çekim kuvvetinin mesafeye göre değişimi deneyi',
+        'Işığın prizmada renklerine ayrılması deney düzeneği',
+        'Geri dönüşüm tesisinde atıkların ayrıştırılma mekanizması'
+      ]
+    ]
+  };
+
+  const subjectPools = contextPoolsBySubject[subjectId] || contextPoolsBySubject.turkce;
+  const poolIndex = Math.abs(vIdx) % subjectPools.length;
+  const selectedPool = subjectPools[poolIndex];
+
+  // Alternatif isim rotasyonu (klişe Kerem/Elif/Deniz yerine özgün Türk isimleri)
+  const nameSets = [
+    ['Umut', 'Bilge', 'Tarık', 'Yasemin', 'Ozan', 'Beril'],
+    ['Ilgaz', 'Defne', 'Serra', 'Selim', 'Görkem', 'Meltem'],
+    ['Barış', 'Eren', 'Duru', 'Ceyda', 'Kaan', 'Asude']
+  ];
+  const selectedNames = nameSets[Math.abs(vIdx) % nameSets.length];
+
+  const avoidSection = avoidAlerts.length > 0
+    ? `\n- [YASAK BAĞLAMLAR]: Önceki setlerdeki şu temaları KESİNLİKLE TEKRARLAMA: ${avoidAlerts.join(', ')}.`
+    : '';
+
+  return `HER SORU İÇİN DİNAMİK BAĞLAM ÇEŞİTLİLİĞİ VE ÖZGÜNLÜK KURALI (EN KRİTİK KURAL):
+- AYNI SINAV İÇİNDEKİ SORULARDA ASLA AYNI MEKÂN, AYNI ETKİNLİK VEYA AYNI BAĞLAMI TEKRARLAMA!
+- Soru numaralarına sabit kalıplar (örneğin 1. soruya pazar/manav) KESİNLİKLE BAĞLANAMAZ.${avoidSection}
+- Bu sınav ${grade}. Sınıf ${vIdx + 1}. varyasyon setidir. Her soruda birbirinden TAMAMEN FARKLI alanlardan taze kurgu kurunuz:
+${selectedPool.map((c, i) => `  * Soru ${i + 1}: ${c}`).join('\n')}
+- Karakter isimleri her soruda özgün ve çeşitli olmalıdır (${selectedNames.join(', ')} vb.).
+- ZORUNLU PEDAGOJİK SINIR: Kurgu ve olay örgüsü, sorunun kazanımını ve bilişsel düzeyini asla gölgelememeli; süs değil, analitik düşünme zemini olmalıdır. Soru kökü açık ve amaca dönük kalmalıdır.`;
+}
+
 export function getMebiPedagogicalRules(targetCount: number): string {
   return `ÖNEMLİ MEBİ PEDAGOJİK KURALLARI:
 1. DÜZ BİLGİ/TANIM KESİNLİKLE YASAKTIR. ("... nedir?", "... kim bulmuştur?" gibi ezber sorular sorulamaz).

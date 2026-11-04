@@ -62,6 +62,122 @@ export interface GeneratorOptions {
 }
 
 /**
+ * Türkçe metni küçük harfe dönüştürür, inceltme/şapkalı harfleri normalize eder ve
+ * noktalama işaretlerini temizler.
+ */
+export function cleanTurkishText(text: string): string {
+  if (!text) return '';
+  return text
+    .replace(/â/g, 'a').replace(/î/g, 'i').replace(/û/g, 'u')
+    .replace(/Â/g, 'a').replace(/Î/g, 'i').replace(/Û/g, 'u')
+    .toLocaleLowerCase('tr-TR')
+    .replace(/[^a-z0-9çğıöşü\s]/gi, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+/**
+ * Türkçe çekim eklerini (hâl, iyelik, çoğul, zaman ve kişi ekleri) budayarak
+ * kök veya yalın gövdeyi elde eder.
+ */
+export function normalizeTurkishStem(word: string): string {
+  if (!word || word.length <= 2) return word;
+  let w = cleanTurkishText(word);
+  if (w.length <= 2) return w;
+
+  const multiSuffixes: [RegExp, number][] = [
+    [/(?:mışlardır|mişlerdir|muşlardır|müşlerdir|dılar|diler|tılar|tiler)$/, 2],
+    [/(?:yordular|yordiler|yormuş|yormiş|yordu|yordu|yorsa|yorse|yacak|yecek|acaklar|ecekler|malıdır|melidir)$/, 2],
+    [/(?:lardan|lerden|larda|lerde|ların|lerin|lara|lere|ları|leri|ndan|nden|nda|nde|nın|nin|nun|nün)$/, 3],
+    [/(?:dan|den|tan|ten|mız|miz|muz|müz|nız|niz|nuz|nüz|da|de|ta|te|ya|ye|na|ne)$/, 3],
+    [/(?:mış|miş|muş|müş|uyor|üyor|ıyor|iyor|acak|ecek|malı|meli)$/, 2],
+    [/(?:mıştır|miştir|muştur|müştür|dular|düler|tular|tüler|dınız|diniz)$/, 2],
+    [/(?:dı|di|du|dü|tı|ti|tu|tü)$/, 2],
+    [/(?:lar|ler|sı|si|su|sü|ım|im|um|üm|ın|in|un|ün|la|le|yla|yle)$/, 3],
+    [/(?:yı|yi|yu|yü|nı|ni|nu|nü)$/, 3]
+  ];
+
+  for (let pass = 0; pass < 2; pass++) {
+    const prev = w;
+    for (const [rx, minLen] of multiSuffixes) {
+      if (rx.test(w)) {
+        const cand = w.replace(rx, '');
+        if (cand.length >= minLen) {
+          w = cand;
+          break;
+        }
+      }
+    }
+    if (w === prev) break;
+  }
+
+  // Tek harfli hal ekleri (-a, -e, -ı, -i, -u, -ü) sadece kelime en az 5 harfliyse
+  if (w.length >= 5 && /[aeıiuü]$/.test(w)) {
+    const cand = w.slice(0, -1);
+    if (cand.length >= 3) {
+      w = cand;
+    }
+  }
+
+  // Yumuşama (softening)
+  if (w.endsWith('ğ')) w = w.slice(0, -1) + 'k';
+  else if (w.endsWith('c')) w = w.slice(0, -1) + 'ç';
+  else if (w.endsWith('d')) w = w.slice(0, -1) + 't';
+  else if (w.endsWith('b')) w = w.slice(0, -1) + 'p';
+
+  return w;
+}
+
+const GENERIC_DIRECTIVE_WORDS = new Set([
+  've', 'ile', 'veya', 'ama', 'fakat', 'ancak', 'bu', 'şu', 'o', 'bir', 'tek',
+  'da', 'de', 'ta', 'te', 'için', 'göre', 'kadar', 'sonra', 'önce', 'gibi',
+  'yukarıdaki', 'aşağıdaki', 'metne', 'parçaya', 'yazınız', 'açıklayınız',
+  'belirtiniz', 'ifade', 'ediniz', 'bulunuz', 'hesaplayınız', 'nedir',
+  'hangi', 'hangisi', 'hangisidir', 'kaçtır', 'nelerdir', 'nasıl', 'neden',
+  'gerekçesiyle', 'cümleyle', 'soruyu', 'cevaplayınız', 'verilen', 'ilgili',
+  'doğru', 'yanlış'
+]);
+
+/**
+ * Metinden genel yönergeleri ve bağlaçları ayıklayarak semantik konu köklerini döndürür.
+ */
+export function extractTopicTokens(text: string): string[] {
+  if (!text) return [];
+  const words = cleanTurkishText(text).split(/\s+/).filter(w => w.length > 2);
+  const tokens: string[] = [];
+  for (const w of words) {
+    const stem = normalizeTurkishStem(w);
+    if (stem.length > 2 && !GENERIC_DIRECTIVE_WORDS.has(stem) && !GENERIC_DIRECTIVE_WORDS.has(w)) {
+      tokens.push(stem);
+    }
+  }
+  return Array.from(new Set(tokens));
+}
+
+function calculateJaccard(tokensA: string[], tokensB: string[]): number {
+  if (tokensA.length === 0 || tokensB.length === 0) return 0;
+  const setA = new Set(tokensA);
+  const setB = new Set(tokensB);
+  let inter = 0;
+  for (const t of setA) {
+    if (setB.has(t)) inter++;
+  }
+  const union = setA.size + setB.size - inter;
+  return union > 0 ? inter / union : 0;
+}
+
+function calculateOverlapRatio(tokensA: string[], tokensB: string[]): number {
+  if (tokensA.length === 0 || tokensB.length === 0) return 0;
+  const setA = new Set(tokensA);
+  const setB = new Set(tokensB);
+  let inter = 0;
+  for (const t of setA) {
+    if (setB.has(t)) inter++;
+  }
+  return inter / Math.min(setA.size, setB.size);
+}
+
+/**
  * Kelime düzeyinde Jaccard ve alt dize benzerliği hesaplayarak mükerrer veya
  * yalnızca birkaç kelimesi değiştirilmiş soruları tespit eder.
  */
@@ -127,28 +243,54 @@ export function isDuplicateOrTooSimilar(
     if (!aQ && !aS) continue;
 
     const aFull = (aS ? aS + ' ' : '') + aQ;
-    if (cFull === aFull || (cQ && cQ === aQ)) return true;
+    if (cFull === aFull) return true;
+
+    // Her iki soruda da uyarıcı yokken soru kökleri tam eşleşiyorsa mükerrer
+    if (!cS && !aS && cQ && cQ === aQ) return true;
 
     const fullSim = calculateQuestionSimilarity(cFull, aFull);
     const qSim = calculateQuestionSimilarity(cQ, aQ);
+    const aNums = extractNumbersFromText(aFull);
 
-    // Senaryolu / Zengin Uyarıcılı Sorular (Her ikisinin de uyarıcısı zenginse)
+    // Senaryolu / Zengin Uyarıcılı Sorular
     if (cS.length > 25 && aS.length > 25) {
       const stimSim = calculateQuestionSimilarity(cS, aS);
+      const stimTopicsC = extractTopicTokens(cS);
+      const stimTopicsA = extractTopicTokens(aS);
+      const stimTopicOverlap = calculateOverlapRatio(stimTopicsC, stimTopicsA);
+
+      // Kurgular ve olay örgüleri tamamen farklıysa salt ortak yönerge (örn. "ana fikri yazınız") nedeniyle eleme
+      if (stimTopicOverlap < 0.25 && stimSim < 0.35) {
+        if (fullSim >= 0.70) return true;
+        continue;
+      }
+
       if (stimSim >= 0.50) {
         if (qSim >= 0.40 || fullSim >= 0.55) return true;
       }
+
+      // Sayısal parametre içermeyen sözel/metin anlama sorularında semantik olay örgüsü ve konu analizi
+      if (cNums.length === 0 || aNums.length === 0) {
+        const fullTopicsC = extractTopicTokens(cFull);
+        const fullTopicsA = extractTopicTokens(aFull);
+        const fullTopicJaccard = calculateJaccard(fullTopicsC, fullTopicsA);
+        const fullTopicOverlap = calculateOverlapRatio(fullTopicsC, fullTopicsA);
+        const stimTopicJaccard = calculateJaccard(stimTopicsC, stimTopicsA);
+
+        if (fullTopicJaccard >= 0.45 && fullTopicOverlap >= 0.70) return true;
+        if (stimTopicJaccard >= 0.36 && stimTopicOverlap >= 0.60 && fullTopicJaccard >= 0.42) return true;
+      }
+
       if (stimSim < 0.35) {
-        // Kurgular ve bağlamlar tamamen farklı; salt yönerge/komut benzerliğinden ötürü mükerrer sayma
         if (fullSim >= 0.65) return true;
         continue;
       }
+
       if (fullSim >= 0.58) return true;
       continue;
     }
 
     // Matematik / Fen Sorularında Sayısal / Parametrik Kontrol
-    const aNums = extractNumbersFromText(aFull);
     if (cNums.length > 0 && aNums.length > 0) {
       const commonNums = cNums.filter(n => aNums.includes(n));
       // Tamamen farklı sayılar/parametreler içeriyorsa (örn. 542A & 4 ile 7832B & 9, ya da 72 ile 90)
@@ -163,6 +305,12 @@ export function isDuplicateOrTooSimilar(
 
     // Düz Metin / Türkçe Anlama ve Dilbilgisi Soruları
     if (fullSim >= threshold || qSim >= threshold) {
+      return true;
+    }
+    const fullTopicsC = extractTopicTokens(cFull);
+    const fullTopicsA = extractTopicTokens(aFull);
+    const fullTopicJaccard = calculateJaccard(fullTopicsC, fullTopicsA);
+    if (fullTopicJaccard >= threshold) {
       return true;
     }
   }

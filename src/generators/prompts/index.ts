@@ -4,6 +4,7 @@ import {
   getOutcomeAlignmentRule,
   getDifficultyPlanRule,
   CONTEXT_DIVERSITY_RULE,
+  getDynamicContextDiversityRule,
   getMebiPedagogicalRules,
   getQualityPedagogicalRules,
   QUESTION_DIRECTIVE_CLARITY_RULE,
@@ -199,6 +200,16 @@ export function buildLiveExamPrompt(params: LiveExamPromptParams): string {
     }
   }
 
+  const contextDiversityBlock = isQualityActive
+    ? getDynamicContextDiversityRule({
+        grade,
+        subjectId,
+        targetCount,
+        variationIndex: params.variationIndex,
+        avoidDirectives: params.avoidDirectives
+      })
+    : CONTEXT_DIVERSITY_RULE;
+
   return `${header}
 
 ${outcomeRule}
@@ -207,7 +218,7 @@ ${gradeRule}
 
 ${diffRule}
 
-${CONTEXT_DIVERSITY_RULE}${directiveClarityBlock}
+${contextDiversityBlock}${directiveClarityBlock}
 
 ${pedaRule}
 ${rubricDesignBlock}${turkishMebiDirectives}
@@ -231,7 +242,8 @@ export {
   buildGrade56TextbookDirectives,
   getQualityPedagogicalRules,
   QUESTION_DIRECTIVE_CLARITY_RULE,
-  RUBRIC_DESIGN_RULE
+  RUBRIC_DESIGN_RULE,
+  getDynamicContextDiversityRule
 };
 
 export type { LiveExamPromptParams, PromptRegistryEntry, AvoidDirectivesParams } from './types';
