@@ -236,6 +236,8 @@ export const QUESTION_DIRECTIVE_CLARITY_RULE = `YÖNERGE AÇIKLIĞI VE BİLİŞS
   * Yazım-noktalama sorularında: Çoğul hata isteniyorsa metinde en az 2 somut hata yer almalıdır. Metinde tek hata varsa soru kökü KESİNLİKLE tekil olmalıdır ("yazım yanlışını bularak doğrusunu yazınız").
 - Noktalama görevi sorulan sorularda model cevap her işaretin metindeki somut görevini açıkça eşleştirmelidir (Örn: "İki nokta: Kendisinden sonra konuşma geleceğini belirtmek; Tırnak: Aktarma sözünü göstermek").
 - MODEL CEVAPTA SORU KÖKÜNÜ TEKRAR ETME YASAĞI: 'answer' alanı KESİNLİKLE soru kökünü tekrar edemez; doğrudan doğru çözümü ve yanıtı yazınız. 'alternativeAnswers' da model cevapla aynı temel gerçeği desteklemelidir.
+- ÖZEL AD VE EK YAZIMI (TDK): 3. teklik kişi iyelik eki olan özel adlarda kesme işareti addan sonra konur (Örn: 'Ankara Garı\'ndan', 'İstanbul Boğazı\'na'; 'Ankara Garın\'dan' gibi hatalı ayrımlar yapılamaz).
+- METİNDEN AKTARIM VE İMLA DOĞRULUĞU: Model cevapta metinden aktarılan sözcükler eksiksiz yazılmalıdır (Örn: metinde 'pideleri' geçiyorsa model cevapta 'pider' gibi kırpılmış değil, 'pideleri' yazılmalıdır).
 - Görev Bütünlüğü: Birbirinden bağımsız iki farklı görev tek bir soru cümlesinde iç içe geçirilmemeli, alt maddeler halinde ayrılmalıdır. Ancak birbiriyle doğrudan ilişkili ve bütünleşik bir beceriyi ölçen aşamalı görevler ("hatayı tespit edip doğrusunu yazınız") korunabilir; sırf "ve" bağlacı var diye yapay olarak bölünmemelidir.
 - Sınıf Düzeyi ve Pedagojik Derinlik (Yüzeysellik Yasağı):
   * Metinden geçen tek bir kelime/nesne avcılığı ("Hangi meyve alınmıştır?") KESİNLİKLE ÜRETİLEMEZ.

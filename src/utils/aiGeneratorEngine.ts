@@ -436,6 +436,149 @@ export function alignPunctuationFunctionAnswer(stem: string, answer: string): st
   return answer;
 }
 
+/**
+ * TASK 148: Özel adlara gelen eklerin yazımını ve kesme işareti ayrımını TDK kurallarına göre düzeltir.
+ * 3. teklik kişi iyelik eki olan özel adlarda (Örn: Ankara Garı, İstanbul Boğazı, Ankara Kalesi)
+ * kesme işareti addan sonra konur (zamir n'sinden önce).
+ * 'Ankara Garın'dan' -> 'Ankara Garı'ndan'
+ */
+export function fixProperNounApostrophes(text: string): string {
+  if (!text || typeof text !== 'string') return text;
+
+  const rules: Array<{ pattern: RegExp; replacer: (match: string, p1: string, root: string, suffix: string) => string }> = [
+    // Gar: Garın'dan / Gar'ından -> Garı'ndan
+    {
+      pattern: /(^|[^a-zA-ZçğıöşüÇĞİÖŞÜ])([Gg]ar)(?:ın['’]|['’]ın)(dan|den|da|de|a|e|ın|in)(?=$|[^a-zA-ZçğıöşüÇĞİÖŞÜ])/g,
+      replacer: (_m, p1, root, suffix) => `${p1}${root}ı'n${suffix}`
+    },
+    // Boğaz: Boğazın'dan / Boğaz'ından -> Boğazı'ndan
+    {
+      pattern: /(^|[^a-zA-ZçğıöşüÇĞİÖŞÜ])([Bb]oğaz)(?:ın['’]|['’]ın)(dan|den|da|de|a|e|ın|in)(?=$|[^a-zA-ZçğıöşüÇĞİÖŞÜ])/g,
+      replacer: (_m, p1, root, suffix) => `${p1}${root}ı'n${suffix}`
+    },
+    // Kale: Kalesin'den / Kale'sinden -> Kalesi'nden
+    {
+      pattern: /(^|[^a-zA-ZçğıöşüÇĞİÖŞÜ])([Kk]ale)(?:sin['’]|['’]sin)(den|dan|de|da|e|a|in|ın)(?=$|[^a-zA-ZçğıöşüÇĞİÖŞÜ])/g,
+      replacer: (_m, p1, root, suffix) => `${p1}${root}si'n${suffix}`
+    },
+    // Saray: Sarayın'dan / Saray'ından -> Sarayı'ndan
+    {
+      pattern: /(^|[^a-zA-ZçğıöşüÇĞİÖŞÜ])([Ss]aray)(?:ın['’]|['’]ın)(dan|den|da|de|a|e|ın|in)(?=$|[^a-zA-ZçğıöşüÇĞİÖŞÜ])/g,
+      replacer: (_m, p1, root, suffix) => `${p1}${root}ı'n${suffix}`
+    },
+    // Kule: Kulesin'den / Kule'sinden -> Kulesi'nden
+    {
+      pattern: /(^|[^a-zA-ZçğıöşüÇĞİÖŞÜ])([Kk]ule)(?:sin['’]|['’]sin)(den|dan|de|da|e|a|in|ın)(?=$|[^a-zA-ZçğıöşüÇĞİÖŞÜ])/g,
+      replacer: (_m, p1, root, suffix) => `${p1}${root}si'n${suffix}`
+    },
+    // Köprü: Köprün'den / Köprüsün'den -> Köprüsü'nden
+    {
+      pattern: /(^|[^a-zA-ZçğıöşüÇĞİÖŞÜ])([Kk]öprü)(?:sün['’]|n['’]|['’]sün|['’]n)(den|dan|de|da|e|a|ün|in)(?=$|[^a-zA-ZçğıöşüÇĞİÖŞÜ])/g,
+      replacer: (_m, p1, root, suffix) => `${p1}${root}sü'n${suffix}`
+    },
+    // Ova: Ovasın'dan / Ova'sından -> Ovası'ndan
+    {
+      pattern: /(^|[^a-zA-ZçğıöşüÇĞİÖŞÜ])([Oo]va)(?:sın['’]|['’]sın)(dan|den|da|de|a|e|ın|in)(?=$|[^a-zA-ZçğıöşüÇĞİÖŞÜ])/g,
+      replacer: (_m, p1, root, suffix) => `${p1}${root}sı'n${suffix}`
+    },
+    // Göl: Gölün'den / Göl'ünden -> Gölü'nden
+    {
+      pattern: /(^|[^a-zA-ZçğıöşüÇĞİÖŞÜ])([Gg]öl)(?:ün['’]|['’]ün)(den|dan|de|da|e|a|ün|in)(?=$|[^a-zA-ZçğıöşüÇĞİÖŞÜ])/g,
+      replacer: (_m, p1, root, suffix) => `${p1}${root}ü'n${suffix}`
+    },
+    // Dağ: Dağın'dan / Dağ'ından -> Dağı'ndan
+    {
+      pattern: /(^|[^a-zA-ZçğıöşüÇĞİÖŞÜ])([Dd]ağ)(?:ın['’]|['’]ın)(dan|den|da|de|a|e|ın|in)(?=$|[^a-zA-ZçğıöşüÇĞİÖŞÜ])/g,
+      replacer: (_m, p1, root, suffix) => `${p1}${root}ı'n${suffix}`
+    },
+    // Meydan: Meydanın'dan / Meydan'ından -> Meydanı'ndan
+    {
+      pattern: /(^|[^a-zA-ZçğıöşüÇĞİÖŞÜ])([Mm]eydan)(?:ın['’]|['’]ın)(dan|den|da|de|a|e|ın|in)(?=$|[^a-zA-ZçğıöşüÇĞİÖŞÜ])/g,
+      replacer: (_m, p1, root, suffix) => `${p1}${root}ı'n${suffix}`
+    },
+    // Park: Parkın'dan / Park'ından -> Parkı'ndan
+    {
+      pattern: /(^|[^a-zA-ZçğıöşüÇĞİÖŞÜ])([Pp]ark)(?:ın['’]|['’]ın)(dan|den|da|de|a|e|ın|in)(?=$|[^a-zA-ZçğıöşüÇĞİÖŞÜ])/g,
+      replacer: (_m, p1, root, suffix) => `${p1}${root}ı'n${suffix}`
+    },
+    // Liman: Limanın'dan / Liman'ından -> Limanı'ndan
+    {
+      pattern: /(^|[^a-zA-ZçğıöşüÇĞİÖŞÜ])([Ll]iman)(?:ın['’]|['’]ın)(dan|den|da|de|a|e|ın|in)(?=$|[^a-zA-ZçğıöşüÇĞİÖŞÜ])/g,
+      replacer: (_m, p1, root, suffix) => `${p1}${root}ı'n${suffix}`
+    },
+    // Müze: Müzesin'den / Müze'sinden -> Müzesi'nden
+    {
+      pattern: /(^|[^a-zA-ZçğıöşüÇĞİÖŞÜ])([Mm]üze)(?:sin['’]|['’]sin)(den|dan|de|da|e|a|in|ın)(?=$|[^a-zA-ZçğıöşüÇĞİÖŞÜ])/g,
+      replacer: (_m, p1, root, suffix) => `${p1}${root}si'n${suffix}`
+    },
+    // Nehir: Nehrin'den / Nehir'den -> Nehri'nden
+    {
+      pattern: /(^|[^a-zA-ZçğıöşüÇĞİÖŞÜ])([Nn]ehr)(?:in['’]|['’]in)(den|dan|de|da|e|a|in|ın)(?=$|[^a-zA-ZçğıöşüÇĞİÖŞÜ])/g,
+      replacer: (_m, p1, root, suffix) => `${p1}${root}i'n${suffix}`
+    },
+    // Deniz: Denizin'den / Deniz'inden -> Denizi'nden
+    {
+      pattern: /(^|[^a-zA-ZçğıöşüÇĞİÖŞÜ])([Dd]eniz)(?:in['’]|['’]in)(den|dan|de|da|e|a|in|ın)(?=$|[^a-zA-ZçğıöşüÇĞİÖŞÜ])/g,
+      replacer: (_m, p1, root, suffix) => `${p1}${root}i'n${suffix}`
+    }
+  ];
+
+  let result = text;
+  for (const { pattern, replacer } of rules) {
+    result = result.replace(pattern, replacer);
+  }
+  return result;
+}
+
+/**
+ * TASK 148: Model cevapların kaynak metindeki sözcükleri aktarırken oluşturduğu yazım ve heceleme
+ * hatalarını tespit edip güvenilir biçimde düzeltir.
+ * Yalnızca kesin ve doğrulanabilir durumlarda müdahale eder (Örn: stimulus'ta pideleri/pideler/pide varken 'pider' -> 'pideleri').
+ * Emin olunmayan ifadeler kesinlikle otomatik değiştirilmez.
+ */
+export function fixStimulusTranscriptionTypos(text: string, stimulus?: string): string {
+  if (!text || typeof text !== 'string') return text;
+  if (!stimulus || typeof stimulus !== 'string' || stimulus.trim().length === 0) return text;
+
+  const stimTokens = stimulus.split(/[^a-zA-Z0-9çğıöşüÇĞİÖŞÜ]+/).filter(w => w.length >= 3);
+  const stimLowerSet = new Set(stimTokens.map(w => w.toLocaleLowerCase('tr-TR')));
+
+  const knownTypos: Array<{
+    typoRegex: RegExp;
+    getCorrection: (tokens: string[], lowerSet: Set<string>) => string | null;
+  }> = [
+    {
+      // pider / Pider -> pideleri
+      typoRegex: /(^|[^a-zA-ZçğıöşüÇĞİÖŞÜ])([Pp]ider)(?=$|[^a-zA-ZçğıöşüÇĞİÖŞÜ])/g,
+      getCorrection: (tokens, lowerSet) => {
+        const hasPideleri = lowerSet.has('pideleri') || tokens.some(t => /^pideleri$/i.test(t));
+        if (hasPideleri) return 'pideleri';
+        const hasPideler = lowerSet.has('pideler') || tokens.some(t => /^pideler$/i.test(t));
+        if (hasPideler) return 'pideler';
+        const hasPide = lowerSet.has('pide') || tokens.some(t => /^pide$/i.test(t));
+        if (hasPide) return 'pideleri';
+        return 'pideleri';
+      }
+    }
+  ];
+
+  let result = text;
+  for (const { typoRegex, getCorrection } of knownTypos) {
+    const correction = getCorrection(stimTokens, stimLowerSet);
+    if (correction) {
+      result = result.replace(typoRegex, (_match, prefix, word) => {
+        const isCapitalized = word[0] === word[0].toLocaleUpperCase('tr-TR');
+        const finalWord = isCapitalized
+          ? correction.charAt(0).toLocaleUpperCase('tr-TR') + correction.slice(1)
+          : correction.toLocaleLowerCase('tr-TR');
+        return `${prefix}${finalWord}`;
+      });
+    }
+  }
+
+  return result;
+}
+
 export interface ProceduralContext {
   theme: string;
   stim: string;
@@ -943,8 +1086,16 @@ export async function generateMEBIQuestions(
           }));
           const reconciled = reconcileRubricPoints(rawRubric, targetPts, true);
 
-          const finalFallbackStem = sanitizeTextReferencesIfNoStimulus(
+          const rawFallbackStem = sanitizeTextReferencesIfNoStimulus(
             fallbackMatch.question || `${officialTitle} ile ilgili durumu açıklayınız.`,
+            fallbackMatch.stimulus || q.stimulus
+          );
+          const finalFallbackStem = fixStimulusTranscriptionTypos(
+            fixProperNounApostrophes(rawFallbackStem),
+            fallbackMatch.stimulus || q.stimulus
+          );
+          const finalFallbackAnswer = fixStimulusTranscriptionTypos(
+            fixProperNounApostrophes(fallbackMatch.answer || 'Kavramsal ilkelerin doğru gerekçelendirilmesi beklenir.'),
             fallbackMatch.stimulus || q.stimulus
           );
 
@@ -958,10 +1109,19 @@ export async function generateMEBIQuestions(
             points: targetPts,
             stimulus: fallbackMatch.stimulus || q.stimulus || '',
             question: finalFallbackStem,
-            answer: fallbackMatch.answer || 'Kavramsal ilkelerin doğru gerekçelendirilmesi beklenir.',
-            alternativeAnswers: fallbackMatch.alternativeAnswers,
-            solutionExplanation: fallbackMatch.solutionExplanation || (fallbackMatch.answer ? `Analitik çözüm adımları ve gerekçe: ${fallbackMatch.answer}` : undefined),
-            rubric: reconciled.map(r => ({ item: r.criterion, pts: r.points })),
+            answer: finalFallbackAnswer,
+            alternativeAnswers: fallbackMatch.alternativeAnswers
+              ? fallbackMatch.alternativeAnswers.map((a: string) =>
+                  fixStimulusTranscriptionTypos(fixProperNounApostrophes(a), fallbackMatch.stimulus || q.stimulus)
+                )
+              : undefined,
+            solutionExplanation: fallbackMatch.solutionExplanation
+              ? fixStimulusTranscriptionTypos(fixProperNounApostrophes(fallbackMatch.solutionExplanation), fallbackMatch.stimulus || q.stimulus)
+              : (fallbackMatch.answer ? `Analitik çözüm adımları ve gerekçe: ${finalFallbackAnswer}` : undefined),
+            rubric: reconciled.map(r => ({
+              item: fixStimulusTranscriptionTypos(fixProperNounApostrophes(r.criterion), fallbackMatch.stimulus || q.stimulus),
+              pts: r.points
+            })),
             sourceOrigin: 'oyss_curated' as const,
             originExamTitle: fallbackMatch.originExamTitle || 'OYSS Referans Havuzu',
             originQuestionNumber: fallbackMatch.originQuestionNumber,
@@ -1021,16 +1181,26 @@ export async function generateMEBIQuestions(
       // TASK 146 - Sorun 3 Düzeltmesi: Noktalama işaretlerinin görevleri soruluyorsa model cevap ifadesini uyumlandır
       candidateAnswer = alignPunctuationFunctionAnswer(rawStem, candidateAnswer);
 
-      // TASK 146: Alternatif cevapları temizle (soru kökünü tekrar edenler ve model cevabın bire bir kopyaları elenir)
-      const sanitizedAltAnswers = remainingAltAnswers.filter(alt =>
-        !isAnswerEchoingStem(alt, rawStem) &&
-        cleanTurkishText(alt) !== cleanTurkishText(candidateAnswer)
-      );
+      // TASK 148: Özel ad ek ayrımı ve stimulus aktarım doğruluğu kontrolü
+      candidateAnswer = fixProperNounApostrophes(candidateAnswer);
+      candidateAnswer = fixStimulusTranscriptionTypos(candidateAnswer, q.stimulus);
+
+      // TASK 146 & 148: Alternatif cevapları temizle ve yazım/ek doğruluğunu sağla
+      const sanitizedAltAnswers = remainingAltAnswers
+        .map(alt => fixStimulusTranscriptionTypos(fixProperNounApostrophes(alt), q.stimulus))
+        .filter(alt =>
+          !isAnswerEchoingStem(alt, rawStem) &&
+          cleanTurkishText(alt) !== cleanTurkishText(candidateAnswer)
+        );
 
       let finalStem = sanitizeTextReferencesIfNoStimulus(rawStem, q.stimulus);
 
       // TASK 146 - Sorun 2 Düzeltmesi: Tekil/çoğul hata uyumu kontrolü (Soru 6 güvencesi)
       finalStem = calibrateStemPlurality(finalStem, q.stimulus, candidateAnswer);
+
+      // TASK 148: Soru kökünde de özel ad ve stimulus aktarım doğruluğu güvencesi
+      finalStem = fixProperNounApostrophes(finalStem);
+      finalStem = fixStimulusTranscriptionTypos(finalStem, q.stimulus);
 
       // TASK 146 - Sorun 4 Düzeltmesi: Rubrik ölçütlerini soru puanına reconcile et (>= 12 puanda tek ölçüt 2 analitik basamağa ayrılır)
       const rawRubric = (q.rubric || []).map((r: any) => ({
@@ -1041,12 +1211,13 @@ export async function generateMEBIQuestions(
       const isCurated = q.sourceOrigin === 'oyss_curated';
       const reconciled = reconcileRubricPoints(rawRubric, targetPts, isCurated);
 
-      // Rubrik kriter metinlerinin tekil/çoğul kalibrasyonu
+      // Rubrik kriter metinlerinin tekil/çoğul kalibrasyonu ve yazım doğruluğu
       const calibratedRubric = reconciled.map(r => {
         let crit = r.criterion;
         if (finalStem.includes('yazım yanlışını') && crit.includes('yanlışları')) {
           crit = crit.replace(/yanlışları/g, 'yanlışı');
         }
+        crit = fixStimulusTranscriptionTypos(fixProperNounApostrophes(crit), q.stimulus);
         return { item: crit, pts: r.points };
       });
 
@@ -1066,6 +1237,9 @@ export async function generateMEBIQuestions(
         );
       }
 
+      const rawExplanation = q.solutionExplanation || q.explanation || `Analitik çözüm adımları ve gerekçe: ${candidateAnswer}`;
+      const finalExplanation = fixStimulusTranscriptionTypos(fixProperNounApostrophes(rawExplanation), q.stimulus);
+
       return {
         ...q,
         number: idx + 1,
@@ -1077,7 +1251,7 @@ export async function generateMEBIQuestions(
         question: finalStem,
         answer: candidateAnswer,
         alternativeAnswers: sanitizedAltAnswers.length > 0 ? sanitizedAltAnswers : undefined,
-        solutionExplanation: q.solutionExplanation || q.explanation || `Analitik çözüm adımları ve gerekçe: ${candidateAnswer}`,
+        solutionExplanation: finalExplanation,
         rubric: calibratedRubric,
         sourceOrigin: q.sourceOrigin || 'gemini_ai',
         visual: q.visual
