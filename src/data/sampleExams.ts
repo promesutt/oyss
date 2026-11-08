@@ -1209,7 +1209,37 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 7
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "visual": {
+          "type": "geometry_shape",
+          "sourceOrigin": "oyss_svg",
+          "caption": "Şekil 1, Şekil 2 ve Şekil 3 geometrik yapı modelleri",
+          "params": {
+            "subType": "polygon_2d",
+            "title": "Çokgen Tanımı Karşılaştırma Modeli",
+            "polygons": [
+              {
+                "points": [{ "x": 40, "y": 140 }, { "x": 90, "y": 60 }, { "x": 140, "y": 140 }],
+                "closed": true,
+                "label": "Şekil 1 (Kapalı Üçgen)",
+                "color": "#16a34a"
+              },
+              {
+                "points": [{ "x": 170, "y": 140 }, { "x": 170, "y": 70 }, { "x": 240, "y": 70 }, { "x": 240, "y": 115 }],
+                "closed": false,
+                "label": "Şekil 2 (Ucu Açık)",
+                "color": "#dc2626"
+              },
+              {
+                "points": [{ "x": 270, "y": 140 }, { "x": 270, "y": 70 }, { "x": 350, "y": 70 }],
+                "closed": true,
+                "hasCurve": true,
+                "label": "Şekil 3 (Eğri Kenarlı)",
+                "color": "#f59e0b"
+              }
+            ]
+          }
+        }
       },
       {
         "questionNumber": 6,
@@ -1259,7 +1289,46 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 7
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "visual": {
+          "type": "geometry_shape",
+          "sourceOrigin": "oyss_svg",
+          "caption": "Kareli zeminde A (Okul) ve B (Kütüphane) noktaları ve bağıl konum vektörü",
+          "params": {
+            "subType": "grid_coordinate",
+            "title": "Noktanın Noktaya Göre Konumu",
+            "grid": {
+              "cols": 8,
+              "rows": 6,
+              "cellSize": 32,
+              "origin": { "col": 1, "row": 4 }
+            },
+            "points": [
+              { "col": 1, "row": 4, "label": "A (Okul)", "color": "#2563eb" },
+              { "col": 6, "row": 2, "label": "B (Kütüphane)", "color": "#dc2626" }
+            ],
+            "vectors": [
+              {
+                "fromCol": 1,
+                "fromRow": 4,
+                "toCol": 6,
+                "toRow": 4,
+                "label": "5 birim sağa",
+                "dashed": true,
+                "color": "#64748b"
+              },
+              {
+                "fromCol": 6,
+                "fromRow": 4,
+                "toCol": 6,
+                "toRow": 2,
+                "label": "2 birim yukarı",
+                "dashed": true,
+                "color": "#64748b"
+              }
+            ]
+          }
+        }
       }
     ]
   },
@@ -1352,7 +1421,20 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 7
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "visual": {
+          "type": "geometry_shape",
+          "sourceOrigin": "oyss_svg",
+          "caption": "Saat 03.00 ve 04.00 akrep ile yelkovan açı modelleri",
+          "params": {
+            "subType": "angle_model",
+            "title": "Analog Saatte Açı Çeşitleri",
+            "clocks": [
+              { "hour": 3, "minute": 0, "angleLabel": "1. Durum: 90°" },
+              { "hour": 4, "minute": 0, "angleLabel": "2. Durum: 120°" }
+            ]
+          }
+        }
       },
       {
         "questionNumber": 4,
@@ -1377,7 +1459,35 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 7
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "visual": {
+          "type": "geometry_shape",
+          "sourceOrigin": "oyss_svg",
+          "caption": "Tek bir P noktasında kesişen m ve n doğruları",
+          "params": {
+            "subType": "line_system",
+            "title": "Düzlemde Kesişen İki Doğru Modeli",
+            "lines": [
+              {
+                "kind": "line",
+                "start": { "x": 50, "y": 70 },
+                "end": { "x": 350, "y": 150 },
+                "label": "m",
+                "labelPos": { "x": 360, "y": 155 }
+              },
+              {
+                "kind": "line",
+                "start": { "x": 80, "y": 190 },
+                "end": { "x": 320, "y": 30 },
+                "label": "n",
+                "labelPos": { "x": 330, "y": 25 }
+              }
+            ],
+            "points": [
+              { "x": 200, "y": 110, "label": "P", "color": "#dc2626" }
+            ]
+          }
+        }
       },
       {
         "questionNumber": 5,
@@ -19187,7 +19297,25 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 5
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "visual": {
+          "type": "geometry_shape",
+          "sourceOrigin": "oyss_svg",
+          "caption": "120 cm x 180 cm banyo zeminine 60x60 cm kare fayans döşeme modeli",
+          "params": {
+            "subType": "area_perimeter",
+            "title": "EBOB Zemin Kaplama (Tessellation) Modeli",
+            "tessellation": {
+              "totalWidth": 180,
+              "totalHeight": 120,
+              "tileWidth": 60,
+              "tileHeight": 60,
+              "widthLabel": "180 cm",
+              "heightLabel": "120 cm",
+              "tileLabel": "60x60 cm"
+            }
+          }
+        }
       },
       {
         "questionNumber": 3,

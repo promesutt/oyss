@@ -257,3 +257,11 @@ export const RUBRIC_DESIGN_RULE = `ANALİTİK DERECELİ PUANLAMA ANAHTARI (RUBR�
   * 12-20 puanlık sorularda bütün puanı tek ölçüte bağlamak kısmi puanlamayı imkânsız kılar. Bu sorular en az 2 analitik ölçüte (Örn: Kavramsal tespit 8-9 p, Gerekçelendirme 8-9 p) bölünmek zorundadır.
 - Soru doğrudan tek bir olguyu ölçüyorsa ve puanı < 12 ise tek kriterli rubrik kullanılabilir (zorla bölünmez).
 - Her sorunun rubrik kriter puanlarının toplamı, o sorunun 'points' değerine TAM EŞİT olmak zorundadır.`;
+
+/**
+ * TASK 158 - Matematik Dersi İçin Otomatik Görsel Desteği Kuralı
+ */
+export const AI_MATHEMATICS_VISUAL_DIRECTIVES = `MATEMATİK GÖRSEL KURALLARI ("visual" alanı):
+- Yalnızca geometrik şekil, açı, koordinat, tessellation veya sayı doğrusu/kesir modeli şartsa ekleyiniz. Salt aritmetik ve sözel sorularda bu alanı EKLEMEYİNİZ.
+- Desteklenen: "geometry_shape" (subType: polygon_2d, angle_model, line_system, grid_coordinate, area_perimeter), "number_line", "fraction_model".
+- ANTI-LEAK: Bilinmeyen veya aranan değerler için görsel etiketlerinde daima "?" kullanınız; cevabı asla doğrudan yazmayınız.`;

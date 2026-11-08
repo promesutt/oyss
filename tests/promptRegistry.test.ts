@@ -73,9 +73,7 @@ function runRegistryTests() {
     { grade: 5, sub: 'turkce' },
     { grade: 5, sub: 'matematik' },
     { grade: 6, sub: 'fen_bilimleri' },
-    { grade: 7, sub: 'ingilizce' },
-    { grade: 8, sub: 'sosyal_bilgiler' },
-    { grade: 8, sub: 'din_kulturu' }
+    { grade: 7, sub: 'ingilizce' }
   ];
 
   for (const { grade, sub } of sampleGenericCombos) {
@@ -141,9 +139,9 @@ function runRegistryTests() {
   const allPrompts = getAllRegisteredPrompts();
   const keys = Object.keys(allPrompts);
   assert(
-    keys.length === 5,
+    keys.length === 11,
     'Kütük Toplam Özel Kayıt Sayısı',
-    `Tam olarak 5 adet 7. sınıf özel branşı kayıtlıdır: [${keys.join(', ')}]`
+    `Tam olarak 11 adet özel branş (5 adet 7. sınıf + 6 adet 8. sınıf) kayıtlıdır: [${keys.join(', ')}]`
   );
 
   assert(

@@ -1,7 +1,7 @@
 /**
  * RFC 8259 Uyumlu JSON Çıktı Şablonu
  * - isQualityActive === false: Legacy parity eşitliğini korur.
- * - isQualityActive === true: Koşullu/esnek alternativeAnswers ve analitik rubrik şablonu sunar (FAZ 3.3.2).
+ * - isQualityActive === true: Koşullu/esnek alternativeAnswers, analitik rubrik ve opsiyonel visual şablonu sunar.
  */
 export function getJsonOutputSchema(hasAlternativeAnswers: boolean, isQualityActive: boolean = false): string {
   if (!isQualityActive) {
@@ -54,8 +54,18 @@ SADECE geçerli bir JSON çıktısı ver. JSON şeması:
       "rubric": [
         {"item": "Kriter 1 (Kavramsal / olgusal teşhis)", "pts": 8},
         {"item": "Kriter 2 (Analitik gerekçelendirme / işlem basamağı)", "pts": 7}
-      ]
+      ],
+      "visual": {
+        "type": "geometry_shape | number_line | fraction_model",
+        "caption": "Görsel açıklaması",
+        "params": {
+          "subType": "polygon_2d | angle_model | line_system | grid_coordinate | area_perimeter",
+          "...": "Modele özgü parametreler"
+        }
+      }
     }
   ]
-}\nNOT: Puanı 12 ve üzeri sorularda tek ölçütlü rubrik KESİNLİKLE YASAKTIR; en az 2 analitik ölçüte bölünmelidir.`;
+}
+NOT 1: >=12 puanlı sorularda tek ölçütlü rubrik YASAKTIR; en az 2 analitik ölçüte bölünmelidir.
+NOT 2: "visual" İSTEĞE BAĞLIDIR. Yalnızca görsel düşünme şartsa ekleyiniz; gerekmiyorsa ÇIKARINIZ. Cevabı görselde ifşa etmeyiniz ("?" kullanınız).`;
 }

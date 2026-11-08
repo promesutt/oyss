@@ -251,7 +251,9 @@ export const App: React.FC = () => {
       subjectId: selectedSubject,
       examTerm: selectedTerm,
       scenarioId: currentScenario.id,
-      title: `${selectedGrade}. Sınıf ${subjectName} (${currentScenario.name}) TYMM Kapsamlı Sınav Çalışma Kağıdı`,
+      title: selectedGrade === 8
+        ? `8. Sınıf ${subjectName} (${currentScenario.name}) Okul Yazılılarına Hazırlık Çalışma Kağıdı`
+        : `${selectedGrade}. Sınıf ${subjectName} (${currentScenario.name}) TYMM Kapsamlı Sınav Çalışma Kağıdı`,
       sections
     };
   }, [selectedGrade, selectedSubject, selectedTerm, currentScenario]);

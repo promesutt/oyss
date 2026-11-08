@@ -30,11 +30,11 @@ export const ALL_SUBJECTS: SubjectMeta[] = [
 ];
 
 export const ALL_GRADES: { level: GradeLevel; name: string; stage: SchoolStage; tymmRollout: string }[] = [
-  // Ortaokul (TYMM Kapsamında: 5, 6, 7; LGS: 8)
+  // Ortaokul (TYMM Kapsamında: 5, 6, 7; Okul Yazılılarına Hazırlık: 8)
   { level: 5, name: '5. Sınıf', stage: 'ortaokul', tymmRollout: 'TYMM Kapsamında' },
   { level: 6, name: '6. Sınıf', stage: 'ortaokul', tymmRollout: 'TYMM Kapsamında' },
   { level: 7, name: '7. Sınıf', stage: 'ortaokul', tymmRollout: 'TYMM Kapsamında' },
-  { level: 8, name: '8. Sınıf', stage: 'ortaokul', tymmRollout: 'LGS / Ortak Sınav' },
+  { level: 8, name: '8. Sınıf', stage: 'ortaokul', tymmRollout: 'Okul Yazılılarına Hazırlık' },
   
   // Lise (TYMM Kapsamında: 9, 10, 11)
   { level: 9, name: '9. Sınıf', stage: 'lise', tymmRollout: 'TYMM Kapsamında' },

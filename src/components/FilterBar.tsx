@@ -177,7 +177,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
                 >
                   {g.name}
                   <span className="hidden sm:inline-block ml-1 text-[10px] text-slate-400 font-normal">
-                    ({g.tymmRollout.includes('TYMM') ? 'TYMM' : 'Ortak'})
+                    ({g.level === 8 ? 'Okul Yazılısı' : (g.tymmRollout.includes('TYMM') ? 'TYMM' : 'Ortak')})
                   </span>
                 </button>
               ))}

@@ -18,6 +18,7 @@ import {
   isSemanticallySelfContainedQuestion
 } from './sourceMaterialValidator';
 import { parseExamJsonSafely } from './jsonParser';
+import { validateAndSanitizeAiVisual } from './aiVisualValidator';
 import { buildLiveExamPrompt, buildAvoidDirectives } from '../generators/prompts';
 
 const POOL_NAMES_A = [
@@ -1240,6 +1241,17 @@ export async function generateMEBIQuestions(
       const rawExplanation = q.solutionExplanation || q.explanation || `Analitik çözüm adımları ve gerekçe: ${candidateAnswer}`;
       const finalExplanation = fixStimulusTranscriptionTypos(fixProperNounApostrophes(rawExplanation), q.stimulus);
 
+      // AI tarafından üretilen görselin doğrulanması ve anti-leak temizliği (TASK158)
+      let validVisual = undefined;
+      if (q.visual && typeof q.visual === 'object') {
+        const visualValidation = validateAndSanitizeAiVisual(q.visual, candidateAnswer);
+        if (visualValidation.isValid && visualValidation.visual) {
+          validVisual = visualValidation.visual;
+        } else {
+          console.warn(`[AiVisualValidator] ${idx + 1}. sorudaki AI görseli elendi: ${visualValidation.reason || 'Geçersiz parametre'}`);
+        }
+      }
+
       return {
         ...q,
         number: idx + 1,
@@ -1254,7 +1266,7 @@ export async function generateMEBIQuestions(
         solutionExplanation: finalExplanation,
         rubric: calibratedRubric,
         sourceOrigin: q.sourceOrigin || 'gemini_ai',
-        visual: q.visual
+        visual: validVisual
       };
     });
     const calibrated = calibrateQuestionDifficulties(withTitles);

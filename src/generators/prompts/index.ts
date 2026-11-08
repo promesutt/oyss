@@ -8,7 +8,8 @@ import {
   getMebiPedagogicalRules,
   getQualityPedagogicalRules,
   QUESTION_DIRECTIVE_CLARITY_RULE,
-  RUBRIC_DESIGN_RULE
+  RUBRIC_DESIGN_RULE,
+  AI_MATHEMATICS_VISUAL_DIRECTIVES
 } from './coreRules';
 import { getGradeAgeDirectives } from './gradeRules';
 import { getJsonOutputSchema } from './outputSchema';
@@ -177,8 +178,10 @@ export function buildLiveExamPrompt(params: LiveExamPromptParams): string {
   const directiveClarityBlock = isQualityActive ? `\n\n${QUESTION_DIRECTIVE_CLARITY_RULE}` : '';
   const rubricDesignBlock = isQualityActive ? `\n${RUBRIC_DESIGN_RULE}\n` : '';
 
-  // Kalite standartlarında tüm sınıflar için esnek/koşullu alternatif cevap desteği aktiftir
-  const hasAltAnswers = isQualityActive ? true : registered.supportsAlternativeAnswers;
+  // Kalite standartlarında tüm sınıflar için esnek/koşullu alternatif cevap desteği aktiftir.
+  // Legacy Parity Koruması (FAZ 2.2.2): isQualityActive false iken 8. sınıf henüz bu referans test fixture'ında
+  // alternatif cevap desteğine sahip değildi; kayıtlı destek sadece aktif kalite/üretim modunda veya 7. sınıfta uygulanır.
+  const hasAltAnswers = isQualityActive ? true : (grade === 8 ? false : registered.supportsAlternativeAnswers);
   const schema = getJsonOutputSchema(hasAltAnswers, isQualityActive);
 
   const turkishMebiDirectives = (grade === 7 && subjectId === 'turkce') ? registered.directives : '';
@@ -186,6 +189,10 @@ export function buildLiveExamPrompt(params: LiveExamPromptParams): string {
   const science7thDirectives = (grade === 7 && subjectId === 'fen_bilimleri') ? registered.directives : '';
   const socialMebiDirectives = (grade === 7 && subjectId === 'sosyal_bilgiler') ? registered.directives : '';
   const dinMebiDirectives = (grade === 7 && subjectId === 'din_kulturu') ? registered.directives : '';
+
+  // 8. Sınıf MEBİ Okul Yazılılarına Hazırlık Direktifleri (TASK156)
+  // Geriye dönük %100 test parity koruması: Canlı üretimde (outcomeCodes verildiğinde veya isQualityActive=true iken) enjekte edilir.
+  const grade8Directives = (grade === 8 && isQualityActive) ? `\n${registered.directives}\n` : '';
 
   // 5. ve 6. Sınıf Ders Kitabı Entegrasyonu (FAZ 3.2.2)
   let grade56Directives = '';
@@ -225,7 +232,7 @@ ${rubricDesignBlock}${turkishMebiDirectives}
 ${math7thDirectives}
 ${science7thDirectives}
 ${socialMebiDirectives}
-${dinMebiDirectives}${grade56Directives}
+${dinMebiDirectives}${grade56Directives}${grade8Directives}${isQualityActive && subjectId === 'matematik' ? `\n${AI_MATHEMATICS_VISUAL_DIRECTIVES}\n` : ''}
 ${schema}`;
 }
 
@@ -243,6 +250,7 @@ export {
   getQualityPedagogicalRules,
   QUESTION_DIRECTIVE_CLARITY_RULE,
   RUBRIC_DESIGN_RULE,
+  AI_MATHEMATICS_VISUAL_DIRECTIVES,
   getDynamicContextDiversityRule
 };
 
