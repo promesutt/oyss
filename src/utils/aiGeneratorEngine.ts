@@ -1247,6 +1247,7 @@ export async function generateMEBIQuestions(
         const visualValidation = validateAndSanitizeAiVisual(q.visual, candidateAnswer);
         if (visualValidation.isValid && visualValidation.visual) {
           validVisual = visualValidation.visual;
+          console.info(`[AiVisualValidator] ${idx + 1}. soruda geçerli görsel onaylandı (tür: ${validVisual.type}, model: ${(validVisual.params as any)?.subType || validVisual.type})`);
         } else {
           console.warn(`[AiVisualValidator] ${idx + 1}. sorudaki AI görseli elendi: ${visualValidation.reason || 'Geçersiz parametre'}`);
         }

@@ -259,9 +259,13 @@ export const RUBRIC_DESIGN_RULE = `ANALİTİK DERECELİ PUANLAMA ANAHTARI (RUBR�
 - Her sorunun rubrik kriter puanlarının toplamı, o sorunun 'points' değerine TAM EŞİT olmak zorundadır.`;
 
 /**
- * TASK 158 - Matematik Dersi İçin Otomatik Görsel Desteği Kuralı
+ * TASK 158 / TASK 161 - Matematik Dersi İçin Otomatik Görsel Desteği Kuralı
  */
-export const AI_MATHEMATICS_VISUAL_DIRECTIVES = `MATEMATİK GÖRSEL KURALLARI ("visual" alanı):
-- Yalnızca geometrik şekil, açı, koordinat, tessellation veya sayı doğrusu/kesir modeli şartsa ekleyiniz. Salt aritmetik ve sözel sorularda bu alanı EKLEMEYİNİZ.
-- Desteklenen: "geometry_shape" (subType: polygon_2d, angle_model, line_system, grid_coordinate, area_perimeter), "number_line", "fraction_model".
-- ANTI-LEAK: Bilinmeyen veya aranan değerler için görsel etiketlerinde daima "?" kullanınız; cevabı asla doğrudan yazmayınız.`;
+export const AI_MATHEMATICS_VISUAL_DIRECTIVES = `MATEMATİK GÖRSEL KURALLARI VE PEDAGOJİK MODELLEME ("visual" alanı):
+- PEDAGOJİK GÖRSEL: EBOB parselleme/fayans ('area_perimeter'), kare/dikdörtgen alan-çevre ('polygon_2d'), sayı doğrusunda köklü sayı ('number_line') gibi görselin düşünmeyi desteklediği sorularda "visual" üretiniz.
+- GÖRSEL GEREKMEYEN: Salt işlem, denklem veya asal çarpan algoritması gibi sözel/aritmetik sorularda bu alanı EKLEMEYİNİZ.
+- DESTEKLENEN: "geometry_shape" (subType: polygon_2d, angle_model, line_system, grid_coordinate, area_perimeter), "number_line", "fraction_model".
+  * number_line: params: { min: 0, max: 10, step: 1, points: [{ label: "?", value: 4.5 }] }
+  * area_perimeter: params: { subType: "area_perimeter", totalWidth: 120, totalHeight: 80, tileWidth: 40, tileHeight: 40, widthLabel: "120 m", heightLabel: "80 m" }
+  * polygon_2d: params: { subType: "polygon_2d", shape: "rectangle", width: 12, height: 8, edgeLabels: ["12 cm", "8 cm", "12 cm", "8 cm"] }
+- ANTI-LEAK: Bilinmeyen değerler için görsel etiketinde daima "?" kullanınız; cevabı asla doğrudan yazmayınız.`;

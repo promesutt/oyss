@@ -332,6 +332,103 @@ async function runTests() {
     `textOnlyHtml: "${textOnlyHtml}"`
   );
 
+  // =========================================================================
+  // TEST 11: 8. Sınıf LLM Sayı Doğrusu Normalizasyonu (Kareköklü Sayı Yerleşimi)
+  // =========================================================================
+  const naturalNlVisual = {
+    type: 'number_line',
+    caption: '√20 sayısının sayı doğrusundaki tahmini konumu',
+    params: {
+      min: 4,
+      max: 5,
+      points: [{ label: '?', value: 4.47 }]
+    }
+  };
+
+  const validatedNl = validateAndSanitizeAiVisual(naturalNlVisual, '√20 sayısı 4 ile 5 arasındadır.');
+  const nlHtml = renderToString(React.createElement(QuestionVisualView, { visual: validatedNl.visual }));
+
+  assert(
+    validatedNl.isValid && nlHtml.includes('<svg') && nlHtml.includes('√20'),
+    '8. Sınıf LLM Sayı Doğrusu: Doğal LLM formatındaki köklü sayı noktası başarıyla doğrulanır ve SVG olarak render edilir',
+    `isValid: ${validatedNl.isValid}, hasSvg: ${nlHtml.includes('<svg')}`
+  );
+
+  // =========================================================================
+  // TEST 12: 8. Sınıf LLM EBOB Parselleme Normalizasyonu (area_perimeter)
+  // =========================================================================
+  const naturalAreaVisual = {
+    type: 'geometry_shape',
+    caption: '120 m x 80 m arsanın kare parsellere bölünmesi',
+    params: {
+      subType: 'area_perimeter',
+      totalWidth: 120,
+      totalHeight: 80,
+      tileWidth: 40,
+      tileHeight: 40,
+      widthLabel: '120 m',
+      heightLabel: '80 m'
+    }
+  };
+
+  const validatedArea = validateAndSanitizeAiVisual(naturalAreaVisual);
+  const areaHtml = renderToString(React.createElement(QuestionVisualView, { visual: validatedArea.visual }));
+
+  assert(
+    validatedArea.isValid && areaHtml.includes('<svg') && areaHtml.includes('120 m'),
+    '8. Sınıf LLM EBOB Parselleme: Üst düzey genişlik/yükseklik parametreleri tessellation modeline dönüştürülür ve render edilir',
+    `isValid: ${validatedArea.isValid}, hasSvg: ${areaHtml.includes('<svg')}`
+  );
+
+  // =========================================================================
+  // TEST 13: 8. Sınıf LLM Çokgen Alan-Kenar Normalizasyonu (polygon_2d)
+  // =========================================================================
+  const naturalPolyVisual = {
+    type: 'geometry_shape',
+    caption: 'Kenar uzunlukları verilen dikdörtgen bahçe',
+    params: {
+      subType: 'polygon_2d',
+      shape: 'rectangle',
+      width: 15,
+      height: 9,
+      edgeLabels: ['15 m', '9 m', '15 m', '9 m']
+    }
+  };
+
+  const validatedPoly = validateAndSanitizeAiVisual(naturalPolyVisual);
+  const polyHtml = renderToString(React.createElement(QuestionVisualView, { visual: validatedPoly.visual }));
+
+  assert(
+    validatedPoly.isValid && polyHtml.includes('<polygon') && polyHtml.includes('15 m'),
+    '8. Sınıf LLM Çokgen Modeli: Şekil ve kenar etiketleri merkezlenmiş SVG çokgen koordinatlarına dönüştürülür ve render edilir',
+    `isValid: ${validatedPoly.isValid}, hasPolygon: ${polyHtml.includes('<polygon')}`
+  );
+
+  // =========================================================================
+  // TEST 14: 8. Sınıf Matematik Canlı Prompt Bütünlüğü ve Bütçe Korunumu
+  // =========================================================================
+  const grade8MathPrompt = buildLiveExamPrompt({
+    grade: 8,
+    subjectId: 'matematik',
+    targetCount: 6,
+    distributionsText: '[1. Soru] Kazanım: M.8.1.1.2\n[2. Soru] Kazanım: M.8.1.3.2',
+    avoidDirectives: '',
+    difficultyPlanText: '2 Kolay, 3 Orta, 1 Zor',
+    outcomeCodes: ['M.8.1.1.2', 'M.8.1.3.2']
+  });
+
+  const g8HasDirectives = grade8MathPrompt.includes('MEBİ 8. SINIF MATEMATİK') &&
+                          grade8MathPrompt.includes('MATEMATİK GÖRSEL KURALLARI') &&
+                          grade8MathPrompt.includes('area_perimeter') &&
+                          grade8MathPrompt.includes('number_line');
+  const g8UnderBudget = grade8MathPrompt.length <= 16500;
+
+  assert(
+    g8HasDirectives && g8UnderBudget,
+    '8. Sınıf Matematik Canlı Prompt: MEBİ yönergesi, görsel kuralları ve JSON şeması bütçe tavanı içinde eksiksiz yer alır',
+    `g8HasDirectives: ${g8HasDirectives}, promptLength: ${grade8MathPrompt.length} (Limit: <=16500)`
+  );
+
   console.log('=== TEST ÖZETİ ===');
   console.log(`Toplam Test: ${passCount + failCount}`);
   console.log(`Başarılı: ${passCount}`);

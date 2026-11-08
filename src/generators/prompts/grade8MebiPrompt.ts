@@ -26,9 +26,9 @@ export const GRADE_8_MATH_DIRECTIVES = `
 MEBİ 8. SINIF MATEMATİK OKUL YAZILILARINA HAZIRLIK VE ÖLÇME YÖNERGESİ:
 1. ÖLÇME YAKLAŞIMI VE İŞLEM BASAMAKLARI:
    - Sorular LGS tarzı sayfalarca süren bulmaca kurguları değil; doğrudan MEB kazanımlarını ölçen, işlem basamakları açıkça gösterilebilen okul yazılısı problemleridir.
-   - Çarpanlar ve Katlar (M.8.1.1.1 - M.8.1.1.3): Pozitif tam sayıların çarpanları, asal çarpanlar, EBOB ve EKOK kavramları gerçek yaşam durumları (parselleme, eşit paylaştırma, nöbet/zil ortak zamanı) üzerinden modellenmelidir.
+   - Çarpanlar ve Katlar (M.8.1.1.1 - M.8.1.1.3): Pozitif tam sayıların çarpanları, asal çarpanlar, EBOB ve EKOK kavramları gerçek yaşam durumları (parselleme, eşit paylaştırma, nöbet/zil ortak zamanı) üzerinden modellenmelidir. EBOB ile arsa parselleme veya fayans döşeme sorularında "area_perimeter" görsel modelini ekleyiniz.
    - Üslü İfadeler (M.8.1.2.1 - M.8.1.2.5): Tam sayıların tam sayı kuvvetleri, üslü ifadelerle çarpma ve bölme, çok büyük/çok küçük sayıların bilimsel gösterimi ve teknoloji/depolama bağlamları işlenmelidir.
-   - Kareköklü İfadeler (M.8.1.3.1 - M.8.1.3.3): Tam kare pozitif tam sayılarla karekök ilişkisi, tam kare olmayan köklü sayıların hangi iki ardışık doğal sayı arasında olduğunun belirlenmesi ve a√b gösterimi adım adım sorgulanmalıdır.
+   - Kareköklü İfadeler (M.8.1.3.1 - M.8.1.3.3): Tam kare pozitif tam sayılarla karekök ilişkisi, tam kare olmayan köklü sayıların hangi iki ardışık doğal sayı arasında olduğunun belirlenmesi ve a√b gösterimi adım adım sorgulanmalıdır. Sayı doğrusunda köklü sayı yerleşimi sorularında "number_line", alanı verilen kare bahçe sorularında "polygon_2d" görsel modelini ekleyiniz.
 2. MATEMATİKSEL GÖSTERİM VE KaTeX DESTEĞİ:
    - Kesirler, üslü/köklü ifadeler ve formüller için standart KaTeX $...$ formatını kullanınız (Örn: $2^3 \\cdot 3^2 = 72$, $\\sqrt{48} = 4\\sqrt{3}$, $1,2 \\times 10^6$, $\\text{EBOB}(24, 36) = 12$).
    - JSON UYUMLULUK KURALI (RFC 8259): JSON dizgileri içindeki KaTeX ters eğik çizgilerini çift ters eğik çizgi (\\\\) olarak kaçırınız (ör. "\\\\sqrt{48}", "\\\\times").

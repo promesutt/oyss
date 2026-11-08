@@ -59,13 +59,18 @@ SADECE geçerli bir JSON çıktısı ver. JSON şeması:
         "type": "geometry_shape | number_line | fraction_model",
         "caption": "Görsel açıklaması",
         "params": {
-          "subType": "polygon_2d | angle_model | line_system | grid_coordinate | area_perimeter",
-          "...": "Modele özgü parametreler"
+          "subType": "area_perimeter | polygon_2d | angle_model | line_system | grid_coordinate",
+          "totalWidth": 120,
+          "totalHeight": 80,
+          "tileWidth": 40,
+          "tileHeight": 40,
+          "widthLabel": "120 m",
+          "heightLabel": "80 m"
         }
       }
     }
   ]
 }
 NOT 1: >=12 puanlı sorularda tek ölçütlü rubrik YASAKTIR; en az 2 analitik ölçüte bölünmelidir.
-NOT 2: "visual" İSTEĞE BAĞLIDIR. Yalnızca görsel düşünme şartsa ekleyiniz; gerekmiyorsa ÇIKARINIZ. Cevabı görselde ifşa etmeyiniz ("?" kullanınız).`;
+NOT 2: "visual" İSTEĞE BAĞLIDIR. Parselleme, alan-çevre, köklü sayı yeri gibi görsel sorularda ekleyiniz; salt işlemde ÇIKARINIZ. Cevapta "?" kullanınız.`;
 }
