@@ -311,25 +311,36 @@ export const FilterBar: React.FC<FilterBarProps> = ({
                 onScroll={updateScrollState}
                 className="flex items-center space-x-2 overflow-x-auto pb-1 scrollbar-none scroll-smooth w-full"
               >
-                {scenarios.map((sc) => {
-                  const isSelected = selectedScenarioId === sc.id;
-                  return (
-                    <button
-                      key={sc.id}
-                      onClick={() => onSelectScenario(sc.id)}
-                      className={`inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-medium border transition-all shrink-0 cursor-pointer ${
-                        isSelected
-                          ? 'bg-indigo-50 border-indigo-300 text-indigo-900 font-bold ring-1 ring-indigo-400'
-                          : 'bg-white border-slate-200 text-slate-600 hover:bg-slate-50'
-                      }`}
-                    >
-                      <span>{sc.name}</span>
-                      <span className="ml-1.5 px-1.5 py-0.2 bg-slate-200/80 rounded-full text-[10px] text-slate-700">
-                        {sc.totalQuestions} Soru
-                      </span>
-                    </button>
-                  );
-                })}
+                {scenarios.length > 0 ? (
+                  scenarios.map((sc) => {
+                    const isSelected = selectedScenarioId === sc.id;
+                    return (
+                      <button
+                        key={sc.id}
+                        onClick={() => onSelectScenario(sc.id)}
+                        className={`inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-medium border transition-all shrink-0 cursor-pointer ${
+                          isSelected
+                            ? 'bg-indigo-50 border-indigo-300 text-indigo-900 font-bold ring-1 ring-indigo-400'
+                            : 'bg-white border-slate-200 text-slate-600 hover:bg-slate-50'
+                        }`}
+                      >
+                        <span>{sc.name}</span>
+                        <span className="ml-1.5 px-1.5 py-0.2 bg-slate-200/80 rounded-full text-[10px] text-slate-700">
+                          {sc.totalQuestions} Soru
+                        </span>
+                        {sc.sourceOrigin === 'oyss_curated' && (
+                          <span className="ml-1.5 px-1.5 py-0.2 bg-amber-100 text-amber-800 border border-amber-300 rounded-full text-[9px] font-bold">
+                            OYSS Uyarlaması
+                          </span>
+                        )}
+                      </button>
+                    );
+                  })
+                ) : (
+                  <div className="text-xs text-amber-800 bg-amber-50 border border-amber-200/80 px-3 py-1.5 rounded-lg flex items-center gap-1.5 font-medium">
+                    MEB 2. dönem konu-soru dağılım tabloları yayımlandığında eklenecektir.
+                  </div>
+                )}
               </div>
 
               {/* Right Arrow Button & Indicator */}

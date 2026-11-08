@@ -1051,7 +1051,7 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
                         {/* 6. MODEL CEVAP: Model Çözüm & Gerekçe */}
                         <div className="text-xs text-emerald-950 bg-emerald-50/60 p-3.5 rounded-xl border border-emerald-200 space-y-2">
                           <strong className="block text-emerald-900 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
-                            <span className="text-emerald-700">🎯</span> {isQuestionFromMeb(q) ? 'MEB ÖDSGM Model Cevap & Gerekçe:' : 'OYSS Model Cevap & Gerekçe:'}
+                            <span className="text-emerald-700">🎯</span> {isQuestionFromMeb(q) ? 'MEB ÖDSGM Model Cevap & Gerekçe:' : 'OYSS Rehberi Model Cevap & Gerekçe:'}
                           </strong>
                           <div className="whitespace-pre-line font-medium text-slate-800 bg-white p-3 rounded-lg border border-emerald-100 leading-relaxed">
                             <MathRenderer content={q.modelAnswer} />
@@ -1453,7 +1453,7 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
                       {/* Official / Generated Model Answer */}
                       <div className="bg-white p-3.5 rounded-xl border border-emerald-100 space-y-1">
                         <span className="font-bold text-emerald-900 block text-xs">
-                          {isQuestionFromMeb(currentQ) ? 'MEB ÖDSGM Model Cevap & Gerekçe:' : 'OYSS Model Cevap & Gerekçe:'}
+                          {isQuestionFromMeb(currentQ) ? 'MEB ÖDSGM Model Cevap & Gerekçe:' : 'OYSS Rehberi Model Cevap & Gerekçe:'}
                         </span>
                         <div className="whitespace-pre-line font-medium text-slate-800 leading-relaxed">
                           <MathRenderer content={currentQ.modelAnswer} />

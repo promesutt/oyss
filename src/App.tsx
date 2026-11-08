@@ -36,7 +36,7 @@ import { InteractivePracticeView } from './components/InteractivePracticeView';
 import { QuickStartGuide } from './components/QuickStartGuide';
 import { loadCustomExamPaper, clearCustomExamPaper } from './utils/practiceStorage';
 import { validateAndEnrichExamQuestions } from './utils/sourceMaterialValidator';
-import { triggerPdfPrint, generateMaterialPdfFileName } from './utils/materialFileNameGenerator';
+import { triggerPdfPrint } from './utils/materialFileNameGenerator';
 import { 
   BookOpen, 
   Mic, 
@@ -44,7 +44,9 @@ import {
   AlertCircle, 
   ArrowRight, 
   RotateCcw, 
-  FileText 
+  FileText,
+  GraduationCap,
+  Calendar 
 } from 'lucide-react';
 
 export const App: React.FC = () => {
@@ -95,7 +97,13 @@ export const App: React.FC = () => {
   const currentScenario = useMemo(() => {
     const found = scenarios.find(s => s.id === selectedScenarioId);
     if (found) return found;
-    return scenarios[0];
+    return scenarios[0] || {
+      id: 'senaryo_1',
+      name: 'Senaryo',
+      description: '',
+      totalQuestions: 0,
+      distributions: []
+    };
   }, [scenarios, selectedScenarioId]);
 
   const currentSubjectMeta = useMemo(() => {
@@ -272,21 +280,12 @@ export const App: React.FC = () => {
     );
   }, [selectedGrade, selectedSubject]);
 
-  // Dynamic document.title synchronization for print-to-PDF standard
+  // Kalıcı sekme başlığı (document.title asla filtre veya soru üretimiyle değişmez)
   useEffect(() => {
-    const isCustomExam = Boolean(customExamPaper && activeExamPaper?.id === customExamPaper.id);
-    const title = generateMaterialPdfFileName({
-      grade: selectedGrade,
-      subjectId: selectedSubject,
-      examTerm: selectedTerm,
-      scenarioId: (selectedMaterial === 'speaking_guide') ? undefined : currentScenario.id,
-      materialKind: selectedMaterial,
-      isCustomExam
-    });
-    if (title && typeof document !== 'undefined') {
-      document.title = title;
+    if (typeof document !== 'undefined') {
+      document.title = 'OYSS Rehberi | Ortak Yazılılara Hazırlık';
     }
-  }, [selectedGrade, selectedSubject, selectedTerm, currentScenario, selectedMaterial, customExamPaper, activeExamPaper]);
+  }, []);
 
   const handleGlobalPrint = () => {
     const isCustomExam = Boolean(customExamPaper && activeExamPaper?.id === customExamPaper.id);
@@ -332,7 +331,65 @@ export const App: React.FC = () => {
 
       {/* Main Content Area */}
       <main className="flex-1 pb-16">
-        {selectedMaterial === 'exam_paper' && (
+        {currentStage === 'lise' ? (
+          <div className="max-w-4xl mx-auto py-12 px-4 sm:px-6 animate-in fade-in duration-200">
+            <div className="bg-white rounded-2xl border-2 border-dashed border-indigo-200 p-8 sm:p-12 text-center shadow-xs">
+              <div className="w-16 h-16 bg-indigo-50 rounded-2xl border border-indigo-200 flex items-center justify-center mx-auto mb-4 text-indigo-600">
+                <GraduationCap className="w-8 h-8" />
+              </div>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs font-bold mb-3">
+                Lise Hazırlık Materyalleri Hazırlanıyor
+              </div>
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">
+                Lise Kademesi Çok Yakında Yayında
+              </h3>
+              <p className="text-sm sm:text-base text-slate-600 max-w-xl mx-auto mb-6 leading-relaxed">
+                Lise düzeyine yönelik ortak yazılılara hazırlık içerikleri üzerinde çalışıyoruz. Lise sınavlarına hazırlık materyalleri, ikinci yazılı dönemi öncesinde sisteme eklenecektir.
+              </p>
+              <div className="flex justify-center">
+                <button
+                  onClick={() => handleSelectStage('ortaokul')}
+                  className="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-sm font-semibold inline-flex items-center gap-2 shadow-sm transition-colors cursor-pointer"
+                >
+                  Ortaokul Sınavlarına Dön <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
+            </div>
+          </div>
+        ) : (selectedTerm === '2_donem_1_yazili' || selectedTerm === '2_donem_2_yazili') ? (
+          <div className="max-w-4xl mx-auto py-12 px-4 sm:px-6 animate-in fade-in duration-200">
+            <div className="bg-white rounded-2xl border-2 border-dashed border-amber-200 p-8 sm:p-12 text-center shadow-xs">
+              <div className="w-16 h-16 bg-amber-50 rounded-2xl border border-amber-200 flex items-center justify-center mx-auto mb-4 text-amber-600">
+                <Calendar className="w-8 h-8" />
+              </div>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-xs font-bold mb-3">
+                2. Dönem MEB Tabloları Bekleniyor
+              </div>
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">
+                MEB 2. Dönem Konu-Soru Dağılım Tabloları Henüz Yayımlanmadı
+              </h3>
+              <p className="text-sm sm:text-base text-slate-600 max-w-xl mx-auto mb-6 leading-relaxed">
+                MEB, 2026-2027 eğitim öğretim yılı 2. dönem konu-soru dağılım tablolarını henüz yayımlamamıştır. Bu döneme ait ortak yazılı sınavları ve çalışma materyalleri, MEB tabloları yayımlandıktan sonra OYSS Rehberi'ne eklenecektir.
+              </p>
+              <div className="flex flex-wrap justify-center gap-3">
+                <button
+                  onClick={() => handleSelectTerm('1_donem_1_yazili')}
+                  className="px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs sm:text-sm font-semibold inline-flex items-center gap-1.5 shadow-sm transition-colors cursor-pointer"
+                >
+                  1. Dönem 1. Yazılıya Geç <ArrowRight className="w-4 h-4" />
+                </button>
+                <button
+                  onClick={() => handleSelectTerm('1_donem_2_yazili')}
+                  className="px-4 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs sm:text-sm font-semibold inline-flex items-center gap-1.5 shadow-sm transition-colors cursor-pointer"
+                >
+                  1. Dönem 2. Yazılıya Geç <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <>
+            {selectedMaterial === 'exam_paper' && (
           activeExamPaper ? (
             <ExamPaperView 
               examPaper={activeExamPaper}
@@ -510,6 +567,8 @@ export const App: React.FC = () => {
               </div>
             </div>
           )
+        )}
+          </>
         )}
       </main>
 

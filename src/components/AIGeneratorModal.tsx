@@ -222,7 +222,7 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
               <h2 className="text-base sm:text-lg font-bold flex items-center">
                 Yapay Zekâ Destekli Soru & Materyal Hazırlama
                 <span className="ml-2 text-[10px] bg-indigo-500/30 text-indigo-200 border border-indigo-400/30 px-2 py-0.5 rounded-full font-normal">
-                  OYSS Özgün Sınavı (MEB Ölçme Standartlı)
+                  OYSS Rehberi Özgün Sınavı (MEB Ölçme Standartlı)
                 </span>
               </h2>
               <p className="text-xs text-indigo-200">
@@ -252,7 +252,7 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
                 onChange={(e) => setOutputType(e.target.value as any)}
                 className="w-full bg-white border border-slate-300 rounded-lg p-2 text-xs font-semibold text-slate-800 focus:ring-2 focus:ring-indigo-500"
               >
-                <option value="exam">OYSS Özgün Sınav Kâğıdı (MEB Ölçme Standartlı)</option>
+                <option value="exam">OYSS Rehberi Özgün Sınav Kâğıdı (MEB Ölçme Standartlı)</option>
                 <option value="study_sheet">Hap Bilgi & Çalışma Kâğıdı</option>
                 <option value="practice_question">Öğrenme Çıktısı Odaklı Soru Seti</option>
               </select>
@@ -293,6 +293,17 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
             </div>
           </div>
 
+          {/* 2. Dönem Tabloları Bekleme Bildirimi */}
+          {(examTerm === '2_donem_1_yazili' || examTerm === '2_donem_2_yazili') && (
+            <div className="bg-amber-50 border border-amber-300 p-4 rounded-xl text-xs text-amber-900 flex items-start space-x-2.5">
+              <AlertTriangle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+              <div className="leading-relaxed">
+                <span className="font-bold block mb-1">MEB 2. Dönem Tabloları Bekleniyor</span>
+                MEB, 2026-2027 eğitim öğretim yılı 2. dönem konu-soru dağılım tablolarını henüz yayımlamamıştır. Bu döneme ait ortak yazılı sınavları ve çalışma materyalleri, MEB tabloları yayımlandıktan sonra OYSS Rehberi'ne eklenecektir.
+              </div>
+            </div>
+          )}
+
           {/* Action Button: Generate */}
           <div className="flex flex-wrap items-center justify-between gap-3 pt-1 border-b border-slate-200 pb-3">
             <div className="text-xs font-semibold text-slate-600">
@@ -301,7 +312,7 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
 
             <button
               onClick={handleGenerate}
-              disabled={isGenerating}
+              disabled={isGenerating || examTerm === '2_donem_1_yazili' || examTerm === '2_donem_2_yazili'}
               className="inline-flex items-center px-4 py-2 rounded-xl text-xs sm:text-sm font-bold text-white bg-indigo-600 hover:bg-indigo-700 shadow-md transition-all active:scale-95 disabled:opacity-50 cursor-pointer"
             >
               {isGenerating ? (
@@ -352,10 +363,10 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
                       <AlertTriangle className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
                       <div>
                         <span className="font-bold block text-amber-950">
-                          Yerel OYSS Standart Soru Üretim Motoru Devreye Girdi (Soru Seti #{generatedResult.variationNumber}):
+                          Yerel OYSS Rehberi Standart Soru Üretim Motoru Devreye Girdi (Soru Seti #{generatedResult.variationNumber}):
                         </span>
                         <span className="text-[11px] text-amber-800 font-normal">
-                          {generatedResult.fallbackReason || 'Yapay zekâ servisi meşgul olduğundan sorular yerel OYSS kural tabanlı motoruyla özgün olarak hazırlandı.'}
+                          {generatedResult.fallbackReason || 'Yapay zekâ servisi meşgul olduğundan sorular yerel OYSS Rehberi kural tabanlı motoruyla özgün olarak hazırlandı.'}
                         </span>
                       </div>
                     </div>
@@ -493,7 +504,7 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
                         {/* Model Cevap */}
                         <div className="bg-slate-50 p-3 rounded-lg border border-slate-200 text-xs text-slate-700 mb-2">
                           <strong className="text-emerald-800 block mb-1">
-                            {gq.sourceOrigin === 'meb_official' ? 'MEB ÖDSGM Model Cevap & Gerekçe:' : 'OYSS Model Cevap & Gerekçe:'}
+                            {gq.sourceOrigin === 'meb_official' ? 'MEB ÖDSGM Model Cevap & Gerekçe:' : 'OYSS Rehberi Model Cevap & Gerekçe:'}
                           </strong>
                           <div className="whitespace-pre-line font-medium text-slate-700">
                             <MathRenderer content={gq.answer} />

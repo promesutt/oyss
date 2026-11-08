@@ -53,6 +53,7 @@ export interface ExamScenario {
   description: string;
   totalQuestions: number;
   distributions: ScenarioDistribution[];
+  sourceOrigin?: 'meb_official' | 'oyss_curated';
 }
 
 export interface QuestionRubricItem {

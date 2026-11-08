@@ -1,4 +1,5 @@
 import { GradeLevel, SubjectId, ExamTerm, ExamScenario, SchoolStage, CognitiveLevel } from '../types';
+import { MIDDLE_SCHOOL_OFFICIAL_SCENARIOS_TERM2 } from './secondTermScenarios';
 
 export interface SubjectMeta {
   id: SubjectId;
@@ -2770,7 +2771,22 @@ export const MIDDLE_SCHOOL_OFFICIAL_SCENARIOS: Record<number, Partial<Record<Sub
   },
 };
 
-export function getScenarios(subjectId: SubjectId, grade: GradeLevel, _examTerm?: ExamTerm): ExamScenario[] {
+export function getScenarios(subjectId: SubjectId, grade: GradeLevel, examTerm?: ExamTerm): ExamScenario[] {
+  // 2. Dönem: MEB henüz 2. dönem konu-soru dağılım tablolarını yayımlamamıştır.
+  if (examTerm === '2_donem_1_yazili' || examTerm === '2_donem_2_yazili') {
+    return [];
+  }
+
+  // 1. Dönem 2. Yazılı: MEB ÖDSGM 2. Yazılı Resmî Senaryoları
+  if (examTerm === '1_donem_2_yazili') {
+    const term2GradeScenarios = MIDDLE_SCHOOL_OFFICIAL_SCENARIOS_TERM2[grade];
+    if (term2GradeScenarios && term2GradeScenarios[subjectId] && term2GradeScenarios[subjectId]!.length > 0) {
+      return term2GradeScenarios[subjectId]!;
+    }
+    return [];
+  }
+
+  // 1. Dönem 1. Yazılı (Varsayılan)
   const gradeScenarios = MIDDLE_SCHOOL_OFFICIAL_SCENARIOS[grade];
   if (gradeScenarios && gradeScenarios[subjectId] && gradeScenarios[subjectId]!.length > 0) {
     return gradeScenarios[subjectId]!;
