@@ -259,7 +259,7 @@ export const ExamPaperView: React.FC<ExamPaperViewProps> = ({
                     </div>
                   </div>
                   <span className="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-semibold shrink-0">
-                    {d.cognitiveLevel || meta.cognitiveLevel}
+                    {d.questionCount ? `${d.questionCount} Soru` : '1 Soru'}
                   </span>
                 </div>
               );
@@ -461,9 +461,6 @@ export const ExamPaperView: React.FC<ExamPaperViewProps> = ({
                     <span className="flex items-center print:text-[10.5px]">
                       <CheckCircle2 className="w-4 h-4 mr-1.5 text-emerald-700 print:w-3.5 print:h-3.5" />
                       Model Cevap ve Çözüm Adımları (Rubrik Referanslı)
-                    </span>
-                    <span className="text-[11px] font-medium text-emerald-900 bg-emerald-100 px-2.5 py-0.5 rounded border border-emerald-300 print:text-[9px] print:px-1.5 print:py-0">
-                      ÖDSGM Bilişsel Düzey (Öğretmen Kaydı): <strong>{q.cognitiveLevel}</strong>
                     </span>
                   </div>
 

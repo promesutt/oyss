@@ -233,7 +233,7 @@ export const App: React.FC = () => {
         topicTitle: `${d.outcomeCode}: ${topicDesc}`,
         quickNotes: [
           `${topicDesc} konusunda MEB konu ve soru dağılımında belirtilen temel kavramları ve ilkeleri gözden geçiriniz.`,
-          `Bu öğrenme çıktısında (${meta.cognitiveLevel}) düzeyinde akıl yürütme, analiz ve gerekçelendirme becerisi ölçülmektedir.`
+          `Bu öğrenme çıktısında kavramsal kavrama, akıl yürütme ve analitik gerekçelendirme becerisi ölçülmektedir.`
         ],
         examTraps: [
           'Soruda verilen deney, grafik, metin veya vaka verilerini doğrudan incelemeden ezber bilgiyle genelleme yapmayınız.'

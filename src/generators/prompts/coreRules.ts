@@ -34,8 +34,8 @@ export function getDifficultyPlanRule(targetCount: number, difficultyPlanText: s
 - Sınavdaki ${targetCount} sorunun zorluk derecesi MEB Ölçme ve Değerlendirme standartlarına TAM UYGUN olmalıdır:
   * Zorunlu Zorluk Dağılımı: ${difficultyPlanText}
   * ASLA eşit sayıda (örneğin 2 kolay, 2 orta, 2 zor gibi) dağıtım yapma! Sınavın omurgasını daima "Orta" düzey oluşturmalıdır.
-  * "Basit Bilişsel Süreçler" etiketli kazanımlar "Kolay" veya "Orta" olmalıdır.
-  * "Karmaşık Bilişsel Süreçler" etiketli kazanımlar "Orta" veya "Zor" olmalıdır.
+  * Soru zorluğu; senaryodaki soru sayısı, dersin niteliği, sınıf seviyesi, öğrenme çıktısı ve istenen ölçme derinliğine göre dengeli belirlenmelidir.
+  * Kolay, orta ve zor sorular pedagojik dengede üretilmeli; üst düzey düşünme gerektiren sorular yapay bir kazanım etiketi kısıtlaması olmaksızın senaryo zorluk planına göre oluşturulmalıdır.
   * Sınavın 1. sorusu öğrenciyi cesaretlendirmek için "Kolay" veya "Orta" olmalı; "Zor" soru sınavın sonuna doğru yerleştirilmelidir.`;
 }
 

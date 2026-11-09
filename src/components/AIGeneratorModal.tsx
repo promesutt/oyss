@@ -746,7 +746,7 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
                                 </div>
                               </div>
                               <span className="text-[10px] font-semibold text-slate-600 bg-slate-100 px-2 py-0.5 rounded shrink-0">
-                                {d.cognitiveLevel || meta.cognitiveLevel}
+                                {d.questionCount ? `${d.questionCount} Soru` : '1 Soru'}
                               </span>
                             </div>
                           );

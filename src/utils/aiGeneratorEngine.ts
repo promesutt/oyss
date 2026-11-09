@@ -956,7 +956,7 @@ export async function generateMEBIQuestions(
     const inquiryAngle = prevMatches > 0
       ? ` [Ölçme Çeşitlemesi: Aynı kazanıma bağlı önceki sorudan (${prevMatches}. soru) FARKLI bir vaka, deney veya problem bağlamı kullanınız]`
       : '';
-    return `Soru ${i + 1}: [Kazanım Kodu: ${d.outcomeCode}] [Resmi Öğrenme Çıktısı: ${meta.displayLabel}] [Konu: ${meta.topicNote || meta.displayLabel}] [Bilişsel Düzey: ${d.cognitiveLevel}]${inquiryAngle}`;
+    return `Soru ${i + 1}: [Kazanım Kodu: ${d.outcomeCode}] [Resmi Öğrenme Çıktısı: ${meta.displayLabel}] [Konu: ${meta.topicNote || meta.displayLabel}]${inquiryAngle}`;
   }).join('\n');
 
   const difficultyPlanText = formatDifficultyPlanText(targetCount);

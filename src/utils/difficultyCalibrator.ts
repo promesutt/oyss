@@ -33,11 +33,11 @@ export function formatDifficultyPlanText(totalQuestions: number): string {
 }
 
 /**
- * Soruların Bilişsel Düzeylerine (Basit / Karmaşık) ve Sınavdaki Sırasına Göre
- * Zorluk Seviyelerini MEB Standardında Kalibre Eder.
- * - Zor sorular: Karmaşık Bilişsel Süreçler'e ve sınavın sonuna öncelik verilir.
- * - Kolay sorular: Basit Bilişsel Süreçler'e ve sınavın başlangıcına öncelik verilir.
- * - Orta sorular: Sınavın gövdesini oluşturur.
+ * Soruların Sınavdaki Sırasına ve Pedagojik Konumuna Göre
+ * Zorluk Seviyelerini MEB Çan Eğrisi Standardında Kalibre Eder.
+ * - Kolay sorular: Sınavın başlangıcına öncelik verilir (öğrenciyi cesaretlendirme).
+ * - Zor sorular: Sınavın sonuna öncelik verilir (ayırt edici aşama).
+ * - Orta sorular: Sınavın omurgasını oluşturur (%50-60 ağırlık).
  */
 export function calibrateQuestionDifficulties<T extends { difficulty?: 'Kolay' | 'Orta' | 'Zor'; cognitiveLevel?: string }>(
   questions: T[]
@@ -49,59 +49,57 @@ export function calibrateQuestionDifficulties<T extends { difficulty?: 'Kolay' |
   const items = questions.map((q, idx) => ({
     original: q,
     idx,
-    isSimple: q.cognitiveLevel === 'Basit Bilişsel Süreçler',
     assigned: null as ('Kolay' | 'Orta' | 'Zor' | null)
   }));
 
-  // 1. Zor soruların atanması (Öncelik: Karmaşık Bilişsel & Sınavın sonu)
+  const isPunctuationRule = (it: (typeof items)[0]) => {
+    const orig = it.original as any;
+    const oc = (orig.outcomeCode || orig.outcome || '');
+    const ot = (orig.outcomeTitle || '').toLowerCase();
+    return oc.includes('16') || ot.includes('yazım') || ot.includes('noktalama');
+  };
+
+  // 1. Zor soruların atanması (Öncelik: Sınavın sonu & doğrudan kural uygulamalarını geriye alma)
   let zorNeeded = target.Zor;
-  const karmasikCandidates = items.filter(it => !it.isSimple).sort((a, b) => b.idx - a.idx);
-  for (const c of karmasikCandidates) {
-    if (zorNeeded > 0) {
+  const zorCandidates = items.slice().sort((a, b) => {
+    const aIsRule = isPunctuationRule(a);
+    const bIsRule = isPunctuationRule(b);
+    if (aIsRule !== bIsRule) {
+      return aIsRule ? 1 : -1; // Doğrudan kural uygulamalarını "Zor" sıralamasında geriye al
+    }
+    // Önceden "Zor" olarak belirlenmiş sorular varsa önceliklendir
+    const aIsZor = a.original.difficulty === 'Zor';
+    const bIsZor = b.original.difficulty === 'Zor';
+    if (aIsZor !== bIsZor) {
+      return bIsZor ? 1 : -1;
+    }
+    // Sınavın sonundaki sorulara öncelik
+    return b.idx - a.idx;
+  });
+
+  for (const c of zorCandidates) {
+    if (zorNeeded > 0 && c.assigned === null) {
       c.assigned = 'Zor';
       zorNeeded--;
     }
   }
-  if (zorNeeded > 0) {
-    const isPunctuationRule = (it: (typeof items)[0]) => {
-      const orig = it.original as any;
-      const oc = (orig.outcomeCode || orig.outcome || '');
-      const ot = (orig.outcomeTitle || '').toLowerCase();
-      return oc.includes('16') || ot.includes('yazım') || ot.includes('noktalama');
-    };
 
-    const remaining = items.filter(it => it.assigned === null).sort((a, b) => {
-      const aIsRule = isPunctuationRule(a);
-      const bIsRule = isPunctuationRule(b);
-      if (aIsRule !== bIsRule) {
-        return aIsRule ? 1 : -1; // Doğrudan kural uygulamalarını "Zor" sıralamasında geriye al
-      }
-      return b.idx - a.idx;
-    });
-    for (const c of remaining) {
-      if (zorNeeded > 0) {
-        c.assigned = 'Zor';
-        zorNeeded--;
-      }
-    }
-  }
-
-  // 2. Kolay soruların atanması (Öncelik: Basit Bilişsel & Sınavın başlangıcı)
+  // 2. Kolay soruların atanması (Öncelik: Sınavın başlangıcı)
   let kolayNeeded = target.Kolay;
-  const basitCandidates = items.filter(it => it.isSimple && it.assigned === null).sort((a, b) => a.idx - b.idx);
-  for (const c of basitCandidates) {
-    if (kolayNeeded > 0) {
+  const kolayCandidates = items.filter(it => it.assigned === null).sort((a, b) => {
+    const aIsKolay = a.original.difficulty === 'Kolay';
+    const bIsKolay = b.original.difficulty === 'Kolay';
+    if (aIsKolay !== bIsKolay) {
+      return bIsKolay ? 1 : -1;
+    }
+    // Sınavın başındaki sorulara öncelik
+    return a.idx - b.idx;
+  });
+
+  for (const c of kolayCandidates) {
+    if (kolayNeeded > 0 && c.assigned === null) {
       c.assigned = 'Kolay';
       kolayNeeded--;
-    }
-  }
-  if (kolayNeeded > 0) {
-    const remaining = items.filter(it => it.assigned === null).sort((a, b) => a.idx - b.idx);
-    for (const c of remaining) {
-      if (kolayNeeded > 0) {
-        c.assigned = 'Kolay';
-        kolayNeeded--;
-      }
     }
   }
 

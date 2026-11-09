@@ -40,7 +40,6 @@ export const ScenarioOverviewView: React.FC<ScenarioOverviewViewProps> = ({
   const expandedRows: {
     questionNumber: number;
     outcomeCode: string;
-    cognitiveLevel: string;
     notes?: string;
     officialTitle: string;
     displayLabel: string;
@@ -50,12 +49,11 @@ export const ScenarioOverviewView: React.FC<ScenarioOverviewViewProps> = ({
   let qNum = 1;
   for (const d of scenario.distributions) {
     const count = d.questionCount || 1;
-    const resolved = resolveOutcomeMetadata(d.outcomeCode, d.notes, d.cognitiveLevel);
+    const resolved = resolveOutcomeMetadata(d.outcomeCode, d.notes);
     for (let c = 0; c < count; c++) {
       expandedRows.push({
         questionNumber: qNum++,
         outcomeCode: d.outcomeCode,
-        cognitiveLevel: d.cognitiveLevel,
         notes: d.notes,
         officialTitle: resolved.officialTitle,
         displayLabel: resolved.displayLabel,
@@ -158,10 +156,10 @@ export const ScenarioOverviewView: React.FC<ScenarioOverviewViewProps> = ({
           <table className="w-full text-left text-xs sm:text-sm border-collapse">
             <thead>
               <tr className="bg-slate-100 text-slate-700 font-bold border-b border-slate-200 text-[11px] sm:text-xs">
-                <th className="py-3 px-3 sm:px-4 w-14 text-center">Soru</th>
-                <th className="py-3 px-3 sm:px-4 w-32">Kazanım Kodu</th>
+                <th className="py-3 px-3 sm:px-4 w-16 text-center">Soru No</th>
+                <th className="py-3 px-3 sm:px-4 w-36">Kazanım Kodu</th>
                 <th className="py-3 px-3 sm:px-4">Konu ve Öğrenme Çıktısı Açıklaması</th>
-                <th className="py-3 px-3 sm:px-4 w-40 text-center">Bilişsel Düzey</th>
+                <th className="py-3 px-3 sm:px-4 w-28 text-center">Soru Sayısı</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-200 text-slate-800">
@@ -188,12 +186,8 @@ export const ScenarioOverviewView: React.FC<ScenarioOverviewViewProps> = ({
                     )}
                   </td>
                   <td className="py-3 px-3 sm:px-4 text-center">
-                    <span className={`inline-block px-2.5 py-1 rounded-md text-[11px] font-semibold border ${
-                      row.cognitiveLevel.includes('Basit')
-                        ? 'bg-emerald-50 text-emerald-800 border-emerald-200'
-                        : 'bg-amber-50 text-amber-800 border-amber-200'
-                    }`}>
-                      {row.cognitiveLevel}
+                    <span className="inline-block px-2.5 py-1 rounded-md text-[11px] font-semibold bg-slate-100 text-slate-700 border border-slate-200">
+                      1 Soru
                     </span>
                   </td>
                 </tr>

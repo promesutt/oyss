@@ -1120,7 +1120,7 @@ export interface OutcomeResolution {
   officialTitle: string;
   topicNote: string;
   displayLabel: string;
-  cognitiveLevel: CognitiveLevel;
+  cognitiveLevel?: CognitiveLevel;
   promptContext: string;
 }
 
@@ -1136,7 +1136,7 @@ export function resolveOutcomeMetadata(
       officialTitle: '',
       topicNote: scenarioNote || '',
       displayLabel: scenarioNote || '',
-      cognitiveLevel: fallbackCognitiveLevel || 'Karmaşık Bilişsel Süreçler',
+      cognitiveLevel: fallbackCognitiveLevel,
       promptContext: scenarioNote || 'Kavramsal Uygulama'
     };
   }
@@ -1166,7 +1166,7 @@ export function resolveOutcomeMetadata(
     officialTitle: hasOfficialTitle ? officialTitle : '',
     topicNote,
     displayLabel,
-    cognitiveLevel: official?.cognitiveLevel || fallbackCognitiveLevel || 'Karmaşık Bilişsel Süreçler',
+    cognitiveLevel: official?.cognitiveLevel || fallbackCognitiveLevel,
     promptContext
   };
 }
