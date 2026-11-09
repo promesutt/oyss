@@ -271,26 +271,93 @@ export const APP_PAGE_TITLE = 'OYSS Rehberi | Ortak Yazılılara Hazırlık';
 
 /**
  * Tarayıcı PDF indirme/yazdırma tetikleyicisi.
- * document.title değerini yazdırma anında standart dosya adına ayarlar,
- * window.print() tamamlandıktan sonra kalıcı 'OYSS Rehberi | Ortak Yazılılara Hazırlık' sekme başlığına geri döndürür.
+ * document.title değerini yazdırma anında standart dosya adına ayarlar.
+ * window.print() tamamlandıktan veya iptal edildikten sonra (afterprint / matchMedia),
+ * sekme başlığını yan etki oluşturmadan orijinal haline geri döndürür.
+ * Safari ve Chrome uyumluluğu için kör setTimeout mekanizması kaldırılmıştır.
  */
 export function triggerPdfPrint(params: MaterialFileNameParams): void {
+  // 1. window ve window.print kullanılabilirlik kontrolü (SSR veya kısıtlı ortam)
+  if (typeof window === 'undefined' || typeof window.print !== 'function') {
+    return;
+  }
+
+  const originalTitle = (typeof document !== 'undefined' && document.title)
+    ? document.title
+    : APP_PAGE_TITLE;
+
   const pdfTitle = generateMaterialPdfFileName(params);
-  if (typeof document !== 'undefined') {
+  if (typeof document !== 'undefined' && pdfTitle) {
     document.title = pdfTitle;
   }
-  if (typeof window !== 'undefined' && typeof window.print === 'function') {
-    const restoreTitle = () => {
-      if (typeof document !== 'undefined') {
-        document.title = APP_PAGE_TITLE;
-      }
-      if (typeof window !== 'undefined') {
+
+  let hasRestored = false;
+  let printMediaQuery: MediaQueryList | null = null;
+  let mediaQueryHandler: ((mql: MediaQueryListEvent | MediaQueryList) => void) | null = null;
+  let afterprintAdded = false;
+
+  const restoreTitle = () => {
+    if (hasRestored) return;
+    hasRestored = true;
+
+    if (typeof document !== 'undefined') {
+      document.title = originalTitle;
+    }
+
+    if (typeof window !== 'undefined') {
+      if (afterprintAdded) {
         window.removeEventListener('afterprint', restoreTitle);
+        afterprintAdded = false;
       }
-    };
+
+      if (printMediaQuery && mediaQueryHandler) {
+        try {
+          if (typeof printMediaQuery.removeEventListener === 'function') {
+            printMediaQuery.removeEventListener('change', mediaQueryHandler);
+          } else if (typeof (printMediaQuery as any).removeListener === 'function') {
+            (printMediaQuery as any).removeListener(mediaQueryHandler);
+          }
+        } catch {
+          // matchMedia temizliği sessizce atlanır
+        }
+        mediaQueryHandler = null;
+      }
+    }
+  };
+
+  try {
+    // 1. Standart afterprint dinleyicisi (Chrome, Firefox, modern Safari)
     window.addEventListener('afterprint', restoreTitle);
+    afterprintAdded = true;
+
+    // 2. Safari / WebKit uyumluluğu için matchMedia('print') dinleyicisi
+    if (typeof window.matchMedia === 'function') {
+      try {
+        printMediaQuery = window.matchMedia('print');
+        if (printMediaQuery) {
+          mediaQueryHandler = (mql: MediaQueryListEvent | MediaQueryList) => {
+            if (!mql.matches) {
+              restoreTitle();
+            }
+          };
+
+          if (typeof printMediaQuery.addEventListener === 'function') {
+            printMediaQuery.addEventListener('change', mediaQueryHandler);
+          } else if (typeof (printMediaQuery as any).addListener === 'function') {
+            (printMediaQuery as any).addListener(mediaQueryHandler);
+          }
+        }
+      } catch {
+        // matchMedia kısıtlı ortamlarda sessizce atlanır
+      }
+    }
+
+    // Kullanıcı etkileşim zinciri (user gesture) korunarak senkron çağrılır
     window.print();
-    // Fallback if afterprint does not fire in certain browser configurations
-    setTimeout(restoreTitle, 1000);
+  } catch (printError) {
+    // Hata durumunda (örneğin iframe kısıtı, izin reddi veya beklenmeyen istisnalar)
+    // başlığı derhal eski haline getir ve dinleyicileri temizle
+    restoreTitle();
+    console.error('[OYSS Print] Yazdırma işlemi sırasında hata oluştu:', printError);
   }
 }
