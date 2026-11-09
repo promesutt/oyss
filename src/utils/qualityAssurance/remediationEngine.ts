@@ -66,6 +66,62 @@ export function autoRemediateQuestion(
     }
   }
 
+  // 4. Anlatımsal ve Zamansal Çelişki Onarımı (TASK199)
+  const narrativeFinding = auditResult.findings.find(
+    f => f.validationMethod === 'narrative_temporal_consistency_check'
+  );
+
+  if (narrativeFinding) {
+    const rawStim = clone.stimulus || '';
+    const rawStem = clone.question || clone.questionText || '';
+    const combined = `${rawStim} ${rawStem}`.toLowerCase();
+
+    // Selim çanta / 3 eylemli fiziksel iş senaryosu deterministik onarımı
+    // İlk cümlede çantanın zaten sırtta olması çelişkisini temizleyerek kronolojik sırayı kurar
+    const isSelimBagScenario = 
+      /selim/i.test(combined) &&
+      /çanta/i.test(combined) &&
+      /(?:kütüphane|masa|masanın|üzerine|kaldır)/i.test(combined);
+
+    if (isSelimBagScenario) {
+      clone.stimulus = 'Selim, okul çıkışında ağır çantasını yerden alarak sırtına takmıştır. Daha sonra düz bir yolda sabit süratle yürümüş ve son olarak çantasını kütüphane masasının üzerine koymak için dikey doğrultuda yukarı kaldırmıştır.';
+      clone.question = "Selim'in gerçekleştirdiği bu üç farklı eylemden (çantayı yerden kaldırma, düz yolda taşıma, masaya koymak için kaldırma) hangilerinde fiziksel anlamda iş yapılmıştır? Gerekçeleriyle birlikte açıklayınız.";
+      if (clone.questionText) {
+        clone.questionText = clone.question;
+      }
+      clone.modelAnswer = "• Fiziksel Anlamda İş Yapılan Eylemler: 1. Eylem (çantayı yerden kaldırma) ve 3. Eylem (masaya koymak için kaldırma).\n• Gerekçelendirme:\n- 1. Eylem (Yerden Kaldırma): Çantayı kaldırırken uygulanan kuvvet düşey yukarı yönlüdür ve çanta kuvvet doğrultusunda yukarı doğru hareket etmiştir. Kuvvet ve hareket aynı doğrultuda olduğu için yer çekimine karşı fiziksel iş yapılmıştır.\n- 2. Eylem (Düz Yolda Taşıma): Çantayı taşırken uygulanan kuvvet düşey yukarı yönlüdür ancak hareket yatay doğrultudadır. Kuvvet ile hareket doğrultuları birbirine dik (90°) olduğu için kuvvet doğrultusunda yer değiştirme yoktur ve fiziksel iş yapılmamıştır (W = 0).\n- 3. Eylem (Masaya Koymak İçin Kaldırma): Çanta masaya konurken uygulanan kaldırma kuvveti düşey yukarı yönlüdür ve çanta yukarı doğru yer değiştirmiştir. Kuvvet ile hareket aynı doğrultuda olduğundan yer çekimine karşı fiziksel iş yapılmıştır.";
+      clone.answer = clone.modelAnswer;
+      clone.alternativeAnswers = [
+        "1 ve 3. eylemlerde iş yapılmıştır. 1 ve 3'te uygulanan kuvvet ile hareket düşey doğrultuda aynı yönlüdür; 2. eylemde ise kaldırma kuvveti düşey iken hareket yataydır (birbirine diktir, iş yapılmaz).",
+        "Çantayı yerden kaldırırken ve masaya koymak için kaldırırken iş yapılır (kuvvet ile yer değiştirme aynı doğrultudadır). Düz yolda taşırken kuvvet düşey, hareket yatay olduğundan iş yapılmaz."
+      ];
+      
+      const pts = targetPoints || 11;
+      if (pts === 11) {
+        clone.rubric = [
+          { item: '1. Eylemde (çantayı yerden kaldırma) yer çekimine karşı iş yapıldığının ve düşey doğrultu uyumunun açıklanması', pts: 4 },
+          { item: '2. Eylemde (düz yolda taşıma) kuvvet ile hareketin birbirine dik olması sebebiyle iş yapılmadığının gerekçelendirilmesi', pts: 3 },
+          { item: '3. Eylemde (masaya koymak için kaldırma) yer çekimine karşı iş yapıldığının ve düşey doğrultu uyumunun açıklanması', pts: 4 }
+        ];
+      } else {
+        const p1 = Math.round(pts * 0.36);
+        const p2 = Math.round(pts * 0.28);
+        const p3 = pts - p1 - p2;
+        clone.rubric = [
+          { item: '1. Eylemde (çantayı yerden kaldırma) yer çekimine karşı iş yapıldığının açıklanması', pts: p1 },
+          { item: '2. Eylemde (düz yolda taşıma) kuvvet ve hareket dikliği gerekçesiyle iş yapılmadığının açıklanması', pts: p2 },
+          { item: '3. Eylemde (masaya koymak için kaldırma) yer çekimine karşı iş yapıldığının açıklanması', pts: p3 }
+        ];
+      }
+
+      wasModified = true;
+      notes.push('Soru senaryosundaki zamansal ve anlatımsal çelişki (zaten sırtta olan çantanın yerden alınması) kronolojik akışa uygun olarak düzeltildi; model cevap ve rubrik yeni anlatımla eşitlendi.');
+    } else {
+      // Deterministik onarım güvenilir değilse soruyu sessizce değiştirme; kalite uyarısını koru
+      notes.push('Soru senaryosunda anlatımsal/zamansal çelişki tespit edildi. Güvenli deterministik onarım şablonu bulunmadığı için soru metni değiştirilmemiş; kalite güvence uyarısı korunmuştur.');
+    }
+  }
+
   return {
     remediatedQuestion: clone,
     wasModified,

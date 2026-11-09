@@ -346,6 +346,76 @@ export function runCommonQualityChecks(
     });
   }
 
+  // -------------------------------------------------------------
+  // E.3: SENARYOLARDA ANLATIMSAL VE ZAMANSAL TUTARLILIK KONTROLÜ (TASK199)
+  // Olayların mantıksal, kronolojik veya durumsal (state) çelişkilerini denetler.
+  // Örn: Bir nesnenin ilk cümlede zaten taşındığı/sırtta/elde olduğu belirtilmişken
+  // sonraki cümlede aynı nesneyi sıfırdan yerden alıp sırtına taktığının anlatılması.
+  // -------------------------------------------------------------
+  const fullScenario = `${stimulus} ${stem}`.trim();
+  if (fullScenario.length >= 25) {
+    // 1. Durumlar bağımsız alternatifler mi? ("1. Durum: ... 2. Durum: ..." veya "1. Aşama: ... 2. Aşama: ...")
+    // Karşılaştırmalı bağımsız deneylerde (A durumu vs B durumu) durumlar arası farklılıklar çelişki DEĞİLDİR.
+    const hasDistinctSituations =
+      /(?:1\.\s*durum|durum\s*1|1\.\s*eylem|eylem\s*1|1\.\s*aşama|aşama\s*1|yöntem\s*1)/i.test(fullScenario) &&
+      /(?:2\.\s*durum|durum\s*2|2\.\s*eylem|eylem\s*2|2\.\s*aşama|aşama\s*2|yöntem\s*2)/i.test(fullScenario);
+
+    // Eğer bağımsız durumlar varsa, her durumu kendi içinde tekil olarak inceleriz
+    const segmentsToCheck: string[] = hasDistinctSituations
+      ? fullScenario.split(/(?=[1234]\.\s*(?:durum|eylem|aşama|yöntem))/i)
+      : [fullScenario];
+
+    for (const seg of segmentsToCheck) {
+      const segLower = seg.toLowerCase();
+
+      // Olumsuzluk koruması (Negation Guard): "yerden almadı", "sırtında değildi", "kaldırmadan" vb.
+      const hasNegation = /(?:almadan|kaldırmadan|takmadan|bırakmadan|değil|değildi|yoktu)/i.test(segLower);
+
+      // Çelişki Kalıbı 1: Zaten sırtta / elde olan nesnenin ara eylem olmaksızın yerden alınıp sırtına/eline takılması
+      // Örnek: "Selim, okul çıkışında sırtındaki ağır çantayla ... çantasını yerden alarak sırtına takmış..."
+      // Örnek: "Selim'in çantası sırtındadır ... çantasını yerden alıp sırtına takmıştır..."
+      const preExistingBackState = /(?:sırtındaki|sırtında\s+bulunan|sırtında\s+olan|çantası\s+sırtında|sırtında\s+taşırken|sırtında\s+taşıdığı)\s+(?:ağır\s+)?(?:okul\s+)?(çanta|koli|yük|bavul|kutu|paket)/i;
+      const preExistingHandState = /(?:elindeki|elinde\s+bulunan|elinde\s+tuttuğu|elinde\s+olan|kucağındaki)\s+(?:ağır\s+)?(çanta|koli|yük|bavul|kutu|paket|bardak)/i;
+
+      const subsequentBackPickup = /(?:çanta|koli|yük|bavul|kutu|paket)(?:sını|yı|sini|yi|ünü|ü|unu|u|ini|i)?\s+yerden\s+(?:alarak|alıp|kaldırarak|kaldırıp)\s+sırtına\s+(?:tak|al)/i;
+      const subsequentHandPickup = /(?:çanta|koli|yük|bavul|kutu|paket|bardak)(?:sını|yı|sini|yi|ünü|ü|unu|u|ini|i)?\s+yerden\s+(?:alarak|alıp|kaldırarak|kaldırıp)\s+(?:eline|kucağına)\s+al/i;
+
+      const intermediatePutDown = /(?:yere\s+(?:koy|bırak|indir|attı)|sırtından\s+(?:çıkar|indir|al)|masaya\s+(?:bırak|koy)|yere\s+bıraktıktan)/i;
+
+      if (!hasNegation) {
+        const hasBackConflict = preExistingBackState.test(segLower) && subsequentBackPickup.test(segLower);
+        const hasHandConflict = preExistingHandState.test(segLower) && subsequentHandPickup.test(segLower);
+
+        if ((hasBackConflict || hasHandConflict) && !intermediatePutDown.test(segLower)) {
+          findings.push({
+            category: 'language_clarity',
+            severity: 'critical',
+            field: 'stimulus',
+            message: 'Senaryoda anlatımsal ve zamansal çelişki tespit edildi: İlk cümlede zaten sırtta/elde olduğu belirtilen nesnenin sonraki cümlede ara eylem olmaksızın yerden alınıp sırtına/eline takıldığı ifade edilmektedir.',
+            suggestedFix: 'Olay akışını kronolojik sıraya koyunuz: Nesnenin önce yerden alınmasını, ardından taşınmasını ve son olarak bırakılmasını sırasıyla ifade ediniz.',
+            validationMethod: 'narrative_temporal_consistency_check'
+          });
+          break;
+        }
+
+        // Çelişki Kalıbı 2: Zamansal terslik (Taşıma/yürüme eyleminin ardından sırtına takma)
+        // Örnek: "düz yolda yürüdükten sonra çantasını sırtına takmıştır" (arada yere bırakma olmadan)
+        const walkThenPickup = /(?:düz\s+yolda|koridorda|yolda)\s+(?:yürüdükten|ilerledikten)\s+sonra\s+.*?(?:yerden\s+al(?:arak|ıp)\s+sırtına\s+tak|yerden\s+kaldırıp\s+sırtına\s+tak)/i;
+        if (walkThenPickup.test(segLower) && !intermediatePutDown.test(segLower)) {
+          findings.push({
+            category: 'language_clarity',
+            severity: 'critical',
+            field: 'stimulus',
+            message: 'Senaryoda zamansal terslik (kronolojik çelişki) tespit edildi: Yürüme eyleminden sonra çantayı yerden alıp sırtına takma adımı yer almaktadır.',
+            suggestedFix: 'Olayları kronolojik sırayla veriniz (önce çantayı yerden alma, sonra yolda yürüme).',
+            validationMethod: 'narrative_temporal_consistency_check'
+          });
+          break;
+        }
+      }
+    }
+  }
+
   // ==========================================
   // F. ÖLÇME NİTELİĞİ VE SINAV İÇİ ÇEŞİTLİLİK
   // ==========================================
