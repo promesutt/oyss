@@ -8,6 +8,7 @@ import {
   getMebiPedagogicalRules,
   getQualityPedagogicalRules,
   QUESTION_DIRECTIVE_CLARITY_RULE,
+  getDirectiveClarityRule,
   RUBRIC_DESIGN_RULE,
   AI_MATHEMATICS_VISUAL_DIRECTIVES
 } from './coreRules';
@@ -27,6 +28,8 @@ import {
   createGenericPromptEntry
 } from './genericPrompt';
 import { buildGrade56TextbookDirectives } from './grade56TextbookPrompt';
+import { buildGrade7MathDirectives } from './grade7MathPrompt';
+import { buildGrade7ScienceDirectives } from './grade7SciencePrompt';
 
 /**
  * Metinleri anlamsız hece kesilmelerini önleyecek ve ayırt edici kısımları
@@ -175,7 +178,7 @@ export function buildLiveExamPrompt(params: LiveExamPromptParams): string {
   const gradeRule = getGradeAgeDirectives(grade, isQualityActive);
   const diffRule = getDifficultyPlanRule(targetCount, difficultyPlanText);
   const pedaRule = isQualityActive ? getQualityPedagogicalRules(targetCount) : getMebiPedagogicalRules(targetCount);
-  const directiveClarityBlock = isQualityActive ? `\n\n${QUESTION_DIRECTIVE_CLARITY_RULE}` : '';
+  const directiveClarityBlock = isQualityActive ? `\n\n${getDirectiveClarityRule(subjectId)}` : '';
   const rubricDesignBlock = isQualityActive ? `\n${RUBRIC_DESIGN_RULE}\n` : '';
 
   // Kalite standartlarında tüm sınıflar için esnek/koşullu alternatif cevap desteği aktiftir.
@@ -185,8 +188,17 @@ export function buildLiveExamPrompt(params: LiveExamPromptParams): string {
   const schema = getJsonOutputSchema(hasAltAnswers, isQualityActive);
 
   const turkishMebiDirectives = (grade === 7 && subjectId === 'turkce') ? registered.directives : '';
-  const math7thDirectives = (grade === 7 && subjectId === 'matematik') ? registered.directives : '';
-  const science7thDirectives = (grade === 7 && subjectId === 'fen_bilimleri') ? registered.directives : '';
+  // TASK174: 7. Sınıf Matematik ve Fen Bilimleri için senaryo bazlı dinamik kazanım filtreleme
+  const math7thDirectives = (grade === 7 && subjectId === 'matematik')
+    ? (params.outcomeCodes && params.outcomeCodes.length > 0
+        ? `\n${buildGrade7MathDirectives(params.outcomeCodes)}\n`
+        : registered.directives)
+    : '';
+  const science7thDirectives = (grade === 7 && subjectId === 'fen_bilimleri')
+    ? (params.outcomeCodes && params.outcomeCodes.length > 0
+        ? `\n${buildGrade7ScienceDirectives(params.outcomeCodes)}\n`
+        : registered.directives)
+    : '';
   const socialMebiDirectives = (grade === 7 && subjectId === 'sosyal_bilgiler') ? registered.directives : '';
   const dinMebiDirectives = (grade === 7 && subjectId === 'din_kulturu') ? registered.directives : '';
 
@@ -247,11 +259,17 @@ export {
   isValidMiddleSchoolCombination,
   createGenericPromptEntry,
   buildGrade56TextbookDirectives,
+  buildGrade7MathDirectives,
+  buildGrade7ScienceDirectives,
   getQualityPedagogicalRules,
   QUESTION_DIRECTIVE_CLARITY_RULE,
+  getDirectiveClarityRule,
   RUBRIC_DESIGN_RULE,
   AI_MATHEMATICS_VISUAL_DIRECTIVES,
   getDynamicContextDiversityRule
 };
+
+export { GRADE_7_MATH_OUTCOME_DICTIONARY } from './grade7MathPrompt';
+export { GRADE_7_SCIENCE_OUTCOME_DICTIONARY } from './grade7SciencePrompt';
 
 export type { LiveExamPromptParams, PromptRegistryEntry, AvoidDirectivesParams } from './types';
