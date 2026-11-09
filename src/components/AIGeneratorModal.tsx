@@ -8,7 +8,7 @@ import {
   getExamClassificationDetails,
   getQuestionSourceBadge
 } from '../types';
-import { ALL_SUBJECTS, getOfficialOutcomeTitle, formatOutcomeBadgeTitle } from '../data/curriculumData';
+import { ALL_SUBJECTS, getOfficialOutcomeTitle, formatOutcomeBadgeTitle, resolveOutcomeMetadata } from '../data/curriculumData';
 import { calibrateQuestionDifficulties } from '../utils/difficultyCalibrator';
 import { 
   X, 
@@ -19,7 +19,9 @@ import {
   FileCheck2,
   RotateCw,
   AlertTriangle,
-  Info
+  Info,
+  PlayCircle,
+  Table
 } from 'lucide-react';
 import { MathRenderer } from './MathRenderer';
 import { QuestionVisualView } from './QuestionVisualView';
@@ -81,6 +83,7 @@ interface AIGeneratorModalProps {
   examTerm: ExamTerm;
   scenario: ExamScenario;
   onApplyGeneratedExam?: (customExam: any) => void;
+  onApplyAndStartInteractive?: (customExam: any) => void;
 }
 
 export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
@@ -91,6 +94,7 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
   examTerm,
   scenario,
   onApplyGeneratedExam,
+  onApplyAndStartInteractive,
 }) => {
   const [outputType, setOutputType] = useState<'exam' | 'study_sheet' | 'practice_question'>('exam');
   const [cognitiveWeight, setCognitiveWeight] = useState<'standard' | 'more_complex' | 'foundational'>('standard');
@@ -541,102 +545,225 @@ export const AIGeneratorModal: React.FC<AIGeneratorModalProps> = ({
 
                     {/* Apply to Exam Button */}
                     {onApplyGeneratedExam && (
-                      <div className="p-3 bg-indigo-50/70 border border-indigo-200 rounded-xl flex flex-wrap items-center justify-between gap-3">
+                      <div className="p-3.5 bg-indigo-50/80 border border-indigo-200 rounded-xl flex flex-wrap items-center justify-between gap-3">
                         <span className="text-xs text-indigo-950 font-medium">
-                          Bu üretilen {classDetails.titleSuffix.toLowerCase()} sorularını ana sınav kâğıdı ekranına aktarıp A4 olarak yazdırmak ister misiniz?
+                          Bu üretilen {classDetails.titleSuffix.toLowerCase()} sorularını sınav kâğıdı veya etkileşimli modda kullanabilirsiniz:
                         </span>
-                        <button
-                          onClick={() => {
-                            const qCount = generatedResult.generatedQuestions.length;
-                            const pointAllocations = distributeExamPoints(qCount);
+                        <div className="flex flex-wrap items-center gap-2">
+                          {onApplyAndStartInteractive && (
+                            <button
+                              onClick={() => {
+                                const qCount = generatedResult.generatedQuestions.length;
+                                const pointAllocations = distributeExamPoints(qCount);
 
-                            const customExam: ExamPaper = {
-                              id: `ai_generated_${Date.now()}`,
-                              grade: grade,
-                              subjectId: subjectId,
-                              examTerm: examTerm,
-                              scenarioId: scenario.id,
-                              title: `${grade}. Sınıf ${subjectMeta?.name} (${scenario.name}) - ${classDetails.titleSuffix} (#${generatedResult.variationNumber})`,
-                              durationMinutes: 40,
-                              totalPoints: 100,
-                              examClassification: classification,
-                              instructions: [
-                                'Bu sınav kağıdı, ilgili MEB senaryosunun öğrenme çıktıları esas alınarak hazırlanan bir ÇALIŞMA VE ALIŞTIRMA TASLAĞIDIR.',
-                                'Soruları analitik düşünme adımlarını ve gerekçelerinizi belirterek açık uçlu cevaplayınız.',
-                                'Puanlamada MEB Analitik Dereceli Puanlama Anahtarı (Rubrik) basamakları esas alınacaktır.'
-                              ],
-                              questions: generatedResult.generatedQuestions.map((q, idx) => {
-                                const questionPts = pointAllocations[idx] || q.points || 15;
-                                const rawRubric = (q.rubric || []).map((r) => ({
-                                  criterion: r.item || 'Değerlendirme Ölçütü',
-                                  points: r.pts ?? 0
-                                }));
-                                const rubricList = reconcileRubricPoints(rawRubric, questionPts);
+                                const customExam: ExamPaper = {
+                                  id: `ai_generated_${Date.now()}`,
+                                  grade: grade,
+                                  subjectId: subjectId,
+                                  examTerm: examTerm,
+                                  scenarioId: scenario.id,
+                                  title: `${grade}. Sınıf ${subjectMeta?.name} (${scenario.name}) - ${classDetails.titleSuffix} (#${generatedResult.variationNumber})`,
+                                  durationMinutes: 40,
+                                  totalPoints: 100,
+                                  examClassification: classification,
+                                  instructions: [
+                                    'Bu sınav kağıdı, ilgili MEB senaryosunun öğrenme çıktıları esas alınarak hazırlanan bir ÇALIŞMA VE ALIŞTIRMA TASLAĞIDIR.',
+                                    'Soruları analitik düşünme adımlarını ve gerekçelerinizi belirterek açık uçlu cevaplayınız.',
+                                    'Puanlamada MEB Analitik Dereceli Puanlama Anahtarı (Rubrik) basamakları esas alınacaktır.'
+                                  ],
+                                  questions: generatedResult.generatedQuestions.map((q, idx) => {
+                                    const questionPts = pointAllocations[idx] || q.points || 15;
+                                    const rawRubric = (q.rubric || []).map((r) => ({
+                                      criterion: r.item || 'Değerlendirme Ölçütü',
+                                      points: r.pts ?? 0
+                                    }));
+                                    const rubricList = reconcileRubricPoints(rawRubric, questionPts);
 
-                                const officialTitle = getOfficialOutcomeTitle(q.outcome);
-                                const resolvedOutcomeTitle = (officialTitle && officialTitle !== q.outcome)
-                                  ? officialTitle
-                                  : formatOutcomeBadgeTitle(q.outcomeTitle, q.outcome) || 'Öğrenme Çıktısı';
+                                    const officialTitle = getOfficialOutcomeTitle(q.outcome);
+                                    const resolvedOutcomeTitle = (officialTitle && officialTitle !== q.outcome)
+                                      ? officialTitle
+                                      : formatOutcomeBadgeTitle(q.outcomeTitle, q.outcome) || 'Öğrenme Çıktısı';
 
-                                const specificExplanation = q.solutionExplanation
-                                  ? q.solutionExplanation
-                                  : q.answer
-                                  ? `Örnek çözüm adımları ve gerekçeli dereceli puanlama: ${q.answer}`
-                                  : 'Bu soru için MEB analitik dereceli puanlama anahtarı basamakları esas alınmıştır.';
+                                    const specificExplanation = q.solutionExplanation
+                                      ? q.solutionExplanation
+                                      : q.answer
+                                      ? `Örnek çözüm adımları ve gerekçeli dereceli puanlama: ${q.answer}`
+                                      : 'Bu soru için MEB analitik dereceli puanlama anahtarı basamakları esas alınmıştır.';
 
-                                return {
-                                  questionNumber: q.number || (idx + 1),
-                                  outcomeCode: q.outcome,
-                                  outcomeTitle: resolvedOutcomeTitle,
-                                  difficulty: q.difficulty || 'Orta',
-                                  cognitiveLevel: (q.level || 'Karmaşık Bilişsel Süreçler') as any,
-                                  archetype: q.templateType as any,
-                                  points: questionPts,
-                                  stimulus: q.stimulus,
-                                  sharedSourceId: q.sharedSourceId,
-                                  commonStimulus: q.commonStimulus,
-                                  hasMissingSourceError: q.hasMissingSourceError,
-                                  sourceValidationError: q.sourceValidationError,
-                                  questionText: q.question,
-                                  modelAnswer: q.answer,
-                                  alternativeAnswers: q.alternativeAnswers,
-                                  solutionExplanation: specificExplanation,
-                                  rubric: rubricList,
-                                  sourceOrigin: q.sourceOrigin,
-                                  originExamTitle: q.originExamTitle,
-                                  originQuestionNumber: q.originQuestionNumber,
-                                  visual: q.visual
+                                    return {
+                                      questionNumber: q.number || (idx + 1),
+                                      outcomeCode: q.outcome,
+                                      outcomeTitle: resolvedOutcomeTitle,
+                                      difficulty: q.difficulty || 'Orta',
+                                      cognitiveLevel: (q.level || 'Karmaşık Bilişsel Süreçler') as any,
+                                      archetype: q.templateType as any,
+                                      points: questionPts,
+                                      stimulus: q.stimulus,
+                                      sharedSourceId: q.sharedSourceId,
+                                      commonStimulus: q.commonStimulus,
+                                      hasMissingSourceError: q.hasMissingSourceError,
+                                      sourceValidationError: q.sourceValidationError,
+                                      questionText: q.question,
+                                      modelAnswer: q.answer,
+                                      alternativeAnswers: q.alternativeAnswers,
+                                      solutionExplanation: specificExplanation,
+                                      rubric: rubricList,
+                                      sourceOrigin: q.sourceOrigin,
+                                      originExamTitle: q.originExamTitle,
+                                      originQuestionNumber: q.originQuestionNumber,
+                                      visual: q.visual
+                                    };
+                                  })
                                 };
-                              })
-                            };
 
-                            const calibratedQuestions = calibrateQuestionDifficulties(customExam.questions);
-                            const finalExam = { ...customExam, questions: calibratedQuestions };
+                                const calibratedQuestions = calibrateQuestionDifficulties(customExam.questions);
+                                const finalExam = { ...customExam, questions: calibratedQuestions };
 
-                            // Tarayıcı yenilemelerinde kaybolmaması için localStorage'a kaydet
-                            saveCustomExamPaper(finalExam);
+                                saveCustomExamPaper(finalExam);
+                                onApplyAndStartInteractive(finalExam);
+                                onClose();
+                              }}
+                              className="inline-flex items-center px-3.5 py-2 rounded-xl bg-purple-600 hover:bg-purple-700 text-white text-xs font-bold shadow-sm transition-all active:scale-95 cursor-pointer"
+                            >
+                              <PlayCircle className="w-4 h-4 mr-1.5 text-amber-300" />
+                              Etkileşimli Olarak Çöz
+                            </button>
+                          )}
+                          <button
+                            onClick={() => {
+                              const qCount = generatedResult.generatedQuestions.length;
+                              const pointAllocations = distributeExamPoints(qCount);
 
-                            onApplyGeneratedExam(finalExam);
-                            onClose();
-                          }}
-                          className="inline-flex items-center px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold shadow-md transition-all active:scale-95 shrink-0"
-                        >
-                          <FileCheck2 className="w-4 h-4 mr-1.5 text-amber-300" />
-                          Sınav Kağıdına Aktar
-                        </button>
+                              const customExam: ExamPaper = {
+                                id: `ai_generated_${Date.now()}`,
+                                grade: grade,
+                                subjectId: subjectId,
+                                examTerm: examTerm,
+                                scenarioId: scenario.id,
+                                title: `${grade}. Sınıf ${subjectMeta?.name} (${scenario.name}) - ${classDetails.titleSuffix} (#${generatedResult.variationNumber})`,
+                                durationMinutes: 40,
+                                totalPoints: 100,
+                                examClassification: classification,
+                                instructions: [
+                                  'Bu sınav kağıdı, ilgili MEB senaryosunun öğrenme çıktıları esas alınarak hazırlanan bir ÇALIŞMA VE ALIŞTIRMA TASLAĞIDIR.',
+                                  'Soruları analitik düşünme adımlarını ve gerekçelerinizi belirterek açık uçlu cevaplayınız.',
+                                  'Puanlamada MEB Analitik Dereceli Puanlama Anahtarı (Rubrik) basamakları esas alınacaktır.'
+                                ],
+                                questions: generatedResult.generatedQuestions.map((q, idx) => {
+                                  const questionPts = pointAllocations[idx] || q.points || 15;
+                                  const rawRubric = (q.rubric || []).map((r) => ({
+                                    criterion: r.item || 'Değerlendirme Ölçütü',
+                                    points: r.pts ?? 0
+                                  }));
+                                  const rubricList = reconcileRubricPoints(rawRubric, questionPts);
+
+                                  const officialTitle = getOfficialOutcomeTitle(q.outcome);
+                                  const resolvedOutcomeTitle = (officialTitle && officialTitle !== q.outcome)
+                                    ? officialTitle
+                                    : formatOutcomeBadgeTitle(q.outcomeTitle, q.outcome) || 'Öğrenme Çıktısı';
+
+                                  const specificExplanation = q.solutionExplanation
+                                    ? q.solutionExplanation
+                                    : q.answer
+                                    ? `Örnek çözüm adımları ve gerekçeli dereceli puanlama: ${q.answer}`
+                                    : 'Bu soru için MEB analitik dereceli puanlama anahtarı basamakları esas alınmıştır.';
+
+                                  return {
+                                    questionNumber: q.number || (idx + 1),
+                                    outcomeCode: q.outcome,
+                                    outcomeTitle: resolvedOutcomeTitle,
+                                    difficulty: q.difficulty || 'Orta',
+                                    cognitiveLevel: (q.level || 'Karmaşık Bilişsel Süreçler') as any,
+                                    archetype: q.templateType as any,
+                                    points: questionPts,
+                                    stimulus: q.stimulus,
+                                    sharedSourceId: q.sharedSourceId,
+                                    commonStimulus: q.commonStimulus,
+                                    hasMissingSourceError: q.hasMissingSourceError,
+                                    sourceValidationError: q.sourceValidationError,
+                                    questionText: q.question,
+                                    modelAnswer: q.answer,
+                                    alternativeAnswers: q.alternativeAnswers,
+                                    solutionExplanation: specificExplanation,
+                                    rubric: rubricList,
+                                    sourceOrigin: q.sourceOrigin,
+                                    originExamTitle: q.originExamTitle,
+                                    originQuestionNumber: q.originQuestionNumber,
+                                    visual: q.visual
+                                  };
+                                })
+                              };
+
+                              const calibratedQuestions = calibrateQuestionDifficulties(customExam.questions);
+                              const finalExam = { ...customExam, questions: calibratedQuestions };
+
+                              // Tarayıcı yenilemelerinde kaybolmaması için localStorage'a kaydet
+                              saveCustomExamPaper(finalExam);
+
+                              onApplyGeneratedExam(finalExam);
+                              onClose();
+                            }}
+                            className="inline-flex items-center px-3.5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold shadow-sm transition-all active:scale-95 cursor-pointer"
+                          >
+                            <FileCheck2 className="w-4 h-4 mr-1.5 text-amber-300" />
+                            Sınav Kâğıdına Aktar
+                          </button>
+                        </div>
                       </div>
                     )}
                   </div>
                 </div>
               ) : (
-                <div className="border-2 border-dashed border-slate-200 rounded-xl p-8 text-center text-slate-400 space-y-2">
-                  <Sparkles className="w-8 h-8 mx-auto text-indigo-300" />
-                  <p className="text-xs sm:text-sm font-semibold text-slate-600">
-                    Henüz yeni sorular oluşturulmadı.
-                  </p>
-                  <p className="text-xs text-slate-400 max-w-sm mx-auto">
-                    Yukarıdaki <strong>"Yapay Zekâ ile Soru Üret"</strong> butonuna tıklayarak her seferinde farklı vaka kurguları ve açık uçlu senaryolarla yeni çalışma soruları hazırlayabilirsiniz.
-                  </p>
+                <div className="space-y-4">
+                  {/* Scenario Outcome & Question Distribution Preview */}
+                  {scenario && scenario.distributions && scenario.distributions.length > 0 && (
+                    <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 text-xs shadow-xs">
+                      <div className="flex items-center justify-between mb-3 border-b border-slate-200 pb-2">
+                        <span className="font-bold text-slate-800 flex items-center gap-1.5">
+                          <Table className="w-4 h-4 text-indigo-600" />
+                          Bu Senaryodaki Resmî MEB ÖDSGM Dağılımı ({scenario.totalQuestions} Soru)
+                        </span>
+                        <span className="text-[11px] text-indigo-700 bg-indigo-50 border border-indigo-200 px-2.5 py-0.5 rounded-full font-semibold">
+                          {scenario.name}
+                        </span>
+                      </div>
+                      <div className="space-y-2 max-h-52 overflow-y-auto pr-1">
+                        {scenario.distributions.map((d, i) => {
+                          const meta = resolveOutcomeMetadata(d.outcomeCode, d.notes);
+                          return (
+                            <div key={`${d.outcomeCode}_${i}`} className="flex items-start justify-between bg-white border border-slate-200 rounded-lg p-2.5 gap-2 hover:border-indigo-200 transition-colors">
+                              <div className="flex items-start gap-2">
+                                <span className="w-5 h-5 rounded-md bg-indigo-100 text-indigo-800 font-bold text-[11px] flex items-center justify-center shrink-0 mt-0.5">
+                                  {i + 1}
+                                </span>
+                                <div>
+                                  <span className="font-bold text-slate-900 mr-1.5 font-mono text-[11px]">
+                                    {d.outcomeCode}
+                                  </span>
+                                  <span className="text-slate-700 font-medium">
+                                    {meta.topicNote || meta.officialTitle || d.notes}
+                                  </span>
+                                </div>
+                              </div>
+                              <span className="text-[10px] font-semibold text-slate-600 bg-slate-100 px-2 py-0.5 rounded shrink-0">
+                                {d.cognitiveLevel || meta.cognitiveLevel}
+                              </span>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
+
+                  <div className="border-2 border-dashed border-slate-200 rounded-xl p-6 text-center text-slate-400 space-y-2">
+                    <Sparkles className="w-8 h-8 mx-auto text-indigo-400" />
+                    <p className="text-xs sm:text-sm font-semibold text-slate-700">
+                      Yapay Zekâ ile Senaryoya Özel Sınav Hazırlayın
+                    </p>
+                    <p className="text-xs text-slate-500 max-w-md mx-auto">
+                      Yukarıdaki <strong>"Yapay Zekâ ile Soru Üret"</strong> butonuna tıklayarak yukarıdaki MEB konu-soru dağılımına birebir uygun, dereceli puanlama anahtarı (rubrik) ve model cevapları olan özgün bir sınav oluşturabilirsiniz.
+                    </p>
+                  </div>
                 </div>
               )}
             </div>

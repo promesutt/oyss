@@ -1,5 +1,6 @@
 import { GradeLevel, SubjectId, ExamTerm, ExamScenario, SchoolStage, CognitiveLevel } from '../types';
 import { MIDDLE_SCHOOL_OFFICIAL_SCENARIOS_TERM2 } from './secondTermScenarios';
+import { TERM2_OFFICIAL_OUTCOMES } from './secondTermOutcomeAdditions';
 
 export interface SubjectMeta {
   id: SubjectId;
@@ -1098,6 +1099,7 @@ export const OFFICIAL_OUTCOMES: Record<string, OfficialOutcomeMeta> = {
     canonicalTitle: "Mondros Ateşkes Antlaşması’nın imzalanması ve uygulanması karşısında Osmanlı yönetiminin, Mustafa Kemal’in ve halkın tutumunu analiz eder.",
     cognitiveLevel: "Karmaşık Bilişsel Süreçler"
   },
+  ...TERM2_OFFICIAL_OUTCOMES
 };
 
 export function getOfficialOutcomeTitle(code: string): string {
@@ -1109,7 +1111,64 @@ export function getOfficialOutcomeTitle(code: string): string {
     title = title.replace(/^(?:[A-ZÇĞİÖŞÜa-zçğıöşü]+[.\s]*)?\d+[.]\d+[.]\d+[.]?\s*/i, '').trim();
     return title;
   }
-  return code;
+  return '';
+}
+
+export interface OutcomeResolution {
+  code: string;
+  hasOfficialTitle: boolean;
+  officialTitle: string;
+  topicNote: string;
+  displayLabel: string;
+  cognitiveLevel: CognitiveLevel;
+  promptContext: string;
+}
+
+export function resolveOutcomeMetadata(
+  code: string,
+  scenarioNote?: string,
+  fallbackCognitiveLevel?: CognitiveLevel
+): OutcomeResolution {
+  if (!code) {
+    return {
+      code: '',
+      hasOfficialTitle: false,
+      officialTitle: '',
+      topicNote: scenarioNote || '',
+      displayLabel: scenarioNote || '',
+      cognitiveLevel: fallbackCognitiveLevel || 'Karmaşık Bilişsel Süreçler',
+      promptContext: scenarioNote || 'Kavramsal Uygulama'
+    };
+  }
+  const cleanCode = code.trim();
+  const normalized = cleanCode.replace('SB ', 'SB.');
+  const official = OFFICIAL_OUTCOMES[normalized];
+  const officialTitle = getOfficialOutcomeTitle(cleanCode);
+  const hasOfficialTitle = Boolean(officialTitle && officialTitle.length > 0 && officialTitle !== cleanCode);
+  const topicNote = (scenarioNote || official?.topic || '').trim();
+
+  let displayLabel = '';
+  if (hasOfficialTitle) {
+    displayLabel = officialTitle;
+  } else if (topicNote && topicNote !== cleanCode) {
+    displayLabel = topicNote;
+  } else {
+    displayLabel = cleanCode;
+  }
+
+  const promptContext = hasOfficialTitle
+    ? (topicNote && topicNote !== officialTitle ? `${topicNote}: ${officialTitle}` : officialTitle)
+    : (topicNote || 'Kavramsal Uygulama ve Problem Çözme');
+
+  return {
+    code: cleanCode,
+    hasOfficialTitle,
+    officialTitle: hasOfficialTitle ? officialTitle : '',
+    topicNote,
+    displayLabel,
+    cognitiveLevel: official?.cognitiveLevel || fallbackCognitiveLevel || 'Karmaşık Bilişsel Süreçler',
+    promptContext
+  };
 }
 
 export function formatOutcomeBadgeTitle(outcomeTitle?: string, outcomeCode?: string): string {
