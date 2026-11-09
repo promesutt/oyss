@@ -1,3 +1,5 @@
+import { SubjectId } from '../../types';
+
 /**
  * MEB ÖDSGM ve Temel Eğitim Genel Müdürlüğü Ortak Pedagojik Çekirdek Kuralları
  * Tüm sınıf seviyeleri ve dersler için evrenseldir.
@@ -32,8 +34,8 @@ export function getDifficultyPlanRule(targetCount: number, difficultyPlanText: s
 - Sınavdaki ${targetCount} sorunun zorluk derecesi MEB Ölçme ve Değerlendirme standartlarına TAM UYGUN olmalıdır:
   * Zorunlu Zorluk Dağılımı: ${difficultyPlanText}
   * ASLA eşit sayıda (örneğin 2 kolay, 2 orta, 2 zor gibi) dağıtım yapma! Sınavın omurgasını daima "Orta" düzey oluşturmalıdır.
-  * "Basit Bilişsel Süreçler" etiketli kazanımlar "Kolay" veya "Orta" olmalıdır.
-  * "Karmaşık Bilişsel Süreçler" etiketli kazanımlar "Orta" veya "Zor" olmalıdır.
+  * Soru zorluğu; senaryodaki soru sayısı, dersin niteliği, sınıf seviyesi, öğrenme çıktısı ve istenen ölçme derinliğine göre dengeli belirlenmelidir.
+  * Kolay, orta ve zor sorular pedagojik dengede üretilmeli; üst düzey düşünme gerektiren sorular yapay bir kazanım etiketi kısıtlaması olmaksızın senaryo zorluk planına göre oluşturulmalıdır.
   * Sınavın 1. sorusu öğrenciyi cesaretlendirmek için "Kolay" veya "Orta" olmalı; "Zor" soru sınavın sonuna doğru yerleştirilmelidir.`;
 }
 
@@ -226,34 +228,69 @@ export function getQualityPedagogicalRules(targetCount: number): string {
 }
 
 /**
- * FAZ 3.3.2 - Yönerge Açıklığı, Bilişsel Düzey ve Pedagojik Kalite Kuralı
+ * FAZ 3.3.2 / TASK174 - Yönerge Açıklığı ve Pedagojik Kalite Kuralı (Genel Çekirdek)
+ * Tüm dersler için ortak: açık yönergeler, net tekil/çoğul beklentisi, soru kökünü tekrarlamama,
+ * ve yüzeysellik karşıtı analitik derinlik.
  */
-export const QUESTION_DIRECTIVE_CLARITY_RULE = `YÖNERGE AÇIKLIĞI VE BİLİŞSEL DÜZEY KORUNUMU KURALI (EN KRİTİK KURAL):
+export const UNIVERSAL_DIRECTIVE_CLARITY_RULE = `YÖNERGE AÇIKLIĞI VE BİLİŞSEL DÜZEY KORUNUMU KURALI (EN KRİTİK KURAL):
 - Soru kökünde öğrenciden tam olarak ne yapması istendiği açık, net ve şüphesiz ifade edilmelidir.
-- Tekil / Çoğul beklentisi açıkça belirtilmelidir (kaynak metinle %100 tutarlı olmalıdır):
-  * Tek bir cevap bekleniyorsa bu durum belirtilmeli ("tek bir cümleyle açıklayınız", "ana düşünceyi belirleyiniz" vb.).
+- Tekil / Çoğul beklentisi açıkça belirtilmelidir:
+  * Tek bir cevap bekleniyorsa bu durum belirtilmeli ("tek bir gerekçeyle açıklayınız", "temel nedeni belirleyiniz" vb.).
   * Birden fazla cevap veya örnek isteniyorsa sayı açıkça verilmelidir ("2 farklı örnek veriniz", "3 temel nedenini yazınız" vb.).
-  * Yazım-noktalama sorularında: Çoğul hata isteniyorsa metinde en az 2 somut hata yer almalıdır. Metinde tek hata varsa soru kökü KESİNLİKLE tekil olmalıdır ("yazım yanlışını bularak doğrusunu yazınız").
-- Noktalama görevi sorulan sorularda model cevap her işaretin metindeki somut görevini açıkça eşleştirmelidir (Örn: "İki nokta: Kendisinden sonra konuşma geleceğini belirtmek; Tırnak: Aktarma sözünü göstermek").
 - MODEL CEVAPTA SORU KÖKÜNÜ TEKRAR ETME YASAĞI: 'answer' alanı KESİNLİKLE soru kökünü tekrar edemez; doğrudan doğru çözümü ve yanıtı yazınız. 'alternativeAnswers' da model cevapla aynı temel gerçeği desteklemelidir.
-- ÖZEL AD VE EK YAZIMI (TDK): 3. teklik kişi iyelik eki olan özel adlarda kesme işareti addan sonra konur (Örn: 'Ankara Garı\'ndan', 'İstanbul Boğazı\'na'; 'Ankara Garın\'dan' gibi hatalı ayrımlar yapılamaz).
-- METİNDEN AKTARIM VE İMLA DOĞRULUĞU: Model cevapta metinden aktarılan sözcükler eksiksiz yazılmalıdır (Örn: metinde 'pideleri' geçiyorsa model cevapta 'pider' gibi kırpılmış değil, 'pideleri' yazılmalıdır).
-- Görev Bütünlüğü: Birbirinden bağımsız iki farklı görev tek bir soru cümlesinde iç içe geçirilmemeli, alt maddeler halinde ayrılmalıdır. Ancak birbiriyle doğrudan ilişkili ve bütünleşik bir beceriyi ölçen aşamalı görevler ("hatayı tespit edip doğrusunu yazınız") korunabilir; sırf "ve" bağlacı var diye yapay olarak bölünmemelidir.
+- Görev Bütünlüğü: Birbirinden bağımsız iki farklı görev tek bir soru cümlesinde iç içe geçirilmemeli, alt maddeler halinde ayrılmalıdır. Ancak birbiriyle doğrudan ilişkili aşamalı görevler ("hatayı tespit edip doğrusunu yazınız") korunabilir; sırf "ve" bağlacı var diye yapay olarak bölünmemelidir.
 - Sınıf Düzeyi ve Pedagojik Derinlik (Yüzeysellik Yasağı):
-  * Metinden geçen tek bir kelime/nesne avcılığı ("Hangi meyve alınmıştır?") KESİNLİKLE ÜRETİLEMEZ.
-  * T.O.5.6 gibi anlama soruları tek kelime değil, olayın gelişimini veya neden-sonuç ilişkisini bütüncül açıklamayı gerektirir. Tek kelimelik yanıtlara asla 12 puandan fazla verilemez; 15-20 puanlık sorular iki boyutlu açıklama gerektirir.
-  * Temsil Uyumu: Gerçek görsel yoksa afiş/resim sorulamaz. Yazım-noktalama soruları "Zor" değil "Kolay/Orta" etiketlenmelidir.
-  * Öğrenciden davranışı açıklaması, neden-sonuç ilişkisi kurması veya çıkarım yapması istenmelidir; yapay olarak zorlaştırılmamalı veya aşırı basitleştirilmemelidir.
+  * Metinden/bağlamdan tek bir kelime/nesne avcılığı ("Hangi nesne alınmıştır?") KESİNLİKLE ÜRETİLEMEZ.
+  * Sorular olayın gelişimini, bilimsel prensipleri veya neden-sonuç ilişkisini bütüncül açıklamayı gerektirir. Tek kelimelik yanıtlara asla 12 puandan fazla verilemez; 15-20 puanlık sorular çok boyutlu analitik açıklama gerektirir.
+  * Temsil Uyumu: Gerçek görsel yoksa afiş/resim sorulamaz.
+  * Öğrenciden kavramsal mekanizmayı açıklayabilmesi, neden-sonuç ilişkisi kurması veya bilimsel çıkarım yapması istenmelidir; yapay olarak zorlaştırılmamalı veya aşırı basitleştirilmemelidir.
 - Dili sadeleştirirken sorunun kazanımı, bilişsel düzeyi ve düşünme derinliği KESİNLİKLE düşürülmemelidir.`;
 
+export const TURKISH_DIRECTIVE_CLARITY_ADDITIONS = `
+- Türkçe Yazım ve Noktalama Yönergeleri:
+  * Yazım-noktalama sorularında: Çoğul hata isteniyorsa metinde en az 2 somut hata yer almalıdır. Metinde tek hata varsa soru kökü KESİNLİKLE tekil olmalıdır ("yazım yanlışını bularak doğrusunu yazınız").
+  * Noktalama görevi sorulan sorularda model cevap her işaretin metindeki somut görevini açıkça eşleştirmelidir (Örn: "İki nokta: Kendisinden sonra konuşma geleceğini belirtmek; Tırnak: Aktarma sözünü göstermek").
+  * ÖZEL AD VE EK YAZIMI (TDK): 3. teklik kişi iyelik eki olan özel adlarda kesme işareti addan sonra konur (Örn: 'Ankara Garı\\'ndan', 'İstanbul Boğazı\\'na'; 'Ankara Garın\\'dan' gibi hatalı ayrımlar yapılamaz).
+  * METİNDEN AKTARIM VE İMLA DOĞRULUĞU: Model cevapta metinden aktarılan sözcükler eksiksiz yazılmalıdır (Örn: metinde 'pideleri' geçiyorsa model cevapta 'pider' gibi kırpılmış değil, 'pideleri' yazılmalıdır).
+  * T.O.5.6 gibi anlama soruları tek kelime değil, olayın gelişimini veya neden-sonuç ilişkisini bütüncül açıklamayı gerektirir.`;
+
 /**
- * FAZ 3.3.2 - Rubrik ve Dereceli Puanlama Anahtarı Tasarım Kuralı
+ * Geriye dönük uyumluluk için statik Türkçe içeren tam kural
+ */
+export const QUESTION_DIRECTIVE_CLARITY_RULE = `${UNIVERSAL_DIRECTIVE_CLARITY_RULE}${TURKISH_DIRECTIVE_CLARITY_ADDITIONS}`;
+
+/**
+ * TASK174 - Branşa Duyarlı Yönerge Açıklığı Kuralı
+ * Türkçe branşına özel dil bilgisi/noktalama kurallarını yalnızca Türkçe dersine enjekte eder;
+ * Fen Bilimleri, Matematik ve diğer derslere yalnızca genel yönerge açıklığını aktarır.
+ */
+export function getDirectiveClarityRule(subjectId?: SubjectId | string): string {
+  if (subjectId === 'turkce') {
+    return QUESTION_DIRECTIVE_CLARITY_RULE;
+  }
+  return UNIVERSAL_DIRECTIVE_CLARITY_RULE;
+}
+
+/**
+ * FAZ 3.3.2 / TASK174 - Rubrik ve Dereceli Puanlama Anahtarı Tasarım Kuralı
+ * Analitik basamaklama, kısmi puanlama ve puan eşitliğini tek elden yönetir.
  */
 export const RUBRIC_DESIGN_RULE = `ANALİTİK DERECELİ PUANLAMA ANAHTARI (RUBRİK) TEŞVİK KURALI:
-- Sorunun çözüm süreci birden fazla basamak, kavram teşhisi ve analitik gerekçelendirme gerektiriyorsa rubrik KESİNLİKLE analitik kriter basamaklarına ayrılmalıdır:
+- Sorunun çözüm süreci birden fazla basamak, kavram teşhisi ve analitik gerekçelendirme gerektiriyorsa rubrik analitik kriter basamaklarına ayrılmalıdır:
   * Kriter 1: Doğru kavramsal / olgusal teşhis ve tespit (Örn: 8 puan)
   * Kriter 2: Bilimsel gerekçelendirme, metin kanıtı veya işlem basamakları (Örn: 7 puan)
-- YÜKSEK PUANLI (>= 12 PUAN) SORULARDA TEK ÖLÇÜT KESİNLİKLE YASAKTIR:
-  * 12-20 puanlık sorularda bütün puanı tek ölçüte bağlamak kısmi puanlamayı imkânsız kılar. Bu sorular en az 2 analitik ölçüte (Örn: Kavramsal tespit 8-9 p, Gerekçelendirme 8-9 p) bölünmek zorundadır.
-- Soru doğrudan tek bir olguyu ölçüyorsa ve puanı < 12 ise tek kriterli rubrik kullanılabilir (zorla bölünmez).
+- Yüksek puanlı (>= 12 p) sorularda tek ölçüt yasaktır; kısmi puanlama için en az 2 analitik ölçüte bölünmelidir.
+- Doğrudan tek olgulu ve < 12 p sorularda tek ölçüt kullanılabilir (zorla bölünmez).
 - Her sorunun rubrik kriter puanlarının toplamı, o sorunun 'points' değerine TAM EŞİT olmak zorundadır.`;
+
+/**
+ * TASK 158 / TASK 161 - Matematik Dersi İçin Otomatik Görsel Desteği Kuralı
+ */
+export const AI_MATHEMATICS_VISUAL_DIRECTIVES = `MATEMATİK GÖRSEL KURALLARI VE PEDAGOJİK MODELLEME ("visual" alanı):
+- PEDAGOJİK GÖRSEL: EBOB parselleme/fayans ('area_perimeter'), kare/dikdörtgen alan-çevre ('polygon_2d'), sayı doğrusunda köklü sayı ('number_line') gibi görselin düşünmeyi desteklediği sorularda "visual" üretiniz.
+- GÖRSEL GEREKMEYEN: Salt işlem, denklem veya asal çarpan algoritması gibi sözel/aritmetik sorularda bu alanı EKLEMEYİNİZ.
+- DESTEKLENEN: "geometry_shape" (subType: polygon_2d, angle_model, line_system, grid_coordinate, area_perimeter), "number_line", "fraction_model".
+  * number_line: params: { min: 0, max: 10, step: 1, points: [{ label: "?", value: 4.5 }] }
+  * area_perimeter: params: { subType: "area_perimeter", totalWidth: 120, totalHeight: 80, tileWidth: 40, tileHeight: 40, widthLabel: "120 m", heightLabel: "80 m" }
+  * polygon_2d: params: { subType: "polygon_2d", shape: "rectangle", width: 12, height: 8, edgeLabels: ["12 cm", "8 cm", "12 cm", "8 cm"] }
+- ANTI-LEAK: Bilinmeyen değerler için görsel etiketinde daima "?" kullanınız; cevabı asla doğrudan yazmayınız.`;

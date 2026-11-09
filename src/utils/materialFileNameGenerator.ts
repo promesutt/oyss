@@ -267,9 +267,12 @@ export function getMaterialPdfFileNameWithExtension(params: MaterialFileNamePara
   return base ? `${base}.pdf` : 'OYSS_Materyal.pdf';
 }
 
+export const APP_PAGE_TITLE = 'OYSS Rehberi | Ortak Yazılılara Hazırlık';
+
 /**
  * Tarayıcı PDF indirme/yazdırma tetikleyicisi.
- * document.title değerini standart dosya adına ayarlar ve window.print() fonksiyonunu çalıştırır.
+ * document.title değerini yazdırma anında standart dosya adına ayarlar,
+ * window.print() tamamlandıktan sonra kalıcı 'OYSS Rehberi | Ortak Yazılılara Hazırlık' sekme başlığına geri döndürür.
  */
 export function triggerPdfPrint(params: MaterialFileNameParams): void {
   const pdfTitle = generateMaterialPdfFileName(params);
@@ -277,6 +280,17 @@ export function triggerPdfPrint(params: MaterialFileNameParams): void {
     document.title = pdfTitle;
   }
   if (typeof window !== 'undefined' && typeof window.print === 'function') {
+    const restoreTitle = () => {
+      if (typeof document !== 'undefined') {
+        document.title = APP_PAGE_TITLE;
+      }
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('afterprint', restoreTitle);
+      }
+    };
+    window.addEventListener('afterprint', restoreTitle);
     window.print();
+    // Fallback if afterprint does not fire in certain browser configurations
+    setTimeout(restoreTitle, 1000);
   }
 }

@@ -6,7 +6,7 @@ import {
   classifyExamQuestions, 
   getExamClassificationDetails 
 } from '../types';
-import { getOfficialOutcomeTitle } from '../data/curriculumData';
+import { getOfficialOutcomeTitle, resolveOutcomeMetadata } from '../data/curriculumData';
 import { SAMPLE_EXAMS } from '../data/sampleExams';
 import { formatDifficultyPlanText, calibrateQuestionDifficulties } from './difficultyCalibrator';
 import { distributeExamPoints, reconcileRubricPoints } from './examScoring';
@@ -18,6 +18,8 @@ import {
   isSemanticallySelfContainedQuestion
 } from './sourceMaterialValidator';
 import { parseExamJsonSafely } from './jsonParser';
+import { validateAndSanitizeAiVisual } from './aiVisualValidator';
+import { ensureExamQuality } from './qualityAssurance';
 import { buildLiveExamPrompt, buildAvoidDirectives } from '../generators/prompts';
 
 const POOL_NAMES_A = [
@@ -626,15 +628,24 @@ export function buildProceduralSyntheticQuestion(
   targetPts: number,
   subjectId: string,
   variationIndex: number = 0,
-  cognitiveLevel: string = 'Karmaşık Bilişsel Süreçler'
+  cognitiveLevel: string = 'Karmaşık Bilişsel Süreçler',
+  scenarioNote?: string
 ): GeneratedQuestionItem {
+  const meta = resolveOutcomeMetadata(outcomeCode, scenarioNote, cognitiveLevel as any);
+  const cleanTitle = (officialTitle && officialTitle !== outcomeCode && !officialTitle.startsWith(outcomeCode))
+    ? officialTitle
+    : meta.displayLabel;
+  const topic = (meta.topicNote && meta.topicNote !== outcomeCode)
+    ? meta.topicNote
+    : cleanTitle;
+
   if (subjectId === 'turkce') {
     const ctx = TURKISH_PROCEDURAL_CONTEXTS[(variationIndex + idx) % TURKISH_PROCEDURAL_CONTEXTS.length];
     if (outcomeCode.includes('T.O.5.20') || outcomeCode.includes('T.O.7.4')) {
       return {
         number: idx + 1,
         outcome: outcomeCode,
-        outcomeTitle: officialTitle,
+        outcomeTitle: cleanTitle,
         difficulty: 'Orta',
         level: cognitiveLevel || 'Basit Bilişsel Süreçler',
         templateType: 'Kelime Anlamı & Bağlamsal Çözümleme',
@@ -658,7 +669,7 @@ export function buildProceduralSyntheticQuestion(
       return {
         number: idx + 1,
         outcome: outcomeCode,
-        outcomeTitle: officialTitle,
+        outcomeTitle: cleanTitle,
         difficulty: 'Zor',
         level: cognitiveLevel || 'Karmaşık Bilişsel Süreçler',
         templateType: 'Deyim ve Zengin Söz Varlığıyla Yazma',
@@ -683,7 +694,7 @@ export function buildProceduralSyntheticQuestion(
       return {
         number: idx + 1,
         outcome: outcomeCode,
-        outcomeTitle: officialTitle,
+        outcomeTitle: cleanTitle,
         difficulty: 'Orta',
         level: cognitiveLevel || 'Karmaşık Bilişsel Süreçler',
         templateType: 'Kurgusal Senaryo & Vaka İncelemesi',
@@ -706,23 +717,202 @@ export function buildProceduralSyntheticQuestion(
     }
   }
 
-  // Diğer dersler için genel analitik sentetik soru
-  const genericStimulus = `${officialTitle} konusunda günlük hayat uygulamaları ve bilimsel süreç basamakları ayrıntılı olarak ele alınmaktadır. Bu süreçte temel kavramlar ile neden-sonuç ilişkileri birlikte incelenir.`;
+  // Branş ve konu bazlı dinamik sentetik soru motoru (Anlamsız şablon ve kod sızıntısı KESİNLİKLE engellenmiştir)
+  const normTopic = topic.toLowerCase();
+  const vSlot = (variationIndex * 5 + idx) % 4;
+
+  let stim = '';
+  let qStem = '';
+  let modelAns = '';
+  let solExp = '';
+  let rubricA = 'Kavramsal ilkelerin ve değişkenlerin doğru tespiti';
+  let rubricB = 'Neden-sonuç ilişkisinin ve gerekçenin bilimsel analizi';
+  let tType: any = 'Kurgusal Senaryo & Vaka İncelemesi';
+
+  if (subjectId === 'fen_bilimleri') {
+    if (normTopic.includes('enerji')) {
+      if (vSlot === 0 || vSlot === 2) {
+        stim = `Fen bilimleri laboratuvarında özdeş K ve L bilyeleri kullanılarak bir deney düzeneği kurulmuştur. Sürtünmesiz eğik düzlemin $h$ ve $2h$ yüksekliklerinden serbest bırakılan bilyelerin yatay yoldaki özdeş takozlara çarptıklarında takozları sırasıyla $x$ ve $2x$ mesafesi kadar ittiği kaydedilmiştir.`;
+        qStem = `Deneyde bilyelerin bırakıldıkları yükseklikler ile takozları itme mesafeleri arasındaki ilişkiyi, çekim potansiyel enerjisi ve kinetik enerji dönüşümü ilkeleri doğrultusunda gerekçelendirerek açıklayınız.`;
+        modelAns = `Yükseklik arttıkça bilyenin başlangıçtaki çekim potansiyel enerjisi artar. Eğik düzlemin dibinde bu potansiyel enerji kinetik enerjiye dönüşür. 2h yüksekliğinden bırakılan L bilyesi daha büyük sürate ve kinetik enerjiye sahip olduğu için takozu daha uzağa itmiştir.`;
+        solExp = `Çekim potansiyel enerjisi formülü ($E_p = m \\cdot g \\cdot h$) gereği yükseklik arttıkça kinetik enerjiye dönüşen miktar artar ve yapılan iş büyür.`;
+        rubricA = 'Yükseklik ile çekim potansiyel enerjisi arasındaki doğru orantının tespiti';
+        rubricB = 'Kinetik enerjiye dönüşüm ve takozun itilme gerekçesinin doğru açıklanması';
+      } else {
+        stim = `Yatay bir yolda belirli bir süratle ilerleyen kaykayın, pürüzlü ve kumlu bir yüzeye girdiğinde bir süre sonra yavaşlayarak durduğu gözlemlenmiştir. Kaykayın tekerleklerinin ve temas ettiği yol yüzeyinin sıcaklığının bir miktar arttığı termal sensörlerle tespit edilmiştir.`;
+        qStem = `Kaykayın yavaşlayıp durması ve tekerlek yüzeylerinin ısınması olayını, sürtünme kuvveti ve enerjinin korunumu ilkesi çerçevesinde açıklayınız.`;
+        modelAns = `Kaykayın sahip olduğu kinetik enerji, tekerlekler ile pürüzlü zemin arasındaki sürtünme kuvveti nedeniyle ısı ve ses enerjisine dönüşmüştür. Mekanik enerji azalmış ancak toplam enerji yok olmayıp korunmuştur.`;
+        solExp = `Sürtünme kuvveti mekanik enerjiyi ısıya dönüştürür; sistemdeki toplam enerji sabittir.`;
+        rubricA = 'Sürtünme kuvvetinin kinetik enerjiyi ısıya dönüştürdüğünün tespiti';
+        rubricB = 'Toplam enerjinin korunduğu ilkesinin bilimsel gerekçelendirilmesi';
+      }
+    } else if (normTopic.includes('sindirim')) {
+      if (vSlot === 0 || vSlot === 2) {
+        stim = `Bir biyoloji deneyinde özdeş üç deney tüpüne eşit miktarda zeytinyağı ve su konulmuştur. 1. tüpe sadece safra sıvısı, 2. tüpe sadece pankreas öz suyu, 3. tüpe ise hem safra sıvısı hem de pankreas öz suyu eklenerek $37\\text{ °C}$ sıcaklıktaki su banyosunda bekletilmiştir. Bir süre sonra 3. tüpteki yağların tamamen sindirildiği gözlemlenmiştir.`;
+        qStem = `3. deney tüpünde yağların sindiriminin en hızlı gerçekleşmesinin nedenini, safra sıvısı ile pankreas öz suyunun sindirimdeki farklı rollerini belirterek açıklayınız.`;
+        modelAns = `Safra sıvısı yağları fiziksel (mekanik) olarak küçük damlacıklara ayırıp enzimlerin etki edeceği yüzey alanını artırır. Pankreas öz suyundaki lipaz enzimi de genişleyen yüzey sayesinde yağların kimyasal sindirimini çok daha hızlı ve eksiksiz tamamlar.`;
+        solExp = `Fiziksel sindirim kimyasal sindirimi hızlandırır; safra mekanik parçalama yaparken pankreas öz suyu kimyasal bağları yıkar.`;
+        rubricA = 'Safra sıvısının mekanik (fiziksel) sindirim yaptığının tespiti';
+        rubricB = 'Pankreas öz suyunun kimyasal sindirimdeki rolü ve yüzey alanı etkisinin açıklanması';
+      } else {
+        stim = `İnce bağırsağın iç yüzeyi incelendiğinde milyonlarca parmak benzeri villus (tümür) çıkıntısı bulunduğu ve her villusun içinde yoğun kılcal kan ve lenf damarlarının yer aldığı görülmüştür.`;
+        qStem = `İnce bağırsakta villus yapılarının bulunmasının ve yüzey alanının geniş olmasının besinlerin emilimi ve hücrelere ulaştırılması açısından sağladığı biyolojik avantajı açıklayınız.`;
+        modelAns = `Villuslar emilim yüzey alanını yüzlerce kat artırır. Böylece sindirilmiş besin yapı taşları (glikoz, amino asit, yağ asitleri) difüzyon ve aktif taşımayla çok daha hızlı ve kayıpsız bir şekilde kana ve lenfe emilerek dokulara taşınır.`;
+        solExp = `Villuslar yüzey alanını büyüterek sindirilmiş monomerlerin emilim hızını ve verimini maksimize eder.`;
+        rubricA = 'Villusların emilim yüzey alanını artırdığının tespiti';
+        rubricB = 'Besin yapı taşlarının kana/lenfe emilim verimliliğinin gerekçelendirilmesi';
+      }
+    } else if (normTopic.includes('dolaşım')) {
+      if (vSlot === 0 || vSlot === 2) {
+        stim = `İnsan dolaşım sistemi incelenirken sağ karıncıktan çıkan kirli kanın akciğerlere gidip temizlendikten sonra kalbin sol kulakçığına döndüğü; sol karıncıktan çıkan temiz kanın ise tüm vücut organlarına dağıtıldıktan sonra kalbin sağ kulakçığına ulaştığı şematik olarak gösterilmiştir.`;
+        qStem = `Küçük kan dolaşımı ile büyük kan dolaşımının temel amaçlarını ve dolaşımdaki damarların taşıdığı kanın oksijen durumunu karşılaştırarak açıklayınız.`;
+        modelAns = `Küçük kan dolaşımının amacı kirli kanı akciğerlerde oksijence zenginleştirmektir (temizlemektir). Büyük kan dolaşımının amacı ise temiz kanı tüm dokulara ulaştırıp hücrelere besin ve oksijen taşımak, atık karbondioksiti kalbe geri getirmektir.`;
+        solExp = `Küçük dolaşım kalp ile akciğer arasında kanı temizler; büyük dolaşım kalp ile vücut dokuları arasında madde iletimini sağlar.`;
+        rubricA = 'Küçük ve büyük kan dolaşımının amaçlarının doğru ayırt edilmesi';
+        rubricB = 'Akciğer atardamarı ve toplardamarındaki oksijen durumunun doğru belirtilmesi';
+      } else {
+        stim = `Kalbin yapısı incelendiğinde sol karıncık duvarındaki kas tabakasının sağ karıncığa göre belirgin şekilde daha kalın ve güçlü olduğu tespit edilmiştir. Ayrıca kulakçıklar ile karıncıklar arasında tek yöne açılan kapakçıklar bulunmaktadır.`;
+        qStem = `Sol karıncık kas tabakasının daha kalın olmasının ve tek yönlü kapakçıkların bulunmasının kan dolaşımı mekanizması açısından önemini açıklayınız.`;
+        modelAns = `Sol karıncık temiz kanı aort damarıyla tüm vücuda (baş, kollar, bacaklar ve organlara) yüksek basınçla pompalamak zorundadır; bu nedenle kas tabakası kalındır. Kapakçıklar ise kanın pompalanırken geriye doğru kaçmasını engelleyerek tek yönlü akışı garanti eder.`;
+        solExp = `Büyük dolaşım yüksek direnç gerektirdiğinden sol miyokard kalındır; atriyoventriküler kapakçıklar geri akışı önler.`;
+        rubricA = 'Sol karıncığın tüm vücuda yüksek basınçla kan pompalamasının belirtilmesi';
+        rubricB = 'Kapakçıkların kanın geriye kaçışını engellediğinin açıklanması';
+      }
+    } else if (normTopic.includes('solunum')) {
+      if (vSlot === 0 || vSlot === 2) {
+        stim = `Öğrenciler cam fanus, Y borusu, iki küçük balon ve tabanına esnek lastik gerilmiş bir akciğer modeli hazırlamıştır. Lastik taban aşağı doğru çekildiğinde fanus içindeki balonların hava ile dolup şiştiği; lastik taban serbest bırakıldığında ise balonların söndüğü gözlemlenmiştir.`;
+        qStem = `Modeldeki lastik tabanın aşağı çekilmesi olayını, insan vücudundaki diyafram kasının hareketi, göğüs kafesi hacmi ve soluk alma mekanizması ile ilişkilendirerek açıklayınız.`;
+        modelAns = `Lastik taban aşağı çekildiğinde diyafram kasının kasılıp düzleşmesi modellenmiştir. Bu durumda göğüs kafesi hacmi artar, iç basınç düşer ve dış ortamdaki hava akciğerlere hücum ederek soluk alma gerçekleşir.`;
+        solExp = `Diyafram kası kasıldığında göğüs hacmi artar, basınç azalır ve akciğerlere hava dolar.`;
+        rubricA = 'Lastik tabanın diyafram kasının kasılıp düzleşmesini temsil ettiğinin tespiti';
+        rubricB = 'Hacim artışı ve basınç düşüşünün soluk alma ile bilimsel ilişkilendirilmesi';
+      } else {
+        stim = `Akciğerlerdeki bronşiyollerin ucunda yer alan tek katlı yassı epitel dokudan oluşmuş mikroskobik alveoller (hava kesecikleri), yoğun bir kılcal damar ağı ile sarılmıştır.`;
+        qStem = `Alveollerin duvarının çok ince olmasının ve etrafının yoğun kılcal damarlarla çevrili olmasının gaz değişimi (oksijen ve karbondioksit geçişi) açısından önemini açıklayınız.`;
+        modelAns = `Alveol duvarının tek katlı ve ince olması difüzyon mesafesini kısaltır. Yoğun kılcal damar ağı ise geniş bir yüzey alanı sağlayarak solunan havadaki oksijenin hızla kana geçmesini, kandaki karbondioksitin ise solukla atılmak üzere alveole geçmesini en yüksek verimle gerçekleştirir.`;
+        solExp = `Alveol-kılcal damar teması Fick difüzyon yasası gereği ince yüzey ve geniş alanda maksimum gaz alışverişi sağlar.`;
+        rubricA = 'İnce çeperin difüzyonu kolaylaştırdığının belirtilmesi';
+        rubricB = 'Kılcal damar ağının gaz değişim yüzey alanını artırdığının gerekçelendirilmesi';
+      }
+    } else if (normTopic.includes('basınç')) {
+      if (vSlot === 0 || vSlot === 2) {
+        stim = `Özdeş üç tuğla kullanılarak yapılan bir deneyde; tuğla önce geniş tabanı üzerine, ardından dar tabanı üzerine sünger zemin üzerine konulmuş ve süngerdeki batma miktarları ölçülmüştür. Son aşamada dar tabandaki tuğlanın üzerine bir tuğla daha eklenmiştir.`;
+        qStem = `Deneyde tuğlaların taban alanları ve ağırlıkları ile süngerdeki batma miktarları arasındaki ilişkiyi katı basıncı prensipleriyle açıklayınız.`;
+        modelAns = `Katı basıncı ağırlıkla doğru, temas yüzey alanıyla ters orantılıdır ($P = G/S$). Geniş tabandan dar tabana geçildiğinde yüzey alanı küçüldüğü için batma artar. Üzerine ikinci tuğla konulduğunda ağırlık arttığı için basınç ve batma en yüksek seviyeye ulaşır.`;
+        solExp = `Katı basıncı bağıntısı $P = G/S$ olup kuvvet arttıkça veya yüzey küçüldükçe basınç artar.`;
+        rubricA = 'Yüzey alanı küçüldükçe katı basıncının arttığının gerekçelendirilmesi';
+        rubricB = 'Ağırlık arttıkça basıncın arttığının formül veya kavramla delillendirilmesi';
+      } else {
+        stim = `Derinlikleri aynı olan iki özdeş kaba eşit yükseklikte ($h$) su ($d = 1\\text{ g/cm}^3$) ve yoğunluğu daha büyük olan tuzlu su ($d = 1{,}2\\text{ g/cm}^3$) doldurulmuştur. Kapların tabanlarındaki manometrelerle sıvı basınçları ölçülmüştür.`;
+        qStem = `Kap tabanlarındaki sıvı basınçlarını karşılaştırınız ve sıvı basıncını etkileyen faktörler (derinlik ve yoğunluk) doğrultusunda sonucu gerekçelendiriniz.`;
+        modelAns = `Sıvı basıncı derinlik ve sıvının yoğunluğu ile doğru orantılıdır ($P = h \\cdot d \\cdot g$). Sıvı yükseklikleri eşit olduğundan yoğunluğu daha büyük olan tuzlu suyun bulunduğu kap tabanındaki sıvı basıncı, saf suyun bulunduğu kap tabanındakinden daha büyüktür.`;
+        solExp = `Sıvı basıncı formülü $P = h \\cdot d \\cdot g$ gereği aynı derinlikte yoğunluk arttıkça basınç artar.`;
+        rubricA = 'Yoğunluk ile sıvı basıncı arasındaki doğru orantının belirtilmesi';
+        rubricB = 'Tuzlu suyun taban basıncının saf sudan büyük olduğunun gerekçeli tespiti';
+      }
+    } else {
+      if (vSlot === 0) {
+        stim = `Laboratuvar ortamında ${topic} konusu kapsamında özdeş değişkenler ve kontrollü deney düzenekleri kurularak ölçümler yapılmıştır. Elde edilen bulgular doğrultusunda sistemdeki fiziksel ve kimyasal değişimler incelenmiştir.`;
+        qStem = `Yukarıda verilen deney düzeneğinde gerçekleşen ${topic} durumunu göz önünde bulundurarak, gözlemlenen sonucun temel bilimsel gerekçesini açıklayınız.`;
+      } else if (vSlot === 1) {
+        stim = `Günlük yaşamda karşılaşılan bir teknolojik araçta ${topic} ilkelerinden yararlanılarak enerji ve verimlilik optimizasyonu sağlanmıştır.`;
+        qStem = `Bu araçta kullanılan ${topic} prensibinin çalışma mekanizmasını ve sağladığı temel faydayı açıklayınız.`;
+      } else if (vSlot === 2) {
+        stim = `Bir biyoloji ve çevre araştırmasında iki farklı canlı popülasyonunun ${topic} süreçlerine verdikleri tepkiler gözlemlenmiştir.`;
+        qStem = `Gözlem verileri doğrultusunda ${topic} durumunun ekosistem ve canlı metabolizması üzerindeki etkisini gerekçelendiriniz.`;
+      } else {
+        stim = `Bilim insanları tarafından hazırlanan hipotez testinde ${topic} sürecine etki eden bağımsız değişkenler kademeli olarak değiştirilmiştir.`;
+        qStem = `Bağımsız değişkenin değişimi ile ${topic} çıktısı arasındaki neden-sonuç ilişkisini analiz ederek açıklayınız.`;
+      }
+      modelAns = `Öğrencinin ${topic} konusundaki kavramsal ilkeleri doğru teşhis etmesi, neden-sonuç bağını kurması ve değişkenlerin etkisini bilimsel gerekçelerle açıklaması beklenir.`;
+      solExp = `${topic} sürecinde gerçekleşen temel bilimsel prensipler ve gözlem sonuçları doğrulanmıştır.`;
+      rubricA = `${topic} konusundaki kavramsal unsurların doğru tespiti`;
+      rubricB = 'Deney değişkenlerinin ve neden-sonuç ilişkisinin analitik delillendirilmesi';
+    }
+  } else if (subjectId === 'matematik') {
+    if (normTopic.includes('rasyonel') || normTopic.includes('kesir')) {
+      stim = `Bir marangoz elindeki $4\\frac{1}{2}\\text{ metre}$ uzunluğundaki ahşap kalası, her biri $\\frac{3}{4}\\text{ metre}$ uzunluğunda eşit parçalara ayırmak istemektedir.`;
+      qStem = `Marangozun kalastan elde edebileceği parça sayısını rasyonel sayılarda bölme işlemi basamaklarını göstererek hesaplayınız.`;
+      modelAns = `Tam sayılı kesir bileşik kesre çevrilir: $4\\frac{1}{2} = \\frac{9}{2}\\text{ m}$. Rasyonel sayılarda bölme kuralı uygulanır: $\\frac{9}{2} \\div \\frac{3}{4} = \\frac{9}{2} \\cdot \\frac{4}{3} = 6$ parça elde edilir.`;
+      solExp = `Bileşik kesre dönüştürme ve rasyonel bölme adımlarıyla işlem tamamlanır.`;
+      rubricA = 'Kesirlerin dönüştürülmesi ve uygun bölme modelinin kurulması';
+      rubricB = 'İşlem adımlarının doğru yürütülmesi ve birimli sonucun bulunması';
+    } else if (normTopic.includes('prizma') || normTopic.includes('hacim') || normTopic.includes('alan') || normTopic.includes('küp')) {
+      if (vSlot === 0 || vSlot === 2) {
+        stim = `Ayrıt uzunlukları $60\\text{ cm}$, $40\\text{ cm}$ ve $50\\text{ cm}$ olan dikdörtgenler prizması şeklindeki bir akvaryumun yarısına kadar su doldurulmuştur.`;
+        qStem = `Akvaryumun toplam hacmini ve içindeki suyun hacmini litre ($L$) cinsinden hesaplayınız ($1\\text{ dm}^3 = 1\\text{ L}$, $1000\\text{ cm}^3 = 1\\text{ dm}^3$).`;
+        modelAns = `Toplam hacim: $V = 60 \\cdot 40 \\cdot 50 = 120.000\\text{ cm}^3 = 120\\text{ dm}^3 = 120\\text{ L}$. Yarısı su dolu olduğuna göre suyun hacmi: $120 \\div 2 = 60\\text{ L}$ su bulunur.`;
+        solExp = `Dikdörtgenler prizmasında hacim formülü $V = a \\cdot b \\cdot c$ ve hacim-litre birim dönüşümü uygulanır.`;
+        rubricA = 'Prizmanın santimetreküp cinsinden hacminin ve litreye dönüşümünün doğru yapılması';
+        rubricB = 'Yarı dolu su hacminin birimli olarak eksiksiz hesaplanması';
+      } else {
+        stim = `Taban ayrıtları $10\\text{ cm}$ ve $15\\text{ cm}$, yüksekliği $20\\text{ cm}$ olan dikdörtgenler prizması şeklindeki kapalı bir hediye kutusunun tüm dış yüzeyi kaplama kâğıdı ile kaplanacaktır.`;
+        qStem = `Bu kutuyu kaplamak için en az kaç santimetrekare ($\text{cm}^2$) kaplama kâğıdı gerektiğini yüzey alanı formülü basamaklarını göstererek bulunuz.`;
+        modelAns = `Yüzey alanı: $A = 2(ab + bc + ac) = 2(10 \\cdot 15 + 15 \\cdot 20 + 10 \\cdot 20) = 2(150 + 300 + 200) = 2(650) = 1300\\text{ cm}^2$ kaplama kâğıdı gerekir.`;
+        solExp = `Dikdörtgenler prizmasının yüzey alanı 6 yüzün alanları toplamıdır.`;
+        rubricA = 'Karşılıklı yüz çiftlerinin alanlarının doğru modellenmesi';
+        rubricB = 'Toplam yüzey alanının hatasız toplanarak bulunması';
+      }
+    } else if (normTopic.includes('veri') || normTopic.includes('grafik') || normTopic.includes('istatistik')) {
+      stim = `Bir okulun 7/A ve 7/B sınıflarının bir haftada topladıkları atık kâğıt miktarları (kg) günlere göre kaydedilmiş ve sütun grafiğinde karşılaştırılmıştır. 7/A sınıfı düzenli olarak günde ortalama $15\\text{ kg}$ kâğıt toplarken, 7/B sınıfının topladığı miktarlar günlere göre $5\\text{ kg}$ ile $30\\text{ kg}$ arasında değişkenlik göstermiştir.`;
+      qStem = `Verilen durumdaki verileri aritmetik ortalama ve açıklık (tutarlılık/istikrar) kavramları doğrultusunda değerlendirerek hangi sınıfın geri dönüşüm sürecinde daha istikrarlı olduğunu gerekçelendiriniz.`;
+      modelAns = `Açıklık değeri küçük olan gruplar daha istikrarlıdır. 7/A sınıfının günlük topladığı miktarlar ortalama etrafında toplandığı için açıklığı küçüktür ve geri dönüşüm sürecinde daha tutarlı ve istikrarlıdır.`;
+      solExp = `Aritmetik ortalama veri grubunun merkezini, açıklık ise verilerin dağılım ve istikrarını gösterir.`;
+      rubricA = 'Açıklık ve istikrar kavramlarının doğru ilişkilendirilmesi';
+      rubricB = '7/A sınıfının gerekçeli olarak daha tutarlı olduğunun açıklanması';
+    } else if (normTopic.includes('cebir') || normTopic.includes('denklem')) {
+      stim = `Kısa kenarı $(2x + 1)\\text{ metre}$, uzun kenarı ise kısa kenarından $3\\text{ metre}$ daha uzun olan dikdörtgen şeklindeki bir sebze bahçesinin etrafına 2 sıra tel çekilecektir.`;
+      qStem = `Bahçenin çevresini $x$ cinsinden cebirsel ifade olarak yazınız ve 2 sıra tel için gerekli toplam tel uzunluğunu en sade biçimde hesaplayınız.`;
+      modelAns = `Uzun kenar: $(2x + 1) + 3 = 2x + 4\\text{ m}$. Dikdörtgen çevresi: $2[(2x + 1) + (2x + 4)] = 2(4x + 5) = 8x + 10\\text{ m}$. İki sıra tel için: $2(8x + 10) = 16x + 20\\text{ metre}$ tel gerekir.`;
+      solExp = `Cebirsel ifadelerde benzer terimlerin toplanması ve parantezin çarpma ile dağıtılması adımları uygulanır.`;
+      rubricA = 'Uzun kenarın ve çevre bağıntısının cebirsel olarak doğru kurulması';
+      rubricB = 'Benzer terimlerin toplanması ve iki sıra tel çarpımının en sade biçimde bulunması';
+    } else {
+      stim = `Bir matematiksel problemde ${topic} konusuyla ilgili veriler toplanmış ve değişkenler arasındaki sayısal ilişkiler modellenmiştir.`;
+      qStem = `Verilen durumdaki ${topic} ilişkisini dikkate alarak gerekli matematiksel işlem basamaklarını kurunuz ve sonucu gerekçelendiriniz.`;
+      modelAns = `Öğrencinin ${topic} konusundaki işlem kurallarını ve bağıntıları doğru uygulayarak işlem adımlarını eksiksiz sunması beklenir.`;
+      solExp = `Analitik matematik kuralları ve işlem basamakları doğrulanmıştır.`;
+      rubricA = 'Problemin matematiksel modelinin ve formülünün doğru kurulması';
+      rubricB = 'İşlem basamaklarının hatasız yürütülmesi ve sonucun doğrulanması';
+    }
+  } else if (subjectId === 'sosyal_bilgiler') {
+    stim = `Tarihî kaynaklar incelendiğinde ${topic} sürecinde alınan kararların toplumun siyasi, sosyal ve ekonomik yapısında önemli değişimlere yol açtığı görülmektedir.`;
+    qStem = `${topic} konusunun ortaya çıkış gerekçelerini ve millî birlik / toplumsal dayanışma açısından doğurduğu sonuçları açıklayınız.`;
+    modelAns = `Öğrencinin ${topic} konusundaki tarihsel neden-sonuç bağını kurması, dönemin koşullarını dikkate alarak kararların çok boyutlu etkilerini delillendirmesi beklenir.`;
+    solExp = `Tarihsel neden-sonuç analizi ve çok boyutluluk ilkeleri uygulanmıştır.`;
+    rubricA = 'Tarihsel olgunun ortaya çıkış nedenlerinin doğru tespiti';
+    rubricB = 'Toplumsal ve millî sonuçların gerekçelendirilerek açıklanması';
+  } else if (subjectId === 'din_kulturu') {
+    stim = `İslam dininin temel kaynaklarında ${topic} ile ilgili ilkeler açıklanırken insanın bireysel ve toplumsal sorumluluklarına vurgu yapılmıştır.`;
+    qStem = `${topic} konusunun bireyin ahlaki gelişimi ve toplumda adalet / yardımlaşma bilincinin yerleşmesi açısından önemini açıklayınız.`;
+    modelAns = `Öğrencinin ${topic} kavramının dini ve ahlaki boyutunu doğru teşhis etmesi, paylaşma, adalet ve sorumluluk ilkeleriyle ilişkilendirerek gerekçelendirmesi beklenir.`;
+    solExp = `Kavramsal anlama ve ahlaki ilkelerin günlük yaşamla ilişkilendirilmesi sağlanmıştır.`;
+    rubricA = `${topic} kavramının anlam ve kapsamının doğru belirtilmesi`;
+    rubricB = 'Toplumsal dayanışma ve ahlaki sorumlulukla ilişkisinin gerekçelendirilmesi';
+  } else {
+    stim = `In the reading context regarding "${topic}", students examine real-life situations, personal preferences, and communicative tasks.`;
+    qStem = `Based on the context of "${topic}", explain the main reason for the given situation in a complete and grammatically correct English sentence.`;
+    modelAns = `Students are expected to state a clear reason using the appropriate functional target vocabulary and grammar structures related to ${topic}.`;
+    solExp = `Communicative purpose and grammatical accuracy related to ${topic} are verified.`;
+    rubricA = 'Correct identification of the communicative goal and reason';
+    rubricB = 'Grammatical accuracy, appropriate vocabulary, and sentence structure';
+  }
+
   return {
     number: idx + 1,
     outcome: outcomeCode,
-    outcomeTitle: officialTitle,
+    outcomeTitle: cleanTitle,
     difficulty: 'Orta',
     level: cognitiveLevel || 'Karmaşık Bilişsel Süreçler',
-    templateType: 'Kurgusal Senaryo & Vaka İncelemesi',
+    templateType: tType,
     points: targetPts,
-    stimulus: genericStimulus,
-    question: `${outcomeCode} [${officialTitle}] öğrenme çıktısı kapsamında, verilen durumdaki kavramsal ilkeleri ve neden-sonuç ilişkilerini gerekçelendirerek açıklayınız.`,
-    answer: 'Öğrencinin kavramsal ilkeleri doğru teşhis etmesi ve bilimsel ilkeler doğrultusunda mantıksal çözüm basamaklarını gerekçelendirmesi beklenir.',
-    solutionExplanation: `Analitik çözüm kuralına göre ${outcomeCode} çıktısı gerekçelendirilmelidir.`,
+    stimulus: stim,
+    question: qStem,
+    answer: modelAns,
+    solutionExplanation: solExp,
     rubric: [
-      { item: 'Kavramsal teşhis ve bilimsel tespit', pts: Math.ceil(targetPts / 2) },
-      { item: 'Analitik gerekçelendirme ve çözüm adımı', pts: Math.floor(targetPts / 2) }
+      { item: rubricA, pts: Math.ceil(targetPts / 2) },
+      { item: rubricB, pts: Math.floor(targetPts / 2) }
     ],
     sourceOrigin: 'oyss_synthetic',
     originExamTitle: 'OYSS Dinamik Sentez Havuzu'
@@ -762,8 +952,12 @@ export async function generateMEBIQuestions(
   });
 
   const distributionsText = questionDistributions.map((d, i) => {
-    const officialTitle = getOfficialOutcomeTitle(d.outcomeCode);
-    return `Soru ${i + 1}: [Kazanım Kodu: ${d.outcomeCode}] [Resmi Öğrenme Çıktısı: ${officialTitle || d.notes || 'Kavramsal Uygulama'}] [Bilişsel Düzey: ${d.cognitiveLevel}]`;
+    const meta = resolveOutcomeMetadata(d.outcomeCode, d.notes, d.cognitiveLevel);
+    const prevMatches = questionDistributions.filter((x, prevIdx) => prevIdx < i && x.outcomeCode === d.outcomeCode).length;
+    const inquiryAngle = prevMatches > 0
+      ? ` [Ölçme Çeşitlemesi: Aynı kazanıma bağlı önceki sorudan (${prevMatches}. soru) FARKLI bir vaka, deney veya problem bağlamı kullanınız]`
+      : '';
+    return `Soru ${i + 1}: [Kazanım Kodu: ${d.outcomeCode}] [Resmi Öğrenme Çıktısı: ${meta.displayLabel}] [Konu: ${meta.topicNote || meta.displayLabel}]${inquiryAngle}`;
   }).join('\n');
 
   const difficultyPlanText = formatDifficultyPlanText(targetCount);
@@ -923,56 +1117,67 @@ export async function generateMEBIQuestions(
         const missingIdx = safeQuestions.length;
         const distItem = questionDistributions[missingIdx] || scenario.distributions[0];
         const reqOutcome = distItem.outcomeCode;
-        const reqTitle = getOfficialOutcomeTitle(reqOutcome) || distItem.notes || 'Öğrenme Çıktısı';
+        const meta = resolveOutcomeMetadata(reqOutcome, distItem.notes, distItem.cognitiveLevel);
         const targetPts = pointAllocations[missingIdx] || 15;
-        safeQuestions.push({
-          number: missingIdx + 1,
-          outcome: reqOutcome,
-          outcomeTitle: reqTitle,
-          difficulty: 'Orta',
-          level: distItem.cognitiveLevel || 'Karmaşık Bilişsel Süreçler',
-          templateType: 'Kurgusal Senaryo & Vaka İncelemesi',
-          points: targetPts,
-          stimulus: `${reqTitle} ile ilgili günlük hayat durumu ve uygulama basamakları incelenmektedir.`,
-          question: `${reqOutcome} [${reqTitle}] öğrenme çıktısına uygun olarak verilen durumu analitik olarak açıklayınız.`,
-          answer: `Öğrencinin kavramsal ilkeleri doğru tespit etmesi ve mantıksal çözüm basamaklarını gerekçelendirmesi beklenir.`,
-          solutionExplanation: `Analitik çözüm kuralına göre ${reqOutcome} çıktısı gerekçelendirilmelidir.`,
-          rubric: [
-            { item: 'Kavramsal teşhis ve bilimsel tespit', pts: Math.ceil(targetPts / 2) },
-            { item: 'Analitik gerekçelendirme ve çözüm adımı', pts: Math.floor(targetPts / 2) }
-          ],
-          sourceOrigin: 'oyss_synthetic'
-        });
+        const synthQ = buildProceduralSyntheticQuestion(
+          reqOutcome,
+          meta.displayLabel,
+          missingIdx,
+          targetPts,
+          subjectId,
+          variationIndex,
+          distItem.cognitiveLevel,
+          distItem.notes
+        );
+        safeQuestions.push(synthQ);
       }
     }
 
-    const withTitles = safeQuestions.slice(0, targetCount).map((q, idx) => {
+    const acceptedQuestions: GeneratedQuestionItem[] = [];
+
+    for (let idx = 0; idx < targetCount; idx++) {
+      const q = safeQuestions[idx] || null;
       const distItem = questionDistributions[idx] || scenario.distributions[0];
       const requiredOutcome = distItem.outcomeCode;
-      const officialTitle = getOfficialOutcomeTitle(requiredOutcome) || distItem.notes || q.outcomeTitle || 'Öğrenme Çıktısı';
-      const targetPts = pointAllocations[idx] || q.points || 15;
+      const meta = resolveOutcomeMetadata(requiredOutcome, distItem.notes, distItem.cognitiveLevel);
+      const officialTitle = meta.displayLabel;
+      const targetPts = pointAllocations[idx] || (q ? q.points : 15);
 
-      const rawStem = typeof q.question === 'string' ? q.question.trim() : '';
+      const rawStem = (q && typeof q.question === 'string') ? q.question.trim() : '';
       const isStemValid = rawStem.length >= 3;
-      const rawAns = typeof q.answer === 'string' ? q.answer.trim() : '';
-      const rawStim = typeof q.stimulus === 'string' ? q.stimulus.trim() : '';
+      const rawAns = (q && typeof q.answer === 'string') ? q.answer.trim() : '';
+      const rawStim = (q && typeof q.stimulus === 'string') ? q.stimulus.trim() : '';
 
-      // Pedagojik Kalite Denetimi (Yüzeysel Tek Kelime Avcılığı & Sahte Görsel Kontrolü)
+      // Pedagojik Kalite Denetimi (Yüzeysel Tek Kelime Avcılığı, Sahte Görsel, Şablon Sızıntısı & Sınav İçi Tekrar)
       let isPedagogicallyDeficient = false;
       let deficiencyReason = '';
 
       const cleanAns = rawAns.replace(/[.,!?;:"'«»()]+$/g, '').trim().toLowerCase();
       const cleanStim = rawStim.toLowerCase();
 
-      if (!isStemValid) {
+      // İçi boş kalıp şablon denetimi
+      const isHollowBoilerplate = 
+        /(?:öğrenme\s+çıktısı\s+kapsamında|günlük\s+hayat\s+uygulamaları\s+ve\s+bilimsel\s+süreç\s+basamakları|kavramsal\s+ilkeleri\s+ve\s+neden-sonuç\s+ilişkilerini\s+gerekçelendirerek\s+açıklayınız|verilen\s+durumu\s+analitik\s+olarak\s+açıklayınız)/i.test(rawStem + ' ' + rawStim) ||
+        new RegExp(`${requiredOutcome}\\s*\\[?.*?\\s*öğrenme\\s+çıktısı`, 'i').test(rawStem);
+
+      // Sınav içi anlamsal tekrar (Intra-exam duplicate) kontrolü
+      const isIntraExamDuplicate = acceptedQuestions.some(prev => 
+        isDuplicateOrTooSimilar(rawStem, rawStim, [{ questionText: prev.question, stimulus: prev.stimulus }], undefined, 0.45)
+      );
+
+      if (!q || !isStemValid) {
         isPedagogicallyDeficient = true;
-        deficiencyReason = 'Soru kökü eksik veya boş (< 3 karakter)';
+        deficiencyReason = 'Soru eksik veya boş';
+      } else if (isHollowBoilerplate) {
+        isPedagogicallyDeficient = true;
+        deficiencyReason = 'Genel şablon metin veya ham kazanım kodu sızıntısı tespit edildi';
+      } else if (isIntraExamDuplicate) {
+        isPedagogicallyDeficient = true;
+        deficiencyReason = 'Aynı sınav içindeki başka bir soruyla anlamsal mükerrerlik tespit edildi';
       } else if (
         (subjectId === 'turkce' || subjectId === 'sosyal_bilgiler' || subjectId === 'din_kulturu') &&
         targetPts >= 14
       ) {
-        // Sözel derslerde yüksek puanlı mekanik kelime avcılığı kontrolü:
-        // Model cevap 2 veya daha az kelime, stimulus içinde doğrudan yer alıyor ve soru kökü açıkça tek nesne/renk/meyve/kişi soruyor
         const ansWordCount = cleanAns.split(/\s+/).filter(Boolean).length;
         const isSubstring = cleanAns.length > 0 && cleanStim.includes(cleanAns);
         const isTrivialQuery = /(hangi\s+(meyve|sebze|renk|şehir|araç|hayvan|nesne|eşya)|kimdir|kaç\s+(liradır|kestane|elma))/i.test(rawStem);
@@ -983,17 +1188,17 @@ export async function generateMEBIQuestions(
         }
       }
 
-      // Sahte görsel sorusu denetimi: Kazanım görsel okuma gerektiriyor fakat görsel yok ve stimulus metinsel tasvir
+      // Sahte görsel sorusu denetimi
       if (!isPedagogicallyDeficient && (requiredOutcome.includes('.7') || officialTitle.toLowerCase().includes('görsel'))) {
         const hasFakeVisualText = /(bu\s+görselde|afişte\s+görüldüğü\s+gibi|resimde\s+bir|yandaki\s+afişte|afişte\s+verilmek)/i.test(rawStem + ' ' + rawStim);
-        if (!q.visual && hasFakeVisualText && rawStim.length < 150) {
+        if (!q?.visual && hasFakeVisualText && rawStim.length < 150) {
           isPedagogicallyDeficient = true;
           deficiencyReason = 'Gerçek görsel olmadan metinsel afiş tasvirine dayalı sahte görsel sorusu';
         }
       }
 
-      // Metin/Kaynak gerektiren sorular için Stimulus Kalitesi Denetimi (Metinsiz soru önleme)
-      const sourceReq = detectSourceRequirement(rawStem, q.templateType, undefined, rawStim);
+      // Metin/Kaynak gerektiren sorular için Stimulus Kalitesi Denetimi
+      const sourceReq = detectSourceRequirement(rawStem, q?.templateType, undefined, rawStim);
       if (!isPedagogicallyDeficient && sourceReq.requiresSource && sourceReq.type === 'reading_text') {
         const stimQuality = checkStimulusQuality(rawStim, sourceReq);
         if (!stimQuality.isValid) {
@@ -1002,8 +1207,7 @@ export async function generateMEBIQuestions(
         }
       }
 
-      // Anlamsal Cevaplanabilirlik Güvencesi:
-      // Uyarıcı metin (stimulus) bulunmayan veya geçersiz olan bir soru, metin atfı silinse dahi tek başına cevaplanabilir değilse kusurlu kabul edilir.
+      // Anlamsal Cevaplanabilirlik Güvencesi
       if (!isPedagogicallyDeficient) {
         const isSelfContained = isSemanticallySelfContainedQuestion(rawStem, rawStim, requiredOutcome);
         if (!isSelfContained) {
@@ -1012,9 +1216,14 @@ export async function generateMEBIQuestions(
         }
       }
 
-      // Soru pedagojik olarak kusurlu veya eksikse: Yalnızca bu soruyu OYSS referans havuzundan cerrahi olarak ikame et
+      // Soru pedagojik olarak kusurlu veya eksikse cerrahi ikame et
       if (isPedagogicallyDeficient) {
-        console.warn(`[PedagogicalQuality] ${idx + 1}. soruda pedagojik kusur (${deficiencyReason}) tespit edildi; OYSS referans havuzundan güvenle ikame ediliyor.`);
+        console.warn(`[PedagogicalQuality] ${idx + 1}. soruda kusur (${deficiencyReason}) tespit edildi; güvenli ikame yapılıyor.`);
+        const avoidCombined: AvoidItem[] = [
+          ...allAvoidItems,
+          ...acceptedQuestions.map(aq => ({ questionText: aq.question, stimulus: aq.stimulus }))
+        ];
+
         let fallbackMatch = internalAllQuestions.find(fq => {
           if (fq.outcome !== requiredOutcome) return false;
           if (sourceReq.requiresSource && sourceReq.type === 'reading_text') {
@@ -1024,7 +1233,7 @@ export async function generateMEBIQuestions(
           } else if (!isSemanticallySelfContainedQuestion(fq.question, fq.stimulus, fq.outcome)) {
             return false;
           }
-          return !isDuplicateOrTooSimilar(fq.question, fq.stimulus, allAvoidItems, undefined, 0.38);
+          return !isDuplicateOrTooSimilar(fq.question, fq.stimulus, avoidCombined, undefined, 0.38);
         }) || internalAllQuestions.find(fq => {
           if (fq.outcome !== requiredOutcome) return false;
           if (sourceReq.requiresSource && sourceReq.type === 'reading_text') {
@@ -1045,7 +1254,7 @@ export async function generateMEBIQuestions(
             } else if (!isSemanticallySelfContainedQuestion(sq.questionText, sq.stimulus, sq.outcomeCode)) {
               return false;
             }
-            return !isDuplicateOrTooSimilar(sq.questionText, sq.stimulus, allAvoidItems, undefined, 0.38);
+            return !isDuplicateOrTooSimilar(sq.questionText, sq.stimulus, avoidCombined, undefined, 0.38);
           }) || SAMPLE_EXAMS.flatMap(e => e.questions.map(sq => ({ sq, exam: e }))).find(({ sq }) => {
             if (sq.outcomeCode !== requiredOutcome) return false;
             if (sourceReq.requiresSource && sourceReq.type === 'reading_text') {
@@ -1088,63 +1297,64 @@ export async function generateMEBIQuestions(
 
           const rawFallbackStem = sanitizeTextReferencesIfNoStimulus(
             fallbackMatch.question || `${officialTitle} ile ilgili durumu açıklayınız.`,
-            fallbackMatch.stimulus || q.stimulus
+            fallbackMatch.stimulus || q?.stimulus
           );
           const finalFallbackStem = fixStimulusTranscriptionTypos(
             fixProperNounApostrophes(rawFallbackStem),
-            fallbackMatch.stimulus || q.stimulus
+            fallbackMatch.stimulus || q?.stimulus
           );
           const finalFallbackAnswer = fixStimulusTranscriptionTypos(
             fixProperNounApostrophes(fallbackMatch.answer || 'Kavramsal ilkelerin doğru gerekçelendirilmesi beklenir.'),
-            fallbackMatch.stimulus || q.stimulus
+            fallbackMatch.stimulus || q?.stimulus
           );
 
-          return {
+          acceptedQuestions.push({
             number: idx + 1,
             outcome: requiredOutcome,
             outcomeTitle: officialTitle,
-            cognitiveLevel: distItem.cognitiveLevel || fallbackMatch.level || 'Karmaşık Bilişsel Süreçler',
+            level: distItem.cognitiveLevel || fallbackMatch.level || 'Karmaşık Bilişsel Süreçler',
             difficulty: fallbackMatch.difficulty || 'Orta',
             templateType: fallbackMatch.templateType || 'Kurgusal Senaryo & Vaka İncelemesi',
             points: targetPts,
-            stimulus: fallbackMatch.stimulus || q.stimulus || '',
+            stimulus: fallbackMatch.stimulus || q?.stimulus || '',
             question: finalFallbackStem,
             answer: finalFallbackAnswer,
             alternativeAnswers: fallbackMatch.alternativeAnswers
               ? fallbackMatch.alternativeAnswers.map((a: string) =>
-                  fixStimulusTranscriptionTypos(fixProperNounApostrophes(a), fallbackMatch.stimulus || q.stimulus)
+                  fixStimulusTranscriptionTypos(fixProperNounApostrophes(a), fallbackMatch.stimulus || q?.stimulus)
                 )
               : undefined,
             solutionExplanation: fallbackMatch.solutionExplanation
-              ? fixStimulusTranscriptionTypos(fixProperNounApostrophes(fallbackMatch.solutionExplanation), fallbackMatch.stimulus || q.stimulus)
+              ? fixStimulusTranscriptionTypos(fixProperNounApostrophes(fallbackMatch.solutionExplanation), fallbackMatch.stimulus || q?.stimulus)
               : (fallbackMatch.answer ? `Analitik çözüm adımları ve gerekçe: ${finalFallbackAnswer}` : undefined),
             rubric: reconciled.map(r => ({
-              item: fixStimulusTranscriptionTypos(fixProperNounApostrophes(r.criterion), fallbackMatch.stimulus || q.stimulus),
+              item: fixStimulusTranscriptionTypos(fixProperNounApostrophes(r.criterion), fallbackMatch.stimulus || q?.stimulus),
               pts: r.points
             })),
             sourceOrigin: 'oyss_curated' as const,
             originExamTitle: fallbackMatch.originExamTitle || 'OYSS Referans Havuzu',
             originQuestionNumber: fallbackMatch.originQuestionNumber,
             visual: fallbackMatch.visual
-          };
+          });
+          continue;
         } else {
-          // Uygun ikame bulunamadı: Yalnızca metin atıflarını silerek soruyu geçerli kabul ETME.
-          // Kusurlu soruyu üretim sonucundan çıkar ve dinamik OYSS sentez havuzundan tam metinli soru üret!
-          console.warn(`[SemanticAnswerability] ${idx + 1}. soru (${requiredOutcome}) için referans havuzunda geçerli ikame bulunamadı; dinamik OYSS sentez havuzundan tam metinli soru üretiliyor.`);
-          return buildProceduralSyntheticQuestion(
+          console.warn(`[SemanticAnswerability] ${idx + 1}. soru (${requiredOutcome}) için dinamik OYSS sentez havuzundan soru üretiliyor.`);
+          const synth = buildProceduralSyntheticQuestion(
             requiredOutcome,
             officialTitle,
             idx,
             targetPts,
             subjectId,
             variationIndex,
-            distItem.cognitiveLevel
+            distItem.cognitiveLevel,
+            distItem.notes
           );
+          acceptedQuestions.push(synth);
+          continue;
         }
       }
 
-      let calibratedDifficulty = q.difficulty || 'Orta';
-      // Doğrudan kural uygulaması (yazım-noktalama) sorularında "Zor" etiketini pedagojik olarak "Orta" düzeyine kalibre et
+      let calibratedDifficulty = q!.difficulty || 'Orta';
       if (
         (requiredOutcome.includes('16') || officialTitle.toLowerCase().includes('yazım')) &&
         calibratedDifficulty === 'Zor'
@@ -1152,100 +1362,96 @@ export async function generateMEBIQuestions(
         calibratedDifficulty = 'Orta';
       }
 
-      let candidateAnswer = typeof q.answer === 'string' ? q.answer.trim() : '';
-      const altAnswers = Array.isArray(q.alternativeAnswers)
-        ? q.alternativeAnswers
+      let candidateAnswer = typeof q!.answer === 'string' ? q!.answer.trim() : '';
+      const altAnswers = Array.isArray(q!.alternativeAnswers)
+        ? q!.alternativeAnswers
             .filter((a: any) => typeof a === 'string' && a.trim().length > 0)
             .map((a: string) => a.trim())
         : undefined;
 
       let remainingAltAnswers: string[] = altAnswers ? [...altAnswers] : [];
 
-      // TASK 146 - Sorun 1 Düzeltmesi: Model cevap soru kökünü tekrar ediyorsa alternatif cevap havuzundan kurtar
       if (!candidateAnswer || isAnswerEchoingStem(candidateAnswer, rawStem)) {
         const viableAltIdx = remainingAltAnswers.findIndex(
           alt => !isAnswerEchoingStem(alt, rawStem) && alt.trim().length > 0
         );
 
         if (viableAltIdx !== -1) {
-          console.warn(`[AnswerRecovery] ${idx + 1}. sorunun model cevabı soru kökünü tekrar ettiği için alternatif cevap havuzundan ("${remainingAltAnswers[viableAltIdx].slice(0, 30)}...") kurtarıldı.`);
           candidateAnswer = remainingAltAnswers[viableAltIdx];
           remainingAltAnswers.splice(viableAltIdx, 1);
-        } else if (q.solutionExplanation && !isAnswerEchoingStem(q.solutionExplanation, rawStem)) {
-          candidateAnswer = q.solutionExplanation.replace(/^(?:analitik çözüm adımları ve gerekçe:\s*)+/i, '').trim();
+        } else if (q!.solutionExplanation && !isAnswerEchoingStem(q!.solutionExplanation, rawStem)) {
+          candidateAnswer = q!.solutionExplanation.replace(/^(?:analitik çözüm adımları ve gerekçe:\s*)+/i, '').trim();
         } else {
           candidateAnswer = `Öğrencinin ${officialTitle.toLowerCase()} kazanımı doğrultusunda ilgili kavramsal unsurları doğru tespit etmesi ve gerekçelendirmesi beklenir.`;
         }
       }
 
-      // TASK 146 - Sorun 3 Düzeltmesi: Noktalama işaretlerinin görevleri soruluyorsa model cevap ifadesini uyumlandır
       candidateAnswer = alignPunctuationFunctionAnswer(rawStem, candidateAnswer);
-
-      // TASK 148: Özel ad ek ayrımı ve stimulus aktarım doğruluğu kontrolü
       candidateAnswer = fixProperNounApostrophes(candidateAnswer);
-      candidateAnswer = fixStimulusTranscriptionTypos(candidateAnswer, q.stimulus);
+      candidateAnswer = fixStimulusTranscriptionTypos(candidateAnswer, q!.stimulus);
 
-      // TASK 146 & 148: Alternatif cevapları temizle ve yazım/ek doğruluğunu sağla
       const sanitizedAltAnswers = remainingAltAnswers
-        .map(alt => fixStimulusTranscriptionTypos(fixProperNounApostrophes(alt), q.stimulus))
+        .map(alt => fixStimulusTranscriptionTypos(fixProperNounApostrophes(alt), q!.stimulus))
         .filter(alt =>
           !isAnswerEchoingStem(alt, rawStem) &&
           cleanTurkishText(alt) !== cleanTurkishText(candidateAnswer)
         );
 
-      let finalStem = sanitizeTextReferencesIfNoStimulus(rawStem, q.stimulus);
-
-      // TASK 146 - Sorun 2 Düzeltmesi: Tekil/çoğul hata uyumu kontrolü (Soru 6 güvencesi)
-      finalStem = calibrateStemPlurality(finalStem, q.stimulus, candidateAnswer);
-
-      // TASK 148: Soru kökünde de özel ad ve stimulus aktarım doğruluğu güvencesi
+      let finalStem = sanitizeTextReferencesIfNoStimulus(rawStem, q!.stimulus);
+      finalStem = calibrateStemPlurality(finalStem, q!.stimulus, candidateAnswer);
       finalStem = fixProperNounApostrophes(finalStem);
-      finalStem = fixStimulusTranscriptionTypos(finalStem, q.stimulus);
+      finalStem = fixStimulusTranscriptionTypos(finalStem, q!.stimulus);
 
-      // TASK 146 - Sorun 4 Düzeltmesi: Rubrik ölçütlerini soru puanına reconcile et (>= 12 puanda tek ölçüt 2 analitik basamağa ayrılır)
-      const rawRubric = (q.rubric || []).map((r: any) => ({
+      const rawRubric = (q!.rubric || []).map((r: any) => ({
         criterion: r.item || r.criterion || 'Değerlendirme Ölçütü',
         points: r.pts ?? r.points
       }));
 
-      const isCurated = q.sourceOrigin === 'oyss_curated';
+      const isCurated = q!.sourceOrigin === 'oyss_curated';
       const reconciled = reconcileRubricPoints(rawRubric, targetPts, isCurated);
 
-      // Rubrik kriter metinlerinin tekil/çoğul kalibrasyonu ve yazım doğruluğu
       const calibratedRubric = reconciled.map(r => {
         let crit = r.criterion;
         if (finalStem.includes('yazım yanlışını') && crit.includes('yanlışları')) {
           crit = crit.replace(/yanlışları/g, 'yanlışı');
         }
-        crit = fixStimulusTranscriptionTypos(fixProperNounApostrophes(crit), q.stimulus);
+        crit = fixStimulusTranscriptionTypos(fixProperNounApostrophes(crit), q!.stimulus);
         return { item: crit, pts: r.points };
       });
 
-      // Anlamsal cevaplanabilirlik son güvencesi:
-      // Eğer soru kökünden metin atfı silinse dahi soru tek başına anlamsal olarak cevaplanamaz durumdaysa
-      // kusurlu soruyu üretim sonucundan çıkar ve güvenli dinamik sentez mekanizmasını kullan!
-      if (!isSemanticallySelfContainedQuestion(finalStem, q.stimulus, requiredOutcome)) {
+      if (!isSemanticallySelfContainedQuestion(finalStem, q!.stimulus, requiredOutcome)) {
         console.warn(`[SemanticAnswerability] ${idx + 1}. soru ("${finalStem.slice(0, 40)}...") metinsiz cevaplanamaz; dinamik OYSS sentez havuzundan tam metinli soru üretiliyor.`);
-        return buildProceduralSyntheticQuestion(
+        const synth = buildProceduralSyntheticQuestion(
           requiredOutcome,
           officialTitle,
           idx,
           targetPts,
           subjectId,
           variationIndex,
-          distItem.cognitiveLevel
+          distItem.cognitiveLevel,
+          distItem.notes
         );
+        acceptedQuestions.push(synth);
+        continue;
       }
 
-      const rawExplanation = q.solutionExplanation || q.explanation || `Analitik çözüm adımları ve gerekçe: ${candidateAnswer}`;
-      const finalExplanation = fixStimulusTranscriptionTypos(fixProperNounApostrophes(rawExplanation), q.stimulus);
+      const rawExplanation = q!.solutionExplanation || q!.explanation || `Analitik çözüm adımları ve gerekçe: ${candidateAnswer}`;
+      const finalExplanation = fixStimulusTranscriptionTypos(fixProperNounApostrophes(rawExplanation), q!.stimulus);
 
-      return {
-        ...q,
+      let validVisual = undefined;
+      if (q!.visual && typeof q!.visual === 'object') {
+        const visualValidation = validateAndSanitizeAiVisual(q!.visual, candidateAnswer);
+        if (visualValidation.isValid && visualValidation.visual) {
+          validVisual = visualValidation.visual;
+        }
+      }
+
+      acceptedQuestions.push({
+        ...q!,
         number: idx + 1,
         outcome: requiredOutcome,
         outcomeTitle: officialTitle,
-        cognitiveLevel: distItem.cognitiveLevel || q.level || 'Karmaşık Bilişsel Süreçler',
+        level: distItem.cognitiveLevel || q!.level || 'Karmaşık Bilişsel Süreçler',
         difficulty: calibratedDifficulty,
         points: targetPts,
         question: finalStem,
@@ -1253,13 +1459,19 @@ export async function generateMEBIQuestions(
         alternativeAnswers: sanitizedAltAnswers.length > 0 ? sanitizedAltAnswers : undefined,
         solutionExplanation: finalExplanation,
         rubric: calibratedRubric,
-        sourceOrigin: q.sourceOrigin || 'gemini_ai',
-        visual: q.visual
-      };
-    });
-    const calibrated = calibrateQuestionDifficulties(withTitles);
+        sourceOrigin: q!.sourceOrigin || 'gemini_ai',
+        visual: validVisual
+      });
+    }
+
+    const calibrated = calibrateQuestionDifficulties(acceptedQuestions);
     const { enrichedQuestions } = validateAndEnrichExamQuestions(calibrated);
-    return enrichedQuestions as GeneratedQuestionItem[];
+    const { certifiedQuestions } = ensureExamQuality(
+      enrichedQuestions,
+      { grade, subjectId },
+      internalAllQuestions as any
+    );
+    return certifiedQuestions as GeneratedQuestionItem[];
   };
 
   // 1. TIER 1: Güvenli Sunucu Fonksiyonu Proxy (/api/generate)
@@ -1348,8 +1560,35 @@ export async function generateMEBIQuestions(
         errJson = await proxyRes.json();
       } catch {}
 
-      if (proxyRes.status === 429) {
-        fallbackReason = 'Yapay zekâ servisi kota sınırında (429 - Çok sık istek). Lütfen bir dakika sonra tekrar deneyiniz.';
+      const serverError = errJson?.error;
+      const serverCode = errJson?.code;
+
+      console.warn('[AI Generation Proxy Error]', {
+        status: proxyRes.status,
+        code: serverCode,
+        error: serverError,
+        elapsedMs: errJson?.elapsedMs,
+        details: errJson?.details
+      });
+
+      if (proxyRes.status === 429 || serverCode === 'RATE_LIMIT_EXCEEDED') {
+        fallbackReason = serverError || 'Yapay zekâ servisi kota sınırında (429 - Çok sık istek). Lütfen bir dakika sonra tekrar deneyiniz.';
+      } else if (proxyRes.status === 504 || serverCode === 'GATEWAY_TIMEOUT') {
+        fallbackReason = serverError
+          ? `${serverError} Sorular yerel OYSS standart motoruyla hazırlandı.`
+          : 'Yapay zekâ yanıtı belirlenen sürede tamamlayamadı (Zaman aşımı). Sorular yerel OYSS standart motoruyla hazırlandı.';
+      } else if (proxyRes.status === 503 || serverCode === 'SERVICE_UNAVAILABLE' || serverCode === 'MISSING_API_KEY') {
+        fallbackReason = serverError
+          ? `${serverError} Sorular yerel OYSS standart motoruyla hazırlandı.`
+          : 'Yapay zekâ servisi geçici olarak hizmet veremiyor (HTTP 503). Sorular yerel OYSS standart motoruyla hazırlandı.';
+      } else if (proxyRes.status === 403 || serverCode === 'API_KEY_FORBIDDEN') {
+        fallbackReason = serverError
+          ? `${serverError} Sorular yerel OYSS standart motoruyla hazırlandı.`
+          : 'Yapay zekâ API anahtarının yetkisi bulunmuyor (HTTP 403). Sorular yerel OYSS standart motoruyla hazırlandı.';
+      } else if (proxyRes.status === 400 || serverCode === 'BAD_REQUEST_PAYLOAD') {
+        fallbackReason = serverError
+          ? `${serverError} Sorular yerel OYSS standart motoruyla hazırlandı.`
+          : 'Yapay zekâ istek parametreleri kabul edilmedi (HTTP 400). Sorular yerel OYSS standart motoruyla hazırlandı.';
       } else if (proxyRes.status === 422) {
         // Kontrollü Kurtarma: Eğer HTTP 422 soru kökü eksikliği nedeniyle döndüyse ve eldeki sorular varsa,
         // yalnızca eksik soru kökünü yerel onaylı soruyla ikame ederek geçerli soruları kurtar
@@ -1392,11 +1631,17 @@ export async function generateMEBIQuestions(
             };
           }
         }
-        fallbackReason = errJson?.error || 'Üretilen sınav yanıtı biçimsel şemaya uymadığı için yerel motor devreye alındı.';
-      } else if (proxyRes.status === 502 || proxyRes.status === 503) {
-        fallbackReason = errJson?.error || 'Yapay zekâ servisi şu anda meşgul veya geçici olarak yanıt veremiyor (HTTP 502/503).';
+        fallbackReason = serverError
+          ? `${serverError} Sorular yerel OYSS standart motoruyla hazırlandı.`
+          : 'Üretilen sınav yanıtı biçimsel şemaya uymadığı için yerel OYSS standart motoru devreye alındı.';
+      } else if (proxyRes.status === 502) {
+        fallbackReason = serverError
+          ? `${serverError} Sorular yerel OYSS standart motoruyla hazırlandı.`
+          : 'Yapay zekâ servisi şu anda meşgul veya geçici olarak yanıt veremiyor (HTTP 502).';
       } else {
-        fallbackReason = errJson?.error || `Yapay zekâ servisi yanıt veremedi (HTTP ${proxyRes.status}).`;
+        fallbackReason = serverError
+          ? `${serverError} Sorular yerel OYSS standart motoruyla hazırlandı.`
+          : `Yapay zekâ servisi yanıt veremedi (HTTP ${proxyRes.status}). Sorular yerel OYSS standart motoruyla hazırlandı.`;
       }
     }
   } catch (proxyErr: any) {
@@ -1578,165 +1823,16 @@ export async function generateMEBIQuestions(
     }
 
     // 4. Havuzda henüz bulunmayan veya mükerrerlik filtresi sonrası boş kalan kazanımlar için pedagojik dinamik OYSS sentezi
-    const dynSubjectName = subjectId.replace(/_/g, ' ').toUpperCase();
-
-    // Türkçe dersi için özel bağlamsal edebî kurgular
-    if (subjectId === 'turkce') {
-      const turkishContexts = TURKISH_PROCEDURAL_CONTEXTS;
-
-      const ctx = turkishContexts[(variationIndex + idx) % turkishContexts.length];
-
-      if (outcomeCode.includes('T.O.5.6') || outcomeCode.includes('T.O.7.5')) {
-        return {
-          number: idx + 1,
-          outcome: outcomeCode,
-          outcomeTitle: resolvedTitle,
-          difficulty: 'Kolay',
-          level: d.cognitiveLevel || 'Basit Bilişsel Süreçler',
-          templateType: 'Kurgusal Senaryo & Vaka İncelemesi',
-          points: pointAllocations[idx] || 15,
-          stimulus: ctx.stim,
-          question: ctx.meaningQ,
-          answer: ctx.meaningAns,
-          alternativeAnswers: [
-            `Metinde anlatılan ${ctx.theme} olayında adalet, emek ve paylaşım bilinci vurgulanmaktadır.`,
-            `Olay örgüsünde ${ctx.theme} çerçevesinde toplumsal dayanışma, dürüstlük ve ortak sorumluluk değerleri öne çıkarılmıştır.`
-          ],
-          rubric: [
-            { item: 'Metnin ana konusunun ve olay örgüsünün doğru tespiti', pts: Math.round((pointAllocations[idx] || 15) * 0.5) },
-            { item: 'Gerekçenin metindeki somut eylemlerle delillendirilmesi', pts: Math.round((pointAllocations[idx] || 15) * 0.5) }
-          ],
-          sourceOrigin: 'oyss_synthetic'
-        };
-      } else if (outcomeCode.includes('T.O.5.20') || outcomeCode.includes('T.O.7.4')) {
-        return {
-          number: idx + 1,
-          outcome: outcomeCode,
-          outcomeTitle: resolvedTitle,
-          difficulty: 'Orta',
-          level: d.cognitiveLevel || 'Basit Bilişsel Süreçler',
-          templateType: 'Kelime Anlamı & Bağlamsal Çözümleme',
-          points: pointAllocations[idx] || 15,
-          stimulus: ctx.stim,
-          question: `Metinde geçen '${ctx.vocabWords[0]}' ve '${ctx.vocabWords[1]}' kelimelerinin bağlamsal anlamlarını yazınız ve birer cümlede kullanınız.`,
-          answer: `'${ctx.vocabWords[0]}' ve '${ctx.vocabWords[1]}' kelimelerinin metindeki bağlama uygun anlamı yazılmış ve kurallı cümleler kurulmuştur.`,
-          alternativeAnswers: [
-            `Kelimeler metindeki bağlama uygun olarak doğru anlamlandırılmıştır.`,
-            `Her iki sözcüğün de metnin ana temasına ve cümle yapısına uygun anlam karşılıkları yazılmıştır.`
-          ],
-          rubric: [
-            { item: 'Kelimelerin bağlama uygun doğru anlamlandırılması', pts: Math.round((pointAllocations[idx] || 15) * 0.5) },
-            { item: 'Örnek cümlelerin anlam bütünlüğü ve dilbilgisi kurallarına uygunluğu', pts: Math.round((pointAllocations[idx] || 15) * 0.5) }
-          ],
-          sourceOrigin: 'oyss_synthetic'
-        };
-      } else if (outcomeCode.includes('T.Y.5.13') || outcomeCode.includes('T.Y.7.13')) {
-        return {
-          number: idx + 1,
-          outcome: outcomeCode,
-          outcomeTitle: resolvedTitle,
-          difficulty: 'Zor',
-          level: d.cognitiveLevel || 'Karmaşık Bilişsel Süreçler',
-          templateType: 'Deyim ve Zengin Söz Varlığıyla Yazma',
-          points: pointAllocations[idx] || 15,
-          stimulus: ctx.stim,
-          question: `İçinde '${ctx.idioms[0]}' ve '${ctx.idioms[1]}' deyimlerinin geçtiği, ${ctx.theme} konusuna uygun akıcı ve kurallı bir paragraf yazınız.`,
-          answer: `Her iki deyim anlamına uygun biçimde kullanılarak kurallı ve anlamlı bir paragraf oluşturulmuştur.`,
-          alternativeAnswers: [
-            `Deyimler yerinde ve doğru anlamda kullanılarak tutarlı bir metin kurgulanmıştır.`,
-            `Belirtilen deyimler bağlama ve tema akışına uygun seçilerek dil kurallarına uygun şekilde metne işlenmiştir.`
-          ],
-          rubric: [
-            { item: 'Deyimlerin yerinde ve doğru anlamda kullanılması', pts: Math.round((pointAllocations[idx] || 15) * 0.5) },
-            { item: 'Paragrafın kurgusal bütünlüğü ve akıcılığı', pts: Math.round((pointAllocations[idx] || 15) * 0.5) }
-          ],
-          sourceOrigin: 'oyss_synthetic'
-        };
-      } else if (outcomeCode.includes('T.Y.5.16') || outcomeCode.includes('T.Y.7.21')) {
-        return {
-          number: idx + 1,
-          outcome: outcomeCode,
-          outcomeTitle: resolvedTitle,
-          difficulty: 'Kolay',
-          level: d.cognitiveLevel || 'Basit Bilişsel Süreçler',
-          templateType: 'Hata Tespiti & Düzeltme',
-          points: pointAllocations[idx] || 14,
-          stimulus: ctx.errSentence,
-          question: `Yukarıdaki cümlede büyük harf ve noktalama kurallarına aykırı yapılan 3 hatayı belirleyip cümlenin doğrusunu yazınız.`,
-          answer: `Hatalar tespit edilerek büyük harfler ve noktalama işaretleri kurallara uygun biçimde düzeltilmiştir.`,
-          alternativeAnswers: [
-            `Büyük harf ve noktalama işaretleri eksiksiz düzeltilmiştir.`,
-            `Cümledeki özel isim yazımı, iki nokta ve büyük harf kuralları doğru biçimde uygulanarak cümle yeniden yazılmıştır.`
-          ],
-          rubric: [
-            { item: 'Büyük harf ve noktalama hatalarının tespiti', pts: Math.round((pointAllocations[idx] || 15) * 0.5) },
-            { item: 'Cümlenin hatasız yeniden yazımı', pts: Math.round((pointAllocations[idx] || 15) * 0.5) }
-          ],
-          sourceOrigin: 'oyss_synthetic'
-        };
-      }
-    }
-    const archetypesList = [
-      'Durum & Özellik Matrisi (VAR/YOK Tablosu)',
-      'Kurgusal Senaryo & Vaka İncelemesi',
-      'Öğrenci Diyaloğu & Kavram Yanılgısı',
-      'Hata Tespiti & Adım Analizi',
-      'Dilemma (İkilem) & Çözüm Değerlendirme',
-      'Metin İçi Delillendirme & Örtük Anlam',
-      'Birinci Ağızdan Konuşturma / Rol'
-    ];
-    const arch = archetypesList[idx % archetypesList.length];
-    const sName1 = POOL_NAMES_A[(variationIndex + idx) % POOL_NAMES_A.length];
-    const sName2 = POOL_NAMES_B[(variationIndex + idx + 3) % POOL_NAMES_B.length];
-
-    let stim = '';
-    let qText = '';
-    let ans = '';
-
-    if (arch.includes('Matris')) {
-      stim = `Tablo: ${dynSubjectName} Temel Kavramları ve Özellikleri
-----------------------------------------------------------------------
-| Kavram / Durum | Temel İlke Şartı | Gerçek Yaşam Uygulaması |
-| Durum A        | ................ | ....................... |
-| Durum B        | ................ | ....................... |`;
-      qText = `Tabloda boş bırakılan yerleri ${outcomeCode} [${resolvedTitle}] öğrenme çıktısına göre uygun bilimsel/kavramsal ifadelerle doldurunuz.`;
-      ans = `Durum A ve Durum B özellikleri ders ilkeleri doğrultusunda eksiksiz eşleştirilmiştir.`;
-    } else if (arch.includes('Diyalog')) {
-      stim = `${sName1} ve ${sName2} ders çalışırken ${resolvedTitle} konusunda farklı görüşler belirtmiştir:
-${sName1}: "Bu olayda sadece ilk değişken belirleyicidir ve sonuç buna göre şekillenir."
-${sName2}: "Hayır, şartlar değiştiğinde doğrudan diğer etkenlerin devreye girdiği ve sonuca etki ettiği görülür."`;
-      qText = `${sName1} ve ${sName2}'nin açıklamalarını ${outcomeCode} ilkeleri doğrultusunda değerlendiriniz. Hangisi haklıdır? Gerekçelendiriniz.`;
-      ans = `${sName2} haklıdır. Çünkü süreç tek bir değişkene indirgenemez, bağlamsal şartlar belirleyicidir.`;
-    } else if (arch.includes('Hata')) {
-      stim = `${sName1}, problem çözümünde 3 adım uygulamıştır:
-1. Adım: Temel tanımı ve değişkenleri belirlemiştir.
-2. Adım: Verilen kuralları işleme koymuştur.
-3. Adım: Çıkan sonucu ilk durumla karşılaştırıp sonuca varmıştır.`;
-      qText = `${sName1}'in çözüm adımlarını ${outcomeCode} doğrultusunda analiz ediniz. İlk hata hangi adımda yapılmıştır? Doğru adımı yazınız.`;
-      ans = `Hata tespiti ve kavramsal gerekçelendirme adım basamaklarıyla sunulmuştur.`;
-    } else {
-      stim = `Bir araştırma ve uygulama ortamında ${dynSubjectName} kapsamında iki farklı yöntem (Yöntem 1 ve Yöntem 2) karşılaştırılmaktadır.`;
-      qText = `Yöntem 1 ve Yöntem 2'yi ${resolvedTitle} bakımından karşılaştırınız. Hangi yöntemin daha verimli olduğunu gerekçelendiriniz.`;
-      ans = `Seçilen yöntemin gerekçesi ve diğer yöntemin sınırları bilimsel kanıtlarla açıklanmıştır.`;
-    }
-
-    return {
-      number: idx + 1,
-      outcome: outcomeCode,
-      outcomeTitle: resolvedTitle,
-      difficulty: 'Orta',
-      level: d.cognitiveLevel,
-      templateType: arch,
-      points: pointAllocations[idx] || 15,
-      stimulus: stim,
-      question: qText,
-      answer: ans,
-      rubric: [
-        { item: 'Kavramsal teşhis ve doğru tespit', pts: Math.round((pointAllocations[idx] || 15) * 0.5) },
-        { item: 'Bilimsel/mantıksal gerekçelendirme basamağı', pts: Math.round((pointAllocations[idx] || 15) * 0.5) }
-      ],
-      sourceOrigin: 'oyss_synthetic'
-    };
+    return buildProceduralSyntheticQuestion(
+      outcomeCode,
+      resolvedTitle,
+      idx,
+      pointAllocations[idx] || 15,
+      subjectId,
+      variationIndex,
+      d.cognitiveLevel,
+      d.notes
+    );
   });
 
   const finalDynamicQuestions = normalizeAndCalibrateQuestions(dynamicQuestions);

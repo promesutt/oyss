@@ -53,6 +53,7 @@ export interface ExamScenario {
   description: string;
   totalQuestions: number;
   distributions: ScenarioDistribution[];
+  sourceOrigin?: 'meb_official' | 'oyss_curated';
 }
 
 export interface QuestionRubricItem {
@@ -100,6 +101,10 @@ export interface ExamQuestion {
   originExamTitle?: string; // Alındığı resmî sınavın adı
   originQuestionNumber?: number; // Alındığı resmî sınavdaki soru numarası
   visual?: QuestionVisual; // Sorunun matematiksel veya pedagojik görsel çizimi
+  isCertified?: boolean; // Kalite güvence sertifikası
+  _qaStatus?: string; // passed, warning, needs_review, failed
+  _qaWarning?: string; // Öğretmen inceleme uyarısı
+  _qaFindings?: any[]; // Denetim bulguları
 }
 
 export interface ExamPaper {
@@ -114,6 +119,7 @@ export interface ExamPaper {
   totalPoints: number;
   questions: ExamQuestion[];
   examClassification?: ExamSourceClassification; // Sınavın kaynak sınıflandırması
+  qualityAudit?: any; // Sınav Kalite Güvence ve Sertifikasyon Raporu
 }
 
 /**
@@ -294,11 +300,17 @@ export interface StudySheetSection {
     question: string;
     analysis: string;
     solution: string;
+    stimulus?: string;
   };
   practiceQuestion: {
     question: string;
     hint: string;
+    stimulus?: string;
+    usesSolvedExampleStimulus?: boolean;
   };
+  isCertified?: boolean;
+  qaStatus?: string;
+  qaFindings?: any[];
 }
 
 export interface StudySheet {
@@ -309,6 +321,7 @@ export interface StudySheet {
   scenarioId: string;
   title: string;
   sections: StudySheetSection[];
+  qualityAudit?: any;
 }
 
 export interface InfographicItem {
@@ -452,9 +465,132 @@ export interface FractionModelVisual extends BaseVisual {
   params: FractionModelVisualParams;
 }
 
+export type GeometrySubType =
+  | 'line_system'       // Doğru, doğru parçası, ışın, paralel/dik/kesişen doğrular
+  | 'angle_model'       // Açı çeşitleri, saat kadranı, tümler/bütünler açılar, iletki
+  | 'polygon_2d'        // Üçgenler, dörtgenler, çokgenler, köşegenler, iç açılar
+  | 'grid_coordinate'   // Kareli zemin (grid), öteleme, noktanın konumu, pergel
+  | 'area_perimeter';   // Dikdörtgen çevre/alan, fidan dikimi (EBOB), fayans ızgara
+
+export interface Point2D {
+  id?: string;
+  x?: number;
+  y?: number;
+  col?: number;
+  row?: number;
+  label?: string;
+  labelPosition?: 'top' | 'bottom' | 'left' | 'right' | 'top_left' | 'top_right' | 'bottom_left' | 'bottom_right';
+  isClosed?: boolean;   // Dolu nokta (doğru parçası sınırı için)
+  color?: string;
+}
+
+export interface LineItem {
+  id?: string;
+  type?: 'line' | 'segment' | 'ray';
+  kind?: 'line' | 'segment' | 'ray';
+  from?: Point2D;
+  to?: Point2D;
+  start?: Point2D;
+  end?: Point2D;
+  label?: string;
+  labelPos?: Point2D;
+  isDashed?: boolean;
+  dashed?: boolean;
+  hasArrowStart?: boolean;
+  hasArrowEnd?: boolean;
+  strokeWidth?: number;
+  color?: string;
+  lengthLabel?: string; // Örn: '20 cm'
+}
+
+export interface AngleItem {
+  id?: string;
+  vertex: Point2D;      // Köşe noktası
+  startAngleDeg?: number;// Başlangıç açısı (derece)
+  endAngleDeg?: number;  // Bitiş açısı (derece)
+  degrees?: number;
+  arm1?: Point2D;
+  arm2?: Point2D;
+  radius?: number;      // Açı yayının yarıçapı
+  isRightAngle?: boolean; // 90° diklik karesi ve nokta sembolü
+  degreeLabel?: string; // Örn: '35°', '90°' veya soru işareti '?' (cevabı ele vermemek için)
+  label?: string;
+  color?: string;
+}
+
+export interface PolygonItem {
+  id?: string;
+  vertices?: Point2D[];
+  points?: Point2D[];
+  isClosed?: boolean;   // Çokgen olma şartı (kapalı/açık kontrolü)
+  closed?: boolean;
+  hasCurveEdge?: boolean; // Çokgen olmama testi (eğri kenar kontrolü)
+  hasCurve?: boolean;
+  label?: string;
+  fill?: string;
+  strokeColor?: string;
+  color?: string;
+  edgeLabels?: string[];// Kenar uzunlukları (a, b veya 40m, 56m)
+  interiorAngles?: AngleItem[]; // İç açı yayları
+  diagonals?: { fromIdx: number; toIdx: number; isDashed?: boolean }[]; // Köşegenler
+}
+
+export interface ClockItem {
+  hour: number;         // 1 - 12
+  minute: number;       // 0 - 59
+  angleLabel?: string;  // Örn: '90° (Dik Açı)'
+  showDialNumbers?: boolean;
+}
+
+export interface GridParams {
+  cols: number;
+  rows: number;
+  cellSize: number;
+  showAxes?: boolean;
+  origin?: { x?: number; y?: number; col?: number; row?: number };
+}
+
+export interface TessellationParams {
+  totalWidth: number;
+  totalHeight: number;
+  tileWidth: number;
+  tileHeight: number;
+  widthLabel: string;
+  heightLabel: string;
+  tileLabel?: string;
+}
+
+export interface GeometryShapeVisualParams {
+  subType: GeometrySubType;
+  title?: string;
+  viewBoxWidth?: number;  // Varsayılan: 600
+  viewBoxHeight?: number; // Varsayılan: 360
+  isProportional?: boolean; // true: Matematiksel ölçekli, false: Temsili çizim ("Şekil temsilidir")
+  
+  // Alt türlere özel parametre blokları
+  lines?: LineItem[];
+  angles?: AngleItem[];
+  polygons?: PolygonItem[];
+  clocks?: ClockItem[];
+  grid?: GridParams;
+  points?: Point2D[];
+  vectors?: Array<{
+    fromCol: number;
+    fromRow: number;
+    toCol: number;
+    toRow: number;
+    label?: string;
+    dashed?: boolean;
+    color?: string;
+  }>;
+  tessellation?: TessellationParams;
+  
+  note?: string; // Dipnot, örn: 'Şekil temsilidir ve ölçeksizdir.'
+}
+
 export interface GeometryShapeVisual extends BaseVisual {
   type: 'geometry_shape';
-  params: Record<string, unknown>;
+  params: GeometryShapeVisualParams;
 }
 
 export interface CoordinateVisual extends BaseVisual {

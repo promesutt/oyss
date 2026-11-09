@@ -1,9 +1,9 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { 
-  GradeLevel, 
-  SubjectId, 
-  ExamTerm, 
-  MaterialType, 
+import {
+  GradeLevel,
+  SubjectId,
+  ExamTerm,
+  MaterialType,
   ExamPaper,
   ExamQuestion,
   StudySheet,
@@ -12,10 +12,11 @@ import {
   SpeakingGuide,
   SchoolStage
 } from './types';
-import { 
+import {
   ALL_SUBJECTS,
   ALL_GRADES,
-  getScenarios
+  getScenarios,
+  resolveOutcomeMetadata
 } from './data/curriculumData';
 import { SAMPLE_EXAMS } from './data/sampleExams';
 import { SAMPLE_STUDY_SHEETS } from './data/studySheets';
@@ -26,6 +27,7 @@ import { SAMPLE_SPEAKING_GUIDES } from './data/speakingGuides';
 import { Navbar } from './components/Navbar';
 import { FilterBar } from './components/FilterBar';
 import { ExamPaperView } from './components/ExamPaperView';
+import { ScenarioOverviewView } from './components/ScenarioOverviewView';
 import { StudySheetView } from './components/StudySheetView';
 import { InfographicView } from './components/InfographicView';
 import { SpeakingGuideView } from './components/SpeakingGuideView';
@@ -36,15 +38,14 @@ import { InteractivePracticeView } from './components/InteractivePracticeView';
 import { QuickStartGuide } from './components/QuickStartGuide';
 import { loadCustomExamPaper, clearCustomExamPaper } from './utils/practiceStorage';
 import { validateAndEnrichExamQuestions } from './utils/sourceMaterialValidator';
-import { triggerPdfPrint, generateMaterialPdfFileName } from './utils/materialFileNameGenerator';
-import { 
-  BookOpen, 
-  Mic, 
-  Sparkles, 
-  AlertCircle, 
-  ArrowRight, 
-  RotateCcw, 
-  FileText 
+import { ensureExamQuality, ensureStudySheetQuality } from './utils/qualityAssurance';
+import { triggerPdfPrint } from './utils/materialFileNameGenerator';
+import {
+  Mic,
+  Sparkles,
+  ArrowRight,
+  GraduationCap,
+  Calendar
 } from 'lucide-react';
 
 export const App: React.FC = () => {
@@ -95,7 +96,13 @@ export const App: React.FC = () => {
   const currentScenario = useMemo(() => {
     const found = scenarios.find(s => s.id === selectedScenarioId);
     if (found) return found;
-    return scenarios[0];
+    return scenarios[0] || {
+      id: 'senaryo_1',
+      name: 'Senaryo',
+      description: '',
+      totalQuestions: 0,
+      distributions: []
+    };
   }, [scenarios, selectedScenarioId]);
 
   const currentSubjectMeta = useMemo(() => {
@@ -146,29 +153,39 @@ export const App: React.FC = () => {
   // Active Exam Paper: Prioritize verified teacher-curated sample exam
   const activeExamPaper: ExamPaper | null = useMemo(() => {
     // 1. If a custom AI generated exam paper is active for this grade and subject, show it directly!
-    if (customExamPaper && 
-        customExamPaper.grade === selectedGrade && 
-        customExamPaper.subjectId === selectedSubject) {
+    if (customExamPaper &&
+      customExamPaper.grade === selectedGrade &&
+      customExamPaper.subjectId === selectedSubject) {
       const { enrichedQuestions } = validateAndEnrichExamQuestions(customExamPaper.questions);
+      const { certifiedQuestions, report } = ensureExamQuality(
+        enrichedQuestions,
+        { grade: selectedGrade, subjectId: selectedSubject }
+      );
       return {
         ...customExamPaper,
-        questions: enrichedQuestions as ExamQuestion[]
+        questions: certifiedQuestions as ExamQuestion[],
+        qualityAudit: report
       };
     }
 
     // 2. Direct match in verified teacher-curated repository
     const match = SAMPLE_EXAMS.find(
-      e => e.grade === selectedGrade && 
-           e.subjectId === selectedSubject && 
-           e.examTerm === selectedTerm && 
-           e.scenarioId === currentScenario.id
+      e => e.grade === selectedGrade &&
+        e.subjectId === selectedSubject &&
+        e.examTerm === selectedTerm &&
+        e.scenarioId === currentScenario.id
     );
 
     if (match) {
       const { enrichedQuestions } = validateAndEnrichExamQuestions(match.questions);
+      const { certifiedQuestions, report } = ensureExamQuality(
+        enrichedQuestions,
+        { grade: selectedGrade, subjectId: selectedSubject }
+      );
       return {
         ...match,
-        questions: enrichedQuestions as ExamQuestion[]
+        questions: certifiedQuestions as ExamQuestion[],
+        qualityAudit: report
       };
     }
 
@@ -219,41 +236,44 @@ export const App: React.FC = () => {
         return sectionMatch;
       }
 
-      const cleanTitle = d.notes 
-        ? (d.notes.toLowerCase().includes(subjectName.toLowerCase()) ? d.notes : `${subjectName} - ${d.notes}`)
-        : `${subjectName} - ${d.outcomeCode}`;
+      const meta = resolveOutcomeMetadata(d.outcomeCode, d.notes);
+      const topicDesc = meta.topicNote || meta.officialTitle || subjectName;
 
       return {
         outcomeCode: d.outcomeCode,
-        topicTitle: cleanTitle,
+        topicTitle: `${d.outcomeCode}: ${topicDesc}`,
         quickNotes: [
-          `${subjectName} dersi ${d.outcomeCode} öğrenme çıktısında kavramlar arası neden-sonuç bağını kurunuz.`,
-          'Açık uçlu sorularda doğrudan ezber tanım yerine verilen öncülü ve vaka durumunu gerekçelendiriniz.'
+          `${topicDesc} konusunda MEB konu ve soru dağılımında belirtilen temel kavramları ve ilkeleri gözden geçiriniz.`,
+          `Bu öğrenme çıktısında kavramsal kavrama, akıl yürütme ve analitik gerekçelendirme becerisi ölçülmektedir.`
         ],
         examTraps: [
-          'Sorudaki anahtar kavramları ve soru kökündeki olumsuz/koşullu yönergeleri dikkatle okuyunuz.'
+          'Soruda verilen deney, grafik, metin veya vaka verilerini doğrudan incelemeden ezber bilgiyle genelleme yapmayınız.'
         ],
         solvedExample: {
-          question: `${d.notes || d.outcomeCode} ile ilgili açık uçlu model soru ve analizi.`,
-          analysis: 'Kavramsal analizi adım adım kurma.',
-          solution: 'Model çözüm basamakları eksiksiz gerekçelendirilir.'
+          question: `${topicDesc} konusuna ait açık uçlu sorularda sonuca nasıl ulaşılır?`,
+          analysis: 'Verilen verileri, kuralları ve kavramsal bağıntıları sırasıyla inceleyiniz.',
+          solution: `İlgili kavrama (${topicDesc}) ait temel kural uygulanır ve ulaşılan sonuç mantıksal gerekçeleriyle adım adım ifade edilir.`
         },
         practiceQuestion: {
-          question: 'Bu öğrenme çıktısıyla ilgili açık uçlu pekiştirme sorusu.',
-          hint: 'Verilen ipuçlarını ve ders içi temel kavramları göz önünde bulundurunuz.'
+          question: `${topicDesc} kazanımı kapsamında günlük yaşamdan bir örnek veya durum vererek çıkarımınızı açıklayınız.`,
+          hint: 'Kavramsal tanımların yanı sıra neden-sonuç ilişkisini ve kuralları açıkça belirtiniz.'
         }
       };
     });
 
-    return {
+    const rawSheet: StudySheet = {
       id: `study_${selectedSubject}_${selectedGrade}_${currentScenario.id}`,
       grade: selectedGrade,
       subjectId: selectedSubject,
       examTerm: selectedTerm,
       scenarioId: currentScenario.id,
-      title: `${selectedGrade}. Sınıf ${subjectName} (${currentScenario.name}) TYMM Kapsamlı Sınav Çalışma Kağıdı`,
+      title: selectedGrade === 8
+        ? `8. Sınıf ${subjectName} (${currentScenario.name}) Okul Yazılılarına Hazırlık Çalışma Kağıdı`
+        : `${selectedGrade}. Sınıf ${subjectName} (${currentScenario.name}) TYMM Kapsamlı Sınav Çalışma Kağıdı`,
       sections
     };
+
+    return ensureStudySheetQuality(rawSheet);
   }, [selectedGrade, selectedSubject, selectedTerm, currentScenario]);
 
   // Active Infographics: Return verified items only (empty state handles missing items)
@@ -270,21 +290,12 @@ export const App: React.FC = () => {
     );
   }, [selectedGrade, selectedSubject]);
 
-  // Dynamic document.title synchronization for print-to-PDF standard
+  // Kalıcı sekme başlığı (document.title asla filtre veya soru üretimiyle değişmez)
   useEffect(() => {
-    const isCustomExam = Boolean(customExamPaper && activeExamPaper?.id === customExamPaper.id);
-    const title = generateMaterialPdfFileName({
-      grade: selectedGrade,
-      subjectId: selectedSubject,
-      examTerm: selectedTerm,
-      scenarioId: (selectedMaterial === 'speaking_guide') ? undefined : currentScenario.id,
-      materialKind: selectedMaterial,
-      isCustomExam
-    });
-    if (title && typeof document !== 'undefined') {
-      document.title = title;
+    if (typeof document !== 'undefined') {
+      document.title = 'OYSS Rehberi | Ortak Yazılılara Hazırlık';
     }
-  }, [selectedGrade, selectedSubject, selectedTerm, currentScenario, selectedMaterial, customExamPaper, activeExamPaper]);
+  }, []);
 
   const handleGlobalPrint = () => {
     const isCustomExam = Boolean(customExamPaper && activeExamPaper?.id === customExamPaper.id);
@@ -330,184 +341,196 @@ export const App: React.FC = () => {
 
       {/* Main Content Area */}
       <main className="flex-1 pb-16">
-        {selectedMaterial === 'exam_paper' && (
-          activeExamPaper ? (
-            <ExamPaperView 
-              examPaper={activeExamPaper}
-              isCustomAIExam={Boolean(customExamPaper && activeExamPaper.id === customExamPaper.id)}
-              onResetToDefaultExam={() => {
-                clearCustomExamPaper(selectedGrade, selectedSubject);
-                setCustomExamPaper(null);
-              }}
-              onOpenAIGenerator={() => setIsAIModalOpen(true)}
-              onOpenInteractivePractice={() => setSelectedMaterial('interactive_exam')}
-            />
-          ) : (
-            <div className="max-w-4xl mx-auto py-10 px-4 sm:px-6 animate-in fade-in duration-200">
-              <div className="bg-white rounded-2xl border-2 border-dashed border-amber-200 p-8 sm:p-10 text-center shadow-xs">
-                <div className="w-14 h-14 bg-amber-50 rounded-2xl border border-amber-200 flex items-center justify-center mx-auto mb-4 text-amber-600">
-                  <AlertCircle className="w-7 h-7" />
-                </div>
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-xs font-semibold mb-3">
-                  ÖDSGM Senaryo Esaslı Örnek Sınav Hazırlanıyor
-                </div>
-                <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2">
-                  {selectedGrade}. Sınıf {currentSubjectMeta?.name || 'Ders'} ({currentScenario?.name || 'Senaryo'}) İçin Hazır Örnek Sınav Bulunamadı
-                </h3>
-                <p className="text-sm text-slate-600 max-w-xl mx-auto mb-6 leading-relaxed">
-                  Bu dönem ve senaryoya ait ÖDSGM senaryo esaslı örnek sınav kâğıdı henüz sisteme eklenmemiştir. Öğrencileri yanıltmamak adına 
-                  başka senaryolardan izinsiz soru ödünç alma veya genel şablonları senaryoya ait gibi gösterme uygulaması kaldırılmıştır.
-                </p>
-
-                <div className="grid sm:grid-cols-2 gap-3 max-w-lg mx-auto text-left mb-6">
-                  <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
-                    <p className="text-xs font-bold text-slate-800 flex items-center gap-1.5 mb-1">
-                      <BookOpen className="w-4 h-4 text-blue-600" />
-                      1. Dönem 1. Yazılı Arşivi
-                    </p>
-                    <p className="text-xs text-slate-500 mb-3">
-                      Sistemimizde 1. Dönem 1. Yazılı için ÖDSGM konu-soru dağılım tabloları esas alınarak hazırlanmış 123 örnek sınav mevcuttur.
-                    </p>
-                    <button
-                      onClick={() => {
-                        setSelectedTerm('1_donem_1_yazili');
-                        setSelectedScenarioId('senaryo_1');
-                      }}
-                      className="text-xs font-bold text-blue-600 hover:text-blue-700 inline-flex items-center gap-1 cursor-pointer"
-                    >
-                      1. Dönem 1. Yazılıya Geç <ArrowRight className="w-3.5 h-3.5" />
-                    </button>
-                  </div>
-
-                  <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
-                    <p className="text-xs font-bold text-slate-800 flex items-center gap-1.5 mb-1">
-                      <Sparkles className="w-4 h-4 text-purple-600" />
-                      Yapay Zekâ Destekli Soru Seti
-                    </p>
-                    <p className="text-xs text-slate-500 mb-3">
-                      Bu senaryonun öğrenme çıktılarına uygun yapay zekâ destekli bir alıştırma ve çalışma seti hazırlayın.
-                    </p>
-                    <button
-                      onClick={() => setIsAIModalOpen(true)}
-                      className="text-xs font-bold text-purple-600 hover:text-purple-700 inline-flex items-center gap-1 cursor-pointer"
-                    >
-                      Soru Seti Hazırla <ArrowRight className="w-3.5 h-3.5" />
-                    </button>
-                  </div>
-                </div>
-
-                <div className="flex flex-wrap items-center justify-center gap-3">
-                  <button
-                    onClick={() => setSelectedMaterial('study_sheet')}
-                    className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-xs font-bold shadow-xs transition-colors cursor-pointer inline-flex items-center gap-1.5"
-                  >
-                    <FileText className="w-4 h-4" />
-                    Senaryonun Çalışma Kâğıdını İncele
-                  </button>
-                  <button
-                    onClick={() => {
-                      setSelectedTerm('1_donem_1_yazili');
-                      setSelectedScenarioId('senaryo_1');
-                    }}
-                    className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-bold transition-colors cursor-pointer inline-flex items-center gap-1.5"
-                  >
-                    <RotateCcw className="w-4 h-4" />
-                    Varsayılan Senaryo 1'e Dön
-                  </button>
-                </div>
+        {currentStage === 'lise' ? (
+          <div className="max-w-4xl mx-auto py-12 px-4 sm:px-6 animate-in fade-in duration-200">
+            <div className="bg-white rounded-2xl border-2 border-dashed border-indigo-200 p-8 sm:p-12 text-center shadow-xs">
+              <div className="w-16 h-16 bg-indigo-50 rounded-2xl border border-indigo-200 flex items-center justify-center mx-auto mb-4 text-indigo-600">
+                <GraduationCap className="w-8 h-8" />
               </div>
-            </div>
-          )
-        )}
-
-        {selectedMaterial === 'interactive_exam' && (
-          activeExamPaper ? (
-            <InteractivePracticeView 
-              key={activeExamPaper.id}
-              examPaper={activeExamPaper}
-              isCustomAIExam={Boolean(customExamPaper && activeExamPaper.id === customExamPaper.id)}
-              onBackToPaperView={() => setSelectedMaterial('exam_paper')}
-              onOpenStudySheet={() => setSelectedMaterial('study_sheet')}
-            />
-          ) : (
-            <div className="max-w-4xl mx-auto py-10 px-4 sm:px-6 animate-in fade-in duration-200">
-              <div className="bg-white rounded-2xl border-2 border-dashed border-amber-200 p-8 sm:p-10 text-center shadow-xs">
-                <div className="w-14 h-14 bg-amber-50 rounded-2xl border border-amber-200 flex items-center justify-center mx-auto mb-4 text-amber-600">
-                  <AlertCircle className="w-7 h-7" />
-                </div>
-                <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2">
-                  Etkileşimli Uygulama İçin Sınav Bulunamadı
-                </h3>
-                <p className="text-sm text-slate-600 max-w-xl mx-auto mb-6">
-                  Bu sınıf ve senaryo için hazır sınav bulunmamaktadır. Aşağıdaki butona tıklayarak yapay zekâ destekli özgün bir sınav hazırlayabilir ve hemen etkileşimli olarak çözebilirsiniz.
-                </p>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs font-bold mb-3">
+                Lise Hazırlık Materyalleri Hazırlanıyor
+              </div>
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">
+                Lise Kademesi Çok Yakında Yayında
+              </h3>
+              <p className="text-sm sm:text-base text-slate-600 max-w-xl mx-auto mb-6 leading-relaxed">
+                Lise düzeyine yönelik ortak yazılılara hazırlık içerikleri üzerinde çalışıyoruz. Lise sınavlarına hazırlık materyalleri, ikinci yazılı dönemi öncesinde sisteme eklenecektir.
+              </p>
+              <div className="flex justify-center">
                 <button
-                  onClick={() => setIsAIModalOpen(true)}
-                  className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-xs font-bold shadow-xs transition-colors cursor-pointer"
+                  onClick={() => handleSelectStage('ortaokul')}
+                  className="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-sm font-semibold inline-flex items-center gap-2 shadow-sm transition-colors cursor-pointer"
                 >
-                  Yapay Zekâ ile Soru Üret
+                  Ortaokul Sınavlarına Dön <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
             </div>
-          )
-        )}
-
-        {selectedMaterial === 'study_sheet' && (
-          <StudySheetView 
-            studySheet={activeStudySheet}
-            onOpenAIGenerator={() => setIsAIModalOpen(true)}
-          />
-        )}
-
-        {selectedMaterial === 'infographic' && (
-          <InfographicView 
-            infographics={activeInfographics}
-            selectedGrade={selectedGrade}
-            selectedSubject={selectedSubject}
-            selectedTerm={selectedTerm}
-            selectedScenarioId={currentScenario.id}
-          />
-        )}
-
-        {selectedMaterial === 'speaking_guide' && (
-          activeSpeakingGuide ? (
-            <SpeakingGuideView 
-              guide={activeSpeakingGuide}
-            />
-          ) : (
-            <div className="max-w-4xl mx-auto py-12 px-4 sm:px-6 animate-in fade-in duration-200">
-              <div className="bg-white rounded-2xl border border-slate-200 p-8 sm:p-10 text-center shadow-xs">
-                <div className="w-14 h-14 bg-indigo-50 rounded-2xl border border-indigo-200 flex items-center justify-center mx-auto mb-4 text-indigo-600">
-                  <Mic className="w-7 h-7" />
-                </div>
-                <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2">
-                  Konuşma ve Dinleme Kılavuzu Bulunmuyor
-                </h3>
-                <p className="text-sm text-slate-600 max-w-lg mx-auto mb-6 leading-relaxed">
-                  MEB mevzuatına göre 4 temel dil becerisini (dinleme, konuşma, okuma, yazma) içeren uygulama kılavuzları 
-                  yalnızca <strong>Türkçe</strong> ve <strong>İngilizce</strong> dersleri için hazırlanmaktadır. 
-                  Seçili ders ({currentSubjectMeta?.name || 'Ders'}) için konuşma kılavuzu geçerli değildir.
-                </p>
-                <div className="flex flex-wrap items-center justify-center gap-3">
-                  <button
-                    onClick={() => {
-                      setSelectedSubject('turkce');
-                      setSelectedMaterial('speaking_guide');
-                    }}
-                    className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-xs font-bold shadow-xs transition-colors cursor-pointer"
-                  >
-                    Türkçe Konuşma Kılavuzunu Aç
-                  </button>
-                  <button
-                    onClick={() => setSelectedMaterial('exam_paper')}
-                    className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-bold transition-colors cursor-pointer"
-                  >
-                    Yazılı Sınav Kâğıdına Dön
-                  </button>
-                </div>
+          </div>
+        ) : (selectedTerm === '2_donem_1_yazili' || selectedTerm === '2_donem_2_yazili') ? (
+          <div className="max-w-4xl mx-auto py-12 px-4 sm:px-6 animate-in fade-in duration-200">
+            <div className="bg-white rounded-2xl border-2 border-dashed border-amber-200 p-8 sm:p-12 text-center shadow-xs">
+              <div className="w-16 h-16 bg-amber-50 rounded-2xl border border-amber-200 flex items-center justify-center mx-auto mb-4 text-amber-600">
+                <Calendar className="w-8 h-8" />
+              </div>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-xs font-bold mb-3">
+                2. Dönem MEB Tabloları Bekleniyor
+              </div>
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">
+                MEB 2. Dönem Konu-Soru Dağılım Tabloları Henüz Yayımlanmadı
+              </h3>
+              <p className="text-sm sm:text-base text-slate-600 max-w-xl mx-auto mb-6 leading-relaxed">
+                MEB, 2026-2027 eğitim öğretim yılı 2. dönem konu-soru dağılım tablolarını henüz yayımlamamıştır. Bu döneme ait ortak yazılı sınavları ve çalışma materyalleri, MEB tabloları yayımlandıktan sonra OYSS Rehberi'ne eklenecektir.
+              </p>
+              <div className="flex flex-wrap justify-center gap-3">
+                <button
+                  onClick={() => handleSelectTerm('1_donem_1_yazili')}
+                  className="px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs sm:text-sm font-semibold inline-flex items-center gap-1.5 shadow-sm transition-colors cursor-pointer"
+                >
+                  1. Dönem 1. Yazılıya Geç <ArrowRight className="w-4 h-4" />
+                </button>
+                <button
+                  onClick={() => handleSelectTerm('1_donem_2_yazili')}
+                  className="px-4 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs sm:text-sm font-semibold inline-flex items-center gap-1.5 shadow-sm transition-colors cursor-pointer"
+                >
+                  1. Dönem 2. Yazılıya Geç <ArrowRight className="w-4 h-4" />
+                </button>
               </div>
             </div>
-          )
+          </div>
+        ) : (
+          <>
+            {selectedMaterial === 'exam_paper' && (
+              activeExamPaper ? (
+                <ExamPaperView
+                  examPaper={activeExamPaper}
+                  scenario={currentScenario}
+                  isCustomAIExam={Boolean(customExamPaper && activeExamPaper.id === customExamPaper.id)}
+                  onResetToDefaultExam={() => {
+                    clearCustomExamPaper(selectedGrade, selectedSubject);
+                    setCustomExamPaper(null);
+                  }}
+                  onOpenAIGenerator={() => setIsAIModalOpen(true)}
+                  onOpenInteractivePractice={() => setSelectedMaterial('interactive_exam')}
+                />
+              ) : (
+                <ScenarioOverviewView
+                  scenario={currentScenario}
+                  grade={selectedGrade}
+                  subjectMeta={currentSubjectMeta}
+                  examTerm={selectedTerm}
+                  onOpenAIGenerator={() => setIsAIModalOpen(true)}
+                  onOpenStudySheet={() => setSelectedMaterial('study_sheet')}
+                  onOpenInteractivePractice={() => setIsAIModalOpen(true)}
+                  onSwitchToTerm1={() => {
+                    setSelectedTerm('1_donem_1_yazili');
+                    setSelectedScenarioId('senaryo_1');
+                  }}
+                />
+              )
+            )}
+
+            {selectedMaterial === 'interactive_exam' && (
+              activeExamPaper ? (
+                <InteractivePracticeView
+                  key={activeExamPaper.id}
+                  examPaper={activeExamPaper}
+                  isCustomAIExam={Boolean(customExamPaper && activeExamPaper.id === customExamPaper.id)}
+                  onBackToPaperView={() => setSelectedMaterial('exam_paper')}
+                  onOpenStudySheet={() => setSelectedMaterial('study_sheet')}
+                />
+              ) : (
+                <div className="max-w-4xl mx-auto py-10 px-4 sm:px-6 animate-in fade-in duration-200">
+                  <div className="bg-white rounded-2xl border-2 border-dashed border-indigo-200 p-8 sm:p-10 text-center shadow-xs">
+                    <div className="w-14 h-14 bg-indigo-50 rounded-2xl border border-indigo-200 flex items-center justify-center mx-auto mb-4 text-indigo-600">
+                      <Sparkles className="w-7 h-7" />
+                    </div>
+                    <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-indigo-50 text-indigo-700 rounded-full text-xs font-semibold mb-3 border border-indigo-200">
+                      {currentScenario.name} • {currentScenario.totalQuestions} Soru Dağılımı
+                    </div>
+                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2">
+                      Etkileşimli Çözüm İçin Senaryoya Özel Sınav Hazırlayın
+                    </h3>
+                    <p className="text-sm text-slate-600 max-w-xl mx-auto mb-6">
+                      Bu senaryonun resmî MEB ÖDSGM konu-soru dağılımına uygun özgün bir sınav oluşturarak soruları adım adım puanlayabilir ve model çözümlerle pekiştirebilirsiniz.
+                    </p>
+                    <div className="flex flex-wrap items-center justify-center gap-3">
+                      <button
+                        onClick={() => setIsAIModalOpen(true)}
+                        className="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs sm:text-sm font-bold shadow-md transition-all active:scale-95 cursor-pointer inline-flex items-center gap-2"
+                      >
+                        <Sparkles className="w-4 h-4 text-amber-300" />
+                        Yapay Zekâ ile Sınav Hazırla ve Hemen Çöz
+                      </button>
+                      <button
+                        onClick={() => setSelectedMaterial('exam_paper')}
+                        className="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs sm:text-sm font-semibold transition-colors cursor-pointer"
+                      >
+                        Senaryo Kazanım Dağılımını İncele
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )
+            )}
+
+            {selectedMaterial === 'study_sheet' && (
+              <StudySheetView
+                studySheet={activeStudySheet}
+                onOpenAIGenerator={() => setIsAIModalOpen(true)}
+              />
+            )}
+
+            {selectedMaterial === 'infographic' && (
+              <InfographicView
+                infographics={activeInfographics}
+                selectedGrade={selectedGrade}
+                selectedSubject={selectedSubject}
+                selectedTerm={selectedTerm}
+                selectedScenarioId={currentScenario.id}
+              />
+            )}
+
+            {selectedMaterial === 'speaking_guide' && (
+              activeSpeakingGuide ? (
+                <SpeakingGuideView
+                  guide={activeSpeakingGuide}
+                />
+              ) : (
+                <div className="max-w-4xl mx-auto py-12 px-4 sm:px-6 animate-in fade-in duration-200">
+                  <div className="bg-white rounded-2xl border border-slate-200 p-8 sm:p-10 text-center shadow-xs">
+                    <div className="w-14 h-14 bg-indigo-50 rounded-2xl border border-indigo-200 flex items-center justify-center mx-auto mb-4 text-indigo-600">
+                      <Mic className="w-7 h-7" />
+                    </div>
+                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2">
+                      Konuşma ve Dinleme Kılavuzu Bulunmuyor
+                    </h3>
+                    <p className="text-sm text-slate-600 max-w-lg mx-auto mb-6 leading-relaxed">
+                      MEB mevzuatına göre 4 temel dil becerisini (dinleme, konuşma, okuma, yazma) içeren uygulama kılavuzları
+                      yalnızca <strong>Türkçe</strong> ve <strong>İngilizce</strong> dersleri için hazırlanmaktadır.
+                      Seçili ders ({currentSubjectMeta?.name || 'Ders'}) için konuşma kılavuzu geçerli değildir.
+                    </p>
+                    <div className="flex flex-wrap items-center justify-center gap-3">
+                      <button
+                        onClick={() => {
+                          setSelectedSubject('turkce');
+                          setSelectedMaterial('speaking_guide');
+                        }}
+                        className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-xs font-bold shadow-xs transition-colors cursor-pointer"
+                      >
+                        Türkçe Konuşma Kılavuzunu Aç
+                      </button>
+                      <button
+                        onClick={() => setSelectedMaterial('exam_paper')}
+                        className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-bold transition-colors cursor-pointer"
+                      >
+                        Yazılı Sınav Kâğıdına Dön
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )
+            )}
+          </>
         )}
       </main>
 
@@ -522,6 +545,13 @@ export const App: React.FC = () => {
         onApplyGeneratedExam={(customExam) => {
           setCustomExamPaper(customExam);
           setSelectedMaterial('exam_paper');
+          setTimeout(() => {
+            window.scrollTo({ top: 120, behavior: 'smooth' });
+          }, 80);
+        }}
+        onApplyAndStartInteractive={(customExam) => {
+          setCustomExamPaper(customExam);
+          setSelectedMaterial('interactive_exam');
           setTimeout(() => {
             window.scrollTo({ top: 120, behavior: 'smooth' });
           }, 80);

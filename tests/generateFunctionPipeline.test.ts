@@ -269,12 +269,13 @@ async function runTests() {
     const json8 = await res8.json();
 
     assert(
-      res8.status === 502 &&
+      res8.status === 504 &&
+      json8.code === 'GATEWAY_TIMEOUT' &&
       json8.details?.[0]?.errorType === 'TIMEOUT' &&
       json8.details?.[0]?.status === 504 &&
       !JSON.stringify(json8).includes('test-dummy-api-key'),
-      'Test 8: Zaman aşımı durumunda telemetri TIMEOUT ve status: 504 kaydetmeli, anahtar sızdırmamalı',
-      `Status: ${res8.status}, Telemetry: ${JSON.stringify(json8.details?.[0])}`
+      'Test 8: Zaman aşımı durumunda HTTP 504 GATEWAY_TIMEOUT dönmeli, telemetri TIMEOUT ve status: 504 kaydetmeli, anahtar sızdırmamalı',
+      `Status: ${res8.status}, Code: ${json8.code}, Telemetry: ${JSON.stringify(json8.details?.[0])}`
     );
 
   } finally {

@@ -18,6 +18,7 @@ import {
   QuestionVisual
 } from '../types';
 import { renderFractionModel, FractionRenderOptions } from './fractionMathEngine';
+import { renderGeometryShape } from './svgGeometryEngine';
 
 export type { NumberLinePoint };
 
@@ -653,6 +654,10 @@ export function renderQuestionVisual(
 
     case 'fraction_model': {
       return renderFractionModel(visual, options);
+    }
+
+    case 'geometry_shape': {
+      return renderGeometryShape(visual, options);
     }
 
     default: {

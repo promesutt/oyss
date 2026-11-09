@@ -1,4 +1,5 @@
 import { OUTCOME_STUDY_BANK } from '../../data/outcomeStudyBank';
+import { OFFICIAL_OUTCOMES } from '../../data/curriculumData';
 import { GradeLevel, SubjectId } from '../../types';
 
 /**
@@ -26,6 +27,18 @@ export function buildGrade56TextbookDirectives(
   for (const code of uniqueCodes) {
     const card = OUTCOME_STUDY_BANK[code];
     if (!card) {
+      const official = OFFICIAL_OUTCOMES[code.trim().replace('SB ', 'SB.')];
+      if (official) {
+        const lines: string[] = [];
+        const titleStr = official.canonicalTitle ? ` - ${official.canonicalTitle}` : (official.topic ? ` - ${official.topic}` : '');
+        lines.push(`- Kazanım: [${code}]${titleStr}`);
+        if (official.unit || official.topic) {
+          lines.push(`  * Ders Kitabı Teması: Ünite: "${official.unit || '-'}", Konu: "${official.topic || '-'}"`);
+        }
+        lines.push(`  * Pedagojik Ölçme Yaklaşımı: Açık uçlu, kavramsal ve analitik düşünme süreçlerini değerlendiren özgün problem durumu.`);
+        contextBlocks.push(lines.join('\n'));
+        continue;
+      }
       missingCodes.push(code);
       continue;
     }

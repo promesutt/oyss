@@ -36,7 +36,8 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     },
     "practiceQuestion": {
       "question": "Okuduğunuz hikâyede olay nerede ve günün hangi saatinde geçmektedir? Metinden iki kanıt bularak yazınız.",
-      "hint": "Metinde geçen mekân ve zaman zarflarını doğrudan arayınız."
+      "hint": "Metinde geçen mekân ve zaman zarflarını doğrudan arayınız.",
+      "usesSolvedExampleStimulus": true
     }
   },
   "T.O.5.7": {
@@ -3162,7 +3163,8 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
       "Sırtında çantayla düz yatay koridorda sabit hızla yürüyen öğrenci: Kaldırma kuvveti düşey, hareket yatay → Birbirine dik olduğu için yer çekimine karşı iş YAPILMAZ (Sayfa 60)",
       "Aynı çantayı merdivenlerden yukarı kata çıkaran öğrenci: Yer çekimine zıt yönde yukarı kuvvet ve yukarı hareket → Yer çekimine karşı iş YAPILIR (Sayfa 61)",
       "Ağır dolabı 100 N kuvvetle iten ancak hareket ettiremeyen öğrenci: Δx = 0 olduğu için iş SIFIRDIR (Sayfa 62)",
-      "İş deneyi: Yol eşitken (10 m) 15 N kuvvet 150 J, 30 N kuvvet 300 J iş yapar; kuvvet ile iş doğru orantılıdır (W = F · Δx) (Sayfa 64)"
+      "İş deneyi: Yol eşitken (10 m) 15 N kuvvet 150 J, 30 N kuvvet 300 J iş yapar; kuvvet ile iş doğru orantılıdır (W = F · Δx) (Sayfa 64)",
+      "Selim'in okul çantası (3 farklı eylem kronolojisi): Ağır çantayı yerden alarak sırtına takma (düşey kuvvet ve düşey hareket: iş yapılır), düz yolda sabit süratle taşıma (düşey kuvvet ile yatay hareket birbirine dik: iş yapılmaz), kütüphane masasının üzerine koymak için dikey kaldırma (düşey kuvvet ve düşey hareket: iş yapılır)"
     ],
     "quickNotes": [
       "Fiziksel İşin Şartları: 1) Cisme bir kuvvet uygulanmalı, 2) Cisim uygulanan kuvvet doğrultusunda mutlaka yol almalıdır (yer değiştirmelidir).",

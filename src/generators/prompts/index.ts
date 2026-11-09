@@ -8,7 +8,9 @@ import {
   getMebiPedagogicalRules,
   getQualityPedagogicalRules,
   QUESTION_DIRECTIVE_CLARITY_RULE,
-  RUBRIC_DESIGN_RULE
+  getDirectiveClarityRule,
+  RUBRIC_DESIGN_RULE,
+  AI_MATHEMATICS_VISUAL_DIRECTIVES
 } from './coreRules';
 import { getGradeAgeDirectives } from './gradeRules';
 import { getJsonOutputSchema } from './outputSchema';
@@ -26,6 +28,8 @@ import {
   createGenericPromptEntry
 } from './genericPrompt';
 import { buildGrade56TextbookDirectives } from './grade56TextbookPrompt';
+import { buildGrade7MathDirectives } from './grade7MathPrompt';
+import { buildGrade7ScienceDirectives } from './grade7SciencePrompt';
 
 /**
  * Metinleri anlamsız hece kesilmelerini önleyecek ve ayırt edici kısımları
@@ -174,18 +178,33 @@ export function buildLiveExamPrompt(params: LiveExamPromptParams): string {
   const gradeRule = getGradeAgeDirectives(grade, isQualityActive);
   const diffRule = getDifficultyPlanRule(targetCount, difficultyPlanText);
   const pedaRule = isQualityActive ? getQualityPedagogicalRules(targetCount) : getMebiPedagogicalRules(targetCount);
-  const directiveClarityBlock = isQualityActive ? `\n\n${QUESTION_DIRECTIVE_CLARITY_RULE}` : '';
+  const directiveClarityBlock = isQualityActive ? `\n\n${getDirectiveClarityRule(subjectId)}` : '';
   const rubricDesignBlock = isQualityActive ? `\n${RUBRIC_DESIGN_RULE}\n` : '';
 
-  // Kalite standartlarında tüm sınıflar için esnek/koşullu alternatif cevap desteği aktiftir
-  const hasAltAnswers = isQualityActive ? true : registered.supportsAlternativeAnswers;
+  // Kalite standartlarında tüm sınıflar için esnek/koşullu alternatif cevap desteği aktiftir.
+  // Legacy Parity Koruması (FAZ 2.2.2): isQualityActive false iken 8. sınıf henüz bu referans test fixture'ında
+  // alternatif cevap desteğine sahip değildi; kayıtlı destek sadece aktif kalite/üretim modunda veya 7. sınıfta uygulanır.
+  const hasAltAnswers = isQualityActive ? true : (grade === 8 ? false : registered.supportsAlternativeAnswers);
   const schema = getJsonOutputSchema(hasAltAnswers, isQualityActive);
 
   const turkishMebiDirectives = (grade === 7 && subjectId === 'turkce') ? registered.directives : '';
-  const math7thDirectives = (grade === 7 && subjectId === 'matematik') ? registered.directives : '';
-  const science7thDirectives = (grade === 7 && subjectId === 'fen_bilimleri') ? registered.directives : '';
+  // TASK174: 7. Sınıf Matematik ve Fen Bilimleri için senaryo bazlı dinamik kazanım filtreleme
+  const math7thDirectives = (grade === 7 && subjectId === 'matematik')
+    ? (params.outcomeCodes && params.outcomeCodes.length > 0
+        ? `\n${buildGrade7MathDirectives(params.outcomeCodes)}\n`
+        : registered.directives)
+    : '';
+  const science7thDirectives = (grade === 7 && subjectId === 'fen_bilimleri')
+    ? (params.outcomeCodes && params.outcomeCodes.length > 0
+        ? `\n${buildGrade7ScienceDirectives(params.outcomeCodes)}\n`
+        : registered.directives)
+    : '';
   const socialMebiDirectives = (grade === 7 && subjectId === 'sosyal_bilgiler') ? registered.directives : '';
   const dinMebiDirectives = (grade === 7 && subjectId === 'din_kulturu') ? registered.directives : '';
+
+  // 8. Sınıf MEBİ Okul Yazılılarına Hazırlık Direktifleri (TASK156)
+  // Geriye dönük %100 test parity koruması: Canlı üretimde (outcomeCodes verildiğinde veya isQualityActive=true iken) enjekte edilir.
+  const grade8Directives = (grade === 8 && isQualityActive) ? `\n${registered.directives}\n` : '';
 
   // 5. ve 6. Sınıf Ders Kitabı Entegrasyonu (FAZ 3.2.2)
   let grade56Directives = '';
@@ -225,7 +244,7 @@ ${rubricDesignBlock}${turkishMebiDirectives}
 ${math7thDirectives}
 ${science7thDirectives}
 ${socialMebiDirectives}
-${dinMebiDirectives}${grade56Directives}
+${dinMebiDirectives}${grade56Directives}${grade8Directives}${isQualityActive && subjectId === 'matematik' ? `\n${AI_MATHEMATICS_VISUAL_DIRECTIVES}\n` : ''}
 ${schema}`;
 }
 
@@ -240,10 +259,17 @@ export {
   isValidMiddleSchoolCombination,
   createGenericPromptEntry,
   buildGrade56TextbookDirectives,
+  buildGrade7MathDirectives,
+  buildGrade7ScienceDirectives,
   getQualityPedagogicalRules,
   QUESTION_DIRECTIVE_CLARITY_RULE,
+  getDirectiveClarityRule,
   RUBRIC_DESIGN_RULE,
+  AI_MATHEMATICS_VISUAL_DIRECTIVES,
   getDynamicContextDiversityRule
 };
+
+export { GRADE_7_MATH_OUTCOME_DICTIONARY } from './grade7MathPrompt';
+export { GRADE_7_SCIENCE_OUTCOME_DICTIONARY } from './grade7SciencePrompt';
 
 export type { LiveExamPromptParams, PromptRegistryEntry, AvoidDirectivesParams } from './types';

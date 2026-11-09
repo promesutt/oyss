@@ -5,6 +5,14 @@ import { GRADE_7_MATH_DIRECTIVES } from './grade7MathPrompt';
 import { GRADE_7_SCIENCE_DIRECTIVES } from './grade7SciencePrompt';
 import { GRADE_7_SOCIAL_DIRECTIVES } from './grade7SocialPrompt';
 import { GRADE_7_DIN_DIRECTIVES } from './grade7DinPrompt';
+import {
+  GRADE_8_TURKISH_DIRECTIVES,
+  GRADE_8_MATH_DIRECTIVES,
+  GRADE_8_SCIENCE_DIRECTIVES,
+  GRADE_8_INKILAP_DIRECTIVES,
+  GRADE_8_DIN_DIRECTIVES,
+  GRADE_8_ENGLISH_DIRECTIVES
+} from './grade8MebiPrompt';
 import { isValidMiddleSchoolCombination, createGenericPromptEntry } from './genericPrompt';
 
 export class PromptRegistryError extends Error {
@@ -15,6 +23,7 @@ export class PromptRegistryError extends Error {
 }
 
 const REGISTRY: Record<string, PromptRegistryEntry> = {
+  // 7. Sınıf MEBİ Özel Kütük Kayıtları
   '7_turkce': {
     grade: 7,
     subjectId: 'turkce',
@@ -49,6 +58,51 @@ const REGISTRY: Record<string, PromptRegistryEntry> = {
     directives: GRADE_7_DIN_DIRECTIVES,
     supportsAlternativeAnswers: true,
     version: '1.3'
+  },
+
+  // 8. Sınıf MEBİ Okul Yazılılarına Hazırlık Özel Kütük Kayıtları (TASK156)
+  '8_turkce': {
+    grade: 8,
+    subjectId: 'turkce',
+    directives: GRADE_8_TURKISH_DIRECTIVES,
+    supportsAlternativeAnswers: true,
+    version: '1.0'
+  },
+  '8_matematik': {
+    grade: 8,
+    subjectId: 'matematik',
+    directives: GRADE_8_MATH_DIRECTIVES,
+    supportsAlternativeAnswers: true,
+    version: '1.0'
+  },
+  '8_fen_bilimleri': {
+    grade: 8,
+    subjectId: 'fen_bilimleri',
+    directives: GRADE_8_SCIENCE_DIRECTIVES,
+    supportsAlternativeAnswers: true,
+    version: '1.0'
+  },
+  // T.C. İnkılap Tarihi ve Atatürkçülük: Sistem genelinde mimari subjectId 'sosyal_bilgiler'dir.
+  '8_sosyal_bilgiler': {
+    grade: 8,
+    subjectId: 'sosyal_bilgiler',
+    directives: GRADE_8_INKILAP_DIRECTIVES,
+    supportsAlternativeAnswers: true,
+    version: '1.0'
+  },
+  '8_din_kulturu': {
+    grade: 8,
+    subjectId: 'din_kulturu',
+    directives: GRADE_8_DIN_DIRECTIVES,
+    supportsAlternativeAnswers: true,
+    version: '1.0'
+  },
+  '8_ingilizce': {
+    grade: 8,
+    subjectId: 'ingilizce',
+    directives: GRADE_8_ENGLISH_DIRECTIVES,
+    supportsAlternativeAnswers: true,
+    version: '1.0'
   }
 };
 
