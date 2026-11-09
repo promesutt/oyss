@@ -36,7 +36,8 @@ export const OUTCOME_STUDY_BANK: Record<string, StudySheetSection> = {
     },
     "practiceQuestion": {
       "question": "Okuduğunuz hikâyede olay nerede ve günün hangi saatinde geçmektedir? Metinden iki kanıt bularak yazınız.",
-      "hint": "Metinde geçen mekân ve zaman zarflarını doğrudan arayınız."
+      "hint": "Metinde geçen mekân ve zaman zarflarını doğrudan arayınız.",
+      "usesSolvedExampleStimulus": true
     }
   },
   "T.O.5.7": {

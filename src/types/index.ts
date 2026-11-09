@@ -101,6 +101,10 @@ export interface ExamQuestion {
   originExamTitle?: string; // Alındığı resmî sınavın adı
   originQuestionNumber?: number; // Alındığı resmî sınavdaki soru numarası
   visual?: QuestionVisual; // Sorunun matematiksel veya pedagojik görsel çizimi
+  isCertified?: boolean; // Kalite güvence sertifikası
+  _qaStatus?: string; // passed, warning, needs_review, failed
+  _qaWarning?: string; // Öğretmen inceleme uyarısı
+  _qaFindings?: any[]; // Denetim bulguları
 }
 
 export interface ExamPaper {
@@ -115,6 +119,7 @@ export interface ExamPaper {
   totalPoints: number;
   questions: ExamQuestion[];
   examClassification?: ExamSourceClassification; // Sınavın kaynak sınıflandırması
+  qualityAudit?: any; // Sınav Kalite Güvence ve Sertifikasyon Raporu
 }
 
 /**
@@ -295,11 +300,17 @@ export interface StudySheetSection {
     question: string;
     analysis: string;
     solution: string;
+    stimulus?: string;
   };
   practiceQuestion: {
     question: string;
     hint: string;
+    stimulus?: string;
+    usesSolvedExampleStimulus?: boolean;
   };
+  isCertified?: boolean;
+  qaStatus?: string;
+  qaFindings?: any[];
 }
 
 export interface StudySheet {
@@ -310,6 +321,7 @@ export interface StudySheet {
   scenarioId: string;
   title: string;
   sections: StudySheetSection[];
+  qualityAudit?: any;
 }
 
 export interface InfographicItem {

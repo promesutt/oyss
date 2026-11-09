@@ -230,6 +230,11 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
 
   const currentQ = questions[activeQuestionIndex];
   const qNum = currentQ?.questionNumber || (activeQuestionIndex + 1);
+  const isBlockedByQA = currentQ?.isCertified === false || 
+    (currentQ as any)?._qaStatus === 'failed' || 
+    (currentQ as any)?._qaStatus === 'needs_review' || 
+    (currentQ as any)?.needsReview === true;
+
   const currentAnswerData: QuestionSessionData = (session.examId === examPaper.id ? session.answers[qNum] : undefined) || {
     questionNumber: qNum,
     studentAnswer: '',
@@ -544,6 +549,14 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
   };
 
   const handlePrint = () => {
+    const hasUncertifiedQuestions = (examPaper.qualityAudit?.certifiedForStudents ?? examPaper.qualityAudit?.summary?.certifiedForStudents) === false ||
+      examPaper.questions.some(q => (q as any).isCertified === false || (q as any)._qaStatus === 'failed' || (q as any)._qaStatus === 'needs_review' || (q as any).needsReview === true);
+
+    if (hasUncertifiedQuestions) {
+      alert('Bu sınavda kalite denetimini geçemeyen veya inceleme bekleyen sorular bulunmaktadır. Öğrenci güvenliği ve ölçme güvenirliği gereği onaylanmamış içerik yazdırılamaz veya PDF olarak dışa aktarılamaz.');
+      return;
+    }
+
     triggerPdfPrint({
       grade: examPaper.grade,
       subjectId: examPaper.subjectId,
@@ -911,6 +924,10 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
                 const trimmedAnswer = rawAnswer.trim();
                 const isCompletelyEmpty = trimmedAnswer.length === 0;
                 const hasValidAnswer = isValidStudentAnswer(rawAnswer);
+                const isQBlocked = q.isCertified === false || 
+                  (q as any)._qaStatus === 'failed' || 
+                  (q as any)._qaStatus === 'needs_review' || 
+                  (q as any).needsReview === true;
 
                 return (
                   <div key={num} className="border border-slate-200 rounded-2xl p-4 sm:p-5 bg-slate-50/50 space-y-4 shadow-2xs">
@@ -943,7 +960,12 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
                         )}
                       </div>
                       <div className="flex items-center space-x-2">
-                        {q.hasMissingSourceError ? (
+                        {isQBlocked ? (
+                          <span className="text-xs font-bold text-rose-800 bg-rose-50 border border-rose-200 px-2 py-0.5 rounded flex items-center gap-1">
+                            <AlertTriangle className="w-3.5 h-3.5 text-rose-600 shrink-0" />
+                            Kapatıldı
+                          </span>
+                        ) : q.hasMissingSourceError ? (
                           <span className="text-xs font-bold text-amber-800 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded flex items-center gap-1">
                             <AlertTriangle className="w-3.5 h-3.5 text-amber-600 shrink-0" />
                             Kaynak Eksik
@@ -966,7 +988,25 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
                       </div>
                     </div>
 
-                    {q.hasMissingSourceError ? (
+                    {isQBlocked ? (
+                      <div className="space-y-3">
+                        {/* Bilgilendirme Kartı: Soru kökü, uyaran ve seçenekler kullanıcıya ASLA gösterilmez */}
+                        <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 text-xs sm:text-sm text-slate-700 flex items-start space-x-3 shadow-2xs">
+                          <AlertTriangle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+                          <div className="space-y-1.5 w-full">
+                            <strong className="block text-slate-900 font-bold text-xs uppercase tracking-wide">
+                              Bu Soru Kalite Güvence Standartları Kapsamında Güncellenmektedir
+                            </strong>
+                            <p className="leading-relaxed font-medium">
+                              Bu soru içerik ve ölçme standartlarını tam olarak karşılayana kadar sınav görünümünden geçici olarak çıkarılmıştır.
+                            </p>
+                            <span className="text-[11px] text-slate-500 block pt-0.5">
+                              * Ölçme güvenirliği gereği soru metni, uyaran, cevaplama ve öz değerlendirme devre dışıdır.
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    ) : q.hasMissingSourceError ? (
                       <div className="p-4 rounded-xl bg-amber-50/80 border border-amber-200 text-amber-900 space-y-2">
                         <div className="flex items-center space-x-2 font-bold text-xs text-amber-800">
                           <AlertTriangle className="w-4 h-4 text-amber-600 shrink-0" />
@@ -1302,84 +1342,122 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
                 </div>
               </div>
 
-              {/* Special Stimulus (Table, Dialogue, Scenario, Experiment) */}
-              {currentQ.stimulus && (
-                <div className="bg-amber-50/80 border border-amber-200 rounded-xl p-4 text-xs sm:text-sm text-slate-800 whitespace-pre-line leading-relaxed shadow-2xs">
-                  <div className="text-[11px] font-bold text-amber-900 uppercase tracking-wider mb-1.5 flex items-center justify-between">
-                    <span className="flex items-center">
-                      <Layers className="w-3.5 h-3.5 mr-1 text-amber-700" />
-                      {currentQ.commonStimulus ? 'Ortak Kaynak Metin / Durum Senaryosu:' : 'Durum Senaryosu / Öğrenci Diyaloğu:'}
-                    </span>
-                    {currentQ.commonStimulus && (
-                      <span className="text-[10px] bg-amber-200/80 text-amber-900 font-bold px-2 py-0.5 rounded">
-                        ★ Ortak Materyal
+              {/* KALİTE GÜVENCE VE SUNUM KAPISI (TASK188) */}
+              {isBlockedByQA ? (
+                <div className="space-y-4 pt-2">
+                  {/* Bilgilendirme Kartı: Soru kökü, uyaran ve seçenekler kullanıcıya ASLA gösterilmez */}
+                  <div className="bg-slate-50 border border-slate-200 rounded-xl p-5 text-xs sm:text-sm text-slate-700 flex items-start space-x-3 shadow-2xs">
+                    <AlertTriangle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+                    <div className="space-y-1.5 w-full">
+                      <strong className="block text-slate-900 font-bold text-xs uppercase tracking-wide">
+                        Bu Soru Kalite Güvence Standartları Kapsamında Güncellenmektedir
+                      </strong>
+                      <p className="leading-relaxed font-medium">
+                        Bu soru içerik ve ölçme standartlarını tam olarak karşılayana kadar sınav görünümünden geçici olarak çıkarılmıştır.
+                      </p>
+                      <span className="text-[11px] text-slate-500 block pt-0.5">
+                        * Ölçme güvenirliği gereği soru metni, uyaran, cevaplama ve puanlama devre dışıdır. Sonraki soruya geçebilirsiniz.
                       </span>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <>
+                  {/* Special Stimulus (Table, Dialogue, Scenario, Experiment) */}
+                  {currentQ.stimulus && (
+                    <div className="bg-amber-50/80 border border-amber-200 rounded-xl p-4 text-xs sm:text-sm text-slate-800 whitespace-pre-line leading-relaxed shadow-2xs">
+                      <div className="text-[11px] font-bold text-amber-900 uppercase tracking-wider mb-1.5 flex items-center justify-between">
+                        <span className="flex items-center">
+                          <Layers className="w-3.5 h-3.5 mr-1 text-amber-700" />
+                          {currentQ.commonStimulus ? 'Ortak Kaynak Metin / Durum Senaryosu:' : 'Durum Senaryosu / Öğrenci Diyaloğu:'}
+                        </span>
+                        {currentQ.commonStimulus && (
+                          <span className="text-[10px] bg-amber-200/80 text-amber-900 font-bold px-2 py-0.5 rounded">
+                            ★ Ortak Materyal
+                          </span>
+                        )}
+                      </div>
+                      <div className="font-medium text-slate-800 pl-1 border-l-2 border-amber-300">
+                        <MathRenderer content={currentQ.stimulus} />
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Missing Source Material Warning Banner */}
+                  {currentQ.hasMissingSourceError && (
+                    <div className="bg-rose-50 border border-rose-300 rounded-xl p-4 text-xs sm:text-sm text-rose-950 flex items-start space-x-3 shadow-2xs">
+                      <AlertTriangle className="w-5 h-5 text-rose-600 shrink-0 mt-0.5" />
+                      <div className="space-y-1">
+                        <strong className="block text-rose-900 font-bold text-xs uppercase tracking-wide">
+                          Kaynak Materyal Eksikliği Bildirimi:
+                        </strong>
+                        <p className="leading-relaxed font-medium">
+                          {currentQ.sourceValidationError || 'Bu soru bir kaynak metne/tabloya dayanmaktadır ancak sınavda kaynak materyal bulunamamıştır. Öğrencinin mağduriyet yaşamaması için bu soru için cevaplama ve öz değerlendirme kilitlenmiştir.'}
+                        </p>
+                        <span className="text-[11px] text-rose-700 block font-semibold pt-0.5">
+                          * Sınavın diğer geçerli sorularını çözmeye devam edebilirsiniz.
+                        </span>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Kalite Güvence Uyarısı (Yalnızca warning düzeyindeki sorular için) */}
+                  {(currentQ as any)._qaWarning && (
+                    <div className="bg-amber-50 border border-amber-300 rounded-xl p-4 text-xs sm:text-sm text-amber-950 flex items-start space-x-3 shadow-2xs">
+                      <AlertTriangle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+                      <div className="space-y-1">
+                        <strong className="block text-amber-900 font-bold text-xs uppercase tracking-wide">
+                          Kalite Güvence Uyarısı:
+                        </strong>
+                        <p className="leading-relaxed font-medium">
+                          {(currentQ as any)._qaWarning}
+                        </p>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Context Text if any */}
+                  {currentQ.contextText && (
+                    <div className="text-xs sm:text-sm text-slate-600 italic bg-slate-50 p-3 rounded-lg border-l-4 border-slate-400">
+                      <MathRenderer content={currentQ.contextText} />
+                    </div>
+                  )}
+
+                  {/* Main Question Text */}
+                  <div className="text-sm sm:text-base font-bold text-slate-900 pl-1">
+                    <span className="text-indigo-600 mr-2">Soru {qNum}:</span>
+                    <MathRenderer content={currentQ.questionText} />
+                  </div>
+
+                  {/* Soru Matematiksel Görsel Modeli (FAZ 2B) */}
+                  {currentQ.visual && (
+                    <div className="my-3">
+                      <QuestionVisualView visual={currentQ.visual} />
+                    </div>
+                  )}
+
+                  {/* Student Response Editor with Math and Live Preview Support */}
+                  <div className="pt-2">
+                    {currentQ.hasMissingSourceError ? (
+                      <div className="p-4 bg-slate-100 border border-slate-200 rounded-xl text-xs text-slate-500 italic text-center">
+                        Bu sorunun dayandığı kaynak materyal eksik olduğu için cevap alanı ve öz değerlendirme devre dışı bırakılmıştır.
+                      </div>
+                    ) : (
+                      <MathAnswerEditor
+                        value={currentAnswerData.studentAnswer}
+                        onChange={handleAnswerTextChange}
+                        questionNumber={qNum}
+                        subjectId={examPaper.subjectId}
+                        placeholder="Cevabınızı, analitik gerekçelerinizi ve işlem basamaklarınızı buraya yazınız..."
+                        rows={5}
+                      />
                     )}
                   </div>
-                  <div className="font-medium text-slate-800 pl-1 border-l-2 border-amber-300">
-                    <MathRenderer content={currentQ.stimulus} />
-                  </div>
-                </div>
+                </>
               )}
-
-              {/* Missing Source Material Warning Banner */}
-              {currentQ.hasMissingSourceError && (
-                <div className="bg-rose-50 border border-rose-300 rounded-xl p-4 text-xs sm:text-sm text-rose-950 flex items-start space-x-3 shadow-2xs">
-                  <AlertTriangle className="w-5 h-5 text-rose-600 shrink-0 mt-0.5" />
-                  <div className="space-y-1">
-                    <strong className="block text-rose-900 font-bold text-xs uppercase tracking-wide">
-                      Kaynak Materyal Eksikliği Bildirimi:
-                    </strong>
-                    <p className="leading-relaxed font-medium">
-                      {currentQ.sourceValidationError || 'Bu soru bir kaynak metne/tabloya dayanmaktadır ancak sınavda kaynak materyal bulunamamıştır. Öğrencinin mağduriyet yaşamaması için bu soru için cevaplama ve öz değerlendirme kilitlenmiştir.'}
-                    </p>
-                    <span className="text-[11px] text-rose-700 block font-semibold pt-0.5">
-                      * Sınavın diğer geçerli sorularını çözmeye devam edebilirsiniz.
-                    </span>
-                  </div>
-                </div>
-              )}
-
-              {/* Context Text if any */}
-              {currentQ.contextText && (
-                <div className="text-xs sm:text-sm text-slate-600 italic bg-slate-50 p-3 rounded-lg border-l-4 border-slate-400">
-                  <MathRenderer content={currentQ.contextText} />
-                </div>
-              )}
-
-              {/* Main Question Text */}
-              <div className="text-sm sm:text-base font-bold text-slate-900 pl-1">
-                <span className="text-indigo-600 mr-2">Soru {qNum}:</span>
-                <MathRenderer content={currentQ.questionText} />
-              </div>
-
-              {/* Soru Matematiksel Görsel Modeli (FAZ 2B) */}
-              {currentQ.visual && (
-                <div className="my-3">
-                  <QuestionVisualView visual={currentQ.visual} />
-                </div>
-              )}
-
-              {/* Student Response Editor with Math and Live Preview Support */}
-              <div className="pt-2">
-                {currentQ.hasMissingSourceError ? (
-                  <div className="p-4 bg-slate-100 border border-slate-200 rounded-xl text-xs text-slate-500 italic text-center">
-                    Bu sorunun dayandığı kaynak materyal eksik olduğu için cevap alanı ve öz değerlendirme devre dışı bırakılmıştır.
-                  </div>
-                ) : (
-                  <MathAnswerEditor
-                    value={currentAnswerData.studentAnswer}
-                    onChange={handleAnswerTextChange}
-                    questionNumber={qNum}
-                    subjectId={examPaper.subjectId}
-                    placeholder="Cevabınızı, analitik gerekçelerinizi ve işlem basamaklarınızı buraya yazınız..."
-                    rows={5}
-                  />
-                )}
-              </div>
 
               {/* Immediate Feedback & Self-Assessment Box */}
-              {session.feedbackMode === 'immediate' && !currentQ.hasMissingSourceError && (
+              {session.feedbackMode === 'immediate' && !currentQ.hasMissingSourceError && !isBlockedByQA && (
                 !hasStudentAnswer ? (
                   <div className="mt-4 pt-4 border-t border-slate-200">
                     <div className="p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-500 flex items-center justify-between">

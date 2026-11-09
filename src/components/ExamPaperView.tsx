@@ -18,7 +18,8 @@ import {
   Sparkles,
   Printer,
   PenTool,
-  Table
+  Table,
+  AlertTriangle
 } from 'lucide-react';
 
 interface ExamPaperViewProps {
@@ -206,6 +207,15 @@ export const ExamPaperView: React.FC<ExamPaperViewProps> = ({
 
             <button
               onClick={() => {
+                const hasUncertifiedQuestions = (examPaper.qualityAudit?.certifiedForStudents ?? examPaper.qualityAudit?.summary?.certifiedForStudents) === false ||
+                  examPaper.qualityAudit?.overallStatus === 'failed' ||
+                  examPaper.qualityAudit?.overallStatus === 'needs_review' ||
+                  examPaper.questions.some(q => (q as any).isCertified === false || (q as any)._qaStatus === 'failed' || (q as any)._qaStatus === 'needs_review' || (q as any).needsReview === true);
+
+                if (hasUncertifiedQuestions) {
+                  alert('Bu sınavda kalite denetimini geçemeyen veya inceleme bekleyen sorular bulunmaktadır. Öğrenci güvenliği gereği onaylanmamış içerik yazdırılamaz veya PDF olarak dışa aktarılamaz.');
+                  return;
+                }
                 triggerPdfPrint({
                   grade: examPaper.grade,
                   subjectId: examPaper.subjectId,
@@ -337,11 +347,19 @@ export const ExamPaperView: React.FC<ExamPaperViewProps> = ({
 
         {/* Question List */}
         <div className="space-y-8 print:space-y-0">
-          {examPaper.questions.map((q) => (
-            <div 
-              key={q.questionNumber} 
-              className="exam-question-item border-b border-slate-200 pb-8 last:border-b-0 print:border-b print:border-slate-300 print:pb-3 print:mb-3 print:last:mb-0 print:last:border-b-0"
-            >
+          {examPaper.questions.map((q) => {
+            const isBlockedByQA = (q as any).isCertified === false || 
+              (q as any)._qaStatus === 'failed' || 
+              (q as any)._qaStatus === 'needs_review' || 
+              (q as any).needsReview === true;
+
+            return (
+              <div 
+                key={q.questionNumber} 
+                className={`exam-question-item border-b border-slate-200 pb-8 last:border-b-0 print:border-b print:border-slate-300 print:pb-3 print:mb-3 print:last:mb-0 print:last:border-b-0 ${
+                  isBlockedByQA ? 'print:hidden' : ''
+                }`}
+              >
               {/* Question Header: Number, Outcome, Difficulty, Archetype, Points */}
               <div className="flex flex-wrap items-center justify-between gap-2 mb-3 print:mb-1.5 print:gap-1">
                 <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 print:gap-1">
@@ -396,63 +414,96 @@ export const ExamPaperView: React.FC<ExamPaperViewProps> = ({
                 </div>
               </div>
 
-              {/* Context / Stimulus Text (if any) */}
-              {q.contextText && (
-                <div className="text-xs sm:text-sm text-slate-600 italic mb-2 bg-slate-50 p-2.5 rounded-lg border-l-4 border-slate-400 print:p-1.5 print:mb-1 print:text-[10px] print:bg-slate-50/50 print:border-slate-400">
-                  <MathRenderer content={q.contextText} />
-                </div>
-              )}
-
-              {/* Special Stimulus (Experiment setup, scenario text, data, dialogue) */}
-              {q.stimulus && (
-                <div className="text-xs sm:text-sm text-slate-800 font-medium mb-3 bg-amber-50/70 p-3.5 rounded-xl border border-amber-200 shadow-2xs whitespace-pre-line leading-relaxed print:bg-slate-50/70 print:border print:border-slate-300 print:p-2.5 print:mb-1.5 print:text-[11px] print:leading-snug print:rounded-lg print:shadow-none">
-                  {q.commonStimulus && (
-                    <div className="text-[10px] font-bold text-amber-900 uppercase tracking-wider mb-1 flex items-center print:text-[9px] print:text-slate-800">
-                      ★ {q.commonStimulus}
+              {/* KALİTE GÜVENCE VE SUNUM KAPISI (TASK188) */}
+              {isBlockedByQA ? (
+                <div className="space-y-3 pt-1">
+                  {/* Bilgilendirme Kartı: Soru kökü, uyaran ve seçenekler kullanıcıya ASLA gösterilmez */}
+                  <div className="p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm text-slate-700 flex items-start space-x-2.5 print:hidden shadow-2xs">
+                    <AlertTriangle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+                    <div className="space-y-1">
+                      <strong className="block text-slate-900 font-bold uppercase tracking-wide">
+                        Bu Soru Kalite Güvence Standartları Kapsamında Güncellenmektedir
+                      </strong>
+                      <p className="text-xs text-slate-600 font-medium">
+                        Bu soru içerik ve ölçme standartlarını tam olarak karşılayana kadar sınav görünümünden ve A4 baskı çıktısından geçici olarak çıkarılmıştır.
+                      </p>
+                      <span className="text-[11px] text-slate-500 block pt-0.5">
+                        * Ölçme güvenirliği gereği soru metni, uyaran ve cevap alanı devre dışıdır.
+                      </span>
                     </div>
-                  )}
-                  <MathRenderer content={q.stimulus} />
-                </div>
-              )}
-
-              {/* Missing Source Material Warning Banner */}
-              {q.hasMissingSourceError && (
-                <div className="p-3 mb-3 bg-rose-50 border border-rose-300 rounded-xl text-xs text-rose-900 font-semibold flex items-start space-x-2 print:border-rose-400 print:text-[10px]">
-                  <span>⚠️</span>
-                  <div>
-                    <strong>Eksik Kaynak Uyarısı:</strong> {q.sourceValidationError || 'Bu soru bir kaynak metne/tabloya dayanmaktadır ancak kaynak materyal sınavda bulunamamıştır.'}
                   </div>
                 </div>
+              ) : (
+                <>
+                  {/* Context / Stimulus Text (if any) */}
+                  {q.contextText && (
+                    <div className="text-xs sm:text-sm text-slate-600 italic mb-2 bg-slate-50 p-2.5 rounded-lg border-l-4 border-slate-400 print:p-1.5 print:mb-1 print:text-[10px] print:bg-slate-50/50 print:border-slate-400">
+                      <MathRenderer content={q.contextText} />
+                    </div>
+                  )}
+
+                  {/* Special Stimulus (Experiment setup, scenario text, data, dialogue) */}
+                  {q.stimulus && (
+                    <div className="text-xs sm:text-sm text-slate-800 font-medium mb-3 bg-amber-50/70 p-3.5 rounded-xl border border-amber-200 shadow-2xs whitespace-pre-line leading-relaxed print:bg-slate-50/70 print:border print:border-slate-300 print:p-2.5 print:mb-1.5 print:text-[11px] print:leading-snug print:rounded-lg print:shadow-none">
+                      {q.commonStimulus && (
+                        <div className="text-[10px] font-bold text-amber-900 uppercase tracking-wider mb-1 flex items-center print:text-[9px] print:text-slate-800">
+                          ★ {q.commonStimulus}
+                        </div>
+                      )}
+                      <MathRenderer content={q.stimulus} />
+                    </div>
+                  )}
+
+                  {/* Missing Source Material Warning Banner */}
+                  {q.hasMissingSourceError && (
+                    <div className="p-3 mb-3 bg-rose-50 border border-rose-300 rounded-xl text-xs text-rose-900 font-semibold flex items-start space-x-2 print:border-rose-400 print:text-[10px]">
+                      <span>⚠️</span>
+                      <div>
+                        <strong>Eksik Kaynak Uyarısı:</strong> {q.sourceValidationError || 'Bu soru bir kaynak metne/tabloya dayanmaktadır ancak kaynak materyal sınavda bulunamamıştır.'}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Kalite Güvence Uyarısı (Yalnızca warning düzeyindeki sorular için) */}
+                  {(q as any)._qaWarning && (
+                    <div className="p-3 mb-3 bg-amber-50 border border-amber-300 rounded-xl text-xs text-amber-900 font-semibold flex items-start space-x-2 print:hidden">
+                      <span>⚠️</span>
+                      <div>
+                        <strong>Kalite Güvence Uyarısı:</strong> {(q as any)._qaWarning}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Main Question Text */}
+                  <div className="text-sm sm:text-base font-semibold text-slate-900 mb-4 pl-1 print:text-[12px] print:font-bold print:mb-2 print:pl-0 print:leading-snug">
+                    <MathRenderer content={q.questionText} />
+                  </div>
+
+                  {/* Soru Matematiksel Görsel Modeli (FAZ 2B) */}
+                  {q.visual && (
+                    <div className="my-3 print:my-1.5">
+                      <QuestionVisualView visual={q.visual} />
+                    </div>
+                  )}
+
+                  {/* Student Answer Space (Blank lines or boxed area) */}
+                  <div className="mt-4 pt-3 border-t border-dashed border-slate-300 print:mt-1.5 print:pt-1">
+                    <div className="flex items-center justify-between text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2 print:mb-1 print:text-[10px] print:text-slate-600">
+                      <span>Öğrenci Çözüm ve Cevap Alanı:</span>
+                      <span className="print:inline hidden print:text-[10px] print:font-bold">Puan: [ &nbsp; &nbsp; / {q.points} ]</span>
+                    </div>
+                    {/* Lined writing area for real printing - perfectly equal row heights */}
+                    <div className="w-full rounded-lg bg-slate-50/50 border border-slate-200 print:bg-transparent print:border-slate-300 overflow-hidden divide-y divide-slate-200 print:divide-slate-300">
+                      {Array.from({ length: answerLineCount }).map((_, lineIdx) => (
+                        <div 
+                          key={lineIdx} 
+                          className="h-8 print:h-7 w-full"
+                        />
+                      ))}
+                    </div>
+                  </div>
+                </>
               )}
-
-              {/* Main Question Text */}
-              <div className="text-sm sm:text-base font-semibold text-slate-900 mb-4 pl-1 print:text-[12px] print:font-bold print:mb-2 print:pl-0 print:leading-snug">
-                <MathRenderer content={q.questionText} />
-              </div>
-
-              {/* Soru Matematiksel Görsel Modeli (FAZ 2B) */}
-              {q.visual && (
-                <div className="my-3 print:my-1.5">
-                  <QuestionVisualView visual={q.visual} />
-                </div>
-              )}
-
-              {/* Student Answer Space (Blank lines or boxed area) */}
-              <div className="mt-4 pt-3 border-t border-dashed border-slate-300 print:mt-1.5 print:pt-1">
-                <div className="flex items-center justify-between text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2 print:mb-1 print:text-[10px] print:text-slate-600">
-                  <span>Öğrenci Çözüm ve Cevap Alanı:</span>
-                  <span className="print:inline hidden print:text-[10px] print:font-bold">Puan: [ &nbsp; &nbsp; / {q.points} ]</span>
-                </div>
-                {/* Lined writing area for real printing - perfectly equal row heights */}
-                <div className="w-full rounded-lg bg-slate-50/50 border border-slate-200 print:bg-transparent print:border-slate-300 overflow-hidden divide-y divide-slate-200 print:divide-slate-300">
-                  {Array.from({ length: answerLineCount }).map((_, lineIdx) => (
-                    <div 
-                      key={lineIdx} 
-                      className="h-8 print:h-7 w-full"
-                    />
-                  ))}
-                </div>
-              </div>
 
               {/* Optional Scoring Rubric & Model Answer Box (Toggled by user) */}
               {showRubric && (
@@ -511,7 +562,8 @@ export const ExamPaperView: React.FC<ExamPaperViewProps> = ({
                 </div>
               )}
             </div>
-          ))}
+          );
+        })}
         </div>
 
         {/* Footer */}

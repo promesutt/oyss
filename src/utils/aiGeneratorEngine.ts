@@ -19,6 +19,7 @@ import {
 } from './sourceMaterialValidator';
 import { parseExamJsonSafely } from './jsonParser';
 import { validateAndSanitizeAiVisual } from './aiVisualValidator';
+import { ensureExamQuality } from './qualityAssurance';
 import { buildLiveExamPrompt, buildAvoidDirectives } from '../generators/prompts';
 
 const POOL_NAMES_A = [
@@ -1465,7 +1466,12 @@ export async function generateMEBIQuestions(
 
     const calibrated = calibrateQuestionDifficulties(acceptedQuestions);
     const { enrichedQuestions } = validateAndEnrichExamQuestions(calibrated);
-    return enrichedQuestions as GeneratedQuestionItem[];
+    const { certifiedQuestions } = ensureExamQuality(
+      enrichedQuestions,
+      { grade, subjectId },
+      internalAllQuestions as any
+    );
+    return certifiedQuestions as GeneratedQuestionItem[];
   };
 
   // 1. TIER 1: Güvenli Sunucu Fonksiyonu Proxy (/api/generate)

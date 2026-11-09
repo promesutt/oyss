@@ -1,5 +1,6 @@
 import { StudentExamSession } from '../types/practice';
 import { ExamPaper } from '../types';
+import { sanitizeExamPaper } from './qualityAssurance';
 
 const SESSION_PREFIX = 'oyss_session_v1_';
 const CUSTOM_EXAM_PREFIX = 'oyss_custom_exam_v1_';
@@ -58,8 +59,11 @@ export function loadPracticeSession(examId: string): StudentExamSession | null {
     const parsed = JSON.parse(raw);
     if (!parsed || typeof parsed !== 'object') return null;
     if (parsed.examId !== examId) return null;
-    if (!parsed.answers || typeof parsed.answers !== 'object') {
+    if (parsed.answers && typeof parsed.answers !== 'object') {
       parsed.answers = {};
+    }
+    if (parsed.customExamSnapshot) {
+      parsed.customExamSnapshot = sanitizeExamPaper(parsed.customExamSnapshot);
     }
     return parsed as StudentExamSession;
   } catch (err) {
@@ -73,8 +77,19 @@ export function loadPracticeSession(examId: string): StudentExamSession | null {
  */
 export function savePracticeSession(session: StudentExamSession): boolean {
   if (!session || !session.examId) return false;
+
+  // Depolama Sanitizasyonu (TASK188):
+  // Oturumdaki customExamSnapshot sertifikasız soru içeriyorsa,
+  // gereksiz teknik hata verilerinin yerel depolamada birikmesini önlemek için
+  // sunum sanitizasyonu ile temizlenerek kaydedilir.
+  let cleanSnapshot = session.customExamSnapshot;
+  if (cleanSnapshot) {
+    cleanSnapshot = sanitizeExamPaper(cleanSnapshot);
+  }
+
   const payload = {
     ...session,
+    customExamSnapshot: cleanSnapshot,
     updatedAt: Date.now()
   };
   return safeSetItem(`${SESSION_PREFIX}${session.examId}`, JSON.stringify(payload));

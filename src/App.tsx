@@ -38,6 +38,7 @@ import { InteractivePracticeView } from './components/InteractivePracticeView';
 import { QuickStartGuide } from './components/QuickStartGuide';
 import { loadCustomExamPaper, clearCustomExamPaper } from './utils/practiceStorage';
 import { validateAndEnrichExamQuestions } from './utils/sourceMaterialValidator';
+import { ensureExamQuality, ensureStudySheetQuality } from './utils/qualityAssurance';
 import { triggerPdfPrint } from './utils/materialFileNameGenerator';
 import {
   Mic,
@@ -156,9 +157,14 @@ export const App: React.FC = () => {
       customExamPaper.grade === selectedGrade &&
       customExamPaper.subjectId === selectedSubject) {
       const { enrichedQuestions } = validateAndEnrichExamQuestions(customExamPaper.questions);
+      const { certifiedQuestions, report } = ensureExamQuality(
+        enrichedQuestions,
+        { grade: selectedGrade, subjectId: selectedSubject }
+      );
       return {
         ...customExamPaper,
-        questions: enrichedQuestions as ExamQuestion[]
+        questions: certifiedQuestions as ExamQuestion[],
+        qualityAudit: report
       };
     }
 
@@ -172,9 +178,14 @@ export const App: React.FC = () => {
 
     if (match) {
       const { enrichedQuestions } = validateAndEnrichExamQuestions(match.questions);
+      const { certifiedQuestions, report } = ensureExamQuality(
+        enrichedQuestions,
+        { grade: selectedGrade, subjectId: selectedSubject }
+      );
       return {
         ...match,
-        questions: enrichedQuestions as ExamQuestion[]
+        questions: certifiedQuestions as ExamQuestion[],
+        qualityAudit: report
       };
     }
 
@@ -250,7 +261,7 @@ export const App: React.FC = () => {
       };
     });
 
-    return {
+    const rawSheet: StudySheet = {
       id: `study_${selectedSubject}_${selectedGrade}_${currentScenario.id}`,
       grade: selectedGrade,
       subjectId: selectedSubject,
@@ -261,6 +272,8 @@ export const App: React.FC = () => {
         : `${selectedGrade}. Sınıf ${subjectName} (${currentScenario.name}) TYMM Kapsamlı Sınav Çalışma Kağıdı`,
       sections
     };
+
+    return ensureStudySheetQuality(rawSheet);
   }, [selectedGrade, selectedSubject, selectedTerm, currentScenario]);
 
   // Active Infographics: Return verified items only (empty state handles missing items)
