@@ -3,6 +3,93 @@ import { isSemanticallySelfContainedQuestion, detectSourceRequirement, checkStim
 import { resolveOutcomeMetadata } from '../../data/curriculumData';
 
 /**
+ * Bir sorunun "Hata Tespiti", "Adım Analizi" veya "Kavram Yanılgısı" türünde
+ * kasıtlı olarak kurgulanmış bir yanlış bilgi arayışı içerip içermediğini denetler.
+ * (TASK198)
+ */
+export function isIntentionalErrorDetectionQuestion(q: any): boolean {
+  if (!q) return false;
+  const archetype = String(q.archetype || q.templateType || '').toLowerCase();
+  const stem = String(q.questionText || q.question || '').toLowerCase();
+
+  // 1. Archetype / Template türü kontrolü
+  const isErrorArchetype = /(?:hata\s*tespiti|adım\s*analizi|yanılgı|öğrenci\s*diyaloğu|öğrenci\s*tartışması|kavram\s*yanılgısı|hata\s*ve\s*düzeltme)/i.test(archetype);
+
+  // 2. Soru kökünde kasıtlı yanlış bilgi / hata arayışı yönergesi kontrolü
+  const hasErrorKeywords = /(?:hata|yanlış|yanılgı|çelişki|hatalı|doğru\s+olmadığı|eksiklik|kusur)/i.test(stem);
+  const hasDetectionDirectives = /(?:tespit|bulunuz|bulun|belirleyiniz|belirleyin|belirtiniz|belirtin|düzeltiniz|düzeltin|açıklayınız|açıklayın|hangi\s+adım|neden\s+yanlış|hangisi\s+yanlış|doğrusunu\s+yaz|düzeltilmiş)/i.test(stem);
+  const stemAsksForErrorDetection = hasErrorKeywords && hasDetectionDirectives;
+
+  if (isErrorArchetype && stemAsksForErrorDetection) return true;
+  if (stemAsksForErrorDetection) return true;
+  if (isErrorArchetype && /(?:hangi\s+adım|ilk\s+hata|kaçıncı\s+adım)/i.test(stem)) return true;
+
+  return false;
+}
+
+/**
+ * Bir soru içerisindeki belirli bir kural / kavram alanının, soruda hedeflenen
+ * kasıtlı yanlış bilgi olup olmadığını denetler. (TASK205)
+ *
+ * Bir senaryo hatasının tolere edilebilmesi için:
+ * 1. Soru genel olarak bir "Hata Tespiti & Adım Analizi" veya "Kavram Yanılgısı" sorusu olmalıdır.
+ * 2. İlgili kuralın hedef kavramı, model cevap veya rubrikte MUTLAKA ele alınmış ve çözülmüş olmalıdır.
+ * 3. Soru kökü açıkça BAŞKA bir konudaki hatayı hedefleyerek bu kuralın konusunu dışlamış olmamalıdır.
+ */
+export function isTargetedIntentionalError(
+  q: any,
+  ruleTopicKeywords: string[],
+  options?: {
+    customAnswerCheck?: (answerOnlyText: string) => boolean;
+    customStemCheck?: (stemOnlyText: string) => boolean;
+  }
+): boolean {
+  if (!isIntentionalErrorDetectionQuestion(q)) return false;
+
+  const stem = String(q.questionText || q.question || '').toLowerCase();
+  const answer = String(q.modelAnswer || q.answer || '').toLowerCase();
+  const solution = String(q.solutionExplanation || q.solution || '').toLowerCase();
+  const rubricText = Array.isArray(q.rubric)
+    ? q.rubric.map((r: any) => `${r.criterion || ''} ${r.item || ''} ${r.description || ''}`).join(' ').toLowerCase()
+    : '';
+  const altText = Array.isArray(q.alternativeAnswers) ? q.alternativeAnswers.join(' ').toLowerCase() : '';
+  const answerOnlyText = `${answer} ${solution} ${rubricText} ${altText}`;
+
+  // 1. Model cevap ve rubrik kontrolü:
+  // Model cevap ve rubrikte bu kuralın anahtar kavramı ele alınmıyorsa,
+  // bu hata soruda öğrencinin çözmesi hedeflenen hata DEĞİLDİR (bağımsız / kontrolsüz bir hatadır).
+  let isAddressedInAnswer = false;
+  if (options?.customAnswerCheck) {
+    isAddressedInAnswer = options.customAnswerCheck(answerOnlyText);
+  } else {
+    isAddressedInAnswer = ruleTopicKeywords.some(kw => answerOnlyText.includes(kw.toLowerCase()));
+  }
+
+  if (!isAddressedInAnswer) return false;
+
+  // 2. Soru kökü sınırlama kontrolü:
+  // Eğer soru kökü başka bir konudaki hatayı açıkça spesifik olarak hedeflemişse
+  // (Örn: "...kütle ölçümü ile ilgili hatayı tespit ediniz..."),
+  // soru kökünde tesadüfen arka plan olarak adı geçen diğer kavramlar (örn. safra) muaf tutulamaz.
+  if (options?.customStemCheck) {
+    if (!options.customStemCheck(stem)) return false;
+  } else {
+    // Soru kökünde spesifik hata yönergesi kalıbı: "[alan/kavram] ile ilgili/hakkındaki/konusundaki yapılan hata"
+    const specificErrorTargetMatch = stem.match(/([a-zçğıöşü\s]{3,30})\s+(?:ile\s+ilgili|hakkındaki|konusundaki)\s+(?:yapılan|yaptığı|verilen)?\s*(?:bilimsel\s+)?(?:hata|yanlış|yanılgı)/i);
+    if (specificErrorTargetMatch) {
+      const targetedDomain = specificErrorTargetMatch[1].trim().toLowerCase();
+      // Eğer bu spesifik hedeflenen alan bizim kuralımızın anahtar kelimelerinden hiçbirini içermiyorsa:
+      const matchesRule = ruleTopicKeywords.some(kw => targetedDomain.includes(kw.toLowerCase()) || kw.toLowerCase().includes(targetedDomain));
+      if (!matchesRule) {
+        return false;
+      }
+    }
+  }
+
+  return true;
+}
+
+/**
  * Ortak Kalite Denetim Katmanı (Tüm Branşlar ve Tüm Sınıf Seviyeleri İçin)
  */
 export function runCommonQualityChecks(
@@ -196,6 +283,40 @@ export function runCommonQualityChecks(
   }
 
   // ==========================================
+  // B.2: HATA TESPİTİ VE SENARYO TUTARLILIĞI (TASK198)
+  // ==========================================
+  const isErrorQuestion = isIntentionalErrorDetectionQuestion(q);
+  if (isErrorQuestion) {
+    // 1. Senaryo / uyarıcı metin varlığı kontrolü
+    if (!stimulus || stimulus.length < 20) {
+      findings.push({
+        category: 'stem_answer_consistency',
+        severity: 'critical',
+        field: 'stimulus',
+        message: 'Hata tespiti / adım analizi sorusu olmasına rağmen senaryoda öğrencinin inceleyeceği bir öğrenci ifadesi, deney verisi veya işlem adımları (stimulus) bulunmamaktadır.',
+        suggestedFix: 'Senaryo (stimulus) alanına incelenecek öğrenci ifadesini, poster içeriğini veya işlem basamaklarını ekleyiniz.',
+        validationMethod: 'intentional_error_scenario_presence_check'
+      });
+    }
+
+    // 2. Adım hatası soruluyorsa senaryoda numaralı adımların varlığı
+    const asksWhichStep = /(?:hangi\s+adım|kaçıncı\s+adım|ilk\s+hata.*adım)/i.test(stem);
+    if (asksWhichStep && stimulus) {
+      const hasNumberedSteps = /(?:1\.\s*adım|adım\s*1|I\.\s*adım|I\.|1\.\s*aşama|aşama\s*1)/i.test(stimulus);
+      if (!hasNumberedSteps) {
+        findings.push({
+          category: 'stem_answer_consistency',
+          severity: 'critical',
+          field: 'stimulus',
+          message: 'Soru kökünde hangi adımda hata yapıldığı sorulmasına rağmen senaryoda numaralandırılmış işlem adımları (1. Adım, 2. Adım vb.) bulunmamaktadır.',
+          suggestedFix: 'Senaryodaki işlem basamaklarını "1. Adım:", "2. Adım:" şeklinde açıkça numaralandırınız.',
+          validationMethod: 'intentional_error_step_consistency_check'
+        });
+      }
+    }
+  }
+
+  // ==========================================
   // C. SORU VE MODEL CEVAP TUTARLILIĞI
   // ==========================================
   if (!answer || answer.length < 2) {
@@ -381,8 +502,9 @@ export function runCommonQualityChecks(
       const subsequentHandPickup = /(?:çanta|koli|yük|bavul|kutu|paket|bardak)(?:sını|yı|sini|yi|ünü|ü|unu|u|ini|i)?\s+yerden\s+(?:alarak|alıp|kaldırarak|kaldırıp)\s+(?:eline|kucağına)\s+al/i;
 
       const intermediatePutDown = /(?:yere\s+(?:koy|bırak|indir|attı)|sırtından\s+(?:çıkar|indir|al)|masaya\s+(?:bırak|koy)|yere\s+bıraktıktan)/i;
+      const isAskingNarrativeError = isErrorQuestion && /(?:anlatım|zamansal|kronoloji|çelişki|olay\s+akışı|mantık\s+hatası)/i.test(stem);
 
-      if (!hasNegation) {
+      if (!hasNegation && !isAskingNarrativeError) {
         const hasBackConflict = preExistingBackState.test(segLower) && subsequentBackPickup.test(segLower);
         const hasHandConflict = preExistingHandState.test(segLower) && subsequentHandPickup.test(segLower);
 

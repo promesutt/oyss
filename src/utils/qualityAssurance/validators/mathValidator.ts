@@ -1,4 +1,5 @@
 import { QualityFinding, QuestionValidationContext } from '../types';
+import { isIntentionalErrorDetectionQuestion } from '../commonValidators';
 
 /**
  * Matematik Dersi Uzman Kalite Kontrolü
@@ -11,6 +12,14 @@ export function validateMathQuestion(
   const stem = (q.questionText || q.question || '').trim();
   const stimulus = (q.stimulus || q.contextText || '').trim();
   const answer = (q.modelAnswer || q.answer || '').trim();
+  const solution = (q.solutionExplanation || q.solution || '').trim();
+  const rubric = Array.isArray(q.rubric) ? q.rubric : [];
+  const altAnswers = Array.isArray(q.alternativeAnswers) ? q.alternativeAnswers : [];
+
+  const rubricText = rubric.map((r: any) => `${r.criterion || ''} ${r.item || ''} ${r.description || ''}`).join(' ');
+  const altText = altAnswers.join(' ');
+  const answerOnlyText = `${answer} ${solution} ${rubricText} ${altText}`;
+  const stimulusOnlyText = stimulus;
 
   // 1. Sayısal sonuç gerektiren sorularda cevabın sayısal/cebirsel varlığı
   const asksForNumericValue = /(?:kaçtır\??|kaç\s+(?:adet|tane|derece|metre|santimetre|kg|lira|katıdır|katı|br|birim)|değerini\s+bulunuz|sonucu\s+bulunuz|alanı\s+kaç|çevresi\s+kaç)/i.test(stem);
@@ -29,67 +38,117 @@ export function validateMathQuestion(
   }
 
   // 2. Basit deterministik aritmetik tutarlılık kontrolü
-  // Soru kökü, model cevap veya metin içindeki herhangi bir aritmetik eşitliği (A + B = C vb.) denetle
-  const allText = `${stem} ${stimulus} ${answer}`;
-
   // Tamsayı veya ondalıklı eşitlikler: A + B = C, A - B = C, A * B = C vb.
   // Kesirlerle (örneğin 1/2 + 1/4 = 3/4) çakışmaması için bölme işareti olarak / değil, ÷, :, bölü kontrol edilir;
   // ve sayının hemen ardında / bulunamaz.
-  const eqRegex = /(?<!\/\s*)(\b\d+(?:\.\d+)?)\s*([\+\-\*x•·÷:])\s*(\d+(?:\.\d+)?)\s*=\s*(\d+(?:\.\d+)?)(?!\s*\/)/gi;
-  let eqMatch;
-  while ((eqMatch = eqRegex.exec(allText)) !== null) {
-    const a = parseFloat(eqMatch[1]);
-    const op = eqMatch[2];
-    const b = parseFloat(eqMatch[3]);
-    const c = parseFloat(eqMatch[4]);
-    let expected: number | null = null;
-    if (op === '+') expected = a + b;
-    else if (op === '-') expected = a - b;
-    else if (['*', 'x', '•', '·'].includes(op)) expected = a * b;
-    else if (['÷', ':'].includes(op) && b !== 0) expected = a / b;
+  const eqRegexStr = '(?<!\\/\\s*)(\\b\\d+(?:\\.\\d+)?)\\s*([\\+\\-\\*x•·÷:])\\s*(\\d+(?:\\.\\d+)?)\\s*=\\s*(\\d+(?:\\.\\d+)?)(?!\\s*\\/)';
 
-    if (expected !== null && Math.abs(expected - c) > 0.001) {
-      findings.push({
-        category: 'scientific_correctness',
-        severity: 'critical',
-        field: 'answer',
-        message: `Matematiksel aritmetik işlem hatası: ${a} ${op} ${b} = ${expected} olmalıdır; metinde ${c} olarak hesaplanmıştır.`,
-        suggestedFix: `İşlemin doğru sonucu olan ${expected} değerini kullanınız.`,
-        validationMethod: 'math_arithmetic_verifier'
-      });
-    }
-  }
+  const isTargetedArithmeticOperation = (a: number, b: number, op: string, expected: number): boolean => {
+    if (!isIntentionalErrorDetectionQuestion(q)) return false;
 
-  // Kesirli toplama / çıkarma eşitliği kontrolü: A/B + C/D = E/F
-  const fracEqRegex = /(\d+)\/(\d+)\s*([\+\-])\s*(\d+)\/(\d+)\s*=\s*(\d+)\/(\d+)/g;
-  let fracMatch;
-  while ((fracMatch = fracEqRegex.exec(allText)) !== null) {
-    const aNum = parseInt(fracMatch[1], 10);
-    const aDen = parseInt(fracMatch[2], 10);
-    const op = fracMatch[3];
-    const bNum = parseInt(fracMatch[4], 10);
-    const bDen = parseInt(fracMatch[5], 10);
-    const cNum = parseInt(fracMatch[6], 10);
-    const cDen = parseInt(fracMatch[7], 10);
+    // 1. Model cevap ve rubrikte bu spesifik işlemin doğru sonucu veya operandları ele alınmış mı?
+    const hasExpectedInAnswer = new RegExp(`\\b${expected}\\b`).test(answerOnlyText);
+    const hasOperandsInAnswer = new RegExp(`\\b${a}\\b`).test(answerOnlyText) && new RegExp(`\\b${b}\\b`).test(answerOnlyText);
+    const isAddressedInAnswer = hasExpectedInAnswer || hasOperandsInAnswer;
+    if (!isAddressedInAnswer) return false;
 
-    if (aDen > 0 && bDen > 0 && cDen > 0) {
-      const valA = aNum / aDen;
-      const valB = bNum / bDen;
-      const valC = cNum / cDen;
-      const expectedVal = op === '+' ? valA + valB : valA - valB;
+    // 2. Soru kökü sınırlama kontrolü: Soru kökü spesifik bir işlem türünü hedeflemişse
+    const stemLower = stem.toLowerCase();
+    if (op === '+' && /(?:çarpma|bölme|çıkarma)\s+(?:işleminde|hatası)/i.test(stemLower) && !/toplama/i.test(stemLower)) return false;
+    if (op === '-' && /(?:toplama|çarpma|bölme)\s+(?:işleminde|hatası)/i.test(stemLower) && !/çıkarma/i.test(stemLower)) return false;
+    if (['*', 'x', '•', '·'].includes(op) && /(?:toplama|çıkarma|bölme)\s+(?:işleminde|hatası)/i.test(stemLower) && !/çarpma/i.test(stemLower)) return false;
+    if (['÷', ':'].includes(op) && /(?:toplama|çıkarma|çarpma)\s+(?:işleminde|hatası)/i.test(stemLower) && !/bölme/i.test(stemLower)) return false;
 
-      if (Math.abs(expectedVal - valC) > 0.001) {
+    return true;
+  };
+
+  const verifyArithmetic = (text: string, targetField: 'answer' | 'stimulus') => {
+    const eqRegex = new RegExp(eqRegexStr, 'gi');
+    let eqMatch;
+    while ((eqMatch = eqRegex.exec(text)) !== null) {
+      const a = parseFloat(eqMatch[1]);
+      const op = eqMatch[2];
+      const b = parseFloat(eqMatch[3]);
+      const c = parseFloat(eqMatch[4]);
+      let expected: number | null = null;
+      if (op === '+') expected = a + b;
+      else if (op === '-') expected = a - b;
+      else if (['*', 'x', '•', '·'].includes(op)) expected = a * b;
+      else if (['÷', ':'].includes(op) && b !== 0) expected = a / b;
+
+      if (expected !== null && Math.abs(expected - c) > 0.001) {
+        if (targetField === 'stimulus') {
+          // Kural düzeyinde hedeflenen kasıtlı hata muafiyeti (TASK205)
+          if (isTargetedArithmeticOperation(a, b, op, expected)) {
+            continue;
+          }
+        }
+
         findings.push({
           category: 'scientific_correctness',
           severity: 'critical',
-          field: 'answer',
-          message: `Rasyonel sayı işlem hatası: ${aNum}/${aDen} ${op} ${bNum}/${bDen} işleminin sonucu ${cNum}/${cDen} olamaz.`,
-          suggestedFix: 'Paydaları eşitleyerek işlemi doğru rasyonel sayı sonucuyla güncelleyiniz.',
-          validationMethod: 'math_fraction_arithmetic_verifier'
+          field: targetField,
+          message: `Matematiksel aritmetik işlem hatası: ${a} ${op} ${b} = ${expected} olmalıdır; metinde ${c} olarak hesaplanmıştır.`,
+          suggestedFix: `İşlemin doğru sonucu olan ${expected} değerini kullanınız.`,
+          validationMethod: 'math_arithmetic_verifier'
         });
       }
     }
-  }
+  };
+
+  // Model cevap ve rubrikte aritmetik hata ASLA tolere edilemez:
+  verifyArithmetic(answerOnlyText, 'answer');
+  // Senaryo metninde ise yalnızca hedeflenen kasıtlı işlem tolere edilir:
+  verifyArithmetic(stimulusOnlyText, 'stimulus');
+
+  // Kesirli toplama / çıkarma eşitliği kontrolü: A/B + C/D = E/F
+  const isTargetedFractionOperation = (aNum: number, aDen: number, bNum: number, bDen: number): boolean => {
+    if (!isIntentionalErrorDetectionQuestion(q)) return false;
+    const hasFracA = answerOnlyText.includes(`${aNum}/${aDen}`);
+    const hasFracB = answerOnlyText.includes(`${bNum}/${bDen}`);
+    return hasFracA || hasFracB;
+  };
+
+  const verifyFractions = (text: string, targetField: 'answer' | 'stimulus') => {
+    const fracEqRegex = /(\d+)\/(\d+)\s*([\+\-])\s*(\d+)\/(\d+)\s*=\s*(\d+)\/(\d+)/g;
+    let fracMatch;
+    while ((fracMatch = fracEqRegex.exec(text)) !== null) {
+      const aNum = parseInt(fracMatch[1], 10);
+      const aDen = parseInt(fracMatch[2], 10);
+      const op = fracMatch[3];
+      const bNum = parseInt(fracMatch[4], 10);
+      const bDen = parseInt(fracMatch[5], 10);
+      const cNum = parseInt(fracMatch[6], 10);
+      const cDen = parseInt(fracMatch[7], 10);
+
+      if (aDen > 0 && bDen > 0 && cDen > 0) {
+        const valA = aNum / aDen;
+        const valB = bNum / bDen;
+        const valC = cNum / cDen;
+        const expectedVal = op === '+' ? valA + valB : valA - valB;
+
+        if (Math.abs(expectedVal - valC) > 0.001) {
+          if (targetField === 'stimulus') {
+            if (isTargetedFractionOperation(aNum, aDen, bNum, bDen)) {
+              continue;
+            }
+          }
+
+          findings.push({
+            category: 'scientific_correctness',
+            severity: 'critical',
+            field: targetField,
+            message: `Rasyonel sayı işlem hatası: ${aNum}/${aDen} ${op} ${bNum}/${bDen} işleminin sonucu ${cNum}/${cDen} olamaz.`,
+            suggestedFix: 'Paydaları eşitleyerek işlemi doğru rasyonel sayı sonucuyla güncelleyiniz.',
+            validationMethod: 'math_fraction_arithmetic_verifier'
+          });
+        }
+      }
+    }
+  };
+
+  verifyFractions(answerOnlyText, 'answer');
+  verifyFractions(stimulusOnlyText, 'stimulus');
 
   const simpleMultMatch = stem.match(/(\d+)\s*[x*•·]\s*(\d+)\s*(?:işleminin\s+sonucu|kaçtır)/i);
   if (simpleMultMatch) {
