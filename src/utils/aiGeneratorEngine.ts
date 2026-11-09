@@ -1560,8 +1560,35 @@ export async function generateMEBIQuestions(
         errJson = await proxyRes.json();
       } catch {}
 
-      if (proxyRes.status === 429) {
-        fallbackReason = 'Yapay zekâ servisi kota sınırında (429 - Çok sık istek). Lütfen bir dakika sonra tekrar deneyiniz.';
+      const serverError = errJson?.error;
+      const serverCode = errJson?.code;
+
+      console.warn('[AI Generation Proxy Error]', {
+        status: proxyRes.status,
+        code: serverCode,
+        error: serverError,
+        elapsedMs: errJson?.elapsedMs,
+        details: errJson?.details
+      });
+
+      if (proxyRes.status === 429 || serverCode === 'RATE_LIMIT_EXCEEDED') {
+        fallbackReason = serverError || 'Yapay zekâ servisi kota sınırında (429 - Çok sık istek). Lütfen bir dakika sonra tekrar deneyiniz.';
+      } else if (proxyRes.status === 504 || serverCode === 'GATEWAY_TIMEOUT') {
+        fallbackReason = serverError
+          ? `${serverError} Sorular yerel OYSS standart motoruyla hazırlandı.`
+          : 'Yapay zekâ yanıtı belirlenen sürede tamamlayamadı (Zaman aşımı). Sorular yerel OYSS standart motoruyla hazırlandı.';
+      } else if (proxyRes.status === 503 || serverCode === 'SERVICE_UNAVAILABLE' || serverCode === 'MISSING_API_KEY') {
+        fallbackReason = serverError
+          ? `${serverError} Sorular yerel OYSS standart motoruyla hazırlandı.`
+          : 'Yapay zekâ servisi geçici olarak hizmet veremiyor (HTTP 503). Sorular yerel OYSS standart motoruyla hazırlandı.';
+      } else if (proxyRes.status === 403 || serverCode === 'API_KEY_FORBIDDEN') {
+        fallbackReason = serverError
+          ? `${serverError} Sorular yerel OYSS standart motoruyla hazırlandı.`
+          : 'Yapay zekâ API anahtarının yetkisi bulunmuyor (HTTP 403). Sorular yerel OYSS standart motoruyla hazırlandı.';
+      } else if (proxyRes.status === 400 || serverCode === 'BAD_REQUEST_PAYLOAD') {
+        fallbackReason = serverError
+          ? `${serverError} Sorular yerel OYSS standart motoruyla hazırlandı.`
+          : 'Yapay zekâ istek parametreleri kabul edilmedi (HTTP 400). Sorular yerel OYSS standart motoruyla hazırlandı.';
       } else if (proxyRes.status === 422) {
         // Kontrollü Kurtarma: Eğer HTTP 422 soru kökü eksikliği nedeniyle döndüyse ve eldeki sorular varsa,
         // yalnızca eksik soru kökünü yerel onaylı soruyla ikame ederek geçerli soruları kurtar
@@ -1604,11 +1631,17 @@ export async function generateMEBIQuestions(
             };
           }
         }
-        fallbackReason = errJson?.error || 'Üretilen sınav yanıtı biçimsel şemaya uymadığı için yerel motor devreye alındı.';
-      } else if (proxyRes.status === 502 || proxyRes.status === 503) {
-        fallbackReason = errJson?.error || 'Yapay zekâ servisi şu anda meşgul veya geçici olarak yanıt veremiyor (HTTP 502/503).';
+        fallbackReason = serverError
+          ? `${serverError} Sorular yerel OYSS standart motoruyla hazırlandı.`
+          : 'Üretilen sınav yanıtı biçimsel şemaya uymadığı için yerel OYSS standart motoru devreye alındı.';
+      } else if (proxyRes.status === 502) {
+        fallbackReason = serverError
+          ? `${serverError} Sorular yerel OYSS standart motoruyla hazırlandı.`
+          : 'Yapay zekâ servisi şu anda meşgul veya geçici olarak yanıt veremiyor (HTTP 502).';
       } else {
-        fallbackReason = errJson?.error || `Yapay zekâ servisi yanıt veremedi (HTTP ${proxyRes.status}).`;
+        fallbackReason = serverError
+          ? `${serverError} Sorular yerel OYSS standart motoruyla hazırlandı.`
+          : `Yapay zekâ servisi yanıt veremedi (HTTP ${proxyRes.status}). Sorular yerel OYSS standart motoruyla hazırlandı.`;
       }
     }
   } catch (proxyErr: any) {

@@ -102,7 +102,8 @@ export default async (req: Request) => {
   if (!apiKey) {
     return new Response(
       JSON.stringify({ 
-        error: 'Soru üretim servisi yapılandırılmamış (GEMINI_API_KEY eksik). Lütfen Netlify yönetim panelinden ortam değişkenini tanımlayınız.' 
+        error: 'Soru üretim servisi yapılandırılmamış (GEMINI_API_KEY eksik). Lütfen Netlify yönetim panelinden ortam değişkenini tanımlayınız.',
+        code: 'MISSING_API_KEY'
       }),
       {
         status: 503,
@@ -183,6 +184,8 @@ export default async (req: Request) => {
   const modelErrors: ModelAttemptTelemetry[] = [];
 
   const FUNCTION_TOTAL_BUDGET_MS = 22000; // Hard 22s limit to strictly prevent Netlify 26s gateway abort
+  const PRIMARY_ATTEMPT_MAX_MS = 16500; // Up to 16.5s for primary model to allow 9-question exam generation
+  const MIN_FALLBACK_BUDGET_MS = 6000; // Minimum 6s needed for any fallback attempt to generate questions
   const functionStartTime = Date.now();
 
   for (let i = 0; i < targetModels.length; i++) {
@@ -190,17 +193,16 @@ export default async (req: Request) => {
     const elapsedSoFar = Date.now() - functionStartTime;
     const remainingBudget = FUNCTION_TOTAL_BUDGET_MS - elapsedSoFar;
 
-    // Abort loop gracefully before hitting Netlify container kill if budget is depleted (<3s)
-    if (remainingBudget < 3000) {
+    // Do not start another attempt if remaining time is insufficient (< 6s)
+    if (remainingBudget < MIN_FALLBACK_BUDGET_MS) {
       console.warn(`[Generate] Insufficient time budget (${remainingBudget}ms) for model ${modelName}. Aborting fallback chain.`);
       break;
     }
 
     // Allocate timeout for current attempt:
-    // First attempt gets up to 11s; subsequent fallbacks get up to 8s (or remaining budget - 1.5s margin)
-    const attemptTimeoutMs = i === 0
-      ? Math.min(11000, remainingBudget - 1500)
-      : Math.min(8000, remainingBudget - 1500);
+    // First attempt gets up to 16.5s (or remaining budget - 1.5s margin)
+    // Subsequent fallback attempts get remaining budget - 1.5s margin (capped at 16.5s)
+    const attemptTimeoutMs = Math.min(PRIMARY_ATTEMPT_MAX_MS, remainingBudget - 1500);
 
     const abortController = new AbortController();
     const timeoutId = setTimeout(() => abortController.abort(), attemptTimeoutMs);
@@ -339,18 +341,33 @@ export default async (req: Request) => {
     let clientCode = 'AI_GATEWAY_UNAVAILABLE';
     let clientErrorMsg = 'Soru üretim servisi şu anda meşgul veya geçici olarak yanıt veremiyor. Lütfen az sonra tekrar deneyiniz.';
 
-    if (modelErrors.every(e => e.status === 404)) {
-      clientStatus = 502;
-      clientCode = 'MODELS_NOT_FOUND';
-      clientErrorMsg = 'Yapılandırılan yapay zekâ modelleri API üzerinde bulunamadı.';
-    } else if (modelErrors.some(e => e.status === 403)) {
+    const allTimeouts = modelErrors.length > 0 && modelErrors.every(e => e.errorType === 'TIMEOUT' || e.status === 504);
+    const lastAttemptTimeout = modelErrors.length > 0 && (modelErrors[modelErrors.length - 1].errorType === 'TIMEOUT' || modelErrors[modelErrors.length - 1].status === 504);
+    const hasForbidden = modelErrors.some(e => e.status === 403);
+    const hasBadRequest = modelErrors.some(e => e.status === 400 && !e.errorMessage.includes('thinking'));
+    const hasServiceUnavailable = modelErrors.some(e => e.status === 503);
+    const allNotFound = modelErrors.length > 0 && modelErrors.every(e => e.status === 404);
+
+    if (allTimeouts || lastAttemptTimeout) {
+      clientStatus = 504;
+      clientCode = 'GATEWAY_TIMEOUT';
+      clientErrorMsg = 'Yapay zekâ yanıtı belirlenen sürede tamamlayamadı (Zaman aşımı).';
+    } else if (hasForbidden) {
       clientStatus = 403;
       clientCode = 'API_KEY_FORBIDDEN';
       clientErrorMsg = 'Yapay zekâ API anahtarının bu işlem için yetkisi bulunmuyor (403 Erişim Reddedildi).';
-    } else if (modelErrors.some(e => e.status === 400 && !e.errorMessage.includes('thinking'))) {
+    } else if (hasBadRequest) {
       clientStatus = 400;
       clientCode = 'BAD_REQUEST_PAYLOAD';
       clientErrorMsg = 'Yapay zekâ servisine iletilen istek parametreleri geçersiz (400 Hatalı İstek).';
+    } else if (hasServiceUnavailable) {
+      clientStatus = 503;
+      clientCode = 'SERVICE_UNAVAILABLE';
+      clientErrorMsg = 'Yapay zekâ servisi geçici olarak hizmet veremiyor (HTTP 503).';
+    } else if (allNotFound) {
+      clientStatus = 502;
+      clientCode = 'MODELS_NOT_FOUND';
+      clientErrorMsg = 'Yapılandırılan yapay zekâ modelleri API üzerinde bulunamadı (404).';
     }
 
     return new Response(
