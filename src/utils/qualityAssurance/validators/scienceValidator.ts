@@ -7,18 +7,36 @@ import { isTargetedIntentionalError } from '../commonValidators';
  * inmez, içermez, salgılamaz, üretmez, iddiasıdır, yanılgıdır vb.) taşıyıp taşımadığını denetler.
  */
 function isStatementNegated(fullText: string, matchIndex: number, matchLength: number): boolean {
-  const matchSnippet = fullText.slice(matchIndex, matchIndex + matchLength).toLowerCase();
-  const postSnippet = fullText.slice(matchIndex + matchLength, matchIndex + matchLength + 55).toLowerCase();
-  const preSnippet = fullText.slice(Math.max(0, matchIndex - 50), matchIndex).toLowerCase();
+  // Cümle sınırlarını belirle: önceki cümlenin sonunu (. ! ? \n) ve sonraki cümlenin sonunu bul.
+  // Bir önceki veya sonraki cümleden olumsuzluk miras alınması (yanlış negatif) engellenir.
+  const textBefore = fullText.slice(0, matchIndex);
+  const lastBoundary = Math.max(
+    textBefore.lastIndexOf('.'),
+    textBefore.lastIndexOf('!'),
+    textBefore.lastIndexOf('?'),
+    textBefore.lastIndexOf('\n')
+  );
+  const sentenceStart = lastBoundary !== -1 ? lastBoundary + 1 : 0;
+
+  const textAfter = fullText.slice(matchIndex + matchLength);
+  const nextBoundaryMatch = /[.!?\n]/.exec(textAfter);
+  const sentenceEnd = nextBoundaryMatch ? (matchIndex + matchLength + nextBoundaryMatch.index) : fullText.length;
+
+  const preStart = Math.max(sentenceStart, matchIndex - 60);
+  const postEnd = Math.min(sentenceEnd, matchIndex + matchLength + 65);
+
+  const windowSnippet = fullText.slice(preStart, postEnd).toLowerCase();
 
   const negationWords = [
     'değildir', 'değil', 'ölçülmez', 'yanlıştır', 'yanlış', 'söylenemez', 'inmez', 'oluşmaz',
     'bulunmaz', 'sağlamaz', 'taşımaz', 'olamaz', 'içermez', 'hariç', 'dışında', 'farklıdır',
-    'salgılamaz', 'üretmez', 'yapmaz', 'etmez', 'hatadır', 'hatalıdır', 'yanılgıdır',
-    'yanılgı', 'iddiası', 'iddiasıdır', 'sanması', 'zannetmesi', 'yerine', 'aksine', 'doğru değildir'
+    'salgılamaz', 'salgılanmaz', 'üretmez', 'üretilmez', 'yapmaz', 'etmez', 'hatadır', 'hatalıdır', 'yanılgıdır',
+    'yanılgı', 'iddiası', 'iddiasıdır', 'sanması', 'zannetmesi', 'yerine', 'aksine', 'doğru değildir',
+    'üretmediği', 'üretmediğini', 'üretmemesi', 'üretmediğinden', 'salgılamadığı', 'salgılamadığını', 'salgılamaması',
+    'salgılanmadığı', 'salgılanmadığını', 'üretilmediği', 'üretilmediğini'
   ];
 
-  return negationWords.some(neg => matchSnippet.includes(neg) || postSnippet.includes(neg) || preSnippet.includes(neg));
+  return negationWords.some(neg => windowSnippet.includes(neg));
 }
 
 /**
@@ -41,10 +59,11 @@ export function validateScienceQuestion(
 
   // Kapsam ayrımı (TASK198 & TASK205):
   // Model cevap, çözüm, kabul edilebilir alternatifler ve puanlama rubriği bilimsel açıdan KUSURSUZ olmalıdır.
-  const answerOnlyText = `${answer} ${solution} ${rubricText} ${altText}`.toLowerCase();
+  // Alanlar arasına noktalı satır sonu eklenerek cümle sınırları korunur.
+  const answerOnlyText = `${answer}.\n${solution}.\n${rubricText}.\n${altText}`.toLowerCase();
   const stimulusOnlyText = stimulus.toLowerCase();
   const stemOnlyText = stem.toLowerCase();
-  const allText = `${stem} ${stimulus} ${answer} ${solution} ${rubricText} ${altText}`.toLowerCase();
+  const allText = `${stem}.\n${stimulus}.\n${answer}.\n${solution}.\n${rubricText}.\n${altText}`.toLowerCase();
 
   /**
    * Bilimsel kural denetimi uygulayıcı (Kural Düzeyinde Hedefli Muafiyet - TASK205)
@@ -62,7 +81,8 @@ export function validateScienceQuestion(
       suggestedFix: string;
       validationMethod: string;
       topicKeywords: string[];
-    }
+    },
+    matcherFilter?: (match: RegExpExecArray, fullText: string) => boolean
   ) => {
     const toGlobal = (re: RegExp) => new RegExp(re.source, re.flags.includes('g') ? re.flags : re.flags + 'g');
 
@@ -70,6 +90,9 @@ export function validateScienceQuestion(
     const ansRe = toGlobal(ruleRegex);
     let match: RegExpExecArray | null;
     while ((match = ansRe.exec(answerOnlyText)) !== null) {
+      if (matcherFilter && !matcherFilter(match, answerOnlyText)) {
+        continue;
+      }
       if (!isStatementNegated(answerOnlyText, match.index, match[0].length)) {
         findings.push({
           category: ruleInfo.category,
@@ -86,6 +109,9 @@ export function validateScienceQuestion(
     // 2. SENARYO (STIMULUS) KONTROLÜ (KURAL DÜZEYİNDE HEDEFLİ MUAFİYET - TASK205)
     const stimRe = toGlobal(ruleRegex);
     while ((match = stimRe.exec(stimulusOnlyText)) !== null) {
+      if (matcherFilter && !matcherFilter(match, stimulusOnlyText)) {
+        continue;
+      }
       if (!isStatementNegated(stimulusOnlyText, match.index, match[0].length)) {
         const isTargeted = isTargetedIntentionalError(q, ruleInfo.topicKeywords);
         if (!isTargeted) {
@@ -105,6 +131,9 @@ export function validateScienceQuestion(
     // 3. SORU KÖKÜ (STEM) KONTROLÜ
     const stemRe = toGlobal(ruleRegex);
     while ((match = stemRe.exec(stemOnlyText)) !== null) {
+      if (matcherFilter && !matcherFilter(match, stemOnlyText)) {
+        continue;
+      }
       if (!isStatementNegated(stemOnlyText, match.index, match[0].length)) {
         const isTargeted = isTargetedIntentionalError(q, ruleInfo.topicKeywords);
         if (!isTargeted) {
@@ -195,14 +224,32 @@ export function validateScienceQuestion(
   // Yemek borusu veya yutakta safra salgılanmaz/üretilmez.
   if (/safra/i.test(allText)) {
     // Hata 1: "Safra yağların kimyasal sindirimini sağlar"
-    checkRule(/(?:safra[^.!?;\n]*?yağ[^.!?;\n]*?kimyasal\s+sindirim|safra[^.!?;\n]*?kimyasal\s+olarak\s+sindir|safranın\s+kimyasal\s+sindirim)/i, {
-      category: 'scientific_correctness',
-      severity: 'critical',
-      message: 'Bilimsel kavram yanılgısı: Safra bir enzim değildir; yağların fiziksel (mekanik) sindirimini sağlar. Yağların kimyasal sindirimini pankreas özsuyundaki lipaz enzimi gerçekleştirir.',
-      suggestedFix: 'Safranın görevini "fiziksel (mekanik) sindirim / emülsiyon" olarak düzeltiniz.',
-      validationMethod: 'science_bile_digestive_role',
-      topicKeywords: ['safra']
-    });
+    // Eşleşme safraya doğrudan kimyasal sindirim atfedildiğinde tetiklenmeli;
+    // Safranın mekanik, pankreasın ise kimyasal sindirim yaptığını açıklayan doğru bilimsel metinler yanlış pozitif olmamalıdır.
+    checkRule(
+      /(?:safra[^.!?;\n]*?kimyasal\s+(?:olarak\s+)?sindir|safranın\s+kimyasal\s+sindirim)/i,
+      {
+        category: 'scientific_correctness',
+        severity: 'critical',
+        message: 'Bilimsel kavram yanılgısı: Safra bir enzim değildir; yağların fiziksel (mekanik) sindirimini sağlar. Yağların kimyasal sindirimini pankreas özsuyundaki lipaz enzimi gerçekleştirir.',
+        suggestedFix: 'Safranın görevini "fiziksel (mekanik) sindirim / emülsiyon" olarak düzeltiniz.',
+        validationMethod: 'science_bile_digestive_role',
+        topicKeywords: ['safra']
+      },
+      (match) => {
+        // Eğer 'safra' ile 'kimyasal sindirim' arasında 'pankreas' veya 'lipaz' geçiyorsa;
+        // kimyasal sindirim safraya değil pankreasa/enzime aittir (yanlış pozitif engelleme).
+        const matchedSnippet = match[0].toLowerCase();
+        const bileIdx = matchedSnippet.indexOf('safra');
+        if (bileIdx !== -1) {
+          const afterBile = matchedSnippet.slice(bileIdx);
+          if (afterBile.includes('pankreas') || afterBile.includes('lipaz')) {
+            return false;
+          }
+        }
+        return true;
+      }
+    );
 
     // Hata 2: "Safra bir enzimdir"
     checkRule(/(?:safra\s+(?:bir\s+)?enzimdir|safra\s+enzimi)/i, {
@@ -215,14 +262,28 @@ export function validateScienceQuestion(
     });
 
     // Hata 3: "Safra pankreastan / yemek borusundan / yutaktan / mideden salgılanır/üretilir"
-    checkRule(/(?:safra[^.!?;\n]{0,80}?(?:pankreas|mide|yutak|yemek\s+borusu)[^.!?;\n]{0,60}?(?:salgılanır|üretilir|salgılar|salgıla|üret)|(?:pankreas|mide|yutak|yemek\s+borusu)[^.!?;\n]{0,80}?safra[^.!?;\n]{0,60}?(?:salgılar|üretir|salgılanır|salgıla|üret))/i, {
-      category: 'scientific_correctness',
-      severity: 'critical',
-      message: 'Biyolojik organ hatası: Safra karaciğer tarafından üretilir ve safra kesesinde depolanır; yemek borusu, yutak, mide veya pankreas tarafından üretilmez/salgılanmaz.',
-      suggestedFix: 'Safrayı karaciğer ile ilişkilendiriniz.',
-      validationMethod: 'science_bile_digestive_role',
-      topicKeywords: ['safra']
-    });
+    // Safranın karaciğerde üretildiği ve pankreasın kendi öz suyunu salgıladığı doğru ifadeler korunur.
+    checkRule(
+      /(?:(?:pankreas|mide|yutak|yemek\s+borusu)(?:'?[a-zçğıöşü]+)?(?:\s+(?:ve|ile)\s+(?:pankreas|mide|yutak|yemek\s+borusu)(?:'?[a-zçğıöşü]+)?)?\s+(?:tarafından\s+)?safra(?:\s+(?:sıvısı|salgısı))?(?:'?[a-zçğıöşü]+)?\s*(?:salgıla|üret)|(?:pankreas(?:tan)?|mide(?:den)?|yutak(?:tan)?|yemek\s+borusu(?:ndan)?)\s*(?:tarafından\s+)?(?:salgılanan|üretilen)\s+safra|safra(?:\s+(?:sıvısı|salgısı))?(?:'?[a-zçğıöşü]+)?(?:\s+(?:ise|da))?\s*(?:tarafından\s+)?(?:pankreas(?:tan|ta)|mide(?:den|de)|yutak(?:tan|ta)|yemek\s+borusu(?:ndan|nda))\s*(?:tarafından\s+)?(?:salgılan|üretil))/i,
+      {
+        category: 'scientific_correctness',
+        severity: 'critical',
+        message: 'Biyolojik organ hatası: Safra karaciğer tarafından üretilir ve safra kesesinde depolanır; yemek borusu, yutak, mide veya pankreas tarafından üretilmez/salgılanmaz.',
+        suggestedFix: 'Safrayı karaciğer ile ilişkilendiriniz.',
+        validationMethod: 'science_bile_digestive_role',
+        topicKeywords: ['safra']
+      },
+      (match) => {
+        // Eğer metinde safra açıkça karaciğerle ilişkilendirilmiş ve pankreas kendi öz suyuyla anılmışsa;
+        // örneğin "safra sıvısı karaciğerde, pankreas öz suyu ise pankreasta üretilir" gibi
+        // ayrıştırılmış doğru cümleler kesinlikle yanlış pozitif olmamalıdır.
+        const snippet = match[0].toLowerCase();
+        if (snippet.includes('karaciğer') || snippet.includes('öz suyu') || snippet.includes('özsuyu')) {
+          return false;
+        }
+        return true;
+      }
+    );
   }
 
   // 5. Dolaşım Sistemi: Atardamar ve Toplardamar Tanımları
