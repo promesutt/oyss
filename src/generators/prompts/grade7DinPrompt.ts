@@ -33,4 +33,9 @@ MEBİ 7. SINIF DİN KÜLTÜRÜ VE AHLAK BİLGİSİ DERS KİTABI ENTEGRASYON VE �
    - Her soru için JSON çıktısında "alternativeAnswers" dizisi KESİNLİKLE üretilmeli ve kavramsal olarak denk en az 2 kabul edilebilir alternatif ifade eklenmelidir.
 4. ANALİTİK VE PARÇALI RUBRİK:
    - Rubrik basamakları parçalı ve dengeli kriterlere bölünmeli, her kriterin puanı açıkça belirtilmelidir. Kriter puanları toplamı soru puanına kuruşu kuruşuna eşit olmalıdır.
+5. SENARYO REHBERLİĞİ VE ÖLÇME ODAK KURALI (TASK234):
+   - SÜS HİKÂYE YASAĞI: Senaryo (stimulus) yalnızca süs, edebi giriş veya soruyla ilgisiz bir hikâye olarak KESİNLİKLE yazılamaz (Örn: Soru meleklerin görevlerini soruyorken 'Deniz feneri bekçisi Barış dalgaları izliyordu' gibi alakasız yapay hikâyeler YASAKTIR). Senaryo doğrudan sorulan kavramla, ayetle veya ahlaki durumla organik olarak ilişkili olmalıdır.
+   - DOĞRUDAN BİLGİ VE KAVRAMSAL YORUM TERCİHİ: Kazanım yapay bir olay örgüsü gerektirmiyorsa, öğrenciye doğrudan ayet/hadis meali vererek veya doğrudan kavramsal bir durum üzerinden (kısa ve net) soru sorunuz. Gereksiz yapay kurgular uydurmayınız.
+   - TEK KAZANIM VE ODAK: Tek bir soruda adalet, mazlumun tesellisi, ölüm korkusunu yenme, hayata anlam katma gibi çok sayıda ilgisiz kazanımı BİRLEŞTİRMEYİNİZ! Soru kökü açık, odaklı ve tek bir ölçme amacına yönelik olmalıdır.
+   - SORU KÖKÜ - MODEL CEVAP - RUBRİK BİREBİR UYUMU: Model cevap sorunun bütün taleplerini eksiksiz karşılamalı; rubrik kriterleri model cevap ve soru köküyle birebir örtüşmelidir.
 `;

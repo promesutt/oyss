@@ -438,18 +438,50 @@ export default async (req: Request) => {
     const invalidStemIndices: number[] = [];
     for (let i = 0; i < parsedData.questions.length; i++) {
       const q = parsedData.questions[i];
-      const stem = typeof q?.question === 'string' ? q.question.trim() : '';
+      if (!q) continue;
+
+      // Model alternatif anahtarlar kullandıysa (questionText, stem, soru, text) normalize et
+      let stem = (
+        typeof q.question === 'string' ? q.question :
+        typeof q.questionText === 'string' ? q.questionText :
+        typeof q.stem === 'string' ? q.stem :
+        typeof q.soru === 'string' ? q.soru :
+        typeof q.text === 'string' ? q.text : ''
+      ).trim();
+
+      // Soru kökü boş fakat stimulus sonunda soru cümlesi varsa oradan çöz (TASK234)
+      if ((!stem || stem.length < 3) && typeof q.stimulus === 'string' && q.stimulus.trim().length > 10) {
+        const stim = q.stimulus.trim();
+        const lines = stim.split('\n').map((l: string) => l.trim()).filter(Boolean);
+        if (lines.length > 1) {
+          const lastLine = lines[lines.length - 1];
+          if (lastLine.endsWith('?') || /(?:açıklayınız|belirtiniz|yazınız|bulunuz|hesaplayınız|hangisidir)\.?$/i.test(lastLine)) {
+            stem = lastLine;
+            lines.pop();
+            q.stimulus = lines.join('\n');
+          }
+        }
+      }
+
+      q.question = stem;
+
+      // Model cevabı ve rubriği normalize et
+      if (!q.answer && typeof q.modelAnswer === 'string') q.answer = q.modelAnswer;
+      if (!q.answer && typeof q.cevap === 'string') q.answer = q.cevap;
+      if (!q.rubric && Array.isArray(q.rubrik)) q.rubric = q.rubrik;
+
       // Geçerli kısa soru köklerini ("x kaçtır?", "Ana fikir nedir?") reddetme; boşluk ve anlamsız boşlukları yakala
       if (!stem || stem.length < 3) {
         invalidStemIndices.push(q?.number || (i + 1));
       }
     }
 
-    if (invalidStemIndices.length > 0) {
-      console.warn('Model output contained questions with missing stems:', invalidStemIndices);
+    // Eğer TÜM soruların kökü boşsa 422 hatası ile bildir
+    if (invalidStemIndices.length === parsedData.questions.length) {
+      console.warn('Model output contained questions with all missing stems:', invalidStemIndices);
       return new Response(
         JSON.stringify({
-          error: `Üretilen sorulardan ${invalidStemIndices.join(', ')}. sorunun kökü eksik veya boş.`,
+          error: `Üretilen soruların hiçbirinde geçerli bir soru kökü bulunamadı.`,
           code: 'EMPTY_QUESTION_STEM',
           invalidQuestions: invalidStemIndices,
           questions: parsedData.questions,
@@ -462,9 +494,16 @@ export default async (req: Request) => {
       );
     }
 
+    // Kısmi eksik kök durumunda tüm üretimi kaybetme (TASK234); geçerli soruları döndür, istemci eksik olanı ikame etsin
+    if (invalidStemIndices.length > 0) {
+      console.warn('Model output contained questions with partial missing stems (istemci cerrahi ikame yapacak):', invalidStemIndices);
+    }
+
     return new Response(
       JSON.stringify({
         ...parsedData,
+        hasPartialMissingStems: invalidStemIndices.length > 0,
+        invalidQuestions: invalidStemIndices,
         activeModel: usedModel
       }),
       {
