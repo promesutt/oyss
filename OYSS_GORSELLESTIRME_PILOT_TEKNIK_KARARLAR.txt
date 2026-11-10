@@ -1,0 +1,185 @@
+# OYSS REHBERİ | GÖRSELLEŞTİRME VE İNFOGRAFİK PROJESİ
+## FAZ 0.1 (Revizyon 3): Kesinleşmiş Teknik Kararlar ve Güçlendirilmiş Doğrulama Standartları
+
+**Doküman No:** 069 (068 No'lu Raporun 3. Revizyonu)  
+**Tarih:** 2 Kasım 2026  
+**Proje:** OYSS Rehberi (Ortak Yazılı Sınavlara Öğrenci Hazırlık Portalı)  
+**Kapsam:** Güçlendirilmiş Anlamsal Doğrulama (ID Bazlı Çapa Eşleme), Eksen Uzantıları & Sonsuzluk Okları (`showArrows`), Rasyonel Birim Mesafesi Düzeltmesi  
+**Durum:** Kesinleşmiş Teknik Kararlar Raporu (Geliştirme Öncesi - Kod Değişikliği Yapılmaz)
+
+---
+
+## 1. REVİZYON 3 İLE GERÇEKLEŞTİRİLEN DÜZELTMELER
+
+Kullanıcı geri bildirimi doğrultusunda ilk kodlama fazına geçilmeden önce mimaride şu 3 ince ayar kesinleştirilmiştir:
+
+| No | Düzeltme Alanı | Revizyon 2 Durumu | Revizyon 3 Kesin Standart |
+| :--- | :--- | :--- | :--- |
+| **1** | **Anlamsal Doğrulama (`validateSemanticConsistency`)** | Yalnızca sayısal kesirlerin listede bulunup bulunmadığı kontrol ediliyordu. Nokta kimlikleri (`id`) eşleştirilmiyordu. | **ID Bazlı Birebir Çapa Eşleme.** `SemanticAnchor` yapısı `id`, `numerator`, `denominator` alanlarıyla güçlendirildi. Her nokta kendi tekil ID'si ile eşleştirilir. Eksik, tekrarlanan (duplicate) veya yanlış ID/kesir eşleşmesi kesin olarak reddedilir (`BigInt` ile). |
+| **2** | **Pilot Soru Mesafesi İfadesi** | Sayı doğrusunda sıfıra uzaklık "10 birim" ve "9 birim" olarak ifade edilmişti. | **Matematiksel Düzeltme.** Aralık $[-1, 0]$ (tam 1 birim) olduğundan, sıfıra olan mesafeler sırasıyla **"10/12 birim"** (veya $5/6$ birim) ve **"9/12 birim"** (veya $3/4$ birim) olarak düzeltildi. |
+| **3** | **Sayı Doğrusu Okları (`showArrows`)** | $[-1, 0]$ aralığında eksen çentiklerinin eksenin bitişi gibi algılanması riski vardı. | **Eksen Uzantısı (Extension Margins).** Eksen çizgisi $min$ ve $max$ çentiklerinin ötesine (her iki yana $E_{\text{ext}} = 25\text{px}$) taşırılarak oklar bu uzantıların ucuna konur. Sayı doğrusunun bir doğru parçası değil, iki yöne de sonsuz uzanan bir doğrunun odaklanmış bir kesiti olduğu görsel olarak güvenceye alınır. |
+
+---
+
+## 2. GÜÇLENDİRİLMİŞ ANLAMSAL DOĞRULAMA (`validateSemanticConsistency`)
+
+Görselin soru metniyle tutarlılığı, rastgele kesir taramasıyla değil; **tekil kimlik (`id`) ve tam kesir değeri (`BigInt`)** denetimiyle sağlanacaktır:
+
+```typescript
+export interface SemanticAnchorPoint {
+  id: string;          // Beklenen tekil kimlik (ör. 'mert_val', 'ece_val')
+  numerator: number;   // Beklenen pay
+  denominator: number; // Beklenen payda (d > 0)
+}
+
+export interface SemanticAnchor {
+  expectedPoints: SemanticAnchorPoint[];
+  allowExtraPoints?: boolean; // Varsayılan: false (beklenmeyen noktaları reddet)
+}
+
+/**
+ * Çizimdeki noktaların soru gereksinimleriyle birebir ID ve BigInt değer eşleşmesini doğrular.
+ */
+export function validateSemanticConsistency(
+  visualPoints: { id: string; numerator: number; denominator: number }[],
+  anchors: SemanticAnchor
+): { isValid: boolean; reason?: string } {
+  // 1. Çizim noktalarında tekrarlanan (duplicate) ID kontrolü
+  const pointIds = new Set<string>();
+  for (const pt of visualPoints) {
+    if (pointIds.has(pt.id)) {
+      return {
+        isValid: false,
+        reason: `Görselde tekrarlanan nokta kimliği (duplicate ID) tespit edildi: "${pt.id}".`
+      };
+    }
+    pointIds.add(pt.id);
+  }
+
+  // 2. Her beklenen çapanın ID ile bulunması ve BigInt tam kesir eşitliği denetimi
+  for (const expected of anchors.expectedPoints) {
+    const matchedPoint = visualPoints.find(pt => pt.id === expected.id);
+
+    if (!matchedPoint) {
+      return {
+        isValid: false,
+        reason: `Soru için zorunlu olan "${expected.id}" kimlikli nokta görsel parametrelerinde bulunamadı.`
+      };
+    }
+
+    // BigInt çapraz çarpımı ile mutlak eşitlik denetimi
+    // matchedPoint.n / matchedPoint.d === expected.n / expected.d
+    const left = BigInt(matchedPoint.numerator) * BigInt(expected.denominator);
+    const right = BigInt(expected.numerator) * BigInt(matchedPoint.denominator);
+
+    if (left !== right) {
+      return {
+        isValid: false,
+        reason: `"${expected.id}" kimlikli noktanın kesir değeri uyuşmuyor: Beklenen ${expected.numerator}/${expected.denominator}, gelen ${matchedPoint.numerator}/${matchedPoint.denominator}.`
+      };
+    }
+  }
+
+  // 3. Beklenmeyen ekstra nokta kontrolü (katı mod)
+  if (!anchors.allowExtraPoints && visualPoints.length !== anchors.expectedPoints.length) {
+    const expectedIds = new Set(anchors.expectedPoints.map(p => p.id));
+    const extraPoints = visualPoints.filter(p => !expectedIds.has(p.id));
+    if (extraPoints.length > 0) {
+      return {
+        isValid: false,
+        reason: `Görselde soru kapsamında tanımlanmamış fazladan noktalar bulundu: ${extraPoints.map(p => p.id).join(', ')}.`
+      };
+    }
+  }
+
+  return { isValid: true };
+}
+```
+
+---
+
+## 3. SAYI DOĞRUSUNDA SONSUZLUK OKLARI VE EKSEN UZANTILARI (`showArrows`)
+
+Bir sayı doğrusunda $[-1, 0]$ aralığı çizildiğinde, eğer eksen çizgisi $-1$ noktasında başlayıp $0$ noktasında biterse, öğrencinin zihninde *"sayı doğrusu $-1$'de başlar, $0$'da biter"* şeklinde ciddi bir kavram yanılgısı oluşabilir.
+
+### 3.1 Geometrik Düzenleme ve Eksen Uzantısı Kuralı
+
+```
+           Sol Uzantı                                                   Sağ Uzantı
+          (E_ext = 25px)                                              (E_ext = 25px)
+          ◄────────────                                                ────────────►
+  ◄═════════════════════╤═════════════════════════════════════════════╤═════════════════════►
+ (Sol Ok)               │                  İç Aralık                  │              (Sağ Ok)
+                    -1 Çentiği           (12 Eşit Parça)          0 Çentiği
+                     (X_int_min)                                 (X_int_max)
+```
+
+1. **Uzantı Mesafesi ($E_{\text{ext}}$):**
+   - Eksen çizgisi $min$ tam sayı çentiğinin $25\text{px}$ solundan başlar ($X_{\text{start}} = P - E_{\text{ext}}$).
+   - Eksen çizgisi $max$ tam sayı çentiğinin $25\text{px}$ sağına kadar devam eder ($X_{\text{end}} = P + U + E_{\text{ext}}$).
+2. **Okların Konumu:**
+   - `showArrows: true` olduğunda sol ok ($<$) tam olarak $X_{\text{start}}$ noktasına, sağ ok ($>$) ise $X_{\text{end}}$ noktasına yerleştirilir.
+3. **Pedagojik Anlam:**
+   - Tam sayı çentikleri ($-1$ ve $0$) eksenin uçları değil, eksen üzerinde yer alan iki iç referans noktasıdır.
+   - Bu sayede öğrenci, çizimin sayı doğrusunun tamamı değil, sonsuza uzanan bir doğrunun odaklanmış bir penceresi olduğunu görsel olarak doğrudan kavrar.
+
+---
+
+## 4. PİLOT SORU DOĞRULAMASI VE BİRİM MESAFESİ DÜZELTMESİ
+
+`src/data/sampleExams.ts` dosyasındaki gerçek `exam_7_matematik_1_1_senaryo_1` 4. sorusuna ait pilot görsel ve açıklama şu şekilde kesinleştirilmiştir:
+
+### 4.1 Pilot Soru Verisi
+- **Sınav / Soru:** 7. Sınıf Matematik 1. Dönem 1. Yazılı (Senaryo 1 - Soru 4, Satır: 11428)
+- **Kazanım:** `MAT.7.1.3`
+- **Konu:** Mert ve Ece'nin $-\frac{3}{4}$ ve $-\frac{5}{6}$ karşılaştırması öğrenci diyaloğu.
+- **Sayı Doğrusu Aralığı:** $[-1, 0]$ (Eşit 12 parçaya bölünmüş).
+
+### 4.2 Matematiksel Birim Mesafesi Analizi (Düzeltildi)
+- $[-1, 0]$ aralığının toplam matematiksel boyutu tam $1$ birimdir.
+- $0$'a olan mesafeler mutlak değer ile tanımlanır:
+  - **Mert'in Sayısı ($-\frac{3}{4} = -\frac{9}{12}$):** Sıfıra olan mesafesi $|-\frac{9}{12}| = \mathbf{\frac{9}{12}\text{ birim}}$ (veya $\frac{3}{4}$ birim).
+  - **Ece'nin Sayısı ($-\frac{5}{6} = -\frac{10}{12}$):** Sıfıra olan mesafesi $|-\frac{10}{12}| = \mathbf{\frac{10}{12}\text{ birim}}$ (veya $\frac{5}{6}$ birim).
+- **Bilimsel Karşılaştırma:**
+  $$\frac{9}{12}\text{ birim} < \frac{10}{12}\text{ birim}$$
+  Mert'in sayısı sıfıra daha yakın olduğu için, negatif sayılar kuralı gereğince Mert'in sayısı daha büyüktür:
+  $$-\frac{5}{6} < -\frac{3}{4}$$
+  *(Ece'nin "pozitifte 10 büyük olduğu için negatifte de büyüktür" argümanı sayı doğrusu mesafesiyle çürütülmüş olur).*
+
+---
+
+## 5. İLK KODLAMA AŞAMASININ KESİN BİLEŞEN HARİTASI
+
+Kullanıcı onayı ile başlatılacak kodlama adımında hayata geçirilecek kesin dosya içeriği:
+
+1. **`src/types/index.ts`:**
+   - `RationalFraction` (`numerator: number; denominator: number`)
+   - `SemanticAnchorPoint` & `SemanticAnchor`
+   - `NumberLineVisualParams` (uzantı ve ok bayraklarıyla)
+   - `QuestionVisual` (`sourceOrigin: 'meb_odsgm' | 'oyss_svg' | ...`)
+2. **`src/utils/svgMathEngine.ts`:**
+   - `SVG_COLOR_MAP` (Tailwind token -> W3C HEX dönüştürücü)
+   - `resolveSvgColor`
+   - `escapeXml` (XML güvenliği)
+   - `compareFractionsExact` (`BigInt` çapraz çarpım)
+   - `validateMathematicalParams` (saf matematiksel doğrulama)
+   - `validateSemanticConsistency` (ID bazlı çapa doğrulama)
+   - `generateNumberLineSvg` ($E_{\text{ext}}$ uzantılı sonsuzluk okları ve analitik çentiklerle)
+   - `generateFallbackSvg` (kontrollü hata görünümü)
+3. **`src/utils/svgMathEngine.test.ts`:**
+   - ID eşleşme ve tekrarlanan ID testleri,
+   - $E_{\text{ext}}$ uzantı ve ok koordinat testleri,
+   - `BigInt` tam kesir karşılaştırma testleri,
+   - W3C geçerli HEX renk testleri.
+
+*Bu ilk aşamada hiçbir mevcut sınav verisine (`sampleExams.ts`), Gemini fonksiyonuna (`generate.ts`) veya kullanıcı arayüzüne dokunulmayacaktır.*
+
+---
+
+## 6. SONUÇ VE ONAY TALEBİ
+
+Kullanıcının talep ettiği üç düzeltmenin tamamı (ID bazlı anlamsal doğrulama, $10/12$ birim mesafe düzeltmesi ve eksen uzantılı sonsuzluk okları) mimari dokümana işlenmiştir.
+
+Çalışma alanında hiçbir kod değişikliği, paket kurulumu veya Git işlemi yapılmamıştır.
+
+İlk kodlama aşamasına başlanması için **onayınızı arz ederim.**
