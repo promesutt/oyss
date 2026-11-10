@@ -81,7 +81,7 @@ async function runAllTests() {
         timeoutErr.name = 'AbortError';
         throw timeoutErr;
       }
-      // İkinci model (gemini-2.5-flash) başarılı döner
+      // İkinci model (gemini-3.8-flash) başarılı döner
       return new Response(JSON.stringify({
         candidates: [{
           content: {
@@ -113,7 +113,7 @@ async function runAllTests() {
     assert(
       res2.status === 200 &&
       attemptCountTest2 === 2 &&
-      json2.activeModel === 'gemini-2.5-flash',
+      json2.activeModel === 'gemini-3.8-flash',
       'Test 2: İlk deneme timeout olduğunda ikinci deneme devreye girmeli ve başarılı olmalı',
       `Status: ${res2.status}, Model: ${json2.activeModel}, Toplam Deneme: ${attemptCountTest2}`
     );
@@ -202,8 +202,8 @@ async function runAllTests() {
 
     globalThis.fetch = (async () => {
       attemptCountTest6++;
-      // İlk deneme 16.5 sn sürüyor ve timeout oluyor
-      virtualNow += 16600;
+      // İlk deneme 19 sn sürüyor ve timeout oluyor (24s bütçeden geriye 5s kaldığı için 5.5s eşiğinin altına düşer)
+      virtualNow += 19000;
       const timeoutErr = new Error('The operation was aborted');
       timeoutErr.name = 'AbortError';
       throw timeoutErr;

@@ -335,5 +335,263 @@ describe('TASK234: Gemini Üretim Güvenilirliği ve Din Kültürü Soru Kalites
     assert.strictEqual(findings.length, 0, 'MEB formatına uygun odaklı soru sıfır hata ile geçmelidir.');
   });
 
+  // --------------------------------------------------------------------------
+  // 5. Kesik JSON Kurtarma (Truncation Recovery) ve Yedek Model Zinciri
+  // --------------------------------------------------------------------------
+  it('5.1. recoverTruncatedJsonArray token sınırı nedeniyle kesilen JSON dizisinden tamamlanan soruları kurtarmalıdır', async () => {
+    const { recoverTruncatedJsonArray, parseExamJsonSafely } = await import('../src/utils/jsonParser');
+
+    const truncatedOutput = `{
+      "title": "7. Sınıf Fen Bilimleri 1. Dönem 1. Yazılı",
+      "questions": [
+        {
+          "number": 1,
+          "outcomeCode": "F.7.1.1.1",
+          "question": "Uzay araştırmalarında kullanılan yapay uyduların amaçlarını yazınız.",
+          "answer": "Haberleşme, meteoroloji ve keşif amaçlı kullanılır.",
+          "rubric": [{ "item": "Kullanım amaçları", "pts": 10 }]
+        },
+        {
+          "number": 2,
+          "outcomeCode": "F.7.1.1.2",
+          "question": "Uzay kirliliğinin nedenlerini ve olası sonuçlarını açıklayınız.",
+          "answer": "Ömrü tükenen uydular ve roket parçaları uzay kirliliğine yol açar.",
+          "rubric": [{ "item": "Kirlilik nedenleri", "pts": 10 }]
+        },
+        {
+          "number": 3,
+          "outcomeCode": "F.7.1.2.1",
+          "question": "Teleskobun yapısını ve çalışma prensibini
+    `;
+
+    const recovered = recoverTruncatedJsonArray(truncatedOutput);
+    assert.ok(recovered, 'Kesik JSON kurtarılabilmelidir.');
+    assert.ok(recovered.includes('"number": 2'), 'Tamamlanan 2. soru korunmalıdır.');
+    assert.ok(!recovered.includes('"Teleskobun yapısını"'), 'Yarıda kesilen 3. soru güvenle atılmalıdır.');
+
+    const parseResult = parseExamJsonSafely(truncatedOutput);
+    assert.strictEqual(parseResult.success, true, 'Kesik JSON güvenli ayrıştırıcı ile başarılı olmalıdır.');
+    assert.strictEqual(parseResult.wasTruncated, true, 'wasTruncated bayrağı true olarak işaretlenmelidir.');
+    assert.strictEqual((parseResult.data as any).questions.length, 2, 'Kurtarılan 2 soru eksiksiz dönmelidir.');
+  });
+
+  it('5.2. generateHandler birincil model 503 döndüğünde gemini-3.8-flash yedek modeline geçmeli ve başarılı olmalıdır', async () => {
+    const originalFetch = globalThis.fetch;
+    process.env.GEMINI_API_KEY = 'mock_api_key_for_testing';
+
+    const calledModels: string[] = [];
+
+    globalThis.fetch = (async (url: string) => {
+      const match = url.match(/models\/([a-zA-Z0-9.-]+):generateContent/);
+      const model = match ? match[1] : 'unknown';
+      calledModels.push(model);
+
+      if (model === 'gemini-3.5-flash-lite') {
+        // Birincil model 503 Service Unavailable döner
+        return new Response(JSON.stringify({
+          error: { status: 'UNAVAILABLE', code: 503, message: 'This model is currently experiencing high demand.' }
+        }), { status: 503, headers: { 'Content-Type': 'application/json' } });
+      }
+
+      if (model === 'gemini-3.8-flash') {
+        // Yedek model başarıyla döner
+        return new Response(JSON.stringify({
+          candidates: [{
+            content: {
+              parts: [{
+                text: JSON.stringify({
+                  title: '7. Sınıf Sınav',
+                  questions: [
+                    { number: 1, question: 'Fen sorusu kökü?', answer: 'Cevap', rubric: [{ item: 'Puan', pts: 10 }] }
+                  ]
+                })
+              }]
+            }
+          }]
+        }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+      }
+
+      return new Response(JSON.stringify({ error: 'Not found' }), { status: 404 });
+    }) as any;
+
+    try {
+      const req = new Request('http://localhost/api/generate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          prompt: 'MEB 7. sınıf fen bilimleri sınav sorusu üret'
+        })
+      });
+
+      const res = await generateHandler(req);
+      assert.strictEqual(res.status, 200, 'Yedek model devreye girdiğinde 200 dönmelidir.');
+      const resJson: any = await res.json();
+      assert.strictEqual(resJson.activeModel, 'gemini-3.8-flash', 'Kullanılan aktif model gemini-3.8-flash olmalıdır.');
+      assert.ok(calledModels.includes('gemini-3.5-flash-lite'), 'Önce gemini-3.5-flash-lite denenmiş olmalıdır.');
+      assert.ok(calledModels.includes('gemini-3.8-flash'), 'Ardından gemini-3.8-flash denenmiş olmalıdır.');
+      assert.ok(!calledModels.includes('gemini-2.5-flash'), 'Kullanımdan kalkan gemini-2.5-flash aranmamalıdır.');
+    } finally {
+      globalThis.fetch = originalFetch;
+      delete process.env.GEMINI_API_KEY;
+    }
+  });
+
+  // --------------------------------------------------------------------------
+  // 6. Gemini 3.8 Flash / 3.5 Flash-Lite A/B Test Altyapısı ve Token Telemetrisi
+  // --------------------------------------------------------------------------
+  it('6.1. generateHandler gemini-3.8-flash seçildiğinde thinkingLevel: MEDIUM iletmeli ve usageMetadata token telemetrisini kaydetmelidir', async () => {
+    const originalFetch = globalThis.fetch;
+    process.env.GEMINI_API_KEY = 'mock_api_key_ab_test';
+
+    let capturedUrl = '';
+    let capturedBody: any = null;
+
+    globalThis.fetch = (async (url: string, init: any) => {
+      capturedUrl = url;
+      capturedBody = JSON.parse(init.body);
+
+      return new Response(JSON.stringify({
+        candidates: [{
+          content: {
+            parts: [{
+              text: JSON.stringify({
+                title: '3.8 Flash Test Sınavı',
+                questions: [
+                  { number: 1, question: 'A/B Test Soru Kökü?', answer: 'Test Cevap', rubric: [{ item: 'Doğruluk', pts: 10 }] }
+                ]
+              })
+            }]
+          }
+        }],
+        usageMetadata: {
+          promptTokenCount: 1420,
+          candidatesTokenCount: 860,
+          thoughtsTokenCount: 340,
+          totalTokenCount: 2620
+        }
+      }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+    }) as any;
+
+    try {
+      const req = new Request('http://localhost/api/generate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          prompt: '7. sınıf MEB matematik yazılı sınavı kazanım testi',
+          model: 'gemini-3.8-flash',
+          thinkingLevel: 'medium'
+        })
+      });
+
+      const res = await generateHandler(req);
+      assert.strictEqual(res.status, 200);
+      const resJson: any = await res.json();
+
+      assert.ok(capturedUrl.includes('models/gemini-3.8-flash:generateContent'), 'gemini-3.8-flash URL ile çağrılmalıdır.');
+      assert.strictEqual(capturedBody?.generationConfig?.thinkingConfig?.thinkingLevel, 'MEDIUM', 'Düşünme seviyesi MEDIUM olarak iletilmelidir.');
+      assert.strictEqual(resJson.activeModel, 'gemini-3.8-flash');
+      assert.strictEqual(resJson.usageMetrics?.hasUsageData, true, 'Token telemetrisi mevcut olmalıdır.');
+      assert.strictEqual(resJson.usageMetrics?.promptTokens, 1420);
+      assert.strictEqual(resJson.usageMetrics?.candidatesTokens, 860);
+      assert.strictEqual(resJson.usageMetrics?.thinkingTokens, 340);
+      assert.strictEqual(resJson.usageMetrics?.totalTokens, 2620);
+    } finally {
+      globalThis.fetch = originalFetch;
+      delete process.env.GEMINI_API_KEY;
+    }
+  });
+
+  it('6.2. Token verisi API yanıtında olmadığında tahmin yapılmamalı, hasUsageData: false ve null değerler dönmelidir', async () => {
+    const originalFetch = globalThis.fetch;
+    process.env.GEMINI_API_KEY = 'mock_api_key_ab_test';
+
+    globalThis.fetch = (async () => {
+      return new Response(JSON.stringify({
+        candidates: [{
+          content: {
+            parts: [{
+              text: JSON.stringify({
+                title: 'No Token Sınavı',
+                questions: [
+                  { number: 1, question: 'Soru?', answer: 'Cevap', rubric: [{ item: 'Puan', pts: 10 }] }
+                ]
+              })
+            }]
+          }
+        }]
+        // usageMetadata kasıtlı olarak yok
+      }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+    }) as any;
+
+    try {
+      const req = new Request('http://localhost/api/generate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          prompt: '7. sınıf MEB matematik yazılı sınavı kazanım testi'
+        })
+      });
+
+      const res = await generateHandler(req);
+      const resJson: any = await res.json();
+
+      assert.strictEqual(resJson.usageMetrics?.hasUsageData, false, 'hasUsageData false olmalıdır.');
+      assert.strictEqual(resJson.usageMetrics?.promptTokens, null, 'Tahmin yapılmamalı, null dönmelidir.');
+      assert.strictEqual(resJson.usageMetrics?.candidatesTokens, null, 'Tahmin yapılmamalı, null dönmelidir.');
+      assert.strictEqual(resJson.usageMetrics?.thinkingTokens, null, 'Tahmin yapılmamalı, null dönmelidir.');
+    } finally {
+      globalThis.fetch = originalFetch;
+      delete process.env.GEMINI_API_KEY;
+    }
+  });
+
+  it('6.3. Model belirtilmediğinde mevcut üretim varsayılanı (gemini-3.5-flash-lite) korunmalıdır', async () => {
+    const originalFetch = globalThis.fetch;
+    process.env.GEMINI_API_KEY = 'mock_api_key_ab_test';
+
+    let capturedUrl = '';
+    let capturedBody: any = null;
+
+    globalThis.fetch = (async (url: string, init: any) => {
+      capturedUrl = url;
+      capturedBody = JSON.parse(init.body);
+
+      return new Response(JSON.stringify({
+        candidates: [{
+          content: {
+            parts: [{
+              text: JSON.stringify({
+                title: 'Varsayılan Model Sınavı',
+                questions: [
+                  { number: 1, question: 'Varsayılan Soru?', answer: 'Cevap', rubric: [{ item: 'Puan', pts: 10 }] }
+                ]
+              })
+            }]
+          }
+        }]
+      }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+    }) as any;
+
+    try {
+      const req = new Request('http://localhost/api/generate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          prompt: '7. sınıf MEB matematik yazılı sınavı kazanım testi'
+        })
+      });
+
+      const res = await generateHandler(req);
+      const resJson: any = await res.json();
+
+      assert.ok(capturedUrl.includes('models/gemini-3.5-flash-lite:generateContent'), 'Varsayılan olarak gemini-3.5-flash-lite çağrılmalıdır.');
+      assert.strictEqual(capturedBody?.generationConfig?.thinkingConfig, undefined, 'gemini-3.5-flash-lite için thinkingConfig gönderilmemelidir.');
+      assert.strictEqual(resJson.activeModel, 'gemini-3.5-flash-lite');
+    } finally {
+      globalThis.fetch = originalFetch;
+      delete process.env.GEMINI_API_KEY;
+    }
+  });
+
 });
 

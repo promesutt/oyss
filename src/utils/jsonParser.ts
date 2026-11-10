@@ -12,6 +12,56 @@ export interface SafeJsonParseResult<T = any> {
   data: T | null;
   error?: string;
   rawText?: string;
+  wasTruncated?: boolean;
+}
+
+/**
+ * Token sınırı veya ağ kesintisi nedeniyle sonu kesilmiş (truncated) JSON dizi çıktılarını kurtarır.
+ * "questions": [ { ... }, { ... }, { "incomplete"... durumunda,
+ * yalnızca tamamlanmamış son nesneyi atıp diziyi "]" ve nesneyi "}" ile güvenle kapatır.
+ */
+export function recoverTruncatedJsonArray(rawStr: string): string | null {
+  if (!rawStr || typeof rawStr !== 'string') return null;
+  const questionsIdx = rawStr.indexOf('"questions"');
+  if (questionsIdx === -1) return null;
+  const arrayStart = rawStr.indexOf('[', questionsIdx);
+  if (arrayStart === -1) return null;
+
+  let inString = false;
+  let escape = false;
+  let depth = 0;
+  let lastCompleteItemEnd = -1;
+
+  for (let i = arrayStart + 1; i < rawStr.length; i++) {
+    const ch = rawStr[i];
+    if (escape) {
+      escape = false;
+      continue;
+    }
+    if (ch === '\\') {
+      escape = true;
+      continue;
+    }
+    if (ch === '"') {
+      inString = !inString;
+      continue;
+    }
+    if (!inString) {
+      if (ch === '{') {
+        depth++;
+      } else if (ch === '}') {
+        depth--;
+        if (depth === 0) {
+          lastCompleteItemEnd = i;
+        }
+      }
+    }
+  }
+
+  if (lastCompleteItemEnd > arrayStart) {
+    return rawStr.slice(0, lastCompleteItemEnd + 1) + '\n  ]\n}';
+  }
+  return null;
 }
 
 /**
@@ -248,7 +298,27 @@ export function parseExamJsonSafely<T = any>(rawText: string | undefined): SafeJ
           const parsedTrailingCleaned = JSON.parse(withoutTrailingCleaned);
           return { success: true, data: parsedTrailingCleaned, rawText: withoutTrailingCleaned };
         } catch {
-          // İkinci deneme de başarısız olursa mevcut hata ve fallback davranışını aynen koru
+          // 4. Kesik (truncated) JSON kurtarma: Token sınırı nedeniyle son soru yarıda kaldıysa, tamamlanan soruları kurtar
+          try {
+            const recoveredText = recoverTruncatedJsonArray(repaired) || recoverTruncatedJsonArray(cleaned);
+            if (recoveredText) {
+              const withoutTrailingRecovered = removeTrailingCommas(recoveredText);
+              const parsedRecovered = JSON.parse(withoutTrailingRecovered);
+              if (parsedRecovered && Array.isArray(parsedRecovered.questions) && parsedRecovered.questions.length > 0) {
+                console.warn(`[SafeJsonParser] Kesik JSON çıktısı başarıyla onarıldı (${parsedRecovered.questions.length} soru kurtarıldı).`);
+                return {
+                  success: true,
+                  data: parsedRecovered,
+                  rawText: withoutTrailingRecovered,
+                  wasTruncated: true
+                };
+              }
+            }
+          } catch (truncErr) {
+            // Kurtarma denemesi başarısız olduysa orijinal hatayı raporla
+          }
+
+          // Dört deneme de başarısız olursa mevcut hata ve fallback davranışını aynen koru
           return {
             success: false,
             data: null,

@@ -40,6 +40,10 @@ export interface GenerationResult {
   variationNumber: number;
   generationTime: string;
   model: string;
+  requestedModel?: string;
+  actualModel?: string;
+  isModelFallback?: boolean;
+  httpStatus?: number;
   isFallback?: boolean;
   fallbackReason?: string;
   questionsCount: number;
@@ -55,6 +59,13 @@ export interface GenerationResult {
     budgetCeiling: number;
     compressionApplied: 'none' | 'light' | 'compact';
   };
+  usageMetrics?: {
+    hasUsageData: boolean;
+    promptTokens: number | null;
+    candidatesTokens: number | null;
+    thinkingTokens: number | null;
+    totalTokens: number | null;
+  };
   examClassification?: ExamSourceClassification;
 }
 
@@ -63,6 +74,8 @@ export interface GeneratorOptions {
   avoidStimuli?: string[];
   preferredDifficulty?: 'standard' | 'more_complex' | 'foundational';
   outputType?: 'exam' | 'study_sheet' | 'practice_question';
+  primaryModel?: 'gemini-3.5-flash-lite' | 'gemini-3.8-flash';
+  thinkingLevel?: 'low' | 'medium' | 'high';
 }
 
 /**
@@ -1511,7 +1524,9 @@ export async function generateMEBIQuestions(
           body: JSON.stringify({
             prompt: livePrompt,
             variationIndex,
-            variationToken
+            variationToken,
+            model: options?.primaryModel,
+            thinkingLevel: options?.thinkingLevel
           })
         });
 
@@ -1612,6 +1627,10 @@ export async function generateMEBIQuestions(
             variationNumber: variationIndex + 1,
             generationTime: elapsedSec,
             model: `${activeModelName}`,
+            requestedModel: data?.requestedModel || options?.primaryModel || 'gemini-3.5-flash-lite',
+            actualModel: data?.activeModel || 'gemini-3.5-flash-lite',
+            isModelFallback: Boolean(data?.isModelFallback),
+            httpStatus: 200,
             isFallback: false,
             questionsCount: deduplicatedQuestions.length,
             generatedQuestions: deduplicatedQuestions,
@@ -1625,6 +1644,13 @@ export async function generateMEBIQuestions(
               promptLength: livePrompt.length,
               budgetCeiling: BUDGET_CEILING,
               compressionApplied: compressionLevel
+            },
+            usageMetrics: data?.usageMetrics || {
+              hasUsageData: false,
+              promptTokens: null,
+              candidatesTokens: null,
+              thinkingTokens: null,
+              totalTokens: null
             },
             examClassification
           };
@@ -1720,6 +1746,10 @@ export async function generateMEBIQuestions(
               variationNumber: variationIndex + 1,
               generationTime: elapsedSec,
               model: `${activeModelName}`,
+              requestedModel: errJson?.requestedModel || options?.primaryModel || 'gemini-3.5-flash-lite',
+              actualModel: errJson?.activeModel || 'gemini-3.5-flash-lite',
+              isModelFallback: Boolean(errJson?.isModelFallback),
+              httpStatus: proxyRes.status,
               isFallback: false,
               questionsCount: deduplicated.length,
               generatedQuestions: deduplicated,
@@ -1733,6 +1763,13 @@ export async function generateMEBIQuestions(
                 promptLength: livePrompt.length,
                 budgetCeiling: BUDGET_CEILING,
                 compressionApplied: compressionLevel
+              },
+              usageMetrics: errJson?.usageMetrics || {
+                hasUsageData: false,
+                promptTokens: null,
+                candidatesTokens: null,
+                thinkingTokens: null,
+                totalTokens: null
               },
               examClassification
             };
@@ -1954,6 +1991,9 @@ export async function generateMEBIQuestions(
     variationNumber: variationIndex + 1,
     generationTime: elapsedFormatted,
     model: 'OYSS Standart Soru Üretim Motoru (MEBİ Ölçme Referanslı)',
+    requestedModel: options?.primaryModel || 'gemini-3.5-flash-lite',
+    actualModel: 'OYSS Procedural Fallback',
+    isModelFallback: true,
     isFallback: true,
     fallbackReason: fallbackReason || 'Canlı yapay zekâ servisi şu anda meşgul veya çevrimdışı olduğundan sorular yerel OYSS kural tabanlı standart motoruyla hazırlandı.',
     questionsCount: finalDynamicQuestions.length,
@@ -1962,6 +2002,13 @@ export async function generateMEBIQuestions(
       isFullyValid: !finalDynamicQuestions.some(q => q.hasMissingSourceError),
       missingSourceCount: finalDynamicQuestions.filter(q => q.hasMissingSourceError).length,
       recoveredCount: finalDynamicQuestions.filter(q => q.commonStimulus || q.sharedSourceId).length
+    },
+    usageMetrics: {
+      hasUsageData: false,
+      promptTokens: null,
+      candidatesTokens: null,
+      thinkingTokens: null,
+      totalTokens: null
     },
     examClassification
   };

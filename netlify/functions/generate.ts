@@ -156,19 +156,31 @@ export default async (req: Request) => {
   }
 
   // 4. Model Selection and Execution with Bounded Timeout Budget
+  // Google'ın güncel ve resmi Flash modelleri (kullanımdan kaldırılmış 404 modeller temizlendi)
   const verifiedModels = [
     'gemini-3.5-flash-lite',
-    'gemini-2.5-flash',
-    'gemini-2.5-flash-lite',
-    'gemini-2.0-flash',
-    'gemini-1.5-flash'
+    'gemini-3.8-flash'
   ];
 
-  // If user configured a specific model, place it first in line, followed by verified fallbacks
-  const targetModels = Array.from(new Set([
-    configuredModel,
-    ...verifiedModels
-  ])).filter(Boolean);
+  // Ortam İzolasyonu ve Güvenlik Sınırı:
+  // Üretim ortamında (process.env.CONTEXT === 'production') istemciden gelen model parametresi KESİNLİKLE reddedilir.
+  // Model seçimi yalnızca test ortamlarında (branch-deploy, deploy-preview, dev/test) aktiftir.
+  const isProductionEnv = process.env.CONTEXT === 'production';
+  const rawRequestedModel = typeof (body?.model || body?.primaryModel) === 'string'
+    ? (body.model || body.primaryModel).trim()
+    : '';
+  const requestedModel = (!isProductionEnv && verifiedModels.includes(rawRequestedModel))
+    ? rawRequestedModel
+    : '';
+
+  // Kontrollü A/B testi: Test ortamında belirtilen model birincil seçilir; diğeri yedek atanır
+  // Üretimde configuredModel (gemini-3.5-flash-lite) daima birincildir
+  const effectivePrimary = requestedModel || configuredModel;
+  const fallbackModel = effectivePrimary === 'gemini-3.8-flash'
+    ? 'gemini-3.5-flash-lite'
+    : 'gemini-3.8-flash';
+
+  const targetModels = [effectivePrimary, fallbackModel];
 
   interface ModelAttemptTelemetry {
     model: string;
@@ -183,9 +195,9 @@ export default async (req: Request) => {
   let usedModel = configuredModel;
   const modelErrors: ModelAttemptTelemetry[] = [];
 
-  const FUNCTION_TOTAL_BUDGET_MS = 22000; // Hard 22s limit to strictly prevent Netlify 26s gateway abort
-  const PRIMARY_ATTEMPT_MAX_MS = 16500; // Up to 16.5s for primary model to allow 9-question exam generation
-  const MIN_FALLBACK_BUDGET_MS = 6000; // Minimum 6s needed for any fallback attempt to generate questions
+  const FUNCTION_TOTAL_BUDGET_MS = 24000; // 24s sınır (Netlify 26s gateway sınırına pay bırakır)
+  const PRIMARY_ATTEMPT_MAX_MS = 18000; // 9 soruluk kapsamlı sınavlar için 18s birincil model bütçesi
+  const MIN_FALLBACK_BUDGET_MS = 5500; // Yedek model denemesi için asgari 5.5s pay
   const functionStartTime = Date.now();
 
   for (let i = 0; i < targetModels.length; i++) {
@@ -193,15 +205,13 @@ export default async (req: Request) => {
     const elapsedSoFar = Date.now() - functionStartTime;
     const remainingBudget = FUNCTION_TOTAL_BUDGET_MS - elapsedSoFar;
 
-    // Do not start another attempt if remaining time is insufficient (< 6s)
+    // Kalan süre yedek denemesi için yetersizse (< 5.5s) gereksiz çağrı yapma
     if (remainingBudget < MIN_FALLBACK_BUDGET_MS) {
       console.warn(`[Generate] Insufficient time budget (${remainingBudget}ms) for model ${modelName}. Aborting fallback chain.`);
       break;
     }
 
-    // Allocate timeout for current attempt:
-    // First attempt gets up to 16.5s (or remaining budget - 1.5s margin)
-    // Subsequent fallback attempts get remaining budget - 1.5s margin (capped at 16.5s)
+    // Mevcut deneme için zaman aşımı tahsisi (kalan bütçeye göre dinamik ve güvenli)
     const attemptTimeoutMs = Math.min(PRIMARY_ATTEMPT_MAX_MS, remainingBudget - 1500);
 
     const abortController = new AbortController();
@@ -209,19 +219,23 @@ export default async (req: Request) => {
     const attemptStart = Date.now();
 
     try {
-      const isGemini25 = modelName.includes('2.5');
-
       const generationConfig: Record<string, any> = {
         temperature: 0.75,
-        maxOutputTokens: 6000,
+        maxOutputTokens: 8192, // 9 soruluk uzun çıktılarda kesilmeyi (JSON truncation) önleyen 8k token tavanı
         responseMimeType: 'application/json'
       };
 
-      // Model ailesine göre düşünme parametresi ayrımı:
-      // - Gemini 2.5 modelleri thinkingBudget destekler
-      // - Gemini 3.5 Flash-Lite ve diğer modeller parametresiz (varsayılan) çalıştırılır
-      if (isGemini25) {
-        generationConfig.thinkingConfig = { thinkingBudget: 0 };
+      // 3.8 Flash için düşünme seviyesi yapılandırması (Kullanıcı talebi: medium)
+      if (modelName.includes('3.8')) {
+        const rawThinkingLevel = typeof body?.thinkingLevel === 'string'
+          ? body.thinkingLevel.toUpperCase()
+          : 'MEDIUM';
+        const validThinkingLevel = ['LOW', 'MEDIUM', 'HIGH'].includes(rawThinkingLevel)
+          ? rawThinkingLevel
+          : 'MEDIUM';
+        generationConfig.thinkingConfig = {
+          thinkingLevel: validThinkingLevel
+        };
       }
 
       const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
@@ -238,8 +252,10 @@ export default async (req: Request) => {
         signal: abortController.signal
       });
 
-      // Eğer thinkingConfig nedeniyle 400 (Invalid argument/Unknown field) döndüyse, aynı modele parametresiz hemen yeniden dene
-      if (!res.ok && res.status === 400 && generationConfig.thinkingConfig) {
+      // 503 Geçici Yoğunluk Spike Kontrolü: Eğer ilk denemede 503 döndüyse ve kalan süre yeterliyse 800ms bekle ve aynı modele 1 kez tekrar dene
+      if (res.status === 503 && i === 0 && (FUNCTION_TOTAL_BUDGET_MS - (Date.now() - functionStartTime)) >= 12000) {
+        console.warn(`[Generate] Model ${modelName} 503 döndü; 800ms bekleyerek anlık spike için 1 kez yeniden deneniyor...`);
+        await new Promise(r => setTimeout(r, 800));
         res = await fetch(geminiUrl, {
           method: 'POST',
           headers: {
@@ -247,11 +263,7 @@ export default async (req: Request) => {
           },
           body: JSON.stringify({
             contents: [{ parts: [{ text: prompt }] }],
-            generationConfig: {
-              temperature: 0.75,
-              maxOutputTokens: 6000,
-              responseMimeType: 'application/json'
-            }
+            generationConfig
           }),
           signal: abortController.signal
         });
@@ -389,6 +401,25 @@ export default async (req: Request) => {
     const data = await geminiResponse.json();
     const rawText = data?.candidates?.[0]?.content?.parts?.[0]?.text || '';
     
+    // UsageMetadata Telemetrisi (Giriş, çıkış, düşünme tokenleri)
+    // API yanıtında mevcut değilse açıkça null olarak raporlanır; tahminî değer üretilmez.
+    const usage = data?.usageMetadata;
+    const usageMetrics = usage ? {
+      hasUsageData: true,
+      promptTokens: typeof usage.promptTokenCount === 'number' ? usage.promptTokenCount : null,
+      candidatesTokens: typeof usage.candidatesTokenCount === 'number' ? usage.candidatesTokenCount : null,
+      thinkingTokens: typeof usage.thoughtsTokenCount === 'number'
+        ? usage.thoughtsTokenCount
+        : (typeof usage.thinkingTokenCount === 'number' ? usage.thinkingTokenCount : null),
+      totalTokens: typeof usage.totalTokenCount === 'number' ? usage.totalTokenCount : null
+    } : {
+      hasUsageData: false,
+      promptTokens: null,
+      candidatesTokens: null,
+      thinkingTokens: null,
+      totalTokens: null
+    };
+    
     if (!rawText || !rawText.trim()) {
       return new Response(
         JSON.stringify({
@@ -502,9 +533,13 @@ export default async (req: Request) => {
     return new Response(
       JSON.stringify({
         ...parsedData,
+        wasTruncated: Boolean(parseResult.wasTruncated),
         hasPartialMissingStems: invalidStemIndices.length > 0,
         invalidQuestions: invalidStemIndices,
-        activeModel: usedModel
+        activeModel: usedModel,
+        requestedModel: effectivePrimary,
+        isModelFallback: usedModel !== effectivePrimary,
+        usageMetrics
       }),
       {
         status: 200,

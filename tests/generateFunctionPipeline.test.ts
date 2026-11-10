@@ -109,10 +109,10 @@ async function runTests() {
     );
 
     // -------------------------------------------------------------
-    // Test 4: Model Fallback: gemini-3.5 404 verdiğinde gemini-2.5-flash modeline geçmeli ve thinkingBudget: 0 kullanmalı
+    // Test 4: Model Fallback: gemini-3.5 404 verdiğinde gemini-3.8-flash modeline geçmeli
     // -------------------------------------------------------------
     const attemptedUrls: string[] = [];
-    let bodySentTo25: any = null;
+    let bodySentTo38: any = null;
     globalThis.fetch = (async (url: string, init: any) => {
       attemptedUrls.push(url);
       const parsed = JSON.parse(init.body);
@@ -121,8 +121,8 @@ async function runTests() {
           error: { code: 404, status: 'NOT_FOUND', message: 'models/gemini-3.5-flash-lite not found' }
         }), { status: 404, headers: { 'Content-Type': 'application/json' } });
       }
-      if (url.includes('gemini-2.5-flash:')) {
-        bodySentTo25 = parsed;
+      if (url.includes('gemini-3.8-flash:')) {
+        bodySentTo38 = parsed;
         return new Response(JSON.stringify({
           candidates: [{
             content: {
@@ -155,12 +155,11 @@ async function runTests() {
 
     assert(
       res4.status === 200 &&
-      json4.activeModel === 'gemini-2.5-flash' &&
-      bodySentTo25?.generationConfig?.thinkingConfig?.thinkingBudget === 0 &&
+      json4.activeModel === 'gemini-3.8-flash' &&
       attemptedUrls.length === 2 &&
       attemptedUrls[0].includes('gemini-3.5-flash-lite:') &&
-      attemptedUrls[1].includes('gemini-2.5-flash:'),
-      'Test 4: Birincil model 404 verdiğinde ikincil gemini-2.5-flash modeline geçmeli ve thinkingBudget: 0 kullanmalı',
+      attemptedUrls[1].includes('gemini-3.8-flash:'),
+      'Test 4: Birincil model 404 verdiğinde ikincil gemini-3.8-flash modeline geçmeli',
       `Used Model: ${json4.activeModel}, Attempts: ${attemptedUrls.length}`
     );
 
