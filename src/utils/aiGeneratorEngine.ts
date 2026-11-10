@@ -20,7 +20,7 @@ import {
 import { parseExamJsonSafely } from './jsonParser';
 import { validateAndSanitizeAiVisual } from './aiVisualValidator';
 import { ensureExamQuality } from './qualityAssurance';
-import { buildLiveExamPrompt, buildAvoidDirectives } from '../generators/prompts';
+import { buildLiveExamPrompt, buildAvoidDirectives, ENABLE_AI_VISUAL_GENERATION } from '../generators/prompts';
 
 const POOL_NAMES_A = [
   'Selin', 'Kerem', 'Zehra', 'Burak', 'Aslı', 'Emre', 'Derya', 'Tarık', 
@@ -1188,12 +1188,12 @@ export async function generateMEBIQuestions(
         }
       }
 
-      // Sahte görsel sorusu denetimi
-      if (!isPedagogicallyDeficient && (requiredOutcome.includes('.7') || officialTitle.toLowerCase().includes('görsel'))) {
-        const hasFakeVisualText = /(bu\s+görselde|afişte\s+görüldüğü\s+gibi|resimde\s+bir|yandaki\s+afişte|afişte\s+verilmek)/i.test(rawStem + ' ' + rawStim);
-        if (!q?.visual && hasFakeVisualText && rawStim.length < 150) {
+      // Görsel gerektiren soru kökü denetimi (görsel üretimi kapalıyken veya görsel yokken metin tabanlı soru zorunluluğu)
+      if (!isPedagogicallyDeficient) {
+        const hasVisualReference = /(bu\s+görselde|görsele\s+göre|şekildeki|grafikteki|şekle\s+göre|grafiğe\s+göre|afişte\s+görüldüğü\s+gibi|resimde\s+bir|yandaki\s+afişte|afişte\s+verilmek|çizilen\s+şekilde)/i.test(rawStem + ' ' + rawStim);
+        if ((!q?.visual || !ENABLE_AI_VISUAL_GENERATION) && hasVisualReference && rawStim.length < 150) {
           isPedagogicallyDeficient = true;
-          deficiencyReason = 'Gerçek görsel olmadan metinsel afiş tasvirine dayalı sahte görsel sorusu';
+          deficiencyReason = 'Görsel üretimi devre dışıyken veya görsel yokken görsel atıflı soru kökü tespit edildi; metin tabanlı eşdeğer soruya dönüştürülüyor.';
         }
       }
 
@@ -1439,7 +1439,7 @@ export async function generateMEBIQuestions(
       const finalExplanation = fixStimulusTranscriptionTypos(fixProperNounApostrophes(rawExplanation), q!.stimulus);
 
       let validVisual = undefined;
-      if (q!.visual && typeof q!.visual === 'object') {
+      if (ENABLE_AI_VISUAL_GENERATION && q!.visual && typeof q!.visual === 'object') {
         const visualValidation = validateAndSanitizeAiVisual(q!.visual, candidateAnswer);
         if (visualValidation.isValid && visualValidation.visual) {
           validVisual = visualValidation.visual;

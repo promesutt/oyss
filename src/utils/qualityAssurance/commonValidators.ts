@@ -1,5 +1,10 @@
 import { QualityFinding, QuestionValidationContext } from './types';
-import { isSemanticallySelfContainedQuestion, detectSourceRequirement, checkStimulusQuality } from '../sourceMaterialValidator';
+import { 
+  isSemanticallySelfContainedQuestion, 
+  detectSourceRequirement, 
+  checkStimulusQuality,
+  verifyQuestionSourceBinding
+} from '../sourceMaterialValidator';
 import { resolveOutcomeMetadata } from '../../data/curriculumData';
 
 /**
@@ -87,6 +92,103 @@ export function isTargetedIntentionalError(
   }
 
   return true;
+}
+
+/**
+ * Görsel nesnesinin (q.visual) yapısal ve parametrik geçerliliğini doğrular (TASK228).
+ */
+export function isValidVisualPayload(visual: any): boolean {
+  if (!visual || typeof visual !== 'object' || Array.isArray(visual)) {
+    return false;
+  }
+  const keys = Object.keys(visual);
+  if (keys.length === 0) return false;
+
+  // Bilinen matematik/geometri türlerinde parametre kontrolü
+  if (visual.type) {
+    const mathTypes = ['geometry_shape', 'number_line', 'fraction_model'];
+    if (mathTypes.includes(visual.type)) {
+      if (!visual.params || typeof visual.params !== 'object' || Array.isArray(visual.params) || Object.keys(visual.params).length === 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  // Genel SVG, diagram, tablo veya görsel verileri
+  if (visual.svg || visual.data || visual.params || visual.url || visual.src || visual.content || visual.diagram || visual.elements) {
+    return true;
+  }
+
+  return false;
+}
+
+/**
+ * Metin içerisinde açıkça yapılandırılmış veri tablosu veya sayısal veri listesi olup olmadığını tespit eder (TASK228 & TASK228-FIX).
+ */
+export function hasStructuredTableOrDataSet(text: string): boolean {
+  if (!text || typeof text !== 'string') return false;
+  const trimmed = text.trim();
+  if (!trimmed) return false;
+
+  // 1. Markdown tablo formatı (| ... | ve |---|---| veya en az 4 pipe karakteri)
+  if (trimmed.includes('|') && /\|[^\n]+\|\n\s*\|[-:\s|]+\|/m.test(trimmed)) {
+    return true;
+  }
+  const pipeCount = (trimmed.match(/\|/g) || []).length;
+  if (pipeCount >= 4) {
+    return true;
+  }
+
+  const lines = trimmed.split('\n').map(l => l.trim()).filter(Boolean);
+
+  // 2. Etiket + iki nokta üst üste / eşittir + sayısal veri dizisi içeren satırlar (TASK228-FIX B-02)
+  // Örn: "Zaman (s): 1, 2, 3, 4", "Yol (m): 6, 12, 18, 24", "Sürat (m/s): 5, 10, 15", "Kuvvet (N): 2, 4, 6"
+  // Etiket açıklama cümlesi değil veri başlığı olmalı (<= 35 karakter) ve en az 2 virgül/noktalı virgül/tab ile ayrılmış sayı içermelidir
+  const numericSeriesLinePattern = /^[a-zA-ZçÇğĞıİöÖşŞüÜ0-9\s°\/%()^³²_\-]{1,35}\s*[:=]\s*[-+]?\d+(?:[.,]\d+)?(?:\s*[,;\t]\s*[-+]?\d+(?:[.,]\d+)?)+/;
+  if (lines.some(l => numericSeriesLinePattern.test(l))) {
+    return true;
+  }
+
+  // 3. Çok satırlı yapılandırılmış veri listeleri (en az 2 satır eşleşmesi)
+  // Gün / Yıl / Bölge / Grup / Fiziksel nicelik değer eşleşmeleri: "Pazartesi: 15", "Kütle: 50"
+  const dataRowPattern = /(?:pazartesi|salı|çarşamba|perşembe|cuma|cumartesi|pazar|\b\d{4}\b|bölge\s+[a-z0-9]|grup\s+[a-z0-9]|durum\s+[a-z0-9]|örnek\s+[a-z0-9]|aşama\s+[a-z0-9]|zaman|yol|sürat|hız|kuvvet|kütle|ağırlık|hacim|yoğunluk|sıcaklık|basınç)\s*[:|-]\s*[-+]?\d+/i;
+  const matchCount = lines.filter(l => dataRowPattern.test(l)).length;
+  if (matchCount >= 2) {
+    return true;
+  }
+
+  return false;
+}
+
+/**
+ * Model cevabın gerçek bir çözüm/yanıt yerine değerlendirme yönergesi,
+ * öğretmen talimatı veya öğrenci beklenti ifadesi (meta-cevap) olup olmadığını denetler (TASK228).
+ */
+export function isMetaInstructionAnswer(ans: string): boolean {
+  if (!ans || typeof ans !== 'string') return false;
+  const clean = ans.trim();
+  if (clean.length < 5) return false;
+
+  // 1. Öğrenci veya adayın yapması beklenen/istenen davranışları tarif eden doğrudan kalıplar
+  // Örn: 'Öğrencinin doğru cevabı açıklaması beklenir.', 'Öğrenciden nedenini belirtmesi istenir.'
+  const studentDirectivePattern = /(?:öğrencinin|öğrenciden|öğrencilerin|adayın|öğrenci)\s+[^\.\n]*?(?:açıklaması|belirtmesi|yazması|bulması|hesaplaması|göstermesi|kurması|sunması|yapması|aktarması|ifade\s+etmesi|çizmesi|kullanması|yorumlaması|ilişkilendirmesi|teşhis\s+etmesi|çözümlemesi|değerlendirmesi|cevaplaması|yanıtlaması|delillendirmesi|gerekçelendirmesi|somutlaştırması|ortaya\s+koyması)\s+(?:beklenir|beklenmektedir|gerekir|gerekmektedir|istenir|istenmektedir|hedeflenir)/i;
+  if (studentDirectivePattern.test(clean)) return true;
+
+  // 2. Doğrudan fiilimsi + beklenir/gerekir kalıbı (Cevap sadece değerlendirme talimatı olarak kurgulanmışsa)
+  // Örn: 'Doğru uygulaması beklenmektedir.', 'İlişki kurması beklenir.', 'Kavramları kullanması gerekir.'
+  const actionExpectationPattern = /^(?:doğru|eksiksiz|uygun|kurallı|başarılı)?\s*[a-zA-ZçÇğĞıİöÖşŞüÜ0-9\s,\/\(\)-]*?(?:uygulaması|yapması|çözmesi|açıklaması|belirtmesi|yazması|göstermesi|kurması|sunması|kullanması|ifade\s+etmesi|delillendirmesi|gerekçelendirmesi)\s+(?:beklenir|beklenmektedir|gerekir|gerekmektedir|istenir|istenmektedir)\.?$/i;
+  if (actionExpectationPattern.test(clean)) return true;
+
+  // 3. Konuya ilişkin bilgilerini kullanarak açıklaması gerekir / beklenir kalıpları
+  const topicInstructionPattern = /(?:konuya|kavrama|kazanıma|içeriğe)\s+ilişkin\s+bilgilerini\s+kullanarak\s+[^\.\n]*?(?:açıklaması|belirtmesi|yanıtlaması|cevaplaması|gerekçelendirmesi)\s+(?:gerekir|gerekmektedir|beklenir|beklenmektedir)/i;
+  if (topicInstructionPattern.test(clean)) return true;
+
+  // 4. Öğrencinin ... gerekir kalıbı
+  const studentMustPattern = /(?:öğrencinin|öğrencilerin)\s+[^\.\n]*?(?:kullanması|kurması|bilmesi|fark\s+etmesi|gözetmesi)\s+(?:gerekir|gerekmektedir)/i;
+  if (studentMustPattern.test(clean)) return true;
+
+  return false;
 }
 
 /**
@@ -226,30 +328,97 @@ export function runCommonQualityChecks(
     });
   }
 
-  // Görsele, şekle, tabloya veya şemaya açık atıf denetimi
-  const referencesVisualOrTable = /(?:şekilde|şekle\s+göre|grafikte|grafiğe\s+göre|tabloda|tabloya\s+göre|görselde|görsele\s+göre|yandaki|aşağıdaki\s+şemada|düzenekte|deney\s+düzeneğinde)/i.test(stem);
-  if (referencesVisualOrTable && !q.visual && (!stimulus || stimulus.length < 25)) {
-    findings.push({
-      category: 'answerability',
-      severity: 'critical',
-      field: 'visual',
-      message: 'Soru kökünde şekil, grafik, tablo veya görsele atıf yapılmasına rağmen ne görsel ne de stimulus metni bulunmaktadır.',
-      suggestedFix: 'Sorunun atıfta bulunduğu görseli veya veri tablosunu ekleyiniz.',
-      validationMethod: 'visual_stimulus_reference_check'
-    });
+  // ==========================================
+  // TASK228: GÖRSEL VE YAPILANDIRILMIŞ VERİ ATFI DENETİMİ
+  // ==========================================
+  // 1. Tablo ve Çizelge Atfı Denetimi
+  const referencesTable = /(?:tabloda(?:ki)?|tabloya\s+göre|tablodaki\s+veriler|çizelgede(?:ki)?|çizelgeye\s+göre|(?:verilen|aşağıdaki|yandaki)\s+tablo)/i.test(stem);
+  if (referencesTable) {
+    const hasVisual = isValidVisualPayload(q.visual);
+    const hasTableData = hasStructuredTableOrDataSet(stimulus) || hasStructuredTableOrDataSet(q.commonStimulus) || Boolean(q.dataTable || q.table);
+    if (!hasVisual && !hasTableData) {
+      findings.push({
+        category: 'answerability',
+        severity: 'critical',
+        field: 'stimulus',
+        message: 'Soru kökünde tablo veya çizelgedeki verilere atıf yapılmasına rağmen ne görsel ne de yapılandırılmış veri tablosu bulunmaktadır.',
+        suggestedFix: 'Sorunun ihtiyaç duyduğu veri tablosunu metin veya görsel nesnesi olarak ekleyiniz.',
+        validationMethod: 'visual_stimulus_reference_check'
+      });
+    }
   }
 
+  // 2. Şekil, Şema, Grafik, Harita veya Deney Düzeneği Atfı Denetimi
+  // Not: "yukarıdaki metne göre" / "metinden hareketle" gibi saf metin referansları KESİNLİKLE dahil edilmez.
+  const referencesVisualOrDiagram = /(?:şekildeki|şekle\s+göre|(?:verilen|yandaki|aşağıdaki|bu)\s+şek(?:il|le|ilde)|şekilde\s+(?:verilen|gösterilen|yer\s+alan)|görseldeki|görsele\s+göre|(?:verilen|yandaki|aşağıdaki|bu)\s+görsel(?:de|e|i)?|görselde\s+(?:verilen|gösterilen|yer\s+alan)|grafikte(?:ki)?|grafiğe\s+göre|(?:verilen|yandaki|aşağıdaki|bu)\s+grafi(?:k|ğe|kte)|koordinat\s+sisteminde|koordinat\s+düzleminde|(?:verilen|aşağıdaki|şekildeki|yandaki)\s+sayı\s+doğrusu|sayı\s+doğrusundaki|sayı\s+doğrusu\s+üzerinde\s+(?:verilen|gösterilen|işaretlenen)|haritada(?:ki)?|haritaya\s+göre|haritayı\s+inceleyerek|(?:verilen|yandaki|aşağıdaki)\s+harita|devre\s+şemasında|devre\s+şemasına\s+göre|(?:verilen|aşağıdaki|şekildeki)\s+şemada|şemadaki|deney\s+düzeneğinde(?:ki)?|deney\s+düzeneğine\s+göre|(?:verilen|aşağıdaki|bu)\s+düzenekte|düzenekteki)/i.test(stem);
+
+  if (referencesVisualOrDiagram) {
+    if (!q.visual) {
+      findings.push({
+        category: 'answerability',
+        severity: 'critical',
+        field: 'visual',
+        message: 'Soru kökünde şekil, şema, grafik, harita veya deney düzeneğine açık atıf yapılmasına rağmen gerekli görsel veya model nesnesi (q.visual) bulunmamaktadır.',
+        suggestedFix: 'Sorunun atıfta bulunduğu görseli veya deney düzeneği modelini q.visual alanına ekleyiniz.',
+        validationMethod: 'visual_stimulus_reference_check'
+      });
+    } else if (!isValidVisualPayload(q.visual)) {
+      findings.push({
+        category: 'answerability',
+        severity: 'critical',
+        field: 'visual',
+        message: 'Sorunun atıfta bulunduğu görsel nesnesi (q.visual) boş, bozuk veya geçersiz parametreler içermektedir.',
+        suggestedFix: 'Görsel parametrelerini (type, params) eksiksiz ve geçerli biçimde yapılandırınız.',
+        validationMethod: 'visual_stimulus_reference_check'
+      });
+    }
+  }
+
+  // TASK224-B: Doğrulanabilir kaynak eşleştirme ve bağlam denetimi
+  const commonStim = (q.commonStimulus || '').trim();
+  const sourceBinding = verifyQuestionSourceBinding(
+    {
+      questionText: stem,
+      stimulus: stimulus,
+      commonStimulus: q.commonStimulus,
+      sharedSourceId: q.sharedSourceId,
+      questionNumber: q.questionNumber || q.number,
+      number: q.questionNumber || q.number,
+      outcomeCode: outcomeCode,
+      templateType: q.templateType,
+      archetype: q.archetype,
+      contextText: q.contextText,
+      visual: q.visual
+    },
+    context?.siblingQuestions || [],
+    context?.sharedSourceGroups
+  );
+
+  const effectiveStimulus = (sourceBinding.isValid && sourceBinding.resolvedStimulus) 
+    ? sourceBinding.resolvedStimulus 
+    : (stimulus || commonStim);
+
   // Metin veya uyarıcı gereksinimi kontrolü
-  const sourceReq = detectSourceRequirement(stem, q.templateType || q.archetype, undefined, stimulus);
+  const sourceReq = detectSourceRequirement(stem, q.templateType || q.archetype, undefined, effectiveStimulus);
   if (sourceReq.requiresSource) {
-    if (!stimulus || stimulus.length < 30) {
-      // Görsel yoksa veya görsel olmayan bir metin sorusuysa
-      if (!q.visual) {
+    if (sourceBinding.isValid && sourceBinding.bindingType !== 'self_contained') {
+      findings.push({
+        category: 'answerability',
+        severity: 'info',
+        field: 'stimulus',
+        message: sourceBinding.bindingType === 'valid_cross_reference'
+          ? `Soru ${sourceBinding.sourceOwnerQuestionNumber}. sorudaki kaynak metne çapraz referansla başarıyla bağlanmıştır.`
+          : 'Soru sınav içi doğrulanmış ortak kaynak metnine dayanmaktadır.',
+        suggestedFix: 'Bağımsız kullanım için tam metni soru bünyesine de ekleyebilirsiniz.',
+        validationMethod: 'source_requirement_check'
+      });
+    } else if (!stimulus || stimulus.length < 30) {
+      if (!q.visual && (!sourceBinding.isValid || sourceBinding.bindingType === 'orphan_reference' || sourceBinding.bindingType === 'missing_source')) {
         findings.push({
           category: 'answerability',
           severity: 'critical',
           field: 'stimulus',
-          message: 'Soru kökü metne/grafiğe atıf yapmasına rağmen kaynak veri veya okuma metni eksik.',
+          message: sourceBinding.reason || 'Soru kökü metne/grafiğe atıf yapmasına rağmen kaynak veri veya okuma metni eksik.',
           suggestedFix: 'Sorunun ihtiyaç duyduğu okuma metnini, veri tablosunu veya grafiği ekleyiniz.',
           validationMethod: 'source_requirement_check'
         });
@@ -261,7 +430,7 @@ export function runCommonQualityChecks(
           category: 'answerability',
           severity: 'warning',
           field: 'stimulus',
-          message: 'Kaynak metin/veri kalitesi yetersiz veya çapraz soru referansı içeriyor.',
+          message: 'Kaynak metin/veri kalitesi yetersiz veya çözümlenmemiş çapraz soru referansı içeriyor.',
           suggestedFix: 'Kaynak metni öğrenci düzeyine uygun, zengin ve tutarlı hale getiriniz.',
           validationMethod: 'stimulus_quality_check'
         });
@@ -270,7 +439,13 @@ export function runCommonQualityChecks(
   }
 
   // Anlamsal olarak tek başına cevaplanabilirlik
-  const isSelfContained = isSemanticallySelfContainedQuestion(stem, stimulus, outcomeCode);
+  const isSelfContained = isSemanticallySelfContainedQuestion(
+    stem,
+    effectiveStimulus,
+    outcomeCode,
+    commonStim,
+    sourceBinding.isValid && sourceBinding.bindingType !== 'missing_source' && sourceBinding.bindingType !== 'orphan_reference'
+  );
   if (!isSelfContained) {
     findings.push({
       category: 'answerability',
@@ -329,6 +504,18 @@ export function runCommonQualityChecks(
       validationMethod: 'answer_presence_check'
     });
   } else {
+    // TASK228: Meta-talimat / Öğretmen yönergesi cevap kontrolü
+    if (isMetaInstructionAnswer(answer)) {
+      findings.push({
+        category: 'stem_answer_consistency',
+        severity: 'critical',
+        field: 'answer',
+        message: 'Model cevap alanı gerçek bir çözüm veya yanıt yerine öğretmen yönergesi / değerlendirme talimatı (meta-cevap) içermektedir.',
+        suggestedFix: 'Öğrencinin yapması gerekeni tarif etmek yerine, sorunun doğrudan çözümlenmiş nihai cevabını ve bilimsel açıklamasını yazınız.',
+        validationMethod: 'meta_instruction_answer_check'
+      });
+    }
+
     // Model cevap soru kökünü papağan gibi tekrar ediyor mu?
     const cleanStem = stem.replace(/[^\p{L}\p{N}\s]/gu, '').trim().toLowerCase();
     const cleanAns = answer.replace(/[^\p{L}\p{N}\s]/gu, '').trim().toLowerCase();
@@ -363,6 +550,15 @@ export function runCommonQualityChecks(
           message: `${i + 1}. alternatif cevap soru kökünün tekrarıdır.`,
           suggestedFix: 'Soru kökünü tekrar etmeyen geçerli bir alternatif yanıt giriniz.',
           validationMethod: 'alternative_answer_stem_repeat_check'
+        });
+      } else if (isMetaInstructionAnswer(alt)) {
+        findings.push({
+          category: 'stem_answer_consistency',
+          severity: 'critical',
+          field: 'alternativeAnswers',
+          message: `${i + 1}. alternatif cevap gerçek bir yanıt yerine öğretmen yönergesi (meta-cevap) içermektedir.`,
+          suggestedFix: 'Alternatif cevap maddesini gerçek bir öğrenci yanıtı olacak şekilde yazınız.',
+          validationMethod: 'meta_instruction_answer_check'
         });
       }
     }
@@ -426,16 +622,24 @@ export function runCommonQualityChecks(
         });
       }
 
-      // Yüksek puanlı sorularda tek ölçütlü rubrik uyarısı
+      // Yüksek puanlı sorularda tek ölçütlü rubrik denetimi (TASK232 Öncelik 5)
       if (points >= 12 && rubric.length === 1) {
-        findings.push({
-          category: 'rubric_consistency',
-          severity: 'warning',
-          field: 'rubric',
-          message: `Yüksek puanlı (${points} puan) soru tek ölçüte bağlanmış; kısmi puanlama imkânı kısıtlı.`,
-          suggestedFix: 'Rubriği en az 2 analitik ölçüte (kavramsal teşhis ve analitik gerekçelendirme) bölünüz.',
-          validationMethod: 'rubric_granularity_check'
-        });
+        // Pedagojik istisna (Kategori A): Tek kavram, geometrik terim veya doğrudan kısa cevap gerektiren meşru tek adımlı sorular
+        const isSingleConceptQuestion = (
+          (answer && answer.length <= 30 && !/[\n•\d\)]/.test(answer)) ||
+          /(?:geometride\s+nasıl\s+adlandırılır|hangi\s+geometrik\s+şekil|tek\s+bir\s+(?:kelime|cümle|terim)|complete\s+the\s+sentence|which\s+word|tanımı\s+nedir)/i.test(stem)
+        );
+
+        if (!isSingleConceptQuestion) {
+          findings.push({
+            category: 'rubric_consistency',
+            severity: 'warning',
+            field: 'rubric',
+            message: `Yüksek puanlı (${points} puan) çok bileşenli soru tek ölçüte bağlanmış; kısmi puanlama imkânı kısıtlı.`,
+            suggestedFix: 'Rubriği en az 2 analitik ölçüte (kavramsal teşhis ve analitik gerekçelendirme) bölünüz.',
+            validationMethod: 'rubric_granularity_check'
+          });
+        }
       }
     }
   }

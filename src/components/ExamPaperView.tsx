@@ -10,6 +10,7 @@ import { MathRenderer } from './MathRenderer';
 import { QuestionVisualView } from './QuestionVisualView';
 import { formatOutcomeBadgeTitle, resolveOutcomeMetadata } from '../data/curriculumData';
 import { triggerPdfPrint } from '../utils/materialFileNameGenerator';
+import { sanitizeExamPaper } from '../utils/qualityAssurance/presentationContentFilter';
 import { 
   CheckCircle2, 
   Eye, 
@@ -18,8 +19,7 @@ import {
   Sparkles,
   Printer,
   PenTool,
-  Table,
-  AlertTriangle
+  Table
 } from 'lucide-react';
 
 interface ExamPaperViewProps {
@@ -44,9 +44,13 @@ export const ExamPaperView: React.FC<ExamPaperViewProps> = ({
   const [answerLineCount, setAnswerLineCount] = useState<number>(3);
   const [showOutcomeTitleInPrint, setShowOutcomeTitleInPrint] = useState<boolean>(false);
 
+  const displayExam = useMemo(() => {
+    return sanitizeExamPaper(examPaper);
+  }, [examPaper]);
+
   const classification = useMemo(() => {
-    return examPaper.examClassification || classifyExamQuestions(examPaper.questions);
-  }, [examPaper.examClassification, examPaper.questions]);
+    return displayExam.examClassification || classifyExamQuestions(displayExam.questions);
+  }, [displayExam.examClassification, displayExam.questions]);
 
   const classDetails = useMemo(() => {
     return getExamClassificationDetails(classification);
@@ -207,20 +211,20 @@ export const ExamPaperView: React.FC<ExamPaperViewProps> = ({
 
             <button
               onClick={() => {
-                const hasUncertifiedQuestions = (examPaper.qualityAudit?.certifiedForStudents ?? examPaper.qualityAudit?.summary?.certifiedForStudents) === false ||
-                  examPaper.qualityAudit?.overallStatus === 'failed' ||
-                  examPaper.qualityAudit?.overallStatus === 'needs_review' ||
-                  examPaper.questions.some(q => (q as any).isCertified === false || (q as any)._qaStatus === 'failed' || (q as any)._qaStatus === 'needs_review' || (q as any).needsReview === true);
+                const hasUncertifiedQuestions = (displayExam.qualityAudit?.certifiedForStudents ?? displayExam.qualityAudit?.summary?.certifiedForStudents) === false ||
+                  displayExam.qualityAudit?.overallStatus === 'failed' ||
+                  displayExam.qualityAudit?.overallStatus === 'needs_review' ||
+                  displayExam.questions.some(q => (q as any).isCertified === false || (q as any)._qaStatus === 'failed' || (q as any)._qaStatus === 'needs_review' || (q as any).needsReview === true);
 
                 if (hasUncertifiedQuestions) {
                   alert('Bu sınavda kalite denetimini geçemeyen veya inceleme bekleyen sorular bulunmaktadır. Öğrenci güvenliği gereği onaylanmamış içerik yazdırılamaz veya PDF olarak dışa aktarılamaz.');
                   return;
                 }
                 triggerPdfPrint({
-                  grade: examPaper.grade,
-                  subjectId: examPaper.subjectId,
-                  examTerm: examPaper.examTerm,
-                  scenarioId: examPaper.scenarioId,
+                  grade: displayExam.grade,
+                  subjectId: displayExam.subjectId,
+                  examTerm: displayExam.examTerm,
+                  scenarioId: displayExam.scenarioId,
                   materialKind: 'exam_paper',
                   isCustomExam: isCustomAIExam,
                   isAnswerKey: showRubric,
@@ -288,7 +292,7 @@ export const ExamPaperView: React.FC<ExamPaperViewProps> = ({
               T.C. MİLLÎ EĞİTİM BAKANLIĞI
             </h3>
             <h1 className="text-base sm:text-lg font-black text-slate-900 mt-0.5 tracking-tight uppercase print:text-xs print:font-extrabold print:mt-0">
-              {examPaper.title}
+              {displayExam.title}
               {showRubric && (
                 <span className="text-emerald-700 ml-2 font-bold normal-case print:text-[10px] print:text-emerald-800">
                   (Cevap Anahtarı & Rubrik)
@@ -314,9 +318,9 @@ export const ExamPaperView: React.FC<ExamPaperViewProps> = ({
                 <span className="border-b border-dashed border-slate-400 flex-1 h-5 print:h-4"></span>
               </div>
               <div className="flex items-center text-slate-500 text-[11px] pt-1 print:pt-0.5 print:text-[10px]">
-                <span>Sınav Süresi: <strong>{examPaper.durationMinutes} Dakika</strong></span>
+                <span>Sınav Süresi: <strong>{displayExam.durationMinutes} Dakika</strong></span>
                 <span className="mx-2">•</span>
-                <span>Toplam Puan: <strong>{examPaper.totalPoints} Puan</strong></span>
+                <span>Toplam Puan: <strong>{displayExam.totalPoints} Puan</strong></span>
               </div>
             </div>
 
@@ -337,7 +341,7 @@ export const ExamPaperView: React.FC<ExamPaperViewProps> = ({
         {/* General Instructions */}
         <div className="mb-6 p-3 bg-slate-50 rounded-lg border border-slate-200 text-xs text-slate-600 space-y-1 print:mb-2.5 print:p-1.5 print:text-[10px] print:bg-slate-50/50 print:border-slate-300 print:space-y-0.5">
           <span className="font-bold text-slate-800 block print:inline print:mr-1">Yönerge:</span>
-          {examPaper.instructions.map((ins, i) => (
+          {displayExam.instructions.map((ins, i) => (
             <span key={i} className="print:inline-block print:mr-2">
               <span className="print:hidden">• </span>
               {ins}
@@ -347,18 +351,11 @@ export const ExamPaperView: React.FC<ExamPaperViewProps> = ({
 
         {/* Question List */}
         <div className="space-y-8 print:space-y-0">
-          {examPaper.questions.map((q) => {
-            const isBlockedByQA = (q as any).isCertified === false || 
-              (q as any)._qaStatus === 'failed' || 
-              (q as any)._qaStatus === 'needs_review' || 
-              (q as any).needsReview === true;
-
+          {displayExam.questions.map((q) => {
             return (
               <div 
                 key={q.questionNumber} 
-                className={`exam-question-item border-b border-slate-200 pb-8 last:border-b-0 print:border-b print:border-slate-300 print:pb-3 print:mb-3 print:last:mb-0 print:last:border-b-0 ${
-                  isBlockedByQA ? 'print:hidden' : ''
-                }`}
+                className="exam-question-item border-b border-slate-200 pb-8 last:border-b-0 print:border-b print:border-slate-300 print:pb-3 print:mb-3 print:last:mb-0 print:last:border-b-0"
               >
               {/* Question Header: Number, Outcome, Difficulty, Archetype, Points */}
               <div className="flex flex-wrap items-center justify-between gap-2 mb-3 print:mb-1.5 print:gap-1">
@@ -414,28 +411,7 @@ export const ExamPaperView: React.FC<ExamPaperViewProps> = ({
                 </div>
               </div>
 
-              {/* KALİTE GÜVENCE VE SUNUM KAPISI (TASK188) */}
-              {isBlockedByQA ? (
-                <div className="space-y-3 pt-1">
-                  {/* Bilgilendirme Kartı: Soru kökü, uyaran ve seçenekler kullanıcıya ASLA gösterilmez */}
-                  <div className="p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm text-slate-700 flex items-start space-x-2.5 print:hidden shadow-2xs">
-                    <AlertTriangle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
-                    <div className="space-y-1">
-                      <strong className="block text-slate-900 font-bold uppercase tracking-wide">
-                        Bu Soru Kalite Güvence Standartları Kapsamında Güncellenmektedir
-                      </strong>
-                      <p className="text-xs text-slate-600 font-medium">
-                        Bu soru içerik ve ölçme standartlarını tam olarak karşılayana kadar sınav görünümünden ve A4 baskı çıktısından geçici olarak çıkarılmıştır.
-                      </p>
-                      <span className="text-[11px] text-slate-500 block pt-0.5">
-                        * Ölçme güvenirliği gereği soru metni, uyaran ve cevap alanı devre dışıdır.
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              ) : (
-                <>
-                  {/* Context / Stimulus Text (if any) */}
+              {/* Context / Stimulus Text (if any) */}
                   {q.contextText && (
                     <div className="text-xs sm:text-sm text-slate-600 italic mb-2 bg-slate-50 p-2.5 rounded-lg border-l-4 border-slate-400 print:p-1.5 print:mb-1 print:text-[10px] print:bg-slate-50/50 print:border-slate-400">
                       <MathRenderer content={q.contextText} />
@@ -451,26 +427,6 @@ export const ExamPaperView: React.FC<ExamPaperViewProps> = ({
                         </div>
                       )}
                       <MathRenderer content={q.stimulus} />
-                    </div>
-                  )}
-
-                  {/* Missing Source Material Warning Banner */}
-                  {q.hasMissingSourceError && (
-                    <div className="p-3 mb-3 bg-rose-50 border border-rose-300 rounded-xl text-xs text-rose-900 font-semibold flex items-start space-x-2 print:border-rose-400 print:text-[10px]">
-                      <span>⚠️</span>
-                      <div>
-                        <strong>Eksik Kaynak Uyarısı:</strong> {q.sourceValidationError || 'Bu soru bir kaynak metne/tabloya dayanmaktadır ancak kaynak materyal sınavda bulunamamıştır.'}
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Kalite Güvence Uyarısı (Yalnızca warning düzeyindeki sorular için) */}
-                  {(q as any)._qaWarning && (
-                    <div className="p-3 mb-3 bg-amber-50 border border-amber-300 rounded-xl text-xs text-amber-900 font-semibold flex items-start space-x-2 print:hidden">
-                      <span>⚠️</span>
-                      <div>
-                        <strong>Kalite Güvence Uyarısı:</strong> {(q as any)._qaWarning}
-                      </div>
                     </div>
                   )}
 
@@ -502,8 +458,6 @@ export const ExamPaperView: React.FC<ExamPaperViewProps> = ({
                       ))}
                     </div>
                   </div>
-                </>
-              )}
 
               {/* Optional Scoring Rubric & Model Answer Box (Toggled by user) */}
               {showRubric && (

@@ -39,9 +39,10 @@ export function validateMathQuestion(
 
   // 2. Basit deterministik aritmetik tutarlılık kontrolü
   // Tamsayı veya ondalıklı eşitlikler: A + B = C, A - B = C, A * B = C vb.
-  // Kesirlerle (örneğin 1/2 + 1/4 = 3/4) çakışmaması için bölme işareti olarak / değil, ÷, :, bölü kontrol edilir;
-  // ve sayının hemen ardında / bulunamaz.
-  const eqRegexStr = '(?<!\\/\\s*)(\\b\\d+(?:\\.\\d+)?)\\s*([\\+\\-\\*x•·÷:])\\s*(\\d+(?:\\.\\d+)?)\\s*=\\s*(\\d+(?:\\.\\d+)?)(?!\\s*\\/)';
+  // Negatif sayılar, parantezler ve zincirleme ara adımlar (ör. (-35) - (-50) = -35 + 50 = 15) desteklenir.
+  // Saat formatları (10:20, 08:00) veya noktalı gösterimlerle karışmaması için : bölünme olarak kabul edilmez.
+  // Kesirler (12/20) ve sonraki oklar (->) için güvenli sözcük sınırları ve hariç tutmalar uygulanır.
+  const getEqRegex = () => /(?<![\d+*x×•·÷/)\-]\s*)\(?\s*([-+]?\d+(?:\.\d+)?)\s*\)?\s*([+*x×•·÷\-])\s*\(?\s*([-+]?\d+(?:\.\d+)?)\s*\)?\s*=\s*(?:[-+]?\d+(?:\.\d+)?\s*[+*x×•·÷\-]\s*[-+]?\d+(?:\.\d+)?\s*=\s*)?\(?\s*([-+]?\d+(?:\.\d+)?)\b\s*\)?(?!\s*[/+*x×•·÷]|(?:\s*-(?!>)))/gi;
 
   const isTargetedArithmeticOperation = (a: number, b: number, op: string, expected: number): boolean => {
     if (!isIntentionalErrorDetectionQuestion(q)) return false;
@@ -56,14 +57,14 @@ export function validateMathQuestion(
     const stemLower = stem.toLowerCase();
     if (op === '+' && /(?:çarpma|bölme|çıkarma)\s+(?:işleminde|hatası)/i.test(stemLower) && !/toplama/i.test(stemLower)) return false;
     if (op === '-' && /(?:toplama|çarpma|bölme)\s+(?:işleminde|hatası)/i.test(stemLower) && !/çıkarma/i.test(stemLower)) return false;
-    if (['*', 'x', '•', '·'].includes(op) && /(?:toplama|çıkarma|bölme)\s+(?:işleminde|hatası)/i.test(stemLower) && !/çarpma/i.test(stemLower)) return false;
-    if (['÷', ':'].includes(op) && /(?:toplama|çıkarma|çarpma)\s+(?:işleminde|hatası)/i.test(stemLower) && !/bölme/i.test(stemLower)) return false;
+    if (['*', 'x', '×', '•', '·'].includes(op) && /(?:toplama|çıkarma|bölme)\s+(?:işleminde|hatası)/i.test(stemLower) && !/çarpma/i.test(stemLower)) return false;
+    if (op === '÷' && /(?:toplama|çıkarma|çarpma)\s+(?:işleminde|hatası)/i.test(stemLower) && !/bölme/i.test(stemLower)) return false;
 
     return true;
   };
 
   const verifyArithmetic = (text: string, targetField: 'answer' | 'stimulus') => {
-    const eqRegex = new RegExp(eqRegexStr, 'gi');
+    const eqRegex = getEqRegex();
     let eqMatch;
     while ((eqMatch = eqRegex.exec(text)) !== null) {
       const a = parseFloat(eqMatch[1]);
@@ -73,8 +74,8 @@ export function validateMathQuestion(
       let expected: number | null = null;
       if (op === '+') expected = a + b;
       else if (op === '-') expected = a - b;
-      else if (['*', 'x', '•', '·'].includes(op)) expected = a * b;
-      else if (['÷', ':'].includes(op) && b !== 0) expected = a / b;
+      else if (['*', 'x', '×', '•', '·'].includes(op)) expected = a * b;
+      else if (op === '÷' && b !== 0) expected = a / b;
 
       if (expected !== null && Math.abs(expected - c) > 0.001) {
         if (targetField === 'stimulus') {

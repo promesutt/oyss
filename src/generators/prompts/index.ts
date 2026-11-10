@@ -10,7 +10,8 @@ import {
   QUESTION_DIRECTIVE_CLARITY_RULE,
   getDirectiveClarityRule,
   RUBRIC_DESIGN_RULE,
-  AI_MATHEMATICS_VISUAL_DIRECTIVES
+  AI_MATHEMATICS_VISUAL_DIRECTIVES,
+  ENABLE_AI_VISUAL_GENERATION
 } from './coreRules';
 import { getGradeAgeDirectives } from './gradeRules';
 import { getJsonOutputSchema } from './outputSchema';
@@ -185,7 +186,10 @@ export function buildLiveExamPrompt(params: LiveExamPromptParams): string {
   // Legacy Parity Koruması (FAZ 2.2.2): isQualityActive false iken 8. sınıf henüz bu referans test fixture'ında
   // alternatif cevap desteğine sahip değildi; kayıtlı destek sadece aktif kalite/üretim modunda veya 7. sınıfta uygulanır.
   const hasAltAnswers = isQualityActive ? true : (grade === 8 ? false : registered.supportsAlternativeAnswers);
-  const schema = getJsonOutputSchema(hasAltAnswers, isQualityActive);
+  const isVisualActive = params.enableVisuals !== undefined
+    ? params.enableVisuals
+    : ENABLE_AI_VISUAL_GENERATION;
+  const schema = getJsonOutputSchema(hasAltAnswers, isQualityActive, isVisualActive);
 
   const turkishMebiDirectives = (grade === 7 && subjectId === 'turkce') ? registered.directives : '';
   // TASK174: 7. Sınıf Matematik ve Fen Bilimleri için senaryo bazlı dinamik kazanım filtreleme
@@ -244,7 +248,7 @@ ${rubricDesignBlock}${turkishMebiDirectives}
 ${math7thDirectives}
 ${science7thDirectives}
 ${socialMebiDirectives}
-${dinMebiDirectives}${grade56Directives}${grade8Directives}${isQualityActive && subjectId === 'matematik' ? `\n${AI_MATHEMATICS_VISUAL_DIRECTIVES}\n` : ''}
+${dinMebiDirectives}${grade56Directives}${grade8Directives}${isQualityActive && subjectId === 'matematik' && isVisualActive ? `\n${AI_MATHEMATICS_VISUAL_DIRECTIVES}\n` : ''}
 ${schema}`;
 }
 
@@ -266,6 +270,7 @@ export {
   getDirectiveClarityRule,
   RUBRIC_DESIGN_RULE,
   AI_MATHEMATICS_VISUAL_DIRECTIVES,
+  ENABLE_AI_VISUAL_GENERATION,
   getDynamicContextDiversityRule
 };
 

@@ -29,7 +29,7 @@ async function runTests() {
   // =========================================================================
   // TEST 01: Çıktı Şemasında İsteğe Bağlı "visual" Alanı Varlığı
   // =========================================================================
-  const schemaQuality = getJsonOutputSchema(true, true);
+  const schemaQuality = getJsonOutputSchema(true, true, true);
   const schemaLegacy = getJsonOutputSchema(true, false);
 
   const hasVisualInQuality = schemaQuality.includes('"visual"') &&
@@ -53,7 +53,8 @@ async function runTests() {
     distributionsText: '[1. Soru] Kazanım: MAT.5.3.1 (Açılar ve çokgenler)',
     avoidDirectives: 'Tekrar yok.',
     difficultyPlanText: '2 Kolay, 3 Orta, 1 Zor',
-    outcomeCodes: ['MAT.5.3.1']
+    outcomeCodes: ['MAT.5.3.1'],
+    enableVisuals: true
   });
 
   const hasMathVisualDirectives = mathPrompt.includes('MATEMATİK GÖRSEL KURALLARI') &&
@@ -414,7 +415,8 @@ async function runTests() {
     distributionsText: '[1. Soru] Kazanım: M.8.1.1.2\n[2. Soru] Kazanım: M.8.1.3.2',
     avoidDirectives: '',
     difficultyPlanText: '2 Kolay, 3 Orta, 1 Zor',
-    outcomeCodes: ['M.8.1.1.2', 'M.8.1.3.2']
+    outcomeCodes: ['M.8.1.1.2', 'M.8.1.3.2'],
+    enableVisuals: true
   });
 
   const g8HasDirectives = grade8MathPrompt.includes('MEBİ 8. SINIF MATEMATİK') &&

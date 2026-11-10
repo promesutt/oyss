@@ -21,6 +21,7 @@ export interface LiveExamPromptParams {
   outcomeCodes?: string[];
   textbookDirectives?: string;
   enableQualityStandards?: boolean;
+  enableVisuals?: boolean;
 }
 
 export interface AvoidDirectivesParams {

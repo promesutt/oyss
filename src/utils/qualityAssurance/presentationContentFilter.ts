@@ -93,7 +93,9 @@ export function sanitizeExamQuestion(
     _qaStatus: ((q as any)._qaStatus as QualityStatus) || 'passed',
     // İç teknik QA denetim notları sunum modelinden arındırılır:
     _qaWarning: undefined,
-    _qaFindings: undefined
+    _qaFindings: undefined,
+    sourceValidationError: undefined,
+    hasMissingSourceError: undefined
   };
 }
 
@@ -106,9 +108,41 @@ export function sanitizeExamPaper(
 ): ExamPaper {
   if (!exam) return exam;
 
-  const sanitizedQuestions = (exam.questions || []).map(q => 
-    sanitizeExamQuestion(q, options)
+  // Kusurlu veya inceleme bekleyen sorular öğrenciye sunulmaz; elenir (TASK233)
+  const validQuestions = (exam.questions || []).filter(q => 
+    q.isCertified !== false && 
+    (q as any)._qaStatus !== 'failed' && 
+    (q as any)._qaStatus !== 'needs_review' && 
+    (q as any).needsReview !== true
   );
+
+  const targetList = validQuestions.length > 0 ? validQuestions : exam.questions || [];
+
+  // Soru numaralarını 1, 2, 3... olarak yeniden indeksle ve sunum modelini temizle
+  let sanitizedQuestions = targetList.map((q, idx) => ({
+    ...sanitizeExamQuestion(q, options),
+    questionNumber: idx + 1,
+    number: idx + 1,
+    sourceValidationError: undefined,
+    hasMissingSourceError: undefined
+  }));
+
+  // Eğer kusurlu sorular elendiyse puanları sınav toplam puanına göre dengeli dağıt
+  if (validQuestions.length > 0 && validQuestions.length < (exam.questions || []).length) {
+    const targetTotal = exam.totalPoints || 100;
+    const basePts = Math.floor(targetTotal / sanitizedQuestions.length);
+    const rem = targetTotal - (basePts * sanitizedQuestions.length);
+    sanitizedQuestions = sanitizedQuestions.map((q, i) => {
+      const pts = basePts + (i < rem ? 1 : 0);
+      return {
+        ...q,
+        points: pts,
+        rubric: (q.rubric && q.rubric.length > 0)
+          ? q.rubric.map((r, ri) => ri === 0 ? { ...r, points: pts - (q.rubric!.slice(1).reduce((s, cr) => s + (cr.points || 0), 0)) } : r)
+          : [{ criterion: 'Doğru ve eksiksiz cevap', points: pts }]
+      };
+    });
+  }
 
   const certifiedForStudents = sanitizedQuestions.every(q => q.isCertified === true);
 

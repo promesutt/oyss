@@ -32,8 +32,12 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "modelAnswer": "Metnin konusu: Dedenin torununa çocukluk yıllarında emek vererek yaptığı ahşap oyuncakları göstermesi ve kendi emeğiyle üretmenin değerini anlatmasıdır.",
         "rubric": [
           {
-            "criterion": "Metnin konusunun eksiksiz ve tek cümleyle yazılması",
-            "points": 17
+            "criterion": "Metnin konusunun (ahşap oyuncak ve emek) eksiksiz belirlenmesi",
+            "points": 10
+          },
+          {
+            "criterion": "Düşüncenin tek, açık ve kurallı bir cümleyle ifade edilmesi",
+            "points": 7
           }
         ],
         "sourceOrigin": "oyss_curated"
@@ -53,8 +57,12 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "modelAnswer": "Dedesi, parayla satın alınan hazır oyuncakların kolayca tüketilebileceğini; ancak insanın kendi alın teri, sabrı ve hayal gücüyle ürettiği bir oyuncağın çok daha kıymetli ve unutulmaz olduğunu anlatmak istemiştir.",
         "rubric": [
           {
-            "criterion": "Emek ve manevi değer ilişkisinin doğru açıklanması",
-            "points": 17
+            "criterion": "Ustanın el emeği ve alın teri vurgusunun doğru açıklanması",
+            "points": 9
+          },
+          {
+            "criterion": "Manevi değer ve hazır tüketim ürünlerinden farkının belirtilmesi",
+            "points": 8
           }
         ],
         "sourceOrigin": "oyss_curated"
@@ -68,7 +76,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Görsel / Deney / Günlük Hayat Durumu",
         "points": 17,
         "contextText": "Geleneksel ahşap oyuncak ile hazır plastik oyuncak karşılaştırma tablosu.",
-        "stimulus": "Aşağıdaki tabloda geleneksel ahşap oyuncaklar ile günümüz plastik oyuncaklarının özellikleri verilmiştir:\n• Ahşap Oyuncak: Doğal ağaçtan yapılır, dayanıklıdır, çocuğun el becerisini ve üreticiliğini geliştirir, çevreye zarar vermez.\n• Plastik Seri Üretim Oyuncak: Fabrikada üretilir, çabuk kırılabilir, çocukta hazır tüketim alışkanlığı yaratır, doğada yüzyıllarca kaybolmaz.",
+        "stimulus": "Aşağıdaki tabloda geleneksel ahşap oyuncaklar ile günümüz plastik oyuncaklarının özellikleri verilmiştir:\n\n| Oyuncak Türü | Üretim Materyali | Çocuk Gelişimine Etkisi | Çevre ve Doğa Etkisi |\n| :--- | :--- | :--- | :--- |\n| **Ahşap Oyuncak** | Doğal ağaç | El becerisi ve hayal gücünü geliştirir | Doğada kolayca biyolojik çözünür |\n| **Plastik Oyuncak** | Fabrikasyon petrol türevi | Tüketim alışkanlığı yaratır | Doğada yüzyıllarca kaybolmaz |",
         "questionText": "Tablodaki verileri çocuk gelişimi ve çevre sağlığı açısından yorumlayınız. Neden ahşap oyuncaklar daha sağlıklı ve yararlıdır? İki gerekçe yazınız.",
         "solutionExplanation": "Doğal malzemedir, kimyasal içermez, üreticiliği destekler ve doğayı kirletmez.",
         "modelAnswer": "1. Çocuk Gelişimi Açısından: Ahşap oyuncaklar çocuğu tüketen değil üreten konumuna getirir, el becerisini ve hayal gücünü geliştirir.\n2. Çevre ve Sağlık Açısından: Tamamen doğal ağaçtan yapıldığı için kimyasal madde içermez ve kırıldığında doğada kolayca çözünerek çevre kirliliği oluşturmaz.",
@@ -207,7 +215,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 17,
         "contextText": "Metne dayalı 5N1K ve olay akışı.",
-        "stimulus": "Yukarıda verilen 1. sorudaki karınca metnini dikkate alınız.",
+        "stimulus": "“Güneşli bir yaz sabahı minik karınca Çıtı, yuvasına buğday tanesi taşımaya çalışıyordu. Buğday tanesi kendi cüssesinden ağırdı, yolda defalarca tepeciğin yamacından aşağı yuvarlandı. Fakat Çıtı asla yılmadı; her düşüşte taneyi yeniden sırtlayıp yola koyuldu. Diğer karıncalar da yardıma koşunca buğday yuvanın kapısına ulaştı.”",
         "questionText": "Karınca Çıtı buğday tanesini yuvasına taşırken yolda nasıl bir engelle karşılaşmıştır ve buğday tanesini yuvanın kapısına nasıl ulaştırmıştır? Metindeki olay akışına göre açıklayınız.",
         "solutionExplanation": "Metindeki açık olgular: Buğday tanesinin ağırlığı sebebiyle tepecikten aşağı yuvarlanması ve diğer karıncaların yardıma koşmasıyla yuvaya ulaştırılmasıdır.",
         "modelAnswer": "• Karşılaştığı Engel: Kendi cüssesinden ağır olan buğday tanesini taşırken yolda defalarca tepeciğin yamacından aşağı yuvarlanmıştır.\n• Çözüm ve Sonuç: Asla yılmayıp her düşüşte taneyi yeniden sırtlamış, diğer karıncaların da yardıma koşmasıyla buğday tanesini yuvanın kapısına ulaştırmıştır.",
@@ -282,14 +290,18 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 16,
         "contextText": "Anahtar kelime tespiti.",
-        "stimulus": "Yukarıda verilen 1. sorudaki karınca Çıtı metnini dikkate alınız.",
+        "stimulus": "“Güneşli bir yaz sabahı minik karınca Çıtı, yuvasına buğday tanesi taşımaya çalışıyordu. Buğday tanesi kendi cüssesinden ağırdı, yolda defalarca tepeciğin yamacından aşağı yuvarlandı. Fakat Çıtı asla yılmadı; her düşüşte taneyi yeniden sırtlayıp yola koyuldu. Diğer karıncalar da yardıma koşunca buğday yuvanın kapısına ulaştı.”",
         "questionText": "Çalışkan karınca Çıtı'nın kış hazırlığını anlatan bu metnin içeriğini en iyi özetleyen 3 anahtar kelimeyi yazınız.",
         "solutionExplanation": "Karınca, azim/gayret, yardımlaşma.",
         "modelAnswer": "1. Karınca\n2. Azim (Çalışkanlık)\n3. Yardımlaşma (Dayanışma)",
         "rubric": [
           {
-            "criterion": "Metni temsil eden 3 anahtar kelimenin doğru yazılması",
-            "points": 16
+            "criterion": "Karınca ve azim/çalışkanlık anahtar kelimelerinin tespiti",
+            "points": 8
+          },
+          {
+            "criterion": "Yardımlaşma/dayanışma anahtar kelimesinin tespiti",
+            "points": 8
           }
         ],
         "sourceOrigin": "oyss_curated"
@@ -371,7 +383,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 15,
         "contextText": "Metnin konusunu belirleme.",
-        "stimulus": "Yukarıda verilen 1. sorudaki 'Merhamet Isıtır' metnini dikkate alınız.",
+        "stimulus": "“Kış kapıya dayanmış, ayaz rüzgârlar sokakları sarmıştı. 5-A sınıfı öğrencileri bir araya gelip 'Merhamet Isıtır' adını verdikleri bir kulüp kurdular. Boş koli kutularını su geçirmez naylonlarla kaplayıp içlerine eski kazakları sererek sokaktaki minik dostlarına korunaklı barınaklar hazırladılar. Mahalleli çocukların bu samimi gayretini takdirle karşıladı.”",
         "questionText": "Can ve arkadaşlarının sokak hayvanları için kışlık kulübe yapmasını anlatan bu metnin konusunu tek bir cümleyle yazınız.",
         "solutionExplanation": "Metin çocukların sokak hayvanlarını soğuktan korumak için el birliğiyle kedi evleri yapmasını anlatır.",
         "modelAnswer": "Metnin konusu: Bir grup 5. sınıf öğrencisinin kış aylarında sokak hayvanlarını soğuktan korumak amacıyla kendi elleriyle barınaklar yapması ve çevreye örnek olmasıdır.",
@@ -392,7 +404,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Metne dayalı açık bilgi tespiti (neden-sonuç).",
-        "stimulus": "Yukarıda verilen 1. sorudaki 'Merhamet Isıtır' metnini dikkate alınız.",
+        "stimulus": "“Kış kapıya dayanmış, ayaz rüzgârlar sokakları sarmıştı. 5-A sınıfı öğrencileri bir araya gelip 'Merhamet Isıtır' adını verdikleri bir kulüp kurdular. Boş koli kutularını su geçirmez naylonlarla kaplayıp içlerine eski kazakları sererek sokaktaki minik dostlarına korunaklı barınaklar hazırladılar. Mahalleli çocukların bu samimi gayretini takdirle karşıladı.”",
         "questionText": "Çocukların koli kutularını su geçirmez naylonla kaplamalarının ve içlerine eski kazakları sermelerinin AMACI nedir? Açıklayınız.",
         "solutionExplanation": "Kutuları yağmurdan/kardan korumak ve içerisini sıcak tutarak hayvanların üşümesini engellemek.",
         "modelAnswer": "Naylonla kaplamalarının amacı yağmur ve kar suyunun kutuyu ıslatıp çürütmesini engellemektir. İçine eski kazak sermelerinin amacı ise barınağın zeminini yumuşak ve sıcak tutarak hayvanların donmaktan korunmasını sağlamaktır.",
@@ -434,7 +446,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Anahtar kelimeler.",
-        "stimulus": "Yukarıda verilen 1. sorudaki sokak hayvanları metnini dikkate alınız.",
+        "stimulus": "“Kış kapıya dayanmış, ayaz rüzgârlar sokakları sarmıştı. 5-A sınıfı öğrencileri bir araya gelip 'Merhamet Isıtır' adını verdikleri bir kulüp kurdular. Boş koli kutularını su geçirmez naylonlarla kaplayıp içlerine eski kazakları sererek sokaktaki minik dostlarına korunaklı barınaklar hazırladılar. Mahalleli çocukların bu samimi gayretini takdirle karşıladı.”",
         "questionText": "Metnin anahtar kelimelerinden 3 tanesini yazınız.",
         "solutionExplanation": "Sokak hayvanları, merhamet/yardımlaşma, barınak/kedi evi.",
         "modelAnswer": "1. Sokak hayvanları\n2. Merhamet\n3. Barınak (Kedi evi)",
@@ -833,7 +845,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Hikaye unsurlarını belirleme (Serim, Düğüm, Çözüm).",
-        "stimulus": "Boğaç Han metninin olay örgüsü.",
+        "stimulus": "“Eski zamanlarda Oğuz beylerinden Dirse Han'ın oğlu on beş yaşına bastığında Bayındır Han'ın meydanında azgın bir boğayla güreşti. Boğanın yumruğuyla alnına vurup onu dize getirdi. Dede Korkut gelip boy boyladı, soy soyladı: 'Bu oğlan boğayı basıp yendi, adı Boğaç olsun!' dedi. Boğaç Han yiğitliğiyle obasına baş oldu.”",
         "questionText": "Boğaç Han metninin hikâye unsurlarını aşağıdaki şablona göre yazınız:\n• Olay: ....................................................\n• Şahıs Kadrosu: ....................................................\n• Mekân (Yer): ....................................................\n• Çözüm Bölümü: ....................................................",
         "solutionExplanation": "Hikaye unsurlarının tespiti.",
         "modelAnswer": "• Olay: Bayındır Han'ın toyunda kaçan azgın boğayı genç bir yiğidin cesaretle alt etmesi ve isim kazanması.\n• Şahıs Kadrosu: Dirse Han'ın oğlu (Boğaç Han), Bayındır Han, Dede Korkut, oba halkı.\n• Mekân: Bayındır Han'ın toy meydanı / oba çadırı.\n• Çözüm: Boğanın yenilmesi üzerine Dede Korkut'un gelerek gence kahramanlığına uygun 'Boğaç Han' adını vermesi.",
@@ -989,7 +1001,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 12,
         "contextText": "Anahtar kelimeler.",
-        "stimulus": "Metin zeytin ağacı, hasat zamanı, emek ve zeytinyağı etrafında şekillenmiştir.",
+        "stimulus": "“Sonbaharın ılık rüzgârları Ege kıyılarını serinletirken Ayvalık'ın asırlık zeytinliklerinde hummalı bir çalışma başladı. Hasan Dede sırığıyla dalları incitmeden silkerken torunu yere serilen yaygılardaki taneleri sepete dolduruyordu. Hasan Dede torununa: 'Zeytin sabırdır evlat, her tanesinde binbir emek ve bereket saklıdır.' dedi. Akşama doğru toplanan zeytinler taş değirmene götürülüp altın sarısı zeytinyağına dönüştü.”",
         "questionText": "Hasan Dede ve torununun Ayvalık'taki zeytin hasadını anlatan bu metnin içeriğini en iyi yansıtan 3 anahtar kelimeyi belirleyiniz.",
         "solutionExplanation": "Zeytin, hasat, emek (veya zeytinyağı, bereket).",
         "modelAnswer": "1. Zeytin\n2. Hasat\n3. Emek (veya Zeytinyağı / Bereket)",
@@ -1219,19 +1231,62 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "title": "Çokgen Tanımı Karşılaştırma Modeli",
             "polygons": [
               {
-                "points": [{ "x": 40, "y": 140 }, { "x": 90, "y": 60 }, { "x": 140, "y": 140 }],
+                "points": [
+                  {
+                    "x": 40,
+                    "y": 140
+                  },
+                  {
+                    "x": 90,
+                    "y": 60
+                  },
+                  {
+                    "x": 140,
+                    "y": 140
+                  }
+                ],
                 "closed": true,
                 "label": "Şekil 1 (Kapalı Üçgen)",
                 "color": "#16a34a"
               },
               {
-                "points": [{ "x": 170, "y": 140 }, { "x": 170, "y": 70 }, { "x": 240, "y": 70 }, { "x": 240, "y": 115 }],
+                "points": [
+                  {
+                    "x": 170,
+                    "y": 140
+                  },
+                  {
+                    "x": 170,
+                    "y": 70
+                  },
+                  {
+                    "x": 240,
+                    "y": 70
+                  },
+                  {
+                    "x": 240,
+                    "y": 115
+                  }
+                ],
                 "closed": false,
                 "label": "Şekil 2 (Ucu Açık)",
                 "color": "#dc2626"
               },
               {
-                "points": [{ "x": 270, "y": 140 }, { "x": 270, "y": 70 }, { "x": 350, "y": 70 }],
+                "points": [
+                  {
+                    "x": 270,
+                    "y": 140
+                  },
+                  {
+                    "x": 270,
+                    "y": 70
+                  },
+                  {
+                    "x": 350,
+                    "y": 70
+                  }
+                ],
                 "closed": true,
                 "hasCurve": true,
                 "label": "Şekil 3 (Eğri Kenarlı)",
@@ -1275,7 +1330,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Kurgusal Senaryo & Vaka İncelemesi",
         "points": 14,
         "contextText": "Kareli kâğıtta okul ve kütüphane konumu.",
-        "stimulus": "Kareli zeminde okul A noktasında, kütüphane B noktasındadır. B noktası A noktasından 5 birim sağda ve 2 birim yukarıdadır.",
+        "stimulus": "Kareli zeminde okul A noktasında, kütüphane B noktasındadır.",
         "questionText": "B noktasının A noktasına göre konumunu tek bir cümleyle ifade ediniz.",
         "solutionExplanation": "B noktası, A noktasının 5 birim sağında ve 2 birim yukarısındadır.",
         "modelAnswer": "B noktası, A noktasının '5 birim sağında ve 2 birim yukarısındadır'.",
@@ -1293,7 +1348,7 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "visual": {
           "type": "geometry_shape",
           "sourceOrigin": "oyss_svg",
-          "caption": "Kareli zeminde A (Okul) ve B (Kütüphane) noktaları ve bağıl konum vektörü",
+          "caption": "Kareli zeminde A (Okul) ve B (Kütüphane) noktaları",
           "params": {
             "subType": "grid_coordinate",
             "title": "Noktanın Noktaya Göre Konumu",
@@ -1301,30 +1356,23 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
               "cols": 8,
               "rows": 6,
               "cellSize": 32,
-              "origin": { "col": 1, "row": 4 }
+              "origin": {
+                "col": 1,
+                "row": 4
+              }
             },
             "points": [
-              { "col": 1, "row": 4, "label": "A (Okul)", "color": "#2563eb" },
-              { "col": 6, "row": 2, "label": "B (Kütüphane)", "color": "#dc2626" }
-            ],
-            "vectors": [
               {
-                "fromCol": 1,
-                "fromRow": 4,
-                "toCol": 6,
-                "toRow": 4,
-                "label": "5 birim sağa",
-                "dashed": true,
-                "color": "#64748b"
+                "col": 1,
+                "row": 4,
+                "label": "A (Okul)",
+                "color": "#2563eb"
               },
               {
-                "fromCol": 6,
-                "fromRow": 4,
-                "toCol": 6,
-                "toRow": 2,
-                "label": "2 birim yukarı",
-                "dashed": true,
-                "color": "#64748b"
+                "col": 6,
+                "row": 2,
+                "label": "B (Kütüphane)",
+                "color": "#dc2626"
               }
             ]
           }
@@ -1430,8 +1478,16 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "subType": "angle_model",
             "title": "Analog Saatte Açı Çeşitleri",
             "clocks": [
-              { "hour": 3, "minute": 0, "angleLabel": "1. Durum: 90°" },
-              { "hour": 4, "minute": 0, "angleLabel": "2. Durum: 120°" }
+              {
+                "hour": 3,
+                "minute": 0,
+                "angleLabel": "1. Durum: 90°"
+              },
+              {
+                "hour": 4,
+                "minute": 0,
+                "angleLabel": "2. Durum: 120°"
+              }
             ]
           }
         }
@@ -1470,21 +1526,44 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "lines": [
               {
                 "kind": "line",
-                "start": { "x": 50, "y": 70 },
-                "end": { "x": 350, "y": 150 },
+                "start": {
+                  "x": 50,
+                  "y": 70
+                },
+                "end": {
+                  "x": 350,
+                  "y": 150
+                },
                 "label": "m",
-                "labelPos": { "x": 360, "y": 155 }
+                "labelPos": {
+                  "x": 360,
+                  "y": 155
+                }
               },
               {
                 "kind": "line",
-                "start": { "x": 80, "y": 190 },
-                "end": { "x": 320, "y": 30 },
+                "start": {
+                  "x": 80,
+                  "y": 190
+                },
+                "end": {
+                  "x": 320,
+                  "y": 30
+                },
                 "label": "n",
-                "labelPos": { "x": 330, "y": 25 }
+                "labelPos": {
+                  "x": 330,
+                  "y": 25
+                }
               }
             ],
             "points": [
-              { "x": 200, "y": 110, "label": "P", "color": "#dc2626" }
+              {
+                "x": 200,
+                "y": 110,
+                "label": "P",
+                "color": "#dc2626"
+              }
             ]
           }
         }
@@ -11213,7 +11292,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 17
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g7_turkce_s2_ahi"
       },
       {
         "questionNumber": 2,
@@ -11243,7 +11323,9 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 8
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g7_turkce_s2_ahi",
+        "commonStimulus": "“Selçuklu ve Osmanlı döneminde esnafın piri sayılan Ahi Evran, çarşıdaki dürüstlük ve meslek ahlakını çok sıkı kurallara bağlamıştı. Bir ayakkabıcı veya saraç hatalı, çürük bir mal ürettiğinde o esnafın lonca heyeti toplanır, hatalı ayakkabıyı dükkânın çatısına (damına) fırlatırdı. Bu durum, o esnafın kusurlu mal sattığının çarşıdaki herkese ilanıydı. 'Pabucu dama atılmak' deyimi işte bu köklü ahlak geleneğinden doğmuştur. Ahilikte helal kazanç, usta-çırak terbiyesi ve tüketiciye saygı her şeyin üstünde tutulurdu.”"
       },
       {
         "questionNumber": 3,
@@ -11272,7 +11354,9 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 8
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g7_turkce_s2_ahi",
+        "commonStimulus": "“Selçuklu ve Osmanlı döneminde esnafın piri sayılan Ahi Evran, çarşıdaki dürüstlük ve meslek ahlakını çok sıkı kurallara bağlamıştı. Bir ayakkabıcı veya saraç hatalı, çürük bir mal ürettiğinde o esnafın lonca heyeti toplanır, hatalı ayakkabıyı dükkânın çatısına (damına) fırlatırdı. Bu durum, o esnafın kusurlu mal sattığının çarşıdaki herkese ilanıydı. 'Pabucu dama atılmak' deyimi işte bu köklü ahlak geleneğinden doğmuştur. Ahilikte helal kazanç, usta-çırak terbiyesi ve tüketiciye saygı her şeyin üstünde tutulurdu.”"
       },
       {
         "questionNumber": 4,
@@ -11301,7 +11385,9 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 8
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g7_turkce_s2_ahi",
+        "commonStimulus": "“Selçuklu ve Osmanlı döneminde esnafın piri sayılan Ahi Evran, çarşıdaki dürüstlük ve meslek ahlakını çok sıkı kurallara bağlamıştı. Bir ayakkabıcı veya saraç hatalı, çürük bir mal ürettiğinde o esnafın lonca heyeti toplanır, hatalı ayakkabıyı dükkânın çatısına (damına) fırlatırdı. Bu durum, o esnafın kusurlu mal sattığının çarşıdaki herkese ilanıydı. 'Pabucu dama atılmak' deyimi işte bu köklü ahlak geleneğinden doğmuştur. Ahilikte helal kazanç, usta-çırak terbiyesi ve tüketiciye saygı her şeyin üstünde tutulurdu.”"
       },
       {
         "questionNumber": 5,
@@ -11361,6 +11447,22 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         ],
         "sourceOrigin": "oyss_curated"
       }
+    ],
+    "sharedSourceGroups": [
+      {
+        "id": "src_g7_turkce_s2_ahi",
+        "examId": "exam_7_turkce_1_1_senaryo_2",
+        "scenarioId": "senaryo_2",
+        "title": "Ahilik Teşkilatı ve Esnaf Ahlakı",
+        "sourceText": "“Selçuklu ve Osmanlı döneminde esnafın piri sayılan Ahi Evran, çarşıdaki dürüstlük ve meslek ahlakını çok sıkı kurallara bağlamıştı. Bir ayakkabıcı veya saraç hatalı, çürük bir mal ürettiğinde o esnafın lonca heyeti toplanır, hatalı ayakkabıyı dükkânın çatısına (damına) fırlatırdı. Bu durum, o esnafın kusurlu mal sattığının çarşıdaki herkese ilanıydı. 'Pabucu dama atılmak' deyimi işte bu köklü ahlak geleneğinden doğmuştur. Ahilikte helal kazanç, usta-çırak terbiyesi ve tüketiciye saygı her şeyin üstünde tutulurdu.”",
+        "questionNumbers": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "sourceType": "reading_passage"
+      }
     ]
   },
   {
@@ -11406,7 +11508,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 7
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g7_turkce_s3_tebessum"
       },
       {
         "questionNumber": 2,
@@ -11431,7 +11534,9 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 15
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g7_turkce_s3_tebessum",
+        "commonStimulus": "“İnsan ilişkilerinde en ucuz ama getirisi en yüksek sermaye içten bir tebessümdür. Asık suratlı, sürekli eleştiren ve etrafına öfke saçan insanlar, çevrelerindeki en candan dostlarını bile zamanla uzaklaştırırlar. Oysa güler yüzlü bir 'Günaydın' veya içten bir 'Teşekkür ederim', en gergin ortamların bile buzlarını eritir. İletişim yalnızca ağızdan çıkan kelimelerden ibaret değildir; bakışlarımızın nezaketi ve ses tonumuzun sıcaklığı kelimelerden çok daha hızlı karşı tarafa nüfuz eder.”"
       },
       {
         "questionNumber": 3,
@@ -11456,7 +11561,9 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 14
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g7_turkce_s3_tebessum",
+        "commonStimulus": "“İnsan ilişkilerinde en ucuz ama getirisi en yüksek sermaye içten bir tebessümdür. Asık suratlı, sürekli eleştiren ve etrafına öfke saçan insanlar, çevrelerindeki en candan dostlarını bile zamanla uzaklaştırırlar. Oysa güler yüzlü bir 'Günaydın' veya içten bir 'Teşekkür ederim', en gergin ortamların bile buzlarını eritir. İletişim yalnızca ağızdan çıkan kelimelerden ibaret değildir; bakışlarımızın nezaketi ve ses tonumuzun sıcaklığı kelimelerden çok daha hızlı karşı tarafa nüfuz eder.”"
       },
       {
         "questionNumber": 4,
@@ -11485,7 +11592,9 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 7
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g7_turkce_s3_tebessum",
+        "commonStimulus": "“İnsan ilişkilerinde en ucuz ama getirisi en yüksek sermaye içten bir tebessümdür. Asık suratlı, sürekli eleştiren ve etrafına öfke saçan insanlar, çevrelerindeki en candan dostlarını bile zamanla uzaklaştırırlar. Oysa güler yüzlü bir 'Günaydın' veya içten bir 'Teşekkür ederim', en gergin ortamların bile buzlarını eritir. İletişim yalnızca ağızdan çıkan kelimelerden ibaret değildir; bakışlarımızın nezaketi ve ses tonumuzun sıcaklığı kelimelerden çok daha hızlı karşı tarafa nüfuz eder.”"
       },
       {
         "questionNumber": 5,
@@ -11574,6 +11683,22 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         ],
         "sourceOrigin": "oyss_curated"
       }
+    ],
+    "sharedSourceGroups": [
+      {
+        "id": "src_g7_turkce_s3_tebessum",
+        "examId": "exam_7_turkce_1_1_senaryo_3",
+        "scenarioId": "senaryo_3",
+        "title": "Tebessüm ve Tatlı Dilin Önemi",
+        "sourceText": "“İnsan ilişkilerinde en ucuz ama getirisi en yüksek sermaye içten bir tebessümdür. Asık suratlı, sürekli eleştiren ve etrafına öfke saçan insanlar, çevrelerindeki en candan dostlarını bile zamanla uzaklaştırırlar. Oysa güler yüzlü bir 'Günaydın' veya içten bir 'Teşekkür ederim', en gergin ortamların bile buzlarını eritir. İletişim yalnızca ağızdan çıkan kelimelerden ibaret değildir; bakışlarımızın nezaketi ve ses tonumuzun sıcaklığı kelimelerden çok daha hızlı karşı tarafa nüfuz eder.”",
+        "questionNumbers": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "sourceType": "reading_passage"
+      }
     ]
   },
   {
@@ -11619,7 +11744,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 7
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g7_turkce_s4_cinar"
       },
       {
         "questionNumber": 2,
@@ -11644,7 +11770,9 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 15
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g7_turkce_s4_cinar",
+        "commonStimulus": "“Bursa’nın İnkaya köyünde heybetiyle göğe yükselen altı asırlık çınar, Osmanlı Devleti’nin kuruluş günlerinden bugüne kadar nice nesillere tanıklık etmiştir. Dalları onlarca metreye yayılan bu ulu ağacın gölgesinde soluklanan insanlar, sadece bir ağacın değil; yaşayan bir tarihin serinliğini hissederler. Kökleri toprağın derinliklerine sımsıkı sarılmış bu çınar; bize sabrı, geçmişe vefa duymayı ve fırtınalara karşı dimdik durmayı fısıldar.”"
       },
       {
         "questionNumber": 3,
@@ -11673,7 +11801,9 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 7
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g7_turkce_s4_cinar",
+        "commonStimulus": "“Bursa’nın İnkaya köyünde heybetiyle göğe yükselen altı asırlık çınar, Osmanlı Devleti’nin kuruluş günlerinden bugüne kadar nice nesillere tanıklık etmiştir. Dalları onlarca metreye yayılan bu ulu ağacın gölgesinde soluklanan insanlar, sadece bir ağacın değil; yaşayan bir tarihin serinliğini hissederler. Kökleri toprağın derinliklerine sımsıkı sarılmış bu çınar; bize sabrı, geçmişe vefa duymayı ve fırtınalara karşı dimdik durmayı fısıldar.”"
       },
       {
         "questionNumber": 4,
@@ -11698,7 +11828,9 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 14
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g7_turkce_s4_cinar",
+        "commonStimulus": "“Bursa’nın İnkaya köyünde heybetiyle göğe yükselen altı asırlık çınar, Osmanlı Devleti’nin kuruluş günlerinden bugüne kadar nice nesillere tanıklık etmiştir. Dalları onlarca metreye yayılan bu ulu ağacın gölgesinde soluklanan insanlar, sadece bir ağacın değil; yaşayan bir tarihin serinliğini hissederler. Kökleri toprağın derinliklerine sımsıkı sarılmış bu çınar; bize sabrı, geçmişe vefa duymayı ve fırtınalara karşı dimdik durmayı fısıldar.”"
       },
       {
         "questionNumber": 5,
@@ -11787,6 +11919,22 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         ],
         "sourceOrigin": "oyss_curated"
       }
+    ],
+    "sharedSourceGroups": [
+      {
+        "id": "src_g7_turkce_s4_cinar",
+        "examId": "exam_7_turkce_1_1_senaryo_4",
+        "scenarioId": "senaryo_4",
+        "title": "Tarihin Canlı Tanığı İnkaya Çınarı",
+        "sourceText": "“Bursa’nın İnkaya köyünde heybetiyle göğe yükselen altı asırlık çınar, Osmanlı Devleti’nin kuruluş günlerinden bugüne kadar nice nesillere tanıklık etmiştir. Dalları onlarca metreye yayılan bu ulu ağacın gölgesinde soluklanan insanlar, sadece bir ağacın değil; yaşayan bir tarihin serinliğini hissederler. Kökleri toprağın derinliklerine sımsıkı sarılmış bu çınar; bize sabrı, geçmişe vefa duymayı ve fırtınalara karşı dimdik durmayı fısıldar.”",
+        "questionNumbers": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "sourceType": "reading_passage"
+      }
     ]
   },
   {
@@ -11832,7 +11980,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 8
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g7_turkce_s5_kitap"
       },
       {
         "questionNumber": 2,
@@ -11857,7 +12006,9 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 17
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g7_turkce_s5_kitap",
+        "commonStimulus": "“Kil tabletlerden papirüslere, parşömenden kâğıt ve matbaaya uzanan kitap, insanlığın bilgi birikimini çağlar ötesine taşıyan en sadık yol arkadaşıdır. Gutenberg’in hareketli harflerle çalışan matbaayı icat etmesi, bilginin sadece sarayların ve manastırların tekelinde kalmasını önlemiş; halk kitlelerine yayılmasını sağlamıştır. Günümüzde ise e-kitaplar hayatımıza girmiştir. Biçim değişse de değişmeyen tek şey, insanın öğrenme tutkusudur.”"
       },
       {
         "questionNumber": 3,
@@ -11886,7 +12037,9 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 8
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g7_turkce_s5_kitap",
+        "commonStimulus": "“Kil tabletlerden papirüslere, parşömenden kâğıt ve matbaaya uzanan kitap, insanlığın bilgi birikimini çağlar ötesine taşıyan en sadık yol arkadaşıdır. Gutenberg’in hareketli harflerle çalışan matbaayı icat etmesi, bilginin sadece sarayların ve manastırların tekelinde kalmasını önlemiş; halk kitlelerine yayılmasını sağlamıştır. Günümüzde ise e-kitaplar hayatımıza girmiştir. Biçim değişse de değişmeyen tek şey, insanın öğrenme tutkusudur.”"
       },
       {
         "questionNumber": 4,
@@ -11915,7 +12068,9 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 8
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g7_turkce_s5_kitap",
+        "commonStimulus": "“Kil tabletlerden papirüslere, parşömenden kâğıt ve matbaaya uzanan kitap, insanlığın bilgi birikimini çağlar ötesine taşıyan en sadık yol arkadaşıdır. Gutenberg’in hareketli harflerle çalışan matbaayı icat etmesi, bilginin sadece sarayların ve manastırların tekelinde kalmasını önlemiş; halk kitlelerine yayılmasını sağlamıştır. Günümüzde ise e-kitaplar hayatımıza girmiştir. Biçim değişse de değişmeyen tek şey, insanın öğrenme tutkusudur.”"
       },
       {
         "questionNumber": 5,
@@ -11975,6 +12130,22 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         ],
         "sourceOrigin": "oyss_curated"
       }
+    ],
+    "sharedSourceGroups": [
+      {
+        "id": "src_g7_turkce_s5_kitap",
+        "examId": "exam_7_turkce_1_1_senaryo_5",
+        "scenarioId": "senaryo_5",
+        "title": "Kitabın ve Yazının Tarihsel Serüveni",
+        "sourceText": "“Kil tabletlerden papirüslere, parşömenden kâğıt ve matbaaya uzanan kitap, insanlığın bilgi birikimini çağlar ötesine taşıyan en sadık yol arkadaşıdır. Gutenberg’in hareketli harflerle çalışan matbaayı icat etmesi, bilginin sadece sarayların ve manastırların tekelinde kalmasını önlemiş; halk kitlelerine yayılmasını sağlamıştır. Günümüzde ise e-kitaplar hayatımıza girmiştir. Biçim değişse de değişmeyen tek şey, insanın öğrenme tutkusudur.”",
+        "questionNumbers": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "sourceType": "reading_passage"
+      }
     ]
   },
   {
@@ -12020,7 +12191,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 8
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g7_turkce_s6_neset"
       },
       {
         "questionNumber": 2,
@@ -12045,7 +12217,9 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 17
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g7_turkce_s6_neset",
+        "commonStimulus": "“Anadolu’nun bağrından kopan türküler, bu milletin sevinçlerinin ve gurbet acılarının en samimi aynasıdır. 'Bozkırın Tezenesi' olarak anılan Neşet Ertaş; sazının tellerine dokunduğunda sadece bir melodi çalmaz, adeta bir halkın kalbinden geçenleri dile getirirdi. Onun 'Gönülden gönüle bir yol vardır görülmez' deyişi, Türk insanının sevgiye ve samimiyete verdiği değeri en veciz şekilde ortaya koyar. Türkülerini unutan bir millet, ruhunun en derin ezgilerini kaybetmiş demektir.”"
       },
       {
         "questionNumber": 3,
@@ -12074,7 +12248,9 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 8
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g7_turkce_s6_neset",
+        "commonStimulus": "“Anadolu’nun bağrından kopan türküler, bu milletin sevinçlerinin ve gurbet acılarının en samimi aynasıdır. 'Bozkırın Tezenesi' olarak anılan Neşet Ertaş; sazının tellerine dokunduğunda sadece bir melodi çalmaz, adeta bir halkın kalbinden geçenleri dile getirirdi. Onun 'Gönülden gönüle bir yol vardır görülmez' deyişi, Türk insanının sevgiye ve samimiyete verdiği değeri en veciz şekilde ortaya koyar. Türkülerini unutan bir millet, ruhunun en derin ezgilerini kaybetmiş demektir.”"
       },
       {
         "questionNumber": 4,
@@ -12103,7 +12279,9 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 8
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g7_turkce_s6_neset",
+        "commonStimulus": "“Anadolu’nun bağrından kopan türküler, bu milletin sevinçlerinin ve gurbet acılarının en samimi aynasıdır. 'Bozkırın Tezenesi' olarak anılan Neşet Ertaş; sazının tellerine dokunduğunda sadece bir melodi çalmaz, adeta bir halkın kalbinden geçenleri dile getirirdi. Onun 'Gönülden gönüle bir yol vardır görülmez' deyişi, Türk insanının sevgiye ve samimiyete verdiği değeri en veciz şekilde ortaya koyar. Türkülerini unutan bir millet, ruhunun en derin ezgilerini kaybetmiş demektir.”"
       },
       {
         "questionNumber": 5,
@@ -12162,6 +12340,22 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
           }
         ],
         "sourceOrigin": "oyss_curated"
+      }
+    ],
+    "sharedSourceGroups": [
+      {
+        "id": "src_g7_turkce_s6_neset",
+        "examId": "exam_7_turkce_1_1_senaryo_6",
+        "scenarioId": "senaryo_6",
+        "title": "Bozkırın Tezenesi Neşet Ertaş ve Türkülerimiz",
+        "sourceText": "“Anadolu’nun bağrından kopan türküler, bu milletin sevinçlerinin ve gurbet acılarının en samimi aynasıdır. 'Bozkırın Tezenesi' olarak anılan Neşet Ertaş; sazının tellerine dokunduğunda sadece bir melodi çalmaz, adeta bir halkın kalbinden geçenleri dile getirirdi. Onun 'Gönülden gönüle bir yol vardır görülmez' deyişi, Türk insanının sevgiye ve samimiyete verdiği değeri en veciz şekilde ortaya koyar. Türkülerini unutan bir millet, ruhunun en derin ezgilerini kaybetmiş demektir.”",
+        "questionNumbers": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "sourceType": "reading_passage"
       }
     ]
   },
@@ -12454,17 +12648,17 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         "archetype": "Görsel / Deney / Günlük Hayat Durumu",
         "points": 20,
         "contextText": "Deniz seviyesine göre konumlar ve tam sayılar.",
-        "stimulus": "Bir deniz araştırmasında üç farklı gözlem noktasının deniz seviyesine göre konumları belirlenmiştir:\n• Araştırma Dalgıcı: Deniz seviyesinin 45 m altında (-45 m)\n• Keşif Denizaltısı: Deniz seviyesinin 120 m altında (-120 m)\n• Gözlem Helikopteri: Deniz seviyesinin 80 m üstünde (+80 m)",
+        "stimulus": "Bir deniz araştırmasında üç farklı gözlem noktasının deniz seviyesine göre konumları belirlenmiştir:\n• Araştırma Dalgıcı: Deniz seviyesinin 40 m altında (-40 m)\n• Keşif Denizaltısı: Deniz seviyesinin 120 m altında (-120 m)\n• Gözlem Helikopteri: Deniz seviyesinin 80 m üstünde (+80 m)",
         "questionText": "a) Gözlem helikopteri ile keşif denizaltısı arasındaki dikey mesafe kaç metredir? İşlemini yazınız.\nb) Bir balık sürüsü dalgıç ile denizaltının tam orta noktasında bulunduğuna göre, balık sürüsünün konumunu gösteren tam sayı kaçtır?",
-        "solutionExplanation": "a) (+80) - (-120) = 200 m. b) Orta nokta: [(-45) + (-120)] / 2 = -165 / 2 = -82,5 m.",
-        "modelAnswer": "a) Helikopter (+80) ve denizaltı (-120) arasındaki dikey mesafe: (+80) - (-120) = 80 + 120 = 200 metredir.\nb) Dalgıç (-45) ve denizaltı (-120) orta noktası: [(-45) + (-120)] ÷ 2 = -165 ÷ 2 = -82,5 m (veya -82 tam 1/2 m).",
+        "solutionExplanation": "a) (+80) - (-120) = 200 m. b) Orta nokta: [(-40) + (-120)] / 2 = -160 / 2 = -80 m.",
+        "modelAnswer": "a) Helikopter (+80) ve denizaltı (-120) arasındaki dikey mesafe: (+80) - (-120) = 80 + 120 = 200 metredir.\nb) Dalgıç (-40) ve denizaltı (-120) orta noktası: [(-40) + (-120)] ÷ 2 = -160 ÷ 2 = -80 metredir. Balık sürüsünün konumunu gösteren tam sayı -80'dir.",
         "rubric": [
           {
             "criterion": "a şıkkında 200 metre dikey mesafenin işlemle bulunması",
             "points": 10
           },
           {
-            "criterion": "b şıkkında orta noktanın (-82,5 m) doğru hesaplanması",
+            "criterion": "b şıkkında orta noktanın (-80 m) tam sayı olarak doğru hesaplanması",
             "points": 10
           }
         ],
@@ -16815,7 +17009,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 13
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g8_turkce_s1_seyit"
       },
       {
         "questionNumber": 2,
@@ -16840,7 +17035,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 6
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g8_turkce_s1_seyit"
       },
       {
         "questionNumber": 3,
@@ -16861,7 +17057,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 13
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g8_turkce_s1_seyit"
       },
       {
         "questionNumber": 4,
@@ -16886,7 +17083,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 6
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g8_turkce_s1_seyit"
       },
       {
         "questionNumber": 5,
@@ -16907,7 +17105,9 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 12
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g8_turkce_s1_seyit",
+        "commonStimulus": "Metin Parçası: '18 Mart 1915 günü Çanakkale Boğazı'nda top sesleri yeri göğü inletiyordu. Rumeli Mecidiye Tabyası ağır bir bombardıman altında kalmış, topun vinci parçalanmıştı. Havranlı Seyit Onbaşı, vatan aşkıyla devasa 215 okkalık mermiyi sırtlayarak namluya sürdü ve İngiliz zırhlısı Ocean'ı dümeninden vurarak saf dışı bıraktı.'"
       },
       {
         "questionNumber": 6,
@@ -16932,7 +17132,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 6
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g8_turkce_s1_seyit"
       },
       {
         "questionNumber": 7,
@@ -16984,6 +17185,24 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         ],
         "sourceOrigin": "oyss_curated"
       }
+    ],
+    "sharedSourceGroups": [
+      {
+        "id": "src_g8_turkce_s1_seyit",
+        "examId": "exam_8_turkce_1_1_senaryo_1",
+        "scenarioId": "senaryo_1",
+        "title": "Çanakkale Deniz Zaferi ve Seyit Onbaşı",
+        "sourceText": "Metin Parçası: '18 Mart 1915 günü Çanakkale Boğazı'nda top sesleri yeri göğü inletiyordu. Rumeli Mecidiye Tabyası ağır bir bombardıman altında kalmış, topun vinci parçalanmıştı. Havranlı Seyit Onbaşı, vatan aşkıyla devasa 215 okkalık mermiyi sırtlayarak namluya sürdü ve İngiliz zırhlısı Ocean'ı dümeninden vurarak saf dışı bıraktı.'",
+        "questionNumbers": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "sourceType": "reading_passage"
+      }
     ]
   },
   {
@@ -17021,7 +17240,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 12
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g8_turkce_s2_ai"
       },
       {
         "questionNumber": 2,
@@ -17042,7 +17262,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 11
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g8_turkce_s2_ai"
       },
       {
         "questionNumber": 3,
@@ -17067,7 +17288,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 5
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g8_turkce_s2_ai"
       },
       {
         "questionNumber": 4,
@@ -17088,7 +17310,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 11
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g8_turkce_s2_ai"
       },
       {
         "questionNumber": 5,
@@ -17109,7 +17332,9 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 11
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g8_turkce_s2_ai",
+        "commonStimulus": "Yapay zekâ algoritmaları son yıllarda tıp, astronomi ve mühendislikte çığır açan keşiflere öncülük etmektedir. Devasa veri havuzlarını saniyeler içinde tarayan bu sistemler, araştırmacıların yıllar sürecek tahlillerini anında somutlaştırmaktadır. Ancak bu algoritmaların eğitim verilerindeki önyargıları devralması günümüz bilgisayar mühendisliğinin en tartışmalı konusudur. Bilimsel ilerlemede yapay zekâ bir araç olarak kullanılmalı, insan vicdanı ve etik denetimi asla elden bırakılmamalıdır."
       },
       {
         "questionNumber": 6,
@@ -17130,7 +17355,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 11
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g8_turkce_s2_ai"
       },
       {
         "questionNumber": 7,
@@ -17155,7 +17381,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 5
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g8_turkce_s2_ai"
       },
       {
         "questionNumber": 8,
@@ -17180,7 +17407,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 5
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g8_turkce_s2_ai"
       },
       {
         "questionNumber": 9,
@@ -17206,6 +17434,26 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
           }
         ],
         "sourceOrigin": "oyss_curated"
+      }
+    ],
+    "sharedSourceGroups": [
+      {
+        "id": "src_g8_turkce_s2_ai",
+        "examId": "exam_8_turkce_1_1_senaryo_2",
+        "scenarioId": "senaryo_2",
+        "title": "Yapay Zekâ ve Bilimsel Gelişmeler",
+        "sourceText": "Yapay zekâ algoritmaları son yıllarda tıp, astronomi ve mühendislikte çığır açan keşiflere öncülük etmektedir. Devasa veri havuzlarını saniyeler içinde tarayan bu sistemler, araştırmacıların yıllar sürecek tahlillerini anında somutlaştırmaktadır. Ancak bu algoritmaların eğitim verilerindeki önyargıları devralması günümüz bilgisayar mühendisliğinin en tartışmalı konusudur. Bilimsel ilerlemede yapay zekâ bir araç olarak kullanılmalı, insan vicdanı ve etik denetimi asla elden bırakılmamalıdır.",
+        "questionNumbers": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "sourceType": "reading_passage"
       }
     ]
   },
@@ -17244,7 +17492,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 15
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g8_turkce_s3_ebru"
       },
       {
         "questionNumber": 2,
@@ -17269,7 +17518,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 7
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g8_turkce_s3_ebru"
       },
       {
         "questionNumber": 3,
@@ -17294,7 +17544,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 7
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g8_turkce_s3_ebru"
       },
       {
         "questionNumber": 4,
@@ -17315,7 +17566,9 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 14
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g8_turkce_s3_ebru",
+        "commonStimulus": "Ebru, kitreli suyun yüzeyine toprak boyaların serpilmesi ve biz adı verilen ince uçlu aletlerle ahenkle şekillendirilmesiyle icra edilen kadim bir kâğıt süsleme sanatıdır. Her yapılan ebrunun dünyada sadece tek bir nüsha olması, tekrarlanamaz ve benzersiz bir sanat harikası doğurur. Ebru ustası teknenin başına geçtiğinde suyun sakinliği ve renklerin dansı ruhu dinlendirir."
       },
       {
         "questionNumber": 5,
@@ -17336,7 +17589,9 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 14
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g8_turkce_s3_ebru",
+        "commonStimulus": "Ebru, kitreli suyun yüzeyine toprak boyaların serpilmesi ve biz adı verilen ince uçlu aletlerle ahenkle şekillendirilmesiyle icra edilen kadim bir kâğıt süsleme sanatıdır. Her yapılan ebrunun dünyada sadece tek bir nüsha olması, tekrarlanamaz ve benzersiz bir sanat harikası doğurur. Ebru ustası teknenin başına geçtiğinde suyun sakinliği ve renklerin dansı ruhu dinlendirir."
       },
       {
         "questionNumber": 6,
@@ -17388,6 +17643,23 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
         ],
         "sourceOrigin": "oyss_curated"
       }
+    ],
+    "sharedSourceGroups": [
+      {
+        "id": "src_g8_turkce_s3_ebru",
+        "examId": "exam_8_turkce_1_1_senaryo_3",
+        "scenarioId": "senaryo_3",
+        "title": "Geleneksel Türk Ebru Sanatı",
+        "sourceText": "Ebru, kitreli suyun yüzeyine toprak boyaların serpilmesi ve biz adı verilen ince uçlu aletlerle ahenkle şekillendirilmesiyle icra edilen kadim bir kâğıt süsleme sanatıdır. Her yapılan ebrunun dünyada sadece tek bir nüsha olması, tekrarlanamaz ve benzersiz bir sanat harikası doğurur. Ebru ustası teknenin başına geçtiğinde suyun sakinliği ve renklerin dansı ruhu dinlendirir.",
+        "questionNumbers": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "sourceType": "reading_passage"
+      }
     ]
   },
   {
@@ -17425,7 +17697,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 15
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g8_turkce_s4_orman"
       },
       {
         "questionNumber": 2,
@@ -17450,7 +17723,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 7
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g8_turkce_s4_orman"
       },
       {
         "questionNumber": 3,
@@ -17471,7 +17745,9 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 14
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g8_turkce_s4_orman",
+        "commonStimulus": "Ormanlar sadece ağaç toplulukları değil; mikoriza mantarlarından dev meşelere kadar sayısız canlının birbirine kenetlendiği kusursuz bir ekolojik ağdır. İklimin dengelenmesinden erozyonun önlenmesine kadar hayati fonksiyonlar üstlenen bu ekosistemler, insan tahribatına karşı korunması gereken en değerli mirasımızdır."
       },
       {
         "questionNumber": 4,
@@ -17492,7 +17768,9 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 14
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g8_turkce_s4_orman",
+        "commonStimulus": "Ormanlar sadece ağaç toplulukları değil; mikoriza mantarlarından dev meşelere kadar sayısız canlının birbirine kenetlendiği kusursuz bir ekolojik ağdır. İklimin dengelenmesinden erozyonun önlenmesine kadar hayati fonksiyonlar üstlenen bu ekosistemler, insan tahribatına karşı korunması gereken en değerli mirasımızdır."
       },
       {
         "questionNumber": 5,
@@ -17517,7 +17795,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 7
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g8_turkce_s4_orman"
       },
       {
         "questionNumber": 6,
@@ -17564,6 +17843,23 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
           }
         ],
         "sourceOrigin": "oyss_curated"
+      }
+    ],
+    "sharedSourceGroups": [
+      {
+        "id": "src_g8_turkce_s4_orman",
+        "examId": "exam_8_turkce_1_1_senaryo_4",
+        "scenarioId": "senaryo_4",
+        "title": "Orman Ekosistemleri ve Biyoçeşitlilik",
+        "sourceText": "Ormanlar sadece ağaç toplulukları değil; mikoriza mantarlarından dev meşelere kadar sayısız canlının birbirine kenetlendiği kusursuz bir ekolojik ağdır. İklimin dengelenmesinden erozyonun önlenmesine kadar hayati fonksiyonlar üstlenen bu ekosistemler, insan tahribatına karşı korunması gereken en değerli mirasımızdır.",
+        "questionNumbers": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "sourceType": "reading_passage"
       }
     ]
   },
@@ -17858,7 +18154,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 5
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g8_turkce_s6_imece"
       },
       {
         "questionNumber": 3,
@@ -17879,7 +18176,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 10
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g8_turkce_s6_imece"
       },
       {
         "questionNumber": 4,
@@ -17900,7 +18198,9 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 10
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g8_turkce_s6_imece",
+        "commonStimulus": "İmece, köylerde tek başına yapılması imkânsız olan tarla hasadı, ev yapımı gibi ağır işlerin bütün köylünün bir araya gelerek karşılıksız ve sırayla yapmasıdır. Bu gelenekte menfaat değil, derin bir sevgi ve dayanışma hâkimdir. Yolda kalan yabancıların bile köy odalarında baş tacı edildiği Anadolu misafirperverliği, birlik ve beraberliğin en canlı kanıtıdır."
       },
       {
         "questionNumber": 5,
@@ -17921,7 +18221,9 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 10
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g8_turkce_s6_imece",
+        "commonStimulus": "İmece, köylerde tek başına yapılması imkânsız olan tarla hasadı, ev yapımı gibi ağır işlerin bütün köylünün bir araya gelerek karşılıksız ve sırayla yapmasıdır. Bu gelenekte menfaat değil, derin bir sevgi ve dayanışma hâkimdir. Yolda kalan yabancıların bile köy odalarında baş tacı edildiği Anadolu misafirperverliği, birlik ve beraberliğin en canlı kanıtıdır."
       },
       {
         "questionNumber": 6,
@@ -17942,7 +18244,9 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 10
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g8_turkce_s6_imece",
+        "commonStimulus": "İmece, köylerde tek başına yapılması imkânsız olan tarla hasadı, ev yapımı gibi ağır işlerin bütün köylünün bir araya gelerek karşılıksız ve sırayla yapmasıdır. Bu gelenekte menfaat değil, derin bir sevgi ve dayanışma hâkimdir. Yolda kalan yabancıların bile köy odalarında baş tacı edildiği Anadolu misafirperverliği, birlik ve beraberliğin en canlı kanıtıdır."
       },
       {
         "questionNumber": 7,
@@ -17963,7 +18267,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 10
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g8_turkce_s6_imece"
       },
       {
         "questionNumber": 8,
@@ -17988,7 +18293,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 5
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g8_turkce_s6_imece"
       },
       {
         "questionNumber": 9,
@@ -18031,6 +18337,25 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
           }
         ],
         "sourceOrigin": "oyss_curated"
+      }
+    ],
+    "sharedSourceGroups": [
+      {
+        "id": "src_g8_turkce_s6_imece",
+        "examId": "exam_8_turkce_1_1_senaryo_6",
+        "scenarioId": "senaryo_6",
+        "title": "Anadolu İmece Geleneği",
+        "sourceText": "İmece, köylerde tek başına yapılması imkânsız olan tarla hasadı, ev yapımı gibi ağır işlerin bütün köylünün bir araya gelerek karşılıksız ve sırayla yapmasıdır. Bu gelenekte menfaat değil, derin bir sevgi ve dayanışma hâkimdir. Yolda kalan yabancıların bile köy odalarında baş tacı edildiği Anadolu misafirperverliği, birlik ve beraberliğin en canlı kanıtıdır.",
+        "questionNumbers": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "sourceType": "reading_passage"
       }
     ]
   },
@@ -18090,7 +18415,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 15
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g8_turkce_s7_dil"
       },
       {
         "questionNumber": 3,
@@ -18111,7 +18437,9 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 14
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g8_turkce_s7_dil",
+        "commonStimulus": "Dil, bir milletin ruhudur. Bir kelimeyi kaybettiğimizde sadece birkaç harfi değil, o kelimenin bin yılda biriktirdiği anlamı ve hissiyatı da yitiririz. Karamanoğlu Mehmet Bey'in fermanında olduğu gibi, Türkçemizi yabancı sözcüklerin istilasından korumak ve yaşatmak her fert için millî bir vazifedir."
       },
       {
         "questionNumber": 4,
@@ -18132,7 +18460,8 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
             "points": 14
           }
         ],
-        "sourceOrigin": "oyss_curated"
+        "sourceOrigin": "oyss_curated",
+        "sharedSourceId": "src_g8_turkce_s7_dil"
       },
       {
         "questionNumber": 5,
@@ -18204,6 +18533,21 @@ export const SAMPLE_EXAMS: ExamPaper[] = [
           }
         ],
         "sourceOrigin": "oyss_curated"
+      }
+    ],
+    "sharedSourceGroups": [
+      {
+        "id": "src_g8_turkce_s7_dil",
+        "examId": "exam_8_turkce_1_1_senaryo_7",
+        "scenarioId": "senaryo_7",
+        "title": "Dil Bilinci ve Türkçemizin Korunması",
+        "sourceText": "Dil, bir milletin ruhudur. Bir kelimeyi kaybettiğimizde sadece birkaç harfi değil, o kelimenin bin yılda biriktirdiği anlamı ve hissiyatı da yitiririz. Karamanoğlu Mehmet Bey'in fermanında olduğu gibi, Türkçemizi yabancı sözcüklerin istilasından korumak ve yaşatmak her fert için millî bir vazifedir.",
+        "questionNumbers": [
+          2,
+          3,
+          4
+        ],
+        "sourceType": "reading_passage"
       }
     ]
   },

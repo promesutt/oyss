@@ -26,6 +26,7 @@ import {
 import { TextbookSourceCard } from './TextbookSourceCard';
 import { QuestionVisualView } from './QuestionVisualView';
 import { triggerPdfPrint } from '../utils/materialFileNameGenerator';
+import { sanitizeExamPaper } from '../utils/qualityAssurance/presentationContentFilter';
 import { 
   ArrowLeft,
   ArrowRight,
@@ -87,12 +88,13 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
   onBackToPaperView,
   onOpenStudySheet
 }) => {
-  const questions = examPaper.questions || [];
+  const sanitizedExam = useMemo(() => sanitizeExamPaper(examPaper), [examPaper]);
+  const questions = sanitizedExam.questions || [];
   const totalQuestions = questions.length;
 
   const classification = useMemo(() => {
-    return examPaper.examClassification || classifyExamQuestions(examPaper.questions);
-  }, [examPaper.examClassification, examPaper.questions]);
+    return sanitizedExam.examClassification || classifyExamQuestions(sanitizedExam.questions);
+  }, [sanitizedExam.examClassification, sanitizedExam.questions]);
 
   const classDetails = useMemo(() => {
     return getExamClassificationDetails(classification);
@@ -1379,39 +1381,6 @@ export const InteractivePracticeView: React.FC<InteractivePracticeViewProps> = (
                       </div>
                       <div className="font-medium text-slate-800 pl-1 border-l-2 border-amber-300">
                         <MathRenderer content={currentQ.stimulus} />
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Missing Source Material Warning Banner */}
-                  {currentQ.hasMissingSourceError && (
-                    <div className="bg-rose-50 border border-rose-300 rounded-xl p-4 text-xs sm:text-sm text-rose-950 flex items-start space-x-3 shadow-2xs">
-                      <AlertTriangle className="w-5 h-5 text-rose-600 shrink-0 mt-0.5" />
-                      <div className="space-y-1">
-                        <strong className="block text-rose-900 font-bold text-xs uppercase tracking-wide">
-                          Kaynak Materyal Eksikliği Bildirimi:
-                        </strong>
-                        <p className="leading-relaxed font-medium">
-                          {currentQ.sourceValidationError || 'Bu soru bir kaynak metne/tabloya dayanmaktadır ancak sınavda kaynak materyal bulunamamıştır. Öğrencinin mağduriyet yaşamaması için bu soru için cevaplama ve öz değerlendirme kilitlenmiştir.'}
-                        </p>
-                        <span className="text-[11px] text-rose-700 block font-semibold pt-0.5">
-                          * Sınavın diğer geçerli sorularını çözmeye devam edebilirsiniz.
-                        </span>
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Kalite Güvence Uyarısı (Yalnızca warning düzeyindeki sorular için) */}
-                  {(currentQ as any)._qaWarning && (
-                    <div className="bg-amber-50 border border-amber-300 rounded-xl p-4 text-xs sm:text-sm text-amber-950 flex items-start space-x-3 shadow-2xs">
-                      <AlertTriangle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
-                      <div className="space-y-1">
-                        <strong className="block text-amber-900 font-bold text-xs uppercase tracking-wide">
-                          Kalite Güvence Uyarısı:
-                        </strong>
-                        <p className="leading-relaxed font-medium">
-                          {(currentQ as any)._qaWarning}
-                        </p>
                       </div>
                     </div>
                   )}

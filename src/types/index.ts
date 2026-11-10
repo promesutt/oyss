@@ -119,6 +119,7 @@ export interface ExamPaper {
   totalPoints: number;
   questions: ExamQuestion[];
   examClassification?: ExamSourceClassification; // Sınavın kaynak sınıflandırması
+  sharedSourceGroups?: any[]; // Ortak okuma metni veya senaryo veri grupları (TASK229)
   qualityAudit?: any; // Sınav Kalite Güvence ve Sertifikasyon Raporu
 }
 

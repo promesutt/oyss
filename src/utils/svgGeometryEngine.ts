@@ -386,9 +386,9 @@ function renderPolygon2D(params: GeometryShapeVisualParams): string[] {
     const poly = rawPoly as any;
     const pts = poly.vertices || poly.points || [];
     const isClosed = poly.isClosed !== undefined ? poly.isClosed : poly.closed !== false;
-    const hasCurveEdge = Boolean(poly.hasCurveEdge ?? poly.hasCurve);
+    const hasCurveEdge = Boolean(poly.hasCurveEdge ?? poly.hasCurve ?? poly.curve);
     const ptStr = pts.map((p: any) => `${p.x},${p.y}`).join(' ');
-    const stroke = resolveSvgColor(poly.strokeColor, GEOMETRY_CANVAS.LINE_COLOR);
+    const stroke = resolveSvgColor(poly.strokeColor || poly.color, GEOMETRY_CANVAS.LINE_COLOR);
     const fill = resolveSvgColor(poly.fill, '#f8fafc');
 
     if (isClosed === false) {
@@ -397,12 +397,37 @@ function renderPolygon2D(params: GeometryShapeVisualParams): string[] {
         `<polyline points="${ptStr}" fill="none" stroke="${stroke}" stroke-width="${GEOMETRY_CANVAS.STROKE_WIDTH}" stroke-linecap="round" stroke-linejoin="round" />`
       );
     } else if (hasCurveEdge) {
-      // Bir kenarı eğri olan şekil (çokgen olmama testi)
+      // Bir kenarı açıkça ayırt edilebilir eğri/yay olan şekil (çokgen olmama testi)
       const last = pts[pts.length - 1];
       const first = pts[0];
-      const curveMidX = (last.x + first.x) / 2 + 25;
-      const curveMidY = (last.y + first.y) / 2 - 25;
-      const d = `M ${first.x} ${first.y} ` + pts.slice(1).map((p: any) => `L ${p.x} ${p.y}`).join(' ') + ` Q ${curveMidX} ${curveMidY} ${first.x} ${first.y}`;
+
+      // Kiriş orta noktası ve uzunluğu
+      const midX = (last.x + first.x) / 2;
+      const midY = (last.y + first.y) / 2;
+      const dx = first.x - last.x;
+      const dy = first.y - last.y;
+      const chordLen = Math.hypot(dx, dy) || 1;
+
+      // Çokgen ağırlık merkezi (centroid)
+      const polyCenterX = pts.reduce((s: number, p: any) => s + p.x, 0) / pts.length;
+      const polyCenterY = pts.reduce((s: number, p: any) => s + p.y, 0) / pts.length;
+
+      // Normal vektör (merkezden dışarıya doğru yönelim garantili)
+      let normX = -dy / chordLen;
+      let normY = dx / chordLen;
+      const testDistOut = Math.hypot(midX + normX * 10 - polyCenterX, midY + normY * 10 - polyCenterY);
+      const testDistIn = Math.hypot(midX - normX * 10 - polyCenterX, midY - normY * 10 - polyCenterY);
+      if (testDistIn > testDistOut) {
+        normX = -normX;
+        normY = -normY;
+      }
+
+      // Belirgin, gözle ve A4 baskıda net görülebilen dış kavis (en az 38px)
+      const curveAmount = Math.max(38, chordLen * 0.38);
+      const ctrlX = Math.round(midX + normX * curveAmount);
+      const ctrlY = Math.round(midY + normY * curveAmount);
+
+      const d = `M ${first.x} ${first.y} ` + pts.slice(1).map((p: any) => `L ${p.x} ${p.y}`).join(' ') + ` Q ${ctrlX} ${ctrlY} ${first.x} ${first.y}`;
       elements.push(
         `<path d="${d}" fill="${fill}" stroke="${stroke}" stroke-width="${GEOMETRY_CANVAS.STROKE_WIDTH}" stroke-linejoin="round" />`
       );

@@ -5,7 +5,6 @@ import {
   ExamTerm,
   MaterialType,
   ExamPaper,
-  ExamQuestion,
   StudySheet,
   StudySheetSection,
   InfographicItem,
@@ -37,8 +36,7 @@ import { FeedbackModal } from './components/FeedbackModal';
 import { InteractivePracticeView } from './components/InteractivePracticeView';
 import { QuickStartGuide } from './components/QuickStartGuide';
 import { loadCustomExamPaper, clearCustomExamPaper } from './utils/practiceStorage';
-import { validateAndEnrichExamQuestions } from './utils/sourceMaterialValidator';
-import { ensureExamQuality, ensureStudySheetQuality } from './utils/qualityAssurance';
+import { ensureExamQuality, ensureStudySheetQuality, sanitizeExamPaper } from './utils/qualityAssurance';
 import { triggerPdfPrint } from './utils/materialFileNameGenerator';
 import {
   Mic,
@@ -156,16 +154,8 @@ export const App: React.FC = () => {
     if (customExamPaper &&
       customExamPaper.grade === selectedGrade &&
       customExamPaper.subjectId === selectedSubject) {
-      const { enrichedQuestions } = validateAndEnrichExamQuestions(customExamPaper.questions);
-      const { certifiedQuestions, report } = ensureExamQuality(
-        enrichedQuestions,
-        { grade: selectedGrade, subjectId: selectedSubject }
-      );
-      return {
-        ...customExamPaper,
-        questions: certifiedQuestions as ExamQuestion[],
-        qualityAudit: report
-      };
+      const ensuredExam = ensureExamQuality(customExamPaper);
+      return sanitizeExamPaper(ensuredExam);
     }
 
     // 2. Direct match in verified teacher-curated repository
@@ -177,16 +167,8 @@ export const App: React.FC = () => {
     );
 
     if (match) {
-      const { enrichedQuestions } = validateAndEnrichExamQuestions(match.questions);
-      const { certifiedQuestions, report } = ensureExamQuality(
-        enrichedQuestions,
-        { grade: selectedGrade, subjectId: selectedSubject }
-      );
-      return {
-        ...match,
-        questions: certifiedQuestions as ExamQuestion[],
-        qualityAudit: report
-      };
+      const ensuredExam = ensureExamQuality(match);
+      return sanitizeExamPaper(ensuredExam);
     }
 
     // Do NOT silently borrow questions from another scenario

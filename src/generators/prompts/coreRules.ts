@@ -284,6 +284,14 @@ export const RUBRIC_DESIGN_RULE = `ANALİTİK DERECELİ PUANLAMA ANAHTARI (RUBR�
 - Her sorunun rubrik kriter puanlarının toplamı, o sorunun 'points' değerine TAM EŞİT olmak zorundadır.`;
 
 /**
+ * TASK233: Yapay Zekâ Görsel Üretim Bayrağı
+ * Kullanıcı ve öğrenci kararlılığı için AI otomatik görsel üretimi şimdilik devre dışı bırakılmıştır.
+ * Mevcut MEB kaynak görselleri ve yapısal HTML tabloları korunmaktadır.
+ * Bu bayrak true yapılarak özellik ileride kolayca yeniden aktif edilebilir.
+ */
+export const ENABLE_AI_VISUAL_GENERATION = false;
+
+/**
  * TASK 158 / TASK 161 - Matematik Dersi İçin Otomatik Görsel Desteği Kuralı
  */
 export const AI_MATHEMATICS_VISUAL_DIRECTIVES = `MATEMATİK GÖRSEL KURALLARI VE PEDAGOJİK MODELLEME ("visual" alanı):

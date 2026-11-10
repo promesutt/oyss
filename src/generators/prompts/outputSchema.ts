@@ -1,9 +1,15 @@
+import { ENABLE_AI_VISUAL_GENERATION } from './coreRules';
+
 /**
  * RFC 8259 Uyumlu JSON Çıktı Şablonu
  * - isQualityActive === false: Legacy parity eşitliğini korur.
  * - isQualityActive === true: Koşullu/esnek alternativeAnswers, analitik rubrik ve opsiyonel visual şablonu sunar.
  */
-export function getJsonOutputSchema(hasAlternativeAnswers: boolean, isQualityActive: boolean = false): string {
+export function getJsonOutputSchema(
+  hasAlternativeAnswers: boolean,
+  isQualityActive: boolean = false,
+  allowVisual: boolean = ENABLE_AI_VISUAL_GENERATION
+): string {
   if (!isQualityActive) {
     return `ÇIKTI FORMATI:
 SADECE geçerli bir JSON çıktısı ver. JSON şeması:
@@ -33,6 +39,8 @@ SADECE geçerli bir JSON çıktısı ver. JSON şeması:
 }`;
   }
 
+  const shouldIncludeVisual = allowVisual;
+
   return `ÇIKTI FORMATI:
 SADECE geçerli bir JSON çıktısı ver. JSON şeması:
 {
@@ -54,7 +62,7 @@ SADECE geçerli bir JSON çıktısı ver. JSON şeması:
       "rubric": [
         {"item": "Kriter 1 (Kavramsal / olgusal teşhis)", "pts": 8},
         {"item": "Kriter 2 (Analitik gerekçelendirme / işlem basamağı)", "pts": 7}
-      ],
+      ]${shouldIncludeVisual ? `,
       "visual": {
         "type": "geometry_shape | number_line | fraction_model",
         "caption": "Görsel açıklaması",
@@ -67,10 +75,10 @@ SADECE geçerli bir JSON çıktısı ver. JSON şeması:
           "widthLabel": "120 m",
           "heightLabel": "80 m"
         }
-      }
+      }` : ''}
     }
   ]
 }
 NOT 1: >=12 puanlı sorularda tek ölçütlü rubrik YASAKTIR; en az 2 analitik ölçüte bölünmelidir.
-NOT 2: "visual" İSTEĞE BAĞLIDIR. Parselleme, alan-çevre, köklü sayı yeri gibi görsel sorularda ekleyiniz; salt işlemde ÇIKARINIZ. Cevapta "?" kullanınız.`;
+${shouldIncludeVisual ? 'NOT 2: "visual" İSTEĞE BAĞLIDIR. Parselleme, alan-çevre, köklü sayı yeri gibi görsel sorularda ekleyiniz; salt işlemde ÇIKARINIZ. Cevapta "?" kullanınız.' : 'NOT 2: Sorular metin tabanlı (açık, anlaşılır metin/veri içeren) hazırlanmalıdır; "visual" alanı eklemeyiniz.'}`;
 }

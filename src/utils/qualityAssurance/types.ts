@@ -42,6 +42,7 @@ export interface QuestionQualityResult {
   findings: QualityFinding[];
   autoRemediated?: boolean;
   remediationNotes?: string[];
+  previousQaStatus?: QualityStatus;
 }
 
 export interface ExamQualityAuditReport {
@@ -59,20 +60,46 @@ export interface ExamQualityAuditReport {
   executionTimeMs: number;
 }
 
+export interface SharedSourceGroup {
+  id: string;
+  examId?: string;
+  scenarioId?: string;
+  title?: string;
+  text?: string;
+  sourceText?: string;
+  questionNumbers: number[];
+  sourceType?: 'reading_passage' | 'case_study' | 'poem' | 'data_table';
+}
+
 export interface QuestionValidationContext {
   grade?: number;
   subjectId?: string;
   subject?: string;
+  course?: string;
   questionIndex?: number;
   totalQuestions?: number;
   targetPoints?: number;
   materialKind?: 'exam_paper' | 'study_sheet' | 'practice';
   skipRubricCheck?: boolean;
+  sharedSourceGroups?: SharedSourceGroup[];
+  assignedSubstitutionIds?: Set<string>;
   siblingQuestions?: Array<{
     questionNumber?: number;
+    number?: number;
     questionText?: string;
     question?: string;
     stimulus?: string;
+    commonStimulus?: string;
+    sharedSourceId?: string;
+    visual?: any;
     answer?: string;
   }>;
+}
+
+export type CandidateEligibilityStatus = 'eligible' | 'ineligible' | 'requires_review';
+
+export interface CandidateEvaluationResult {
+  status: CandidateEligibilityStatus;
+  score: number;
+  reason?: string;
 }
