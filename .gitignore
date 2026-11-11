@@ -38,3 +38,6 @@ lerna-debug.log*
 
 # Local Netlify folder
 .netlify
+
+# Local test scratch folder
+scratch/
