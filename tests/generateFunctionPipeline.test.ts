@@ -109,38 +109,15 @@ async function runTests() {
     );
 
     // -------------------------------------------------------------
-    // Test 4: Model Fallback: gemini-3.5 404 verdiğinde gemini-3.8-flash modeline geçmeli
+    // Test 4: TASK237: gemini-3.5-flash-lite tek modeldir; model 404 verdiğinde ikinci model aranmamalı ve 502 dönmeli
     // -------------------------------------------------------------
     const attemptedUrls: string[] = [];
-    let bodySentTo38: any = null;
-    globalThis.fetch = (async (url: string, init: any) => {
+    globalThis.fetch = (async (url: string) => {
       attemptedUrls.push(url);
-      const parsed = JSON.parse(init.body);
       if (url.includes('gemini-3.5-flash-lite:')) {
         return new Response(JSON.stringify({
           error: { code: 404, status: 'NOT_FOUND', message: 'models/gemini-3.5-flash-lite not found' }
         }), { status: 404, headers: { 'Content-Type': 'application/json' } });
-      }
-      if (url.includes('gemini-3.8-flash:')) {
-        bodySentTo38 = parsed;
-        return new Response(JSON.stringify({
-          candidates: [{
-            content: {
-              parts: [{
-                text: JSON.stringify({
-                  questions: [
-                    {
-                      number: 1,
-                      question: 'Kuvvetin birimi nedir?',
-                      answer: 'Newton',
-                      rubric: [{ item: 'Doğru cevap', pts: 10 }]
-                    }
-                  ]
-                })
-              }]
-            }
-          }]
-        }), { status: 200, headers: { 'Content-Type': 'application/json' } });
       }
       return new Response('Not found', { status: 404 });
     }) as any;
@@ -154,13 +131,12 @@ async function runTests() {
     const json4 = await res4.json();
 
     assert(
-      res4.status === 200 &&
-      json4.activeModel === 'gemini-3.8-flash' &&
-      attemptedUrls.length === 2 &&
-      attemptedUrls[0].includes('gemini-3.5-flash-lite:') &&
-      attemptedUrls[1].includes('gemini-3.8-flash:'),
-      'Test 4: Birincil model 404 verdiğinde ikincil gemini-3.8-flash modeline geçmeli',
-      `Used Model: ${json4.activeModel}, Attempts: ${attemptedUrls.length}`
+      res4.status === 502 &&
+      json4.code === 'MODELS_NOT_FOUND' &&
+      attemptedUrls.length === 1 &&
+      attemptedUrls[0].includes('gemini-3.5-flash-lite:'),
+      'Test 4: TASK237: gemini-3.5-flash-lite tek modeldir; 404 durumunda başka modele geçilmeden doğrudan 502 dönmeli',
+      `Status: ${res4.status}, Code: ${json4.code}, Attempts: ${attemptedUrls.length}`
     );
 
     // -------------------------------------------------------------

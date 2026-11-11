@@ -375,43 +375,41 @@ describe('TASK234: Gemini Üretim Güvenilirliği ve Din Kültürü Soru Kalites
     assert.strictEqual((parseResult.data as any).questions.length, 2, 'Kurtarılan 2 soru eksiksiz dönmelidir.');
   });
 
-  it('5.2. generateHandler birincil model 503 döndüğünde gemini-3.8-flash yedek modeline geçmeli ve başarılı olmalıdır', async () => {
+  it('5.2. generateHandler birincil model 503 döndüğünde 800ms bekleme ile tekrar denemeli ve başarılı olmalıdır (TASK237)', async () => {
     const originalFetch = globalThis.fetch;
     process.env.GEMINI_API_KEY = 'mock_api_key_for_testing';
 
     const calledModels: string[] = [];
+    let fetchAttempts = 0;
 
     globalThis.fetch = (async (url: string) => {
+      fetchAttempts++;
       const match = url.match(/models\/([a-zA-Z0-9.-]+):generateContent/);
       const model = match ? match[1] : 'unknown';
       calledModels.push(model);
 
-      if (model === 'gemini-3.5-flash-lite') {
-        // Birincil model 503 Service Unavailable döner
+      if (fetchAttempts === 1) {
+        // İlk çağrıda anlık 503 yoğunluk hatası döner
         return new Response(JSON.stringify({
           error: { status: 'UNAVAILABLE', code: 503, message: 'This model is currently experiencing high demand.' }
         }), { status: 503, headers: { 'Content-Type': 'application/json' } });
       }
 
-      if (model === 'gemini-3.8-flash') {
-        // Yedek model başarıyla döner
-        return new Response(JSON.stringify({
-          candidates: [{
-            content: {
-              parts: [{
-                text: JSON.stringify({
-                  title: '7. Sınıf Sınav',
-                  questions: [
-                    { number: 1, question: 'Fen sorusu kökü?', answer: 'Cevap', rubric: [{ item: 'Puan', pts: 10 }] }
-                  ]
-                })
-              }]
-            }
-          }]
-        }), { status: 200, headers: { 'Content-Type': 'application/json' } });
-      }
-
-      return new Response(JSON.stringify({ error: 'Not found' }), { status: 404 });
+      // 800ms sonraki 2. denemede aynı model (gemini-3.5-flash-lite) başarıyla yanıt verir
+      return new Response(JSON.stringify({
+        candidates: [{
+          content: {
+            parts: [{
+              text: JSON.stringify({
+                title: '7. Sınıf Sınav',
+                questions: [
+                  { number: 1, question: 'Fen sorusu kökü?', answer: 'Cevap', rubric: [{ item: 'Puan', pts: 10 }] }
+                ]
+              })
+            }]
+          }
+        }]
+      }), { status: 200, headers: { 'Content-Type': 'application/json' } });
     }) as any;
 
     try {
@@ -424,12 +422,12 @@ describe('TASK234: Gemini Üretim Güvenilirliği ve Din Kültürü Soru Kalites
       });
 
       const res = await generateHandler(req);
-      assert.strictEqual(res.status, 200, 'Yedek model devreye girdiğinde 200 dönmelidir.');
+      assert.strictEqual(res.status, 200, '503 retry sonrası 200 dönmelidir.');
       const resJson: any = await res.json();
-      assert.strictEqual(resJson.activeModel, 'gemini-3.8-flash', 'Kullanılan aktif model gemini-3.8-flash olmalıdır.');
-      assert.ok(calledModels.includes('gemini-3.5-flash-lite'), 'Önce gemini-3.5-flash-lite denenmiş olmalıdır.');
-      assert.ok(calledModels.includes('gemini-3.8-flash'), 'Ardından gemini-3.8-flash denenmiş olmalıdır.');
-      assert.ok(!calledModels.includes('gemini-2.5-flash'), 'Kullanımdan kalkan gemini-2.5-flash aranmamalıdır.');
+      assert.strictEqual(resJson.activeModel, 'gemini-3.5-flash-lite', 'Kullanılan aktif model gemini-3.5-flash-lite olmalıdır.');
+      assert.strictEqual(calledModels.length, 2, 'Aynı modele 2 kez çağrı yapılmış olmalıdır.');
+      assert.ok(calledModels.every(m => m === 'gemini-3.5-flash-lite'), 'Tüm çağrılar gemini-3.5-flash-lite modeline yapılmış olmalıdır.');
+      assert.ok(!calledModels.includes('gemini-3.8-flash'), 'TASK237 gereği gemini-3.8-flash çağrılmamalıdır.');
     } finally {
       globalThis.fetch = originalFetch;
       delete process.env.GEMINI_API_KEY;
@@ -437,27 +435,25 @@ describe('TASK234: Gemini Üretim Güvenilirliği ve Din Kültürü Soru Kalites
   });
 
   // --------------------------------------------------------------------------
-  // 6. Gemini 3.8 Flash / 3.5 Flash-Lite A/B Test Altyapısı ve Token Telemetrisi
+  // 6. Gemini 3.5 Flash-Lite Token Telemetrisi ve Model İzolasyonu (TASK237)
   // --------------------------------------------------------------------------
-  it('6.1. generateHandler gemini-3.8-flash seçildiğinde thinkingLevel: MEDIUM iletmeli ve usageMetadata token telemetrisini kaydetmelidir', async () => {
+  it('6.1. generateHandler gemini-3.5-flash-lite modelinde usageMetadata token telemetrisini kaydetmelidir', async () => {
     const originalFetch = globalThis.fetch;
-    process.env.GEMINI_API_KEY = 'mock_api_key_ab_test';
+    process.env.GEMINI_API_KEY = 'mock_api_key_telemetry';
 
     let capturedUrl = '';
-    let capturedBody: any = null;
 
-    globalThis.fetch = (async (url: string, init: any) => {
+    globalThis.fetch = (async (url: string) => {
       capturedUrl = url;
-      capturedBody = JSON.parse(init.body);
 
       return new Response(JSON.stringify({
         candidates: [{
           content: {
             parts: [{
               text: JSON.stringify({
-                title: '3.8 Flash Test Sınavı',
+                title: '3.5 Flash Test Sınavı',
                 questions: [
-                  { number: 1, question: 'A/B Test Soru Kökü?', answer: 'Test Cevap', rubric: [{ item: 'Doğruluk', pts: 10 }] }
+                  { number: 1, question: 'Test Soru Kökü?', answer: 'Test Cevap', rubric: [{ item: 'Doğruluk', pts: 10 }] }
                 ]
               })
             }]
@@ -466,8 +462,7 @@ describe('TASK234: Gemini Üretim Güvenilirliği ve Din Kültürü Soru Kalites
         usageMetadata: {
           promptTokenCount: 1420,
           candidatesTokenCount: 860,
-          thoughtsTokenCount: 340,
-          totalTokenCount: 2620
+          totalTokenCount: 2280
         }
       }), { status: 200, headers: { 'Content-Type': 'application/json' } });
     }) as any;
@@ -477,9 +472,7 @@ describe('TASK234: Gemini Üretim Güvenilirliği ve Din Kültürü Soru Kalites
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          prompt: '7. sınıf MEB matematik yazılı sınavı kazanım testi',
-          model: 'gemini-3.8-flash',
-          thinkingLevel: 'medium'
+          prompt: '7. sınıf MEB matematik yazılı sınavı kazanım testi'
         })
       });
 
@@ -487,14 +480,12 @@ describe('TASK234: Gemini Üretim Güvenilirliği ve Din Kültürü Soru Kalites
       assert.strictEqual(res.status, 200);
       const resJson: any = await res.json();
 
-      assert.ok(capturedUrl.includes('models/gemini-3.8-flash:generateContent'), 'gemini-3.8-flash URL ile çağrılmalıdır.');
-      assert.strictEqual(capturedBody?.generationConfig?.thinkingConfig?.thinkingLevel, 'MEDIUM', 'Düşünme seviyesi MEDIUM olarak iletilmelidir.');
-      assert.strictEqual(resJson.activeModel, 'gemini-3.8-flash');
+      assert.ok(capturedUrl.includes('models/gemini-3.5-flash-lite:generateContent'), 'gemini-3.5-flash-lite URL ile çağrılmalıdır.');
+      assert.strictEqual(resJson.activeModel, 'gemini-3.5-flash-lite');
       assert.strictEqual(resJson.usageMetrics?.hasUsageData, true, 'Token telemetrisi mevcut olmalıdır.');
       assert.strictEqual(resJson.usageMetrics?.promptTokens, 1420);
       assert.strictEqual(resJson.usageMetrics?.candidatesTokens, 860);
-      assert.strictEqual(resJson.usageMetrics?.thinkingTokens, 340);
-      assert.strictEqual(resJson.usageMetrics?.totalTokens, 2620);
+      assert.strictEqual(resJson.usageMetrics?.totalTokens, 2280);
     } finally {
       globalThis.fetch = originalFetch;
       delete process.env.GEMINI_API_KEY;

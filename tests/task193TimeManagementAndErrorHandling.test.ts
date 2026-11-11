@@ -71,35 +71,14 @@ async function runAllTests() {
     );
 
     // -------------------------------------------------------------
-    // Test 2: İlk deneme timeout, ikinci deneme başarılı
+    // Test 2: TASK237: gemini-3.5-flash-lite tek modeldir; timeout durumunda ikinci model aranmamalı ve 504 dönmeli
     // -------------------------------------------------------------
     let attemptCountTest2 = 0;
     globalThis.fetch = (async (url: string) => {
       attemptCountTest2++;
-      if (url.includes('gemini-3.5-flash-lite')) {
-        const timeoutErr = new Error('The operation was aborted');
-        timeoutErr.name = 'AbortError';
-        throw timeoutErr;
-      }
-      // İkinci model (gemini-3.8-flash) başarılı döner
-      return new Response(JSON.stringify({
-        candidates: [{
-          content: {
-            parts: [{
-              text: JSON.stringify({
-                questions: [
-                  {
-                    number: 1,
-                    question: 'Makaraların kuvvet kazancını açıklayınız.',
-                    answer: 'Hareketli makaralarda kuvvet kazancı 2 katıdır.',
-                    rubric: [{ item: 'Doğru formül', pts: 10 }]
-                  }
-                ]
-              })
-            }]
-          }
-        }]
-      }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+      const timeoutErr = new Error('The operation was aborted');
+      timeoutErr.name = 'AbortError';
+      throw timeoutErr;
     }) as any;
 
     const req2 = new Request('http://localhost/api/generate', {
@@ -111,11 +90,11 @@ async function runAllTests() {
     const json2 = await res2.json();
 
     assert(
-      res2.status === 200 &&
-      attemptCountTest2 === 2 &&
-      json2.activeModel === 'gemini-3.8-flash',
-      'Test 2: İlk deneme timeout olduğunda ikinci deneme devreye girmeli ve başarılı olmalı',
-      `Status: ${res2.status}, Model: ${json2.activeModel}, Toplam Deneme: ${attemptCountTest2}`
+      res2.status === 504 &&
+      attemptCountTest2 === 1 &&
+      json2.code === 'GATEWAY_TIMEOUT',
+      'Test 2: TASK237: gemini-3.5-flash-lite tek modeldir; timeout durumunda ikinci model aranmamalı ve 504 GATEWAY_TIMEOUT dönmeli',
+      `Status: ${res2.status}, Code: ${json2.code}, Toplam Deneme: ${attemptCountTest2}`
     );
 
     // -------------------------------------------------------------
@@ -188,12 +167,12 @@ async function runAllTests() {
 
     assert(
       res5.status === 504 && json5.code === 'GATEWAY_TIMEOUT',
-      'Test 5: İki deneme de zaman aşımına uğradığında HTTP 504 GATEWAY_TIMEOUT dönmeli',
+      'Test 5: Model zaman aşımına uğradığında HTTP 504 GATEWAY_TIMEOUT dönmeli',
       `Status: ${res5.status}, Code: ${json5.code}, Error: ${json5.error}`
     );
 
     // -------------------------------------------------------------
-    // Test 6: İkinci deneme için yeterli süre kalmamışsa (< 6000ms), yeni model başlatılmamalı
+    // Test 6: Model zaman aşımına uğradığında güvenli çıkılmalı ve gereksiz ikinci çağrı yapılmamalı
     // -------------------------------------------------------------
     let attemptCountTest6 = 0;
     const realDateNow = Date.now;
@@ -202,7 +181,6 @@ async function runAllTests() {
 
     globalThis.fetch = (async () => {
       attemptCountTest6++;
-      // İlk deneme 19 sn sürüyor ve timeout oluyor (24s bütçeden geriye 5s kaldığı için 5.5s eşiğinin altına düşer)
       virtualNow += 19000;
       const timeoutErr = new Error('The operation was aborted');
       timeoutErr.name = 'AbortError';
@@ -222,7 +200,7 @@ async function runAllTests() {
       res6.status === 504 &&
       attemptCountTest6 === 1 &&
       json6.details.length === 1,
-      'Test 6: Kalan bütçe 6 saniyenin altındaysa ikinci model başlatılmadan anında çıkılmalı',
+      'Test 6: Model zaman aşımına uğradığında güvenli 504 dönmeli ve gereksiz ikinci çağrı yapılmamalı',
       `Status: ${res6.status}, Yapılan Deneme: ${attemptCountTest6}, Telemetri Kaydı: ${json6.details.length}`
     );
 

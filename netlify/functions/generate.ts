@@ -156,10 +156,10 @@ export default async (req: Request) => {
   }
 
   // 4. Model Selection and Execution with Bounded Timeout Budget
-  // Google'ın güncel ve resmi Flash modelleri (kullanımdan kaldırılmış 404 modeller temizlendi)
+  // TASK237: Production tek ve sabit ana model: gemini-3.5-flash-lite
+  // gemini-3.8-flash ve eski modeller fallback zincirinden tamamen çıkarılmıştır.
   const verifiedModels = [
-    'gemini-3.5-flash-lite',
-    'gemini-3.8-flash'
+    'gemini-3.5-flash-lite'
   ];
 
   // Ortam İzolasyonu ve Güvenlik Sınırı:
@@ -173,14 +173,9 @@ export default async (req: Request) => {
     ? rawRequestedModel
     : '';
 
-  // Kontrollü A/B testi: Test ortamında belirtilen model birincil seçilir; diğeri yedek atanır
-  // Üretimde configuredModel (gemini-3.5-flash-lite) daima birincildir
+  // Üretimde configuredModel (gemini-3.5-flash-lite) tek ve sabit ana modeldir
   const effectivePrimary = requestedModel || configuredModel;
-  const fallbackModel = effectivePrimary === 'gemini-3.8-flash'
-    ? 'gemini-3.5-flash-lite'
-    : 'gemini-3.8-flash';
-
-  const targetModels = [effectivePrimary, fallbackModel];
+  const targetModels = [effectivePrimary];
 
   interface ModelAttemptTelemetry {
     model: string;
@@ -197,19 +192,12 @@ export default async (req: Request) => {
 
   const FUNCTION_TOTAL_BUDGET_MS = 24000; // 24s sınır (Netlify 26s gateway sınırına pay bırakır)
   const PRIMARY_ATTEMPT_MAX_MS = 18000; // 9 soruluk kapsamlı sınavlar için 18s birincil model bütçesi
-  const MIN_FALLBACK_BUDGET_MS = 5500; // Yedek model denemesi için asgari 5.5s pay
   const functionStartTime = Date.now();
 
   for (let i = 0; i < targetModels.length; i++) {
     const modelName = targetModels[i];
     const elapsedSoFar = Date.now() - functionStartTime;
     const remainingBudget = FUNCTION_TOTAL_BUDGET_MS - elapsedSoFar;
-
-    // Kalan süre yedek denemesi için yetersizse (< 5.5s) gereksiz çağrı yapma
-    if (remainingBudget < MIN_FALLBACK_BUDGET_MS) {
-      console.warn(`[Generate] Insufficient time budget (${remainingBudget}ms) for model ${modelName}. Aborting fallback chain.`);
-      break;
-    }
 
     // Mevcut deneme için zaman aşımı tahsisi (kalan bütçeye göre dinamik ve güvenli)
     const attemptTimeoutMs = Math.min(PRIMARY_ATTEMPT_MAX_MS, remainingBudget - 1500);
@@ -224,19 +212,6 @@ export default async (req: Request) => {
         maxOutputTokens: 8192, // 9 soruluk uzun çıktılarda kesilmeyi (JSON truncation) önleyen 8k token tavanı
         responseMimeType: 'application/json'
       };
-
-      // 3.8 Flash için düşünme seviyesi yapılandırması (Kullanıcı talebi: medium)
-      if (modelName.includes('3.8')) {
-        const rawThinkingLevel = typeof body?.thinkingLevel === 'string'
-          ? body.thinkingLevel.toUpperCase()
-          : 'MEDIUM';
-        const validThinkingLevel = ['LOW', 'MEDIUM', 'HIGH'].includes(rawThinkingLevel)
-          ? rawThinkingLevel
-          : 'MEDIUM';
-        generationConfig.thinkingConfig = {
-          thinkingLevel: validThinkingLevel
-        };
-      }
 
       const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
 
@@ -253,7 +228,7 @@ export default async (req: Request) => {
       });
 
       // 503 Geçici Yoğunluk Spike Kontrolü: Eğer ilk denemede 503 döndüyse ve kalan süre yeterliyse 800ms bekle ve aynı modele 1 kez tekrar dene
-      if (res.status === 503 && i === 0 && (FUNCTION_TOTAL_BUDGET_MS - (Date.now() - functionStartTime)) >= 12000) {
+      if (res.status === 503 && i === 0 && (FUNCTION_TOTAL_BUDGET_MS - (Date.now() - functionStartTime)) >= 10000) {
         console.warn(`[Generate] Model ${modelName} 503 döndü; 800ms bekleyerek anlık spike için 1 kez yeniden deneniyor...`);
         await new Promise(r => setTimeout(r, 800));
         res = await fetch(geminiUrl, {
