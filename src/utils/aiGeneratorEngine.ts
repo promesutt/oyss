@@ -40,6 +40,10 @@ export interface GenerationResult {
   variationNumber: number;
   generationTime: string;
   model: string;
+  requestedModel?: string;
+  actualModel?: string;
+  isModelFallback?: boolean;
+  httpStatus?: number;
   isFallback?: boolean;
   fallbackReason?: string;
   questionsCount: number;
@@ -55,6 +59,13 @@ export interface GenerationResult {
     budgetCeiling: number;
     compressionApplied: 'none' | 'light' | 'compact';
   };
+  usageMetrics?: {
+    hasUsageData: boolean;
+    promptTokens: number | null;
+    candidatesTokens: number | null;
+    thinkingTokens: number | null;
+    totalTokens: number | null;
+  };
   examClassification?: ExamSourceClassification;
 }
 
@@ -63,6 +74,8 @@ export interface GeneratorOptions {
   avoidStimuli?: string[];
   preferredDifficulty?: 'standard' | 'more_complex' | 'foundational';
   outputType?: 'exam' | 'study_sheet' | 'practice_question';
+  primaryModel?: 'gemini-3.5-flash-lite' | 'gemini-3.8-flash';
+  thinkingLevel?: 'low' | 'medium' | 'high';
 }
 
 /**
@@ -302,19 +315,31 @@ export function isDuplicateOrTooSimilar(
         if (fullSim >= 0.85) return true;
         continue;
       }
-      // Sayısal kesişim varsa benzerlik eşiği
-      if (fullSim >= 0.60 || qSim >= 0.60) return true;
+      // Ortak sayılar yalnızca yapısal/sıra sayılarıysa (0, 1, 2) daha yüksek benzerlik ara (TASK234)
+      const nonTrivialCommon = commonNums.filter(n => !['0', '1', '2'].includes(n));
+      if (nonTrivialCommon.length === 0) {
+        if (fullSim >= 0.72 || qSim >= 0.68) return true;
+        continue;
+      }
+      // Anlamlı sayısal kesişim varsa benzerlik eşiği
+      if (fullSim >= 0.65 || qSim >= 0.65) return true;
       continue;
     }
 
-    // Düz Metin / Türkçe Anlama ve Dilbilgisi Soruları
-    if (fullSim >= threshold || qSim >= threshold) {
+    // Düz Metin / Türkçe Anlama ve Dilbilgisi Soruları (TASK234 İyileştirmesi)
+    // Salt ders söz varlığı veya kazanım terimi ortaklığı (örn: "zekat", "rasyonel sayı", "ibadet")
+    // tek başına bir mükerrerlik göstergesi değildir. Gerçek mükerrerlik için ya cümle kurgusu yüksek oranda
+    // benzemeli (fullSim >= 0.70 / qSim >= 0.65) ya da hem konu terimleri hem de soru cümlesi birlikte örtüşmelidir.
+    const effectiveSimThreshold = Math.max(threshold, 0.65);
+    if (fullSim >= Math.max(threshold, 0.70) || qSim >= effectiveSimThreshold) {
       return true;
     }
     const fullTopicsC = extractTopicTokens(cFull);
     const fullTopicsA = extractTopicTokens(aFull);
     const fullTopicJaccard = calculateJaccard(fullTopicsC, fullTopicsA);
-    if (fullTopicJaccard >= threshold) {
+    const fullTopicOverlap = calculateOverlapRatio(fullTopicsC, fullTopicsA);
+    // Kök düzeyinde aynı konuyu işleyip anahtar sözcüklerin büyük kısmını paylaşıyorsa mükerrerdir (TASK234)
+    if ((fullTopicJaccard >= 0.45 && fullTopicOverlap >= 0.60) || fullTopicJaccard >= 0.65) {
       return true;
     }
   }
@@ -1477,21 +1502,57 @@ export async function generateMEBIQuestions(
   // 1. TIER 1: Güvenli Sunucu Fonksiyonu Proxy (/api/generate)
   // Tüm yapay zekâ istekleri istemciden gizlenmiş sunucu tarafı Netlify Function üzerinden yürütülür.
   if (livePrompt && livePrompt.length <= HARD_LIMIT) {
-  try {
-    const proxyRes = await fetch('/api/generate', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-App-Client': 'oyss-portal-v1'
-      },
-      body: JSON.stringify({
-        prompt: livePrompt,
-        variationIndex,
-        variationToken
-      })
-    });
+    let proxyError: any = null;
+    try {
+      const MAX_RETRIES = 1; // Geçici 503/Ağ dalgalanmaları için 1 kontrollü tekrar (TASK234)
+      let proxyRes: Response | null = null;
 
-    if (proxyRes.ok) {
+    for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+      if (attempt > 0) {
+        const delayMs = 1000 * attempt;
+        console.warn(`[AI Generation] Geçici servis yanıtı (503/502/Ağ); ${attempt}. tekrar deneniyor (${delayMs}ms bekleme)...`);
+        await new Promise(r => setTimeout(r, delayMs));
+      }
+
+      try {
+        proxyRes = await fetch('/api/generate', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-App-Client': 'oyss-portal-v1'
+          },
+          body: JSON.stringify({
+            prompt: livePrompt,
+            variationIndex,
+            variationToken,
+            model: options?.primaryModel,
+            thinkingLevel: options?.thinkingLevel
+          })
+        });
+
+        // 200 başarılı yanıt
+        if (proxyRes.ok) {
+          break;
+        }
+
+        // 429 (Kota sınırı), 400 (Hatalı istek), 403 (Yetki), 422 (Şema) durumlarında tekrar deneme, anında çık
+        if (proxyRes.status === 429 || proxyRes.status === 400 || proxyRes.status === 403 || proxyRes.status === 422) {
+          break;
+        }
+
+        // 503 veya 502 durumunda son deneme değilse tekrar dene
+        if (attempt < MAX_RETRIES && (proxyRes.status === 503 || proxyRes.status === 502)) {
+          continue;
+        }
+      } catch (err: any) {
+        proxyError = err;
+        if (attempt < MAX_RETRIES) {
+          continue;
+        }
+      }
+    }
+
+    if (proxyRes && proxyRes.ok) {
       const data = await proxyRes.json();
       let questionsList = data?.questions;
 
@@ -1514,47 +1575,91 @@ export async function generateMEBIQuestions(
         }));
         const normalized = normalizeAndCalibrateQuestions(geminiTagged);
 
-        // Anti-duplication sanity check: Canlı Gemini çıktısının mevcut sınav sorularını birebir tekrarlamadığından emin ol
-        const hasDirectDuplicate = normalized.some(nq =>
-          isDuplicateOrTooSimilar(nq.question, nq.stimulus, allAvoidItems, undefined, 0.45)
-        );
+        // Anti-duplication cerrahi denetimi (TASK234):
+        // Tek bir sorunun benzer çıkması durumunda TÜM SINAVI ÇÖPE ATMA;
+        // Yalnızca benzer olan soruyu onaylı havuzdan ikame et, kalan Gemini sorularını koru!
+        let duplicateCount = 0;
+        const deduplicatedQuestions: GeneratedQuestionItem[] = [];
 
-        if (!hasDirectDuplicate) {
-          const activeModelName = data?.activeModel || 'Gemini Akıllı Soru Motoru';
+        for (let i = 0; i < normalized.length; i++) {
+          const nq = normalized[i];
+          const isDup = isDuplicateOrTooSimilar(nq.question, nq.stimulus, allAvoidItems, undefined, 0.65);
+          if (isDup) {
+            duplicateCount++;
+            console.warn(`[AntiDuplication] ${i + 1}. soru (${nq.outcome}) mevcut sınav sorularıyla yüksek benzerlik taşıyor; cerrahi ikame yapılıyor.`);
+            const avoidCombined: AvoidItem[] = [
+              ...allAvoidItems,
+              ...deduplicatedQuestions.map(dq => ({ questionText: dq.question, stimulus: dq.stimulus }))
+            ];
+            const fallbackMatch = internalAllQuestions.find(fq =>
+              fq.outcome === nq.outcome &&
+              !isDuplicateOrTooSimilar(fq.question, fq.stimulus, avoidCombined, undefined, 0.60)
+            ) || internalAllQuestions.find(fq => fq.outcome === nq.outcome);
+
+            if (fallbackMatch) {
+              deduplicatedQuestions.push({
+                ...fallbackMatch,
+                number: i + 1,
+                points: nq.points,
+                sourceOrigin: 'oyss_curated' as const
+              });
+              continue;
+            }
+          }
+          deduplicatedQuestions.push(nq);
+        }
+
+        // Eğer soruların çoğunluğu (> %60) çözümlenemeyen mükerrerlik içeriyorsa o zaman yerel motora geç
+        if (duplicateCount > 0 && duplicateCount >= Math.ceil(normalized.length * 0.6)) {
+          console.warn(`Canlı model çıktısında soruların çoğunluğu (${duplicateCount}/${normalized.length}) mevcut sınavla çakıştı; yerel motora aktarılıyor.`);
+          fallbackReason = `[Benzerlik Kontrolü] Canlı yapay zekâ çıktısındaki soruların çoğunluğu (${duplicateCount}/${normalized.length}) mevcut sınavla çakıştığından yerel OYSS standart motoru devreye alındı.`;
+        } else {
+          // Kalan Gemini soruları KORUNDU!
+          const activeModelName = duplicateCount > 0
+            ? `${data?.activeModel || 'Gemini Akıllı Soru Motoru'} (Kısmi İkame: ${duplicateCount} Soru)`
+            : (data?.activeModel || 'Gemini Akıllı Soru Motoru');
           const elapsedSec = Math.max(0.7, (Date.now() - startTime) / 1000).toFixed(1) + ' saniye';
-          const examClassification = classifyExamQuestions(normalized);
+          const examClassification = classifyExamQuestions(deduplicatedQuestions);
           const classDetails = getExamClassificationDetails(examClassification);
 
           return {
-            title: `${grade}. Sınıf ${scenario.name} (${classDetails.titleSuffix} - ${normalized.length} Soru)`,
+            title: `${grade}. Sınıf ${scenario.name} (${classDetails.titleSuffix} - ${deduplicatedQuestions.length} Soru)`,
             variationNumber: variationIndex + 1,
             generationTime: elapsedSec,
             model: `${activeModelName}`,
+            requestedModel: data?.requestedModel || options?.primaryModel || 'gemini-3.5-flash-lite',
+            actualModel: data?.activeModel || 'gemini-3.5-flash-lite',
+            isModelFallback: Boolean(data?.isModelFallback),
+            httpStatus: 200,
             isFallback: false,
-            questionsCount: normalized.length,
-            generatedQuestions: normalized,
+            questionsCount: deduplicatedQuestions.length,
+            generatedQuestions: deduplicatedQuestions,
             sourceValidationSummary: {
-              isFullyValid: !normalized.some(q => q.hasMissingSourceError || q.hasMissingStemError),
-              missingSourceCount: normalized.filter(q => q.hasMissingSourceError).length,
-              missingStemCount: normalized.filter(q => q.hasMissingStemError).length,
-              recoveredCount: normalized.filter(q => q.commonStimulus || q.sharedSourceId).length
+              isFullyValid: !deduplicatedQuestions.some(q => q.hasMissingSourceError || q.hasMissingStemError),
+              missingSourceCount: deduplicatedQuestions.filter(q => q.hasMissingSourceError).length,
+              missingStemCount: deduplicatedQuestions.filter(q => q.hasMissingStemError).length,
+              recoveredCount: deduplicatedQuestions.filter(q => q.commonStimulus || q.sharedSourceId).length
             },
             promptMetrics: {
               promptLength: livePrompt.length,
               budgetCeiling: BUDGET_CEILING,
               compressionApplied: compressionLevel
             },
+            usageMetrics: data?.usageMetrics || {
+              hasUsageData: false,
+              promptTokens: null,
+              candidatesTokens: null,
+              thinkingTokens: null,
+              totalTokens: null
+            },
             examClassification
           };
-        } else {
-          console.warn('Canlı model çıktısında mevcut sınavla çakışan soru tespit edildi; yerel OYSS kural tabanlı motoruna aktarılıyor.');
-          fallbackReason = 'Canlı yapay zekâ çıktısı mevcut sınavla benzerlik gösterdiğinden yerel OYSS standart motoru devreye alındı.';
         }
       } else {
         console.warn('Canlı model geçerli soru listesi sağlamadı:', data);
         fallbackReason = data?.error || 'Model çıktısı geçerli bir sınav formatına (questions dizisi) uymadığı için yerel motor devreye alındı.';
       }
-    } else {
+    } else if (proxyRes) {
       let errJson: any = null;
       try {
         errJson = await proxyRes.json();
@@ -1572,7 +1677,9 @@ export async function generateMEBIQuestions(
       });
 
       if (proxyRes.status === 429 || serverCode === 'RATE_LIMIT_EXCEEDED') {
-        fallbackReason = serverError || 'Yapay zekâ servisi kota sınırında (429 - Çok sık istek). Lütfen bir dakika sonra tekrar deneyiniz.';
+        fallbackReason = serverError
+          ? (serverError.includes('429') ? serverError : `[HTTP 429 - Kota Doldu] ${serverError}`)
+          : 'Yapay zekâ servisi kota sınırında (429 - Çok sık istek). Lütfen bir dakika sonra tekrar deneyiniz.';
       } else if (proxyRes.status === 504 || serverCode === 'GATEWAY_TIMEOUT') {
         fallbackReason = serverError
           ? `${serverError} Sorular yerel OYSS standart motoruyla hazırlandı.`
@@ -1598,34 +1705,71 @@ export async function generateMEBIQuestions(
             sourceOrigin: gq.sourceOrigin || 'gemini_ai'
           }));
           const normalized = normalizeAndCalibrateQuestions(geminiTagged);
-          const hasDirectDuplicate = normalized.some(nq =>
-            isDuplicateOrTooSimilar(nq.question, nq.stimulus, allAvoidItems, undefined, 0.45)
-          );
+          let duplicateCount = 0;
+          const deduplicated: GeneratedQuestionItem[] = [];
 
-          if (!hasDirectDuplicate) {
+          for (let i = 0; i < normalized.length; i++) {
+            const nq = normalized[i];
+            const isDup = isDuplicateOrTooSimilar(nq.question, nq.stimulus, allAvoidItems, undefined, 0.65);
+            if (isDup) {
+              duplicateCount++;
+              const avoidCombined: AvoidItem[] = [
+                ...allAvoidItems,
+                ...deduplicated.map(dq => ({ questionText: dq.question, stimulus: dq.stimulus }))
+              ];
+              const fallbackMatch = internalAllQuestions.find(fq =>
+                fq.outcome === nq.outcome &&
+                !isDuplicateOrTooSimilar(fq.question, fq.stimulus, avoidCombined, undefined, 0.60)
+              ) || internalAllQuestions.find(fq => fq.outcome === nq.outcome);
+
+              if (fallbackMatch) {
+                deduplicated.push({
+                  ...fallbackMatch,
+                  number: i + 1,
+                  points: nq.points,
+                  sourceOrigin: 'oyss_curated' as const
+                });
+                continue;
+              }
+            }
+            deduplicated.push(nq);
+          }
+
+          if (duplicateCount < Math.ceil(normalized.length * 0.6)) {
             const activeModelName = errJson?.activeModel || 'Gemini Akıllı Soru Motoru (Kısmi İkame)';
             const elapsedSec = Math.max(0.7, (Date.now() - startTime) / 1000).toFixed(1) + ' saniye';
-            const examClassification = classifyExamQuestions(normalized);
+            const examClassification = classifyExamQuestions(deduplicated);
             const classDetails = getExamClassificationDetails(examClassification);
 
             return {
-              title: `${grade}. Sınıf ${scenario.name} (${classDetails.titleSuffix} - ${normalized.length} Soru)`,
+              title: `${grade}. Sınıf ${scenario.name} (${classDetails.titleSuffix} - ${deduplicated.length} Soru)`,
               variationNumber: variationIndex + 1,
               generationTime: elapsedSec,
               model: `${activeModelName}`,
+              requestedModel: errJson?.requestedModel || options?.primaryModel || 'gemini-3.5-flash-lite',
+              actualModel: errJson?.activeModel || 'gemini-3.5-flash-lite',
+              isModelFallback: Boolean(errJson?.isModelFallback),
+              httpStatus: proxyRes.status,
               isFallback: false,
-              questionsCount: normalized.length,
-              generatedQuestions: normalized,
+              questionsCount: deduplicated.length,
+              generatedQuestions: deduplicated,
               sourceValidationSummary: {
-                isFullyValid: !normalized.some(q => q.hasMissingSourceError || q.hasMissingStemError),
-                missingSourceCount: normalized.filter(q => q.hasMissingSourceError).length,
-                missingStemCount: normalized.filter(q => q.hasMissingStemError).length,
-                recoveredCount: normalized.filter(q => q.commonStimulus || q.sharedSourceId).length
+                isFullyValid: !deduplicated.some(q => q.hasMissingSourceError || q.hasMissingStemError),
+                missingSourceCount: deduplicated.filter(q => q.hasMissingSourceError).length,
+                missingStemCount: deduplicated.filter(q => q.hasMissingStemError).length,
+                recoveredCount: deduplicated.filter(q => q.commonStimulus || q.sharedSourceId).length
               },
               promptMetrics: {
                 promptLength: livePrompt.length,
                 budgetCeiling: BUDGET_CEILING,
                 compressionApplied: compressionLevel
+              },
+              usageMetrics: errJson?.usageMetrics || {
+                hasUsageData: false,
+                promptTokens: null,
+                candidatesTokens: null,
+                thinkingTokens: null,
+                totalTokens: null
               },
               examClassification
             };
@@ -1645,7 +1789,8 @@ export async function generateMEBIQuestions(
       }
     }
   } catch (proxyErr: any) {
-    console.warn('Sunucu proxy çağrısı başarısız, yerel yedek motora geçiliyor:', proxyErr?.message || proxyErr);
+    const finalErr = proxyError || proxyErr;
+    console.warn('Sunucu proxy çağrısı başarısız, yerel yedek motora geçiliyor:', finalErr?.message || finalErr);
     fallbackReason = 'Canlı yapay zekâ servisiyle bağlantı kurulamadı (Ağ/Çevrimdışı); sorular OYSS kural tabanlı standart motoruyla hazırlandı.';
   }
   } else if (livePrompt && livePrompt.length > HARD_LIMIT) {
@@ -1846,6 +1991,9 @@ export async function generateMEBIQuestions(
     variationNumber: variationIndex + 1,
     generationTime: elapsedFormatted,
     model: 'OYSS Standart Soru Üretim Motoru (MEBİ Ölçme Referanslı)',
+    requestedModel: options?.primaryModel || 'gemini-3.5-flash-lite',
+    actualModel: 'OYSS Procedural Fallback',
+    isModelFallback: true,
     isFallback: true,
     fallbackReason: fallbackReason || 'Canlı yapay zekâ servisi şu anda meşgul veya çevrimdışı olduğundan sorular yerel OYSS kural tabanlı standart motoruyla hazırlandı.',
     questionsCount: finalDynamicQuestions.length,
@@ -1854,6 +2002,13 @@ export async function generateMEBIQuestions(
       isFullyValid: !finalDynamicQuestions.some(q => q.hasMissingSourceError),
       missingSourceCount: finalDynamicQuestions.filter(q => q.hasMissingSourceError).length,
       recoveredCount: finalDynamicQuestions.filter(q => q.commonStimulus || q.sharedSourceId).length
+    },
+    usageMetrics: {
+      hasUsageData: false,
+      promptTokens: null,
+      candidatesTokens: null,
+      thinkingTokens: null,
+      totalTokens: null
     },
     examClassification
   };

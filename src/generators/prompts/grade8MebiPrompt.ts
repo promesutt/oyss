@@ -95,6 +95,11 @@ MEBİ 8. SINIF DİN KÜLTÜRÜ VE AHLAK BİLGİSİ OKUL YAZILILARINA HAZIRLIK VE
    - Kavramsal olarak aynı doğruya ulaşan farklı öğrenci ifadeleri için "alternativeAnswers" dizisine en az 2-3 alternatif eklenmelidir.
 4. ANALİTİK VE PARÇALI RUBRİK:
    - Yasa veya kavram tespiti (kısmi puan) + ayet/metin gerekçelendirmesi (kısmi puan) şeklinde adımlı puanlama yapılmalıdır.
+5. SENARYO REHBERLİĞİ VE ÖLÇME ODAK KURALI (TASK234):
+   - SÜS HİKÂYE YASAĞI: Senaryo yalnızca süs veya uzun bir giriş metni olarak yazılamaz; soruyla doğrudan ilişkili olmalıdır.
+   - DOĞRUDAN BİLGİ VE KAVRAMSAL YORUM TERCİHİ: Gereksiz kurgusal hikâyeler yerine doğrudan ayet/hadis meali veya kısa kavramsal vaka tercih edilmelidir.
+   - TEK ÖLÇME AMACI: Tek bir soruda ilgisiz birden fazla kazanım birleştirilemez; soru açık ve odaklı olmalıdır.
+   - RUBRİK UYUMU: Rubrik, soru kökü ve model cevapla birebir uyumlu olmalıdır.
 `;
 
 export const GRADE_8_ENGLISH_DIRECTIVES = `

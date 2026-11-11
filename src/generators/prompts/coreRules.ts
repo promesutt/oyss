@@ -254,6 +254,13 @@ export const TURKISH_DIRECTIVE_CLARITY_ADDITIONS = `
   * METİNDEN AKTARIM VE İMLA DOĞRULUĞU: Model cevapta metinden aktarılan sözcükler eksiksiz yazılmalıdır (Örn: metinde 'pideleri' geçiyorsa model cevapta 'pider' gibi kırpılmış değil, 'pideleri' yazılmalıdır).
   * T.O.5.6 gibi anlama soruları tek kelime değil, olayın gelişimini veya neden-sonuç ilişkisini bütüncül açıklamayı gerektirir.`;
 
+export const DIN_DIRECTIVE_CLARITY_ADDITIONS = `
+- Din Kültürü ve Ahlak Bilgisi Soru Kalitesi ve Senaryo Bütünlüğü Yönergeleri:
+  * BAĞLAMIN VE SENARYONUN AMACA HİZMET ETMESİ (SÜS HİKÂYE YASAĞI): Senaryo (stimulus) yalnızca süs, edebi giriş veya soruyla ilgisiz bir hikâye olarak KESİNLİKLE yazılamaz (Örn: Soru meleklerin görevlerini soruyorken 'Deniz feneri bekçisi Barış dalgaları izliyordu' gibi alakasız yapay hikâyeler YASAKTIR). Senaryo doğrudan sorulan kavramla, ayetle veya ahlaki durumla organik olarak ilişkili olmalıdır.
+  * DOĞRUDAN BİLGİ VE KAVRAMSAL YORUM TERCİHİ: Kazanım yapay bir olay örgüsü gerektirmiyorsa, öğrenciye doğrudan ayet/hadis meali vererek veya doğrudan kavramsal bir durum üzerinden (kısa ve net) soru sorunuz. Gereksiz yapay kurgular uydurmayınız.
+  * TEK SORUDA TEK ÖLÇME AMACI (KAZANIM YIĞILMASI YASAĞI): Tek bir soruda adalet, mazlumun tesellisi, ölüm korkusunu yenme, hayata anlam katma, tabiat olayları gibi birbirinden bağımsız çok sayıda kavramı ve kazanımı BİRLEŞTİRMEYİNİZ! Soru kökü açık, odaklı ve tek bir ölçme amacına sahip olmalıdır.
+  * MODEL CEVAP VE RUBRİK BİREBİR UYUMU: Soru kökü ne talep ediyorsa, model cevap tam olarak o talepleri karşılamalıdır. Rubrik basamakları soru kökü ve model cevaptaki unsurlarla birebir örtüşmeli; sorulmayan ekstra talepler içermemelidir.`;
+
 /**
  * Geriye dönük uyumluluk için statik Türkçe içeren tam kural
  */
@@ -262,11 +269,15 @@ export const QUESTION_DIRECTIVE_CLARITY_RULE = `${UNIVERSAL_DIRECTIVE_CLARITY_RU
 /**
  * TASK174 - Branşa Duyarlı Yönerge Açıklığı Kuralı
  * Türkçe branşına özel dil bilgisi/noktalama kurallarını yalnızca Türkçe dersine enjekte eder;
+ * Din Kültürü branşına özel senaryo ve ölçme netliği kurallarını Din Kültürü dersine enjekte eder;
  * Fen Bilimleri, Matematik ve diğer derslere yalnızca genel yönerge açıklığını aktarır.
  */
 export function getDirectiveClarityRule(subjectId?: SubjectId | string): string {
   if (subjectId === 'turkce') {
     return QUESTION_DIRECTIVE_CLARITY_RULE;
+  }
+  if (subjectId === 'din_kulturu') {
+    return `${UNIVERSAL_DIRECTIVE_CLARITY_RULE}${DIN_DIRECTIVE_CLARITY_ADDITIONS}`;
   }
   return UNIVERSAL_DIRECTIVE_CLARITY_RULE;
 }

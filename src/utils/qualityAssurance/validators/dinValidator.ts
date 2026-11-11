@@ -188,5 +188,62 @@ export function validateDinQuestion(
     });
   }
 
+  // 5. Senaryo ve Soru Bağıntısı (Süs Hikâye Tespiti - TASK234)
+  // Eğer uzun bir kurgusal senaryo varsa (hikâye/vaka) ama soru kökü senaryodaki durum veya karaktere
+  // hiç değinmeden bağımsız bir kavram ezberi soruyorsa, senaryo süs kalmıştır.
+  if (stimulus.length > 80 && !/(?:meal|ayet|sure|hadis|rivayet)/i.test(stimulus)) {
+    const isNarrative = /(?:bir\s+gün|bekçi|fener|çiftçi|bahçe|tohum|öğrenci|mektup|gezi|yolculuk|ziyaret)/i.test(stimulus);
+    const hasContextLink = /(?:bu\s+(?:durum|metin|parça|olay|mektup|örnek|vaka|davranış|hikâye)|metne\s+göre|parçaya\s+göre|karakterin|yaşadığı)/i.test(stem);
+    const isIsolatedDirectRecall = /(?:adı\s+nedir|görevli\s+melek|dört\s+büyük\s+melek|kaç\s+tür|hangi\s+melektir|hangisidir|yazınız)[.?!;:\s]*$/i.test(stem);
+
+    if (isNarrative && !hasContextLink && isIsolatedDirectRecall) {
+      findings.push({
+        category: 'pedagogical_depth',
+        severity: 'warning',
+        field: 'stimulus',
+        message: 'Senaryo (stimulus) soru köküyle organik bir bağ kurmamakta, süs metin olarak kalmaktadır. Senaryo soruyla doğrudan ilişkilendirilmeli veya soru doğrudan sorulmalıdır.',
+        suggestedFix: 'Soru kökünü senaryodaki duruma atıf yapacak şekilde bağlayınız veya gereksiz süs hikâyeyi kaldırınız.',
+        validationMethod: 'din_disconnected_stimulus'
+      });
+    }
+  }
+
+  // 6. Çoklu Kazanım ve Tema Yığılması Tespiti (Overloading - TASK234)
+  // Tek soruda birbirinden bağımsız çok sayıda felsefi/etik temanın (adalet, mazlumun tesellisi, ölüm korkusu, hayata anlam katma) birleştirilmesi
+  const disjointThemes = [
+    /(?:adalet\s+duygusu|ilahi\s+adalet|mizan)/i,
+    /(?:mazlumun\s+tesellisi|haksızlığa\s+uğrayan)/i,
+    /(?:ölüm\s+korkusu|ölüm\s+kaygısı)/i,
+    /(?:hayata\s+anlam\s+katma|varoluşsal\s+boşluk)/i,
+    /(?:otokontrol|öz\s+denetim|kirâmen\s+kâtibîn)/i
+  ];
+  const matchedThemeCount = disjointThemes.filter(rx => rx.test(stem)).length;
+  if (matchedThemeCount >= 3) {
+    findings.push({
+      category: 'outcome_alignment',
+      severity: 'warning',
+      field: 'stem',
+      message: `Tek bir soru kökünde ${matchedThemeCount} farklı kazanım teması ('adalet duygusu', 'mazlumun tesellisi', 'ölüm korkusu', 'hayata anlam katma') birleştirilmiştir. Ölçme geçerliği için soru tek bir amaca odaklanmalıdır.`,
+      suggestedFix: 'Soru kökünü kazanımın tek bir temel boyutuna odaklanacak şekilde sadeleştiriniz.',
+      validationMethod: 'din_overloaded_outcome_stem'
+    });
+  }
+
+  // 7. Soru Kökü ile Model Cevap ve Rubrik Uyumu (TASK234)
+  if (stem.includes('adını') && stem.includes('görev')) {
+    const hasNameInAnswer = /(?:cebrail|mikail|israfil|azrail|münker|nekir|kirâmen|hafaza)/i.test(answerOnlyText);
+    const hasDutyInAnswer = /(?:vahiy|tabiat|rızık|kıyamet|ecel|can|koruma|yazma|sorgu)/i.test(answerOnlyText);
+    if (!hasNameInAnswer || !hasDutyInAnswer) {
+      findings.push({
+        category: 'stem_answer_consistency',
+        severity: 'critical',
+        field: 'answer',
+        message: 'Soru kökü hem melek adını hem görevini sormasına rağmen model cevap her iki unsuru da eksiksiz içermemektedir.',
+        suggestedFix: 'Model cevaba hem ilgili meleğin adını hem de görev alanını açıkça ekleyiniz.',
+        validationMethod: 'din_rubric_stem_alignment'
+      });
+    }
+  }
+
   return findings;
 }
